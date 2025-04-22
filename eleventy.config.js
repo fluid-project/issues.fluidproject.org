@@ -50,6 +50,10 @@ export default function eleventy(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "node_modules/@github/relative-time-element/dist": "assets/scripts/relative-time/" });
   eleventyConfig.addPassthroughCopy({ "node_modules/@zachleat/filter-container/filter-container.js": "assets/scripts/filter-container.js" });
 
+  eleventyConfig.addFilter("autolink", function (content) {
+    return content.replaceAll(/(?<![\/>])\b([A-Z]+-[0-9]+)\b/g, '<a href="/browse/$1/">$1</a>');
+  });
+
   eleventyConfig.addTransform("parse", parseTransform);
   eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(highlightjs));
   eleventyConfig.on("afterBuild", async () => {
