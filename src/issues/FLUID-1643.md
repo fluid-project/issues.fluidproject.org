@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21820",
       "author": "Eli Cochran",
       "date": "2008-10-30T16:47:18.000-0400",
       "body": "Changed the text to refer to Uploader samples in general in the sample-code/uploader/ directory\n"
     },
     {
+      "id": "21821",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:44.592-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

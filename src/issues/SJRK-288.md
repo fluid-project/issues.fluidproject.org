@@ -72,26 +72,31 @@
   ],
   "comments": [
     {
+      "id": "26565",
       "author": "Justin Obara",
       "date": "2019-09-13T07:52:14.477-0400",
       "body": "Might want to also take a look at the Infusion Reorderer. <https://build.fluidproject.org/infusion/demos/reorderer/listReorderer/>\n"
     },
     {
+      "id": "26566",
       "author": "Gregor Moss",
       "date": "2019-11-12T16:09:20.490-0500",
       "body": "Feedback: it might be good to provide a block deletion along with the order up/down buttons\n"
     },
     {
+      "id": "26567",
       "author": "Dana",
       "date": "2020-05-26T21:10:36.337-0400",
       "body": "Mockups without individual block deletion button:\n\n<https://files.inclusivedesign.ca/index.php/f/112362>\n\n \n\n \n"
     },
     {
+      "id": "26568",
       "author": "Gregor Moss",
       "date": "2020-05-27T14:03:59.104-0400",
       "body": "The single block deletion button work will be tackled separately in <https://fluidproject.atlassian.net/browse/SJRK-358#icft=SJRK-358>, and the drag-and-drop functionality will be tackled in <https://fluidproject.atlassian.net/browse/SJRK-359#icft=SJRK-359>. Both of these should be done only after this Jira has been completed.\n"
     },
     {
+      "id": "26569",
       "author": "Cindy Li",
       "date": "2020-06-30T15:40:19.957-0400",
       "body": "[The pull request](https://github.com/fluid-project/sjrk-story-telling/pull/84) that fixes this issue has been merged into the project repo master branch at [this commit](https://github.com/fluid-project/sjrk-story-telling/commit/124ca75934d39db06645c1cd017a7966efa6da49).\n"

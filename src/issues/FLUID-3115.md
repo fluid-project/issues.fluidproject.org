@@ -39,21 +39,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15302",
       "author": "Justin Obara",
       "date": "2009-08-20T11:17:49.000-0400",
       "body": "Seems like something changed between FF3 and FF3.5.\n\nNot sure exactly what that was yet though. Here are some links from the swfupload forum about issues people have had with FF 3.5\n\n<http://swfupload.org/forum/generaldiscussion/1672>\n\n<http://swfupload.org/forum/generaldiscussion/1641>\n"
     },
     {
+      "id": "15306",
       "author": "Justin Obara",
       "date": "2009-09-21T09:44:56.000-0400",
       "body": "Bug Parade Infusion 1.1.2\n"
     },
     {
+      "id": "15309",
       "author": "Eli Cochran",
       "date": "2009-10-02T13:29:15.000-0400",
       "body": "Tested using FF3.5 against the Uploader running in the ImageGallery demo on the build server. Appears to be working now. The code was reviewed as part of the review for <https://fluidproject.atlassian.net/browse/FLUID-3114#icft=FLUID-3114>\n"
     },
     {
+      "id": "15312",
       "author": "Eli Cochran",
       "date": "2009-10-02T13:32:33.000-0400",
       "body": "Resolved per Colin Clark's code and my review\n"

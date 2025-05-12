@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18254",
       "author": "Colin Clark",
       "date": "2008-02-22T14:40:47.000-0500",
       "body": "Added a new function to the public API, hasTabindexAttr () that behaves the way hasTabindex () did previously. Modified hasTabindex () and getValue () to correctly return values if the element doesn't have a tabindex attribute but is naturally focussable by the browser (and this has an effective tabindex of 0).\n"
     },
     {
+      "id": "18257",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:57.859-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

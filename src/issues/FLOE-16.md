@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11431",
       "author": "Anastasia Cheetham",
       "date": "2012-06-25T12:40:22.529-0400",
       "body": "I've tested this on the new 'a11y-uio' branch that's based off master, and there are still some things that are not responding to font size changes:\n\n* drop-downs and check boxes in the 'Additional Search Criteria' section\n* the 'search' buttons\n"
     },
     {
+      "id": "11432",
       "author": "Michelle D'Souza",
       "date": "2012-07-04T12:13:19.424-0400",
       "body": "I'm dealing with the search buttons in Assembla issue 641\n"

@@ -22,16 +22,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12970",
       "author": "Anastasia Cheetham",
       "date": "2012-05-10T14:34:44.497-0400",
       "body": "The content at the bottom of the main section of each of the cluster pages (design and development, mobile, etc) is extending into the left sidebar. The sidebar needs to be 'full height'\n"
     },
     {
+      "id": "12971",
       "author": "Anastasia Cheetham",
       "date": "2012-05-18T17:38:14.963-0400",
       "body": "not sure if this is still happening\n"
     },
     {
+      "id": "12972",
       "author": "Michelle D'Souza",
       "date": "2012-05-25T10:28:13.901-0400",
       "body": "This is now only an issue in IE6  <https://fluidproject.atlassian.net/browse/IDI-72#icft=IDI-72>\n"

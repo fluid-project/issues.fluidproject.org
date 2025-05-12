@@ -24,16 +24,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26454",
       "author": "Gregor Moss",
       "date": "2020-04-16T12:41:26.671-0400",
       "body": "Quick fix: we can set it to a big number like 500 in the short term\n"
     },
     {
+      "id": "26455",
       "author": "Cindy Li",
       "date": "2020-04-17T09:37:37.123-0400",
       "body": "[The temporary solution](https://github.com/fluid-project/sjrk-story-telling/pull/70) that increases the number of stories per page to 500 has been merged into the project repo master branch at [this commit](https://github.com/fluid-project/sjrk-story-telling/commit/d48db8597c47b9371ec414b88bac11570046cd5d).\n"
     },
     {
+      "id": "26456",
       "author": "Gregor Moss",
       "date": "2020-04-21T11:46:44.545-0400",
       "body": "<https://fluidproject.atlassian.net/browse/SJRK-339#icft=SJRK-339> has been filed to add pagination\n"

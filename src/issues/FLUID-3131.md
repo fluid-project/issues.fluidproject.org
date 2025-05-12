@@ -42,31 +42,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17660",
       "author": "Justin Obara",
       "date": "2009-09-21T09:44:08.000-0400",
       "body": "Bug Parade Infusion 1.1.2\n"
     },
     {
+      "id": "17662",
       "author": "Colin Clark",
       "date": "2009-09-29T19:26:08.000-0400",
       "body": "This fix has been implemented and is ready for code review.\n"
     },
     {
+      "id": "17665",
       "author": "Antranig Basman",
       "date": "2009-10-04T13:17:32.000-0400",
       "body": "Hi - I have reviewed the changes occurring at rev. 7828 (btw, we seem to have lost commit linking on JIRA again) and they look good - I do want to query the expansion of fluid.initView that used to occur at line 117 into the 3 lines now at line 128:\\\nvar that = {};\\\nfluid.mergeComponentOptions(that, \"fluid.reorderImages\", options);\\\nthat.container = fluid.container(container);\\\nwhich appear less idiomatic - is there a step of the initView workflow that we want to bypass here?\n"
     },
     {
+      "id": "17667",
       "author": "Justin Obara",
       "date": "2009-10-05T12:38:29.000-0400",
       "body": "It seems that the fix for this may have caused some of the image reorderer's unit tests to fail\n"
     },
     {
+      "id": "17669",
       "author": "Colin Clark",
       "date": "2009-10-05T16:30:44.000-0400",
       "body": "This one is ready for code review again.\n"
     },
     {
+      "id": "17670",
       "author": "Antranig Basman",
       "date": "2009-10-05T16:49:34.000-0400",
       "body": "I have verified this as fixed, and close this JIRA through delegation of Royalty.\n"

@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12050",
       "author": "James Yoon",
       "date": "2010-01-26T12:11:29.000-0500",
       "body": "Storycards for each screen type linked off of: <http://wiki.fluidproject.org/display/fluid/Mobile+wireframes%2C+draft+9>\n"

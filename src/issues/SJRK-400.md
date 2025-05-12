@@ -29,16 +29,19 @@
   ],
   "comments": [
     {
+      "id": "26587",
       "author": "Gregor Moss",
       "date": "2020-10-20T20:59:27.611-0400",
       "body": "From today's discussion in the #fluid-work IRC channel, a discussion between Justin Obara and Antranig Basman around why one aspect of one of of the attempted solutions did not work:\n\n> \\<Justin\\_o> Bosmon: an unrelated questions. For the onDestroy event, is that fired before any destructive actions have taken place? With some updates to the storytelling tool that gmoss is working on. We were looking at firing a model change, to trigger an upstream model relay, just before the component is destroyed. I think there were some errors with a relay not being available though.\\\n> \\<Bosmon> Yes, onDestroy is fired before anything is torn down\\\n> \\<Justin\\_o> Bosmon: hmmm so the model relay should have worked then\\\n> \\<Justin\\_o> which is what I was expecting. I guess we'll have to take a look at that error again\\\n> \\<Bosmon> Justin\\_o - relays are not torn down until the last moment before afterDestroy\\\n> \\<Justin\\_o> Bosmon: thanks for confirming that. might have been something else... will try to remember to check this with gmoss when he's online later\n"
     },
     {
+      "id": "26588",
       "author": "Justin Obara",
       "date": "2020-10-21T08:26:52.412-0400",
       "body": "Gregor Moss and Antranig Basman I've pushed up a [branch](https://github.com/jobara/sjrk-story-telling/tree/SJRK-289-onDestroy) that will include the issues with using onDestroy as mentioned in the comment above. See further discussion from the [fluid-work irc channel](http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2020-10-21.log) today.\n"
     },
     {
+      "id": "26589",
       "author": "Justin Obara",
       "date": "2020-10-21T08:48:00.201-0400",
       "body": "There is an underlying framework issue that prevents using onDestroy as mentioned above. See: <https://fluidproject.atlassian.net/browse/FLUID-6558#icft=FLUID-6558>\n"

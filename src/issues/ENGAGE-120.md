@@ -34,21 +34,25 @@
   ],
   "comments": [
     {
+      "id": "11900",
       "author": "Colin Clark",
       "date": "2009-10-14T14:15:41.000-0400",
       "body": "yura: colinclark: the issue with navigation from browse to view is not broken anymore with that patch. and it also makes the Related Artifacts link not just back/forward button because once you navigate to view and consequently click on Related Artifacts the list of related artifacts might look different than the one we navigated from to the view, all thanks to a better match of multiple categories\\\n\\[1:42pm] colinclark: yura: Ok\\\n\\[1:42pm] colinclark: So we're saying that either:\\\n\\[1:42pm] colinclark: 1) We remove the Related Artifacts link in Artifact View\\\n\\[1:42pm] colinclark: or\\\n\\[1:42pm] colinclark: 2) We add this patch and it will work as-planned for this release?\\\n\\[1:44pm] yura: colinclark: exactly\n"
     },
     {
+      "id": "11901",
       "author": "Colin Clark",
       "date": "2009-10-14T14:16:00.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "11902",
       "author": "Colin Clark",
       "date": "2009-10-14T17:37:16.000-0400",
       "body": "Yura resolved this issue as part of his r8312 and r8319 commits.\n"
     },
     {
+      "id": "11903",
       "author": "Justin Obara",
       "date": "2009-11-03T11:48:24.000-0500",
       "body": "Closed as per previous comment\n"

@@ -33,26 +33,31 @@
   ],
   "comments": [
     {
+      "id": "18417",
       "author": "Justin Obara",
       "date": "2011-05-17T10:01:17.860-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "18420",
       "author": "Harris Wong",
       "date": "2011-05-30T15:55:48.691-0400",
       "body": "Related to json2 removal. <https://github.com/fluid-project/infusion/commit/3e45b80f11b88b3b42982c50f23c7eafa3d1244a>\n"
     },
     {
+      "id": "18425",
       "author": "Harris Wong",
       "date": "2011-05-30T16:00:23.980-0400",
       "body": "I tried running WinXP + IE8 on master and <http://build.fluidproject.org/infusion/tests/manual-tests/html/renderer-component-types.html>.  Cannot reproduce anymore. &#x20;\n\nI have also attached a screenshot renderer-component-may-30-2011.png\n"
     },
     {
+      "id": "18429",
       "author": "Harris Wong",
       "date": "2011-05-31T14:54:21.356-0400",
       "body": "Cannot reproduce as of:\\\ncommit 01a994f19c5adcba2594ac322a828961a02daada\\\nDate:   Mon May 30 15:45:40 2011 -0600\n"
     },
     {
+      "id": "18432",
       "author": "Justin Obara",
       "date": "2011-06-14T09:49:02.822-0400",
       "body": "I tried it from the daily build site today and also couldn't reproduce the issue\n"

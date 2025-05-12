@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10371",
       "author": "Justin Obara",
       "date": "2012-01-10T09:35:36.901-0500",
       "body": "This has been resolved. It had occurred because the scripts were being looked for from a relative path instead of from the system path. (e.g. ./fontgrouper.py instead of fontgrouper.py)\n"

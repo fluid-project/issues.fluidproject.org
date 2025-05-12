@@ -36,36 +36,43 @@
   ],
   "comments": [
     {
+      "id": "21142",
       "author": "Justin Obara",
       "date": "2009-01-23T14:29:34.000-0500",
       "body": "\"Focused Fix Day Wish List\"&#x20;\n"
     },
     {
+      "id": "21143",
       "author": "Justin Obara",
       "date": "2009-02-06T12:53:45.000-0500",
       "body": "Bug Parade 0.8 release\n"
     },
     {
+      "id": "21144",
       "author": "Jacob Farber",
       "date": "2009-02-12T17:08:49.000-0500",
       "body": "Removed explicit cursor settings\n"
     },
     {
+      "id": "21145",
       "author": "Anastasia Cheetham",
       "date": "2009-02-13T14:39:35.000-0500",
       "body": "Jacob's patch for this looks good, and works. He should commit it.\n"
     },
     {
+      "id": "21146",
       "author": "Justin Obara",
       "date": "2009-02-13T15:00:34.000-0500",
       "body": "still an issue with the renderer version\n\n<http://build.fluidproject.org/fluid/sample-code/pager/renderer/pager-render.html#>\n"
     },
     {
+      "id": "21147",
       "author": "Anastasia Cheetham",
       "date": "2009-02-13T15:12:36.000-0500",
       "body": "Fixes on this all look good.\n"
     },
     {
+      "id": "21148",
       "author": "Justin Obara",
       "date": "2009-02-13T15:41:01.000-0500",
       "body": "Verified fix using:\n\nOpera 9.5 (Mac OS 10.5, Win XP)\n"

@@ -30,16 +30,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10088",
       "author": "Colin Clark",
       "date": "2010-07-14T00:19:00.995-0400",
       "body": "This will require the server to keep the calibration model up to date with what it thinks are the left and right cameras. We'll also need a temporary storage place for these images.\n"
     },
     {
+      "id": "10089",
       "author": "Justin Obara",
       "date": "2010-07-14T11:16:03.768-0400",
       "body": "Bug Parade Decapod 0.4\n"
     },
     {
+      "id": "10090",
       "author": "Colin Clark",
       "date": "2010-07-15T19:29:11.666-0400",
       "body": "This issue was fixed at server revision 07b67045b3, with working services for capturing left and right calibration images. Left and right cameras are identified by serial number, so this may limit our supported cameras.\n"

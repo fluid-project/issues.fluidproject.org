@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19462",
       "author": "Jess Mitchell",
       "date": "2008-07-22T22:27:49.000-0400",
       "body": "iteration16\n"
     },
     {
+      "id": "19463",
       "author": "Allison Bloodworth",
       "date": "2008-09-02T14:31:22.000-0400",
       "body": "Based on the meeting Daphne, Erin, and I had on Friday about personas, some will be merged/changed/updated (tasks to be entered), we've chosen primary & secondary personas, plan to re-work the presentation of personas in the wiki (task to be entered) and afterwards send a note about this (and our other findings) to fluid-work, and will continue to look at the final format for personas (<http://issues.fluidproject.org/browse/FLUID-970>) and tweak our personas appropriately after we've decided on this format.\n"

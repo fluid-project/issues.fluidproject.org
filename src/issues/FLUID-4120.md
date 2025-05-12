@@ -33,21 +33,25 @@
   ],
   "comments": [
     {
+      "id": "25041",
       "author": "Michelle D'Souza",
       "date": "2011-03-04T16:27:13.001-0500",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-4120#icft=FLUID-4120>.patch has updates to the release notes that specify the exact jquery UI widgets that we depend on and mentions that accordion was removed in 1.4\n"
     },
     {
+      "id": "25042",
       "author": "Anastasia Cheetham",
       "date": "2011-03-07T11:08:32.642-0500",
       "body": "These changes will be good for the 1.4 release notes, but I think they will need to be incorporated much closer to the actual release. For now, these are the release notes for 1.3.1.\n"
     },
     {
+      "id": "25044",
       "author": "Anastasia Cheetham",
       "date": "2011-04-06T10:24:23.463-0400",
       "body": "Now that the release notes are in the main project repo and have been crafted to start describing the next release (1.4), we could probably incorporate your changes, Michelle\n"
     },
     {
+      "id": "25046",
       "author": "Anastasia Cheetham",
       "date": "2011-05-17T13:18:05.911-0400",
       "body": "I've applied Michelle's patch updating the Release Notes.\n"

@@ -25,21 +25,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15676",
       "author": "Paul Zablosky",
       "date": "2009-01-09T17:52:37.000-0500",
       "body": "iteration28\\\niteration29\n"
     },
     {
+      "id": "15677",
       "author": "Paul Zablosky",
       "date": "2009-01-12T16:47:37.000-0500",
       "body": "The UX Toolkit section of the User Manual ToC is now consistent with recent page relocations.  It is clear that a lot more can be done to refine the content of these pages, which will result in more changes required to the ToC.  Pointers and references to the OSDPL are not all they should be, but  we should wait until more work is done on the OSDP itself.\n"
     },
     {
+      "id": "15680",
       "author": "Paul Zablosky",
       "date": "2009-01-19T18:52:20.000-0500",
       "body": "More work will be required after we complete work on the OSDPL pages and others.  This one is being carried forward to I25.\n"
     },
     {
+      "id": "15682",
       "author": "Jess Mitchell",
       "date": "2011-01-20T14:17:07.705-0500",
       "body": "I think much of this work was completed.  The work has evolved since then too.\n"

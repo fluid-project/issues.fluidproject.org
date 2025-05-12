@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26033",
       "author": "Giovanni Tirloni",
       "date": "2020-04-28T19:35:04.502-0400",
       "body": "All servers have been updated to CentOS 7.8\n"

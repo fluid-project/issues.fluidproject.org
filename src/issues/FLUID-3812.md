@@ -33,6 +33,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20304",
       "author": "Justin Obara",
       "date": "2010-10-20T09:56:44.111-0400",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"

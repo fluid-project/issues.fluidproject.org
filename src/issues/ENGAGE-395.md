@@ -70,21 +70,25 @@
   ],
   "comments": [
     {
+      "id": "12613",
       "author": "Colin Clark",
       "date": "2010-02-17T10:49:48.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12614",
       "author": "Svetoslav Nedkov",
       "date": "2010-02-17T10:52:31.000-0500",
       "body": "Patch <https://fluidproject.atlassian.net/browse/ENGAGE-395#icft=ENGAGE-395> makes the collect artifact button higher and gives an absolute position of the collect notification which is now slid down.\n"
     },
     {
+      "id": "12615",
       "author": "Svetoslav Nedkov",
       "date": "2010-02-18T06:21:47.000-0500",
       "body": "ENGAGE-3950-2.patch should be used instead of ENGAGE-3950.patch, the collect/uncollect confirmation position is still absolute but now the top enclosing div is made relative, so the confirmation is relative to it and is less prone to move about in different browsers and with different font sizes. Also as the confirmation is a link (and links under the iphone theme are with black text color) a forced value for its text color is given. The only change to ArtifactCollectiView\\.js is to hide the confirmation element before setting its text so that the layout of its predecessors is not affected.\n"
     },
     {
+      "id": "12616",
       "author": "Justin Obara",
       "date": "2010-02-18T15:07:07.000-0500",
       "body": "Committed the ENGAGE-395c.patch. The only changes made were to use plain text for the message strings and using jquery's .text function instead of .html for applying them.\n"

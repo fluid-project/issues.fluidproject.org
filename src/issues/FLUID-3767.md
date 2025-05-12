@@ -35,31 +35,37 @@
   ],
   "comments": [
     {
+      "id": "18892",
       "author": "Justin Obara",
       "date": "2010-10-04T14:00:12.114-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "18897",
       "author": "Antranig Basman",
       "date": "2010-10-14T17:26:05.002-0400",
       "body": "Attached patch which removes the delegate plugin from the core framework. Note that the patch doesn't seem to include the actual directory deletion owing to the stupid vagaries of SVN. Yura is at present evaluating a live use of \"focusin\" for CollectionSpace and if the functionality continues to work, it is good evidence that the delegation is implemented adequately for our purposes. I did track down one live use of the feature within the renderer's \"reRender\" path.&#x20;\n"
     },
     {
+      "id": "18902",
       "author": "y z",
       "date": "2010-10-15T13:03:48.016-0400",
       "body": "jQuery focusin implementation seems to be working well with cspace implementation of dead man's blur. There's even no need to use live or delegate to bind to focusin and the example of implementation can be currently in the patch that is soon going to be committed to cspace: <http://issues.collectionspace.org/secure/attachment/11136/CSPACE-3037.3.patch.txt> . It has both the implementation and the test cases for blurring and exclusions.\n"
     },
     {
+      "id": "18907",
       "author": "Antranig Basman",
       "date": "2010-10-15T16:10:43.015-0400",
       "body": "Testing has revealed a significant difference between the 1.4.2 core functionality and the delegate plugin - the first two arguments to $.delegate have been swapped round. This grievous incompatibility means that CSpace repeatable will need to be patched once this framework upgrade reaches it, since it uses $.delegate to bind events to the dynamically generated component material. For example, from jquery.ui.delegate.js:\n\ndelegate: function(type, delegate, handler) {\n\nwhereas from jQuery 1.4.3:\n\ndelegate: function( selector, types, data, fn ) {\\\nreturn this.live( types, data, fn, selector );\\\n},\n\nThere is some commentary from people who believed they had gone crazy, on the delegate API docs page: <http://api.jquery.com/delegate/>\n"
     },
     {
+      "id": "18910",
       "author": "Antranig Basman",
       "date": "2010-10-18T01:01:34.141-0400",
       "body": "Fixed at revision 10147. Documentation update is required as part of release notes.\n"
     },
     {
+      "id": "18915",
       "author": "Michelle D'Souza",
       "date": "2010-10-18T17:10:35.469-0400",
       "body": "I've reviewed and spot tested this issue. It looks good to me.&#x20;\n"

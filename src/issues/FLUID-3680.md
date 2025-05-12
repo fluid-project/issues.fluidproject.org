@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16430",
       "author": "Antranig Basman",
       "date": "2010-08-02T02:53:43.698-0400",
       "body": "Merged into trunk at 9969. Transactionality is working, but basic \"change application\" semantics still need some further thought and review. Currently there is the awkward asymmetry between changes which are applied at the root and those applied elsewhere. Also the \"careful change applier\" needs to be implemented - but the more I think about it, the more there might be some subtleties in its implementation. What happens with arrays, for example.\n"

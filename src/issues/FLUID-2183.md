@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13068",
       "author": "Daphne Ogle",
       "date": "2009-02-02T21:20:19.000-0500",
       "body": "iteration28\n"
     },
     {
+      "id": "13070",
       "author": "Daphne Ogle",
       "date": "2009-03-17T11:19:51.000-0400",
       "body": "Components Landmark will focus on:  Uploader, Image Reorderer & Simple Text Inline Edit.\n\nIn addition, Alison Benjamin will be working with Laurie MacArthur at the ATRC to do some accessibility testing on these same 3 components in addition to the pager component.\n"

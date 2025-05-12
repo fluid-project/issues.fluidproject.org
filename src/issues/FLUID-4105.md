@@ -37,26 +37,31 @@
   ],
   "comments": [
     {
+      "id": "21787",
       "author": "Justin Obara",
       "date": "2011-02-22T16:15:14.038-0500",
       "body": "The \"Screenshot\" attachment shows the focus styling on the status bar after tabbing to it\n"
     },
     {
+      "id": "21788",
       "author": "Colin Clark",
       "date": "2011-02-22T17:13:04.824-0500",
       "body": "With some fun debugging-fu from Justin and I, we've determined that elements with an overflow:auto style will be keyboard focusable in Firefox 4, even if they shouldn't be. This issue is in Firefox, and I'll escalate it to Mozilla if it isn't already on their radar.\n"
     },
     {
+      "id": "21789",
       "author": "Colin Clark",
       "date": "2011-02-22T17:15:53.753-0500",
       "body": "Here's a test file that, when run in Firefox 4, shows that a \\<div> with an overflow:auto style is incorrectly focusable with the tab key.\n"
     },
     {
+      "id": "21790",
       "author": "Colin Clark",
       "date": "2011-02-22T17:18:40.954-0500",
       "body": "Mozilla is aware of the issue and it is being tracked in Bugzilla: <https://bugzilla.mozilla.org/show_bug.cgi?id=616594>\n"
     },
     {
+      "id": "21791",
       "author": "Justin Obara",
       "date": "2014-03-03T13:38:25.229-0500",
       "body": "The bugzilla ticket has been resolved as fixed.\n"

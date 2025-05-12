@@ -44,11 +44,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18856",
       "author": "Colin Clark",
       "date": "2008-05-30T18:37:53.000-0400",
       "body": "I committed several related fixes under the <https://fluidproject.atlassian.net/browse/FLUID-666#icft=FLUID-666> ticket.\n"
     },
     {
+      "id": "18859",
       "author": "Colin Clark",
       "date": "2008-05-30T18:39:08.000-0400",
       "body": "This issue was fixed by doing the following:\n\n* Ensuring all buttons and links are correctly in the tab order\n* Adding descriptive hidden text to the remove buttons\n* Throwing focus on the Pause button when uploading is occurring\n* Putting focus back on the Done button when the progress bar is dismissed\n"

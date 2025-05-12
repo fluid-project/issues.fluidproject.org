@@ -32,21 +32,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19873",
       "author": "Blagoj Dimovski",
       "date": "2016-04-04T17:19:50.838-0400",
       "body": "I could work on the issue, if it is okay? I see that pull request has been made already, but it has been declined, so that's why I am asking.&#x20;\n"
     },
     {
+      "id": "19875",
       "author": "Justin Obara",
       "date": "2016-04-04T18:14:35.890-0400",
       "body": "Blagoj Dimovski yes feel free to work on this one.&#x20;\n"
     },
     {
+      "id": "19877",
       "author": "Blagoj Dimovski",
       "date": "2016-04-05T11:56:27.895-0400",
       "body": "I've just created a pull request, regarding the issue: <https://github.com/fluid-project/infusion/pull/697>\n"
     },
     {
+      "id": "19878",
       "author": "Justin Obara",
       "date": "2016-04-06T09:00:03.504-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/698> ) into the project repo at 20e3757c5dbeffb202e7a216dfe8eb42ae8186c4\n"

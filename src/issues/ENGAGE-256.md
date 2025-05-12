@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12543",
       "author": "James Yoon",
       "date": "2010-01-28T10:41:35.000-0500",
       "body": "<http://wiki.fluidproject.org/display/fluid/Kiosk+design+overview>\n"

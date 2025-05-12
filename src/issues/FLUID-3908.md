@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21304",
       "author": "Jonathan Hung",
       "date": "2010-12-15T15:56:31.571-0500",
       "body": "Duplicates <https://fluidproject.atlassian.net/browse/FLUID-2536#icft=FLUID-2536>\n"
     },
     {
+      "id": "21305",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T11:27:02.812-0500",
       "body": "Reopening these issues in order to add the inline edit component to them.&#x20;\n"

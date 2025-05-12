@@ -36,16 +36,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22416",
       "author": "Alan Harnum",
       "date": "2016-02-10T15:41:07.040-0500",
       "body": "Updating this one to critical. Not sure about the history of <http://ckeditor-fluid.appspot.com/> and <http://tinymce-fluid.appspot.com/> but we should either move the needed files to our own Cachefly CND or get them from a public CDN like <https://cdnjs.com/>\n"
     },
     {
+      "id": "22418",
       "author": "Alan Harnum",
       "date": "2016-09-14T16:52:40.602-0400",
       "body": "Noting that this issue is still present (ran into it when manually testing in Edge). I made a quick branch to test what happens when sourcing the RTE source code from cdnjs: <https://github.com/waharnum/infusion/tree/FLUID-5719>\n\nThe latest CKEditor seems to work, but the latest TinyMCE has a number of issues with the integration (latest TinyMCE is 4.4.3, the version used last time this demo was updated was 3.49).\n"
     },
     {
+      "id": "22420",
       "author": "Cindy Li",
       "date": "2016-09-15T15:17:02.306-0400",
       "body": "The pull request <https://github.com/fluid-project/infusion/pull/751> has been merged into the project master branch @ 68adc5f70fd520acb33e0d847fb6e567c86485fa\n"

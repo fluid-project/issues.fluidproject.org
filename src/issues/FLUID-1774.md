@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "15684",
       "author": "Eli Cochran",
       "date": "2008-11-05T18:21:42.000-0500",
       "body": "Added FLUID-1772-74.patch file which resolves <https://fluidproject.atlassian.net/browse/FLUID-1772#icft=FLUID-1772>, <https://fluidproject.atlassian.net/browse/FLUID-1773#icft=FLUID-1773>, <https://fluidproject.atlassian.net/browse/FLUID-1774#icft=FLUID-1774>. Patch only changes InlineEdit.js. There are also changes to the Section Info InlineEdit sample code that go along with this, that have not yet been checked in.&#x20;\n\nAll current InlineEdit jqUnit automated tests pass.&#x20;\n"
     },
     {
+      "id": "15686",
       "author": "Antranig Basman",
       "date": "2008-11-06T14:21:02.000-0500",
       "body": "I have incorporated this patch as well as the one for <https://fluidproject.atlassian.net/browse/FLUID-1772#icft=FLUID-1772>, although I have gone with the signature (newValue, oldValue, editField, viewElement) with the middle two arguments interchanged, for greater consistency with the current modelChanged - also the editField/viewElement arguments become more arguable with different varieties of InlineEdit, which might not have a single well-defined value-bearing node (e.g. if the editable view consisted of radio buttons, etc.) - we should discourage \"sharing\" these outside the component itself.&#x20;\n\nAlso note that \"afterFinished\" itself has become \"afterFinishEdit\" in accordance with <https://fluidproject.atlassian.net/browse/FLUID-1778#icft=FLUID-1778>.\n\nRevision 5965\n"

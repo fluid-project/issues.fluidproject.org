@@ -34,6 +34,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20780",
       "author": "Jacob Farber",
       "date": "2009-02-11T14:07:17.000-0500",
       "body": "Opera, by default, uses different key strokes to get to links:\\\nPlease see: <http://help.opera.com/Windows/8.51/en/keyboard.html> for link navigation\n"

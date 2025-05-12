@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12288",
       "author": "Michelle D'Souza",
       "date": "2010-03-09T14:52:07.000-0500",
       "body": "Since we ended up cutting the 0.3b3 release - the performance enhancements - from trunk, I'm wondering if we can actually delete this branch now.\n"
     },
     {
+      "id": "12289",
       "author": "Justin Obara",
       "date": "2010-03-10T02:34:50.000-0500",
       "body": "This should be fine, since we can branch off the tag if we need to cut another beta release.\n"

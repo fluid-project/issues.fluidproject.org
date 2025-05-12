@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "15385",
       "author": "Justin Obara",
       "date": "2009-05-28T08:44:40.000-0400",
       "body": "\"screenshot-1\" shows the \"Links\" label at the bottom of the set of radio buttons instead of at the top\n"
     },
     {
+      "id": "15390",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T11:03:36.530-0400",
       "body": "Simplified layout is no longer offered by UIO.\n"

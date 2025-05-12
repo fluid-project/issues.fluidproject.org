@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25593",
       "author": "Ned Zimmerman",
       "date": "2021-05-10T16:52:56.932-0400",
       "body": "If I'm understanding this correctly I think that gracefully handling different root options through the buildModules.js API (option 2) would be preferable— putting \\`src\\` into \\`dist\\` seems potentially confusing.\n"

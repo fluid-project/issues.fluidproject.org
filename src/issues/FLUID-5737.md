@@ -38,26 +38,31 @@
   ],
   "comments": [
     {
+      "id": "25540",
       "author": "Justin Obara",
       "date": "2015-08-07T16:31:48.685-0400",
       "body": "screenshot.png shows the uploaded size being larger than the total size.\n"
     },
     {
+      "id": "25541",
       "author": "Neel Dalsania",
       "date": "2016-03-06T14:39:56.233-0500",
       "body": "I think, I resolved this issue\\\nThere was problem with the uploadingSize variable present in fluid.uploader.updateTotalProgress, instead of sum of batch.totalBytesUploaded and that.queue.sizeOfUploadedFiles() if we use that.queue.sizeOfUploadedFiles() only then it works perfectly\n\nShould i sent a PR for the issue\n"
     },
     {
+      "id": "25542",
       "author": "Justin Obara",
       "date": "2016-03-07T10:45:35.446-0500",
       "body": "Neel Dalsania feel free to submit a pull request. The proposed fix can be discussed further then.\n"
     },
     {
+      "id": "25543",
       "author": "Neel Dalsania",
       "date": "2016-03-09T00:09:36.826-0500",
       "body": "Pull request : <https://github.com/fluid-project/infusion/pull/684>\n"
     },
     {
+      "id": "25544",
       "author": "Justin Obara",
       "date": "2016-11-08T12:32:00.074-0500",
       "body": "These seems to happen if you remove files as well.\n"

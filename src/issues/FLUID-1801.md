@@ -42,11 +42,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24937",
       "author": "Justin Obara",
       "date": "2008-11-13T10:24:13.000-0500",
       "body": "For Safari 3 and Opera 9.5 on mac OS 10.5, the page will scroll if the pointer is dragged out of the browser past the point of where the fixed width container would end.\n"
     },
     {
+      "id": "24938",
       "author": "Justin Obara",
       "date": "2011-01-10T15:30:49.850-0500",
       "body": "Appears to have been fixed, possibly with the changes from made for the Infusion 1.3 release\n"

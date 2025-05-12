@@ -37,11 +37,13 @@
   ],
   "comments": [
     {
+      "id": "22573",
       "author": "Justin Obara",
       "date": "2016-11-02T10:41:21.931-0400",
       "body": "screenshot-column1.png shows the top of the header text at the bottom of column 1. screenshot-column2.png shows the remainder of the header text at the top of column 2.\n"
     },
     {
+      "id": "22574",
       "author": "Justin Obara",
       "date": "2016-11-02T10:42:04.793-0400",
       "body": "Similar issue occurs when changing line-space.\n"

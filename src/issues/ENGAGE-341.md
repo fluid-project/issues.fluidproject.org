@@ -37,31 +37,37 @@
   ],
   "comments": [
     {
+      "id": "12080",
       "author": "Colin Clark",
       "date": "2010-02-08T15:55:11.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12081",
       "author": "James Yoon",
       "date": "2010-02-09T11:10:05.000-0500",
       "body": "A keyframe/thumbnail should be used for video, but if no keyframe/thumbnail is available, use the attached video icon\n"
     },
     {
+      "id": "12082",
       "author": "y z",
       "date": "2010-02-11T15:44:45.000-0500",
       "body": "This bug is fixed with commit r9364 by Colin.\n"
     },
     {
+      "id": "12083",
       "author": "y z",
       "date": "2010-02-11T15:44:58.000-0500",
       "body": "This bug is fixed with commit r9364 by Colin.\n"
     },
     {
+      "id": "12084",
       "author": "Colin Clark",
       "date": "2010-02-12T15:03:51.000-0500",
       "body": "I'm reopening this issue since we still need to add and correctly reference the media icons.\n"
     },
     {
+      "id": "12085",
       "author": "Antranig Basman",
       "date": "2010-02-12T17:31:42.000-0500",
       "body": "I reviewed this fix at 9389\n"

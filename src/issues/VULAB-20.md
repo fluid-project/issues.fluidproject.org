@@ -35,16 +35,19 @@
   ],
   "comments": [
     {
+      "id": "27412",
       "author": "Blake E",
       "date": "2008-09-08T11:09:35.000-0400",
       "body": "Please take a read through the attached readme for the web component and ask questions here.\\\nAs someone who knows the program inside and out, I feel like I'm not entirely qualified to QA it myself 🙂\n"
     },
     {
+      "id": "27413",
       "author": "Former user",
       "date": "2008-09-19T00:22:48.000-0400",
       "body": "\\#SPAM#\n"
     },
     {
+      "id": "27414",
       "author": "Blake E",
       "date": "2008-10-20T10:47:16.000-0400",
       "body": "Readme v1 is complete. High Level documentation is coming now, closing this issue to be re-visited later after high level documentation is complete.\n"

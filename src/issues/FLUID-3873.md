@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21697",
       "author": "Justin Obara",
       "date": "2010-12-03T08:48:20.328-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "21698",
       "author": "Justin Obara",
       "date": "2014-05-22T14:28:19.245-0400",
       "body": "Due to a cross site scripting vulnerability we have removed flash support from the uploader. See <https://fluidproject.atlassian.net/browse/FLUID-5354#icft=FLUID-5354>\n"

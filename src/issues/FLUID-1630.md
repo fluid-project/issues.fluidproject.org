@@ -42,16 +42,19 @@
   ],
   "comments": [
     {
+      "id": "16374",
       "author": "Justin Obara",
       "date": "2008-09-26T11:35:06.000-0400",
       "body": "'screenshot-1' shows the border missing on the right\n"
     },
     {
+      "id": "16375",
       "author": "Justin Obara",
       "date": "2009-03-18T11:07:59.000-0400",
       "body": "My 1st Bug\n"
     },
     {
+      "id": "16377",
       "author": "Jonathan Hung",
       "date": "2011-01-06T12:47:07.501-0500",
       "body": "Likely a styling issue isolated to this demo. This demo has since been removed. Closing.\n"

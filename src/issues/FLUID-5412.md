@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20017",
       "author": "Justin Obara",
       "date": "2014-06-06T11:06:42.329-0400",
       "body": "Note that the page actually works in Safari. The typo has to do with capitalization, perhaps it ignores this.\n"
     },
     {
+      "id": "20019",
       "author": "Justin Obara",
       "date": "2014-06-09T14:28:47.920-0400",
       "body": "Submitted a pull request \\\n<https://github.com/fluid-project/infusion/pull/524>\n"
     },
     {
+      "id": "20021",
       "author": "Michelle D'Souza",
       "date": "2014-06-10T13:15:45.577-0400",
       "body": "Merged at d77e43057077660c34f741e9b31bbdf169f25697\n"

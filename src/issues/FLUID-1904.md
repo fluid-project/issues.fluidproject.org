@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18899",
       "author": "Jonathan Hung",
       "date": "2008-12-03T09:21:57.000-0500",
       "body": "–\n"
     },
     {
+      "id": "18903",
       "author": "Jonathan Hung",
       "date": "2009-01-20T10:44:08.000-0500",
       "body": "Possible Solution:\n\nThis can easily be accomplished by adding the appropriate link into a block that appears in the Header region of the layout (See Admin: Blocks).  Then use modify custom.css to position that block at the top-left corner.\n\nShould ensure that the link appears as tab index 1.\n"
     },
     {
+      "id": "18906",
       "author": "Jonathan Hung",
       "date": "2009-01-20T13:51:24.000-0500",
       "body": "Mike Elledge makes an interesting comment about links and accessibility:\n\n\"I think it could be disorienting since it is not conventional behavior. Also, we would be assuming that the person would be going to the main content on the page, and not something else, such as subnavigation, or related content, for example.\n\nThe one exception that comes to mind is if someone is clicking on a link to continue reading an article (\"Rest of article about Fluid project\", which unfortunately is usually titled \"More\"), in which case it should take them to the article itself, preferably at the point where the article continues from the previous page. That's also why ending content with a partial sentence (\"Fluid has been in operation for...\") has never made sense to me.\"\n"

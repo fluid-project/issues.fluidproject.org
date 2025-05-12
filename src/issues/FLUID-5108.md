@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16642",
       "author": "Antranig Basman",
       "date": "2013-08-17T04:06:20.276-0400",
       "body": "This is actually a much more fundamental issue and results from <https://fluidproject.atlassian.net/browse/FLUID-5085#icft=FLUID-5085>, in that the grade merging algorithm as currently implemented is incorrect. It is actually unrelated to the IoCSS or dynamic grade machinery, and the test case has been accordingly simplified to act as a basic test for <https://fluidproject.atlassian.net/browse/FLUID-5085#icft=FLUID-5085>.\n"
     },
     {
+      "id": "16644",
       "author": "Antranig Basman",
       "date": "2013-09-10T00:25:41.533-0400",
       "body": "Merged into trunk at revision 40de4e2 together with a revision of the grade merging algorithm for <https://fluidproject.atlassian.net/browse/FLUID-5085#icft=FLUID-5085>\n"

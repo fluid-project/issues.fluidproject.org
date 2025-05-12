@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21298",
       "author": "Laurel Williams",
       "date": "2009-05-14T14:09:48.000-0400",
       "body": "This is the page\\\n<http://wiki.fluidproject.org/display/fluid/Infusion+Dependency+Declaration+JSON+Files>\n"
     },
     {
+      "id": "21299",
       "author": "Anastasia Cheetham",
       "date": "2011-02-04T17:08:46.716-0500",
       "body": "I've updated this page (now at <http://wiki.fluidproject.org/display/fluid/Builder+Dependency+Declaration+JSON+Files> ) to include the example in-line instead of referring to SVN (since the file is now in Git). I've also added a table of contents and an admonishment to developers to keep the files up-to-date.\n"

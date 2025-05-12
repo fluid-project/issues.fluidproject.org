@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20773",
       "author": "Antranig Basman",
       "date": "2009-03-02T13:33:26.000-0500",
       "body": "Test case does not demonstrate that there is a problem - issue is probably due to cross-linked options structures and mismatched ids.\n"
     },
     {
+      "id": "20774",
       "author": "Justin Obara",
       "date": "2009-03-03T10:33:17.000-0500",
       "body": "Pushed ahead to refactor component using the Fluid Framework and the issue is no longer present. It appears that Antranig's comment points to the actual cause of the issue.\n"

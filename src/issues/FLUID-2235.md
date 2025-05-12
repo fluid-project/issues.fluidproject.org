@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21216",
       "author": "Eli Cochran",
       "date": "2009-02-19T14:21:03.000-0500",
       "body": "Added in my edits, Justin's known issues and Jess' excellent edits and I think that we're ready to go.\n\nOh, and Colin and I made changes to the Uploader ReadMe as well. Almost forgot.\n"
     },
     {
+      "id": "21217",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:20.811-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

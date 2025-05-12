@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19795",
       "author": "Anastasia Cheetham",
       "date": "2008-07-08T19:37:02.000-0400",
       "body": "This is a known issue in IE, and there isn't really anything we can do about it.\n"
     },
     {
+      "id": "19797",
       "author": "Jacob Farber",
       "date": "2008-09-11T09:23:07.000-0400",
       "body": "There was a fixed width and height assigned to the clone, cropping it.\n"
     },
     {
+      "id": "19799",
       "author": "Justin Obara",
       "date": "2008-09-11T10:45:33.000-0400",
       "body": "IE7 (Win XP, Win Vista)\n"

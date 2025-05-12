@@ -43,11 +43,13 @@
   ],
   "comments": [
     {
+      "id": "19905",
       "author": "Justin Obara",
       "date": "2008-10-30T13:43:13.000-0400",
       "body": "'screenshot-1' shows the lightbox portlet overlapping the footer text\n"
     },
     {
+      "id": "19906",
       "author": "Justin Obara",
       "date": "2014-06-05T15:21:09.214-0400",
       "body": "This demo has been removed\n"

@@ -39,11 +39,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24135",
       "author": "Anastasia Cheetham",
       "date": "2013-06-13T13:38:18.648-0400",
       "body": "This issue is very closely related to <https://fluidproject.atlassian.net/browse/FLUID-4394#icft=FLUID-4394>, but I wonder about use cases where the integrator's path to MyInfusion.js might not be what an automatic head rewrite script would assume. We might still want to consider allowing integrators to override the file path altogether.\n"
     },
     {
+      "id": "27819",
       "author": "Justin Obara",
       "date": "2024-07-22T14:42:13.240-0400",
       "body": "iframew was remove with work on FLUID-6749\n"

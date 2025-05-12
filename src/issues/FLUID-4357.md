@@ -34,26 +34,31 @@
   ],
   "comments": [
     {
+      "id": "24390",
       "author": "Justin Obara",
       "date": "2011-07-26T16:35:22.596-0400",
       "body": "ScreenShot.png shows the small font size in Fat Panel UIO\n"
     },
     {
+      "id": "24391",
       "author": "Justin Obara",
       "date": "2011-07-26T16:35:47.877-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24392",
       "author": "Justin Obara",
       "date": "2011-07-28T13:24:04.797-0400",
       "body": "This might also be causing the various options to appear to close together\n"
     },
     {
+      "id": "24393",
       "author": "Justin Obara",
       "date": "2011-07-29T13:06:39.738-0400",
       "body": "Submitted a pull request <https://github.com/fluid-project/infusion/pull/124>\n"
     },
     {
+      "id": "24394",
       "author": "Michelle D'Souza",
       "date": "2011-07-29T14:25:38.044-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/124> merged into project repo at 51d221dfc140ad5e97911504526d126047d11c6c\n"

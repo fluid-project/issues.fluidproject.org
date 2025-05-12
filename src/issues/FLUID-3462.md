@@ -43,36 +43,43 @@
   ],
   "comments": [
     {
+      "id": "15532",
       "author": "Antranig Basman",
       "date": "2010-01-07T10:08:02.000-0500",
       "body": "Patch to manually trigger on \"keyup\" on radio buttons. Really disagreeable necessity.\n"
     },
     {
+      "id": "15533",
       "author": "Colin Clark",
       "date": "2010-01-07T12:39:44.000-0500",
       "body": "Let's try a \"grown up patch\" without the crass comments. Otherwise the code looks reasonable.\n"
     },
     {
+      "id": "15535",
       "author": "Justin Obara",
       "date": "2010-01-07T13:00:48.000-0500",
       "body": "I tried out the patch using Safari 4 and FF 3.5.\n\nSafari 4 is now working, and there are no changes to FF 3.5.&#x20;\n"
     },
     {
+      "id": "15537",
       "author": "Antranig Basman",
       "date": "2010-01-07T13:12:17.000-0500",
       "body": "This issue has been reported upstream at Webkit as <https://bugs.webkit.org/show_bug.cgi?id=33328> - it appears to affect every browser based on recent webkit.\n"
     },
     {
+      "id": "15539",
       "author": "Antranig Basman",
       "date": "2010-01-07T13:13:59.000-0500",
       "body": "Patch without crass comment attached. Apologies for the early-morning red fog 😛\n"
     },
     {
+      "id": "15541",
       "author": "Justin Obara",
       "date": "2010-01-19T16:50:02.000-0500",
       "body": "tested the patch with the renderer demo, and it appears to working properly now in safari 4\n"
     },
     {
+      "id": "15543",
       "author": "Antranig Basman",
       "date": "2010-01-19T21:35:40.000-0500",
       "body": "Fixed at revision 9045. Depending on the Chrome release schedule, we may need to make a detect for that browser too.\n"

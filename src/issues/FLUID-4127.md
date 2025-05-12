@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20364",
       "author": "Justin Obara",
       "date": "2011-03-06T21:08:13.266-0500",
       "body": "Pushed changes at d800c49b532c6535b323. I've tried to standardize the globals comments by adding a comment above \"Declare Dependencies\" in all cases, and ordering the globals by browser/javascript, infusions, third party. Also updated the declared globals for all files. This included removing ones that our jslint settings already took care of, removing ones that weren't actually necessary, and adding in any that were missing. If variables appeared to be global in error, I didn't add them to the set of declared globals.\n"

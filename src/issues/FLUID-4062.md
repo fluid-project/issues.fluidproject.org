@@ -27,26 +27,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21769",
       "author": "Anastasia Cheetham",
       "date": "2011-02-16T10:45:15.263-0500",
       "body": "Michelle, I've submitted a pull request for this. It's minor - would you have a moment to finish?\n"
     },
     {
+      "id": "21770",
       "author": "Michelle D'Souza",
       "date": "2011-02-16T11:28:43.822-0500",
       "body": "Pushed to Infusion project repo at commit 36351c1a0624a130ed7ee42fb203eeaf0bc1a2cf\n"
     },
     {
+      "id": "21771",
       "author": "Anastasia Cheetham",
       "date": "2011-02-16T15:49:33.826-0500",
       "body": "I missed the pom.xml file in the image gallery.\n"
     },
     {
+      "id": "21772",
       "author": "Anastasia Cheetham",
       "date": "2011-02-16T16:08:14.961-0500",
       "body": "MIchelle, could you pull this chance?\n"
     },
     {
+      "id": "21773",
       "author": "Justin Obara",
       "date": "2011-02-17T09:43:00.186-0500",
       "body": "I pushed the pom.xml update at 876068651a0fd02f9d88\n"

@@ -62,11 +62,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23055",
       "author": "Gregor Moss",
       "date": "2018-07-31T16:54:09.943-0400",
       "body": "Once implemented, add this change to the \"Using grades\" example\n"
     },
     {
+      "id": "23056",
       "author": "Gregor Moss",
       "date": "2018-09-24T16:24:02.244-0400",
       "body": "The \"using grades\" example update has been moved to a separate issue: <https://fluidproject.atlassian.net/browse/FLUID-6341#icft=FLUID-6341>\n"

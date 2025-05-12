@@ -51,11 +51,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19600",
       "author": "Michelle D'Souza",
       "date": "2008-10-01T13:35:21.000-0400",
       "body": "dev-iteration45\n"
     },
     {
+      "id": "19601",
       "author": "Anastasia Cheetham",
       "date": "2008-11-26T13:44:52.000-0500",
       "body": "Duplicated by <https://fluidproject.atlassian.net/browse/FLUID-1833#icft=FLUID-1833>\n"

@@ -36,31 +36,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21908",
       "author": "Daphne Ogle",
       "date": "2008-07-22T00:33:53.000-0400",
       "body": "Added details from design storycard\n"
     },
     {
+      "id": "21909",
       "author": "Antranig Basman",
       "date": "2008-07-31T14:23:56.000-0400",
       "body": "Work merged in at revision 5312\n"
     },
     {
+      "id": "21910",
       "author": "Colin Clark",
       "date": "2008-07-31T17:30:48.000-0400",
       "body": "infusion-05-wishlist\n"
     },
     {
+      "id": "21911",
       "author": "Anastasia Cheetham",
       "date": "2008-08-11T13:24:53.000-0400",
       "body": "Still not properly working for multiple editors on the same page. Also needs a way to infuse undoability onto many edits in a single call (a la fluid.inlineEdits()).\n"
     },
     {
+      "id": "21912",
       "author": "Antranig Basman",
       "date": "2008-08-11T14:33:40.000-0400",
       "body": "Corrected multiple undo issue with test cases, added ability to create multiple undos in a single operation at revision 5344\n"
     },
     {
+      "id": "21913",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:58.283-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

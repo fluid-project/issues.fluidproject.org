@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12195",
       "author": "Justin Obara",
       "date": "2010-02-26T11:03:34.000-0500",
       "body": "Unfortunately Safari doesn't support live regions. So we will have to come up with another strategy.\n\nHere is link to Apple's Safari documentation about their supported aria roles\n\n<http://developer.apple.com/safari/library/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/AccessibilityRoles.html>\n"

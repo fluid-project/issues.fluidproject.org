@@ -74,71 +74,85 @@
   ],
   "comments": [
     {
+      "id": "14540",
       "author": "Anastasia Cheetham",
       "date": "2011-07-25T16:38:46.127-0400",
       "body": "After some discussion, it was decided that a whole new, slick demo page will be designed for the context (instead of using the SomeKindOfNews test page).\n\nI've implemented the SomeKindOfNews version for now: The mechanics will be the same regardless of the content of the page. The branch is:\\\n<https://github.com/acheetham/infusion/tree/FLUID-4351-newUIOContextDemo>\n"
     },
     {
+      "id": "14541",
       "author": "Anastasia Cheetham",
       "date": "2011-07-25T16:39:30.501-0400",
       "body": "James, I'm passing this one over to your plate for the design portion.\n"
     },
     {
+      "id": "14543",
       "author": "James Yoon",
       "date": "2011-07-27T11:04:05.879-0400",
       "body": "Attached files for the UIO context demo\n"
     },
     {
+      "id": "14546",
       "author": "James Yoon",
       "date": "2011-07-28T10:36:42.742-0400",
       "body": "Typography + fonts:\n\nH1 text in: LoveYaLikeASister\\\n\"DISPLAY PREFERENCES\" text in: Myriad Pro Bold + Regular\\\nAll other text in: Lato\n\nH1 sub-header: 21pt, Light Italic\n\n\"Some helpful tips\": 21pt, Black\\\n\"1. User interface...\": 21pt, Light\\\n\"All three configurations provide...\": 16pt, Light\n\n\"Introduction\": 21pt, Light\\\n\"Lorem ipsum...\": 12pt, Light\n\n\"Email address\", \"Your comments\": 12pt, Regular\n\nColour:\n\nAll text in: #3E606F\n"
     },
     {
+      "id": "14549",
       "author": "Anastasia Cheetham",
       "date": "2011-07-28T14:45:57.392-0400",
       "body": "I've pushed an implementation of James' design to my github repo\\\n<https://github.com/acheetham/infusion/tree/FLUID-4351-newUIOContextDemo>\\\nand issued a pull request\\\n<https://github.com/fluid-project/infusion/pull/121>\n"
     },
     {
+      "id": "14551",
       "author": "Anastasia Cheetham",
       "date": "2011-08-03T11:04:51.536-0400",
       "body": "James, could you have a look at the pull request?\n\n<https://github.com/fluid-project/infusion/pull/121>\n"
     },
     {
+      "id": "14554",
       "author": "Anastasia Cheetham",
       "date": "2011-08-08T11:14:09.929-0400",
       "body": "I've updated the code to reflect the changes in the API from the recent merge of <https://fluidproject.atlassian.net/browse/FLUID-4353#icft=FLUID-4353> and comment to that effect on the pull request.\n"
     },
     {
+      "id": "14556",
       "author": "Anastasia Cheetham",
       "date": "2011-08-11T09:35:43.338-0400",
       "body": "James has given me some verbal feedback on requested improvements to the demo. I'll work on those and ask for another review.\n"
     },
     {
+      "id": "14559",
       "author": "Anastasia Cheetham",
       "date": "2011-08-11T16:16:54.379-0400",
       "body": "I've pushed updates to my github repo and commented on the pull request:\\\n<https://github.com/fluid-project/infusion/pull/121>\n\nHeidi, if you have a chance to check the CSS for me, that would be great. Either assign back to me for fixes or pass on to James for final approval.\n"
     },
     {
+      "id": "14562",
       "author": "Anastasia Cheetham",
       "date": "2011-08-12T13:23:16.812-0400",
       "body": "James, I've made some final changes based on Heidi's feedback. When you have a minute, maybe you could look over my shoulder for a final sign-off?\n"
     },
     {
+      "id": "14564",
       "author": "James Yoon",
       "date": "2011-08-12T13:52:02.353-0400",
       "body": "Looks good. Closing this off.\n"
     },
     {
+      "id": "14567",
       "author": "Anastasia Cheetham",
       "date": "2011-08-15T12:24:41.479-0400",
       "body": "Some temporary files were committed and the JS was not adequately reviewed.\n"
     },
     {
+      "id": "14569",
       "author": "Anastasia Cheetham",
       "date": "2011-08-15T12:28:19.711-0400",
       "body": "Justin, I've issued a new pull request for this:\\\n<https://github.com/fluid-project/infusion/pull/138>\\\nCould you review?\n"
     },
     {
+      "id": "14572",
       "author": "Justin Obara",
       "date": "2011-08-17T17:25:01.203-0400",
       "body": "Merged into project repo at 82298c8650e3b3ecb0fdb8e4ee666fdadad96096\n"

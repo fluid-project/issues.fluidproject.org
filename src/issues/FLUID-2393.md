@@ -28,36 +28,43 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21427",
       "author": "Justin Obara",
       "date": "2009-03-23T11:27:37.000-0400",
       "body": "Bug Parade 1.0 release&#x20;\n"
     },
     {
+      "id": "21428",
       "author": "Justin Obara",
       "date": "2009-03-23T11:55:14.000-0400",
       "body": "It appears that Opera doesn't like double quotes (\") in the cookie. It will accept single quotes (') though\n"
     },
     {
+      "id": "21429",
       "author": "Michelle D'Souza",
       "date": "2009-03-24T15:16:22.000-0400",
       "body": "I fixed the issue by not storing the cookie using JSON.&#x20;\n"
     },
     {
+      "id": "21430",
       "author": "Michelle D'Souza",
       "date": "2009-03-24T16:31:31.000-0400",
       "body": "Colin review this and suggested using JSON and URI encoding.&#x20;\n"
     },
     {
+      "id": "21431",
       "author": "Michelle D'Souza",
       "date": "2009-03-24T16:41:40.000-0400",
       "body": "Using JSON and URI encoding works fine in Opera.&#x20;\n"
     },
     {
+      "id": "21432",
       "author": "Jacob Farber",
       "date": "2009-03-25T10:04:10.000-0400",
       "body": "Looks good.\n"
     },
     {
+      "id": "21433",
       "author": "Justin Obara",
       "date": "2009-03-25T10:07:52.000-0400",
       "body": "Verified fix using:\n\nOpera 9.6 (Mac OS 10.5, Win XP)\n"

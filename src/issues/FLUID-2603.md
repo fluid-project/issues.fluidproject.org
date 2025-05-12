@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22763",
       "author": "Antranig Basman",
       "date": "2009-04-14T16:43:50.000-0400",
       "body": "Implemented at revision 7119.\n"
     },
     {
+      "id": "22766",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:17.014-0500",
       "body": "Closing issues that were fixed in 1.1\n"

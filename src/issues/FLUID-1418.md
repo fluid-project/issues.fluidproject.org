@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18511",
       "author": "Daphne Ogle",
       "date": "2008-09-03T12:07:13.000-0400",
       "body": "iteration23\n"
     },
     {
+      "id": "18517",
       "author": "Daphne Ogle",
       "date": "2008-12-08T21:14:48.000-0500",
       "body": "Didn't fleshout the potential additional functionality.  Just identified where it might be:  batch naming, metadata, tagging & notification.\n"

@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27433",
       "author": "Blake E",
       "date": "2008-10-27T13:46:02.000-0400",
       "body": "vulab5\n"
     },
     {
+      "id": "27434",
       "author": "Blake E",
       "date": "2008-11-03T11:25:01.000-0500",
       "body": "basic database configuration files created. further changes to this issue is depreciated with vulab6 investigation into frameworks and the all-hands meeting release deadline.\n"

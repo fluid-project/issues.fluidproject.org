@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20281",
       "author": "Justin Obara",
       "date": "2011-02-28T12:48:55.658-0500",
       "body": "updated the version numbers to 1.4-SNAPSHOT and namespace to fluid\\_1\\_4. At 0c532232116add3908cc and f5f85643f3a339f7b7053be800ce6e4fc25e1f86. Didn't update the readme, that will be part of <https://fluidproject.atlassian.net/browse/FLUID-4120#icft=FLUID-4120>\n"

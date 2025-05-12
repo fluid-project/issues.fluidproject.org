@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21775",
       "author": "John Kremer",
       "date": "2011-02-18T12:51:08.817-0500",
       "body": "Tried to re-create the error by:\\\n1\\. Closing and restarting browser\\\n2\\. Navigate to <http://build.fluidproject.org/infusion/integration-demos/sakai/html>\\\n3\\. Select ui-options-fss-sakai.html\\\n4\\. Click on edit appearance\\\n5\\. Click on font drop-down and make a selection\n\nNow it seems to be fine.\n"

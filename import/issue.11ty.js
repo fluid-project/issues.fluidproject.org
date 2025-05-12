@@ -63,6 +63,7 @@ class Issue {
             comments: data.issue.fields?.comment?.comments ?
                 data.issue.fields.comment.comments.map(comment => {
                     return {
+                        id: comment.id,
                         author: comment.author.displayName,
                         date: comment.created,
                         body: this.removeMentions(this.fromADF(comment.body))

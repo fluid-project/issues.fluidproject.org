@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25936",
       "author": "Giovanni Tirloni",
       "date": "2017-01-13T12:02:02.319-0500",
       "body": "The situation has evolved and currently this would be accomplished by applying these roles to the host:\n\n* <https://github.com/idi-ops/ansible-jenkins-node>\n* <https://github.com/idi-ops/ansible-docker>\n"

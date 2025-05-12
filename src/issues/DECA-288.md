@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10196",
       "author": "Jonathan Hung",
       "date": "2012-07-24T10:13:15.676-0400",
       "body": "Label: \"Font Matched Text with OCR\"\\\nDescription: \"Text on image is matched to a True-Type font resulting in a very compact PDF. Works best with Latin script.\"\n"
     },
     {
+      "id": "10197",
       "author": "Justin Obara",
       "date": "2012-08-02T11:19:25.802-0400",
       "body": "Added type4 output to the ui.&#x20;\n\nThe changes are in my bitbucket repo\\\n<https://bitbucket.org/jobara/decapod-0.6-ui-iteration5>\n"

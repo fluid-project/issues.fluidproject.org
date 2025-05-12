@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10363",
       "author": "Jonathan Hung",
       "date": "2010-04-20T09:51:24.000-0400",
       "body": "This issue may resolve itself when if Decapod uses the Ocropus book directory structure.\n\nLikely related to genpdf script expecting / supporting the Ocropus directory structure. (but works fine without it).\n"
     },
     {
+      "id": "10364",
       "author": "Colin Clark",
       "date": "2010-07-14T00:47:01.559-0400",
       "body": "I'm resolving this as fixed since the specific error Michelle reported has been fixed. We're still a bit heavy-handed about blasting away any previous working directories when generating a new PDF, and the issue of using the Ocropus book directory structure still stands and has its own JIRA.\n"

@@ -33,41 +33,49 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17702",
       "author": "Justin Obara",
       "date": "2008-12-08T11:36:50.000-0500",
       "body": "Bug Parade 0.6 release\n"
     },
     {
+      "id": "17703",
       "author": "Anastasia Cheetham",
       "date": "2008-12-09T10:31:45.000-0500",
       "body": "Ok, I've tested everything against jQuery UI trunk. Everything works except the nested reorderers manual test page: Moving items (using the mouse) within an inner reorderer moves both the inner item and the outer item that it is inside. Haven't figured out why yet.\n\nOddly, this doesn't happen with the nested case of the Image Reorderer inside the Layout Reorderer in the uPortal mock-up.\n\nI'm going to try 1.5.3 next.\n"
     },
     {
+      "id": "17705",
       "author": "Anastasia Cheetham",
       "date": "2008-12-09T12:09:50.000-0500",
       "body": "The weirdness with nested reorderers does NOT happen with 1.5.3. The behaviour is just fine.\n"
     },
     {
+      "id": "17707",
       "author": "Anastasia Cheetham",
       "date": "2008-12-09T12:54:28.000-0500",
       "body": "The jQuery UI files have been upgraded to the 1.5.3 version. No changes to the Fluid code were needed.\n"
     },
     {
+      "id": "17709",
       "author": "Justin Obara",
       "date": "2008-12-09T16:05:49.000-0500",
       "body": "closed in error... needs to under go code review still\n"
     },
     {
+      "id": "17711",
       "author": "Justin Obara",
       "date": "2008-12-09T16:06:12.000-0500",
       "body": "Anastasia had resolved this issue\n"
     },
     {
+      "id": "17713",
       "author": "Colin Clark",
       "date": "2008-12-10T13:21:53.000-0500",
       "body": "I've reviewed this code. +1.\n"
     },
     {
+      "id": "17714",
       "author": "Justin Obara",
       "date": "2008-12-10T13:33:37.000-0500",
       "body": "Verified fix using:\n\nFF3, FF2 (Mac OS 10.5)\n\nFF3, IE7 (Win Vista)\n"

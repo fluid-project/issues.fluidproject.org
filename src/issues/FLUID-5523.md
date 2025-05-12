@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24018",
       "author": "Anastasia Cheetham",
       "date": "2014-10-10T10:20:57.592-0400",
       "body": "This problem actually seems to be present in most – if not all – demos.\n"
     },
     {
+      "id": "24019",
       "author": "Justin Obara",
       "date": "2014-10-10T10:53:53.489-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/563> ) into the project repo at fde96fce6fd6683cbdbb82d0c0bad69ddc180e88\n"
     },
     {
+      "id": "24021",
       "author": "Justin Obara",
       "date": "2015-06-26T09:50:53.472-0400",
       "body": "Reopening to change the fix version to 1.9\n"

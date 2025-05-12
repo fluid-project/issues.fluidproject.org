@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19663",
       "author": "Justin Obara",
       "date": "2008-07-28T08:56:29.000-0400",
       "body": "Appears to be fixed, may have been resolved along with fix to Fluid-1028.\n\nVerified using:\n\nFF2, FF3, Opera 9.5 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\n"

@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11988",
       "author": "Justin Obara",
       "date": "2010-03-23T16:33:27.000-0400",
       "body": "All the unit tests are currently passing\n"

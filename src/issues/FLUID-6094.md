@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25411",
       "author": "Justin Obara",
       "date": "2017-01-13T09:31:05.718-0500",
       "body": "We might want to think about adding a box for the design cards.\n"
     },
     {
+      "id": "25412",
       "author": "Justin Obara",
       "date": "2018-12-04T16:10:56.643-0500",
       "body": "It seems that our DocPad configuration and/or plugins may be out of date with the latest Node and DocPad versions. \n"
     },
     {
+      "id": "25413",
       "author": "Justin Obara",
       "date": "2020-11-10T10:37:44.169-0500",
       "body": "The fluidproject.org site is migrating from DocPad to 11ty and will be redesigned after the migration. \n"

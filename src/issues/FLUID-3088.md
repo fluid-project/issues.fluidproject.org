@@ -37,16 +37,19 @@
   ],
   "comments": [
     {
+      "id": "22881",
       "author": "Justin Obara",
       "date": "2009-11-09T09:15:39.000-0500",
       "body": "I think the issue is that the contents of the portlet all have focus styling as well.\n"
     },
     {
+      "id": "22885",
       "author": "Justin Obara",
       "date": "2011-01-11T09:11:53.052-0500",
       "body": "Screenshot.png shows part of the large focus highlight and that all the elements within the image lightbox portlet have focus styling\n"
     },
     {
+      "id": "22887",
       "author": "Justin Obara",
       "date": "2014-07-07T15:38:18.057-0400",
       "body": "Opera is no longer a supported browser.\n"

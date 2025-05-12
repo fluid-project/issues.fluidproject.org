@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24959",
       "author": "Michelle D'Souza",
       "date": "2009-05-12T16:16:46.000-0400",
       "body": "I was able to tab to the first form control (the font style) however focus immediately moved back to the close button.\n"
     },
     {
+      "id": "24960",
       "author": "Justin Obara",
       "date": "2009-05-14T09:12:58.000-0400",
       "body": "Bug Parade 1.1 release\n"

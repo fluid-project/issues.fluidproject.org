@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25758",
       "author": "Giovanni Tirloni",
       "date": "2020-04-13T07:51:10.928-0400",
       "body": "PR merged: <https://github.com/idi-ops/ansible-nodejs/pull/44>\n"

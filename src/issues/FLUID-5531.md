@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25355",
       "author": "YashJipkate",
       "date": "2020-04-06T11:27:28.890-0400",
       "body": "I think the issue needs some updates:\n\n* The 'Download Infusion' link at fluidproject.org is now present in the 'Infusion' section rather than the 'Projects' section. Also, it no longer references the README of the docs repo, but the repo itself. \n* The [build site](https://build.fluidproject.org/) no longer contains link to the README or the infusion-docs repo. Should it include one?\n\nAs for the 'Download Infusion' link at fluidproject.org, the link should point specifically to the '[How Do I Get Infusion](https://github.com/fluid-project/infusion#how-do-i-get-infusion)' section rather than linking to the GitHub repo as a whole. What do you think?\n\n \n"
     },
     {
+      "id": "27905",
       "author": "Justin Obara",
       "date": "2024-07-25T15:07:01.648-0400",
       "body": "It seems the issue is outdated, and things are sufficient as they stand even if not perfectly ideal. I think we can revisit this when we have time to refresh the fluid project website.\n"

@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18775",
       "author": "Justin Obara",
       "date": "2015-06-09T10:58:52.000-0400",
       "body": "Could not reproduce with the latest version of chrome and Windows 8\n"
     },
     {
+      "id": "18779",
       "author": "Justin Obara",
       "date": "2015-06-26T09:50:50.213-0400",
       "body": "Reopening to change the fix version to 1.9\n"

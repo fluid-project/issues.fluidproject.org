@@ -42,11 +42,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13178",
       "author": "Justin Obara",
       "date": "2012-05-16T11:26:35.721-0400",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-4334#icft=FLUID-4334> is a similar issue, but refers specifically to the refreshView function.\n"
     },
     {
+      "id": "13179",
       "author": "Antranig Basman",
       "date": "2013-02-19T14:53:50.440-0500",
       "body": "Resolved by merge of <https://fluidproject.atlassian.net/browse/FLUID-4330#icft=FLUID-4330> branch at revision 91d5d1\n"

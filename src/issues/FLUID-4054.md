@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19328",
       "author": "Justin Obara",
       "date": "2011-03-23T09:36:13.251-0400",
       "body": "The image-gallery and infusion daily builds were made to work for the 1.3.1 release. However they could use some more improvements to get them building the way we want them to.\n"
     },
     {
+      "id": "19329",
       "author": "Justin Obara",
       "date": "2011-05-17T09:46:54.541-0400",
       "body": "hourly and nighly builds working for Infusion and the image gallery, and nightly build of the builder is up. Any new issues for these should be filed under specific jiras.\n"

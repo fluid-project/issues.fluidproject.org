@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18851",
       "author": "Antranig Basman",
       "date": "2008-09-10T14:40:21.000-0400",
       "body": "Fixed at revision 5504\n"
     },
     {
+      "id": "18854",
       "author": "Justin Obara",
       "date": "2008-09-11T09:29:14.000-0400",
       "body": "Verified fix using:\n\nOpera 9.5 (Mac OS 10.5, Win XP)\n"

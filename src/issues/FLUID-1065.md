@@ -52,46 +52,55 @@
   ],
   "comments": [
     {
+      "id": "20429",
       "author": "Justin Obara",
       "date": "2008-08-14T15:24:46.000-0400",
       "body": "If you move the pointer quickly from the bottom or the top and land on the inline edit field, the pointer will change to a hand.\n"
     },
     {
+      "id": "20431",
       "author": "Justin Obara",
       "date": "2008-08-28T09:45:58.000-0400",
       "body": "In the bSpace example (<http://build.fluidproject.org/fluid/sample-code/inline-edit/section-info/section-info.html>) the pointer properly changes to a hand unless it is dragged over the inline edit field from the right side\n"
     },
     {
+      "id": "20432",
       "author": "Justin Obara",
       "date": "2008-09-02T11:11:06.000-0400",
       "body": "'screenshot-1' shows the improper cursor style\n"
     },
     {
+      "id": "20433",
       "author": "Jacob Farber",
       "date": "2008-10-31T09:16:40.000-0400",
       "body": "Cursor effect now properly initialized (no longer on hover)\n"
     },
     {
+      "id": "20434",
       "author": "Jacob Farber",
       "date": "2008-10-31T09:18:31.000-0400",
       "body": "Cursor effect is now properly initialized (no longer done on hover class)\n"
     },
     {
+      "id": "20435",
       "author": "Justin Obara",
       "date": "2008-11-13T13:40:29.000-0500",
       "body": "Still evident in Opera 9.5 (Mac OS 10.5)\n"
     },
     {
+      "id": "20436",
       "author": "Justin Obara",
       "date": "2009-01-14T12:47:56.000-0500",
       "body": "Currently only seems to be an issue with the Inline Edit Springboards.\n"
     },
     {
+      "id": "20437",
       "author": "Justin Obara",
       "date": "2009-03-18T11:37:15.000-0400",
       "body": "My 1st Bug\n"
     },
     {
+      "id": "20438",
       "author": "Jonathan Hung",
       "date": "2011-01-04T14:39:27.566-0500",
       "body": "No longer an issue. Opera is not a supported browser in Infusion 1.3.\n"

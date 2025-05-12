@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21849",
       "author": "Michelle D'Souza",
       "date": "2010-05-31T12:38:22.497-0400",
       "body": "The test is failing because it uses an id selector to pull out a DOM node for testing. The id is under the control of the renderer and the renderer has changed the id that it generates.\n"

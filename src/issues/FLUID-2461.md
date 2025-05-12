@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20327",
       "author": "Anastasia Cheetham",
       "date": "2011-03-17T12:07:25.180-0400",
       "body": "I had a look at this post 1.3.1: setting initiallyHidden=false does result in the progress bar being visible initially. I'm not sure what other behaviour is expected...\n"
     },
     {
+      "id": "20328",
       "author": "Justin Obara",
       "date": "2014-11-05T12:53:25.258-0500",
       "body": "From the previous comment it seems that this has been addressed\n"

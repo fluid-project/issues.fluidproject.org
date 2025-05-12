@@ -38,6 +38,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25116",
       "author": "Antranig Basman",
       "date": "2017-03-15T21:37:32.094-0400",
       "body": "This is a specific bug with respect to \"source\" that we should be able to solve. This context name is treated specially because of the possibility of dynamically created components in response to an event. There would be no problem with a component named \"container\" since this is not a context name with any special meaning in the framework. However, there would be problems with a component named \"arguments\", or, indeed \"that\". It seems reasonable to prevent a component being created with either of these names as a member name or a short nickname. This is a similar issue to <https://fluidproject.atlassian.net/browse/FLUID-5761#icft=FLUID-5761> which is a pretty serious usability failure.\n"

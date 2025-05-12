@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20815",
       "author": "Kasper Galschiot Markus",
       "date": "2013-09-14T18:05:03.665-0400",
       "body": "Fixed with <https://github.com/fluid-project/infusion/pull/383>\n"
     },
     {
+      "id": "20816",
       "author": "Justin Obara",
       "date": "2014-03-03T11:47:57.287-0500",
       "body": "The pull request ( <https://github.com/fluid-project/infusion/pull/383> ) was merged into the project repo at 9f9ab10f1dc8cd52ffbd99555d758dbd56cf65dd&#x20;\n"

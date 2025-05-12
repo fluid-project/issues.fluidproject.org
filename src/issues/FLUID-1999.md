@@ -35,21 +35,25 @@
   ],
   "comments": [
     {
+      "id": "20729",
       "author": "Gonzalo David Silverio",
       "date": "2009-01-06T13:49:12.000-0500",
       "body": "Labels for radio buttons that wrap the input and do not explicitly establish their relationship to the input (via for/id) have this problem in IE, others in other contexts. A patch to UIOptions attached.\n"
     },
     {
+      "id": "20730",
       "author": "Justin Obara",
       "date": "2009-01-07T09:17:42.000-0500",
       "body": "Bug Parade 0.7 release\n"
     },
     {
+      "id": "20731",
       "author": "Gonzalo David Silverio",
       "date": "2009-01-12T13:43:18.000-0500",
       "body": "Looks good - thanks Jacob.\n"
     },
     {
+      "id": "20732",
       "author": "Justin Obara",
       "date": "2009-01-12T14:05:47.000-0500",
       "body": "Verified fix using\n\nIE 6 (Win XP)\n"

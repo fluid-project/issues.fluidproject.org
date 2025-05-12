@@ -24,21 +24,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22043",
       "author": "Tony Atkins [RtF]",
       "date": "2016-07-20T04:50:49.526-0400",
       "body": "Update, requiring jqUnit resolves this, which is why I don't usually see this.  Usually I have at least one local test function.  Lately I have been able to write more \"pure\" tests that only call existing functions from sequence steps.  It is these that will not work on their own.\n\nMoving this issue to infusion, as it is not a problem with Kettle.  Calling `kettle.loadTestingSupport` just solves the problem because somewhere along the way it requires jqUnit.\n"
     },
     {
+      "id": "22046",
       "author": "Tony Atkins [RtF]",
       "date": "2016-07-20T05:03:09.344-0400",
       "body": "On further investigation, I discovered that the problem is a result of jqUnit.assert not being available as a global variable (makes sense).  I get the same failure if I change the example to use \"bogus\".\n\nSeems like all we need is something to throw a proper error if \"func\" doesn't exist.\n"
     },
     {
+      "id": "22049",
       "author": "Tony Atkins [RtF]",
       "date": "2016-07-20T05:05:59.186-0400",
       "body": "Sorry, I keep updating my example to confirm, it looks like even if you don't call a jqUnit function, jqUnit is required.  The framework does correctly throw an error about a bogus function, but only if jqUnit has been required.\n\nHere's an updated example that clearly illustrates the problem:\n\n```java\n/* eslint-env node */\r\n\"use strict\";\r\nvar fluid = require(\"infusion\");\r\nfluid.loadTestingSupport();\r\n\r\n//require(\"node-jqunit\");\r\n\r\nfluid.defaults(\"gpii.tests.wtf.caseHolder\", {\r\n    gradeNames: [\"fluid.test.testCaseHolder\"],\r\n    modules: [{\r\n        name: \"Confirm that things are borderline sane...\",\r\n        tests: [\r\n            {\r\n                name: \"We should be able to run a single test...\",\r\n                type: \"test\",\r\n                sequence: [\r\n                    {   func: \"console.log\", args: [\"Here we are now.\"] }\r\n                ]\r\n            }\r\n        ]\r\n    }]\r\n});\r\n\r\nfluid.defaults(\"gpii.tests.wtf.environment\", {\r\n    gradeNames: [\"fluid.test.testEnvironment\"],\r\n    components: {\r\n        caseHolder: {\r\n            type: \"gpii.tests.wtf.caseHolder\"\r\n        }\r\n    }\r\n});\r\n\r\nfluid.test.runTests(\"gpii.tests.wtf.environment\");\n```\n"
     },
     {
+      "id": "22055",
       "author": "Antranig Basman",
       "date": "2016-07-20T07:17:56.195-0400",
       "body": "Yes, this is a long-standing annoyance. I think it can really only be resolved sensibly by eliminating the annoying node-jqunit module and folding this into Infusion. However, this itself also relies on some kind of \"monorepo\" pattern for Infusion itself so that all these dependencies can be properly isolated within it.\n"

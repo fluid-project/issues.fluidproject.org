@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17996",
       "author": "Justin Obara",
       "date": "2010-10-04T14:56:09.609-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "17998",
       "author": "Colin Clark",
       "date": "2010-12-02T12:26:33.264-0500",
       "body": "A series of refactoring ending at r10315 in the <https://fluidproject.atlassian.net/browse/FLUID-3722#icft=FLUID-3722> branch has resolved this issue.\n"

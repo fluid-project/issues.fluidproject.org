@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19750",
       "author": "Colin Clark",
       "date": "2008-06-29T10:40:10.000-0400",
       "body": "Switched the mechanism for checking for elements to looking for nodeType.\n"

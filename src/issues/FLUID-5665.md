@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19242",
       "author": "Antranig Basman",
       "date": "2015-06-12T13:26:02.639-0400",
       "body": "The reason we would want to separate preference state from UI state, to start with, is to persist information such as in <https://fluidproject.atlassian.net/browse/FLOE-331#icft=FLOE-331>\n"
     },
     {
+      "id": "19245",
       "author": "Antranig Basman",
       "date": "2015-08-22T15:07:24.593-0400",
       "body": "Merged into trunk at revision 5263b0e75e3f36384f7e5e73089ed90f2d9217fd\n"

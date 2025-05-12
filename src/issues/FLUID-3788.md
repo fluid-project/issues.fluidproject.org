@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21906",
       "author": "Michelle D'Souza",
       "date": "2010-12-23T15:48:01.172-0500",
       "body": "Please check if this is done and either close it or put it into another release.\n"
     },
     {
+      "id": "21907",
       "author": "Justin Obara",
       "date": "2014-07-15T14:31:46.197-0400",
       "body": "I believe it is just that NVDA announces disabled buttons as unavailable. We may want to consider moving focus off of the button so that it isn't announced.\n"

@@ -35,21 +35,25 @@
   ],
   "comments": [
     {
+      "id": "23933",
       "author": "y z",
       "date": "2011-01-07T16:20:34.226-0500",
       "body": "Apply to jqUnit.js&#x20;\n"
     },
     {
+      "id": "23935",
       "author": "Justin Obara",
       "date": "2011-05-17T09:48:19.379-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "23941",
       "author": "Michelle D'Souza",
       "date": "2011-06-20T16:36:04.047-0400",
       "body": "Yura's fix was merged into the project repo at 73025e5319598d0fa500c474cc0af526ef558434\n"
     },
     {
+      "id": "23946",
       "author": "Justin Obara",
       "date": "2011-06-22T17:12:27.156-0400",
       "body": "already in project repo, see previous comment\n"

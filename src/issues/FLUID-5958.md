@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25716",
       "author": "Justin Obara",
       "date": "2016-09-15T09:04:47.206-0400",
       "body": "Perhaps a declarative approach more inline with listeners and invokers would work.\n"
     },
     {
+      "id": "25717",
       "author": "Antranig Basman",
       "date": "2016-09-15T09:23:57.973-0400",
       "body": "It's a good idea to rationalise our approach. An area called \"templates\" in a suitably graded component is one idea - however, note that we also have a standard model transformation rule <https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/ModelTransformationTransforms.js#L687> which allows users to achieve this in a freeform way - this just requires the designer to have placed the output strings within the model area as well as their input material.\n"

@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10227",
       "author": "Justin Obara",
       "date": "2012-05-25T13:40:14.393-0400",
       "body": "I'm not exactly sure what this means. What sort of error checking is required?\n"
     },
     {
+      "id": "10228",
       "author": "Justin Obara",
       "date": "2012-06-01T10:49:50.377-0400",
       "body": "Not enough details on this issue. Closed as incomplete.\n"

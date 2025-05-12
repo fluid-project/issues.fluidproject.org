@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25003",
       "author": "Jonathan Hung",
       "date": "2008-09-24T16:32:10.000-0400",
       "body": "Iteration20\n"
     },
     {
+      "id": "25004",
       "author": "Justin Obara",
       "date": "2011-01-10T15:49:31.319-0500",
       "body": "Closed as per discussion in IRC Chat  ( <http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2011-01-10> ) starting around 13:58\n"

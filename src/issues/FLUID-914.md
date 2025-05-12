@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19564",
       "author": "Justin Obara",
       "date": "2008-08-28T11:30:45.000-0400",
       "body": "Currently it only flips back and forth once now.\n"
     },
     {
+      "id": "19565",
       "author": "Justin Obara",
       "date": "2008-12-19T08:18:38.000-0500",
       "body": "Appears to have been fixed\n\nTested Using:\\\nOpera 9.5 (Win XP)&#x20;\n"

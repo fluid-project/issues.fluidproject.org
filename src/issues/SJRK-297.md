@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26544",
       "author": "Cindy Li",
       "date": "2019-10-02T19:08:49.449-0400",
       "body": "\\[The pull request]\\(<https://github.com/fluid-project/sjrk-story-telling/pull/45>) has been merged at \\[this commit]\\(<https://github.com/fluid-project/sjrk-story-telling/commit/a870c8afe9609a484f9005778039a0fe73974545>).\n\nThe new branch for hosting SJRK-flavoured theme is created at <https://github.com/fluid-project/sjrk-story-telling/tree/stories-sojustrepairit-production>\n"
     },
     {
+      "id": "26545",
       "author": "Gregor Moss",
       "date": "2019-10-03T13:45:16.065-0400",
       "body": "sjrk-story-telling code has been merged in, but the environment setup and config still remains\n"

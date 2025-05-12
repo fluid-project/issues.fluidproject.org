@@ -33,16 +33,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12446",
       "author": "Justin Obara",
       "date": "2009-09-25T15:28:40.000-0400",
       "body": "Bug Parade Engage 0.1&#x20;\n"
     },
     {
+      "id": "12447",
       "author": "Antranig Basman",
       "date": "2009-10-05T17:52:46.000-0400",
       "body": "This is now resolved in trunk, please review\n"
     },
     {
+      "id": "12448",
       "author": "Justin Obara",
       "date": "2009-11-03T11:56:28.000-0500",
       "body": "Closed as per previous comment\n"

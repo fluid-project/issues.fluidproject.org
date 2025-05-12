@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11197",
       "author": "Michelle D'Souza",
       "date": "2012-06-25T15:14:36.021-0400",
       "body": "The fixes in your branch look really great! The only issue I see is with high contrast themes. I guess we should just remove the background image and put a thin outline around the box.&#x20;\n"

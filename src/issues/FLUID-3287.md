@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17738",
       "author": "Jonathan Hung",
       "date": "2010-10-05T09:57:19.701-0400",
       "body": "Still an issue in v1.3 (tested Oct 5, 2010, FF3.6).\n"
     },
     {
+      "id": "17740",
       "author": "Jonathan Hung",
       "date": "2010-12-01T10:43:07.479-0500",
       "body": "No longer an issue in the Layout Reorderer. Grid Reorderer will fix this issue with the upcoming redesign.\n"

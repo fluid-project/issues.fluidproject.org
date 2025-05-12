@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17671",
       "author": "Colin Clark",
       "date": "2008-12-05T12:16:41.000-0500",
       "body": "This was fixed by removing all of Uploader 1 from repository and renaming Uploader 2 to remove the \"2\" part.\n"
     },
     {
+      "id": "17673",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:52.922-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

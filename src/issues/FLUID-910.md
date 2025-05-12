@@ -46,16 +46,19 @@
   ],
   "comments": [
     {
+      "id": "13431",
       "author": "Justin Obara",
       "date": "2008-07-16T13:57:09.000-0400",
       "body": "'screenshot-1' shows the avatar \"12. Book caterer\" displaying the number on the left.\n"
     },
     {
+      "id": "13433",
       "author": "Justin Obara",
       "date": "2008-07-16T13:58:00.000-0400",
       "body": "'sreenshot-2' shows the avatar \"Book facilities ...\" without the number to the left\n"
     },
     {
+      "id": "13435",
       "author": "Justin Obara",
       "date": "2008-08-22T08:32:13.000-0400",
       "body": "The number should probably not display on the avatar and is captured more generally in fluid-1292.\n"

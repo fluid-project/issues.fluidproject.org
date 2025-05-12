@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14022",
       "author": "Antranig Basman",
       "date": "2009-03-16T14:10:44.000-0400",
       "body": "Fixed at revision 6749 with test case\n"
     },
     {
+      "id": "14025",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:54.989-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

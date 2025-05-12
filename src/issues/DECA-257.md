@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10155",
       "author": "Justin Obara",
       "date": "2012-05-16T11:04:30.958-0400",
       "body": "Resolved the issue by fixing the misconfigured demands blocks. Also changed \"Export Progress\" to \"Creating PDF\".\n\nThe changes can be found in my bitbucket repo:\\\n<https://bitbucket.org/jobara/decapod-ui-05release>\n"
     },
     {
+      "id": "10156",
       "author": "Justin Obara",
       "date": "2012-05-18T14:47:31.159-0400",
       "body": "Merged into the project repo\n"

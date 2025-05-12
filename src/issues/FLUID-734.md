@@ -43,11 +43,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20771",
       "author": "Daphne Ogle",
       "date": "2008-06-09T16:22:20.000-0400",
       "body": "iteration16\n"
     },
     {
+      "id": "20772",
       "author": "Daphne Ogle",
       "date": "2008-08-29T17:29:36.000-0400",
       "body": "Task Complete.  We'll be creating a wiki page to represent this and will add the URL once that's complete. &#x20;\n\nPrimary Personas\n\n* Catalina De Silva (Faculty - GSI Manager in Spanish)\n* Christy Gonzola (Undergraduate Student - Molecular & Cell Biology)\n* Ashley Myles (Undergraduate Student - Archeology)\n\nSecondary Personas\n\n* George McFadden (Online Instructor - Journalism)\n* Stacey Pearson (Graduate Teaching Assistant - Microbiology)\n* Anita Stalmach (Departmental Pedagogy Support - Instructional Designer)\n* Andy Wright (Graduate Student - Information Studies)\n* New provisional student persona - overacheiver who takes a lot of online classes\n"

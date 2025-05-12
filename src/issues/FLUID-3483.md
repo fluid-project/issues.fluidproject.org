@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14764",
       "author": "Antranig Basman",
       "date": "2014-04-02T15:22:12.293-0400",
       "body": "This wasn't really the purpose of the \"source\" field which is a remnant of the \"source tracking\" operated by the old ChangeApplier. In practice, any new code listening to model changes can easily get access to the component reference through listener boiling so this isn't a practical problem any more.\n"

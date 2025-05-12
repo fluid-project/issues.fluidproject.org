@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18153",
       "author": "Jonathan Hung",
       "date": "2008-10-30T09:31:12.000-0400",
       "body": "iteration22\n"
     },
     {
+      "id": "18154",
       "author": "Jonathan Hung",
       "date": "2008-11-16T00:49:31.000-0500",
       "body": "Fixed this problem by using Contemplate. By putting some logic into the template using PHP, we can now detect whether a pattern is missing information. In those cases, an appropriate message is displayed along with an Edit link.\n"

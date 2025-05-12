@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26401",
       "author": "Alan Harnum",
       "date": "2017-11-09T16:32:55.165-0500",
       "body": "* How does this relate to authorship management\n* Auto-translation\n* Submitting translations (approval?)\n* Translation management\n* Does the original story author have any sort of control over translations?\n"

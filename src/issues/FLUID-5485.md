@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20197",
       "author": "Anastasia Cheetham",
       "date": "2014-08-06T15:14:57.026-0400",
       "body": "The pages have been checked, and are ready for conversion.\n"
     },
     {
+      "id": "20198",
       "author": "Justin Obara",
       "date": "2014-08-08T15:36:29.894-0400",
       "body": "Submitted a pull request <https://github.com/fluid-project/infusion-docs/pull/27>\n"

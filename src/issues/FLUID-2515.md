@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21583",
       "author": "Justin Obara",
       "date": "2009-05-14T08:58:51.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "21585",
       "author": "Justin Obara",
       "date": "2009-08-13T12:58:10.000-0400",
       "body": "Browser support for Infusion 1.2 ( <http://wiki.fluidproject.org/display/fluid/Prior+Browser+Support> ) does not include Opera 9.6 for Mac OS\n"

@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24347",
       "author": "Antranig Basman",
       "date": "2015-10-27T12:49:16.931-0400",
       "body": "Resolved in fluid-publish 1.1.0\n"

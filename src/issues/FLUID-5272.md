@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19731",
       "author": "Cindy Li",
       "date": "2014-02-11T16:28:15.833-0500",
       "body": "No need to fix since using new component types \"fluid.viewRelayComponent\" and \"fluid.renderRelayComponent\" fixes this issue.\n"

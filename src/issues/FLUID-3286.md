@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23257",
       "author": "Mike Lam",
       "date": "2011-01-05T16:02:33.544-0500",
       "body": "Fixed for Infusion 1.3 release.\n"

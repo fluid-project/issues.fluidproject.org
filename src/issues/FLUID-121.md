@@ -39,11 +39,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17220",
       "author": "Michelle D'Souza",
       "date": "2007-11-19T17:07:26.000-0500",
       "body": "Removing the anchors from the tab order in the template created this bug. Keyboard accessibility is only available when the Lightbox is present. In alphabetical mode there is no Lightbox.\n"
     },
     {
+      "id": "17222",
       "author": "Justin Obara",
       "date": "2007-11-26T14:58:52.000-0500",
       "body": "Note that this doesn't seem to work using firefox on Mac OS 10.5.1\n"

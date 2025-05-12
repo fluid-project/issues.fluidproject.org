@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21810",
       "author": "Eli Cochran",
       "date": "2009-06-02T17:24:25.000-0400",
       "body": "Uncommented line 33 of Fluid.js&#x20;\n\nmessage.fail(); // Intentionally cause a browser error by invoking a nonexistent function.\n"
     },
     {
+      "id": "21811",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:18.587-0500",
       "body": "Closing issues that were fixed in 1.1\n"

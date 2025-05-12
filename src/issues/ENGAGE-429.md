@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12594",
       "author": "James Yoon",
       "date": "2010-02-22T11:21:05.000-0500",
       "body": "a11y issue\n"
     },
     {
+      "id": "12595",
       "author": "James Yoon",
       "date": "2010-02-22T17:36:52.000-0500",
       "body": "Duplicate of <https://fluidproject.atlassian.net/browse/ENGAGE-380#icft=ENGAGE-380>\n"

@@ -32,21 +32,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22543",
       "author": "Justin Obara",
       "date": "2010-05-07T14:08:49.479-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "22545",
       "author": "Anastasia Cheetham",
       "date": "2011-01-10T14:47:50.697-0500",
       "body": "Yura, most of the demos have undergone a redesign. Could you revisit this issue, and either resolve or update with your latest assessment?\n"
     },
     {
+      "id": "22547",
       "author": "Justin Obara",
       "date": "2014-07-30T15:27:13.786-0400",
       "body": "Pager and Progress are now wcag 2 AA compliant. The uploader still has some issues. I've updated the description to reflect this.\n"
     },
     {
+      "id": "22549",
       "author": "Justin Obara",
       "date": "2016-11-01T17:50:08.215-0400",
       "body": "Fixed as part of <https://fluidproject.atlassian.net/browse/FLUID-6008#icft=FLUID-6008>\n"

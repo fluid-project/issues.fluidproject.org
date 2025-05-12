@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17638",
       "author": "Antranig Basman",
       "date": "2009-03-25T11:32:21.000-0400",
       "body": "Fixed at revision 6841\n"
     },
     {
+      "id": "17640",
       "author": "Michelle D'Souza",
       "date": "2009-03-25T11:48:46.000-0400",
       "body": "Reviewed. The only change was importing DataBinding.js\n"
     },
     {
+      "id": "17642",
       "author": "Justin Obara",
       "date": "2009-03-25T11:55:25.000-0400",
       "body": "Verified fix using\n\nFF2, FF3, Opera 9.6, Safari 3.2 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.6 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

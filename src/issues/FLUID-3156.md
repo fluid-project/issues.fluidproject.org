@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14798",
       "author": "Laurel Williams",
       "date": "2009-09-08T15:58:04.000-0400",
       "body": "Alison - I have taken care of the description and keywords on the website (note that the URL of the site has changed - ask me for the new one if you'd like to check this.\n\nIt isn't clear to me how to add a description of how the page works - should it be a simple paragraph of text, or some other technique.\n"
     },
     {
+      "id": "14800",
       "author": "Justin Obara",
       "date": "2009-09-21T09:56:00.000-0400",
       "body": "Bug Parade Infusion 1.1.2\n"
     },
     {
+      "id": "14802",
       "author": "Laurel Williams",
       "date": "2009-09-24T13:53:29.000-0400",
       "body": "Added the text to the website. Some styling is required, but accessibility-wise, the instructions are complete.\n"
     },
     {
+      "id": "14803",
       "author": "Colin Clark",
       "date": "2009-09-30T14:11:12.000-0400",
       "body": "I've reviewed these changes and they look just fine.\n"

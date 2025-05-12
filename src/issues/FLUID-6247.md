@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14066",
       "author": "Tony Atkins [RtF]",
       "date": "2018-02-13T05:34:22.554-0500",
       "body": "<https://github.com/fluid-project/eslint-config-fluid/pull/3>\n"
     },
     {
+      "id": "14068",
       "author": "Tony Atkins [RtF]",
       "date": "2018-02-13T05:38:38.739-0500",
       "body": "To assist in reviewing, here are the docs for the option in question:\n\n<https://eslint.org/docs/rules/valid-jsdoc>\n"

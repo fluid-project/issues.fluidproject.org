@@ -30,16 +30,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25155",
       "author": "Justin Obara",
       "date": "2017-06-08T10:07:03.294-0400",
       "body": "We should also consider making the stylus directory a sibling to css instead of nested under it, to keep things cleaner and better separated.\n"
     },
     {
+      "id": "25156",
       "author": "Justin Obara",
       "date": "2017-06-08T10:11:06.878-0400",
       "body": "Consider also making all the stylus files as specific as possible, to make it easier to reuse. These can then be compiled into a single css file at build time.\n"
     },
     {
+      "id": "25157",
       "author": "Justin Obara",
       "date": "2022-02-03T10:38:14.148-0500",
       "body": "With the work on <https://fluidproject.atlassian.net/browse/FLUID-6260#icft=FLUID-6260> and <https://fluidproject.atlassian.net/browse/FLUID-6605#icft=FLUID-6605> the Sass files were split into modular parts based on the preference they are enacting. They are also recommending into an Enactors file to simplify usage and support backwards compatibility. \n"

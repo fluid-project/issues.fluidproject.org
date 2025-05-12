@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14451",
       "author": "Colin Clark",
       "date": "2008-10-28T15:43:03.000-0400",
       "body": "Added the onFileStart event to SWFUploadManager, along with tests.\n"
     },
     {
+      "id": "14453",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:28:00.300-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

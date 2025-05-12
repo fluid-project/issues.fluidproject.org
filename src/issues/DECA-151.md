@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10308",
       "author": "Justin Obara",
       "date": "2010-07-21T11:30:32.922-0400",
       "body": "Decided in the irc channel that this is a blocker for the 0.4 release\n"
     },
     {
+      "id": "10309",
       "author": "Justin Obara",
       "date": "2010-07-22T09:09:38.523-0400",
       "body": "James added in the focus styling and some nifty sprites for the rotation buttons.\n"

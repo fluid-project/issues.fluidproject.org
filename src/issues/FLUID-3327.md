@@ -34,6 +34,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23298",
       "author": "Laurel Williams",
       "date": "2009-11-04T09:32:17.000-0500",
       "body": "I created a single config.php which works for both deployment strategies and only needs to be edited in four places as noted in the deployment instructions on the wiki.\n\nI created two builder.php files (builder\\_local.php and builder.php).&#x20;\n\nbuilder.php is for the server and assumes that \"DISTANT\\_PATH\" is located at  \"../../../infusion-builder-secure/php/\". This is the path that Jamon suggested we locate the \"secure\" files.\n\nbuild\\_local.php is for your local installation and assumes that you just leave the infusion-builder-secure directory where it is in relation to the infusion-builder directory when you check the files out of the svn. So \"DISTANT\\_PATH\" is \"../../infusion-builder-secure/php/\".\n"

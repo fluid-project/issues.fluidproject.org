@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10024",
       "author": "Jonathan Hung",
       "date": "2011-10-21T09:42:09.137-0400",
       "body": "Removed from Decapod.css. Still need to check the other css files.\n"
     },
     {
+      "id": "10025",
       "author": "Jonathan Hung",
       "date": "2011-10-21T11:48:18.745-0400",
       "body": "Removed the last reference to coal theme from HTML file.\n"
     },
     {
+      "id": "10026",
       "author": "Jonathan Hung",
       "date": "2011-10-21T11:49:22.598-0400",
       "body": "Removed last reference to Coal theme.\n"

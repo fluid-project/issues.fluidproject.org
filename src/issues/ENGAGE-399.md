@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12335",
       "author": "Colin Clark",
       "date": "2010-02-17T15:54:31.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12336",
       "author": "Colin Clark",
       "date": "2010-02-17T16:08:57.000-0500",
       "body": "I resolved this issue at r9424 by using relative URLs instead of absolute URLs. This also enabled me to simplify some code in ArtifactCollectView\\.js\n"
     },
     {
+      "id": "12337",
       "author": "Antranig Basman",
       "date": "2010-02-17T16:56:19.000-0500",
       "body": "This change looks good - and suggests some similar fixes I will need to make in Guestbook.\n"

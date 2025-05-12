@@ -34,16 +34,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13107",
       "author": "Anastasia Cheetham",
       "date": "2008-04-08T15:17:40.000-0400",
       "body": "As of today, the avatar, the css class names and the keystrokes are now parameterized.\n"
     },
     {
+      "id": "13108",
       "author": "Antranig Basman",
       "date": "2008-09-07T19:00:12.000-0400",
       "body": "Rehoming this issue as part of overall Reorderer API consistency work\n"
     },
     {
+      "id": "13109",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:28:00.352-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

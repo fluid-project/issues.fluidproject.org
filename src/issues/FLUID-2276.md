@@ -44,16 +44,19 @@
   ],
   "comments": [
     {
+      "id": "21362",
       "author": "Eli Cochran",
       "date": "2009-02-19T19:55:18.000-0500",
       "body": "Here are the bundles which fix this bug. This would be the latest testing bundle for the 0.8 Release created at 4:54pm (PST)\n"
     },
     {
+      "id": "21363",
       "author": "Justin Obara",
       "date": "2009-02-20T08:28:01.000-0500",
       "body": "I have set up a testing task list for this at the following wiki page.\\\n<http://wiki.fluidproject.org/display/fluid/Release+Package+QA+Test++Plan>\n"
     },
     {
+      "id": "21364",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:54.374-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

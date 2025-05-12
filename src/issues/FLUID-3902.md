@@ -36,26 +36,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15609",
       "author": "Michelle D'Souza",
       "date": "2010-12-23T15:50:30.476-0500",
       "body": "Please check if this is done and either close it or put it into another release.\n"
     },
     {
+      "id": "15610",
       "author": "Justin Obara",
       "date": "2011-01-11T12:48:59.715-0500",
       "body": "update the affects version and removed the fix for version\n"
     },
     {
+      "id": "15612",
       "author": "Justin Obara",
       "date": "2011-02-18T12:49:11.757-0500",
       "body": "This seems to always be an issue with in IE 6 when viewed in the demo portal\n"
     },
     {
+      "id": "15614",
       "author": "Justin Obara",
       "date": "2014-06-25T16:17:26.169-0400",
       "body": "FSS was deprecated in Infusion 1.5 and will be removed from Infusion 2.0\n"
     },
     {
+      "id": "15616",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:06.750-0400",
       "body": "Reopening to change the fix version to 1.9\n"

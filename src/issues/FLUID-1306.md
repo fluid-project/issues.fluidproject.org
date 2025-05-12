@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19101",
       "author": "Colin Clark",
       "date": "2008-08-22T12:11:25.000-0400",
       "body": "I fixed this by removing the call to message.fail() entirely.\n"
     },
     {
+      "id": "19105",
       "author": "Colin Clark",
       "date": "2008-08-22T13:56:04.000-0400",
       "body": "Apparently fluid.fail() is supposed to fail this way, in order to ensure that logging and a real browser error occurs.\n"
     },
     {
+      "id": "19110",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:51.014-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

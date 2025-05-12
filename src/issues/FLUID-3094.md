@@ -41,11 +41,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19784",
       "author": "Justin Obara",
       "date": "2010-05-07T13:48:13.048-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "19786",
       "author": "Justin Obara",
       "date": "2014-07-11T15:09:18.259-0400",
       "body": "We are now using CKEditor 3 and Firefox is up to version 30. The issue could have been fixed with either of those.\n"

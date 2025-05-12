@@ -27,26 +27,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21419",
       "author": "Justin Obara",
       "date": "2009-03-25T12:37:30.000-0400",
       "body": "Clean Up Parade 1.0&#x20;\n"
     },
     {
+      "id": "21420",
       "author": "Justin Obara",
       "date": "2009-03-30T17:51:59.000-0400",
       "body": "changed css classes from Pager.css at r6949\\\nchanged classes from pager.js at r6951\n"
     },
     {
+      "id": "21421",
       "author": "Justin Obara",
       "date": "2009-03-31T09:51:05.000-0400",
       "body": "missed a bunch of selectors\n"
     },
     {
+      "id": "21422",
       "author": "Justin Obara",
       "date": "2009-03-31T16:11:24.000-0400",
       "body": "selectors and styling related class names have been updated\n"
     },
     {
+      "id": "21423",
       "author": "Justin Obara",
       "date": "2009-11-13T08:59:54.000-0500",
       "body": "Closed as per previous comment\n"

@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17344",
       "author": "Eli Cochran",
       "date": "2008-05-30T18:48:26.000-0400",
       "body": "File upload errors now block the Upload complete so the Progress is not dismissed until the very end.\n"
     },
     {
+      "id": "17346",
       "author": "Justin Obara",
       "date": "2008-12-03T11:42:00.000-0500",
       "body": "appears to have been fixed\n"

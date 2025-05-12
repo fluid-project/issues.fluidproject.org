@@ -24,21 +24,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24824",
       "author": "Justin Obara",
       "date": "2010-11-15T12:51:04.788-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "24825",
       "author": "Mike Lam",
       "date": "2010-11-15T16:35:05.759-0500",
       "body": "Replaced \"Remove file\" text with \"Press delete key to remove file from queue\" to provide improved instructions on how to remove a file from the file queue.\n"
     },
     {
+      "id": "24826",
       "author": "Anastasia Cheetham",
       "date": "2010-11-16T11:20:02.708-0500",
       "body": "Confirmed. Much clearer now.\n"
     },
     {
+      "id": "24827",
       "author": "Anastasia Cheetham",
       "date": "2010-11-19T12:32:46.376-0500",
       "body": "I've reviewed the code for this (actually committed under <https://fluidproject.atlassian.net/browse/FLUID-3722#icft=FLUID-3722>) and it looks good.\n"

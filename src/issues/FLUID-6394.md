@@ -45,31 +45,37 @@
   ],
   "comments": [
     {
+      "id": "25252",
       "author": "Justin Obara",
       "date": "2019-08-13T14:38:46.860-0400",
       "body": "screenshot.png shows the play button rendered below the selected text.\n"
     },
     {
+      "id": "25253",
       "author": "Cindy Li",
       "date": "2019-09-05T12:40:31.875-0400",
       "body": "[The pull request](https://github.com/fluid-project/infusion/pull/960) has been merged into the project repo master branch at [this commit](https://github.com/fluid-project/infusion/commit/b024bff871a7d4a73a3fc8f609d8dfd08149f209).\n"
     },
     {
+      "id": "25254",
       "author": "Justin Obara",
       "date": "2019-10-03T12:38:39.590-0400",
       "body": "I've re-opened the issue. While the above PR addressed the issue found on <https://morphic.world/> with UIO+ and did not demonstrate any adverse affects on the prefs framework demo, it broken the Orator's own demo. Will update the description.\n\n \n"
     },
     {
+      "id": "25255",
       "author": "Justin Obara",
       "date": "2019-10-03T13:30:50.987-0400",
       "body": "Added \"orator demo issue.png\" which shows the play button far above the selected text in the Orator demo.\n"
     },
     {
+      "id": "25256",
       "author": "Justin Obara",
       "date": "2019-10-08T10:32:36.761-0400",
       "body": "In speaking with Jonathan Hung and Gregor Moss it came up that the absolute positioning is relative to the closest positioned parent. ( see: <https://developer.mozilla.org/en-US/docs/Web/CSS/position> ). The above code made the assumption that it was always positioning against the document. Also, it was discussed that it might be helpful to break this positioning piece out of the Orator so that it can can be used by other widgets in the future.\n"
     },
     {
+      "id": "25257",
       "author": "Cindy Li",
       "date": "2019-10-31T12:01:39.830-0400",
       "body": "[The pull request](https://github.com/fluid-project/infusion/pull/963) has been merged into the project repo master branch at [this commit](https://github.com/fluid-project/infusion/commit/345496b1c5fce5d64ee69a5b5415530ee1426aa9).\n"

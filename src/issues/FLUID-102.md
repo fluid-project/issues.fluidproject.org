@@ -27,31 +27,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16590",
       "author": "Michelle D'Souza",
       "date": "2007-11-07T10:52:50.000-0500",
       "body": "Which files should the embedded license text be included in? Everything, including CSS, HTML and so on? Or only for programmatic code such as JavaScript and Java files?\n"
     },
     {
+      "id": "16591",
       "author": "Joseph Scheuhammer",
       "date": "2007-11-07T14:32:03.000-0500",
       "body": "Fixed link to embedded licence in the original description.\n"
     },
     {
+      "id": "16592",
       "author": "Sheila Crossey",
       "date": "2007-11-08T10:48:47.000-0500",
       "body": "Regarding Michelle's question, it seems OK to me to put the license text in just the programmatic code (Java script and Java), but not in CSS and HTML files. This is based on my assumption that the HTML and CSS items will be in the source respository and that potential sublicensors will assume that the LICENSE file applies to these items.\n"
     },
     {
+      "id": "16594",
       "author": "Colin Clark",
       "date": "2007-11-20T11:34:06.000-0500",
       "body": "We should add copyright attribution for Cambridge contributions in LICENSE.txt and the file headers for the appropriate modules:\n\nCambridge:\n\n* fluid-components\n* fluid.js\n* Reorderer.js\n\n- gallery-portlet\n"
     },
     {
+      "id": "16595",
       "author": "Colin Clark",
       "date": "2007-11-20T11:44:59.000-0500",
       "body": "I added the Cambridge copyright statements where appropriate. Probably a good idea to get Sheila to check this over and close the issue.\n"
     },
     {
+      "id": "16596",
       "author": "Colin Clark",
       "date": "2007-11-26T14:35:19.000-0500",
       "body": "I showed Sheila the fix for this issue and she was happy.\n"

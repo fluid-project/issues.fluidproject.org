@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12664",
       "author": "Justin Obara",
       "date": "2010-02-08T17:22:24.000-0500",
       "body": "Bug Parade Engage 0.3&#x20;\n"
     },
     {
+      "id": "12665",
       "author": "y z",
       "date": "2010-02-11T15:39:49.000-0500",
       "body": "This bug is fixed with commit r9364 by Colin.\n"
     },
     {
+      "id": "12666",
       "author": "y z",
       "date": "2010-02-11T15:39:59.000-0500",
       "body": "This bug is fixed with commit r9364 by Colin.\n"
     },
     {
+      "id": "12667",
       "author": "Colin Clark",
       "date": "2010-02-12T14:47:32.000-0500",
       "body": "I reviewed Yura's major refactoring of Artifact View and it includes correctly translated strings from Hugues. +1 for inclusion in Engage 0.3b\n"

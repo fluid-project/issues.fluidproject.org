@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18900",
       "author": "Anastasia Cheetham",
       "date": "2008-05-12T17:17:15.000-0400",
       "body": "Apparently, this shouldn't really be expected to work fully yet. The decision is to move it into the manual tests folder.\n"
     },
     {
+      "id": "18901",
       "author": "Michelle D'Souza",
       "date": "2008-05-27T14:39:19.000-0400",
       "body": "The example has been moved to the manual tests.\n"
     },
     {
+      "id": "18904",
       "author": "Justin Obara",
       "date": "2009-05-05T09:02:37.000-0400",
       "body": "We no longer use the menu bar as an example\n"

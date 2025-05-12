@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16110",
       "author": "Antranig Basman",
       "date": "2012-03-11T01:31:26.748-0500",
       "body": "A workable although slightly non-standard packaging system - fluid.require(\"package\", require) - has been merged into the core framework over a few recent commits\n"

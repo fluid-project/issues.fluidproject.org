@@ -39,11 +39,13 @@
   ],
   "comments": [
     {
+      "id": "20996",
       "author": "Justin Obara",
       "date": "2009-04-01T14:02:09.000-0400",
       "body": "'screenshot-1' shows the overlapping text\n"
     },
     {
+      "id": "20997",
       "author": "Justin Obara",
       "date": "2014-06-05T15:22:06.051-0400",
       "body": "This demo has been removed\n"

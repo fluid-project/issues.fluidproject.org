@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16433",
       "author": "Colin Clark",
       "date": "2012-08-13T15:54:20.778-0400",
       "body": "I've issued a pull request for this:\n\n<https://github.com/fluid-project/builder/pull/2>\n"
     },
     {
+      "id": "16435",
       "author": "Justin Obara",
       "date": "2012-08-14T13:11:09.119-0400",
       "body": "Merged into the project repo at 09a8eec47abbcdb73ed4c54452604bf87bcbef9d\n"

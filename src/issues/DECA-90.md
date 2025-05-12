@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10268",
       "author": "Jonathan Hung",
       "date": "2010-03-31T20:34:41.000-0400",
       "body": "Sorry, not a bug.\n"

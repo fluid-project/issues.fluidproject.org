@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15820",
       "author": "Antranig Basman",
       "date": "2012-04-04T20:31:00.082-0400",
       "body": "I upgraded jQuery UI to its latest version also (1.8.18) and this issue went away. One doesn't expect this kind of gratuitous incompatibility at minor point releases, but there it is 🙂\n"
     },
     {
+      "id": "15822",
       "author": "Nicholas Mayne",
       "date": "2012-04-07T10:14:23.203-0400",
       "body": "I have done more investigation and it appears to be an issue with Firefox 12.\n"
     },
     {
+      "id": "15824",
       "author": "Nicholas Mayne",
       "date": "2012-04-07T16:04:31.689-0400",
       "body": "FYI - looks like someone els ehas looked at a patch form another project. <https://jira.sakaiproject.org/browse/SAKIII-4305>\n"
     },
     {
+      "id": "15826",
       "author": "Justin Obara",
       "date": "2014-03-03T12:58:33.147-0500",
       "body": "Resolved by commit of <https://fluidproject.atlassian.net/browse/FLUID-4684#icft=FLUID-4684> at 1f04a2\n"

@@ -40,21 +40,25 @@
   ],
   "comments": [
     {
+      "id": "21240",
       "author": "Justin Obara",
       "date": "2009-04-02T14:56:03.000-0400",
       "body": "If this is just an incorrect path or missing style sheet, it can be verified on just one or two configurations. (probably IE6)\n"
     },
     {
+      "id": "21241",
       "author": "Jacob Farber",
       "date": "2009-04-06T16:24:17.000-0400",
       "body": "Fixed missing CSS file and missing class names\n"
     },
     {
+      "id": "21242",
       "author": "Anastasia Cheetham",
       "date": "2009-04-06T16:42:09.000-0400",
       "body": "I've looked at this patch, and tested it in IE6 on Win XP. It looks good to me, and work just fine.\n"
     },
     {
+      "id": "21243",
       "author": "Justin Obara",
       "date": "2009-04-07T11:13:53.000-0400",
       "body": "Verified fix using:\n\nIE 6 (Win 2000)\n"

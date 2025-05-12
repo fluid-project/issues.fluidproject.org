@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16083",
       "author": "Jacob Farber",
       "date": "2009-04-01T13:33:01.000-0400",
       "body": "This issue is due mostly to the nature of sub-pixel rounding in browsers:\n\n<http://ejohn.org/blog/sub-pixel-problems-in-css/>\n\nWhats happening is some browsers have less leftover space than others, due to the different alogrithms they use to evaluate sub-pixels.\n\nA workaround is if you dont absolutely need flexible columns with gutters, you could use flexible containers which have less data for rounding errors and should fit \"tighter\"\n"

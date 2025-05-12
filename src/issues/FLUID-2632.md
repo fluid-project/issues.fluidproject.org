@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22786",
       "author": "Laurel Williams",
       "date": "2009-05-12T16:08:59.000-0400",
       "body": "Styling complete.\n"
     },
     {
+      "id": "22787",
       "author": "Laurel Williams",
       "date": "2009-06-04T14:54:32.000-0400",
       "body": "Has been completed.\n"

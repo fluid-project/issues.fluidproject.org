@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15146",
       "author": "Justin Obara",
       "date": "2009-12-17T14:32:10.000-0500",
       "body": "The download button still seems to be functional in this state, and will download the last checked items.\n"
     },
     {
+      "id": "15149",
       "author": "Jonathan Hung",
       "date": "2010-12-17T13:13:50.026-0500",
       "body": "Does not appear to happen any longer. Tested with FF3.6, Win7, WinXP, and Mac OSX. (tested by Heidi and Jonathan).\n"

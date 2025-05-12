@@ -34,6 +34,7 @@
   ],
   "comments": [
     {
+      "id": "13012",
       "author": "Simon Bates",
       "date": "2018-08-14T16:15:58.650-0400",
       "body": "Merged at <https://github.com/inclusive-design/website-cities/commit/19f3a3fa1438141f9f570241d3a571a5680ff9f0>\n\nThanks Sophie!\n"

@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10322",
       "author": "Justin Obara",
       "date": "2012-07-09T15:19:24.330-0400",
       "body": "There is a bug in the uploader ( FLUID-4726 ) that prevents it from using strings passed in to update the UI. When this is fixed, exporter.js should be able to take in a string for the browse file button and pass it down to the uploader.&#x20;\n"

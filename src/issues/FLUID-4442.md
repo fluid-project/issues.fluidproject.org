@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16896",
       "author": "Justin Obara",
       "date": "2011-09-20T13:14:04.955-0400",
       "body": "Merged colin's pull request ( <https://github.com/fluid-project/infusion/pull/168> ) into the project repo at be812d76370693d0d34271d69e20b7c416092039\n\nIt still needs to be tested off the daily build site, from a remote location, to make sure that the flickering issue has actually been solved.&#x20;\n"
     },
     {
+      "id": "16898",
       "author": "heidi valles",
       "date": "2011-09-20T14:27:47.440-0400",
       "body": "Flickering gone (tested from remote location)\n"

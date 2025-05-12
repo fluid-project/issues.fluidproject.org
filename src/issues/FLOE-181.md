@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11144",
       "author": "Dana",
       "date": "2014-04-21T11:49:20.355-0400",
       "body": "Hi Anastasia Cheetham,\n\nHere is what I suggest as an addition to the FLOE page, with \"Preference Management Tools\" text linking to the screen-cast. &#x20;\n\nPreference editing tools help learners discover and customize resources. User Interface Options allows learners to indicate their preferences and get exactly what they need. The Preference Management Tools allow learners to fine-tune their preferences, store them in the cloud, and apply them across multiple devices.\n\nAlso, in the following section could we change the line \"If a learner doesn't know what they need\" to \"If a learner doesn't know what might be helpful to them\"? It sounds a little less prescriptive to me.  Do you agree?\n"
     },
     {
+      "id": "11145",
       "author": "Jonathan Hung",
       "date": "2014-04-21T12:16:01.811-0400",
       "body": "The text on the index of floeproject.org has been updated and will be going in with the pull request for <https://fluidproject.atlassian.net/browse/FLOE-183#icft=FLOE-183>.\n\nWaiting for the link for the screencast.\n"
     },
     {
+      "id": "11146",
       "author": "Michelle D'Souza",
       "date": "2014-04-21T14:24:53.557-0400",
       "body": "Merged into project repo at cf66732656b57cf36142fc5b6a3861a0a62c8f65\n"

@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17567",
       "author": "Eli Cochran",
       "date": "2009-02-05T19:03:26.000-0500",
       "body": "We now explicitly check for null before updating the text of the progressor.&#x20;\n"
     },
     {
+      "id": "17572",
       "author": "Justin Obara",
       "date": "2009-02-06T08:42:00.000-0500",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF3, IE7 (Win Vista)\n"

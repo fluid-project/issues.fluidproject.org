@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22882",
       "author": "Justin Obara",
       "date": "2022-12-07T12:35:13.469-0500",
       "body": "From some further investigation it appears that the selected text is being read after the page text. This would suggest that the speech synthesis queue isn't being cleared and the selected text is just being appended. \n"

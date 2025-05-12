@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20483",
       "author": "Antranig Basman",
       "date": "2008-07-25T20:31:32.000-0400",
       "body": "Fixed at revision 5283, at home in keyboard-a11y. Focus will now never be \"dropped\" so long as the \"refresh\" method is called appropriately.&#x20;\n"
     },
     {
+      "id": "20484",
       "author": "Justin Obara",
       "date": "2008-07-28T08:43:30.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\n"

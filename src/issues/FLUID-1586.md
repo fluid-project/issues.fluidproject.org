@@ -46,21 +46,25 @@
   ],
   "comments": [
     {
+      "id": "14596",
       "author": "Joseph Vernuccio",
       "date": "2008-09-18T14:21:52.000-0400",
       "body": "screenshot - 1\n\nnotice the outline of selection box remains.&#x20;\n"
     },
     {
+      "id": "14598",
       "author": "Joseph Vernuccio",
       "date": "2008-09-18T14:23:07.000-0400",
       "body": "screenshot - 2&#x20;\n\nSecond example of shadow box issue.&#x20;\n"
     },
     {
+      "id": "14599",
       "author": "Joseph Vernuccio",
       "date": "2008-09-18T14:36:47.000-0400",
       "body": "Noticed that if you edit file then tap 'enter' the outline of the selection box does not seem to remain. However if you edit the inline edit text line and then tap the 'tab' button in order to move focus to the next inline editior text that the outline of the selection box will remain and the edit will remained saved.&#x20;\n"
     },
     {
+      "id": "14601",
       "author": "Justin Obara",
       "date": "2009-06-04T11:18:12.000-0400",
       "body": "Appears to have been fixed with the update to the quickstart example\n\ntested using:\n\nOpera 9.6 (Mac OS 10.5)\n"

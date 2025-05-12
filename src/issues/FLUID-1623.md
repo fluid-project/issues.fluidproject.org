@@ -44,11 +44,13 @@
   ],
   "comments": [
     {
+      "id": "18348",
       "author": "Justin Obara",
       "date": "2008-09-25T17:04:20.000-0400",
       "body": "'screenshot-1' shows the sub-list items extending below the grey background of the avatar\n"
     },
     {
+      "id": "18351",
       "author": "Justin Obara",
       "date": "2011-01-10T15:05:54.443-0500",
       "body": "Appears to have been fixed with the demo redesign\n"

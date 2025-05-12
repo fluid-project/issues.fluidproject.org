@@ -35,16 +35,19 @@
   ],
   "comments": [
     {
+      "id": "27491",
       "author": "Blake E",
       "date": "2008-12-09T09:33:42.000-0500",
       "body": "Here is the dump of the database for the development (live) version of VULab. A cleaner production style (tables and only a small amount of clean startup data) should be written in the future.\n"
     },
     {
+      "id": "27492",
       "author": "Blake E",
       "date": "2008-12-15T15:32:53.000-0500",
       "body": "depreciated for <https://fluidproject.atlassian.net/browse/VULAB-107#icft=VULAB-107>\n\nignore this issue.\n"
     },
     {
+      "id": "27493",
       "author": "Blake E",
       "date": "2008-12-15T15:52:50.000-0500",
       "body": "I changed the resolution to this as \"duplicate\" as it is being covered by another issue.\n"

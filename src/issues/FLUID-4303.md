@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24497",
       "author": "heidi valles",
       "date": "2011-06-24T10:06:41.431-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24498",
       "author": "heidi valles",
       "date": "2011-06-28T14:36:25.063-0400",
       "body": "Sent pull request <https://github.com/fluid-project/infusion/pull/90>\n"
     },
     {
+      "id": "24499",
       "author": "Justin Obara",
       "date": "2011-06-30T09:46:25.497-0400",
       "body": "Merged into the project repo at 0b1e8b87f0fd697cba66b9979c72737e1030cefb\n"

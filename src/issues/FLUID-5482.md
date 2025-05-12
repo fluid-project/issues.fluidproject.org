@@ -35,16 +35,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16084",
       "author": "Justin Obara",
       "date": "2014-07-25T09:26:25.243-0400",
       "body": "See discussion on the fluid-work mailing list: \\\n<http://fluid.2324889.n4.nabble.com/Removing-FSS-from-Infusion-td9140.html>&#x20;\n"
     },
     {
+      "id": "16086",
       "author": "Justin Obara",
       "date": "2014-10-20T15:38:05.916-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/564> ) into the project repo at d4d747fea2a351de5bcf9dbdedcb4037f9fc9f60\n"
     },
     {
+      "id": "16088",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:08.332-0400",
       "body": "Reopening to change the fix version to 1.9\n"

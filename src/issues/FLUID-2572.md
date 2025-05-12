@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17492",
       "author": "Justin Obara",
       "date": "2009-05-16T22:38:10.000-0400",
       "body": "Moved the progress unit test out of the uploader directory and into its own\n"
     },
     {
+      "id": "17493",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:16.614-0500",
       "body": "Closing issues that were fixed in 1.1\n"

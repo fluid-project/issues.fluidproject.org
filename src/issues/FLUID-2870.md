@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13895",
       "author": "Michelle D'Souza",
       "date": "2009-06-02T08:53:57.000-0400",
       "body": "I went through the commit logs and this is what I've found that has changed:\n\niterateDOM API  - we need to check if this was advertised publicly in previous releases\\\ngetLastFocusedElement was added\n\nkeyboard a11y API change\n\nRenderer (possibly already noted in the renderer section but worth looking at)\n\n* removeClass decorator\n* attribute removal\n* textarea autobinding\n* fluid decorator&#x20;\n"
     },
     {
+      "id": "13897",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:17.086-0500",
       "body": "Closing issues that were fixed in 1.1\n"

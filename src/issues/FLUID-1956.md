@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17628",
       "author": "Jonathan Hung",
       "date": "2009-02-17T14:54:13.000-0500",
       "body": "Iteration30\n"
     },
     {
+      "id": "17630",
       "author": "Jonathan Hung",
       "date": "2009-04-02T12:22:44.000-0400",
       "body": "Using CCK Blocks, those fields are now in the right sidebar.&#x20;\n\nHowever, the formatting needs to be adjusted a little.\n"

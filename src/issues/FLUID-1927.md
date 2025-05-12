@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14136",
       "author": "Michelle D'Souza",
       "date": "2008-12-05T16:55:27.000-0500",
       "body": "Gary, would it be better to show the UI Options component in this example as a dialog or in a portlet?&#x20;\n"
     },
     {
+      "id": "14138",
       "author": "Michelle D'Souza",
       "date": "2009-03-17T10:47:03.000-0400",
       "body": "There have been so many changes between the original creation of the example and uPortal 3 that it's beginning to seem like we should get rid of this example all together.&#x20;\n"
     },
     {
+      "id": "14140",
       "author": "Michelle D'Souza",
       "date": "2013-02-19T15:35:12.486-0500",
       "body": "We have decided to remove this example.\n"

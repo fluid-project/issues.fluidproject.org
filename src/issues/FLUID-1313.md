@@ -37,16 +37,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22169",
       "author": "Justin Obara",
       "date": "2010-05-07T13:05:50.276-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "22172",
       "author": "Antranig Basman",
       "date": "2010-08-31T01:21:30.047-0400",
       "body": "This is an awful issue and must be resolved for the next major release\n"
     },
     {
+      "id": "22176",
       "author": "Justin Obara",
       "date": "2010-10-04T15:39:24.868-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"

@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17967",
       "author": "Anastasia Cheetham",
       "date": "2008-12-17T13:32:45.000-0500",
       "body": "Justin, if you update the build site, you can test this using the Dropdown Inline Edit manual test page\\\n<http://build.fluidproject.org/fluid/tests/fluid-tests/manual/inline-edit/dropdown.html>\n"
     },
     {
+      "id": "17969",
       "author": "Michelle D'Souza",
       "date": "2008-12-18T10:32:19.000-0500",
       "body": "I reviewed commit revision 6245 and it is fine.\n"
     },
     {
+      "id": "17970",
       "author": "Justin Obara",
       "date": "2008-12-18T10:38:55.000-0500",
       "body": "Does not appear to introduce any new bugs\n\nVerified using:\n\nFF3, FF2, Opera 9.5, Safar 3.1 (Mac OS 10.5)\\\nFF3, IE7 (Win Vista)\n"

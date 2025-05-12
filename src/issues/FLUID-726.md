@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17224",
       "author": "Michelle D'Souza",
       "date": "2008-06-09T16:05:34.000-0400",
       "body": "This was fixed by a work around from Colin that wraps the 'focus' in a setTimeout. It looks like the underlying problem is a bug in Firefox.\n"

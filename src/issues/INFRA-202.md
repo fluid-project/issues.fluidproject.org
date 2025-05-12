@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26019",
       "author": "Giovanni Tirloni",
       "date": "2018-08-02T15:04:12.487-0400",
       "body": "All resources renamed.\n\nRemoval of tor1.inclusivedesign.ca scheduled for October 1.\n"

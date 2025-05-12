@@ -35,21 +35,25 @@
   ],
   "comments": [
     {
+      "id": "19897",
       "author": "Justin Obara",
       "date": "2008-07-23T19:11:34.000-0400",
       "body": "'screenshot-1' shows the lack of padding between the bottom border and the bottom buttons\n"
     },
     {
+      "id": "19900",
       "author": "Eli Cochran",
       "date": "2008-07-23T19:56:22.000-0400",
       "body": "So this appears to be a bug in jQuery UI dialog. I'm not sure what we should do about it. OK, I can add a little workaround but it's not pretty.&#x20;\n"
     },
     {
+      "id": "19902",
       "author": "Eli Cochran",
       "date": "2008-07-23T21:45:51.000-0400",
       "body": "using the obscure and slightly evil !important CSS directive, I've fixed this bug\n"
     },
     {
+      "id": "19904",
       "author": "Justin Obara",
       "date": "2008-07-24T13:07:01.000-0400",
       "body": "Verified Fix using FF2, FF3 (Mac OS 10.5)\n"

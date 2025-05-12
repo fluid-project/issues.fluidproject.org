@@ -44,16 +44,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14471",
       "author": "Anastasia Cheetham",
       "date": "2010-12-17T14:15:06.325-0500",
       "body": "I'm still noticing this issue while testing for the 1.3 release.\n"
     },
     {
+      "id": "14475",
       "author": "Colin Clark",
       "date": "2011-03-10T13:50:31.216-0500",
       "body": "I have resolved this issue in the <https://fluidproject.atlassian.net/browse/FLUID-2616#icft=FLUID-2616> branch of my Github fork and submitted a pull request to Michelle.\\\n<https://github.com/fluid-project/infusion/pull/23>\n"
     },
     {
+      "id": "14478",
       "author": "Justin Obara",
       "date": "2011-05-17T11:51:10.331-0400",
       "body": "pushed into the project repo at 1bf29cc5b032cd5ca1f623ac04b13b7e28f6f96d\n"

@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10990",
       "author": "Justin Obara",
       "date": "2015-05-26T11:17:33.953-0400",
       "body": "Submitted a pull request:\\\n<https://github.com/fluid-project/first-discovery/pull/63>\n"
     },
     {
+      "id": "10991",
       "author": "Anastasia Cheetham",
       "date": "2015-05-28T11:05:10.242-0400",
       "body": "Merged at 9c4936edb3f79aab5c699f47686710b201f7fb0c\n"

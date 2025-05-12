@@ -79,96 +79,115 @@
   ],
   "comments": [
     {
+      "id": "19808",
       "author": "Jonathan Hung",
       "date": "2010-10-15T16:26:24.361-0400",
       "body": "Attached incomplete wireframe.\n"
     },
     {
+      "id": "19810",
       "author": "Jonathan Hung",
       "date": "2010-10-15T16:31:12.790-0400",
       "body": "A CSS-only 5-star widget. <http://www.pmob.co.uk/temp/star-rating2.htm> It's Tab-navigable, but we'll want to use the cursor keys on it.\n"
     },
     {
+      "id": "19812",
       "author": "Anastasia Cheetham",
       "date": "2010-10-20T10:46:40.994-0400",
       "body": "Once we have the new keyboard-a11y demo, we'll be getting rid of old accessible tabs demos\n"
     },
     {
+      "id": "19813",
       "author": "Anastasia Cheetham",
       "date": "2010-10-20T10:51:41.313-0400",
       "body": "Once we have the new keyboard-a11y demo, a new tutorial will be written based on it\n"
     },
     {
+      "id": "19814",
       "author": "Anastasia Cheetham",
       "date": "2010-10-20T11:17:54.754-0400",
       "body": "I've created a branch in the incubator for this work:\\\n<http://source.fluidproject.org/svn/incubator/FLUID-3799-keyboard-a11y-demo/>\n"
     },
     {
+      "id": "19816",
       "author": "Justin Obara",
       "date": "2010-10-20T11:59:03.833-0400",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "19818",
       "author": "Jonathan Hung",
       "date": "2010-11-01T15:24:56.801-0400",
       "body": "Updated design. Removed messages and updated keyboard instructions.\n"
     },
     {
+      "id": "19819",
       "author": "Anastasia Cheetham",
       "date": "2010-11-16T13:53:32.371-0500",
       "body": "Michelle has reviewed the demo code, recommended improvements, and reviewed the improvements. I think this is ready for a final design review.\n"
     },
     {
+      "id": "19821",
       "author": "Anastasia Cheetham",
       "date": "2010-11-16T13:55:05.273-0500",
       "body": "Jon, I think the code for this demo is pretty much done. When the uploader/pager crunch dies down, could you give it a design review, make any tweaks you might think appropriate? The demo is now accessible in trunk, from the demo portal.\n"
     },
     {
+      "id": "19823",
       "author": "Jonathan Hung",
       "date": "2010-11-22T14:06:58.969-0500",
       "body": "Updated design for demo with thumbnails along top, and viewer below.\n"
     },
     {
+      "id": "19824",
       "author": "heidi valles",
       "date": "2010-11-23T16:30:17.198-0500",
       "body": "Tidies up the CSS, validates the html. \\\nTested on 10.6 FF & Safari, 10.5 FF & Safari, and Win prof IE8, IE7\n"
     },
     {
+      "id": "19826",
       "author": "Anastasia Cheetham",
       "date": "2010-11-26T16:33:21.715-0500",
       "body": "I think this demo is finally done. It could use one last code review.\n"
     },
     {
+      "id": "19828",
       "author": "Antranig Basman",
       "date": "2010-12-13T17:03:02.955-0500",
       "body": "Hi - I am reviewing the code for this demo. There are a few problematic aspects with the code, highlighted particularly by this line, which occurs at line 66:\n\nvar currImg = $(demo.imageViewer.selectors.image).attr(\"src\");\n\nIn general, the direct use of selectors rather than a component's DOM binder is not to be done - since this configuration is naturally scoped to a particular instance. I'm aware that this is special-purpose code just for this demo, but as we know, the first thing people do when they try to use a new framework is to cut 'n paste code from the demo code in the understanding that this is a best practice. This further highlights the fact that the configuration stored in demo.imageViewer is not properly stored for a component using fluid.defaults but is simply assigned into a global namespace. demo.imageViewer should be a proper fluid component and the line of code pasted above should use its DOM binder to access the image.\n\nLine 56 is also problematic:\n\nvar thumb = (evt.target.nodeName === \"LI\" ? $(\"img\", evt.target) : $(evt.target));\n\nThis makes assumptions not only about the DOM in general but also on the casing of nodeNames which can vary from browser to browser. All of these utility functions from line 26 to 69 should make use of a selector configured via a DOM binder rather than using hard-coded dependencies on node types.\n\nAs a general comment, the \"modern style\" is to expose functions like these as parts of a global namespace so that they can be maximally reused by other code. Again since this is part of a demo rather than framework code this is not critical but it is always helpful to illustrate what we currently believe to be best practices.\n"
     },
     {
+      "id": "19830",
       "author": "Anastasia Cheetham",
       "date": "2010-12-14T09:58:13.434-0500",
       "body": "Antranig thanks for the review. Regarding line 56 (the check for nodeName \"LI\") - agreed: this definitely needs to be reworked. Regarding the broader question of whether or not the demo itself should be written as a component, this begs a larger question. I will bring the issue up on the fluid-work mailing list.\n"
     },
     {
+      "id": "19832",
       "author": "Anastasia Cheetham",
       "date": "2010-12-14T10:55:01.891-0500",
       "body": "Reopening to address some of Antranig's comments\n"
     },
     {
+      "id": "19833",
       "author": "Anastasia Cheetham",
       "date": "2010-12-14T12:34:59.830-0500",
       "body": "This patch (FLUID-3799-selectors.patch.txt) addresses the second of Antranig's comments: the use of hard-coded element types instead of selectors. Selectors have been defined, and the selectable items have been slightly adjusted so that the activate event and the click event happen to the same element, eliminating the need to figure out where the actual event was.\n"
     },
     {
+      "id": "19835",
       "author": "Anastasia Cheetham",
       "date": "2010-12-14T12:36:32.276-0500",
       "body": "Antranig, I've attached a patch (FLUID-3799-selectors.patch.txt) that addresses the second of your comments (see my comment on the JIRA for more information). Could you please have a look at it? As to re-implementing the whole demo as a component, please see my email to the list.\n"
     },
     {
+      "id": "19837",
       "author": "Colin Clark",
       "date": "2010-12-15T20:00:42.424-0500",
       "body": "I've reviewed, tested, and committed Anastasia's latest patch for this issue, which appropriately refactors how we handle selectors throughout the demo. This is sufficient for Infusion 1.3. Given how rich and complex this demo is, I am inclined to agree with the idea that it's a good candidate for component-ification, but this work can easily be done for the Infusion 1.4 release instead.\n\nAnastasia, can you file a separate JIRA for the issue of converting the demo into a component, and I'll close this one.\n"
     },
     {
+      "id": "19839",
       "author": "Colin Clark",
       "date": "2010-12-15T20:04:45.670-0500",
       "body": "Reviewed, tested, committed, closed.\n"

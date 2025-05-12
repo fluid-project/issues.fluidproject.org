@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21655",
       "author": "Mike Lam",
       "date": "2010-09-08T13:49:54.529-0400",
       "body": "Component progress indicators are up-to-date.\n"
     },
     {
+      "id": "21656",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:22.073-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

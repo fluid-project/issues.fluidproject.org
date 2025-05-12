@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10362",
       "author": "Boyan Sheytanov",
       "date": "2010-03-15T09:59:09.000-0400",
       "body": "Showing a message implemented. It has not been tested though.\n"

@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19516",
       "author": "Michelle D'Souza",
       "date": "2008-10-01T13:50:01.000-0400",
       "body": "dev-iteration44\n"
     },
     {
+      "id": "19517",
       "author": "Colin Clark",
       "date": "2008-10-21T11:41:54.000-0400",
       "body": "The event-handling infrastructure is now in place, and the responsibilities are well separated between Uploader, FileQueueView, and UploadManager.\n\nUploader's main responsibility is to provide a central point for registering events and options. It then passes these things off to its children as necessary.\n"
     },
     {
+      "id": "19519",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:46.474-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

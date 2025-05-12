@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23396",
       "author": "Justin Obara",
       "date": "2010-04-07T16:27:36.000-0400",
       "body": "Infusion 1.2beta1 has been tagged\n\n<http://source.fluidproject.org/svn/fluid/infusion/tags/infusion-1.2beta1/>\n"
     },
     {
+      "id": "23398",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:23.188-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16772",
       "author": "Eli Cochran",
       "date": "2009-02-03T15:46:26.000-0500",
       "body": "changed tool.css in the Image Gallery code to not set the font-size\n"
     },
     {
+      "id": "16774",
       "author": "Justin Obara",
       "date": "2009-02-04T08:31:37.000-0500",
       "body": "Verified fix using:\n\nFF3 (Mac OS 10.5)\\\nIE 7 ( Win Vista)\n"

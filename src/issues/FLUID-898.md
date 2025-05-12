@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15630",
       "author": "Anastasia Cheetham",
       "date": "2008-07-28T09:48:41.000-0400",
       "body": "Justin, do you mean the Javascript files that must be included in the HTML for a component to work, or the browsers supported, or some other form of requirements?\n"
     },
     {
+      "id": "15632",
       "author": "Justin Obara",
       "date": "2008-07-28T10:26:47.000-0400",
       "body": "I was refering to supported browsers/OS, as well as any necessary dependencies outside of what we provide in the package.&#x20;\n"
     },
     {
+      "id": "15636",
       "author": "Anastasia Cheetham",
       "date": "2011-01-10T14:24:47.263-0500",
       "body": "After discussing this with Justin, we think this issue is adequately addressed by the current documentation.\n"

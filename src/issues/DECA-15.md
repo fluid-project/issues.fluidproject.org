@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10455",
       "author": "Boyan Sheytanov",
       "date": "2009-11-30T04:40:33.000-0500",
       "body": "It was decided that no separate subcomponent for thumbnail browser is needed now. Its functionality will be implemented as part of  the Capture component.\n"
     },
     {
+      "id": "10456",
       "author": "Boyan Sheytanov",
       "date": "2009-11-30T04:41:15.000-0500",
       "body": "This issue should be marked resolved/closed.\n"

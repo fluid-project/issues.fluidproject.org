@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11097",
       "author": "Jonathan Hung",
       "date": "2021-08-13T11:24:58.226-0400",
       "body": "This issue has been migrated to Github issues: <https://github.com/inclusive-design/guide.inclusivedesign.ca/issues/55>\n"
     },
     {
+      "id": "11098",
       "author": "Jonathan Hung",
       "date": "2021-08-13T11:25:39.985-0400",
       "body": "Issue has been migrated to Github Issues:\\\n<https://github.com/inclusive-design/guide.inclusivedesign.ca/issues/55>\n"

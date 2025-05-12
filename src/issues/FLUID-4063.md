@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21619",
       "author": "Anastasia Cheetham",
       "date": "2011-02-22T10:04:00.998-0500",
       "body": "I missed the Uploader dependency on the scrollTo plugin\n"
     },
     {
+      "id": "21620",
       "author": "heidi valles",
       "date": "2011-02-22T10:48:20.172-0500",
       "body": "Sent pull request for 4063. Added jQueryScrollToPlugin to uploader dependencies.\n"

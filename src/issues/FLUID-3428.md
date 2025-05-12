@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23302",
       "author": "Justin Obara",
       "date": "2009-12-11T13:58:15.000-0500",
       "body": "Bug Parade Builder 1.1.2&#x20;\n"
     },
     {
+      "id": "23303",
       "author": "Justin Obara",
       "date": "2009-12-11T16:32:57.000-0500",
       "body": "Links have been updated. Should now all point at the proper locations.\n"

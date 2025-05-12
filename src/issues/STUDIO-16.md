@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12874",
       "author": "Anastasia Cheetham",
       "date": "2011-12-09T10:29:06.751-0500",
       "body": "My initial fix to make the commas blue has broken the hover styling.\n"
     },
     {
+      "id": "12875",
       "author": "Michelle D'Souza",
       "date": "2011-12-09T11:02:33.748-0500",
       "body": "Merged into project repo at cf2b74715012f616172f194b16701561c63db41f\n"

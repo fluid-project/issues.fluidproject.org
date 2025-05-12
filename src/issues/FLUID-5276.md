@@ -56,21 +56,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15705",
       "author": "Jonathan Hung",
       "date": "2014-03-06T14:12:45.648-0500",
       "body": "I have added a class named \"fl-demoMenu-hidden\". When this class is added to the \\<div class=\"fl-demoMenu\"> container, the contents will hide using a transition effect.\n\nThe javascript should be updated so when the close button or star button is selected, fl-demoMenu-hidden is added or removed from the container automatically.\n"
     },
     {
+      "id": "15707",
       "author": "Simon Bates",
       "date": "2014-04-02T10:55:43.563-0400",
       "body": "Pull request: <https://github.com/fluid-project/infusion/pull/487>\n"
     },
     {
+      "id": "15709",
       "author": "Anastasia Cheetham",
       "date": "2014-04-11T10:29:57.491-0400",
       "body": "Antranig suggested that the \"test\" page in the html folder of the Overview Panel be moved to the demos folder as a proper demo. Simon and I discussed this, and I'll take care of this as part of the <https://fluidproject.atlassian.net/browse/FLUID-5289#icft=FLUID-5289> work, which is adding the panel to all of the demos.\n"
     },
     {
+      "id": "15711",
       "author": "Michelle D'Souza",
       "date": "2014-04-16T13:59:17.131-0400",
       "body": "Merged into project repo at 27fee1657dd28bb79a7d2becb0b48229b3f84352\n"

@@ -39,11 +39,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17501",
       "author": "James Yoon",
       "date": "2009-04-02T16:34:59.000-0400",
       "body": "After executing a first edit and save, clicking to edit again does not open the edit field. Instead, a new line with a grey, rectangular box is inserted above the existing text. At this point, clicking on an empty area will revert back to the text without the new line or box. Alternatively, clicking on the text or box a second time will open the edit field.\n\nThis holds true for both mouse and keyboard access.\n\nHolds true for FF3 in OS X 10.5 too.\n"
     },
     {
+      "id": "17502",
       "author": "Justin Obara",
       "date": "2009-06-03T14:00:43.000-0400",
       "body": "Appears to have been fixed, possibly in the move from a manual to test to a quick start example\n\nTested using:\n\nFF3 (Mac OS 10.5)\n"

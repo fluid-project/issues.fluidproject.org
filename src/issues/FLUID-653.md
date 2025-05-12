@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18871",
       "author": "Justin Obara",
       "date": "2010-05-07T09:45:36.619-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "18876",
       "author": "Justin Obara",
       "date": "2011-01-10T14:13:27.001-0500",
       "body": "May have been fixed as part of the changes for Infusion 1.3. There were no environments listed, so it may only occur in a specific configuration.\n"

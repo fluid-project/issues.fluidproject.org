@@ -47,21 +47,25 @@
   ],
   "comments": [
     {
+      "id": "21047",
       "author": "Justin Obara",
       "date": "2008-07-29T13:45:08.000-0400",
       "body": "'screenshot-1' shows how the hover message should appear\n"
     },
     {
+      "id": "21048",
       "author": "Justin Obara",
       "date": "2008-07-29T13:46:27.000-0400",
       "body": "'screenshot-2' shows how the hover text appears when a long string of text is entered into the inline edit field. The pointer was over the right end of the 'g'.\n"
     },
     {
+      "id": "21049",
       "author": "Eli Cochran",
       "date": "2008-08-05T20:05:43.000-0400",
       "body": "Assigned to Uploader component by accident; changed to Inline Edit\n"
     },
     {
+      "id": "21050",
       "author": "Justin Obara",
       "date": "2009-06-04T11:41:32.000-0400",
       "body": "Appears to have been fixed with one of the changes to inline edit since the last release\n\nTested using:\\\nFF3, Opera 9.6 (Mac OS 10.5)\n"

@@ -45,26 +45,31 @@
   ],
   "comments": [
     {
+      "id": "12764",
       "author": "y z",
       "date": "2010-03-30T15:07:59.000-0400",
       "body": "Since engage core depends on the resources from Fluid Infusion it is necessary to update it as well.\n"
     },
     {
+      "id": "12765",
       "author": "y z",
       "date": "2010-03-30T15:09:11.000-0400",
       "body": "This is an update to kettle that adds its own older version of jquery, compatible with env.js\n"
     },
     {
+      "id": "12766",
       "author": "y z",
       "date": "2010-03-30T16:11:44.000-0400",
       "body": "Also fixes broken artifact view, updates mycollection unit tests\n"
     },
     {
+      "id": "12768",
       "author": "Michelle D'Souza",
       "date": "2010-04-07T14:49:24.000-0400",
       "body": "I reviewed the changes and they look good.\n"
     },
     {
+      "id": "12770",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:29.063-0500",
       "body": "The repository has been archived.\n"

@@ -36,6 +36,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13967",
       "author": "Justin Obara",
       "date": "2009-01-13T11:21:46.000-0500",
       "body": "This appears to be an Opera bug, see the following pages.\n\n<http://groups.google.com/group/comp.infosystems.www.authoring.stylesheets/browse_thread/thread/4b00c8815bfc8c5f>\n\nitem 33 on this page\\\n<http://www.gtalbot.org/BrowserBugsSection/Opera9Bugs/>\n\n* the list is frequently updated leading to change in numbers. The item has name \"New nested absolute positioning\"\n"

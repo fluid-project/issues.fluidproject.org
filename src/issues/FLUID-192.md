@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19452",
       "author": "Michelle D'Souza",
       "date": "2008-02-03T15:53:57.000-0500",
       "body": "As we worked on this issue we realized that it is important and non-trivial to keep the selectables and movables lists up to date. We can either take in a function which locates the items in question or internally update the lists. The current plan is to go back to using finder functions but keep with the fine grained approach.&#x20;\n\nWe will provide two different methods of identifying orderable items. In the simple case, the caller can pass a single function named 'findMovables' which will identify items that are selectable, movable and drop targets. If more control is required, such as in the portlet reordering case, the caller can pass the following structure:\n\nfindItems: {\\\nselectables: function () {},\\\nmovables: function () {},\\\ndropTargets: function () {}\\\n}&#x20;\n"

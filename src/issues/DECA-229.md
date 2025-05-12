@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10139",
       "author": "Justin Obara",
       "date": "2012-01-30T16:01:40.651-0500",
       "body": "I've refactored the server code to remove old code and duplication.\n\nThe changes are currently in my bitbucket repo\\\n<https://jobara@bitbucket.org/jobara/decapod-server-rest>\n"
     },
     {
+      "id": "10140",
       "author": "Justin Obara",
       "date": "2012-05-18T14:21:16.901-0400",
       "body": "Merged into the project repo\n"

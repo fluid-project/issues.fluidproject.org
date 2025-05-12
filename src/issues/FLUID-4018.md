@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20345",
       "author": "Mike Lam",
       "date": "2011-01-27T11:08:12.688-0500",
       "body": "Patch for <https://fluidproject.atlassian.net/browse/FLUID-4017#icft=FLUID-4017> should automatically take care of this.  See <https://fluidproject.atlassian.net/browse/FLUID-4018#icft=FLUID-4018>.\n"
     },
     {
+      "id": "20346",
       "author": "Golam Chowdhury",
       "date": "2011-03-07T11:23:22.845-0500",
       "body": "Changed affect version to 1.3.1.\n"
     },
     {
+      "id": "20347",
       "author": "Golam Chowdhury",
       "date": "2011-03-07T12:02:54.157-0500",
       "body": "Removed affects version 1.3.1 until further testing.&#x20;\n"

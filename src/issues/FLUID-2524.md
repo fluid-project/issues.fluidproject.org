@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "17544",
       "author": "Justin Obara",
       "date": "2009-04-06T10:18:38.000-0400",
       "body": "'screenshot-1' shows the styling issues&#x20;\n"
     },
     {
+      "id": "17546",
       "author": "Justin Obara",
       "date": "2009-06-03T13:04:40.000-0400",
       "body": "Appears to have been fixed. Possibly with the change to a jQuery UI Dialog\n\nTested using:\\\nIE 6 (Win 2000)\n"

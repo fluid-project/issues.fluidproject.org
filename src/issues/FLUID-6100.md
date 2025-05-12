@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13310",
       "author": "Antranig Basman",
       "date": "2016-12-18T19:00:13.107-0500",
       "body": "Hi - thanks for this report which highlights an annoying usability failure. This looks like a great use case for the new \"sequenceGrade\" option which is currently in trunk, but whose documentation is in review: <https://github.com/amb26/infusion-docs/blob/FLUID-5903/src/documents/IoCTestingFramework.md#using-sequencegrade-to-build-up-complex-reusable-test-sequences> - in keeping with our modern tendency towards creating \"gigantic up-front JSON dialects\" (like renderer component trees, model transformation documents and IoC Testing fixtures), this allows the work of building up a test sequence to be factored out as a set of reusable grades, which each feature a less hostile mergePolicy.\\\nThere was also extensive notes taken in the piratePad in the GPII meeting on this topic last Monday but sadly I can't easily find the URL at present.\n\nIn terms of fixing the existing \"modules\" feature I fear there is little we can do with the existing framework architecture since it would require a level of detailed control over mergePolicies which isn't currently possible - and which I suspect might create a confusing landscape if it was possible.\n"
     },
     {
+      "id": "13311",
       "author": "Antranig Basman",
       "date": "2016-12-18T21:46:14.296-0500",
       "body": "I've wikified the notes from the relevant section of the meeting at <https://wiki.fluidproject.org/display/fluid/Motivation+and+Explanation+for+New+IoC+Testing+Framework+Feature+sequenceGrade>\n"

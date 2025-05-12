@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12984",
       "author": "Anastasia Cheetham",
       "date": "2012-05-02T12:42:49.243-0400",
       "body": "Merged at commit 83cfc727d48474c7fa5ba0aa76bea26c0733a0ff\n"

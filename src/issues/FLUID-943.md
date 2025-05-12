@@ -41,16 +41,19 @@
   ],
   "comments": [
     {
+      "id": "19531",
       "author": "Justin Obara",
       "date": "2008-07-18T14:06:48.000-0400",
       "body": "'screenshot-1' shows the \"Cancel\" and \"Upload\" buttons hidden\n"
     },
     {
+      "id": "19532",
       "author": "Justin Obara",
       "date": "2008-07-18T14:07:26.000-0400",
       "body": "'screenshot-2' shows the Uploader's title bar hidden\n"
     },
     {
+      "id": "19533",
       "author": "Justin Obara",
       "date": "2008-07-25T11:15:58.000-0400",
       "body": "I believe you may have fixed this with your fix for fluid-915 (svn commit: 5265). Could you please verify and i'll close. Thanks\n"

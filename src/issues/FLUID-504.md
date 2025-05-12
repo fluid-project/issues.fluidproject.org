@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14193",
       "author": "Jonathan Hung",
       "date": "2008-04-25T14:56:18.000-0400",
       "body": "I did an evaluation of this using JAWS and found it very useful to have that link available. By default JAWS would read the header and then the left navigation. By having that link, focus can be switched quickly to the main content and JAWS can begin reading there.\n\nWorth keeping in.\n"

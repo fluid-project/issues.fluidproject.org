@@ -42,41 +42,49 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15586",
       "author": "Kaye Mao",
       "date": "2015-06-09T16:21:15.549-0400",
       "body": "Attempting to change labels for slider icons (ex line spacing icons) within the linespace.json file revealed that there is no corresponding css class (in panels.js,   narrowIcon: \".flc-prefsEditor-line-space-narrowIcon\") for the selector to connect to.&#x20;\n\nthe current aria-label for the panel icons are hardcoded into the html (PrefsEditorTemplate-lineSpace.html)\n"
     },
     {
+      "id": "15588",
       "author": "Kaye Mao",
       "date": "2015-06-11T14:59:40.804-0400",
       "body": "Updated design for UIO with new descriptions <https://www.dropbox.com/s/02j7ilnhxd7c8hv/UIO_mock.pdf?dl=0>\\\nwhich may solve \"- Wording for measure of scale with text size and line height as x Times may be confusing\"\n"
     },
     {
+      "id": "15590",
       "author": "Kaye Mao",
       "date": "2015-06-17T12:07:23.864-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/611>\n"
     },
     {
+      "id": "15592",
       "author": "Justin Obara",
       "date": "2015-08-12T09:38:18.281-0400",
       "body": "Kaye Mao the description talks about \"Wording for measure of scale with text size and line height as x Times may be confusing\" but this doesn't appear to be handled in your pull request. Could you please create a new jira for this issue?\n"
     },
     {
+      "id": "15594",
       "author": "Kaye Mao",
       "date": "2015-08-12T10:05:56.466-0400",
       "body": "Created new jira <https://fluidproject.atlassian.net/browse/FLUID-5738#icft=FLUID-5738>\n"
     },
     {
+      "id": "15595",
       "author": "Justin Obara",
       "date": "2015-09-30T10:11:46.225-0400",
       "body": "Submitted a new pull request that is updated to infusion master\\\n<https://github.com/fluid-project/infusion/pull/639>\n"
     },
     {
+      "id": "15597",
       "author": "Justin Obara",
       "date": "2015-09-30T10:39:18.631-0400",
       "body": "new infusion-docs related pull request:\\\n<https://github.com/fluid-project/infusion-docs/pull/72>\n"
     },
     {
+      "id": "15599",
       "author": "Cindy Li",
       "date": "2015-09-30T12:02:13.674-0400",
       "body": "The infusion repo pull request <https://github.com/fluid-project/infusion/pull/639> has been merged into the master branch @ e17422195ffe9e978b1a199f9606272c4015a1a6\n\nThe corresponding infusion-docs repo pull request <https://github.com/fluid-project/infusion-docs/pull/72> has been merged @ a5fd904e7608e22a84b38060cdb168d6d35e9e26\n"

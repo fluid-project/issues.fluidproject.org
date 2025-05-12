@@ -34,16 +34,19 @@
   ],
   "comments": [
     {
+      "id": "14398",
       "author": "Joseph Vernuccio",
       "date": "2008-09-25T12:49:51.000-0400",
       "body": "screeshot-1 of undo link under inline edit feild.&#x20;\n"
     },
     {
+      "id": "14401",
       "author": "Jacob Farber",
       "date": "2008-10-02T11:01:04.000-0400",
       "body": "converted divs to spans to avoid display:block problems with show/hide\n"
     },
     {
+      "id": "14403",
       "author": "Justin Obara",
       "date": "2008-10-02T11:25:40.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

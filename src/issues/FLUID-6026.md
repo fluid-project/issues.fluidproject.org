@@ -31,6 +31,7 @@
   ],
   "comments": [
     {
+      "id": "22540",
       "author": "Justin Obara",
       "date": "2016-11-02T12:23:49.786-0400",
       "body": "screenshot.png shows the files not added as a comma separate string.\n"

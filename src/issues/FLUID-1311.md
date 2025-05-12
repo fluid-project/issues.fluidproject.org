@@ -48,16 +48,19 @@
   ],
   "comments": [
     {
+      "id": "21012",
       "author": "Justin Obara",
       "date": "2008-08-26T11:32:26.000-0400",
       "body": "'screenshot-1' shows the inline edit field in edit mode. Notice that the star is not displayed.\n"
     },
     {
+      "id": "21013",
       "author": "Justin Obara",
       "date": "2008-08-26T11:33:03.000-0400",
       "body": "'screenshot-2' shows the inline edit field out of edit mode. Notice that the star is displayed\n"
     },
     {
+      "id": "21014",
       "author": "Antranig Basman",
       "date": "2008-11-07T13:17:47.000-0500",
       "body": "A text input field is a native OS/browser component, and therefore its visual rendering is outside the scope of the framework.\n"

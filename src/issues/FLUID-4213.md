@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18436",
       "author": "Justin Obara",
       "date": "2011-05-10T15:44:00.608-0400",
       "body": "Sent a pull request to merge changes from my <https://fluidproject.atlassian.net/browse/FLUID-4213#icft=FLUID-4213> branch in github. <https://github.com/fluid-project/infusion/pull/41>\\\nI've modified the defaults annotateColumnRange is set to undefined again, and the columnDefs are set to an empty array, with a comment showing the correct format.\\\nA unit test has been provided\n"
     },
     {
+      "id": "18445",
       "author": "Justin Obara",
       "date": "2011-05-11T16:23:14.487-0400",
       "body": "Antranig merged this into the project repo at 844e1be791b768d12a686edca7fb3d54637cd0e8\n"

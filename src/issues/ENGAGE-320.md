@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12024",
       "author": "Michelle D'Souza",
       "date": "2010-02-03T16:34:07.000-0500",
       "body": "The current code is in a patch on <https://fluidproject.atlassian.net/browse/ENGAGE-290#icft=ENGAGE-290> but we will commit it to the scratchpad now so that other people can run imports more easily.&#x20;\n"
     },
     {
+      "id": "12025",
       "author": "Colin Clark",
       "date": "2010-02-04T14:40:50.000-0500",
       "body": "Yura and I have done some superficial refactoring of the import code to make it easier to read and somewhat better factored. This included:\n\n* Making hard coded values (URLs, database names, config file paths) constants so it is clear that they are hard coded\n* Breaking the main import loop into several methods that are more clearly named\n\nThere's still more work to be done here, in particular the ability to swap out strategies for different import formats, better exception handling, and the like.\n"
     },
     {
+      "id": "12026",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:29.974-0500",
       "body": "The repository has been archived.\n"

@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "12292",
       "author": "Colin Clark",
       "date": "2010-02-08T11:54:56.000-0500",
       "body": "Here is a patch containing the relevant changes.\n"
     },
     {
+      "id": "12293",
       "author": "Antranig Basman",
       "date": "2010-02-12T18:36:28.000-0500",
       "body": "Thanks for assembling this patch, Colin. I can confirm that the functionality that it addresses is already in trunk.\n"

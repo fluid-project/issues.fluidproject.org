@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18714",
       "author": "Antranig Basman",
       "date": "2008-09-17T01:09:39.000-0400",
       "body": "Actually this really affected all environments - there was a Firebug error on Firefox plaforms. Fixed at revision 5551.\n"
     },
     {
+      "id": "18717",
       "author": "Justin Obara",
       "date": "2008-09-17T10:15:04.000-0400",
       "body": "Verified fix using:&#x9;\n\nIE6, IE7 (Win XP)\\\nIE7 (Win Vista)\n"

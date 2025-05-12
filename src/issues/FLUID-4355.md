@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24165",
       "author": "Harris Wong",
       "date": "2011-07-26T13:18:50.045-0400",
       "body": "Bug Parade Infusion 1.4\n"

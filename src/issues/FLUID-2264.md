@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24983",
       "author": "Justin Obara",
       "date": "2010-05-07T13:17:06.550-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "24985",
       "author": "Jonathan Hung",
       "date": "2011-01-06T15:55:40.809-0500",
       "body": "Duplicate of <https://fluidproject.atlassian.net/browse/FLUID-3865#icft=FLUID-3865>.\n"

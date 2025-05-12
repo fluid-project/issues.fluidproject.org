@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17188",
       "author": "Justin Obara",
       "date": "2008-10-29T15:56:52.000-0400",
       "body": "Only seems to occur when the file has already been uploaded before\n"
     },
     {
+      "id": "17190",
       "author": "Justin Obara",
       "date": "2008-12-18T14:05:25.000-0500",
       "body": "Appears to have been fixed\n\nTested using:\n\nIE7 (Win Vista)\n"

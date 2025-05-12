@@ -43,16 +43,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20179",
       "author": "Colin Clark",
       "date": "2010-03-30T18:42:37.000-0400",
       "body": "Justin is working on a patch to address this issue, along with improved screen reader support. This is one of our blockers for Infusion 1.2.\n"
     },
     {
+      "id": "20181",
       "author": "Colin Clark",
       "date": "2010-03-31T15:28:47.000-0400",
       "body": "Justin and Alison's fix for <https://fluidproject.atlassian.net/browse/FLUID-3421#icft=FLUID-3421> also addresses this issue.\n"
     },
     {
+      "id": "20182",
       "author": "Colin Clark",
       "date": "2010-03-31T15:30:45.000-0400",
       "body": "This issue overlaps with <https://fluidproject.atlassian.net/browse/FLUID-3421#icft=FLUID-3421>, which was fixed for Infusion 1.2. Closing it for simplicity's sake.\n"

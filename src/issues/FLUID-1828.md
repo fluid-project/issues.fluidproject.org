@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17240",
       "author": "Justin Obara",
       "date": "2009-05-05T11:44:30.000-0400",
       "body": "Appears to have been fixed, possibly during our class renaming push just before 1.0\n"
     },
     {
+      "id": "17242",
       "author": "Eli Cochran",
       "date": "2009-05-05T11:50:32.000-0400",
       "body": "Yep. Actually wasn't necessary in the first place because the row style was carried by the template.&#x20;\n"

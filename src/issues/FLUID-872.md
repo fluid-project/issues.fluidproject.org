@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19929",
       "author": "Justin Obara",
       "date": "2008-07-25T09:03:07.000-0400",
       "body": "You are able to tab to the file queue when the scroll bar is visible.\n\nThis issue happens on some machines while Fluid-1016 happens in others. \\\nStill trying to determine what causes the difference\n"
     },
     {
+      "id": "19932",
       "author": "Justin Obara",
       "date": "2008-07-25T13:09:08.000-0400",
       "body": "This is actually caused by a setting in Mac OS 10.5&#x20;\n\nGo to System Preferences > Keyboard & Mouse >&#x20;\n\nAt the bottom pick the \"All Controls\" radio button\n\nThis will resolve this issue\n"

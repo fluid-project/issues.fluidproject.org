@@ -57,11 +57,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19438",
       "author": "Michelle D'Souza",
       "date": "2008-03-18T10:15:44.000-0400",
       "body": "Revision 4745 implements an interim pluggable key set model for the Reorderer. The next step is to work with multiple key sets so that reordering will work with both the screen reader compatible set as well as the more natural CTRL+arrow keys.\n"
     },
     {
+      "id": "19439",
       "author": "Michelle D'Souza",
       "date": "2008-03-19T15:52:24.000-0400",
       "body": "The generic-lightbox example now works with Jaws and Window-Eyes compatible keystrokes: CTRL + i, j, k, m.\\\nThe regular lightbox works with the original keystrokes: CTRL + arrow keys.\n\nThe next step in this refactoring is to allow multiple keysets in the same Reorderer thereby allowing CTRL + arrow keys as well as the screen reader compatible keyset.&#x20;\n"

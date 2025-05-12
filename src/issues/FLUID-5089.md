@@ -30,16 +30,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15176",
       "author": "Antranig Basman",
       "date": "2013-07-13T02:05:33.520-0400",
       "body": "Failing test case from colinbdclark looked as follows:\n\ntest(\"Typed Array Merge Preservation\", function () {\\\nvar ta = new Float32Array(\\[1.1, 2.2, 3.3]);\\\nok(ta instanceof Float32Array, \"Sanity check: a Float32Array should be an instance of a Float32Array\");\n\nfluid.defaults(\"flock.test.typedArrayComponent\", {\\\ngradeNames: \\[\"fluid.littleComponent\", \"autoInit\"],\\\nmergePolicy: {\\\n\"synthDef.cat\": \"nomerge\"   \\\n},\\\nsynthDef: {\\\ncat: ta\\\n}\\\n});\n\nvar comp = flock.test.typedArrayComponent();\\\nok(comp.options.synthDef.cat instanceof Float32Array, \\\n\"A typed array stored as a component default should not be corrupted.\");\\\n});\n"
     },
     {
+      "id": "15180",
       "author": "Antranig Basman",
       "date": "2013-09-12T06:23:02.621-0400",
       "body": "A much simpler strategy seems to be able to handle all the cases that currently trouble us. The \"acid test\" scheme operated by \"Object.prototype.toString\" (which we were previously using to recognise arrayable objects) is also good enough to detect all the \"exotic objects\" that we currently find passing through our hands provided by the browser impl - including typed arrays, canvas contexts and others. This test could be MORE powerful in that it doesn't actually detect all objects with a custom constructor - but it would not be possible to extend this to a performant test which operated on older browsers (IE6 through IE8) since these do not support the constructor.name property which is the only performant route for this detection. The \"Object.prototype.toString\" approach has the virtue of \"doing no harm\" on older browsers as well as being performant, and powerful enough to detect the browser exotics that we can't avoid handling.\n\nUsers who need other custom types (produced via \"new\") preserved will still need to fall back on merge policies as before.\n"
     },
     {
+      "id": "15184",
       "author": "Colin Clark",
       "date": "2013-10-03T22:17:17.950-0400",
       "body": "I reviewed and tested this fix, both in terms of Infusion itself and in Flocking, where the issue was originally reported.&#x20;\n\nPreviously in Flocking, I had maintained monkey patches for both fluid.isPrimitive and fluid.mergeOneImpl in order to keep ArrayBuffer Views (i.e. \"typed arrays\") from being mangled. This fix allowed for the removal of  these monkey patches while all of Flocking's relevant tests continue to pass.\n\n<https://github.com/colinbdclark/Flocking/blob/master/tests/flocking/js/core-tests.js#L1417-L1444>\n\nPushed to master at 912baf3e094045103bd280cd8a39b35a9b05ff75.\n"

@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23981",
       "author": "Cindy Li",
       "date": "2016-06-17T16:05:18.824-0400",
       "body": "The infusion pull request: <https://github.com/fluid-project/infusion/pull/721>\n\nThe corresponding infusion-docs pull request: <https://github.com/fluid-project/infusion-docs/pull/90>\n"
     },
     {
+      "id": "23982",
       "author": "Cindy Li",
       "date": "2016-06-22T19:29:40.233-0400",
       "body": "The infusion pull request has been merged into the master @ 78f89868fc9478461c33afef58603e4dddfeca63\n\nAntranig added more doc for fluid.fetchResources() and issued an updated infusion doc pull request <https://github.com/fluid-project/infusion-docs/pull/91> which has been merged into the master @ 78f89868fc9478461c33afef58603e4dddfeca63\n"

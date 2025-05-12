@@ -31,11 +31,13 @@
   ],
   "comments": [
     {
+      "id": "13818",
       "author": "Laurel Williams",
       "date": "2009-06-19T16:30:38.000-0400",
       "body": "Added more error checking, factored out the processing of the input variables to it's own function, responded to Colin's comments by returning a 400 error for any problems in the request, corrected some problems with returning the built file (filesize was not working, and filename was incorrect).\n"
     },
     {
+      "id": "13819",
       "author": "Laurel Williams",
       "date": "2009-07-13T11:54:58.000-0400",
       "body": "400 error is now returned for any errors\n"

@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20147",
       "author": "Mike Lam",
       "date": "2011-02-24T11:29:40.385-0500",
       "body": "A poor miscalculation on my part with converting file size limits between strategies.  The fileSizeLimit has been correctly converted from kilobytes to bytes in the HTML5 strategy.  The legacyBrowserLimit value has also been converted from MB to bytes.  The unit tests have been adjusted to reflect the bug fix.  We should be using the same units across the entire HTML5 strategy to avoid confusion in the future.\n"
     },
     {
+      "id": "20149",
       "author": "Mike Lam",
       "date": "2011-02-24T11:54:14.616-0500",
       "body": "Re-opening to change the workflow to \"needs commit\".   The workflow button is disabled once the issue is resolved\n"
     },
     {
+      "id": "20151",
       "author": "Mike Lam",
       "date": "2011-03-14T16:24:50.462-0400",
       "body": "Reviewed and pushed into the project repository.\n"
     },
     {
+      "id": "20153",
       "author": "Mike Lam",
       "date": "2011-03-14T16:26:25.673-0400",
       "body": "I need to re-open this JIRA so that I can resolve it and properly close it.\n"

@@ -55,26 +55,31 @@
   ],
   "comments": [
     {
+      "id": "13704",
       "author": "heidi valles",
       "date": "2010-11-16T11:13:42.962-0500",
       "body": "also IE - clicking on module header creates column outline on mouse down&#x20;\n"
     },
     {
+      "id": "13706",
       "author": "Justin Obara",
       "date": "2010-11-16T12:02:05.244-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "13708",
       "author": "heidi valles",
       "date": "2010-11-17T11:24:50.816-0500",
       "body": "There's another weird IE issue - when an input is focused, its corresponding label changes to yellow but in IE, if you select a checkbox with keyboard, the label colour change doesn't happen until you move your mouse.\n"
     },
     {
+      "id": "13711",
       "author": "heidi valles",
       "date": "2010-11-17T14:26:07.023-0500",
       "body": "fixes ff border issue, and ie column outline issue\n\ndoesn't fix focus remaining despite hovering elsewhere (its correct how it is, even if it seems weird) or IE not changing module header colour when input focused.\n"
     },
     {
+      "id": "13713",
       "author": "Justin Obara",
       "date": "2014-03-03T11:20:13.093-0500",
       "body": "builder.fluidproject.org has been taken down and there are no immediate plans to replace it. Currently all builds are expected to be generated directly from the grunt build scripts.\n\n<http://fluid.2324889.n4.nabble.com/Infusion-Builder-issues-tp8926.html>\n"

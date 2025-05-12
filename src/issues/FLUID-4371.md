@@ -39,16 +39,19 @@
   ],
   "comments": [
     {
+      "id": "13697",
       "author": "Justin Obara",
       "date": "2011-07-28T13:48:42.027-0400",
       "body": "ScreenShot.png shows the fat panel not open wide enough. Notice the clipped options and the scroll bar on the right.\n"
     },
     {
+      "id": "13699",
       "author": "Justin Obara",
       "date": "2011-07-28T13:48:57.040-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "13701",
       "author": "Justin Obara",
       "date": "2011-07-28T13:49:22.834-0400",
       "body": "The panel doesn't automatically change it's height because the iframe doesn't scale with it's contents.\n"

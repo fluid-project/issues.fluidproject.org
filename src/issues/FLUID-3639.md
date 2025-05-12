@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22059",
       "author": "Justin Obara",
       "date": "2010-04-20T10:39:03.000-0400",
       "body": "The links have been updated to point at the 1.2 demos. Also updated the script imports mentioned in api and tutorial pages to reflect changes made in 1.2.\n"
     },
     {
+      "id": "22061",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:22.824-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

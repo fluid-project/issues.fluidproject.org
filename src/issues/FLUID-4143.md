@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23634",
       "author": "Colin Clark",
       "date": "2011-03-14T17:42:56.916-0400",
       "body": "Fixed in the project repo at revision <https://github.com/fluid-project/infusion/commit/30917aa779fef4e4e03305fc75c24dde642378ea>\n"
     },
     {
+      "id": "23637",
       "author": "Colin Clark",
       "date": "2011-03-15T11:27:57.635-0400",
       "body": "Unit tests are still borked\n"

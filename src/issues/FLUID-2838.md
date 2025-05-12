@@ -44,11 +44,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15256",
       "author": "Daphne Ogle",
       "date": "2009-05-28T22:20:01.000-0400",
       "body": "After I played with this a bit, I realize by choosing Cancel the settings from previous sessions aren't lost.  I think the problem is that the Reset button is different from the Save and Apply and the Cancel.  The Reset only acts on the preview but the other two are sort of finalizing the action and closing out UI Options.  Perhaps moving Reset up closer to the preview or under the settings themselves would help?  And then the button name could be \"Reset All\".  This probably needs a little more thought.\n"
     },
     {
+      "id": "15262",
       "author": "Michelle D'Souza",
       "date": "2013-09-05T16:11:45.245-0400",
       "body": "This full page version of UI Options is no longer the recommended way to use UI Options. It is now only in manual tests to provide an example of how it would be possible to use UI Options in a full page mode. The PCP and PMT which were designed as part of the Cloud For All project show examples of recommended uses of full page UI Options. These do not include the reset and save and apply buttons.\n\n<http://wiki.fluidproject.org/display/fluid/Preference+Editing+Tools+Design>\n"

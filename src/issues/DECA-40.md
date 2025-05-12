@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10246",
       "author": "Jonathan Hung",
       "date": "2010-03-05T10:08:44.000-0500",
       "body": "May be possible using CSS3 and FF3.6, but may depend on the layout of the elements inside the rounded containers.\n"
     },
     {
+      "id": "10247",
       "author": "Jonathan Hung",
       "date": "2010-03-05T13:22:30.000-0500",
       "body": "Added rounded corners using CSS3. Only supported in Mozilla and Webkit browsers.\n"

@@ -61,21 +61,25 @@
   ],
   "comments": [
     {
+      "id": "11821",
       "author": "y z",
       "date": "2009-06-04T14:25:30.000-0400",
       "body": "Contains the XML to json (as dict or string compatible with json and simplejson libraries) parser and simple couch db wrapper in python\n"
     },
     {
+      "id": "11822",
       "author": "y z",
       "date": "2009-06-08T15:30:48.000-0400",
       "body": "Newer updated parser\n"
     },
     {
+      "id": "11823",
       "author": "y z",
       "date": "2009-06-12T16:56:55.000-0400",
       "body": "latest patch for benchmarking (simply writes to memory not the file)\n"
     },
     {
+      "id": "11824",
       "author": "Justin Obara",
       "date": "2009-11-10T10:46:19.000-0500",
       "body": "appears to have been completed\n"

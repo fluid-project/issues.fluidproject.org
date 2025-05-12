@@ -41,16 +41,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14895",
       "author": "Jonathan Hung",
       "date": "2010-12-09T15:41:35.157-0500",
       "body": "Does not appear to be the same issue as <https://fluidproject.atlassian.net/browse/FLUID-3288#icft=FLUID-3288>. The problem persists although <https://fluidproject.atlassian.net/browse/FLUID-3288#icft=FLUID-3288> appears to be fixed.\n"
     },
     {
+      "id": "14898",
       "author": "Jonathan Hung",
       "date": "2010-12-09T15:42:24.190-0500",
       "body": "Retested in FF3.6 on Ubuntu 10.04.\n"
     },
     {
+      "id": "14901",
       "author": "Jonathan Hung",
       "date": "2014-07-14T09:58:08.360-0400",
       "body": "Tested in Ubuntu 12.04 FF 17 on Image and List Reorderer, no longer seems to be a problem.\n"

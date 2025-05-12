@@ -51,56 +51,67 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25055",
       "author": "Eli Cochran",
       "date": "2009-05-19T03:21:08.000-0400",
       "body": "Added error messages for when a file queue fails.&#x20;\n\nPlease note that there is some strange behavior in SWFUpload:\\\nif the limit on the number of files that can be uploaded is 3 and the user attempts to select 4 files, instead of queing the first 3 files and then throwing an error, SWFUpload just throws an error and no files are queued. Fun!&#x20;\n"
     },
     {
+      "id": "25056",
       "author": "Eli Cochran",
       "date": "2009-05-19T09:44:46.000-0400",
       "body": "Forgot a few things in my check in:\n\n* linting\n* check in tests\n"
     },
     {
+      "id": "25057",
       "author": "Justin Obara",
       "date": "2009-05-21T10:00:52.000-0400",
       "body": "In case this isn't part of the \"check in tests\" from the comment above, the Uploader unit tests are currently broken.\\\n<http://build.fluidproject.org/infusion/tests/component-tests/uploader/html/Uploader-test.html>\n"
     },
     {
+      "id": "25058",
       "author": "Eli Cochran",
       "date": "2009-05-21T17:52:32.000-0400",
       "body": "I broke the tests when I failed to copy the HTML to the tests. Wondering if the tests should use AJAX to pull in the HTML the way that the Image Gallery does... wondering if that would even work.\n"
     },
     {
+      "id": "25059",
       "author": "Justin Obara",
       "date": "2009-05-22T09:11:50.000-0400",
       "body": "I can't comment on whether or not this is the correct approach. I believe that the UI Options test may do this though ( <http://build.fluidproject.org/infusion/tests/component-tests/uiOptions/html/UIOptions-test.html> ). The side effect is that the stats for \"x tests of y failed\" and the time to complete, don't work.\n"
     },
     {
+      "id": "25060",
       "author": "Eli Cochran",
       "date": "2009-05-22T13:36:57.000-0400",
       "body": "Added basic unit tests and fixed some minor esthetic issues with IE\n"
     },
     {
+      "id": "25061",
       "author": "Colin Clark",
       "date": "2009-05-25T15:28:10.000-0400",
       "body": "Eli missed a stray line of code here that causes a global variable to be defined with SWFObject. Easy fix.\n"
     },
     {
+      "id": "25062",
       "author": "Colin Clark",
       "date": "2009-05-25T18:04:31.000-0400",
       "body": "Bigger issues than I thought. On looking at this feature more closely, two show stoppers emerged:\n\n1\\. The queue error dialog isn't implemented using jQuery UI's Dialog widget, so it lack a number of the keyboard accessibility fixes we added. As a result, focus is not captured within the dialog, and in fact moves directly behind the dialog.\n\n2\\. There are no ARIA roles or states that would inform an AT user that this is an actual dialog.\n\nWe're not going to have a chance to implement fixes to these accessibility blockers before code freeze, so I've moved the code into a branch and removed the feature from trunk in preparation for the 1.1 release.&#x20;\n"
     },
     {
+      "id": "23563",
       "author": "Anastasia Cheetham",
       "date": "2009-05-29T15:22:52.000-0400",
       "body": "In testing for the 1.1 release, I still see this issue - there is no indication that an error occurred, other than the fact that the file doesn't show up in the queue.\n"
     },
     {
+      "id": "23564",
       "author": "Anastasia Cheetham",
       "date": "2010-12-22T11:00:34.665-0500",
       "body": "I'll confirm this is still an issue for 1.3, multiple browsers/platforms.\n"
     },
     {
+      "id": "23565",
       "author": "Anastasia Cheetham",
       "date": "2014-04-02T15:06:56.946-0400",
       "body": "Tested before the 1.5 release: In an HTML5 browser, the user now gets a warning explaining why the file isn't added to the queue.\n"

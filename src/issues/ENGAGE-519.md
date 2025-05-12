@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12741",
       "author": "Justin Obara",
       "date": "2010-03-19T10:01:28.000-0400",
       "body": "Removed the preventEventFireOnInit option from the cabinet, and now no longer fire events on init ever. Also removed the now unnecessary toggleVisibility function as this has been switched to be handled by css\n"
     },
     {
+      "id": "12742",
       "author": "Justin Obara",
       "date": "2010-03-24T10:10:45.000-0400",
       "body": "Assigned to Antranig for review\n"
     },
     {
+      "id": "12743",
       "author": "Antranig Basman",
       "date": "2010-03-25T08:59:51.000-0400",
       "body": "Good changes which removed redundant utility as well as unclear initialisation workflow.\n"

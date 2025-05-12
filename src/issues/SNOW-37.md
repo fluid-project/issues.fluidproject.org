@@ -29,16 +29,19 @@
   ],
   "comments": [
     {
+      "id": "26212",
       "author": "Jonathan Hung",
       "date": "2018-09-25T12:08:51.421-0400",
       "body": "To change the footer, from the Admin dashboard go to: Settings > a11y Theme Options. You should see a box for Footer text and change the footer there.\n"
     },
     {
+      "id": "26213",
       "author": "Caren Watkins",
       "date": "2018-09-25T12:29:25.095-0400",
       "body": "The content in the a11y Theme Options does not seem to be syncing with the footer. Prior to making changes and post changes.\n"
     },
     {
+      "id": "26214",
       "author": "Caren Watkins",
       "date": "2018-09-26T11:57:36.978-0400",
       "body": "alternative access worked: \n\nTheme Editor. Go to Sidebar > Appearance > Editor.\n\nin the right sidebar that shows different theme files, choose \"Theme Footer (footer.php)\n"

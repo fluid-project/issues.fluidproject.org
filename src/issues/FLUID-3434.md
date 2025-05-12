@@ -31,16 +31,19 @@
   ],
   "comments": [
     {
+      "id": "14588",
       "author": "Laurel Williams",
       "date": "2009-12-17T12:47:44.000-0500",
       "body": "I just checked this in IE6 - the cursor does change to a hand for hovers over actionable items.\n"
     },
     {
+      "id": "14589",
       "author": "Laurel Williams",
       "date": "2010-02-01T13:28:40.000-0500",
       "body": "Am uploading a patch FLUID-3434-1.patch.txt. I added a class fl-infusionBuilder-clickable, to the css file and added that class to the reset and select all buttons. The class is added programmatically added to the download button when it is enabled, and removed when it is disabled.\n"
     },
     {
+      "id": "14591",
       "author": "Laurel Williams",
       "date": "2010-02-01T13:28:54.000-0500",
       "body": "See attached patch.\n"

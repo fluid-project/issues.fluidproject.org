@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15408",
       "author": "Antranig Basman",
       "date": "2013-01-16T03:08:12.553-0500",
       "body": "Some further improvements were added to this work package as a result of harmonising with the GPII/node implementation:\n\n\\[FLUID-4886 e8034e7] <https://fluidproject.atlassian.net/browse/FLUID-4886#icft=FLUID-4886>: Updating to latest version of qunit trunk in order to resolve cross-context \"equiv\" issues in GPII/node - we now use the new qunit \"propEqual\" method for comparing deep equality as more in keeping with our framework-wide opinions on state-equivalence - see <https://github.com/jquery/qunit/issues/279> for discussion on this. Updates to fluid.js node driver to fix error with global namespace pollution as well as exposing globally useful method fluid.loadInContext for loading non-require-aware framework-style files. We also improve the fidelity of the node context object by adding setTimeout and a self-linking \"window\" property.\n"
     },
     {
+      "id": "15411",
       "author": "Antranig Basman",
       "date": "2013-01-25T17:05:07.189-0500",
       "body": "This hit trunk yesterday at revision d29007c - thanks to michelled and yzen for excellent review. This resulted in some shoring up of support on IE (at least to the level of current trunk) and also ended up uncovering a renderer bug with faulty usage of $.inArray (only visible on IE).\n"

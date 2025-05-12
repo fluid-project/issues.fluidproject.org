@@ -26,21 +26,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19938",
       "author": "Justin Obara",
       "date": "2014-06-04T09:12:39.405-0400",
       "body": "beth.mejsullivan in safari you may need to use option-tab to navigate to links.&#x20;\n"
     },
     {
+      "id": "19940",
       "author": "Cindy Li",
       "date": "2014-06-10T09:08:52.373-0400",
       "body": "Tried with Safari 7.0.4 on Mac 10.9.3. Cannot reproduce.\n"
     },
     {
+      "id": "19942",
       "author": "beth.mejsullivan",
       "date": "2014-06-10T10:11:14.291-0400",
       "body": "Option-tab works to get to the Overview Panel. Mac 10.8.5 Safari Version 6.1 (8537.71)\n"
     },
     {
+      "id": "19944",
       "author": "beth.mejsullivan",
       "date": "2014-06-10T10:28:44.754-0400",
       "body": "It might be helpful to add the browser specific navigation key combinations in the documentation. Especially if this is also directed toward developers and users who are not as knowledgeable at the accessibility shortcuts of each browser.\n\nIf this is too much of a burden on the project, links out to the supported browsers' instructions on how to navigate using a keyboard might be another solution.\n\n(If I can help with the documentation here let me know.)\n"

@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17129",
       "author": "Erin Yu",
       "date": "2008-12-03T13:39:43.000-0500",
       "body": "iteration29\n"
     },
     {
+      "id": "17130",
       "author": "Justin Obara",
       "date": "2011-01-20T10:18:29.461-0500",
       "body": "Orphaned work - closing.\n"

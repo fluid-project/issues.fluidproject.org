@@ -37,16 +37,19 @@
   ],
   "comments": [
     {
+      "id": "26633",
       "author": "Gregor Moss",
       "date": "2020-08-04T13:56:37.217-0400",
       "body": "With the completion of <https://fluidproject.atlassian.net/browse/SJRK-122#icft=SJRK-122>, this will be difficult to reproduce.\n"
     },
     {
+      "id": "26635",
       "author": "Gregor Moss",
       "date": "2021-01-11T10:54:22.929-0500",
       "body": "This issue was encountered by Giovanni Tirloni while working on his PR for <https://fluidproject.atlassian.net/browse/SJRK-446#icft=SJRK-446>, and it has been rearing its head in other PRs before that.\n\nI did some more testing today to try to reproduce it on my personal computer, but I was unable to make it happen. I tried repeated runs of the NPM script (\"npm test\") as well as dozens of runs each in Chrome 87, Firefox 84 and Edge 87. These in-browser tests were accomplished by serving the files via [browsersync](https://browsersync.io/), not the Storytelling Tool server.\n"
     },
     {
+      "id": "26636",
       "author": "Justin Obara",
       "date": "2021-02-04T08:17:52.065-0500",
       "body": "Merged PR ( <https://github.com/fluid-project/sjrk-story-telling/pull/108> ) into the project repo at 6ed4d317be8539dbe8b61f80d3fb06d9cf8ce75b\n"

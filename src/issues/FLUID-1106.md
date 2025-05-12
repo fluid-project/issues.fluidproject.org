@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21880",
       "author": "Antranig Basman",
       "date": "2008-08-06T11:48:11.000-0400",
       "body": "Committed to jqUnit at 5323\n"
     },
     {
+      "id": "21881",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:49.959-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

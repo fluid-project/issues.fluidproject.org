@@ -45,11 +45,13 @@
   ],
   "comments": [
     {
+      "id": "23105",
       "author": "Justin Obara",
       "date": "2008-09-26T11:16:52.000-0400",
       "body": "'screenshot-1' shows the blue border above and below the list\n"
     },
     {
+      "id": "23108",
       "author": "Justin Obara",
       "date": "2014-07-07T15:38:17.792-0400",
       "body": "Opera is no longer a supported browser.\n"

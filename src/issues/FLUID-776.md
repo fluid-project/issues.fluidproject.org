@@ -30,16 +30,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19591",
       "author": "Jess Mitchell",
       "date": "2008-08-05T16:39:26.000-0400",
       "body": "\\-\n"
     },
     {
+      "id": "19593",
       "author": "Jonathan Hung",
       "date": "2009-01-07T16:51:53.000-0500",
       "body": "cron will be set up shortly (Jan 8. 09)?\n\nCurrently removed Searching from the site as there isn't much content to search for and we're waiting for cron.\n"
     },
     {
+      "id": "19594",
       "author": "Jonathan Hung",
       "date": "2009-01-14T12:50:01.000-0500",
       "body": "Cron has been added (rather, osdpl was added to cron).\n"

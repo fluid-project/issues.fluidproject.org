@@ -33,16 +33,19 @@
   ],
   "comments": [
     {
+      "id": "20709",
       "author": "Colin Clark",
       "date": "2011-05-16T19:47:22.304-0400",
       "body": "I've fixed this bug in my branch of Cindy's image-gallery repo: <https://github.com/colinbdclark/image-gallery> \\\nThis also includes a pretty wild refactoring of the code to IoCify it in the process.\n"
     },
     {
+      "id": "20710",
       "author": "Anastasia Cheetham",
       "date": "2011-09-30T14:36:25.494-0400",
       "body": "Cindy thinks this might be related: The attached image (uploader-strange-error.png) shows an error message I see after two clicks on any file type checkboxes. I don't get any pop-ups.\n"
     },
     {
+      "id": "20711",
       "author": "Justin Obara",
       "date": "2015-06-09T13:23:51.476-0400",
       "body": "The image uploader demo no longer exists.\n"

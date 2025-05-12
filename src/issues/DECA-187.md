@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10109",
       "author": "Justin Obara",
       "date": "2012-01-10T09:32:17.349-0500",
       "body": "I believe this is working now. Jon, could you please verify and update the jira as needed.\n"
     },
     {
+      "id": "10110",
       "author": "Jonathan Hung",
       "date": "2012-01-10T11:13:05.530-0500",
       "body": "Hasan fixed this with an update in early November. Tested and confirmed fixed.\n"

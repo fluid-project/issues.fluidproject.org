@@ -30,16 +30,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13100",
       "author": "Antranig Basman",
       "date": "2011-08-29T19:22:23.932-0400",
       "body": "Infusion Bug Parade 1.4\n"
     },
     {
+      "id": "13101",
       "author": "Michelle D'Souza",
       "date": "2011-08-31T13:49:37.896-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "13102",
       "author": "Michelle D'Souza",
       "date": "2011-09-01T15:34:58.875-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/142> merged into project repo at 775660bb181320a2b23dd1d61994bb2f2f88cae2\n"

@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17948",
       "author": "Shaw-Han Liem",
       "date": "2008-02-06T15:20:55.000-0500",
       "body": "iteration02\n"
     },
     {
+      "id": "17950",
       "author": "Allison Bloodworth",
       "date": "2008-02-19T13:02:22.000-0500",
       "body": "Will be resolved today.\n"

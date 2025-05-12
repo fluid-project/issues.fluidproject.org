@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26244",
       "author": "Gregor Moss",
       "date": "2018-06-11T17:01:45.830-0400",
       "body": "This requires adding references to this potential new file in 26 html files (mostly tests) in order to get everything working again. Is this worth it at this point? What should this new file be called? Should the helper grade \"paths\" be renamed as well, if they don't live in the same file any more?\n"

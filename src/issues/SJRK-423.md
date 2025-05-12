@@ -36,11 +36,13 @@
   ],
   "comments": [
     {
+      "id": "26621",
       "author": "Justin Obara",
       "date": "2020-11-12T16:12:49.736-0500",
       "body": "\"Screen Shot - empty preview\\.png\" shows the empty preview screen after traveling forward in history.\n"
     },
     {
+      "id": "26622",
       "author": "Gregor Moss",
       "date": "2020-11-12T16:54:01.405-0500",
       "body": "As noticed on an iPad 3 Air running iOS 13.3: if you're on the metadata or preview step and then reload, it will show you the block editor step and overwrite that history state. This may or may not be the same issue\n"

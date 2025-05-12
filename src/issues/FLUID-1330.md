@@ -51,11 +51,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13933",
       "author": "Justin Obara",
       "date": "2008-09-22T12:52:04.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "13936",
       "author": "Jonathan Hung",
       "date": "2011-01-04T15:01:22.927-0500",
       "body": "Still an issue in Infusion 1.3. Slightly difference because now we have a minimum width to an editable field, but not an minimum height.\n"

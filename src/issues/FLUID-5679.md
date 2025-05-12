@@ -30,41 +30,49 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16275",
       "author": "Justin Obara",
       "date": "2015-06-12T08:53:21.305-0400",
       "body": "The status should be Needs Commit\n"
     },
     {
+      "id": "16279",
       "author": "Justin Obara",
       "date": "2015-06-12T08:53:44.800-0400",
       "body": "The open pull request for this issue is <https://github.com/fluid-project/infusion/pull/608>\n"
     },
     {
+      "id": "16281",
       "author": "Simon Bates",
       "date": "2015-06-12T16:18:05.777-0400",
       "body": "The TableOfContents-test.html test is failing:\n\nThe output should contain exactly one H1\\\nExpected: 1\\\nResult: 0\n\nThe H1 should contain the expected text\\\nExpected: \"Table of Contents\"\\\nResult: \"\"\n"
     },
     {
+      "id": "16284",
       "author": "Justin Obara",
       "date": "2015-06-15T08:51:52.499-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/608> ) into the project repo at 84ca9761eef2927b837db1f811347a338f3b62ca . However this has lead to the failing test mentioned above.\n"
     },
     {
+      "id": "16286",
       "author": "Kaye Mao",
       "date": "2015-06-15T12:19:05.416-0400",
       "body": "Test may need to be updated as the suggestion was to change the TOC h1 to h2, should be expecting one h2\n"
     },
     {
+      "id": "16288",
       "author": "Kaye Mao",
       "date": "2015-06-16T10:34:48.186-0400",
       "body": "Pull request at <https://github.com/fluid-project/infusion/pull/609>\n"
     },
     {
+      "id": "16290",
       "author": "Justin Obara",
       "date": "2015-06-16T12:56:58.752-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/609> ) into the project repo at c300a8fb3136dfb8441652c07642a50db5a7c684\n"
     },
     {
+      "id": "16292",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:15.472-0400",
       "body": "Reopening to change the fix version to 1.9\n"

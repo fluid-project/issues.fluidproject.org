@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25781",
       "author": "Giovanni Tirloni",
       "date": "2015-08-18T13:57:45.859-0400",
       "body": "Deployed in production: <https://github.com/inclusive-design/ops/tree/master/ansible/roles/nginx>\n"
     },
     {
+      "id": "25782",
       "author": "Giovanni Tirloni",
       "date": "2015-09-04T10:19:00.797-0400",
       "body": "Role has been pretty stable at this point.\n"

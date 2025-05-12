@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18919",
       "author": "Cindy Li",
       "date": "2015-03-25T10:30:32.078-0400",
       "body": "Issued a pull request: <https://github.com/fluid-project/infusion/pull/587>\n"
     },
     {
+      "id": "18924",
       "author": "Cindy Li",
       "date": "2015-06-26T09:57:39.440-0400",
       "body": "Merged @ 5adc32e325f8db4bb171edc33fa5818a09cb42d8\n\nThe corresponding infusion-docs pull request (<https://github.com/fluid-project/infusion-docs/pull/67>) has been merged @ 369e47d2785bcf52ec2803d3345edf586b70493c\n"

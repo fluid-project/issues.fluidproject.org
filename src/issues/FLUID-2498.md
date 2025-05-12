@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21454",
       "author": "Antranig Basman",
       "date": "2009-04-13T15:45:03.000-0400",
       "body": "Fixed at revision 7111\n"
     },
     {
+      "id": "21455",
       "author": "Justin Obara",
       "date": "2009-04-14T09:18:06.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.6, Safari 3.2 (Mac OS 10.5)\\\nFF3, IE7 (Win Vista)\n"

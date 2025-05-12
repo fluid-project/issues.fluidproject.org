@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26518",
       "author": "Gregor Moss",
       "date": "2019-09-12T18:48:28.636-0400",
       "body": "The co-design session has been conducted and most of the proposed changes were made. A few remain:\n\n<https://fluidproject.atlassian.net/browse/SJRK-170#icft=SJRK-170> was solved with a workaround, so it remains open\n\n<https://fluidproject.atlassian.net/browse/SJRK-281#icft=SJRK-281> was deferred until we can have a design crit about the matter to discuss various ways of providing user feedback and determine the best solution for the time being.\n"

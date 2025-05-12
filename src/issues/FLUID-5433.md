@@ -26,21 +26,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16166",
       "author": "Justin Obara",
       "date": "2014-06-12T14:52:25.831-0400",
       "body": "It seems that VoiceOver will always interact with the underlying input element, and read off it's default values. Here is an example of  a multi file input <http://jsfiddle.net/L2Kcd/> For the uploader, it creates new inputs every time a user adds files to the queue, to support adding additional files. This means that a user will always interact with an empty input.\n"
     },
     {
+      "id": "16169",
       "author": "Justin Obara",
       "date": "2014-06-16T10:44:16.804-0400",
       "body": "An aria-label seems to work, but it will be suffixed with \"file upload button\" so we could set it to \"browse files\" or \"add more\" and it would be read as \"browse files file upload button\" or \"add more file upload button\"\n"
     },
     {
+      "id": "16171",
       "author": "Justin Obara",
       "date": "2014-06-16T14:24:06.021-0400",
       "body": "Submitted a pull request:\\\n<https://github.com/fluid-project/infusion/pull/534>\n"
     },
     {
+      "id": "16173",
       "author": "Cindy Li",
       "date": "2014-06-16T15:30:02.400-0400",
       "body": "Merged into the project repo @ f4f90199d3ae1724d713ae14d791fca5e3ad5665\n"

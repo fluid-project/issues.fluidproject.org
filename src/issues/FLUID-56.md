@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17867",
       "author": "Anastasia Cheetham",
       "date": "2008-07-09T16:10:56.000-0400",
       "body": "The layout handler is now paramaterizes to accept the orientation, but does not yet use it to affect keystrokes.\n\nThe Keyboard a11y plugin does use orientation to affect keystrokes, but the layout handler and reorderer do not yet use that aspect of the keyboard a11y plugin.\n"
     },
     {
+      "id": "17869",
       "author": "Antranig Basman",
       "date": "2008-09-07T18:37:23.000-0400",
       "body": "Corrected at revision 5477\n"

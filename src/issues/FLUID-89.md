@@ -38,16 +38,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15458",
       "author": "Colin Clark",
       "date": "2008-01-07T16:42:35.000-0500",
       "body": "With Spaces turned on in Mac OS X 10.5, the Ctrl-Arrow keys have been mapped to space switching, rendering the Reorderer inoperable.\n"
     },
     {
+      "id": "15460",
       "author": "Joseph Scheuhammer",
       "date": "2008-01-31T11:09:35.000-0500",
       "body": "There is a preference in FireFox that overrides the navigation keystrokes defined in the Reorderer.  Open FF's preferences, and choose \"Advanced\".  Within \"Advanced\" choose the \"General\" tab.  The \"General\" preferences contain an \"Accessibility\" section.  That section has a checkbox labelled \"Always use the cursor keys to navigate within pages\".  If this is checked, navigation using arrow keys behaves strangely and only works partially in the context of a Reorderer.\n\nFireFox 2.0.0.11 (Mac OS 10.5.1).\n"
     },
     {
+      "id": "15463",
       "author": "Michelle D'Souza",
       "date": "2008-03-19T15:53:57.000-0400",
       "body": "Key stroke sets are now configurable. The generic-lightbox example uses a screen reader friendly key set.\n"

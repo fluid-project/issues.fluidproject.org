@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10365",
       "author": "Boyan Sheytanov",
       "date": "2009-12-21T10:40:55.000-0500",
       "body": "Some real book images can be found here: <http://beard.garrison.cc/ConcerningBeards/> (shot using the BookLiberator camera setup). These should be sufficient at the current stage of development. More might need to be added once we implement the Fix Image and Export to PDF functionality.\n"
     },
     {
+      "id": "10366",
       "author": "Boyan Sheytanov",
       "date": "2010-01-08T06:32:56.000-0500",
       "body": "Only the test data needed by Capture is provided. Fixed images and PDF documents will be provided as other components are developed.\n"

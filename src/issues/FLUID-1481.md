@@ -30,16 +30,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17456",
       "author": "Justin Obara",
       "date": "2008-09-08T12:45:34.000-0400",
       "body": "In FF3 (Mac OS 10.5, Win XP) you can move back and forth between columns are changing the direction of keypress. If you got into the column by pressing down, pressing up will let you switch back to the other column.\n"
     },
     {
+      "id": "17458",
       "author": "Antranig Basman",
       "date": "2008-09-08T14:47:03.000-0400",
       "body": "Fixed at revision 5486\n"
     },
     {
+      "id": "17459",
       "author": "Justin Obara",
       "date": "2008-09-09T08:46:30.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3 (Mac OS 10.5)\\\nFF2, FF3 (Win XP)\\\nFF3 (Win Vista)\n"

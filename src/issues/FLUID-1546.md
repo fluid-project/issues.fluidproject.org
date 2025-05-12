@@ -36,16 +36,19 @@
   ],
   "comments": [
     {
+      "id": "14497",
       "author": "Justin Obara",
       "date": "2008-09-11T12:07:38.000-0400",
       "body": "'screenshot-1' shows the locked portlet error message appearing when trying to drop the portlet in a valid spot below the locked portlet\n"
     },
     {
+      "id": "14500",
       "author": "Antranig Basman",
       "date": "2008-09-11T13:24:08.000-0400",
       "body": "Whisky Award Bug! Congrats Justin. Fixed at revision 5515.\n"
     },
     {
+      "id": "14503",
       "author": "Justin Obara",
       "date": "2008-09-12T09:02:11.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

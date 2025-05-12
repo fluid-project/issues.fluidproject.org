@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15317",
       "author": "Colin Clark",
       "date": "2014-03-26T15:53:58.206-0400",
       "body": "It looks like jQuery's isEmptyObject has been included in our jquery.standalone.js file, which we use in Node.js and other non-browser environments. Kasper Galschiot Markus can you confirm that this addresses this issue, and close it if so?\n"

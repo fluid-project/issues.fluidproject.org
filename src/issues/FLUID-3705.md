@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16148",
       "author": "Mike Lam",
       "date": "2010-09-08T13:47:03.772-0400",
       "body": "Branch 1.2.1 created for new maintenance release.\n"
     },
     {
+      "id": "16150",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:20.107-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "18894",
       "author": "Justin Obara",
       "date": "2008-09-10T11:07:43.000-0400",
       "body": "'screenshot-1' shows that the portlet is semi-transparent\n"
     },
     {
+      "id": "18896",
       "author": "Justin Obara",
       "date": "2008-09-19T11:39:06.000-0400",
       "body": "Appears to have been fixed with some of the recent changes to the reorderer\n\nVerified using:\n\nOpera 9.5 (Win XP)&#x20;\n"

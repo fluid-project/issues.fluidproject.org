@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21015",
       "author": "Justin Obara",
       "date": "2015-06-15T15:02:00.630-0400",
       "body": "The markup driven demo has been replaced by an example <http://build.fluidproject.org/infusion/examples/components/pager/markupDriven/> . However, the reason it does not show the tooltip, is that the markup driven pager does not support it.\n"
     },
     {
+      "id": "21016",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:06.366-0400",
       "body": "Reopening to change the fix version to 1.9\n"

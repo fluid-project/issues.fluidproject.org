@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27469",
       "author": "Blake E",
       "date": "2008-10-20T10:44:05.000-0400",
       "body": "vulab4\n"
     },
     {
+      "id": "27470",
       "author": "Blake E",
       "date": "2008-10-20T13:05:49.000-0400",
       "body": "Version 1, probably needs some work and there is probably overlap with other documentation, but its a good start.\n\n🙂\n\n<http://wiki.fluidproject.org/display/fluid/OpenVULab+Web+Component+Vision>\n"

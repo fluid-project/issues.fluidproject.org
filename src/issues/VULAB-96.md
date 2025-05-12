@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27481",
       "author": "David Makalsky",
       "date": "2008-12-08T15:59:08.000-0500",
       "body": "vulab11\n"
     },
     {
+      "id": "27482",
       "author": "David Makalsky",
       "date": "2008-12-22T10:37:35.000-0500",
       "body": "Creating new item for next iteration\n"

@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25566",
       "author": "Antranig Basman",
       "date": "2014-04-08T19:28:47.478-0400",
       "body": "One possible and maybe less intrusive scheme than \"link counting\" might be a \"draw by perpetual check\" detection system. At each participant in a transaction we keep a log of paths and changes, and throw a fatal error on finding ourselves honoring the same update from the same previous value twice in the same transaction - with the logs cleared by a system based on the simple \"external freshness\" criterion. Users could enhance performance by turning this checking off if they were sure that the set of transforms they were using were all good.\n"
     },
     {
+      "id": "25567",
       "author": "Antranig Basman",
       "date": "2014-04-08T19:50:08.763-0400",
       "body": "NB - to fix <https://fluidproject.atlassian.net/browse/FLUID-5293#icft=FLUID-5293> completely we required a further refinement to delta tracking within a transaction, which was reporting {} as a deltaMap when no changes had occurred. Cheapest way of fixing this is explicitly counting deltas as an int and censoring the return when zero.\n"

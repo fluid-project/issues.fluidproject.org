@@ -32,6 +32,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10284",
       "author": "Justin Obara",
       "date": "2010-07-14T10:20:56.428-0400",
       "body": "The styling has been taken as far as currently possible to be inilne with the 1.0 wireframes\n"

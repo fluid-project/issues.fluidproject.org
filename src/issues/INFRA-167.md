@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25832",
       "author": "Giovanni Tirloni",
       "date": "2018-04-24T11:17:37.227-0400",
       "body": "Deployed to dev and production load balancers.\n\nVersion is pinned now. We're relying on the common role to deploy approved repositories. Unfortunately this makes the role less useful outside of our infrastructure (but easier to reason about).\n\n<https://github.com/inclusive-design/ops/commit/18e2d5b87a1c0bb2bf8c653240131dd0478092eb>\n"

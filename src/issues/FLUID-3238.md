@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23226",
       "author": "Anastasia Cheetham",
       "date": "2011-10-14T15:18:50.881-0400",
       "body": "I know we'll probably be redesigning the demo portal, but this issue should probably be kept in mind. We could certainly easily fix it while waiting for the new design.\n"
     },
     {
+      "id": "23228",
       "author": "Justin Obara",
       "date": "2014-07-14T07:17:37.865-0400",
       "body": "The demo portal is no longer being used.\n"

@@ -30,16 +30,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16211",
       "author": "Colin Clark",
       "date": "2011-01-27T18:31:38.901-0500",
       "body": "I fixed this as part of a commit against <https://fluidproject.atlassian.net/browse/FLUID-3837#icft=FLUID-3837>, which substantially cleaned up Uploader's markup at r10479. The fix involved putting back a misplaced fl-progEnhance-enhanced style on the Uploader's container, and extending ProgressiveEnhancement.js to automatically unhide fl-progEnhance-enhanced if JavaScript is enabled.\n"
     },
     {
+      "id": "16213",
       "author": "Colin Clark",
       "date": "2011-01-27T18:32:07.580-0500",
       "body": "Mike or Erin, can you take a look at tomorrow's build and verify that this issue is fixed? Thanks!\n"
     },
     {
+      "id": "16215",
       "author": "Mike Lam",
       "date": "2011-01-28T10:35:08.795-0500",
       "body": "The single file uploader is not displayed when Javascript is disabled.  &#x20;\n"

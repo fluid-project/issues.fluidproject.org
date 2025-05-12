@@ -48,31 +48,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15058",
       "author": "Colin Clark",
       "date": "2009-08-25T23:02:03.000-0400",
       "body": "I've got a working draft of the new afterMove page here:\n\n<http://wiki.fluidproject.org/display/fluid/Talking+to+the+Server+Using+The+afterMove+Event>\n"
     },
     {
+      "id": "15062",
       "author": "Justin Obara",
       "date": "2009-09-21T10:03:03.000-0400",
       "body": "Bug Parade Infusion 1.1.2\n"
     },
     {
+      "id": "15065",
       "author": "Colin Clark",
       "date": "2009-10-05T13:52:44.000-0400",
       "body": "These are related in that changes to the default CSS and demo have affected the unit tests. I've fixed this issue in r8229.\n"
     },
     {
+      "id": "15068",
       "author": "Colin Clark",
       "date": "2009-10-05T15:03:16.000-0400",
       "body": "The last  fixes went in for this issue as of r8235. I'd appreciate review for these.\n"
     },
     {
+      "id": "15070",
       "author": "Colin Clark",
       "date": "2009-10-05T15:09:04.000-0400",
       "body": "The documentation side of this JIRA has been moved to <https://fluidproject.atlassian.net/browse/FLUID-3226#icft=FLUID-3226> so that we can wind this one down for bug parade.\n"
     },
     {
+      "id": "15073",
       "author": "Jacob Farber",
       "date": "2009-10-05T15:12:14.000-0400",
       "body": "Reviewed and it looks good.\n"

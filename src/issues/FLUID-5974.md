@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22546",
       "author": "Justin Obara",
       "date": "2016-09-29T12:44:57.850-0400",
       "body": "Antranig Basman do you have a thought on how we should proceed with this. The dropdown inline edit is still not a fully supported component/feature in infusion.\n"
     },
     {
+      "id": "22548",
       "author": "Cindy Li",
       "date": "2016-10-03T15:27:55.596-0400",
       "body": "The pull request <https://github.com/fluid-project/jquery.selectbox/pull/1> has been merged into the master branch at cb5b2f36a23304260286236414124e80006e27a0\n"
     },
     {
+      "id": "22550",
       "author": "Cindy Li",
       "date": "2016-10-03T16:22:57.646-0400",
       "body": "The infusion pull request <https://github.com/fluid-project/infusion/pull/759> has been merged into the master at a1199e7ff7d856b30d63fd55412534069b3d63d8\n"

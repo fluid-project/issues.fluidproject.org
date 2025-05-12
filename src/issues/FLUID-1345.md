@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18210",
       "author": "Colin Clark",
       "date": "2008-08-29T00:00:31.000-0400",
       "body": "Still need to get scrollability working in the queue.\n"
     },
     {
+      "id": "18211",
       "author": "Colin Clark",
       "date": "2008-09-09T20:36:17.000-0400",
       "body": "I've filed the problem of scrollability not working as a separate issue.\n"
     },
     {
+      "id": "18212",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:47.001-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

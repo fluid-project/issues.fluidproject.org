@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17549",
       "author": "Allison Bloodworth",
       "date": "2008-03-18T00:40:23.000-0400",
       "body": "iteration08\n"
     },
     {
+      "id": "17551",
       "author": "Allison Bloodworth",
       "date": "2008-04-18T17:08:15.000-0400",
       "body": "\\-\n"
     },
     {
+      "id": "17553",
       "author": "Jonathan Hung",
       "date": "2008-05-13T15:13:28.000-0400",
       "body": "Transferred content from Sakai design patterns working group into OSDPL.\n"

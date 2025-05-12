@@ -33,21 +33,25 @@
   ],
   "comments": [
     {
+      "id": "15514",
       "author": "y z",
       "date": "2009-05-13T14:48:50.000-0400",
       "body": "Patch for the issue.\n"
     },
     {
+      "id": "15517",
       "author": "y z",
       "date": "2009-05-13T15:17:32.000-0400",
       "body": "Updated the patch to comply with jslint\n"
     },
     {
+      "id": "15520",
       "author": "Justin Obara",
       "date": "2009-05-16T13:11:55.000-0400",
       "body": "returning this one to open, until the patch is committed\n"
     },
     {
+      "id": "15523",
       "author": "Justin Obara",
       "date": "2009-05-16T13:20:16.000-0400",
       "body": "Actually it was committed at revision 7174&#x20;\n\nVerified fix using:\n\nIE 6, FF3 (Win XP)\\\nFF2, FF3, Opera 9.6 (Mac OS 10.5)\n"

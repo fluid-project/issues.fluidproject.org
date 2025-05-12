@@ -44,21 +44,25 @@
   ],
   "comments": [
     {
+      "id": "24445",
       "author": "Harris Wong",
       "date": "2011-07-26T16:47:50.382-0400",
       "body": "white-on-black.ong:\n\n* button text is white and is invisible, should be in black\n* header and paragraph are in dark gray, change that to white\n\nblack-on-yellow\\.png:\n\n* slider bar is white, which is extremely close to the yellow background colour.  Change it to black.\n\nyellow-on-black.png:\n\n* button text is yellow and is invisible, should be in black\n* header and paragraph are in dark gray, change that to white\n"
     },
     {
+      "id": "24446",
       "author": "Harris Wong",
       "date": "2011-07-26T16:49:04.824-0400",
       "body": "Bug Parade Infusion 1.4\n"
     },
     {
+      "id": "24447",
       "author": "Michelle D'Souza",
       "date": "2011-08-25T11:33:04.917-0400",
       "body": "I think this is related to the work Justin is doing right now.\n"
     },
     {
+      "id": "24448",
       "author": "Michelle D'Souza",
       "date": "2011-09-02T11:11:32.000-0400",
       "body": "This seems to be fixed by pull request <https://github.com/fluid-project/infusion/pull/146> merged into project repo at e8af4dd1d5003291d5be73eb09014cc38cb794fb&#x20;\n"

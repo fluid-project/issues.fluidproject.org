@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25819",
       "author": "Giovanni Tirloni",
       "date": "2016-08-22T11:41:03.881-0400",
       "body": "It looks like all these issues have been cloned into the GPII JIRA already.\n"

@@ -37,11 +37,13 @@
   ],
   "comments": [
     {
+      "id": "11372",
       "author": "Justin Obara",
       "date": "2015-06-05T13:43:39.840-0400",
       "body": "screenshot.png shows the fourth language option just starting to peak out above the down arrow, when scrolling with the keyboard in high contrast.\n"
     },
     {
+      "id": "11373",
       "author": "Cindy Li",
       "date": "2015-11-12T14:38:52.645-0500",
       "body": "This report has been copied to the GPII bug tracker: <https://issues.gpii.net/browse/GPII-1457> and all activities should be carried on there.\n"

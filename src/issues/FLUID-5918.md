@@ -38,11 +38,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25561",
       "author": "Justin Obara",
       "date": "2016-06-16T14:17:43.591-0400",
       "body": "We are currently using the \"grunt-contrib-stylus\" grunt plugin for compiling Styl files to css. However, this plugin does not explicitly support source maps. It is possible to get it to generate inline source maps, but this causes the css file size to double. A more appropriate method would be to create distinct map files.\n\n<https://github.com/gruntjs/grunt-contrib-stylus/issues/118#issuecomment-98195500>\n"
     },
     {
+      "id": "25563",
       "author": "Justin Obara",
       "date": "2021-03-23T12:49:51.214-0400",
       "body": "As part of the work on <https://fluidproject.atlassian.net/browse/FLUID-6496#icft=FLUID-6496> the CSS Preprocessing in Infusion was migrated to Sass\n"

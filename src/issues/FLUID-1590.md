@@ -31,11 +31,13 @@
   ],
   "comments": [
     {
+      "id": "19061",
       "author": "Justin Obara",
       "date": "2008-09-18T17:03:49.000-0400",
       "body": "'screenshot-1' shows that there is no error message when attempting to place a movable portlet above a locked one\n"
     },
     {
+      "id": "19063",
       "author": "Justin Obara",
       "date": "2008-09-19T10:36:47.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

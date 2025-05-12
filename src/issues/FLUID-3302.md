@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15374",
       "author": "Jonathan Hung",
       "date": "2011-01-10T09:49:52.718-0500",
       "body": "Using Safari 5 Mac OS X 10.5, the problem doesn't appear.\n"

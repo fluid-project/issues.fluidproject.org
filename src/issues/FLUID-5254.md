@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13456",
       "author": "Antranig Basman",
       "date": "2014-01-16T22:38:05.585-0500",
       "body": "Part of this fix requires the fix to <https://fluidproject.atlassian.net/browse/FLUID-5242#icft=FLUID-5242>\n"
     },
     {
+      "id": "13458",
       "author": "Antranig Basman",
       "date": "2015-05-21T09:22:10.535-0400",
       "body": "Merged into trunk at revision f13dda69b9f2b8f1cf8a0eb98fc568416f09108e (Feb 5, 2014)\n"

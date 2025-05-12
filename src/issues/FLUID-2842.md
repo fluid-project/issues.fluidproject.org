@@ -45,16 +45,19 @@
   ],
   "comments": [
     {
+      "id": "13438",
       "author": "Daphne Ogle",
       "date": "2009-05-28T22:57:10.000-0400",
       "body": "This show left 1/4 of UI Options inaccessible with largest font setting chosen.\n"
     },
     {
+      "id": "13440",
       "author": "Justin Obara",
       "date": "2009-06-02T09:38:22.000-0400",
       "body": "The problem is that the dialog is centred and expands off of the screen to the left at large font sizes. You are unable to scroll to the left so portions of the dialog becomes unusable.\n"
     },
     {
+      "id": "13442",
       "author": "Michelle D'Souza",
       "date": "2011-09-06T11:59:53.977-0400",
       "body": "This is no longer an issue since we moved to the fat panel version instead of using a dialog.\n"

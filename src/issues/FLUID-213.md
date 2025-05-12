@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13648",
       "author": "Shaw-Han Liem",
       "date": "2008-02-06T15:29:07.000-0500",
       "body": "iteration02\n"
     },
     {
+      "id": "13649",
       "author": "Barbara Glover",
       "date": "2008-02-14T14:48:26.000-0500",
       "body": "We are separating this task into two tasks.\n"

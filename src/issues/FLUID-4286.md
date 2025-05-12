@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24395",
       "author": "Jonathan Hung",
       "date": "2011-06-08T20:56:08.199-0400",
       "body": "Line 59 of src/webapp/lib/jquery/ui/css/fl-theme-hc/hc.css\n\n.fl-theme-hc .ui-widget { font-family: Verdana,Arial,sans-serif; font-size: 1.2em; }\n\n1.2em should be 1.0em.\n"
     },
     {
+      "id": "24396",
       "author": "Anastasia Cheetham",
       "date": "2014-04-02T16:40:51.799-0400",
       "body": "FSS is deprecated\n"

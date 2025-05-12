@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10063",
       "author": "Justin Obara",
       "date": "2012-05-25T08:09:15.855-0400",
       "body": "Changed the uploader in the client to have a max file size of 100MB. Due to FLUID-4713 the size is actually set to 102401 KB to allow a file of at most 100MB\n"

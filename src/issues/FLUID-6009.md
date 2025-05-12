@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23658",
       "author": "Justin Obara",
       "date": "2020-07-30T15:31:15.606-0400",
       "body": "For <https://fluidproject.atlassian.net/browse/FLUID-6525#icft=FLUID-6525> we modified the placeholder text in the contrast themes to have the same colour as the content but italicized to identify it as placeholder text. In some browsers the placeholder text will still have some opacity applied (e.g. Firefox 79).\n"

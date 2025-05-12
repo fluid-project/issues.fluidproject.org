@@ -69,41 +69,49 @@
   ],
   "comments": [
     {
+      "id": "11632",
       "author": "y z",
       "date": "2010-02-19T18:49:56.000-0500",
       "body": "This patch is not fully functional yet, there's an older bug with the spinner background colour. So todo: fix the spinner background problem, put spinner everywhere.\n"
     },
     {
+      "id": "11633",
       "author": "Jess Mitchell",
       "date": "2010-02-22T15:22:55.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "11634",
       "author": "y z",
       "date": "2010-02-22T19:06:45.000-0500",
       "body": "This patch is almost working. There are 2 issues left: \\\n1\\) make the home page working with spinner.\\\n2\\) investigate why the spinner disappears on the ipod after a first second\n"
     },
     {
+      "id": "11635",
       "author": "Colin Clark",
       "date": "2010-02-22T19:51:40.000-0500",
       "body": "Yura, I took a quick peek at your patch. Things look roughly as I expected. My only concern: it looks like a fair bit of markup has changed in many pages. Have you snuck a few other changes in here, or have tabs crept in perhaps? Or is there another reason why all of the navbar markup--as well as the body take in some cases--has changed on Artifact View, Browse, etc.?\n\nNot a big deal, but definitely worth looking at before submitting a final patch\n"
     },
     {
+      "id": "11637",
       "author": "y z",
       "date": "2010-03-05T17:53:34.000-0500",
       "body": "spinner should go to shared/images in engage core\n"
     },
     {
+      "id": "11638",
       "author": "Antranig Basman",
       "date": "2010-03-10T00:58:04.000-0500",
       "body": "it seems a bit onerous to expect every implementor of a navigation link to apply a particular CSS class to it, and somewhat error-prone. Would it not be a better strategy to simply hook into the global fluid.engage.url.setLocation functions that we were obliged to provide for the condenser?\n"
     },
     {
+      "id": "11639",
       "author": "Colin Clark",
       "date": "2010-03-10T01:04:04.000-0500",
       "body": "Antranig's comments make sense to me, but it strikes me that we may want to extend the Screen Navigator to fire real events before and after a page change occurs, allowing us to add effects such as this spinner and cross-page animations.\n"
     },
     {
+      "id": "11640",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:17.036-0500",
       "body": "The repository has been archived.\n"

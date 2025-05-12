@@ -53,16 +53,19 @@
   ],
   "comments": [
     {
+      "id": "14100",
       "author": "Jonathan Hung",
       "date": "2013-07-03T14:37:16.182-0400",
       "body": "Note, the attached EOT and TTF file are improperly named. They should say \"InfusionIcons-FSS\" not \"InfusionIcons-Uploader\".\n"
     },
     {
+      "id": "14102",
       "author": "Jonathan Hung",
       "date": "2013-09-06T09:17:51.721-0400",
       "body": "Some icons used in different themes in FSS (i.e. Coal theme) have special visual effects which would be removed if implemented as a font-icon equivalent (font icons are monotone).\n\nThis brings up an issue where changing the visual appearance of FSS may have undesired consequences for integrators (i.e. if someone has used FSS's coal theme and expected it to look a particular way).\n"
     },
     {
+      "id": "14105",
       "author": "Michelle D'Souza",
       "date": "2014-04-04T15:32:59.807-0400",
       "body": "FSS is currently deprecated and will be removed for 2.0.\n"

@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23660",
       "author": "Antranig Basman",
       "date": "2016-04-12T17:56:40.048-0400",
       "body": "Smoking gun test is to add the following in DataBinding.js:\n\n```javascript\nfluid.establishModelRelay = function (that, optionsModel, optionsML, optionsMR, applier) {\r\n        if (that.modelRelayEstablishing) {\r\n            fluid.fail(\"ERROR: reentry into fluid.establishModelRelay\");\r\n        }\r\n        that.modelRelayEstablishing = true;\n```\n\nCurrently this causes no failure in a core fixture, but will, for example, cause Builder.js tests to bomb out in the prefs framework\n"
     },
     {
+      "id": "23662",
       "author": "Cindy Li",
       "date": "2016-05-05T10:25:55.377-0400",
       "body": "The pull request <https://github.com/fluid-project/infusion/pull/706> has been merged into the project repo master branch at 63b8a53442f712d00dfbb684702ee1f7df2b5f55\n"

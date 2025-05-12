@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18784",
       "author": "Michelle D'Souza",
       "date": "2008-04-28T13:22:53.000-0400",
       "body": "The SWF plugin needs a special setting in order to work with local files. There are instructions in the readme accompanying the sample describing how to do this It is only an issue for developers working with local files - it shouldn't affect users working with a served-up application.\n"

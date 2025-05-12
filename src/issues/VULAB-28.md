@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27662",
       "author": "Blake E",
       "date": "2008-10-20T10:45:06.000-0400",
       "body": "I feel like we need to prioritize this, so if you don't mind I'm going to assign this to vulab4\n"
     },
     {
+      "id": "27663",
       "author": "David Makalsky",
       "date": "2008-10-27T14:02:32.000-0400",
       "body": "VULAB7\n"
     },
     {
+      "id": "27664",
       "author": "David Makalsky",
       "date": "2008-12-01T18:01:52.000-0500",
       "body": "Following up in <https://fluidproject.atlassian.net/browse/VULAB-28#icft=VULAB-28>\n"

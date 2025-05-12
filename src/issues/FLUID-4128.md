@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13516",
       "author": "Antranig Basman",
       "date": "2011-03-01T22:26:25.064-0500",
       "body": "The code in question reads:\n\n```java\ncspace.header.produceTree = function (that) {\r\n        var tree = {\r\n            logout: {\r\n                messagekey: \"logout\"\r\n            },\r\n            user: {\r\n                messagekey: \"user\"\r\n            },\r\n            userName: {\r\n                messagekey: \"userName\",\r\n                args: {\r\n                    userName: that.options.login.options.screenName\r\n                } //interpret %userName string\r\n            },\r\n            expander: {\r\n                repeatID: \"menuItem\",\r\n                type: \"fluid.renderer.repeat\",\r\n                pathAs: \"item\",\r\n                valueAs: \"itemName\",\r\n                controlledBy: \"menuitems\",\r\n                tree: { //check whether to display the menu items by calling assertMenuItemDisplay with the hide variable\r\n                    expander: {\r\n                        type: \"fluid.renderer.condition\",\r\n                        condition: {\r\n                            funcName: \"cspace.header.assertMenuItemDisplay\",\r\n                            args: \"${{itemName}.hide}\"\r\n                        },\r\n                        trueTree: {\r\n                            label: {\r\n                                target: \"${{item}.href}\",\r\n                                linktext: {\r\n                                    messagekey: \"${{item}.name}\"\r\n                                }\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        };\r\n        return tree;\r\n    };\n```\n"
     },
     {
+      "id": "13524",
       "author": "Antranig Basman",
       "date": "2011-03-01T23:15:37.649-0500",
       "body": "Fixed at revision c6298c9db2fca7f385d1dfd83bbdd23fa328b03c&#x20;\n"

@@ -39,11 +39,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25847",
       "author": "Alan Harnum",
       "date": "2015-11-03T16:56:07.524-0500",
       "body": "CouchDB has recently fallen out of the EPEL for CentOS7: <http://pkgs.fedoraproject.org/cgit/couchdb.git/commit/?h=epel7>\n\n*2015-10-28: Retired because it depends on erlang-mochiweb, which was retired, because it was orphaned for more than six weeks.*\n\nThis is hopefully resolved soon - if not we'll probably have to make a container that builds from source.\n"
     },
     {
+      "id": "25848",
       "author": "Avtar Gill",
       "date": "2016-01-11T10:49:30.026-0500",
       "body": "Pull request for this issue:\n\n<https://github.com/idi-ops/docker-couchdb/pull/1>\n"

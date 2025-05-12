@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14574",
       "author": "Kasper Galschiot Markus",
       "date": "2016-04-13T04:25:35.657-0400",
       "body": "It is not clear that this JIRA is actually valid, since firstValue is a bit special in its behavior. By default all the entries of the firstValue transform are interpreted as transforms (ie. paths if they are strings). This would conflict with the current expectations of the model transformation systems standardInputFunction.\n"

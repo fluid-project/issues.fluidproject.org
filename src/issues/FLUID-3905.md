@@ -37,16 +37,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18440",
       "author": "Justin Obara",
       "date": "2011-08-12T10:41:51.569-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "18449",
       "author": "Justin Obara",
       "date": "2011-08-12T11:17:14.132-0400",
       "body": "In the future we may want to create a jslint option to specifically handle the comments in the arguments instead of using jslint:ok.\n"
     },
     {
+      "id": "18453",
       "author": "Justin Obara",
       "date": "2011-08-12T11:17:42.227-0400",
       "body": "Pushed pull request <https://github.com/fluid-project/infusion/pull/132/files> into the project repo at 284a423e6f8a4885c13a50c1e3656dead3334dce\n"

@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23172",
       "author": "Eli Cochran",
       "date": "2009-06-02T18:52:25.000-0400",
       "body": "Done. I added this task so it would be picked up for the next release.\n"
     },
     {
+      "id": "23173",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:19.339-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

@@ -39,26 +39,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19714",
       "author": "Justin Obara",
       "date": "2008-07-16T13:45:11.000-0400",
       "body": "Windows shortcuts for Opera\n\nCtrl+M = ?\\\nCtrl+J = manage transfers\\\nCtrl+k = new e-mail\\\nCtrl+I = (this will work for us)\\\nCtrl+ arrow = left and right activate the browsers forward and back actions\n\nMac shortcuts for Opera\n\nusing the Ctrl modifier and any of our navigation buttons does not seem to have any affect.\n"
     },
     {
+      "id": "19717",
       "author": "Antranig Basman",
       "date": "2008-09-24T16:35:01.000-0400",
       "body": "I am not quite sure of the characterisation of this issue, but it may have been fixed at revision 5669 which is an Opera-specific keyboard navigation fix. Please review -&#x20;\n"
     },
     {
+      "id": "19719",
       "author": "Justin Obara",
       "date": "2008-09-30T11:24:13.000-0400",
       "body": "The ctrl key still doesn't function properly in Mac OS, it has been remapped to the command key. <https://fluidproject.atlassian.net/browse/FLUID-1626#icft=FLUID-1626>\n"
     },
     {
+      "id": "19722",
       "author": "Justin Obara",
       "date": "2008-09-30T11:28:31.000-0400",
       "body": "The remaining portion of this bug is duplicated by <https://fluidproject.atlassian.net/browse/FLUID-1626#icft=FLUID-1626>\n"
     },
     {
+      "id": "19724",
       "author": "Justin Obara",
       "date": "2008-09-30T11:30:50.000-0400",
       "body": "The majority of this bug is fixed, a portion is duplicated by <https://fluidproject.atlassian.net/browse/FLUID-1626#icft=FLUID-1626>, will close this issue and refer to <https://fluidproject.atlassian.net/browse/FLUID-1626#icft=FLUID-1626> now\n"

@@ -40,11 +40,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19334",
       "author": "Antranig Basman",
       "date": "2011-05-12T03:57:23.859-0400",
       "body": "By correcting a bug in FluidRenderer.js, it was possible to achieve sharing of the direct model state between the cooperating components as in the CSpace case without implementing the functionality described here. As a result, implementation has been pushed out to Infusion 1.5.\n"
     },
     {
+      "id": "19335",
       "author": "Antranig Basman",
       "date": "2014-02-20T04:34:02.953-0500",
       "body": "This facility is delivered as part of the <https://fluidproject.atlassian.net/browse/FLUID-3674#icft=FLUID-3674> new changeApplier, which was merged into trunk at revision 3873109a964f9837c9b6d7c4a81e94ac2a9add11\n"

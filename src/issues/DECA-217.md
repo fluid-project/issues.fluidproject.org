@@ -28,21 +28,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10122",
       "author": "Justin Obara",
       "date": "2012-01-15T20:29:45.308-0500",
       "body": "I've removed the camera capture and calibration workflow from the Decapod-server and Decapod-ui repos. The work is currently in my bitbucket repos and needs to be pulled into the master repo.\n\n<https://bitbucket.org/jobara/decapod-server>\\\n<https://bitbucket.org/jobara/decapod-ui>\n\n\\*Note that the install scripts haven't yet been updated to remove any, now, unneeded dependencies. This will be done later when the list of dependencies have been established and the install script is updated.&#x20;\n"
     },
     {
+      "id": "10123",
       "author": "Justin Obara",
       "date": "2012-01-16T11:45:53.712-0500",
       "body": "pushed up to the main googlecode repo\n"
     },
     {
+      "id": "10124",
       "author": "Jonathan Hung",
       "date": "2012-01-31T11:18:46.902-0500",
       "body": "Re-opened because there are images that still need to be removed.\n"
     },
     {
+      "id": "10125",
       "author": "Jonathan Hung",
       "date": "2012-02-10T13:59:55.527-0500",
       "body": "Removed last offending images.\n"

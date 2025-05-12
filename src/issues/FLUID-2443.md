@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20275",
       "author": "Justin Obara",
       "date": "2009-05-05T14:04:30.000-0400",
       "body": "Updated the paths, which were missed.\n\nAlso updated the tabbable function call\n"
     },
     {
+      "id": "20276",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:16.171-0500",
       "body": "Closing issues that were fixed in 1.1\n"

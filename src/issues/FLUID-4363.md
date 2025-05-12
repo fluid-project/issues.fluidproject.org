@@ -39,21 +39,25 @@
   ],
   "comments": [
     {
+      "id": "13507",
       "author": "Justin Obara",
       "date": "2011-07-28T09:15:16.002-0400",
       "body": "ScreenShot.png shows the \"Show Table of Contents\" label being wrapped and the header misaligned with the icon\n"
     },
     {
+      "id": "13510",
       "author": "Justin Obara",
       "date": "2011-07-28T09:19:07.633-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "13512",
       "author": "y z",
       "date": "2011-09-06T16:49:15.699-0400",
       "body": "This seems to be resolved as I can't reproduce it.\n"
     },
     {
+      "id": "13514",
       "author": "Justin Obara",
       "date": "2011-09-26T12:53:12.128-0400",
       "body": "This may have been resolved with the move to the new demo\n"

@@ -27,26 +27,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21437",
       "author": "Justin Obara",
       "date": "2009-03-25T12:37:48.000-0400",
       "body": "Clean Up Parade 1.0&#x20;\n"
     },
     {
+      "id": "21438",
       "author": "Jacob Farber",
       "date": "2009-03-26T17:04:27.000-0400",
       "body": "currently fl-ProgEnhance-show/hide are whats being used to execute progressive enhancement display effects. Since this gets flipped at run-time, it doesnt make sense.\\\nWhen possible, I suggest we try :\n\nfl-ProgEnhance-basic {} // what would get changed at run time to hidden\\\nfl-ProgEnhance-enhanced {} // what would get changed at run time to shown (instead of  writing out the style on the node)\n\nand flc-basic, flc-enhanced could be the DOM selectors maybe?\n"
     },
     {
+      "id": "21439",
       "author": "Eli Cochran",
       "date": "2009-03-30T14:43:41.000-0400",
       "body": "changed fl-ProgEnhance selectors to use the selectors as suggested by Jacob above\n"
     },
     {
+      "id": "21440",
       "author": "Eli Cochran",
       "date": "2009-03-31T15:05:47.000-0400",
       "body": "Uploader style and selector class names are now updated to the new scheme&#x20;\n"
     },
     {
+      "id": "21441",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:46.034-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

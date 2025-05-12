@@ -42,11 +42,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17092",
       "author": "Jacob Farber",
       "date": "2008-09-26T14:13:52.000-0400",
       "body": "updated implementation code and focus CSS to deliver the correct experience\n"
     },
     {
+      "id": "17094",
       "author": "Justin Obara",
       "date": "2008-09-26T15:57:59.000-0400",
       "body": "Proper fixes were implemented quickly and code reviewed&#x20;\n"

@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20698",
       "author": "Justin Obara",
       "date": "2010-10-04T14:57:23.056-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "20699",
       "author": "Colin Clark",
       "date": "2010-12-02T18:31:51.081-0500",
       "body": "We've also been using this issue as a catch-all for major commits related to implementing the HTML 5 version of the Uploader. Now that the immediate issue has been resolved, I'm going to resolve this JIRA and we'll start using more specific issues for bug parade.\n"
     },
     {
+      "id": "20700",
       "author": "Colin Clark",
       "date": "2010-12-02T18:33:19.760-0500",
       "body": "Mike migrated the Gears-related code that was relevant to HTML 5, resolving this issue at r10307 with refinements from me at r10315. We'll resolve this in favour of more specific issues going forward.\n"

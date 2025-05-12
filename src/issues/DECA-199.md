@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10417",
       "author": "Jonathan Hung",
       "date": "2012-06-05T10:00:11.000-0400",
       "body": "Special circumstances:\\\n1\\. What if there's already a file with the same name in the import queue?\\\n2\\. How should the import process treat two files with the same name but in different locations?\n"
     },
     {
+      "id": "10418",
       "author": "Justin Obara",
       "date": "2012-06-08T12:16:20.420-0400",
       "body": "Sort order is purely based on import order\n"

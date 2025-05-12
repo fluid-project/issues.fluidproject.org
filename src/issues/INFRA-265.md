@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25926",
       "author": "Giovanni Tirloni",
       "date": "2020-10-02T12:57:30.828-0400",
       "body": "We've opted to use the free matrix.org server initially and only create our own server if necessary in the future.\n"

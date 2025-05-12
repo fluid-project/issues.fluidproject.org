@@ -47,16 +47,19 @@
   ],
   "comments": [
     {
+      "id": "24354",
       "author": "Justin Obara",
       "date": "2009-01-06T10:38:37.000-0500",
       "body": "'screenshot-1' shows the bottom of the \"Edit Appearance\" button missing, and the scrollbar to the far right\n"
     },
     {
+      "id": "24356",
       "author": "Justin Obara",
       "date": "2009-04-17T08:57:21.000-0400",
       "body": "Updated Environments, as it is now only an issue with Safari\n"
     },
     {
+      "id": "24357",
       "author": "Michelle D'Souza",
       "date": "2011-06-27T15:23:24.563-0400",
       "body": "This issue was fixed by moving to the fat panel UIO.&#x20;\n"

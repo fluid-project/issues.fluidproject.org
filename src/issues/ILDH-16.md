@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13054",
       "author": "Justin Obara",
       "date": "2018-04-24T07:43:03.072-0400",
       "body": "Handlebars and Uglify are coming through docpad-plugin-handlebars; which currently only supports handlebars 1.3.0. \n"

@@ -32,16 +32,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19757",
       "author": "Harris Wong",
       "date": "2011-02-18T13:03:53.022-0500",
       "body": "I can reproduce on IE7 (Win XP) and IE8 as well. &#x20;\n\nFor IE8, even the \"Add more\" is focused, it refreshes the screen when I press \"Enter\" onto it.\n"
     },
     {
+      "id": "19758",
       "author": "John Kremer",
       "date": "2011-02-22T11:13:07.813-0500",
       "body": "IE9 similar issue expect that the focus is stuck on Add More. You can hit enter to browse for a file, but cannot tab off of Add More if you don't hit enter.\n"
     },
     {
+      "id": "19760",
       "author": "Justin Obara",
       "date": "2014-05-22T14:28:36.428-0400",
       "body": "Due to a cross site scripting vulnerability we have removed flash support from the uploader. See <https://fluidproject.atlassian.net/browse/FLUID-5354#icft=FLUID-5354>\n"

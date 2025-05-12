@@ -36,26 +36,31 @@
   ],
   "comments": [
     {
+      "id": "16112",
       "author": "Mike Lam",
       "date": "2010-12-22T15:32:23.856-0500",
       "body": "Adding release builds.\n"
     },
     {
+      "id": "16114",
       "author": "Colin Clark",
       "date": "2010-12-22T18:15:39.207-0500",
       "body": "Mike, can you regenerate the release packages from the official tag?\n\n<https://source.fluidproject.org/svn/fluid/infusion/tags/infusion-1.3>\n"
     },
     {
+      "id": "16116",
       "author": "Mike Lam",
       "date": "2010-12-23T12:08:47.493-0500",
       "body": "Removed the trunk release bundles and replaced them with the 1.3 Tag release bundles. &#x20;\n"
     },
     {
+      "id": "16118",
       "author": "Colin Clark",
       "date": "2010-12-23T13:30:39.738-0500",
       "body": "Mike generated the release artifacts from the tag, and he and Heidi tested them thoroughly.\n"
     },
     {
+      "id": "16120",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:19.645-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

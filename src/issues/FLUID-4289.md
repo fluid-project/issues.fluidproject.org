@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24123",
       "author": "Justin Obara",
       "date": "2011-06-14T09:43:59.609-0400",
       "body": "I think this is either a bug with jQuery UI itself or with their documentation. They provide another means of setting disabled which takes an array of tab indexes instead of a Boolean, this works.\n"

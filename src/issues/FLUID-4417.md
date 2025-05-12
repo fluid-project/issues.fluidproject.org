@@ -34,16 +34,19 @@
   ],
   "comments": [
     {
+      "id": "14455",
       "author": "Michelle D'Souza",
       "date": "2011-08-31T11:23:47.205-0400",
       "body": "James, can you please provide us with some design guidance for the preview?&#x20;\n"
     },
     {
+      "id": "14459",
       "author": "Justin Obara",
       "date": "2016-07-08T10:59:35.231-0400",
       "body": "Replaced the missing screenshot. It seems that the issue is likely less pronounced that before.\n"
     },
     {
+      "id": "14463",
       "author": "Justin Obara",
       "date": "2016-07-08T11:00:29.269-0400",
       "body": "Real world implementation will depend on the content used for the preview by an integrator. Perhaps for the manual test we can use a min-width on the preview window.\n"

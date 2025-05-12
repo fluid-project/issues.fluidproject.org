@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15883",
       "author": "Justin Obara",
       "date": "2014-11-05T14:24:04.385-0500",
       "body": "This manual test has been replaced\n"
     },
     {
+      "id": "15885",
       "author": "Justin Obara",
       "date": "2015-06-26T09:50:58.167-0400",
       "body": "Reopening to change the fix version to 1.9\n"

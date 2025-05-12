@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25444",
       "author": "Justin Obara",
       "date": "2020-09-01T13:59:14.213-0400",
       "body": "Original filled as <https://issues.gpii.net/browse/GPII-4276>\n"
     },
     {
+      "id": "25445",
       "author": "Justin Obara",
       "date": "2020-09-01T13:59:23.577-0400",
       "body": "example solutions registry entry. <https://github.com/GPII/universal/blob/master/testData/solutions/win32.json5#L7285>\n\n* Would have one settings handler for every enactor.\n* Will include the configuration (e.g. there's a base grade for the class swapper type enactors, this would be configurations each to the particular preference enactor it works for)\n* Supported settings block will need to reference the related primary schema\n* Investigate use of preference maps, but in general should not have to modify the enactors themselves much\n* capabilities transformations handles the model mapping\n"

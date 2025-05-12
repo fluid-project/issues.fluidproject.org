@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18588",
       "author": "Anastasia Cheetham",
       "date": "2008-04-14T16:49:58.000-0400",
       "body": "The styling has been changed - font is larger, padding is increased, drop target size is reduced. This greatly reduces the flakiness of this demo.\n"

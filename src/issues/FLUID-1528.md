@@ -74,46 +74,55 @@
   ],
   "comments": [
     {
+      "id": "23715",
       "author": "Justin Obara",
       "date": "2008-09-09T13:02:19.000-0400",
       "body": "'screenshot-1' shows the text outside of edit mode\n"
     },
     {
+      "id": "23716",
       "author": "Justin Obara",
       "date": "2008-09-09T13:16:49.000-0400",
       "body": "'screenshot-2' shows the same string of text as 'screenshot-1' but this time in  edit mode. Notice that the text isn't completely visible.\n"
     },
     {
+      "id": "23717",
       "author": "Justin Obara",
       "date": "2008-09-09T13:22:30.000-0400",
       "body": "This problem can become more prevalent with smaller screen resolutions and browser windows, and with larger font sizes.\n"
     },
     {
+      "id": "23719",
       "author": "Justin Obara",
       "date": "2008-09-22T12:51:34.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "23720",
       "author": "Antranig Basman",
       "date": "2008-11-07T13:01:49.000-0500",
       "body": "This issue cannot be resolved, along with <https://fluidproject.atlassian.net/browse/FLUID-889#icft=FLUID-889> and others. The behaviour of single-line input fields in browsers is \"magic\" and inconsistent when newlines and other special characters are entered. If multiline text is required, the integrator should supply a multi-line edit view, such as textarea or rich equivalent.\n"
     },
     {
+      "id": "23722",
       "author": "Justin Obara",
       "date": "2008-11-07T13:39:18.000-0500",
       "body": "Re-opened as this issue has to do with long text entered in an inline edit field that is then displayed on multiple lines in view mode. It does not have to do with attempting it to display on two lines. That being said it may be out of our control anyways.\n"
     },
     {
+      "id": "23723",
       "author": "Antranig Basman",
       "date": "2008-11-07T17:13:49.000-0500",
       "body": "I have adjusted the behaviour to ensure \"scroll to end\" even if \"selectOnEdit\" is enabled. Please reverify and determine if this new behaviour is more acceptable.\n\nAt revision 5981\n"
     },
     {
+      "id": "23725",
       "author": "Justin Obara",
       "date": "2008-11-10T08:52:46.000-0500",
       "body": "design-watched\n\nI'm marking this one for the design team to look at.\n"
     },
     {
+      "id": "23726",
       "author": "Justin Obara",
       "date": "2008-11-10T08:53:25.000-0500",
       "body": "leaving it open until the design team determines the appropriate behaviour\n"

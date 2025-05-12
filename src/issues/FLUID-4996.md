@@ -42,31 +42,37 @@
   ],
   "comments": [
     {
+      "id": "13696",
       "author": "heidi valles",
       "date": "2013-05-14T10:58:48.388-0400",
       "body": "Need pencil icon from <http://192.168.2.11/git_heidi/infusion/src/webapp/demos/inlineEdit/simple/html/inlineEdit.html>\n"
     },
     {
+      "id": "13698",
       "author": "Jonathan Hung",
       "date": "2013-06-10T11:19:29.044-0400",
       "body": "Attached font with pencil, undo, redo, and save.\\\nIcons generated from the AI file attached to this JIRA:\\\n<http://issues.fluidproject.org/browse/FLUID-3801>\n"
     },
     {
+      "id": "13700",
       "author": "Jonathan Hung",
       "date": "2013-06-21T08:00:04.785-0400",
       "body": "There is a problem with the pencil icon. Currently the icon is in the editable field which appears and disappears when editing / viewing. However, any text within the field will become part of the editable text - including the icon font.\n\nOne possible way to fix this is to put the icon in a span after the editable field and allow the integrator ability to position as they please via CSS.\n"
     },
     {
+      "id": "13702",
       "author": "Jonathan Hung",
       "date": "2013-06-21T11:13:10.365-0400",
       "body": "Fleshing out the previous solution some more:\n\n* by default the edit icon appears immediately to the right of the editable text field.\n* edit mode can be activated by selecting the icon or by selecting the text field.&#x20;\n* the edit icon by default dims when edit field is activated\n* hovering over the edit icon will produce an outline\n\nUsing CSS, the user will be able to:\n\n* position the edit icon to where ever they want\n* modify dim style or hide the icon all together when edit mode is activated\n"
     },
     {
+      "id": "13705",
       "author": "Justin Obara",
       "date": "2015-06-15T10:18:21.546-0400",
       "body": "Jonathan Hung do you know the state of this jira?\n"
     },
     {
+      "id": "13707",
       "author": "Justin Obara",
       "date": "2021-06-22T15:19:19.139-0400",
       "body": "May need to convert to SVGs instead, see: <https://fluidproject.atlassian.net/browse/FLUID-6142#icft=FLUID-6142>\n"

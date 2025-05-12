@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12908",
       "author": "Anastasia Cheetham",
       "date": "2012-05-03T09:23:48.209-0400",
       "body": "Existing sidebars removed. Waiting for designs for a 'global' sidebar\n"
     },
     {
+      "id": "12909",
       "author": "Michelle D'Souza",
       "date": "2012-05-10T10:32:18.826-0400",
       "body": "This feature requires designs before it can be implemented.&#x20;\n"

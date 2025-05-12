@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11865",
       "author": "Justin Obara",
       "date": "2009-08-21T15:08:10.000-0400",
       "body": "Making use of the messageBundle feature in the renderer to handle I18N\n"
     },
     {
+      "id": "11866",
       "author": "Justin Obara",
       "date": "2009-11-10T10:47:52.000-0500",
       "body": "closed as per previous comment\n"

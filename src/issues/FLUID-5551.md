@@ -30,16 +30,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23872",
       "author": "Justin Obara",
       "date": "2014-11-12T11:52:19.873-0500",
       "body": "We'll probably need to start a conversation on the fluid-work about where to put the packages on the CDN. Currently the CDN uses a directory structure that starts with the websites url as the base. We could put the packages under the fluidproject.org or have a specific infusion directory.\n"
     },
     {
+      "id": "23873",
       "author": "Colin Clark",
       "date": "2016-08-17T15:46:17.191-0400",
       "body": "These days, Github Releases is probably the best option for this. Users should be encouraged to use npm for most uses, but a downloadable zip file is always nice.\n"
     },
     {
+      "id": "23875",
       "author": "Justin Obara",
       "date": "2016-12-08T16:05:01.152-0500",
       "body": "Builds of Infusion are included on the Infusion 2.0 release page on GitHub and a version is published to NPM.\n\nsee:&#x20;\n\n* <https://github.com/fluid-project/infusion/releases/tag/infusion-2.0>\n* <https://www.npmjs.com/package/infusion>\n"

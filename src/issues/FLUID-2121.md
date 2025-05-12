@@ -37,41 +37,49 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21154",
       "author": "Justin Obara",
       "date": "2009-02-06T12:03:15.000-0500",
       "body": "Bug Parade  0.8 release\n"
     },
     {
+      "id": "21155",
       "author": "Jacob Farber",
       "date": "2009-02-11T15:53:13.000-0500",
       "body": "jQuery UI dialog now forces  proper focus\n"
     },
     {
+      "id": "21156",
       "author": "Justin Obara",
       "date": "2009-02-11T15:54:34.000-0500",
       "body": "Speaking to Joseph about this.&#x20;\n\nHe suggested that the \"Close\" button be part of a title bar and activated by using the \"esc\" key or clicking on it with the mouse.\n\nThe first focusable element in the dialog should be the first item or whatever makes the most sense.&#x20;\n\nIn our case this would likely be the accordion (when it is implemented) or the first option.\n"
     },
     {
+      "id": "21157",
       "author": "Justin Obara",
       "date": "2009-02-12T10:23:50.000-0500",
       "body": "It seems as though the commit at r6487 has caused IE to take approximately 10 minutes  to load the UI Options Dialog.&#x20;\n"
     },
     {
+      "id": "21158",
       "author": "Jacob Farber",
       "date": "2009-02-12T10:47:19.000-0500",
       "body": "I went to the link <http://build.fluidproject.org/fluid/sample-code/shared/sakai/sakai.html> , hit the button and it loaded within a second or two....\\\nAlso, the ESC key closes the dialog, as far as I can tell.\n"
     },
     {
+      "id": "21159",
       "author": "Justin Obara",
       "date": "2009-03-12T11:31:35.000-0400",
       "body": "Bug Parade 1.0 release\n"
     },
     {
+      "id": "21160",
       "author": "Michelle D'Souza",
       "date": "2009-03-20T10:43:16.000-0400",
       "body": "I tested this and reviewed the code. It works nicely.\n"
     },
     {
+      "id": "21161",
       "author": "Justin Obara",
       "date": "2009-03-20T11:24:56.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3 (Mac OS 10.5)\\\nFF2, FF3, IE6, (Win XP)\\\nFF3, IE7 (Win Vista)\n"

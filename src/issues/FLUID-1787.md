@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17309",
       "author": "Jonathan Hung",
       "date": "2008-11-12T12:52:08.000-0500",
       "body": "iteration22\n"
     },
     {
+      "id": "17310",
       "author": "Jonathan Hung",
       "date": "2008-11-16T00:46:34.000-0500",
       "body": "Created a block for the pattern categories.\n"

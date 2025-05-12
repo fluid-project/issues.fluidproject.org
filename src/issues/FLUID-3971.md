@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24878",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T12:52:55.507-0400",
       "body": "I've tested this for v1.4, and there is now focus indication.\n"

@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17304",
       "author": "Justin Obara",
       "date": "2008-12-18T11:52:17.000-0500",
       "body": "Appears to have been fixed\n\nTested with\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26333",
       "author": "Cindy Li",
       "date": "2020-04-17T09:38:39.060-0400",
       "body": "[The pull request](https://github.com/fluid-project/sjrk-story-telling/pull/70) that increases the maximum number of files in a story to 50 has been merged into the project repo master branch at [this commit](https://github.com/fluid-project/sjrk-story-telling/commit/d48db8597c47b9371ec414b88bac11570046cd5d).\n"

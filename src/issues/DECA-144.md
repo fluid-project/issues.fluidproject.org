@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10298",
       "author": "Justin Obara",
       "date": "2010-07-19T12:53:11.392-0400",
       "body": "Bug Parade Decapod 0.4&#x20;\n"
     },
     {
+      "id": "10299",
       "author": "Justin Obara",
       "date": "2010-07-19T13:09:52.981-0400",
       "body": "It appears the the urls are coming back incorrectly on a page reload.\n\nHere is the return value after posting the images:\n\n{\"spread\": \"/book/capturedImages/decapod-0001-mid-decapod-0002-mid.png\", \"right\": \"/book/capturedImages/decapod-0002.jpg\", \"thumb\": \"/book/capturedImages/decapod-0001-mid-decapod-0002-mid-thumb.png\", \"left\": \"/book/capturedImages/decapod-0001.jpg\"}\n\nHere is the return value from the get after reloading:\n\n\\[{\"spread\": \"${book}/capturedImages/decapod-0001-mid-decapod-0002-mid.png\", \"right\": \"${book}/capturedImages/decapod-0002.jpg\", \"thumb\": \"${book}/capturedImages/decapod-0001-mid-decapod-0002-mid-thumb.png\", \"left\": \"${book}/capturedImages/decapod-0001.jpg\"}]\n"
     },
     {
+      "id": "10300",
       "author": "Colin Clark",
       "date": "2010-07-19T17:11:40.660-0400",
       "body": "This issue was resolved at revision d3abd3b12a99, along with web tests that show the issue and the fix.\n"

@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15031",
       "author": "Justin Obara",
       "date": "2009-03-12T10:48:45.000-0400",
       "body": "In IE you need to specify a border for the content sections of the accordion. jQuery UI does this by adding classes in the js file. Since we do not import those classes, we had to add it manually.\n"
     },
     {
+      "id": "15034",
       "author": "Justin Obara",
       "date": "2009-03-12T10:49:23.000-0400",
       "body": "Please verify and close if fixed\n"
     },
     {
+      "id": "15037",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:49.587-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

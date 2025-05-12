@@ -41,21 +41,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10294",
       "author": "Justin Obara",
       "date": "2010-07-19T10:50:35.513-0400",
       "body": "Bug Parade Decapod 0.4\n"
     },
     {
+      "id": "10295",
       "author": "Colin Clark",
       "date": "2010-07-19T15:35:58.289-0400",
       "body": "We need to invoke stitch with the -Rnn argument to prevent it from doing rotation by default.\n"
     },
     {
+      "id": "10296",
       "author": "Colin Clark",
       "date": "2010-07-19T15:39:31.352-0400",
       "body": "Fixed in the server at revision d3407db7efea by passing the -Rnn argument to decapod-stitching to prevent automatic rotation, along with accompanying unit tests.\n"
     },
     {
+      "id": "10297",
       "author": "Jonathan Hung",
       "date": "2010-07-19T15:49:30.489-0400",
       "body": "Confirmed fixed.\n"

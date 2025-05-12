@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17879",
       "author": "Justin Obara",
       "date": "2009-03-12T12:47:11.000-0400",
       "body": "Bug Parade 1.0 release\n"
     },
     {
+      "id": "17881",
       "author": "Antranig Basman",
       "date": "2009-03-17T17:08:02.000-0400",
       "body": "Fixed at revision 6767 - bug in parser/renderer\n"
     },
     {
+      "id": "17883",
       "author": "Anastasia Cheetham",
       "date": "2009-03-20T15:56:00.000-0400",
       "body": "I've reviewed this change, and it looks good to me.\n"
     },
     {
+      "id": "17885",
       "author": "Justin Obara",
       "date": "2009-03-20T16:03:07.000-0400",
       "body": "Verified fix using:\n\nIE6, IE7 (Win XP)\\\nIE7 (Win Vista)\n"

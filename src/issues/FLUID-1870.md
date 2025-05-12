@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17302",
       "author": "Colin Clark",
       "date": "2008-11-28T17:06:48.000-0500",
       "body": "Fixed in Uploader.totalProgressUpdate().\n"
     },
     {
+      "id": "17306",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:28:00.397-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

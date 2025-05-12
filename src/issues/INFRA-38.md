@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25729",
       "author": "Giovanni Tirloni",
       "date": "2015-09-04T10:12:19.838-0400",
       "body": "Image updated, includes updates up to 2015-09-03.\n\nServers vpn01, vpn02, ssh01 and ssh02 were launched using it. No errors found.\n"

@@ -38,26 +38,31 @@
   ],
   "comments": [
     {
+      "id": "21536",
       "author": "Eli Cochran",
       "date": "2009-04-09T15:18:58.000-0400",
       "body": "Bundles for Fluid 1.0\n"
     },
     {
+      "id": "21537",
       "author": "Eli Cochran",
       "date": "2009-04-09T16:57:08.000-0400",
       "body": "Attempt 2 at a Fluid Infusion 1.0 Release\n"
     },
     {
+      "id": "21538",
       "author": "Eli Cochran",
       "date": "2009-04-09T18:39:43.000-0400",
       "body": "attempt number 4, please only use the files called infusion-\\<version>\n"
     },
     {
+      "id": "21539",
       "author": "Eli Cochran",
       "date": "2009-04-10T13:43:27.000-0400",
       "body": "Tested, Released\n"
     },
     {
+      "id": "21540",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:21.248-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

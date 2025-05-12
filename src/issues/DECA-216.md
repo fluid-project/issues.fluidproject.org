@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10120",
       "author": "Justin Obara",
       "date": "2012-07-06T09:09:56.721-0400",
       "body": "I've added new exceptions to the python modules. Updated the response codes returned by the server, and will now set an error status for the export status if the export process fails.\n\nThe changes are in my bitbucket repo:\\\n<https://bitbucket.org/jobara/decapod-0.6-server-iteration4>\n"
     },
     {
+      "id": "10121",
       "author": "Justin Obara",
       "date": "2012-07-10T13:49:03.305-0400",
       "body": "Merged into the googlecode repo\n"

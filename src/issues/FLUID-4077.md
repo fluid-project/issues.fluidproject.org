@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21688",
       "author": "Antranig Basman",
       "date": "2011-02-18T01:33:33.827-0500",
       "body": "I could verify this on IE6 as well.\\\nThe issue here is that the test markup is somewhat \"corrupt\" - it includes a bare \\<li> tag without enclosing \\<ul> or \\<ol>. On all modern browsers (including IE8) this is fine, but on earlier IEs (6 and 7) the template will be corrupted during extraction via innerHTML. This causes the final rendered tree to be similarly corrupt, containing duplicated tags for the original li and contained message, leading to the test case failure.\n"

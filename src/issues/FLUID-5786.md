@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13111",
       "author": "Justin Obara",
       "date": "2015-10-06T15:24:27.510-0400",
       "body": "see [http://semver.org](http://semver.org/) point 10 for build metadata in the version number.\n"
     },
     {
+      "id": "13112",
       "author": "Justin Obara",
       "date": "2015-10-06T15:24:57.890-0400",
       "body": "git rev-parse --verify --short HEAD\n\ncan be used to get the short form of the SHA commit hash\n"
     },
     {
+      "id": "13113",
       "author": "Justin Obara",
       "date": "2015-10-06T15:31:59.511-0400",
       "body": "Submitted a pull request:\\\n<https://github.com/fluid-project/infusion/pull/641>\n"

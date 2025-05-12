@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18271",
       "author": "Justin Obara",
       "date": "2010-05-07T13:10:04.113-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "18274",
       "author": "Justin Obara",
       "date": "2014-07-07T16:13:13.987-0400",
       "body": "is this still an issue?\n"

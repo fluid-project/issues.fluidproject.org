@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14212",
       "author": "Jonathan Hung",
       "date": "2008-04-02T15:48:58.000-0400",
       "body": "Patterns can be found here:\\\n<http://wiki.fluidproject.org/display/fluid/Design+Patterns>\n\n1\\. Drag and Drop\\\n2\\. Drag and Drop List Ordering\\\n3\\. Drag and Drop Layout Preview\n"
     },
     {
+      "id": "14215",
       "author": "Jonathan Hung",
       "date": "2008-04-28T15:50:46.000-0400",
       "body": "Did as much as I could without the ability to do rich formatting using HTML.\n\nStill some work to be done, but most content is there.\n"

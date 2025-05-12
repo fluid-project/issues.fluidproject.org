@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15488",
       "author": "Justin Obara",
       "date": "2014-06-25T16:17:26.465-0400",
       "body": "FSS was deprecated in Infusion 1.5 and will be removed from Infusion 2.0\n"
     },
     {
+      "id": "15491",
       "author": "Justin Obara",
       "date": "2015-06-26T09:50:49.542-0400",
       "body": "Reopening to change the fix version to 1.9\n"

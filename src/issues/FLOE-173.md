@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11215",
       "author": "Justin Obara",
       "date": "2014-03-07T10:00:44.264-0500",
       "body": "Submitted a pull request to add the simple view mode\\\n<https://github.com/fluid-project/metadata/pull/21>\n"
     },
     {
+      "id": "11216",
       "author": "Cindy Li",
       "date": "2014-03-07T14:09:28.594-0500",
       "body": "The pull request has been merged into the project repo @ 87e190ad3fd468a4ee4530975a25fc0653c535e1\n"

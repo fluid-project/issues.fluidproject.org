@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19727",
       "author": "Michelle D'Souza",
       "date": "2008-06-17T08:53:35.000-0400",
       "body": "I tried to write an automated test to show this bug, however, QUnit is interfering with normal browser focus and I can't reproduce it.&#x20;\n"
     },
     {
+      "id": "19729",
       "author": "Michelle D'Souza",
       "date": "2008-06-17T09:31:43.000-0400",
       "body": "The click handler on the body was causing focus to be put on a different Inline Edit component when the user clicked inside an edit field.&#x20;\n"

@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12158",
       "author": "Justin Obara",
       "date": "2010-02-05T14:28:07.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12159",
       "author": "Justin Obara",
       "date": "2010-02-24T13:31:03.000-0500",
       "body": "Did a quick test by viewing the page source, but the local eclipse version and standalone versions are showing paths starting with ../ instead of ../../../../\n"

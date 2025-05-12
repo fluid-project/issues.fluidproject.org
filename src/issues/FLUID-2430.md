@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15816",
       "author": "Eli Cochran",
       "date": "2009-03-31T15:08:18.000-0400",
       "body": "Here is the nascent contents of the Progress.css file for this Springboard (taken from the Progress.css file that used to be part of Progress but since progress doesn't have a default instantiation has been removed.)\n\n.fl-progress-bounds {border-width:1px; border-style:solid; padding:2px; text-align:center;}\\\n.fl-progress-fill {width:100%;}\n"
     },
     {
+      "id": "15818",
       "author": "Justin Obara",
       "date": "2010-05-07T13:21:03.092-0400",
       "body": "There is a demo in the demo portal for Progress\n"

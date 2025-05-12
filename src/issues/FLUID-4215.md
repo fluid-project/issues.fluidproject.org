@@ -27,26 +27,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13579",
       "author": "Justin Obara",
       "date": "2011-05-17T10:07:49.008-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "13582",
       "author": "Justin Obara",
       "date": "2011-06-13T14:16:27.291-0400",
       "body": "Merged into the project repo at fe70c7276ff35b360dac50c2258959a7ce7cffab\n"
     },
     {
+      "id": "13589",
       "author": "heidi valles",
       "date": "2011-06-13T14:22:20.477-0400",
       "body": "Unit tests broken\n"
     },
     {
+      "id": "13595",
       "author": "Justin Obara",
       "date": "2011-06-13T14:52:46.230-0400",
       "body": "heidi fixed the broken unit tests\n"
     },
     {
+      "id": "13602",
       "author": "Justin Obara",
       "date": "2011-06-13T14:52:58.410-0400",
       "body": "merged in latest changes to the project repo at ce89965ec059fcaf51f46ea9560c0acfe8a986f1\n"

@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27453",
       "author": "Blake E",
       "date": "2008-11-04T14:07:25.000-0500",
       "body": "vulab6\n"
     },
     {
+      "id": "27454",
       "author": "Blake E",
       "date": "2008-11-04T14:11:53.000-0500",
       "body": "🙂 fixed. It redirects.\n\nI also added the functionality to the \"view\" project page (is for viewing active projects)\n"
     },
     {
+      "id": "27455",
       "author": "Blake E",
       "date": "2008-11-04T14:24:41.000-0500",
       "body": "I even added a nice little fadeout on the homescreen after the deletion.\n"

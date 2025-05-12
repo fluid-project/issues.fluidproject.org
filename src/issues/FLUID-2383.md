@@ -41,36 +41,43 @@
   ],
   "comments": [
     {
+      "id": "13417",
       "author": "Alison Benjamin",
       "date": "2009-05-05T15:13:48.000-0400",
       "body": "FF3: The jQuery UI Slider is skipped by JAWS when tabbing through page elements\n\nIE7: JAWS announces: \"HTML slash UI Options Link\" when it reaches the slider.&#x20;\n\n<http://www.w3.org/TR/wai-aria/#slider>\n"
     },
     {
+      "id": "13419",
       "author": "Justin Obara",
       "date": "2009-05-14T08:54:41.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "13421",
       "author": "Justin Obara",
       "date": "2009-05-14T14:55:30.000-0400",
       "body": "a11y issue&#x20;\n"
     },
     {
+      "id": "13423",
       "author": "Alison Benjamin",
       "date": "2009-05-25T14:42:30.000-0400",
       "body": "This patch adds aria support to the thumb of the slider.&#x20;\n"
     },
     {
+      "id": "13424",
       "author": "Jacob Farber",
       "date": "2009-05-26T15:30:25.000-0400",
       "body": "I reviewed the results in Firebug, and +1\n"
     },
     {
+      "id": "13426",
       "author": "Michelle D'Souza",
       "date": "2009-05-26T15:34:39.000-0400",
       "body": "I had committed a slight reworking of Alison's patch which included tests.\n"
     },
     {
+      "id": "13428",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:19.367-0500",
       "body": "Closing issues that were fixed in 1.1\n"

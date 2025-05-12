@@ -48,21 +48,25 @@
   ],
   "comments": [
     {
+      "id": "21481",
       "author": "Justin Obara",
       "date": "2010-04-14T14:27:53.000-0400",
       "body": "Adding the regular Infusion Release builds (source and minified)\n"
     },
     {
+      "id": "21483",
       "author": "Justin Obara",
       "date": "2010-04-14T14:35:36.000-0400",
       "body": "Adding the source and minified InfusionAll test builds\n"
     },
     {
+      "id": "21485",
       "author": "Justin Obara",
       "date": "2010-04-14T17:55:56.000-0400",
       "body": "All testing is complete\n"
     },
     {
+      "id": "21487",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:19.521-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

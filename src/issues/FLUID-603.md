@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13168",
       "author": "Michelle D'Souza",
       "date": "2008-05-16T10:44:42.000-0400",
       "body": "This behaviour is related to the use of the 'greedy' flag in jQuery UI's droppable. It seems that taking away the 'greedy' flag for the thumbnails results in correct behaviour in FF2.&#x20;\n"
     },
     {
+      "id": "13169",
       "author": "Anastasia Cheetham",
       "date": "2008-05-16T15:23:17.000-0400",
       "body": "The browser inconsistency seems to be caused by jQuery.ui.intersect() (in ui.droppable.js). When it compares the draggable with the droppables, on FF2, it considers the draggable to be intersecting the thumbnail droppable that it's over, whereas on IE7, it doesn't.\n\nI haven't yet figured out why this is the case, or exactly how this is affecting the subsequent behavior.\n"
     },
     {
+      "id": "13170",
       "author": "Justin Obara",
       "date": "2008-07-07T15:28:26.000-0400",
       "body": "The bug appears to be fixed in current build.\n"
     },
     {
+      "id": "13171",
       "author": "Justin Obara",
       "date": "2008-11-13T13:33:20.000-0500",
       "body": "Appears to have been fixed\n"

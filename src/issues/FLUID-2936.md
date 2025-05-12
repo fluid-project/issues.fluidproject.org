@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23202",
       "author": "Alison Benjamin",
       "date": "2009-06-10T10:50:35.000-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "23203",
       "author": "Alison Benjamin",
       "date": "2009-07-08T16:59:36.000-0400",
       "body": "At very least, need an indicator of when progress has started and completed.\n"

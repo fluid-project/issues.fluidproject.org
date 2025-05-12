@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "10176",
       "author": "Justin Obara",
       "date": "2012-05-14T13:54:03.078-0400",
       "body": "Screenshot.png shows that the 'Add More' button appears enabled when it should be disabled.\n"
     },
     {
+      "id": "10177",
       "author": "Justin Obara",
       "date": "2012-05-23T12:22:04.493-0400",
       "body": "Merged into the project repo\n"

@@ -73,91 +73,109 @@
   ],
   "comments": [
     {
+      "id": "24751",
       "author": "Justin Obara",
       "date": "2010-11-01T13:55:42.829-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "24752",
       "author": "Mike Lam",
       "date": "2010-11-01T16:58:52.124-0400",
       "body": "Refactored majority of code base into smaller, more dedicated functions.\n"
     },
     {
+      "id": "24753",
       "author": "Mike Lam",
       "date": "2010-11-02T12:37:50.094-0400",
       "body": "Refactored code to pass unit tests in IE8.\n"
     },
     {
+      "id": "24754",
       "author": "Justin Obara",
       "date": "2010-11-02T14:27:20.624-0400",
       "body": "Committed Mike's patch ( patchRefactored.txt ), which refactors the inline edit code, fixes the icons used, and updates the default style used for Simple text inlineEdit. Made small change to update the copyright info on a couple of the js files.\n"
     },
     {
+      "id": "24755",
       "author": "Mike Lam",
       "date": "2010-11-04T15:15:11.290-0400",
       "body": "Add comments to public functions.  Rename instructionText variables.\n"
     },
     {
+      "id": "24756",
       "author": "Mike Lam",
       "date": "2010-11-04T16:49:40.373-0400",
       "body": "Made more commenting changes after some review.\n"
     },
     {
+      "id": "24757",
       "author": "Mike Lam",
       "date": "2010-11-08T11:17:27.161-0500",
       "body": "Incorporate a background image in the css for the textEditButton.   This eliminates an API change and doesn't require an integrator to provide an image option each time the component is instantiated. &#x20;\n"
     },
     {
+      "id": "24758",
       "author": "Mike Lam",
       "date": "2010-11-09T10:11:43.697-0500",
       "body": "CSS styles clean up.\n"
     },
     {
+      "id": "24759",
       "author": "Justin Obara",
       "date": "2010-11-09T14:22:42.383-0500",
       "body": "Attached patch cssStyleCleanup-2.patch.txt which contains modified styles that I worked with James on to prevent the display from jumping when switching between modes. Also worked with Mike to make some slight modifications to the default style options for the component.\n"
     },
     {
+      "id": "24760",
       "author": "Justin Obara",
       "date": "2010-11-09T14:48:48.166-0500",
       "body": "Committed cssStyleCleanup-2.patch.txt with a minor css change to remove a couple of unneeded properties and added a copyright to the integrations file\n"
     },
     {
+      "id": "24761",
       "author": "Mike Lam",
       "date": "2010-11-09T15:32:07.828-0500",
       "body": "Control textEditButton focus\n"
     },
     {
+      "id": "24762",
       "author": "Justin Obara",
       "date": "2010-11-10T12:04:56.089-0500",
       "body": "Moved the textEditButtonFocus.txt patch to the <https://fluidproject.atlassian.net/browse/FLUID-2652#icft=FLUID-2652>\n"
     },
     {
+      "id": "24763",
       "author": "Michelle D'Souza",
       "date": "2010-11-23T15:57:46.127-0500",
       "body": "There are several small cleanup things that should be done before we close this issue.&#x20;\n"
     },
     {
+      "id": "24764",
       "author": "Michelle D'Souza",
       "date": "2010-11-23T15:58:49.398-0500",
       "body": "I've complete a code review on this refactoring. There are several small things that should be done to clean up the code base.\n\n1\\)  The tests have a lot of repeated setup code. Perhaps we should create a setup function for these tests to remove the repetition. \\\n2\\)  showDefaultViewText contains a line that does nothing and should be removed (line 199) \\\n3\\)  setupTooltipTitle is a single line function and the implementation can be simplified. There is no need to wrap the element since the function is always passed a jquery object. Perhaps we should remove the function and set the title inline instead. (line 271)\\\n4\\) setupDisplayView is a confusing name since we also have a 'displayView' subcomponent that refers to something else. This is in the public API so we do need to be careful with what we name it. (line 337)\\\n5\\) It seems that the richTextViewAccessor should be moved into the integrations file. (line 766)\\\n6\\) renderKeyboardTooltip was renamed to be editModeInstruction but a couple references are still in the Integrations file (line 242)        &#x20;\n"
     },
     {
+      "id": "24765",
       "author": "Michelle D'Souza",
       "date": "2010-11-23T16:09:40.678-0500",
       "body": "Making this issue a blocker since it didn't pass code review and the code is already in trunk.&#x20;\n"
     },
     {
+      "id": "24766",
       "author": "Mike Lam",
       "date": "2010-11-30T12:44:52.608-0500",
       "body": "Code refactoring: &#x20;\n\n* moved richTextViewAccessor from the simple inline edit into the integrations. &#x20;\n* removed setupTooltipTitle function and all calls to it\n* renamed setupDisplayView function to setupDisplayText\n* removed all references to keyboard tooltip option that no longer exists in the integrations&#x20;\n"
     },
     {
+      "id": "24767",
       "author": "Michelle D'Souza",
       "date": "2010-11-30T15:28:34.288-0500",
       "body": "Mike and I talked about the refactoring notes I had put on this issue - here are our notes:&#x20;\n\nAfter looking into the tests, he found that the setup, although it looks quite similar between several tests, is actually different in subtle ways. We felt that the tests would be more readable and maintainable in their current state. \\\nThe issue on line 199 exposed a regression where empty display text was not being styled correctly. This has been fixed under a different JIRA.\\\nThe remaining issues are addressed in Mike's latest patch.&#x20;\n"
     },
     {
+      "id": "24768",
       "author": "Mike Lam",
       "date": "2010-11-30T15:34:36.043-0500",
       "body": "Refactoring changes reviewed and committed.\n"

@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21005",
       "author": "Michelle D'Souza",
       "date": "2008-04-28T13:53:03.000-0400",
       "body": "The wording of the test protocol should be changed, since in this example, we don't actually expect the element styling to change. The instructions should say something like \"is there a visual indication that the element is movable?\"\n"
     },
     {
+      "id": "21006",
       "author": "Anastasia Cheetham",
       "date": "2008-04-28T16:19:50.000-0400",
       "body": "The test protocol has been updated.\n"

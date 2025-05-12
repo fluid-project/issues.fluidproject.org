@@ -36,11 +36,13 @@
   ],
   "comments": [
     {
+      "id": "18339",
       "author": "Justin Obara",
       "date": "2009-05-28T11:32:47.000-0400",
       "body": "'screenshot-1' shows the title for the unopened accordion panel is not visible\n"
     },
     {
+      "id": "18344",
       "author": "Michelle D'Souza",
       "date": "2011-03-04T15:42:11.257-0500",
       "body": "This is no longer an issue because the new designs do not have an accordion.&#x20;\n"

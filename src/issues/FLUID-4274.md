@@ -40,11 +40,13 @@
   ],
   "comments": [
     {
+      "id": "24369",
       "author": "Cindy Li",
       "date": "2011-06-02T09:42:15.955-0400",
       "body": "Implemented the UI design, mainly at modifying js to render the dropdown and checkboxes.&#x20;\n\nThe changes are pushed into <https://github.com/colinbdclark/image-gallery> at commit 580ebe250f1efa54f863.\n"
     },
     {
+      "id": "24370",
       "author": "Jonathan Hung",
       "date": "2011-06-07T13:24:09.000-0400",
       "body": "Code had been merged into Master for Infusion 1.4.\n"

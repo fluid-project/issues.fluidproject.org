@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17952",
       "author": "Jonathan Hung",
       "date": "2007-12-14T13:51:24.000-0500",
       "body": "Duplicate of GAL-63\\\n<http://bugs.sakaiproject.org/jira/browse/GAL-63>\n"

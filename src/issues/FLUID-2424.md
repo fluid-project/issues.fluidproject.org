@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21491",
       "author": "Michelle D'Souza",
       "date": "2009-04-06T11:41:46.000-0400",
       "body": "The list of files is passed back as a comma separated list in the property allRequiredFiles.\n"

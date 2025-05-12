@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10211",
       "author": "Justin Obara",
       "date": "2012-10-04T14:48:53.654-0400",
       "body": "This has become more of a documentation issue. Although the server will produce different directories for storing captures of the different types. This will be useful for when calibration is introduced.\n"

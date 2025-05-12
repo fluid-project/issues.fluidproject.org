@@ -43,16 +43,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11578",
       "author": "Justin Obara",
       "date": "2015-06-25T12:28:45.880-0400",
       "body": "Submitted a pull request to add infusion to the repository:\\\n<https://github.com/fluid-project/chartAuthoring/pull/2>\n"
     },
     {
+      "id": "11579",
       "author": "Cindy Li",
       "date": "2015-07-15T12:31:24.912-0400",
       "body": "The pull request to add the infusion lib has been merged into the master branch @ d135fc3bceacde76a8a392c4ee35b142915b7209\n"
     },
     {
+      "id": "11580",
       "author": "Justin Obara",
       "date": "2015-07-20T10:34:18.116-0400",
       "body": "Submitted a pull request for the data entry form at:\\\n<https://github.com/fluid-project/chartAuthoring/pull/3>\n"

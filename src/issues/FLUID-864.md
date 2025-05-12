@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13528",
       "author": "Anastasia Cheetham",
       "date": "2008-07-09T17:40:32.000-0400",
       "body": "The tab key shouldn't actually be moving focus amongst the tabs, this is a bug in jQuery:\\\n<http://ui.jquery.com/bugs/ticket/3079>\n\nIf the arrow keys still work properly, I would consider this one to not be a bug.\n"
     },
     {
+      "id": "13530",
       "author": "Justin Obara",
       "date": "2008-07-09T18:10:04.000-0400",
       "body": "the arrow keys still work\n"

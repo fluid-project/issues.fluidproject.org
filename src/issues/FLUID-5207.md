@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13299",
       "author": "Michelle D'Souza",
       "date": "2014-04-04T15:51:34.526-0400",
       "body": "Anastasia Cheetham, can you please start a conversation on list about naming these?&#x20;\n"
     },
     {
+      "id": "13300",
       "author": "Justin Obara",
       "date": "2014-04-24T14:57:45.908-0400",
       "body": "Based on the conversation in the channel today <https://botbot.me/freenode/fluid-work/2014-04-24/?tz=America/Toronto>\n\n\"msgBundle\" -> \"msgResolver\"\\\n\"stringBundle\" -> \"msgLookup\"\n"
     },
     {
+      "id": "13301",
       "author": "Justin Obara",
       "date": "2014-04-24T15:42:04.421-0400",
       "body": "Submitted a pull request\\\n<https://github.com/fluid-project/infusion/pull/498>\n"
     },
     {
+      "id": "13302",
       "author": "Cindy Li",
       "date": "2014-04-24T16:20:49.321-0400",
       "body": "Merged into the project repo @ 78d3600b61697a5063f066735b3943dfbab1b1b9\n"

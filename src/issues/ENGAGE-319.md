@@ -41,21 +41,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12618",
       "author": "Justin Obara",
       "date": "2010-02-05T15:52:21.000-0500",
       "body": "Bug Parade Engage 0.3&#x20;\n"
     },
     {
+      "id": "12619",
       "author": "Justin Obara",
       "date": "2010-02-05T22:36:33.000-0500",
       "body": "<https://fluidproject.atlassian.net/browse/ENGAGE-324#icft=ENGAGE-324> and <https://fluidproject.atlassian.net/browse/ENGAGE-319#icft=ENGAGE-319> are due to the message bundle not being found. This seems to be a pathing issue as it works in the local version, but not the standalone\n"
     },
     {
+      "id": "12620",
       "author": "Antranig Basman",
       "date": "2010-02-18T12:56:20.000-0500",
       "body": "Now appears fixed on the daily build site by the commit at 9426.\n"
     },
     {
+      "id": "12621",
       "author": "James Yoon",
       "date": "2010-02-22T17:19:40.000-0500",
       "body": "Tested on 02/22/2010, 4:45 PM EST.\n\nLooks good. Issue closed.\n"

@@ -25,21 +25,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12449",
       "author": "Justin Obara",
       "date": "2009-09-22T14:26:04.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "12450",
       "author": "Antranig Basman",
       "date": "2009-09-24T22:01:56.000-0400",
       "body": "Fixed at revision 8120 with manual test case, but since we do not have assertDeepEq in Java, this will have to remain \"by eye\" for now\\...\n"
     },
     {
+      "id": "12451",
       "author": "y z",
       "date": "2009-10-05T12:56:08.000-0400",
       "body": "Reviewed the code and tested with McCord dataset of 200 artifacts.\n"
     },
     {
+      "id": "12452",
       "author": "Justin Obara",
       "date": "2009-11-03T11:56:48.000-0500",
       "body": "Closed as per previous comment\n"

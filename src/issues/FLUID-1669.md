@@ -39,6 +39,7 @@
   ],
   "comments": [
     {
+      "id": "14484",
       "author": "Joseph Vernuccio",
       "date": "2008-10-09T12:53:41.000-0400",
       "body": "Screenshiot-1 shows the fragments of blue highlight bos that appear after shifiting focus to a new tab or clicking in blank/white space.&#x20;\n"

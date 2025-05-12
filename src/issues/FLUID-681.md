@@ -51,31 +51,37 @@
   ],
   "comments": [
     {
+      "id": "18971",
       "author": "Eli Cochran",
       "date": "2008-06-16T22:50:47.000-0400",
       "body": "With the various changes to the way that the progress is tracked and displayed this bug is fixed.&#x20;\n"
     },
     {
+      "id": "18974",
       "author": "Jonathan Hung",
       "date": "2008-07-11T17:31:03.000-0400",
       "body": "Bug does not appear to be fixed. Tested with version from the build server on July 11, 2008.\n\nSee attached image for a description of the problem.\n"
     },
     {
+      "id": "18975",
       "author": "Jonathan Hung",
       "date": "2008-07-11T17:31:35.000-0400",
       "body": "Visual description of the progress bar bug.\n"
     },
     {
+      "id": "18979",
       "author": "Justin Obara",
       "date": "2008-08-13T15:08:18.000-0400",
       "body": "Updated to reflect the various browsers the issue affects\n"
     },
     {
+      "id": "18981",
       "author": "Michelle D'Souza",
       "date": "2008-09-02T12:52:30.000-0400",
       "body": "We should ensure that this bug is resolved as part of uploader 2.&#x20;\n"
     },
     {
+      "id": "18983",
       "author": "Eli Cochran",
       "date": "2008-11-16T18:46:21.000-0500",
       "body": "New code no longer displays this problem\n"

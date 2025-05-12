@@ -30,6 +30,7 @@
   ],
   "comments": [
     {
+      "id": "26296",
       "author": "Gregor Moss",
       "date": "2019-06-24T17:47:12.706-0400",
       "body": "Possible approach: add a little icon for each modality beside the words in the “Contains:” part of each story link. Something like this:\n\n“Contains: 📝 text, 🔊 audio, 🖼️ image, 🎬 video”\n"

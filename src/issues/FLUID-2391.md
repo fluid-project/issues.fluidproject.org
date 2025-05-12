@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21424",
       "author": "Justin Obara",
       "date": "2009-05-05T13:16:02.000-0400",
       "body": "This issue has been fixed with <https://fluidproject.atlassian.net/browse/FLUID-2425#icft=FLUID-2425>, as the dialog is now closed on saving changes.\n"

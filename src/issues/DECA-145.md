@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10352",
       "author": "Justin Obara",
       "date": "2012-05-25T13:41:59.760-0400",
       "body": "The page for managing the images has been removed from this release\n"

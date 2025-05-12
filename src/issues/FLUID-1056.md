@@ -39,11 +39,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20468",
       "author": "Justin Obara",
       "date": "2008-08-14T15:07:47.000-0400",
       "body": "The unit test has been changed, test 34 has been renumbered to test 35\n"
     },
     {
+      "id": "20469",
       "author": "Justin Obara",
       "date": "2008-09-26T15:16:35.000-0400",
       "body": "Likely resolved with fix for Fluid-1603\n\nVerified using:\n\nIE7, IE6 (Win XP)\\\nIE7 (Win Vista)\n"

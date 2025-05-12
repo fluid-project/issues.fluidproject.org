@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12527",
       "author": "James Yoon",
       "date": "2010-02-16T10:58:31.000-0500",
       "body": "Files attached to appropriate developer JIRAs\n"

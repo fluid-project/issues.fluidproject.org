@@ -34,16 +34,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15792",
       "author": "heidi valles",
       "date": "2010-12-15T16:13:11.834-0500",
       "body": "Also, if you enter non-numerical values, it says NaN% when it should use the previous values.\n"
     },
     {
+      "id": "15794",
       "author": "Justin Obara",
       "date": "2014-11-05T14:23:47.770-0500",
       "body": "This manual test has been replaced.\n"
     },
     {
+      "id": "15796",
       "author": "Justin Obara",
       "date": "2015-06-26T09:50:50.045-0400",
       "body": "Reopening to change the fix version to 1.9\n"

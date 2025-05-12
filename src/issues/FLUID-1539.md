@@ -45,16 +45,19 @@
   ],
   "comments": [
     {
+      "id": "19925",
       "author": "Simon Simon",
       "date": "2008-09-10T18:51:22.000-0400",
       "body": "I could not even see any of the portlet icons with IE 6. But FF2 is fine.\n"
     },
     {
+      "id": "19926",
       "author": "Simon Simon",
       "date": "2008-09-10T19:10:17.000-0400",
       "body": "I tried using IE6 to view uPortal 3 page, and all the portlet icons show up correctly. But I could not see if any of the portlet is \"get focus\". While FF2 shows everything correctly. It looks that this could be another styling issue.\n"
     },
     {
+      "id": "19928",
       "author": "Justin Obara",
       "date": "2014-06-05T15:21:53.272-0400",
       "body": "This demo has been removed\n"

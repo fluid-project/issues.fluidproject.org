@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20697",
       "author": "Antranig Basman",
       "date": "2013-06-26T12:05:00.105-0400",
       "body": "The problem lies with the following block of code, which assumes that an asynchronous test issued to QUnit will always begin to execute asynchronously. Sometimes QUnit will finish the test completely before the the following queue check executes, which then causes the testing framework to faultily try to reinstantiate the entire tree when it reaches the \"noteTest\" directive:\n\nIoCTestUtils.js lines 466-479\n\n// Note that this test relies on an implementation detail of qunit. For those\\\n// tests which fail the \"validTest\" test due to being filtered out in the UI,\\\n// they result in no material placed in the queue. We escape the case where they\\\n// might enter the queue and immediately leave it as a result of only ever issuing\\\n// asynchronous tests\\\nvar oldLength = QUnit.config.queue.length;\\\njqUnit\\[testType]\\(fixture.name, testFunc);\\\nif (QUnit.config.queue.length === oldLength) {\\\nfluid.log(fluid.logLevel.IMPORTANT, \"Skipped test \" + fixture.name);\\\n}\\\nelse {\\\nfluid.log(fluid.logLevel.IMPORTANT, \"Successfully queued test \" + fixture.name);\\\nfluid.test.noteTest(testCaseState.root, 1);\\\n}&#x20;\n"

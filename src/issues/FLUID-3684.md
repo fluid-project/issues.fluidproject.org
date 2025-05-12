@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16394",
       "author": "Antranig Basman",
       "date": "2010-08-10T03:12:06.259-0400",
       "body": "Fixed at revision 9987 - Accelerated cutpoint matching for cutpoints that consist of a single class. With this implementation, parsing of test template derived from CollectionSpace \"object.html\" with 175 class-based cutpoints is nearly 10 times faster - parse time reduced from around 500ms to around 70ms. Should people be found using many id-based selectors these could be accelerated too.\n"
     },
     {
+      "id": "16397",
       "author": "Golam Chowdhury",
       "date": "2011-03-03T16:49:20.064-0500",
       "body": "Changed the \"Affect Version\" to 1.3.1.\n"

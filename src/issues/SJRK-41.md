@@ -30,21 +30,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26572",
       "author": "Alan Harnum",
       "date": "2017-11-07T16:37:50.946-0500",
       "body": "An upstream organizational repo has been created: <https://github.com/fluid-project/fluid-couch-config>\n"
     },
     {
+      "id": "26573",
       "author": "Alan Harnum",
       "date": "2017-11-07T16:48:51.293-0500",
       "body": "Fork with original repo content, ready for PR against upstream organizational repo: <https://github.com/waharnum/fluid-couch-config>\n"
     },
     {
+      "id": "26574",
       "author": "Alan Harnum",
       "date": "2017-11-07T16:50:56.750-0500",
       "body": "This could be PR'd and reviewed at any time, since it is independent of other repos being moved.\n"
     },
     {
+      "id": "26575",
       "author": "Gregor Moss",
       "date": "2017-11-08T19:05:30.990-0500",
       "body": "As part of the relocating, I think it would be best to re-namespace the grades in this repository to indicate its general usability across all projects, i.e. instead of \"sjrk.server.couchConfig\", it would become \"fluid.server.couchConfig\"\n"

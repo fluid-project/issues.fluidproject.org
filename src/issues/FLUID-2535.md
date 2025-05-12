@@ -31,26 +31,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13085",
       "author": "Justin Obara",
       "date": "2009-05-14T09:11:22.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "13086",
       "author": "Justin Obara",
       "date": "2009-05-14T14:39:25.000-0400",
       "body": "a11y issue&#x20;\n"
     },
     {
+      "id": "13087",
       "author": "Antranig Basman",
       "date": "2009-05-16T21:38:40.000-0400",
       "body": "Should it be possible to fix this? The low-level details of tabindex addressing will be browser-specific, and users who habitually use a particular browser for keyboard navigation will simply expect their browser's particular quirks to be perpetrated. The only real room for recourse we might have (short of the \"global focus manager\", which, with our new framework method, \"getLastFocusedElement\" does actually come one step closer) would be to give all the radio buttons tabindex 1, which I don't think would be particularly helpful.\n"
     },
     {
+      "id": "13089",
       "author": "Justin Obara",
       "date": "2009-05-19T10:07:43.000-0400",
       "body": "I was looking at this the other day. If you go to this site (<http://www.echoecho.com/htmlforms10.htm>), tabbing between the sets of radio buttons works as expected (moving to the selected one in each field). The difference is that focus is placed on the radio button, and not the text.&#x20;\n"
     },
     {
+      "id": "13091",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T11:06:10.597-0400",
       "body": "The UIO dialog has been redesigned and no longer has radio buttons.\n"

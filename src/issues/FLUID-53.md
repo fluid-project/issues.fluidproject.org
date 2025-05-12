@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15650",
       "author": "Anastasia Cheetham",
       "date": "2007-10-17T16:17:16.000-0400",
       "body": "The scripts are in place. There's a bug in the email message that is emailed to commits\\@fluidproject.org right now - once that's cleared up, I'll resolve this issue.\n"
     },
     {
+      "id": "15652",
       "author": "Anastasia Cheetham",
       "date": "2007-10-29T14:02:52.000-0400",
       "body": "Scripts are in place and functioning.\n"

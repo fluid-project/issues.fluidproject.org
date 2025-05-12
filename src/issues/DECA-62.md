@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10404",
       "author": "Jonathan Hung",
       "date": "2010-04-20T10:17:07.000-0400",
       "body": "Captured by other issues.\n"

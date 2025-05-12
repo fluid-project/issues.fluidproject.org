@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23443",
       "author": "Justin Obara",
       "date": "2009-04-21T12:26:10.000-0400",
       "body": "Updated the comment to match the implementation. Basically just changed the word \"true\" to \"false\"\n"
     },
     {
+      "id": "23444",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:19.426-0500",
       "body": "Closing issues that were fixed in 1.1\n"

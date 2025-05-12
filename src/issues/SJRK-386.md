@@ -34,6 +34,7 @@
   ],
   "comments": [
     {
+      "id": "26617",
       "author": "Gregor Moss",
       "date": "2020-08-12T12:59:02.002-0400",
       "body": "I think this resizing ability is the default behaviour in most web browsers rather than something we added intentionally, so we'll have to look into whether it can be removed outright. At the very least, we should be able to set the maximum and minimum width of these fields to the same value, so it can only be resized vertically.\n\nI would lean towards option 1, given those two choices.\n"

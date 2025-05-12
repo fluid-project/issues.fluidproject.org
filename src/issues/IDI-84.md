@@ -22,6 +22,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12936",
       "author": "Michelle D'Souza",
       "date": "2014-06-25T15:55:53.599-0400",
       "body": "We are no longer actively supporting IE6, IE7 and IE8. We will consider patches for some issues if they are offered.\n"

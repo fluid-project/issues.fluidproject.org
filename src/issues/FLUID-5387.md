@@ -29,31 +29,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21017",
       "author": "Justin Obara",
       "date": "2014-06-02T13:23:38.377-0400",
       "body": "This issue seems to have arisen with this merge <https://github.com/fluid-project/infusion/commit/f77fac2d2d8ecd7fe5ffd2f497cf404e8f13814b>\n"
     },
     {
+      "id": "21018",
       "author": "Anastasia Cheetham",
       "date": "2014-06-09T13:40:59.230-0400",
       "body": "GIven that this is only in IE8, perhaps we shouldn't worry too much about it?\n"
     },
     {
+      "id": "21019",
       "author": "Antranig Basman",
       "date": "2014-06-11T10:16:01.875-0400",
       "body": "This issue results from a timing issue (race condition) in the IoC testing framework. I believe it will require an upgrade to qunit in order to resolve it but I haven't had time to investigate it in detail. I have seen these failures on several browsers and not just IE8, especially if the machine is running slowly. The workaround is to run the failing tests individually and verify that they run. We should push this out for Infusion 2.0 since it will take a lot of diagnosis to resolve.\n"
     },
     {
+      "id": "21020",
       "author": "Justin Obara",
       "date": "2014-06-11T10:17:13.913-0400",
       "body": "Spoke with Antranig Basman in the channel today about this. It seems there is a timing issue, that may require a fix in qunit. This seems to be out of the scope for the 1.5 release, and should be addressed afterwards.\n\n<https://botbot.me/freenode/fluid-work/2014-06-11/>\n"
     },
     {
+      "id": "21021",
       "author": "Justin Obara",
       "date": "2015-06-15T14:56:31.722-0400",
       "body": "Could not reproduce with IE 11 (which is currently the latest version of IE supported)\n"
     },
     {
+      "id": "21022",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:17.190-0400",
       "body": "Reopening to change the fix version to 1.9\n"

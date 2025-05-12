@@ -55,26 +55,31 @@
   ],
   "comments": [
     {
+      "id": "23705",
       "author": "Justin Obara",
       "date": "2016-11-01T17:21:21.762-0400",
       "body": "screenshot-originalSize.png shows the default presentation of the textfield slider. screenshot-largeText.png shows the knob at the original size  after the font size has increased.\n"
     },
     {
+      "id": "23706",
       "author": "Alan Harnum",
       "date": "2016-11-03T07:42:03.283-0400",
       "body": "PR: <https://github.com/fluid-project/infusion/pull/775>\n"
     },
     {
+      "id": "23708",
       "author": "Alan Harnum",
       "date": "2016-11-03T13:53:04.741-0400",
       "body": "Current approach seems to work well on latest Firefox and Chrome. See attached \"edge and IE11 native sliders.png\" for appearance of native slider in the two current MS browsers.\n\nGood: slider knob now adjusts with font size changes.\n\nBad: in both browsers, slider knob is cropped by width of the track.\n"
     },
     {
+      "id": "23709",
       "author": "Alan Harnum",
       "date": "2016-11-04T10:40:20.466-0400",
       "body": "Linked to separate <https://fluidproject.atlassian.net/browse/FLUID-6030#icft=FLUID-6030> on thumb-cropping issue in MS browsers.\n"
     },
     {
+      "id": "23710",
       "author": "Alan Harnum",
       "date": "2016-11-04T13:46:39.296-0400",
       "body": "Merged: <https://github.com/fluid-project/infusion/commit/783779e872feb3bfe7110529a189de361de54f8c>\n"

@@ -42,16 +42,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20527",
       "author": "Justin Obara",
       "date": "2010-10-04T15:39:37.053-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "20528",
       "author": "Anastasia Cheetham",
       "date": "2010-10-20T10:53:10.227-0400",
       "body": "Once the new demo is created, a new tutorial will be created based on the demo.\n"
     },
     {
+      "id": "20529",
       "author": "Michelle D'Souza",
       "date": "2010-12-23T15:43:39.431-0500",
       "body": "Please check if this is done and either close it or put it into another release.\n"

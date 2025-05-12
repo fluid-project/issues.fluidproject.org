@@ -25,21 +25,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12178",
       "author": "y z",
       "date": "2010-02-08T17:27:43.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12179",
       "author": "y z",
       "date": "2010-02-11T15:40:41.000-0500",
       "body": "This bug is fixed with commit r9364 by Colin.\n"
     },
     {
+      "id": "12180",
       "author": "y z",
       "date": "2010-02-11T15:40:52.000-0500",
       "body": "This bug is fixed with commit r9364 by Colin.\n"
     },
     {
+      "id": "12181",
       "author": "Colin Clark",
       "date": "2010-02-12T14:11:13.000-0500",
       "body": "I reviewed and committed Yura's fix for this issue. +1 for inclusion in Engage 0.3b\n"

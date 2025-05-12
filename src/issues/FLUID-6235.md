@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19249",
       "author": "Antranig Basman",
       "date": "2018-01-03T07:31:19.595-0500",
       "body": "This is a well-known oddity with options expansion and is a duplicate of <https://fluidproject.atlassian.net/browse/FLUID-6219#icft=FLUID-6219> - it recently tripped over the ASTEA team. It will be addressed in the framework rewrite after the next one.\n"
     },
     {
+      "id": "19253",
       "author": "Tony Atkins [RtF]",
       "date": "2018-01-03T09:38:49.825-0500",
       "body": "Thanks, Antranig Basman.  I'll close this one as a duplicate.\n"

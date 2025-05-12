@@ -50,21 +50,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22248",
       "author": "Justin Obara",
       "date": "2015-06-09T14:28:22.938-0400",
       "body": "It's probably enough to remove the aria-label, and possibly also adding a role=\"presentation\" if it is still being picked up by the AT.\n"
     },
     {
+      "id": "22250",
       "author": "Justin Obara",
       "date": "2015-06-12T09:05:15.533-0400",
       "body": "for the \"+\" and \"-\" in the tab for the sliding panel, those values are supplied by the message bundle. It may take some reworking to switch to using an icon for those portions.\n"
     },
     {
+      "id": "22252",
       "author": "Kaye Mao",
       "date": "2015-08-11T14:47:58.025-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/620>\n"
     },
     {
+      "id": "22253",
       "author": "Justin Obara",
       "date": "2016-08-12T07:56:09.498-0400",
       "body": "I believe this may have been reopened by accident instead of being closed.\n"

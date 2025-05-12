@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23320",
       "author": "Justin Obara",
       "date": "2009-12-07T10:30:38.000-0500",
       "body": "Bug Parade Builder 1.1.2\n"
     },
     {
+      "id": "23321",
       "author": "Laurel Williams",
       "date": "2009-12-16T11:53:37.000-0500",
       "body": "I ran jsLint on all the js files in the project 12/15/09\n"

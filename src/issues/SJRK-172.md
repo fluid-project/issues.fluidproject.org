@@ -31,26 +31,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26523",
       "author": "Dana",
       "date": "2020-04-14T17:30:08.627-0400",
       "body": "Provide markdown support in text block as-is\n"
     },
     {
+      "id": "26524",
       "author": "Gregor Moss",
       "date": "2020-04-14T17:41:48.670-0400",
       "body": "That's the easiest option from a coding perspective 🙂 Should we document this feature somewhere in the site? I.e. on text blocks there could be something that says \"Markdown supported\" or similar, perhaps with a link to a brief [cheat sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) or tutorial.\n"
     },
     {
+      "id": "26525",
       "author": "Gregor Moss",
       "date": "2020-07-14T07:33:45.353-0400",
       "body": "Functionality has been added to automatically detect links in text blocks. Should determine whether to add the same for other fields such as block headings and media block descriptions.\n"
     },
     {
+      "id": "26526",
       "author": "Dana",
       "date": "2020-07-14T12:04:38.394-0400",
       "body": "Thanks Gregor Moss this is great. I don't think we'd want to have links in the description or alt-text, but I'm thinking we should allow them in headings.\n"
     },
     {
+      "id": "26527",
       "author": "Cindy Li",
       "date": "2020-07-17T14:04:43.749-0400",
       "body": "[The pull request](https://github.com/fluid-project/sjrk-story-telling/pull/90) for supporting markdown has been merged into the project repo master branch at [this commit](https://github.com/fluid-project/sjrk-story-telling/commit/70bce4e75b4e9ccfa1b17c431b3c61f88cea7a0d).\n"

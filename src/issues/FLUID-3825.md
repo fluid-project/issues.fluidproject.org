@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15627",
       "author": "Justin Obara",
       "date": "2010-11-05T15:03:57.037-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "15629",
       "author": "Antranig Basman",
       "date": "2010-11-08T04:13:33.305-0500",
       "body": "Implemented at revision 10189. Comment:\n\nUpgrade of fluid.fetchResources to support PROLEPTICK JOINSETS. The opportunity was taken to thoroughly refactor this rather gnarled nodule of pretty ancestral code that \"just grew\" as it came to handle more complexity. Now with a proper \"that\" as well as a dedicated namespace - previously unannounced functions \"primeCacheFromResources\" and \"clearCache\" have been moved into this fluid.fetchResources namespace. Addition of \"mockjax\" testing framework to our test image which allows the issuing of \"deterministic asynchronous\" tests of which \"CachingTests.js\" now exhibits the style. All possible interleavings of response cycles are tested to demonstrate correct behaviour of caching system - this exposed a fatal bug with the \"forceCache\" implementation to date.\n"
     },
     {
+      "id": "15631",
       "author": "Michelle D'Souza",
       "date": "2010-12-15T16:21:01.661-0500",
       "body": "Reviewed.&#x20;\n"

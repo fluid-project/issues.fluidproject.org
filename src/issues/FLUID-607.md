@@ -43,16 +43,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14300",
       "author": "Justin Obara",
       "date": "2008-06-02T13:39:56.000-0400",
       "body": "I was unable to upload any single file larger than 21MB. The OS file open dialog would allow me to select the file, but the Uploader would not add it to the list. I could add multiple 20MB files to the Uploader, though.&#x20;\n\nAttempted with:\n\nFF2 (Mac OS 10.5, WinXP)\\\nIE7 (WinXP)\n"
     },
     {
+      "id": "14302",
       "author": "Justin Obara",
       "date": "2008-09-16T14:43:44.000-0400",
       "body": "Affects Uploader 2\n"
     },
     {
+      "id": "14304",
       "author": "Gonzalo David Silverio",
       "date": "2009-01-13T12:20:45.000-0500",
       "body": "Both server and demo versions - failure, no message. Server debug:\n\nSWF DEBUG: Event: fileDialogStart : Browsing files. Multi Select. Allowed file types: **.gif;**.jpeg;**.jpg;**.png;\\*.tiff\\\nSWF DEBUG: Event: fileDialogComplete: File Dialog window cancelled.\\\nSWF DEBUG: Event: fileDialogStart : Browsing files. Multi Select. Allowed file types: **.gif;**.jpeg;**.jpg;**.png;\\*.tiff\\\nSWF DEBUG: Select Handler: Received the files selected from the dialog. Processing the file list...\\\nSWF DEBUG: Event: fileQueueError : File exceeds size limit.\\\nSWF DEBUG: Event: fileDialogComplete : Finished processing selected files. Files selected: 1. Files Queued: 0\n"

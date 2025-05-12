@@ -30,21 +30,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20379",
       "author": "heidi valles",
       "date": "2011-03-17T11:28:13.590-0400",
       "body": "Wonder if the comments should be tied into fss documentation at all?\n"
     },
     {
+      "id": "20380",
       "author": "Anastasia Cheetham",
       "date": "2011-09-27T12:41:57.932-0400",
       "body": "We're a few days away from the 1.4 release, and the FSS files are frozen, so changes to comments will not be happening for 1.4. I do agree that we should add more comments; I've set the 'fix' version to 1.5.\n"
     },
     {
+      "id": "20381",
       "author": "Justin Obara",
       "date": "2014-06-25T16:17:27.015-0400",
       "body": "FSS was deprecated in Infusion 1.5 and will be removed from Infusion 2.0\n"
     },
     {
+      "id": "20382",
       "author": "Justin Obara",
       "date": "2015-06-26T09:50:45.129-0400",
       "body": "Reopening to change the fix version to 1.9\n"

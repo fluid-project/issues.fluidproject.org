@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23713",
       "author": "Jonathan Hung",
       "date": "2015-07-28T13:51:01.551-0400",
       "body": "Doc platform has template which has license information in the footer. When infusiond-docs gets ported to the new platform, this issue should be solved.\n"

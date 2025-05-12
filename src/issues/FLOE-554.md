@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11051",
       "author": "Jonathan Hung",
       "date": "2018-06-22T10:36:07.478-0400",
       "body": "Currently there are two ways to do this:\n\n1. Upload the graphic using the built-in media uploader, find its path, then use the theme editor to change the path in front-page.php.\n2. Upload the image into the theme's image directory and replace the existing image. Or rename it and adjust the front-page.php file.\n"

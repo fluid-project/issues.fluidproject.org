@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10205",
       "author": "Jonathan Hung",
       "date": "2012-07-09T09:40:00.816-0400",
       "body": "There seems to be dependencies on Ocropus 0.4.4 in genpdf. These dependencies were moved to the ocroold sub repository.\n\nIt seems that we will need to update genpdf to not rely on these components, or update the genpdf install script to pull from the old directory?\n"
     },
     {
+      "id": "10206",
       "author": "Justin Obara",
       "date": "2012-07-09T11:05:44.890-0400",
       "body": "My vote would be to update genpdf. I don't think it's a good idea for us to be mixing Ocropus 0.4.4 and 0.5 for use in decapod.\n"
     },
     {
+      "id": "10207",
       "author": "Jonathan Hung",
       "date": "2012-09-04T15:57:02.963-0400",
       "body": "We will be moving to Ocrous 0.6 which has a better installation procedure and less dependencies.\n"

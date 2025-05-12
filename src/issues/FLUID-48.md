@@ -34,16 +34,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17871",
       "author": "Joseph Scheuhammer",
       "date": "2008-01-22T16:13:28.000-0500",
       "body": "Actually, the Reorderer **modifies** the drag and drop properties, so it's part way there.\n\nJonathan and I spent most of a day looking into the jAria plugin, and almost started to use jAreia to resolve this issue.  Actually, our intent was to use jAria to handle **all** of the ARIA bit s-- not just drag-and-drop, and not just modification of roles and states, but also initialization thereof.\n"
     },
     {
+      "id": "17873",
       "author": "Joseph Scheuhammer",
       "date": "2008-02-12T14:08:35.000-0500",
       "body": "With respect to porltets, specifically portlets that can be selected but are immoveable, the ARIA grab state is irrelevant.  The Reorderer should be modified to **not** add/remove this state from fixed portlets.\n"
     },
     {
+      "id": "17876",
       "author": "Anastasia Cheetham",
       "date": "2008-03-11T12:23:54.000-0400",
       "body": "ARIA states and properties are now controlled programmatically. Templates and sample markup do not contain any ARIA markup.\n\nRegarding the comment about portlets: Only movables have their grab state set to supported.\n"

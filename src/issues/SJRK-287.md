@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26375",
       "author": "Gregor Moss",
       "date": "2020-02-14T14:14:20.445-0500",
       "body": "GIF uploads worked fine in Chrome 79, Firefox 72 and Edge 80, both running locally and on the FLOE staging site. Can't reproduce the issue.\n"

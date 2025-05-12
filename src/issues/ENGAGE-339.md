@@ -45,51 +45,61 @@
   ],
   "comments": [
     {
+      "id": "12698",
       "author": "Colin Clark",
       "date": "2010-02-08T16:24:17.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12699",
       "author": "Svetoslav Nedkov",
       "date": "2010-02-17T09:27:44.000-0500",
       "body": "Patch <https://fluidproject.atlassian.net/browse/ENGAGE-339#icft=ENGAGE-339>: fixes My Collection tests. The test for navigation bar will fail until <http://issues.fluidproject.org/secure/attachment/10976/ENGAGE-154.patch> is applied.\n"
     },
     {
+      "id": "12700",
       "author": "Colin Clark",
       "date": "2010-02-17T10:38:55.000-0500",
       "body": "I committed Sveto's fix for this issue at r9420.\n"
     },
     {
+      "id": "12701",
       "author": "Colin Clark",
       "date": "2010-02-17T10:39:13.000-0500",
       "body": "Reviewed and committed. +1 for inclusion in Engage 0.3b\n"
     },
     {
+      "id": "12702",
       "author": "Colin Clark",
       "date": "2010-02-19T00:23:10.000-0500",
       "body": "Sveto, it looks like the My Collection unit tests are failing again, caused by the addition of the Save dialog box or other feature.\n\nApologies again for committing code with breaking tests, but I thinking these probably broke sometime between your patch and Justin and Yura's modification to it.\n"
     },
     {
+      "id": "12703",
       "author": "Svetoslav Nedkov",
       "date": "2010-02-19T08:20:52.000-0500",
       "body": "Added ENGAGE-339-2.patch that does no more than to replace an include in the test markup.\n"
     },
     {
+      "id": "12704",
       "author": "Justin Obara",
       "date": "2010-03-02T10:04:56.000-0500",
       "body": "Committed Sveto's patch ENGAGE-339-2.patch that fixes the broken MyCollection unit tests by fixing up the script imports.\n"
     },
     {
+      "id": "12705",
       "author": "y z",
       "date": "2010-03-31T11:09:33.000-0400",
       "body": "My collection tests are failing again due to the update to demo data that's used for standalone viewing/testing.\n"
     },
     {
+      "id": "12706",
       "author": "Justin Obara",
       "date": "2010-03-31T11:26:12.000-0400",
       "body": "Committed Yura's patch <https://fluidproject.atlassian.net/browse/ENGAGE-339#icft=ENGAGE-339>.txt, which fixes the broken test. Basically the local data was changed to be the options for the component rather than just the model. The patch updates the tests to reflect this.\n"
     },
     {
+      "id": "12707",
       "author": "Michelle D'Souza",
       "date": "2010-04-07T17:53:40.000-0400",
       "body": "I'm getting an error when I try to run the tests: \"module is not defined\" on line 323 of jqUnit\n"

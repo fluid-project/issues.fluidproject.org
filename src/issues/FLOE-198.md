@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11172",
       "author": "Justin Obara",
       "date": "2014-07-15T14:17:48.937-0400",
       "body": "Submitted a pull request:\\\n<https://github.com/fluid-project/metadata/pull/27>\n"
     },
     {
+      "id": "11173",
       "author": "Cindy Li",
       "date": "2014-07-18T09:32:38.770-0400",
       "body": "Merged into the master branch @ 017b8c8163a3433bc3ad6282c4ed9088cbede38b\n\nJustin filed a jira for the feedback tool overlapping the header and the UIO button when the icons don't fit on a single row. <http://issues.fluidproject.org/browse/FLOE-200>\n"

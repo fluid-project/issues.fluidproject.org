@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12407",
       "author": "Justin Obara",
       "date": "2009-11-13T10:15:44.000-0500",
       "body": "The related objects component is a browse component that uses a specific search.\n"

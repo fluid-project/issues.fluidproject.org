@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16635",
       "author": "Antranig Basman",
       "date": "2010-04-06T11:35:03.000-0400",
       "body": "Fixed at revision 9805 -  Corrected updated event binding strategy required for <https://fluidproject.atlassian.net/browse/FLUID-3527#icft=FLUID-3527> to work on IE6 as well. This apparently does not listen to event handlers bound onto \"window\". Binding explicitly onto \"body\" appears to work in every browser.\n"
     },
     {
+      "id": "16637",
       "author": "Justin Obara",
       "date": "2010-04-06T12:05:15.000-0400",
       "body": "Did a quick test on this and it appears to be working well now.&#x20;\n"

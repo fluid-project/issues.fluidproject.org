@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13166",
       "author": "Antranig Basman",
       "date": "2012-08-29T02:02:13.342-0400",
       "body": "Work is now concluded. Unfortunately, although it was possible to remove the last object allocation from the \"fast\" fluid.get pipeline, the increased complexity of the implementation has led to something like a 15% slowdown over the old \"fast\" pipeline rescued from an ancient version of the framework. Some sample times on FF 14 for 200,000 runs of fluid.get with path lengths between 1 and 6:\n\nOriginal \"fast\": 1170ms\\\nNew \"fast\": 1340ms\\\nNew \"fast\" without EL parsing: 940ms\\\nNew \"slow\" with only default strategy: 1460ms\\\nNew \"slow\" with standard strategies: 2000ms\n\nNotably, current versions of Chrome are at least 4x faster on this test and show very few significant differences between the different implementations. Note that allowing arrays of EL segments wherever only flat EL path strings were previously permitted should be a good source of architecture-wide speedups, bypassing EL parsing entirely in many cases. 200,000 is coincidentally roughly the number of calls to fluid.get that were seen on a very complex CSpace page, indicating that significant amounts of time may still be being spent on this during page load - it may be worthwhile to roll in a \"hyper-fast\" fluid.get implementation that does nothing but the bare bones of traversal, and roll together the current \"fast\" and \"slow\" implementations into one, since they are now so close together in performance. This depends on where exactly in the architecture these calls are being issued from. Under the new GINGER WORLD model, this may be impossible in any case.\n\nThe new-style \"strategy\" API is much simpler, and permits only plain functions with a standard 4-argument signature, removing the previous complex \"init\" system for stateful strategies. A form of \"micro-trundler\" API has been preserved which allows new-style \"resolvers\" to be expressible in almost exactly the same form as the old ones, but rather than a mini \"object\", the thing trundled is a simple pairing of a value together with a list of EL segments {root: root, segs: segs}, and the \"trundler API\" is just a light wrapper which forwards to a JURIFIED function which deals only in primitive argument types.\n"
     },
     {
+      "id": "13167",
       "author": "Michelle D'Souza",
       "date": "2012-08-30T10:51:07.978-0400",
       "body": "Merged into project repo at 4839ad705ce9e2c1190e439c6630238cbfe02f54\n"

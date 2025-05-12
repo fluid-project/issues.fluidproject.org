@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16935",
       "author": "Justin Obara",
       "date": "2009-09-22T09:41:00.000-0400",
       "body": "Bug Parade Infusion 1.1.2&#x20;\n"
     },
     {
+      "id": "16936",
       "author": "Jacob Farber",
       "date": "2009-10-06T11:19:47.000-0400",
       "body": "Converted files to Unix line delimiters\n"
     },
     {
+      "id": "16937",
       "author": "Antranig Basman",
       "date": "2009-10-06T13:10:47.000-0400",
       "body": "Hi, I checked over the source tree, and only found DOS endings remaining in some of our 3rd party libraries (chilli and FCKEditor) which we have agreed to leave unchanged.\n"
     },
     {
+      "id": "16938",
       "author": "Michelle D'Souza",
       "date": "2011-01-13T16:50:10.719-0500",
       "body": "Reopening these issues in order to change the component to Release.&#x20;\n"

@@ -38,61 +38,73 @@
   ],
   "comments": [
     {
+      "id": "24070",
       "author": "Aman varshney",
       "date": "2016-03-11T13:08:04.172-0500",
       "body": "@Awesome Arnold can I work on this issue.\n"
     },
     {
+      "id": "24071",
       "author": "Jonathan Hung",
       "date": "2016-03-11T14:44:49.650-0500",
       "body": "Arnold Tagne\\\nThe image isn't showing up. Use the \"Attach Files\" option in the \"More\" menu to attach an image to the Jira.\n"
     },
     {
+      "id": "24074",
       "author": "Arnold Tagne",
       "date": "2016-03-12T14:26:40.444-0500",
       "body": "Look at the encircle part of the  attached image.\n"
     },
     {
+      "id": "24077",
       "author": "Aman varshney",
       "date": "2016-03-12T14:42:44.766-0500",
       "body": "@Awesome Arnold I changed UI of that page <https://github.com/fluid-project/infusion/pull/688> .\n\nInitially the text was in column then I changed it into row.\\\nhave a look\\\nfeedback welcome&#x20;\n"
     },
     {
+      "id": "24081",
       "author": "Arnold Tagne",
       "date": "2016-03-14T08:19:50.197-0400",
       "body": "I actually worked on the issue @Aman Varshney. Good to know you did something\\\nThe problem is,  I created the issue and could not assign it to myself  i.e change it's status to \"In progress\"\\\nJIRA is not giving me that option\n"
     },
     {
+      "id": "24083",
       "author": "Aman varshney",
       "date": "2016-03-17T12:24:07.703-0400",
       "body": "Is this is resolved or not ?\n"
     },
     {
+      "id": "24086",
       "author": "Arnold Tagne",
       "date": "2016-03-17T12:47:59.780-0400",
       "body": "@Aman Varshney, It has been resolved but I am still waiting for the pull request to be validated.\n"
     },
     {
+      "id": "24088",
       "author": "Aman varshney",
       "date": "2016-03-17T15:28:01.897-0400",
       "body": "ok\n"
     },
     {
+      "id": "24089",
       "author": "Justin Obara",
       "date": "2016-04-01T10:40:35.075-0400",
       "body": "Arnold Tagne are you sure this is a problem. Can you try it again with the latest version of Chrome. I am not able to reproduce this issue at all. If you can reproduce it, please include all of the steps necessary to trigger the problem.\n"
     },
     {
+      "id": "24091",
       "author": "Aman varshney",
       "date": "2016-04-01T14:26:46.595-0400",
       "body": "@Justin Obara, I am also getting same problem in google chrome browser.\n\nsee the attachment.&#x20;\n"
     },
     {
+      "id": "24092",
       "author": "Arnold Tagne",
       "date": "2016-04-04T04:46:22.963-0400",
       "body": "@Justin Obara, this issue was confirmed by @Jonathan Hung before I created and resolved it.\\\nPlease check the image attached to the issue.\n"
     },
     {
+      "id": "24094",
       "author": "Justin Obara",
       "date": "2016-04-04T07:40:08.439-0400",
       "body": "Jonathan Hung could you please review the associated pull request\n"

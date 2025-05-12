@@ -37,11 +37,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25153",
       "author": "Justin Obara",
       "date": "2021-06-22T15:08:38.220-0400",
       "body": "The Preferences Framework has been update significantly for <https://fluidproject.atlassian.net/browse/FLUID-6420#icft=FLUID-6420>, included in <https://github.com/fluid-project/infusion/pull/1052> When the PR is merged, we should verify that it addresses this issue.\n"
     },
     {
+      "id": "25154",
       "author": "Justin Obara",
       "date": "2022-02-03T10:33:17.859-0500",
       "body": "fluid.prefs.create no longer exists. fluid.uiOptions and the fluid.prefs.assembler.prefsEd provide a top level option for configuring the prefsEditorLoader.\n"

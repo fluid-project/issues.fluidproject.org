@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12146",
       "author": "Justin Obara",
       "date": "2009-09-22T14:47:53.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "12147",
       "author": "Colin Clark",
       "date": "2009-10-09T18:40:44.000-0400",
       "body": "Yura, I'm assigning this one to you--you've probably already fixed it, but I'm doing a bit of Engage 0.1 JIRA gardening.\n"
     },
     {
+      "id": "12148",
       "author": "Justin Obara",
       "date": "2009-11-03T11:55:41.000-0500",
       "body": "URLs are now being pulled from the config file\n"

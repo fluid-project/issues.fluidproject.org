@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22258",
       "author": "Alan Harnum",
       "date": "2016-11-03T08:46:00.296-0400",
       "body": "PR: <https://github.com/fluid-project/infusion/pull/776>\n"
     },
     {
+      "id": "22263",
       "author": "Justin Obara",
       "date": "2016-11-03T09:35:27.278-0400",
       "body": "Merged PR ( <https://github.com/fluid-project/infusion/pull/776> ) into project-repo at d62aafa6f9f91e4e362632287ab2a8f4d147a726\n"

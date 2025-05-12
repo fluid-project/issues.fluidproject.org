@@ -25,21 +25,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27439",
       "author": "Jess Mitchell",
       "date": "2008-09-30T12:50:49.000-0400",
       "body": "vulab2\n"
     },
     {
+      "id": "27440",
       "author": "David Makalsky",
       "date": "2008-10-27T14:05:43.000-0400",
       "body": "VULAB5\n"
     },
     {
+      "id": "27441",
       "author": "David Makalsky",
       "date": "2008-11-10T14:45:09.000-0500",
       "body": "vulab7\n"
     },
     {
+      "id": "27442",
       "author": "David Makalsky",
       "date": "2008-12-01T10:49:25.000-0500",
       "body": "Code pattern had some issues in practice.  Abandoning for more standard multithreading models.\n"

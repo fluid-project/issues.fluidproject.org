@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19769",
       "author": "Eli Cochran",
       "date": "2009-07-06T11:30:00.000-0400",
       "body": "The current SWFUpload engine 2.2.0 only has a setting for which filetypes to include, not which to exclude.&#x20;\n\nfile\\_types: the file\\_types setting accepts a semi-colon separated list of file extensions that are allowed to be selected by the user. Use '**.**' to allow all file types.\n\nWe could can exclude files as they are added to the file queue but the end-user would still be able to \"select\" the excluded files in the file browser.&#x20;\n"
     },
     {
+      "id": "19771",
       "author": "Mike Lam",
       "date": "2011-01-05T11:52:33.116-0500",
       "body": "We have given the integrator the option of what file types the SWF uploader will allow.   This feature has also been implemented into the new HTML5 uploader, however, most browsers still ignore the HTML5 input's accept attribute.\n"

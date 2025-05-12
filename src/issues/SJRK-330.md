@@ -48,6 +48,7 @@
   ],
   "comments": [
     {
+      "id": "26577",
       "author": "Gregor Moss",
       "date": "2020-07-02T17:22:06.603-0400",
       "body": "A similar issue was noted in Safari on the iPad Air 3 (iOS 13.3). It only occurred once and could not be reproduced in subsequent attempts. See \"2020-07-02 ipad audio preview broken (cropped).png\"\n\nI added an audio block as part of Test 14 (one of each block type, all fields filled in), and when I got to the preview, the file could not be played. This may be the same issue or it may be separate\n"

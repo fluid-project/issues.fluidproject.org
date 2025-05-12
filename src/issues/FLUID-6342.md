@@ -24,26 +24,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22962",
       "author": "Steven Githens",
       "date": "2018-09-20T22:12:38.993-0400",
       "body": "Antranig Basman or anyone else.  Any comments on this appreciated (or maybe something I missed in the sequence impl that does allow passing payloads).  I'm happy to implement this.\n"
     },
     {
+      "id": "22964",
       "author": "Antranig Basman",
       "date": "2018-09-21T04:14:55.002-0400",
       "body": "I think what you see as the weakness of fireTransformEvent, \"that you need to have a series of components to create listeners and events on\" is the main strength of it. Once you are working with an pipeline that is any more than trivial, you want to be programming \"in the open\" - in the sense explained by the paper on the \"Open Authorial Principle\" - <https://github.com/amb26/papers/blob/master/onward-2016/onward-2016.pdf>\\\nThis implies that\\\ni) It should be easy for further authors to contribute further stages of the pipeline slotted in between existing ones created by the first author(s)\\\nii) It should be easy for further authors to override particular stages of the pipelines with implementations held on unrelated component(s)\\\nNeither of those are possible with the implementation/workflow that you've implemented which is why I think we should discourage it. fireTransformEvent is certainly a bit clunky in the current incarnation, but I think the answer to that is to help people achieve the effects of it with less syntax and formality, along the lines suggested in <https://wiki.fluidproject.org/display/fluid/Plan+to+Abolish+Invokers+and+Events> . Do have a read of both of these resources and let me know what you think -&#x20;\n"
     },
     {
+      "id": "22968",
       "author": "Steven Githens",
       "date": "2018-09-24T19:22:17.878-0400",
       "body": "I'm still reviewing those papers, but I'd like to think this really isn't much different than other cases in the IoC system that use array-like or ordered things, such as unit tests. \n\nWe handle the non-trivial case alright, but in my example linked above, it's really a really trivial use case. 3 single functions, called in order, that each take the payload from the previous function.  I'd like to think we could express this is some sort of simple data block that would allow swapping them out, rather than create events/listeners for each one.\n\nFrom an authorial standpoint say if a future author wanted to change the final lookup of the record ( return dbDataStore.findById(lookupData.prefsSafeId) ), perhaps from our couchdb store, to an LDAP lookup or something, ideally they could just swap out the last portion.\n\nIs there an existing bit of infrastructure in infusion, perhaps from the work done to order sequential test cases, that I could adapt to do this?\n\n \n"
     },
     {
+      "id": "22971",
       "author": "Antranig Basman",
       "date": "2018-09-26T08:49:15.655-0400",
       "body": "We only support arrays in other places such as in the IoC Testing Framework because we haven't had time to take up the improved alternatives, for example the grade sequence system implemented in <https://issues.fluidproject.org/browse/FLUID-5903> . Please try to go ahead with the events/listeners approach as in fluid.fireTransformEvent or perhaps provide some forms of utility or wrapping function to cut down on the bureaucracy. Good luck with continuing to read the papers!\n"
     },
     {
+      "id": "22973",
       "author": "Steven Githens",
       "date": "2018-09-26T19:34:59.302-0400",
       "body": "Thanks, I took at look at the completed <https://fluidproject.atlassian.net/browse/FLUID-5903#icft=FLUID-5903> ticket, and looked again at the IoC testing docs.  I think for now I will adopt a similar (if not exact, then a subset) syntax from the \\`sequence\\` entry in infusion based tests, which I guess will be implemented under the covers with \\`fluid.fireTransformEvent\\`.  I don't think it should take long for the first stab at it for the initial use case which inspired this ticket.  Because the calls for the use case are so simple, I feel somewhat strongly about them being grouped/authored together in the component so that it's easy to understand the workflow and there isn't overlapping confusion with the rest of the existing events/listeners on the preferences server component.\n"

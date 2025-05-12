@@ -34,6 +34,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16219",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T13:08:42.438-0400",
       "body": "Currently, clicking in the text does NOT activate the editor: you must click the Edit link.\n"

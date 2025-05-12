@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17555",
       "author": "Justin Obara",
       "date": "2009-02-04T09:36:22.000-0500",
       "body": "It appears that these scripts, while called in script tags in the head, are not actually used in the tests\n"
     },
     {
+      "id": "17558",
       "author": "Justin Obara",
       "date": "2009-02-04T15:19:26.000-0500",
       "body": "Removed the import of two no longer existing script files&#x20;\n\nportlets.js and reordererLayoutTests.js\n"
     },
     {
+      "id": "17560",
       "author": "Justin Obara",
       "date": "2009-02-05T08:17:02.000-0500",
       "body": "Verified fix using:\n\nOpera 9.5 (Mac OS 10.5)\n"

@@ -32,11 +32,13 @@
   ],
   "comments": [
     {
+      "id": "21679",
       "author": "Antranig Basman",
       "date": "2009-05-27T13:19:05.000-0400",
       "body": "Attached patch which guards against this issue twice - There are two parts to this problem.&#x20;\n\nFirstly, the ids assigned to the page links in this case are not assigned stably, so the last 3 links in general will not have corresponding ids once the page link control is rerendered. This is now handled by setting the \"localID\" property for the control which now stably associates its id with the page number to which it corresponds.\n\nSecondly, this error should not be thrown under any circumstances, even if the element to be focused no longer exists. So the relevant code in the renderer is now guarded.\n"
     },
     {
+      "id": "21680",
       "author": "Justin Obara",
       "date": "2009-05-27T14:01:00.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.6, Safari 3.2 (Mac OS 10.5)\\\nFF3, IE7, IE8 (Win Vista)\n"

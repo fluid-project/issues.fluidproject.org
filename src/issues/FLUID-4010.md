@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24905",
       "author": "John Kremer",
       "date": "2011-02-22T09:47:22.272-0500",
       "body": "Feb 22 - \\\nCan insert some text, but cannot insert link, indent, lists, url, etc - mouse does not work for selecting formatting options at all. \\\nYou can highlight the text with the keyboard (shift and arrow) only. Cannot mouse click off of the highlighted text. \\\nCan bold, italic, underline with keyboard shortcuts only on highlighted text. &#x20;\n\n<http://build.fluidproject.org/infusion/demos/inlineEdit/rich/demo.html>\n"
     },
     {
+      "id": "24906",
       "author": "heidi valles",
       "date": "2011-02-23T16:27:16.631-0500",
       "body": "Also after using TMC, 'Edit' link for ckeditor doesn't work. \\\nThere's also a weird bug where undo/redo link text doesn't change until you move pointer off the link.\n"
     },
     {
+      "id": "24907",
       "author": "Anastasia Cheetham",
       "date": "2014-04-02T15:49:30.051-0400",
       "body": "Tested pre-1.5, working fine now.\n"

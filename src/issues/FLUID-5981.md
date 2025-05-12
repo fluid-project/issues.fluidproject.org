@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25235",
       "author": "Antranig Basman",
       "date": "2016-10-15T20:28:55.053-0400",
       "body": "<https://github.com/amb26/infusion/tree/FLUID-5981> contains a failing test case for this issue.\n"
     },
     {
+      "id": "28204",
       "author": "Antranig Basman",
       "date": "2024-12-17T16:02:22.971-0500",
       "body": "Resolved for Infusion 6 with new implementation of fluid.flattenSignals - <https://github.com/fluid-project/infusion-6/blob/main/tests/framework-tests/core/js/FluidILTests.js#L141-L144>\n"

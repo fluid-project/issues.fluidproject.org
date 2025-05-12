@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17720",
       "author": "Jonathan Hung",
       "date": "2009-02-18T12:47:20.000-0500",
       "body": "It's possible to do this by following: <http://drupal.org/node/92657>\n\nHowever, the username and password fields are too long and bleed into the other divs. Also the density of the page isn't very friendly and rather dense. We should use a modified form if this is something we'd like to pursue.\n"

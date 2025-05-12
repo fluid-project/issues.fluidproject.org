@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26052",
       "author": "Alan Harnum",
       "date": "2018-10-23T12:54:08.079-0400",
       "body": "Fixed as follows:\n\n* SSH'd into server\n* changed to the production SNOW install directory at **/var/www/afe0ab1f**\n* removed these two lines from **wp-config.php**\n  * define('WP\\_CACHE', true); //Added by WP-Cache Manager\\\n    define( 'WPCACHEHOME', '/var/www/snow-dev.idrc.ocadu.ca/wordpress/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager\n* At this point, the Super Cache plugin could be disabled\n* Turned off maintenance mode\n\nI believe this issues relates to the WPCACHEHOME variable pointing to a nonexistent directory. Possibly this is what the plugin sets by default, but because the install failed the plugin could not be properly configured to use the correct directory.\n"

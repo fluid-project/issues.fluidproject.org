@@ -42,11 +42,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20910",
       "author": "Michelle D'Souza",
       "date": "2009-04-16T16:59:27.000-0400",
       "body": "Partly the issue here is a divergence from the wireframes. Cancel is supposed to close the UI Options interface. Reset removes all the user set preferences. Perhaps this will make the meaning of the buttons more clear.\n"
     },
     {
+      "id": "20911",
       "author": "Michelle D'Souza",
       "date": "2013-09-05T16:12:58.035-0400",
       "body": "This full page version of UI Options is no longer the recommended way to use UI Options. It is now only in manual tests to provide an example of how it would be possible to use UI Options in a full page mode. The PCP and PMT which were designed as part of the Cloud For All project show examples of recommended uses of full page UI Options. These do not include the reset and save and apply buttons.\n\n<http://wiki.fluidproject.org/display/fluid/Preference+Editing+Tools+Design>\n"

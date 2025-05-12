@@ -32,16 +32,19 @@
   ],
   "comments": [
     {
+      "id": "13957",
       "author": "y z",
       "date": "2010-04-13T15:46:12.000-0400",
       "body": "This patch updates all copyright dates for Infusion 1.2\n"
     },
     {
+      "id": "13960",
       "author": "Justin Obara",
       "date": "2010-04-13T15:57:13.000-0400",
       "body": "Committed Yura's patch <https://fluidproject.atlassian.net/browse/FLUID-3645#icft=FLUID-3645>.patch at r9823\n"
     },
     {
+      "id": "13961",
       "author": "Michelle D'Souza",
       "date": "2011-01-13T16:50:09.783-0500",
       "body": "Reopening these issues in order to change the component to Release.&#x20;\n"

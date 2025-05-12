@@ -32,16 +32,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11327",
       "author": "Antranig Basman",
       "date": "2015-05-25T17:10:07.485-0400",
       "body": "This looks like a use case which motivates restoring the \"source tracking\" system as suggested in <http://issues.fluidproject.org/browse/FLUID-5490> . With this, it would be possible to apply a source named \"latch\" to the shift key source, and then apply 'includeSource: \"latch\"' to the model listener which provides the spoken message. As it stands, it is awkward to demultiplex the different sources of change to the shift state.\n\nOne approach for finessing this for now could be to add a single event source, \"shiftLatchChange\" which detects the user's long-pressing of shift, and then two add two listeners to this with different priorities - a high priority listener which updates the model state, and then a low priority listener which READS the updated model state and then announces it.\n"
     },
     {
+      "id": "11328",
       "author": "Justin Obara",
       "date": "2015-05-26T10:41:03.986-0400",
       "body": "Submitted a pull request:\\\n<https://github.com/fluid-project/first-discovery/pull/62>\n"
     },
     {
+      "id": "11329",
       "author": "Cindy Li",
       "date": "2015-05-26T15:03:46.711-0400",
       "body": "Merged @ 4b81887c85848fb35b327f42aa348c48bd03c2f9\n"

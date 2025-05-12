@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20473",
       "author": "Justin Obara",
       "date": "2008-09-16T14:54:58.000-0400",
       "body": "Affects Uploader 2\n"
     },
     {
+      "id": "20474",
       "author": "Justin Obara",
       "date": "2009-01-14T13:00:43.000-0500",
       "body": "Appears to have been fixed.\n\nTested using:\n\nIE7 (Win Vista)\\\nIE6 (Win XP)\n"

@@ -48,16 +48,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15939",
       "author": "Justin Obara",
       "date": "2014-07-03T13:13:04.619-0400",
       "body": "Submitted a pull request for the Uploader API\\\n<https://github.com/fluid-project/infusion-docs/pull/21>\n"
     },
     {
+      "id": "15941",
       "author": "Anastasia Cheetham",
       "date": "2014-10-17T13:09:07.943-0400",
       "body": "As of this date, Uploader API and UIO API have been ported to the new docs. The rest only have placeholder pages in the to-do folder.\n"
     },
     {
+      "id": "15943",
       "author": "Anastasia Cheetham",
       "date": "2015-04-23T16:31:26.321-0400",
       "body": "The remaining tasks for this have been captured in individual JIRAs\n"

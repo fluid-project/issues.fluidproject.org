@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20538",
       "author": "Gary Thompson",
       "date": "2008-08-13T14:14:09.000-0400",
       "body": "Page documenting the integration steps was created here:\\\n<http://wiki.fluidproject.org/x/QY07>\n"
     },
     {
+      "id": "20539",
       "author": "Justin Obara",
       "date": "2011-01-10T14:30:34.458-0500",
       "body": "appears to have been finished. It was marked as resolved, just closing it.\n"

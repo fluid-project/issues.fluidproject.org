@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11918",
       "author": "Michelle D'Souza",
       "date": "2009-10-19T22:45:22.000-0400",
       "body": "Bug Parade Infusion 1.1.2&#x20;\n"
     },
     {
+      "id": "11919",
       "author": "Justin Obara",
       "date": "2009-10-20T15:30:36.000-0400",
       "body": "A loading message has been added, rhino was upgraded, and switched to native json parsing in rhino. All this means that the template isn't shown on page load (replaced by the loading message) and the page loads much faster now.\n"
     },
     {
+      "id": "11920",
       "author": "Justin Obara",
       "date": "2009-11-10T14:05:49.000-0500",
       "body": "Closed as per previous comment\n"

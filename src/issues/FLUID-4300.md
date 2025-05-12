@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "24517",
       "author": "heidi valles",
       "date": "2011-07-06T09:54:27.631-0400",
       "body": "Browse icon position off in Safari\n"
     },
     {
+      "id": "24518",
       "author": "Michelle D'Souza",
       "date": "2011-07-08T16:09:16.692-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/87> merged into project repo at 0d8f2d802b3217c6149c15878367a7584ce64740\n"

@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18926",
       "author": "Allison Bloodworth",
       "date": "2008-11-12T17:29:10.000-0500",
       "body": "iteration23\n"
     },
     {
+      "id": "18930",
       "author": "Allison Bloodworth",
       "date": "2008-12-19T17:57:38.000-0500",
       "body": "Though we will likely revisit this task again after our next user testing session, this has been completed for this iteration of the component.\n"

@@ -42,6 +42,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19523",
       "author": "Justin Obara",
       "date": "2009-02-03T12:56:49.000-0500",
       "body": "Appears to have been fixed at r6398 as part of the upgrade to jQuery (<https://fluidproject.atlassian.net/browse/FLUID-2180#icft=FLUID-2180>)\n\nTested with:\\\nOpera 9.5 (Mac OS 10.5, Win XP)\n"

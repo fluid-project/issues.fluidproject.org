@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10233",
       "author": "Justin Obara",
       "date": "2010-07-14T11:22:25.641-0400",
       "body": "Bug Parade Decapod 0.4\n"
     },
     {
+      "id": "10234",
       "author": "Justin Obara",
       "date": "2012-05-14T14:13:33.201-0400",
       "body": "Resolved with changes to <https://fluidproject.atlassian.net/browse/DECA-218#icft=DECA-218>\n"

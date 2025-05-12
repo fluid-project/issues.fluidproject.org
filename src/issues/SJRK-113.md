@@ -41,21 +41,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26463",
       "author": "Gregor Moss",
       "date": "2018-06-14T15:59:38.350-0400",
       "body": "The user requirement is that the site has multiple languages, and the site author would like to add a panel to UIO so that site users can decide which language they would like to have the site in.\n\nThese are the technical details of the work:\n\n* We need a new panel, including an adjuster and an enactor\n  * Use the LetterSpacing files as an example to follow\n* We need a spot to hook into to set the language AND have it reload at that point\n* We need to save the user's chosen language (might be automagic)\n* We need to check the language when we're loading the page to make sure it's loaded in the preferred language initially. No FOUC\n"
     },
     {
+      "id": "26464",
       "author": "Gregor Moss",
       "date": "2018-06-14T16:12:20.679-0400",
       "body": "Consider the prior art in the First Discovery tool (<https://github.com/GPII/first-discovery>) and the Preferences Editor ([https://docs.fluidproject.org/infusion/development/LocalizationInThePreferencesFramework.html#](https://docs.fluidproject.org/infusion/development/LocalizationInThePreferencesFramework.html))\n\nPerhaps Cindy Li can weigh in? 🙂\n\ncc Michelle D'Souza\n"
     },
     {
+      "id": "26465",
       "author": "Cindy Li",
       "date": "2018-06-19T11:33:01.116-0400",
       "body": "To re-capture the conversion that Greggor and I had today: yes, it's worthwhile to have a look at the implementation of the language panel in the first discovery tool, which also uses the preferences framework to render the panel and react to the language selection. Some of the code, such as the broadcasting of the selected language, probably can even be reused.\n"
     },
     {
+      "id": "26466",
       "author": "Gregor Moss",
       "date": "2018-07-17T12:57:41.553-0400",
       "body": "Not actually closed, resolution issue\n"

@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27267",
       "author": "David Makalsky",
       "date": "2008-12-01T11:25:25.000-0500",
       "body": "Mac G4, G5 and some other non-intel hardware require big endian encoding for the audio input stream\n\nAdding a try / catch  to support the non-intels\n\nvulab9\n"
     },
     {
+      "id": "27268",
       "author": "Blake E",
       "date": "2008-12-01T12:02:44.000-0500",
       "body": "(change to issue = component was not assigned)\n"
     },
     {
+      "id": "27269",
       "author": "David Makalsky",
       "date": "2008-12-01T18:03:46.000-0500",
       "body": "Code committed and tested by Peter R.  States that bigendian hardware is working (at least on a MAC G4)\n"

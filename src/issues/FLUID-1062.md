@@ -39,16 +39,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20552",
       "author": "Antranig Basman",
       "date": "2008-08-14T21:26:07.000-0400",
       "body": "The \"overt\" form of this error (visible drop marker but no drop occurs) has probably already been fixed, but until <https://fluidproject.atlassian.net/browse/FLUID-1148#icft=FLUID-1148> is resolved, there will still be numerous areas in the DOM (many of them inappropriate) where no drop will appear to be possible.\n"
     },
     {
+      "id": "20553",
       "author": "Antranig Basman",
       "date": "2008-09-07T18:10:02.000-0400",
       "body": "Drop Manager, Dom Permutation work merged back into trunk at revision 5476\n"
     },
     {
+      "id": "20554",
       "author": "Justin Obara",
       "date": "2008-09-30T11:21:25.000-0400",
       "body": "Verified fix using:\n\nIE6 (Win XP)\n"

@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13939",
       "author": "Giovanni Tirloni",
       "date": "2016-11-21T11:18:43.978-0500",
       "body": "Issue is being caused by the new \"Collaborative editing\" feature in Confluence 6.0.&#x20;\n\nI've turned it off (so Confluence continues to work in the old way, without collaborative editing) and it's working now.\n"
     },
     {
+      "id": "13943",
       "author": "Giovanni Tirloni",
       "date": "2016-11-21T11:22:01.780-0500",
       "body": "Useful link - <https://answers.atlassian.com/questions/43907783/confluence-6.0.1-loading-the-editors-taking-longer-than-usual>\n"

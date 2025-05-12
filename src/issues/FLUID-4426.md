@@ -48,16 +48,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13860",
       "author": "heidi valles",
       "date": "2011-09-01T14:39:21.267-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "13861",
       "author": "Anastasia Cheetham",
       "date": "2011-12-16T15:34:15.342-0500",
       "body": "I have experimented with a number of ways to address this issue, without much success. The most \"correct\" seeming approach is to mark the panel up as an accordion using tablist/tab/tabpanel. I experimented with that here:\n\n<https://github.com/acheetham/infusion/tree/FLUID-4426-tabpanel>\n\nbut it doesn't cause a screen reader to say anything.\n\nAmong other things, I tried forcing focus onto one of the tabs after the panel opens (albeit using a total hack that is obviously not the proper way to do it):\n\n<https://github.com/acheetham/infusion/tree/FLUID-4426-focus-on-tab>\n\nThis at least causes the screen reader to read the tab text, which at least indicates to the user that something has happened. I'm not sure why we don't move focus into the panel already.\n"
     },
     {
+      "id": "13865",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:06.866-0400",
       "body": "Reopening to change the fix version to 1.9\n"

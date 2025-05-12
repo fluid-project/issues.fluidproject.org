@@ -30,36 +30,43 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17427",
       "author": "Antranig Basman",
       "date": "2008-09-17T00:56:21.000-0400",
       "body": "Resolved at revision 5550\n"
     },
     {
+      "id": "17429",
       "author": "Justin Obara",
       "date": "2008-09-17T09:11:19.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, Opera 9.5 (Win XP)\\\nFF3 (Win Vista)\n"
     },
     {
+      "id": "17430",
       "author": "Allison Bloodworth",
       "date": "2008-10-01T15:59:24.000-0400",
       "body": "I am experiencing the same problem again. When I edit something twice, it toggles between the very last edit and the original state. It should only toggle between the very last edit and the edit just before that. I'm on Mac OS 10.5 with FF3.\n"
     },
     {
+      "id": "17431",
       "author": "Michelle D'Souza",
       "date": "2008-10-03T14:26:46.000-0400",
       "body": "This seems to have come back as a result of the fix to <https://fluidproject.atlassian.net/browse/FLUID-1594#icft=FLUID-1594>\n"
     },
     {
+      "id": "17432",
       "author": "Michelle D'Souza",
       "date": "2008-10-03T14:27:19.000-0400",
       "body": "dev-iteration44\n"
     },
     {
+      "id": "17433",
       "author": "Anastasia Cheetham",
       "date": "2008-10-03T16:21:17.000-0400",
       "body": "I think I've fixed this one without re-introducing <https://fluidproject.atlassian.net/browse/FLUID-1594#icft=FLUID-1594> again, i.e. both bugs should now be fixed. Hopefully, I haven't introduced or re-introduced anything else. Tests pass, and it all seems to work.\n"
     },
     {
+      "id": "17434",
       "author": "Justin Obara",
       "date": "2008-10-06T09:01:42.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

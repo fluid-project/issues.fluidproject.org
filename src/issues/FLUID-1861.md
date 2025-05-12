@@ -30,6 +30,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15909",
       "author": "Colin Clark",
       "date": "2009-04-08T18:06:45.000-0400",
       "body": "Features such as the standard \"strings\" option in Fluid components, along with the i18n features of the Renderer provide a reasonable set of strategies for supporting localized versions of Fluid components. Developers can use these tools to add internationalization features to their own code as well.\n"

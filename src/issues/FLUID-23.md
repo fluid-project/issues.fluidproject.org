@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13114",
       "author": "Anastasia Cheetham",
       "date": "2007-08-08T07:54:27.000-0400",
       "body": "Only one test remains that passes in Firefox, but fails in IE and Safari on Windows: testPersistFocus()\n\nWe believe it fails because focus persistence in IE doesn't work as expected in terms of focus and blur events on the Lightbox node (i.e. the test **should** fail because there's a bug: <https://fluidproject.atlassian.net/browse/FLUID-7#icft=FLUID-7>). This applies to Safari as well.\n\nThe reason the MochiKit tests fail is because they have not been factored out yet - they shouldn't be run.\n"
     },
     {
+      "id": "13115",
       "author": "Joseph Scheuhammer",
       "date": "2007-08-08T12:29:25.000-0400",
       "body": "The tests are showing bugs in the code now, not problems with the tests themselves.  There is still an issue of publishing the test function names for the Mochikit version of the lightbox, but the plan is, as part of refactoring the lightbox, to move the Mochikit code to a \"sandbox\" project, where issues with Mochikit testing will be dealt with.\n"

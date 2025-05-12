@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24981",
       "author": "Allison Bloodworth",
       "date": "2009-01-12T18:50:34.000-0500",
       "body": "iteration30\n"
     },
     {
+      "id": "24982",
       "author": "Jonathan Hung",
       "date": "2011-01-06T15:43:46.138-0500",
       "body": "closing - orphaned work.\n"

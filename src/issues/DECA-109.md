@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10279",
       "author": "Justin Obara",
       "date": "2010-06-08T15:18:41.967-0400",
       "body": "committed preliminary tests for the decapod server. These are just basic at the moment and will need to be expanded. They are based on the webtest module.\n\n<http://code.google.com/p/decapod/source/browse?repo=server#hg/tests>\n"

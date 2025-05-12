@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "23304",
       "author": "Laurel Williams",
       "date": "2009-12-18T12:49:28.000-0500",
       "body": "The attached patch fixes the logic for packaging a source or minified build\n"
     },
     {
+      "id": "23305",
       "author": "Justin Obara",
       "date": "2009-12-18T16:03:50.000-0500",
       "body": "This is no longer an issue now that <https://fluidproject.atlassian.net/browse/FLUID-3437#icft=FLUID-3437> has been fixed.\n"

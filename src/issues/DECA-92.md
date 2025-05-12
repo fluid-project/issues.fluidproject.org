@@ -30,21 +30,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10101",
       "author": "Michelle D'Souza",
       "date": "2010-04-01T16:13:11.000-0400",
       "body": "Specifying the -t flag was not quite enough - an error is being thrown about not being able to find the directory that is passed with the -d flag\n"
     },
     {
+      "id": "10102",
       "author": "Michelle D'Souza",
       "date": "2010-04-01T16:13:52.000-0400",
       "body": "There also appears to be a regression with the actually pdf generation. Jon was able to generate a pdf from the command line but the quality was very low - in fact unreadable.&#x20;\n"
     },
     {
+      "id": "10103",
       "author": "Jonathan Hung",
       "date": "2010-06-10T16:27:46.357-0400",
       "body": "For 0.4 / 0.5, confirm fix and close.\n"
     },
     {
+      "id": "10104",
       "author": "Jonathan Hung",
       "date": "2010-06-17T15:10:09.651-0400",
       "body": "Confirmed fixed in version e46d1748a910 of genpdf. Jun 17, 2010. Tested on Ubuntu 9.10, FF 3.5.8.\n"

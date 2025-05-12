@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20035",
       "author": "Eli Cochran",
       "date": "2009-05-18T12:44:48.000-0400",
       "body": "In the time since I posted this bug they have released 2.2.0.1 which (from the ChangeLog.txt file):&#x20;\n\n* Removed requeueUpload due to bugs/poor testing\\\n  \\= Fixed namespace conflict that broke stopUpload\n\nI've done a smoke test using the server and stand-alone versions.&#x20;\n\nServer versions where tested using:\n\n* Mac 10.5/FF3/Flash 10\n* Mac 10.5/Safari 3/Flash 10\n* Windows XPsp3/IE7/Flash9\n* WindowsXPsp3/FF3/Flash9\n\nStandalone version was tested with:\n\n* Mac 10.5/FF3/Flash 10\n\nMy smoke test consisted of uploading a set of files, stopping and starting the upload, letting the upload complete, and then doing another upload with some repeated files to test upload failure. (upload failure, of course, fails to to fail on the standalone version.)\n\nBased on these tests and a cursory look at the change logs and the code for SWFUpload I'm going to go ahead and commit the latest version of SWF Upload\n"
     },
     {
+      "id": "20037",
       "author": "Eli Cochran",
       "date": "2009-05-18T12:47:26.000-0400",
       "body": "Latest version of the SWFUpload swf and js files have been committed to the code base. Looking good so far.&#x20;\n"
     },
     {
+      "id": "20039",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:15.464-0500",
       "body": "Closing issues that were fixed in 1.1\n"

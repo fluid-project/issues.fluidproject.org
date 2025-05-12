@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12911",
       "author": "Alexey Novak",
       "date": "2012-05-15T12:35:44.274-0400",
       "body": "About text-decorations in CSS transitions. One of those links which say that it is most likely unfeasible to achieve.&#x20;\n\n<http://www.webdesignforum.com/14906-do-css3-transitions-not-work-text-decoration.html>\n\n<http://www.w3.org/TR/css3-transitions/>\n"

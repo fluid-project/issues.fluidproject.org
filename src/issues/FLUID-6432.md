@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25531",
       "author": "Justin Obara",
       "date": "2020-02-03T08:06:58.001-0500",
       "body": "Along with these changes look into using CSS variables instead of the hardcoded colour values that are currently used. This can be done with or without stylus, so may also want to revisit the need for stylus.\n\nsee example: <https://codepen.io/greatislander/pen/VwYJVvK>\n\nHowever, CSS variables are not supported in IE 11 ( <https://caniuse.com/#feat=css-variables> )\n"

@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13948",
       "author": "Justin Obara",
       "date": "2010-01-04T16:08:58.000-0500",
       "body": "Likely an IE issue where it is evaluating the head of the fetched template as part of the implementation of jquery's load function\n"
     },
     {
+      "id": "13951",
       "author": "Justin Obara",
       "date": "2014-03-03T11:20:13.804-0500",
       "body": "builder.fluidproject.org has been taken down and there are no immediate plans to replace it. Currently all builds are expected to be generated directly from the grunt build scripts.\n\n<http://fluid.2324889.n4.nabble.com/Infusion-Builder-issues-tp8926.html>\n"

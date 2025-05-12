@@ -31,46 +31,55 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23039",
       "author": "Antranig Basman",
       "date": "2018-08-21T13:16:01.551-0400",
       "body": "Cheers for the report, Giovanni Tirloni. We have a new linting implementation contributed by Tony Atkins \\[RtF] which makes many more checks than before, which is responsible for the increased processing time. Hopefully we can increase the build timeouts in order to compensate.\n"
     },
     {
+      "id": "23040",
       "author": "Justin Obara",
       "date": "2018-08-21T15:00:40.942-0400",
       "body": "Merged PR ( <https://github.com/fluid-project/infusion/pull/925> ) into the project repo at 7c9cf5cdccdec4108fd2cc042a293e552f2297ca\n"
     },
     {
+      "id": "23041",
       "author": "Giovanni Tirloni",
       "date": "2018-08-21T15:59:39.367-0400",
       "body": "Thanks Antranig Basman & Justin Obara.\n\nThe new build average time is 35 minutes.\n"
     },
     {
+      "id": "23042",
       "author": "Tony Atkins [RtF]",
       "date": "2018-08-22T04:48:49.083-0400",
       "body": "Giovanni Tirloni or anyone, is there an example of successful build with the new timeout?  I'd like to review and confirm that we aren't accidentally linting non-repo content.\n"
     },
     {
+      "id": "23043",
       "author": "Giovanni Tirloni",
       "date": "2018-08-22T06:51:13.234-0400",
       "body": "Still running but it's successfully finished the build/lint phases: <https://ci.fluidproject.org/job/infusion-pull-request/22>\n"
     },
     {
+      "id": "23044",
       "author": "Tony Atkins [RtF]",
       "date": "2018-08-22T08:21:23.873-0400",
       "body": "Thanks, I decided to sanity check via other means and submitted <https://fluidproject.atlassian.net/browse/FLUID-6328#icft=FLUID-6328> with the few files that were not checked that should have been.  I didn't find any evidence that files that shouldn't be checked were being checked, which was what I was worried about with the timing.\n"
     },
     {
+      "id": "23045",
       "author": "Tony Atkins [RtF]",
       "date": "2018-09-04T06:44:47.521-0400",
       "body": "I have reopened this as the speed was a separate issue.  I'm submitting a pull shortly that brings the linting time down to 9-10 seconds.\n"
     },
     {
+      "id": "23046",
       "author": "Tony Atkins [RtF]",
       "date": "2018-09-04T07:03:50.366-0400",
       "body": "After some research, it became clear that the globbing used by Grunt, in combination with overly broad patterns like `./**/*.js` resulted in scanning and then excluding all files in dist, node\\_modules, et cetera.  There is a new pull that uses the new gpii-glob library and tighter patterns, which reduces the linting speed to 9-10 seconds.\n\n<https://github.com/fluid-project/infusion/pull/930>\n"
     },
     {
+      "id": "23047",
       "author": "Justin Obara",
       "date": "2018-09-20T08:34:54.088-0400",
       "body": "Merged PR ( <https://github.com/fluid-project/infusion/pull/930> ) into the project repo at 81c4c0572b8ac0ffd650fa675cc8dab43d422d11\n"

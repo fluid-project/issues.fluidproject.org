@@ -35,16 +35,19 @@
   ],
   "comments": [
     {
+      "id": "16265",
       "author": "Justin Obara",
       "date": "2008-08-27T13:54:56.000-0400",
       "body": "'screenshot-1' shows the failed unit test\n"
     },
     {
+      "id": "16267",
       "author": "Justin Obara",
       "date": "2008-09-24T13:16:50.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "16269",
       "author": "Justin Obara",
       "date": "2008-09-26T15:06:10.000-0400",
       "body": "The tests seem to have changed and are no  longer failing\n"

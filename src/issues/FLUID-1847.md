@@ -35,16 +35,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20410",
       "author": "Michelle D'Souza",
       "date": "2009-03-05T13:26:54.000-0500",
       "body": "After a conversation with Laurie McArthur, we've decided to ship 1.0 with 4 special themes: high contrast, high contrast inverted, medium contrast and low contrast.&#x20;\n"
     },
     {
+      "id": "20411",
       "author": "Michelle D'Souza",
       "date": "2009-03-16T11:30:29.000-0400",
       "body": "The low, medium, high an high inverted themes now exist.&#x20;\n"
     },
     {
+      "id": "18250",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:59.915-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

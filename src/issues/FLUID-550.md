@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18802",
       "author": "Anastasia Cheetham",
       "date": "2008-05-16T10:55:31.000-0400",
       "body": "It seems that this requirement is not necessarily decided on yet. In his email of Wed, 14 May, titled \" \t Re: Finishing the Layout Customizer\", Gary wrote\n\n\"...I am leaning toward having locked portlets visually be no different than unlocked portlets, with perhaps the one change of replacing the remove icon (the red X) with a lock icon...\"\n\nI'm going to reduce this issue from Blocker to Major until the discussion is settled.\n"
     },
     {
+      "id": "18804",
       "author": "Michelle D'Souza",
       "date": "2008-05-27T11:33:26.000-0400",
       "body": "The locked portlet in the uPortal example looks different from the other portlets.\n"
     },
     {
+      "id": "18806",
       "author": "Jonathan Hung",
       "date": "2008-05-27T16:10:53.000-0400",
       "body": "Visual style of locked portlet more distinct.\n"

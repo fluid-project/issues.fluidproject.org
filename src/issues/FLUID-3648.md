@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15752",
       "author": "Jonathan Hung",
       "date": "2011-01-11T09:51:18.547-0500",
       "body": "Is this undesirable? I guess the confusion would be that the user doesn't expect Undo to persist beyond their most immediate edit in the Editor.\n"
     },
     {
+      "id": "15753",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T13:37:45.677-0400",
       "body": "In v1.4, I'm actually unable to reproduce this in the Rich Text Editor: while editing, the \"undo\" link disappears. However, in the simple text version, the undo icon is there and is clickable: Clicking it ends the current edit but doesn't cancel the changes you were in the middle of i.e. doesn't do anything a user would consider undoing.\n"

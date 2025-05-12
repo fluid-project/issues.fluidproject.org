@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24536",
       "author": "Cindy Li",
       "date": "2011-07-20T12:17:22.663-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24537",
       "author": "Cindy Li",
       "date": "2011-07-25T10:24:45.350-0400",
       "body": "Resolved in the pull request for <https://fluidproject.atlassian.net/browse/FLUID-4137#icft=FLUID-4137>, which is merged into project repo at 6d6c5ddc4ac62499c026c9d61430459eb73d2e94\n"
     },
     {
+      "id": "24538",
       "author": "Cindy Li",
       "date": "2011-07-25T10:24:52.093-0400",
       "body": "Closed\n"

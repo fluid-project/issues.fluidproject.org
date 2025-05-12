@@ -69,51 +69,61 @@
   ],
   "comments": [
     {
+      "id": "11433",
       "author": "Anastasia Cheetham",
       "date": "2012-06-25T12:33:49.124-0400",
       "body": "I've tested this on the new 'a11y-uio' branch that's based on Master. There are still a few things I've found that are not responding to the font size setting:\n\n* \"View all tags\" on front page\n* some drop-downs (including on the Advanced Search page, see <https://fluidproject.atlassian.net/browse/FLOE-16#icft=FLOE-16>)\n* search buttons on advanced search page (see <https://fluidproject.atlassian.net/browse/FLOE-16#icft=FLOE-16>)\n\nSince <https://fluidproject.atlassian.net/browse/FLOE-16#icft=FLOE-16> exists, we should probably carry out the work on that page under that JIRA. I'll also create a separate JIRA for the 'view item' page, since that seems to be a big issue.\n"
     },
     {
+      "id": "11434",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T13:11:24.152-0400",
       "body": "Search button text on the main page gets cut off when text size is maxed out.&#x20;\n"
     },
     {
+      "id": "11435",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T13:16:47.049-0400",
       "body": "Table headings are cut off on the Browse All page.&#x20;\n"
     },
     {
+      "id": "11436",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T13:18:10.001-0400",
       "body": "Submit OER panel on the contribute page looks broken.&#x20;\n"
     },
     {
+      "id": "11437",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T13:21:06.314-0400",
       "body": "Height of the summary bar on the results page should be increased to hold the text.&#x20;\n"
     },
     {
+      "id": "11438",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T13:23:46.990-0400",
       "body": "Headings on the submit a resource page are cut off.&#x20;\n"
     },
     {
+      "id": "11439",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T13:25:19.931-0400",
       "body": "Drop downs on the submit a resource page should have larger font size.&#x20;\n"
     },
     {
+      "id": "11440",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T13:26:15.809-0400",
       "body": "Width of columns on the submit a resource page should increase with font size.&#x20;\n"
     },
     {
+      "id": "11441",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T13:28:02.161-0400",
       "body": "Save button on the profile preferences page should have increased font size.&#x20;\n"
     },
     {
+      "id": "11442",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T13:28:58.947-0400",
       "body": "The feed back type drop down should have increased font size.&#x20;\n"

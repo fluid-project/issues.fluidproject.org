@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20607",
       "author": "James Yoon",
       "date": "2009-12-17T10:48:08.000-0500",
       "body": "The server should know when the package has been put together and is being sent to the user--at that point, \"Preparing your download\" is moot and the page should indicate a different state.\n"

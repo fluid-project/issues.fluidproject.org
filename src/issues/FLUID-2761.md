@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16982",
       "author": "Jacob Farber",
       "date": "2009-05-22T15:22:28.000-0400",
       "body": "The form controls are spilling over multiple lines by default\n"
     },
     {
+      "id": "16983",
       "author": "Justin Obara",
       "date": "2009-05-25T08:53:55.000-0400",
       "body": "Bug Parade 1.1 release&#x20;\n"
     },
     {
+      "id": "16984",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:15.939-0500",
       "body": "Closing issues that were fixed in 1.1\n"

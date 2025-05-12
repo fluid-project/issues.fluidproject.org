@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19765",
       "author": "Jonathan Hung",
       "date": "2008-06-11T12:27:53.000-0400",
       "body": "I suggest that this be one of the last tasks we do in the restructuring. Start with creating the content pages first then create the navigation at the end.\n"
     },
     {
+      "id": "19767",
       "author": "Jonathan Hung",
       "date": "2008-07-03T20:46:02.000-0400",
       "body": "For the most part this is completed. Missing some items from the navigation, but I think it works.\n"

@@ -40,6 +40,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10338",
       "author": "Jonathan Hung",
       "date": "2012-07-09T11:02:39.265-0400",
       "body": "We will need to do the following:\n\n1\\. Add new container for Image types group.\\\n2\\. Update UI code to handle this new Image types group.\\\n3\\. Update UI code to be more granular (current export options are applied globally to the export type, but each type may have its own options).\n"

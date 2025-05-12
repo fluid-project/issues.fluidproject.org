@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15178",
       "author": "Colin Clark",
       "date": "2008-05-30T18:35:52.000-0400",
       "body": "I've committed changes to the build script that will create a separate source distribution and zip file\n"
     },
     {
+      "id": "15181",
       "author": "Michelle D'Souza",
       "date": "2008-06-05T11:18:56.000-0400",
       "body": "I've tested the source distribution and it's fine.\n"

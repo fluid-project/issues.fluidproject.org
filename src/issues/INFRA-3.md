@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25841",
       "author": "Alan Harnum",
       "date": "2015-11-02T12:00:25.761-0500",
       "body": "Closing since we're going ahead.\n"
     },
     {
+      "id": "25842",
       "author": "Alan Harnum",
       "date": "2015-11-02T12:03:26.293-0500",
       "body": "<https://issues.fluidproject.org/browse/INFRA-53>\n"

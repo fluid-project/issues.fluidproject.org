@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10235",
       "author": "Jonathan Hung",
       "date": "2010-07-15T16:55:56.291-0400",
       "body": "I can no longer reproduce this problem.\n"

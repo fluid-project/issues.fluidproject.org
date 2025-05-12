@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21890",
       "author": "Justin Obara",
       "date": "2009-03-11T12:36:50.000-0400",
       "body": "Changed to using the accordion's options to {clearStyle: true, autoHeight: false} to solve <https://fluidproject.atlassian.net/browse/FLUID-2308#icft=FLUID-2308>, now that we have updated to jQuery UI 1.7\n"
     },
     {
+      "id": "21891",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:52.384-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

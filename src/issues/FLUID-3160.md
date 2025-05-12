@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23178",
       "author": "Laurel Williams",
       "date": "2009-12-02T12:40:42.000-0500",
       "body": "all aspects of the Infusion Builder should run on the daily build server, including the php unit tests.\n"
     },
     {
+      "id": "23180",
       "author": "Laurel Williams",
       "date": "2010-01-18T10:59:43.000-0500",
       "body": "this is no longer an issue because the daily build of the infusion builder was moved to forge, where the php tests do run.\n"

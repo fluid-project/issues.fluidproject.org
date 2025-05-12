@@ -37,16 +37,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20099",
       "author": "Antranig Basman",
       "date": "2008-09-12T17:01:19.000-0400",
       "body": "As of revision 5530 event architecture is now generalised (see Fluid.js \"mergeListeners\" and \"instantiateFirers\" ) and it will be easy to freely add new \"moments\".\n"
     },
     {
+      "id": "20100",
       "author": "Antranig Basman",
       "date": "2008-09-17T23:58:52.000-0400",
       "body": "Fixed at revision 5572. As of this revision the current set of supported events reads as follows:\\\nonShowKeyboardDropWarning: null,\\\nonSelect: null,\\\nonBeginMove: \"preventable\",\\\nonMove: null,\\\nafterMove: null,\\\nonHover: null\n\nThis can be duly expanded but should be sufficient to be going on with. afterMove reports as well as the moving item, its target position and the complete list of movables.\n"
     },
     {
+      "id": "20102",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:51.949-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

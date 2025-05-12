@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24616",
       "author": "Antranig Basman",
       "date": "2010-12-10T15:50:11.151-0500",
       "body": "Fixed for the 1.3 release\n"

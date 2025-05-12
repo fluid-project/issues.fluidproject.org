@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26653",
       "author": "Giovanni Tirloni",
       "date": "2020-05-07T10:13:44.255-0400",
       "body": "PR to build/push Docker images: <https://github.com/fluid-project/sjrk-story-telling/pull/76>\n"
     },
     {
+      "id": "26654",
       "author": "Giovanni Tirloni",
       "date": "2020-05-14T07:29:42.761-0400",
       "body": "PR with initial code of helm chart: <https://github.com/idi-ops/charts/pull/1>\n"

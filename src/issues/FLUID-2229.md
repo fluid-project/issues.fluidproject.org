@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21261",
       "author": "Colin Clark",
       "date": "2009-02-20T13:22:29.000-0500",
       "body": "I've extensively edited and updated both the API documentation and the tutorial. It's now up to date with the Infusion 0.8 version of Uploader.\n"

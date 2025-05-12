@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18581",
       "author": "Allison Bloodworth",
       "date": "2008-10-29T12:42:18.000-0400",
       "body": "iteration22\n"
     },
     {
+      "id": "18586",
       "author": "Allison Bloodworth",
       "date": "2008-12-02T19:42:00.000-0500",
       "body": "We've done a show and tell of the storyboard & wireframes, but still need to do design patterns. May want to split this up into separate tasks in the future.\n"

@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11267",
       "author": "Justin Obara",
       "date": "2014-07-24T15:18:26.168-0400",
       "body": "Resolved at a552942aa428d2171b6ce1a7ffc11e73604ea43b\n"

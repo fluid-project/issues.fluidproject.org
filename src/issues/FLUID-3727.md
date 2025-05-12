@@ -33,16 +33,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24578",
       "author": "Justin Obara",
       "date": "2010-09-09T13:49:12.170-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "24579",
       "author": "Justin Obara",
       "date": "2010-10-04T14:43:49.285-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "24580",
       "author": "Colin Clark",
       "date": "2010-12-02T12:11:07.273-0500",
       "body": "This was fixed and committed to the <https://fluidproject.atlassian.net/browse/FLUID-3722#icft=FLUID-3722> branch at r10248\n"

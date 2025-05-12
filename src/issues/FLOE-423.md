@@ -24,21 +24,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11150",
       "author": "Justin Obara",
       "date": "2015-09-25T13:47:37.545-0400",
       "body": "Perhaps making the endpoint \"/user/\" would be good to match the api of the flow manager. <https://wiki.gpii.net/w/Flow_Manager_API#User_Preferences>\n"
     },
     {
+      "id": "11151",
       "author": "Justin Obara",
       "date": "2015-09-28T13:03:00.601-0400",
       "body": "The response should return a JSON object in the response.\n\nsuccess:\n\n{\\\ntoken: \"some token\"\\\n}\n\nfailure:&#x20;\n\n{\\\nerror: \"some error message\"\\\n}\n"
     },
     {
+      "id": "11152",
       "author": "Justin Obara",
       "date": "2015-10-07T10:11:08.824-0400",
       "body": "Submitted a pull request:\\\n<https://github.com/fluid-project/first-discovery-server/pull/2>\n"
     },
     {
+      "id": "11153",
       "author": "Cindy Li",
       "date": "2015-11-12T14:34:31.010-0500",
       "body": "This report has been copied to the GPII bug tracker: <https://issues.gpii.net/browse/GPII-1479> and all activities should be carried on there.\n"

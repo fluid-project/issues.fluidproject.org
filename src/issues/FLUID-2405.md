@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15086",
       "author": "Justin Obara",
       "date": "2009-03-25T12:37:20.000-0400",
       "body": "Clean Up Parade 1.0&#x20;\n"
     },
     {
+      "id": "15089",
       "author": "Justin Obara",
       "date": "2009-03-31T10:09:14.000-0400",
       "body": "move component styles into the component's css file, rather than scattered amongst various css files\n"
     },
     {
+      "id": "15092",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:45.987-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

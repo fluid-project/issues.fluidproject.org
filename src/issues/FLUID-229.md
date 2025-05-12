@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20622",
       "author": "Jonathan Hung",
       "date": "2008-02-13T14:31:25.000-0500",
       "body": "The ant script now produces a Fluid-all-min.js file which is a minified concatenated version of all Fluid component code.\n\nStill to do:\\\nRemove other minified files as they are no longer needed in the distribution.\n"

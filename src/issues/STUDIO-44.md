@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12840",
       "author": "Michelle D'Souza",
       "date": "2012-01-11T10:23:52.063-0500",
       "body": "It appears that focus styling for the top nav bar is only included on pages with the admin section. The actual display of the top bar is an optional setting within a user account. We should probably see if we can default new users to not have that bar.&#x20;\n"
     },
     {
+      "id": "12841",
       "author": "Justin Obara",
       "date": "2014-03-04T11:53:58.704-0500",
       "body": "The fluid studios site has been taken down. There are no current plans to replace it.\n"

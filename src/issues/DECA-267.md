@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10188",
       "author": "Justin Obara",
       "date": "2012-05-28T13:33:33.702-0400",
       "body": "I spoke with Scott Gonzalez from jQuery UI about it in the jqueryui-dev channel. \\\n<http://irc.jquery.com/%23jqueryui-dev/%23jqueryui-dev_20120528.log.html>\n\nThe accordion in master behaves better. You are able to move to and open the other accordion panels, but pressing up/down arrow keys will require you to read line by line through a panel before you can get to the next accordion headers.\n\nDemo of the accordion widget in master:\\\n<http://view.jqueryui.com/master/demos/accordion/default.html>\n"
     },
     {
+      "id": "10189",
       "author": "Justin Obara",
       "date": "2012-06-04T15:40:01.638-0400",
       "body": "Spoke with clown (joseph today) in the irc channel:\\\n<http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2012-06-04>\n\nHe pointed me at this issue from orca where they suggest it is an issue with Firefox:\\\n<https://bugzilla.gnome.org/show_bug.cgi?id=638062>\n"
     },
     {
+      "id": "10190",
       "author": "Justin Obara",
       "date": "2012-06-12T14:04:57.083-0400",
       "body": "After some investigation from Joseph, it seems that if you press ORCA+f12 to switch to Gecko's navigation mode, it will handle the arrow navigation as intended.\n\nSee the Orca note: <http://wiki.jqueryui.com/w/page/12137702/Accordion>\n"

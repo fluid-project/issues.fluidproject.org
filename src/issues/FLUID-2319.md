@@ -33,16 +33,19 @@
   ],
   "comments": [
     {
+      "id": "21341",
       "author": "Justin Obara",
       "date": "2009-03-09T09:03:22.000-0400",
       "body": "'screenshot-1' shows that the close button apears to be an empty box\n"
     },
     {
+      "id": "21342",
       "author": "Jacob Farber",
       "date": "2009-03-10T11:40:02.000-0400",
       "body": "Made dialog more like widget, so close button should behave better\n"
     },
     {
+      "id": "21343",
       "author": "Justin Obara",
       "date": "2009-03-12T09:02:58.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.6, Safari 3.2 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.6 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

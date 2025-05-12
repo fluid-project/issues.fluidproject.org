@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18826",
       "author": "Anastasia Cheetham",
       "date": "2008-04-08T15:22:42.000-0400",
       "body": "This bug duplicates <https://fluidproject.atlassian.net/browse/FLUID-407#icft=FLUID-407>\n"
     },
     {
+      "id": "18828",
       "author": "Herb Wideman",
       "date": "2008-04-08T16:01:45.000-0400",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-407#icft=FLUID-407> concerns the misplacement of the location marker bar, but does not mention the multiple occurences of the marker bar I encountered... a somewhat different phenomenon.\n"

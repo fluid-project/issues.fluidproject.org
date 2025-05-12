@@ -42,6 +42,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10441",
       "author": "Justin Obara",
       "date": "2012-06-08T12:26:22.994-0400",
       "body": "Was intended to help with the book management, which is currently out of the scope of decapod\n"

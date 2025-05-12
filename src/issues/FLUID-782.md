@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15493",
       "author": "Anastasia Cheetham",
       "date": "2008-06-26T19:03:46.000-0400",
       "body": "The release is out.\n"
     },
     {
+      "id": "15496",
       "author": "Michelle D'Souza",
       "date": "2011-01-13T16:50:10.458-0500",
       "body": "Reopening these issues in order to change the component to Release.&#x20;\n"

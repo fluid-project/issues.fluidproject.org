@@ -24,16 +24,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23608",
       "author": "Antranig Basman",
       "date": "2018-03-09T19:01:04.525-0500",
       "body": "I now saw this issue twice in a row, so I guess it needs some attention.\n"
     },
     {
+      "id": "23610",
       "author": "Antranig Basman",
       "date": "2018-03-10T18:46:32.116-0500",
       "body": "I can actually reproduce this all the time in Firefox on Windows. I guess I only ever considered it intermittent because testem isn't capable of finding Firefox on my baremetal machine and when I reported it, I had just done one complete testem run in my VM (which takes a good long time). The problem is entirely unrelated to testem.\n"
     },
     {
+      "id": "23611",
       "author": "Antranig Basman",
       "date": "2018-03-12T12:27:01.596-0400",
       "body": "Just found that reproducing this bug requires a non-default desktop DPI, e.g. 125% zoom\n"

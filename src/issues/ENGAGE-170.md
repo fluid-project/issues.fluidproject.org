@@ -36,16 +36,19 @@
   ],
   "comments": [
     {
+      "id": "12494",
       "author": "Colin Clark",
       "date": "2009-10-22T18:55:09.000-0400",
       "body": "Here's the official Engage 0.1 source WAR file.\n"
     },
     {
+      "id": "12495",
       "author": "Colin Clark",
       "date": "2009-10-22T18:55:34.000-0400",
       "body": "Here's the official Engage 0.1 minified release WAR file.\n"
     },
     {
+      "id": "12496",
       "author": "Colin Clark",
       "date": "2009-10-22T18:56:23.000-0400",
       "body": "These artifacts have been created, tested briefly, and posted as attachments to this ticket.\n"

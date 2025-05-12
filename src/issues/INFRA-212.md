@@ -22,11 +22,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26064",
       "author": "Giovanni Tirloni",
       "date": "2018-08-27T16:40:37.037-0400",
       "body": "<https://github.com/inclusive-design/ops/commit/298c894b333c45eb9e73ca7fb4c226ec2ee13c12>\n"
     },
     {
+      "id": "26065",
       "author": "Giovanni Tirloni",
       "date": "2018-08-27T16:41:04.730-0400",
       "body": "'offsite\\_backup' role needs to be applied to RPi (only available from office).\n"

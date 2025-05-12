@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24894",
       "author": "Anastasia Cheetham",
       "date": "2010-12-21T11:19:27.971-0500",
       "body": "This issue duplicates <https://fluidproject.atlassian.net/browse/FLUID-3618#icft=FLUID-3618>\n"

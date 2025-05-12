@@ -41,11 +41,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15106",
       "author": "Harris Wong",
       "date": "2011-05-30T15:54:28.754-0400",
       "body": "Related to json2 removal. <https://github.com/fluid-project/infusion/commit/3e45b80f11b88b3b42982c50f23c7eafa3d1244a>\n"
     },
     {
+      "id": "15110",
       "author": "Antranig Basman",
       "date": "2013-05-25T04:54:32.296-0400",
       "body": "Some basic support was delivered for this in the 1.4 release, with successive improvements continuing to the point of <https://fluidproject.atlassian.net/browse/FLUID-4330#icft=FLUID-4330> where we now have a system where the \"transformOptions\" block can be both IoC and options-delivered - current showcase implementation is in UploaderCompatibilityTests.js . The system referred to as \"tag groups\" was implemented as <https://fluidproject.atlassian.net/browse/FLUID-4917#icft=FLUID-4917> under the name of \"demands block horizons\"\n"

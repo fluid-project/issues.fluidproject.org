@@ -34,6 +34,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10178",
       "author": "Justin Obara",
       "date": "2012-06-01T10:14:22.181-0400",
       "body": "The capture work flow has been removed from the 0.5 release\n"

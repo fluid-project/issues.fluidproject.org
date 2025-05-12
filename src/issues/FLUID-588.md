@@ -38,16 +38,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14323",
       "author": "Allison Bloodworth",
       "date": "2008-05-13T12:57:42.000-0400",
       "body": "futuretask\n"
     },
     {
+      "id": "14325",
       "author": "Allison Bloodworth",
       "date": "2008-06-09T21:25:01.000-0400",
       "body": "I am able to create a parent-child relationship with the menus for now--I didn't realize it was DTHML menus which was making it impossible to click on and navigate to the top level navigation item (e.g. Drag and Drop).\n\nThough it might be better to do this semantically and either actually link UI design pattern nodes in parent-child relationships (the ideal case) or create a subcategory (e.g. Drag and Drop under Information Organization), for now I think things will work just fine using the menu capabilities. If we ever decide not to have any sort of moderator, that should probably be revisited.\n\nI did also try to create a subcategory for Drag and Drop under Information Organization, but processing the URL generated (e.g. taxomony-menu/1/2/25) is more difficult (if not impossible) than processing a URL generated with just one level of hierarchy in a category (e.g. taxonomy-menu/1/2). So, again, for now I think we can leave this to us to handle in the  menu system.&#x20;\n\nIn the future it **would** be nice to show a more semantic parent-child relationship between UI design pattern nodes, as is possible using the \"book\" content type, so I will leave this as a future task.\n"
     },
     {
+      "id": "14328",
       "author": "Jonathan Hung",
       "date": "2009-01-19T13:56:10.000-0500",
       "body": "Node Hierarchy may be what we need: <http://drupal.org/project/nodehierarchy>\n"

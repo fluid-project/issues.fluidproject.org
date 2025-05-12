@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21133",
       "author": "Jonathan Hung",
       "date": "2009-01-08T12:48:15.000-0500",
       "body": "iteration24\n"
     },
     {
+      "id": "21134",
       "author": "Jonathan Hung",
       "date": "2009-01-15T14:12:43.000-0500",
       "body": "Did a quick run through. Nothing really major, though some navigational quirks to work out. Will file those Jiras.\n"

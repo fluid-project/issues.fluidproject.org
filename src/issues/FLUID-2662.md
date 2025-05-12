@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19043",
       "author": "Colin Clark",
       "date": "2009-05-11T17:57:52.000-0400",
       "body": "I fixed this issue in r7159.\n"
     },
     {
+      "id": "19047",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:16.680-0500",
       "body": "Closing issues that were fixed in 1.1\n"

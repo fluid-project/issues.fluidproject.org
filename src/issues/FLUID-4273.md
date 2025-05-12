@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "13358",
       "author": "Harris Wong",
       "date": "2011-05-30T16:16:33.008-0400",
       "body": "attached fss-base-demo-404-errors-may-30-2011.png\n"
     },
     {
+      "id": "13360",
       "author": "Justin Obara",
       "date": "2012-12-07T08:38:39.590-0500",
       "body": "This is because of the tabbed panels to the right of the demo. Basically the demo portal requests related files from the server, however in this case those files don't exist. The current strategy of the portal is to use the success/errors of these fetches to know which tabs to create on the right. A better approach might be to register which files are actually used in the demo.\n"

@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15556",
       "author": "Antranig Basman",
       "date": "2015-04-28T12:41:14.666-0400",
       "body": "Failing config is being tracked at <https://github.com/amb26/first-discovery/tree/FLUID-5659>\n"
     },
     {
+      "id": "15558",
       "author": "Antranig Basman",
       "date": "2015-04-29T11:35:24.786-0400",
       "body": "This issue has now been characterised - it consists of yet more rubbish caused by the faulty \"relayCount\" system which was responsible for <https://fluidproject.atlassian.net/browse/FLUID-5303#icft=FLUID-5303> and <https://fluidproject.atlassian.net/browse/FLUID-5293#icft=FLUID-5293> amongst others. Firstly, the issue is caused by these being shared across transactions -  bizarrely, by policy, for no good reason. Secondly, the failure was caused by having a model rich in relay rules which was being tested by several back-to-back transactions resulting from a long fixture in the IoC testing framework:\n\nsequence: \\[{\\\nfunc: \"{lang}.refreshView\"\\\n}, {\\\nlistener: \"gpii.tests.langTester.verifyRendering\",\\\npriority: \"last\",\\\nevent: \"{lang}.events.afterRender\"\\\n}, {\\\nlistener: \"gpii.tests.langTester.verifyButtonTopsReady\",\\\nargs: \\[\"{lang}\"],\\\npriority: \"last\",\\\nevent: \"{lang}.events.onButtonTopsReady\"\\\n}, {\\\njQueryTrigger: \"click\",\\\nelement: \"{lang}.dom.next\"\\\n}, {\\\nlistener: \"gpii.tests.langTester.verifyLangModel\",\\\nargs: \\[\"{lang}\", \"sv\"],\\\nspec: {path: \"lang\", priority: \"last\"},\\\nchangeEvent: \"{lang}.applier.modelChanged\"\\\n}, {\\\nfunc: \"{lang}.refreshView\"\\\n}, {\\\nlistener: \"gpii.tests.langTester.verifyButtonStates\",\\\nargs: \\[\"{lang}\", \"sv\", false, true],\\\npriority: \"last\",\\\nevent: \"{lang}.events.afterRender\"\\\n}, {\\\njQueryTrigger: \"click\",\\\nelement: \"{lang}.dom.prev\"\\\n}, {\\\nlistener: \"gpii.tests.langTester.verifyLangModel\",\\\nargs: \\[\"{lang}\", \"ne\"],\\\nspec: {path: \"lang\", priority: \"last\"},\\\nchangeEvent: \"{lang}.applier.modelChanged\"\\\n}, {\\\nfunc: \"{lang}.refreshView\"\\\n}, {\\\nlistener: \"gpii.tests.langTester.verifyButtonStates\",\\\nargs: \\[\"{lang}\", \"ne\", false, false],\\\npriority: \"last\",\\\nevent: \"{lang}.events.afterRender\"\\\n}, {\\\nfunc: \"gpii.tests.debugLang\",\\\nargs: \"{lang}\"\\\n}, {\\\nfunc: \"{lang}.applier.change\",\\\nargs: \\[\"lang\", \"en\"]\\\n}, {\\\nlistener: \"gpii.tests.langTester.verifyLangModel\",\\\nargs: \\[\"{lang}\", \"en\"],\\\nspec: {path: \"lang\", priority: \"last\"},\\\nchangeEvent: \"{lang}.applier.modelChanged\"\\\n}, {\\\nfunc: \"gpii.tests.debugLang\",\\\nargs: \"{lang}\"\\\n}, {\\\nfunc: \"{lang}.refreshView\"\\\n}, {\\\nlistener: \"gpii.tests.langTester.verifyButtonStates\",\\\nargs: \\[\"{lang}\", \"en\", true, false],\\\npriority: \"last\",\\\nevent: \"{lang}.events.afterRender\"\\\n}]\\\n}]\n\nEach listener to applier.modelChanged ends up triggering the following fixture during the endgame of the previous transaction - and given this entire sequence actually resolves synchronously, they are accumulated 3 deep by the end of the sequence. Unfortunately, the logic introduced for <https://fluidproject.atlassian.net/browse/FLUID-5293#icft=FLUID-5293> for clearing the relay counts only executes after all listeners have been notified, by which time the relay counts have been completely saturated.\n"
     },
     {
+      "id": "15561",
       "author": "Justin Obara",
       "date": "2015-04-30T09:37:28.983-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/597> ) into the project repo at c0c17164e10e46ac498af9d758c0cfcb93dac7d5\n"

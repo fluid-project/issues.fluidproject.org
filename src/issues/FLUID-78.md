@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16621",
       "author": "Michelle D'Souza",
       "date": "2008-04-07T15:45:54.000-0400",
       "body": "This is really an issue with uPortal's old skin CSS. Given that they've done a substantial overhaul on their skin for the 3.0 release, and the fact that we can't possibly work with every type of half-broken styling the world might throw at us, I don't think there's anything here to fix.\n"

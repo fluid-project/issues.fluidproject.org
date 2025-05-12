@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21335",
       "author": "Justin Obara",
       "date": "2009-03-12T12:06:12.000-0400",
       "body": "Bug Parade 1.0 release\n"
     },
     {
+      "id": "21336",
       "author": "Justin Obara",
       "date": "2009-03-17T09:43:25.000-0400",
       "body": "Throws an error\n\nError: previewEnhancer is undefined\\\nLine:219\\\nFile: UIOptions.js\n\nsee <https://fluidproject.atlassian.net/browse/FLUID-2313#icft=FLUID-2313>\n"
     },
     {
+      "id": "21337",
       "author": "Justin Obara",
       "date": "2009-03-20T16:30:54.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.6, Safari 3.2(Mac OS 10.5)\\\nFF2, FF3, IE7 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

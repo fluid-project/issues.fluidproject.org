@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12900",
       "author": "Anastasia Cheetham",
       "date": "2012-05-25T10:43:28.797-0400",
       "body": "A temporary fix for the effects of font size changes has been implemented, but it is not ideal: As the font is adjusted, the button slides back and forth across the screen. It would be good to find a more proper solution.\n"

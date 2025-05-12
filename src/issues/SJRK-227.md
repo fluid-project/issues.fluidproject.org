@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26512",
       "author": "Gregor Moss",
       "date": "2019-04-16T17:48:25.819-0400",
       "body": "An attempt was made to add integration tests for the listeners I added which call fluid.log, but there was no straightforward way to do so at this time. In newer versions of Infusion (as of October 2018), there is the fluid.loggingEvent which can be taken advantage of for setting up tests, but this depends on <https://fluidproject.atlassian.net/browse/SJRK-244#icft=SJRK-244> being completed.\n"
     },
     {
+      "id": "26513",
       "author": "Cindy Li",
       "date": "2019-04-25T09:48:31.489-0400",
       "body": "[The pull request](https://github.com/fluid-project/sjrk-story-telling/pull/22) has been merged into the project repo stories-floe-dev branch at [this commit](https://github.com/fluid-project/sjrk-story-telling/commit/9448cb4f4372ca1f5afb79503ceb24b155d07e77).\n"

@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25950",
       "author": "Alan Harnum",
       "date": "2015-11-26T13:29:45.335-0500",
       "body": "This should be tested at the datacentre, but looks good from the office. Specifically:\n\n* the crash cart adapter has been configured to work under OS X\n* we've installed Chrome Remote Desktop on the Mac and confirmed that Giovanni can remote control it\n"

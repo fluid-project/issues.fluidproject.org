@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26593",
       "author": "Gregor Moss",
       "date": "2020-04-20T21:25:53.253-0400",
       "body": "When we originally made the config file system, I believe the intention was to separate settings like that from the codebase. In hindsight, though, I think this change makes sense. It shifts the balance of that work away from our infrastructure lead (usually one person) and towards fluid-project committers (several people).&#x20;\n\nOur current multi-branch deployment approach means we have copies of the file regardless, so this would seem to make sense. We'll have to carefully plan out the deployment, once the codebase is in order.\n"

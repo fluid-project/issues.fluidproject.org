@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23518",
       "author": "Antranig Basman",
       "date": "2009-04-13T21:36:04.000-0400",
       "body": "Fixed at revision 7115:\n\nNote that this commit also includes:\\\ni) API upgrade for iterateDOM\\\nii) Recursive upgrade for testUtils \"assertNodes\" - this can now make an assertion about any amount of nested markup\\\niii) \"template armouring\" upgrade for selfRender - note that whilst this in theory supports both CDATA and comment armouring, CDATA nodes seem not to be supportable in IE (their nodeValue arrives corrupt) and so comment armouring is the only form we can support.\\\niv) General delinting\n"
     },
     {
+      "id": "23519",
       "author": "Antranig Basman",
       "date": "2009-04-13T21:47:55.000-0400",
       "body": "Comment on CDATA support in browsers.&#x20;\n\n<http://www.sitepoint.com/forums/showthread.php?t=574817>\n"
     },
     {
+      "id": "23520",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:18.504-0500",
       "body": "Closing issues that were fixed in 1.1\n"

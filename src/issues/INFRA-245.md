@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26067",
       "author": "Giovanni Tirloni",
       "date": "2020-05-04T10:06:47.631-0400",
       "body": "Old versions:\n\n```\ncertbot (0.17.0)\r\ncertbot-dns-route53 (0.17.0)\r\ncertbot-route53 (0.2.0)\n```\n\nNew versions:\n\n```\ncertbot (1.3.0)\r\ncertbot-dns-route53 (1.3.0)\r\ncertbot-route53 (0.2.0)\n```\n\nSuccessful job run:\n\n```\n+ ansible-playbook -i environments/production playbooks/letsencrypt_renew.yml\r\n\r\nPLAY [Rewew existing Let's Encrypt certificates] *******************************\r\n\r\nTASK [Gathering Facts] *********************************************************\r\nok: [i-0023.tor1.incd.ca]\r\n\r\nTASK [letsencrypt-route53 : Check if action is valid] **************************\r\nskipping: [i-0023.tor1.incd.ca]\r\n\r\nTASK [letsencrypt-route53 : Include tasks] *************************************\r\nincluded: /home/deploy/workspace/infra-letsencrypt-renew/roles/letsencrypt-route53/tasks/renew.yml for i-0023.tor1.incd.ca\r\n\r\nTASK [letsencrypt-route53 : Renew certificates] ********************************\r\nok: [i-0023.tor1.incd.ca]\r\n\r\nPLAY RECAP *********************************************************************\r\ni-0023.tor1.incd.ca        : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   \r\n\r\nTriggering a new build of infra-letsencrypt-deploy\r\nFinished: SUCCESS\n```\n"

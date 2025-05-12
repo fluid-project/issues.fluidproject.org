@@ -35,21 +35,25 @@
   ],
   "comments": [
     {
+      "id": "21783",
       "author": "Justin Obara",
       "date": "2009-03-17T09:23:36.000-0400",
       "body": "'screenshot-1' shows the buttons overlapping in simplified layout\n"
     },
     {
+      "id": "21784",
       "author": "Justin Obara",
       "date": "2009-05-14T09:10:11.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "21785",
       "author": "Laurel Williams",
       "date": "2009-05-25T14:45:19.000-0400",
       "body": "Checked on Windows XP, IE8, FF3, Opera. Very small change in the fss code. This looks fine.\n"
     },
     {
+      "id": "21786",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:15.525-0500",
       "body": "Closing issues that were fixed in 1.1\n"

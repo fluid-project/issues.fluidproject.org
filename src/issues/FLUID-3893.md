@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19676",
       "author": "Justin Obara",
       "date": "2011-01-11T12:47:08.782-0500",
       "body": "It looks like this is happening because after reaching the end of the text on the line it wraps to the next line, and places the cursor ahead of the next list item. When this happens the reorderable element no longer has focus. Pressing tab again will restore focus and allow reorderering.\n"

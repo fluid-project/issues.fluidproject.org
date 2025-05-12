@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10056",
       "author": "Justin Obara",
       "date": "2012-11-05T12:25:55.231-0500",
       "body": "Rendering out help link text and updated the \"Reset\" link to be \"Restart\". The changes are in my bitbucket repo.\\\n<https://bitbucket.org/jobara/decapod-0.7-ui-iteration3>\n"

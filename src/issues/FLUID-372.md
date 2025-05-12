@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16350",
       "author": "Allison Bloodworth",
       "date": "2008-03-17T20:39:21.000-0400",
       "body": "iteration06\n"
     },
     {
+      "id": "16352",
       "author": "Jonathan Hung",
       "date": "2008-04-02T14:38:44.000-0400",
       "body": "Sandbox installation of Drupal 5.7 and 6.1 have been installed on an ATRC server. The hardware is not powerful enough to become a production server. We are waiting for some new hardware.\n"

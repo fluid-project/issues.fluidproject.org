@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11975",
       "author": "Justin Obara",
       "date": "2010-02-05T14:11:44.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "11977",
       "author": "Colin Clark",
       "date": "2010-02-08T16:38:05.000-0500",
       "body": "I fixed this when integrating the Navigation Bar into Exhibitions.\n"

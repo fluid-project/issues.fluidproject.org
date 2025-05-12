@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21858",
       "author": "Antranig Basman",
       "date": "2008-11-07T13:11:17.000-0500",
       "body": "Initial work at revision 5977. Needs extension so that all \"view\"-specific code resides within the view.\n"
     },
     {
+      "id": "21859",
       "author": "Antranig Basman",
       "date": "2008-11-13T21:42:43.000-0500",
       "body": "Work merged into trunk at revision 6031. \"view\" concept is itself factored into orthogonal aspects of an \"accessor\" and a \"refreshable view\"\n"
     },
     {
+      "id": "21860",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:47.674-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

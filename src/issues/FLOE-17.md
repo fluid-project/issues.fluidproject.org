@@ -22,11 +22,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10924",
       "author": "Michelle D'Souza",
       "date": "2012-07-05T16:01:55.224-0400",
       "body": "The advanced search buttons have been modified in Assembla 641 but still use background image to create a gradient.   &#x20;\n"
     },
     {
+      "id": "10925",
       "author": "Michelle D'Souza",
       "date": "2012-07-05T17:20:08.233-0400",
       "body": "I think all of these are fixed except for the 'Actions' dropdown on the browse listings page.&#x20;\n"

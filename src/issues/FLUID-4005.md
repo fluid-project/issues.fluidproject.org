@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13678",
       "author": "Anastasia Cheetham",
       "date": "2011-10-14T15:47:03.121-0400",
       "body": "This issue seems to be gone as of 1.4.\n"

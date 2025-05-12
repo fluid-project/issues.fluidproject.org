@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24511",
       "author": "Cindy Li",
       "date": "2011-07-14T14:48:23.771-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24512",
       "author": "Anastasia Cheetham",
       "date": "2011-07-18T10:15:55.709-0400",
       "body": "This will be fixed under <https://fluidproject.atlassian.net/browse/FLUID-4344#icft=FLUID-4344>\n"

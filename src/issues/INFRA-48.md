@@ -23,16 +23,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25802",
       "author": "Giovanni Tirloni",
       "date": "2015-10-14T13:28:26.890-0400",
       "body": "I've modifed the staticsite and phpsite roles to include the following in the nginx configuration template:\n\nlocation \\~ /\\\\.(git|htaccess) {\\\ndeny                     all;\\\n}\n\nAdded .htaccess to in the mix even though we're not using Apache, since sometimes .htaccess contains sensitive data and could have been carried over from another deployment.\n"
     },
     {
+      "id": "25803",
       "author": "Giovanni Tirloni",
       "date": "2015-10-14T13:44:56.458-0400",
       "body": "Deployed to websites in production. No issues found so far, works as expected.\n"
     },
     {
+      "id": "25804",
       "author": "Alan Harnum",
       "date": "2015-10-14T15:50:14.253-0400",
       "body": "Generally speaking I think blocking public web server access to any dotfiles by default is a good practice, so I'm all in favour of this.\n"

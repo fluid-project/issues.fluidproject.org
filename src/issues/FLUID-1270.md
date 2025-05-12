@@ -42,11 +42,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18340",
       "author": "Daphne Ogle",
       "date": "2008-08-21T20:44:22.000-0400",
       "body": "Take a look at this again in a couple iterations and see where we are based on new work.  Is there a need for any new iterations?\n"
     },
     {
+      "id": "18342",
       "author": "Jonathan Hung",
       "date": "2011-01-06T12:34:55.076-0500",
       "body": "Closing - orphaned work.\n"

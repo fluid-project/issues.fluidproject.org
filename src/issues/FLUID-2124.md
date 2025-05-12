@@ -35,31 +35,37 @@
   ],
   "comments": [
     {
+      "id": "21103",
       "author": "Justin Obara",
       "date": "2009-01-13T16:36:58.000-0500",
       "body": "'screenshot-1' shows the page links with no space between them\n"
     },
     {
+      "id": "21104",
       "author": "Anastasia Cheetham",
       "date": "2009-01-28T14:26:09.000-0500",
       "body": "Oddly, this lack of spacing is a result of a lack of line break between \\<li> elements. At least, if I add line breaks, the spacing is appropriate.\n"
     },
     {
+      "id": "21105",
       "author": "Anastasia Cheetham",
       "date": "2009-01-28T14:36:52.000-0500",
       "body": "Based on a conversation with Jacob in the channel (<http://wiki.fluidproject.org/x/UgBa>, starting at about 2:30pm), it is normal that the lack of any white space between the \\<li> elements would produce the lack of space, and he suggests a CSS fix.\n"
     },
     {
+      "id": "21106",
       "author": "Justin Obara",
       "date": "2009-01-29T09:10:04.000-0500",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"
     },
     {
+      "id": "21107",
       "author": "Justin Obara",
       "date": "2009-01-29T09:19:12.000-0500",
       "body": "need to delete tag in comment\n"
     },
     {
+      "id": "21108",
       "author": "Justin Obara",
       "date": "2009-01-29T09:19:41.000-0500",
       "body": "reclosing after removing tag comment.&#x20;\n"

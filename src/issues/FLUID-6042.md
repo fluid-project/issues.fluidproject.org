@@ -38,11 +38,13 @@
   ],
   "comments": [
     {
+      "id": "24061",
       "author": "Justin Obara",
       "date": "2016-11-07T16:34:38.576-0500",
       "body": "screenshot.png shows a single star visually set, but all of the \"aria-checked\" attributes are set to false.\n"
     },
     {
+      "id": "24063",
       "author": "Khushil Mistry",
       "date": "2017-01-23T09:10:26.818-0500",
       "body": "<https://github.com/fluid-project/infusion/pull/804> This is the pull request i have created.\\\nNow area-checked is set true for first start it it needed. Just made a call demo.fiveStar.updateARIA(stars,1) in the function demo.fiveStar.setARIA . Please Review it. Thanks.\n"

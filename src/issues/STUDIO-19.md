@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12876",
       "author": "Anastasia Cheetham",
       "date": "2011-12-09T11:04:55.511-0500",
       "body": "This issue was originally filed as the 'display prefs' button not adjusting with line spacing. I checked this one with James, and he feels that neither the login button nor the show prefs button should adjust with line spacing, since they're only one line. So the problem is that the login button **does** enlarge. I will address that issue.\n"
     },
     {
+      "id": "12877",
       "author": "Michelle D'Souza",
       "date": "2011-12-12T12:11:38.732-0500",
       "body": "Merged into project repo at 5400f9d7c83a77ae9e499da9dd2f0ded917dd759\n"

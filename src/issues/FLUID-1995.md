@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18026",
       "author": "Justin Obara",
       "date": "2009-01-30T11:02:07.000-0500",
       "body": "Appears to have been fixed\n\nTested using:\n\nFF3, Opera 9.5, IE6 (Win XP)\\\nIE 7, FF3 (Win Vista)\n"

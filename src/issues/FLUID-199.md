@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16434",
       "author": "Shaw-Han Liem",
       "date": "2008-02-04T11:38:19.000-0500",
       "body": "Deleting 1st iteration\n"
     },
     {
+      "id": "16436",
       "author": "Shaw-Han Liem",
       "date": "2008-02-15T11:21:51.000-0500",
       "body": "iteration05\n"

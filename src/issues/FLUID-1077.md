@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16806",
       "author": "Colin Clark",
       "date": "2008-07-31T16:57:26.000-0400",
       "body": "infusion-05-wishlist\n"
     },
     {
+      "id": "16808",
       "author": "Colin Clark",
       "date": "2008-09-16T10:03:18.000-0400",
       "body": "dev-iteration43\n"
     },
     {
+      "id": "16810",
       "author": "Colin Clark",
       "date": "2008-09-21T19:57:38.000-0400",
       "body": "I've significantly chopped the file size of Fluid.js by removing unused functions, moving limited-use functions into the component files that use them, and breaking out a series of pure DOM utilities into a separate DOMUtilities.js file.\n"
     },
     {
+      "id": "16811",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:57.729-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

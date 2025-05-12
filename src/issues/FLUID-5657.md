@@ -24,16 +24,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20202",
       "author": "Cindy Li",
       "date": "2015-04-24T12:49:17.511-0400",
       "body": "The pull request <https://github.com/fluid-project/infusion/pull/594> has been merged into the project master branch @ de1165232ea859a0d4724f2ce6d0c9382fa46b7f\n"
     },
     {
+      "id": "20203",
       "author": "Cindy Li",
       "date": "2015-04-24T16:45:50.859-0400",
       "body": "Issued another pull request (<https://github.com/fluid-project/infusion/pull/595>) to add \"fluid.transforms.dereference\", the invertible partner of \"fluid.transforms.indexOf\".\n"
     },
     {
+      "id": "20205",
       "author": "Cindy Li",
       "date": "2015-04-28T11:30:33.065-0400",
       "body": "The pull request #595 has been merged @ f7fbaea8e95c4abb78eed8fcabc9296ba823655a\n"

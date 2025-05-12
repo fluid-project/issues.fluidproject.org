@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25683",
       "author": "Anastasia Cheetham",
       "date": "2011-10-03T16:33:11.060-0400",
       "body": "Testing 1.4 in IE9 on Win7, I notice that \"make input larger\" doesn't affect the textarea field. The single-line input field does get larger, but not the textarea.\n"
     },
     {
+      "id": "25684",
       "author": "Justin Obara",
       "date": "2021-06-22T12:59:01.530-0400",
       "body": "Addressed with changes to <https://fluidproject.atlassian.net/browse/FLUID-5686#icft=FLUID-5686>\n"

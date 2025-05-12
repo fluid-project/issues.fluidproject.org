@@ -42,26 +42,31 @@
   ],
   "comments": [
     {
+      "id": "18057",
       "author": "Justin Obara",
       "date": "2009-01-05T11:01:52.000-0500",
       "body": "'screenshot-1' shows the previous and next links missing\n"
     },
     {
+      "id": "18058",
       "author": "Justin Obara",
       "date": "2009-01-06T12:08:22.000-0500",
       "body": "Bug Parade  0.7 release\n"
     },
     {
+      "id": "18059",
       "author": "Anastasia Cheetham",
       "date": "2009-01-06T14:26:40.000-0500",
       "body": "Possibly related to FLUID-2047?\n"
     },
     {
+      "id": "18060",
       "author": "Antranig Basman",
       "date": "2009-01-07T15:33:30.000-0500",
       "body": "Fixed at revision 6278\n"
     },
     {
+      "id": "18061",
       "author": "Justin Obara",
       "date": "2009-01-08T08:32:45.000-0500",
       "body": "Verified fix using:\n\nOpera 9.5 (Mac OS 10.5, Win XP)\n"

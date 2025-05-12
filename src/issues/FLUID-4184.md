@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23255",
       "author": "Justin Obara",
       "date": "2011-04-12T09:18:41.733-0400",
       "body": "I could be misremembering, but if I'm recalling correctly, Jacob had been thinking of removing the rust theme.\n"
     },
     {
+      "id": "23256",
       "author": "heidi valles",
       "date": "2011-06-28T10:54:22.084-0400",
       "body": "We are deprecating the rust theme.\n"

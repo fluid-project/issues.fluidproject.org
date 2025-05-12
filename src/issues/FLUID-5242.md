@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22720",
       "author": "Michelle D'Souza",
       "date": "2014-03-27T15:01:35.225-0400",
       "body": "Colin ClarkAntranig Basman Should this issue be fixed for 1.5 or 2.0?&#x20;\n"
     },
     {
+      "id": "22722",
       "author": "Antranig Basman",
       "date": "2015-02-13T12:58:00.938-0500",
       "body": "Fix was committed to master along with <https://fluidproject.atlassian.net/browse/FLUID-5185#icft=FLUID-5185> jQuery upgrade work at revision 65ad591cc61bd9e84342161234ab837b7e505ed8 on Dec 23rd, 2013\n"
     },
     {
+      "id": "22724",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:11.332-0400",
       "body": "Reopening to change the fix version to 1.9\n"

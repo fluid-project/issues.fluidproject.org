@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27320",
       "author": "Blake E",
       "date": "2008-11-04T16:44:32.000-0500",
       "body": "vulab6\n"
     },
     {
+      "id": "27321",
       "author": "Blake E",
       "date": "2008-11-04T16:44:44.000-0500",
       "body": "created wiki page: <http://wiki.fluidproject.org/display/fluid/VULab+WEB+-+Live+Development+Status>\n\njust gotta add it to the site.\n"
     },
     {
+      "id": "27322",
       "author": "Blake E",
       "date": "2008-11-04T17:41:24.000-0500",
       "body": "I added a link to the main navigation 🙂\n"

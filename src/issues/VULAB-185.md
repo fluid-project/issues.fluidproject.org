@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27599",
       "author": "Blake E",
       "date": "2009-02-23T16:07:30.000-0500",
       "body": "vulab17\n"
     },
     {
+      "id": "27600",
       "author": "Blake E",
       "date": "2009-02-23T16:07:51.000-0500",
       "body": "<http://docs.google.com/Doc?id=dcx2dxzz_8d4kfp4fb> is my working document. Feel free to take a peek. Let me know for collab user abilities.\n"
     },
     {
+      "id": "27601",
       "author": "Blake E",
       "date": "2009-03-23T16:32:12.000-0400",
       "body": "We'll call what I have Version 1.0, and I'm going to talk to Justin on getting tighter unit tests up/added.\n"

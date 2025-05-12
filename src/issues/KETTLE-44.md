@@ -23,21 +23,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26153",
       "author": "Tony Atkins [RtF]",
       "date": "2016-06-07T07:09:55.490-0400",
       "body": "We need some small discussion around the right \"strict\" setting before this can proceed:\n\n<https://issues.fluidproject.org/browse/FLUID-5914>\n"
     },
     {
+      "id": "26154",
       "author": "Tony Atkins [RtF]",
       "date": "2016-06-07T07:59:33.543-0400",
       "body": "I proceeded with everything else (including a new Gruntfile, etc.).  I would also like to add a \"test\" script to the package.json, but get odd errors when doing so.  Antranig Basman, we should look at this together, it should not take more than five minutes.\n"
     },
     {
+      "id": "26155",
       "author": "Tony Atkins [RtF]",
       "date": "2016-06-07T08:09:32.963-0400",
       "body": "Here is the branch:\n\n<https://github.com/the-t-in-rtf/kettle/tree/KETTLE-44>\n\nIf I run `node tests/all-tests.js`, I get:\n\n```java\n> node test/all-tests.js\r\nfunction\n```\n"
     },
     {
+      "id": "26156",
       "author": "Tony Atkins [RtF]",
       "date": "2016-06-07T15:34:22.292-0400",
       "body": "<https://github.com/fluid-project/kettle/pull/23>\n"

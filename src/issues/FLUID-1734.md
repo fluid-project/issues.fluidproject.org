@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17138",
       "author": "Colin Clark",
       "date": "2008-10-30T19:20:16.000-0400",
       "body": "This was resolved by Eli when he added support for additional states to Uploader.js.\n"
     },
     {
+      "id": "17139",
       "author": "Justin Obara",
       "date": "2008-11-03T10:34:20.000-0500",
       "body": "When the uploader file queue is empty you are still able to click it once, before it becomes truly disabled.&#x20;\n"
     },
     {
+      "id": "17140",
       "author": "Eli Cochran",
       "date": "2008-11-14T16:24:34.000-0500",
       "body": "Fixed so that the initial state of the Upload button is disabled until files are added to the queue\n"
     },
     {
+      "id": "17141",
       "author": "Justin Obara",
       "date": "2008-11-17T08:53:44.000-0500",
       "body": "Verified fix using:\n\nFF2 (Mac OS 10.5)\n"

@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24197",
       "author": "Antranig Basman",
       "date": "2016-05-20T11:00:17.325-0400",
       "body": "Note that whilst npm 3 now features support for resolving cyclic groups of modules - see <https://github.com/npm/npm/issues/2063> - we will continue with the node 4.x/npm 2.x ecosystem for a while. Also, for this particular case, we will likely always run into problems due to the lack of transitivity of the \"devDependencies\" model. We should also think about factoring Kettle into several smaller npm modules using the \"monorepo\" pattern.\n"

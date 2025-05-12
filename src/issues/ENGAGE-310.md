@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12610",
       "author": "Michelle D'Souza",
       "date": "2010-02-02T10:21:04.000-0500",
       "body": "mccord-pilot\n"
     },
     {
+      "id": "12611",
       "author": "Colin Clark",
       "date": "2010-02-08T17:23:32.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12612",
       "author": "Antranig Basman",
       "date": "2010-02-12T13:24:07.000-0500",
       "body": "As of 9374, Guestbook component is integrated into artifact and exhibitions, although it has so far no real functionality\n"

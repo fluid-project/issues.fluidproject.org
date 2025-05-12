@@ -33,31 +33,37 @@
   ],
   "comments": [
     {
+      "id": "11970",
       "author": "James Yoon",
       "date": "2010-02-05T16:03:36.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "11971",
       "author": "Jess Mitchell",
       "date": "2010-02-22T11:55:29.000-0500",
       "body": "changed the image size to 72x72 and changed the font size of the title and date as well as the left margin of the exhibition-title-date\n"
     },
     {
+      "id": "11972",
       "author": "Jess Mitchell",
       "date": "2010-02-22T12:04:37.000-0500",
       "body": "i imagine the dateUtils.js is where to change the date issue stated above, but i'm not sure how to do that.\n"
     },
     {
+      "id": "11973",
       "author": "Jess Mitchell",
       "date": "2010-02-22T16:22:48.000-0500",
       "body": "date format is coming from the data feed from McCord\n"
     },
     {
+      "id": "11974",
       "author": "Antranig Basman",
       "date": "2010-02-22T16:31:30.000-0500",
       "body": "Styling patch committed at revision 9472 - issue with date representation cannot be fixed here since these strings come from the gallery. Should be adjusted either upstream or else in the CouchDB\n"
     },
     {
+      "id": "11976",
       "author": "James Yoon",
       "date": "2010-02-22T16:58:53.000-0500",
       "body": "Tested on 02/22/2010, 4:23 PM EST.\n\nLooks good. Minor issues persist (text alignment on second line of date, date format), but nothing to fret about for 0.3. Issue closed.\n"

@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13849",
       "author": "Jonathan Hung",
       "date": "2008-09-15T11:04:33.000-0400",
       "body": "–\n"
     },
     {
+      "id": "13852",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:45.764-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

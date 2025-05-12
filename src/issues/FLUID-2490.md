@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21561",
       "author": "Justin Obara",
       "date": "2009-05-05T14:36:59.000-0400",
       "body": "The smallest option should be 10 items per page.\n"
     },
     {
+      "id": "21562",
       "author": "Golam Chowdhury",
       "date": "2011-01-13T12:28:36.637-0500",
       "body": "This issue was fixed and pager does not have the options to view 5 items per page.\n"

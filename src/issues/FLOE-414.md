@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10910",
       "author": "Alan Harnum",
       "date": "2015-09-14T10:16:58.482-0400",
       "body": "A few observations from recent experimentation:\n\n* it's pretty straightforward to have the SVG scale to the proportions of the container DIV using jQuery to figure out the container height + width when creating it. One approach to this is in the branch at <https://github.com/waharnum/chartAuthoring/tree/FLOE-414>&#x20;\n\n- per the spec, you can specify SVG width + height in em or rem, though I'm not sure there's consistent behaviour cross-browser on this. This seems to work OK in Chrome and behave strangely in Firefox.\n\n* the viewBox attribute can do all kinds of magic - basically, it lets you specify a proportional-coordinate system and behaviour for any drawing within the SVG. So you can specify the SVG's size in relation to the viewBox height and width, rather than any external measurements. This helps a lot in auto-scaling to container size.\n\n- If we'd like the pie charts to scale based on UIO font scaling, one approach would be to set their parent container height in em and use one of the autoscaling approaches. We might need to have them redraw based on a listener.\n"

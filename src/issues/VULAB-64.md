@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27459",
       "author": "Blake E",
       "date": "2008-10-30T11:55:36.000-0400",
       "body": "vulab5\n"
     },
     {
+      "id": "27460",
       "author": "Blake E",
       "date": "2008-10-30T14:28:42.000-0400",
       "body": "I modified index.php in the main directory to avoid this issue.\n"

@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19355",
       "author": "Justin Obara",
       "date": "2011-05-11T10:25:54.764-0400",
       "body": "Added in the missing dependency and pushed to the project repo at 1c4ea5788dfad951390845f331f1ad4bbf9d80db\n"
     },
     {
+      "id": "19356",
       "author": "Justin Obara",
       "date": "2011-05-11T10:26:43.870-0400",
       "body": "reopened to add the fix for version number. now closing again\n"

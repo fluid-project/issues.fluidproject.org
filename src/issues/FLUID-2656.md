@@ -42,6 +42,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22737",
       "author": "Alison Benjamin",
       "date": "2009-05-13T10:15:34.000-0400",
       "body": "I have done some research on this and the undo / redo buttons actually are read by JAWS. The problem is that the JAWS user does not know how to save an inline edit (see <http://issues.fluidproject.org/browse/FLUID-2652>). If you don't save an inline edit, a redo button will not appear. &#x20;\n"

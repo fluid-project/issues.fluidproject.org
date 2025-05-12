@@ -36,16 +36,19 @@
   ],
   "comments": [
     {
+      "id": "18719",
       "author": "Justin Obara",
       "date": "2008-09-11T12:12:45.000-0400",
       "body": "'screenshot-1' shows the drop target in the wrong location. It should be under the locked portlet in the same column as the avatar\n"
     },
     {
+      "id": "18722",
       "author": "Antranig Basman",
       "date": "2008-09-11T13:23:49.000-0400",
       "body": "Whisky Award Bug! Congrats Justin. Fixed at revision 5515.\n"
     },
     {
+      "id": "18725",
       "author": "Justin Obara",
       "date": "2008-09-12T09:01:44.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

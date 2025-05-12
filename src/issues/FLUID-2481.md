@@ -50,36 +50,43 @@
   ],
   "comments": [
     {
+      "id": "24989",
       "author": "Jacob Farber",
       "date": "2009-04-30T16:11:33.000-0400",
       "body": "This is an issue of the preview window already containing items that the UIOptions interface is trying to set.\\\nI think the solution is to build a better preview, one that does not use any styles outside of the class names UI Options uses - this way when you change the UI Options options, it will enable a change in the preview.\n\nAlso, perhaps UI Options might want to have certain features pre- selected to match the intial state of the preview.\n"
     },
     {
+      "id": "24990",
       "author": "Jacob Farber",
       "date": "2009-04-30T16:12:57.000-0400",
       "body": "Also, for the word wrapping issue, we could stack the items vertically if there are too many.\n"
     },
     {
+      "id": "24992",
       "author": "Justin Obara",
       "date": "2009-05-14T09:10:02.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "24994",
       "author": "Jacob Farber",
       "date": "2009-05-22T15:21:05.000-0400",
       "body": "Im splitting this issue into several sub issues, since there are too many parts to address here\n"
     },
     {
+      "id": "24996",
       "author": "y z",
       "date": "2009-05-28T12:56:24.000-0400",
       "body": "Bold option does not work neither in IE6, Opera 9.6, FF3 on WinXP\n"
     },
     {
+      "id": "24998",
       "author": "Alison Benjamin",
       "date": "2009-05-29T14:30:28.000-0400",
       "body": "Bold option also not working in OS X: FF3, FF2, Safari, Opera 9.3.&#x20;\n"
     },
     {
+      "id": "24999",
       "author": "heidi valles",
       "date": "2011-01-07T13:31:12.002-0500",
       "body": "Only bold link issues remains, so closing this, and keeping bold link jira.\n"

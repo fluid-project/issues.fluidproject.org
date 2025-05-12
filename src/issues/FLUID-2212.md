@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21234",
       "author": "Colin Clark",
       "date": "2010-09-20T18:33:51.238-0400",
       "body": "The Gears version of the Uploader, like Gears itself, is deprecated in favour of HTML 5.\n"

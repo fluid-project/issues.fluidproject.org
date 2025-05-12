@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26174",
       "author": "Antranig Basman",
       "date": "2019-01-30T10:54:30.904-0500",
       "body": "As a quick \"hot patch\" to allow people to use, e.g. --inspect-brk by hot-editing kettle from inside node\\_modules, this set of changes will simply disable Kettle's command-line parsing:\n\n```java\ndiff --git a/lib/KettleConfigLoader.js b/lib/KettleConfigLoader.js\r\nindex 6a36abb..6d203ba 100644\r\n--- a/lib/KettleConfigLoader.js\r\n+++ b/lib/KettleConfigLoader.js\r\n -28,7 +28,8  fluid.defaults(\"kettle.config\", {\r\n  * is suitable for appearing as the configName field in the options to <code>kettle.config.createDefaults</code> etc.\r\n  */\r\n kettle.config.getConfigName = function (outerDefault) {\r\n-    var nodeEnv = process.argv[3] || process.env.NODE_ENV || outerDefault;\r\n+    console.log(\"Process arguments are \" + process.argv);\r\n+    var nodeEnv = process.env.NODE_ENV || outerDefault;\r\n     if (nodeEnv) {\r\n         fluid.log(\"Loader running configuration name \" + nodeEnv);\r\n     } else {\r\n -42,10 +43,7  kettle.config.getConfigName = function (outerDefault) {\r\n  * is suitable for appearing as the configPath field in the options to <code>kettle.config.createDefaults</code> etc.\r\n  */\r\n kettle.config.getConfigPath = function (outerDefault) {\r\n-    var arg2 = process.argv[2];\r\n-    if (arg2 === \"-\") {\r\n-        arg2 = null;\r\n-    }\r\n+    var arg2 = null;\r\n     var configPath = arg2 || outerDefault;\r\n     if (!configPath) {\r\n         fluid.fail(\"Config path must be specified as 1st command line argument\");\n```\n"
     },
     {
+      "id": "26175",
       "author": "Antranig Basman",
       "date": "2019-02-04T06:59:40.077-0500",
       "body": "Note that this is more specifically a problem with executing electron apps from the command line. There is a long-standing fault in electron argument parsing which fails to strip off the V8-specific arguments which precede the script filename which is intended to appear in process.argv\\[1]. <https://github.com/electron/electron/issues/4690> - this stackExchange answer explains the distinction between process.argv and process.execArgv which is observed in plain node but not with electron - <https://stackoverflow.com/questions/4351521/how-do-i-pass-command-line-arguments-to-a-node-js-program#comment57056011_4351548>\n"

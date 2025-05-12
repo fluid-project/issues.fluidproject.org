@@ -56,31 +56,37 @@
   ],
   "comments": [
     {
+      "id": "12756",
       "author": "y z",
       "date": "2010-01-28T17:24:34.000-0500",
       "body": "this is a patch with example of cabinet issue\n"
     },
     {
+      "id": "12757",
       "author": "y z",
       "date": "2010-01-28T18:15:27.000-0500",
       "body": "Patch that demonstrates unexpected cabinet behavior. Here cabinet toggling is working but it is open on load.\n"
     },
     {
+      "id": "12758",
       "author": "Michelle D'Souza",
       "date": "2010-01-29T16:17:38.000-0500",
       "body": "Currently this patch results in no headings on the navigation lists. Yura is working on a replacement patch.\n"
     },
     {
+      "id": "12759",
       "author": "y z",
       "date": "2010-01-29T16:17:44.000-0500",
       "body": "Latest working version for browse.\n"
     },
     {
+      "id": "12760",
       "author": "y z",
       "date": "2010-01-29T17:02:43.000-0500",
       "body": "This is an attempt to implement i18n with other component that uses browse. It only works for english data right now, need a way of passing along string bundle with french app strings.\n"
     },
     {
+      "id": "12761",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:21.767-0500",
       "body": "The repository has been archived.\n"

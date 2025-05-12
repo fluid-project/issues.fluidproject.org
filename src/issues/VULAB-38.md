@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27358",
       "author": "David Makalsky",
       "date": "2008-10-27T14:07:31.000-0400",
       "body": "still have some modifications to do before putting it up, will do this week\n\nVULAB5\n"
     },
     {
+      "id": "27359",
       "author": "David Makalsky",
       "date": "2008-11-09T18:51:02.000-0500",
       "body": "A page demonstrating RASCAL 0.5B can be found at [http://rascal.xymbo.com](http://rascal.xymbo.com/)\n"

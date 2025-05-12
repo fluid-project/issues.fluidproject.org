@@ -33,21 +33,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13116",
       "author": "heidi valles",
       "date": "2011-01-20T15:25:36.850-0500",
       "body": "These are the styles used by uPortal's implementation:  <https://wiki.jasig.org/display/UPC/JSR-168+PLT.C+CSS+Style+Definitions>\n"
     },
     {
+      "id": "13117",
       "author": "heidi valles",
       "date": "2011-01-20T15:29:03.522-0500",
       "body": "JSR-286 (newer version) has more styles, but still needs fss help\n"
     },
     {
+      "id": "13118",
       "author": "heidi valles",
       "date": "2011-01-20T15:35:38.635-0500",
       "body": "gary's sample portlet template with suggested additional styles: <https://wiki.jasig.org/display/UPC/Portlet+Markup+Template>\n\nsome css being used for this: <https://source.jasig.org/uPortal/trunk/uportal-war/src/main/webapp/media/skins/universality/common/css/layout-portlet.css> (shared by all uportal skins)\n"
     },
     {
+      "id": "13119",
       "author": "Anastasia Cheetham",
       "date": "2014-04-02T16:40:51.891-0400",
       "body": "FSS is deprecated\n"

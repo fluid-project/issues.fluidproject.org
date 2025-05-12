@@ -72,16 +72,19 @@
   ],
   "comments": [
     {
+      "id": "10040",
       "author": "Jonathan Hung",
       "date": "2012-01-26T10:49:59.631-0500",
       "body": "See attached wireframes.\n"
     },
     {
+      "id": "10041",
       "author": "Jonathan Hung",
       "date": "2012-02-03T14:11:09.991-0500",
       "body": "reopened for revision in the design.\n"
     },
     {
+      "id": "10042",
       "author": "Jonathan Hung",
       "date": "2012-05-16T13:34:08.515-0400",
       "body": "Done\n"

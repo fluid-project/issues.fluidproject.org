@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11839",
       "author": "vmoulder",
       "date": "2009-08-19T15:57:29.000-0400",
       "body": "James - Not sure how you see this as different from task - <https://fluidproject.atlassian.net/browse/FLUID-3061#icft=FLUID-3061> Let talk more this week.\n"
     },
     {
+      "id": "11840",
       "author": "James Yoon",
       "date": "2009-10-06T15:30:20.000-0400",
       "body": "<http://wiki.fluidproject.org/display/fluid/August+12%2C+2009+Teleconference>\n"

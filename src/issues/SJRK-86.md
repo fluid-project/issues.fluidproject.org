@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26235",
       "author": "Gregor Moss",
       "date": "2018-05-18T18:26:45.594-0400",
       "body": "This has been achieved using cookies via a fluid.prefs.cookieStore component\n"

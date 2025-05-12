@@ -24,16 +24,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15348",
       "author": "Antranig Basman",
       "date": "2014-03-24T15:23:34.508-0400",
       "body": "I see the following code in current ModelTransformation.js line 254 which suggests this issue is resolved. Kasper, could you please review and close if you believe this is no longer an issue\n\n//if the function has no input, the result is considered undefined, and this is returned\\\nif (expanded === undefined) {\\\nreturn undefined;\\\n}\n"
     },
     {
+      "id": "15351",
       "author": "Justin Obara",
       "date": "2015-06-15T10:43:08.167-0400",
       "body": "Kasper Galschiot Markus Could you see if this issue has been resolved. See above comment from Antranig Basman\n"
     },
     {
+      "id": "15354",
       "author": "Kasper Galschiot Markus",
       "date": "2015-06-15T12:39:29.183-0400",
       "body": "This issue has been resolved in general in the commits:\\\n<https://github.com/fluid-project/infusion/commit/d5d87014a4cb4b0162e47686153083a533eebc29>\\\nand \\\n<https://github.com/fluid-project/infusion/commit/485173aeab137033c325ea924ff09b885a8526ee>\n"

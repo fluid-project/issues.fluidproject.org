@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27640",
       "author": "Blake E",
       "date": "2008-10-20T11:03:17.000-0400",
       "body": "vulab4\n"
     },
     {
+      "id": "27641",
       "author": "Blake E",
       "date": "2008-10-27T11:39:55.000-0400",
       "body": "information is stored in admin/config.\\<context>.php&#x20;\n\n\\<context> could be 'localhost' or 'live' etc.etc. This is the multiple host support.\n"

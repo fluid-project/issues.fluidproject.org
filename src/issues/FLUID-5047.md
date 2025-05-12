@@ -50,6 +50,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25127",
       "author": "Antranig Basman",
       "date": "2021-09-09T08:18:23.057-0400",
       "body": "Note that the work plan listed in this JIRA is extremely old. In practice we did not work by translation and produce old-fashioned renderer trees from new renderer components - instead the new renderer currently in <https://github.com/amb26/new-renderer-demo/blob/FLUID-5047> fabricates the new DOM tree directly from the component tree without any intermediate representation.\n"

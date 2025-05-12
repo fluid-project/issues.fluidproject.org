@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20193",
       "author": "Daphne Ogle",
       "date": "2008-04-29T13:28:18.000-0400",
       "body": "iteration 21\n"
     },
     {
+      "id": "20195",
       "author": "Justin Obara",
       "date": "2011-01-10T14:31:32.358-0500",
       "body": "I'm assuming that this was done, or won't be completed. Sorry Gary if you were still working on this, please re-open if need be.\n"

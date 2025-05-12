@@ -57,16 +57,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15388",
       "author": "Anastasia Cheetham",
       "date": "2013-05-29T13:57:03.385-0400",
       "body": "I had a chat with Antranig about this in the channel today (<http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-05-29>). He feels that the framework is not yet ready to support the kind of model relay transformation functionality that is provided by the VideoPlayer's private modelRelay, and that we shouldn't try to upgrade the UIO model relay until after Kasper's done some more work on the model transformation stuff, and we have some more converstaions about this.\n\nSo for now, the VideoPlayer will continue to use its own private modelRelay.\n"
     },
     {
+      "id": "15391",
       "author": "Cindy Li",
       "date": "2014-03-19T15:58:06.713-0400",
       "body": "The new model relay system implemented by Antranig already supports model transformations. This new system has made into the project master branch.&#x20;\n\nThe next step is to upgrade the preferences framework, and video player, to make use of the new system.\n"
     },
     {
+      "id": "15394",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:00.035-0400",
       "body": "Reopening to change the fix version to 1.9\n"

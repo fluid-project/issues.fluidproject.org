@@ -75,41 +75,49 @@
   ],
   "comments": [
     {
+      "id": "20310",
       "author": "Justin Obara",
       "date": "2008-07-10T14:40:25.000-0400",
       "body": "'screenshot-1' shows the text with multiple spaces, in edit mode.\n"
     },
     {
+      "id": "20311",
       "author": "Justin Obara",
       "date": "2008-07-10T14:41:34.000-0400",
       "body": "'screenshot-2' shows the multiple spaces reduced to a single space, between the brackets.\n"
     },
     {
+      "id": "20313",
       "author": "Justin Obara",
       "date": "2008-10-31T09:33:29.000-0400",
       "body": "design-watched\n"
     },
     {
+      "id": "20315",
       "author": "Antranig Basman",
       "date": "2008-11-13T21:34:31.000-0500",
       "body": "See comments on <https://fluidproject.atlassian.net/browse/FLUID-886#icft=FLUID-886>. Whitespace normalisation is a standard aspect of HTML and the XML family in general.\n"
     },
     {
+      "id": "20317",
       "author": "Daphne Ogle",
       "date": "2008-11-18T17:47:24.000-0500",
       "body": "I would like to revisit this (along with 886).  The right thing to do for users is represent their text exactly as they typed it in.  Apparently folks have used some pretty extensive algorithms to get this behavior – particularly in wikis.  Eli knows about some of these algorithms and basically it is about representing space as non breaking and breaking spaces. &#x20;\n"
     },
     {
+      "id": "20319",
       "author": "Allison Bloodworth",
       "date": "2008-11-19T14:01:21.000-0500",
       "body": "The reasoning behind this design decision is that otherwise the text jumps around when the user \"opens\" and \"closes\" the inline edit field. We've seen in user testing that this can be very disconcerting for users and want as much as we can to maintain the illusion that they are editing in place.\n"
     },
     {
+      "id": "20321",
       "author": "Daphne Ogle",
       "date": "2009-03-13T15:17:36.000-0400",
       "body": "Unassigning so this can go into the development pool of bugs.\n"
     },
     {
+      "id": "20323",
       "author": "Jess Mitchell",
       "date": "2010-12-21T13:02:28.031-0500",
       "body": "safari 5 and FF4 show the white spaces as one space.\n"

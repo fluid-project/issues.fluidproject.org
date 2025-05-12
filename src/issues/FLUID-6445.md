@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25289",
       "author": "Antranig Basman",
       "date": "2019-12-19T18:21:50.824-0500",
       "body": "As well as, of course, guarding the actual access site in fluid.resolveContext with a suitable comment.\n"
     },
     {
+      "id": "25290",
       "author": "Antranig Basman",
       "date": "2019-12-19T19:49:56.580-0500",
       "body": "The situation in <https://github.com/GPII/universal/pull/833> with StartupAPITests.js is much simpler than expected. The harness is destroyed because it is a subcomponent of the \"config\", and there are no extra sequence elements beyond what can be seen in the test cases. In particular, the test fixture makes no attempt to wait for the GPII to actually complete starting up or wait for any of the elements of the \"combinedStartup\" promise chain in the harness before it unceremoniously and synchronously destroys it all. So it is no surprise that the failure occurs, which is actually in the very first asynchronous element of the chain, attempting to determine whether Couch is up via the  \"combinedStartup.isCouchUp\" element.\n"

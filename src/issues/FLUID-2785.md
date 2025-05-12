@@ -32,11 +32,13 @@
   ],
   "comments": [
     {
+      "id": "22842",
       "author": "Antranig Basman",
       "date": "2009-05-27T13:24:32.000-0400",
       "body": "It appears that against expectation, we **did** have code in the framework which was dependent on the API altered with the fix to <https://fluidproject.atlassian.net/browse/FLUID-2247#icft=FLUID-2247> - this now cause InlineEdit.js to fail in its activation handlers. Patch adjusts this usage.\n"
     },
     {
+      "id": "22843",
       "author": "Justin Obara",
       "date": "2009-05-27T14:10:33.000-0400",
       "body": "The patch was code reviewed and committed by Michelle\n\nVerified the fix using:\n\nFF2, FF3, Opera 9.6, Safari 3.2 (Mac OS 10.5)\\\nFF2, IE8 (Win XP)\\\nFF3, IE7, IE8 (Win Vista)\n"

@@ -56,36 +56,43 @@
   ],
   "comments": [
     {
+      "id": "16713",
       "author": "Colin Clark",
       "date": "2009-07-26T16:22:05.000-0400",
       "body": "Experimentation on different ways of generating a component tree. This is a super-raw proof-of-concept showing how component trees could be built up using a set of pre-built utility functions. The main goals here are:\n\n* provide an API with simple methods that match the goals of a Renderer user (eg. checkbox(), value(), container(), etc.)\n* Hide away the cutpoints structure and the colon suffix for IDs so the user doesn't have to deal with them\n* avoid a one vs. many distinction: if input is an array, a branch should automatically occur\n"
     },
     {
+      "id": "16715",
       "author": "Colin Clark",
       "date": "2010-03-30T19:06:04.000-0400",
       "body": "Some of this will be addressed with the promotion of the pseudo-component style of building trees from Engage into Infusion for 1.4. The rest will, hopefully, be address in 1.5 and 1.6.\n"
     },
     {
+      "id": "16721",
       "author": "Antranig Basman",
       "date": "2010-08-02T01:06:41.897-0400",
       "body": "A working and reasonably complete \"protoComponent expander\" is now in trunk as part of the <https://fluidproject.atlassian.net/browse/FLUID-3658#icft=FLUID-3658> work. This largely completes implementation of \"this strand\" of this issue - however, work will now continue on the other strand, based around \"renderer antigens\" (\"component grading\") and the IoC driven approach whereby declarative programming will be expressed in terms of \"IoC trees\" rather than \"renderer trees\".\n"
     },
     {
+      "id": "16723",
       "author": "y z",
       "date": "2010-12-07T15:24:26.903-0500",
       "body": "This patch modifies renderer utilities to take into consideration a case where the tree contains more than one expander in the expander array.\n"
     },
     {
+      "id": "16724",
       "author": "Colin Clark",
       "date": "2010-12-07T15:48:32.859-0500",
       "body": "Removed from bug parade in favour of <https://fluidproject.atlassian.net/browse/FLUID-3882#icft=FLUID-3882>\n"
     },
     {
+      "id": "16726",
       "author": "Antranig Basman",
       "date": "2013-05-25T05:32:04.090-0400",
       "body": "This work (\"renderer antigens\") begins with the implementation of <https://fluidproject.atlassian.net/browse/FLUID-5022#icft=FLUID-5022>, facility for dynamically specified collections of subcomponents\n"
     },
     {
+      "id": "16729",
       "author": "Justin Obara",
       "date": "2014-07-11T14:22:47.641-0400",
       "body": "Colin Clark do you know if this issue has been resolved?\n"

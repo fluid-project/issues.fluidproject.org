@@ -32,11 +32,13 @@
   ],
   "comments": [
     {
+      "id": "20422",
       "author": "Justin Obara",
       "date": "2008-07-23T17:34:15.000-0400",
       "body": "'screenshot-1' shows the failed unit tests.\n"
     },
     {
+      "id": "20423",
       "author": "Justin Obara",
       "date": "2008-07-28T09:28:01.000-0400",
       "body": "Appears fixed in latest build\n\nVerified using:\n\nFF2, FF3 (Mac OS 10.5, Win XP)\n"

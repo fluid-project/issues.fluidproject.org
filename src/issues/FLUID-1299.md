@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18202",
       "author": "Jonathan Hung",
       "date": "2008-10-03T12:25:29.000-0400",
       "body": "Added the following to our theme's CSS\n\n/\\* Custom Tagadelic \"more tags\" top margin. Fluid-1299. \\*/\\\n.block-tagadelic .content .more-link{\\\nmargin-top: 10px;\\\n}\n\nGives it more of a gap.\n\nIteration19\n"
     },
     {
+      "id": "18203",
       "author": "Jonathan Hung",
       "date": "2008-10-03T12:26:51.000-0400",
       "body": "Done.\n"

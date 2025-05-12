@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24953",
       "author": "Mike Lam",
       "date": "2011-01-05T15:56:39.929-0500",
       "body": "Image gallery issue, not an uploader issue.   Appropriate error messages will be implemented for better user feedback.   As a note, only IE will be using the SWF uploader.   All other browsers will be using the new HTML5 implementation.\n"

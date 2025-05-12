@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13346",
       "author": "Antranig Basman",
       "date": "2012-12-11T23:32:27.877-0500",
       "body": "Thanks, Alexey - this is indeed a kind of bug in that the framework behaviour is not entirely helpful. However, this highlights the design issue that invokers are primarily designed to cover cases where there is definitely exactly one implementation intended to cover the operation. In the case where the multiplicity of implementations might vary (including varying to zero as you have in this report), it is more appropriate to use a Fluid event to define the operation rather than an invoker. We should definitely fix the issue you have reported, but I think it is of relatively low priority given that the use of an undefined invoker (null) represents a non-ideal use of the framework.\n\nUntil the issue is fixed properly, you can work around it by assigning the invoker to the \"do-nothing\" function fluid.identity rather than to null.\n"
     },
     {
+      "id": "13348",
       "author": "Alexey Novak",
       "date": "2012-12-12T09:00:12.894-0500",
       "body": "Thanks for such a detailed reply Antranig. I will try to use fluid.identity in the meantime and maybe even rethink the structure of the component I have.\n"

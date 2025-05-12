@@ -41,11 +41,13 @@
   ],
   "comments": [
     {
+      "id": "24234",
       "author": "Justin Obara",
       "date": "2016-11-14T12:36:03.396-0500",
       "body": "Antranig Basman could you please confirm if this is still an issue. There were some substantial styling changes in <https://fluidproject.atlassian.net/browse/FLUID-6017#icft=FLUID-6017>\n"
     },
     {
+      "id": "24236",
       "author": "Justin Obara",
       "date": "2017-01-26T09:00:35.758-0500",
       "body": "There were changes to the native html5 sliders in the lead up to the Infusion 2.0 release. It is likely that those styling changes may have fixed this issue.\n"

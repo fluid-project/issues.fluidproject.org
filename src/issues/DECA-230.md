@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10373",
       "author": "Justin Obara",
       "date": "2012-01-30T16:00:22.888-0500",
       "body": "Renamed the ImportExportController to ExportController.\n\nThe work is currently in my bitbucket repo\\\n<https://jobara@bitbucket.org/jobara/decapod-server-rest>\n"
     },
     {
+      "id": "10375",
       "author": "Justin Obara",
       "date": "2012-05-18T14:21:37.654-0400",
       "body": "Merged into the project repo\n"

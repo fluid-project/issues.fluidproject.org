@@ -34,21 +34,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16762",
       "author": "Golam Chowdhury",
       "date": "2011-01-11T09:58:59.611-0500",
       "body": "Events onProgressBegin and afterProgressHidden are added into version 1.3.&#x20;\n"
     },
     {
+      "id": "16764",
       "author": "Justin Obara",
       "date": "2011-01-17T10:34:55.524-0500",
       "body": "maybe an on update event would be useful. Then the user could keep other parts of the ui up-to-date with the amount of the progress.&#x20;\n"
     },
     {
+      "id": "16766",
       "author": "Anastasia Cheetham",
       "date": "2014-04-02T15:14:12.438-0400",
       "body": "These events have not yet been added as of the pre-1.5 evaluation\n"
     },
     {
+      "id": "16768",
       "author": "Antranig Basman",
       "date": "2014-04-02T15:16:25.242-0400",
       "body": "Now we have the new ChangeApplier implementation, the progress bar should use a model to communicate updates\n"

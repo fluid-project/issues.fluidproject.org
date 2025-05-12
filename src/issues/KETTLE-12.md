@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26106",
       "author": "Antranig Basman",
       "date": "2013-08-13T13:52:45.100-0400",
       "body": "\"new new Kettle\" being based on express, allows all of express's routing functions including arbitrary depth expressions involving capturing patterns such as /user/:id/photos - whilst this offers good user flexibility, we will need to work a bit to recover some of the original declarative capabilities planned for Kettle, including \"inverse routes\". In the meantime we can consider this issue resolved as filed\n"

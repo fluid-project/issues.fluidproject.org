@@ -36,11 +36,13 @@
   ],
   "comments": [
     {
+      "id": "18680",
       "author": "Justin Obara",
       "date": "2008-09-10T15:54:21.000-0400",
       "body": "'screenshot-1' shows the keyboard navigation instructions. Notice the \\<br /> tags\n"
     },
     {
+      "id": "18682",
       "author": "Justin Obara",
       "date": "2009-03-18T09:57:02.000-0400",
       "body": "no longer using this demo page\n"

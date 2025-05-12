@@ -36,6 +36,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15153",
       "author": "Colin Clark",
       "date": "2013-03-21T16:13:03.372-0400",
       "body": "This issue is fixed in the current Infusion master branch and will be released along with Infusion 1.5 (or whatever version it ends up being).\n"

@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20233",
       "author": "Jacob Farber",
       "date": "2008-09-18T15:19:51.000-0400",
       "body": "As reviewed, we can either suggest to people to include a some CSS to set the cursor on their grab handle and leave it up to them, or we can set a CSS class onto designated  grab handles on init - no need to do any cursor work on :hover since you get that for free\n"
     },
     {
+      "id": "20235",
       "author": "Jacob Farber",
       "date": "2008-10-31T10:36:26.000-0400",
       "body": "Everything was resolved with css tweaks, except for Erin's reported task (which seemed more like a performance-related issue than a cursor fix.)\n"

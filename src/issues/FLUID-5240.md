@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25208",
       "author": "Antranig Basman",
       "date": "2022-07-07T08:35:19.579-0400",
       "body": "Composite panels as a specific grade type will be abolished in Infusion 5, instead allowing for any freeform component material to act as a panel. As a result there is no specific implementation required for this issue.\n"

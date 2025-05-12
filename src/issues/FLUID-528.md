@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23457",
       "author": "Justin Obara",
       "date": "2009-06-05T14:44:42.000-0400",
       "body": "Not currently developing this example\n"
     },
     {
+      "id": "23458",
       "author": "Michelle D'Souza",
       "date": "2011-01-19T08:23:50.110-0500",
       "body": "Reopening these issues in order to add the workshopcomponent to them\n"

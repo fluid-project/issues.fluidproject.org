@@ -39,31 +39,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15345",
       "author": "Antranig Basman",
       "date": "2008-09-07T18:38:05.000-0400",
       "body": "Corrected at revision 5477\n"
     },
     {
+      "id": "15347",
       "author": "Michelle D'Souza",
       "date": "2008-09-08T10:53:43.000-0400",
       "body": "Keyboard navigation is still broken when there are non-movable items in the list.&#x20;\n"
     },
     {
+      "id": "15350",
       "author": "Antranig Basman",
       "date": "2008-09-08T12:47:37.000-0400",
       "body": "Re-fixed at revision 5483, see comments on <https://fluidproject.atlassian.net/browse/FLUID-677#icft=FLUID-677>\n"
     },
     {
+      "id": "15352",
       "author": "Antranig Basman",
       "date": "2008-09-08T14:51:25.000-0400",
       "body": "I misread the description, and this is a different issue - it is specifically caused when a keyboard operation follows a mouse operation. This has been resolved by resolving <https://fluidproject.atlassian.net/browse/FLUID-1141#icft=FLUID-1141> - the avatar in general must be placed outside the container for even further reasons in addition to those listed there, since in general it cannot be depended that user-supplied selectors to discover orderables will not in addition discover the avatar - this was causing this issue, since the avatar was \"left behind\" in the container at the moment when the geometry was refreshed (end drag), but was detached from the document at the time when the keyboard navigation was requested. This caused a \"DOM stone\" which was considered the target of the operation which then failed.\\\nNote on JQuery draggable implementation - we do **not** in general seem to have the flexibility to get a callback after the time the avatar is removed, since the end drag sequence is user callback followed by clear. However, JQuery draggable **will** respect avatar parent placement, and not attempt to reattach it to the document if it discovers that it is already present.&#x20;\n"
     },
     {
+      "id": "15356",
       "author": "Antranig Basman",
       "date": "2008-09-08T14:52:33.000-0400",
       "body": "Fixed finally (hopefully!) at revision 5486.\n"
     },
     {
+      "id": "15358",
       "author": "Justin Obara",
       "date": "2008-09-30T11:25:59.000-0400",
       "body": "Verified using:\n\nFF2 (Mac OS 10.5)\n"

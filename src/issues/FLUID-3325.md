@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15240",
       "author": "Colin Clark",
       "date": "2009-10-22T18:51:08.000-0400",
       "body": "Ack, cloned this into the wrong space. Let's try this again.\n"
     },
     {
+      "id": "15243",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:21.805-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

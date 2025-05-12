@@ -36,26 +36,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18484",
       "author": "Anastasia Cheetham",
       "date": "2008-11-12T10:36:36.000-0500",
       "body": "I've drafted something, at\\\n<http://wiki.fluidproject.org/display/fluid/Events+for+Component+Developers>\\\nand\\\n<http://wiki.fluidproject.org/display/fluid/Events+for+Component+Users>\\\nand have asked Michelle to 'beta test' it.\n\nOne thing that is still needed is for the individual component pages to better document the parameters supported by the event listeners.\n"
     },
     {
+      "id": "18489",
       "author": "Michelle D'Souza",
       "date": "2009-01-05T11:50:21.000-0500",
       "body": "The event documentation was in fairly good shape for the 0.6 release. There are a couple of things that could still be done.&#x20;\n\n1\\. Create an 'Events' landing page: <http://wiki.fluidproject.org/display/fluid/Events> or rework <http://wiki.fluidproject.org/display/fluid/The+Fluid+Event+System> into the landing page\\\n2\\. Remove the duplication of the Event Type table - pull it in from a single source. It currently exists in 3 places and each is slightly different.\\\n3\\. Move the Event Firer table to the component developer docs page. \\\n4\\. Remove the warnings\n"
     },
     {
+      "id": "18492",
       "author": "Anastasia Cheetham",
       "date": "2009-01-06T15:41:46.000-0500",
       "body": "Bug Parade 0.8 release\n"
     },
     {
+      "id": "18495",
       "author": "Anastasia Cheetham",
       "date": "2009-02-11T10:31:38.000-0500",
       "body": "I've taken care of points 1, 2 and 4 in Michelle's comments. I need to clarify #3 with her before proceeding.\n"
     },
     {
+      "id": "18498",
       "author": "Anastasia Cheetham",
       "date": "2009-02-11T11:51:20.000-0500",
       "body": "I have addressed all of Michelle's comments.\n"

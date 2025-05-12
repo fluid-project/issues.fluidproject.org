@@ -36,31 +36,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21251",
       "author": "Anastasia Cheetham",
       "date": "2009-02-13T15:54:27.000-0500",
       "body": "This behaviour happens on Cancel, too:\n\n1\\) Click \"Edit Appearances\"\\\n2\\) Make some changes and \"Save and Apply\" them.\\\n3\\) Close the dialog.\\\n4\\) Click \"Edit Appearances\" again \\\n5\\) Make some choices that are different than the previously saved changes\\\n6\\) Click Cancel\n\nThe controls properly revert to the previously saved values, but the Preview does not reflect those values.\n"
     },
     {
+      "id": "21252",
       "author": "Anastasia Cheetham",
       "date": "2009-02-13T16:20:33.000-0500",
       "body": "Pondering whether this failing test (<https://fluidproject.atlassian.net/browse/FLUID-2215#icft=FLUID-2215>) might be related?\n"
     },
     {
+      "id": "21253",
       "author": "Michelle D'Souza",
       "date": "2009-02-24T20:54:08.000-0500",
       "body": "This appears to be a timing issue. Putting in a break point causes the preview to render correctly.&#x20;\n"
     },
     {
+      "id": "21254",
       "author": "Anastasia Cheetham",
       "date": "2009-03-03T10:16:54.000-0500",
       "body": "I can no longer reproduce this issue. It's possible that Jacob's fix to <https://fluidproject.atlassian.net/browse/FLUID-2248#icft=FLUID-2248> eliminated this problem?\n"
     },
     {
+      "id": "21255",
       "author": "Anastasia Cheetham",
       "date": "2009-03-03T10:24:06.000-0500",
       "body": "Justin, if you can confirm that this issue can't be reproduced, maybe you could close it officially.\n"
     },
     {
+      "id": "21256",
       "author": "Justin Obara",
       "date": "2009-03-03T10:47:03.000-0500",
       "body": "Tested using:\n\nFF2, FF3, Opera 9.6, Safari 3.2 (Mac OS 10.5)\\\nFF3, IE7 (Win Vista)\n\nCould not reproduce the issue\n"

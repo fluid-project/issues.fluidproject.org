@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27284",
       "author": "Blake E",
       "date": "2008-12-12T09:39:06.000-0500",
       "body": "broadened the scope this issue (and renamed it) to all additional research and added more detail to the description (so I don't forget who to give props to)\n\np.s\\\nvulab11\n"
     },
     {
+      "id": "27285",
       "author": "Blake E",
       "date": "2008-12-18T11:28:22.000-0500",
       "body": "I've finished my research and I've started implementing the idea of \"question groups\" which are used to closely relate questions so we can create new question types like \"matrix\" which was a popular type on the list.\n"

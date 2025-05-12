@@ -46,26 +46,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19851",
       "author": "Justin Obara",
       "date": "2009-01-08T08:47:36.000-0500",
       "body": "It seems as though you are able to shift-tab away after adding files to the file queue, likely because focus is on a file in the file queue and not on the flash movie.\n"
     },
     {
+      "id": "19853",
       "author": "Justin Obara",
       "date": "2009-05-14T14:58:48.000-0400",
       "body": "a11y issue&#x20;\n"
     },
     {
+      "id": "19854",
       "author": "Colin Clark",
       "date": "2010-03-30T14:02:09.000-0400",
       "body": "This is an issue that only Adobe can fix, but so far they seem unwilling. The best fix for us is to deprecate the Flash-based Uploader in favour of HTML 5 uploads where the browser supports it.\n"
     },
     {
+      "id": "19856",
       "author": "y z",
       "date": "2010-04-05T18:13:13.000-0400",
       "body": "This is also an issue in IE 8 , WIN 7\n"
     },
     {
+      "id": "19858",
       "author": "Anastasia Cheetham",
       "date": "2014-04-02T15:10:43.021-0400",
       "body": "This is not an issue in HTML5 browsers\n"

@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23947",
       "author": "Colin Clark",
       "date": "2014-06-05T10:18:31.363-0400",
       "body": "This appears to be related to the Festival server, rather than the client side. For example, if you try to play this URL directly in Safari, it will also cause the crash:\n\n<http://tts.idrc.ocadu.ca/?q=text%20to%20speech%20enabled>\n\nIt is worth exploring a few issues:\n\n1\\. Are we sending back correctly formed WAVE files?\\\n2\\. Do we have the appropriate MIME type configured and are we sending the the right headers?\n"
     },
     {
+      "id": "23948",
       "author": "Justin Obara",
       "date": "2015-06-15T15:14:21.598-0400",
       "body": "We should upgrade the Exploration Tool to use the web speech api.\n"

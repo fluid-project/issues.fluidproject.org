@@ -29,31 +29,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12168",
       "author": "Tona Monjo",
       "date": "2009-10-21T16:12:47.000-0400",
       "body": "Found the same bug; it seems to happen for portrait images. For landscape images, description expands to its fullest.&#x20;\n"
     },
     {
+      "id": "12169",
       "author": "Justin Obara",
       "date": "2009-11-10T14:13:10.000-0500",
       "body": "This may be solved when we update to the new wireframes that have all the info below the image\n"
     },
     {
+      "id": "12170",
       "author": "Justin Obara",
       "date": "2010-02-05T14:24:36.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12171",
       "author": "y z",
       "date": "2010-02-11T15:49:23.000-0500",
       "body": "This bug is fixed with commit r9364 by Colin.\n"
     },
     {
+      "id": "12172",
       "author": "y z",
       "date": "2010-02-11T15:49:40.000-0500",
       "body": "This bug is fixed with commit r9364 by Colin.\n"
     },
     {
+      "id": "12173",
       "author": "Colin Clark",
       "date": "2010-02-12T15:05:17.000-0500",
       "body": "I reviewed and committed Yura's fix for this issue. +1 for Engage 0.3b\n"

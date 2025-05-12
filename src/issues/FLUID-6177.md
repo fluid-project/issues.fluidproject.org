@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23688",
       "author": "Justin Obara",
       "date": "2018-05-01T16:07:09.103-0400",
       "body": "Can use the \"selectionchange\" event, along with \"window\\.getSelection()\" to know when a user selection has been made and to get the contents of the selection.\n\nsee: <https://developer.mozilla.org/en-US/docs/Web/API/Selection>\n"
     },
     {
+      "id": "23689",
       "author": "Justin Obara",
       "date": "2018-07-20T10:46:02.857-0400",
       "body": "PR ( <https://github.com/fluid-project/infusion/pull/903> ) merged into the project repo at 272cf702d5bf749172c0ba2015ba00dcceb526b1\n"

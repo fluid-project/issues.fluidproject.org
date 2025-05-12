@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12377",
       "author": "Antranig Basman",
       "date": "2009-10-02T12:55:16.000-0400",
       "body": "Reordered finally block at  8215\n"
     },
     {
+      "id": "12378",
       "author": "Justin Obara",
       "date": "2009-11-10T11:57:27.000-0500",
       "body": "Closed as per previous comment\n"

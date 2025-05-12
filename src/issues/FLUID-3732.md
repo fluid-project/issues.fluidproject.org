@@ -32,16 +32,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22449",
       "author": "Anastasia Cheetham",
       "date": "2010-09-10T16:35:38.760-0400",
       "body": "The only place I've noticed this so far is InlineEdit: that's the only code I've found that actually doesn't pass an array to initSubcomponents(). The only reason this doesn't cause a problem is because the subcomponents in question happen to work fine if passed a DOM node instead of the intended jQuery object. However, if the IoC system is used to create the subcomponents, mayhem ensues.\n"
     },
     {
+      "id": "22450",
       "author": "Justin Obara",
       "date": "2014-07-14T10:31:56.685-0400",
       "body": "Antranig Basman can you verify if this is still an issue?\n"
     },
     {
+      "id": "22451",
       "author": "Antranig Basman",
       "date": "2015-08-20T21:45:36.300-0400",
       "body": "initSubcomponent is no longer a supported API following this release, so the issue is null\n"

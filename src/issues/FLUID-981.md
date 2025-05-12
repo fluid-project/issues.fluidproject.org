@@ -46,31 +46,37 @@
   ],
   "comments": [
     {
+      "id": "19993",
       "author": "Justin Obara",
       "date": "2008-09-02T11:18:07.000-0400",
       "body": "'screenshot-1' shows the incorrect pointer style\n"
     },
     {
+      "id": "19995",
       "author": "Jacob Farber",
       "date": "2008-10-31T10:29:58.000-0400",
       "body": "Patch in fluid 987 fixes this problem\n"
     },
     {
+      "id": "19998",
       "author": "Justin Obara",
       "date": "2008-11-03T09:55:14.000-0500",
       "body": "The description may have been a little unclear. The problem here is that you are able to place the mouse over the tab and perform actions, such as DnD, without the pointer changing to a hand. As soon as the pointer is placed over top of the tab, it should change from an arrow to a hand.&#x20;\n"
     },
     {
+      "id": "20001",
       "author": "Gonzalo David Silverio",
       "date": "2008-12-17T17:29:57.000-0500",
       "body": "Observed in WIN FF3, IE7, IE6  OSX FF2 - mouseover does not change cursor to cross or hand..the cross only appears on a very narrow area a few pixels high.\n"
     },
     {
+      "id": "20003",
       "author": "Jacob Farber",
       "date": "2010-03-26T15:40:58.000-0400",
       "body": "Demo no longer exists\n"
     },
     {
+      "id": "20005",
       "author": "Jacob Farber",
       "date": "2010-03-26T15:41:49.000-0400",
       "body": "Demo has been succeeded Demo portal examples\n"

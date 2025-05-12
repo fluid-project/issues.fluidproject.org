@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17574",
       "author": "Justin Obara",
       "date": "2009-02-06T11:31:18.000-0500",
       "body": "Updated the paths to the js and css files as needed ( at r6439)\n"
     },
     {
+      "id": "17576",
       "author": "Justin Obara",
       "date": "2009-02-06T11:37:32.000-0500",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF3, IE7 (Win Vista)\n"

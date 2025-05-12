@@ -32,6 +32,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26433",
       "author": "Gregor Moss",
       "date": "2019-09-12T19:11:10.340-0400",
       "body": "The two repositories have been joined, and the current setup is not really relevant to this Jira. Currently, the custom theme is set in the server and then passed along to the client side via sjrk.storyTelling.loadThemedPage().\n"

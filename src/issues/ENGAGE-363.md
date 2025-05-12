@@ -50,11 +50,13 @@
   ],
   "comments": [
     {
+      "id": "12257",
       "author": "Jess Mitchell",
       "date": "2010-02-16T13:11:17.000-0500",
       "body": "needs review and then to close\n"
     },
     {
+      "id": "12259",
       "author": "Justin Obara",
       "date": "2010-02-16T15:42:32.000-0500",
       "body": "Reviewed and committed the latest patches for this issue. Made a change to one of them that basically just added a class name instead of referring to an element by it's tag. This prevented some side effects that were  happening.\n"

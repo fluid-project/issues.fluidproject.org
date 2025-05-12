@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18688",
       "author": "Allison Bloodworth",
       "date": "2008-10-29T12:41:00.000-0400",
       "body": "iteration23\n"
     },
     {
+      "id": "18691",
       "author": "Allison Bloodworth",
       "date": "2008-12-02T19:25:41.000-0500",
       "body": "I actually logged too much work for this as it doesn't include storyboards. Should probably be about 3-4 hours of work here. Leaving open as we need to put some finishing touches on the wireframes.\n"
     },
     {
+      "id": "18699",
       "author": "Allison Bloodworth",
       "date": "2008-12-19T17:58:58.000-0500",
       "body": "Though we will likely revisit this task after our next user testing session, for now it is completed.\n"

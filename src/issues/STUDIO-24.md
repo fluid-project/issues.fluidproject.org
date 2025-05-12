@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12823",
       "author": "Cindy Li",
       "date": "2011-12-12T09:13:21.625-0500",
       "body": "Colin's fix has been merged into project repo @ f5fdf341fb6b8d2927916ca1c30129b2673d265b\n"

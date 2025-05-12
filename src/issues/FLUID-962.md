@@ -62,51 +62,61 @@
   ],
   "comments": [
     {
+      "id": "22555",
       "author": "Justin Obara",
       "date": "2008-07-21T18:00:41.000-0400",
       "body": "'screenshot-1' shows how a long file name pushes the files size and remove button out of view\n"
     },
     {
+      "id": "22557",
       "author": "Eli Cochran",
       "date": "2008-08-05T20:21:57.000-0400",
       "body": "need to implement \"smart\" file name truncation\n"
     },
     {
+      "id": "22558",
       "author": "Justin Obara",
       "date": "2008-09-16T14:52:28.000-0400",
       "body": "Affects Uploader 2\n"
     },
     {
+      "id": "22560",
       "author": "Eli Cochran",
       "date": "2008-09-19T15:16:14.000-0400",
       "body": "This is basically the same bug as <https://fluidproject.atlassian.net/browse/FLUID-1595#icft=FLUID-1595> it just manifests its self differently on different browsers and both of these bugs will be to come up with a way to automatically truncate the text of long files names. I thought that there was a bug written for that, but I can't find it.\n"
     },
     {
+      "id": "22562",
       "author": "Anastasia Cheetham",
       "date": "2010-12-22T11:11:41.797-0500",
       "body": "This is still happening in v1.3\n"
     },
     {
+      "id": "22564",
       "author": "Anastasia Cheetham",
       "date": "2011-10-03T12:39:50.784-0400",
       "body": "Testing for the 1.4 release, this is still happening, though in FF on Mac, the delete buttons for short file names are NOT being pushed, only the ones for the long file names.\n"
     },
     {
+      "id": "22565",
       "author": "Saksham Saxena",
       "date": "2016-03-06T12:32:52.942-0500",
       "body": "Not on IE 10,11; Chrome and FF on Win 10. Unlikely that it'll be reproduced, as <https://fluidproject.atlassian.net/browse/FLUID-4075#icft=FLUID-4075> is closed.\n"
     },
     {
+      "id": "22567",
       "author": "Justin Obara",
       "date": "2016-03-09T09:15:59.980-0500",
       "body": "Saksham Saxena I just did a quick test in Safari 9 and the issue is still present there. Also <https://fluidproject.atlassian.net/browse/FLUID-4075#icft=FLUID-4075> was close because it is a duplicate of this issue.\n"
     },
     {
+      "id": "22568",
       "author": "Akshay Agarwal",
       "date": "2016-03-29T14:11:13.330-0400",
       "body": "Is anyone working on this issue?\n"
     },
     {
+      "id": "22570",
       "author": "Justin Obara",
       "date": "2016-11-08T12:39:27.039-0500",
       "body": "Addressed with work for <https://fluidproject.atlassian.net/browse/FLUID-6028#icft=FLUID-6028>, which causes the long file names to wrap to a new line.\n"

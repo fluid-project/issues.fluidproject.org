@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22335",
       "author": "Avtar Gill",
       "date": "2016-02-02T20:30:40.139-0500",
       "body": "I forgot to add that using the changes in the `saucelabs` branch require the creation of a `provisioning/secrets.yml` file. An example can be found here:\n\n<https://github.com/avtar/infusion/blob/saucelabs/provisioning/secrets.yml.example>\n"

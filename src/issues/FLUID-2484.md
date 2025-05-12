@@ -30,6 +30,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24954",
       "author": "Jonathan Hung",
       "date": "2011-01-07T13:02:21.509-0500",
       "body": "This demo has been deprecated.\n"

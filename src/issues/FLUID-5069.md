@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13316",
       "author": "Cindy Li",
       "date": "2013-07-02T14:45:15.849-0400",
       "body": "The pull request is merged into master @ dbb3e4fbc56cb2645ef7d33ddce15afcb71b59be\n"

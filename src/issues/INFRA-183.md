@@ -22,11 +22,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25739",
       "author": "Giovanni Tirloni",
       "date": "2020-04-08T14:47:12.033-0400",
       "body": "It's probably starting before networking is available and/or it can reach the DNS resolver.\n"
     },
     {
+      "id": "25740",
       "author": "Giovanni Tirloni",
       "date": "2020-04-13T08:10:27.222-0400",
       "body": "This has not happened in the last batch of upgrades/reboots so assuming it's not a problem anymore or it won't be a problem once we migrate to a cloud provider.\n"

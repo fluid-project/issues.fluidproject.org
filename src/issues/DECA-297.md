@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10077",
       "author": "Justin Obara",
       "date": "2012-08-21T11:06:44.292-0400",
       "body": "Updated so that the images are numbered so that they retain their order. The name would look like \"image-index.format\"\n\nThe changes are in my bitbucket repo:\\\n<https://bitbucket.org/jobara/decapod-0.6-server-iteration5>\n"

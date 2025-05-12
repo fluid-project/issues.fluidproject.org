@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19358",
       "author": "Jonathan Hung",
       "date": "2008-09-05T12:13:27.000-0400",
       "body": "Iteration20\n"
     },
     {
+      "id": "19360",
       "author": "Blake E",
       "date": "2008-09-05T15:44:43.000-0400",
       "body": "After mine and Jonathan's meeting this morning, we agreed on the following structure and drupal controls.\n\nContent Type: Pattern\\\n\\===============\n\nComplete aka Production Ready Pattern\\\n\\===============\\\nControl Vocabulary: Status\n\nPublic Visibility\\\nNode Status Control: Published\n\nViewing\\\nAdapted View from: Drupal Views Module - <http://drupalmodules.com/module/views>\\\nKey Filter: Published = Yes, Type = Pattern, Vocabulary:Status = Complete\n\nDraft Pattern\\\n\\===============\\\nControl Vocabulary: Status\n\nPublic Visibility\\\nNode Status Control: Published\n\nPrivate Visibility\\\nNode Status Control: unPublished\n\nViewing\\\nAdapted View from: Drupal Views Module - <http://drupalmodules.com/module/views>\\\nKey Filter: Published = Yes, Type = Pattern, Vocabulary:Status = Draft\n"

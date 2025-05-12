@@ -35,16 +35,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19123",
       "author": "Justin Obara",
       "date": "2008-10-31T09:54:12.000-0400",
       "body": "design-watched\n"
     },
     {
+      "id": "19125",
       "author": "Justin Obara",
       "date": "2010-05-07T09:46:02.005-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "19127",
       "author": "Mike Lam",
       "date": "2011-01-05T16:23:05.866-0500",
       "body": "Screen reader feedback has been greatly enhanced through ARIA live regions and application roles. &#x20;\n"

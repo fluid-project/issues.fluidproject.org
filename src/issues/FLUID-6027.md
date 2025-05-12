@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22490",
       "author": "Justin Obara",
       "date": "2016-11-02T12:29:47.961-0400",
       "body": "On inspecting the Remove Errors button it looks like a \"fl-uploader-hidden\" class is added to the \\<span> containing the error button text. However this class applies \"display: none;\" to the element. Using display:none removes the element from the accessibility tree. Rather the \"fl-hidden-accessible\" class from fluid.css should be used instead. This will hide it visually but allow it to be accessed by an AT.\n"
     },
     {
+      "id": "22492",
       "author": "Cindy Li",
       "date": "2016-11-03T15:22:56.581-0400",
       "body": "The pull request <https://github.com/fluid-project/infusion/pull/773> has been merged into the master at 0c483584d4ee60f0596aa18350de0a119b6a48bc\n"

@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12277",
       "author": "Justin Obara",
       "date": "2009-09-21T16:38:09.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "12278",
       "author": "Colin Clark",
       "date": "2009-10-14T18:00:47.000-0400",
       "body": "Yura and Justin have implemented this for Engage 0.1\n"
     },
     {
+      "id": "12279",
       "author": "Justin Obara",
       "date": "2009-11-03T11:29:28.000-0500",
       "body": "Close as per previous comment\n"

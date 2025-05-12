@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12009",
       "author": "Colin Clark",
       "date": "2010-02-25T18:26:17.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12010",
       "author": "Colin Clark",
       "date": "2010-02-26T10:03:47.000-0500",
       "body": "This was finished at r9519\n"
     },
     {
+      "id": "12012",
       "author": "Colin Clark",
       "date": "2010-02-26T10:04:09.000-0500",
       "body": "Tagged, cut, deployed, tested, updated version numbers. Done.\n"

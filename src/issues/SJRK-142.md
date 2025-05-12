@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26368",
       "author": "Gregor Moss",
       "date": "2019-09-12T19:02:17.278-0400",
       "body": "With the removal of the Capture Image button and hasMobileCamera functionality, this is no longer possible\n"

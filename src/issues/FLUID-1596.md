@@ -36,16 +36,19 @@
   ],
   "comments": [
     {
+      "id": "13821",
       "author": "Justin Obara",
       "date": "2008-09-19T09:52:22.000-0400",
       "body": "'screenshot-1' shows the locked portlet from column b in column c\n"
     },
     {
+      "id": "13823",
       "author": "Antranig Basman",
       "date": "2008-09-19T12:36:28.000-0400",
       "body": "Fixed at revision 5619. Bug in fluid.remove\\_if corrected with test cases.\n"
     },
     {
+      "id": "13825",
       "author": "Justin Obara",
       "date": "2008-09-19T14:18:07.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

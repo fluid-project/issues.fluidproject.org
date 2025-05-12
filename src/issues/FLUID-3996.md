@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23589",
       "author": "Mike Lam",
       "date": "2010-12-21T16:26:25.271-0500",
       "body": "Creates an Ajax error in the browser.   We are trying to upload a file into the image gallery that doesn't exist in the file system.  It looks like additional error handling should properly address this scenario.&#x20;\n"
     },
     {
+      "id": "23591",
       "author": "Justin Obara",
       "date": "2014-05-26T15:42:52.552-0400",
       "body": "The demo this is referring to no longer exists. We should create a new issue against the uploader if it is found to be an issue still in other instances.\n"

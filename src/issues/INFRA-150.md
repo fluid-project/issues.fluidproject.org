@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26032",
       "author": "Giovanni Tirloni",
       "date": "2018-03-30T19:30:06.118-0400",
       "body": "Released Fedora 27 v20180330 with PackageKit disabled.\n\nTested on fluid-project/infusion and GPII/universal successfully.\n"

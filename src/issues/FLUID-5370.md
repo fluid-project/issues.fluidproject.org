@@ -33,6 +33,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23702",
       "author": "Justin Obara",
       "date": "2016-09-15T08:53:47.620-0400",
       "body": "This was discussed at the Community Meeting on Sept 14, 2016. It was determined that the old values were still useful to integrators and that all relevant information that could be tokenized and used within a string template should be modelled and passed into the string template function. This has been captured in <https://fluidproject.atlassian.net/browse/FLUID-5957#icft=FLUID-5957>(<https://issues.fluidproject.org/browse/FLUID-5957>)\n"

@@ -35,6 +35,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23345",
       "author": "Michelle D'Souza",
       "date": "2007-12-14T10:49:28.000-0500",
       "body": "This was resolved by moving the event binding from dojo to jQuery.&#x20;\n"

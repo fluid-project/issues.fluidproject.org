@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14906",
       "author": "Michelle D'Souza",
       "date": "2009-04-06T11:33:22.000-0400",
       "body": "Also check the dependencies for json in the lib folder.&#x20;\n"
     },
     {
+      "id": "14909",
       "author": "Anastasia Cheetham",
       "date": "2009-04-07T12:28:04.000-0400",
       "body": "Tested - working.\n"
     },
     {
+      "id": "14912",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:44.450-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

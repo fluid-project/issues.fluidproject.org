@@ -27,26 +27,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19187",
       "author": "Colin Clark",
       "date": "2008-10-28T21:46:35.000-0400",
       "body": "I have implemented by adding an onFileProgress listener within SWFUploadManager, which then updates the state of the fileQueue accordingly. In time, it will likely be best to shift this logic into the fileQueue itself. I also pass the currentFile.\n"
     },
     {
+      "id": "19190",
       "author": "Colin Clark",
       "date": "2008-10-28T21:46:52.000-0400",
       "body": "This code still needs unit tests before it is complete.\n"
     },
     {
+      "id": "19193",
       "author": "Colin Clark",
       "date": "2008-10-29T14:42:44.000-0400",
       "body": "Still needs unit tests.\n"
     },
     {
+      "id": "19197",
       "author": "Justin Obara",
       "date": "2009-05-14T09:25:39.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "19200",
       "author": "Colin Clark",
       "date": "2010-12-22T15:40:10.386-0500",
       "body": "This issue was resolved in an old version of Infusion but was left open due to unit tests. I'll file a separate unit testing issue instead.\n"

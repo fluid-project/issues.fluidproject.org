@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18960",
       "author": "Jonathan Hung",
       "date": "2008-07-22T14:01:20.000-0400",
       "body": "For the most part this can be resolved. Usability has been improved, though there are places where it can still be improved (i.e. the Design Patterns areas).\n"

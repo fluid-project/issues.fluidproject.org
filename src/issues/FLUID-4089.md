@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21767",
       "author": "Justin Obara",
       "date": "2011-02-24T12:54:11.825-0500",
       "body": "Does this happen even when the ariaBusyText is set to \"\"?\n"
     },
     {
+      "id": "21768",
       "author": "Justin Obara",
       "date": "2013-06-14T10:32:54.451-0400",
       "body": "Still an issue with FF 21 and NVDA 2013.1\n"

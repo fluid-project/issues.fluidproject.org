@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24974",
       "author": "Allison Bloodworth",
       "date": "2009-01-07T16:27:12.000-0500",
       "body": "iteration29\n"
     },
     {
+      "id": "24975",
       "author": "Jonathan Hung",
       "date": "2011-01-06T15:16:30.711-0500",
       "body": "new icons now available in v1.3\n"

@@ -35,26 +35,31 @@
   ],
   "comments": [
     {
+      "id": "19555",
       "author": "Justin Obara",
       "date": "2008-07-16T18:32:10.000-0400",
       "body": "'screenshot-1' shows the progress bar expanding outside of the componet\n"
     },
     {
+      "id": "19556",
       "author": "Justin Obara",
       "date": "2008-07-16T18:33:08.000-0400",
       "body": "I'm not sure if the 'x' should be enabled while files are uploading. The user should have to pause the upload to add/remove files from the queue\n"
     },
     {
+      "id": "19557",
       "author": "Eli Cochran",
       "date": "2008-07-16T22:30:28.000-0400",
       "body": "The X should be un-clickable during upload. So that's the real bug.&#x20;\n"
     },
     {
+      "id": "19558",
       "author": "Eli Cochran",
       "date": "2008-07-23T23:30:17.000-0400",
       "body": "Disabled the Remove and the Add More buttons during Upload\n"
     },
     {
+      "id": "19559",
       "author": "Justin Obara",
       "date": "2008-07-24T13:15:40.000-0400",
       "body": "Verified fixed:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE7, Opera 9.5 (Win XP)\n"

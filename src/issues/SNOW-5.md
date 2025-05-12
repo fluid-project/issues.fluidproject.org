@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26181",
       "author": "Eloisa Guerrero",
       "date": "2018-02-07T09:02:49.975-0500",
       "body": "Added B\\&W, B\\&Y, grey assets of banner and logo.\n"
     },
     {
+      "id": "26182",
       "author": "Eloisa Guerrero",
       "date": "2018-02-14T12:26:13.316-0500",
       "body": "Table of Contents class \".flc-toc-tocContainer\" added to front page, category, pages and posts.\n\nLine-height override of Foundation needed to work with UIO:\n\n```java\n/* Overriding Foundation to work with UIO */\r\nlabel, p {\r\n  line-height: inherit;\r\n}\n```\n"

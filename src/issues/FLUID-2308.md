@@ -39,21 +39,25 @@
   ],
   "comments": [
     {
+      "id": "23399",
       "author": "Justin Obara",
       "date": "2009-03-04T09:28:28.000-0500",
       "body": "\"screenshot-1\" shows the contents of the accordion displayed incorrectly\n"
     },
     {
+      "id": "23400",
       "author": "Justin Obara",
       "date": "2009-03-09T16:25:12.000-0400",
       "body": "It appears the accordion problem is caused by it calculating the height before it was actually displayed. To solve this I have changed it to always be displayed, but off of the page when not needed. A better way to have done this would have been to use the accordions options clearStyle: true, and autoHeight: false. Unfortunately this caused an error in IE7.\n"
     },
     {
+      "id": "23401",
       "author": "Justin Obara",
       "date": "2009-03-12T10:49:38.000-0400",
       "body": "Please verify and close if fixed\n"
     },
     {
+      "id": "23403",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:59.021-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

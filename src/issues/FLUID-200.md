@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20498",
       "author": "Shaw-Han Liem",
       "date": "2008-02-04T11:38:56.000-0500",
       "body": "Deleting 1st iteration\n"
     },
     {
+      "id": "20499",
       "author": "Shaw-Han Liem",
       "date": "2008-02-15T11:21:51.000-0500",
       "body": "iteration04\n"
     },
     {
+      "id": "20500",
       "author": "Daphne Ogle",
       "date": "2008-03-05T16:41:19.000-0500",
       "body": "Reduced time estimate to account for Judy's time on this task.  She is considered a volunteer for planning purposes so her time should not be accounted for.  The total time estimate on the this is 1.25 days.\n"

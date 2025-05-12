@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14900",
       "author": "Jacob Farber",
       "date": "2009-06-29T12:10:21.000-0400",
       "body": "<http://developer.apple.com/safari/library/documentation/InternetWeb/Conceptual/iPhoneWebAppHIG/MetricsLayout/MetricsLayout.html#//apple_ref/doc/uid/TP40007900-CH6-SW1>\n\nis the definitive source we're using for guidelines on the iPhone experience\n"
     },
     {
+      "id": "14904",
       "author": "Jacob Farber",
       "date": "2010-03-26T11:50:30.000-0400",
       "body": "Information gleaned from Apple UI guidelines\n"

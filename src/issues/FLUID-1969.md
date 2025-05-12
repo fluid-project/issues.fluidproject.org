@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17972",
       "author": "Jonathan Hung",
       "date": "2008-12-12T13:08:10.000-0500",
       "body": "iteration24\n"
     },
     {
+      "id": "17973",
       "author": "Jonathan Hung",
       "date": "2009-01-09T11:46:01.000-0500",
       "body": "Added instructions to the Submit tab. Should help clarify scope.\n\nRenaming the buttons to say \"Submit Pattern\" or \"Preview Pattern\" doesn't work because Drupal relies on the values of these buttons to be 'Delete', 'Preview', and 'Submit'.\n"

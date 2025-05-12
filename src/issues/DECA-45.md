@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10259",
       "author": "Jonathan Hung",
       "date": "2010-03-05T10:27:14.000-0500",
       "body": "Done.\n"
     },
     {
+      "id": "10260",
       "author": "Jonathan Hung",
       "date": "2010-03-05T10:27:47.000-0500",
       "body": "Added placeholders in the thumbnail navigator when there are no images in a book.\n"

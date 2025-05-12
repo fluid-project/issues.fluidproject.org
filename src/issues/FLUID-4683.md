@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15485",
       "author": "Antranig Basman",
       "date": "2012-08-26T03:38:16.840-0400",
       "body": "Resolved by commit of <https://fluidproject.atlassian.net/browse/FLUID-4684#icft=FLUID-4684> at 1f04a2\n"

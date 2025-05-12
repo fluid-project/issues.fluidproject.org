@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11237",
       "author": "Justin Obara",
       "date": "2013-12-11T10:39:03.550-0500",
       "body": "Pull request ( <https://github.com/fluid-project/metadata/pull/3> ) was merged into the project repo at 10102d34c16bdc3570bbbbd091b8887e6b459aa4\n"

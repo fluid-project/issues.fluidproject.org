@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18967",
       "author": "Eli Cochran",
       "date": "2008-05-30T18:43:02.000-0400",
       "body": "This has been fixed by hiding the Uploader and then showing it after the dialog initializes.\\\nAlso hiding the Uploader just before the dialog hides.\n"

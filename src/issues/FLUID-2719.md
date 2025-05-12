@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22923",
       "author": "Justin Obara",
       "date": "2009-05-13T14:28:31.000-0400",
       "body": "Removed the modifiedReleaseBuild and modifiedCustomBuild targets. Now to create a modified build (that incorporates head rewriting to point at the single js and css files), you now just call a build with the following parameter -DrewriteHead=\"true\"\n"
     },
     {
+      "id": "22926",
       "author": "Justin Obara",
       "date": "2009-05-14T13:35:33.000-0400",
       "body": "some refactoring needed\n"
     },
     {
+      "id": "22928",
       "author": "Justin Obara",
       "date": "2009-05-14T14:04:30.000-0400",
       "body": "Some refactoring. Renamed checkCondition to checkRewriteStatus. Removed the dependency on removing js files from the removing css task. Added in an additional \\<antcall> task rewriteHTMLHead to call both the rewriting of the css and js\n"
     },
     {
+      "id": "22931",
       "author": "Justin Obara",
       "date": "2009-11-13T09:15:03.000-0500",
       "body": "Closed as per previous comment\n"

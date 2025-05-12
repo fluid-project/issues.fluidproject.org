@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21245",
       "author": "Eli Cochran",
       "date": "2009-02-09T19:35:13.000-0500",
       "body": "Missed uploader/upload.gif\n"
     },
     {
+      "id": "21246",
       "author": "Eli Cochran",
       "date": "2009-03-17T02:31:08.000-0400",
       "body": "This was done back in 0.8. Just noticed that I forgot to resolve the JIRA\n"
     },
     {
+      "id": "21247",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:55.707-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

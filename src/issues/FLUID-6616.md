@@ -32,16 +32,19 @@
   ],
   "comments": [
     {
+      "id": "25643",
       "author": "Justin Obara",
       "date": "2021-05-04T14:55:50.830-0400",
       "body": "screenshot\\_responsive.png shows the contrast panel in the mobile view, with the right side cut off (off screen).\n"
     },
     {
+      "id": "25644",
       "author": "Ned Zimmerman",
       "date": "2021-05-05T09:55:42.249-0400",
       "body": "It seems to me like perhaps a good approach to the contrast panel might be to make it a grid with the theme buttons wrapping onto two rows.\n"
     },
     {
+      "id": "25645",
       "author": "Justin Obara",
       "date": "2021-05-05T10:25:02.212-0400",
       "body": "We have talked about using a grid in the past. If I recall correctly the main sticking point is that the options are currently marked up as radio buttons. With a keyboard, radio buttons are typically navigated with the arrow keys; forward and down move to the next option, and back and up move to the previous. If the options are grouped in a grid it may give the impression that pressing up/down should move between the rows. If the grid layout makes more sense, we may have to consider moving away from radio buttons, but still finding something that communicates the single selection for the group of options. \n"

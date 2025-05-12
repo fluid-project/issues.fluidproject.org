@@ -42,11 +42,13 @@
   ],
   "comments": [
     {
+      "id": "19779",
       "author": "Justin Obara",
       "date": "2009-08-11T13:37:11.000-0400",
       "body": "\"screenshot-1\" shows the columns stacked. When in this position you cannot drag items into column c\n"
     },
     {
+      "id": "19781",
       "author": "Justin Obara",
       "date": "2014-07-11T15:05:16.081-0400",
       "body": "Cannot seem to stack columns anymore more. This could be the result of a better demo code. Please re-open or file a new jira if the issue is encountered again.\n"

@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21365",
       "author": "Antranig Basman",
       "date": "2009-04-13T18:26:59.000-0400",
       "body": "Implemented at revision 7113 - \\\nInlineEdit test cases expanded to test construction and retrieval of custom InlineEdit control via a renderer decorator.\n"
     },
     {
+      "id": "21366",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:15.778-0500",
       "body": "Closing issues that were fixed in 1.1\n"

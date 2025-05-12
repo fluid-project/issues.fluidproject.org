@@ -33,6 +33,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23319",
       "author": "Michelle D'Souza",
       "date": "2008-04-07T13:35:44.000-0400",
       "body": "We now focus on the thumbnail rather then the link and focusing on the thumbnail scrolls the entire image into view.\n"

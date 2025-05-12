@@ -40,16 +40,19 @@
   ],
   "comments": [
     {
+      "id": "17051",
       "author": "Justin Obara",
       "date": "2008-08-28T15:57:45.000-0400",
       "body": "'screenshot-1' shows the inline edit field (in bold), not in edit mode. Notice its position in the line\n"
     },
     {
+      "id": "17052",
       "author": "Justin Obara",
       "date": "2008-08-28T15:58:47.000-0400",
       "body": "'screenshot-2' shows the inline edit field in edit mode. Notice it is now at the end of the line.&#x20;\n"
     },
     {
+      "id": "17053",
       "author": "Justin Obara",
       "date": "2008-09-10T08:57:49.000-0400",
       "body": "Appears to have been resolved with r5493\n\nVerified using:&#x20;\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

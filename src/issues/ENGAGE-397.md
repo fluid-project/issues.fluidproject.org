@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11756",
       "author": "Sambhavi Chandrashekar",
       "date": "2010-02-24T12:44:30.000-0500",
       "body": "a11y issue\n"
     },
     {
+      "id": "11757",
       "author": "y z",
       "date": "2010-02-24T14:35:25.000-0500",
       "body": "Alt descriptions have been added to the images, however adding label to the link itself should be considered.&#x20;\n"
     },
     {
+      "id": "11758",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:33.437-0500",
       "body": "The repository has been archived.\n"

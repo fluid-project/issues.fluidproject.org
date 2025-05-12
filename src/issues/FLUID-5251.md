@@ -34,26 +34,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23580",
       "author": "Kasper Galschiot Markus",
       "date": "2014-01-12T05:28:10.940-0500",
       "body": "Added a test case illustrating the problem here: <https://github.com/fluid-project/infusion/pull/453>\n"
     },
     {
+      "id": "23582",
       "author": "Antranig Basman",
       "date": "2014-01-15T03:59:19.754-0500",
       "body": "This can be fixed without altering the output model - we just need to alter the contract of the multiInputTransformFunction transformers. Rather than receiving a map of already resolved inputs, they can receive a map of functions returning them (or, if you like, \"promises\" for them). This means that we can implement the required \"short-circuit\" property of the condition expander and others, by allowing them to only trigger the evaluation of input values that they have determined they will use.\n"
     },
     {
+      "id": "23584",
       "author": "Kasper Galschiot Markus",
       "date": "2014-01-15T09:06:05.084-0500",
       "body": "Pull request: <https://github.com/fluid-project/infusion/pull/454>\n"
     },
     {
+      "id": "23585",
       "author": "Antranig Basman",
       "date": "2014-03-22T02:26:17.482-0400",
       "body": "Merged into trunk at <https://github.com/fluid-project/infusion/commit/66d2ebbd4df1a731e0fe95fab4b71ccc059b1f3c>\n"
     },
     {
+      "id": "23587",
       "author": "Antranig Basman",
       "date": "2014-03-22T02:31:03.506-0400",
       "body": "Actually at 6c8ea3098c80bf4297ae773cda144c4e58939017\n"

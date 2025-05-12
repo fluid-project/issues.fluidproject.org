@@ -64,31 +64,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19016",
       "author": "Anastasia Cheetham",
       "date": "2008-07-09T17:42:11.000-0400",
       "body": "Not a bug: the tab key isn't expected to navigate amongst tabs in this demo, the arrow keys should.\n"
     },
     {
+      "id": "19020",
       "author": "Justin Obara",
       "date": "2008-07-09T18:16:29.000-0400",
       "body": "The actual issue is that you are unable to 'tab' away from the jQuery tabs at all. The user won't be able to press the 'tab' at all, it becomes completely none responsive.\n"
     },
     {
+      "id": "19024",
       "author": "Justin Obara",
       "date": "2008-09-22T12:55:16.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "19029",
       "author": "Antranig Basman",
       "date": "2009-01-30T11:10:16.000-0500",
       "body": "This is a bug in Firefox and/or JQuery UI - since there should be no possible situation in which a browser generates a \"focus black hole\". It needs to be escalated somewhere... perhaps to Mozilla if we can satisfy ourselves, as with <https://fluidproject.atlassian.net/browse/FLUID-539#icft=FLUID-539>, that no Javascript is firing during the tab keypress.\n"
     },
     {
+      "id": "19032",
       "author": "Justin Obara",
       "date": "2010-05-07T09:54:12.370-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "19034",
       "author": "Jonathan Hung",
       "date": "2010-12-08T15:14:32.154-0500",
       "body": "This demo has been removed from the repository. See <https://fluidproject.atlassian.net/browse/FLUID-3731#icft=FLUID-3731>.\n"

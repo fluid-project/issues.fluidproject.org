@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27384",
       "author": "David Makalsky",
       "date": "2008-09-18T10:07:23.000-0400",
       "body": "<http://wiki.fluidproject.org/display/fluid/RASCAL+0.5B+Roadmap> contains the readme code.  I will add the readme to SVN when I upload the applet code.\n"
     },
     {
+      "id": "27385",
       "author": "Blake E",
       "date": "2008-09-26T15:06:35.000-0400",
       "body": "could you attach the readme? we can get some dialog on it.\n"
     },
     {
+      "id": "27386",
       "author": "Blake E",
       "date": "2008-09-26T15:06:43.000-0400",
       "body": "pushed to vulab4\n"

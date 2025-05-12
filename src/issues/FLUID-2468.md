@@ -31,16 +31,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13837",
       "author": "Jonathan Hung",
       "date": "2011-01-07T09:48:55.614-0500",
       "body": "Does this happen in Simple Inline Edit too? <http://build.fluidproject.org/infusion/demos/inlineEdit/simple/demo.html>\n"
     },
     {
+      "id": "13839",
       "author": "Jonathan Hung",
       "date": "2011-01-07T09:52:08.756-0500",
       "body": "Can not verify if this affects Infusion 1.3 since edit mode is not activated by clicking on editable text. Will need to modify the demo to test this bug.\n"
     },
     {
+      "id": "13842",
       "author": "Anastasia Cheetham",
       "date": "2011-01-07T10:19:53.253-0500",
       "body": "I tried making the text field editable to test this, and I'm completely unable to reproduce it, so we'll call this one fixed as of 1.3.\n"

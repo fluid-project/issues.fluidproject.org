@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20360",
       "author": "Justin Obara",
       "date": "2013-08-08T16:22:32.452-0400",
       "body": "Pull request with an unit test demonstrating the issue has been sent.\\\n<https://github.com/fluid-project/infusion/pull/385>\n"
     },
     {
+      "id": "20361",
       "author": "Antranig Basman",
       "date": "2014-11-18T20:25:33.031-0500",
       "body": "Fix merged into trunk at revision cfc51e89663d73524663c8591e65af1a74ff6830 - Aug 19 2013\n"

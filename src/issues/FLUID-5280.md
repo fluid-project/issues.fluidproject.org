@@ -33,21 +33,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23143",
       "author": "Colin Clark",
       "date": "2014-03-18T04:38:54.832-0400",
       "body": "I tested, reviewed, and pushed this veterancy-based fix to the project repo's master at revision 81e3e2e1543e6f3f19e68428e1a14ccceb9c9cb0.\n\nAs requested by Antranig, I'll leave the ticket open so that we can continue to log other alternatives here.\n"
     },
     {
+      "id": "23144",
       "author": "Anastasia Cheetham",
       "date": "2014-04-02T15:46:19.700-0400",
       "body": "Running the unit tests in IE9, the RendererUtilities test for this fails.\n"
     },
     {
+      "id": "23145",
       "author": "Justin Obara",
       "date": "2014-05-02T08:42:46.286-0400",
       "body": "The failing tests stemmed from using a non-existing function for sorting an array in the DataBinding.js. This has been resolved in <https://fluidproject.atlassian.net/browse/FLUID-5339#icft=FLUID-5339>. However, this illustrated the lack of a proper test for this part of the codebase. See Antranig's comment on the pull request for more information <https://github.com/fluid-project/infusion/pull/506#issuecomment-41950465>\n"
     },
     {
+      "id": "23146",
       "author": "Antranig Basman",
       "date": "2014-05-15T03:27:10.232-0400",
       "body": "We've added a new explicit strategy which can help with conflict resolution in <https://fluidproject.atlassian.net/browse/FLUID-5371#icft=FLUID-5371> - this allows conditions to be placed on both the forward and backward parts of a relay rule constraining them from acting in either the initialisation or live phase of a component's lifecycle.\n"

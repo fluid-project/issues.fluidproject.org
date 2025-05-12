@@ -159,7 +159,7 @@
                 <h2>Comments</h2>
                 <ul class="spacing-y-2" role="list">
                     {% for comment in comments %}
-                    <li>
+                    <li id="comment-{{ comment.id }}">
                         <p class="mb-0"><b>{{ comment.author }}</b> <i>commented <relative-time datetime="{{ comment.date }}">{{ comment.date }}</relative-time></i></p>
                         {{ comment.body | renderContent("md") | autolink | safe }}
                     </li>

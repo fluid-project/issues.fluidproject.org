@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18205",
       "author": "Jonathan Hung",
       "date": "2008-07-07T18:53:13.000-0400",
       "body": "Put off to future iteration.\n\nFuturetask\n"
     },
     {
+      "id": "18206",
       "author": "Jess Mitchell",
       "date": "2011-01-20T10:28:25.923-0500",
       "body": "Will become the articulation of \"Participation\" and mini projects.\n"

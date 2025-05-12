@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25202",
       "author": "Anastasia Cheetham",
       "date": "2015-06-11T13:22:39.839-0400",
       "body": "I'm writing the PGA architecture report right now, and I am again struck by the lack of documentation for this component. The comments in the code describe it as \"the only Preferences Editor component that is intended to be called by the outside world\" – as such, it really should be documented!\n"
     },
     {
+      "id": "25203",
       "author": "Antranig Basman",
       "date": "2022-07-07T08:38:37.783-0400",
       "body": "The PrefsEditorLoader is abolished in 5.0, and replaced by an all in one \"loader and driver\" fluid.prefs.weaver which will be a base grade of an instantiated fluid.uiOptions - documentation will be unified centred on that\n"

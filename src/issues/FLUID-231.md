@@ -37,6 +37,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16817",
       "author": "Colin Clark",
       "date": "2011-01-20T09:25:22.199-0500",
       "body": "This is a nice old gem from the early days of Fluid, and completely incomprehensible in retrospect. Given that we're trying to avoid doing anything with Maven, I'm going to close this one.\n"

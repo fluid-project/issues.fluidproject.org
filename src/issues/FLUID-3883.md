@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19709",
       "author": "Justin Obara",
       "date": "2010-12-10T16:11:48.370-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "19712",
       "author": "Antranig Basman",
       "date": "2010-12-10T16:15:01.992-0500",
       "body": "Global rename is committed for release 1.3. Following a fuller vote in the IRC channel on the subsequent day, 9/12/2010, we decided in favour of fluid.get/fluid.set rather than the slightly longer names. We will plan to support the historical names fluid.model.getBeanValue etc. for a substantial number of releases, possibly until 2.0 since there may be a wide body of client code expecting them.\n"

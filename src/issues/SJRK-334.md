@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26656",
       "author": "Cindy Li",
       "date": "2020-04-23T14:00:59.774-0400",
       "body": "[The pull request](https://github.com/fluid-project/sjrk-story-telling/pull/64) has been merged into the project repo master branch at [this commit](https://github.com/fluid-project/sjrk-story-telling/commit/1bf1c121172ce9b2c477123e285a2ff5c6a19bef).\n\n[The stories-karisma-production branch](https://github.com/fluid-project/sjrk-story-telling/tree/stories-karisma-production) is created based off the master branch for the karisma production deployment.\n"

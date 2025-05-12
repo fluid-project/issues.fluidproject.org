@@ -41,11 +41,13 @@
   ],
   "comments": [
     {
+      "id": "13403",
       "author": "Anastasia Cheetham",
       "date": "2008-07-04T14:48:45.000-0400",
       "body": "I've attached a patch which adds a pluggable invitation text to be used if the 'display' text is empty. It includes tests and modifications to the manual test file.\n\nIt adds the invitation text, but doesn't style it - that's another JIRA.\n"
     },
     {
+      "id": "13405",
       "author": "Anastasia Cheetham",
       "date": "2008-07-15T20:32:39.000-0400",
       "body": "Fixed, and merged from the branch back into trunk.\n"

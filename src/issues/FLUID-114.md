@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15971",
       "author": "Jonathan Hung",
       "date": "2007-12-12T13:51:29.000-0500",
       "body": "Unable to reproduce this bug on FireFox 2.0.0.11 on Windows. Using Gallery in Sakai-Cafe with 8 images. Using SVN Revision 4534 of Fluid.\n"
     },
     {
+      "id": "15973",
       "author": "Eli Cochran",
       "date": "2007-12-20T17:24:32.000-0500",
       "body": "I'm going to close this, because I can't reproduce it either, and I used to be able to make this happen every time. I suspect that one of the many other changes fixed this bug.&#x20;\n"

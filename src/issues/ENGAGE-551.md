@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11848",
       "author": "Michelle D'Souza",
       "date": "2009-07-13T14:16:31.000-0400",
       "body": "We want to create the CSV converter because we are likely going to get data from MMI in this format.&#x20;\n"
     },
     {
+      "id": "11849",
       "author": "y z",
       "date": "2009-08-18T14:12:44.000-0400",
       "body": "Finalize CSV to JSON code and start working on the code integration with Kettle\n"

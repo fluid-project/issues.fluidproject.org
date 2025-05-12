@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14805",
       "author": "Justin Obara",
       "date": "2009-06-18T14:02:42.000-0400",
       "body": "Changed \"if\" to \"while\" on line 583. This will allow for multiple levels of nesting for databinding\n"
     },
     {
+      "id": "14808",
       "author": "Justin Obara",
       "date": "2009-11-13T09:15:55.000-0500",
       "body": "Closed as per previous comment\n"

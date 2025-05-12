@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "17961",
       "author": "Justin Obara",
       "date": "2008-12-17T10:49:53.000-0500",
       "body": "'screenshot-1' shows the lines through the Font options text\n"
     },
     {
+      "id": "17963",
       "author": "Justin Obara",
       "date": "2009-01-14T10:08:26.000-0500",
       "body": "Appears to have been fixed.\n\nVerified using:\n\nIE6 (Win XP)\n"

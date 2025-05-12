@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "21550",
       "author": "y z",
       "date": "2009-05-07T10:16:42.000-0400",
       "body": "this is a patch for the issue\n"
     },
     {
+      "id": "21551",
       "author": "y z",
       "date": "2009-05-07T10:31:32.000-0400",
       "body": "this is a patch for the issue\n"

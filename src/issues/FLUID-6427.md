@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25671",
       "author": "Antranig Basman",
       "date": "2019-11-16T19:15:47.101-0500",
       "body": "At the point of the original cycle we have:\n\n```java\nfluid.defaults(\"gpii.app.dialog\", {\r\n    gradeNames: [\"gpii.app.localisedMessagesReceiver\", \"gpii.app.resizable\"],\r\n    model: {\r\n        width:       \"{that}.options.config.attrs.width\", // the actual width of the content\n```\n\nwhich is a base class for&#x20;\n\n```java\nfluid.defaults(\"gpii.app.qssInWrapper\", {\r\n    gradeNames: \"gpii.app.qss\",\r\n    config: {\r\n        params: {\r\n            settings: \"{qssWrapper}.model.settings\"\r\n        }\r\n    },\n```\n\nwhich itself derives from\n\n```java\n*/\r\nfluid.defaults(\"gpii.app.qss\", {\r\n    gradeNames: [\"gpii.app.dialog\", \"gpii.app.dialog.offScreenHidable\", \"gpii.app.blurrable\"],\n```\n"

@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14787",
       "author": "Justin Obara",
       "date": "2009-06-15T14:14:43.000-0400",
       "body": "Here is another link on how to change the favicon\n\n<http://confluence.atlassian.com/display/DOC/Change+Confluence+Browser+Icon>\n"
     },
     {
+      "id": "14789",
       "author": "Jess Mitchell",
       "date": "2011-01-20T10:24:59.845-0500",
       "body": "Tiny bug that will take seconds I think.\n"
     },
     {
+      "id": "14791",
       "author": "Anastasia Cheetham",
       "date": "2011-01-20T14:20:42.079-0500",
       "body": "I looked over the instructions, and I think this is one that Jamon should probably take care of, unless he trusts someone else to muck about on the confluence server. If so, I'd be happy to do it - Jamon, just reassign to me if so.\n"

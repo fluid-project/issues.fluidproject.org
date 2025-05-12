@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17664",
       "author": "Jonathan Hung",
       "date": "2008-12-03T10:38:14.000-0500",
       "body": "iteration24\n"
     },
     {
+      "id": "17666",
       "author": "Jonathan Hung",
       "date": "2009-01-09T12:17:16.000-0500",
       "body": "The block is performing correctly. It is retrieving the time updated from the database. If a new pattern is submitted and has never been edited, it will not appear in this list.\n\nThis problem may go away once we have decided on a community process and workflow since all Published patterns will have been edited by an Editor anyway.\n"

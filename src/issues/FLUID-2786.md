@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15726",
       "author": "Laurel Williams",
       "date": "2009-05-29T12:41:51.000-0400",
       "body": "I just found this in IE7 as well.\n"
     },
     {
+      "id": "15728",
       "author": "Michelle D'Souza",
       "date": "2014-06-25T15:58:45.313-0400",
       "body": "We no longer actively support IE6, IE7 and IE8. We will consider patches for certain issues.\n"

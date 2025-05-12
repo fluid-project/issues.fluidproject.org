@@ -38,11 +38,13 @@
   ],
   "comments": [
     {
+      "id": "15022",
       "author": "Jacob Farber",
       "date": "2009-09-18T09:08:43.000-0400",
       "body": "I made a minor adjustment to the name (fl-hidden is too ambiguous and is used partially elsewhere) to fl-offScreen-hidden and committed it\n"
     },
     {
+      "id": "15024",
       "author": "Alison Benjamin",
       "date": "2009-09-18T13:08:54.000-0400",
       "body": "hidden class has been added called: \\\n.fl-offScreen-hidden&#x20;\n"

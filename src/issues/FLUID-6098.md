@@ -109,16 +109,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23574",
       "author": "Antranig Basman",
       "date": "2016-12-18T00:26:29.780-0500",
       "body": "A prerequisite for this work is the basic tidyup that has been on the table as <https://fluidproject.atlassian.net/browse/FLUID-4734#icft=FLUID-4734> for a while.\n"
     },
     {
+      "id": "23576",
       "author": "Antranig Basman",
       "date": "2016-12-18T00:27:34.523-0500",
       "body": "Reworking the tooltip relationship so it is sane should have the effect of fixing <https://fluidproject.atlassian.net/browse/FLUID-5348#icft=FLUID-5348>\n"
     },
     {
+      "id": "23577",
       "author": "Justin Obara",
       "date": "2017-01-11T12:31:19.698-0500",
       "body": "Linking all of the recently filed Inline Edit related issues.\n"

@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27499",
       "author": "David Makalsky",
       "date": "2008-12-01T11:29:46.000-0500",
       "body": "Will track integration issues in this task for documentation purposes.\n\nVULAB9\n"
     },
     {
+      "id": "27500",
       "author": "Blake E",
       "date": "2008-12-01T12:03:56.000-0500",
       "body": "I've got it integrated and automatically posted the vid to the database and I've changed it to the only one link at a time. \"Start Test\" (which hides when clicked) and then \"Finish Test\" (which redirects to final survey)\n"

@@ -40,21 +40,25 @@
   ],
   "comments": [
     {
+      "id": "23485",
       "author": "Justin Obara",
       "date": "2010-12-09T10:44:13.236-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "23486",
       "author": "Colin Clark",
       "date": "2010-12-11T16:59:09.382-0500",
       "body": "This is a patch of the model transformation functionality, which should suffice for providing backwards compatibility of options in Uploader.\n"
     },
     {
+      "id": "23487",
       "author": "Colin Clark",
       "date": "2010-12-12T22:57:49.492-0500",
       "body": "Here's a second version of the model transformation code, this time with full passing tests for the case of Uploader backwards compatibility.\n"
     },
     {
+      "id": "23488",
       "author": "Colin Clark",
       "date": "2010-12-22T15:37:35.892-0500",
       "body": "This issue was implemented for Infusion 1.3 using the ModelTransformations.js and Uploader's Infusion 1.2 compatibility file.\n"

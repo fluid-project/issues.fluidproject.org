@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12986",
       "author": "Anastasia Cheetham",
       "date": "2012-05-25T11:01:04.541-0400",
       "body": "Nav bar images were removed in IE6\n"

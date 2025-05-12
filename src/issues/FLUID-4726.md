@@ -39,6 +39,7 @@
   ],
   "comments": [
     {
+      "id": "25689",
       "author": "Saksham Saxena",
       "date": "2016-03-06T11:54:53.756-0500",
       "body": "\"Browse Files\" do get used when you add files and remove all of them, then this string is used. There was actually an inconsistency  of this string only, because the template has \"Browse files\" and the string has a capital F. Because of this tiny difference, the text was flowing out of the button. Before and after scenarios are attached for reference. The other strings, maybe over ambitiously written, are anyways relatively long and would go beyond the width of the button (fixed).\n\nUPDATE : So the \"Stop Upload\" button is hardcoded and is toggled through classes only. There is no \"Resume Upload\" and \"Cancel Remaining Uploads\" functionality as of now. Usage of \"Remove\" is unclear as well.\n"

@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14040",
       "author": "Antranig Basman",
       "date": "2013-05-02T17:26:18.076-0400",
       "body": "Merged in to trunk at revision d0f009b\n"
     },
     {
+      "id": "14042",
       "author": "Justin Obara",
       "date": "2013-08-13T08:34:36.609-0400",
       "body": "An issue with IoC resolution in uiBound renderer components was resolved at 5053d384ae70d4f479af2e14680b8d62e5a6f270\n"

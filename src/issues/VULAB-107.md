@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27272",
       "author": "Blake E",
       "date": "2008-12-01T17:26:22.000-0500",
       "body": "pushed to vulab10\\\nPRIORITY BEFORE ANY CODING!!!!\n"
     },
     {
+      "id": "27273",
       "author": "Blake E",
       "date": "2008-12-15T15:36:41.000-0500",
       "body": "colin helped me to import (really he did a fancy add and some stuff that was nicely over my head) anyway, he commited my code and I can start working from the svn with proper patching!\n"

@@ -22,11 +22,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25960",
       "author": "Giovanni Tirloni",
       "date": "2018-08-30T08:55:30.588-0400",
       "body": "Creation is automated with Packer so that's okay. We need to figure out how to deploy it.\n"
     },
     {
+      "id": "25961",
       "author": "Giovanni Tirloni",
       "date": "2020-04-13T08:02:02.911-0400",
       "body": "There won't be a need to do this anymore in AWS/Azure/GCP.\n"

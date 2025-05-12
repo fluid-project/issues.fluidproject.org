@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11387",
       "author": "Cindy Li",
       "date": "2015-10-02T12:48:06.382-0400",
       "body": "The pull request <https://github.com/fluid-project/chartAuthoring/pull/7> has been merged into the master @ df106a8f9d353d9829d6d58b5d18b2e218bd24c9\n"

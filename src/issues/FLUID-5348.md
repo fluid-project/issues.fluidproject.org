@@ -45,11 +45,13 @@
   ],
   "comments": [
     {
+      "id": "16888",
       "author": "Justin Obara",
       "date": "2014-04-30T15:12:53.172-0400",
       "body": "screenshot.png shows the two tooltips for the same inline edit field\n"
     },
     {
+      "id": "27824",
       "author": "Justin Obara",
       "date": "2024-07-22T14:57:01.938-0400",
       "body": "Could not reproduce with FF 128 on macOS 14.5\n"

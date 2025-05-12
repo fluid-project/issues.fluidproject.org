@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13703",
       "author": "Justin Obara",
       "date": "2011-01-11T10:28:01.934-0500",
       "body": "as of 1.3 you can turn wrapping on/off via the \"disableWrap\" setting in the options for reorderer components\n"

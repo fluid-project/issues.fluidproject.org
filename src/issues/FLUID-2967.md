@@ -48,31 +48,37 @@
   ],
   "comments": [
     {
+      "id": "17480",
       "author": "Justin Obara",
       "date": "2009-07-27T16:12:14.000-0400",
       "body": "Bug Parade 1.1.1 release\n"
     },
     {
+      "id": "17481",
       "author": "Antranig Basman",
       "date": "2009-08-04T15:06:21.000-0400",
       "body": "Fundamental error in permuteDom algorithm - fixed with additional test cases\n"
     },
     {
+      "id": "17482",
       "author": "Antranig Basman",
       "date": "2009-08-04T15:43:55.000-0400",
       "body": "Secondary patch to correct keyboard navigation issue\n"
     },
     {
+      "id": "17483",
       "author": "Antranig Basman",
       "date": "2009-08-04T16:20:38.000-0400",
       "body": "Fixed and committed to both trunk and the 1.1.1 branch - this was quite a complex issue since there was an error in the underlying fluid.permuteDom algorithm implementation (hidden by a couple of missing test cases), which bug had then been compensated for at a higher level, in particular in the implementation of the gridReorderer. As a result of the bug, the layoutHandler for the gridReorderer was spuriously equivalent to the standard geometricStrategy (which happened to be used also in the layoutReorderer). With this bug fixed, these two implementations may no longer coincide and the gridReorderer needs its own, slightly tweaked, geometric strategy for the perpendicular direction.\n"
     },
     {
+      "id": "17484",
       "author": "Michelle D'Souza",
       "date": "2009-08-06T16:34:07.000-0400",
       "body": "I ran some quick tests and this issues appears to be fixed. I looked at the patch and I can see that Antranig has added a strategy for grid layout handling. Unfortunately I don't know the code base well enough to notice an nuances in this code. I think this needs to be well tested.&#x20;\n"
     },
     {
+      "id": "17485",
       "author": "Justin Obara",
       "date": "2009-08-07T09:02:14.000-0400",
       "body": "Tested using:\n\nFF2, FF3, FF3.5, Opera 9.6, Safari 3.2, Safari 4 (Mac OS 10.5)\\\nFF3, IE7, IE8 (Win Vista)\n\nAppears to be working properly\n"

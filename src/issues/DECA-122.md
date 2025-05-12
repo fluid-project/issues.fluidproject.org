@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10427",
       "author": "Justin Obara",
       "date": "2012-05-25T15:45:08.389-0400",
       "body": "The capture workflow was removed from the Decapod 0.5 release\n"

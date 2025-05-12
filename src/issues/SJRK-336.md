@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26278",
       "author": "Justin Obara",
       "date": "2020-04-14T08:50:41.450-0400",
       "body": "The highlighting does require a lot of DOM mutations as it moves the highlight mark across. I wonder if it's just an issue with repainting and or some other memory/performance issue. Also were any other DOM changes happening when the Orator was started, maybe that's playing into it? Have you seen this on any other platform than Windows? I'm wondering if I'd be able to reproduce on macOS.\n"

@@ -33,16 +33,19 @@
   ],
   "comments": [
     {
+      "id": "22171",
       "author": "Harris Wong",
       "date": "2010-08-31T11:12:13.617-0400",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-3696#icft=FLUID-3696>.patch.txt updates all version number from 1.1.2 to 1.1.3.\n"
     },
     {
+      "id": "22173",
       "author": "Justin Obara",
       "date": "2010-09-02T14:00:15.859-0400",
       "body": "Committed Harris' patch which updated all the version numbers to 1.1.3\n"
     },
     {
+      "id": "22174",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:20.279-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

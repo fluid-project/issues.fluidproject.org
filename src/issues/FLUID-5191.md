@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16303",
       "author": "Cindy Li",
       "date": "2013-10-25T15:16:51.566-0400",
       "body": "A pull request has been issued: <https://github.com/fluid-project/infusion/pull/425>\n"
     },
     {
+      "id": "16305",
       "author": "Antranig Basman",
       "date": "2013-11-21T17:38:42.194-0500",
       "body": "Thanks for taking care of this problem, cindyli - merged into master at revision ae07cd4\n"

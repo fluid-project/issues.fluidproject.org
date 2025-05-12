@@ -48,11 +48,13 @@
   ],
   "comments": [
     {
+      "id": "18280",
       "author": "Jonathan Hung",
       "date": "2008-03-18T12:20:24.000-0400",
       "body": "A spreadsheet outlining the effects of different keyboard mappings using JAWS, Window Eyes, and a web browser.\n"
     },
     {
+      "id": "18283",
       "author": "Michelle D'Souza",
       "date": "2008-03-19T14:36:32.000-0400",
       "body": "Through much trial and error we've determined that the i, j, k and m keys work with the modifier CTRL in IE6, IE7, FF2 and FF3 with Jaws and Window-Eyes. Not ideal key strokes as they are non-intuitive but they do work.\n"

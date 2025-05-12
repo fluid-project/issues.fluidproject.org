@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21003",
       "author": "Laurel Williams",
       "date": "2009-11-02T15:35:35.000-0500",
       "body": "Took this one step further (with some advice from Michelle) and tested for fluid.customBuild.dependencies. If it exists then use it, otherwise, use the local data.\n"
     },
     {
+      "id": "21004",
       "author": "Laurel Williams",
       "date": "2009-11-25T11:17:17.000-0500",
       "body": "This issue was essentially totally removed with <https://fluidproject.atlassian.net/browse/FLUID-3349#icft=FLUID-3349>\n"

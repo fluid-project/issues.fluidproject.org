@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17283",
       "author": "Justin Obara",
       "date": "2008-07-25T11:34:03.000-0400",
       "body": "appears fixed in latest build\n\nverified using:\n\nFF2 (Mac OS 10.5)\\\nFF2, FF3 (Win XP)\n"

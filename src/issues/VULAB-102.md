@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27313",
       "author": "Blake E",
       "date": "2008-12-01T12:07:14.000-0500",
       "body": "vulab9\n"
     },
     {
+      "id": "27314",
       "author": "Blake E",
       "date": "2008-12-08T14:32:58.000-0500",
       "body": "I redid the iFrame system so it repositioned it as well. It goes 80% of the screen width, 15px below the bar, and 500px long (this height is static and we should consider making it dynamic)\n\nI solve this issue with this one: <https://fluidproject.atlassian.net/browse/VULAB-101#icft=VULAB-101>\n"

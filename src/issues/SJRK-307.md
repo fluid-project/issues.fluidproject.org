@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26541",
       "author": "Justin Obara",
       "date": "2019-10-10T14:21:56.892-0400",
       "body": "Related to the Orator, the underlying Text-to-Speech component does provide a check that can be used with Infusion's context awareness or other conditional check.\n\n<https://github.com/fluid-project/infusion/blob/master/src/components/textToSpeech/js/TextToSpeech.js#L60-L62>\n"
     },
     {
+      "id": "26542",
       "author": "Gregor Moss",
       "date": "2020-08-10T14:10:13.125-0400",
       "body": "Found an MDN article on browser and feature detection: <https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent>\n"
     },
     {
+      "id": "26543",
       "author": "Justin Obara",
       "date": "2020-09-02T08:46:14.521-0400",
       "body": "If the issue is only about using the Orator if the browser supports the speech synthesis api, we can use context awareness and the provided check from the Text-to-Speech component to only include the Orator when it is supported.\n\nIf the issue is around CSS we could use something like PostCSS to transpile modern CSS to variants that are supported in older browsers. See: <https://dev.to/adrianbdesigns/postcss-preset-env-babel-for-css-12hp>\n\nHowever with any of these we should way the benefit against costs like performance impacts, maintenance burdens, complexity and etc. \n"

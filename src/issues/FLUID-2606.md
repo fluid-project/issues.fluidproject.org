@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21564",
       "author": "Eli Cochran",
       "date": "2009-04-16T17:02:46.000-0400",
       "body": "Added some block and position styling to the surrounding div to force IE to wrap the floating images.\n"
     },
     {
+      "id": "21565",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:16.933-0500",
       "body": "Closing issues that were fixed in 1.1\n"

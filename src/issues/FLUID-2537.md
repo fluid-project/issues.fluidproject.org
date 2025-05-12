@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21526",
       "author": "Michelle D'Souza",
       "date": "2009-04-07T11:09:45.000-0400",
       "body": "During the war creation we were trying to copy files from a directory that didn't exist. I changed the format of the ant task to only copy the files if they are there.&#x20;\n"
     },
     {
+      "id": "21527",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:51.373-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

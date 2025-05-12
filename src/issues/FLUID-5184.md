@@ -35,21 +35,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22922",
       "author": "Justin Obara",
       "date": "2013-10-18T12:52:54.664-0400",
       "body": "Submitted a pull request with a unit test demonstrating the issue.\\\n<https://github.com/fluid-project/infusion/pull/418>\n"
     },
     {
+      "id": "22925",
       "author": "Antranig Basman",
       "date": "2013-10-18T13:06:26.138-0400",
       "body": "It's necessary to the way invokers are used that their configuration is merged together, rather than them replacing each other wholesale. For example, it is necessary to the use case where the user wants to override either the argument list or the function name without changing the other. In this case you need to ensure that the original invoker fields are eliminated, for example by overriding them with \"null\", so that the record can be interpreted as a different invoker record type - for example\n\n```java\ninvokers: {\r\n    log: {\r\n        method: null,\r\n        \"this\": null,\r\n        funcName: \"console.log\"\r\n        }\r\n    }\n```\n"
     },
     {
+      "id": "22929",
       "author": "Antranig Basman",
       "date": "2015-08-06T13:33:10.002-0400",
       "body": "I think that is is really a usability bug after all. We should resolve it together with <https://fluidproject.atlassian.net/browse/FLUID-5714#icft=FLUID-5714>\n"
     },
     {
+      "id": "22932",
       "author": "Antranig Basman",
       "date": "2015-08-20T15:50:15.109-0400",
       "body": "Merged into trunk at revision 282f1a318718eed0b0ec060fb8b4ad254417fd7e\n"

@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19067",
       "author": "Justin Obara",
       "date": "2008-09-22T12:59:50.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "19069",
       "author": "Jacob Farber",
       "date": "2008-09-22T14:07:13.000-0400",
       "body": "Inline Edit stuck in perpertual loop due to stylistic changes on mouseover/mouseout. Removed changes causing the loop.\n"
     },
     {
+      "id": "19073",
       "author": "Justin Obara",
       "date": "2008-09-22T15:27:08.000-0400",
       "body": "Verified fix using:\n\nFF2 on Mac OS X 10.5\n"

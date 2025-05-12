@@ -36,16 +36,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25268",
       "author": "Giovanni Tirloni",
       "date": "2018-06-21T14:51:47.971-0400",
       "body": "With the introduction of integrity checks by PR#129, it's necessary to add them to CI so they are executed on every commit.\n\n\"grunt lint\" and \"npm test\"\n"
     },
     {
+      "id": "25269",
       "author": "Justin Obara",
       "date": "2020-06-11T08:10:19.281-0400",
       "body": "Giovanni Tirloni I'm looking at this issue in relation to the related Infusion PR ( <https://github.com/fluid-project/infusion/pull/994> ). However, I'm not entirely sure what the purpose is and the description of this issue seems to be missing details. Related to Infusion, my assumption is that we will be doing CI via GitHub Actions. Which leads me to believe that the related Infusion PR is for CD (deployment) of the demos? Is that correct, or am I missing something?\n"
     },
     {
+      "id": "25270",
       "author": "Giovanni Tirloni",
       "date": "2020-06-11T08:47:21.526-0400",
       "body": "Yes, it's for CD so It can be served in the build/demos website.\n"

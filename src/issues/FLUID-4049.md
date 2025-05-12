@@ -45,6 +45,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19397",
       "author": "Antranig Basman",
       "date": "2014-02-09T03:49:06.678-0500",
       "body": "It might also be useful to take this opportunity to create an automated test covering mouse-based interaction for the Reorderer which is something, like the issue reported here, which can often fall between the cracks until we get around to running some manual tests again. It seems that since we wrote the Reorderer, improvements in the \"jquery simulate\" plugin (currently held here: <https://github.com/jquery/jquery-simulate> ) have made it much more straightforward to produce test cases simulating complex mouse interactions, including dragging.\n"

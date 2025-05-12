@@ -43,21 +43,25 @@
   ],
   "comments": [
     {
+      "id": "18311",
       "author": "Armin Krauss",
       "date": "2009-10-14T15:53:22.000-0400",
       "body": "Screenshot 1 shows\\\nStep 2) to change to singe-file uploader\n"
     },
     {
+      "id": "18318",
       "author": "Armin Krauss",
       "date": "2009-10-14T15:54:43.000-0400",
       "body": "Screenshot 2 shows\\\nStep 3) tabing to the \"back button\" of the browser\n"
     },
     {
+      "id": "18322",
       "author": "Armin Krauss",
       "date": "2009-10-14T15:57:25.000-0400",
       "body": "screenshot-3 shows\\\nStep 4) stuck keyboard navigation\n"
     },
     {
+      "id": "18327",
       "author": "Mike Lam",
       "date": "2011-01-05T15:54:47.076-0500",
       "body": "Supported Safari browser now uses the HTML5 uploader instead of SWF Uploader.   No longer an issue.\n"

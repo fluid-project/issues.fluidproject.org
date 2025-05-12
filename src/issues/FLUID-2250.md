@@ -39,16 +39,19 @@
   ],
   "comments": [
     {
+      "id": "24939",
       "author": "Justin Obara",
       "date": "2009-02-17T14:52:23.000-0500",
       "body": "'screenshot-1' shows the KB wrapped to a new line\n"
     },
     {
+      "id": "24940",
       "author": "Mike Lam",
       "date": "2011-01-05T10:47:41.251-0500",
       "body": "Can no longer reproduce the bug. &#x20;\n"
     },
     {
+      "id": "24941",
       "author": "Mike Lam",
       "date": "2011-01-05T10:49:17.818-0500",
       "body": "No longer an issue in Infusion 1.3\n"

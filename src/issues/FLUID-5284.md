@@ -58,21 +58,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16075",
       "author": "Justin Obara",
       "date": "2014-03-21T15:22:47.144-0400",
       "body": "Had some further discussion with Colin Clark in the channel today about some of the configuration options for jshint as well as not including the jshint comment in every file and just relying on the jshintrc file at the root for the default configuration.\n\n<https://botbot.me/freenode/fluid-work/2014-03-21/?tz=America/Toronto>\n"
     },
     {
+      "id": "16077",
       "author": "Justin Obara",
       "date": "2014-04-04T16:09:20.972-0400",
       "body": "I've filed two pull requests\n\nOnly contains the jshint grunt task and related changes.\\\n<https://github.com/fluid-project/infusion/pull/489>\n\nContains the above as well as linting the code base\\\n<https://github.com/fluid-project/infusion/pull/490>\n"
     },
     {
+      "id": "16078",
       "author": "Justin Obara",
       "date": "2014-04-11T09:05:10.926-0400",
       "body": "Need to update the wiki about this switch to jshint.\n\n<http://wiki.fluidproject.org/display/fluid/Laser+Eye+Checklist>\\\n<http://wiki.fluidproject.org/display/fluid/Coding+and+Commit+Standards>\n"
     },
     {
+      "id": "16080",
       "author": "Justin Obara",
       "date": "2014-04-22T12:56:44.362-0400",
       "body": "The pull requests were merged at db5373a30e84c05a3eb0087f8659ab6bb1acfe4e\n"

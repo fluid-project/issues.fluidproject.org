@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18626",
       "author": "Justin Obara",
       "date": "2008-04-28T12:03:55.000-0400",
       "body": "I have confirmed this in FF2 for WinXP; however, it does not appear in FF2 for Mac OS 10.5\n"
     },
     {
+      "id": "18627",
       "author": "Anastasia Cheetham",
       "date": "2008-04-28T16:17:45.000-0400",
       "body": "This example file has been retired.\n"

@@ -26,21 +26,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25018",
       "author": "Justin Obara",
       "date": "2009-03-12T12:26:44.000-0400",
       "body": "Bug Parade 1.0 release\n"
     },
     {
+      "id": "25020",
       "author": "Justin Obara",
       "date": "2009-03-25T11:15:32.000-0400",
       "body": "Clean Up Parade 1.0\n"
     },
     {
+      "id": "25022",
       "author": "Michelle D'Souza",
       "date": "2009-03-25T12:51:16.000-0400",
       "body": "The ImageReorderer.js file is missing a semicolon on line 130 - a line that was added in the fix for <https://fluidproject.atlassian.net/browse/FLUID-2304#icft=FLUID-2304>.\n"
     },
     {
+      "id": "25023",
       "author": "Michelle D'Souza",
       "date": "2011-01-13T16:50:10.117-0500",
       "body": "Reopening these issues in order to change the component to Release.&#x20;\n"

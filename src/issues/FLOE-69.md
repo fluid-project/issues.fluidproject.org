@@ -33,6 +33,7 @@
   ],
   "comments": [
     {
+      "id": "11142",
       "author": "Alexey Novak",
       "date": "2012-08-16T11:55:10.793-0400",
       "body": "Should be fixed\n"

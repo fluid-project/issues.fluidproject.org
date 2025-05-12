@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27351",
       "author": "Blake E",
       "date": "2008-11-04T14:50:15.000-0500",
       "body": "I've tried to recreate this, maybe it was on a new user? can anyone verify?? (I'll try with demo user)\n"
     },
     {
+      "id": "27352",
       "author": "Blake E",
       "date": "2008-11-04T15:36:46.000-0500",
       "body": "vulab6\n"
     },
     {
+      "id": "27353",
       "author": "Blake E",
       "date": "2008-11-10T11:27:02.000-0500",
       "body": "I haven't seen this happen again. We'll chalk it up to live editing and report again if it happens again.\n"

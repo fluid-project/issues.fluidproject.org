@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19770",
       "author": "Allison Bloodworth",
       "date": "2008-07-16T23:02:12.000-0400",
       "body": "futuretask\n"
     },
     {
+      "id": "19773",
       "author": "Jonathan Hung",
       "date": "2008-08-19T15:25:49.000-0400",
       "body": "The use of Nice Menu needs to re-evaluated because there are some usability concerns from both UX and Accessibility perspectives.\n\nArchitecture phase hopefully will reveal what navigation and information structure we want to use on the OSDPL.\n"

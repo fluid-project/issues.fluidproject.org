@@ -36,31 +36,37 @@
   ],
   "comments": [
     {
+      "id": "13614",
       "author": "Justin Obara",
       "date": "2010-11-10T09:49:53.458-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "13617",
       "author": "Golam Chowdhury",
       "date": "2010-11-11T12:37:26.702-0500",
       "body": "Updated description\n"
     },
     {
+      "id": "13620",
       "author": "Golam Chowdhury",
       "date": "2010-11-11T12:44:18.476-0500",
       "body": "FLUID-3828-AND-3829.patch contains the fix for providing better feedback to the user using screen readers. Note: this is not the final patch and this patch was provided to help designers test the pager component.\n"
     },
     {
+      "id": "13623",
       "author": "Anastasia Cheetham",
       "date": "2010-12-13T16:36:25.429-0500",
       "body": "It seems that some part of the merge from the AEGIS branch didn't make it, or has been regressed since: The goal was to change the 'current page' so that it was NOT a link. This works in the branch, but not in trunk: trunk still reads \"link\" when focus lands on the current page button.\n"
     },
     {
+      "id": "13627",
       "author": "Anastasia Cheetham",
       "date": "2010-12-13T16:56:56.210-0500",
       "body": "Discussion in the channel (<http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2010-12-13>) reveals that for now, we'll leave it speaking \"link\".\n"
     },
     {
+      "id": "13630",
       "author": "Golam Chowdhury",
       "date": "2011-03-03T16:41:33.213-0500",
       "body": "Changed the \"Affect Version\" to 1.3.1.\n"

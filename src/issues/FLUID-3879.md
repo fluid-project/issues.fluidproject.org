@@ -42,41 +42,49 @@
   ],
   "comments": [
     {
+      "id": "24915",
       "author": "Justin Obara",
       "date": "2010-12-07T11:25:55.109-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "24916",
       "author": "heidi valles",
       "date": "2010-12-07T11:48:23.845-0500",
       "body": "We should mention the fact that some of the demos (ex. pager) require AJAX calls to self, and therefore a security config option needs to be changed in firefox for this to work\n"
     },
     {
+      "id": "24917",
       "author": "Michelle D'Souza",
       "date": "2010-12-15T16:07:44.153-0500",
       "body": "Mockjax was added to the lib folder in the tests and should be added to the readme.&#x20;\n"
     },
     {
+      "id": "24918",
       "author": "Colin Clark",
       "date": "2010-12-22T17:38:09.251-0500",
       "body": "Here's a new revision of the general Infusion README file.\n"
     },
     {
+      "id": "24919",
       "author": "Anastasia Cheetham",
       "date": "2010-12-22T17:51:36.260-0500",
       "body": "I've reviewed the changes to the Readme - looks great. I've attached a revised patch (FLUID-3879-c.patch.txt) that makes some very minor tweaks, and adds one more Uploader known issue.\n"
     },
     {
+      "id": "24920",
       "author": "Colin Clark",
       "date": "2010-12-22T17:58:58.738-0500",
       "body": "New edits for Infusion 1.3 committed at r10450.\n"
     },
     {
+      "id": "24921",
       "author": "Anastasia Cheetham",
       "date": "2010-12-22T18:05:30.172-0500",
       "body": "Looks great.\n"
     },
     {
+      "id": "24922",
       "author": "Michelle D'Souza",
       "date": "2011-01-13T16:50:10.858-0500",
       "body": "Reopening these issues in order to change the component to Release.&#x20;\n"

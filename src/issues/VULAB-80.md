@@ -29,26 +29,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27673",
       "author": "Blake E",
       "date": "2008-11-05T14:53:09.000-0500",
       "body": "vulab6\n"
     },
     {
+      "id": "27674",
       "author": "Blake E",
       "date": "2008-11-10T10:39:58.000-0500",
       "body": "I've tracked down the error into the configuration file. Not sure whats causing the havok but it will be a little bug that will solve everything! I know.\n"
     },
     {
+      "id": "27675",
       "author": "Blake E",
       "date": "2008-11-10T10:54:20.000-0500",
       "body": "ok, config files not bogarting the execution its something within the survey serving file. survey.php\n\npublic/project.php is the main controller that serves survey.php (which doens't seem to be executing atm)\n"
     },
     {
+      "id": "27676",
       "author": "Blake E",
       "date": "2008-11-10T11:19:48.000-0500",
       "body": "ok, so... When we were pasting in the licenses for MANY of the files we included a character that gets outputted making a header() redirect impossible. I've finally gotten error\\_reporting on and I'm tracing thru the files.\n"
     },
     {
+      "id": "27677",
       "author": "Blake E",
       "date": "2008-11-10T11:21:49.000-0500",
       "body": "huzzah! It was a mixture of small spaces being printed in some library includes and configuration paths not working outside of the /admin folder.\n\n🙂 all is good now.\n"

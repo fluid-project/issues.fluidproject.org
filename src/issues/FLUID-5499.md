@@ -54,11 +54,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15604",
       "author": "Antranig Basman",
       "date": "2014-08-21T18:51:28.627-0400",
       "body": "Note that without the major improvements to debuggability that we have been frequently calling for, for example under <https://fluidproject.atlassian.net/browse/FLUID-4884#icft=FLUID-4884>, this will further impede debugging and understanding the action of the framework, given the effective cause for the destruction of a component will no longer be easy to determine as it will no longer lie underneath the current stack frame.\n"
     },
     {
+      "id": "15606",
       "author": "Antranig Basman",
       "date": "2015-01-26T20:55:55.391-0500",
       "body": "We will continue to operate the \"abortable events\" model - <https://fluidproject.atlassian.net/browse/FLUID-5592#icft=FLUID-5592> represented a further incarnation of the same issue.\n"

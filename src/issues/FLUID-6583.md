@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25471",
       "author": "Justin Obara",
       "date": "2020-12-10T08:15:18.550-0500",
       "body": "The syllabification explicitly does not attempt to syllabify hidden text. However it would definitely make sense to syllabify the text once it becomes visible, and it seems like the mutation observer is not picking this up. Unfortunately there are many different ways that an element may be hidden, and not all of those could be [observed](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/observe). An inline style or aria-hidden for example could probably be observed via attribute changes. However, if it's done purely by a change of a CSS class that may be on any ancestor, that would difficult.\n\nIf you want to experiment with syllabifying hidden text you should start by overriding the [hasTextToRead invoker](https://github.com/fluid-project/infusion/blob/39773eb69938b6fa0bb9e3ae8f083775d2754f2f/src/framework/preferences/js/SyllabificationEnactor.js#L84-L88). (See: [fluid.textNodeParser.hasTextToRead](https://github.com/fluid-project/infusion/blob/main/src/framework/core/js/TextNodeParser.js#L53-L79) for current implementation). In that case you might be able to just change the use of `innerText` to `textContent`. If that's the case we could probably just parameterize the method for retrieving text from the node in that function.\n"
     },
     {
+      "id": "25472",
       "author": "Justin Obara",
       "date": "2020-12-14T11:09:45.548-0500",
       "body": "Started investigating this in my [FLUID-6583 branch](https://github.com/jobara/infusion/tree/FLUID-6583). There are a bunch of failing tests at the moment. It's likely that some cases aren't adequately being captured. \n"

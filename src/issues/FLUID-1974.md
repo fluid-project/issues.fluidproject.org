@@ -30,21 +30,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17618",
       "author": "Justin Obara",
       "date": "2009-03-12T14:22:22.000-0400",
       "body": "Bug Parade 1.0 release&#x20;\n"
     },
     {
+      "id": "17620",
       "author": "Eli Cochran",
       "date": "2009-03-20T20:20:27.000-0400",
       "body": "total progress is now set to 100% on purpose so that we can show the error or the OK state of the upload\n"
     },
     {
+      "id": "17623",
       "author": "Jacob Farber",
       "date": "2009-03-26T10:20:47.000-0400",
       "body": "Reviewed, and it works for me.\n"
     },
     {
+      "id": "17625",
       "author": "Justin Obara",
       "date": "2009-03-26T10:34:55.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.6, Safari 3.2 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.6 (Win XP)\\\nFF3, IE7 (Win Vista)&#x20;\n"

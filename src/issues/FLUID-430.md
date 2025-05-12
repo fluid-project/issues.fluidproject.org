@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20513",
       "author": "Colin Clark",
       "date": "2008-04-23T20:42:27.000-0400",
       "body": "initListBuilder() now takes an argument called elementSelectors that allows the client to customize which selectors are used to bind to the DOM. Defaults are configured which will allow for a working single instance of the ListBuilder based on the default template, or the user could modify these for different templates or multiple instances.\n"
     },
     {
+      "id": "20514",
       "author": "Michelle D'Souza",
       "date": "2011-01-19T08:23:50.294-0500",
       "body": "Reopening these issues in order to add the workshopcomponent to them\n"

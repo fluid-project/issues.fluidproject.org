@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21650",
       "author": "Justin Obara",
       "date": "2011-02-22T10:58:56.862-0500",
       "body": "This is the same for the undo/redo links\n"
     },
     {
+      "id": "21651",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T12:31:16.791-0400",
       "body": "As of 1.4, I tested this in all IEs, FF6 on Win 7, FF6 on Win XP and FF7 on Mac OSX: I only see this problem in IE7.\n"
     },
     {
+      "id": "21652",
       "author": "Anastasia Cheetham",
       "date": "2014-04-02T15:50:29.895-0400",
       "body": "We're not supporting IE1.7 for 1.5\n"

@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26553",
       "author": "Gregor Moss",
       "date": "2018-11-30T17:33:54.259-0500",
       "body": "Removed:\n\n* language (each block has this now)\n* images (image blocks represent themselves)\n* categories (we're going to use tags only)\n\nCommented out for the future:\n\n* timestampCreated\n* timestampModified\n* requestedTranslations\n  * this could be a collection of language codes as keys with the number of requests for each language as values\n* translationOf\n"
     },
     {
+      "id": "26554",
       "author": "Gregor Moss",
       "date": "2020-01-20T14:46:17.110-0500",
       "body": "Removed more fields, including previously commented-out ones. These were intended for future use, but we can re-implement them when that time comes. For now they're just cruft.\n\n* summary\n* timestampCreated\n* timestampModified\n* requestedTranslations\n* translationOf\n* thumbnailUrl (this is referred to in templates but not saved currently)\n* thumbnailAltText (same as above)\n* contentTypes (same as above, also calculated when loading the browse page data)\n"

@@ -44,16 +44,19 @@
   ],
   "comments": [
     {
+      "id": "24500",
       "author": "heidi valles",
       "date": "2011-06-27T09:01:41.457-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24501",
       "author": "heidi valles",
       "date": "2011-06-28T15:29:00.612-0400",
       "body": "Pull req sent <https://github.com/fluid-project/infusion/pull/92>\n"
     },
     {
+      "id": "24502",
       "author": "Michelle D'Souza",
       "date": "2014-06-25T15:55:54.001-0400",
       "body": "We are no longer actively supporting IE6, IE7 and IE8. We will consider patches for some issues if they are offered.\n"

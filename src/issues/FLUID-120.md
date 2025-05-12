@@ -25,21 +25,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17639",
       "author": "Michelle D'Souza",
       "date": "2007-11-19T17:00:15.000-0500",
       "body": "I think this is a gallery bug.\n"
     },
     {
+      "id": "17641",
       "author": "Joseph Scheuhammer",
       "date": "2007-11-26T16:19:56.000-0500",
       "body": "Isn't this an image-gallery issue?  If so, should it not be \"transferred\" to the image-gallery JIRA (GAL-X)?  Or, has that already occurred?\n"
     },
     {
+      "id": "17643",
       "author": "Eli Cochran",
       "date": "2007-11-26T16:57:42.000-0500",
       "body": "This bug has been moved to the Gallery JIRA as bug GAL-69 <http://jira.sakaiproject.org/jira/browse/GAL-69>\n"
     },
     {
+      "id": "17645",
       "author": "Michelle D'Souza",
       "date": "2011-01-28T12:17:24.627-0500",
       "body": "Reopening these issues to add the uploadercomponent to them.&#x20;\n"

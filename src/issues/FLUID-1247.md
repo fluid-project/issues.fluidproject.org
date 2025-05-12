@@ -36,16 +36,19 @@
   ],
   "comments": [
     {
+      "id": "18142",
       "author": "Justin Obara",
       "date": "2008-08-20T09:15:56.000-0400",
       "body": "'screenshot-1' shows the lightbox portlet frozen over the drop target\n"
     },
     {
+      "id": "18143",
       "author": "Antranig Basman",
       "date": "2008-09-07T22:14:58.000-0400",
       "body": "Michelle put in an interim fix for this issue for 0.5 beta, but it is gone post \"Geometric Manager\"\n"
     },
     {
+      "id": "18144",
       "author": "Justin Obara",
       "date": "2008-09-08T09:39:34.000-0400",
       "body": "verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, Opera 9.5 (Win XP)\\\nFF3 (Win Vista)\n"

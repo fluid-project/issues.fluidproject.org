@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22770",
       "author": "Eli Cochran",
       "date": "2009-04-08T15:23:31.000-0400",
       "body": "This bug seems restricted at this point to one machine that Daphne borrowed from Training and Support here at Berkeley. \\\nThe bug is completely reproducible.&#x20;\n\nI've checked all the settings in Firefox and on the computer, tried turning off Virus Protection, tried a different network connection. No luck.\n\nNote: this machine also appears to not load UI Options in the Sakai Mock up: \\\n<http://build.fluidproject.org/infusion/integration-demos/sakai/html/ui-options-fss-sakai.html>\n"
     },
     {
+      "id": "22773",
       "author": "Eli Cochran",
       "date": "2009-06-08T12:28:45.000-0400",
       "body": "This appears to be restricted to one borrowed machine. Quite the mystery.&#x20;\n"

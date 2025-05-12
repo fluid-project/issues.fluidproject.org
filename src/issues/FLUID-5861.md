@@ -43,21 +43,25 @@
   ],
   "comments": [
     {
+      "id": "24459",
       "author": "Justin Obara",
       "date": "2016-02-11T11:31:37.200-0500",
       "body": "I used a Surface Pro 3 running Windows 10 to try to reproduce this issue in IE 11, but was unable to.&#x20;\n\nGiovanni Tirloni I can't see in the screenshots where the mouse was exactly though. Could you highlight it?\n"
     },
     {
+      "id": "24460",
       "author": "Giovanni Tirloni",
       "date": "2016-02-11T11:43:20.593-0500",
       "body": "I made sure both laptops had all Windows updates applied before testing and cleared the cache betweens runs.\n\nUpdated screenshots.\n"
     },
     {
+      "id": "24461",
       "author": "Justin Obara",
       "date": "2016-02-11T13:21:15.222-0500",
       "body": "Thanks for the updated screenshots. I had mistakenly been MS Edge. Using IE 11 now. I'm getting the issue but intermittently. If i reload the page after it stops, it will work.\n"
     },
     {
+      "id": "27858",
       "author": "Justin Obara",
       "date": "2024-07-23T11:03:12.538-0400",
       "body": "Internet Explorer is no longer supported\n"

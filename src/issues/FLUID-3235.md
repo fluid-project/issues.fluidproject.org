@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23261",
       "author": "joan garcia",
       "date": "2009-10-08T12:59:08.000-0400",
       "body": "In FF3.5 - Linux Ubuntu Jaunty, the same thing happens.\\\nKeyboard: You can't see where the focus is.\n"
     },
     {
+      "id": "23262",
       "author": "joan garcia",
       "date": "2009-10-08T13:09:36.000-0400",
       "body": "In FF 3.0.xx - Linux Ubuntu Jaunty, the same thing happens.\n"

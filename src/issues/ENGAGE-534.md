@@ -29,31 +29,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12118",
       "author": "Justin Obara",
       "date": "2010-03-25T13:18:54.000-0400",
       "body": "There is now only one movement function, positionDrawers. The toggle function remains in the code, but is not accessible publicly. It is still used internally.&#x20;\n"
     },
     {
+      "id": "12119",
       "author": "Justin Obara",
       "date": "2010-03-25T13:19:11.000-0400",
       "body": "Assigned to Antranig for review\n"
     },
     {
+      "id": "12120",
       "author": "Antranig Basman",
       "date": "2010-03-25T17:18:47.000-0400",
       "body": "The \"toggle\" function is just as dangerous and wasteful in private code (if not more so the latter 😛) than in public. It should be removed entirely, and replaced with two separate utilities, one to read the current state of a drawer from the DOM (embodying the elm.hasClass branch) and another to write it. In addition, the open/close utilities should simply be folded into the \"position\" method. Also the current implementation is broken - the \"position\" method called from that.positionDrawers calls through to a method which is actually named \"drawerAdjust\". Please supply test cases for new functionality in future 🙂\n"
     },
     {
+      "id": "12121",
       "author": "Antranig Basman",
       "date": "2010-03-25T17:19:16.000-0400",
       "body": "Apologies - looks like there are functioning test cases for the new functionality - however, I suggest it would be a clearer implementation if the positional arguments were strings, and the toggle, open and close methods were removed.\n"
     },
     {
+      "id": "12122",
       "author": "Justin Obara",
       "date": "2010-03-26T12:23:15.000-0400",
       "body": "Refactored public api again. There are now functions to setDrawers and getDrawerState.\n"
     },
     {
+      "id": "12123",
       "author": "Justin Obara",
       "date": "2010-03-26T12:23:28.000-0400",
       "body": "assigned to Antranig for review\n"

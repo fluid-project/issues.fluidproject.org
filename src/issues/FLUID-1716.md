@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17372",
       "author": "Colin Clark",
       "date": "2008-10-28T16:19:08.000-0400",
       "body": "This has been added to SWFUploadManager and tested against the Image Gallery 2 server.\n"
     },
     {
+      "id": "17373",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:49.400-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

@@ -37,11 +37,13 @@
   ],
   "comments": [
     {
+      "id": "24035",
       "author": "Justin Obara",
       "date": "2011-05-18T13:45:05.722-0400",
       "body": "screenshot.png shows the cursor as a pointer instead of an i-bar when over text\n"
     },
     {
+      "id": "24038",
       "author": "Justin Obara",
       "date": "2014-06-05T15:30:43.405-0400",
       "body": "This demo has been removed\n"

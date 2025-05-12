@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10151",
       "author": "Justin Obara",
       "date": "2012-05-16T12:11:26.792-0400",
       "body": "Added in the suggested comment and changed the calls to refershView to point at renderer.refreshView as per suggestions from the channel log.\n\nThe changes can be found in my bitbucket repo:\\\n<https://bitbucket.org/jobara/decapod-ui-05release>\n"
     },
     {
+      "id": "10152",
       "author": "Justin Obara",
       "date": "2012-05-18T14:47:41.682-0400",
       "body": "Merged into the project repo\n"

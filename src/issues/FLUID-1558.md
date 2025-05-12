@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16558",
       "author": "Allison Bloodworth",
       "date": "2008-09-15T16:44:56.000-0400",
       "body": "iteration18\n"
     },
     {
+      "id": "16559",
       "author": "Allison Bloodworth",
       "date": "2008-09-26T15:39:56.000-0400",
       "body": "Per a discussion with Daphne about it being OK for this persona to have more narrative because she's a very important persona--the only instructor primary persona, I left the narrative and didn't create any sort of categorized, bulleted sections to this persona as an appendix.\n"

@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19534",
       "author": "Allison Bloodworth",
       "date": "2008-07-16T21:02:28.000-0400",
       "body": "futuretask\n"
     },
     {
+      "id": "19535",
       "author": "Jonathan Hung",
       "date": "2008-08-19T15:17:43.000-0400",
       "body": "Won't fix. Governance is likely to change user roles and access significantly. New tasks will be filed for that.\n"

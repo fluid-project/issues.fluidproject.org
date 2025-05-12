@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19704",
       "author": "Justin Obara",
       "date": "2008-07-25T11:37:36.000-0400",
       "body": "Appears to be fixed in latest build\n"
     },
     {
+      "id": "19707",
       "author": "Justin Obara",
       "date": "2008-12-03T11:47:02.000-0500",
       "body": "appears to be fixed\n"

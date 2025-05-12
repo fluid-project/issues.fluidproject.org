@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13155",
       "author": "Eli Cochran",
       "date": "2008-07-25T12:19:21.000-0400",
       "body": "Added a spurious href to the Browse button to get it to see the Enter key\n"
     },
     {
+      "id": "13156",
       "author": "Justin Obara",
       "date": "2008-07-28T08:18:22.000-0400",
       "body": "Verified fix using FF2, FF3, and IE7 (Win XP)\n"

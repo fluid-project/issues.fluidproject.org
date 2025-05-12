@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16232",
       "author": "Justin Obara",
       "date": "2009-03-20T12:40:58.000-0400",
       "body": "Bug Parade 1.0 release\n"
     },
     {
+      "id": "16234",
       "author": "Anastasia Cheetham",
       "date": "2009-03-23T15:01:32.000-0400",
       "body": "I've reviewed this change. The actual change to the defaults is minor, and the resulting behaviour is definitely an improvement. +1\n"
     },
     {
+      "id": "16236",
       "author": "Justin Obara",
       "date": "2009-03-23T15:56:36.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.6 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.6 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

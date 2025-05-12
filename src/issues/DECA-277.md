@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10323",
       "author": "Justin Obara",
       "date": "2012-06-11T15:33:04.878-0400",
       "body": "This should just be a straight conversion of format, no processing or other changes. Since this is meant for preservation.\n"
     },
     {
+      "id": "10324",
       "author": "Justin Obara",
       "date": "2012-06-29T12:59:54.122-0400",
       "body": "Implemented the image export. I had to do a bunch of refactoring, especially to pdf.py, to better structure and reuse code for the image export.\n\nThe changes are in my bitbucket repo:\\\n<https://bitbucket.org/jobara/decapod-0.6-server-iteration2>\n"
     },
     {
+      "id": "10325",
       "author": "Justin Obara",
       "date": "2012-07-03T10:38:23.706-0400",
       "body": "merged into the googlecode project repo\n"

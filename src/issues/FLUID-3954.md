@@ -35,21 +35,25 @@
   ],
   "comments": [
     {
+      "id": "19330",
       "author": "Harris Wong",
       "date": "2011-05-10T14:18:42.311-0400",
       "body": "LayoutReorderer no longer crashes IE9, but gives an error for \"#3.10 - Temporary moved state is cleared.\"\n"
     },
     {
+      "id": "19331",
       "author": "Justin Obara",
       "date": "2011-05-11T07:43:51.890-0400",
       "body": "Updated description with latest info provided in Harris's comment above\n"
     },
     {
+      "id": "19332",
       "author": "Harris Wong",
       "date": "2011-05-16T16:05:23.659-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "19333",
       "author": "Harris Wong",
       "date": "2011-05-18T10:54:30.322-0400",
       "body": "This is fixed at commit: 06be9930f637062dcfbe.\n"

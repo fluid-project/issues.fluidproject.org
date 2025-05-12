@@ -51,26 +51,31 @@
   ],
   "comments": [
     {
+      "id": "11674",
       "author": "Sambhavi Chandrashekar",
       "date": "2010-02-17T15:27:28.000-0500",
       "body": "Bug Parade Engage 0.3&#x20;\n"
     },
     {
+      "id": "11675",
       "author": "Sambhavi Chandrashekar",
       "date": "2010-02-24T12:46:34.000-0500",
       "body": "a11y issue\n"
     },
     {
+      "id": "11676",
       "author": "y z",
       "date": "2010-03-02T13:54:21.000-0500",
       "body": "By adding tabindex to the message and the digit fields we should be able to access those fields with VO. However, dynamically updated values are not updated via VO unless focused.\n"
     },
     {
+      "id": "11677",
       "author": "Svetoslav Nedkov",
       "date": "2010-03-12T11:48:30.000-0500",
       "body": "<https://fluidproject.atlassian.net/browse/ENGAGE-392#icft=ENGAGE-392>.patch replaces the two code digit fields with images, that are recognized by VoiceOver. The images themselves are not included in the patch and should be added manually. The images are attached as codeEntryImages.zip.\n"
     },
     {
+      "id": "11678",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:19.318-0500",
       "body": "The repository has been archived.\n"

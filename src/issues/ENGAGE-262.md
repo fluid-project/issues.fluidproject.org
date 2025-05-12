@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12063",
       "author": "Justin Obara",
       "date": "2010-01-21T17:46:51.000-0500",
       "body": "An integrator can now optionally pass in a selector referring to drawers that should start open by default. This way you can init the cabinet with some drawers open and others closed.\n"

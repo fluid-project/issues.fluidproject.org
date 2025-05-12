@@ -40,36 +40,43 @@
   ],
   "comments": [
     {
+      "id": "22521",
       "author": "Justin Obara",
       "date": "2010-06-07T09:01:07.111-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "22523",
       "author": "Jan Richards",
       "date": "2010-06-15T12:35:06.041-0400",
       "body": "This jQuery progress bar seems to be handled properly by NVDA. I note that it identifies itelf as an application:\\\n<http://hanshillen.github.com/jquery-ui/demos/aegis/index.html#>\n"
     },
     {
+      "id": "22526",
       "author": "Justin Obara",
       "date": "2010-08-11T08:09:43.981-0400",
       "body": "There was a question on the fluid-work list ( <http://fluidproject.org/pipermail/fluid-work/2010-August/006939.html> ) regarding what example this was tested against. I would assume that it was from the Progress Demo ( <http://build.fluidproject.org/infusion/demos/progress/html/progress.html> ). Jan, if this is incorrect could you please make note of the correct url.\n"
     },
     {
+      "id": "22529",
       "author": "Justin Obara",
       "date": "2010-09-20T09:06:46.611-0400",
       "body": "I have filed a ticked with NVDA about this issue. \\\n<http://www.nvda-project.org/ticket/913>\n\nWe should try to provide a work around until it has been addressed.\n"
     },
     {
+      "id": "22531",
       "author": "Golam Chowdhury",
       "date": "2010-09-20T17:46:48.723-0400",
       "body": "Created patch <https://fluidproject.atlassian.net/browse/FLUID-3671#icft=FLUID-3671>.patch.txt for fixing the progress bar issues in NVDA2010 with FireFox 3.5.9.\n"
     },
     {
+      "id": "22533",
       "author": "Golam Chowdhury",
       "date": "2010-09-27T14:00:26.346-0400",
       "body": "For patch <https://fluidproject.atlassian.net/browse/FLUID-3671#icft=FLUID-3671>.v.2.patch where we added options for the integrator to switch between aria-valuetext and aria-valuenow.&#x20;\n"
     },
     {
+      "id": "22535",
       "author": "Golam Chowdhury",
       "date": "2010-09-27T16:33:04.046-0400",
       "body": "Fluid Progress component now provides the option to the integrator to switch between aria-valuenow and aria-valuetext. By setting the ariaBusyText to empty string will default to aria-valuenow and if ariaBusyText is set to some string then aria-valuetext will be enable.\n"

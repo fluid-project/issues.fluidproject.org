@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26356",
       "author": "Michelle D'Souza",
       "date": "2018-05-11T14:12:30.390-0400",
       "body": "Machine translated Spanish messages are available in this branch: <https://github.com/michelled/uio-multilingual/tree/SJRK-90>\n\n \n"
     },
     {
+      "id": "26357",
       "author": "Gregor Moss",
       "date": "2018-05-25T15:04:31.872-0400",
       "body": "We were able to have the UIO panels load different languages and redraw on demand, though we were not able to find a way to have the show/hide button nor the Table of Contents headers update their values dynamically.\n\nThis should be incorporated into UIO proper, and not as part of this project.\n\nAlan's previous work on the subject is still in a pull request:\\\n<https://github.com/fluid-project/infusion/pull/850>\n\nand here is what we came up with for the Storytelling Tool:\\\n<https://github.com/BlueSlug/sjrk-story-telling/blob/SJRK-91/src/js/storyTelling-page.js#L136-L164>\n"

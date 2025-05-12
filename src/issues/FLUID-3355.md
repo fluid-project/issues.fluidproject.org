@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24452",
       "author": "Laurel Williams",
       "date": "2009-11-16T13:54:14.000-0500",
       "body": "Issues with moving the website out of CMSMS:\\\n1\\) RSS feed\n\n2\\) Repeated blocks of code such as header, footer - we would not like to maintain these repeated blocks on every page\n\n3\\) Automated news handling - write story and it is added to page automatically, as well as a summary on front page\n\n4\\) Automated menu generation - menu items, including the depth of the menu is handled automatically by CMSMS\n\n5\\) Automated breadcrumb generation\n\n6\\) Site down maintenance mode.\n\nNext steps:\n\n1\\) Do a site scrape, or at least capture a few representative pages and install on the server somewhere so we can 'play'\n\n2\\) Try to address some of the issues above - discuss technology options, do we want to use javascript? php? other technology?\n"
     },
     {
+      "id": "24453",
       "author": "Colin Clark",
       "date": "2010-03-30T19:21:37.000-0400",
       "body": "Laurel and Jess: Is this issue fixed? Can we close it?\n"

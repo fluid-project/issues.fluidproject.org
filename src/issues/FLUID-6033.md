@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23979",
       "author": "Justin Obara",
       "date": "2016-11-07T08:49:13.503-0500",
       "body": "I was not able to reproduce this issue using Chrome 54 on a Windows 10 VM. You do need to put focus on the group of images before you can change the selection using the arrow and other letter keys. If this is still not working, please re-open with detailed steps to reproduce.\n"

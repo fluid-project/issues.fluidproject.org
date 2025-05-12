@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15671",
       "author": "Justin Obara",
       "date": "2010-03-17T11:59:14.000-0400",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "15673",
       "author": "Jacob Farber",
       "date": "2010-03-25T14:24:28.000-0400",
       "body": "Yura and Jacob did a review March 24th\n"

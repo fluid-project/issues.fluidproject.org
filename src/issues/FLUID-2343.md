@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21383",
       "author": "Antranig Basman",
       "date": "2009-03-17T17:39:18.000-0400",
       "body": "I added a test case at revision 6769 to verify the current DOM binder functionality in this case, but it appears to be correct - the correct way to express dependence on a possibly missing markup element, is to configure either the selector, or the markup which is attached to a particular key, not to erase the name of the key itself - a component developer should not become aware of whether a piece of markup is configured or not except through the return from the DOM binder. Calling the DOM binder with a null value as a key is not part of its API.\n"
     },
     {
+      "id": "21384",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:50.107-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

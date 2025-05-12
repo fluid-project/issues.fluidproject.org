@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12855",
       "author": "Michelle D'Souza",
       "date": "2011-12-08T13:40:04.161-0500",
       "body": "Merged into project repo at ffdff0ac97916bb7c0f571f03700497a19a90d71\n"

@@ -35,31 +35,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21262",
       "author": "Eli Cochran",
       "date": "2009-03-11T19:56:03.000-0400",
       "body": "Apparently the reuse of id's is a well-known bug in SWFUpload 2.2.0 which \"We have yet to find a satisfactory work-around.\" - Gyphie\n\nAnd in case it isn't clear in the above description, we end up with duplicate ids for rows in the DOM which is definitely a no-no.&#x20;\n"
     },
     {
+      "id": "21263",
       "author": "Eli Cochran",
       "date": "2009-03-11T20:38:34.000-0400",
       "body": "OK, I'm feeling better about this one. I can only reproduce it in the demo version of the Uploader. On the server, everything seems fine. Need to do more testing.&#x20;\n"
     },
     {
+      "id": "21264",
       "author": "Justin Obara",
       "date": "2009-03-12T11:26:19.000-0400",
       "body": "Bug Parade 1.0 release\n"
     },
     {
+      "id": "21265",
       "author": "Eli Cochran",
       "date": "2009-03-20T20:19:17.000-0400",
       "body": "Fixed with the patch added to <https://fluidproject.atlassian.net/browse/FLUID-2351#icft=FLUID-2351>\n\nSince we're no longer messing with the DOM ancestor of Flash object we don't get new ids so the progressors show up in the right places.&#x20;\n"
     },
     {
+      "id": "21266",
       "author": "Jacob Farber",
       "date": "2009-03-26T10:15:59.000-0400",
       "body": "Reviewed, and it works for me.\n"
     },
     {
+      "id": "21267",
       "author": "Justin Obara",
       "date": "2009-03-26T10:32:54.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.6, Safari 3.2 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.6 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

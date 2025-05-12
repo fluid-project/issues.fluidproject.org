@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13163",
       "author": "Antranig Basman",
       "date": "2009-03-10T12:39:56.000-0400",
       "body": "Fixed at revision 6706\n"
     },
     {
+      "id": "13164",
       "author": "Justin Obara",
       "date": "2009-11-13T08:58:54.000-0500",
       "body": "Closed as per previous comment\n"

@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14990",
       "author": "Justin Obara",
       "date": "2010-02-26T17:12:21.000-0500",
       "body": "Fliquor App created and presented at FSOSS 2009\n"
     },
     {
+      "id": "14993",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T13:30:04.681-0500",
       "body": "Reopening these issues to add the workshopcomponent\n"

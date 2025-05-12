@@ -35,16 +35,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21332",
       "author": "Colin Clark",
       "date": "2009-02-19T17:50:41.000-0500",
       "body": "I reviewed Eli's commit to build.properties during code freeze and it was correct. This change is required to produce a working Fluid-all.js, but needn't trigger a whole new QA process.\n\n+1.\n"
     },
     {
+      "id": "21333",
       "author": "Eli Cochran",
       "date": "2009-02-19T18:10:15.000-0500",
       "body": "Added the missing file dependency\n"
     },
     {
+      "id": "21334",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:57.114-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

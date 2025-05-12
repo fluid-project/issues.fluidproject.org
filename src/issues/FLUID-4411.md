@@ -33,16 +33,19 @@
   ],
   "comments": [
     {
+      "id": "13501",
       "author": "Justin Obara",
       "date": "2011-08-30T13:17:37.446-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "13503",
       "author": "Justin Obara",
       "date": "2011-08-30T13:37:09.492-0400",
       "body": "Screenshot.png shows the \"Introduction\" header over lapping the text in the column to its right. This happens when the text size is maxed out along with the style being set to \"Comic Sans\"\n"
     },
     {
+      "id": "13505",
       "author": "Justin Obara",
       "date": "2011-09-26T12:52:20.528-0400",
       "body": "This may have been resolved with some of the recent work on the UI Enhancer.\n"

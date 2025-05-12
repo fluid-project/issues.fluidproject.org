@@ -45,16 +45,19 @@
   ],
   "comments": [
     {
+      "id": "15254",
       "author": "Laurel Williams",
       "date": "2009-11-05T16:27:33.000-0500",
       "body": "The attached patch represents a partial solution to removing the code from builder.js. Tests are now failing, and the next step is to determine how to load the CustomBuild template into the tests via ajax, so that they are using the same template as the main code.\n"
     },
     {
+      "id": "15257",
       "author": "Colin Clark",
       "date": "2009-11-05T22:29:57.000-0500",
       "body": "Here's a modified version of Laurel's patch that gets about half of the unit tests passing. Other failures likely have to do with one of two things:\n\n1\\. Hard-baked assumptions in tests about selector names that may have changed between the old test markup and the real template\\\n2\\. The fact that the unit tests clean up the DOM after each test run, causing the component to be in an inconsistent state.\n"
     },
     {
+      "id": "15260",
       "author": "Laurel Williams",
       "date": "2009-11-06T16:19:48.000-0500",
       "body": "Made a small change to the setup of the tests to recreate the component between each test. This solved the problem.\n"

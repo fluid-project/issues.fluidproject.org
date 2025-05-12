@@ -36,6 +36,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10393",
       "author": "Justin Obara",
       "date": "2012-06-01T10:13:32.787-0400",
       "body": "The capture workflow has been removed from the 0.5 release\n"

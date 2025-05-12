@@ -29,31 +29,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21135",
       "author": "Justin Obara",
       "date": "2009-01-05T12:02:37.000-0500",
       "body": "In IE 7 and IE 6 (Win XP) the browse button doesn't even seem to work. This is even after the adjusting the permissions (it does work using firefox).\n"
     },
     {
+      "id": "21136",
       "author": "Justin Obara",
       "date": "2009-01-15T14:11:58.000-0500",
       "body": "The error is also thrown when trying to remove a file from the file queue\n"
     },
     {
+      "id": "21137",
       "author": "Justin Obara",
       "date": "2009-02-06T12:54:31.000-0500",
       "body": "Bug Parade 0.8 release\n"
     },
     {
+      "id": "21138",
       "author": "Justin Obara",
       "date": "2009-02-10T09:52:23.000-0500",
       "body": "updated the line number\n"
     },
     {
+      "id": "21139",
       "author": "Eli Cochran",
       "date": "2009-02-11T20:32:49.000-0500",
       "body": "I couldn't reproduce this bug with either Flash 9 or Flash 10. I am assuming that it was fixed when we moved to b5\n"
     },
     {
+      "id": "21140",
       "author": "Justin Obara",
       "date": "2009-02-12T08:56:43.000-0500",
       "body": "It does appear that this issue was solved by upgrading to swfupload 2.20 beta 5\n\nTested using:\n\nIE7 (Win XP, Win Vista)\\\nIE6 (Win XP)\n"

@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21603",
       "author": "y z",
       "date": "2010-04-12T12:56:44.000-0400",
       "body": "The issue was already reported, it technically shows the correct drop location but is confusing, since it would be better to show it on the new line.\n"

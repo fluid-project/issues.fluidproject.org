@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10212",
       "author": "Justin Obara",
       "date": "2012-10-04T14:45:41.963-0400",
       "body": "Implemented single camera capture\n"

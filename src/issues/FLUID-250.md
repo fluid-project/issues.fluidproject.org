@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18605",
       "author": "Barbara Glover",
       "date": "2008-03-05T10:16:22.000-0500",
       "body": "CI is completed and notes are mostly done.  Just need to add photos to notes.\n"
     },
     {
+      "id": "18607",
       "author": "Barbara Glover",
       "date": "2008-03-05T15:15:08.000-0500",
       "body": "iteration04\n"
     },
     {
+      "id": "18609",
       "author": "Shaw-Han Liem",
       "date": "2008-03-17T16:18:01.000-0400",
       "body": "Categorized notes are in wiki.\n"
     },
     {
+      "id": "18612",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:52.604-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

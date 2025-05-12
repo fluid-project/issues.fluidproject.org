@@ -34,16 +34,19 @@
   ],
   "comments": [
     {
+      "id": "10179",
       "author": "Justin Obara",
       "date": "2010-07-21T09:53:46.210-0400",
       "body": "This is caused by the fact that there is a period in the markup.\n"
     },
     {
+      "id": "10180",
       "author": "Justin Obara",
       "date": "2010-07-21T10:11:28.859-0400",
       "body": "Screenshot.png shows a dot below the status message in the middle of the screen\n"
     },
     {
+      "id": "10181",
       "author": "Justin Obara",
       "date": "2012-05-25T13:42:24.118-0400",
       "body": "The calibration workflow has been removed from this release\n"

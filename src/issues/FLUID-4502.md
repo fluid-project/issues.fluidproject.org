@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "15851",
       "author": "Anastasia Cheetham",
       "date": "2011-10-04T10:28:02.180-0400",
       "body": "This screen capture (uio-vertical-scrollbar.png) shows the fat panel with the scrollbar on the right in IE8 on Win7. You can see all the content of the panel, but the scrollbar is there.\n"
     },
     {
+      "id": "15853",
       "author": "Michelle D'Souza",
       "date": "2014-06-25T16:01:17.754-0400",
       "body": "We no longer actively support IE6, IE7 and IE8. We will consider patches for certain issues.\n"

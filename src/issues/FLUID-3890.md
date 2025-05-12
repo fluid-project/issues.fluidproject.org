@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13732",
       "author": "Mike Lam",
       "date": "2010-12-21T16:10:26.928-0500",
       "body": "Can no longer replicate.  This JIRA may have been fixed as a side-effect. &#x20;\n"
     },
     {
+      "id": "13734",
       "author": "Mike Lam",
       "date": "2010-12-22T13:05:14.523-0500",
       "body": "Still persists in Mac OS + FF.\n"
     },
     {
+      "id": "13736",
       "author": "heidi valles",
       "date": "2010-12-22T13:12:21.215-0500",
       "body": "Can replicate with keyboard only.\n"

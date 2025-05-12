@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16172",
       "author": "Antranig Basman",
       "date": "2008-11-13T22:03:30.000-0500",
       "body": "This has been possible since early versions of InlineEdit by adjusting the CSS style attached to the selector named \"invitation\"\n"
     },
     {
+      "id": "16174",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:28:00.904-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

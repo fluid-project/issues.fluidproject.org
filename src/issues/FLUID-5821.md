@@ -33,21 +33,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24335",
       "author": "Justin Obara",
       "date": "2016-02-04T15:06:21.388-0500",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/657> ) into the project repo at 63ec072e54b75db0dbaae33fcac61264ebb8d63d\n"
     },
     {
+      "id": "24336",
       "author": "Justin Obara",
       "date": "2016-02-05T07:58:36.288-0500",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion-docs/pull/83> ) into the infusion-docs repo at 94207308ed8604cce0e9d40b56aa2d411457ba5d\n"
     },
     {
+      "id": "24338",
       "author": "Justin Obara",
       "date": "2016-02-10T15:52:27.852-0500",
       "body": "Reopened as this is causing the reorder to throw errors on hover for dom.fastLocate and to be broken for mouse interactions.\n"
     },
     {
+      "id": "24339",
       "author": "Antranig Basman",
       "date": "2016-02-12T11:18:48.812-0500",
       "body": "The failure sequence here is slightly subtle - the initial cacher to fluid.locate passes a raw DOM element to the \"localContainer\" argument, which is recognised correctly for the purposes of representing the cache key, but is then returned as the same raw element from \"locate\" and subsequent calls to \"fastLocate\" even if they supply a proper jQuery instead, as it ends up polluting the cache.\n"

@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15365",
       "author": "Jonathan Hung",
       "date": "2014-05-16T11:45:50.242-0400",
       "body": "The metadata component demo currently has a temporary fix for this issue. When this fix gets merged into master, the fix in metadata should be removed.\n"

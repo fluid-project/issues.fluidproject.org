@@ -29,31 +29,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21123",
       "author": "Antranig Basman",
       "date": "2009-02-02T17:46:58.000-0500",
       "body": "This is complete at revision 6399. I have verified all of the test cases on Firefox, and tried a reasonable spread of manual test cases - the upgrade looks extremely seamless with no problems found. Over to Justin for more detailed bashing...\n"
     },
     {
+      "id": "21124",
       "author": "Justin Obara",
       "date": "2009-02-03T10:42:01.000-0500",
       "body": "I'm assigning any issue that I find as a sub-issue\n"
     },
     {
+      "id": "21125",
       "author": "Anastasia Cheetham",
       "date": "2009-02-11T14:03:38.000-0500",
       "body": "build scripts not updates\n\nBug Parade 0.8 release\n"
     },
     {
+      "id": "21126",
       "author": "Anastasia Cheetham",
       "date": "2009-02-11T14:14:04.000-0500",
       "body": "Build script updated, Fluid-all.js is working now.\n"
     },
     {
+      "id": "21127",
       "author": "Colin Clark",
       "date": "2009-02-16T21:46:31.000-0500",
       "body": "I reviewed Anastasia's one-line update to build.properties at r6486 and it is correct. +1 for inclusion in Infusion 0.8.\n"
     },
     {
+      "id": "21128",
       "author": "Justin Obara",
       "date": "2009-02-16T22:38:49.000-0500",
       "body": "uPortal demo pulled from uPortal trunk appears to be working\n"

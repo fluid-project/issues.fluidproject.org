@@ -23,16 +23,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13005",
       "author": "Simon Bates",
       "date": "2018-06-25T17:00:50.974-0400",
       "body": "<https://github.com/inclusive-design/website-cities/pull/8>\n"
     },
     {
+      "id": "13006",
       "author": "Sepideh Shahi",
       "date": "2018-06-26T12:57:56.973-0400",
       "body": "Made the required changes and submitted 2 commits:\n\n<https://github.com/inclusive-design/website-cities/pull/8/commits/5867c35eed6f024f49c49c8604085ef316018378>\n\n<https://github.com/inclusive-design/website-cities/pull/8/commits/2b61be3e46cec432e233735b2779d022eaf0fa35>\n\n \n\n \n\n \n"
     },
     {
+      "id": "13007",
       "author": "Simon Bates",
       "date": "2018-06-26T14:46:35.617-0400",
       "body": "Merged at:\n\n<https://github.com/inclusive-design/website-cities/commit/4a6213534f26fb62d4eedf2aff1bd16ed36dd364>\n"

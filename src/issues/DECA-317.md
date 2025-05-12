@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10204",
       "author": "Justin Obara",
       "date": "2012-10-31T10:51:51.534-0400",
       "body": "Merged into project repo\n"

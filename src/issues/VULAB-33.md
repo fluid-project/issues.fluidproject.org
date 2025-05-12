@@ -29,26 +29,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27315",
       "author": "David Makalsky",
       "date": "2008-09-19T14:15:54.000-0400",
       "body": "from vulab 1\n"
     },
     {
+      "id": "27316",
       "author": "David Makalsky",
       "date": "2008-09-24T10:42:40.000-0400",
       "body": "Sample site with RASCAL Applet put up at [http://rascal.xymbo.com](http://rascal.xymbo.com/)\n"
     },
     {
+      "id": "27317",
       "author": "David Makalsky",
       "date": "2008-09-24T10:43:12.000-0400",
       "body": "see prev. comment\n"
     },
     {
+      "id": "27318",
       "author": "David Makalsky",
       "date": "2008-09-24T10:43:56.000-0400",
       "body": "adding time\n"
     },
     {
+      "id": "27319",
       "author": "David Makalsky",
       "date": "2008-09-24T10:45:07.000-0400",
       "body": "time added\n"

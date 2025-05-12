@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22053",
       "author": "Cindy Li",
       "date": "2015-05-25T10:26:36.932-0400",
       "body": "The pull request <https://github.com/fluid-project/infusion/pull/605> has been merged into the master @ 14d03122a48712b81790bb73471890ff830271ec\n"
     },
     {
+      "id": "22054",
       "author": "Justin Obara",
       "date": "2015-06-26T09:50:57.702-0400",
       "body": "Reopening to change the fix version to 1.9\n"

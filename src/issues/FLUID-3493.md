@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23959",
       "author": "Antranig Basman",
       "date": "2010-02-09T20:38:43.000-0500",
       "body": "This has been revealed to be an issue of corruption of empty tags (such as \\<div />) through the document HTML. In Opera, these are quietly degraded to \"\\<div>\" with resulting corruption of the document structure. Either do not write templates with these tags, or else armour them with CDATA or comment wrapping in order to protect them.\n"
     },
     {
+      "id": "23961",
       "author": "Justin Obara",
       "date": "2014-07-07T15:38:17.942-0400",
       "body": "Opera is no longer a supported browser.\n"

@@ -29,26 +29,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19243",
       "author": "Eli Cochran",
       "date": "2008-06-25T22:50:50.000-0400",
       "body": "Added an error message for the case where the file was moved or deleted after the file was queued but before the file is uploaded.\n"
     },
     {
+      "id": "19244",
       "author": "Justin Obara",
       "date": "2008-07-07T20:45:42.000-0400",
       "body": "Tried on FF2 (Mac 0S X)&#x20;\n\nIt didn't trigger the error message. Is this because no files are actually being uploaded on the build site?\n"
     },
     {
+      "id": "19246",
       "author": "Eli Cochran",
       "date": "2008-07-16T22:18:06.000-0400",
       "body": "this is a case that can only be tested against an a real back-end.\n"
     },
     {
+      "id": "19247",
       "author": "Eli Cochran",
       "date": "2008-07-22T23:31:59.000-0400",
       "body": "I'm going to declare this Fixed until such a time as it can be tested against the Uploader running in the \"live\" mode off a real server\n"
     },
     {
+      "id": "19250",
       "author": "Justin Obara",
       "date": "2008-07-28T14:35:04.000-0400",
       "body": "Verified fix using:\n\nFF3 (Mac OS 10.5)\n"

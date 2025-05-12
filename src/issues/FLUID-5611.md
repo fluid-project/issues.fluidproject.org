@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23076",
       "author": "Antranig Basman",
       "date": "2019-08-01T09:29:00.177-0400",
       "body": "In the new, post <https://fluidproject.atlassian.net/browse/FLUID-6148#icft=FLUID-6148> framework such a condition is not an error and indeed highly likely. Also, the various issues referred to in the report relating to asynchronously loaded resources are resolved by the new ResourceLoader architecture\n"

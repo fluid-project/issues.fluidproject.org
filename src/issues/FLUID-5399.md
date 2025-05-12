@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13255",
       "author": "Justin Obara",
       "date": "2014-06-10T11:05:34.351-0400",
       "body": "This seems to be caused by the overview panel's container being overtop of the single file browse button. The container doesn't have anything in it, so it is invisible, however it is capturing the mouse clicks.\n"
     },
     {
+      "id": "13256",
       "author": "Justin Obara",
       "date": "2014-06-11T11:02:50.842-0400",
       "body": "Submitted a pull request\\\n<https://github.com/fluid-project/infusion/pull/530>\n"
     },
     {
+      "id": "13257",
       "author": "Cindy Li",
       "date": "2014-06-12T10:47:48.325-0400",
       "body": "Merged into the project repo @ d934d757a4bee649137e553ca3c31d16f7e4c39a\n"

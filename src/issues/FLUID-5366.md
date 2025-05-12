@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22709",
       "author": "Anastasia Cheetham",
       "date": "2014-05-13T15:44:07.788-0400",
       "body": "It turns out that options to the component can override the default paths:\n\nfluid.uiOptions.prefsEditor(\".flc-prefsEditor-separatedPanel\", {\\\ntemplatePrefix: \"../../../framework/preferences/html/\",\\\nmessagePrefix: \"../../../framework/preferences/messages/\"\\\n});\n"

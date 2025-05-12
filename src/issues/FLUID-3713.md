@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22039",
       "author": "Justin Obara",
       "date": "2010-09-07T10:23:29.115-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "22041",
       "author": "Justin Obara",
       "date": "2011-01-11T12:28:40.165-0500",
       "body": "As of Infusion 1.3, integrators can enable/disable wrapping through the \"disableWrap\" option\n"
     },
     {
+      "id": "22044",
       "author": "Justin Obara",
       "date": "2011-01-11T12:30:15.890-0500",
       "body": "The wrapping portion has been addressed, and the other issue about presenting grids as lists is a duplicate of <https://fluidproject.atlassian.net/browse/FLUID-3712#icft=FLUID-3712>\n"

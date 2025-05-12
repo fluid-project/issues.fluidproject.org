@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16767",
       "author": "y z",
       "date": "2013-02-05T08:57:03.568-0500",
       "body": "Fixed and merged into master, rev: 8a0ebfa2506562e2cd43a452e4750d20cf51d0b2\n"

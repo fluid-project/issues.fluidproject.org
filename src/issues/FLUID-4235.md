@@ -37,21 +37,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23814",
       "author": "Colin Clark",
       "date": "2011-05-13T18:33:33.236-0400",
       "body": "The symptoms Anastasia reports in <https://fluidproject.atlassian.net/browse/FLUID-4205#icft=FLUID-4205> are due to the brittle use of jQuery.data() as an API for discovering the global UI Enhancer.\n"
     },
     {
+      "id": "23816",
       "author": "Justin Obara",
       "date": "2011-05-17T09:40:24.209-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "23819",
       "author": "Michelle D'Souza",
       "date": "2011-05-26T14:03:30.541-0400",
       "body": "Pull request issued: <https://github.com/fluid-project/infusion/pull/55>\n"
     },
     {
+      "id": "23822",
       "author": "Michelle D'Souza",
       "date": "2011-05-31T15:19:30.391-0400",
       "body": "This was merged into the merge branch <https://fluidproject.atlassian.net/browse/FLUID-4267#icft=FLUID-4267>, at 14633ff7b66ff8b98df9afad96fe2d8d14f2e811\n"

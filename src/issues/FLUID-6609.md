@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25588",
       "author": "Justin Obara",
       "date": "2021-03-29T08:07:24.484-0400",
       "body": "The immediate issue is likely that the [enactor configuration](https://github.com/fluid-project/infusion/blob/4e804fee39403575f893565548124f6e61b00490/examples/framework/preferences/fullPagePanelStyle/index.html#L75-L77) in the example is missing the configuration overrides for its message bundle.\n\nHowever, this demo doesn't really need this specific enactor present at all, so another approach would be to explore keeping the preference but removing the ToC enactor.\n"
     },
     {
+      "id": "25589",
       "author": "Justin Obara",
       "date": "2021-03-29T10:27:16.322-0400",
       "body": "Merged PR ( <https://github.com/fluid-project/infusion/pull/1044> ) into the project repo at b8a058a270c4dbc95fc5e25e8a0e4bdfc619f02f\n"

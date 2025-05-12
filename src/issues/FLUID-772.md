@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19650",
       "author": "Jonathan Hung",
       "date": "2008-06-13T12:11:29.000-0400",
       "body": "Started a discussions page here:\\\n<http://wiki.fluidproject.org/display/fluid/Discussions>\n"
     },
     {
+      "id": "19651",
       "author": "Jonathan Hung",
       "date": "2008-06-17T16:04:28.000-0400",
       "body": "Done for now.\\\n<http://wiki.fluidproject.org/display/fluid/Collaborate>\n"
     },
     {
+      "id": "19652",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:51.067-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10266",
       "author": "Colin Clark",
       "date": "2010-06-25T19:11:30.453-0400",
       "body": "Very preliminary server consolidation by breaking out shared image processing routines into imageprocessing.py, along with a few early unit tests.\n"
     },
     {
+      "id": "10267",
       "author": "Colin Clark",
       "date": "2010-07-14T00:38:50.199-0400",
       "body": "This was resolved at revision 0da88d06c4. We now have a single server, with no duplicated code.\n"

@@ -39,16 +39,19 @@
   ],
   "comments": [
     {
+      "id": "17380",
       "author": "Justin Obara",
       "date": "2008-12-17T17:18:11.000-0500",
       "body": "'screenshot-1' shows the multiple states of the \"Browse Files\" button\n"
     },
     {
+      "id": "17381",
       "author": "Justin Obara",
       "date": "2008-12-17T17:18:30.000-0500",
       "body": "There is actually a third state visible if you keep increasing the size\n"
     },
     {
+      "id": "17382",
       "author": "Justin Obara",
       "date": "2009-11-04T15:02:02.000-0500",
       "body": "This has been fixed by placing an invisible flash movie over the button\n"

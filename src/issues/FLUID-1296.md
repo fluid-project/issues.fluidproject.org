@@ -38,16 +38,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16253",
       "author": "Jonathan Hung",
       "date": "2008-10-14T14:13:11.000-0400",
       "body": "Can be solved by using the Fluid-Clean theme. See this task:\\\n<http://issues.fluidproject.org/browse/FLUID-1681>\n"
     },
     {
+      "id": "16255",
       "author": "Jonathan Hung",
       "date": "2008-10-21T14:33:28.000-0400",
       "body": "Iteration20\n"
     },
     {
+      "id": "16260",
       "author": "Jonathan Hung",
       "date": "2008-10-21T14:33:39.000-0400",
       "body": "Fixed with Fluid-1681.\n"

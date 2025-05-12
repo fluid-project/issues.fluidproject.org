@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22812",
       "author": "Antranig Basman",
       "date": "2009-04-30T10:18:51.000-0400",
       "body": "<http://www.quirksmode.org/dom/w3c_core.html> explains some of the oddities with nodeName/tagName. This code should probably simply be guarded, to prevent any-sized fragments from escaping the range of safe nodes.\n"
     },
     {
+      "id": "22815",
       "author": "Justin Obara",
       "date": "2009-05-22T09:04:05.000-0400",
       "body": "Bug Parade 1.1 release&#x20;\n"
     },
     {
+      "id": "22819",
       "author": "Antranig Basman",
       "date": "2009-05-25T23:00:36.000-0400",
       "body": "tagName replaced for NodeName and now properly guarded - hard to verify since problem is intermittent, but should be impossible now.\n"
     },
     {
+      "id": "22821",
       "author": "Justin Obara",
       "date": "2009-11-13T09:01:10.000-0500",
       "body": "Closed as per previous comment\n"

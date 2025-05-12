@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10072",
       "author": "Justin Obara",
       "date": "2012-06-13T10:27:29.455-0400",
       "body": "The Decapod 0.6 Server architecture spec can be found on the wiki.\\\n<http://wiki.fluidproject.org/display/fluid/Decapod+0.6+Server+Architecture>\n"

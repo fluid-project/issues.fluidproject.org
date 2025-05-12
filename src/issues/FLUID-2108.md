@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22912",
       "author": "Paul Zablosky",
       "date": "2009-01-09T17:46:36.000-0500",
       "body": "iteration28\\\niteration29\n"
     },
     {
+      "id": "22915",
       "author": "Jonathan Hung",
       "date": "2011-01-20T13:23:07.664-0500",
       "body": "Orphaned task. Work seems to have been mostly completed by Paul. Closing.\n"

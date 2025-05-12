@@ -30,16 +30,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25361",
       "author": "Gregor Moss",
       "date": "2020-07-14T03:09:23.526-0400",
       "body": "Once I'd removed the UglifyJsPlugin step from the webpack script, I was able to get the site built and running mostly properly by running server.js via the following actions:\n\n```java\nnpm install\r\nnpm run serve:build\r\nopen http://localhost:8080\n```\n\nOR\n\n```java\nnpm install\r\nnpm run build\r\nnode .\\server.js\r\nopen http://localhost:8080\n```\n\n \n\nI say \"mostly properly\" because almost none of the audio works any more, as all but one file were hosted on and imported from [instaud.io](https://instaud.io/). Only the \"game over\" sound is actually present in the repository, somewhat fittingly.\n\n For context, my environment is:\n\n* Windows 10 Pro v1909\n* Chrome 83\n* Node v10.15.3\n* npm 6.4.1\n"
     },
     {
+      "id": "25362",
       "author": "Giovanni Tirloni",
       "date": "2020-07-14T07:56:13.059-0400",
       "body": "Should we consider this a dynamic website then with a live component (the express server)? I was hoping to just serve the contents of the public folder but it doesn't seem possible.\n"
     },
     {
+      "id": "27798",
       "author": "Justin Obara",
       "date": "2024-07-19T07:38:46.033-0400",
       "body": "Migrated to <https://github.com/fluid-lab/Spifind/issues/1>&#x20;\n"

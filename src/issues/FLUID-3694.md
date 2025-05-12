@@ -48,21 +48,25 @@
   ],
   "comments": [
     {
+      "id": "22201",
       "author": "Cindy Li",
       "date": "2010-08-31T15:06:17.964-0400",
       "body": "\"infusion-1.1.3.zip\" is the deployment bundle of 1.1.3 release\\\n\"infusion-1.1.3-src.zip\" is the source code bundle of 1.1.3 release\n"
     },
     {
+      "id": "22207",
       "author": "Cindy Li",
       "date": "2010-08-31T15:07:15.017-0400",
       "body": "\"infusion-1.1.3-rewriteHead.zip\" is the deployment bundle of 1.1.3 release with all the html heads rewritten to point to \"InfusionAll.js\" in the bundle \\\n\"infusion-1.1.3-src-rewriteHead.zip\" is the deployment bundle of 1.1.3 release with all the html heads rewritten to point to \"InfusionAll.js\" in the bundle&#x20;\n"
     },
     {
+      "id": "22210",
       "author": "Justin Obara",
       "date": "2010-09-02T14:02:07.434-0400",
       "body": "Infusion 1.1.3 has been tagged, packaged, and posted ( <http://wiki.fluidproject.org/display/fluid/Fluid+Infusion+1.1> )\n"
     },
     {
+      "id": "22213",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:21.740-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

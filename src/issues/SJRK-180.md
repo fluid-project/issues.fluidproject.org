@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26303",
       "author": "Gregor Moss",
       "date": "2019-01-17T17:52:32.535-0500",
       "body": "Unable to reproduce this issue on the iPad Mini iOS 12.1.1 or in Chrome 71 on Windows 10\n"
     },
     {
+      "id": "26304",
       "author": "Gregor Moss",
       "date": "2019-10-11T18:13:24.916-0400",
       "body": "Test Sequence 13 in the [Storytelling Tool Manual Testing Grid](https://wiki.fluidproject.org/display/fluid/Storytelling+Tool+Manual+Testing+Grid) is meant to test this exact scenario. In my latest round of testing, and indeed many previous rounds, I have not been able to reproduce this issue. Closing until further notice.\n"

@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14489",
       "author": "Laurel Williams",
       "date": "2009-11-04T14:52:31.000-0500",
       "body": "I would like to follow up on <https://fluidproject.atlassian.net/browse/FLUID-3356#icft=FLUID-3356> by doing this at some point.\n"
     },
     {
+      "id": "14492",
       "author": "Laurel Williams",
       "date": "2009-11-04T14:59:20.000-0500",
       "body": "Altered PostClass: added function to retrieve the fluid version number\\\nAdded test to check this (test will fail unless manually updated with correct fluid version number on new releases).\\\nAltered tests which relied on hard coded version number to use the new function\n"

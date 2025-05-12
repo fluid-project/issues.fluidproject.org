@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "11778",
       "author": "Jess Mitchell",
       "date": "2010-02-12T11:17:33.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "11779",
       "author": "Justin Obara",
       "date": "2010-02-12T11:23:38.000-0500",
       "body": "Committed yura's patch. It was a pretty small change and seems to be working.\n"

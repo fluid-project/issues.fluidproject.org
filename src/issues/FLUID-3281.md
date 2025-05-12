@@ -30,16 +30,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23271",
       "author": "Jacob Farber",
       "date": "2010-03-24T15:37:36.000-0400",
       "body": "FSS should be ok, working on others....\n"
     },
     {
+      "id": "23272",
       "author": "Anastasia Cheetham",
       "date": "2010-08-30T09:56:48.156-0400",
       "body": "James, could you review the pages affected by this issue, and if they've all been fixed, could you resolve it?\n"
     },
     {
+      "id": "23273",
       "author": "Jonathan Hung",
       "date": "2010-10-12T10:06:14.957-0400",
       "body": "Fixed for fss, inlineEdit (simple and rich), pager, progress, renderer, reorderer, uiOptions, and uploader.\n"

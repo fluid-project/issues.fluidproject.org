@@ -38,16 +38,19 @@
   ],
   "comments": [
     {
+      "id": "10388",
       "author": "Justin Obara",
       "date": "2012-05-14T14:02:38.164-0400",
       "body": "Screenshot-disabled.png shows the \"Start Export\" button while disabled.\n"
     },
     {
+      "id": "10389",
       "author": "Justin Obara",
       "date": "2012-05-14T14:03:02.615-0400",
       "body": "Screenshot-enabled.png shows the \"Start Export\" button while enabled.\n"
     },
     {
+      "id": "10390",
       "author": "Justin Obara",
       "date": "2012-05-23T12:19:14.162-0400",
       "body": "Merged into the project repo\n"

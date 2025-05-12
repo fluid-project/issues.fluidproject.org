@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21733",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T11:42:37.530-0400",
       "body": "I can't reproduce this anymore in 1.4, so resolving.\n"

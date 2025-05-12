@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12975",
       "author": "Anastasia Cheetham",
       "date": "2012-05-15T20:03:48.120-0400",
       "body": "Until there is a need for login (i.e. when infrastructure booking is available), we're disabling the affordance for logging in. A direct link will be provided to institution representatives to allow them to edit their pages\n"
     },
     {
+      "id": "12976",
       "author": "Anastasia Cheetham",
       "date": "2013-03-18T14:16:09.742-0400",
       "body": "Logging in will be enabled with the equipment booking functionality (<https://fluidproject.atlassian.net/browse/IDI-99#icft=IDI-99>).\n"

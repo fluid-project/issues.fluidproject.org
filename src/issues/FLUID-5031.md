@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16036",
       "author": "Justin Obara",
       "date": "2013-06-04T08:29:36.728-0400",
       "body": "Submitted a pull request ( <https://github.com/fluid-project/infusion/pull/335> ) which adds i18n.js to UIO's dependency file.\n"
     },
     {
+      "id": "16038",
       "author": "Michelle D'Souza",
       "date": "2013-06-04T10:35:53.433-0400",
       "body": "Merged into project repo at c3c88cd965e8804b678dd309aedd9cc603d4ce16\n"

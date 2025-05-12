@@ -35,16 +35,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15815",
       "author": "Justin Obara",
       "date": "2009-05-14T09:01:17.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "15821",
       "author": "Anastasia Cheetham",
       "date": "2009-05-25T14:49:12.000-0400",
       "body": "The changes made are only remotely related to the issue, but it is true that the issue was basically resolved by the fix to <https://fluidproject.atlassian.net/browse/FLUID-2500#icft=FLUID-2500>, and the changes made against this JIRA are good, so this looks fine to me.\n"
     },
     {
+      "id": "15823",
       "author": "Justin Obara",
       "date": "2009-05-25T16:04:32.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.6, Safari 3.2 (Mac OS 10.5)\\\nIE7 (Win Vista)\n"

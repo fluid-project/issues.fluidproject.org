@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10304",
       "author": "Justin Obara",
       "date": "2010-07-14T11:21:02.084-0400",
       "body": "Bug Parade Decapod 0.4\n"
     },
     {
+      "id": "10305",
       "author": "James Yoon",
       "date": "2010-07-15T16:12:58.353-0400",
       "body": "Verified as fixed.\n"

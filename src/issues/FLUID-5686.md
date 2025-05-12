@@ -81,21 +81,25 @@
   ],
   "comments": [
     {
+      "id": "22266",
       "author": "Kaye Mao",
       "date": "2015-06-11T14:59:36.050-0400",
       "body": "Updated checkbox design for UIO <https://www.dropbox.com/s/02j7ilnhxd7c8hv/UIO_mock.pdf?dl=0>\n"
     },
     {
+      "id": "22267",
       "author": "Dana",
       "date": "2015-09-01T16:10:03.007-0400",
       "body": "We have decided to convert all on/off switches to check boxes (rather than the other way around). For now we will use browser default check boxes, as long as they are large enough.\n"
     },
     {
+      "id": "22269",
       "author": "Justin Obara",
       "date": "2017-01-19T13:55:34.624-0500",
       "body": "Seems we have switched back to wanting to use the on/off toggles, but with the new designs ( \\\n<https://wiki.fluidproject.org/display/fluid/%28Floe%29+User+Interface+%28Learner%29+Options+Mobile+and+Responsive+Design> )\n"
     },
     {
+      "id": "22271",
       "author": "Cindy Li",
       "date": "2017-04-13T17:14:52.143-0400",
       "body": "[The infusion pull request ](https://github.com/fluid-project/infusion/pull/815)has been merged into the master branch at 0ca2eac0a06731f99588399c9abd3e9d29732235\n\n[The corresponding infusion-docs pull request](https://github.com/fluid-project/infusion-docs/pull/117) has been merged into the master branch at 2950c5bed58bad32d670fa723d6625862bbd85dc\n"

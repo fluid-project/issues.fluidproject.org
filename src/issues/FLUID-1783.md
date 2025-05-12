@@ -33,16 +33,19 @@
   ],
   "comments": [
     {
+      "id": "17168",
       "author": "Justin Obara",
       "date": "2008-11-10T09:08:44.000-0500",
       "body": "'screenshot-1' shows the \"Edit Saved\" tag displayed beside all inline edit fields, except the one that has been editted\n"
     },
     {
+      "id": "17169",
       "author": "Eli Cochran",
       "date": "2008-11-16T18:51:42.000-0500",
       "body": "css has been updated so that the Saved bug does not appear in IE unless there is an actual save\n"
     },
     {
+      "id": "17170",
       "author": "Justin Obara",
       "date": "2008-11-17T09:00:21.000-0500",
       "body": "Verified fix using:\n\nIE7 (Win Vista)&#x20;\n"

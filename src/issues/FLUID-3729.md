@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24742",
       "author": "Justin Obara",
       "date": "2010-10-04T14:41:54.009-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "24743",
       "author": "Antranig Basman",
       "date": "2010-10-20T00:27:46.280-0400",
       "body": "Fixed at revision 10150 - please review.\n"
     },
     {
+      "id": "24744",
       "author": "Michelle D'Souza",
       "date": "2010-10-28T15:03:50.358-0400",
       "body": "The tests pass and the code looks good.&#x20;\n"

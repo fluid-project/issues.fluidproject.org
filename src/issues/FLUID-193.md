@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23632",
       "author": "Anastasia Cheetham",
       "date": "2008-02-06T15:59:37.000-0500",
       "body": "The daily build server (<http://build.fluidproject.org/uPortal>) has been upgraded to uPortal 3. The Image Gallery Tool and portlet reorderer have not yet been integrated.\n"
     },
     {
+      "id": "23633",
       "author": "Simon Simon",
       "date": "2008-09-04T14:54:36.000-0400",
       "body": "The uPortal 3 Fluid integration test server is available at: <http://build.fluidproject.org/uPortal>.\n\nThe server and database can be started/stopped manually or automatically through continuum.\n\nThe start/stop scripts are under scripts/uportal/ directory.\n"
     },
     {
+      "id": "23635",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:49.659-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

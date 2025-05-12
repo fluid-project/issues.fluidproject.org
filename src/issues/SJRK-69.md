@@ -25,21 +25,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26328",
       "author": "Gregor Moss",
       "date": "2018-04-17T17:17:28.760-0400",
       "body": "The story is now updated from existing blocks every time the \"context\" is changed. I.e. every time the visibility of a \"page\" is changed, or the story is submitted. <https://github.com/BlueSlug/sjrk-story-telling/commit/71949b06ee040b0ed004ac0f281b10542c30ec0e>\n"
     },
     {
+      "id": "26329",
       "author": "Gregor Moss",
       "date": "2018-04-18T13:30:37.124-0400",
       "body": "An image block's preview image is now updated when the block is re-rendered in the editor. <https://github.com/BlueSlug/sjrk-story-telling/commit/ac13edea2e5f23e7845bdceb6c54883447311300>\n\n \n"
     },
     {
+      "id": "26330",
       "author": "Gregor Moss",
       "date": "2018-04-18T13:35:47.402-0400",
       "body": "I have added <https://fluidproject.atlassian.net/browse/SJRK-81#icft=SJRK-81> to capture the last of our three sub-tasks\n"
     },
     {
+      "id": "26331",
       "author": "Gregor Moss",
       "date": "2018-04-18T13:36:13.909-0400",
       "body": "Language switching in the block editor has been implemented\n"

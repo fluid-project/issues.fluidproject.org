@@ -35,21 +35,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22662",
       "author": "Alan Harnum",
       "date": "2016-10-26T16:58:16.204-0400",
       "body": "This issue appears to originate in component markup injected by Javascript, rather than the index.html page markup itself; it therefore won't be tackled as part of <https://fluidproject.atlassian.net/browse/FLUID-6000#icft=FLUID-6000>.\n"
     },
     {
+      "id": "22663",
       "author": "Alan Harnum",
       "date": "2016-10-26T17:32:57.522-0400",
       "body": "PR at <https://github.com/fluid-project/infusion/pull/770> - thanks David for report.\n"
     },
     {
+      "id": "22664",
       "author": "Alan Harnum",
       "date": "2016-10-26T17:45:13.993-0400",
       "body": "I'm going to try and fix a few of the other demo pages with issues with their injected markup under the heading of this JIRA as well.\n"
     },
     {
+      "id": "22666",
       "author": "Justin Obara",
       "date": "2016-10-27T11:57:55.102-0400",
       "body": "Merged PR ( <https://github.com/fluid-project/infusion/pull/770> ) into the project repo a 0bcd507499bf4968630813c25c8146a8163a1e39\n"

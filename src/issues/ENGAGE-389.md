@@ -48,31 +48,37 @@
   ],
   "comments": [
     {
+      "id": "12544",
       "author": "Jess Mitchell",
       "date": "2010-02-16T12:59:33.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12545",
       "author": "Jess Mitchell",
       "date": "2010-02-16T13:19:52.000-0500",
       "body": "this patch might introduce some other design issues, but it gets us started with styling on guestbook.\n"
     },
     {
+      "id": "12546",
       "author": "Jess Mitchell",
       "date": "2010-02-17T09:34:34.000-0500",
       "body": "needs review and will possibly need more styling fixes once it's implemented.\n"
     },
     {
+      "id": "12547",
       "author": "Jess Mitchell",
       "date": "2010-02-18T22:00:38.000-0500",
       "body": "grew crusty – now re-doing after a re-opening\n"
     },
     {
+      "id": "12548",
       "author": "Jess Mitchell",
       "date": "2010-02-18T22:18:49.000-0500",
       "body": "latest patch based on latest trunk\n"
     },
     {
+      "id": "12549",
       "author": "Jess Mitchell",
       "date": "2010-02-18T22:54:30.000-0500",
       "body": "completed and committed:\n\n* I added a background color to the 'Add Note' row;&#x20;\n* changed the fonts to match the graffle document\n* centered the 'Add Note' text\n\nremaining:\n\n* navbar\\_titles need to change color\n* I'm not sure if the \"load 10 more notes\" has been implemented or styled\n"

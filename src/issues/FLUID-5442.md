@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15232",
       "author": "Justin Obara",
       "date": "2015-06-16T11:53:14.217-0400",
       "body": "The sakai integration demo has been removed.\n"
     },
     {
+      "id": "15235",
       "author": "Justin Obara",
       "date": "2015-06-26T09:50:53.258-0400",
       "body": "Reopening to change the fix version to 1.9\n"

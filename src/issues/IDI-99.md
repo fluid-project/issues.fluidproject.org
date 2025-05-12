@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12994",
       "author": "Anastasia Cheetham",
       "date": "2012-08-22T12:53:41.256-0400",
       "body": "A first draft of this has been merged into the idi-theme repo (development branch) at d56b5049bdf6e0e2747088cf6af64f573558b120 with a small change to the base wordpress-fss-theme at 070ddff81c6e25b3e0e3e654d01263dea4d4516e. There's still work to be done, but this merge should make it easier for people to review the work so far.\n"
     },
     {
+      "id": "12996",
       "author": "Anastasia Cheetham",
       "date": "2013-01-15T15:03:19.100-0500",
       "body": "The dev branch at b22eb872d59aa750a554e84ea23b80513c3566da now contains a more up-to-date version of this work, with access to the form for only logged-in users.\n"

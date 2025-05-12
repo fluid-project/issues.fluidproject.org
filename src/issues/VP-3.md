@@ -32,16 +32,19 @@
   ],
   "comments": [
     {
+      "id": "27008",
       "author": "Michelle D'Souza",
       "date": "2013-01-14T19:08:41.304-0500",
       "body": "Cindy Li opened a pull request for this issue: <https://github.com/fluid-project/videoPlayer/pull/111>\n"
     },
     {
+      "id": "27009",
       "author": "Justin Obara",
       "date": "2013-01-15T09:44:35.342-0500",
       "body": "Unfortunately this change doesn't properly address the issue. When Michelle and I were looking at this a bit last week we noted a few things. 1) we can't just make the video 80% width as the transcripts may not be on and we would like the video to take up the entire space in this case. 2) There is some strange behaviour based on screen aspect ratio (e.g. MacBook Pro display vs external Thunderbolt display). I tested this with my MBP screen and couldn't see the transcripts at all. I think they had wrapped below the video.&#x20;\n\nTo address at least point 1 above, you may want to change things around a bit so that turning on captions will also add another class to the parent element. This can then be used for styling changes in fullscreen so that you could specify that the video take up the full screen space when there are no transcripts and only a portion of the space when the transcripts are present.\n"
     },
     {
+      "id": "27011",
       "author": "Justin Obara",
       "date": "2017-12-22T10:28:45.198-0500",
       "body": "The video player repository has been archived.\n"

@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18021",
       "author": "Anastasia Cheetham",
       "date": "2008-04-18T10:45:47.000-0400",
       "body": "The sample code now includes:\\\nabstract:\n\n* portal examples\\\n  concrete:\n* todo list\n* generic lightbox (multiple keysets **are** now supported, though, but this file will serve as a cut-paste source for Lightbox implementations, simpler than the template file)\n* jquery tabs (this replaces the uPortal sortable tabs example)\n* uPortal sortable portlets (updated, and includes the Lightbox in a portlet, showing nested reorderers)\n* scheduler (the RSFStyleScheduler has been removed)\n"
     },
     {
+      "id": "18023",
       "author": "Anastasia Cheetham",
       "date": "2008-04-21T12:27:49.000-0400",
       "body": "Re abstract portlets example: Either use the test markup for this purpose (make it display, and ensure that the tests clean up after themselves) or move it out of sample code and into tests somewhere.\n\nRe generic lightbox: Ensure that it is indeed nice and clean.\n\nRe scheduler: What does this offer that the to-do list doesn't?\n\nRe unordered-list-tabs: No longer necessary given the jQuery tabs example? Add a welcome tab to the tabs example with the intructions, and move this one out.\n"
     },
     {
+      "id": "18025",
       "author": "Anastasia Cheetham",
       "date": "2008-04-21T15:37:41.000-0400",
       "body": "Done.\n"

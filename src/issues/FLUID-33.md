@@ -36,16 +36,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19574",
       "author": "Antranig Basman",
       "date": "2008-08-14T21:13:50.000-0400",
       "body": "The geometric infrastructure required by the new drop manager should allow us to deal with this task\n"
     },
     {
+      "id": "19575",
       "author": "Antranig Basman",
       "date": "2008-09-07T18:08:05.000-0400",
       "body": "Drop Manager, Dom Permutation work merged back into trunk at revision 5476.\n\nThe new \"projectFrom\" method of the GeometricManager implements this functionality, which is verified by a low-level test case in GeometricManagerTests - however, we should create a high-level markup-driven test to verify that this works reasonably in a real-lfe scenario.\n"
     },
     {
+      "id": "19576",
       "author": "Justin Obara",
       "date": "2008-11-13T13:26:01.000-0500",
       "body": "Verified fix using:\n\nFF2, FF3  (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7 (Win XP)\\\nFF3, IE7 (Win Vista)\\\nFF3, IE6 (Win 2000)\n"

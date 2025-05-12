@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17853",
       "author": "Joseph Scheuhammer",
       "date": "2007-07-17T11:53:19.000-0400",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-8#icft=FLUID-8> is now broken into a number of smaller issues related to reorderer refactoring (see reorderer component).\n"
     },
     {
+      "id": "17855",
       "author": "Colin Clark",
       "date": "2007-09-17T22:11:30.000-0400",
       "body": "The current design of the Reorderer provides a parameter for an orderChangedCallback function, which nicely encapsulates any type of connection strategy desired.\n"

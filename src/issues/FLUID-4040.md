@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24107",
       "author": "Justin Obara",
       "date": "2011-05-17T10:28:03.574-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24109",
       "author": "Justin Obara",
       "date": "2011-07-26T11:24:37.260-0400",
       "body": "This has been added to the boundary tests section of the uploader test plan&#x20;\n"
     },
     {
+      "id": "24112",
       "author": "Justin Obara",
       "date": "2011-07-26T11:24:58.743-0400",
       "body": "Link to uploader test plan <http://wiki.fluidproject.org/display/fluid/Uploader+QA+Test+Plan>\n"

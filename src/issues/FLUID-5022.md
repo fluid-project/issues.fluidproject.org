@@ -40,11 +40,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15118",
       "author": "Colin Clark",
       "date": "2013-06-24T17:32:55.825-0400",
       "body": "Reviewed, tested and pushed to project master. Thanks for the new feature, Antranig!\n"
     },
     {
+      "id": "15121",
       "author": "Justin Obara",
       "date": "2014-03-03T11:55:07.686-0500",
       "body": "Pull request ( <https://github.com/fluid-project/infusion/pull/330> ) was merged into the project repo at e556e55f6c9c4a556bbc62676c475b58b8965c29\n"

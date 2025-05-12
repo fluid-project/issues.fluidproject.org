@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23667",
       "author": "Harris Wong",
       "date": "2011-05-16T15:45:45.781-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "23669",
       "author": "Michelle D'Souza",
       "date": "2011-06-06T10:24:52.094-0400",
       "body": "We are currently able to use the builder with git. I'm leaving this open because I think there is more work that needs to be done when we are doing the larger refactoring of the builder.&#x20;\n"
     },
     {
+      "id": "23672",
       "author": "Justin Obara",
       "date": "2014-03-03T11:20:11.384-0500",
       "body": "builder.fluidproject.org has been taken down and there are no immediate plans to replace it. Currently all builds are expected to be generated directly from the grunt build scripts.\n\n<http://fluid.2324889.n4.nabble.com/Infusion-Builder-issues-tp8926.html>\n"

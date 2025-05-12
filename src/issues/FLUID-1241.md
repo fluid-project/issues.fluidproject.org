@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14512",
       "author": "Colin Clark",
       "date": "2008-09-16T12:59:29.000-0400",
       "body": "After taking a very quick peek at this, I fear that the tests should be failing in this case but aren't. They probably need to be rewritten to fail, then fixed.\n"
     },
     {
+      "id": "14515",
       "author": "Antranig Basman",
       "date": "2008-11-14T09:41:35.000-0500",
       "body": "It's unfortunately quite hard to ensure that the tests fail, since at base all they can do is check that an option of a particular name is passed through from the defaults or user options to the live options... which will always happen, independent of its name. It is probably too intricate/unstable to write tests which verify the **function** of this padding since it will depend a good deal on the natural browser sizes for things. In any case, the tests have been updated at revision 6036 for the new paddings names.\n"

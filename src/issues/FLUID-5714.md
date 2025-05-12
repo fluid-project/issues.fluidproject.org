@@ -41,16 +41,19 @@
   ],
   "comments": [
     {
+      "id": "16803",
       "author": "Colin Clark",
       "date": "2015-07-21T15:46:09.564-0400",
       "body": "Attached is a QUnit test that illustrates the issue.\n"
     },
     {
+      "id": "16805",
       "author": "Justin Obara",
       "date": "2015-07-22T08:37:38.983-0400",
       "body": "The same thing happens when you have a \"this-ist\" invoker (i.e. {this: \"thisObject\", method: \"someMethod\", args: \\[]} ). Currently we have to null out the original properties when trying to override, but that requires the integrator to know what the underlying structure was.\n"
     },
     {
+      "id": "16807",
       "author": "Antranig Basman",
       "date": "2015-08-20T15:49:40.717-0400",
       "body": "Merged into trunk at revision 282f1a318718eed0b0ec060fb8b4ad254417fd7e\n"

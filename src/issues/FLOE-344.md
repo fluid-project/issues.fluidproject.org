@@ -31,16 +31,19 @@
   ],
   "comments": [
     {
+      "id": "11315",
       "author": "Dana",
       "date": "2015-05-19T18:09:14.967-0400",
       "body": "please see page 1 flow of attached wireframes for progress icon paging behaviour\n"
     },
     {
+      "id": "11316",
       "author": "Cindy Li",
       "date": "2015-05-22T15:08:51.927-0400",
       "body": "Antranig issued a pull request: <https://github.com/fluid-project/first-discovery/pull/57>\n"
     },
     {
+      "id": "11317",
       "author": "Cindy Li",
       "date": "2015-05-26T14:47:29.280-0400",
       "body": "Merged @ <http://issues.fluidproject.org/browse/FLOE-350>\n"

@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12258",
       "author": "Justin Obara",
       "date": "2010-02-24T13:53:23.000-0500",
       "body": "This was done for the exhibition home page, but it should be part of the navigation list itself\n"
     },
     {
+      "id": "12260",
       "author": "Justin Obara",
       "date": "2010-02-26T12:41:55.000-0500",
       "body": "This has been fixed already, the issue in the above comment filed as <https://fluidproject.atlassian.net/browse/ENGAGE-463#icft=ENGAGE-463>\n"

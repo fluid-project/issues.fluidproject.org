@@ -31,11 +31,13 @@
   ],
   "comments": [
     {
+      "id": "18536",
       "author": "Justin Obara",
       "date": "2008-04-07T15:44:44.000-0400",
       "body": "screenshot-1 shows the drop target below the first tab, and the other tabs on a lower line.\n"
     },
     {
+      "id": "18539",
       "author": "Michelle D'Souza",
       "date": "2008-04-28T14:10:36.000-0400",
       "body": "The issue was styling related and this sample has been retired.&#x20;\n"

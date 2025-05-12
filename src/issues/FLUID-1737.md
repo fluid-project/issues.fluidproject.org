@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17107",
       "author": "Colin Clark",
       "date": "2008-10-29T21:04:57.000-0400",
       "body": "This was fixed by resetting the event firers after each test.\n"
     },
     {
+      "id": "17108",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:51.755-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

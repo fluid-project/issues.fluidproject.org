@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15077",
       "author": "Justin Obara",
       "date": "2009-03-25T12:37:40.000-0400",
       "body": "Clean Up Parade 1.0&#x20;\n"
     },
     {
+      "id": "15080",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:48.120-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

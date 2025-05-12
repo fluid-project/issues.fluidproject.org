@@ -49,21 +49,25 @@
   ],
   "comments": [
     {
+      "id": "14438",
       "author": "Justin Obara",
       "date": "2008-09-08T12:10:11.000-0400",
       "body": "'screenshot-1' shows the blue selection border around the lightbox\n"
     },
     {
+      "id": "14441",
       "author": "Antranig Basman",
       "date": "2008-09-08T17:57:25.000-0400",
       "body": "I feel somehow this must be related to <https://fluidproject.atlassian.net/browse/FLUID-1484#icft=FLUID-1484>... I do not see this blue box in other browsers, and I am not quite clear what it is 😛 But clearly, in the process of a the DOM manipulation, Opera's idea of what this \"blue box\" represents is being corrupted...\n"
     },
     {
+      "id": "14443",
       "author": "Antranig Basman",
       "date": "2008-09-08T18:20:51.000-0400",
       "body": "Although I can't reproduce this, I feel it might well have been resolved at rev 5490 - could you retest? Cheers\n"
     },
     {
+      "id": "14445",
       "author": "Justin Obara",
       "date": "2008-09-09T09:06:05.000-0400",
       "body": "Verified fix using:\n\nOpera 9.5 (Mac OS 10.5, Win XP)\n"

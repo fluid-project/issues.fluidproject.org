@@ -35,16 +35,19 @@
   ],
   "comments": [
     {
+      "id": "15716",
       "author": "y z",
       "date": "2011-01-21T13:22:01.214-0500",
       "body": "failing.test.patch.txt has a test with an empty model.\n"
     },
     {
+      "id": "15720",
       "author": "Antranig Basman",
       "date": "2011-02-04T03:40:19.828-0500",
       "body": "Resolved with new implementation at what is now git revision 1971f9a.\n"
     },
     {
+      "id": "15722",
       "author": "y z",
       "date": "2011-05-17T11:53:27.300-0400",
       "body": "The test case is now passing and the issue can be resolved.\n"

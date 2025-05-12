@@ -39,11 +39,13 @@
   ],
   "comments": [
     {
+      "id": "13917",
       "author": "Anastasia Cheetham",
       "date": "2011-10-03T16:00:19.211-0400",
       "body": "This screenshot (uio-background-overlapping-line-above.png) shows the \"overlapping\" effect. This only happens when a theme that specifies a background colour is in use, and only with a couple of fonts (Comic Sans being the most pronounced).\n"
     },
     {
+      "id": "13921",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T10:28:43.251-0400",
       "body": "This has been duplicated by <https://fluidproject.atlassian.net/browse/FLUID-4519#icft=FLUID-4519>\n"

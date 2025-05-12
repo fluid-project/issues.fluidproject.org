@@ -33,16 +33,19 @@
   ],
   "comments": [
     {
+      "id": "22112",
       "author": "Cindy Li",
       "date": "2010-08-31T14:03:29.632-0400",
       "body": "\"FLUID-3693.patch.txt\" updates the README.txt with the changes in release 1.1.3.\n"
     },
     {
+      "id": "22114",
       "author": "Justin Obara",
       "date": "2010-09-02T14:01:27.826-0400",
       "body": "Committed Cindy's patch to update the README.txt with a mention of the fixes in 1.1.3\n"
     },
     {
+      "id": "22116",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:20.022-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

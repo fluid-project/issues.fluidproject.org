@@ -38,6 +38,7 @@
   ],
   "comments": [
     {
+      "id": "12351",
       "author": "y z",
       "date": "2010-03-11T14:56:20.000-0500",
       "body": "there's an encoding problem with the patch where JIRA converts \"é\" into a wrong character. Please double check if the message bundle has proper characters in it after applying the patch.\n"

@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12475",
       "author": "Antranig Basman",
       "date": "2009-10-14T14:54:22.000-0400",
       "body": "This occurs on the client end - line 20 of loadData.js converts the entire document URL into a string, including query parameters, but the jQuery.ajax call on line 37 further supplies the query parameters as the \"data\" argument. Note that these URLs are not ones that we plan to support (at least without further discussion) since their serialisation into JSON objects is unclear. We may adopt a standard whereby a segment without value is silently interpreted as if it had the value \"1\", and likewise on serialization.\n"
     },
     {
+      "id": "12476",
       "author": "Justin Obara",
       "date": "2009-11-13T11:58:40.000-0500",
       "body": "Resolved at r8682\\\nRemoved the data options in the ajax call, this is what was adding in the query string a second time.&#x20;\n"

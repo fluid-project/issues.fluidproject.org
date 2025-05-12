@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18027",
       "author": "Shaw-Han Liem",
       "date": "2008-02-06T15:18:48.000-0500",
       "body": "iteration02\n"
     },
     {
+      "id": "18222",
       "author": "Barbara Glover",
       "date": "2008-02-12T17:15:05.000-0500",
       "body": "This CI was canceled.  Only needed 4 faculty not 5.\n"

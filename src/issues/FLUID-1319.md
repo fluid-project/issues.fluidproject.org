@@ -31,16 +31,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21034",
       "author": "Justin Obara",
       "date": "2008-09-24T13:17:00.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "21035",
       "author": "Antranig Basman",
       "date": "2008-11-07T13:30:56.000-0500",
       "body": "This has been fixed at revision 5965 by simply unconditionally catching the exception. Note that this issue is investigated and characterised more fully as part of GWT in the following thread:\n\n<http://code.google.com/p/google-web-toolkit/issues/detail?id=1385>\n\nThe upshot is that the error occurs when attempting to setSelectionRange on any text control which is not currently \"physically embodied\" in front of the user, e.g. hidden as a result of being markup running in a test ase.\n"
     },
     {
+      "id": "21036",
       "author": "Justin Obara",
       "date": "2008-11-10T08:34:34.000-0500",
       "body": "Verified fix using:\n\nFF2, FF3 (Mac OS 10.5)\\\nFF3 (Win Vista)\n"

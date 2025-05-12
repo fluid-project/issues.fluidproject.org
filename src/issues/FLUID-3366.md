@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20572",
       "author": "Colin Clark",
       "date": "2009-11-07T13:06:21.000-0500",
       "body": "I've fixed this at r8615 by fixing the version for Sakai Master in the root POM file, updating Image Gallery Web's version of Infusion, and adding master to the list of modules in the root POM. Now we have a much simpler build that allows us to run a mvn clean/install/deploy right at the root, and all sub-modules will be built automatically.\n"

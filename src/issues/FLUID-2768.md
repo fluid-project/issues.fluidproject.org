@@ -30,6 +30,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19688",
       "author": "Justin Obara",
       "date": "2014-07-11T14:35:06.752-0400",
       "body": "flc-pager-top and flc-pager-bottom are containers used to instantiate the fluid.pager.pagerBar subcomponent responsible for handling the pagination functionality. This is required. Although the exact class names could be configured through the components options.\n"

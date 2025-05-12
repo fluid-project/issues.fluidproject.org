@@ -30,21 +30,25 @@
   ],
   "comments": [
     {
+      "id": "10457",
       "author": "Jonathan Hung",
       "date": "2010-07-14T10:15:12.637-0400",
       "body": "Calibration.html should be renamed to Independent-left-right.html to better reflect functionality.\n"
     },
     {
+      "id": "10458",
       "author": "Justin Obara",
       "date": "2010-07-14T11:21:54.063-0400",
       "body": "Bug Parade Decapod 0.4\n"
     },
     {
+      "id": "10459",
       "author": "Colin Clark",
       "date": "2010-07-14T15:02:51.418-0400",
       "body": "Here's a patch with some refactoring that Justin and I did to both decapodUtils.js and ImageRotater.js\n"
     },
     {
+      "id": "10460",
       "author": "Justin Obara",
       "date": "2011-10-06T14:00:50.820-0400",
       "body": "Decapod 0.4 was released, all necessary code cleanup should have been completed\n"

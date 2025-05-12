@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17514",
       "author": "Antranig Basman",
       "date": "2009-03-16T14:31:35.000-0400",
       "body": "Fixed at revision 6750. I have updated various handlers in InlineEdit and Reorderer to conform to the new model, but I believe that this behaviour was never exercised.\n"
     },
     {
+      "id": "17517",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:42.722-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

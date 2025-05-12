@@ -39,16 +39,19 @@
   ],
   "comments": [
     {
+      "id": "11397",
       "author": "Michelle D'Souza",
       "date": "2012-07-04T12:53:25.787-0400",
       "body": "The first issue should be dealt with once Assembla issue 641 is completed.&#x20;\n"
     },
     {
+      "id": "11398",
       "author": "Michelle D'Souza",
       "date": "2012-07-04T16:36:24.144-0400",
       "body": "The second issue is fixed in this branch: <https://github.com/michelled/OER-Commons/tree/FLOE-42>\n\nThe third issue is waiting for Joanna to export some images.&#x20;\n"
     },
     {
+      "id": "11399",
       "author": "Michelle D'Souza",
       "date": "2012-07-16T15:26:40.839-0400",
       "body": "Could I get the 'write', 'describe' and 'submit' icons without the text on them please?&#x20;\n"

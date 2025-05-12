@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22710",
       "author": "Justin Obara",
       "date": "2016-08-10T15:18:19.843-0400",
       "body": "Only applied the hot fix for now.\n\nMerged pull request ( <https://github.com/inclusive-design/guide.inclusivedesign.ca/pull/9> ) into the project repo at b81d9c2a3fb892316e3bcbc68a3b53c4356e1745\n"

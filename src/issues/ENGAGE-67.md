@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12409",
       "author": "Justin Obara",
       "date": "2009-09-21T16:37:58.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "12410",
       "author": "Justin Obara",
       "date": "2009-09-25T13:38:34.000-0400",
       "body": "Integrated the description component as a sub-component of browse\n"
     },
     {
+      "id": "12411",
       "author": "Justin Obara",
       "date": "2009-11-03T11:59:32.000-0500",
       "body": "Closed as per previous comment\n"

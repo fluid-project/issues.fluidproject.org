@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27360",
       "author": "Blake E",
       "date": "2008-11-24T10:34:05.000-0500",
       "body": "vulab8\n"
     },
     {
+      "id": "27361",
       "author": "Blake E",
       "date": "2008-11-27T14:07:23.000-0500",
       "body": "Any users who have been invited are removed from the list. (Only uninvited users are shown)\n"

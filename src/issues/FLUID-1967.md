@@ -41,11 +41,13 @@
   ],
   "comments": [
     {
+      "id": "19930",
       "author": "Justin Obara",
       "date": "2008-12-12T11:37:43.000-0500",
       "body": "'screenshot-1' shows the pointer as a drag cursor, but you are unable to drag the portlet.\n"
     },
     {
+      "id": "19931",
       "author": "Justin Obara",
       "date": "2014-06-05T15:21:37.552-0400",
       "body": "This demo has been removed\n"

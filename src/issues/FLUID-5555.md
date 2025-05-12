@@ -27,31 +27,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22434",
       "author": "Justin Obara",
       "date": "2016-02-19T08:12:50.537-0500",
       "body": "Jonathan Hung pointed me at  <https://github.com/sapegin/grunt-webfont>. It should address at least some of the above concerns as you can specify which glyph uses which PUA value.\n"
     },
     {
+      "id": "22436",
       "author": "Justin Obara",
       "date": "2016-02-19T09:11:56.112-0500",
       "body": "Grunt does support pulling data from an external JSON file (<http://gruntjs.com/configuring-tasks#importing-external-data>), so we could have JSON files for each project that uses the icons. However it might be easier to just source all this information via the command line, similar to how the Infusion build script currently work.\n"
     },
     {
+      "id": "22437",
       "author": "Justin Obara",
       "date": "2017-03-14T12:52:46.260-0400",
       "body": "A short blog post about how to use grunt-webfont including information about font height, ascent and descent. <https://medium.com/sketch-app-sources/font-icons-workflow-with-sketch-and-grunt-16b161d97c5e#.tqibe05z5>\n"
     },
     {
+      "id": "22438",
       "author": "Justin Obara",
       "date": "2017-03-16T09:09:31.502-0400",
       "body": "I had trouble getting good looking fonts using <https://github.com/sapegin/grunt-webfont> without installing fontforge. Unfortunately fontforge isn't installed via NPM which would pose a problem for using in Infusion. I did have more success with <https://www.npmjs.com/package/webfonts-generator>; however, it is a straight NPM package ( not grunt ) and needed to set the fontHeight option. It appears that both grunt-webfont and webfont-generator use <https://github.com/nfroidure/svgicons2svgfont> as the node engine, so perhaps tweaking the settings for grunt-webfont would get it to work.\n\nWe may also need to rebuild our svgs for the icons. For example use consistent art board sizes for all of them.&#x20;\n"
     },
     {
+      "id": "22440",
       "author": "Eloisa Guerrero",
       "date": "2017-10-19T16:13:16.843-0400",
       "body": "Documentation for standardising workflow for icon fonts over here: <https://wiki.fluidproject.org/display/fluid/Standard+workflow+in+maintaining+and+creating+icon+fonts>\n"
     },
     {
+      "id": "22441",
       "author": "Eloisa Guerrero",
       "date": "2017-10-19T16:17:57.329-0400",
       "body": "See wiki documentation: <https://issues.fluidproject.org/browse/FLUID-5555>\n\nAnd infusion-icons Github repository: <https://github.com/fluid-project/infusion-icons>\n"

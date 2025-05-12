@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15831",
       "author": "Antranig Basman",
       "date": "2013-05-30T15:01:41.078-0400",
       "body": "There is a typo in this test case (DeeperSubComponentOption <-> deeperSubComponentOption) and when this was fixed, the test case passed. Closing for now as \"not a bug\" but please feel free to reopen if the root cause is uncovered - through IRC channel discussion today (30 May 2013) it seemed that the issue resulted from attempting to distribute non-genuine component options material defined using the manual \"derivedDefaults\" mechanism from the old (obsolete) version of UIOptions\n"

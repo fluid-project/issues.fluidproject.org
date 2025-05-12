@@ -35,16 +35,19 @@
   ],
   "comments": [
     {
+      "id": "27552",
       "author": "Blake E",
       "date": "2009-01-22T15:19:01.000-0500",
       "body": "vulab13\n"
     },
     {
+      "id": "27553",
       "author": "Blake E",
       "date": "2009-01-22T16:01:16.000-0500",
       "body": "I have created the boostrap .sql file minus the user tables (users, roles, groups) as they will be dictated by the Active User Library that I use.\n"
     },
     {
+      "id": "27554",
       "author": "Blake E",
       "date": "2009-01-22T16:04:19.000-0500",
       "body": "Note: that some table names and fields have changed to follow the CakePHP conventions and take use of the automagic functions that CakePHP offers.\n\nex. project\\_id becomes id, and question\\_types becomes qtypes.\n\nyou can read up on them here: <http://book.cakephp.org/view/24/Model-and-Database-Conventions>\n"

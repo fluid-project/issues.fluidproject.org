@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18978",
       "author": "Anastasia Cheetham",
       "date": "2008-09-29T13:58:26.000-0400",
       "body": "Michelle's fix to the existing examples for this look good to me.\n"
     },
     {
+      "id": "18982",
       "author": "Justin Obara",
       "date": "2008-09-29T14:01:59.000-0400",
       "body": "code coverted\n"

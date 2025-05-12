@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19661",
       "author": "Allison Bloodworth",
       "date": "2008-06-10T16:51:40.000-0400",
       "body": "\\-\n"
     },
     {
+      "id": "19662",
       "author": "Jonathan Hung",
       "date": "2008-10-24T11:06:28.000-0400",
       "body": "Added a few more tags (like Span, Div, Cite, etc) to the accepted tags used in Filtered HTML.\n\nExisting design patterns confirmed to still look proper.\n"

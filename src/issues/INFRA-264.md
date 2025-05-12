@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26098",
       "author": "Giovanni Tirloni",
       "date": "2020-09-15T05:01:33.999-0400",
       "body": "This was only happening in h-0005. Removed the epel-testing.repo and epel.repo files that were duplicating the EPEL repository configuration and the problem is gone.\n"

@@ -28,11 +28,13 @@
   ],
   "comments": [
     {
+      "id": "11117",
       "author": "Alexey Novak",
       "date": "2012-08-16T11:48:29.769-0400",
       "body": "Assembla ticket created\\\n<https://www.assembla.com/spaces/iskme/tickets/725>\n"
     },
     {
+      "id": "11118",
       "author": "Alexey Novak",
       "date": "2012-10-18T15:18:43.220-0400",
       "body": "Released\n"

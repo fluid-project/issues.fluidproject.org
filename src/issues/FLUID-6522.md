@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25359",
       "author": "Divyanshu Mahajan",
       "date": "2020-06-24T10:20:59.690-0400",
       "body": "The problem that I noticed with both these selectors is that they didn't return the complete list of elements that are focusable/tabbable. For example, the `*summary*` tag and the `*details*` tag are not present in the array returned by them, even if it's on the webpage. It would create accessibility issues and is counterproductive to what we actually want.\n\nThe available alternative is [ally.js](https://allyjs.io/) which can be used separately. It is more accurate and flexible.\n"

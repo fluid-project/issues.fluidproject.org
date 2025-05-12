@@ -40,16 +40,19 @@
   ],
   "comments": [
     {
+      "id": "13371",
       "author": "Justin Obara",
       "date": "2008-09-16T15:24:57.000-0400",
       "body": "'screenshot-1' shows the left and right borders of the blue selection box persisting after all files have been removed from the file queue\n"
     },
     {
+      "id": "13372",
       "author": "Justin Obara",
       "date": "2008-09-16T15:26:40.000-0400",
       "body": "This doesn't seem to occur if the files are removed using the mouse.\n"
     },
     {
+      "id": "13374",
       "author": "Justin Obara",
       "date": "2014-07-07T15:38:18.237-0400",
       "body": "Opera is no longer a supported browser.\n"

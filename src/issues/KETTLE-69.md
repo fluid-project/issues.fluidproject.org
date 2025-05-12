@@ -23,16 +23,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26138",
       "author": "Alan Harnum",
       "date": "2018-06-20T11:26:45.793-0400",
       "body": "Update: the test passes on my work desktop environment, so I think this may be an issue specific to my home laptop environment. I'll investigate further.\n"
     },
     {
+      "id": "26139",
       "author": "Antranig Basman",
       "date": "2018-06-21T07:51:31.508-0400",
       "body": "Works fine for me on Windows 7, node 8.9.4 npm 5.6.0. Perhaps some kind of bug with node 9.x https protocol parsing? I tend to avoid the odd-numbered releases ...\n"
     },
     {
+      "id": "26140",
       "author": "Alan Harnum",
       "date": "2018-06-21T08:47:49.747-0400",
       "body": "Downgrading my home laptop to the Node LTS release (node 8.11.3, npm 5.6.0) resolved this issue. \n\nI also tried upgrading to Node 10.5.0 and the tests failed completely due to a failure with leveldown (I didn't log it, unfortunately) - this may be related to an issue with the OSX dev tools / make on my laptop environment, though.\n\nClosing for now.\n"

@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25527",
       "author": "Justin Obara",
       "date": "2016-08-12T12:02:26.961-0400",
       "body": "Need to review if modernizr is still the best approach.\n"
     },
     {
+      "id": "25528",
       "author": "Ned Zimmerman",
       "date": "2021-03-24T09:00:55.829-0400",
       "body": "I think lots has changed since this JIRA was filed 🙂\n\nBut one good thing to explore would be the [supports](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports) media query. Here's an example for CSS grid.\n\n```css\ndiv.columns > * {\r\n  background: red;\r\n  float: left;\r\n  height: 100px;\r\n  width: 100px;\r\n}\r\n\r\ndiv.columns > * + * {\r\n  margin-left: 1em;\r\n}\r\n\r\n@supports(display: grid) {\r\n  div.columns {\r\n    display: grid;\r\n    grid-gap: 1em;\r\n    grid-template-columns: repeat(4, 100px);\r\n  }\r\n  \r\n  div.columns > * {\r\n    margin: 0;\r\n    width: 100%;\r\n  }\r\n  \r\n  div.columns > * + * {\r\n    margin-left: 0;\r\n  }\r\n}\n```\n\nThe CSS inside the supports query will only be run with browsers which support `display: grid`.\n\nFeature queries themselves are [supported in all modern browsers](https://caniuse.com/css-featurequeries) (not in IE).\n"

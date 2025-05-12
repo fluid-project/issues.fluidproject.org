@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22181",
       "author": "Mike Lam",
       "date": "2010-09-08T13:47:40.322-0400",
       "body": "URLs to 1.2.1 release updated on demo page. &#x20;\n"
     },
     {
+      "id": "22183",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:20.576-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

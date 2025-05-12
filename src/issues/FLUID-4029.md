@@ -41,21 +41,25 @@
   ],
   "comments": [
     {
+      "id": "20640",
       "author": "heidi valles",
       "date": "2011-01-13T14:15:01.539-0500",
       "body": "units tests still pass\n"
     },
     {
+      "id": "20641",
       "author": "Colin Clark",
       "date": "2011-01-27T19:29:13.072-0500",
       "body": "Hi Heidi,\n\nThanks for the patch. On Firefox 3.6, it seems to cause the total file progress area to overflow, causing scroll bars. Can you take a look?\n"
     },
     {
+      "id": "20642",
       "author": "heidi valles",
       "date": "2011-02-02T13:38:42.504-0500",
       "body": "The scroll bar issue is fixed by the updated Uploader.css in <https://fluidproject.atlassian.net/browse/FLUID-3837#icft=FLUID-3837>. Progress tests and demo still good.\n"
     },
     {
+      "id": "20643",
       "author": "Michelle D'Souza",
       "date": "2011-02-12T13:21:36.256-0500",
       "body": "Pushed to Infusion project repository at commit 6368e698fd1a8d22fcbb\n\nHeidi, please check that it's working as you expect.&#x20;\n"

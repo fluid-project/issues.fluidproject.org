@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24482",
       "author": "Justin Obara",
       "date": "2010-09-07T10:03:52.609-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "24483",
       "author": "Justin Obara",
       "date": "2011-07-08T16:33:31.828-0400",
       "body": "A method to indicate movement for the reorderer was implemented in the Infusion 1.3.1 release. Any new issues related to this should be filed in new specific jiras\n"

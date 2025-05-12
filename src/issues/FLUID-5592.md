@@ -45,16 +45,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25385",
       "author": "Cindy Li",
       "date": "2015-01-26T10:42:46.647-0500",
       "body": "Sent a pull request with a test case even though this test case didn't manage to expose the issue: <https://github.com/fluid-project/infusion/pull/580>\n"
     },
     {
+      "id": "25386",
       "author": "Antranig Basman",
       "date": "2015-01-26T20:59:50.912-0500",
       "body": "We can now characterise this issue properly. Given modelListeners are notified synchronously throughout the model skeleton when a transaction commits, we can bypass the framework's deregistration code if we happen to register a modelListener which destroys a component which is due to be notified by a later listener in the queue. This is one of the problematic \"costs of doing business\" with a synchronous event notification system. We have already encountered this issue and noted our response on <https://fluidproject.atlassian.net/browse/FLUID-5499#icft=FLUID-5499> - \"in a glorious future\" we could schedule all effects in the framework asynchronously, but currently we are a very long way from having adequate platform or tooling support.\n\nIn the meantime, we must continue to operate our \"abortable events\" model and extend it consistently to the change notifications operated by ChangeAppliers. The cost of this approach is that we miss the opportunity to detect some coding errors - blatant and direct cases of attempting to notify to events held by destroyed components will simply pass as no-ops. However, the benefit is that we don't have to give obscure and unwieldy advice to implementors such as \"avoid destroying components in model listeners\" - which given a typical implementation scenario would be equivalent to \"avoid destroying components at all\". This is especially problematic with respect to our very old-fashioned renderer which expects to be able to clear away a tree of subcomponents and replace them all within the same stack frame.\n\nResolving this issue required patching 3 separate locations in the model notification pathway. Given the complexity of the implementation, even should we improve it with <https://fluidproject.atlassian.net/browse/FLUID-5373#icft=FLUID-5373> refactoring, this will likely remain messy.\n"
     },
     {
+      "id": "25387",
       "author": "Cindy Li",
       "date": "2015-01-27T11:58:23.214-0500",
       "body": "Merged into the master branch @ 605b0bcfaedf6193c31456236d3aa4e42cf36a96\n"

@@ -35,21 +35,25 @@
   ],
   "comments": [
     {
+      "id": "27578",
       "author": "Blake E",
       "date": "2009-02-12T11:51:10.000-0500",
       "body": "vulab16\n"
     },
     {
+      "id": "27579",
       "author": "Blake E",
       "date": "2009-02-17T13:18:24.000-0500",
       "body": "patch to add database.sql to the main home dir.\\\nthis is the basic database schema with no data imported (the initial signup will create required data)\n"
     },
     {
+      "id": "27580",
       "author": "Colin Clark",
       "date": "2009-02-18T16:51:58.000-0500",
       "body": "I've reviewed Blake's patch and it looks good. Committed at r6535.\n"
     },
     {
+      "id": "27581",
       "author": "Colin Clark",
       "date": "2009-02-18T16:52:56.000-0500",
       "body": "Blake, I've committed your patch. Take a look and make sure it's ok.\n"

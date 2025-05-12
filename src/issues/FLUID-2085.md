@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18033",
       "author": "Jonathan Hung",
       "date": "2009-02-05T09:26:26.000-0500",
       "body": "Fixed.\n"
     },
     {
+      "id": "18034",
       "author": "Jonathan Hung",
       "date": "2009-02-05T10:05:26.000-0500",
       "body": "iteration26\n"

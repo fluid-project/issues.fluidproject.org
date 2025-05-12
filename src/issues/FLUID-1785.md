@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "17193",
       "author": "Justin Obara",
       "date": "2008-11-10T09:50:47.000-0500",
       "body": "'screenshot-1' shows the inline edit field in edit mode, with the borders of the text field not displayed properly\n"
     },
     {
+      "id": "17195",
       "author": "Justin Obara",
       "date": "2008-11-14T09:05:37.000-0500",
       "body": "Appears to have been fixed at r6024\n\nVerified fix using:\n\nIE6 (Win XP)\\\nIE7 (Win Vista)\n"

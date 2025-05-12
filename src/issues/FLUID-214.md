@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17902",
       "author": "Shaw-Han Liem",
       "date": "2008-02-06T15:30:08.000-0500",
       "body": "iteration02\n"
     },
     {
+      "id": "17904",
       "author": "Shaw-Han Liem",
       "date": "2008-02-07T14:42:27.000-0500",
       "body": "Preliminary page is up at:\n\n<http://wiki.fluidproject.org/display/fluid/How+to+Plan+an+Iteration>\n\nMight need some tweaking as we refine our process!\n"

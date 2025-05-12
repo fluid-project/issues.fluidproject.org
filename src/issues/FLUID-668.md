@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15719",
       "author": "Justin Obara",
       "date": "2009-05-05T09:55:53.000-0400",
       "body": "Does seem to be working in IE 8\n"
     },
     {
+      "id": "15721",
       "author": "Justin Obara",
       "date": "2014-07-07T14:49:33.861-0400",
       "body": "This works in IE 11. IE 6 and 7 are no longer supported\n"

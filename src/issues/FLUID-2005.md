@@ -46,51 +46,61 @@
   ],
   "comments": [
     {
+      "id": "17806",
       "author": "Justin Obara",
       "date": "2008-12-17T11:29:45.000-0500",
       "body": "This will also occur if you click the \"Edit Appearance\" button without moving the mouse at all.\n"
     },
     {
+      "id": "17808",
       "author": "Justin Obara",
       "date": "2008-12-17T11:31:38.000-0500",
       "body": "'screenshot-1' shows the UI Options dialog with only the top border adn close button visible\n"
     },
     {
+      "id": "17810",
       "author": "Jacob Farber",
       "date": "2008-12-19T12:55:49.000-0500",
       "body": "Changed the ajax call to only display dialog once load completed.\n"
     },
     {
+      "id": "17812",
       "author": "Justin Obara",
       "date": "2009-01-05T11:09:48.000-0500",
       "body": "Verified fix using:\n\nIE 6 (Win XP)\n"
     },
     {
+      "id": "17814",
       "author": "Michelle D'Souza",
       "date": "2009-01-05T16:21:42.000-0500",
       "body": "I'm going to undo the code changes because they caused <https://fluidproject.atlassian.net/browse/FLUID-2049#icft=FLUID-2049>. I can't reproduce the bug anymore.\n"
     },
     {
+      "id": "17816",
       "author": "Justin Obara",
       "date": "2009-01-06T08:37:47.000-0500",
       "body": "I am able to reproduce this bug, now that the code changes have been reversed\n"
     },
     {
+      "id": "17818",
       "author": "Justin Obara",
       "date": "2009-01-06T12:09:49.000-0500",
       "body": "Bug Parade  0.7 release\n"
     },
     {
+      "id": "17821",
       "author": "Jacob Farber",
       "date": "2009-01-07T10:27:21.000-0500",
       "body": "Fixed dialog show/hide to fire at the right time, even if ajax isnt called\n"
     },
     {
+      "id": "17825",
       "author": "Anastasia Cheetham",
       "date": "2009-01-07T16:45:26.000-0500",
       "body": "I've reviewed and tested this patch - it looks good to me!\n"
     },
     {
+      "id": "17830",
       "author": "Justin Obara",
       "date": "2009-01-08T08:38:36.000-0500",
       "body": "Verified fix using:\n\nIE6 (Win XP)\n"

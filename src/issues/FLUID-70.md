@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17826",
       "author": "Michelle D'Souza",
       "date": "2007-11-05T11:15:46.000-0500",
       "body": "Recently a change was made from using jQuery UI's 'Sortable' to using 'Draggable and Droppable'. This may have fixed this issue as I can no longer reproduce the javascript errors.\n"

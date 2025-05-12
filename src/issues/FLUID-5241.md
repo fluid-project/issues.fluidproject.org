@@ -40,21 +40,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16099",
       "author": "Antranig Basman",
       "date": "2014-12-03T15:39:47.238-0500",
       "body": "The \"grade linkage\" facility will be ditched and we will instead implement such functionality with <https://fluidproject.atlassian.net/browse/FLUID-5556#icft=FLUID-5556> enhanced IoCSS expressions\n"
     },
     {
+      "id": "16101",
       "author": "Justin Obara",
       "date": "2015-06-15T11:06:09.037-0400",
       "body": "Antranig Basman is this still relevant?\n"
     },
     {
+      "id": "16103",
       "author": "Antranig Basman",
       "date": "2015-06-15T11:45:11.608-0400",
       "body": "This is the main functionality delivered in <https://github.com/fluid-project/infusion/pull/591/files>\n"
     },
     {
+      "id": "16104",
       "author": "Antranig Basman",
       "date": "2015-08-20T10:00:14.040-0400",
       "body": "Merged into trunk at revision 282f1a318718eed0b0ec060fb8b4ad254417fd7e\n"

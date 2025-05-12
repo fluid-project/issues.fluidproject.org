@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25640",
       "author": "Antranig Basman",
       "date": "2016-02-12T11:12:26.485-0500",
       "body": "Duplicate of <https://fluidproject.atlassian.net/browse/FLUID-5821#icft=FLUID-5821>\n"
     },
     {
+      "id": "25641",
       "author": "Antranig Basman",
       "date": "2021-05-05T08:29:44.538-0400",
       "body": "Actually it is rather more helpful to produce an error if the selector is missing. In fact implementing this in the <https://fluidproject.atlassian.net/browse/FLUID-6580#icft=FLUID-6580> branch revealed an extremely long-standing framework bug which attempted to resolve \"{that}.dom.locate\" into the DOM binder's selectors in the first instance.\n"

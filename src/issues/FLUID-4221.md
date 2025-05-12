@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23752",
       "author": "Justin Obara",
       "date": "2011-05-17T10:06:42.101-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "23756",
       "author": "Mike Lam",
       "date": "2011-05-27T13:58:06.623-0400",
       "body": "Fix will be made alongside this JIRA:  <http://issues.fluidproject.org/browse/FLUID-4267>\n"
     },
     {
+      "id": "23759",
       "author": "Michelle D'Souza",
       "date": "2011-06-21T10:15:16.716-0400",
       "body": "The fix was merged into the project repo with the <https://fluidproject.atlassian.net/browse/FLUID-4267#icft=FLUID-4267> branch at aa5efc1e1a20aaa152f2e7e2d4edfbb35e08c5ea&#x20;\n"

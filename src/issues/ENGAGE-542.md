@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12023",
       "author": "Justin Obara",
       "date": "2010-04-08T10:45:37.000-0400",
       "body": "Now setting tabindex to -1 when making sure that there are anchors in the handles.\n"

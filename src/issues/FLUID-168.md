@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17977",
       "author": "Shaw-Han Liem",
       "date": "2008-02-04T10:50:19.000-0500",
       "body": "iteration01\n"
     },
     {
+      "id": "17979",
       "author": "Barbara Glover",
       "date": "2008-02-04T12:18:02.000-0500",
       "body": "75% complete - need to finish before user tests start next week. &#x20;\n"
     },
     {
+      "id": "17983",
       "author": "Shaw-Han Liem",
       "date": "2008-02-06T15:15:38.000-0500",
       "body": "iteration02\n"
     },
     {
+      "id": "17985",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:57.209-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

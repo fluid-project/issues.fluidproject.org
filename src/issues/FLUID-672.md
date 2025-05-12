@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17339",
       "author": "Michelle D'Souza",
       "date": "2008-06-04T09:40:57.000-0400",
       "body": "I was unable to recreate this issue using the Fluid samples. I'm going to work with Greg to try to isolate the issue.&#x20;\n"
     },
     {
+      "id": "17340",
       "author": "Michelle D'Souza",
       "date": "2008-06-05T09:40:12.000-0400",
       "body": "The issue is a bug in jQuery where using a selector with the  id starts with filter causes a 'z.indexOf is not a function' error when there is a radio button with the name 'id'\\\nI've opened a ticket in jQuery's Trac: <http://dev.jquery.com/ticket/2990>\n\nThe work around for ATutor is to use a different selector. One selector which will work is: \"div\n\n<!-- media: file UNKNOWN_MEDIA_=atutor -->\n\n\"\n"
     },
     {
+      "id": "17341",
       "author": "Michelle D'Souza",
       "date": "2008-06-05T11:31:35.000-0400",
       "body": "I got confirmation from Greg that the issue in ATutor is now solved.&#x20;\n"

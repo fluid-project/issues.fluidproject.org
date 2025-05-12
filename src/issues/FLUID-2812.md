@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22790",
       "author": "Laurel Williams",
       "date": "2009-05-28T13:37:56.000-0400",
       "body": "CMSMS can automatically generate anchor links. This seems to work better than the original solution of \\<a href=\"#content\">\\</a>\n\nThe new markup looks like:\\\n{anchor anchor='content' title='Jump to content'}\\\n{anchor anchor='nav' title='Jump to navigation menu'}\n"

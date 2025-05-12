@@ -36,6 +36,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25329",
       "author": "Justin Obara",
       "date": "2020-03-12T08:42:01.423-0400",
       "body": "Merged PR (. ) into the project repo at 96771c3fddecad7ec1cca0375757f527f1e5ad64\n\nThis PR addresses an issue where the scripts were not loading due to the relative paths supplied to the news item page.\n\nHowever, this PR doesn't address the case when the site is deployed a different level than root. \n"

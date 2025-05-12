@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15203",
       "author": "Justin Obara",
       "date": "2010-02-26T17:12:56.000-0500",
       "body": "Fliquor App created and presented at FSOSS 2009\n"
     },
     {
+      "id": "15206",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T12:28:45.326-0500",
       "body": "Reopening these issues in order to add the democomponent.&#x20;\n"

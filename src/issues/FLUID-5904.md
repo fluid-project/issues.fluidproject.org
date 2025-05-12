@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24177",
       "author": "Antranig Basman",
       "date": "2016-05-09T20:46:45.740-0400",
       "body": "This is actually a regression since in commit <https://github.com/fluid-project/infusion/commit/0bfd51b310d7c10f01104460f09a00f40bd9d98b#diff-eb23eba7203e400016bc578a4faf8ddb> of Aug 7, 2015 we removed the utility \"fluid.fireEvent\" as part of \"General tidying\" which used to give us resistance to such problems (it was previously classed as an \"optimisation\" for firing to uninstantiated lifecycle events which had no listeners, of which we no longer legitimately have/had any)\n"
     },
     {
+      "id": "24179",
       "author": "Justin Obara",
       "date": "2016-05-11T11:22:19.646-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/711> ) into the project repo at 78d75841a6d6305b11f3ac8ca1b2b66fc67e4c22\n"

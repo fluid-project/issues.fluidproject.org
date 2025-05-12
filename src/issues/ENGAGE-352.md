@@ -33,16 +33,19 @@
   ],
   "comments": [
     {
+      "id": "12582",
       "author": "Justin Obara",
       "date": "2010-02-08T17:08:08.000-0500",
       "body": "Bug Parade Engage 0.3&#x20;\n"
     },
     {
+      "id": "12583",
       "author": "Jess Mitchell",
       "date": "2010-02-17T11:45:10.000-0500",
       "body": "got the French translations from Hugues and put them into the file...\n"
     },
     {
+      "id": "12584",
       "author": "Justin Obara",
       "date": "2010-02-17T15:10:25.000-0500",
       "body": "French translations are in for the components.\n"

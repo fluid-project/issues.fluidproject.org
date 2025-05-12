@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24032",
       "author": "Justin Obara",
       "date": "2014-04-28T15:26:58.326-0400",
       "body": "We had this as a branch for infusion for quite a while, but it never made it into master.\\\n<https://github.com/fluid-project/infusion/tree/mfss-firefox>\n\nUnfortunately now that FSS is deprecated we will be deleting the above branch.\n"

@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19092",
       "author": "Jonathan Hung",
       "date": "2015-07-13T11:48:09.586-0400",
       "body": "For now I have updated the README to not use localhost. Instead the readme now states to generate the content statically and load the index.html file directly in a browser from the file system.\\\nSee: <https://github.com/jhung/doc-base-start/blob/FLUID-5692/README.md>\n"

@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14133",
       "author": "Michelle D'Souza",
       "date": "2008-07-31T10:15:48.000-0400",
       "body": "This is now implemented in the branch and Gary will be using it for user testing. The next step is to merge back to trunk.\n"
     },
     {
+      "id": "14137",
       "author": "Michelle D'Souza",
       "date": "2008-08-06T12:52:08.000-0400",
       "body": "The branch is merged back to trunk.&#x20;\n"

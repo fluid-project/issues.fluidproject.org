@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26310",
       "author": "Gregor Moss",
       "date": "2018-06-07T15:11:54.999-0400",
       "body": "Upon further reflection, this only occurs when a string is passed in directly as an argument. In this case, the value has no key by which to address it in a template, and so is not a recommended approach.\n\nI have adjusted the test to refer to two values in separate collections in order to test the combining, but it will no longer handle strings passed directly into it.\n"

@@ -37,21 +37,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13612",
       "author": "Justin Obara",
       "date": "2009-06-02T09:48:26.000-0400",
       "body": "This is the nature of an accordion.\n\nHere is the comment from jquery UI about this. \\\n(<http://jqueryui.com/demos/accordion/>)\n\nNOTE: If you want multiple sections open at once, don't use an accordion\n\nAn accordion doesn't allow more than one content panel to be open at the same time, and it takes a lot of effort to do that. If you are looking for a widget that allows more than one content panel to be open, don't use this. Usually it can be written with a few lines of jQuery instead, something like this:\n\njQuery(document).ready(function(){\\\n$('.accordion .head').click(function() {\\\n$(this).next().toggle();\\\nreturn false;\\\n}).next().hide();\\\n});\n\nOr animated:\n\njQuery(document).ready(function(){\\\n$('.accordion .head').click(function() {\\\n$(this).next().toggle('slow');\\\nreturn false;\\\n}).next().hide();\\\n});\n"
     },
     {
+      "id": "13616",
       "author": "Justin Obara",
       "date": "2009-11-06T14:23:07.000-0500",
       "body": "The \"Cabinet\" component that is in Engage may be useful for this\n"
     },
     {
+      "id": "13618",
       "author": "heidi valles",
       "date": "2010-10-05T09:26:49.930-0400",
       "body": "do we still want to use the accordion?\n"
     },
     {
+      "id": "13621",
       "author": "Michelle D'Souza",
       "date": "2011-03-04T15:43:06.776-0500",
       "body": "This is no longer an issue because the new designs do not have an accordion.&#x20;\n"

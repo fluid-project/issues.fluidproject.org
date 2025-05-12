@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "20064",
       "author": "Justin Obara",
       "date": "2012-08-20T08:38:23.068-0400",
       "body": "May have to do with FF cacheing the values in the text input.\n"
     },
     {
+      "id": "20066",
       "author": "Anastasia Cheetham",
       "date": "2014-07-30T15:27:06.594-0400",
       "body": "This demo is no longer present, and the bug does not present itself in the existing examples.\n"

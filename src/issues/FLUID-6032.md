@@ -34,16 +34,19 @@
   ],
   "comments": [
     {
+      "id": "23927",
       "author": "Justin Obara",
       "date": "2016-11-04T13:21:11.201-0400",
       "body": "screenshot.png shows the progress bar visually indicating progress but that the \"%\" display sticks at \"0%\"\n"
     },
     {
+      "id": "23928",
       "author": "Kobi Orgil",
       "date": "2016-11-04T15:19:39.748-0400",
       "body": "Just commenting to confirm that the same problem exists on Windows 10 on all the listed web browsers\n"
     },
     {
+      "id": "23930",
       "author": "Cindy Li",
       "date": "2016-11-04T15:26:07.648-0400",
       "body": "The pull request <https://github.com/fluid-project/infusion/pull/779> has been merged into the master branch at 0afec08bca1ecd5455645f950077d46e3b7efa91\n"

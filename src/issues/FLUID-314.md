@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18267",
       "author": "Allison Bloodworth",
       "date": "2008-03-05T15:35:25.000-0500",
       "body": "iteration04\n"
     },
     {
+      "id": "18269",
       "author": "Daphne Ogle",
       "date": "2008-03-13T17:20:15.000-0400",
       "body": "Resolving and creating new task for notes processing that will happen next iteration.\n"

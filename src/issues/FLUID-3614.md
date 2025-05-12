@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "22035",
       "author": "Justin Obara",
       "date": "2010-04-07T15:43:23.000-0400",
       "body": "screenshot-1 shows the total progress bar all filled up, even though none of the files have been uploaded.\n"
     },
     {
+      "id": "22036",
       "author": "Mike Lam",
       "date": "2011-01-05T12:14:37.859-0500",
       "body": "Resolved in Infusion 1.3.&#x20;\n"

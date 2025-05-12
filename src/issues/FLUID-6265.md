@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22715",
       "author": "Giovanni Tirloni",
       "date": "2018-03-26T13:20:14.439-0400",
       "body": "Using the \"build\\_artifacts\" configuration in Buildkite, all files get uploaded individually to Amazon S3.\n\nOpening \\`reports/index.html\\` and then clicking on any link throws an access denied error.&#x20;\n\nI've emailed Buildkite's support team about this.\n"
     },
     {
+      "id": "22717",
       "author": "Giovanni Tirloni",
       "date": "2018-05-22T12:30:56.580-0400",
       "body": "It seems like we will need to create a script to act as a BuildKite plugin and upload it to wherever we want.\n"
     },
     {
+      "id": "22719",
       "author": "Giovanni Tirloni",
       "date": "2018-06-28T11:01:05.921-0400",
       "body": "No satisfactory solution found. Closing due to changes to be introduced in <https://fluidproject.atlassian.net/browse/FLUID-6282#icft=FLUID-6282>.\n"

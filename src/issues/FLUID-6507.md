@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25356",
       "author": "Justin Obara",
       "date": "2020-06-03T09:35:47.431-0400",
       "body": "A couple things to keep in mind when addressing this issue:\n\n* A form submission may be required for saving the preferences depending on how the integrator chooses to store the preferences\n* The preference editor may not be contained inside of a form element.\n"

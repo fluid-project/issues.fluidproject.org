@@ -45,6 +45,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24734",
       "author": "Jonathan Hung",
       "date": "2011-01-11T10:24:07.637-0500",
       "body": "Issues to be captured in more specific Jiras.\n"

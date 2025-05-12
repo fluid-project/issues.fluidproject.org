@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17277",
       "author": "Justin Obara",
       "date": "2009-05-14T10:14:24.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "17279",
       "author": "Anastasia Cheetham",
       "date": "2009-05-20T15:25:10.000-0400",
       "body": "I've reviewed this commit - it looks good to me!\n"
     },
     {
+      "id": "17280",
       "author": "Justin Obara",
       "date": "2009-05-21T10:20:50.000-0400",
       "body": "Verified fix using:\n\nFF3, FF2, Opera 9.6, Safari 3.1 (Mac OS 10.5)\\\nIE 7, IE 8, FF3 (Win Vista)\n"

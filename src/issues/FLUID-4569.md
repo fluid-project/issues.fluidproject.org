@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15489",
       "author": "Justin Obara",
       "date": "2013-10-18T13:18:17.434-0400",
       "body": "Submitted pull request <https://github.com/fluid-project/infusion/pull/419>\n\nActually this issues is somewhat out of date as the slidingPanel has been model bound for a while. However, steps have been taken to ensure that the initial state is based on the model value.\n"
     },
     {
+      "id": "15492",
       "author": "Justin Obara",
       "date": "2014-03-26T16:18:38.229-0400",
       "body": "pull request merged at 861d635d56c7546c764d23cf40e7f96e85516b17\n"

@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16390",
       "author": "Justin Obara",
       "date": "2010-10-04T14:53:24.940-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "16392",
       "author": "Colin Clark",
       "date": "2010-12-02T12:15:22.274-0500",
       "body": "This series of refactoring was generally completed at r10315 in the <https://fluidproject.atlassian.net/browse/FLUID-3722#icft=FLUID-3722> branch of Uploader.\n"

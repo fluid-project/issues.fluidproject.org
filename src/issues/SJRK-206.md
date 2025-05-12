@@ -21,6 +21,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26467",
       "author": "Justin Obara",
       "date": "2019-07-09T16:36:29.482-0400",
       "body": "If the headings are dynamically added to the page, the Table of Contents will need to be run after it or at least refreshed after it. Perhaps hooking it up to a [MutationObserver](https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/MutationObserver.js) would be the best way.  Might make more sense upstream in Infusion. What do you think?\n"

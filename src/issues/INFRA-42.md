@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25994",
       "author": "Giovanni Tirloni",
       "date": "2016-08-22T14:08:38.031-0400",
       "body": "Red Hat says even though 2514 is \"suggested\" by the RELP protocol, it's not a standard port and they won't be support it.\n\nWe've been running RELP over the standard syslog port without problems.\n"

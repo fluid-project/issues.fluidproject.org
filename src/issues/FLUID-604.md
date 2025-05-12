@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19153",
       "author": "Michelle D'Souza",
       "date": "2008-05-16T10:48:06.000-0400",
       "body": "The only time I was able to reproduce this is when I drag very quickly. What's happening underneath in this case is that we never get any mouse movement events.&#x20;\n"
     },
     {
+      "id": "19156",
       "author": "Jonathan Hung",
       "date": "2008-05-27T12:35:42.000-0400",
       "body": "Appears to be fixed.\n"

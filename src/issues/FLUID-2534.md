@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17568",
       "author": "Michelle D'Souza",
       "date": "2009-04-06T11:29:43.000-0400",
       "body": "Please also check the dependencies for fastXmlPull in the lib folder.&#x20;\n"
     },
     {
+      "id": "17570",
       "author": "Antranig Basman",
       "date": "2009-04-07T15:27:19.000-0400",
       "body": "I have verified that the custom Renderer build includes the correct dependencies - all the test cases can pass (except those which independently make use of JSON.js or Pager.js). fastXmlPull.js actually has no further dependencies.&#x20;\n"
     },
     {
+      "id": "17571",
       "author": "Justin Obara",
       "date": "2009-11-13T09:00:22.000-0500",
       "body": "Closed as per previous comment.&#x20;\n"

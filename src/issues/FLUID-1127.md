@@ -36,16 +36,19 @@
   ],
   "comments": [
     {
+      "id": "20503",
       "author": "Justin Obara",
       "date": "2008-08-11T13:37:06.000-0400",
       "body": "'screenshot-1' shows the avatar being dragged acrros two columns. Notice that there are no drop targets visible.\n"
     },
     {
+      "id": "20504",
       "author": "Antranig Basman",
       "date": "2008-09-07T17:59:52.000-0400",
       "body": "Drop Manager, Dom Permutation work merged back into trunk at revision 5476\n"
     },
     {
+      "id": "20505",
       "author": "Justin Obara",
       "date": "2008-09-08T09:02:34.000-0400",
       "body": "Verified fix using:\n\nFF2, Opera 9.5 (Mac OS 10.5, Win XP)\\\nFF3 (Win Vista)\n"

@@ -33,21 +33,25 @@
   ],
   "comments": [
     {
+      "id": "22599",
       "author": "Justin Obara",
       "date": "2011-07-28T14:29:41.294-0400",
       "body": "ScreenShot.png shows the sliding panel's \"Show\" button is not updated with changes from UIO\n"
     },
     {
+      "id": "22602",
       "author": "Justin Obara",
       "date": "2011-07-28T14:30:31.839-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "22604",
       "author": "Justin Obara",
       "date": "2011-07-28T14:30:47.295-0400",
       "body": "The Text Style changes do seem to work.\n"
     },
     {
+      "id": "22605",
       "author": "Michelle D'Souza",
       "date": "2011-09-02T16:13:59.369-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/149> merged into project repo at 0d3d32f72cbaf6fc1680b4e83d62ddb62665a8b8\n"

@@ -29,36 +29,43 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16996",
       "author": "Justin Obara",
       "date": "2009-05-25T13:01:32.000-0400",
       "body": "Bug Parade 1.1 release&#x20;\n"
     },
     {
+      "id": "16997",
       "author": "Anastasia Cheetham",
       "date": "2009-05-25T15:00:11.000-0400",
       "body": "The classes have been renamed.\n"
     },
     {
+      "id": "16998",
       "author": "Anastasia Cheetham",
       "date": "2009-05-25T15:18:39.000-0400",
       "body": "Didn't ensure backward compatibility... oops\n"
     },
     {
+      "id": "16999",
       "author": "Anastasia Cheetham",
       "date": "2009-05-25T15:37:47.000-0400",
       "body": "I've added backward compatibility with the old names, marked as \"deprecated\". Needs review!\n"
     },
     {
+      "id": "17000",
       "author": "Jacob Farber",
       "date": "2009-05-26T14:45:36.000-0400",
       "body": "I made some small syntactic changes, but everything else looked good. Looks like the ball is now in someone elses court!\n"
     },
     {
+      "id": "17001",
       "author": "Antranig Basman",
       "date": "2009-05-26T14:53:57.000-0400",
       "body": "Reviewed this most recent change as +1\n"
     },
     {
+      "id": "17002",
       "author": "Justin Obara",
       "date": "2009-05-26T17:17:13.000-0400",
       "body": "Verified fix using:\n\nFF3 (Mac OS 10.5)\n"

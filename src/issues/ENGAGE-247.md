@@ -34,21 +34,25 @@
   ],
   "comments": [
     {
+      "id": "11718",
       "author": "y z",
       "date": "2010-01-25T17:43:09.000-0500",
       "body": "This is a sketch attempt to remove redundancy across the services in kettle, demonstrated on services for browse\n"
     },
     {
+      "id": "11719",
       "author": "Antranig Basman",
       "date": "2010-01-29T14:53:55.000-0500",
       "body": "Thanks for this patch - I can see two main issues, firstly that the return of genuine data cannot be reliably distinguished from an error return, and secondly that the pattern of factoring of service construction is upside-down - the services should be created from configuration, rather than proving utilities to call from within existing services. I have made an initial implementation of \"fluid.kettle.getData\" now within kettle.js as required by the I18N bundle work...\n"
     },
     {
+      "id": "11720",
       "author": "Justin Obara",
       "date": "2010-03-17T11:47:36.000-0400",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "11722",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:32.412-0500",
       "body": "The repository has been archived.\n"

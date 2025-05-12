@@ -33,26 +33,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23649",
       "author": "Jacob Farber",
       "date": "2008-07-23T19:42:45.000-0400",
       "body": "One way to make this functionality discoverable for AT users would be to have a descriptor attached to the delete-enabled container, most likely through the \"aria-describedby\" attr.\n\nThe example given is a close button for a fake popup window:\n\n\\<a role=\"button\" aria-describedby=\"windowCloseDescription\" href=\"#\" onclick=\"myfakewindow\\.close()\"> X \\</a>&#x20;\n\n.. then hidden anywhere else on the page is the descriptor, identified by the ID in aria-describedby\n\n\\<div id=\"windowCloseDescription\">Closing this window will discard any information entered and return you back to the main page\\</div>\\\n\\----------------\nSee:\\\n<http://www.w3.org/TR/wai-aria-practices/#relations_labeling> > see 4.1.2 Described By\\\n<http://www.w3.org/TR/2008/WD-wai-aria-20080204/#description>\n"
     },
     {
+      "id": "23650",
       "author": "Eli Cochran",
       "date": "2009-01-28T12:09:37.000-0500",
       "body": "Just FYI. Right now the title for the row gets set to \"File Uploaded\" when the file is complete.&#x20;\n"
     },
     {
+      "id": "23652",
       "author": "Colin Clark",
       "date": "2009-01-28T13:59:49.000-0500",
       "body": "It's all yours, Eli.\n"
     },
     {
+      "id": "23653",
       "author": "Justin Obara",
       "date": "2010-05-07T09:09:17.586-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "23655",
       "author": "Justin Obara",
       "date": "2010-08-24T09:20:03.208-0400",
       "body": "Working in Firefox but not in IE 8 (win xp), where after a file has been uploaded it still says \"Remove File\" instead of \"File Uploaded\"\n"

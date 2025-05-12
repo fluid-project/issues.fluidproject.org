@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12748",
       "author": "Justin Obara",
       "date": "2010-03-18T09:11:06.000-0400",
       "body": "Bug Parade Engage 0.3&#x20;\n"
     },
     {
+      "id": "12749",
       "author": "Justin Obara",
       "date": "2010-03-19T11:29:03.000-0400",
       "body": "Removed the concept of shelves from the cabinet. Also updated browse so that this change wouldn't break the exhibition browse page.\n"
     },
     {
+      "id": "12750",
       "author": "Justin Obara",
       "date": "2010-03-24T10:11:00.000-0400",
       "body": "Assigned to Antranig for review\n"
     },
     {
+      "id": "12751",
       "author": "Antranig Basman",
       "date": "2010-03-25T08:56:50.000-0400",
       "body": "These changes are good and helpfully rationalise the responsibilities of the component.\n"

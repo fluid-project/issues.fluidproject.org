@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18012",
       "author": "Jonathan Hung",
       "date": "2008-01-24T15:10:07.000-0500",
       "body": "This bug is a duplicate of two other bugs:\\\nFluid-146: Drop targets not being rendered\\\nFluid-116 Dragging image quickly causes it to freeze\n"

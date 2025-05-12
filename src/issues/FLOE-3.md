@@ -37,6 +37,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10919",
       "author": "Anastasia Cheetham",
       "date": "2013-04-25T10:51:11.250-0400",
       "body": "This work is being carried out under the OER Commons Assembla ticket #895:\\\n<https://www.assembla.com/spaces/iskme/tickets/895>\n\nWork was started, but then suspended to wait for VP-211 (modify VP to automatically query Amara for any subtitles), which, as of this comment, is still in progress.\n\nWe should also likely wait for VP-297 (upgrade VP to latest Infusion), since OER Commons is being upgraded.\n"

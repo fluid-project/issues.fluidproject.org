@@ -36,21 +36,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27420",
       "author": "Blake E",
       "date": "2008-09-23T13:19:13.000-0400",
       "body": "we have chosen to use a york server, and then mask under a fluidproject.org url. URL details for site still unfolding.\n"
     },
     {
+      "id": "27421",
       "author": "Blake E",
       "date": "2008-09-23T13:19:59.000-0400",
       "body": "now that the decision has been made for servers, we will need to get the preview on this server.\n"
     },
     {
+      "id": "27422",
       "author": "Blake E",
       "date": "2008-09-26T12:51:20.000-0400",
       "body": "I've been given temporary root access, so I can install what we need.\n"
     },
     {
+      "id": "27423",
       "author": "Blake E",
       "date": "2008-10-15T11:53:17.000-0400",
       "body": "I finally got phpMyAdmin installed on vulab.yorku,ca/bin/phpMyAdmin\\\n(I had to create god user via ssh)\n"

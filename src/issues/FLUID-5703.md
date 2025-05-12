@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24266",
       "author": "Antranig Basman",
       "date": "2015-07-03T07:01:21.014-0400",
       "body": "This is not a bug - simply a result of our own forgetfulness about the meaning of our transform grade structure. Any transform can opt out of the standard input value workflow by simply avoiding including the \"fluid.transforms.standardInputTransformFunction\" grade. For example, the fluid.transforms.stringTemplate transform that we were originally trying to implement can just be registered with \"fluid.transforms.standardOutputTransformFunction\" gradeNames.\n"
     },
     {
+      "id": "24267",
       "author": "Tony Atkins [RtF]",
       "date": "2015-07-08T08:57:32.377-0400",
       "body": "Antranig, the standardOutputTransformFunction grade also seems to return nothing unless you have a value.  Can  you recommend another grade?\n"
     },
     {
+      "id": "24269",
       "author": "Antranig Basman",
       "date": "2015-07-08T13:22:51.355-0400",
       "body": "Hi Tony Atkins \\[RtF] - the output works just fine, as shown in the following commit - <https://github.com/amb26/infusion/commit/194850705c5dbebf56f423a4847868e2f5bdb1ea> (part of <https://github.com/fluid-project/infusion/pull/616> ) - perhaps you have some other problem.\n"

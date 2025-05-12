@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17819",
       "author": "Jonathan Hung",
       "date": "2007-12-17T16:53:27.000-0500",
       "body": "I've never noticed this being an issue on machines that are \"dual-loading\" IE6 and IE7.\n"
     },
     {
+      "id": "17820",
       "author": "Jonathan Hung",
       "date": "2008-04-09T10:25:08.000-0400",
       "body": "Appears to be fixed on the original hardware used in this bug.\n"

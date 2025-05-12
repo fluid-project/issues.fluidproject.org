@@ -34,16 +34,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17131",
       "author": "Justin Obara",
       "date": "2008-10-30T15:52:40.000-0400",
       "body": "Only seems to happen after holding down the direction key, now\n"
     },
     {
+      "id": "17132",
       "author": "Justin Obara",
       "date": "2010-05-07T14:42:02.756-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "17133",
       "author": "Justin Obara",
       "date": "2011-01-13T10:36:02.546-0500",
       "body": "Was likely fixed with some of the recent framework, and reorderer updates\n"

@@ -44,16 +44,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20454",
       "author": "Colin Clark",
       "date": "2008-07-31T16:35:01.000-0400",
       "body": "We need to work out a reasonable set of API conventions for every component. This will likely include a central point where callbacks can be registered. As a result, we probably won't fix this issue in the style described.\n"
     },
     {
+      "id": "20456",
       "author": "Anastasia Cheetham",
       "date": "2008-08-19T12:47:43.000-0400",
       "body": "In the interest of consistency, both the itemSelector and the orderChangedCallback should be moved into the options. The itemSelector concept should be conveyed using the 'selectors' option.\n"
     },
     {
+      "id": "20457",
       "author": "Michelle D'Souza",
       "date": "2008-08-20T15:11:42.000-0400",
       "body": "reorderLayout now has default selectors for 'columns', 'modules', and 'lockedModules'.&#x20;\n\nAll three of reorderList, reorderGrid and reorderLayout now take 2 parameters - the container and options.&#x20;\n"

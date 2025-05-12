@@ -21,6 +21,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26630",
       "author": "Antranig Basman",
       "date": "2021-02-24T11:42:28.227-0500",
       "body": "Note that whilst our XHR.send architecture isn't the most brilliantly factored thing in the world, it **should** be possible to exploit the new \"transforming promise chain\" DataSource architecture to implement this simply as a further listener slotted into the pipeline.\n\n<https://github.com/fluid-project/infusion/pull/1038/files#diff-2de84a8f3987d9964f56c0294a1633b0825bf2d4bc0b49b27721c760b7d5cdb5R127>\n\nNote that whilst the \\`data\\` argument to this function is documented as a String, there's no reason it couldn't be a FormData instead. Side benefit of a fluidly typed language : P\n"

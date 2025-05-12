@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20788",
       "author": "Antranig Basman",
       "date": "2009-03-12T18:46:06.000-0400",
       "body": "Unfortunately, this issue cannot be resolved. I've spent a long while struggling with FCK focus issues under FF2 and have concluded that it is not possible to influence it... it is also veyr unlikely the FCK team will devote any resources to it since FF2 is not a current browser.\n"

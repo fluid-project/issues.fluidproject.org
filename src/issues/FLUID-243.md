@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18613",
       "author": "Colin Clark",
       "date": "2008-02-17T13:08:04.000-0500",
       "body": "Added an option to selectable() called rememberSelectionState. If this is set to false, the selection state will be forgotten when focus leaves the container.\n"
     },
     {
+      "id": "18616",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:56.437-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

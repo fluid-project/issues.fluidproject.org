@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10100",
       "author": "Jonathan Hung",
       "date": "2010-04-12T13:03:54.000-0400",
       "body": "Accomplished for 0.3 release.\n"

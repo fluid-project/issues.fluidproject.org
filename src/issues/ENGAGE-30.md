@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12242",
       "author": "Armin Krauss",
       "date": "2009-08-18T15:12:50.000-0400",
       "body": "Picture flipping is a copy of the artifact.html with some adoptions to make the flipping work.\n\nGoal is to merge artifact.html and artifact\\_picflip.html into one html file.\n"
     },
     {
+      "id": "12243",
       "author": "Colin Clark",
       "date": "2009-10-09T18:41:58.000-0400",
       "body": "Yura, I'm assigning this one to you, but I think we're probably not going to do it for this release. Justin and Yura, can you look at it and verify that we will/won't fix for 0.1? If not, we can probably take it off the bug parade.\n"
     },
     {
+      "id": "12244",
       "author": "y z",
       "date": "2009-10-10T08:59:19.000-0400",
       "body": "I don't think there is an alternative view in the latest draft 8 of the wireframes so I think it indeed can be taken off the bug parade.\n"
     },
     {
+      "id": "12245",
       "author": "Colin Clark",
       "date": "2009-10-14T16:28:36.000-0400",
       "body": "Picture flipping is no longer a part of the latest mobile wireframes. Let's retire the preliminary code we have in the repository and not implement anything further until this feature is required.\n"

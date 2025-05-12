@@ -75,21 +75,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25351",
       "author": "Antranig Basman",
       "date": "2016-05-08T13:45:43.525-0400",
       "body": "This work, when it occurs, will also be combined with \"shape-based\" optimisations combining chains of immutable options blocks - since the \"new renderer\" will not be viable unless many thousands of small components can be constructed within minimal allocation costs (we need to recover at the very least the level of performance of the 2011-era \"CSpace optimisation framework\" leading to <https://issues.fluidproject.org/browse/FLUID-4563> , and then to considerably exceed it). Another crucial requirement in order to resolve awful potholes such as <https://fluidproject.atlassian.net/browse/FLUID-5668#icft=FLUID-5668> will be support for \"local mergePolicies\" discussed in IRC on <https://botbot.me/freenode/fluid-work/2015-09-11/?msg=49513398&page=1>\n"
     },
     {
+      "id": "25352",
       "author": "Antranig Basman",
       "date": "2018-03-04T18:24:10.058-0500",
       "body": "An interesting use case for this facility is in the GPII PSP's \"dialogManager\" which can display various kinds of dialogs, some of which need to be entered into an asynchronous queue and others of which can be shown immediately. Without the ability for \"partial evaluation\" the implementation's best choice is to make a crude up-front type-based check: <https://github.com/GPII/gpii-app/pull/39/files#diff-c3468ee90de930178dd3c6b8c359f53dR280>\n\nWe need to make sure that the new \"workflow grades\" are easy enough to use that they would seem like a better choice even in lightweight and \"ad hoc\" situations like this.\n"
     },
     {
+      "id": "25353",
       "author": "Antranig Basman",
       "date": "2021-01-12T10:04:24.336-0500",
       "body": "A partial implementation for this has landed as part of the <https://fluidproject.atlassian.net/browse/FLUID-6145#icft=FLUID-6145> work. It falls short of asynchronising all workflow since this would require a wholesale rewrite of the options merging pipeline which has now been deferred to <https://fluidproject.atlassian.net/browse/FLUID-5304#icft=FLUID-5304>. In particular, issues referring to this one suggest that this work requires \"local mergePolicies\" which have not yet been implemented.\n"
     },
     {
+      "id": "25354",
       "author": "Antranig Basman",
       "date": "2021-11-30T11:23:15.760-0500",
       "body": "As a historical note, we have determined that implementing a 'generalised evaluation engine suitable for \"arbitrary parallelisation of irregular algorithms\"' is incompatible with the goals of user programming. These algorithms act on the basis that the task in question is static and that any execution site is interchangeable with any other - whereas each site of user activity is distinct and a source of vital data that must never be lost from the system (e.g. through the cancellation of a transaction)\n"

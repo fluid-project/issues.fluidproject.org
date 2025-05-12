@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11037",
       "author": "Alan Harnum",
       "date": "2015-11-11T09:42:39.917-0500",
       "body": "A pull request is in for the visual design aspects: <https://github.com/fluid-project/chartAuthoring/pull/10>\n"
     },
     {
+      "id": "11038",
       "author": "Cindy Li",
       "date": "2015-11-16T16:54:58.208-0500",
       "body": "The pull request has been merged into the master branch @ 4ffa37fe9cab9c0f2b8d268341554a1586e79f5e\n\nAlan will create a separate JIRA for the test coverage.\n"

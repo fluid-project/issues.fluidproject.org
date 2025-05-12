@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11302",
       "author": "Anastasia Cheetham",
       "date": "2014-09-04T09:31:27.444-0400",
       "body": "Duplicates <https://fluidproject.atlassian.net/browse/FLOE-233#icft=FLOE-233>\n"

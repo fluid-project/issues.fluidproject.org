@@ -44,21 +44,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13460",
       "author": "Michelle D'Souza",
       "date": "2008-04-07T16:48:41.000-0400",
       "body": "Justin, we can't reproduce the issue you mention about the avatar not being visible when dragging an item. Can you provide more details on how to make this happen?\n"
     },
     {
+      "id": "13462",
       "author": "Jonathan Hung",
       "date": "2008-04-09T09:02:02.000-0400",
       "body": "NOTE: There are 2 bugs in this Jira. It should be split into two bugs.\n\nRe: Double tap to move item.\n\nUsing Fluid rev 4790 (8:54am Apr 9) I am able to reproduce on WinXP with IE6 and 7.\n\nTo reproduce\n\n* Open Lightbox.html in IE 6 or 7\n* mouse click an item to have it highlighted\n* First CTRL+ Arrow is fine.\n* With CTRL still depressed, pressing Arrow appears to do nothing\\*\n* With CTRL still depressed, pressing Arrow moves the selected item in the direction of the arrow\n\n- In reality something does happen, but it's very subtle. It looks like focus changes because the thumbnail image shifts 1px. It's as if the focus is being changed from the thumbnail to either the link text or the outer container?\n\nRe: No avatar.\\\nI get an avatar when dragging with mouse. Can't reproduce the no avatar bug.\n"
     },
     {
+      "id": "13464",
       "author": "Jonathan Hung",
       "date": "2008-04-14T14:19:57.000-0400",
       "body": "Anastasia and I fixed this problem. In IE, a check for the Selected style was being done before the Selected style was being applied to an item. To fix this we changed the check to look for the absence of Dragging style instead. This appears to have fixed the problem in IE and works fine in FF.\n"
     },
     {
+      "id": "13465",
       "author": "Justin Obara",
       "date": "2008-04-28T15:02:42.000-0400",
       "body": "Verified fix in IE7 (WinXP)\n"

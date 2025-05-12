@@ -51,26 +51,31 @@
   ],
   "comments": [
     {
+      "id": "20935",
       "author": "Justin Obara",
       "date": "2009-03-17T12:54:46.000-0400",
       "body": "'screenshot-1' shows some issues with the resized text\n"
     },
     {
+      "id": "20936",
       "author": "Justin Obara",
       "date": "2009-03-17T13:27:36.000-0400",
       "body": "comment removed\n"
     },
     {
+      "id": "20937",
       "author": "Jacob Farber",
       "date": "2009-03-25T09:31:39.000-0400",
       "body": "This is the html part that was missing in the original commit. It applies the class names to enforce the fix.\n"
     },
     {
+      "id": "20938",
       "author": "Michelle D'Souza",
       "date": "2009-03-25T10:30:11.000-0400",
       "body": "This fix works for the Reset, Cancel and Save and Apply buttons. The issue still occurs for the dropdowns etc.&#x20;\n\nThe css file has a commented out style in it that should be removed rather then commented out.&#x20;\n"
     },
     {
+      "id": "20939",
       "author": "Justin Obara",
       "date": "2009-05-05T13:09:15.000-0400",
       "body": "This issue is fixed with <https://fluidproject.atlassian.net/browse/FLUID-2425#icft=FLUID-2425>. Since the dialog is closed on saving, it is appropriately repainted when the dialog is re-openned.\n"

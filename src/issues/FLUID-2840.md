@@ -30,16 +30,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24513",
       "author": "Jacob Farber",
       "date": "2009-06-01T14:31:59.000-0400",
       "body": "Since the sakai demo is an integration demo, it's made to showcase the best effects possible. To that end, I made an assumption that a high contrast theme would look much more effective if all the graphical clutter was gone and the content was completely readable.\n\nIts not a bug per se, but rather a design choice in this demo.\n"
     },
     {
+      "id": "24514",
       "author": "Justin Obara",
       "date": "2009-06-02T09:42:31.000-0400",
       "body": "I think the issue is less that the images are removed, and more that the option to remove background images is presented to the user, even though the theme removes them.\n"
     },
     {
+      "id": "24515",
       "author": "Michelle D'Souza",
       "date": "2011-06-27T15:32:22.176-0400",
       "body": "This is no longer an issue because we have removed the ability to set background images on or off.&#x20;\n"

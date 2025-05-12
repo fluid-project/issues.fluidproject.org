@@ -41,16 +41,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19919",
       "author": "Eli Cochran",
       "date": "2008-05-27T12:31:17.000-0400",
       "body": "Most of the work for the dialog is done, except for the new progress indicators. Still using the old progress from the inline version.&#x20;\n"
     },
     {
+      "id": "19921",
       "author": "Eli Cochran",
       "date": "2008-05-30T18:53:13.000-0400",
       "body": "Created new JIRA for the progress indicators, which then closes this bug\n"
     },
     {
+      "id": "19923",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:44.076-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

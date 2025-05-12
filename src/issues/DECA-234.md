@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10130",
       "author": "Justin Obara",
       "date": "2012-02-06T13:56:12.834-0500",
       "body": "The pdf.py code has been updated to remove the lastModified function and replace its usage with os.path.getmtime. The unit tests were also updated.\n\nThe changes are in my bitbucket repo\\\n<https://bitbucket.org/jobara/decapod-server-response>\n"
     },
     {
+      "id": "10131",
       "author": "Justin Obara",
       "date": "2012-05-18T14:22:33.528-0400",
       "body": "Merged into the project repo\n"

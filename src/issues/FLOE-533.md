@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10995",
       "author": "Jonathan Hung",
       "date": "2018-01-17T13:33:40.467-0500",
       "body": "There is no immediate fix for this. For now the best solution is to avoid using posts that belong in more than 1 category. If this bug continues to be a problem, then appropriate time should be allocated to researching and implementing a fix.\n"

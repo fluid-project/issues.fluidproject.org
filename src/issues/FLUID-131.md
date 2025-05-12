@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13077",
       "author": "Eli Cochran",
       "date": "2007-11-27T13:37:05.000-0500",
       "body": "I just want to add that this is part of a general problem with Sakai giving poor feedback as to timeouts. We need a little JS session timer component.&#x20;\n"
     },
     {
+      "id": "13078",
       "author": "Justin Obara",
       "date": "2009-05-05T08:57:20.000-0400",
       "body": "We no longer use the image gallery example\n"

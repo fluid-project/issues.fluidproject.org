@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22978",
       "author": "Justin Obara",
       "date": "2018-09-21T08:20:45.624-0400",
       "body": "Merged Infusion-Icons PR ( <https://github.com/fluid-project/infusion-icons/pull/6> ) at a14272979e6ce485a73a54d133653c11bb649cb3\n"
     },
     {
+      "id": "22979",
       "author": "Cindy Li",
       "date": "2018-09-24T19:09:28.182-0400",
       "body": "[The infusion pull request](https://github.com/fluid-project/infusion/pull/936) has been merged at 05b2dbfdcd29d88dae1460a332fed71f656be674\n"

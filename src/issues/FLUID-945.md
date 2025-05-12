@@ -42,11 +42,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19892",
       "author": "Eli Cochran",
       "date": "2008-08-04T20:19:30.000-0400",
       "body": "this seems to be related to, or actually superseding, <https://fluidproject.atlassian.net/browse/FLUID-844#icft=FLUID-844>\n"
     },
     {
+      "id": "19893",
       "author": "Antranig Basman",
       "date": "2008-11-13T21:45:51.000-0500",
       "body": "See comments on <https://fluidproject.atlassian.net/browse/FLUID-1541#icft=FLUID-1541>. I don't believe this issue should be resolved.\n"

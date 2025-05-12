@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16063",
       "author": "Anastasia Cheetham",
       "date": "2008-08-19T15:55:09.000-0400",
       "body": "dev-iteration41\n"
     },
     {
+      "id": "16064",
       "author": "Jacob Farber",
       "date": "2008-08-25T11:28:19.000-0400",
       "body": "First phase is complete\n"

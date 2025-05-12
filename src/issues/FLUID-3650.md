@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21498",
       "author": "Justin Obara",
       "date": "2010-04-19T11:59:15.000-0400",
       "body": "now pulling in Infusion 1.3-SNAPSHOT as a dependency\n"
     },
     {
+      "id": "21500",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:21.676-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

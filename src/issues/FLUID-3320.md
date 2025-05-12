@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23490",
       "author": "Colin Clark",
       "date": "2010-03-30T18:53:16.000-0400",
       "body": "This was fixed recently in the demo portal, in time for Infusion 1.2\n"

@@ -36,11 +36,13 @@
   ],
   "comments": [
     {
+      "id": "27376",
       "author": "Blake E",
       "date": "2009-03-26T15:03:02.000-0400",
       "body": "🙂 this adds curvy corners to the design, and some general clean up.\n"
     },
     {
+      "id": "27377",
       "author": "Blake E",
       "date": "2009-03-26T15:35:41.000-0400",
       "body": "* Revised to take out legacy ajax js that is not going to be implemented anytime soon.\n* Commented out logging (just to be safe)\n* Put curvy corners js into the jquery document.ready\n\n(thanks jacob 🙂)\n"

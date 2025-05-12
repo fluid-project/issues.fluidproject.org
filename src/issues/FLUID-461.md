@@ -34,6 +34,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15924",
       "author": "Anastasia Cheetham",
       "date": "2008-04-10T12:48:26.000-0400",
       "body": "Multiple keysets are now supported, and the Lightbox default keys now include the screen-reader set as well as the arrow keys.\n"

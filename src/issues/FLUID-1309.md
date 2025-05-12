@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "18357",
       "author": "Justin Obara",
       "date": "2008-08-26T11:20:12.000-0400",
       "body": "'screenshot-1' shows the hover message at the bottom. The pointer was over the highlighted text.\n"
     },
     {
+      "id": "18359",
       "author": "Justin Obara",
       "date": "2008-08-26T15:50:07.000-0400",
       "body": "was fixed as part of revision 5433.\n"

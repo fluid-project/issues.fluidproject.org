@@ -27,31 +27,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16128",
       "author": "Justin Obara",
       "date": "2015-01-21T10:08:57.678-0500",
       "body": "Work currently underway at <https://github.com/jobara/infusion/blob/FLUID-5589/src/components/textToSpeech/js/TextToSpeech.js>\n"
     },
     {
+      "id": "16130",
       "author": "Justin Obara",
       "date": "2015-01-23T10:22:54.053-0500",
       "body": "Chrome 40 does not fully support pause. ( this includes setting the property and firing the event)\\\n<https://code.google.com/p/chromium/issues/detail?id=425553&q=SpeechSynthesis&colspec=ID%20Pri%20M%20Week%20ReleaseBlock%20Cr%20Status%20Owner%20Summary%20OS%20Modified>\n"
     },
     {
+      "id": "16132",
       "author": "Justin Obara",
       "date": "2015-01-29T11:05:07.635-0500",
       "body": "Submitted a pull request \\\n<https://github.com/fluid-project/infusion/pull/583>\n"
     },
     {
+      "id": "16134",
       "author": "Justin Obara",
       "date": "2015-02-03T15:14:47.253-0500",
       "body": "Submitted another pull request that addresses issues with the dependency files\\\n<https://github.com/fluid-project/infusion/pull/584>\n"
     },
     {
+      "id": "16136",
       "author": "Cindy Li",
       "date": "2015-02-03T15:29:55.764-0500",
       "body": "The pull request <https://github.com/fluid-project/infusion/pull/583> is merged @ 2a6793891aee7ee2ad41420d52d10c50a2359593\n\nThe pull request <https://github.com/fluid-project/infusion/pull/584> is merged @ 4413d0020a62585e30a37331edd49c4d0e61b1ad\n"
     },
     {
+      "id": "16138",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:11.430-0400",
       "body": "Reopening to change the fix version to 1.9\n"

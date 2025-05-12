@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "10921",
       "author": "Anastasia Cheetham",
       "date": "2012-07-30T16:48:08.131-0400",
       "body": "This is most likely related to the 'slider' that's used to switch between write, describe and submit. Probably relate to <https://www.assembla.com/spaces/iskme/tickets/677> (which is likely caused by the slider).\n"
     },
     {
+      "id": "10922",
       "author": "Alexey Novak",
       "date": "2012-08-16T13:55:33.886-0400",
       "body": "Should be fixed by Anastasia since any step is scrollable to the bottom, hence it is accessible.\n"

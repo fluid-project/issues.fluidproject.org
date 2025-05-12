@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25796",
       "author": "Giovanni Tirloni",
       "date": "2015-08-18T13:57:56.863-0400",
       "body": "Deployed in production: <https://github.com/inclusive-design/ops/tree/master/ansible/roles/attic>\n"
     },
     {
+      "id": "25797",
       "author": "Giovanni Tirloni",
       "date": "2015-09-08T11:10:25.514-0400",
       "body": "This role has been pretty stable for the last few weeks.\n"

@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22009",
       "author": "Antranig Basman",
       "date": "2016-04-20T20:10:51.097-0400",
       "body": "The pernicious irregularity results from the special rule in fluid.makeExpandOptions currently line 2249, which when encountering a plain string block, expands it immediately into \"target\" (presumably since it could never give rise to any kind of ginger re-entrancy):\n\n```javascript\nif (typeof(source) === \"string\") {\r\n                options.target = options.expandSource(source);\r\n            }\n```\n"
     },
     {
+      "id": "22019",
       "author": "Antranig Basman",
       "date": "2016-04-20T20:16:18.087-0400",
       "body": "It appears that the substitution of \"source\" for \"target\" in fluid.computeDynamicGrades was a simple blunder, or perhaps some kind of late-night \"clicko\" attempting to compensate for some other bug that has since been fixed\n"

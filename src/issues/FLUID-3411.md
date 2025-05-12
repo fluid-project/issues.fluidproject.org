@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23239",
       "author": "Colin Clark",
       "date": "2009-12-04T17:55:10.000-0500",
       "body": "To be clear, we need to update the Infusion external of Builder to point to the **1.1.2 tag** before we start bug parade for the Builder.\n"
     },
     {
+      "id": "23240",
       "author": "Colin Clark",
       "date": "2009-12-04T18:00:28.000-0500",
       "body": "Bug Parade Infusion 1.1.2\n"
     },
     {
+      "id": "23241",
       "author": "Colin Clark",
       "date": "2010-03-30T13:28:00.000-0400",
       "body": "This was a Builder-specific release task that was implemented at the time, and is now redundant.\n"

@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26190",
       "author": "Eloisa Guerrero",
       "date": "2018-02-04T15:18:11.976-0500",
       "body": "To activate the breadcrumbs to the original/main category, we need to add 'current-menu-item' CSS class based on the 'current-post-ancestor' (or 'current-page-ancestor') class of the current page or post. Thus:\n\n```java\nfunction make_current_menu_item( $classes, $item ) {\r\nif (in_array('current-post-ancestor', $classes) || in_array('current-page-ancestor', $classes) || in_array('current-menu-item', $classes) ) {\r\n $classes[] = 'current-menu-item';\r\n }\r\n return $classes;\r\n}\r\nadd_filter( 'nav_menu_css_class', 'make_current_menu_item', 10, 2 );\n```\n\n \n"

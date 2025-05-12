@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12326",
       "author": "Justin Obara",
       "date": "2010-02-26T11:09:22.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12327",
       "author": "Colin Clark",
       "date": "2010-03-09T15:00:03.000-0500",
       "body": "I fixed this issue at r9574 with the inclusion of the jquery.hashchange plugin.\n"

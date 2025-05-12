@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16191",
       "author": "Antranig Basman",
       "date": "2013-02-13T18:03:45.125-0500",
       "body": "Note that we already have implemented a system which detects the \"fluid.typeFount\" grade name and instantiates any such components by priority\n"
     },
     {
+      "id": "16195",
       "author": "Antranig Basman",
       "date": "2013-06-03T04:15:39.822-0400",
       "body": "To a large extent, the requirement for this feature has been removed by <https://fluidproject.atlassian.net/browse/FLUID-4330#icft=FLUID-4330> and <https://fluidproject.atlassian.net/browse/FLUID-4916#icft=FLUID-4916> dynamic grades, and will be considered completely resolved once we have implemented <https://fluidproject.atlassian.net/browse/FLUID-4925#icft=FLUID-4925> and <https://fluidproject.atlassian.net/browse/FLUID-5028#icft=FLUID-5028> - since in that case, subcomponent type computation will necessarily precede all other resolution work (as far as possible) across an entire component tree, ensuring that component construction is done in the light of maximum possible information.\\\nSince we are not planning to allow component authors to supply manual \"hints\" in the way suggested in this issue description, this issue can be closed in favour of the others described.\n"

@@ -40,21 +40,25 @@
   ],
   "comments": [
     {
+      "id": "24735",
       "author": "Justin Obara",
       "date": "2010-10-21T08:53:54.672-0400",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "24736",
       "author": "Justin Obara",
       "date": "2010-10-21T10:30:42.897-0400",
       "body": "This appears to have happened because the extensions on  the images were changed from png  to jpeg, without converting the files.\n"
     },
     {
+      "id": "24737",
       "author": "Justin Obara",
       "date": "2010-11-02T14:28:52.836-0400",
       "body": "Committed Mike's patch ( patchRefactored.txt ) from <https://fluidproject.atlassian.net/browse/FLUID-3821#icft=FLUID-3821>. This patch also fixed the icons used.\n"
     },
     {
+      "id": "24738",
       "author": "Michelle D'Souza",
       "date": "2010-12-01T16:58:42.136-0500",
       "body": "I code reviewed this with a whole group of Inline Edit JIRA issues for 1.3 and it is fine.&#x20;\n"

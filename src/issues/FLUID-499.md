@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14083",
       "author": "Colin Clark",
       "date": "2008-04-15T11:50:52.000-0400",
       "body": "iteration07\n"
     },
     {
+      "id": "14085",
       "author": "Daphne Ogle",
       "date": "2008-04-15T13:21:44.000-0400",
       "body": "2 people for .5 days each\n"
     },
     {
+      "id": "14087",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:58.338-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

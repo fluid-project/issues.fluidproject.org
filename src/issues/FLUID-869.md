@@ -53,26 +53,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19668",
       "author": "Jess Mitchell",
       "date": "2008-07-22T22:28:45.000-0400",
       "body": "Iteration16\n"
     },
     {
+      "id": "19669",
       "author": "Jonathan Hung",
       "date": "2008-08-07T13:03:41.000-0400",
       "body": "Could be useful: Simple review process for drupal.\\\n<http://drupal.org/node/156317>\n"
     },
     {
+      "id": "19670",
       "author": "Jonathan Hung",
       "date": "2008-08-07T15:41:06.000-0400",
       "body": "Currently working on a document that addresses the following questions:\n\n1\\. What will the process be for creating patterns and adding them to the library?\\\n2\\. What makes a good pattern/what are the guidelines for creating good patterns for the library?\\\n3\\. What will the process be for updating patterns?\\\n4\\. How should the OSDPL be moderated?  By a person?  By a technology?\\\n5\\. How will \"ownership\" be maintained?\\\n6\\. Who will write up the OSDPL group charter?\\\n7\\. Do we need to establish roles for users? If so, what are the different types of access they will need to the OSDPL in each role?\n\nI have a pretty good understanding of what is involved in answering the above with the exception of #2 and #6. #2 will be discussed with a small number of people via email. #6 will be started by me, but subject to revision by key OSDPL stakeholders.\n"
     },
     {
+      "id": "19671",
       "author": "Paul Zablosky",
       "date": "2008-08-14T19:46:53.000-0400",
       "body": "We need to think about the various roles people will take on in their associations with the OSDPL\\\n1\\. Site administrators and maintainers\\\n2\\. Pattern authors\\\n3\\. Pattern reviewers\\\n4\\. Site architects&#x20;\n\nI've put some ideas about this into Jonathan's wiki page on governance.\n"
     },
     {
+      "id": "19672",
       "author": "Jonathan Hung",
       "date": "2008-09-02T15:01:55.000-0400",
       "body": "Done to the best of our ability. Time to move on to architecture and implementation.\n"

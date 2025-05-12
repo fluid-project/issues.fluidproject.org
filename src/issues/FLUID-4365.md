@@ -40,21 +40,25 @@
   ],
   "comments": [
     {
+      "id": "15088",
       "author": "Justin Obara",
       "date": "2011-07-28T10:39:53.772-0400",
       "body": "ScreenShot-options.png shows the lower case options, while ScreenShot-Selected.png shows the option in all-caps after being selected\n"
     },
     {
+      "id": "15091",
       "author": "Justin Obara",
       "date": "2011-07-28T10:40:02.393-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "15094",
       "author": "Michelle D'Souza",
       "date": "2011-09-12T13:06:24.754-0400",
       "body": "Cindy has started implementing the fix for this and is planning to with with Heidi to address this using CSS.&#x20;\n"
     },
     {
+      "id": "15097",
       "author": "Justin Obara",
       "date": "2013-09-06T13:31:51.849-0400",
       "body": "The \"colour & contrast\" is now a set of custom radio buttons instead of a drop down.\n"

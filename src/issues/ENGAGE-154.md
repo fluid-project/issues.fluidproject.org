@@ -40,26 +40,31 @@
   ],
   "comments": [
     {
+      "id": "12504",
       "author": "Justin Obara",
       "date": "2010-02-05T14:23:42.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12505",
       "author": "Svetoslav Nedkov",
       "date": "2010-02-12T10:22:13.000-0500",
       "body": "<https://fluidproject.atlassian.net/browse/ENGAGE-154#icft=ENGAGE-154>.patch adds the navigation bar sub-component  to My Collection.\\\nAlso a bug was fixed in the artifact view service that returned a null value for the strings options value.\\\nThe empty collection image was styled.\\\nFinally the html, css and javascript for My Collection was cleaned up to get rid of unnecessary code.\n"
     },
     {
+      "id": "12506",
       "author": "Svetoslav Nedkov",
       "date": "2010-02-17T09:25:33.000-0500",
       "body": "Patch <https://fluidproject.atlassian.net/browse/ENGAGE-154#icft=ENGAGE-154>: Navigation bar added to My Collection, also the status message was removed and only in the case of an empty collection a status is shown. Added style sheet for navigation list.\n"
     },
     {
+      "id": "12507",
       "author": "Colin Clark",
       "date": "2010-02-17T10:14:16.000-0500",
       "body": "I committed Sveto's patch for this issue at r9419.\n"
     },
     {
+      "id": "12508",
       "author": "Colin Clark",
       "date": "2010-02-17T10:14:38.000-0500",
       "body": "I reviewed Sveto's changes and they look good. +1 for inclusion in Engage 0.3b\n"

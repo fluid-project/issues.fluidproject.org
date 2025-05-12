@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11101",
       "author": "Jonathan Hung",
       "date": "2021-08-16T11:26:57.040-0400",
       "body": "This issue has been migrated to Github issues:\\\n<https://github.com/inclusive-design/guide.inclusivedesign.ca/issues/60>\n"

@@ -31,16 +31,19 @@
   ],
   "comments": [
     {
+      "id": "15511",
       "author": "Justin Obara",
       "date": "2010-11-19T16:05:15.104-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "15515",
       "author": "heidi valles",
       "date": "2010-11-22T15:57:42.975-0500",
       "body": "new html & css - includes description in checkbox label\n"
     },
     {
+      "id": "15518",
       "author": "Anastasia Cheetham",
       "date": "2010-12-13T15:14:20.050-0500",
       "body": "I've reviewed Heidi's fix for this: it's clean, and works fine. There's a tiny change in spacing, but I don't think it's an issue at all. I think we can close this one.\n"

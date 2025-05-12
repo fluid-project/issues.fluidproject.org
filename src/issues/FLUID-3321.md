@@ -43,21 +43,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23274",
       "author": "Justin Obara",
       "date": "2010-05-07T13:57:23.736-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "23275",
       "author": "Justin Obara",
       "date": "2010-09-09T13:47:24.462-0400",
       "body": "The only demo that would likely specifically need the role of application would be the UI Options demo, but should inspect the code to confirm this.\n"
     },
     {
+      "id": "23276",
       "author": "Justin Obara",
       "date": "2010-10-04T15:24:59.659-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "23277",
       "author": "Anastasia Cheetham",
       "date": "2014-07-30T15:50:10.258-0400",
       "body": "The keyboard-a11y demo sets the role to application, but nothing else does.\n"

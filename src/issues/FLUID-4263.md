@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24330",
       "author": "Antranig Basman",
       "date": "2011-05-31T02:08:52.772-0400",
       "body": "Infusion Bug Parade\n"
     },
     {
+      "id": "24332",
       "author": "Antranig Basman",
       "date": "2011-05-31T02:09:24.260-0400",
       "body": "This issue is crucial for use of the pager within uPortal, which is widespread\n"
     },
     {
+      "id": "24334",
       "author": "Michelle D'Souza",
       "date": "2011-06-01T11:24:16.806-0400",
       "body": "Merged pull request <https://github.com/fluid-project/infusion/pull/59> into the project repo at eab3445b7d2e712afc9bb4318075f58898afe807\n"

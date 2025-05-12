@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "20802",
       "author": "Justin Obara",
       "date": "2009-01-13T13:39:09.000-0500",
       "body": "'screenshot-1' shows some text fixed, while others scrolled\n"
     },
     {
+      "id": "20803",
       "author": "Justin Obara",
       "date": "2009-01-27T09:09:35.000-0500",
       "body": "Appears to have been resolved with the changes if updating the UI Options component\n\nTested using:\n\nIE6 (Win XP)\n"

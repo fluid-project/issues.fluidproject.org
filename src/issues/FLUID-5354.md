@@ -46,16 +46,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19736",
       "author": "Justin Obara",
       "date": "2014-05-01T09:42:04.455-0400",
       "body": "This makes sense. I think we should include a note in the README or release notes about this.\n"
     },
     {
+      "id": "19738",
       "author": "Justin Obara",
       "date": "2014-05-13T12:48:20.822-0400",
       "body": "Submitted a pull request to remove flash support \\\n<https://github.com/fluid-project/infusion/pull/518>\n"
     },
     {
+      "id": "19740",
       "author": "Michelle D'Souza",
       "date": "2014-05-22T13:49:25.827-0400",
       "body": "Merged at 7ad02491a7faa7f9f2125ed2fb1efbee07b93faa\n"

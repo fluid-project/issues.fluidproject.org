@@ -45,21 +45,25 @@
   ],
   "comments": [
     {
+      "id": "23182",
       "author": "Laurel Williams",
       "date": "2009-06-09T15:16:54.000-0400",
       "body": "postProcessor.php is a very modified version of \"index.php\" which was the non-javascript version of the custom build. The code in this file is intended only to \"process\" the post from the user requesting the custom build file, so a lot of things in index.php were removed. Rather than trying to modify index.php, I changed the name (required) and removed anything that rendered html. I also modified the code to be more modular and put in several TODO notes for things we still need to do.\n\nThis file requires 'config.php'. I have not uploaded config.php because we should generalize the paths listed in config.php - they are not for public consumption. I will email config.php separately so we can discuss what to put in for general consumption.\n"
     },
     {
+      "id": "23183",
       "author": "Laurel Williams",
       "date": "2009-06-09T15:31:53.000-0400",
       "body": "This is the config.php required by postProcessor.php. Must be edited to put in paths specific to server.&#x20;\n"
     },
     {
+      "id": "23184",
       "author": "Laurel Williams",
       "date": "2009-06-10T12:33:22.000-0400",
       "body": "This is an updated version that works with the jsonProcessor.php code and also moved the php tag to the start of the file (before the comments - oops)\n"
     },
     {
+      "id": "23185",
       "author": "Laurel Williams",
       "date": "2009-07-13T11:52:09.000-0400",
       "body": "postProcessor now returns the appropriate response.\n"

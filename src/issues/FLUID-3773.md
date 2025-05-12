@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16832",
       "author": "Justin Obara",
       "date": "2010-10-04T15:41:43.691-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "16834",
       "author": "Anastasia Cheetham",
       "date": "2010-10-19T11:02:38.933-0400",
       "body": "I've added a draft of the new information to the ChangeApplier API page:\\\n<http://wiki.fluidproject.org/display/fluid/ChangeApplier+API>\\\nIt's still missing information about the new 'priority' flag, because I don't quite understand that yet. Once I add it, I'll pass the page on to Antranig for review.\n"
     },
     {
+      "id": "16836",
       "author": "Anastasia Cheetham",
       "date": "2010-12-02T10:51:23.839-0500",
       "body": "Antranig, I'd really appreciate a review of the documentation I've added to <http://wiki.fluidproject.org/display/fluid/ChangeApplier+API> describing the new transaction support.\n"

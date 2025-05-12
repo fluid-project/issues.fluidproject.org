@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25985",
       "author": "Giovanni Tirloni",
       "date": "2016-08-22T09:55:41.101-0400",
       "body": "Public CentOS Vagrant image: <https://github.com/idi-ops/packer-centos>\n\nInternal CentOS KVM image: <https://github.com/inclusive-design/packer-centos-idrc>\n"

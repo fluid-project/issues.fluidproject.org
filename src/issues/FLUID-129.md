@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17827",
       "author": "Colin Clark",
       "date": "2007-11-27T10:03:02.000-0500",
       "body": "I updated the dependencies and rebuilt: everything looks good.\n"
     },
     {
+      "id": "17829",
       "author": "Colin Clark",
       "date": "2007-11-27T10:03:31.000-0500",
       "body": "Build is up and running again.\n"
     },
     {
+      "id": "17831",
       "author": "Anastasia Cheetham",
       "date": "2007-11-27T10:28:05.000-0500",
       "body": "Actually, Continuum **did** notify a few people. It now emails the commits mailing list.\n"

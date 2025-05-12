@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11091",
       "author": "Justin Obara",
       "date": "2014-09-19T10:45:47.324-0400",
       "body": "Submitted a pull request <https://github.com/fluid-project/metadata/pull/43>\n"
     },
     {
+      "id": "11092",
       "author": "Justin Obara",
       "date": "2014-10-26T12:42:16.104-0400",
       "body": "The work for this issue will be shifted to FLUID-5542 as an improvement/addition to Infusion. See comments from <https://github.com/fluid-project/metadata/pull/43>\n"

@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23665",
       "author": "Justin Obara",
       "date": "2015-11-03T13:33:42.786-0500",
       "body": "Added the git repo <https://github.com/fluid-project/ci-service>\n"
     },
     {
+      "id": "23666",
       "author": "Giovanni Tirloni",
       "date": "2015-11-03T13:50:23.694-0500",
       "body": "Thank you, Justin.\n\nThe Jenkins instance running at [https://ci-int.fluidproject.org](https://ci-int.fluidproject.org/) is now updating its job definitions automatically based on commits done to this repository.\n"

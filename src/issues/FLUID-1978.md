@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17691",
       "author": "Justin Obara",
       "date": "2008-12-15T16:05:51.000-0500",
       "body": "Bug Parade: 0.6 release\n"
     },
     {
+      "id": "17692",
       "author": "Justin Obara",
       "date": "2008-12-18T11:10:10.000-0500",
       "body": "Still can't remove files via keyboard in FF3 but that is due to <https://fluidproject.atlassian.net/browse/FLUID-2021#icft=FLUID-2021>\n\nVerified Fix Using:\n\nFF3, IE7, Opera 9.5 (Win XP) with Flash 10\n"

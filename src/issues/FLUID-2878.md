@@ -40,11 +40,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22897",
       "author": "Eli Cochran",
       "date": "2009-06-02T17:22:17.000-0400",
       "body": "Ran the change line endings command from Aptana against the trunk\n"
     },
     {
+      "id": "22899",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:17.816-0500",
       "body": "Closing issues that were fixed in 1.1\n"

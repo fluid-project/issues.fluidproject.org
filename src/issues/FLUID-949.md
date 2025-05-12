@@ -32,11 +32,13 @@
   ],
   "comments": [
     {
+      "id": "18938",
       "author": "Justin Obara",
       "date": "2008-07-21T14:18:52.000-0400",
       "body": "'screenshot-1' shows the two highlighted fields and the mouse hover message\n"
     },
     {
+      "id": "18944",
       "author": "Allison Bloodworth",
       "date": "2008-07-21T19:05:18.000-0400",
       "body": "Daphne and I don't believe this is a bug. You don't often have the ability to \"point\" to two things at once, but since it is possible in this instance, and because both mousing over and tabbing to inline editable elements should highlight them, we feel it is OK for two elements to be highlighted at once. We don't think you should be able to **edit** two at once, but I tested and the system is not allowing this so we are closing this bug.&#x20;\n"

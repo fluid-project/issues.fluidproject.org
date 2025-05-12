@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18693",
       "author": "Allison Bloodworth",
       "date": "2008-03-18T19:00:18.000-0400",
       "body": "iteration05\n"
     },
     {
+      "id": "18696",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:57.356-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

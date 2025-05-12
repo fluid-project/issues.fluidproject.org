@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13662",
       "author": "Daphne Ogle",
       "date": "2008-03-05T15:44:24.000-0500",
       "body": "* was 04 but was a duplicate\n"
     },
     {
+      "id": "13663",
       "author": "Allison Bloodworth",
       "date": "2008-03-05T16:11:24.000-0500",
       "body": "Duplicate of <https://fluidproject.atlassian.net/browse/FLUID-317#icft=FLUID-317>\n"

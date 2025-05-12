@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25456",
       "author": "Antranig Basman",
       "date": "2021-11-27T18:41:18.313-0500",
       "body": "> We can express this a little better today, as a \"transforming chain\" organised via priorities/namespaces with IoC-resolved arguments.\n\nIn practice this was not appropriate - since the validation occurred at two different sites - i) the text value peering with the markup, ii) the numeric value after conversion - so we fell back instead on a serial use of the \"modelListener with priority of last\" trick that now seems to be appropriate. Note that it ought to be possible to remove this priority since the ChangeApplier should always sort transactional listeners to be notified last.\n"

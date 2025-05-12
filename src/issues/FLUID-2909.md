@@ -31,21 +31,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14874",
       "author": "Laurel Williams",
       "date": "2009-06-04T11:02:35.000-0400",
       "body": "completed the edit to the config.php\\\nreviewed the entire website for links to www\\.fluidproject.org and replaced them with fluidproject.org\n"
     },
     {
+      "id": "14877",
       "author": "Laurel Williams",
       "date": "2009-06-04T11:40:01.000-0400",
       "body": "Jamon recommended looking at <http://www.webweaver.nu/html-tips/web-redirection.shtml> for .htaccess help\n"
     },
     {
+      "id": "14879",
       "author": "Laurel Williams",
       "date": "2009-06-04T12:00:21.000-0400",
       "body": "made an addition to the .htaccess file of&#x20;\n\nRewriteCond %{HTTP\\_HOST} .\\\nRewriteCond %{HTTP\\_HOST} !^example\\\\.com\\\nRewriteRule (.\\*) <http://example.com/$1> \\[R=301,L]\n"
     },
     {
+      "id": "14882",
       "author": "Laurel Williams",
       "date": "2009-06-04T14:23:53.000-0400",
       "body": "completed this task.\n"

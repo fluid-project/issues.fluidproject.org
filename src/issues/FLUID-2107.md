@@ -25,21 +25,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13975",
       "author": "Paul Zablosky",
       "date": "2009-01-09T17:34:59.000-0500",
       "body": "iteration24\n"
     },
     {
+      "id": "13978",
       "author": "Allison Bloodworth",
       "date": "2009-01-15T12:32:11.000-0500",
       "body": "I think we kept at least one of those pages because instead of renaming a page, someone move the content to a new page so we lost the page history. We may want to consider keeping some of these pages on file with a \"page deprecated\" note at the top.\n"
     },
     {
+      "id": "13981",
       "author": "Paul Zablosky",
       "date": "2009-01-16T19:12:25.000-0500",
       "body": "Allison is correct.  There is one page that is deprecated, but should be retained for the history of its comments. &#x20;\n"
     },
     {
+      "id": "13984",
       "author": "Paul Zablosky",
       "date": "2009-01-19T18:49:09.000-0500",
       "body": "The \"Walkthrough Working Pages\" have been consolidated and redundant content removed.  Pages which contain a history of authorship and commentary, have been retained but marked \"deprecated\" if they have been superseded by other content.  Three pages have been marked for deletion (by someone who has the power to delete).\n\nThe page has been renamed \"UX Walkthrough Early Drafts and Resource Collections\"\n"

@@ -23,16 +23,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25834",
       "author": "Giovanni Tirloni",
       "date": "2018-03-10T09:35:38.119-0500",
       "body": "<https://access.redhat.com/errata/RHSA-2018:0395>\n"
     },
     {
+      "id": "25835",
       "author": "Giovanni Tirloni",
       "date": "2018-03-15T14:25:17.835-0400",
       "body": "This and other updates are scheduled for March 17th (Saturday) at 8AM.\n"
     },
     {
+      "id": "25836",
       "author": "Giovanni Tirloni",
       "date": "2018-03-19T09:39:34.523-0400",
       "body": "Fixes were applied on Saturday (March 17).\n"

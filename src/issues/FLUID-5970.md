@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22508",
       "author": "Tony Atkins [RtF]",
       "date": "2016-09-27T05:10:58.401-0400",
       "body": "The previous discussion around this can be found here:\n\n<https://issues.fluidproject.org/browse/FLUID-5703>\n\nThe examples given here demonstrate that it's not simply a problem with transformation functions.  In the examples I gave, I cannot \"opt out\" of the input handling.  I would have to supply my own transformation function that closely mirrors fluid.transforms.value, but which does not extend standardInputTransformFunction.\n"

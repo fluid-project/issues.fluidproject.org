@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17389",
       "author": "Joseph Scheuhammer",
       "date": "2007-11-13T10:08:04.000-0500",
       "body": "We do not have unit tests for tabbed navigation.  We do have unit tests for arrow and ctrl+arrow, and tests for moving focus programmatically.  We need to simulate tab keystrokes and test that they are doing \"the right thing\".\n"
     },
     {
+      "id": "17390",
       "author": "Colin Clark",
       "date": "2007-11-15T15:36:13.000-0500",
       "body": "I tested this on FireFox 2.0.0.9 on Windows XP, both at the link Simon included above and within the Sakai gallery tool. Tabbing out of the Lightbox works for me.\n"
     },
     {
+      "id": "17391",
       "author": "Justin Obara",
       "date": "2008-07-10T19:49:49.000-0400",
       "body": "Verified that you are able to tab out of lightbox using FF2 on Win XP\n\nOn the generic lightbox demo from the daily build site:\\\n<http://build.fluidproject.org/fluid/sample-code/reorderer/generic-lightbox/generic-lightbox.html>\n"

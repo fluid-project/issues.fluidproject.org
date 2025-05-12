@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14883",
       "author": "Anastasia Cheetham",
       "date": "2009-04-02T10:01:51.000-0400",
       "body": "This was resolved with the class-renaming efforts.\n"
     },
     {
+      "id": "14886",
       "author": "Justin Obara",
       "date": "2009-04-08T09:06:45.000-0400",
       "body": "Verified that it is now a class called \"flc-pager-sort-header\"\n"

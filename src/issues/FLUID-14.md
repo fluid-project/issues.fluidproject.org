@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17787",
       "author": "Jonathan Hung",
       "date": "2007-06-29T06:51:36.000-0400",
       "body": "This issue appears to be fixed with the latest snapshot of Dojo and Dijit. However this means changes to the Lightbox CSS file.\n"
     },
     {
+      "id": "17789",
       "author": "Anastasia Cheetham",
       "date": "2007-08-24T07:54:58.000-0400",
       "body": "The tooltip has been removed from the mark-up.\n"

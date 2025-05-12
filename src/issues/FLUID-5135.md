@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25513",
       "author": "Justin Obara",
       "date": "2015-06-15T10:45:28.853-0400",
       "body": "The issue here is that all of the demos and etc. use the same cookie to store the preferences.\n"
     },
     {
+      "id": "25514",
       "author": "Mohamed Shadab",
       "date": "2018-03-06T08:02:31.789-0500",
       "body": "I would like to fix this issue but i cannot find the grades demo anywhere in the infusion repo, any help please.\n"
     },
     {
+      "id": "25515",
       "author": "Justin Obara",
       "date": "2018-03-06T08:44:59.183-0500",
       "body": "Mohamed Shadab I've updated the description with links to the demos in action. You can find these in the repo at <https://github.com/fluid-project/infusion/tree/master/examples/framework/preferences/usingGrades> and <https://github.com/fluid-project/infusion/tree/master/demos/uiOptions.>\n\nI would also suggest looking over all of the UIO/Prefs Framework related demos, examples, and manual tests to ensure that they are all working properly. \n"

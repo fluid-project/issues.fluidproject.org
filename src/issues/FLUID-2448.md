@@ -29,31 +29,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21442",
       "author": "Justin Obara",
       "date": "2009-05-14T10:10:43.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "21444",
       "author": "Antranig Basman",
       "date": "2009-05-15T14:23:09.000-0400",
       "body": "I put in a hack in overrides.css to make this appear - but I guess it would be interesting to know why it disappeared in the first place.\n"
     },
     {
+      "id": "21445",
       "author": "Jacob Farber",
       "date": "2009-05-25T12:03:56.000-0400",
       "body": "base.css had a rule on line 41\\\na {\\\noutline:none\\\n}\n\nwhich removed the focus effect.\n"
     },
     {
+      "id": "21446",
       "author": "Jacob Farber",
       "date": "2009-05-25T12:09:32.000-0400",
       "body": "I reviewed Antranig's change.\n"
     },
     {
+      "id": "21447",
       "author": "Antranig Basman",
       "date": "2009-05-25T12:09:50.000-0400",
       "body": "I have confirmed with Nico of the Sakai project that this screen and set of files have no currency within the overall Sakai effort - so we have no responsibility for propagating this fix to a wider community. base.css, reset.css and grid.css appear to be hacked versions of files originally distributed as part of YUI.\n"
     },
     {
+      "id": "21448",
       "author": "Justin Obara",
       "date": "2009-05-25T12:16:44.000-0400",
       "body": "Verified fix using:\n\nFF3, Safari 3.2 (Mac OS 10.5)\\\nFF3, IE8 (Win Vista)\n"

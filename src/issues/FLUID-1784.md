@@ -39,21 +39,25 @@
   ],
   "comments": [
     {
+      "id": "17359",
       "author": "Justin Obara",
       "date": "2008-11-10T09:43:45.000-0500",
       "body": "'screenshot-1' shows the text in display mode\n"
     },
     {
+      "id": "17360",
       "author": "Justin Obara",
       "date": "2008-11-10T09:44:40.000-0500",
       "body": "'screenshot-2' shows the text in edit mode. Notice that the text field is too small to properly display the text\n"
     },
     {
+      "id": "17361",
       "author": "Antranig Basman",
       "date": "2008-11-10T11:30:50.000-0500",
       "body": "Sorry about this, all - I had \"temporarily\" added a correction to force the inline edit width to be inappropriately small so that I could better test my corrections to <https://fluidproject.atlassian.net/browse/FLUID-992#icft=FLUID-992> and <https://fluidproject.atlassian.net/browse/FLUID-1528#icft=FLUID-1528>, but had forgotten to remove it (it was skulking at the end of a line).\n\nCorrected at revision 5987\n"
     },
     {
+      "id": "17362",
       "author": "Justin Obara",
       "date": "2008-11-11T08:17:37.000-0500",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

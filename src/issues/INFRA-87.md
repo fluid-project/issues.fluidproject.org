@@ -23,16 +23,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25853",
       "author": "Giovanni Tirloni",
       "date": "2016-08-11T13:43:53.138-0400",
       "body": "This may not work with HTTPS until CentOS updates OpenSSL to version 1.0.2 at least.\n\n<https://nginx.org/en/docs/http/ngx_http_v2_module.html>\n\n> Note that accepting HTTP/2 connections over TLS requires the “Application-Layer Protocol Negotiation” (ALPN) TLS extension support, which is available only since OpenSSL version 1.0.2. Using the “Next Protocol Negotiation” (NPN) TLS extension for this purpose (available since OpenSSL version 1.0.1) is not guaranteed\n\n.\n"
     },
     {
+      "id": "25854",
       "author": "Giovanni Tirloni",
       "date": "2017-09-21T15:00:14.044-0400",
       "body": "Requires CentOS 7.4 (which now includes newer OpenSSL) and newer nginx packages.\n"
     },
     {
+      "id": "25855",
       "author": "Giovanni Tirloni",
       "date": "2018-01-23T09:05:24.502-0500",
       "body": "HTTP/2 has been enabled by default since Nov 2017\n\n<https://github.com/inclusive-design/ops/blob/master/roles/nginx-reverse/templates/endpoint.conf.j2#L37-L41>\n"

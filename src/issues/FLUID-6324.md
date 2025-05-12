@@ -31,36 +31,43 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15642",
       "author": "Alan Harnum",
       "date": "2018-09-17T14:39:30.813-0400",
       "body": "This problems appears to be because of incompatibility between a global install of the latest docpad and the site code (possibly because one or more of the plugins, as they are pinned at particular versions).\n\nUsing npm install -g docpad\\@6.79.4 (the last version between the 6.8.x line) resolved this problem for me.\n\nNeeds further investigation.\n"
     },
     {
+      "id": "15643",
       "author": "Tony Atkins [RtF]",
       "date": "2019-04-17T08:09:34.324-0400",
       "body": "In my work on <https://fluidproject.atlassian.net/browse/FLUID-5722#icft=FLUID-5722> I confirmed that no version of docpad beyond 6.79.4 works with our plugin stack.  The README currently instructs people to run `npm install -g docpad`, which hasn't worked for more than a year.\n\nLong term we have discussed migrating away from docpad, but in the short term it should still be possible to contribute to this package without forcing your local install to use an outdated docpad.  As a short term solution, I plan to add docpad as a dependency pinned to the last working version and update the README to remove the suggestion to install docpad globally.\n"
     },
     {
+      "id": "15644",
       "author": "Tony Atkins [RtF]",
       "date": "2019-04-17T08:12:36.297-0400",
       "body": "In my testing (with an incompatible docpad installed globally), simply adding the dependency works perfectly for things run using npm scripts, since npm adds node\\_modules/.bin at the start of the PATH.\n"
     },
     {
+      "id": "15645",
       "author": "Alan Harnum",
       "date": "2019-04-18T17:09:28.384-0400",
       "body": "Tony Atkins \\[RtF] - I think we've converged on a similar approach per this comment: <https://github.com/fluid-project/infusion-docs/pull/146#issuecomment-484688337>, but I think your suggestion would work better since it doesn't rely on an outdated global install of DocPad.\n\nIf you've got existing work do you want to open a PR? Simon Bates has been reviewing some of the work I've been doing to (first) try to upgrade the DocPad version and (second, when it turned out to be a yak-shaving exercise) in finding a way to keep using the older version.\n"
     },
     {
+      "id": "15647",
       "author": "Tony Atkins [RtF]",
       "date": "2019-04-19T08:01:32.581-0400",
       "body": "Alan Harnum if you can wait a few days the work to pin the version is included in my early work on <https://fluidproject.atlassian.net/browse/FLUID-5722#icft=FLUID-5722>, which I hope to submit for review next week.\n"
     },
     {
+      "id": "15648",
       "author": "Alan Harnum",
       "date": "2019-04-23T11:23:36.523-0400",
       "body": "Tony Atkins \\[RtF] That sounds great, thanks.\n"
     },
     {
+      "id": "15651",
       "author": "Justin Obara",
       "date": "2019-08-01T11:09:10.022-0400",
       "body": "Seems we should just pin our docpad usage to v6.79.4. Can see this PR for docs-inclusive-learning as an example <https://github.com/fluid-project/docs-inclusive-learning/pull/25>\n\nIt's also looking like we'll be migrating these sites to Hugo as we find the time.\n"

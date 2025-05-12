@@ -25,31 +25,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22727",
       "author": "Antranig Basman",
       "date": "2018-02-20T10:31:57.393-0500",
       "body": "This was encountered again during work by the Astea team on the GPII's PSP survey dialog tests. These read:\n\n \n\n```java\nsequence: [{\r\n        func: \"{that}.app.keyIn\",\r\n        args: [\"snapset_1a\"]\r\n    }, [ // Test closing the survey using the break-out link\r\n        {\r\n            func: \"{that}.app.dialogManager.show\",\r\n            args: [\"survey\", gpii.tests.webview.getSurveyFixture()]\r\n        }, {\r\n            event: \"{that gpii.app.surveyDialog}.events.onSurveyCreated\",\r\n            listener: \"fluid.identity\"\r\n        }, {\r\n            func: \"{that}.app.dialogManager.survey.surveyDialog.executeCommand\",\r\n            args: [clickBreakOutLink]\r\n        }, {\r\n            event: \"{that}.app.dialogManager.survey.surveyDialog.events.onSurveyClose\",\r\n            listener: \"jqUnit.assert\",\r\n            args: [\"Survey was closed by clicking on the break-out link\"]\r\n        }\r\n    ], [ // Test that the survey will not close when clicking on a non-break-out link\r\n        {\r\n            func: \"{that}.app.dialogManager.show\",\r\n            args: [\"survey\", gpii.tests.webview.getSurveyFixture()]\r\n        }, {\r\n            event: \"{that gpii.app.surveyDialog}.events.onSurveyCreated\",\r\n            listener: \"fluid.identity\"\r\n        }, {\r\n            func: \"{that}.app.dialogManager.survey.surveyDialog.executeCommand\",\r\n            args: [clickNonBreakOutLink]\r\n        }, {\r\n            func: \"jqUnit.assertTrue\",\r\n            args: [\r\n                \"Survey was not closed by clicking on a non-break-out link\",\r\n                \"{that}.app.dialogManager.survey.surveyDialog.model.isShown\"\r\n            ]\r\n        }\r\n    ], [ // Test closing the survey using a close button within the content of the survey\r\n        {\r\n            func: \"{that}.app.dialogManager.show\",\r\n            args: [\"survey\", gpii.tests.webview.getSurveyFixture()]\r\n        }, {\r\n            event: \"{that gpii.app.surveyDialog}.events.onSurveyCreated\",\r\n            listener: \"fluid.identity\"\r\n        }, {\r\n            func: \"{that}.app.dialogManager.survey.surveyDialog.executeCommand\",\r\n            args: [clickCloseButton]\r\n        }, {\r\n            event: \"{that}.app.dialogManager.survey.surveyDialog.events.onSurveyClose\",\r\n            listener: \"jqUnit.assert\",\r\n            args: [\"Survey was closed by clicking on the close button within the content\"]\r\n        }\r\n    ], [ // Test closing the survey when a DOM element with id \"EndOfSurvey\" element appears in the survey.\r\n        {\r\n            func: \"{that}.app.dialogManager.show\",\r\n            args: [\"survey\", gpii.tests.webview.getSurveyFixture()]\r\n        }, {\r\n            event: \"{that gpii.app.surveyDialog}.events.onSurveyCreated\",\r\n            listener: \"fluid.identity\"\r\n        }, {\r\n            func: \"{that}.app.dialogManager.survey.surveyDialog.executeCommand\",\r\n            args: [addEndOfSurveyElement]\r\n        }, {\r\n            event: \"{that}.app.dialogManager.survey.surveyDialog.events.onSurveyClose\",\r\n            listener: \"jqUnit.assert\",\r\n            args: [\"Survey was closed automatically when its end has been reached\"]\r\n        }\r\n    ], [ // Test that the survey will not close if it does not need to close on submit\r\n        {\r\n            func: \"{that}.app.dialogManager.show\",\r\n            args: [\"survey\", gpii.tests.webview.getSurveyFixture({closeOnSubmit: false})]\r\n        }, {\r\n            event: \"{that gpii.app.surveyDialog}.events.onSurveyCreated\",\r\n            listener: \"fluid.identity\"\r\n        }, {\r\n            func: \"{that}.app.dialogManager.survey.surveyDialog.executeCommand\",\r\n            args: [addEndOfSurveyElement]\r\n        }, {\r\n            func: \"jqUnit.assertTrue\",\r\n            args: [\r\n                \"Survey was not closed when its end has been reached as it is not configured to closeOnSubmit\",\r\n                \"{that}.app.dialogManager.survey.surveyDialog.model.isShown\"\r\n            ]\r\n        }\r\n    ], {\r\n        func: \"{that}.app.keyOut\"\r\n    }]\n```\n\nIn this case the multiple attempts to bind {that gpii.app.surveyDialog} accumulated and caused the usual sequence overrun as seen above. Time for a fix ...\n\n \n"
     },
     {
+      "id": "22732",
       "author": "Cindy Li",
       "date": "2018-02-20T20:30:28.588-0500",
       "body": "[The pull request](https://github.com/fluid-project/infusion/pull/876) has been merged into the project repo master branch at 29c3e677e6405b0e288075cdf94d8936905d85af\n"
     },
     {
+      "id": "22734",
       "author": "Gregor Moss",
       "date": "2018-09-13T16:09:11.821-0400",
       "body": "I believe I'm experiencing this issue while working on tests for my localized UIO component in [my FLUID-6300 branch](https://github.com/blueslug/infusion/tree/FLUID-6300)\n\nHere is the test sequence I'm trying to get working:\n\n```javascript\nsequence: [{\r\n    event: \"{prefsEditorBaseTest prefsEditor messageLoader}.events.onResourcesLoaded\",\r\n    listener: \"jqUnit.assertEquals\",\r\n    args: [\"defaultLocale is properly propagated to messageLoader\", \"fr\", \"{prefsEditor}.prefsEditorLoader.messageLoader.options.defaultLocale\"]\r\n},\r\n{\r\n    event: \"{prefsEditorBaseTest prefsEditor prefsEditorLoader prefsEditor}.events.onReady\",\r\n    listener: \"fluid.tests.uiOptions.prefsEditorLocalizedTester.verifyPanelMessages\",\r\n    args: \"{prefsEditor}\"\r\n},\r\n{\r\n    funcName: \"fluid.tests.uiOptions.prefsEditorLocalizedTester.verifySlidingPanelMessages\",\r\n    args: [\"{prefsEditor}\", \"prefsEditor\", \"Préférences de l'utilisateur\"]\r\n},\r\n{\r\n    func: \"{prefsEditor}.events.onInterfaceLocaleChangeRequested.fire\",\r\n    args: [\"es\"]\r\n},\r\n{\r\n    event: \"{prefsEditor messageLoader}.events.onResourcesLoaded\",\r\n    listener: \"jqUnit.assertEquals\",\r\n    args: [\"defaultLocale is properly propagated to messageLoader\", \"es\", \"{prefsEditor}.prefsEditorLoader.messageLoader.options.defaultLocale\"]\r\n}]\n```\n"
     },
     {
+      "id": "22738",
       "author": "Gregor Moss",
       "date": "2018-09-13T17:02:40.671-0400",
       "body": "I have captured my failing case in this branch: <https://github.com/BlueSlug/infusion/tree/FLUID-5633>\n"
     },
     {
+      "id": "22740",
       "author": "Antranig Basman",
       "date": "2018-09-17T20:33:41.899-0400",
       "body": "Further failure cases discovered by Gregor Moss\n"
     },
     {
+      "id": "22743",
       "author": "Justin Obara",
       "date": "2018-10-05T10:24:08.113-0400",
       "body": "Merged PR ( <https://github.com/fluid-project/infusion/pull/935> ) into the project repo at bfbbf740eddd18ec17b604d0e4a785ec3033383d\n"

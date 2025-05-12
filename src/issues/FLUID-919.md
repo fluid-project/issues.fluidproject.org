@@ -57,26 +57,31 @@
   ],
   "comments": [
     {
+      "id": "24856",
       "author": "Justin Obara",
       "date": "2008-07-16T17:45:58.000-0400",
       "body": "'screenshot-1' shows the buttons in Opera\n"
     },
     {
+      "id": "24858",
       "author": "Justin Obara",
       "date": "2008-07-16T17:47:19.000-0400",
       "body": "'screenshot-2' shows the buttons in FF3\n"
     },
     {
+      "id": "24860",
       "author": "Eli Cochran",
       "date": "2008-07-24T20:09:58.000-0400",
       "body": "I've made some minor changes to the CSS which help FF but don't mess up Safari or IE (tested 6 not 7) but the fix for Opera is more involved.\n\nI'll leave this open while I think about it.\n"
     },
     {
+      "id": "24862",
       "author": "Justin Obara",
       "date": "2008-09-16T14:50:35.000-0400",
       "body": "Affects Uploader 2\n\nLess noticeable in FF3 now.\n"
     },
     {
+      "id": "24864",
       "author": "Mike Lam",
       "date": "2011-01-05T15:37:57.933-0500",
       "body": "No longer an issue in Infusion 1.3\n"

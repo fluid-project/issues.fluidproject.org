@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22857",
       "author": "Justin Obara",
       "date": "2013-10-31T15:53:15.485-0400",
       "body": "Fixed in my branch <https://github.com/jobara/infusion/tree/FLUID-5200>\n"
     },
     {
+      "id": "22860",
       "author": "Justin Obara",
       "date": "2013-10-31T15:53:58.219-0400",
       "body": "Sent a pull request <https://github.com/fluid-project/infusion/pull/432>\n"
     },
     {
+      "id": "22863",
       "author": "Justin Obara",
       "date": "2013-11-07T15:05:36.504-0500",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/432> ) into the project repo at e4475f1d0ca14eb6d6cc506bb273a04088b0cd18\n"

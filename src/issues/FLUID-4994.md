@@ -48,16 +48,19 @@
   ],
   "comments": [
     {
+      "id": "16090",
       "author": "Colin Clark",
       "date": "2013-05-06T14:10:31.467-0400",
       "body": "We discussed the issue of font icons a bit more in the channel today. Here is the transcript:\n\n<http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-05-06>\n\nIn short, we decided:\n\n1\\. That we should not include any of IcoMoon's icons in Infusion, since we don't use them in any of our designs\\\n2\\. That we should create four separate icon fonts, one each for:\\\ni) UI Options\\\nii) Inline Edit\\\niii) Uploader\\\niv) the Fluid Skinning System (FSS)\n"
     },
     {
+      "id": "16092",
       "author": "Justin Obara",
       "date": "2014-06-25T16:17:26.681-0400",
       "body": "FSS was deprecated in Infusion 1.5 and will be removed from Infusion 2.0\n"
     },
     {
+      "id": "16094",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:08.459-0400",
       "body": "Reopening to change the fix version to 1.9\n"

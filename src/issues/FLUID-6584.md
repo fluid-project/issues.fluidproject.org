@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25650",
       "author": "Antranig Basman",
       "date": "2020-12-14T07:11:56.137-0500",
       "body": "This was encountered when implementing the Covid \"data monitor\" app at <https://github.com/amb26/covid-data-monitor> - the \"built\" configuration uses a templateRenderingView to load the entire UI markup from a template which then contains a Pager and the summary component described above.\n"

@@ -50,51 +50,61 @@
   ],
   "comments": [
     {
+      "id": "19428",
       "author": "Justin Obara",
       "date": "2010-04-07T12:14:31.000-0400",
       "body": "UPDATED Results based on tests of Infusion 1.1.2 and the current trunk version.\n\nSafari 4 (Mac OS 10.6)\\\n\\======================\n\nGrid Reorderer:\n\n1.1.2 - tab (and option-tab) get stuck at first element. Shift-tab (and options-shift-tab) works\n\ncurrent - same as 1.1.2\n\nImage Reorderer:\n\n1.1.2 - same as grid reorderer except option-tab will put focus on each of the images on the first time through.\n\ncurrent - same as 1.1.2\n\nLayout Reorderer:\n\n1.1.2 - same as Image Reorderer except using tab has the same focusing issues as option-tab and shift-tab (and option-shift-tab) always cycles through all of the elements.\n\ncurrent - same as 1.1.2\n\nList Reorderer:\n\n1.1.2 - same as Grid Reorderer\n\ncurrent - same as 1.1.2\n\nFF 3.5 (Win XP)\\\n\\================\n\nGrid Reorderer:\n\n1.1.2 - works\n\ncurrent - works\n\nImage Reorderer:\n\n1.1.2 - works\n\ncurrent - works\n\nLayout Reorderer:\n\n1.1.2 - tab and shift-tab put focus on each element\n\ncurrent - same as 1.1.2\n\nList Reorderer:\n\n1.1.2 - works\n\ncurrent - works\n\nIE 7 (Win XP)\\\n\\================\n\nGrid Reorderer:\n\n1.1.2 - works\n\ncurrent - works\n\nImage Reorderer:\n\n1.1.2 - works\n\ncurrent - works\n\nLayout Reorderer:\n\n1.1.2 - tab and shift-tab put focus on each element\n\ncurrent - same as 1.1.2\n\nList Reorderer:\n\n1.1.2 - works\n\ncurrent - works\n\nFF 3.6 (Win XP)\\\n\\================\n\nGrid Reorderer:\n\n1.1.2 - stops on first element\n\ncurrent - can tab off of first element, but pressing tab again returns you to the first element. Holding down tab, will flicker focus on and off of the first element\n\nImage Reorderer:\n\n1.1.2 - same as Grid Reorderer\n\ncurrent - same as Grid Reorderer\n\nLayout Reorderer:\n\n1.1.2 - tab will put focus on each element the first time through and then work properly after that. shift-tab puts focus on each element all the time\n\ncurrent - same as 1.1.2\n\nList Reorderer:\n\n1.1.2 - same as Grid Reorderer\n\ncurrent - same as Grid Reorderer\n\nIE 8 (Win XP)\\\n\\================\n\nGrid Reorderer:\n\n1.1.2 - works\n\ncurrent - works\n\nImage Reorderer:\n\n1.1.2 - works\n\ncurrent - works\n\nLayout Reorderer:\n\n1.1.2 - tab will put focus on each element the first time through and then work properly after that. shift-tab puts focus on each element all the time\n\ncurrent - same as 1.1.2\n\nList Reorderer:\n\n1.1.2 - works\n\ncurrent - works\n"
     },
     {
+      "id": "19429",
       "author": "Antranig Basman",
       "date": "2010-04-07T16:54:36.000-0400",
       "body": "Patch to correct debugFocus.js for use with jQuery 1.4.x (and perhaps some previous versions)\n"
     },
     {
+      "id": "19430",
       "author": "Antranig Basman",
       "date": "2010-04-07T16:56:20.000-0400",
       "body": "Patch for gridReorderer.html which includes debugging utilities to show progress of focus. Remove \"tabindex = 1\" from the markup to see a slightly different effect also.\n"
     },
     {
+      "id": "19431",
       "author": "Antranig Basman",
       "date": "2010-04-08T12:15:34.000-0400",
       "body": "This patch appears to resolve the issue on Firefox 3.6 and does not break on IE6. Uploading for testing on other browsers\n"
     },
     {
+      "id": "19432",
       "author": "Antranig Basman",
       "date": "2010-04-08T16:43:03.000-0400",
       "body": "Patch to keyboard-a11y as well as Reorderer, to demonstrate fix to issue in addition to \"mouse dropping cleaning\" using explicit blur\n"
     },
     {
+      "id": "19433",
       "author": "Colin Clark",
       "date": "2010-04-09T16:18:29.000-0400",
       "body": "To translate Antranig, we've updated the keyboard-a11y plugin to use the Roaming Tabindex Technique for handling tab focus. Before focusing a new arrow-keyable element, we change its tabindex from -1 to 0. On blur, we change it back to -1, with an additional workaround of manually calling blur() when we programmatically shift focus to a new element.\n"
     },
     {
+      "id": "19434",
       "author": "Colin Clark",
       "date": "2010-04-09T16:19:28.000-0400",
       "body": "I've committed Antranig's wicked, wicked patch at r9819. Justin and I have tested fairly extensively, but I'd like another quick code review from Michelle just in case I missed anything while linting, etc.\n"
     },
     {
+      "id": "19435",
       "author": "Colin Clark",
       "date": "2010-04-09T16:19:42.000-0400",
       "body": "Antranig's patch committed at r9819\n"
     },
     {
+      "id": "19436",
       "author": "Colin Clark",
       "date": "2010-04-09T16:21:20.000-0400",
       "body": "colinclark: Okay dudes, everyone celebrate!\\\n\\[4:19pm] colinclark: <http://issues.fluidproject.org/browse/FLUID-3590>\\\n\\[4:19pm] colinclark: The last blocker is fixed!\\\n\\[4:20pm] colinclark: michelled will do a triple-check of the code, since removed a few bits of cruft from the Reorderer\\\n\\[4:20pm] jessm: yay\\\n\\[4:20pm] colinclark: And we're good to test the Reorderer\\\n\\[4:20pm] athena: congrats! \\\n\\[4:20pm] colinclark: Huge props to our favourite \"volunteer,\" Bosmon, for fixing this one so fast\\\n\\[4:20pm] jessm:\\\n\\[4:20pm]\n"
     },
     {
+      "id": "19437",
       "author": "Colin Clark",
       "date": "2010-04-09T16:23:13.000-0400",
       "body": "More information about the Roaming Tabindex Techinque, in case it's useful in the future:\n\n<http://www.yuiblog.com/blog/2009/02/23/managing-focus/>\n"

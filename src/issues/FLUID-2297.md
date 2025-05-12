@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20856",
       "author": "Eli Cochran",
       "date": "2009-02-26T19:11:29.000-0500",
       "body": "Removed the crufty old code. All tests pass. Uploader still works. Angels sing.\n"
     },
     {
+      "id": "20857",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:52.044-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

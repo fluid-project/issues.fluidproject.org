@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13467",
       "author": "Jonathan Hung",
       "date": "2011-01-07T13:17:43.636-0500",
       "body": "May no longer be an issue.\\\n1\\. bspace example has been removed.\\\n2\\. the fade effect used by current tooltip in inline edit doesn't exhibit this problem in IE6.\n"

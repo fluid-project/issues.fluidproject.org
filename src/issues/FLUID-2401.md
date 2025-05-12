@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21403",
       "author": "Justin Obara",
       "date": "2009-03-25T11:34:48.000-0400",
       "body": "Clean Up Parade 1.0\n"
     },
     {
+      "id": "21404",
       "author": "Eli Cochran",
       "date": "2009-03-31T15:06:40.000-0400",
       "body": "The images for Progress are really very specific to Progress as used in the Uploader, so I'm going to move them to the Uploader component\n"
     },
     {
+      "id": "21405",
       "author": "Anastasia Cheetham",
       "date": "2009-03-31T16:53:41.000-0400",
       "body": "Done! Yay!\n"
     },
     {
+      "id": "21406",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:46.620-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

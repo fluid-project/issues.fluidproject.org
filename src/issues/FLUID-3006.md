@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14777",
       "author": "Laurel Williams",
       "date": "2009-07-07T14:17:20.000-0400",
       "body": "Established that this is not a bug - $minified and $includes default to true and \"\" respectively if any hacking is attempted, therefore this function can still return true because the two values are valid.\n"
     },
     {
+      "id": "14779",
       "author": "Laurel Williams",
       "date": "2009-07-07T14:17:42.000-0400",
       "body": "Have resolved this issue - not a bug.\n"

@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24966",
       "author": "Justin Obara",
       "date": "2009-05-05T12:08:34.000-0400",
       "body": "The \"Click here to edit\" invitation text should be greyed out. Right now it is displayed as inline text is.\n"
     },
     {
+      "id": "24967",
       "author": "Jonathan Hung",
       "date": "2011-01-06T15:03:13.915-0500",
       "body": "This has been fixed in Infusion 1.3\n"

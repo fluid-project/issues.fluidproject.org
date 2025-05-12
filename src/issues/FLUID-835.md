@@ -37,11 +37,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15506",
       "author": "Justin Obara",
       "date": "2008-08-28T11:45:00.000-0400",
       "body": "Removed IE 7 from the environments as it appears to be working there now.\n"
     },
     {
+      "id": "15508",
       "author": "Justin Obara",
       "date": "2009-02-20T15:11:13.000-0500",
       "body": "Pager uses ctrl+(up/down arrow) to move between links\n"

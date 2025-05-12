@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19090",
       "author": "Michelle D'Souza",
       "date": "2008-06-25T13:50:05.000-0400",
       "body": "The basic markup driven Pager component now exists.&#x20;\n"
     },
     {
+      "id": "19093",
       "author": "Michelle D'Souza",
       "date": "2008-06-25T13:54:10.000-0400",
       "body": "Daphne or Erin, can you take a look at the markup example for the pager and close this issue if it meets your expectations?&#x20;\n"

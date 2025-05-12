@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24927",
       "author": "Justin Obara",
       "date": "2015-06-09T10:13:03.426-0400",
       "body": "This sounds like it was from the image gallery uploader demo, which no longer exists.\n"

@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25956",
       "author": "Giovanni Tirloni",
       "date": "2017-11-16T06:19:23.781-0500",
       "body": "All servers have been upgraded to CentOS 7.4\n"

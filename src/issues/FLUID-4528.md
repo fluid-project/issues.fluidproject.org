@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14294",
       "author": "Colin Clark",
       "date": "2011-10-26T18:50:56.896-0400",
       "body": "I've started a Github repository for this project:\n\n<https://github.com/colinbdclark/infusion-authoring>\n"

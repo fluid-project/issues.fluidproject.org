@@ -35,16 +35,19 @@
   ],
   "comments": [
     {
+      "id": "18646",
       "author": "Justin Obara",
       "date": "2008-09-10T15:34:25.000-0400",
       "body": "'screenshot-1' shows the avatar for Tab C in between Tab B and Tab C, but the drop target is in front of Tab D\n"
     },
     {
+      "id": "18649",
       "author": "Justin Obara",
       "date": "2008-09-10T15:37:06.000-0400",
       "body": "You are sometimes able to get other drop targets to appear if you move the avatar below the tabs component. (e.g. over the example 3)&#x20;\n"
     },
     {
+      "id": "18653",
       "author": "Justin Obara",
       "date": "2008-09-15T11:26:26.000-0400",
       "body": "Appears to have been fixed with some recent updates\n\nVerified using:\n\nIE 7 (Vista)\n"

@@ -38,11 +38,13 @@
   ],
   "comments": [
     {
+      "id": "20470",
       "author": "Jacob Farber",
       "date": "2008-08-15T14:24:43.000-0400",
       "body": "This includes some CSS tweaks to solve this JIRA ticket as well : <http://issues.fluidproject.org/browse/FLUID-1060>\n"
     },
     {
+      "id": "20471",
       "author": "Justin Obara",
       "date": "2008-11-13T13:38:46.000-0500",
       "body": "Appears to have been fixed\n"

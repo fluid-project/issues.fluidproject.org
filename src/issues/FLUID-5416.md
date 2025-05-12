@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20014",
       "author": "Justin Obara",
       "date": "2014-06-16T11:32:21.001-0400",
       "body": "Talked to joseph (aka clown) in the channel about this today.\\\n<https://botbot.me/freenode/fluid-work/2014-06-16/?tz=America/Toronto>\n\nQuote from joseph: \"Justin\\_o:  regarding autocorrect:  there is nothing in the aria spec to handle that.  The only thing that comes close is aria-invalid (true/false).\"\n\n<http://www.w3.org/TR/wai-aria/states_and_properties#aria-invalid>\n"
     },
     {
+      "id": "20016",
       "author": "Justin Obara",
       "date": "2017-09-26T12:44:37.722-0400",
       "body": "In Safari 11 on macOS 10.13 corrected value is read if you use the enter key to input the value. However, if you tab away, the value is autocorrected but the label from the element navigated to is read.\n"

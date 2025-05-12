@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18968",
       "author": "Colin Clark",
       "date": "2008-10-09T23:47:21.000-0400",
       "body": "infusion-06-wishlist\n"
     },
     {
+      "id": "18970",
       "author": "Colin Clark",
       "date": "2009-05-15T18:47:53.000-0400",
       "body": "This was fixed back in Infusion 0.7.\n"
     },
     {
+      "id": "18973",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:53.701-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

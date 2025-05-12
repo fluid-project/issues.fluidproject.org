@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25721",
       "author": "Giovanni Tirloni",
       "date": "2015-08-18T13:57:50.028-0400",
       "body": "Deployed in production: <https://github.com/inclusive-design/ops/tree/master/ansible/roles/libvirt_host>\n"
     },
     {
+      "id": "25722",
       "author": "Giovanni Tirloni",
       "date": "2015-09-04T10:13:48.298-0400",
       "body": "Role has been pretty stable at this point.\n"

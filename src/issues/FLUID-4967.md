@@ -34,26 +34,31 @@
   ],
   "comments": [
     {
+      "id": "19865",
       "author": "Anastasia Cheetham",
       "date": "2013-04-01T16:50:13.136-0400",
       "body": "The attached image (large-slider-thumb.png) shows the text size slider with the enlarged thumb obscuring the large A.\n"
     },
     {
+      "id": "19866",
       "author": "Justin Obara",
       "date": "2014-06-04T11:09:16.162-0400",
       "body": "Also happens in full page UIO\n"
     },
     {
+      "id": "19868",
       "author": "Justin Obara",
       "date": "2014-06-10T11:00:13.898-0400",
       "body": "This likely happening now because the size of the slider thumb increases with the font size.&#x20;\n"
     },
     {
+      "id": "19870",
       "author": "Cindy Li",
       "date": "2014-06-11T10:55:33.285-0400",
       "body": "A pull request is issued: <https://github.com/fluid-project/infusion/pull/529>\n"
     },
     {
+      "id": "19872",
       "author": "Justin Obara",
       "date": "2014-06-16T09:35:45.484-0400",
       "body": "Merge pull request ( <https://github.com/fluid-project/infusion/pull/529> ) into the project repo at 4f4486957e964a914871ea485a72029c98d74586\n"

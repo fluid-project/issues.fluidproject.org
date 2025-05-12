@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22198",
       "author": "Mike Lam",
       "date": "2010-09-08T13:52:26.917-0400",
       "body": "1.2.1 release tested on Uploader and SwfObject using Flash 6,9, and 10.\n"
     },
     {
+      "id": "22204",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:20.342-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

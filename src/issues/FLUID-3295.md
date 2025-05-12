@@ -45,11 +45,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22699",
       "author": "Justin Obara",
       "date": "2011-01-12T08:53:00.472-0500",
       "body": "This is possibly due to the fact that we are using a CDN to pull in the rich text editors. This was done to minimize the code size of our examples, since these ship with our full distribution.\n"
     },
     {
+      "id": "22701",
       "author": "Justin Obara",
       "date": "2017-03-10T09:00:01.078-0500",
       "body": "Can no longer reproduce this issue. This was likely fixed when the CDN reference was updated.\n"

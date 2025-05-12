@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19880",
       "author": "Daphne Ogle",
       "date": "2008-02-01T19:06:02.000-0500",
       "body": "Daphne = 1.50d\n"
     },
     {
+      "id": "19882",
       "author": "Barbara Glover",
       "date": "2008-02-04T16:19:44.000-0500",
       "body": "Barbara - 1.25 days\n"
     },
     {
+      "id": "19883",
       "author": "Daphne Ogle",
       "date": "2008-02-13T12:38:14.000-0500",
       "body": "Iteration 01\n"

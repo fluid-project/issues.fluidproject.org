@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17111",
       "author": "Colin Clark",
       "date": "2008-10-27T19:03:30.000-0400",
       "body": "The Image Gallery 2 is now built and deployed nightly. It is available at:\n\n<http://build.fluidproject.org:8080/sakai-imagegallery2-web>\n"
     },
     {
+      "id": "17112",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:42.425-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

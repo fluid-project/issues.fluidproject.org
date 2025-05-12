@@ -37,16 +37,19 @@
   ],
   "comments": [
     {
+      "id": "21270",
       "author": "Justin Obara",
       "date": "2009-05-06T08:43:40.000-0400",
       "body": "may have been fixed\n"
     },
     {
+      "id": "21271",
       "author": "Antranig Basman",
       "date": "2009-05-06T10:58:35.000-0400",
       "body": "To reproduce this issue - \\\ni) open the uPortal layour reorderer demo at <http://build.fluidproject.org/infusion/integration-demos/uportal/html/portal.html#>\\\nii) click on the \"Mist\" skin\\\nThe black lines will appear in IE6.\n"
     },
     {
+      "id": "21272",
       "author": "Jonathan Hung",
       "date": "2011-01-06T14:58:03.367-0500",
       "body": "Tested in WinXP with IE6. Bug no longer present.\n"

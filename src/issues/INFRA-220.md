@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26068",
       "author": "Alan Harnum",
       "date": "2018-09-20T10:55:52.576-0400",
       "body": "Rough plan for this currently\n\n* Dockerized version of Limnoria for logging: <https://github.com/waharnum/limnoria-docker>, with ChannelLogger plugin\n* share logs directory to an nginx container\n\nThis is an immediate-term solution for continuity and won't offer the same capabilities as BotBot.me, but will mean we won't lose logs and can be done in a fairly short timeline.\n"
     },
     {
+      "id": "26070",
       "author": "Giovanni Tirloni",
       "date": "2020-10-05T08:54:45.474-0400",
       "body": "IRC is being logged by fluid-bot and logs are available at <http://irc-logs.fluidproject.org/>\n"

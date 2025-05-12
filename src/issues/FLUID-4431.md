@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14577",
       "author": "Michelle D'Souza",
       "date": "2011-09-26T15:22:27.248-0400",
       "body": "I was able to reproduce this bug when using the keyboard to focus the 'Browse files' button but I could not reproduce it with the mouse.&#x20;\n"
     },
     {
+      "id": "27815",
       "author": "Justin Obara",
       "date": "2024-07-22T14:10:04.189-0400",
       "body": "Could not reproduce with FF 128 on macOS 14.5\n"

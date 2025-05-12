@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12295",
       "author": "Colin Clark",
       "date": "2010-02-09T23:44:38.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12296",
       "author": "Colin Clark",
       "date": "2010-02-16T11:58:19.000-0500",
       "body": "This issue was addressed last week in the myCollection-tryout branch. This fix still needs to be committed to trunk and reviewed.\n"

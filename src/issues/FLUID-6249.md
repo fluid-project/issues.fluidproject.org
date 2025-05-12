@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25073",
       "author": "Justin Obara",
       "date": "2018-02-23T09:39:15.106-0500",
       "body": "Regarding the work in <https://fluidproject.atlassian.net/browse/FLUID-6209#icft=FLUID-6209> it seems that the default panelIndex model value is being saved to the store when the model is instantiated. This is even the case if the modelListener for saving the panelIndex is set to exclude init. It seems that this is happening because the initial model values for the preferences are also being set in the model, which also triggers a save. However, those initial preference values are explicitly ignored. However, any component state such as the panel index will be saved to the store. The effect of this is to replace the previously stored value with the default value.\n\n \n\nFor example, at the time of save, the model will look something like the following. Note that the default preference values are stripped out by the prefs framework before saving the model to the store.\n\n```java\n{\r\n    panelIndex: 0,\r\n    preferences: {\r\n        contrast: \"default\"\r\n    }\r\n}\n```\n"

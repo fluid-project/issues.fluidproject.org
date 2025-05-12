@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23078",
       "author": "Antranig Basman",
       "date": "2019-08-01T09:26:28.388-0400",
       "body": "Unfortunately the sample referred to in this report is in a branch which has been deleted. However, it is likely that this issue has been resolved some time ago by the guarding code now present in invokeInvoker at <https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/FluidIoC.js#L1771>\n"
     },
     {
+      "id": "23079",
       "author": "Antranig Basman",
       "date": "2019-08-01T09:31:53.893-0400",
       "body": "The relevant behaviour is described in <https://issues.fluidproject.org/browse/FLUID-5333>\n"

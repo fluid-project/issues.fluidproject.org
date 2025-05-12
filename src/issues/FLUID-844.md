@@ -38,11 +38,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15790",
       "author": "Antranig Basman",
       "date": "2008-11-13T21:27:53.000-0500",
       "body": "Fixed at revision 6031 with  branch merge.\\\nThe \"isSameAsContainer\" logic has been tweaked a bit. I don't think this use case is general enough to warrant hacking the DOM binder. At least, not until we have another example of it 🙂\n"
     },
     {
+      "id": "15793",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:43.126-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

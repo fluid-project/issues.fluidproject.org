@@ -42,21 +42,25 @@
   ],
   "comments": [
     {
+      "id": "21593",
       "author": "Mike Lam",
       "date": "2011-01-17T11:08:09.563-0500",
       "body": "Added a function to toggle keyboard row handlers on the file queue that are dependent on the FileQueueView events.\n"
     },
     {
+      "id": "21594",
       "author": "Mike Lam",
       "date": "2011-01-17T11:21:01.729-0500",
       "body": "The delete key is now disabled while the uploader is uploading\n"
     },
     {
+      "id": "21595",
       "author": "Mike Lam",
       "date": "2011-01-17T13:56:16.994-0500",
       "body": "Refactored to remove unnecessary processing of files to retrieve the queue rows.   Grabbed the rows directly from the DOM instead. &#x20;\n"
     },
     {
+      "id": "21596",
       "author": "Colin Clark",
       "date": "2011-01-20T16:13:25.155-0500",
       "body": "I reviewed Mike's patch and it looks great. Committed at r10468.\n"

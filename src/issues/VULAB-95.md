@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27485",
       "author": "Blake E",
       "date": "2008-11-27T17:25:53.000-0500",
       "body": "vulab8 ?\n"
     },
     {
+      "id": "27486",
       "author": "David Makalsky",
       "date": "2008-12-01T10:53:22.000-0500",
       "body": "start , stop, isRecording and getSessionid all implemented.  A working demo is available on [http://rascal.xymbo.com](http://rascal.xymbo.com/)\n"

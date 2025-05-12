@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10027",
       "author": "Justin Obara",
       "date": "2010-07-14T11:15:47.170-0400",
       "body": "Bug Parade Decapod 0.4\n"
     },
     {
+      "id": "10028",
       "author": "Colin Clark",
       "date": "2010-07-15T19:27:54.177-0400",
       "body": "For the 0.4, we are persisting the calibration model in memory. Clients can GET the model as JSON and POST changes.\n"

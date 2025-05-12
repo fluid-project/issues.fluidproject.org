@@ -49,26 +49,31 @@
   ],
   "comments": [
     {
+      "id": "14089",
       "author": "Justin Obara",
       "date": "2008-08-19T15:47:17.000-0400",
       "body": "'screenshot-1' shows where to drop the portlet, so that it snaps back to the original location. Note that the pointer is inside the title bar but does not display in the screenshot\n"
     },
     {
+      "id": "14091",
       "author": "Justin Obara",
       "date": "2008-08-19T15:48:14.000-0400",
       "body": "'screenshot-2' shows the portlet in the same position as in 'screenshot-1', but this time the drop target does not appear\n"
     },
     {
+      "id": "14093",
       "author": "Justin Obara",
       "date": "2008-08-20T14:25:24.000-0400",
       "body": "appears to have been created as part of the work around for Fluid-1140 in r5392\n"
     },
     {
+      "id": "14095",
       "author": "Antranig Basman",
       "date": "2008-09-07T22:26:58.000-0400",
       "body": "Fixed with changes at rev 5476\n"
     },
     {
+      "id": "14097",
       "author": "Justin Obara",
       "date": "2008-09-08T09:47:11.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, Opera 9.5 (Win XP)\\\nFF3 (Win Vista\n"

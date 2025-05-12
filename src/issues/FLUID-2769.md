@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24012",
       "author": "Colin Clark",
       "date": "2010-03-30T14:00:35.000-0400",
       "body": "This should be part of a more robust post-commit hook for SVN (or Mercurial). It should include:\n\n* Line endings\n* File encoding (UTF-8)\n* Trimming whitespace\n* Tabs to spaces?\n"
     },
     {
+      "id": "24015",
       "author": "Justin Obara",
       "date": "2011-05-17T11:23:11.090-0400",
       "body": "git can automatically handle this\n"

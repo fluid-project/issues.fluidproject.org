@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22803",
       "author": "Eli Cochran",
       "date": "2008-11-19T18:47:26.000-0500",
       "body": "changed code to only update the Files to Upload total field if the ReadyFiles() changes\n"
     },
     {
+      "id": "22805",
       "author": "Justin Obara",
       "date": "2008-12-03T11:59:35.000-0500",
       "body": "appears to be fixed\n"

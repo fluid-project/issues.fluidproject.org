@@ -30,16 +30,19 @@
   ],
   "comments": [
     {
+      "id": "11543",
       "author": "Justin Obara",
       "date": "2015-02-05T13:04:29.016-0500",
       "body": "screenshot.png shows the fill bar below the indicator container.\n"
     },
     {
+      "id": "11544",
       "author": "Michelle D'Souza",
       "date": "2015-08-24T14:37:49.659-0400",
       "body": "Currently the FD tool does not run on Firefox because they don't support the Web Speech API. Once they do, however, this will continue to be a problem.&#x20;\n"
     },
     {
+      "id": "11545",
       "author": "Cindy Li",
       "date": "2015-11-12T14:47:46.747-0500",
       "body": "This report has been copied to the GPII bug tracker: <https://issues.gpii.net/browse/GPII-1350> and all activities should be carried on there.\n"

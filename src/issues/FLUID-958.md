@@ -45,31 +45,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21986",
       "author": "Antranig Basman",
       "date": "2008-07-22T19:26:40.000-0400",
       "body": "A wiki housing for documentation and thoughts on this contract is now at <http://wiki.fluidproject.org/display/fluid/Component+Model+Interactions+and+API>\n"
     },
     {
+      "id": "21989",
       "author": "Antranig Basman",
       "date": "2008-07-31T14:42:50.000-0400",
       "body": "Some of these features can now be seen in draft within the inline-edit component and its undo add-on - in the form of the modelFirer, the render() method and the general model-driven idiom.\n"
     },
     {
+      "id": "21992",
       "author": "Antranig Basman",
       "date": "2009-01-19T21:18:59.000-0500",
       "body": "Informally, these concepts of a \"model for models\" have been generally agreed, but have not yet seen much exposure outside InlineEdit. Should review on delivery of final release.\n"
     },
     {
+      "id": "21994",
       "author": "Colin Clark",
       "date": "2010-03-30T18:58:39.000-0400",
       "body": "We'll address a portion of this 1.3 when we promote Engage's createRendererFunction() to Infusion, and the rest will be addressed by Infusion 1.5\n"
     },
     {
+      "id": "21997",
       "author": "Justin Obara",
       "date": "2010-10-04T15:39:44.996-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "22000",
       "author": "Antranig Basman",
       "date": "2011-03-25T00:07:40.174-0400",
       "body": "With the work on \"grades\" arriving in the 1.4 framework, in particular \"modelComponent\" and \"rendererComponent\", this nearly 3-yr-old JIRA may finally be closed.\n"

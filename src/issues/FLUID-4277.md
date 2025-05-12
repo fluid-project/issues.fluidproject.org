@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18531",
       "author": "Justin Obara",
       "date": "2011-06-02T16:16:52.473-0400",
       "body": "Bug Parade Infusion&#x20;\n"
     },
     {
+      "id": "18534",
       "author": "Cindy Li",
       "date": "2011-06-07T10:30:47.362-0400",
       "body": "Part of the fix has been merged into project repo with the UI Options merging jira <https://fluidproject.atlassian.net/browse/FLUID-4276#icft=FLUID-4276>, at commit aa5efc1e1a20aaa152f2. More to follow.\n"
     },
     {
+      "id": "18537",
       "author": "Michelle D'Souza",
       "date": "2011-06-09T16:19:39.056-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/66> was merged into the project repo at a72d1807d656dce28edf3629b97f101f50ec52e3\n"

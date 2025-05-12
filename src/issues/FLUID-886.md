@@ -68,36 +68,43 @@
   ],
   "comments": [
     {
+      "id": "20309",
       "author": "Justin Obara",
       "date": "2008-07-10T14:23:02.000-0400",
       "body": "'screenshot-1' shows the tab spacing while in edit mode.\n"
     },
     {
+      "id": "20312",
       "author": "Justin Obara",
       "date": "2008-07-10T14:24:40.000-0400",
       "body": "'screenshot-2' shows the 'tab' spacing reduced to a single space, when out of edit mode\n"
     },
     {
+      "id": "20314",
       "author": "Justin Obara",
       "date": "2008-10-31T09:33:42.000-0400",
       "body": "design-watched\n"
     },
     {
+      "id": "20316",
       "author": "Antranig Basman",
       "date": "2008-11-13T21:32:24.000-0500",
       "body": "This behaviour is part of standard HTML semantics and should not be fixed. The contract of InlineEdit with a single text field is that the value stored as markup (element.text()) should be identical with that which was stored in field.value for the editable field. A standard aspect of HTML is that whitespace is normalised in this way when rendered.\n"
     },
     {
+      "id": "20318",
       "author": "Daphne Ogle",
       "date": "2008-11-18T17:39:31.000-0500",
       "body": "I'd like to revisit this bug (along with 887).  The main goal here is display exactly what the user typed in.  I understand from Eli that html doesn't even recognize tabs.  How about if we convert tabs to 4 spaces?  Eli says this is what many wikis do.  4 spaces could be the default behavior but this needs to be configurable to allow for things like tab delimitation.&#x20;\n\nThe other thing to remember about this is that the only time there will be a tab is if it is copy and pasted in since a tab currently takes the user to the next field.\n"
     },
     {
+      "id": "20320",
       "author": "Daphne Ogle",
       "date": "2009-03-13T15:17:13.000-0400",
       "body": "Unassigning so this can go into the development pool of bugs.\n"
     },
     {
+      "id": "20322",
       "author": "Jonathan Hung",
       "date": "2011-01-04T13:34:41.671-0500",
       "body": "Still an issue in Infusion 1.3.\n"

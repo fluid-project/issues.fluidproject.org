@@ -34,16 +34,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15368",
       "author": "y z",
       "date": "2013-03-15T00:27:54.698-0400",
       "body": "A fix strategy involves the following:\\\nUpdate renderer component grade's default mergePolicy and add a reference from changeApplierOptions.resolverSetConfig option to the top level resolverSetConfig option.\n"
     },
     {
+      "id": "15371",
       "author": "Antranig Basman",
       "date": "2013-03-15T00:59:26.256-0400",
       "body": "Note that this test case itself has now created a THIRD place where this configuration is copied in the framework. When <https://fluidproject.atlassian.net/browse/FLUID-4933#icft=FLUID-4933> is resolved, we must remember to catch this location too\n"
     },
     {
+      "id": "15375",
       "author": "Antranig Basman",
       "date": "2013-03-15T01:01:15.186-0400",
       "body": "Thanks for the report, test case and fix, Yura - pushed to master at 46eff4c\n"

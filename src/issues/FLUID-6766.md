@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25211",
       "author": "Justin Obara",
       "date": "2023-04-19T12:48:27.303-0400",
       "body": "I filed a related ticket against Firefox at <https://bugzilla.mozilla.org/show_bug.cgi?id=1828956>\n\nI also created a [Pen](https://codepen.io/jobara/pen/oNazJqZ) to illustrate the problem.\n"
     },
     {
+      "id": "25212",
       "author": "Daniel Cho",
       "date": "2023-04-24T14:24:42.623-0400",
       "body": "I confirmed that this is not happening on Windows 10 Pro using Edge (version 112.0.1722.58).\n"

@@ -34,16 +34,19 @@
   ],
   "comments": [
     {
+      "id": "23459",
       "author": "Justin Obara",
       "date": "2009-05-29T09:53:07.000-0400",
       "body": "I believe that this issue was introduced at r7254\n"
     },
     {
+      "id": "23460",
       "author": "Antranig Basman",
       "date": "2009-05-29T10:49:33.000-0400",
       "body": "It appears that return semantics for jQuery events do not work the way I imagined. In fact, jQuery.trigger never makes any return other than undefined - even if a handler has made a return. The only way out of this is to explicitly construct an event object using jQuery.event before invoking trigger, so that we may inspect its condition after our new synthetic fluid-activate event has completed. Patch attached\n"
     },
     {
+      "id": "23461",
       "author": "Justin Obara",
       "date": "2009-05-29T13:18:25.000-0400",
       "body": "Verified fix using:\n\nIE6, IE8 (Win XP)\\\nIE8 (Win Vista)\n"

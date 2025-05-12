@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26604",
       "author": "Justin Obara",
       "date": "2020-11-13T09:36:43.796-0500",
       "body": "I think for a longer term solution we may want to consider versioning the database records, and providing a tool/script for migrating between versions.\n"
     },
     {
+      "id": "26605",
       "author": "Cindy Li",
       "date": "2020-11-30T12:42:59.214-0500",
       "body": "[The pull request with the migration script](https://github.com/fluid-project/sjrk-story-telling/pull/102) has been merged into the project repo main branch at [this commit](https://github.com/fluid-project/sjrk-story-telling/commit/d16dafeb8cc3487e62756deb8f3f5b06398e796c).\n"

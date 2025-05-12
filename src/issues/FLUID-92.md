@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17859",
       "author": "Michelle D'Souza",
       "date": "2007-11-14T18:54:50.000-0500",
       "body": "The reorder-indexes that are being sent to the server contain an invalid index when the reordering is done with the mouse. In the above example containing a, b, c, d, if the reordering is done with the keyboard, the indexes 0, 1, 2, and 3 are sent to the server. If the same reordering is done with the mouse, the indexes 4, 1, 2, and 3 are sent to the server. This may be related to the creation of the avatar which is a clone of the node being dragged.&#x20;\n"
     },
     {
+      "id": "17861",
       "author": "Michelle D'Souza",
       "date": "2007-11-20T10:18:41.000-0500",
       "body": "To fix this bug we stopped using the jQuery built in avatar creation and created our own clone that we sanitized. &#x20;\n"
     },
     {
+      "id": "17863",
       "author": "Justin Obara",
       "date": "2007-11-26T14:30:48.000-0500",
       "body": "Verified the fix using Firefox on Mac 10.5.1\n"

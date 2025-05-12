@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17347",
       "author": "Justin Obara",
       "date": "2007-11-05T16:43:34.000-0500",
       "body": "moved to sakai jira at <http://jira.sakaiproject.org/jira/browse/GAL-58>\n"

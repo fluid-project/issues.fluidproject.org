@@ -32,21 +32,25 @@
   ],
   "comments": [
     {
+      "id": "12585",
       "author": "Jess Mitchell",
       "date": "2010-02-12T13:18:35.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12586",
       "author": "Justin Obara",
       "date": "2010-02-12T19:18:37.000-0500",
       "body": "Attaching a patch that contains changes to CouchdbUtility.java\n\nWorked with Yura to get crawling of related artifacts working.\n\nThen did some refactoring to also crawl highlight in the exhibition. (there are comments to distinguish this that should be removed when committed).\n"
     },
     {
+      "id": "12587",
       "author": "Justin Obara",
       "date": "2010-02-16T09:48:47.000-0500",
       "body": "On Friday I was completely confused as to why some of the artifacts still weren't working; after crawling all of the related artifacts and the highlights. It turns out that where we are given the accession number it is capitalized like (M996X.3.327) but the artifact itself is lower case like (m996x.3.327).\n"
     },
     {
+      "id": "12588",
       "author": "y z",
       "date": "2010-02-16T10:27:14.000-0500",
       "body": "Worked together with Justin to resolve this issue.\n"

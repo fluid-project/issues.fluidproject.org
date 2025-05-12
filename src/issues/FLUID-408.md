@@ -42,26 +42,31 @@
   ],
   "comments": [
     {
+      "id": "20665",
       "author": "Michelle D'Souza",
       "date": "2008-03-31T16:45:28.000-0400",
       "body": "I was unable to recreate this - can you give me more information about when you see this behaviour?\n"
     },
     {
+      "id": "20666",
       "author": "Justin Obara",
       "date": "2008-03-31T22:09:17.000-0400",
       "body": "This image (Drop target) shows the drop target... (unfortunately the pointer does not show with a print screen, but would have been to the side of the drop target).\n"
     },
     {
+      "id": "20667",
       "author": "Justin Obara",
       "date": "2008-03-31T22:11:10.000-0400",
       "body": "This image (No Drop Target) shows the drop target missing. (unfortunately the pointer does not show with a print screen, but would have been directly over top of where the drop target should have appeared).\n"
     },
     {
+      "id": "20668",
       "author": "Michelle D'Souza",
       "date": "2008-04-01T10:21:53.000-0400",
       "body": "Thanks for clarifying Justin. The drop target is disappearing because the mouse is no longer over a valid drop target. In the case of the Lightbox, the thumbnails are the drop targets, not the container that they are in. When the mouse moves off a thumbnail and is over the container the thumbnail being dragged can no longer be dropped. I'm sure this is not the desired behaviour.&#x20;\n"
     },
     {
+      "id": "20669",
       "author": "Michelle D'Souza",
       "date": "2008-04-28T14:12:35.000-0400",
       "body": "This is no longer the case. Now the drop target still appears but the thumbnail won't be dropped there. This is filed as <https://fluidproject.atlassian.net/browse/FLUID-479#icft=FLUID-479>.&#x20;\n"

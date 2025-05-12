@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27004",
       "author": "Jonathan Hung",
       "date": "2012-12-11T12:47:21.785-0500",
       "body": "Tested fine in IE9 on Windows 7.\n\nOn IE8 this is still an issue. Some more details:\n\n* clicking a start of the sentence sometimes puts you at the beginning of the previous to selected sentence.\n* clicking on middle or end of multi-part sentence would put you at the start of the sentence or at the start of the previous sentence.\n* it doesn't appear that clicking the transcript will ever put you on the sentence AFTER.\n"
     },
     {
+      "id": "27005",
       "author": "Justin Obara",
       "date": "2017-12-22T10:28:44.714-0500",
       "body": "The video player repository has been archived.\n"

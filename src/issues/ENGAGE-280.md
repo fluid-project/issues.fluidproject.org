@@ -25,21 +25,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12069",
       "author": "Justin Obara",
       "date": "2010-02-05T14:10:55.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12070",
       "author": "Justin Obara",
       "date": "2010-02-09T10:49:24.000-0500",
       "body": "All pages currently in the repository have the following meta tags added:\n\n\\<meta name=\"viewport\" content=\"width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;\" />\\\n\\<meta name=\"apple-mobile-web-app-capable\" content=\"yes\" />\n\nThe home page also has the \\<link> pointing at the icon that will show up on the homescreen.&#x20;\n\nNote that the My Collections component still hasn't been merged into trunk, but looking at the branch, it seems that the html file already has the correct meta tags.\n"
     },
     {
+      "id": "12071",
       "author": "Justin Obara",
       "date": "2010-02-09T10:49:55.000-0500",
       "body": "closed, but had meant to resolve, I have reopened and now changed the status to resolved.\n"
     },
     {
+      "id": "12072",
       "author": "Colin Clark",
       "date": "2010-02-12T13:56:59.000-0500",
       "body": "I've reviewed all of Justin's changes for this issue and they look good and work correctly. +1 for inclusion in Engage 0.3b\n"

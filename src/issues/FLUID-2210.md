@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24090",
       "author": "Colin Clark",
       "date": "2011-05-17T11:53:25.393-0400",
       "body": "While we no longer support a Gears version of the Uploader, this work is equally relevant to the HTML5 version. mlam has completed this work in this context under other JIRA numbers, and this issue can be closed.\n"

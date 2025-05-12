@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10483",
       "author": "Justin Obara",
       "date": "2012-05-25T13:32:42.844-0400",
       "body": "The UI no longer shows thumbnails\n"

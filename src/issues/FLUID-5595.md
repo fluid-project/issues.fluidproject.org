@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16030",
       "author": "Justin Obara",
       "date": "2015-02-09T10:44:41.613-0500",
       "body": "We might also want to add links to the nightly build and the projects page from the website.\n"
     },
     {
+      "id": "16032",
       "author": "Justin Obara",
       "date": "2015-02-10T15:43:22.179-0500",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/586> ) into the project repo at a17a42cc840fa03461998e5e3f12c81c7c7d20a6\n"
     },
     {
+      "id": "16034",
       "author": "Justin Obara",
       "date": "2015-06-26T09:50:46.612-0400",
       "body": "Reopening to change the fix version to 1.9\n"

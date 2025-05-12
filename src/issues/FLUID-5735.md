@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23821",
       "author": "Alan Harnum",
       "date": "2016-08-15T15:30:12.630-0400",
       "body": "Fixed as part of this PR: <https://github.com/fluid-project/infusion/pull/732>\n"
     },
     {
+      "id": "23823",
       "author": "Alan Harnum",
       "date": "2016-09-02T13:42:21.213-0400",
       "body": "Closing, resolved by <https://fluidproject.atlassian.net/browse/FLUID-5936#icft=FLUID-5936> merge.\n"

@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13918",
       "author": "Justin Obara",
       "date": "2009-01-28T14:36:01.000-0500",
       "body": "Using Firefox, go to:\n\n<http://garden.dmc.dc.umich.edu:8080/portal>\n\nLogin as admin/admin\n\nGo to site FLUID Integration\n\nGo to Announcements, then click on Reorder link.\n\nAttempt to reorder the rows\n"
     },
     {
+      "id": "13920",
       "author": "Justin Obara",
       "date": "2009-01-28T14:36:42.000-0500",
       "body": "Quoting Gonzalo\n\n\"If I give the table rows a \"display:table\"  property/value then is works, but it is no longer a \"good\" row. You can see that if you go to Resources/reorder or Assignments/reorder.\"\n"

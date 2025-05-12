@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21322",
       "author": "Justin Obara",
       "date": "2009-02-13T16:01:39.000-0500",
       "body": "Bug Parade 0.8 release\n"
     },
     {
+      "id": "21323",
       "author": "Justin Obara",
       "date": "2009-02-18T10:32:52.000-0500",
       "body": "Appears to have been fixed.\n\nTested using:\n\nOpera 9.5 (Mac OS 10.5, Win XP)\n"

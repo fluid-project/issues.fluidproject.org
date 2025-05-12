@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14003",
       "author": "Antranig Basman",
       "date": "2011-12-06T02:26:38.366-0500",
       "body": "I believe this was really a fault in the renderer's UIMessage resolution system, rather than in stringTemplate, which has had test cases for number substitution since inception. This should have been resolved in the 1.3 release.\n"

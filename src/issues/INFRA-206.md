@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25743",
       "author": "Giovanni Tirloni",
       "date": "2018-08-15T11:16:29.407-0400",
       "body": "Created a pre-checkout hook script that cleans those files:\n\n```\n#!/bin/bash -ex\r\n\r\n# Safety check to ensure we're not being fed a bad path\r\nif [[ ${BUILDKITE_BUILD_CHECKOUT_PATH} == /var/lib/buildkite-agent* ]]; then\r\n\r\n  # Delete root-owned files that might have been created by an old containerized build\r\n  docker run --rm -v ${BUILDKITE_BUILD_CHECKOUT_PATH}:/src busybox sh -c \"cd /src && find /src/ -user root -exec rm -rf \\{\\} \\;\"\r\n\r\nfi\n```\n\nSuccessful build: <https://buildkite.com/fluid-project/kettle/builds/61>\n"

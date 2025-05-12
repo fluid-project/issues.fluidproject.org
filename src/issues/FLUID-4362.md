@@ -39,31 +39,37 @@
   ],
   "comments": [
     {
+      "id": "24212",
       "author": "Justin Obara",
       "date": "2011-07-28T09:07:54.239-0400",
       "body": "ScreenShot.png shows the misaligned Inputs/Icons when the text size is large\n"
     },
     {
+      "id": "24215",
       "author": "Justin Obara",
       "date": "2011-07-28T09:18:59.543-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24218",
       "author": "Michelle D'Souza",
       "date": "2011-09-02T11:18:04.615-0400",
       "body": "This seems to be ok in the with preview version but still broken for without preview.\n"
     },
     {
+      "id": "24221",
       "author": "heidi valles",
       "date": "2011-09-02T12:05:22.312-0400",
       "body": "Both versions now looks off when viewed just as default\n"
     },
     {
+      "id": "24223",
       "author": "heidi valles",
       "date": "2011-09-06T13:45:36.385-0400",
       "body": "Pull request sent\n"
     },
     {
+      "id": "24225",
       "author": "Justin Obara",
       "date": "2011-09-12T15:27:14.932-0400",
       "body": "Merged Heidi's pull request <https://github.com/fluid-project/infusion/pull/148> into the projet repo at 591805538042a922667f3c88a259b19b1eef763b\n"

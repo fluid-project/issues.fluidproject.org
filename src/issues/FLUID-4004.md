@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14708",
       "author": "Anastasia Cheetham",
       "date": "2011-10-03T10:35:43.722-0400",
       "body": "Testing for the 1.4 release, this issue seems to be gone: there is no longer any black border, and the yellow border seems to appear and disappear appropriately.\n"

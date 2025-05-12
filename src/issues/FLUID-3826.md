@@ -34,16 +34,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24777",
       "author": "Colin Clark",
       "date": "2010-11-05T12:19:52.760-0400",
       "body": "This feature is required by the refactored Uploader in order to provide backwards compatibility to existing users of Infusion.\n"
     },
     {
+      "id": "24778",
       "author": "Colin Clark",
       "date": "2011-01-17T10:48:39.246-0500",
       "body": "The new framework APIs in ModelTransformations.js provide a tool for transforming objects arbitrarily, and has been implemented in the Uploader to provide backwards compatibility for options.\n"
     },
     {
+      "id": "24779",
       "author": "Colin Clark",
       "date": "2011-01-17T10:49:14.147-0500",
       "body": "Implemented and released in Infusion 1.3\n"

@@ -38,36 +38,43 @@
   ],
   "comments": [
     {
+      "id": "20289",
       "author": "Anastasia Cheetham",
       "date": "2010-10-12T13:24:08.861-0400",
       "body": "Justin, since this is a bug caused by the default configuration (and since the fix is reasonably simple), I filed this as a blocker for 1.3. If you concur, feel free to assign it back to me and I'll commit a test and a fix asap.\n"
     },
     {
+      "id": "20290",
       "author": "Justin Obara",
       "date": "2010-10-12T14:08:34.260-0400",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "20291",
       "author": "Anastasia Cheetham",
       "date": "2010-10-12T14:41:15.773-0400",
       "body": "This patch (<https://fluidproject.atlassian.net/browse/FLUID-3793#icft=FLUID-3793>.patch.txt) adds a test that configures the pager to use the fluid.pager.selfRender body renderer with the default columnDefs of \"explode\", which causes an error without the fix to the Pager. The fix to the pager (also included in this patch) is to use getRoots() properly, i.e. to use the modified first argument instead of a return value (there is no return value).\n"
     },
     {
+      "id": "20292",
       "author": "Anastasia Cheetham",
       "date": "2010-10-19T09:11:15.032-0400",
       "body": "Antranig, could you review this patch? It adjusts the code to the existing apparent usage of the function, but the api of the function might actually be wrong given the name? A \"get\" function that doesn't actually get anything? I wonder if either the name should be changed or the function should return something?\n"
     },
     {
+      "id": "20293",
       "author": "Antranig Basman",
       "date": "2010-10-28T16:43:26.472-0400",
       "body": "Hi Anastasia - this patch looks ok in content, but seems to have been generated in a strange way that does not include file paths. Would it be possible for you to regenerate it?\n"
     },
     {
+      "id": "20294",
       "author": "Anastasia Cheetham",
       "date": "2010-10-28T16:48:56.370-0400",
       "body": "Adding another attempt at the same patch, but with proper file paths.\n"
     },
     {
+      "id": "20295",
       "author": "Antranig Basman",
       "date": "2010-10-28T16:56:08.875-0400",
       "body": "Reviewed and applied at rev 10165\n"

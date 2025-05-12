@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11649",
       "author": "James Yoon",
       "date": "2010-02-23T15:26:12.000-0500",
       "body": "a11y issue\n"
     },
     {
+      "id": "11650",
       "author": "James Yoon",
       "date": "2010-02-23T15:35:08.000-0500",
       "body": "This is an interesting issue where we have to balance the usability between sighted and VO users.\n\nFor the VO user, my feeling is that we should allow the description to be fully readable (whether it's visually collapsed or expanded), and prevent swiping over the \"more\" and \"less\" buttons/links. The fact that the description can be fully read without surrendering screen real estate is an affordance VO users have over other users.\n\nBut I can see a boundary use case where the device's primary user is a VO user, and he/she has listened to the description and wants to show it to his/her sighted friend to read. How, then, would the VO user expand the description for his/her friend?\n\nThe middle-of-road solution would be to force VO users to read a truncated description (just like sighted users), and expand it to read the rest (again, just like sighted users).\n"
     },
     {
+      "id": "11651",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:17.686-0500",
       "body": "The repository has been archived.\n"

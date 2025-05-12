@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14825",
       "author": "Justin Obara",
       "date": "2013-09-06T12:57:40.665-0400",
       "body": "The refactoring should probably revolve around grades now. Both of these panels could share a common grade and have specific configuration for the differences.\n"
     },
     {
+      "id": "14829",
       "author": "Justin Obara",
       "date": "2015-06-09T14:04:56.805-0400",
       "body": "The underlying codebase for which this jira referenced, has already been refactored, likely in work for Infusion 1.5.\n"

@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26048",
       "author": "Simon Bates",
       "date": "2018-10-10T13:27:10.952-0400",
       "body": "No errors are reported by Hugo in CI.\n\nFor example, see:\n\n* <https://ci.incd.ca/job/stack-cities.inclusivedesign.ca/29/console>\n"
     },
     {
+      "id": "26049",
       "author": "Alan Harnum",
       "date": "2018-10-11T12:02:44.336-0400",
       "body": "This turned out to be the following issue:\n\n* a number of large images were being resized by Hugo on some pages\n* Hugo has a timeout setting for rendering a page (10 seconds by default) that was being exceeded in the resource-restricted container environment, but not in desktop environments\n* Hugo also only uses WARN rather than ERROR when this happens, so pages end up empty\n* Hugo also only reports WARN when run in verbose mode, and the build container wasn't doing this\n\nThese changes were made:\n\n* Timeout was increased in the Hugo config file: <https://github.com/inclusive-design/website-cities/blob/master/config.toml#L4>\n* Hugo build container configured to run in verbose mode: <https://github.com/idi-ops/docker-hugo/blob/master/Dockerfile#L12>\n\nThe site is now rendering correctly.\n"

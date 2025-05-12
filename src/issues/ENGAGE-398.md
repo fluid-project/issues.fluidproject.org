@@ -39,11 +39,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11763",
       "author": "Sambhavi Chandrashekar",
       "date": "2010-02-24T12:45:01.000-0500",
       "body": "a11y issue\n"
     },
     {
+      "id": "11764",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:33.855-0500",
       "body": "The repository has been archived.\n"

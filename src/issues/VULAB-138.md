@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27270",
       "author": "David Makalsky",
       "date": "2008-12-22T10:47:55.000-0500",
       "body": "vulab12\n"
     },
     {
+      "id": "27271",
       "author": "David Makalsky",
       "date": "2009-01-12T16:03:32.000-0500",
       "body": "deferring this functionality for now.  Application developers can always wrap this functionality into whatever JS framework they use.\n"

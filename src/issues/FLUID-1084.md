@@ -36,26 +36,31 @@
   ],
   "comments": [
     {
+      "id": "22638",
       "author": "Colin Clark",
       "date": "2008-07-31T18:10:40.000-0400",
       "body": "infusion-05-wishlist\n"
     },
     {
+      "id": "22640",
       "author": "Jacob Farber",
       "date": "2008-08-19T16:20:22.000-0400",
       "body": "Patch for global CSS changes, local CSS changes, and adding the Reorderer examples\n"
     },
     {
+      "id": "22642",
       "author": "Michelle D'Souza",
       "date": "2008-09-02T12:18:33.000-0400",
       "body": "All the subtasks are now completed.&#x20;\n"
     },
     {
+      "id": "22645",
       "author": "Anastasia Cheetham",
       "date": "2008-09-04T12:47:10.000-0400",
       "body": "Uploader and Pager are still to be done.\n"
     },
     {
+      "id": "22648",
       "author": "Colin Clark",
       "date": "2008-10-21T23:21:03.000-0400",
       "body": "I've promoted the Uploader and Pager springboard work to their own separate issues. This one is done!\n"

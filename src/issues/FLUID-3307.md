@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19895",
       "author": "Antranig Basman",
       "date": "2009-11-29T00:42:53.000-0500",
       "body": "I don't believe this issue can be resolved as posted, with the current semantic the renderer operates. Options with the same value **are** the same option, and semantically indistinguishable. There would be no way to determine which of the identical options to select, only given an inspection of the data model - which is the acid test. We should explore other ways to achieve an effect like this, but I'm afraid the bottom line is that the data model of your application really does need to provide all the information necessary in a self-contained way to distinguish between different UI states that are used to represent it. That HTML supports non-model-based distinct UI conditions both with \\<select> and also with radio buttons has to unfortunately be declared a failure of its semantic model 😛\n"

@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15767",
       "author": "Justin Obara",
       "date": "2013-06-03T14:32:44.190-0400",
       "body": "I've sent a pull request ( <https://github.com/fluid-project/infusion/pull/333> ) which fixes the issue by adding in a json dependency file for the fonts.&#x20;\n"
     },
     {
+      "id": "15769",
       "author": "Michelle D'Souza",
       "date": "2013-06-03T15:42:15.968-0400",
       "body": "Merged into project repo at c964c3928816e4ef3fa58039a246a953deb8e07b\n"

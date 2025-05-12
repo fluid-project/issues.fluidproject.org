@@ -40,16 +40,19 @@
   ],
   "comments": [
     {
+      "id": "22641",
       "author": "Justin Obara",
       "date": "2016-10-26T16:04:08.687-0400",
       "body": "screenshot.png shows the light blue text on the grey background.\n"
     },
     {
+      "id": "22643",
       "author": "Alan Harnum",
       "date": "2016-10-28T14:02:11.648-0400",
       "body": "Fixing as part of <https://fluidproject.atlassian.net/browse/FLUID-6008#icft=FLUID-6008>\n"
     },
     {
+      "id": "22644",
       "author": "Justin Obara",
       "date": "2016-11-01T16:15:17.598-0400",
       "body": "Addressed with work on <https://fluidproject.atlassian.net/browse/FLUID-6008#icft=FLUID-6008>\n"

@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11711",
       "author": "Michelle D'Souza",
       "date": "2010-03-02T17:05:36.000-0500",
       "body": "The truncation is quite complicated and has been pushed to 0.5\n"
     },
     {
+      "id": "11713",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:31.978-0500",
       "body": "The repository has been archived.\n"

@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17954",
       "author": "Anastasia Cheetham",
       "date": "2007-10-09T12:00:02.000-0400",
       "body": "We should also ensure that the style names are properly namespaced\n"
     },
     {
+      "id": "17956",
       "author": "Anastasia Cheetham",
       "date": "2007-11-02T15:30:22.000-0400",
       "body": "Duplicates <https://fluidproject.atlassian.net/browse/FLUID-68#icft=FLUID-68>\n"

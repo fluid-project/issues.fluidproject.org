@@ -45,6 +45,7 @@
   ],
   "comments": [
     {
+      "id": "11087",
       "author": "Justin Obara",
       "date": "2019-11-05T12:37:46.841-0500",
       "body": "* Chrome\\_details\\_closed.png shows arrow indicator pointing right.\n* Chrome\\_details\\_open.png shows arrow indicator pointing down.\n* FF\\_details\\_closed.png shows arrow indicator missing when closed.\n* FF\\_details\\_open.png shows arrow indicator missing when open.\n"

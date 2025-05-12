@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24289",
       "author": "Tony Atkins [RtF]",
       "date": "2018-08-22T08:23:00.612-0400",
       "body": "<https://github.com/fluid-project/infusion/pull/928>\n"
     },
     {
+      "id": "24291",
       "author": "Tony Atkins [RtF]",
       "date": "2018-08-22T13:32:34.976-0400",
       "body": "Here's an updated command that excludes nearly all of the content that shouldn't be linted.  Notably the fluid 1.5 js file is still included, but the totals are otherwise a good match for the linting output.\n\n```java\nfor i in md js json json5; do echo -n $i:; find . -type f -name \\*.$i ! -path ./node_modules/\\* ! -path ./dist/\\* ! -path ./reports/\\* ! -path ./instrumented/\\* ! -path ./coverage/\\* ! -path ./\\*/lib/\\* | wc -l; done\n```\n"

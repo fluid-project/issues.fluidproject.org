@@ -40,11 +40,13 @@
   ],
   "comments": [
     {
+      "id": "25779",
       "author": "Jonathan Hung",
       "date": "2019-05-29T11:38:36.394-0400",
       "body": "Notes:\n\n* This bug is preventing uploading of a Doctor referral form required by VTS.\n* DOCX is an allowed file extension.\n* This bug is possibly caused by a permission error on the directory.\n"
     },
     {
+      "id": "25780",
       "author": "Alan Harnum",
       "date": "2019-05-30T11:16:59.523-0400",
       "body": "This was because of an SELinux policy issue. I disabled it temporarily and uploaded the file.\n\nI'll look longer term into what the SELinux policy setting should be for the /images directory to allow uploads from within the CMS web interface.\n"

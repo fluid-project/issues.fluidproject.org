@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18774",
       "author": "Anastasia Cheetham",
       "date": "2008-04-07T11:23:04.000-0400",
       "body": "I'm unable to reproduce this. Herb, is it possible that this is an example of <https://fluidproject.atlassian.net/browse/FLUID-459#icft=FLUID-459>, where Ctrl+Arrow doesn't move more than once?\n"
     },
     {
+      "id": "18777",
       "author": "Anastasia Cheetham",
       "date": "2008-04-07T11:24:48.000-0400",
       "body": "Ok, a further question: did you encounter this problem using the keyboard manipulations, or with mouse-based drag and drop?\n"
     },
     {
+      "id": "18780",
       "author": "Jonathan Hung",
       "date": "2008-04-10T14:24:33.000-0400",
       "body": "Confirmed the problem with Herb on the phone.\n\nUsing uportal-sortable-tabs-mockup.html I am able to reproduce the bug. It appears that you have to be very precise in where you drop in order for the tab to stick at the end of the list.\n"
     },
     {
+      "id": "18781",
       "author": "Anastasia Cheetham",
       "date": "2008-04-21T13:01:05.000-0400",
       "body": "This is an issue of poor styling in a sample page that is being removed from the release.\n"

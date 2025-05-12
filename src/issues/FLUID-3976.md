@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24146",
       "author": "Jen Chow",
       "date": "2010-12-20T16:35:36.893-0500",
       "body": "Especially inconvenient for a keyboard user, since they have to tab to \"reset,\" press enter to select, then tab from the top all the way down again to select \"save and apply changes.\"&#x20;\n"
     },
     {
+      "id": "24148",
       "author": "Michelle D'Souza",
       "date": "2014-06-25T16:05:27.192-0400",
       "body": "We are no longer actively supporting IE6. We will consider patches for certain issues.\n"

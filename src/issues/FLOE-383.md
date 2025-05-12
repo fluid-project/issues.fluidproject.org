@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11521",
       "author": "Justin Obara",
       "date": "2015-08-25T10:03:41.792-0400",
       "body": "A possible solution would be to hook into the pages unload event and cancelling the speech utterances.\n"
     },
     {
+      "id": "11522",
       "author": "Cindy Li",
       "date": "2015-11-12T14:40:14.112-0500",
       "body": "This report has been copied to the GPII bug tracker: <https://issues.gpii.net/browse/GPII-1485> and all activities should be carried on there.\n"

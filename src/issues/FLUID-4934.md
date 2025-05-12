@@ -47,61 +47,73 @@
   ],
   "comments": [
     {
+      "id": "15439",
       "author": "Justin Obara",
       "date": "2013-03-15T08:51:39.619-0400",
       "body": "In terms of IE support it seems that anything below IE10 will not natively support ligatures (<http://caniuse.com/#feat=font-feature>). In some tests that Heidi and I did earlier this week we found that for IE8 and IE9 the text would be read by a screen reader, but nothing would be visually rendered on screen. It seems that symbol set has a way around this with javascript ( <http://help.symbolset.com/customer/portal/articles/792691-browser-support> ), so there may be a polyfil out there or some technique we can employ ourselves as a workaround.\n"
     },
     {
+      "id": "15442",
       "author": "Justin Obara",
       "date": "2013-03-15T08:56:18.084-0400",
       "body": "Some additional notes about from symbolset about browser support, although it looks to be a bit out of date.\\\n<http://blog.symbolset.com/browser-support/>\n"
     },
     {
+      "id": "15445",
       "author": "Arash Sadr",
       "date": "2013-03-15T11:28:54.974-0400",
       "body": "Font Awesome also claims that they support IE7+ (<http://fortawesome.github.com/Font-Awesome/>). But Both Font Awesome and Symbol set do not allow us to add our own icons.\n"
     },
     {
+      "id": "15448",
       "author": "Arash Sadr",
       "date": "2013-03-15T13:12:54.351-0400",
       "body": "I have created and attached a font with ligatures (UIO.ttf), including our UIO icons for testing.\n"
     },
     {
+      "id": "15451",
       "author": "Arash Sadr",
       "date": "2013-03-22T12:10:37.166-0400",
       "body": "I found this font that easily creates graphs by using ligatures. \"OpenType features are used to interpret and visualize the data. The data remains as editable text, allowing for painless updates.\"\\\n(<https://www.scribbletone.com/typefaces/ff-chartwell>)\\\nI think that this takes our advantages with ligatures to another level, and could make many elements more accessible.\\\nI have also attached an image (FF Chartwell) showing how it works.\n"
     },
     {
+      "id": "15454",
       "author": "Arash Sadr",
       "date": "2013-03-26T16:26:51.102-0400",
       "body": "I have included new icons from UIO, and updated the icon font.\n"
     },
     {
+      "id": "15457",
       "author": "Anastasia Cheetham",
       "date": "2013-04-08T14:37:49.875-0400",
       "body": "I was chatting with Arash about internationalization, and how we could try to get a screen reader to read something other than the ligature. For example:\\\n\\<span class=\"showDontSpeak\">tts\\</span>\\\n\\<span class=\"speakDontShow\">Text To Speech\\</span>\\\nThe first span should be displayed using the icon font but not spoken by a screen reader;\\\nthe second span should not be displayed at all, but should be spoken by a screen reader. This second span would be internationalized.\n\nThe question is: What CSS could we use to accomplish this?\n\nI checked the FSS. We don't have a class for \"show-but-don't-speak\", but ARIA has aria-hidden, which is supposed to be for this purpose. I did a bit of quick testing with this:\\\n\\<span aria-hidden=\"true\">tts\\</span>\\\n\\<span class=\"fl-hidden-accessible\">Text To Speech\\</span>\n\nVoiceOver and NVDA did the right thing here, but Jaws (with IE9) ignored the aria-hidden and spoke both strings.\n\nThis information might also be useful for <https://fluidproject.atlassian.net/browse/FLUID-4986#icft=FLUID-4986>\n"
     },
     {
+      "id": "15461",
       "author": "heidi valles",
       "date": "2013-04-09T12:29:17.981-0400",
       "body": "Thanks Anastasia, this looks like a good way to go for this specific case.&#x20;\n\nThe aria-hidden doc states: \\\n\"Authors MAY, with caution, use aria-hidden to hide visibly rendered content from assistive technologies only if the act of hiding this content is intended to improve the experience for users of assistive technologies by removing redundant or extraneous content. Authors using aria-hidden to hide visible content from screen readers MUST ensure that identical or equivalent meaning and functionality is exposed to assistive technologies.\"\n\nI think in the situation of someone who, say, isn't blind but uses a screen reader, the markup would still behave in a reasonable, understandable way. I wonder if adding \"icon\" to the description would help clarify?  \"Text to Speech icon\" ?\n\nNot sure what the solution would be for Jaws. I'll ask Joseph when we chat about 4986.\n"
     },
     {
+      "id": "15465",
       "author": "heidi valles",
       "date": "2013-04-09T12:30:33.700-0400",
       "body": "Arash, I'm assuming there's a limit to the length of a ligature? and spaces? ie. \"Text to Speech\" wouldn't be a viable lig?\n"
     },
     {
+      "id": "15468",
       "author": "Arash Sadr",
       "date": "2013-04-09T12:36:08.285-0400",
       "body": "Yes Heidi, we haven't had a problem with the length, but we can't have spaces between the words in ligatures.\n"
     },
     {
+      "id": "15471",
       "author": "heidi valles",
       "date": "2013-04-10T13:40:04.896-0400",
       "body": "Just had a big chat with Joseph about aria possibilities. He thinks (and I agree now!) that aria=\"hidden\" wouldn't be appropriate here. The \"MAY\" clause I referenced is somewhat controversial and may be removed at some point. Using aria=hidden on visual elements could be problematic for AT -  for example, it could affect the behaviour of a magnifier. It's possible other ATs might run into issues as well.\n\nUsing icon fonts is bleeding-edge in terms of ARIA, and no real solution is obvious at this time. Joseph will likely bring this up with the ARIA working group, which is cool.&#x20;\n\nOne option we thought of that should be tested is the possibility to set screenreaders to ignore foreign content: skipping over font icons that are represented by unicode (vs a ligature) might be possible and therefore we would not set ligatures for presentational icons.&#x20;\n\nSo in the choice of using an image with role=\"presentation\" vs. a font icon, there is no obvious winner in terms of accessibility. For screenreaders, images work best as they would be skippable, but for visual users, the icon fonts are rendered much better and are easily themable. As we're no strangers to cutting-edge, I think I lean toward the side of using font icons, as long as we properly document the way they behave with screenreaders. And perhaps there is a way to ignore unicode.&#x20;\n\nAlso worth noting is that text that is added via CSS through \"content:\" IS added to the accessibility tree for AT.\n"
     },
     {
+      "id": "15476",
       "author": "Justin Obara",
       "date": "2013-04-29T10:09:15.084-0400",
       "body": "This was further discussed on the fluid-work mailing list.\\\n<http://lists.idrc.ocad.ca/pipermail/fluid-work/2013-April/009016.html>\n\nThe proposal put forward and accept is as follows.\n\nFormal Proposal Regarding Font Icons:\\\n\\==============================\n\nWe should use font icons for relatively simple images that can be represented using a single colour, or a few colours in cases where stacking is appropriate, and which need to be responsive to resolution, size, and colour changes on the fly.\n\nFor complex images, or those that do not require the responsiveness listed above, we should make use of either svg or raster images as appropriate.\n\nGuideline for using Font Icons:\n\n* Use PUA font icons\n* Provide a text alternatives for non-presentational uses\n* Add through CSS using classes\n* Apply the class to add the font icon to an element that will only contain the font icon\n  * e.g. \\<span class=\"addFont\"> font icon \\</span> where \"font icon\" would be the actual font icon displayed.\n"

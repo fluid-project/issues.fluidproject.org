@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23455",
       "author": "Colin Clark",
       "date": "2009-10-06T13:47:07.000-0400",
       "body": "I've updated the Image Gallery to not override the default max file size in the Uploader, meaning it can take files up to 20 Mb.\n"
     },
     {
+      "id": "23456",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:47:16.217-0500",
       "body": "Closing issues that were fixed in 1.1.2\n"

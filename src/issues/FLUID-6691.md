@@ -30,6 +30,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25124",
       "author": "Justin Obara",
       "date": "2022-02-10T08:48:55.693-0500",
       "body": "As the CSS custom properties are more integrator facing than UIO/Prefs framework developer, it may be better to put the documentation/tutorial alongside [Working with UI Options](https://docs.fluidproject.org/infusion/development/tutorial-userinterfaceoptions/workingwithuserinterfaceoptions)\n"

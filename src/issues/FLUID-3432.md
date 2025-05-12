@@ -35,16 +35,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23363",
       "author": "Michelle D'Souza",
       "date": "2009-12-16T12:32:58.000-0500",
       "body": "The refactoring in <https://fluidproject.atlassian.net/browse/FLUID-3407#icft=FLUID-3407> caused this bug\n"
     },
     {
+      "id": "23364",
       "author": "Michelle D'Souza",
       "date": "2010-01-07T12:38:55.000-0500",
       "body": "I'm unable to recreate this issue.\n"
     },
     {
+      "id": "23365",
       "author": "y z",
       "date": "2010-01-07T16:13:19.000-0500",
       "body": "After testing the build script with freshly checked out version of fluid-all the problem is fixed.\n"

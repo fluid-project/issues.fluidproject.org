@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24741",
       "author": "Mike Lam",
       "date": "2011-01-05T15:25:35.220-0500",
       "body": "The SWF Uploader has been limited to a maximum size of 20MB.  Anything file size larger than the default file size limit will not be added to the file queue.\n"

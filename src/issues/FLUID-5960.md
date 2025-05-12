@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23673",
       "author": "Avtar Gill",
       "date": "2016-09-16T11:07:59.147-0400",
       "body": "A few notes summarizing what Justin and I discussed offline:\n\n* An [account](https://www.npmjs.com/signup) will need to be created for the CI server\n* The CI server should be able to authenticate itself without having to reveal the credentials so being able to use environment variables or having the secrets live in a config file would be ideal\n* The account will need to be given required privileges in order to publish Infusion dev packages\n* If the CI server is compromised someone could use it to publish malicious payloads&#x20;\n* If the publishing process fails it should return non-zero exit codes\n"

@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24946",
       "author": "Mike Lam",
       "date": "2011-01-04T15:55:13.324-0500",
       "body": "The link to switch between single and multi-file uploader is no longer available.   Progressive enhancement has been introduced to the uploader and the appropriate upload strategy will be selected and rendered based on the the user's browser.\n"

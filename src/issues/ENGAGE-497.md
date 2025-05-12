@@ -42,16 +42,19 @@
   ],
   "comments": [
     {
+      "id": "11615",
       "author": "Justin Obara",
       "date": "2010-03-07T19:59:18.000-0500",
       "body": "<https://fluidproject.atlassian.net/browse/ENGAGE-497#icft=ENGAGE-497>.patch.txt adds in the missing script import of engageRenderUtils.js to both the components html file and the unit test\n"
     },
     {
+      "id": "11616",
       "author": "Justin Obara",
       "date": "2010-03-07T20:38:23.000-0500",
       "body": "Same as ENGAGE-497b.patch.text but also fixes the problem in the cabinet's html file. While cabinet doesn't actually need this, it does use the navigationList as part of it's example.\n"
     },
     {
+      "id": "11617",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:15.793-0500",
       "body": "The repository has been archived.\n"

@@ -37,21 +37,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20704",
       "author": "Justin Obara",
       "date": "2009-01-06T14:22:40.000-0500",
       "body": "Bug Parade 0.7 release\n"
     },
     {
+      "id": "20705",
       "author": "Eli Cochran",
       "date": "2009-01-07T11:39:11.000-0500",
       "body": "Pretty sure that Antranig is the right person to fix this bug/enhancement. If not, please pass it on.&#x20;\n"
     },
     {
+      "id": "20706",
       "author": "Antranig Basman",
       "date": "2009-01-16T10:04:03.000-0500",
       "body": "Implemented at rev 6325\n"
     },
     {
+      "id": "20707",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:56.103-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

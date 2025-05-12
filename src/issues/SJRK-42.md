@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26365",
       "author": "Gregor Moss",
       "date": "2017-11-07T17:12:35.818-0500",
       "body": "An upstream organizational repo has been created: <https://github.com/fluid-project/fluid-grunt-couch-config>\n\nFork which will be filled with original repo content: <https://github.com/BlueSlug/fluid-grunt-couch-config>\n\nTo do:\n\n* wait for couch-config to be reviewed and merged\n* make adjustments to original code to reflect any changes made\n* remove references to SJRK namespace\n* run tests and ensure it still works\n* make a PR and merge into new repo\n"

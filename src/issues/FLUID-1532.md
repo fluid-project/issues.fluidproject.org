@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18634",
       "author": "Colin Clark",
       "date": "2008-09-09T20:57:43.000-0400",
       "body": "Just need a test to show deletion working with the Del key.\n"
     },
     {
+      "id": "18637",
       "author": "Colin Clark",
       "date": "2008-09-16T10:02:49.000-0400",
       "body": "Keyboard accessibility was added to the file queue and tests out. I've filed a separate JIRA about the need to write a unit test that shows the activation behaviour, but haven't been able to do this yet due to an apparent bug in the keyboard plugin.\n"

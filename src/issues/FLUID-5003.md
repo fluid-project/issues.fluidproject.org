@@ -35,16 +35,19 @@
   ],
   "comments": [
     {
+      "id": "16668",
       "author": "Justin Obara",
       "date": "2014-06-04T11:20:29.502-0400",
       "body": "screenshot.png shows the lack of selection styling for contrast themes.\n"
     },
     {
+      "id": "16670",
       "author": "Justin Obara",
       "date": "2015-06-15T10:21:05.396-0400",
       "body": "Could not reproduce in IE 11 (which is currently the latest supported version of IE)\n"
     },
     {
+      "id": "16672",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:06.233-0400",
       "body": "Reopening to change the fix version to 1.9\n"

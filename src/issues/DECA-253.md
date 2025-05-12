@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10168",
       "author": "Justin Obara",
       "date": "2012-05-16T12:22:24.774-0400",
       "body": "It seems to only be an issue with Firefox as it is working fine in Chrome\n"
     },
     {
+      "id": "10169",
       "author": "Justin Obara",
       "date": "2012-05-16T12:45:30.546-0400",
       "body": "I've fixed the issue by pushing focus onto the \"Add More\" button. To do this i just needed to create a new selector to find the last multi file input, and then use the focusWithEvent facility of the uploader to move focus there after the dialog closes.&#x20;\n\nThe changes are in my bitbucket repo:\\\n<https://bitbucket.org/jobara/decapod-ui-05release>\n"
     },
     {
+      "id": "10171",
       "author": "Justin Obara",
       "date": "2012-05-18T14:47:20.959-0400",
       "body": "Merged into the project repo\n"

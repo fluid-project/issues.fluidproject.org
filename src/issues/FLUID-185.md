@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18302",
       "author": "Anastasia Cheetham",
       "date": "2008-02-06T15:57:54.000-0500",
       "body": "As of now, the functionality is successfully disabled, but the visual drop indicator still appears incorrectly. Work on that is in progress.\n"
     },
     {
+      "id": "18304",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:42.249-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

@@ -31,16 +31,19 @@
   ],
   "comments": [
     {
+      "id": "12367",
       "author": "Svetoslav Nedkov",
       "date": "2009-11-03T08:38:07.000-0500",
       "body": "My collection tryout failing with duplicate attributes\n"
     },
     {
+      "id": "12368",
       "author": "Svetoslav Nedkov",
       "date": "2009-11-03T08:39:16.000-0500",
       "body": "It seems I have accidently found a solution for this problem although I'm not sure why it works now. The solution was to move the image reorderer related code after the rendering code (this was the original order but the call to the rendering code seems to be asynchronous).\n\nAnyway for completeness I'm attaching my part of the application before the changes that fix that problem.\n\nThe structure of my code is:\n\n/project root\\\nmyCollection.json                 - JSON file\\\n/services\\\n/myCollection\\\n/js\\\nmyCollection.js               - server side javascript\\\n/engage-core\\\n/components\\\n/myCollection\\\n/html\\\nmyCollection.html        - HTML file\\\n/js\\\nmyCollection.js             - javascript\n\nTo run this it needs to be placed in the fluid-engage directory structure.\n\nI guess that in order to reproduce the error you need to simply access:\n\nhttp\\://host:port/fluid-engage-mycollection-tryout/artifacts/myCollection.html\n"
     },
     {
+      "id": "12369",
       "author": "Svetoslav Nedkov",
       "date": "2009-11-03T10:49:12.000-0500",
       "body": "The problem was worked around.\n"

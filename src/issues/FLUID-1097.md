@@ -33,21 +33,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24991",
       "author": "Gary Thompson",
       "date": "2008-08-13T14:12:08.000-0400",
       "body": "Colin and I had a followup discussion on the performance issues of the Layout Customizer, and the UoT developers are going to look into those issues.\n"
     },
     {
+      "id": "24993",
       "author": "Gary Thompson",
       "date": "2008-09-03T12:26:42.000-0400",
       "body": "iteration17\n"
     },
     {
+      "id": "24995",
       "author": "Gary Thompson",
       "date": "2008-09-12T18:43:24.000-0400",
       "body": "The issues have been identified and are being addressed by the development team.\n"
     },
     {
+      "id": "24997",
       "author": "Justin Obara",
       "date": "2011-01-10T14:31:05.807-0500",
       "body": "Was marked as resolved, just closing it.\n"

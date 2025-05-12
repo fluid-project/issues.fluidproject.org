@@ -36,16 +36,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21669",
       "author": "heidi valles",
       "date": "2011-02-17T14:00:21.076-0500",
       "body": "Remove no-wrap style on line 87 in Uploader.css\n"
     },
     {
+      "id": "21670",
       "author": "Anastasia Cheetham",
       "date": "2011-02-17T16:18:00.319-0500",
       "body": "I'm re-opening this one: The wrapping only happens on spaces or dashes, so if a long filename has neither (e.g. if it's broken up using underscores), this issue is still present.\n"
     },
     {
+      "id": "21671",
       "author": "Anastasia Cheetham",
       "date": "2011-02-17T16:28:11.736-0500",
       "body": "This issues duplicates <https://fluidproject.atlassian.net/browse/FLUID-962#icft=FLUID-962>\n"

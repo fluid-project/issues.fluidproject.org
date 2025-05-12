@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11195",
       "author": "Alexey Novak",
       "date": "2012-06-25T14:17:17.188-0400",
       "body": "Looks like text-size and line-spacing is not an issue anymore. But pictures in high-contrast themes are still a problem.\n"
     },
     {
+      "id": "11196",
       "author": "Alexey Novak",
       "date": "2012-08-16T14:49:30.516-0400",
       "body": "Looks fixed on a production\n"

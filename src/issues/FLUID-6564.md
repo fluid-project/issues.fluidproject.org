@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25410",
       "author": "Antranig Basman",
       "date": "2020-10-27T09:32:33.916-0400",
       "body": "Note that the odd compound condition in fluid.commitPotentiae is exercised by a test highly similar to the one we need to write, with a comment referring to <https://fluidproject.atlassian.net/browse/FLUID-6410#icft=FLUID-6410> which shows a different pathological behaviour resulting from the pernicious creation of components during an \"onCreate\"\n"

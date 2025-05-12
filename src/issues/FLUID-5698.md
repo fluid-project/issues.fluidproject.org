@@ -25,36 +25,43 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24304",
       "author": "Cindy Li",
       "date": "2015-06-24T13:20:51.141-0400",
       "body": "Once jQuery includes are removed from SeparatedPanelFrame.html, the error,\n\nTypeError: that.jQuery is not a function\n\nis thrown @ <https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/js/SeparatedPanelPrefsEditor.js#L214>\n"
     },
     {
+      "id": "24306",
       "author": "Antranig Basman",
       "date": "2015-06-24T17:35:50.698-0400",
       "body": "Thanks for the investigation, Cindy Li - I think we can fix this with only a small amount of refactoring\n"
     },
     {
+      "id": "24307",
       "author": "Antranig Basman",
       "date": "2016-04-18T14:24:59.615-0400",
       "body": "Work on the FD tool revealed that due to the poor implementation of the jQuery UI tooltip widget, if the prefs framework UI uses this widget, loading it within the iframe will require a 2nd copy of jQuery and the widget. However, the \"plain\" preferences framework we have here does not use the tooltip widget so it seems that we can indeed get rid of all JavaScript within the iframe in this configuration.\n"
     },
     {
+      "id": "24309",
       "author": "Alan Harnum",
       "date": "2016-04-18T15:36:23.971-0400",
       "body": "After some initial experimentation, it looks like removing all Javascript within the iframe doesn't cause any failing tests or initial obvious bugs, but it does cause the sliders to stop working properly (they no longer \"slide\" in response to user input). I assume but haven't dug too deeply that this is because of a similar jQuery UI issue to the one above, but will investigate further.\n"
     },
     {
+      "id": "24310",
       "author": "Alan Harnum",
       "date": "2016-04-19T14:32:11.920-0400",
       "body": "After speaking to Cindy Li and Michelle D'Souza I've created <https://fluidproject.atlassian.net/browse/FLUID-5892#icft=FLUID-5892>\n\nI believe once this is done we'll be able to remove all Javascript from HTML expected to be delivered to the iframe in cases where the dependencies (Infusion, jQuery, etc) are already present in the parent of the iframe.\n"
     },
     {
+      "id": "24312",
       "author": "Alan Harnum",
       "date": "2016-05-17T11:20:12.599-0400",
       "body": "This has been done as part of <https://fluidproject.atlassian.net/browse/FLUID-5892#icft=FLUID-5892> when the native HTML slider is used, as it makes having any JavaScript in the iframe unnecessary. Javascript in the iframe is still necessary when the jQuery UI-based slider is used due to its limitations. So to that end, two different iFrame templates have been created.\n"
     },
     {
+      "id": "24314",
       "author": "Alan Harnum",
       "date": "2016-09-06T09:53:03.591-0400",
       "body": "Closing since this went in as part of another PR.\n"

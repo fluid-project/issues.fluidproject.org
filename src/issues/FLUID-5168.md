@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16855",
       "author": "Justin Obara",
       "date": "2013-10-08T08:39:39.499-0400",
       "body": "Submitted a pull request ( <https://github.com/fluid-project/grunt-modulefiles/pull/2> )\n"
     },
     {
+      "id": "16857",
       "author": "Cindy Li",
       "date": "2014-02-03T09:15:45.076-0500",
       "body": "Merged into the project repo @ 1d2c188905f63b73ef5ed0b8e6cf25dcb00164f5\n"

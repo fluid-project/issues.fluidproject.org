@@ -22,16 +22,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12184",
       "author": "Justin Obara",
       "date": "2009-12-04T14:25:51.000-0500",
       "body": "We might be able to do some comparison with the updated version of couchdb that Jamon and Yura got running.\n"
     },
     {
+      "id": "12185",
       "author": "Jamon Jamon",
       "date": "2009-12-14T14:18:09.000-0500",
       "body": "CouchDB Crashed again at some point in the last few days. Tomcat wasn't throwing an error this time, but couchdb itself wasn't listening on any port, despite being up and running. Edited /etc/couchdb/default.ini to add verbose logging so that when it happens again there'll be a record.\n"
     },
     {
+      "id": "12186",
       "author": "Jess Mitchell",
       "date": "2010-02-24T14:54:43.000-0500",
       "body": "no longer relevant for the issue\n"

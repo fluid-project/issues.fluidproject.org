@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14936",
       "author": "Alison Benjamin",
       "date": "2009-09-04T12:02:36.000-0400",
       "body": "* page needs description and keywords metadata\n* page might feature a description of how the page works&#x20;\n\nJAWS\n\n* checkboxes are accessible, but:\n* should be a way to know aurally that dependencies are highlighted&#x20;\n* Reset: give more meaningful title to reset button; upon reset-select, need aural confirmation (\"no modules selected\")&#x20;\n"

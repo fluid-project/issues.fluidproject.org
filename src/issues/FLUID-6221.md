@@ -23,26 +23,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22398",
       "author": "Justin Obara",
       "date": "2017-11-07T12:53:22.906-0500",
       "body": "Giovanni Tirloni do you have any thoughts on the feasibility and implementation of this. I was talking to Avtar Gill about it today and we were thinking that the build site would point at the latest deployed instance. We'd also have a separate link to point at a directory listing of all of the archived versions. \n"
     },
     {
+      "id": "22399",
       "author": "Avtar Gill",
       "date": "2017-11-07T17:53:54.872-0500",
       "body": "One possible way of tackling it could be to contain each build in a directory named using the commit hash, with a symlink named `latest` pointing to the most recent commit hash. nginx is configured to serve the most recent directory by default using the `latest` symlink. Does that seem reasonable?\n"
     },
     {
+      "id": "22401",
       "author": "Giovanni Tirloni",
       "date": "2017-11-08T06:00:07.217-0500",
       "body": "I think that's reasonable. If the build scripts can output to a directory (say, \"output/$commithash\"), that should make things easier, I guess.\n\nUpdating the \"latest\" symlink might be tricky but, since SFTP supports symlinks, I'm guessing we can find a way around that.\n"
     },
     {
+      "id": "22402",
       "author": "Justin Obara",
       "date": "2017-11-08T09:03:59.949-0500",
       "body": "Giovanni Tirloni, currently the build scripts create a \"build\" directory containing the build files and a \"product\" director containing the a zip of the build files. Would you be able to use those?\n"
     },
     {
+      "id": "22403",
       "author": "Giovanni Tirloni",
       "date": "2017-11-08T09:21:08.020-0500",
       "body": "It's doable. We have to extract the zip and push it to a directory with the commit hash. It shouldn't be hard. Is there any benefit in create a directory with the commit hash locally for developers?\n"

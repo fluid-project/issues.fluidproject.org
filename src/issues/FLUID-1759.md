@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "19248",
       "author": "Justin Obara",
       "date": "2008-10-30T16:33:03.000-0400",
       "body": "'screenshot-1' shows the keyboard instructions not being displayed properly\n"
     },
     {
+      "id": "19254",
       "author": "Justin Obara",
       "date": "2008-12-18T14:01:24.000-0500",
       "body": "Appears to have been fixed&#x20;\n\nTested using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

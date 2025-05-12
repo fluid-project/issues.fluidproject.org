@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27516",
       "author": "Blake E",
       "date": "2008-12-15T15:57:23.000-0500",
       "body": "vulab11\n"
     },
     {
+      "id": "27517",
       "author": "Blake E",
       "date": "2008-12-18T11:23:45.000-0500",
       "body": "I got through a few chapters and will now be using this url as a reference in my continued use of SVN.\n\nNote: I downloaded the demo of: <http://www.versionsapp.com/> which is a great visual tool for svn repos.\n"

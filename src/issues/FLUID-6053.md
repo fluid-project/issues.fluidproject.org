@@ -35,21 +35,25 @@
   ],
   "comments": [
     {
+      "id": "23985",
       "author": "Justin Obara",
       "date": "2016-11-09T09:32:14.069-0500",
       "body": "screenshot.png shows the textfield wrapping to a new line, for the \"line spacing\" textfield slider.\n"
     },
     {
+      "id": "23987",
       "author": "Alan Harnum",
       "date": "2016-11-09T10:50:38.434-0500",
       "body": "Quick note that this problem does not occur if \"Adjust Text Size\" is also between 1.8 & 2.0\n"
     },
     {
+      "id": "23988",
       "author": "Alan Harnum",
       "date": "2016-11-09T11:59:11.384-0500",
       "body": "PR: <https://github.com/fluid-project/infusion/pull/782>\n\nIt was found in exploring this issue that this problem doesn't manifest with the jQuery UI slider because that slider doesn't respect the \"enlarge inputs\" option at all; this has been added to an existing JIRA at <https://issues.fluidproject.org/browse/FLUID-4606>\n"
     },
     {
+      "id": "23990",
       "author": "Justin Obara",
       "date": "2016-11-09T16:17:08.257-0500",
       "body": "Merged PR ( <https://github.com/fluid-project/infusion/pull/782> ) into the project repo at 8fbd9a1ef3ee94b2dea8d9384348ac92b5a103d0\n"

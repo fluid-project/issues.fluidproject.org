@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23417",
       "author": "Justin Obara",
       "date": "2009-04-01T16:44:41.000-0400",
       "body": "the template is loaded via an ajax call so it can't work without javascript.\n"

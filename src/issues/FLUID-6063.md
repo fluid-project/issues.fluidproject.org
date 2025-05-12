@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25698",
       "author": "Simon Bates",
       "date": "2016-11-18T11:17:06.860-0500",
       "body": "An alternative to the use of styling and symbols such as daggers and double daggers for variant values would be to repeat each variation in full, such as in the jQuery docs: <http://api.jquery.com/attr/#attr2>\n\nI think this might be a little easier to read but there is going to be some overhead in maintenance due to the duplication of information.\n"
     },
     {
+      "id": "27959",
       "author": "Justin Obara",
       "date": "2024-08-01T09:36:06.452-0400",
       "body": "Migrated to <https://github.com/fluid-project/infusion-docs/issues/297>&#x20;\n"

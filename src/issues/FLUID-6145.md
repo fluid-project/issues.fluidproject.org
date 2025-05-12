@@ -47,11 +47,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25461",
       "author": "Antranig Basman",
       "date": "2017-03-10T22:23:17.508-0500",
       "body": "Ah, of course, we now remember that this can't be done without the part of the <https://fluidproject.atlassian.net/browse/FLUID-4982#icft=FLUID-4982> work that as we described in <https://github.com/amb26/papers/tree/master/ppig-2016a> corresponds to the implementation of \"potentia II\", since our current \"bit-bashing\" idiom for implementing dynamic components universally takes the form of bashing on the value of `options.components.x` in order to encode representations of upcoming components. Solving this would also solve embarrassing issues like <https://issues.fluidproject.org/browse/FLUID-5614>. It really seems like all of this work just needs to begin simultaneously.&#x20;\n"
     },
     {
+      "id": "25462",
       "author": "Antranig Basman",
       "date": "2020-12-14T07:14:28.093-0500",
       "body": "Looks like this was closed yet again by an unrelated Kettle pull\n"

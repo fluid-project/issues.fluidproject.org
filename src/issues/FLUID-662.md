@@ -46,11 +46,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20879",
       "author": "Justin Obara",
       "date": "2009-05-14T15:10:33.000-0400",
       "body": "a11y issue&#x20;\n"
     },
     {
+      "id": "20880",
       "author": "Justin Obara",
       "date": "2014-07-07T14:09:26.305-0400",
       "body": "The progress for the uploading files is reported as it occurs.\n"

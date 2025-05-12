@@ -53,16 +53,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13398",
       "author": "Justin Obara",
       "date": "2010-05-07T13:19:08.550-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "13400",
       "author": "Jonathan Hung",
       "date": "2011-01-06T16:00:11.498-0500",
       "body": "Tested with Infusion 1.3\\\nDoes not appear to be an issue with IE8 in Win7.\\\nStill appears to be an issue with IE6 in WinXP.\n"
     },
     {
+      "id": "13402",
       "author": "Justin Obara",
       "date": "2014-07-09T09:46:05.851-0400",
       "body": "This doesn't seem to be an issue with IE 11. The older versions of IE listed in the environments are no longer supported.\n"

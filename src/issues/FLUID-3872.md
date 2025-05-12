@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16246",
       "author": "Justin Obara",
       "date": "2010-12-03T08:45:28.273-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "16248",
       "author": "Colin Clark",
       "date": "2010-12-11T16:57:35.688-0500",
       "body": "This issue was resolved at r10391 with the addition of unit tests for the fluid.progressiveChecker framework utility. The unit tests have been reviewed by Michelle, but the overall implementation could do with a last check-over.&#x20;\n"
     },
     {
+      "id": "16250",
       "author": "Colin Clark",
       "date": "2010-12-13T18:10:42.162-0500",
       "body": "Unit tests weren't committed at r10391 as stated. They need to be committed before freezing 1.3\n"
     },
     {
+      "id": "16252",
       "author": "Colin Clark",
       "date": "2010-12-13T18:12:39.006-0500",
       "body": "Unit tests actually committed at r10407.\n"

@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23466",
       "author": "Justin Obara",
       "date": "2009-06-02T10:09:49.000-0400",
       "body": "Was unable to reproduce this issue, not sure why but tested with IE 7 (Win Vista) and IE 6 (Win XP) and it is no longer present.\n"

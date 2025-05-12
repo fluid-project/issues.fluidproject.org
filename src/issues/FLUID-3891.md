@@ -32,6 +32,7 @@
   ],
   "comments": [
     {
+      "id": "19584",
       "author": "Mike Lam",
       "date": "2010-12-09T17:12:59.664-0500",
       "body": "You have to adjust your flash settings in your browser in order for the multi-file uploader to work.\\\n<http://wiki.fluidproject.org/display/fluid/Enabling+Uploader+on+Local+File+Systems>\n"

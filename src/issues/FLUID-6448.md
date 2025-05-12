@@ -23,16 +23,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25246",
       "author": "Justin Obara",
       "date": "2020-01-16T11:29:02.768-0500",
       "body": "Antranig Basman do you have any thoughts on how to best address this?\n"
     },
     {
+      "id": "25247",
       "author": "Gregor Moss",
       "date": "2020-01-16T11:30:10.663-0500",
       "body": "The documentation that has been prepared by Justin Obara but hasn't yet been merged into the Infusion docs does not mention callbacks at all: <https://github.com/fluid-project/infusion-docs/blob/82e47765367fc51b804794ac5e504b47cdd03966/src/documents/DataSourceAPI.md>\n"
     },
     {
+      "id": "25248",
       "author": "Antranig Basman",
       "date": "2020-01-21T07:58:48.951-0500",
       "body": "I think it is best to cleanly axe callback support from impl and docs, this is rather old-fashioned and and unlikely to be of help to anybody.\n"

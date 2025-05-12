@@ -36,21 +36,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24955",
       "author": "Mike Lam",
       "date": "2011-05-16T13:48:18.012-0400",
       "body": "Removed all three buttons from the Uploader demo.  Pull request has been made.&#x20;\n"
     },
     {
+      "id": "24956",
       "author": "Justin Obara",
       "date": "2011-05-17T13:42:58.070-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24957",
       "author": "Justin Obara",
       "date": "2011-05-18T09:06:18.015-0400",
       "body": "reopening to change status to \"needs commit\"\n"
     },
     {
+      "id": "24958",
       "author": "Colin Clark",
       "date": "2011-05-19T16:05:12.056-0400",
       "body": "I reviewed Mike's code changes and merged them into the project repo at <https://github.com/fluid-project/infusion/commit/42547847b524b903b3297c25d5378e1114e12e40>. Made tweaks and committed at <https://github.com/fluid-project/infusion/commit/cb05d2b2c16401a9a977d1255f23c23488387bb1>\n"

@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17850",
       "author": "Colin Clark",
       "date": "2008-11-27T13:14:49.000-0500",
       "body": "This was fixed in the flurry of past Uploader 2 commits.\n"
     },
     {
+      "id": "17852",
       "author": "Michelle D'Souza",
       "date": "2011-01-28T12:17:24.045-0500",
       "body": "Reopening these issues to add the uploadercomponent to them.&#x20;\n"

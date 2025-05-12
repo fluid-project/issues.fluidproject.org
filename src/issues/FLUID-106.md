@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17991",
       "author": "Joseph Scheuhammer",
       "date": "2007-11-12T15:26:44.000-0500",
       "body": "A plain text file containing the two licences were committed to the root of our svn repository.  Awaiting comment from Sheila in terms of whether this file is correct – that nothing was messed up in creating the plains text version.\n"
     },
     {
+      "id": "17994",
       "author": "Joseph Scheuhammer",
       "date": "2007-11-12T16:04:35.000-0500",
       "body": "Added a copy of the plain text licence to components trunk and gallery-portlet trunk such that they are automatically included in (1) releases of the code and (2) branches made from the trunk.\n\n<https://source.fluidproject.org/svn/fluid/components/trunk/LICENSE.txt>\\\n<https://source.fluidproject.org/svn/fluid/gallery-portlet/trunk/LICENSE.txt>\n"

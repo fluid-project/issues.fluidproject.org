@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21984",
       "author": "Mike Lam",
       "date": "2010-12-21T16:00:36.329-0500",
       "body": "There are now 2 HTML5 multi-file uploading methods:  &#x20;\n\n1\\) Support for binary requests (FF 3.6)   \\\n2\\) Support for Form Data (Chrome, Safari, FF4)\n"
     },
     {
+      "id": "21987",
       "author": "Mike Lam",
       "date": "2010-12-21T16:01:10.970-0500",
       "body": "HTML5 version of the uploader implemented.\n"

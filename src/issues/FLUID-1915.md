@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18134",
       "author": "Allison Bloodworth",
       "date": "2008-12-03T14:00:59.000-0500",
       "body": "iteration23\n"
     },
     {
+      "id": "18135",
       "author": "Allison Bloodworth",
       "date": "2008-12-19T17:53:24.000-0500",
       "body": "Initial guidelines created and sent out to Fluid, Sakai & uPortal communities for feedback.\n"

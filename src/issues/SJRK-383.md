@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26500",
       "author": "Justin Obara",
       "date": "2020-08-04T13:54:00.233-0400",
       "body": "Can add the \"Headless Edge\" to the list of browsers in the testem.js <https://github.com/fluid-project/sjrk-story-telling/blob/f3ad5428bc4594aa4d9e0b103cd220d46065f986/tests/ui/testem.js#L35>\n"
     },
     {
+      "id": "26501",
       "author": "Justin Obara",
       "date": "2020-08-04T13:56:11.953-0400",
       "body": "We require this change <https://github.com/testem/testem/pull/1410> for the \"Headless Edge\" launcher to be available.\n"

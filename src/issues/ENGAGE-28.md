@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12193",
       "author": "Armin Krauss",
       "date": "2009-08-18T15:04:33.000-0400",
       "body": "Mobile FSS is used in the artifact component\n"

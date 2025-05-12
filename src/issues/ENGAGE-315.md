@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12674",
       "author": "vmoulder",
       "date": "2010-02-19T16:12:53.000-0500",
       "body": "Results of this work can be found here <http://wiki.fluidproject.org/display/fluid/Accessibility+Design+Review>\n"

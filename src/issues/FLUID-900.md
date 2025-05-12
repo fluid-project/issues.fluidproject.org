@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19815",
       "author": "Colin Clark",
       "date": "2008-09-16T12:55:14.000-0400",
       "body": "dev-iteration44\\\ndev-iteration45\\\ndev-iteration46\\\ndev-iteration47\n"
     },
     {
+      "id": "19817",
       "author": "Anastasia Cheetham",
       "date": "2009-02-11T12:21:08.000-0500",
       "body": "There's a discussion about decorators in the Renderer at\\\n<http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2008-10-09>\\\nUseful for attaching event handlers to the tree (so that re-rendering won't break bindings, for example).\n"
     },
     {
+      "id": "19820",
       "author": "Anastasia Cheetham",
       "date": "2009-06-01T10:58:49.000-0400",
       "body": "There are now several wiki pages devoted to the Renderer:\\\n<http://wiki.fluidproject.org/display/fluid/Renderer>\\\nand its children.\n"

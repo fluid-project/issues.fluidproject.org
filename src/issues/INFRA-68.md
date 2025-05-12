@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25858",
       "author": "Giovanni Tirloni",
       "date": "2015-11-27T14:23:13.297-0500",
       "body": "First attempt at it: <https://github.com/idi-ops/ansible-docker/pull/1>\n"
     },
     {
+      "id": "25859",
       "author": "Giovanni Tirloni",
       "date": "2015-12-08T07:38:55.804-0500",
       "body": "PR merged on Dec 21\n"

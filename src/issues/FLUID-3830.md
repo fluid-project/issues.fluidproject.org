@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24817",
       "author": "Colin Clark",
       "date": "2010-11-10T09:46:50.344-0500",
       "body": "I've addressed this issue by removing Berkeley's maven repository from the Image Gallery's build configuration. Everything seems to be working nicely again.\n"
     },
     {
+      "id": "24818",
       "author": "Colin Clark",
       "date": "2010-11-10T09:47:18.492-0500",
       "body": "Mike, can you verify that this issue is fixed and close it if so?\n"
     },
     {
+      "id": "24819",
       "author": "Mike Lam",
       "date": "2010-11-10T10:15:22.796-0500",
       "body": "Resolved by Colin Clark. &#x20;\n"

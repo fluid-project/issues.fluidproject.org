@@ -30,6 +30,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26321",
       "author": "Gregor Moss",
       "date": "2019-09-12T13:42:09.118-0400",
       "body": "The hasMobileCamera detection has been removed from the project\n"

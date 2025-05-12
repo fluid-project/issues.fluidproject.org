@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19468",
       "author": "Michelle D'Souza",
       "date": "2008-02-11T12:51:03.000-0500",
       "body": "There is function called jById in Fluid.js that will get a jQuery DOM node by id using this strategy. I updated the code and markup examples to use this function but did not update all the tests.&#x20;\n"

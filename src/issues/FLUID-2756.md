@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16702",
       "author": "Justin Obara",
       "date": "2009-05-21T12:09:07.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "16704",
       "author": "Anastasia Cheetham",
       "date": "2009-05-25T09:59:26.000-0400",
       "body": "I've reviewed the changes made to the css, and verified that everything still works as it should. +1\n"
     },
     {
+      "id": "16707",
       "author": "Justin Obara",
       "date": "2009-05-25T10:09:00.000-0400",
       "body": "Verified that this change has broken behaviour, using:\n\nIE 7, FF3 (Win Vista)\\\nFF3 (Mac OS 10.5)\n"

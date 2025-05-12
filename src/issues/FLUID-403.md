@@ -37,31 +37,37 @@
   ],
   "comments": [
     {
+      "id": "13710",
       "author": "Michelle D'Souza",
       "date": "2008-04-07T15:28:09.000-0400",
       "body": "Possibly a change to the z-index of the avatar style will fix this.\n"
     },
     {
+      "id": "13712",
       "author": "Anastasia Cheetham",
       "date": "2008-04-07T16:16:06.000-0400",
       "body": "The style has been changed.\n"
     },
     {
+      "id": "13714",
       "author": "Justin Obara",
       "date": "2008-04-28T15:04:22.000-0400",
       "body": "Verified fix in IE7 (WinXP), FF2(Mac OS 10.5, WinXP)\n"
     },
     {
+      "id": "13716",
       "author": "Justin Obara",
       "date": "2008-07-04T19:53:58.000-0400",
       "body": "The bug appears to have returned.\n\nEnvironments:\n\nMac OS X (FF2)\n\nWinXP (FF2, FF3, IE6, IE7)\n"
     },
     {
+      "id": "13718",
       "author": "Justin Obara",
       "date": "2008-09-02T13:38:38.000-0400",
       "body": "'screenshot-1' shows the avatar for the calendar portlet below the title bar of the my weather portlet\n"
     },
     {
+      "id": "13720",
       "author": "Justin Obara",
       "date": "2008-09-10T13:45:23.000-0400",
       "body": "Appears to have been fixed with one of the changes since r5476\n\nVerified using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

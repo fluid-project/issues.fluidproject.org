@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16373",
       "author": "Antranig Basman",
       "date": "2008-10-20T12:20:25.000-0400",
       "body": "Investigation seems to show that this is a design error in the implementation of the JQuery ui.core function \"mouseDown\". This function operates an \"event delegation model\" for capturing events - it is used in the implementation of JQuery UI \"draggable\" - for any element which is registered as potentially draggable, the event is captured by this function, which, as well as registering some global document event handlers, unconditionally returns \"false\", thus preventing any default action of the event. \\\nUnfortunately an important default action of the event which is prevented is its natural effect on element focus and blur. Therefore any inline-edit control which is expecting to operate natural focus/blur semantics based on elements which are also draggable will fail.\n"
     },
     {
+      "id": "16376",
       "author": "Antranig Basman",
       "date": "2008-10-20T16:19:47.000-0400",
       "body": "This has been fixed at revision 5775 by issuing a dynamic patch to JQuery UI core. The base issue has been illustrated with a test case at <https://source.fluidproject.org/svn/fluid/components/trunk/src/webapp/tests/jquery-tests/manual/jQueryUI-focus-test.html> and is being taken up upstream with the JQuery UI team. Will report here on any responses or tickets raised.\n\nCurrently I have not succeeded in making an automated test case for this issue, since it seems that jQuery.simulate is not a sufficiently \"realistic\" environment to trigger the click -> focus change transition. However, I have adjusted one of the standard Reorderer samples to illustrate the behaviour, at <https://source.fluidproject.org/svn/fluid/components/trunk/src/webapp/sample-code/reorderer/portal/portal.html>. The text \"Default folder behaviour\" on the bookmarks portlet at the top right is inline-editable and clicking on \"empty space\" elsewhere within the same portlet will show up the issue.\n"

@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11850",
       "author": "Justin Obara",
       "date": "2009-09-21T16:43:27.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "11851",
       "author": "Michelle D'Souza",
       "date": "2009-10-13T16:14:33.000-0400",
       "body": "The basic browse component has been built. Remaining issues are separate JIRA issues.&#x20;\n"
     },
     {
+      "id": "11852",
       "author": "Justin Obara",
       "date": "2009-11-03T11:52:40.000-0500",
       "body": "closed as per previous comment\n"

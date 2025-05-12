@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26055",
       "author": "Giovanni Tirloni",
       "date": "2020-04-27T16:30:16.298-0400",
       "body": "Updated mirorr script to sync CentOS 7.8 and updated the 7 symlink to point to it.\n"

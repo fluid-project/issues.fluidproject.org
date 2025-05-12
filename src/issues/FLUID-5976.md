@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25226",
       "author": "Antranig Basman",
       "date": "2019-03-22T18:49:13.610-0400",
       "body": "Connection between this and push/pull models of dataflow and/or FRP. Note that a big demander of the MVM will be the \"new renderer\" which will coordinatise all kinds of bits of DOM state that should not be concretified unless there is an active consumer of them - e.g. the standard \"visibility model\" of <https://issues.fluidproject.org/browse/FLUID-4928>\n"

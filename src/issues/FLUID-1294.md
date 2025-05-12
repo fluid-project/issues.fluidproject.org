@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18287",
       "author": "Jonathan Hung",
       "date": "2009-02-18T12:51:31.000-0500",
       "body": "No longer an issue since we are no longer using teasers for news items.\n"

@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10374",
       "author": "Justin Obara",
       "date": "2012-02-29T15:31:34.568-0500",
       "body": "Upgraded to a snapshot/pre-release of Infusion 1.5 (at rev: f2a883efe711374f5340083314a6207a6ff7d4d)&#x20;\n\nThe changes are currently in my bitbucket repo. \\\n<https://bitbucket.org/jobara/decapod-ui-iteration3>\n"
     },
     {
+      "id": "10376",
       "author": "Justin Obara",
       "date": "2012-05-18T14:24:42.781-0400",
       "body": "Merged into the project repo\n"

@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16421",
       "author": "Justin Obara",
       "date": "2015-06-09T09:13:09.365-0400",
       "body": "Cannot reproduce in IE 11 (the only currently supported version of IE)\n"
     },
     {
+      "id": "16423",
       "author": "Justin Obara",
       "date": "2015-06-26T09:50:58.033-0400",
       "body": "Reopening to change the fix version to 1.9\n"

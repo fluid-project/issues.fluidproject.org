@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11874",
       "author": "Justin Obara",
       "date": "2009-08-31T14:13:49.000-0400",
       "body": "Removed the  toggle event, and now fire open and closed events instead.\n"
     },
     {
+      "id": "11875",
       "author": "Justin Obara",
       "date": "2009-11-10T11:02:49.000-0500",
       "body": "Closed as per previous comment\n"

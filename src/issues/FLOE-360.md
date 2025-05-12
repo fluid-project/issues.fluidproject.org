@@ -37,11 +37,13 @@
   ],
   "comments": [
     {
+      "id": "10993",
       "author": "Justin Obara",
       "date": "2015-05-28T12:57:56.106-0400",
       "body": "screenshot.png shows that the icon for the current panel does not have all of the active styling. It only has the arrow pointing at it (when in a contrast mode).\n"
     },
     {
+      "id": "10994",
       "author": "Justin Obara",
       "date": "2015-06-01T11:04:26.114-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/first-discovery/pull/74> ) into the project repo at efde6dfd3906a6ae200e4252ac5f6fb57a2d6e52\n\nThis improves the active styling, but does not yet fully bring it inline with the designs. (which is why the jira is still open).\n"

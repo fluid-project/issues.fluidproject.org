@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19640",
       "author": "Colin Clark",
       "date": "2008-07-16T16:06:04.000-0400",
       "body": "When we move to that-ism in inline edit, there will only be a single (and very convenient) method to instantiate one or many inline editors. So, this issue is now moot.\n"

@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24242",
       "author": "Antranig Basman",
       "date": "2017-09-28T07:32:30.056-0400",
       "body": "Hopefully a side-effect of resolving this issue would enable the valueMapper to be used as a singleTransform in a relay rule without spuriously needing the a \"path\" element set - as in\n\n```java\nsingleTransform: {\r\n            type: \"fluid.transforms.valueMapper\",\r\n            defaultInputPath: \"\", // required due to FLUID-6179 not yet resolved\r\n            match: [{\r\n                inputValue: null,\r\n                outputValue: \"{that}.options.icons.keyedOut\"\r\n            }],\r\n            noMatch: \"{that}.options.icons.keyedIn\"\r\n        }\n```\n\nsee <https://codepen.io/Bosmon/pen/NajXZZ?editors=1111>\n"

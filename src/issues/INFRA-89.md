@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25964",
       "author": "Giovanni Tirloni",
       "date": "2017-09-21T10:54:58.149-0400",
       "body": "<https://github.com/inclusive-design/websavv> - fixed webhook URL\\\n<https://github.com/fluid-project/sojustrepairit.org> - added webhook\n\n<https://github.com/fluid-project/docs-inclusive-learning> - OK\\\n<https://github.com/inclusive-design/guide.inclusivedesign.ca> - OK\\\n<https://github.com/fluid-project/fluidproject.org.git> - OK\\\n<https://github.com/fluid-project/floeproject.org.git> - OK\\\n<https://github.com/inclusive-design/courses.idrc.git> - OK\n"

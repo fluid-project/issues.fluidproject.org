@@ -22,6 +22,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26045",
       "author": "Justin Obara",
       "date": "2018-09-12T08:42:59.725-0400",
       "body": "PR ( <https://github.com/fluid-project/ci-service/pull/6> ) merged into the project repo at 11d972df7b5392fbf4b139c21e09104ace16390c\n\n \n"

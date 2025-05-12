@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26393",
       "author": "Alan Harnum",
       "date": "2017-10-03T11:46:48.904-0400",
       "body": "A first step for this would be to replace or supplement the existing sjrk.storyTelling.templatedComponent grade's use of stringTemplate with the use of handlebars.\n\nThis can use the client-side renderer described at <https://github.com/GPII/gpii-handlebars/blob/master/docs/renderer.md>\n"
     },
     {
+      "id": "26394",
       "author": "Gregor Moss",
       "date": "2017-10-31T15:03:01.646-0400",
       "body": "Handlebars incorporated and working just fine\n"

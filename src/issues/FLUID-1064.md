@@ -46,11 +46,13 @@
   ],
   "comments": [
     {
+      "id": "20525",
       "author": "Justin Obara",
       "date": "2008-07-29T13:26:17.000-0400",
       "body": "'screenshot-1' shows the text displayed too high. Especially noticable for Tuesday, where the bar at the top is completely missing.\n"
     },
     {
+      "id": "20526",
       "author": "Justin Obara",
       "date": "2009-08-13T13:09:05.000-0400",
       "body": "Browser support for Infusion 1.2 ( <http://wiki.fluidproject.org/display/fluid/Prior+Browser+Support> ) does not include Opera 9.6 for Mac OS\n"

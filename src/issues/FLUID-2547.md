@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21921",
       "author": "Michelle D'Souza",
       "date": "2009-04-06T16:23:40.000-0400",
       "body": "Eventually we should include only the examples and tests that would work but for 1.0 don't include the examples and tests.\n"
     },
     {
+      "id": "21922",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:28:00.049-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

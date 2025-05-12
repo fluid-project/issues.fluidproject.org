@@ -40,26 +40,31 @@
   ],
   "comments": [
     {
+      "id": "13228",
       "author": "Justin Obara",
       "date": "2010-10-04T13:59:14.113-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "13229",
       "author": "Antranig Basman",
       "date": "2010-10-05T03:22:38.675-0400",
       "body": "Going on holiday patch. Perhaps it really is time to sign up to github\n"
     },
     {
+      "id": "13230",
       "author": "Antranig Basman",
       "date": "2010-12-03T16:06:21.583-0500",
       "body": "Updated version of patch with resolution for issue - still needs more tests and description\n"
     },
     {
+      "id": "13231",
       "author": "Antranig Basman",
       "date": "2010-12-07T16:28:58.858-0500",
       "body": "Fixed at revision 10335, along with numerous other fixes for consistency and correctness of the IoC system - including \"noCopy\" for invoker arguments, and \"proleptic ginger nicknames\"\n"
     },
     {
+      "id": "13232",
       "author": "Colin Clark",
       "date": "2010-12-15T19:33:14.584-0500",
       "body": "I've reviewed Antranig's changes for this issue and they look generally reasonable. +1 for inclusion in Infusion 1.3.\n"

@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11946",
       "author": "Justin Obara",
       "date": "2010-01-20T16:30:43.000-0500",
       "body": "the audio/video section has been removed from the main exhibition page\n"

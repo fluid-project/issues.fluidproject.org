@@ -33,16 +33,19 @@
   ],
   "comments": [
     {
+      "id": "18109",
       "author": "Jacob Farber",
       "date": "2008-08-21T15:49:04.000-0400",
       "body": "updated reorderer content, added Inline Edit\n"
     },
     {
+      "id": "18110",
       "author": "Eli Cochran",
       "date": "2008-08-21T17:18:26.000-0400",
       "body": "Patch has been applied\n"
     },
     {
+      "id": "18111",
       "author": "Jacob Farber",
       "date": "2008-08-25T11:29:50.000-0400",
       "body": "First phase is complete\n"

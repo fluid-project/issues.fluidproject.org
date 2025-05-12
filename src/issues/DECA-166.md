@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10080",
       "author": "Justin Obara",
       "date": "2011-10-16T22:00:30.122-0400",
       "body": "I've added the placeholder ui for Import to my bitbucket account\\\n<https://bitbucket.org/jobara/decapod-ui>&#x20;\n"
     },
     {
+      "id": "10081",
       "author": "Justin Obara",
       "date": "2012-01-10T09:23:58.181-0500",
       "body": "This has been added to the 0.5a release\n"

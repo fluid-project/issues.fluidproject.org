@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15782",
       "author": "Colin Clark",
       "date": "2012-08-17T17:25:55.814-0400",
       "body": "Reviewed, tested and pushed to master: <https://github.com/fluid-project/infusion/commit/6b610291339e63f582f3fb3f776bdf3d69f800f9>\n"
     },
     {
+      "id": "15784",
       "author": "Antranig Basman",
       "date": "2012-08-17T18:04:59.096-0400",
       "body": "Filling in a missing piece of the reasoning above - the fresh instantiator was created by an odd \"fall-through\" branch in \"withInstantiator\" that simply adopts the current \"that\" as the root component of a fresh instantiator if one cannot be found - this also contributed to difficulty in writing an adequate test case since if the current \"that\" was INDEED the root of the current component tree, it was hard to observe any problems during the instantiation which followed. This is also exacerbated by the fact that all invokers in the tree have already closed over the true instantiator, so if dispatch ever passes through them again, the correct instantiator will be restored. The case involving dispatch through \"ginger instantation\" described above seems to be the only path (that I can think of or have evidence for) that the instantiator corruption caused by the bug can lead to an observable effect. It may be necessary in time to have some \"white box testing\" in which various invariants of the state of the IoC system are checked, independently from being able to exploit corruption to lead to observable effects...\n"

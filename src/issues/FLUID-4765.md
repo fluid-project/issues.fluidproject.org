@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "14339",
       "author": "Justin Obara",
       "date": "2015-06-12T10:34:55.766-0400",
       "body": "Could not reproduce with IE 11 (which is currently the latest supported version of IE)\n"
     },
     {
+      "id": "14342",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:28.399-0400",
       "body": "Reopening to change the fix version to 1.9\n"

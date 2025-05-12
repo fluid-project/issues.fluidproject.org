@@ -37,11 +37,13 @@
   ],
   "comments": [
     {
+      "id": "11364",
       "author": "Justin Obara",
       "date": "2015-06-05T15:33:03.181-0400",
       "body": "screenshot.png shows the lack of active styling (other than the arrow) for panel icons in high contrast.\n"
     },
     {
+      "id": "11365",
       "author": "Cindy Li",
       "date": "2015-11-12T14:37:19.851-0500",
       "body": "This report has been copied to the GPII bug tracker: <https://issues.gpii.net/browse/GPII-1462> and all activities should be carried on there.\n"

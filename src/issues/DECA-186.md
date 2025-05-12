@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10132",
       "author": "Justin Obara",
       "date": "2012-05-25T15:58:36.399-0400",
       "body": "The uploader's progress bar was removed from the UI. The import and export stages are tightly integrated now with an indeterminate progress bar used for the total progress of both tasks.\n"

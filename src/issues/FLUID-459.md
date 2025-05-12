@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17364",
       "author": "Anastasia Cheetham",
       "date": "2008-04-07T10:39:05.000-0400",
       "body": "Herb, did you encounter this problem with all of the portlets?\n\nThe Google Portlet in the top left is actually locked, and cannot be moved. If this is the only portlet you had the problem with, then I think it's a styling issue - the little padlock icon at the left of the title bar might be insufficient to inform the user that the portlet can't be moved.\n"
     },
     {
+      "id": "17365",
       "author": "Anastasia Cheetham",
       "date": "2008-04-08T16:37:03.000-0400",
       "body": "This turns out to be an instance of <https://fluidproject.atlassian.net/browse/FLUID-401#icft=FLUID-401>.\n"

@@ -35,6 +35,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19233",
       "author": "Jonathan Hung",
       "date": "2010-12-09T10:35:30.035-0500",
       "body": "Was still an issue in this demo (avatar hides behind the selected tab). This demo has since been removed from the repository. <https://fluidproject.atlassian.net/browse/FLUID-3731#icft=FLUID-3731>.\n"

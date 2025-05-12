@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21887",
       "author": "Colin Clark",
       "date": "2008-10-28T16:16:01.000-0400",
       "body": "afterUploadComplete has been added to the SWFUploadManager. The full list of available events are now:\n\nevents: {\\\nafterReady: called after the uploader is ready for action,\\\nonFileDialog: called when the OS file dialog is opened,\\\nafterFileQueued: called after a file has been added the queue,\\\nafterFileRemoved: when a file is removed from the queue,\\\nonQueueError: when an occur occurs while trying to add a file to the queue,\\\nafterFileDialog: after the OS file dialog is dismissed,\\\nonUploadStart: when an upload batch is started,\\\nonFileStart: when a new file starts to be uploaded,\\\nonFileProgress: called periodically as the upload progresses,\\\nonFileError: called if an error occurs during the file upload process,\\\nonFileSuccess: when a file is successfully uploaded,\\\nafterFileComplete: when a file has completed, either successfully or in error,\\\nafterUploadComplete: when a batch of files is finished being uploaded\\\n},\n"
     },
     {
+      "id": "21888",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:50.849-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

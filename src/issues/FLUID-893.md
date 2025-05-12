@@ -41,6 +41,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22552",
       "author": "Allison Bloodworth",
       "date": "2008-07-16T20:57:13.000-0400",
       "body": "Let's hold off on this task for now as we need to finalize the list of design pattern elements as a group, either on the mailing list or at our next OSDPL meeting on July 23rd.\n"

@@ -38,21 +38,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15297",
       "author": "Justin Obara",
       "date": "2014-06-19T09:15:00.680-0400",
       "body": "We briefly discussed this issue at yesterdays community meeting. It was decided that the fluid.version should include -SNAPSHOT but the namespace shouldn't.\n"
     },
     {
+      "id": "15300",
       "author": "Justin Obara",
       "date": "2014-06-19T09:16:03.626-0400",
       "body": "This is fixed with pull request for <https://fluidproject.atlassian.net/browse/FLUID-5449#icft=FLUID-5449>\n\n<https://github.com/fluid-project/infusion/pull/536>\n"
     },
     {
+      "id": "15303",
       "author": "Cindy Li",
       "date": "2014-06-19T14:43:40.645-0400",
       "body": "Merged into the project repo @ 7be53d11b3b7d67ba8eb1ca827801ecf8cca974b\n"
     },
     {
+      "id": "15304",
       "author": "Justin Obara",
       "date": "2015-06-26T09:50:57.008-0400",
       "body": "Reopening to change the fix version to 1.9\n"

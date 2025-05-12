@@ -33,21 +33,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11856",
       "author": "Michelle D'Souza",
       "date": "2009-07-13T13:39:50.000-0400",
       "body": "Data for the 'related objects' component will also need to come from CouchDB eventually. Hopefully the work for this issue will be reusable there.&#x20;\n"
     },
     {
+      "id": "11857",
       "author": "Justin Obara",
       "date": "2009-09-21T16:41:48.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "11858",
       "author": "Colin Clark",
       "date": "2009-10-14T16:29:15.000-0400",
       "body": "Yura and Justin have done excellent work on this umbrella issue, and the work is complete for Engage 0.1\n"
     },
     {
+      "id": "11859",
       "author": "Justin Obara",
       "date": "2009-11-03T11:50:57.000-0500",
       "body": "Closed as per previous comment\n"

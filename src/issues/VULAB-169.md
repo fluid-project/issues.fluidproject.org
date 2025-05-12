@@ -40,26 +40,31 @@
   ],
   "comments": [
     {
+      "id": "27298",
       "author": "Blake E",
       "date": "2009-02-17T13:35:30.000-0500",
       "body": "This patch svn add's the INSTALL.txt to the main home dir of the site, and provides a installation guide for new users.\n\nEDIT:\\\n**oops** I deleted patch, but colin's gunna add the badboy to svn. I opt'd to toss around list. We can do both (patch AND list) and patch any comments generated from list.\n"
     },
     {
+      "id": "27299",
       "author": "Blake E",
       "date": "2009-02-18T13:39:57.000-0500",
       "body": "version 1 of the install.txt - although its hard to see how good it is without following the steps, feel free to give it a read and post comments on the list.\n"
     },
     {
+      "id": "27300",
       "author": "Blake E",
       "date": "2009-02-18T15:08:48.000-0500",
       "body": "Version 2 - with some tips from jess on the list I've explained the \"home directory\" to the installers and added full paths to files referenced within INSTALL.txt\n\nAlthough this isn't finished and I would like more comments, I'm going to hold off on any more changes until the svn is up to date (we re restructuring it atm)\n"
     },
     {
+      "id": "27301",
       "author": "Colin Clark",
       "date": "2009-02-18T16:55:27.000-0500",
       "body": "I've committed the INSTALL-2.txt file to the root directory of VULab Web, as of r6536.\n"
     },
     {
+      "id": "27302",
       "author": "Colin Clark",
       "date": "2009-02-18T16:55:42.000-0500",
       "body": "Blake, can you double check that this is correct?\n"

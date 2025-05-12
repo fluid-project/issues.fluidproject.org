@@ -49,26 +49,31 @@
   ],
   "comments": [
     {
+      "id": "23446",
       "author": "Justin Obara",
       "date": "2008-07-29T13:59:50.000-0400",
       "body": "'screenshot-1' look at the tail of the 'g'&#x20;\n"
     },
     {
+      "id": "23447",
       "author": "Justin Obara",
       "date": "2008-07-29T14:01:13.000-0400",
       "body": "'screenshot-2' - the overlapping is most noticable at the end of the second line\n"
     },
     {
+      "id": "23448",
       "author": "Justin Obara",
       "date": "2008-08-28T09:24:00.000-0400",
       "body": "Doesn't seem to occur in the bSpace example (<http://build.fluidproject.org/fluid/sample-code/inline-edit/section-info/section-info.html>)\n"
     },
     {
+      "id": "23449",
       "author": "Jonathan Hung",
       "date": "2011-01-04T14:44:31.953-0500",
       "body": "Tested in FF3.6 and IE8 on Windows. Does not appear to be an issue in the current simple inline edit demo:\\\n<http://build.fluidproject.org/infusion/demos/inlineEdit/simple/demo.html>\n"
     },
     {
+      "id": "23450",
       "author": "heidi valles",
       "date": "2011-01-04T15:24:36.723-0500",
       "body": "Doesn't happen on Mac FF3.6 or Safari5\n"

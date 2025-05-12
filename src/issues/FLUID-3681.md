@@ -42,21 +42,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24556",
       "author": "Antranig Basman",
       "date": "2010-08-30T01:36:30.996-0400",
       "body": "A basic implementation of \"initRendererComponent\" is now in trunk as of rev 9998 - this automates the work of applying the renderer, fetching templates, configuring cutpoints based on the DOM binder as well as localisation via the string bundle. Work is still to come on \"grading\" (which is mostly done in a branch) and the \"antigenic/multipass\" system which is not yet started.\n"
     },
     {
+      "id": "24557",
       "author": "Justin Obara",
       "date": "2010-10-04T15:04:26.413-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "24558",
       "author": "Antranig Basman",
       "date": "2011-03-25T00:46:22.083-0400",
       "body": "This implementation is nearly complete but needs still a fair number of tweaks\\\ni) Create \"auto-IoC\" mode, perhaps enabled by a particular grade, that will automatically enable IoC-aware decorators for any fluid decorators issued in the component tree by a renderer component\\\nii) Thoroughly review the layout of the options structure accepted by renderer components - there is a lot of very ropy manual options merging code in the chain, and even if we can't clear it all up, we should at least try to somewhat stabilise the API\\\niii) Perhaps make some early efforts to support some kind of \"antigenic\" mode involving multi-pass initialisation - most of the \"hard stuff\" in the framework required to make this work is now there, in the form of i) event-driven IoC instantiation, and ii) grade support\n"
     },
     {
+      "id": "24559",
       "author": "Antranig Basman",
       "date": "2011-05-16T15:26:46.580-0400",
       "body": "This work is done, with the exception of \"antigens\" which we have decided to rename as \"phased components\", this will be allocated a new JIRA for 1.5.\n"

@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "13373",
       "author": "Justin Obara",
       "date": "2008-12-18T10:27:54.000-0500",
       "body": "'screenshot-1' shows the scrollbar\n"
     },
     {
+      "id": "13375",
       "author": "Jacob Farber",
       "date": "2009-01-06T11:27:33.000-0500",
       "body": "overflow:auto was on elements that didnt need it. Refactored fluid.layout.css to handle this.\n"

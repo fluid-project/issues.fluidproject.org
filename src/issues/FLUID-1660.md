@@ -46,11 +46,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20459",
       "author": "Jonathan Hung",
       "date": "2008-10-03T10:46:31.000-0400",
       "body": "Iteration23\n\nWhile performing this task, also check the help text for each entry field (Fluid-1092).\n"
     },
     {
+      "id": "20460",
       "author": "Jonathan Hung",
       "date": "2008-12-03T10:42:42.000-0500",
       "body": "There may be some modifications with respect to Example and Solution images (will be a separate task), but otherwise all elements are there.\n"

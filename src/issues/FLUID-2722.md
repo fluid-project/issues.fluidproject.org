@@ -30,41 +30,49 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17032",
       "author": "Antranig Basman",
       "date": "2009-05-20T19:48:09.000-0400",
       "body": "Fixed at revision 7198, with manual test case (automated test case could probably not verify this issue authoritatively)\n"
     },
     {
+      "id": "17033",
       "author": "Justin Obara",
       "date": "2009-05-21T08:56:48.000-0400",
       "body": "manual test in the wrong location in the directory. It was placed in the stand alone demos, but should be moved to the manual tests directory\n"
     },
     {
+      "id": "17034",
       "author": "Justin Obara",
       "date": "2009-05-21T09:07:47.000-0400",
       "body": "Moved the manual test from the standalone-demos directory to the manual-tests  directory. However, there is a dependency from the manual test to a js file in the standalone-demos directory. This may need to be rethought. Also removed a trailing comma from the model on line 29.&#x20;\n"
     },
     {
+      "id": "17035",
       "author": "Anastasia Cheetham",
       "date": "2009-05-21T10:06:29.000-0400",
       "body": "I've reviewed the code for this, and it looks good. It does fix the original issue that I found in the CSpace code.\n\nThe only further change I would recommend would be to remove the commented lines from applyAutoBind() in fluidRenderer.js\n"
     },
     {
+      "id": "17036",
       "author": "Justin Obara",
       "date": "2009-05-21T10:52:08.000-0400",
       "body": "need to remove the commented out lines of code (See comment above)\n"
     },
     {
+      "id": "17037",
       "author": "Antranig Basman",
       "date": "2009-05-21T13:04:41.000-0400",
       "body": "Sorry for all the stray material - the commented lines and the standalone-demo include have been removed.\n"
     },
     {
+      "id": "17038",
       "author": "Anastasia Cheetham",
       "date": "2009-05-25T10:05:22.000-0400",
       "body": "I've reviewed the changes: +1. I also took the liberty of making small cosmetic changes to the HTML headers so that the text more accurately reflects the content.\n"
     },
     {
+      "id": "17039",
       "author": "Justin Obara",
       "date": "2009-05-25T10:20:28.000-0400",
       "body": "Closing based on Anastasia's code review (see previous comment)\n"

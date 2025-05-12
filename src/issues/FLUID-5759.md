@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21676",
       "author": "Cindy Li",
       "date": "2015-09-10T16:28:12.265-0400",
       "body": "The code that incorrectly loops thru panel names: <https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/js/AuxBuilder.js#L248-L255>. It sets the \"subPanelRenderOn\" variable and causes line 271-274 below sets the panel option \"renderOnPreference\" to 1, which makes \"fluid.prefs.compositePanel\" fail to render the composite panel.\n"
     },
     {
+      "id": "21677",
       "author": "Cindy Li",
       "date": "2015-11-19T15:31:36.422-0500",
       "body": "Issued a pull request: <https://github.com/fluid-project/infusion/pull/655>\n"
     },
     {
+      "id": "21678",
       "author": "Justin Obara",
       "date": "2015-11-26T13:29:38.476-0500",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/655> ) into the project repository at 133da8e1de28b46cd7964a946c459f212ec6ab3d\n"

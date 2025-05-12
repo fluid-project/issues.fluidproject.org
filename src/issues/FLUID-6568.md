@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25370",
       "author": "Justin Obara",
       "date": "2020-10-29T08:45:50.506-0400",
       "body": "That's a good point. I wonder if we can combine this with CD for deploying to the build site?\n"
     },
     {
+      "id": "25371",
       "author": "Ned Zimmerman",
       "date": "2020-10-29T09:12:06.602-0400",
       "body": "Probably, although I think it makes sense to get the CI task in place ASAP and then figure out where to deploy, etc.\n"

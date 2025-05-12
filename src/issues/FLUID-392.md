@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19528",
       "author": "Shaw-Han Liem",
       "date": "2008-03-19T11:13:20.000-0400",
       "body": "Notes are in wiki with photos.\n"

@@ -29,31 +29,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18423",
       "author": "Anastasia Cheetham",
       "date": "2008-02-06T15:03:39.000-0500",
       "body": "Current thinking on how this should behave can be found at\\\n<http://fluidproject.org/work/keyboardtest/keyboardtest.html>\n"
     },
     {
+      "id": "18426",
       "author": "Michelle D'Souza",
       "date": "2008-04-07T15:41:34.000-0400",
       "body": "A thorough testing and assessment of this behaviour is needed to ensure that keyboard navigation works as expected.\n"
     },
     {
+      "id": "18428",
       "author": "Michelle D'Souza",
       "date": "2008-04-07T15:42:01.000-0400",
       "body": "Jonathan, can you take a look at this?\n"
     },
     {
+      "id": "18430",
       "author": "Jonathan Hung",
       "date": "2008-04-08T11:17:27.000-0400",
       "body": "The multiple focus is the most confusing aspect of the mock-up. When a link is selected using a tab, I expect that hitting down-arrow will move me to the next link below, but instead the portal changes focus to the next to the right.\n\nI guess I was expecting the same behaviour that is possible with the outer (portal) container to apply to the contents inside the container. (Arrow keys navigate within a list).\n\nFood for thought:\\\nWhat if a portal container contains multiple items not necessarily in a list (like a Weather portlet with a 5 day forecast horizontally and a list of the days in the extended 14 day forcast below that... and each item \"clickable\"). How will a user navigate that given the above portal navigation scheme?\n"
     },
     {
+      "id": "18433",
       "author": "Michelle D'Souza",
       "date": "2008-04-08T15:30:27.000-0400",
       "body": "Jonathan tested the potlet reordering and confirmed that we can navigate inside a portlet with the keyboard.\n"
     },
     {
+      "id": "18435",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:45.569-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

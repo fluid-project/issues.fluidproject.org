@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11599",
       "author": "Justin Obara",
       "date": "2015-09-30T09:50:36.021-0400",
       "body": "For creating the read only input and textarea, you just need to add a \"readonly\" attribute.\n\n<http://jsfiddle.net/nc23552j/>\n"
     },
     {
+      "id": "11600",
       "author": "Justin Obara",
       "date": "2015-10-05T10:17:22.013-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/first-discovery/pull/102> ) into the project repo at 9802ac5333b0cbac4a40adbaa9df79c739a8f70b\n"

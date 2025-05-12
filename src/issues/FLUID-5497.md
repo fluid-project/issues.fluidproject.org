@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19021",
       "author": "Antranig Basman",
       "date": "2014-08-22T16:08:18.249-0400",
       "body": "Merged into trunk at revision b3926266d844dd15ffb1cd0146d1cec33c12a0d2\n"
     },
     {
+      "id": "19027",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:24.576-0400",
       "body": "Reopening to change the fix version to 1.9\n"

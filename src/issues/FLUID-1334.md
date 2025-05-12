@@ -44,71 +44,85 @@
   ],
   "comments": [
     {
+      "id": "18224",
       "author": "Justin Obara",
       "date": "2008-08-28T08:24:56.000-0400",
       "body": "added some other OS's that the issue occurs in\n"
     },
     {
+      "id": "18226",
       "author": "Justin Obara",
       "date": "2008-09-02T09:44:24.000-0400",
       "body": "'screenshot-1' shows the portlet avatar. Notice how far off to the right the pointer is while dragging the avatar.\n"
     },
     {
+      "id": "18228",
       "author": "Antranig Basman",
       "date": "2008-09-07T22:33:20.000-0400",
       "body": "This is another aspect of the pointer offset issue <https://fluidproject.atlassian.net/browse/FLUID-1335#icft=FLUID-1335> and should be corrected at the same time.\n"
     },
     {
+      "id": "18230",
       "author": "Allison Bloodworth",
       "date": "2008-09-16T21:45:08.000-0400",
       "body": "If the portlet shrinks when picked up, the avatar should shrink towards the pointer so it remains \"attached\" to the pointer.\n"
     },
     {
+      "id": "18233",
       "author": "Justin Obara",
       "date": "2008-09-22T12:58:44.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "18236",
       "author": "Justin Obara",
       "date": "2008-12-03T12:11:53.000-0500",
       "body": "Bug Parade  0.6 release\n"
     },
     {
+      "id": "18238",
       "author": "Antranig Basman",
       "date": "2008-12-10T14:14:04.000-0500",
       "body": "This is really an issue based on being unable to control the avatar size relative to its visible area. We now make efforts, where the \"cloning\" strategy use used to make the avatar, to set its CSS size to the original size - however, for this particular sample, the markup is organised in such a way that it does not respond to this width specification, this resulting in a mismatch between the visual appearance of the avatar and its actual measured size. Therefore I am assigning this to a markup/CSS wizard for attention 😛\n"
     },
     {
+      "id": "18242",
       "author": "Gonzalo David Silverio",
       "date": "2008-12-12T09:41:20.000-0500",
       "body": "A question - who is responsible for the CSS - the component of the implementor?\n\nSetting  the direct descendants of '.ui-draggable-dragging' to 100% width fixes this - but not sure how feasible that is.\n"
     },
     {
+      "id": "18244",
       "author": "Jacob Farber",
       "date": "2008-12-12T11:09:39.000-0500",
       "body": "Removed fixed width, should now stretch to avatar container\n"
     },
     {
+      "id": "18247",
       "author": "Anastasia Cheetham",
       "date": "2008-12-12T17:33:00.000-0500",
       "body": "This seems good now. There's still weirdness in IE if there's scrolling, but I think that's been there for a long time. It's disconcerting if you try to pick the Image Reorderer portlet up when it's mostly off screen.\n"
     },
     {
+      "id": "18249",
       "author": "Justin Obara",
       "date": "2008-12-12T22:29:55.000-0500",
       "body": "There is an issue with the avatar not being the correct size in Safari 3.1. In talking with Jacob, it seems that this is due to the fact that the container sizes are wrong for Safari.\n\nFiled as <https://fluidproject.atlassian.net/browse/FLUID-1972#icft=FLUID-1972>\n"
     },
     {
+      "id": "18253",
       "author": "Justin Obara",
       "date": "2008-12-12T22:33:30.000-0500",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"
     },
     {
+      "id": "18255",
       "author": "Gonzalo David Silverio",
       "date": "2008-12-17T17:21:49.000-0500",
       "body": "WIN: IE6, IE7\n\nTop distance between cursor and avatar proportional to height of portlet/avatar. Short portlets cursor remains on avatar on the correlate spot drag was initiated on portlet. On tall portlets, distance at top  between cursor and avatar increases.&#x20;\n"
     },
     {
+      "id": "18258",
       "author": "Gonzalo David Silverio",
       "date": "2008-12-17T17:26:49.000-0500",
       "body": "Safari 3.2\\\nAvatar size seems off. Some avatars are a fraction of the size as their correlates (Calendar). Some are larger that the viewport (Bookmarks Portlet)\n"

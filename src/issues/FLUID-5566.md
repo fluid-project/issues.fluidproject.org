@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13386",
       "author": "Jonathan Hung",
       "date": "2015-12-14T08:30:27.698-0500",
       "body": "This has been addressed using the docpad redirector plugin which uses meta refresh redirects.\n"

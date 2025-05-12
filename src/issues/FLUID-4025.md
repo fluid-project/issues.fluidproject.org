@@ -35,26 +35,31 @@
   ],
   "comments": [
     {
+      "id": "16015",
       "author": "Justin Obara",
       "date": "2011-03-07T09:58:38.338-0500",
       "body": "Some notes from the FSS meeting\n\nfor percentages we should have fss classes for 1 - 100, we can move the less common ones to a separate file if need be.\n"
     },
     {
+      "id": "16017",
       "author": "Justin Obara",
       "date": "2011-03-15T07:42:43.838-0400",
       "body": "Attached flexible-columns.css which was provided by Gary on the this fluid-work e-mail thread <http://old.nabble.com/FSS-expanded-flexible-columns-to31098851.html>\n"
     },
     {
+      "id": "16019",
       "author": "Justin Obara",
       "date": "2011-03-16T17:14:09.174-0400",
       "body": "Pushed the contributed flex container styles <https://github.com/fluid-project/infusion/commit/a06ef22e3b3d6c5544d0a9e400ca7a8c2d67c8d2> . I made some changes though. 1) changed the names to match that of the other fss flex containers 2) removed the float and display styles 3) did not use the IE 7 hack\n"
     },
     {
+      "id": "16021",
       "author": "Justin Obara",
       "date": "2011-03-16T17:14:44.803-0400",
       "body": "Assigning to you Heidi to see if you would like to add any more container or column styles.\n"
     },
     {
+      "id": "16023",
       "author": "Justin Obara",
       "date": "2011-03-17T13:54:06.400-0400",
       "body": "The fix for the original issue has been committed. Any new column/container styles that we want to add will be filed as separate jiras.\n"

@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20362",
       "author": "Eli Cochran",
       "date": "2008-11-07T11:47:20.000-0500",
       "body": "Fixed in Uploader 2. In Uploader 2, there currently is not a Pause button. This should probably be reopened as a Design issue since there is now, not a way to Stop or Pause the Upload\n"
     },
     {
+      "id": "20363",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:49.535-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

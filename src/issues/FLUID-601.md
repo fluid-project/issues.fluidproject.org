@@ -39,16 +39,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18993",
       "author": "Michelle D'Souza",
       "date": "2008-05-16T09:57:04.000-0400",
       "body": "In the lightbox, the container holding the thumbnails is not a drop target. Dropping on the drop marker is the same as dropping on the container which is invalid.&#x20;\n\nThe bug here is that the drop marker should disappear when the mouse is no longer hovering over a valid drop target.&#x20;\n"
     },
     {
+      "id": "18996",
       "author": "Antranig Basman",
       "date": "2008-08-08T10:26:50.000-0400",
       "body": "Resolved as part of comprehensive drag and drop reorganisation at rev 5338 (\"DragManager\" created)\n"
     },
     {
+      "id": "18997",
       "author": "Justin Obara",
       "date": "2008-11-13T13:31:46.000-0500",
       "body": "appears to have been fixed\n"

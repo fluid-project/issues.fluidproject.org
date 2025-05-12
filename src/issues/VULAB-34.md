@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27373",
       "author": "Blake E",
       "date": "2008-09-26T15:05:06.000-0400",
       "body": "pushed to vulab2\n"
     },
     {
+      "id": "27374",
       "author": "Blake E",
       "date": "2008-10-02T21:58:40.000-0400",
       "body": "with the recent shift in what we are doing with vulab in regards to the survey tool (a pluggable tool with a vulab api), this issue is being depreciated for api planning issues.\n\nthe initial survey plugin with be a stripped down version of the phpESP survey system.\n"
     },
     {
+      "id": "27375",
       "author": "Blake E",
       "date": "2008-10-02T21:59:01.000-0400",
       "body": "depreciated for api planning issues.\n"

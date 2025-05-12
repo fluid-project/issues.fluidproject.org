@@ -28,11 +28,13 @@
   ],
   "comments": [
     {
+      "id": "26221",
       "author": "Caren Watkins",
       "date": "2018-07-04T19:33:25.065-0400",
       "body": "I've reopened this Jira as a way to query a few items in the list. Please see the Description component for the red content. \n"
     },
     {
+      "id": "26222",
       "author": "Jonathan Hung",
       "date": "2018-07-12T15:44:38.619-0400",
       "body": "Caren Watkins can this Jira be closed? If you need a space for tracking work, you can use the [Iteration Plan page](https://wiki.fluidproject.org/display/fluid/Floe+Iteration+Plan) or file separate Jiras for tasks.\n"

@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18711",
       "author": "Colin Clark",
       "date": "2008-10-21T23:15:20.000-0400",
       "body": "I've closed this issue because it appears to be a stale ux planning task. We can re-file it if it becomes relevant in the context of Uploader 2.\n"

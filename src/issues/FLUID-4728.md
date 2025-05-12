@@ -31,16 +31,19 @@
   ],
   "comments": [
     {
+      "id": "23994",
       "author": "Justin Obara",
       "date": "2012-07-10T12:36:18.068-0400",
       "body": "\"Screen Shot.png\" shows the hover style (border) when the \"Add More\" button is disabled.\n"
     },
     {
+      "id": "23996",
       "author": "Neel Dalsania",
       "date": "2016-03-06T08:26:33.673-0500",
       "body": "I have edited the code and i think the hover issue is solved.\\\nI have attached the link of the screenshot, suggest any changes.\\\n<https://www.dropbox.com/s/bhd0qk4bcfntimk/Screenshot%20from%202016-03-06%2018%3A43%3A38.png?dl=0>\n"
     },
     {
+      "id": "23997",
       "author": "Justin Obara",
       "date": "2016-03-07T10:42:11.036-0500",
       "body": "Neel Dalsania it's hard to tell from the screenshot. Could you file a pull request with your changes?\n"

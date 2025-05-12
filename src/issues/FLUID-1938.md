@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "17644",
       "author": "Justin Obara",
       "date": "2008-12-08T10:17:41.000-0500",
       "body": "'screenshot-1' shows the overlap of text in the colour section with the wide font spacing selected\n"
     },
     {
+      "id": "17647",
       "author": "Justin Obara",
       "date": "2009-01-23T14:18:53.000-0500",
       "body": "Example no longer has this section\n"

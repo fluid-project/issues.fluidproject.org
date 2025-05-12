@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16717",
       "author": "Antranig Basman",
       "date": "2015-02-13T15:23:36.824-0500",
       "body": "Committed to trunk at <https://github.com/fluid-project/infusion/commit/6fd1d7f4688fbe7ca5d28de7483aa502a63899d1> on Jan 24th, 2014\n"
     },
     {
+      "id": "16719",
       "author": "Justin Obara",
       "date": "2015-06-26T09:50:56.799-0400",
       "body": "Reopening to change the fix version to 1.9\n"

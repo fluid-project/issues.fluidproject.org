@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10278",
       "author": "Jonathan Hung",
       "date": "2010-04-20T15:36:01.000-0400",
       "body": "Implementing this feature may help create a usable multi-user demo server.\n"

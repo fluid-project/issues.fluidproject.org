@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27392",
       "author": "David Makalsky",
       "date": "2008-10-03T13:33:04.000-0400",
       "body": "pushed to VULAB4\n"
     },
     {
+      "id": "27393",
       "author": "David Makalsky",
       "date": "2008-10-27T13:26:03.000-0400",
       "body": "decided on ftp as a prototype transport, will refactor to http subsequently\n"

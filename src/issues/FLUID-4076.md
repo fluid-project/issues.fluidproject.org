@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21749",
       "author": "Antranig Basman",
       "date": "2011-02-18T01:12:12.536-0500",
       "body": "Fixed at revision ce28f7dbd5d21b94ee84e06a4bd4745e4b752c6d. Please consult commentary at <http://www.mail-archive.com/fluid-work@fluidproject.org/msg05878.html> and description on <https://fluidproject.atlassian.net/browse/FLUID-3487#icft=FLUID-3487> for details of why the current DMB implementation is the way it is. It is unfortunately impossible to test reliably without manual testing or \"robot\" simulation, but this implementation is now regularly receiving QA as part of CollectionSpace.\n"

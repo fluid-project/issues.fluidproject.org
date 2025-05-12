@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22157",
       "author": "Justin Obara",
       "date": "2008-12-03T12:06:26.000-0500",
       "body": "Bug Parade  0.6 release\n"
     },
     {
+      "id": "22160",
       "author": "Antranig Basman",
       "date": "2008-12-10T13:55:04.000-0500",
       "body": "Fixed at revision 6183\n\n\"layout\" property is now exposed via layoutHandler reference (also tested)\\\nnew Reorderer event \"onRefresh\"\n"
     },
     {
+      "id": "22162",
       "author": "Michelle D'Souza",
       "date": "2008-12-12T12:34:10.000-0500",
       "body": "I reviewed the code and athena7 reviewed the functionality. Both look fine.&#x20;\n"

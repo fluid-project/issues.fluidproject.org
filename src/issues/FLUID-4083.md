@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20084",
       "author": "Anastasia Cheetham",
       "date": "2011-10-14T15:52:07.420-0400",
       "body": "Testing this after the 1.4 release, using <http://build.fluidproject.org/uploader/hourly/image-gallery.php>, this is still an issue.\n"
     },
     {
+      "id": "20085",
       "author": "Anastasia Cheetham",
       "date": "2014-07-31T15:56:44.308-0400",
       "body": "Latest demo link is: <http://build.fluidproject.org/infusion/demos/uploader/>\n"

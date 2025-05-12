@@ -31,21 +31,25 @@
   ],
   "comments": [
     {
+      "id": "12455",
       "author": "Colin Clark",
       "date": "2009-10-14T18:36:09.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "12456",
       "author": "Colin Clark",
       "date": "2009-10-14T18:36:09.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "12457",
       "author": "Colin Clark",
       "date": "2009-10-16T18:30:11.000-0400",
       "body": "Yura started this one at r8346, finished it at r8370, and Michelle restructured it into the right place at r8372. We're done.\n"
     },
     {
+      "id": "12458",
       "author": "Justin Obara",
       "date": "2009-11-03T11:26:59.000-0500",
       "body": "closed as per previous comment\n"

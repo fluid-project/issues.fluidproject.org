@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21568",
       "author": "Laurel Williams",
       "date": "2009-07-07T14:20:38.000-0400",
       "body": "Colin commented: In postProcessor.php, I notice that you define $minified and $includes as global variables. How come? If it's necessary, is there a way you can define a class instead that will store this state and the methods that depend on it without requiring globals?\n"
     },
     {
+      "id": "21569",
       "author": "Laurel Williams",
       "date": "2009-07-13T10:38:23.000-0400",
       "body": "Completed this task.\n"

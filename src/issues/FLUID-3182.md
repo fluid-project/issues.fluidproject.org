@@ -27,26 +27,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18716",
       "author": "Justin Obara",
       "date": "2009-09-22T10:55:45.000-0400",
       "body": "Bug Parade Infusion 1.1.2&#x20;\n"
     },
     {
+      "id": "18718",
       "author": "Jacob Farber",
       "date": "2009-09-22T23:09:04.000-0400",
       "body": "Since we could implement a the function in the integration demo, I figured I could save you the trouble and just delete it from the simple demo.\n"
     },
     {
+      "id": "18720",
       "author": "Jacob Farber",
       "date": "2009-09-30T16:46:08.000-0400",
       "body": "I removed the function, awaiting review\n"
     },
     {
+      "id": "18721",
       "author": "Colin Clark",
       "date": "2009-10-02T18:39:48.000-0400",
       "body": "I've review Jacob's change and it looks good. +1\n"
     },
     {
+      "id": "18723",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T11:27:03.034-0500",
       "body": "Reopening these issues in order to add the inline edit component to them.&#x20;\n"

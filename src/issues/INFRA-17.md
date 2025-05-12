@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25927",
       "author": "Giovanni Tirloni",
       "date": "2017-01-13T11:06:47.580-0500",
       "body": "It seems this could be addressed by the work being done on the Vagrant plugin. Would it make sense to add this requirement there and close this ticket?\n"
     },
     {
+      "id": "25928",
       "author": "Alan Harnum",
       "date": "2017-01-13T11:17:05.557-0500",
       "body": "Yes, this makes sense to me - this was filed a year and a half ago & our thinking has evolved a lot since then.\n"

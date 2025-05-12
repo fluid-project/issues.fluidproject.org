@@ -43,21 +43,25 @@
   ],
   "comments": [
     {
+      "id": "18198",
       "author": "Justin Obara",
       "date": "2008-08-26T11:25:24.000-0400",
       "body": "'screenshot-1' shows the hover message when pointer over an inline edit field\n"
     },
     {
+      "id": "18199",
       "author": "Justin Obara",
       "date": "2008-08-26T11:26:03.000-0400",
       "body": "'screenshot-2' shows the hover message when the inline edit field is in edit mode\n"
     },
     {
+      "id": "18200",
       "author": "Antranig Basman",
       "date": "2008-11-13T21:59:58.000-0500",
       "body": "Fixed at revision 6034\n"
     },
     {
+      "id": "18201",
       "author": "Justin Obara",
       "date": "2008-11-14T08:56:56.000-0500",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

@@ -57,21 +57,25 @@
   ],
   "comments": [
     {
+      "id": "26340",
       "author": "Gregor Moss",
       "date": "2018-05-31T14:57:46.146-0400",
       "body": "Consider feature detection using Modernizr or similar, maybe using polyfills\n"
     },
     {
+      "id": "26341",
       "author": "Gregor Moss",
       "date": "2019-01-17T23:57:07.979-0500",
       "body": "Could be solved by using an older specification of the grid property alongside the new one and using an -ms prefix:\\\n<https://www.w3.org/TR/2011/WD-css3-grid-layout-20110407/>\\\n<https://www.smashingmagazine.com/2017/11/css-grid-supporting-browsers-without-grid/>\n\nor potentially using floats or this:\n\n```java\ndisplay: table-cell\n```\n"
     },
     {
+      "id": "26342",
       "author": "Michelle D'Souza",
       "date": "2019-01-18T08:51:15.304-0500",
       "body": "Note that it was discovered during the crit testing that this includes IE11\n"
     },
     {
+      "id": "26343",
       "author": "Gregor Moss",
       "date": "2019-01-21T20:13:46.460-0500",
       "body": "This has also been confirmed on an iPad 2 running iOS 9.3.5\n"

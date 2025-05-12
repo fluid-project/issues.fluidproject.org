@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26389",
       "author": "Eloisa Guerrero",
       "date": "2017-10-27T10:48:00.075-0400",
       "body": "From MDN web docs (<https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag)> seems we needed a meta viewport tag:\n\n`<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">`\n\n \n"

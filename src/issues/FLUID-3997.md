@@ -37,36 +37,43 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16439",
       "author": "Justin Obara",
       "date": "2011-02-23T10:21:06.109-0500",
       "body": "The second issue mentioned has been filed as <https://fluidproject.atlassian.net/browse/FLUID-4082#icft=FLUID-4082>\n"
     },
     {
+      "id": "16441",
       "author": "heidi valles",
       "date": "2011-09-13T15:06:54.446-0400",
       "body": "Still a problem for 1.4\n"
     },
     {
+      "id": "16442",
       "author": "Anastasia Cheetham",
       "date": "2011-10-03T10:38:37.056-0400",
       "body": "Testing for the 1.4 release, I'm seeing this same problem in IE9 on Win 7. Adjusting the issue details accordingly. You can occasionally tab to the Browse/Add button once on the first try, but subsequent attempts (i.e. after tabbing through other controls) fail.\n"
     },
     {
+      "id": "16444",
       "author": "Cindy Li",
       "date": "2011-10-03T16:12:07.431-0400",
       "body": "Testing for the 1.4 release, the same issue in IE6 on Win XP.\n"
     },
     {
+      "id": "16446",
       "author": "Cindy Li",
       "date": "2011-10-03T16:18:06.788-0400",
       "body": "With IE6 on Win XP, another issue discovered at the testing for 1.4 release is that, once the files are added to the queue, cannot tab onto the file queue to remove.\n"
     },
     {
+      "id": "16448",
       "author": "Justin Obara",
       "date": "2014-05-22T14:24:15.486-0400",
       "body": "Due to a cross site scripting vulnerability we have removed flash support from the uploader. See <https://fluidproject.atlassian.net/browse/FLUID-5354#icft=FLUID-5354>\n"
     },
     {
+      "id": "16450",
       "author": "Justin Obara",
       "date": "2014-05-22T14:25:17.532-0400",
       "body": "adding a fix version and will close after\n"

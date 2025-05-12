@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14677",
       "author": "Colin Clark",
       "date": "2010-09-07T11:14:36.976-0400",
       "body": "Here's a thread on the Infusion-users mailing list explaining how to use the Reorderer with a JSON-based callback: <http://fluidproject.org/pipermail/infusion-users/2010-July/000204.html>\n"
     },
     {
+      "id": "14678",
       "author": "Colin Clark",
       "date": "2010-09-07T11:15:54.074-0400",
       "body": "Here's a conversation in #fluid-work explaining how to render tables with the Renderer: <http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2010-06-16>\n"
     },
     {
+      "id": "14679",
       "author": "Anastasia Cheetham",
       "date": "2011-09-27T14:16:56.935-0400",
       "body": "Colin, could you elaborate on what you're envisioning for the JSON-based reorderer callback? I've reviewed the information at\\\n<http://wiki.fluidproject.org/display/fluid/Talking+to+the+Server+Using+The+afterMove+Event>\\\nWhat changes are you thinking of?\n"

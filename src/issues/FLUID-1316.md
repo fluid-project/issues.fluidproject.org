@@ -37,16 +37,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20869",
       "author": "Justin Obara",
       "date": "2008-09-22T12:52:59.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "20870",
       "author": "Justin Obara",
       "date": "2010-05-07T13:05:27.474-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "20871",
       "author": "Justin Obara",
       "date": "2014-07-07T15:34:41.749-0400",
       "body": "Opera is no longer a supported browser\n"

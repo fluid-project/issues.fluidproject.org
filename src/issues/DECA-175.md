@@ -45,11 +45,13 @@
   ],
   "comments": [
     {
+      "id": "10084",
       "author": "Jonathan Hung",
       "date": "2012-02-10T15:01:46.132-0500",
       "body": "Styling guide for Decapod 0.5 Exporter now attached.\n\nGet this code from my bitbucket repo:\\\n<https://bitbucket.org/jhung/decapod-ui>\n"
     },
     {
+      "id": "10085",
       "author": "Jonathan Hung",
       "date": "2012-05-16T13:34:35.845-0400",
       "body": "Done\n"

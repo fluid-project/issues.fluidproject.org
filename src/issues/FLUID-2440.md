@@ -41,11 +41,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25001",
       "author": "Jonathan Hung",
       "date": "2011-01-07T10:03:43.392-0500",
       "body": "Doesn't seem to affect Opera 12 in Win7.\n"
     },
     {
+      "id": "25002",
       "author": "Justin Obara",
       "date": "2014-07-09T09:49:39.292-0400",
       "body": "Can no longe reproduce the issue. Although it is a bit confusing about where the issue is as the description mentions safari and the environments mention opera. Safari 7 is working. Opera is no longer supported.\n"

@@ -39,11 +39,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23768",
       "author": "Anastasia Cheetham",
       "date": "2014-04-02T16:06:12.493-0400",
       "body": "It's likely that NVDA is capturing ctrl+(arrow) for its own use. We should double-check this, and if so, consider closing this issue.\n"
     },
     {
+      "id": "23769",
       "author": "Justin Obara",
       "date": "2015-06-15T10:32:11.509-0400",
       "body": "I wonder if it may have to do with the screenreader being in the wrong mode, because the ctrl-arrow combination works in the grid reorderer demo. I guess it could also have to do with the markup of the demos and/or of the items being reordered.\n"

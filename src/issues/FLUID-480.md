@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18621",
       "author": "Anastasia Cheetham",
       "date": "2008-04-21T15:47:48.000-0400",
       "body": "Fixed. The cursor now changes to the 'move' cursor.\n"
     },
     {
+      "id": "18622",
       "author": "Justin Obara",
       "date": "2008-11-13T13:30:40.000-0500",
       "body": "Appears to have been fixed\n"

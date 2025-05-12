@@ -38,16 +38,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19783",
       "author": "Justin Obara",
       "date": "2008-10-31T09:33:08.000-0400",
       "body": "design-watched\n"
     },
     {
+      "id": "19785",
       "author": "Antranig Basman",
       "date": "2008-11-03T14:14:01.000-0500",
       "body": "This is a native browser/OS issue - pasting of  \"special characters\" is going to be something near difficult/impossible to intercept or modify by means of Javascript.\n"
     },
     {
+      "id": "19788",
       "author": "Antranig Basman",
       "date": "2008-11-07T12:45:48.000-0500",
       "body": "This issue cannot be resolved. I have added some material to the test cases which are supplied for <https://fluidproject.atlassian.net/browse/FLUID-1767#icft=FLUID-1767> to verify the phenomenon. \"Interestingly\", if the edit field is observed using the debugger at a critical point, the newlines will be preserved and the test will pass. If the field is not observed at any point in the cycle, the newline will be \"magically\" removed by the browser and the test will fail.\n"

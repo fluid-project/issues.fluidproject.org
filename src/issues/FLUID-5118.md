@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17025",
       "author": "Justin Obara",
       "date": "2013-08-19T13:16:14.415-0400",
       "body": "Issued a pull request ( <https://github.com/fluid-project/infusion/pull/392> ) containing a test case demonstrating the issue.\n"
     },
     {
+      "id": "17026",
       "author": "Antranig Basman",
       "date": "2013-08-19T15:41:38.483-0400",
       "body": "Hi Justin - this behaviour is just as designed, and it took some effort to get it that way! Options are always expanded based on the site of configuration and not the target component. This is because it is the original requester whose environment is relevant to configuration he provides. He cannot be expected to anticipate the destination site, and hence adjust his configuration for an unforseeable target - they may even be multiple such targets.\n"

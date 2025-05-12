@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25497",
       "author": "Giovanni Tirloni",
       "date": "2021-03-03T13:05:04.508-0500",
       "body": "Node.js 12 is still in active maintenance.\n"

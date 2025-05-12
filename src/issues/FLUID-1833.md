@@ -41,11 +41,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17573",
       "author": "Colin Clark",
       "date": "2008-11-26T13:42:21.000-0500",
       "body": "Welcome to the modern world, Pager.\n\nPagerBar still needs to be refactored, as its event binding code is a bit over-engineered. Otherwise, we've got a fully modern Pager that is ready to be render-ified and grown.\n"
     },
     {
+      "id": "17575",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:45.067-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

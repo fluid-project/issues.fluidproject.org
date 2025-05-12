@@ -46,16 +46,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24271",
       "author": "Justin Obara",
       "date": "2011-01-17T09:57:17.414-0500",
       "body": "I think we should try to move these to manual tests where ever possible.\n"
     },
     {
+      "id": "24273",
       "author": "Michelle D'Souza",
       "date": "2011-01-25T14:23:59.326-0500",
       "body": "There are several unit tests that need to be written so that we can get rid of most of these manual tests. I've put the details in a readme in the manual tests folder and will update that as the work happens.&#x20;\n"
     },
     {
+      "id": "24274",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:29.150-0400",
       "body": "Reopening to change the fix version to 1.9\n"

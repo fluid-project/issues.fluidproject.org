@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26380",
       "author": "Justin Obara",
       "date": "2019-09-13T07:54:39.998-0400",
       "body": "The idea of further description for all of the fields is a good idea.\n\nIn the example of image description that you use, is the description field the image caption, if so, maybe we should call it caption.\n"

@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23087",
       "author": "Justin Obara",
       "date": "2009-03-16T15:14:37.000-0400",
       "body": "you can shift-tab to get to the \"cancel\" button\n"
     },
     {
+      "id": "23088",
       "author": "Justin Obara",
       "date": "2009-05-14T10:16:53.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "23090",
       "author": "Antranig Basman",
       "date": "2009-08-07T10:58:25.000-0400",
       "body": "It is unlikely that this issue can be resolved. Tab order is a native browser issue, and also FCKeditor functions by dynamically creating an iframe within the document which will further interfere with attempts to manipulate tab order. If the issue does not appear on IE8 I suggest we mark it as \"Won't (can't) fix\".\n"

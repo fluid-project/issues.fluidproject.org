@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25837",
       "author": "Giovanni Tirloni",
       "date": "2018-06-26T10:58:31.656-0400",
       "body": "Pinned containers to new version and redeployed.\n\n<https://github.com/inclusive-design/ops/blob/master/playbooks/docker_containers.yml#L64>\n"

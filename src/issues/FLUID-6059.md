@@ -43,11 +43,13 @@
   ],
   "comments": [
     {
+      "id": "24180",
       "author": "Justin Obara",
       "date": "2016-11-11T09:48:02.257-0500",
       "body": "IMG\\_0003.PNG shows the initial state, and IMG\\_0004.PNG shows the tooltip blocking the edit button. The tooltip appears the first time you tap the edit button, a second tap is needed to activate the button.\n"
     },
     {
+      "id": "27870",
       "author": "Justin Obara",
       "date": "2024-07-23T13:20:31.240-0400",
       "body": "Could not reproduce with Safari 17.5 on macOS 14.5. A tooltip no longer appears.\n"

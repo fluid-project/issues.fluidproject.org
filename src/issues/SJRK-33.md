@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "26411",
       "author": "Alan Harnum",
       "date": "2017-11-09T16:28:51.923-0500",
       "body": "This is related to <https://fluidproject.atlassian.net/browse/SJRK-34#icft=SJRK-34>. Multimodality of the story introduces some complexity, and would change the context of the \"Listen to this story\" button (perhaps the text on it should change).\n"
     },
     {
+      "id": "26412",
       "author": "Gregor Moss",
       "date": "2019-01-08T16:05:51.342-0500",
       "body": "with the addition of video (<https://fluidproject.atlassian.net/browse/SJRK-27#icft=SJRK-27>) and audio (<https://fluidproject.atlassian.net/browse/SJRK-31#icft=SJRK-31>) blocks, individual media file playback is incorporated. Still need to figure out a way to listen to the story including the audio and video content, in order. Transcripts are currently read aloud.\n"

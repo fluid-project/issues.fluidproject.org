@@ -38,21 +38,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11553",
       "author": "Justin Obara",
       "date": "2015-02-20T16:02:39.834-0500",
       "body": "work currently underway in <https://github.com/jobara/first-discovery/tree/FLOE-280>\n"
     },
     {
+      "id": "11554",
       "author": "Justin Obara",
       "date": "2015-03-19T12:22:14.049-0400",
       "body": "requires FLUID-5552 and FLUID-5606. After those are both merged into master, Infusion will need to be updated in the First Discovery Tool.\n"
     },
     {
+      "id": "11555",
       "author": "Justin Obara",
       "date": "2015-03-27T09:21:00.843-0400",
       "body": "Submitted two pull requests:\n\n1\\) Infusion Upgrade\\\n<https://github.com/fluid-project/first-discovery/pull/27>\n\n2\\) speak text adjuster\\\n<https://github.com/fluid-project/first-discovery/pull/28>\n"
     },
     {
+      "id": "11556",
       "author": "Cindy Li",
       "date": "2015-03-27T11:58:34.040-0400",
       "body": "The pull request #27 for the infusion upgrade has been merged @ 5c048f2c043d8b3f06eeebe39d144c21f3e8d711\n\nThe pull request #28 for adding speak text adjuster has been merged @ 910bb5f2e0a366f01cbeb7ff8ea3bdd7ca1c8d47\n"

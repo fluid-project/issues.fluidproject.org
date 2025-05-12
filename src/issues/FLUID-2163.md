@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21895",
       "author": "Antranig Basman",
       "date": "2009-02-17T12:35:02.000-0500",
       "body": "Basic demo now implemented. It is somewhat slow, and needs work on the CSS, but most of the core functionality is now there, including sorting, paging, as well as the \"highlight upcoming column range\" feature which was specified in the wireframe. Will be polished and rounded out for the 1.0 release.\n"
     },
     {
+      "id": "21896",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:54.790-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

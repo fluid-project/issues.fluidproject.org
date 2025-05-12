@@ -47,16 +47,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23728",
       "author": "Justin Obara",
       "date": "2009-05-14T10:09:32.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "23729",
       "author": "Anastasia Cheetham",
       "date": "2010-12-22T11:13:41.940-0500",
       "body": "This was still observed during 1.3 testing.\n"
     },
     {
+      "id": "23730",
       "author": "Justin Obara",
       "date": "2014-07-08T11:03:31.220-0400",
       "body": "Colin Clark is this still an issue?\n"

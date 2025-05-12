@@ -36,26 +36,31 @@
   ],
   "comments": [
     {
+      "id": "23311",
       "author": "Laurel Williams",
       "date": "2009-12-17T12:23:07.000-0500",
       "body": "a screenshot of the double button issue.\n"
     },
     {
+      "id": "23312",
       "author": "Justin Obara",
       "date": "2010-11-15T12:52:27.051-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "23313",
       "author": "Cindy Li",
       "date": "2010-11-17T12:24:53.742-0500",
       "body": "\"FLUID-3433-1.patch.txt\" fixes the extra \"d\" button issue, also adjusts the position and size of the download spinner so it does not overlap the button text.\n"
     },
     {
+      "id": "23314",
       "author": "Michelle D'Souza",
       "date": "2010-11-18T13:48:28.804-0500",
       "body": "Patch committed at revision 10281.&#x20;\n"
     },
     {
+      "id": "23315",
       "author": "Cindy Li",
       "date": "2010-11-18T15:20:39.918-0500",
       "body": "Issue closed!\n"

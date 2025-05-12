@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23555",
       "author": "Colin Clark",
       "date": "2015-08-18T14:58:48.558-0400",
       "body": "Antranig Basman, Justin Obara, thoughts on this?\n"
     },
     {
+      "id": "23556",
       "author": "Justin Obara",
       "date": "2015-09-03T14:34:31.499-0400",
       "body": "Merged in pull request ( <https://github.com/fluid-project/infusion/pull/631> ) into the project repo at a1e3d601478e57276d4143fca5bcbe00f9c6b0cd\n"

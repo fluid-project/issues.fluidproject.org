@@ -45,31 +45,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23938",
       "author": "Colin Clark",
       "date": "2010-03-30T13:10:39.000-0400",
       "body": "Some work has been done on this in the Framework Concepts section of the documentation:\n\n<http://wiki.fluidproject.org/display/fluid/Framework+Concepts#FrameworkConcepts-MVC>\n\nIn the future, some further conceptual documentation with the diagrams we've used in slide presentations might be useful.\n"
     },
     {
+      "id": "23943",
       "author": "Justin Obara",
       "date": "2011-03-23T16:46:09.274-0400",
       "body": "closed as a test, will reopening\n"
     },
     {
+      "id": "23949",
       "author": "Justin Obara",
       "date": "2011-03-23T16:47:06.212-0400",
       "body": "closed as a test, but not working, reopenning.\n"
     },
     {
+      "id": "23952",
       "author": "Harris Wong",
       "date": "2011-05-16T16:09:54.490-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "23954",
       "author": "Colin Clark",
       "date": "2011-05-18T12:54:57.655-0400",
       "body": "This issue is pretty broad, and better resolved with finer-grained tickets.\n"
     },
     {
+      "id": "23957",
       "author": "Justin Obara",
       "date": "2011-06-22T17:12:55.227-0400",
       "body": "fixing resolution status\n"

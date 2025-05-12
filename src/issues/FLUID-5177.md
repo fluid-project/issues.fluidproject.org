@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14469",
       "author": "Justin Obara",
       "date": "2013-10-18T13:14:13.333-0400",
       "body": "Submitted pull request <https://github.com/fluid-project/infusion/pull/419>\n\nThis pull request doesn't actually pass down the DOM event object. However, now that the DOM event is bound declaratively it is less strange to bind another handler declaratively, and possible to override the existing one. I believe this should be sufficient for solving any issues requiring the event object.\n"

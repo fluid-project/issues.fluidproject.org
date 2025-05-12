@@ -28,21 +28,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15095",
       "author": "Eli Cochran",
       "date": "2009-02-19T18:51:33.000-0500",
       "body": "We also need to update the documentation in the Wiki\n"
     },
     {
+      "id": "15098",
       "author": "Eli Cochran",
       "date": "2009-02-19T19:01:51.000-0500",
       "body": "Have checked in the correct text. Need to update the wiki\n"
     },
     {
+      "id": "15101",
       "author": "Anastasia Cheetham",
       "date": "2009-02-19T19:07:51.000-0500",
       "body": "I've reviewed the Readme file, and it looks good.\n"
     },
     {
+      "id": "15104",
       "author": "Eli Cochran",
       "date": "2009-02-19T19:56:26.000-0500",
       "body": "I've fixed the wiki entry here: <http://wiki.fluidproject.org/display/fluid/Enabling+Uploader+on+Local+File+Systems>\n"

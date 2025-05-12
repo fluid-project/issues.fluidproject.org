@@ -35,16 +35,19 @@
   ],
   "comments": [
     {
+      "id": "15241",
       "author": "Justin Obara",
       "date": "2014-06-06T09:44:37.041-0400",
       "body": "screenshot.png shows the textfield accompanying the volume slider is empty when the value is set to 0.\n"
     },
     {
+      "id": "15244",
       "author": "Justin Obara",
       "date": "2015-06-15T15:18:57.196-0400",
       "body": "Could not reproduce with Safari 8 or FF 38\n"
     },
     {
+      "id": "15247",
       "author": "Justin Obara",
       "date": "2015-06-26T09:50:55.290-0400",
       "body": "Reopening to change the fix version to 1.9\n"

@@ -25,21 +25,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22934",
       "author": "Jacob Farber",
       "date": "2009-06-02T11:35:12.000-0400",
       "body": "iPhone 3.0 firmware will contain lots of css3 capabilities, but what about earlier versions, or other versions of webkit?\n"
     },
     {
+      "id": "22936",
       "author": "heidi valles",
       "date": "2009-06-02T15:10:09.000-0400",
       "body": "mobile:\\\n-different versions of webkit\\\n-nokia\\\n-blackberry\n"
     },
     {
+      "id": "22939",
       "author": "Jacob Farber",
       "date": "2010-03-26T11:44:01.000-0400",
       "body": "Research is complete, and some interesting things have been found.\\\nSee <http://www.quirksmode.org/webkit.html> as an example\n"
     },
     {
+      "id": "22943",
       "author": "Michelle D'Souza",
       "date": "2011-01-24T10:11:07.050-0500",
       "body": "Reopening these issues to add the mobilecomponent\n"

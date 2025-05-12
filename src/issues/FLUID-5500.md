@@ -38,6 +38,7 @@
   ],
   "comments": [
     {
+      "id": "22132",
       "author": "Justin Obara",
       "date": "2014-08-26T09:48:46.927-0400",
       "body": "screenshot-default.png shows the white background on the icons when the default theme is applied. screenshot-contrast.png shows the missing background when the lgdg contrast theme is applied.&#x20;\n"

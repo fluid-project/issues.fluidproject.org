@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21730",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T11:24:52.899-0400",
       "body": "I am unable to reproduce this in v1.4, so it seems to have been fixed.\n"

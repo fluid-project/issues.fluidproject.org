@@ -33,16 +33,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13930",
       "author": "Anastasia Cheetham",
       "date": "2009-06-01T09:28:52.000-0400",
       "body": "I have added mention of this file as a separate dependency in the Uploader API documentation.\n"
     },
     {
+      "id": "13934",
       "author": "Colin Clark",
       "date": "2010-03-30T14:18:29.000-0400",
       "body": "This is by design: we don't know which pages will require progressive enhancement, so automatically including ProgressiveEnhancement.js in a custom build will be problematic in some cases.\n"
     },
     {
+      "id": "13938",
       "author": "Colin Clark",
       "date": "2010-03-30T14:19:03.000-0400",
       "body": "Anastasia updated the documentation to alert users to the need for ProgressiveEnhancement.js.\n"

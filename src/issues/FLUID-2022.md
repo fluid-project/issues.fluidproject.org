@@ -39,11 +39,13 @@
   ],
   "comments": [
     {
+      "id": "17384",
       "author": "Justin Obara",
       "date": "2008-12-17T16:58:45.000-0500",
       "body": "'screenshot-1' shows that the \"Browse Files\" button where the \"Add More\" button should be\n"
     },
     {
+      "id": "17385",
       "author": "Justin Obara",
       "date": "2009-11-04T15:01:05.000-0500",
       "body": "This has been fixed by placing an invisible flash movie over the button\n"

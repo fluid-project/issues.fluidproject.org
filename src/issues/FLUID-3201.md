@@ -34,21 +34,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15122",
       "author": "Justin Obara",
       "date": "2009-09-28T13:59:27.000-0400",
       "body": "Bug Parade Infusion 1.1.2&#x20;\n"
     },
     {
+      "id": "15125",
       "author": "Laurel Williams",
       "date": "2009-09-29T16:09:21.000-0400",
       "body": "Added error checking for file not opening and also for mysql errors. Further work could be done to fix the reg\\_ex error checking (see <https://fluidproject.atlassian.net/browse/FLUID-3213#icft=FLUID-3213>).\n"
     },
     {
+      "id": "15128",
       "author": "Laurel Williams",
       "date": "2009-09-29T16:10:05.000-0400",
       "body": "manage regex parsing of build.properties, including error checking.\n"
     },
     {
+      "id": "15131",
       "author": "Jacob Farber",
       "date": "2009-10-02T10:36:29.000-0400",
       "body": "Commit rev. 8161 for this bug is difficult to review since the diff file shows the entire file has changed.\\\nAs best as I can tell, the function getFluidVersionNumber looks ok though.\n"

@@ -45,16 +45,19 @@
   ],
   "comments": [
     {
+      "id": "18673",
       "author": "Justin Obara",
       "date": "2008-09-09T10:16:00.000-0400",
       "body": "'screenshot-1' shows the avatar displayed as a link in a bulleted list\n"
     },
     {
+      "id": "18675",
       "author": "Justin Obara",
       "date": "2008-09-09T10:16:59.000-0400",
       "body": "'screenshot-2' shows the avatar without the bullet in IE\n"
     },
     {
+      "id": "18678",
       "author": "Justin Obara",
       "date": "2008-09-11T09:47:28.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

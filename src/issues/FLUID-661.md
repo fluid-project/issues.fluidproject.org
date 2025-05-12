@@ -34,16 +34,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19159",
       "author": "Jonathan Hung",
       "date": "2008-05-29T13:51:34.000-0400",
       "body": "After doing some testing, it would seem that JAWS would only read the text between open and close Button elements.\n\nSince the Remove buttons do not have text, JAWS will just read \"Button\".\n\ni.e.\\\n\\<button >Submit\\</button > will be read as \"Submit button\"\\\n\\<button >\\</button > will be reads as \"button\"\n"
     },
     {
+      "id": "19160",
       "author": "Colin Clark",
       "date": "2008-05-29T18:25:20.000-0400",
       "body": "I added some descriptive text inside the remove button for JAWS. Hiding it with display: none; seems to do the trick.\n\nJonathan, can you confirm this fix?\n"
     },
     {
+      "id": "19163",
       "author": "Jonathan Hung",
       "date": "2008-06-03T14:26:37.000-0400",
       "body": "Confirmed closed. Works well in IE7 and FF2.\n"

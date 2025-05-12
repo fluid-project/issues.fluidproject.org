@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26405",
       "author": "Alan Harnum",
       "date": "2017-11-09T15:44:01.688-0500",
       "body": "Questions from discussion:\n\n* In the search results, what should be shown? Current design has Title, Author byline and story Summary. Could consider having a preview or snippet of what exactly was matching with the search result. Implementation would be easier if it were just the summary.\n* Highlighting in the content? Once the user has selected their matching story, the search term is highlighted wherever it appears, with the option to clear or toggle the highlighting\n* \"Advanced search\" for later 🙂 Can make changes and features in the back end that would make adding an advanced search in the future much easier. The UI implementation would be the most difficult aspect of this, and so should be left for later.\n"

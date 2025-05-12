@@ -31,11 +31,13 @@
   ],
   "comments": [
     {
+      "id": "15882",
       "author": "Justin Obara",
       "date": "2013-04-26T14:30:06.360-0400",
       "body": "\"screen-shot.png\" shows the right border of the \"HIDE\" button missing.\n"
     },
     {
+      "id": "15884",
       "author": "Michelle D'Souza",
       "date": "2014-06-25T16:01:17.927-0400",
       "body": "We no longer actively support IE6, IE7 and IE8. We will consider patches for certain issues.\n"

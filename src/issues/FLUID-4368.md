@@ -44,21 +44,25 @@
   ],
   "comments": [
     {
+      "id": "16238",
       "author": "Justin Obara",
       "date": "2011-07-28T13:03:39.638-0400",
       "body": "ScreenShot.png shows the background images in the preview window with the \"White on Black\" theme active.\n"
     },
     {
+      "id": "16240",
       "author": "Justin Obara",
       "date": "2011-07-28T13:03:55.632-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "16242",
       "author": "Justin Obara",
       "date": "2013-04-30T10:22:56.551-0400",
       "body": "\"screenshot2.png\" shows the same issue in the full with preview manual test. Note that it only happens when enable the table of contents and a contrast theme.\n"
     },
     {
+      "id": "16244",
       "author": "Justin Obara",
       "date": "2013-10-04T09:58:39.665-0400",
       "body": "Don't have background images in the preview window\n"

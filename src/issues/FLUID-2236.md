@@ -56,16 +56,19 @@
   ],
   "comments": [
     {
+      "id": "17910",
       "author": "Eli Cochran",
       "date": "2009-02-20T12:00:56.000-0500",
       "body": "Attaching bundles from the second fluid-0.8 tag\n"
     },
     {
+      "id": "17912",
       "author": "Eli Cochran",
       "date": "2009-02-20T12:37:01.000-0500",
       "body": "Bundles have been built and have been tested\n"
     },
     {
+      "id": "17915",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:20.410-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

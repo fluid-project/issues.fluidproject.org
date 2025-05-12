@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14043",
       "author": "Justin Obara",
       "date": "2017-01-18T14:11:58.281-0500",
       "body": "Upon further review it seems that build metadata doesn't affect precedence of builds. I wonder if we'd prefer to keep things as is so that they are ordered. It's not clear if this will be the case with using buildmetada.\n\n<http://semver.org/#spec-item-11>\n"
     },
     {
+      "id": "14045",
       "author": "Justin Obara",
       "date": "2018-04-06T09:51:10.805-0400",
       "body": "In doing some further investigation into build metadata while working on <https://fluidproject.atlassian.net/browse/FLUID-6270#icft=FLUID-6270> I found that npm strips out this information. It seems the logic is that because it can't be used to sort versions, as build metadata give equal precedence, it is to be ignored and thus stripped out.\n\nSee:\n\n* <https://github.com/npm/npm/issues/12825>\n* <https://github.com/npm/node-semver/pull/221> (pr to add build metadata to npm-semver, but as of yet has been ignored)\n"
     },
     {
+      "id": "14047",
       "author": "Justin Obara",
       "date": "2018-04-06T09:52:42.183-0400",
       "body": "We actually want to use the data and commit has for sorting, so this seems like it would be counter productive. Also, if the build metadata is stripped it will just end up creating a mess of our npm repo.\n"

@@ -25,26 +25,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25317",
       "author": "Justin Obara",
       "date": "2020-04-08T07:08:44.497-0400",
       "body": "Bate martins, which site(s) is this for?\n"
     },
     {
+      "id": "25318",
       "author": "Bate martins",
       "date": "2020-04-08T07:26:26.040-0400",
       "body": "Justin Obara its  for the infusion's documentation site   <https://docs.fluidproject.org/infusion/development/>\n"
     },
     {
+      "id": "25319",
       "author": "Gregor Moss",
       "date": "2020-04-13T16:11:45.465-0400",
       "body": "Thanks for filing this, Batey. I've taken a quick look at your PR as well.\n\nGoogle says that having file extensions at the end of URLs doesn't actually affect their search results. Stability in a site's URLs and the accuracy of them is more important. For some more info on this, here's a Q\\&A video from one of Google's employees that addresses this question: <https://youtu.be/xMIW3i37YeY>\n\nWith that in mind, I feel we should defer discussion of this work until we start the transition to another static site generator.\n\nMore generally, trying to do SEO work is a little bit like an arms race against Google; it's better to make sure your site is easily navigable by any crawlers. Good accessibility and using semantic HTML goes a long way towards that goal.\n"
     },
     {
+      "id": "25320",
       "author": "Bate martins",
       "date": "2020-04-14T15:08:31.411-0400",
       "body": "Thanks Gregor for pointing it out.Added to your statement, from <https://www.searchenginejournal.com/googles-john-mueller-says-parameters-urls-not-matter/246675/> it also says \"In fact, removing file extensions from URLs may even harm the site.\". Though  90% of web searches happen on Google,does this hold true for other engines like  Bing and Yahoo ?.\n"
     },
     {
+      "id": "27795",
       "author": "Justin Obara",
       "date": "2024-07-18T07:44:47.247-0400",
       "body": "This appears to have been completed. Probably with our move to 11ty.\n"

@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21467",
       "author": "Justin Obara",
       "date": "2010-04-19T09:02:06.000-0400",
       "body": "Demos on the website have been updated\n"
     },
     {
+      "id": "21469",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:18.937-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

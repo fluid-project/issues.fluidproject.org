@@ -36,21 +36,25 @@
   ],
   "comments": [
     {
+      "id": "18174",
       "author": "Justin Obara",
       "date": "2008-09-22T12:52:14.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "18176",
       "author": "Michelle D'Souza",
       "date": "2008-09-23T12:36:44.000-0400",
       "body": "I've attached a fix for this bug but I'm not sure if it is 'ideal'. Antranig, can you take a look at this and let me know what you think?\n"
     },
     {
+      "id": "18178",
       "author": "Antranig Basman",
       "date": "2008-09-23T14:28:24.000-0400",
       "body": "Hi Michelle - thanks, this fix looks fine.\n"
     },
     {
+      "id": "18179",
       "author": "Justin Obara",
       "date": "2008-09-23T15:18:40.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

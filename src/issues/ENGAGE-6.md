@@ -31,6 +31,7 @@
   ],
   "comments": [
     {
+      "id": "11820",
       "author": "David Trelles",
       "date": "2009-06-18T12:18:54.000-0400",
       "body": "This is JKL xml-to-json parser. (<http://www.kawa.net/works/js/jkl/parsexml-e.html>). It's similar to others javascript parsers. I'm not pretty sure if I'm using this correctly in performance tests. Change the code as much as needed in case you think it's interesting.\n"

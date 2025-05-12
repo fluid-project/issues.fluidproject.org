@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17565",
       "author": "Antranig Basman",
       "date": "2009-02-10T11:12:40.000-0500",
       "body": "Fixed at revision 6457 - shared file ui.tabs.js had not been updated\n"
     },
     {
+      "id": "17569",
       "author": "Justin Obara",
       "date": "2009-02-10T12:57:36.000-0500",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

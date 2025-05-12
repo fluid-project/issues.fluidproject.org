@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "15158",
       "author": "Alison Benjamin",
       "date": "2009-10-22T16:15:56.000-0400",
       "body": "Adds ARIA using jquery. Works fine with JAWS, & unit tests pass in FF2 & FF3.&#x20;\n"
     },
     {
+      "id": "15161",
       "author": "Justin Obara",
       "date": "2009-11-24T14:06:57.000-0500",
       "body": "Code Review Comments:\\\n\\===================&#x20;\n\nThe live region itself doesn't work in FF 2, but the markup does appear to be correct. Did you experience this as well?\n\nA bit off topic, what is your opinion on this. Since the undo/redo buttons will change the text of the content (the view mode text for inline edit), should these also be declared as live regions. Also should the undo and redo buttons describe what they are doing for example \"undo edit\".\n"

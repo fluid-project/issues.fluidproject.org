@@ -30,6 +30,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12627",
       "author": "Antranig Basman",
       "date": "2010-02-19T19:46:47.000-0500",
       "body": "Fixed at revision 9461. We should eventually have an integrated strategy for managing semi-persistent state (URL state, cookies, session etc.) but for now the server pushes the same information into component options that it pushes into the URL.\n"

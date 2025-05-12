@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17083",
       "author": "Eli Cochran",
       "date": "2008-11-14T15:25:48.000-0500",
       "body": "New files are added to the total as they are added to the queue\n"
     },
     {
+      "id": "17084",
       "author": "Justin Obara",
       "date": "2008-12-03T11:56:45.000-0500",
       "body": "appears to be fixed\n"

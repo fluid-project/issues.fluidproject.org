@@ -38,16 +38,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26362",
       "author": "Gregor Moss",
       "date": "2019-06-25T13:15:20.498-0400",
       "body": "Ensure to update the documentation to be very clear on the steps required to customize a theme, or at least link to a separate MD file that explains the process.\n\nEnsure also to add tests for any new functionality.\n"
     },
     {
+      "id": "26363",
       "author": "Gregor Moss",
       "date": "2019-06-27T13:42:29.390-0400",
       "body": "Tests to add:\n\n* sjrk.storyTelling.loadThemedPage\n* server config loading\n* new client config endpoint response\n* theme fallback functionality\n  * when no theme is provided\n    * base theme should be loaded\n  * when a theme that doesn't exist is provided\n    * should it return an error? should it just load the base theme? the latter could be misleading. just an error message should be sufficient for now\n  * when a theme is provided and requested file exists in custom theme but not base theme\n    * custom theme file should be loaded\n  * when a theme is provided and requested file exists in custom theme and also base theme\n    * custom theme file should be loaded\n  * when a theme is provided and requested file does not exist in custom theme but does in base theme\n    * base theme file should be loaded\n  * when a theme is provided and requested file does not exist in either custom or base theme\n    * 404 should be returned\n"
     },
     {
+      "id": "26364",
       "author": "Gregor Moss",
       "date": "2019-08-02T01:18:38.339-0400",
       "body": "Reopened the issue after discovering problems with the docker setup.\n"

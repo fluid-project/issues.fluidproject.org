@@ -35,16 +35,19 @@
   ],
   "comments": [
     {
+      "id": "13217",
       "author": "Joseph Vernuccio",
       "date": "2008-09-18T11:19:03.000-0400",
       "body": "screenshot- 1&#x20;\n\nExample of caret not appearing when inline edit is selected.&#x20;\n"
     },
     {
+      "id": "13218",
       "author": "Joseph Vernuccio",
       "date": "2008-09-18T13:26:19.000-0400",
       "body": "In addition, this issue seems to repeat itself in example 3 - multiple inline edits.&#x20;\n"
     },
     {
+      "id": "13219",
       "author": "Justin Obara",
       "date": "2008-09-19T11:43:46.000-0400",
       "body": "Could not reproduce, likely fixed with some of the recent changes\n\nVerified using:\\\nFF2 on Mac OS X 10.5\n"

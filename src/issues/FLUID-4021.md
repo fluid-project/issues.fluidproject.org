@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19080",
       "author": "Anastasia Cheetham",
       "date": "2011-01-05T16:22:24.353-0500",
       "body": "Jon, you did a fair bit of work on the Pager demo - do you know if there is a reason why this option is being set?\n"
     },
     {
+      "id": "19086",
       "author": "Antranig Basman",
       "date": "2013-07-22T21:19:21.365-0400",
       "body": "Demo options improved to alter the required page size to 20, different from the defaults. the debugMode flag is now commented in the demo code. Merged into trunk at revision acf4633\n"

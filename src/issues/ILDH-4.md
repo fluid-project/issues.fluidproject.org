@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13039",
       "author": "Cindy Li",
       "date": "2012-03-02T09:54:03.507-0500",
       "body": "The first styling improvement has been merged into \"mediawiki-1.18.1\" branch @ 93481896ebcb9e3b77465fdc8813d076f9b633c2\n"
     },
     {
+      "id": "13040",
       "author": "Anastasia Cheetham",
       "date": "2015-12-02T11:25:59.061-0500",
       "body": "ILDH has been completely redone in docpad\n"

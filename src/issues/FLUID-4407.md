@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "14616",
       "author": "Justin Obara",
       "date": "2011-08-25T15:54:10.828-0400",
       "body": "Screenshot.png shows the browser default focus styling on the slider's knob\n"
     },
     {
+      "id": "14617",
       "author": "heidi valles",
       "date": "2011-10-05T13:49:17.972-0400",
       "body": "See 4504 - fl-focus now on UIO\n"

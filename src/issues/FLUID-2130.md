@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21141",
       "author": "Justin Obara",
       "date": "2009-03-18T10:06:38.000-0400",
       "body": "this was rectified in the 0.8 release\n"

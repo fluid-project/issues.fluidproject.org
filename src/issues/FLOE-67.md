@@ -22,11 +22,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11204",
       "author": "Anastasia Cheetham",
       "date": "2012-08-07T11:18:42.562-0400",
       "body": "I have a branch ready for this:\\\n<https://github.com/acheetham/OER-Commons/tree/FLOE-67>\n"
     },
     {
+      "id": "11205",
       "author": "Alexey Novak",
       "date": "2012-08-16T10:19:00.658-0400",
       "body": "Should be fixed on <http://www.oercommons.org/>\\\nNext and Previous links change in high contrast themes.\n"

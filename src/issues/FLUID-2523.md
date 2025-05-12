@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "21757",
       "author": "Justin Obara",
       "date": "2009-04-06T10:13:53.000-0400",
       "body": "'screenshot-1' shows the blank preview window\n"
     },
     {
+      "id": "21758",
       "author": "Justin Obara",
       "date": "2009-05-11T11:17:44.000-0400",
       "body": "Appears to have been fixed\n"

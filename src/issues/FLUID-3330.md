@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20593",
       "author": "Armin Krauss",
       "date": "2009-10-27T15:41:29.000-0400",
       "body": "There is now a wiki page where the main work will happen.\n\n<http://wiki.fluidproject.org/display/fluid/Fluid+accessibility>\n"
     },
     {
+      "id": "20594",
       "author": "Jess Mitchell",
       "date": "2011-01-20T10:26:23.496-0500",
       "body": "Work moved to documentation effort, not discrete wiki page.\n"

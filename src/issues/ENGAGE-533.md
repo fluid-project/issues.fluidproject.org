@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12015",
       "author": "Justin Obara",
       "date": "2010-03-25T14:05:42.000-0400",
       "body": "Remove the startOpen option. Cabinet now only uses the openByDefault selector when determining the initial state of the drawers.\n"
     },
     {
+      "id": "12017",
       "author": "Justin Obara",
       "date": "2010-03-25T14:05:56.000-0400",
       "body": "Assigning to Antranig for review\n"

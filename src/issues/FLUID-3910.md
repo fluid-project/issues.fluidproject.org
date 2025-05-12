@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "23421",
       "author": "Cindy Li",
       "date": "2010-12-16T11:16:04.462-0500",
       "body": "\"FLUID-3910-1.patch.txt\" updates the php unit tests that fail due to the change on the FSS dependencies. Now the unit tests use \"Renderer\" as the example instead of \"fss\", which does not have dependencies any more. This patch also adjusts the module sequence numbers that have been shifted due to the removal/addition of modules.\n"
     },
     {
+      "id": "23422",
       "author": "Anastasia Cheetham",
       "date": "2010-12-16T15:36:34.622-0500",
       "body": "I've reviewed Cindy's patch, and Cindy has walked me through verifying that the patch does properly update the unit tests. I've committed the changes, and the deployed unit tests now pass.\n"

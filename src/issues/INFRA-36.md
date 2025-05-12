@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25906",
       "author": "Giovanni Tirloni",
       "date": "2015-08-27T09:14:15.062-0400",
       "body": "I thought this was urgent because one website we host needs HTTPS by default (wiki.gpii.net), but it turns out that TLS is terminated at the load balancer (HAProxy), so nginx doesn't need to serve HTTPS. /me breathes\n"

@@ -35,21 +35,25 @@
   ],
   "comments": [
     {
+      "id": "17257",
       "author": "Justin Obara",
       "date": "2008-08-11T15:16:15.000-0400",
       "body": "Updated debugging info\\\n\\====================\n\nFile: Reorderer.js\\\nLine: 483\\\nError: Expected identifier, string or number\n\nAll of the above sites have the same issue.&#x20;\n"
     },
     {
+      "id": "17259",
       "author": "Jacob Farber",
       "date": "2008-08-12T12:09:45.000-0400",
       "body": "Extra comma removed - IE dies when a list contains a trailing comma, whereas FF wont.\n"
     },
     {
+      "id": "17262",
       "author": "Anastasia Cheetham",
       "date": "2008-08-12T12:18:26.000-0400",
       "body": "I've tested this patch, and it does fix the error - good catch, Jacob!\n\nI've committed the fix.\n"
     },
     {
+      "id": "17264",
       "author": "Justin Obara",
       "date": "2008-08-13T08:55:48.000-0400",
       "body": "Verified fix using:&#x20;\n\nIE6, IE7 (Win XP)\\\nIE7 (Win Vista)\n"

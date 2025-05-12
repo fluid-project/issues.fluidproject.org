@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16359",
       "author": "Allison Bloodworth",
       "date": "2008-10-29T12:41:42.000-0400",
       "body": "iteration29\n"
     },
     {
+      "id": "16362",
       "author": "Justin Obara",
       "date": "2011-01-20T10:18:29.113-0500",
       "body": "Orphaned work - closing.\n"

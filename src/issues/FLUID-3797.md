@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19677",
       "author": "Neel Dalsania",
       "date": "2016-03-05T02:06:53.700-0500",
       "body": "Do you mean replacing showAnimation and hideAnimation with fadeIn and fadeOut\n"
     },
     {
+      "id": "19678",
       "author": "Justin Obara",
       "date": "2016-03-09T09:58:20.718-0500",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/679> ) into the project repo at 9f515ec9ed448e1f7f0c6380b1209a20eb398647\n"

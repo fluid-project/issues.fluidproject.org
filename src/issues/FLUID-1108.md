@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20412",
       "author": "Antranig Basman",
       "date": "2008-08-06T13:40:33.000-0400",
       "body": "Committed at revision 5328.\n\nDocumentation page for options merging is at <http://wiki.fluidproject.org/display/fluid/Options+Merging+for+Fluid+Components>\n"
     },
     {
+      "id": "20413",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:57.314-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

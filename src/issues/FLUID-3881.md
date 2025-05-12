@@ -33,21 +33,25 @@
   ],
   "comments": [
     {
+      "id": "20759",
       "author": "Justin Obara",
       "date": "2010-12-07T15:38:02.872-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "20760",
       "author": "Anastasia Cheetham",
       "date": "2010-12-14T13:17:58.428-0500",
       "body": "Antranig reviewed a list of new framework and renderer functions, and identified the public vs unsupported ones. I've modified the comments in the code accordingly.\n"
     },
     {
+      "id": "20761",
       "author": "Antranig Basman",
       "date": "2010-12-15T17:02:32.866-0500",
       "body": "Attached is a patch which comments unsupported functions in webapp/components/reorderer\n"
     },
     {
+      "id": "20762",
       "author": "Anastasia Cheetham",
       "date": "2010-12-16T09:40:57.226-0500",
       "body": "I've reviewed and committed Antrantig's Reorderer patch.\n"

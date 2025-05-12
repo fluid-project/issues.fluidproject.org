@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13380",
       "author": "Cindy Li",
       "date": "2014-03-13T14:43:27.469-0400",
       "body": "Issued a pull request with a unit test to demonstrate this issue: <https://github.com/fluid-project/infusion/pull/479>\n\nKasper Galschiot Markus, let me know if my usage of fluid.transforms.binaryOp or fluid.transforms.condition is incorrect. Thanks.\n"
     },
     {
+      "id": "13381",
       "author": "Cindy Li",
       "date": "2014-03-17T15:48:35.842-0400",
       "body": "The pull request <https://github.com/fluid-project/infusion/pull/477> for <http://issues.fluidproject.org/browse/FLUID-5251> also fixes this issue.\n"

@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21850",
       "author": "Colin Clark",
       "date": "2008-02-08T00:00:44.000-0500",
       "body": "I implemented a concept of a \"key binding,\" which is a simple object that specifies a connection between a keypress and an activation handler:\n\n{\\\nmodifier: undefined || null || CTRL || ALT || SHIFT,\\\nkey: key,\\\nhandler: function\\\n}\n\nThis allows users to specify different activation handlers for different key presses.\n"
     },
     {
+      "id": "21851",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:52.702-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

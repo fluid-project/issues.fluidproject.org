@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14060",
       "author": "Colin Clark",
       "date": "2008-04-23T20:40:44.000-0400",
       "body": "I generalized all but the core selectors so that few assumptions about DOM structure are made. This will enable users to heavily customize the HTML page without having to change the JavaScript code.\n"
     },
     {
+      "id": "14062",
       "author": "Michelle D'Souza",
       "date": "2011-01-19T08:23:50.767-0500",
       "body": "Reopening these issues in order to add the workshopcomponent to them\n"

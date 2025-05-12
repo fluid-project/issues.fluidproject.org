@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22536",
       "author": "Alan Harnum",
       "date": "2016-09-29T12:26:52.005-0400",
       "body": "Speaking to Justin Obara we're going to do the following for now:\n\n* write a general test function for skipping tests based on OS detection\n* wrap the pause/resume test in this function so we skip them on Linux for the moment\n\nThis isn't ideal but the reality seems to be that the TTS support under Linux doesn't allow for pause and resume behaviour.\n\nMore broadly, we should establish practice about tests being skipped by browser or platform - when they should be revisited and how to indicate this.\n"
     },
     {
+      "id": "22539",
       "author": "Alan Harnum",
       "date": "2016-10-17T11:23:44.707-0400",
       "body": "Pause/Resume tests are now appropriately skipped on Linux. I've created a separate issue to document the conditional test features that were introduced as a result of this work.\n"

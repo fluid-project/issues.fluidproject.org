@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21361",
       "author": "Jonathan Hung",
       "date": "2009-02-23T12:20:20.000-0500",
       "body": "Turns out Save and Update appear to do the same thing, except that with update you can affect either the updated or original content.\n\nFor now, I have removed all Update rules and now using only Save rules.\n"

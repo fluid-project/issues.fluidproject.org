@@ -45,26 +45,31 @@
   ],
   "comments": [
     {
+      "id": "23467",
       "author": "Justin Obara",
       "date": "2010-11-19T16:19:06.800-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "23468",
       "author": "Jonathan Hung",
       "date": "2010-11-26T14:03:28.967-0500",
       "body": "Some of the changes shown in the demo patch should become new defaults for the component:\\\n1\\. component's defaultViewStyle style should be changed to match that of .demo-inlineEdit-invitation in the patch.\\\n2\\. component's defaultViewText variable in the JS file should change to \"Edit this\".\n\nAlso:\\\n3\\. the Demo's Javascript is overloading classnames in some places (class used for both selecting and styling)\\\n4\\. some classes need better naming to follow convention.\\\n5\\. some instances where custom selector or style is defined where the component's default should be enough.\n"
     },
     {
+      "id": "23469",
       "author": "Mike Lam",
       "date": "2010-11-26T15:11:20.210-0500",
       "body": "Moved the defaultViewStyle from the demo to the component.   Some CSS tweaks may be needed as the demo-inlineEdit-title style is overriding the italic styling of the defaultViewStyle.\n"
     },
     {
+      "id": "23470",
       "author": "Mike Lam",
       "date": "2010-11-26T16:00:45.810-0500",
       "body": "Set the demo font-size to 2em and removed 'normal'\n"
     },
     {
+      "id": "23471",
       "author": "Michelle D'Souza",
       "date": "2010-12-01T17:04:58.341-0500",
       "body": "I code reviewed this and am happy with it.&#x20;\n"

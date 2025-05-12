@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15434",
       "author": "Antranig Basman",
       "date": "2009-11-05T14:21:09.000-0500",
       "body": "Reordered the test cases to issue the test from inside the fetch callback. It is unclear why this used to work before - when did we update the testing framework that might have changed this behaviour?\n"
     },
     {
+      "id": "15437",
       "author": "Justin Obara",
       "date": "2009-11-13T09:19:29.000-0500",
       "body": "tests seem to be passing\n"

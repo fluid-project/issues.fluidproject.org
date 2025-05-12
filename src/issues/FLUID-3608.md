@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14290",
       "author": "Jonathan Hung",
       "date": "2011-01-10T14:27:38.746-0500",
       "body": "In FF3.6 Win7, repeatedly pasting the character in the middle of the paragraph causes the character to flash momentarily at the end of the paragraph. As characters are pastes, sometimes CRs are inserted.\\\nIn IE8 Win7, repeatedly pasting the character in the middle of the paragraph causes the character to flash momentarily at the end of the paragraph.\n\nOnly happens with CKEditor 3\n"
     },
     {
+      "id": "14292",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T13:59:06.494-0400",
       "body": "I'm unable to reproduce this as of v1.4\n"

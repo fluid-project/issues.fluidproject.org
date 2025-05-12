@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11867",
       "author": "Justin Obara",
       "date": "2009-08-31T16:32:56.000-0400",
       "body": "commented the code\n"
     },
     {
+      "id": "11868",
       "author": "Justin Obara",
       "date": "2009-11-10T11:03:45.000-0500",
       "body": "closed as per previous comment\n"

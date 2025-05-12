@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23299",
       "author": "Antranig Basman",
       "date": "2009-11-05T14:23:41.000-0500",
       "body": "A flag has been added to prevent multiple invocations of the callback. Surprising that this has escaped notice so far, since it might well be the source of a lot of performance problems. Test case for this condition has been integrated with the fixed test case for <https://fluidproject.atlassian.net/browse/FLUID-3362#icft=FLUID-3362>.\n"
     },
     {
+      "id": "23300",
       "author": "Justin Obara",
       "date": "2009-11-13T09:18:08.000-0500",
       "body": "tests seem to be passing\n"

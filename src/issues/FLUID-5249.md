@@ -55,16 +55,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21009",
       "author": "Antranig Basman",
       "date": "2014-09-28T19:51:58.827-0400",
       "body": "Note that this work is actually essential to move to a world where instantiators don't leak. Right now, for example, every test case which constructs a component using plain code, will have both the component instance and its instantiator leak indefinitely. Once we move to a single instantiator, we also need to add further instrumentation to jqUnit so that it can note and tear down every constructed component during teardown of the fixture.\n"
     },
     {
+      "id": "21010",
       "author": "Justin Obara",
       "date": "2015-06-15T14:28:07.220-0400",
       "body": "pull request <https://github.com/fluid-project/infusion/pull/591>\n"
     },
     {
+      "id": "21011",
       "author": "Antranig Basman",
       "date": "2015-08-20T09:59:17.028-0400",
       "body": "Merged into trunk at revision 282f1a318718eed0b0ec060fb8b4ad254417fd7e\n"

@@ -26,26 +26,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24429",
       "author": "Neel Dalsania",
       "date": "2016-03-02T09:53:35.779-0500",
       "body": "I am interested to work on it\n"
     },
     {
+      "id": "24430",
       "author": "Neel Dalsania",
       "date": "2016-03-02T10:12:04.484-0500",
       "body": "I just added autocomplete attribute to the submit, since Firefox persists the dynamic disable state of a \\<button> across page loads and it works perfectly\n"
     },
     {
+      "id": "24431",
       "author": "Justin Obara",
       "date": "2016-03-02T10:23:06.152-0500",
       "body": "Neel Dalsania thanks for looking into this. Would you like to submit a pull request with your fix? You can have a look at our coding and commit standards ( <https://wiki.fluidproject.org/display/fluid/Coding+and+Commit+Standards> ).\n"
     },
     {
+      "id": "24432",
       "author": "Neel Dalsania",
       "date": "2016-03-02T11:19:04.612-0500",
       "body": "Created the pull request <https://github.com/fluid-project/infusion/pull/673>\n"
     },
     {
+      "id": "27857",
       "author": "Justin Obara",
       "date": "2024-07-23T11:02:27.186-0400",
       "body": "Could not reproduce with FF 128 on macOS 14.5\n"

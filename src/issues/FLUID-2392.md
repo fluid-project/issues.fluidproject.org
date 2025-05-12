@@ -37,21 +37,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17509",
       "author": "Justin Obara",
       "date": "2009-03-20T15:54:45.000-0400",
       "body": "Bug Parade 1.0 release&#x20;\n"
     },
     {
+      "id": "17510",
       "author": "Antranig Basman",
       "date": "2009-03-23T21:48:37.000-0400",
       "body": "IE is bloody stupid and suffers from this bug <http://webbugtrack.blogspot.com/2007/11/bug-193-onchange-does-not-fire-properly.html> which causes a \"change\" event to only actually fire when a checkbox or radio button receives a blur, rather than when it is actually changed. Code has been added to the autobind functionality of the renderer to compensate for this - this actually represents added value now to the renderer infrastructure since it is possible to abstract over this issue - previous code used \"change\" just attached to the document. THE CATT is here.\n\nResolved at revision 6814\n"
     },
     {
+      "id": "17511",
       "author": "Michelle D'Souza",
       "date": "2009-03-26T11:14:38.000-0400",
       "body": "This now works and the code looks fine.\n"
     },
     {
+      "id": "17512",
       "author": "Justin Obara",
       "date": "2009-03-26T11:18:35.000-0400",
       "body": "Verified fix using:\n\nIE6 (Win XP)\\\nIE7 (Win Vista)\n"

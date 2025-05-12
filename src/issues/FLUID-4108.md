@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19918",
       "author": "Anastasia Cheetham",
       "date": "2011-02-23T16:07:07.136-0500",
       "body": "I've tested the fix Colin pushed to his git repository, and it seems to work fine: The error is no longer thrown and the uploader works.\n"

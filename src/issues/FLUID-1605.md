@@ -39,11 +39,13 @@
   ],
   "comments": [
     {
+      "id": "18952",
       "author": "Justin Obara",
       "date": "2008-09-24T13:17:11.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "18955",
       "author": "Justin Obara",
       "date": "2008-09-25T14:54:12.000-0400",
       "body": "Appears to have been resolved with fix for <https://fluidproject.atlassian.net/browse/FLUID-1602#icft=FLUID-1602>\n\nVerified using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

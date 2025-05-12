@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16228",
       "author": "Eli Cochran",
       "date": "2008-06-24T20:27:20.000-0400",
       "body": "Tested the uploader using the new multi-instance uploader manual test. Seemed to work just fine (after fixing a progress bug). So I'm closing this bug.\n"
     },
     {
+      "id": "16230",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:53.837-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

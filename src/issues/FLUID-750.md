@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19237",
       "author": "Allison Bloodworth",
       "date": "2008-06-10T02:43:24.000-0400",
       "body": "futuretask\n"
     },
     {
+      "id": "19241",
       "author": "Jonathan Hung",
       "date": "2008-08-19T15:14:47.000-0400",
       "body": "Appears to be fixed or no longer an issue.\n"

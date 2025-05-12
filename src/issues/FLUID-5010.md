@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14124",
       "author": "Michelle D'Souza",
       "date": "2013-05-23T15:40:41.796-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/326> merged into project repo at e4ebd92a75fa1663c4578f700c4d62e0d3bb4c9a\n\nNow that <https://fluidproject.atlassian.net/browse/FLUID-5012#icft=FLUID-5012>, <https://fluidproject.atlassian.net/browse/FLUID-5013#icft=FLUID-5013>, <https://fluidproject.atlassian.net/browse/FLUID-5014#icft=FLUID-5014>, <https://fluidproject.atlassian.net/browse/FLUID-5017#icft=FLUID-5017> and <https://fluidproject.atlassian.net/browse/FLUID-5018#icft=FLUID-5018> are fixed, we should be able to finish the work of removing the manual options mapping code.&#x20;\n"

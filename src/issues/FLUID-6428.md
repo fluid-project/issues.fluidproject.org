@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25266",
       "author": "Antranig Basman",
       "date": "2019-11-20T07:14:47.865-0500",
       "body": "The first variety of this caused a failure during PanelsTests.js \"FLUID-5203: support multiple text field sliders in one composite panel\". The attempt to invoke\n\n```java\nupdateSliderAttributes: {\r\n                \"this\": \"{that}.container\",\r\n                method: \"attr\",\r\n                args: [{\r\n                    \"min\": \"{that}.model.range.min\",\r\n                    \"max\": \"{that}.model.range.max\",\r\n                    \"step\": \"{that}.model.step\",\r\n                    \"type\": \"range\",\r\n                    \"value\": \"{that}.model.value\",\r\n                    \"aria-labelledby\": \"{that}.options.attrs.aria-labelledby\",\r\n                    \"aria-label\": \"{that}.options.attrs.aria-label\"\r\n                }]\r\n            }\n```\n\nvia\n\n```java\n\"onCreate.initSliderAttributes\": \"{that}.updateSliderAttributes\",\n```\n\ncaused a read of \"{that}.options.attrs.aria-labelledby\" which was undefined. The failure was in fluid.makeExpandStrategy's \"deliverer\" which attempted to set the undefined value explicitly in the target. We need a system **both** which freezes values after full observation, but also does not leave mouse dropping tracking in the target, even during observation.\n"

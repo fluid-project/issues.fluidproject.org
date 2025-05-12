@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17578",
       "author": "Antranig Basman",
       "date": "2009-02-06T19:26:20.000-0500",
       "body": "Fixed at revision 6443\n"
     },
     {
+      "id": "17580",
       "author": "Antranig Basman",
       "date": "2009-02-06T19:29:27.000-0500",
       "body": "There have also been several improvements to the rich text infrastructure in this release.\n\nFirstly, there is a new event, afterInitEdit, which is specific to rich text varieties that have asynchronous initialisation/rendering of the edit view (especially, FCKEditor in lazy mode). This allows developers to defer any behaviour until the native control is certainly available - which it may not be still at the conclusion of afterBeginEdit.\n\nSecondly, there is much improved behaviour on initial focusing - that is, the control is correctly focused and the caret is moved to the end of the editable area on edit, at least, on those browsers which correctly implement the respective rich text control's APIs. This doesn't work on FF2, but it is possible that our hard-won hack in fluid.setCaretToEnd could be brought in to patch up this particular case.\n"
     },
     {
+      "id": "17584",
       "author": "Justin Obara",
       "date": "2009-02-09T08:48:16.000-0500",
       "body": "Verified fix using:\n\nOpera 9.5 (Mac OS 10.5, Win XP)&#x20;\n"

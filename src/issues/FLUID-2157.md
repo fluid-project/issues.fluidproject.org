@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14187",
       "author": "Daphne Ogle",
       "date": "2009-01-22T16:58:21.000-0500",
       "body": "iteration25\\\niteration26\n"
     },
     {
+      "id": "14189",
       "author": "Paul Zablosky",
       "date": "2009-02-06T14:20:37.000-0500",
       "body": "The text of the pattern has been substantially rewritten. Changes suggested by the design team have been incorporated.  The pattern is now more general, and doesn't assume limitations that may occur in an implementation, such as the use of a local file browser, or enforced modality. &#x20;\n"
     },
     {
+      "id": "14191",
       "author": "Paul Zablosky",
       "date": "2009-02-06T14:22:01.000-0500",
       "body": "This round of iteration is complete.  If more work is required, a new issue can be raised for this pattern.\n"

@@ -41,16 +41,19 @@
   ],
   "comments": [
     {
+      "id": "19751",
       "author": "Colin Clark",
       "date": "2008-12-21T15:37:12.000-0500",
       "body": "Here's a very sketchy implementation of a fluid.flashBridge component. It is inspired by Swiff, but contains none of its code.\n\nThis hasn't been tested or even run yet. It's just a sketch that I didn't want to accidentally lose.\n"
     },
     {
+      "id": "19753",
       "author": "Colin Clark",
       "date": "2008-12-21T17:41:35.000-0500",
       "body": "Here's a second version of the sketch with quite a number of unit tests. We're getting somewhere.\n"
     },
     {
+      "id": "19755",
       "author": "Justin Obara",
       "date": "2014-05-22T14:27:26.169-0400",
       "body": "Due to a cross site scripting vulnerability we have removed flash support from the uploader. See <https://fluidproject.atlassian.net/browse/FLUID-5354#icft=FLUID-5354>\n"

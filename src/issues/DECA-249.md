@@ -40,21 +40,25 @@
   ],
   "comments": [
     {
+      "id": "10161",
       "author": "Jonathan Hung",
       "date": "2012-09-07T12:46:32.563-0400",
       "body": "We need to get a complete list of errors so we can create a UI to handle them.\n\n* Error should be reported to UI\n"
     },
     {
+      "id": "10162",
       "author": "Justin Obara",
       "date": "2012-11-05T12:36:53.802-0500",
       "body": "possible errors:\n\n1\\) image conversion or pdf generation fail (status set to \"error\")\\\n2\\) import is not an image (return 415 error)\\\n3\\) busy generating an export (return 409 error)\n"
     },
     {
+      "id": "10163",
       "author": "Jonathan Hung",
       "date": "2012-11-06T16:50:21.101-0500",
       "body": "In the case where the user uploads a single file and it is not a valid image file, error messages are split up across the UI. I think these messages should appear in the same place - namely the Export section and not in the Uploader.\n\nSee attached image.\n\nAlso, in the case of a genpdf error, there should be Help and Restart link displayed in the Export option.\n"
     },
     {
+      "id": "10164",
       "author": "Justin Obara",
       "date": "2012-11-07T08:47:09.568-0500",
       "body": "These are actually 2 different errors. The first one is that the server rejected the file for not being an image. The second error, the one in the export, is because it attempted to create an export with no images.&#x20;\n\nAs for the links we should be able to add those in. If I'm not mistaken, the description blocks can accept markup.\n"

@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24866",
       "author": "Mike Lam",
       "date": "2010-12-21T16:07:44.701-0500",
       "body": "See <https://fluidproject.atlassian.net/browse/FLUID-3890#icft=FLUID-3890>.   This is a duplicate JIRA\n"

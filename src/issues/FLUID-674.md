@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15336",
       "author": "Eli Cochran",
       "date": "2008-05-29T19:17:12.000-0400",
       "body": "Moved the instruction out of the table into its own div\n"
     },
     {
+      "id": "15339",
       "author": "Justin Obara",
       "date": "2008-12-03T11:40:57.000-0500",
       "body": "appears to have been fixed\n"

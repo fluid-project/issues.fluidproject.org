@@ -32,11 +32,13 @@
   ],
   "comments": [
     {
+      "id": "21965",
       "author": "Justin Obara",
       "date": "2010-12-20T12:51:37.516-0500",
       "body": "\"Screen shot\" shows that the easier to find panel isn't opening up\n"
     },
     {
+      "id": "21967",
       "author": "Michelle D'Souza",
       "date": "2011-03-04T15:39:40.932-0500",
       "body": "This is no longer an issue because the accordion has been removed in the new designs.&#x20;\n"

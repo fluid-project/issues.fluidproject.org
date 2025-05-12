@@ -32,11 +32,13 @@
   ],
   "comments": [
     {
+      "id": "15389",
       "author": "Mike Lam",
       "date": "2010-12-14T16:48:06.459-0500",
       "body": "More complete feature check of XHR for progressive enhancement. &#x20;\n"
     },
     {
+      "id": "15392",
       "author": "Justin Obara",
       "date": "2010-12-14T17:31:01.227-0500",
       "body": "Reviewed and Committed Mike's patch ( <https://fluidproject.atlassian.net/browse/FLUID-3901#icft=FLUID-3901>.patch ). Also had him run the demo with it and verified that it worked and that the unit tests are still passing.&#x20;\n"

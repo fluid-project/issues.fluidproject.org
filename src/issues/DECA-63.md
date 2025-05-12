@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10250",
       "author": "Jonathan Hung",
       "date": "2010-04-20T09:53:12.000-0400",
       "body": "Likely out of scope for Decapod 1.\n"
     },
     {
+      "id": "10251",
       "author": "Jonathan Hung",
       "date": "2010-06-10T16:49:18.268-0400",
       "body": "Unlikely to implement.\n"

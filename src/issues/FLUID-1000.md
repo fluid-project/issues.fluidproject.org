@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19609",
       "author": "Anastasia Cheetham",
       "date": "2008-07-29T15:46:02.000-0400",
       "body": "The test has been changed to reflect browser differences.\n"
     },
     {
+      "id": "19610",
       "author": "Justin Obara",
       "date": "2008-07-29T15:52:16.000-0400",
       "body": "Verified fix  using IE6, IE7\n"

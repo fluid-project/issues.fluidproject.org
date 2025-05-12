@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "20096",
       "author": "Justin Obara",
       "date": "2008-12-17T09:31:50.000-0500",
       "body": "'screenshot-1' shows the border not sourounding all of the content\n"
     },
     {
+      "id": "20098",
       "author": "Justin Obara",
       "date": "2009-01-06T09:22:52.000-0500",
       "body": "Appears to have been fixed\n\nVerified using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, Opera 9.5 (Win XP)\\\nFF3 (Win Vista)\n"

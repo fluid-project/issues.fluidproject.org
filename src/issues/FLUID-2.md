@@ -38,16 +38,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16076",
       "author": "Antranig Basman",
       "date": "2007-06-28T05:53:00.000-0400",
       "body": "A secure, simple and fast approach is to exploit the existing naming convention on the rendered nodes - the node set that the Lightbox deals in are precisely those with the ids gallery:::gallery-thumbs:::lightbox-cell::11: etc. (or more simply, namebase:lightbox-cell::11: as it should be made more simply in the template). These can be fetched quickly on demand by a batch of getElementById calls in a loop, the upper index is known since it is passed in as the \"count\" argument to initLightbox.\n\nMain implementation change after the \"childNodes\" assumption was removed would be to replace this single call to \\\ndojo.place(this.activeItem, refSibling, placementPosition);  in \t\t\\\n\\_changeFocusOrMove:\\\nto a loop of changes that \"shuffled\" the nodes about in their existing DOM positions, rather than letting them all \"slide\" forwards as they currently do. But this is just a refinement - main goal is to get rid of the \"destroyWhitespace\" function, after which we can go back to having the \\<script> block inside the lightbox and get rid of lightbox-temp-container:&#x20;\n"
     },
     {
+      "id": "16079",
       "author": "Antranig Basman",
       "date": "2007-06-28T05:56:58.000-0400",
       "body": "PS - the same thing should be done with the \"focus policy\" - rather than specifying by tag name and index (which is somewhat fragile and complex in the current scheme) this should be specified by a \"relative id\", in the way that the current code locates the \"reorder-index\" fields by extension from the cell's base ID.\n\nThis could even be part of the official contract of the lightbox on the \"client cell\", or at least a sensible default, that the link to be focused is given a relative ID of something like \"focus-node\". (currently \"thumbs-link\" in our existing client). Perhaps a bit freer to let this be configurable, but we are acquiring a HECK of a lot of arguments to LightboxProducer now!\n"
     },
     {
+      "id": "16081",
       "author": "Joseph Scheuhammer",
       "date": "2007-09-06T15:52:17.000-0400",
       "body": "The Reorderer is now sensitive only to objects classified as \"orderable\" (via CSS) .  As such, removal of non Element nodes from within the thumbnail container is unecessary.\n"

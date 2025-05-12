@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15744",
       "author": "Antranig Basman",
       "date": "2012-10-30T02:28:57.099-0400",
       "body": "Thanks for the fix and test case, Alexey\n"
     },
     {
+      "id": "15746",
       "author": "Alexey Novak",
       "date": "2012-10-30T10:29:56.990-0400",
       "body": "Merged into master 8a9635b98a31b4b521e68115fcedf886582c72a3\n"

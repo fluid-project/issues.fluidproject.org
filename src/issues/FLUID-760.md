@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19595",
       "author": "Anastasia Cheetham",
       "date": "2008-06-11T11:37:22.000-0400",
       "body": "The check for the Enter key was only looking at evt.which - the Arrow keyCode is stored in evt.keyCode and in that case, evt.which is 0, which fails the check, so the arrow was being processed as an Enter.&#x20;\n\nThe fix is to check both keyCode and which.\n"

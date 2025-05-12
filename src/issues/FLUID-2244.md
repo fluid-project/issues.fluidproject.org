@@ -46,61 +46,73 @@
   ],
   "comments": [
     {
+      "id": "18118",
       "author": "Antranig Basman",
       "date": "2009-05-15T13:48:33.000-0400",
       "body": "Fixed at revision 7176 - new \"delegate plugin\" and global focus manager\n"
     },
     {
+      "id": "18119",
       "author": "Justin Obara",
       "date": "2009-05-19T09:07:41.000-0400",
       "body": "This issue has been fixed for this page:\\\n<http://build.fluidproject.org/infusion/integration-demos/sakai/html/pager-site-setting.html#>\n\nbut not for this one:\\\n<http://build.fluidproject.org/fluid/sample-code/pager/renderer/pager-render.html#>&#x20;\n"
     },
     {
+      "id": "18120",
       "author": "Antranig Basman",
       "date": "2009-06-03T13:53:47.000-0400",
       "body": "This kind of problem affects almost all of our keyboard accessibility cases. In general, clicking something with a mouse, and then expecting that keyboard focus has also followed this selection does not work (cf \"accessible tabs\", etc.)\n"
     },
     {
+      "id": "18121",
       "author": "Justin Obara",
       "date": "2010-05-07T13:17:26.371-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "18122",
       "author": "Justin Obara",
       "date": "2010-11-19T14:41:02.675-0500",
       "body": "Try preventing the default action of the link, which is adding # to the end of the url. If this doesn't work, we may need to reassess for bug parade\n\nAlso this issue actually appears to be working in the current trunk, but regressed in the aegis branch\n"
     },
     {
+      "id": "18123",
       "author": "Justin Obara",
       "date": "2010-11-19T16:08:17.424-0500",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "18124",
       "author": "Justin Obara",
       "date": "2010-11-30T12:32:05.460-0500",
       "body": "As part of the commit to <https://fluidproject.atlassian.net/browse/FLUID-3828#icft=FLUID-3828> & <https://fluidproject.atlassian.net/browse/FLUID-3829#icft=FLUID-3829> at r10313, the default action of the links were prevented. This didn't however solve this issue. It may have something to do with the id. Previously the pager had been using the same type of page link to represent all of the page links. Now it has switched to using the disabled type of page link for the current page. This is what is causing the issue. It seems thought that even switching the disabled page link to have the same markup as the other page links doesn't help, which is what leads me to suspect the differing id as the culprit. The id's on the standard page links look something like \"page-link:link1\" whereas the current page link id's look like \"page-link:disabled1\". If the current page were using the same type of page link as the others, the id would stay the same after navigating to that page, and focus would remain.\n"
     },
     {
+      "id": "18125",
       "author": "Justin Obara",
       "date": "2010-11-30T12:37:20.115-0500",
       "body": "I've confirmed that it is related to the id.\n\nIn fluidRenderer.js\n\nline: 1446\\\nlastId is set to the id of the last focused element\n\nline: 1472 - 1477\\\nThe element identified by lastId is found. If it exists, focus is called on it.&#x20;\n"
     },
     {
+      "id": "18126",
       "author": "Harris Wong",
       "date": "2010-12-01T11:55:03.610-0500",
       "body": "Instead of disabling the current element with the \"page-link:disabled\", we now apply the currentPage style onto the current element.  Also removed all \"flc-pager-pageLink-disabled\" from the Pager-tests.html.  Lastly, the pager tests are also adjusted respectively. &#x20;\n"
     },
     {
+      "id": "18127",
       "author": "Harris Wong",
       "date": "2010-12-01T12:52:47.623-0500",
       "body": "Replaced patch. &#x20;\n"
     },
     {
+      "id": "18128",
       "author": "Justin Obara",
       "date": "2010-12-01T17:02:20.146-0500",
       "body": "Committed Harris' patch ( FLUID-2244-patch.txt ) which solves the issue of the changing id's by removing the notion of a disabled link. The code had recently been changed to use disabled links for the current page, which resulted in the id of the element changing, and the lack of focus after rerendering.\n"
     },
     {
+      "id": "18129",
       "author": "Michelle D'Souza",
       "date": "2010-12-14T11:31:10.819-0500",
       "body": "Functionally tested by Mike, code reviewed by me. All systems go.\n"

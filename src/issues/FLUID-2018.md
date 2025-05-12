@@ -56,51 +56,61 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24187",
       "author": "Gonzalo David Silverio",
       "date": "2009-01-26T09:59:50.000-0500",
       "body": "Would ensuring that componentThat.model.value (InlineEdit.js line 527)  is not empty after trimming whitespace be appropriate?\n\n* &#x20;              if (componentThat.model.value) {\\\n  \\+                if (componentThat.model.value && (jQuery.trim(componentThat.model.value) !='')){\n"
     },
     {
+      "id": "24190",
       "author": "Justin Obara",
       "date": "2009-02-06T12:03:59.000-0500",
       "body": "Bug Parade  0.8 release\n"
     },
     {
+      "id": "24192",
       "author": "Anastasia Cheetham",
       "date": "2009-02-11T17:31:50.000-0500",
       "body": "This is fixed, though I definitely request a code review!\n"
     },
     {
+      "id": "24194",
       "author": "Jacob Farber",
       "date": "2009-02-13T11:38:20.000-0500",
       "body": "Code was reviewed, and it looks good.\n"
     },
     {
+      "id": "24196",
       "author": "Justin Obara",
       "date": "2009-02-13T12:10:30.000-0500",
       "body": "It doesn't seem to be working for the themed inline edit scenarios and the sakai announcements version doesn't get highlighted on mouse over when there is only a space char. These occur in at least IE 7 (Win Vista).\n"
     },
     {
+      "id": "24199",
       "author": "Antranig Basman",
       "date": "2009-02-16T18:00:17.000-0500",
       "body": "I have checked this out in FF2, FF3 and Opera and IE6 and it looks ok. Downgraded to minor since only occuring on 1 platform.\n"
     },
     {
+      "id": "24201",
       "author": "Justin Obara",
       "date": "2009-02-18T13:17:29.000-0500",
       "body": "This still occurs on Safari as well\n"
     },
     {
+      "id": "24204",
       "author": "Justin Obara",
       "date": "2009-04-02T10:43:03.000-0400",
       "body": "Resetting to major, because with a lack of keyboard accessibiltity, it is impossible to re-open it in edit mode in Safari\n"
     },
     {
+      "id": "24207",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T09:04:47.526-0400",
       "body": "I just revisited this after the 1.4 release, and I'm unable to reproduce it. Justin, if you concur, do you want to close it?\n"
     },
     {
+      "id": "24209",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T09:06:54.824-0400",
       "body": "Testing this after 1.4, it still seems to be ocurring. The cursor does change to a pointy-finger, but you can't seem to actually click anywhere that does anything.\n"

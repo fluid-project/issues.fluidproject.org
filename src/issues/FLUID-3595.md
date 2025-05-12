@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14916",
       "author": "y z",
       "date": "2010-04-05T12:53:49.000-0400",
       "body": "Doesn't work only in demo portal, Sakai demo works well.\n"
     },
     {
+      "id": "14919",
       "author": "Justin Obara",
       "date": "2014-07-14T10:04:35.628-0400",
       "body": "The demo includes the hover text. The markup driven example doesn't include hover text, and the annotated example only shows it after the table has been sorted by a particular column.\n"

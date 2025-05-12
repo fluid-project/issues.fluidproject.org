@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20965",
       "author": "Justin Obara",
       "date": "2013-09-20T12:52:27.194-0400",
       "body": "Sent a pull request with a test case demonstrating the issue.\\\n<https://github.com/fluid-project/infusion/pull/407>\n"
     },
     {
+      "id": "20966",
       "author": "Antranig Basman",
       "date": "2013-09-21T02:26:12.682-0400",
       "body": "This issue is not a fault, but caused by an inappropriate use of the IoC testing framework, which is primarily designed to assist with working with asynchronous sequences. From the pull request:\n\n\"The behaviour of these tests is essentially random, depending on the exact order that listeners are notified. As explained in the channel, the testing approach is invalid and the IoC testing fixture system should only be used for asynchronous events with a definite ordering, not for synchronous events for which the sequence is arbitrary.\"\n\nAlso see IRC discussion from today at <http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-09-20>\n"

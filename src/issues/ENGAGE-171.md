@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12509",
       "author": "Colin Clark",
       "date": "2009-10-22T19:01:34.000-0400",
       "body": "Updated after the Engage 0.1 release at r8468\n"
     },
     {
+      "id": "12510",
       "author": "Justin Obara",
       "date": "2009-11-10T14:18:10.000-0500",
       "body": "Closed as per previous comment\n"

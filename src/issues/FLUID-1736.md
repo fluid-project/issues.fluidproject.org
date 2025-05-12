@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17166",
       "author": "Justin Obara",
       "date": "2011-01-20T08:38:36.789-0500",
       "body": "The nightly builds aren't archived, but there is a daily build of the infusion builder that creates custom builds based on trunk\n"
     },
     {
+      "id": "17167",
       "author": "Justin Obara",
       "date": "2011-01-20T08:39:15.330-0500",
       "body": "link to daily build of Infusion builder:\\\n<http://forge.fluidproject.org/infusionBuilder/html/InfusionBuilder.html>\n"

@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18207",
       "author": "Justin Obara",
       "date": "2008-08-27T14:55:32.000-0400",
       "body": "I believe this was resolved along with fluid-1186 in r5431\n"
     },
     {
+      "id": "18208",
       "author": "Justin Obara",
       "date": "2008-11-13T13:42:00.000-0500",
       "body": "Appears to have been fixed\n"

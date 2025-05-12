@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18656",
       "author": "Barbara Glover",
       "date": "2008-03-18T11:59:55.000-0400",
       "body": "iteration04\n"
     },
     {
+      "id": "18661",
       "author": "Barbara Glover",
       "date": "2008-03-18T12:00:54.000-0400",
       "body": "Completed heuristic evaluation of the Date Picker Design Erin made as well as the JQuery one.  The results of our evaluation are posted on the wiki.\n"
     },
     {
+      "id": "18665",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:55.511-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

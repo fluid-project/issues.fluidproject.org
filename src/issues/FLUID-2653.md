@@ -46,16 +46,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22778",
       "author": "Justin Obara",
       "date": "2010-05-07T13:29:55.892-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "22779",
       "author": "Justin Obara",
       "date": "2010-10-04T15:37:52.404-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "22783",
       "author": "Michelle D'Souza",
       "date": "2010-12-23T15:43:14.759-0500",
       "body": "Please check if this is done and either close it or put it into another release.\n"

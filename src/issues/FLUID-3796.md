@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24693",
       "author": "Justin Obara",
       "date": "2010-10-13T15:14:13.074-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "24694",
       "author": "Justin Obara",
       "date": "2010-10-14T10:37:14.694-0400",
       "body": "Moved the ariaBusyText and ariaDoneText into a strings block.\n"
     },
     {
+      "id": "24695",
       "author": "Justin Obara",
       "date": "2010-10-18T08:48:45.290-0400",
       "body": "Colin, Golam, and myself walked through the code and reviewed the changes.\n"

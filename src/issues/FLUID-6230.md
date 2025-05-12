@@ -35,16 +35,19 @@
   ],
   "comments": [
     {
+      "id": "25680",
       "author": "Justin Obara",
       "date": "2017-11-24T13:20:23.682-0500",
       "body": "For UIO+ we can modify the behaviour to add the a modelListener on panelIndex to scroll the panel. This effectively snaps the panels into place on scroll.\n\n```javascript\nmodelListeners: {\r\n    \"panelIndex\": {\r\n        listener: \"fluid.prefs.arrowScrolling.scrollToPanel\",\r\n        args: [\"{that}\", \"{that}.model.panelIndex\"],\r\n        includeSource: \"scrollEvent\"\r\n    }\r\n}\n```\n\nIn ArrowScrolling.js we can remove the \"excludeSource: \\[\"scrollEvent\"]\" from the \"panelIndex\" modelListener\" however, there are still some issues. In Firefox it doesn't scroll far enough to indicate that a new panel is on screen so the problem still remains. Also, because this code is still run in the desktop view, it makes scrolling appear jittery.\n"
     },
     {
+      "id": "25681",
       "author": "Justin Obara",
       "date": "2017-11-24T14:01:25.860-0500",
       "body": "screenshot.png shows the the contrast panel misaligned after tab focusing it in the mobile view.\n"
     },
     {
+      "id": "25682",
       "author": "Justin Obara",
       "date": "2017-11-27T08:52:58.695-0500",
       "body": "The styling of the panel should also be reviewed, as it seems they are slightly larger than the viewport width. I believe this has to do with extra padding in the panel and the border around each panel.\n"

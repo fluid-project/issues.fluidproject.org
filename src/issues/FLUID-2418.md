@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15032",
       "author": "Michelle D'Souza",
       "date": "2009-04-16T18:01:55.000-0400",
       "body": "This is also the case in the test template.\n"
     },
     {
+      "id": "15035",
       "author": "Justin Obara",
       "date": "2009-05-16T22:29:58.000-0400",
       "body": "Placed CSS files ahead of JS files\n"

@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21816",
       "author": "Colin Clark",
       "date": "2008-08-19T15:12:03.000-0400",
       "body": "Created a new mergeComponentOptions() function.\n"
     },
     {
+      "id": "21817",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:44.321-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

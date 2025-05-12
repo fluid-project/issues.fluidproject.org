@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25862",
       "author": "Giovanni Tirloni",
       "date": "2018-02-09T05:53:04.225-0500",
       "body": "Confluence upgraded to 6.7.0\n"

@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18370",
       "author": "Colin Clark",
       "date": "2008-10-21T23:05:51.000-0400",
       "body": "The DemoUploadManager has been built and fires all the necessary callbacks to enable a fully working demo. We still need to implement the progress bars in FileQueueView and Uploader, but these tasks are filed under separate JIRA issues.\n"

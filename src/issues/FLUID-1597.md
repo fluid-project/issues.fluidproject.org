@@ -35,21 +35,25 @@
   ],
   "comments": [
     {
+      "id": "18765",
       "author": "Justin Obara",
       "date": "2008-09-19T10:43:41.000-0400",
       "body": "'screenshot-1' shows the avatar displayed with the incorrect size\n"
     },
     {
+      "id": "18769",
       "author": "Antranig Basman",
       "date": "2008-09-19T15:23:57.000-0400",
       "body": "Various attempts at determining the item height via JQuery all produced the same useless results, this has been resolved via a browser detect for Safari.\n"
     },
     {
+      "id": "18773",
       "author": "Justin Obara",
       "date": "2008-09-22T11:02:21.000-0400",
       "body": "Verified fix using:\n\nSafari 3.1 (Mac OS 10.5)\n"
     },
     {
+      "id": "18776",
       "author": "Justin Obara",
       "date": "2008-09-22T12:59:14.000-0400",
       "body": "Bug Parade: 0.5 release\n"

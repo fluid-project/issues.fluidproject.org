@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22608",
       "author": "Antranig Basman",
       "date": "2016-08-04T12:35:22.114-0400",
       "body": "This report seems to be incorrect and confused. The implementation within fluid.expandImmediate is **indeed** the \"fluid.expander.fetch\" implementation that is mentioned, and so is resistant to the problem described. It's been so far impossible to demonstrate this in a test case.\n"
     },
     {
+      "id": "22610",
       "author": "Cindy Li",
       "date": "2016-10-20T14:07:35.356-0400",
       "body": "The pull request <https://github.com/fluid-project/infusion/pull/731> to demonstrate the non-existence of this issue has been merged into the master at 4596804313815bc6f6b43c8346337d219ea7e2e2\n"

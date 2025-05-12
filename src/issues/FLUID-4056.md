@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16692",
       "author": "Justin Obara",
       "date": "2015-06-09T10:33:50.381-0400",
       "body": "Antranig Basman could you please determine if this jira is still relevant?\n"
     },
     {
+      "id": "16694",
       "author": "Antranig Basman",
       "date": "2015-06-09T12:43:14.577-0400",
       "body": "Yes, still somewhat relevant although not very urgent. There's an annoying and increasingly wide gap between the access semantics operated by fluid.get/fluid.set and the ChangeApplier API. These used to be more in line, but with the model relay work, the ChangeApplier semantic has now diverged significantly from fluid.set, and is likely to diverge much further in future - see notes on <https://wiki.fluidproject.org/display/fluid/New+New+Notes+on+the+ChangeApplier> especially with regards to \"immutable application\". This is not terribly urgent because increasingly we will be focusing on semantics for non-users of APIs - either because they are using declarative configuration, relay, or change rules, or else they are outside the JS VM altogether, e.g. via the Nexus. I doubt that we will produce a component \"fluid.accessor\" as this JIRA suggests, but we will certainly do something to rationalise our APIs in this area.\n"

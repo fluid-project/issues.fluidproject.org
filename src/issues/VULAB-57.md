@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27467",
       "author": "Blake E",
       "date": "2008-10-27T11:07:53.000-0400",
       "body": "vulab4\n"
     },
     {
+      "id": "27468",
       "author": "Blake E",
       "date": "2008-10-27T11:12:47.000-0400",
       "body": "created based database class. Mostly skeleton atm, but will fill in as integration into services happens.\n"

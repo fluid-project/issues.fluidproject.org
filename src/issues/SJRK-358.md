@@ -40,6 +40,7 @@
   ],
   "comments": [
     {
+      "id": "26570",
       "author": "Dana",
       "date": "2020-07-27T16:13:04.088-0400",
       "body": "\"Clear all\" would clear content of the active page only (i.e. story blocks). Perhaps we could label it \"clear all blocks\", to be clear 😃\n\nWe could consider a clear all button on the Title/Author/Keyword page too.\n"

@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22015",
       "author": "Kasper Galschiot Markus",
       "date": "2014-04-09T16:44:25.924-0400",
       "body": "As per the architecture meeting, Wednesday, April 9 (<http://piratepad.net/ep/pad/view/O84cznEesx/izpgCyDvgG>), it was decided that we should remove the 'value' alias and only allow 'input' and 'inputPath' to avoid any confusion\n"
     },
     {
+      "id": "22022",
       "author": "Antranig Basman",
       "date": "2014-06-24T07:50:33.173-0400",
       "body": "Note that this also needs to be fixed for multiInputValueTransforms, e.g. linearScale currently fails to support \"inputPath\" but only accepts \"valuePath\"\n"

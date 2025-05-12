@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13651",
       "author": "Colin Clark",
       "date": "2008-03-04T01:13:53.000-0500",
       "body": "Used the jQuery UI 1.5b Tabs example as a basis for showing simple keyboard accessibility.\n"
     },
     {
+      "id": "13652",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:28:00.863-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

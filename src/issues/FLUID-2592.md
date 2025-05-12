@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21847",
       "author": "Justin Obara",
       "date": "2009-04-13T14:20:11.000-0400",
       "body": "update the paths to the images.&#x20;\n"
     },
     {
+      "id": "21848",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:18.440-0500",
       "body": "Closing issues that were fixed in 1.1\n"

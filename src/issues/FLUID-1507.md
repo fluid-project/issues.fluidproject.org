@@ -41,11 +41,13 @@
   ],
   "comments": [
     {
+      "id": "18788",
       "author": "Justin Obara",
       "date": "2008-09-09T10:37:19.000-0400",
       "body": "'screenshot-1' shows that drop target is larger than the column it is in. Notice that it sticks out past the portlets above and below it\n"
     },
     {
+      "id": "18791",
       "author": "Justin Obara",
       "date": "2008-09-11T09:31:01.000-0400",
       "body": "Verified fix using:\n\nIE7 (Win XP, Win Vista)\n"

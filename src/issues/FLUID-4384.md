@@ -33,6 +33,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18803",
       "author": "Anastasia Cheetham",
       "date": "2011-08-26T15:29:58.866-0400",
       "body": "This issue has been resolved: these two options are no longer available as top-level options of UIOptions.\n"

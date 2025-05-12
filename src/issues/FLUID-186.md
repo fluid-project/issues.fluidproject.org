@@ -32,26 +32,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18358",
       "author": "Colin Clark",
       "date": "2008-07-31T18:14:09.000-0400",
       "body": "infusion-05-wishlist\n"
     },
     {
+      "id": "18361",
       "author": "Michelle D'Souza",
       "date": "2008-08-07T12:30:04.000-0400",
       "body": "There are 3 major known issues that we should ping the uPortal community about.\n\n1\\. Avatar does not show up in Safari <https://fluidproject.atlassian.net/browse/FLUID-774#icft=FLUID-774>\\\n2\\. document.writeln breaks drag and drop (this is a problem for the google portlet <https://fluidproject.atlassian.net/browse/FLUID-572#icft=FLUID-572>\\\n3\\. Major speed issues in FF2 <https://fluidproject.atlassian.net/browse/FLUID-1094#icft=FLUID-1094>\n"
     },
     {
+      "id": "18362",
       "author": "Michelle D'Souza",
       "date": "2008-09-25T15:22:14.000-0400",
       "body": "Jen has been doing the integration and Anastasia has been assisting with issues that have cropped up including <https://fluidproject.atlassian.net/browse/FLUID-1616#icft=FLUID-1616>.&#x20;\n"
     },
     {
+      "id": "18365",
       "author": "Michelle D'Souza",
       "date": "2008-09-30T12:27:04.000-0400",
       "body": "Anastasia will be at the unconference next week where the remainder of this work will be carried out.&#x20;\n"
     },
     {
+      "id": "18367",
       "author": "Michelle D'Souza",
       "date": "2008-10-01T13:32:51.000-0400",
       "body": "dev-iteration44\n"

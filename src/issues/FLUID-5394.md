@@ -34,16 +34,19 @@
   ],
   "comments": [
     {
+      "id": "13266",
       "author": "Justin Obara",
       "date": "2014-06-03T11:58:21.459-0400",
       "body": "screenshot.png shows the tooltip at the top left corner of the window.\n"
     },
     {
+      "id": "13267",
       "author": "beth.mejsullivan",
       "date": "2014-06-10T16:29:46.181-0400",
       "body": "When you hover over a page number, the tooltip opens and sets the \"originalTarget\" variable to the anchor (\\<a id=\"page-link:link9\" href=\"#\" aria-describedby=\"ui-tooltip-0\">) within the list item (\\<li class=\"flc-pager-pageLink demo-pager-pageLink-default\">).\\\nWhen you mouse off of the page number, the tooltip closes based on the \"originalTarget\" variable set when the tooltip was originally opened and the .\n\nIf you click the next button before the tooltip still has lost it's opacity, then the close function isn't started until the page reloads. When the page reloads the \"makeCloseHandler\" from the Tooltip.js file fires, but the originalTarget is now the list item and not the anchor within the list item. \\\nThe \"that.events.afterClose.fire(...)\" function does not return a value to show whether it successfully did the afterClose event.\n\nThen tooltip remains on the screen at the top-left hand corner of the page.\n\nInvestigating more...\n"
     },
     {
+      "id": "13268",
       "author": "Justin Obara",
       "date": "2014-06-13T13:16:04.697-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/531> ) into the project repo at 8dd9adde512559455b3d02a905938dffd7b0ec10\n"

@@ -45,16 +45,19 @@
   ],
   "comments": [
     {
+      "id": "19566",
       "author": "Justin Obara",
       "date": "2008-07-10T16:08:40.000-0400",
       "body": "'screenshot-1' shows how the text is displayed by in-line edit\n"
     },
     {
+      "id": "19567",
       "author": "Justin Obara",
       "date": "2008-10-31T09:33:01.000-0400",
       "body": "design-watched\n"
     },
     {
+      "id": "19568",
       "author": "Antranig Basman",
       "date": "2008-11-07T13:07:24.000-0500",
       "body": "This issue cannot be resolved, for similar reasons to <https://fluidproject.atlassian.net/browse/FLUID-890#icft=FLUID-890> and others. Support for multi-line operations in single-line fields in browsers is fundamentally inconsistent, and if multi-line operations are required, the integrator must supply a multi-line edit view.\n"

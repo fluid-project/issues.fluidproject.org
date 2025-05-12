@@ -34,16 +34,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17375",
       "author": "Colin Clark",
       "date": "2008-10-20T12:41:41.000-0400",
       "body": "These two are related because they are both required to support a reasonable rich text version of the inline editor.\n"
     },
     {
+      "id": "17376",
       "author": "Antranig Basman",
       "date": "2008-11-13T21:40:27.000-0500",
       "body": "Merged into trunk at revision 6031. See the new \"accessor\" pattern which mandates a function member named \"value\" with jQuery.val()/text() etc. semantics. Standard examples are provided in the form of standardAccessor and richTextViewAccessor.\n"
     },
     {
+      "id": "17377",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:55.659-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

@@ -63,31 +63,37 @@
   ],
   "comments": [
     {
+      "id": "19689",
       "author": "Justin Obara",
       "date": "2008-09-16T14:12:45.000-0400",
       "body": "'screenshot-1' shows the focus styling in FF.&#x20;\n"
     },
     {
+      "id": "19691",
       "author": "Justin Obara",
       "date": "2008-09-16T14:16:15.000-0400",
       "body": "'screenshot-2' shows the focus styling in IE 7\n"
     },
     {
+      "id": "19693",
       "author": "Justin Obara",
       "date": "2008-09-16T14:16:44.000-0400",
       "body": "This affects Uploader 2\n"
     },
     {
+      "id": "19695",
       "author": "Jacob Farber",
       "date": "2008-09-18T15:17:16.000-0400",
       "body": ":focus pseudo class not supported in IE - this requires an explicit class applied on focus to give it some effect.\n"
     },
     {
+      "id": "19697",
       "author": "Eli Cochran",
       "date": "2008-09-19T13:37:20.000-0400",
       "body": "Fixed in Uploader1 but not yet fixed in Uploader 2. The styles have been added but the code is not in place.\n"
     },
     {
+      "id": "19700",
       "author": "Jonathan Hung",
       "date": "2009-06-08T13:42:59.000-0400",
       "body": "Appears to be fixed. Confirmed in IE7.\n"

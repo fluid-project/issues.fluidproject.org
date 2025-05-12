@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10484",
       "author": "James Yoon",
       "date": "2010-06-08T13:04:20.533-0400",
       "body": "For calibration wireframes (includes image ordering), see: <http://wiki.fluidproject.org/display/fluid/Decapod+1.0+Wireframes>\\\nFor calibration storycards (includes image ordering), see: <http://wiki.fluidproject.org/display/fluid/Decapod+storycards+-+Calibration>\n"
     },
     {
+      "id": "10485",
       "author": "Colin Clark",
       "date": "2010-06-30T11:28:00.959-0400",
       "body": "This issue is superceded by the <https://fluidproject.atlassian.net/browse/DECA-101#icft=DECA-101> umbrella issue, so I'm closing it as a duplicate.\n"

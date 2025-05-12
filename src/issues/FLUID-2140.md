@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21069",
       "author": "Jonathan Hung",
       "date": "2009-01-19T14:57:40.000-0500",
       "body": "Iteration29\n"
     },
     {
+      "id": "21070",
       "author": "Jonathan Hung",
       "date": "2009-01-21T11:06:54.000-0500",
       "body": "* Workflow module: workflow-ng\n* Stamping of contents: use CCK Field Permissions on a field and only allow Admin to modify it. Then use wf-ng to modify it using custom php code through actions.\n"
     },
     {
+      "id": "21071",
       "author": "Jonathan Hung",
       "date": "2009-03-20T11:44:34.000-0400",
       "body": "Done for now. User can now change visibility of their pattern and the interface displays it accordingly depending on the user's role.\n"

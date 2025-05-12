@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17964",
       "author": "Jacob Farber",
       "date": "2009-01-21T10:20:41.000-0500",
       "body": "Updated core selectors and CSS\n"
     },
     {
+      "id": "17966",
       "author": "Justin Obara",
       "date": "2009-01-22T13:30:31.000-0500",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

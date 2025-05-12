@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19682",
       "author": "Jonathan Hung",
       "date": "2008-06-24T18:10:24.000-0400",
       "body": "For the conference, we will have at least 2 of the 3 ready:\n\n* Sortable Table\n* Titled Sections\n* Multi-step indicator\n"
     },
     {
+      "id": "19684",
       "author": "Jonathan Hung",
       "date": "2008-06-25T19:00:59.000-0400",
       "body": "Instead of multi-step, doing List Builder instead since there is a good Sakai example of it.\n"

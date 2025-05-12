@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20324",
       "author": "Jonathan Hung",
       "date": "2007-06-29T09:48:50.000-0400",
       "body": "Could be related to this dijit tooltip bug:\\\n<http://trac.dojotoolkit.org/ticket/1526>\n"
     },
     {
+      "id": "20325",
       "author": "Anastasia Cheetham",
       "date": "2007-10-01T14:30:05.000-0400",
       "body": "This might be fixed with dojo 0.9, and should only be addressed after we upgrade\n"
     },
     {
+      "id": "20326",
       "author": "Michelle D'Souza",
       "date": "2007-10-22T17:49:43.000-0400",
       "body": "Likely fixed with the move to jQuery UI's drag and drop\n"

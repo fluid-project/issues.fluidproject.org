@@ -53,6 +53,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25186",
       "author": "Antranig Basman",
       "date": "2015-01-30T10:04:20.869-0500",
       "body": "A further requirement - we should try to eliminate the cumbersome piece of memory-ware \"fluid.typeFount\" and have the framework eagerly evaluate the shells of any components which appear to have the FORM of dynamic grades first amongst a set of siblings - since these are more likely to encode type decisions that might be consumed by other components.\n"

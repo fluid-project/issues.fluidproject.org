@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11227",
       "author": "Justin Obara",
       "date": "2014-08-05T08:43:14.819-0400",
       "body": "Merged at 6446223d6380f7c4c16886434690ea8032e71cef\n"
     },
     {
+      "id": "11228",
       "author": "Justin Obara",
       "date": "2014-08-05T08:46:52.395-0400",
       "body": "Pull request <https://github.com/fluid-project/metadata/pull/28> was merged at 6446223d6380f7c4c16886434690ea8032e71cef\n"

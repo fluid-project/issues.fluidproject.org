@@ -66,31 +66,37 @@
   ],
   "comments": [
     {
+      "id": "12642",
       "author": "Michelle D'Souza",
       "date": "2010-02-02T10:16:26.000-0500",
       "body": "mccord-pilot\n"
     },
     {
+      "id": "12643",
       "author": "y z",
       "date": "2010-02-02T13:34:25.000-0500",
       "body": "Most updated patch that fixes the services for exhibiton browse, view and about\n"
     },
     {
+      "id": "12644",
       "author": "y z",
       "date": "2010-02-02T18:03:55.000-0500",
       "body": "Latest patch that works with all pages but artifact view\n"
     },
     {
+      "id": "12645",
       "author": "y z",
       "date": "2010-02-03T11:16:33.000-0500",
       "body": "Latest patch for new data feeds, ready for merge with Antranig's update\n"
     },
     {
+      "id": "12646",
       "author": "y z",
       "date": "2010-02-03T16:15:24.000-0500",
       "body": "All data and markup feeds work except for the new data sprout that replaces the older datafeed on exhibition browse page.\n"
     },
     {
+      "id": "12647",
       "author": "Justin Obara",
       "date": "2010-02-08T16:57:12.000-0500",
       "body": "The data feeds are now taking in a language parameter\n"

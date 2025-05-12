@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "16880",
       "author": "Daphne Ogle",
       "date": "2007-10-11T17:59:40.000-0400",
       "body": "Screen shot of current note\n"
     },
     {
+      "id": "16882",
       "author": "Eli Cochran",
       "date": "2007-11-14T13:44:45.000-0500",
       "body": "Logged as: GAL-64 <http://jira.sakaiproject.org/jira/browse/GAL-64> assigned to Eli Cochran\n"

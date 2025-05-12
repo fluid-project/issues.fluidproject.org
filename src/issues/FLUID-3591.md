@@ -35,21 +35,25 @@
   ],
   "comments": [
     {
+      "id": "23431",
       "author": "Justin Obara",
       "date": "2010-04-01T16:23:43.000-0400",
       "body": "screenshot-1 shows one of the failing unit tests\n"
     },
     {
+      "id": "23432",
       "author": "Antranig Basman",
       "date": "2010-04-06T11:14:38.000-0400",
       "body": "IE6 doesn't appreciate raw text being added as an href target and attempts to fully qualify it with the current base URL on fetch. Text case fixed up to supply a valid protocol-based URL. Also improved slight ambiguity in assertNode messages which confused me for a while.\n"
     },
     {
+      "id": "23433",
       "author": "Justin Obara",
       "date": "2010-04-06T12:04:16.000-0400",
       "body": "Tested, looks to be working now\n"
     },
     {
+      "id": "23434",
       "author": "Colin Clark",
       "date": "2010-04-07T11:26:39.000-0400",
       "body": "I've reviewed Antranig's changes to the Renderer tests at r9804 and they look good. +1 for inclusion in Infusion 1.2\n"

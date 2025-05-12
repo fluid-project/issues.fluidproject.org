@@ -39,16 +39,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23599",
       "author": "Justin Obara",
       "date": "2014-06-09T15:29:56.638-0400",
       "body": "A similar issue was present in Infusion 1.4's version of UIO. However, the grouping was different, it was by tab so there was some more content provided in this manner for some of the items.\n"
     },
     {
+      "id": "23601",
       "author": "Justin Obara",
       "date": "2014-06-16T10:32:38.215-0400",
       "body": "Perhaps changing the markup of the panels would help. Instead of using headers, we could use a fieldset.\n"
     },
     {
+      "id": "23602",
       "author": "Justin Obara",
       "date": "2017-09-26T12:30:55.931-0400",
       "body": "Contextual information is much better across the board. In the case of Table of Contents, it's adjuster has been changed to a switch. However, in IE 11 it just reads blank. In Firefox and Chrome it works fine. Tested using NVDA.\n"

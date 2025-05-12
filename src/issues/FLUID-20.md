@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17987",
       "author": "Michelle D'Souza",
       "date": "2007-10-22T11:40:25.000-0400",
       "body": "This was a bug when we were using dojo's drag and drop. Now that we've moved to using jQuery UI's drag and drop this is no longer an issue.\n"

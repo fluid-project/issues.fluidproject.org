@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12370",
       "author": "Michelle D'Souza",
       "date": "2009-08-21T13:48:33.000-0400",
       "body": "Currently the tags component will display tags and provide an edit link which opens a textfield and puts in remove links beside each tag. The actual acts of adding and removing tags are not yet supported. This behaviour should probably be implemented using the utilities already in inline edit and in fact may require some refactoring of inline edit.&#x20;\n"
     },
     {
+      "id": "12371",
       "author": "Michelle D'Souza",
       "date": "2009-09-22T14:51:45.000-0400",
       "body": "New upcoming designs for tagging is likely not going to include the ability to edit tags. I'm therefore going to remove the start of the functionality.&#x20;\n"
     },
     {
+      "id": "12372",
       "author": "Michelle D'Souza",
       "date": "2009-09-24T12:02:58.000-0400",
       "body": "The basic tagging component has been built.&#x20;\n"
     },
     {
+      "id": "12373",
       "author": "Justin Obara",
       "date": "2009-11-10T10:51:50.000-0500",
       "body": "This is an umbrella issue whose children have all been closed\n"

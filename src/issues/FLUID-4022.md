@@ -29,36 +29,43 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16261",
       "author": "heidi valles",
       "date": "2011-03-07T16:40:35.503-0500",
       "body": "How enhancer applies styles now:\\\n-remove clashing classes from container (\\<body>)\\\n-add styles for font, spacing, theme, layout on container\\\n-remove background images if chosen\\\n-sets text size on container\\\n-sets line spacing on container\\\n-sets table of contents\\\n-styles links\\\n-styles inputs\n\nAll FSS stylesheets are added by user into the \\<head>, Enhancer adds/removes fl- classnames as appropriate to reflect user's options.\n"
     },
     {
+      "id": "16263",
       "author": "heidi valles",
       "date": "2011-04-15T12:12:22.564-0400",
       "body": "Pull request sent for branch in my github. !importants removed except for where they make sense in fss-layout (linear and no bg imgs).\n"
     },
     {
+      "id": "16266",
       "author": "Justin Obara",
       "date": "2011-04-19T14:42:18.056-0400",
       "body": "I've pushed the changes, from heidi's branch for this issue, into the project repo at fd9978f0dbe114c186eca0d95493e5861acc17ae\n"
     },
     {
+      "id": "16268",
       "author": "Anastasia Cheetham",
       "date": "2011-06-02T14:30:26.013-0400",
       "body": "There are still four !important tags in the HCI theme that are unrelated to background images. Removing them doesn't seem make any of the FSS styles/widgets look any different, except for actually improving the widget by making the border visible. This might want to be addressed in conjunction with <https://fluidproject.atlassian.net/browse/FLUID-4219#icft=FLUID-4219>.\n"
     },
     {
+      "id": "16270",
       "author": "heidi valles",
       "date": "2011-06-06T10:20:46.125-0400",
       "body": "<https://github.com/fluid-project/infusion/pull/65>\n"
     },
     {
+      "id": "16272",
       "author": "Justin Obara",
       "date": "2011-06-07T14:00:30.646-0400",
       "body": "setting resolution\n"
     },
     {
+      "id": "16274",
       "author": "Justin Obara",
       "date": "2011-06-07T14:00:44.694-0400",
       "body": "Merged into the project repo at e2281c2845b279948bb579b7e0d07591ea6c3bc8\n"

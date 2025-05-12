@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26115",
       "author": "Colin Clark",
       "date": "2010-08-19T18:26:41.778-0400",
       "body": "Kettle, as a proof of concept, was successfully implemented on top of Rhino and Env.js. For the 0.3 release, we will move it to the faster Node.js environment and remove the dependency on Env.js\n"

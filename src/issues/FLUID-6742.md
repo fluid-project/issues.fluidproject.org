@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25195",
       "author": "Antranig Basman",
       "date": "2022-07-01T18:58:30.223-0400",
       "body": "The sketch of this had \n\n```java\nmodel: {\r\n        QUnitReady: \"{that}.resources.QUnitReady.parsed\"\r\n    },\r\n    resources: {\r\n        QUnitReady: {\r\n            promiseFunc: \"fluid.identity\",\r\n            promiseArgs: \"{that}.QUnitReady\"\r\n        }\r\n    },\r\n    members: {\r\n        QUnitReady: \"@expand:fluid.promise()\",\r\n    }\n```\n\nbut we would then have to run \"runTests\" in some workflow function that say, operated immediately after concludeComponentObservation. Could be done now, but messy.\n"

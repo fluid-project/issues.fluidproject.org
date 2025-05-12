@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25678",
       "author": "Justin Obara",
       "date": "2017-03-14T12:39:42.388-0400",
       "body": "The suggestion from \"[Seriously Use Icon Fonts](https://benfrain.com/seriously-use-icon-fonts/#h-H2_3)\" is to use PUA codes starting from \"\\e600\" to avoid collisions.\n"
     },
     {
+      "id": "25679",
       "author": "Justin Obara",
       "date": "2021-06-22T13:23:58.881-0400",
       "body": "Could also address by switching to SVG icons. See <https://fluidproject.atlassian.net/browse/FLUID-6142#icft=FLUID-6142>\n"

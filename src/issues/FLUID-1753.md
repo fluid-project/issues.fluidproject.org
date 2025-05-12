@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18940",
       "author": "Antranig Basman",
       "date": "2008-11-13T22:08:30.000-0500",
       "body": "Probably resolved along with the fix to <https://fluidproject.atlassian.net/browse/FLUID-1310#icft=FLUID-1310>. Please reverify\n"
     },
     {
+      "id": "18943",
       "author": "Justin Obara",
       "date": "2008-12-03T11:55:36.000-0500",
       "body": "appears to be fixed\n"

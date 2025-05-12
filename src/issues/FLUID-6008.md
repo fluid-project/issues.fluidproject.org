@@ -40,21 +40,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22667",
       "author": "Justin Obara",
       "date": "2016-10-28T08:51:44.871-0400",
       "body": "Should also address missing focus highlighting in Safari for the pager examples:\n\n* <http://build.fluidproject.org/infusion/examples/components/progress/bidirectionalAnimation/>\n* <http://build.fluidproject.org/infusion/examples/components/progress/noAnimation/>\n"
     },
     {
+      "id": "22669",
       "author": "Justin Obara",
       "date": "2016-10-28T08:52:34.745-0400",
       "body": "Should also address the missing title element for the minimal pref editor example: <http://build.fluidproject.org/infusion/examples/framework/preferences/minimalEditor/>\n"
     },
     {
+      "id": "22671",
       "author": "Justin Obara",
       "date": "2016-10-28T08:53:40.552-0400",
       "body": "Should also address the missing H1 for the renderer selectors example: <http://build.fluidproject.org/infusion/examples/framework/renderer/selectors/>\n"
     },
     {
+      "id": "22673",
       "author": "Justin Obara",
       "date": "2016-11-01T16:14:50.140-0400",
       "body": "Merged PR ( <https://github.com/fluid-project/infusion/pull/772> ) into the project repo at 28b4dc44982817013de8a8fb267740d5c6d03008\n"

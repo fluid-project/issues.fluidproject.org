@@ -31,16 +31,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23859",
       "author": "Justin Obara",
       "date": "2011-05-17T09:45:12.214-0400",
       "body": "the current version of this has buttons to chose which type of uploader is used (concrete, IoC, and IoC with Demands). These buttons likely make the no-js test impossible.\n"
     },
     {
+      "id": "23862",
       "author": "Justin Obara",
       "date": "2011-05-17T09:45:34.198-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "23868",
       "author": "Colin Clark",
       "date": "2011-05-26T18:50:52.048-0400",
       "body": "I reviewed and pushed Mike fix at <https://github.com/colinbdclark/infusion/commit/6ec70e256e8e52d8d7f9067a4c549ac039496345>\n"

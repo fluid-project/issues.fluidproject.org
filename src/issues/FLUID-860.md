@@ -48,6 +48,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19425",
       "author": "Anastasia Cheetham",
       "date": "2011-01-20T16:41:21.754-0500",
       "body": "Now that the CheckBox example has been removed, we have no easy way to double-check this one. Any thoughts on how we can create a test case for it? Can we effectively simulate double-clicks in a unit test?\n"

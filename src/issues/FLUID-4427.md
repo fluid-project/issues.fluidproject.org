@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13097",
       "author": "Justin Obara",
       "date": "2011-09-06T16:23:54.806-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "13098",
       "author": "heidi valles",
       "date": "2011-09-07T09:49:52.829-0400",
       "body": "Also doesn't work in IE7. Text size works in IE8, but not line spacing.\n"
     },
     {
+      "id": "13099",
       "author": "Michelle D'Souza",
       "date": "2011-09-12T12:36:54.792-0400",
       "body": "Merged into project repo at 68f69313e7da641032c6fa8bec4ccd15dd2a0f00\n"

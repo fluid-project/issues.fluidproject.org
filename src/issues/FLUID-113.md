@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17770",
       "author": "Joseph Scheuhammer",
       "date": "2007-11-16T13:48:07.000-0500",
       "body": "To determine if scaling speed is due to repeated calls of the orderable finder function within the Reorderer, I placed a console.debug() at the top of that  function to print out whenever it is called.  I tested with Lightbox.html.\n\nWith respect to the keyboard, the finder function is called every time a cursor key is pressed, regardless of whether it is for navigation or moving a thumbnail.  See <http://issues.fluidproject.org/browse/FLUID-113>).\n\n(WIth respect to drag-and-drop, the orderable finder function is called once, ever.  See <http://issues.fluidproject.org/browse/FLUID-71>).\n"

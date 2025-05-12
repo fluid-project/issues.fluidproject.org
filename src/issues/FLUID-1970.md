@@ -37,21 +37,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18035",
       "author": "Justin Obara",
       "date": "2008-12-12T13:55:55.000-0500",
       "body": "Bug Parade 0.6 release\n"
     },
     {
+      "id": "18036",
       "author": "Anastasia Cheetham",
       "date": "2008-12-12T15:42:04.000-0500",
       "body": "I've removed the use of the intructionMessageId option, and the related IDs in the mark-up.\n"
     },
     {
+      "id": "18037",
       "author": "Michelle D'Souza",
       "date": "2008-12-15T14:58:29.000-0500",
       "body": "I've reviewed the fix and it looks good.&#x20;\n"
     },
     {
+      "id": "18038",
       "author": "Justin Obara",
       "date": "2008-12-15T15:23:22.000-0500",
       "body": "FF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

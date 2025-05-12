@@ -40,11 +40,13 @@
   ],
   "comments": [
     {
+      "id": "13413",
       "author": "Michelle D'Souza",
       "date": "2011-08-31T11:10:14.983-0400",
       "body": "This might be fixed in Justin's branch for 4370\n"
     },
     {
+      "id": "13415",
       "author": "Michelle D'Souza",
       "date": "2011-08-31T11:10:35.513-0400",
       "body": "Bug Parade Infusion\n"

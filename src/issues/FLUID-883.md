@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19569",
       "author": "Antranig Basman",
       "date": "2008-07-18T17:10:37.000-0400",
       "body": "I can't reproduce this after my fix to <https://fluidproject.atlassian.net/browse/FLUID-857#icft=FLUID-857> - could you check that it is still happening?\n"
     },
     {
+      "id": "19570",
       "author": "Justin Obara",
       "date": "2008-07-18T17:23:46.000-0400",
       "body": "Fixed with fix to Fluid-857\n\nVerified on FF3 (Mac OS 10.5)\n"

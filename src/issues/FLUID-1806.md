@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19321",
       "author": "Jonathan Hung",
       "date": "2008-11-13T19:43:31.000-0500",
       "body": "Iteration22\n"
     },
     {
+      "id": "19323",
       "author": "Jonathan Hung",
       "date": "2008-11-13T22:35:20.000-0500",
       "body": "The above \"fix\" didn't really fix it. The underlying problem was that there are two taxonomies (Category, and Tags) used to describe a pattern. Our View was searching across these taxonomies and finding the same pattern under different tags and categories. Thus multiples were being output in a View because it wasn't smart enough to understand it already found the same item.\n\nTo fix this, I added another condition to the View filter: exclude any pattern that was in the Tags taxonomy. This Views was successful in searching only in the Category taxonomy, and thus only returning a single instance of the pattern.\n"

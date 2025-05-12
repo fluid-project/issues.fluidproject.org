@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12846",
       "author": "Michelle D'Souza",
       "date": "2011-12-15T13:45:03.861-0500",
       "body": "As part of the issue, please pull out the borders for UIO. There should only be a bottom border.&#x20;\n"
     },
     {
+      "id": "12847",
       "author": "Michelle D'Souza",
       "date": "2011-12-19T12:04:50.379-0500",
       "body": "Merged into project repo at d9675f21687735e38913f06229baab518d887d38\n"

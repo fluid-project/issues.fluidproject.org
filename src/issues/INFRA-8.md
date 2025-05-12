@@ -22,11 +22,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25747",
       "author": "Alan Harnum",
       "date": "2015-08-07T10:19:38.910-0400",
       "body": "Avtar and I were discussing this yesterday and were wondering what the thoughts of others were about deploying this as a separate service (ELK stack or similar, with Logstash Forwarder or other pieces in place on the central logging servers) on Kubernetes.\n\nIt seemed plausible to us both that since this would be a brand new service it would be an opportunity to trial-run Kubernetes.\n\nTo that end I'm looking into the containerization options for running the ELK stack along with various other things.\n"
     },
     {
+      "id": "25748",
       "author": "Giovanni Tirloni",
       "date": "2018-01-23T09:11:21.170-0500",
       "body": "Alan Harnum is it okay if we close this Jira and open a new one specifically for ELK? I can do that if you think that's okay.\n"

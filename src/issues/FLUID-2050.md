@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20804",
       "author": "Jacob Farber",
       "date": "2009-01-05T14:58:55.000-0500",
       "body": "Rendering bug, like the :hover issue.\\\nMove something, and everything instantly appears.\n"
     },
     {
+      "id": "20805",
       "author": "Justin Obara",
       "date": "2009-01-06T09:51:08.000-0500",
       "body": "Verified fix using:\n\nIE7 (Win Vista)\n"
     },
     {
+      "id": "20806",
       "author": "Justin Obara",
       "date": "2009-01-06T12:10:10.000-0500",
       "body": "Bug Parade  0.7 release\n"

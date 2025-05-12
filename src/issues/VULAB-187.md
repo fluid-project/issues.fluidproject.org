@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "27279",
       "author": "Blake E",
       "date": "2009-03-02T12:24:21.000-0500",
       "body": "I pulled this data from an old database. Everything should work just fine!\n\nNOTE: JohnC found this in his testing 🙂\n"
     },
     {
+      "id": "27280",
       "author": "Blake E",
       "date": "2009-03-16T14:14:54.000-0400",
       "body": "in the svn. database.sql is updated 🙂\n"

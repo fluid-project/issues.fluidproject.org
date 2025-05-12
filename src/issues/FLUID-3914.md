@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14073",
       "author": "Jonathan Hung",
       "date": "2011-01-11T10:38:50.195-0500",
       "body": "Affects IE8 too but in an opposite manner.\n"
     },
     {
+      "id": "27811",
       "author": "Justin Obara",
       "date": "2024-07-22T13:50:28.911-0400",
       "body": "Internet Explorer is no longer supported\n"

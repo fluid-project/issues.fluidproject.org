@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25699",
       "author": "Antranig Basman",
       "date": "2013-08-28T01:34:35.258-0400",
       "body": "The above discussion ignores the fact that the implementation could be made much simpler and more correct by simply removing the use of ThreadLocals entirely. This should be done, and the collection of \"sources\" should be accumulated indefinitely as a part of the ChangeRequest object itself (and any smaller objects it ends up being fragmented into). This implies that ChangeRequest objects should not be considered copiable (by client code).&#x20;\n"
     },
     {
+      "id": "25700",
       "author": "Antranig Basman",
       "date": "2015-06-10T20:24:33.073-0400",
       "body": "Note that \"source tracking\" was removed entirely in the move to the new relay implementation of the ChangeApplier. There is an open JIRA for it to be restored: <https://issues.fluidproject.org/browse/FLUID-5490>\n"

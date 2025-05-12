@@ -32,16 +32,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25713",
       "author": "Cindy Li",
       "date": "2013-04-30T15:46:08.857-0400",
       "body": "I've started the implementation @ <https://github.com/cindyli/infusion/tree/FLUID-5005>\n\nThe text-to-speech menu in this branch has these features:\n\n1\\. A draggable floating menu;\\\n2\\. Auto-scroll into users' view when the page scrolls;\\\n3\\. Works with touch screens;\\\n4\\. Clicking on \"settings\" button pops settings menu. Clicking on anywhere else on the page, except the menu itself, closes the menu.\n"
     },
     {
+      "id": "25714",
       "author": "Justin Obara",
       "date": "2015-06-15T10:21:50.291-0400",
       "body": "Cindy Li is the experimentation for this complete?\n"
     },
     {
+      "id": "25715",
       "author": "Cindy Li",
       "date": "2015-06-15T10:36:04.610-0400",
       "body": "Justin Obara, only the features described above were experimented in the specified branch, which doesn't yet have actual designed menu items and functionalities.\n"

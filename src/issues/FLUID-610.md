@@ -35,16 +35,19 @@
   ],
   "comments": [
     {
+      "id": "16221",
       "author": "Former user",
       "date": "2008-05-16T17:59:38.000-0400",
       "body": "Since Eli isn't working today and the Toronto team is heading towards a long weekend, I'll have a try at hacking together a solution. If I'm successful, I'll attach it as a patch.\n"
     },
     {
+      "id": "16223",
       "author": "Former user",
       "date": "2008-05-16T20:51:29.000-0400",
       "body": "I've attached a MultiFileUpload.js patch which works with the version of Image Gallery that I'm about to check in.\n\nIt adds one new option to \"settings\":\n\nwhenFileUploaded : function to call when the server reports that an individual file has been successfully stored. It will receive two parameters: \"fileName\" (for the file name as known to the client; note that this is not guaranteed to be unique) and \"serverResponse\" (for the character string returned by the server, usually some sort of server-meaningful ID).\n\nHere's the sample from the Gallery page:\n\nvar settings =   {\\\nfileTypes: \"**.gif;**.jpeg;**.jpg;**.png;\\*.tiff\",\\\nfileTypesText: \"image files\",\\\ncontinueAfterUpload: false,\\\nwhenFileUploaded: function(fileName, serverResponse) {\\\nconsole.log(\"whenFileUploaded called; fileName=\" + fileName + \", serverResponse=\" + serverResponse);\\\njQuery('#new-image-form').append('\\<input type=\"hidden\" name=\"imageIds\" value=\"' + serverResponse + '\"/>');\\\n},\\\ndebug: true\\\n};\n"
     },
     {
+      "id": "16225",
       "author": "Eli Cochran",
       "date": "2008-05-19T13:40:24.000-0400",
       "body": "committed Ray's patch. Current uploader is working against reference JAVA app. May need some re-factoring for other instances\n"

@@ -25,21 +25,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13748",
       "author": "Daphne Ogle",
       "date": "2008-10-28T19:03:21.000-0400",
       "body": "iteration24\n"
     },
     {
+      "id": "13750",
       "author": "Paul Zablosky",
       "date": "2008-12-18T19:35:48.000-0500",
       "body": "The text for most of the sections has been updated.   A new solution image is still required.\n"
     },
     {
+      "id": "13752",
       "author": "Paul Zablosky",
       "date": "2008-12-19T18:42:23.000-0500",
       "body": "The solution image has been updated.  There may be some work to do on the Accessibility section.  Need a critique of current version from Daphne and Allison.\n"
     },
     {
+      "id": "13754",
       "author": "Paul Zablosky",
       "date": "2009-01-19T18:31:15.000-0500",
       "body": "I think we can call this one complete for now.  We can open a new issue if there is a need for more work on the uploader design pattern.\n"

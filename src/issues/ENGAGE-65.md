@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12043",
       "author": "Justin Obara",
       "date": "2009-09-21T16:38:18.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "12044",
       "author": "Justin Obara",
       "date": "2009-09-29T09:20:52.000-0400",
       "body": "I just made a commit (r8149), the issue number was correct, but the message wasn't.\n\nIt read: \"Had erroneously left in the titles as cabinet instead of renaming to browse. This is now fixed.\"\n\nBut should have been.\n\n\"Updated the client side in preparation for pulling data from the server\"&#x20;\n\nThe error was caused by accidentally hitting \"Ok\" instead of \"Cance\n"
     },
     {
+      "id": "12045",
       "author": "Colin Clark",
       "date": "2009-10-14T16:48:18.000-0400",
       "body": "Justin and Yura have done a great job implementing this for Engage 0.1\n"
     },
     {
+      "id": "12046",
       "author": "Justin Obara",
       "date": "2009-11-03T11:49:12.000-0500",
       "body": "Close as per previous comment\n"

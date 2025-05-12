@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18949",
       "author": "Jonathan Hung",
       "date": "2008-05-14T16:14:12.000-0400",
       "body": "HTML is now filtered, but further security evaluation should be carried out on Drupal.\n"
     },
     {
+      "id": "18951",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:58.614-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

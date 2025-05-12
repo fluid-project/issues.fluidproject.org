@@ -32,16 +32,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20831",
       "author": "Justin Obara",
       "date": "2013-10-15T15:12:32.018-0400",
       "body": "May want to consider moving the code changes from <https://fluidproject.atlassian.net/browse/FLUID-5180#icft=FLUID-5180> to the framework instead of the one from slidingPanel.js\n"
     },
     {
+      "id": "20832",
       "author": "Justin Obara",
       "date": "2013-10-18T13:15:14.822-0400",
       "body": "Submitted pull request <https://github.com/fluid-project/infusion/pull/419>\n\nThe pull request doesn't move the lookupMsg to the framework, but rather removes it completely. <https://fluidproject.atlassian.net/browse/FLUID-5180#icft=FLUID-5180> defined a new lookup method, which is employed in the SeparatedPanelPrefsEditor's instance of slidingPanel.\n"
     },
     {
+      "id": "20833",
       "author": "Justin Obara",
       "date": "2014-03-26T16:19:32.516-0400",
       "body": "pull request merged at 861d635d56c7546c764d23cf40e7f96e85516b17\n"

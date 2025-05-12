@@ -39,16 +39,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18790",
       "author": "Justin Obara",
       "date": "2008-09-22T12:54:59.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "18793",
       "author": "Justin Obara",
       "date": "2010-05-07T13:03:21.006-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "18794",
       "author": "Jonathan Hung",
       "date": "2010-12-08T15:42:24.777-0500",
       "body": "This bug is no longer relevant because demo has been removed. See <https://fluidproject.atlassian.net/browse/FLUID-3731#icft=FLUID-3731>.\n"

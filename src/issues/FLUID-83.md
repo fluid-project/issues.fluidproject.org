@@ -38,21 +38,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24484",
       "author": "Anastasia Cheetham",
       "date": "2007-11-12T04:17:57.000-0500",
       "body": "Jaws currently only has partial support for ARIA. It's possible that it wouldn't be expected to handle the markup we're using. We should try to get more specifics from Freedom Scientific about exactly what is and isn't currently supported. Window-Eyes supposedly has better support, but we may want to double-check the level.\n"
     },
     {
+      "id": "24485",
       "author": "Colin Clark",
       "date": "2007-11-12T08:02:56.000-0500",
       "body": "Good point. I checked with David and Simon; the grids, at very least, should be read by both screenreaders.\n\nWe also need to be testing the output of FireFox with a tool like MSAA Inspect to ensure it correctly reflects the roles and states as defined in the markup.\n"
     },
     {
+      "id": "24486",
       "author": "Colin Clark",
       "date": "2007-11-12T15:15:50.000-0500",
       "body": "I've done some further research with Inspect32 and discovered the following:\n\nIn the Lightbox, when we catch Tab and Arrow Key events, we throw focus onto an \\<a> element within the thumbnail, rather than the thumbnail \\<div> itself. The reason we throw focus onto the link instead of the parent div is to get Enter key handling for free. So when the user hits the Enter key on a thumbnail, the browser will automatically trigger the link if it is focussed.\n\nUnfortunately, it's the thumbnail div that contains the ARIA role and state attributes.  So it needs to have focus in order for the ARIA semantics to be visible to MSAA and the assistive technologies.\n\nWe'll have to refactor our focus handling to make this work. We should throw focus to the thumbnail div and then add a bit of JavaScript logic to catch the Enter key and activate the link. Architecturally, these are Lightbox concerns that are independent of the Reorderer.\n"
     },
     {
+      "id": "24487",
       "author": "Colin Clark",
       "date": "2008-01-07T16:32:26.000-0500",
       "body": "Anastasia and I have since discovered that FireFox doesn't yet expose the drag & drop states to MSAA, so the screenreaders don't inform the user of an item's drag-ability. We should provide some other indicator to non-sighted users that the items are indeed draggable, and how to do it.\n"

@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25920",
       "author": "Giovanni Tirloni",
       "date": "2017-09-21T10:33:23.087-0400",
       "body": "Rules have been added to Nginx site configuration to protect these directories.\n\n<https://github.com/idi-ops/ansible-nginx-php/blob/master/templates/nginx/wordpress.conf.j2#L30-L32>\n\n<https://github.com/idi-ops/ansible-nginx-static/blob/master/templates/generic.conf.j2#L41-L43>\n"

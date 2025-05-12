@@ -41,11 +41,13 @@
   ],
   "comments": [
     {
+      "id": "18165",
       "author": "Gonzalo David Silverio",
       "date": "2008-08-27T14:43:26.000-0400",
       "body": "Saf 1.3\n"
     },
     {
+      "id": "18166",
       "author": "Gonzalo David Silverio",
       "date": "2008-08-27T14:45:48.000-0400",
       "body": "I guess not so different from FF3....maybe a non issue.\n"

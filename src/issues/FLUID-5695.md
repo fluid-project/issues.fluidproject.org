@@ -32,16 +32,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23895",
       "author": "Antranig Basman",
       "date": "2016-02-04T22:13:45.862-0500",
       "body": "Namespaces and priorities for model listeners were delivered in the fix for <https://fluidproject.atlassian.net/browse/FLUID-5361#icft=FLUID-5361>. The remainder of the work will receive a dedicated fix.\n"
     },
     {
+      "id": "23897",
       "author": "Antranig Basman",
       "date": "2016-02-04T22:32:40.741-0500",
       "body": "Alternatives above are ambiguous - if we find that \"pathSpec\" (which we will just name \"path\", I think) is an array, how will we determine whether it is an array of path segments of an array of paths?\\\nPerhaps it would be best to just support \"paths\" and \"path\" as separate members.\n\nThe \"if you use path/paths, the key is a namespace\" idiom is a bit worrying. Imagine that if we have USER TOOLS, the old form will never be generated.\n"
     },
     {
+      "id": "23898",
       "author": "Cindy Li",
       "date": "2016-05-02T10:44:44.305-0400",
       "body": "The infusion pull request <https://github.com/fluid-project/infusion/pull/671> was merged at 94fdce728416f1b38f0181c4fa32bcae347acdbd\n\nThe infusion-docs pull request <https://github.com/fluid-project/infusion-docs/pull/84> was merged at 9fed41658edc8bd560dce4f39a1611de75608d01&#x20;\n"

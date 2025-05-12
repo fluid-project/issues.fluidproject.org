@@ -42,26 +42,31 @@
   ],
   "comments": [
     {
+      "id": "21507",
       "author": "Justin Obara",
       "date": "2009-04-03T11:00:40.000-0400",
       "body": "'screenshot-1' shows the missing text\n"
     },
     {
+      "id": "21509",
       "author": "Justin Obara",
       "date": "2009-05-14T08:58:29.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "21510",
       "author": "Anastasia Cheetham",
       "date": "2009-05-25T11:34:27.000-0400",
       "body": "The css file that was removed for this is still being referenced by ui-options-fss-sakai.html and UIOptionsPreview\\.html. The references should be removed.\n"
     },
     {
+      "id": "21512",
       "author": "Anastasia Cheetham",
       "date": "2009-05-25T11:41:13.000-0400",
       "body": "The changes for this fix are all in, and look good to me.\n"
     },
     {
+      "id": "21513",
       "author": "Justin Obara",
       "date": "2009-05-25T12:28:11.000-0400",
       "body": "Verified fix using:\n\nIE 6 (Win XP)\n"

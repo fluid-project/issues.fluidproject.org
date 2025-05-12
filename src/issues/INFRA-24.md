@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25794",
       "author": "Giovanni Tirloni",
       "date": "2015-08-18T13:57:43.832-0400",
       "body": "Deployed in production: <https://github.com/inclusive-design/ops/tree/master/ansible/roles/teamd>\n"
     },
     {
+      "id": "25795",
       "author": "Giovanni Tirloni",
       "date": "2015-09-04T10:14:34.576-0400",
       "body": "Role has been pretty stable at this point.\n"

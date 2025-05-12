@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19181",
       "author": "Colin Clark",
       "date": "2008-10-09T23:43:24.000-0400",
       "body": "infusion-06-wishlist\n"
     },
     {
+      "id": "19184",
       "author": "Colin Clark",
       "date": "2010-12-22T15:35:06.702-0500",
       "body": "Google Gears has been deprecated by Google in favour of HTML 5. This issue has been superseded by <https://fluidproject.atlassian.net/browse/FLUID-3718#icft=FLUID-3718>.\n"

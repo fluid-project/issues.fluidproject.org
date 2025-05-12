@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14230",
       "author": "Anastasia Cheetham",
       "date": "2008-08-05T16:48:13.000-0400",
       "body": "The offending code is in Reorderer.js, in the findPortletsInColumn() function. It explicitly uses portlet.id to identify the portlet.\n"
     },
     {
+      "id": "14233",
       "author": "Antranig Basman",
       "date": "2008-09-07T22:17:50.000-0400",
       "body": "No use of ids is now made, except during initialisation with an old-style \"id layout\" structure, fixed with \"Geometric Manager\" @ rev 5476\n"

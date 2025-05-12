@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20058",
       "author": "Eli Cochran",
       "date": "2009-02-27T18:58:35.000-0500",
       "body": "Added to progress the ability to refresh the view and reposition elements in response to changes in the overall DOM\n"
     },
     {
+      "id": "20059",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:48.749-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

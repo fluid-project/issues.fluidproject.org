@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17354",
       "author": "Jonathan Hung",
       "date": "2008-12-03T10:18:30.000-0500",
       "body": "iteration27\n"
     },
     {
+      "id": "17355",
       "author": "Jonathan Hung",
       "date": "2009-02-18T09:34:39.000-0500",
       "body": "Fixed. The Top Patterns view was not filtering unpublished content.\n"

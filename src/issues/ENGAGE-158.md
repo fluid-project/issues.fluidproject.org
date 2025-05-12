@@ -41,16 +41,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11626",
       "author": "Justin Obara",
       "date": "2010-02-05T14:24:20.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "11627",
       "author": "y z",
       "date": "2010-02-24T11:57:37.000-0500",
       "body": "These are related issues for the loading screen when navigating from one page to another\n"
     },
     {
+      "id": "11628",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:16.416-0500",
       "body": "The repository has been archived.\n"

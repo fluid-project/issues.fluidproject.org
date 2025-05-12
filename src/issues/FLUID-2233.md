@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21329",
       "author": "Eli Cochran",
       "date": "2009-02-20T11:53:00.000-0500",
       "body": "This step in the release process is closed as we are cutting a tag\n"
     },
     {
+      "id": "21330",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:22.417-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24301",
       "author": "Justin Obara",
       "date": "2015-10-21T12:50:11.682-0400",
       "body": "This use case arose when publishing fluid-publish itself to NPM, tags were added after the fact.\n\n<https://botbot.me/freenode/fluid-work/2015-10-21/?msg=52429743&page=2>\n"
     },
     {
+      "id": "24303",
       "author": "Justin Obara",
       "date": "2015-10-22T12:22:45.730-0400",
       "body": "Submitted a pull request:\\\n<https://github.com/fluid-project/fluid-publish/pull/4>\n"

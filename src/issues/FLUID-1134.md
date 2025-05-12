@@ -37,11 +37,13 @@
   ],
   "comments": [
     {
+      "id": "20446",
       "author": "Justin Obara",
       "date": "2008-08-12T09:14:25.000-0400",
       "body": "'screenshot-1' shows the uploader after having uploaded a file. Notice that it says 0 files were uploaded\n"
     },
     {
+      "id": "20447",
       "author": "Justin Obara",
       "date": "2008-12-19T07:36:53.000-0500",
       "body": "Appears to have been fixed\n\nTested with:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

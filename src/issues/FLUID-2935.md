@@ -31,21 +31,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22421",
       "author": "Antranig Basman",
       "date": "2009-06-12T19:40:50.000-0400",
       "body": "Fixed at revision 7350\n"
     },
     {
+      "id": "22423",
       "author": "Justin Obara",
       "date": "2009-07-28T14:46:37.000-0400",
       "body": "Bug Parade 1.1.1 release\n"
     },
     {
+      "id": "22425",
       "author": "Antranig Basman",
       "date": "2009-08-04T16:45:53.000-0400",
       "body": "Backported to 1.1.x branch at revision 7708\n"
     },
     {
+      "id": "22426",
       "author": "Justin Obara",
       "date": "2009-08-06T16:06:09.000-0400",
       "body": "backport appears identical to the trunk version\n"

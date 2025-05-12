@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26457",
       "author": "Gregor Moss",
       "date": "2020-10-28T01:50:35.045-0400",
       "body": "the story grade's model value \"timestampLastModified\" was removed from the <https://fluidproject.atlassian.net/browse/SJRK-289#icft=SJRK-289> development branch at commit [df267d73e9007b78a18075d99bf6c0d12a409bf9](https://github.com/BlueSlug/sjrk-story-telling/commit/df267d73e9007b78a18075d99bf6c0d12a409bf9). This should be reused when the work for this Jira is picked up.\n"
     },
     {
+      "id": "26458",
       "author": "Gregor Moss",
       "date": "2020-10-30T01:14:41.568-0400",
       "body": "The change in \"tests/ui/js/ui-storyUiTests.js\" at commit [d8de999f320e05ac82102c448a36f8573436b5fd](https://github.com/BlueSlug/sjrk-story-telling/commit/d8de999f320e05ac82102c448a36f8573436b5fd) is also necessary for the tests to pass with this update.\n"

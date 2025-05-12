@@ -28,21 +28,25 @@
   ],
   "comments": [
     {
+      "id": "26194",
       "author": "Caren Watkins",
       "date": "2018-07-04T19:18:05.203-0400",
       "body": "REopening to double check if the social media feed is possible for the third front page panel.\n"
     },
     {
+      "id": "26195",
       "author": "Eloisa Guerrero",
       "date": "2018-07-06T10:03:45.615-0400",
       "body": "Caren Watkins yes it is possible\n"
     },
     {
+      "id": "26196",
       "author": "Caren Watkins",
       "date": "2018-07-06T14:31:13.303-0400",
       "body": "Eloisa will send Caren the document to show how to add the social media feed to the third box.\n"
     },
     {
+      "id": "26197",
       "author": "Jonathan Hung",
       "date": "2018-07-12T15:46:27.216-0400",
       "body": "Caren Watkins Is this resolved? Can we close it? It looks like the Twitter feed is looking better than it was before.\n"

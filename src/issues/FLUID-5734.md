@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "25170",
       "author": "Justin Obara",
       "date": "2015-08-07T10:15:30.656-0400",
       "body": "screenshot.png shows the default contrast option with styling from the light-grey-dark-grey contrast theme\n"
     },
     {
+      "id": "25171",
       "author": "Justin Obara",
       "date": "2022-02-03T10:26:36.062-0500",
       "body": "Likely fixed with changes to <https://fluidproject.atlassian.net/browse/FLUID-6260#icft=FLUID-6260> / <https://fluidproject.atlassian.net/browse/FLUID-6605#icft=FLUID-6605>\n"

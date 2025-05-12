@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23265",
       "author": "Colin Clark",
       "date": "2009-11-05T21:36:13.000-0500",
       "body": "Due to the awkward state of the Builder tests, we appear to require the template to be loaded immediately within setup code. Making fetchTemplate() synchronous should address this issue.\n"
     },
     {
+      "id": "23266",
       "author": "Colin Clark",
       "date": "2010-03-30T19:15:57.000-0400",
       "body": "This issue was fixed for Infusion 1.2\n"

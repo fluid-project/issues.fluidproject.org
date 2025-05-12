@@ -30,16 +30,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17476",
       "author": "Justin Obara",
       "date": "2008-09-15T14:08:31.000-0400",
       "body": "In safari 3.1 (Mac OS 10.5) the focus styling isn't applied to the locked portlet either\n"
     },
     {
+      "id": "17477",
       "author": "Antranig Basman",
       "date": "2008-09-18T01:55:20.000-0400",
       "body": "Fixed at revision 5577\n"
     },
     {
+      "id": "17478",
       "author": "Justin Obara",
       "date": "2008-09-18T09:41:02.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, Opera 9.5 (Win XP)\\\nFF3 (Win Vista)\\\nFF3 (Win 2000)\n"

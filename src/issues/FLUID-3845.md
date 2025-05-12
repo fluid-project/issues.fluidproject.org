@@ -40,31 +40,37 @@
   ],
   "comments": [
     {
+      "id": "24843",
       "author": "Jonathan Hung",
       "date": "2010-11-18T15:17:34.892-0500",
       "body": "Some more details:\n\n* issue seems to be present in NVDA 2010.1 and with v3939 dev snapshot in FF3.6.\n* JAWS does not read out \"Auto complete\".\n* NVDA and IE8 was tested, but inconclusive because of outstanding functionality issues with the inline edit demo and IE8.\n"
     },
     {
+      "id": "24845",
       "author": "Jonathan Hung",
       "date": "2010-11-18T15:30:15.175-0500",
       "body": "Also seems to be the same issue reported at NVDA: <http://www.nvda-project.org/ticket/783#comment:2>\n\nThe issue was determined to be a Firefox issue.\n"
     },
     {
+      "id": "24846",
       "author": "Jonathan Hung",
       "date": "2010-11-18T15:46:03.898-0500",
       "body": "Updated patch with comment and JSLinted.\n"
     },
     {
+      "id": "24847",
       "author": "Michelle D'Souza",
       "date": "2010-11-18T17:05:17.705-0500",
       "body": "We need to do some more design thinking and exploration before we put this fix into trunk. We are doing more then just controlling what the screen reader says, we are actually changing the default behaviour of the input and removing the browser's inbuilt autocomplete behaviour. We need to determine whether we are correct in assuming that having the browser read 'edit autocomplete' is in fact confusing and we also need to determine that we truly want to remove the default autocompleting behaviour. If we do decide that we want this behaviour we should consider exposing it in the public API so that people using the component can override this.&#x20;\n"
     },
     {
+      "id": "24848",
       "author": "Justin Obara",
       "date": "2017-09-27T10:33:21.471-0400",
       "body": "In FF 55 and NVDA 2017.3 it now says \"edit has autocomplete\" at the beginning.\n"
     },
     {
+      "id": "24849",
       "author": "Justin Obara",
       "date": "2017-09-27T10:33:56.793-0400",
       "body": "Jonathan Hung do you think we can close this issues as won't fix? I think the behaviour is acceptable as is.\n"

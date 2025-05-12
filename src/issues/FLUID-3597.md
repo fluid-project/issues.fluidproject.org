@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21599",
       "author": "Jonathan Hung",
       "date": "2010-11-09T16:02:03.110-0500",
       "body": "Fixed as part of markup cleanup in preparation of new Pager demo.\n"
     },
     {
+      "id": "21600",
       "author": "Justin Obara",
       "date": "2010-11-10T10:17:32.565-0500",
       "body": "Fixed with commits to <https://fluidproject.atlassian.net/browse/FLUID-3822#icft=FLUID-3822>\n"

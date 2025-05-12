@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14472",
       "author": "Michelle D'Souza",
       "date": "2010-12-23T15:42:44.883-0500",
       "body": "Please check if this is done and either close it or put it into another release.\n"
     },
     {
+      "id": "14474",
       "author": "Michelle D'Souza",
       "date": "2014-06-25T15:58:45.749-0400",
       "body": "We no longer actively support IE6, IE7 and IE8. We will consider patches for certain issues.\n"

@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16523",
       "author": "Antranig Basman",
       "date": "2010-02-19T00:39:52.000-0500",
       "body": "Fixed at revision 9455. A piece of drift between the Java and Javascript versions of the algorithm...\n"
     },
     {
+      "id": "16524",
       "author": "Golam Chowdhury",
       "date": "2011-03-03T16:56:16.662-0500",
       "body": "Changed the \"Affect Version\" to 1.3.1.\n"

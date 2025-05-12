@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18925",
       "author": "Anastasia Cheetham",
       "date": "2008-04-21T12:40:16.000-0400",
       "body": "This is a styling issue: there is no visible drop indicator, so it's hard to tell when you are successfully over a drop target and when you're not.\n\nThis example is being moved out into the sandbox, so we won't be fixing it.\n"

@@ -40,11 +40,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10358",
       "author": "Justin Obara",
       "date": "2012-07-09T13:28:39.385-0400",
       "body": "This is fixed with the changes to <https://fluidproject.atlassian.net/browse/DECA-256#icft=DECA-256>\n"
     },
     {
+      "id": "10359",
       "author": "Justin Obara",
       "date": "2012-07-10T13:49:36.435-0400",
       "body": "Merged into the googlecode repo\n"

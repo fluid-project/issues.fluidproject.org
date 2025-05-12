@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18363",
       "author": "Jonathan Hung",
       "date": "2008-09-09T12:19:36.000-0400",
       "body": "osdpl.org is already taken. I suggest we think of new names.\n\nPossibilities:\\\ndpcommunity\\\nopendesignpatterncommunity\\\nopendpcommunity\n"
     },
     {
+      "id": "18366",
       "author": "Jonathan Hung",
       "date": "2008-10-20T12:54:27.000-0400",
       "body": "Less Fluid centric content on OSDPL, but not going to change any domain names etc.\n"

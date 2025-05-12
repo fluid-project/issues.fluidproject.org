@@ -33,16 +33,19 @@
   ],
   "comments": [
     {
+      "id": "24030",
       "author": "Justin Obara",
       "date": "2011-08-25T15:49:38.150-0400",
       "body": "Screenshot.png shows the columns not properly lining up at the top.\n"
     },
     {
+      "id": "24031",
       "author": "Michelle D'Souza",
       "date": "2011-08-31T12:52:47.585-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24033",
       "author": "Justin Obara",
       "date": "2016-07-08T10:55:42.773-0400",
       "body": "Updated the screenshot. It seems that after some changes to the demo, the issue is most visible with the header of the first column. Looks like it has something to do with extra margins on the headings.\n"

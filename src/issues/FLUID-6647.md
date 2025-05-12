@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25622",
       "author": "Justin Obara",
       "date": "2021-06-29T16:53:11.519-0400",
       "body": "We use the jQuery Plugin touchPunch in other drag and drop demos, and probably need to add that here as well. Although I wonder if there would be any issues because of the older version of the Infusion that is running on the page. We might need to bring that up-to-date or come up with a different demo that better showcases running multiple instances of infusion at the same time.\n"
     },
     {
+      "id": "27888",
       "author": "Justin Obara",
       "date": "2024-07-24T13:56:22.688-0400",
       "body": "This manual test is no longer available.\n"

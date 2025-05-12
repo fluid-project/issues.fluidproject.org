@@ -29,26 +29,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11905",
       "author": "Tona Monjo",
       "date": "2009-10-21T16:13:35.000-0400",
       "body": "Same bug found.\n"
     },
     {
+      "id": "11906",
       "author": "Justin Obara",
       "date": "2010-02-05T15:50:21.000-0500",
       "body": "Bug Parade Engage 0.3&#x20;\n"
     },
     {
+      "id": "11907",
       "author": "y z",
       "date": "2010-02-11T15:37:49.000-0500",
       "body": "This bug is fixed with commit r9364 by Colin.\n"
     },
     {
+      "id": "11908",
       "author": "y z",
       "date": "2010-02-11T15:38:03.000-0500",
       "body": "This bug is fixed with commit r9364 by Colin.\n"
     },
     {
+      "id": "11909",
       "author": "Colin Clark",
       "date": "2010-02-12T14:24:02.000-0500",
       "body": "I reviewed and committed Yura's patch with a completely reworked Artifact View. It fixes this issue.\n"

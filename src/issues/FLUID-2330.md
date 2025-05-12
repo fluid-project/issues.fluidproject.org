@@ -39,6 +39,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21340",
       "author": "Michelle D'Souza",
       "date": "2009-03-17T10:40:43.000-0400",
       "body": "Cookies are now used for persistence but the persistence strategy needs to be made pluggable.&#x20;\n"

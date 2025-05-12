@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11246",
       "author": "Anastasia Cheetham",
       "date": "2014-08-21T16:02:33.472-0400",
       "body": "This is not looking promising. As with other attributes, pandoc is stripping off lots of the things that need to be present for TTS support (see <https://github.com/jgm/pandoc/issues/1555>) but even if the markup is forcefully added to the EPUB resource, Mac OS X's TTS doesn't pay any attention to it.\n"
     },
     {
+      "id": "11247",
       "author": "Anastasia Cheetham",
       "date": "2014-08-27T11:21:39.025-0400",
       "body": "It seems none of the possible voicing technologies currently pay any attention to the lexicons or SSML, so we'll stick with the \\<abbr> elements, which at least some screen readers honour.\n"

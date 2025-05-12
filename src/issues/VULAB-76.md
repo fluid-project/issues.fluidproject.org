@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27488",
       "author": "Blake E",
       "date": "2008-11-04T15:21:34.000-0500",
       "body": "vulab6\n"
     },
     {
+      "id": "27489",
       "author": "Blake E",
       "date": "2008-11-04T16:16:25.000-0500",
       "body": "I just realized that an \"active now\" is a little ackward programming wise as the project cannot be made active until after the project is saved and when the project has surveys etc. So there would be an additional \"save\" or \"finish\" project option.\n\nSo I am going to move the activation settings into the \"activate\" section.\n"
     },
     {
+      "id": "27490",
       "author": "Blake E",
       "date": "2008-11-04T16:34:34.000-0500",
       "body": "I've chosen to rework the entire system which will solve this problem in a way, but the new issue is closer to a duplicate with a more specific purpose (no investigation, only the solution)\n\n<https://fluidproject.atlassian.net/browse/VULAB-78#icft=VULAB-78> is new more targeted issue.\n"

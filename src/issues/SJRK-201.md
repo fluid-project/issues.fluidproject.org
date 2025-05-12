@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26229",
       "author": "Cindy Li",
       "date": "2019-02-15T14:42:59.991-0500",
       "body": "[The client side pull request](https://github.com/fluid-project/sjrk-story-telling/pull/15) has been merged into the project repo at [this commit](https://github.com/fluid-project/sjrk-story-telling/commit/c09d597f13924665f33f8cb6a058818c6a7c3a63).\n\n[The server side pull request](https://github.com/fluid-project/sjrk-story-telling-server/pull/13) has been merged into the project repo at [this commit](https://github.com/fluid-project/sjrk-story-telling-server/commit/aff65f181781bc3add6532de0391cb0dc96f2704).\n"

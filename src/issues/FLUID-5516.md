@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15756",
       "author": "Anastasia Cheetham",
       "date": "2014-10-30T14:08:58.038-0400",
       "body": "Justin and I discussed the issue of the page being too long (<http://lists.idrc.ocad.ca/pipermail/fluid-work/2014-October/009582.html>). The plan is:\n\n1\\) Remove links to “examples” and keep only “demos”\\\nThe “examples” are more instructional in purpose, and will hopefully eventually be moved into the documentation itself. Also, we’re not entirely sure if they’re currently using all of our recommended best practices, so we’re not sure if we want to point people to them. Our thoughts are\\\na) Review the examples to decide if we’re proud of them (if not, update them).\\\nb) Decide whether or not to\\\ni) move the examples to the documentation, or\\\nii) create a second page on the build site for the examples.\n\n2a) Limit automated test links to “all-tests” files.\\\n2b) Add to the Infusion repository “all-tests” files for\\\ni) Renderer tests\\\nii) Framework tests (all of them)\\\niii) Component tests (all of them)\\\nand add these links to the build site. (<https://fluidproject.atlassian.net/browse/FLUID-5544#icft=FLUID-5544>)\n\n3\\) Restructure the layout of the build site as follows: Left column for demos, right column for tests (automated at top, manual at bottom).\n"
     },
     {
+      "id": "15757",
       "author": "Anastasia Cheetham",
       "date": "2014-11-07T10:34:20.272-0500",
       "body": "Merged at 89a166b8e75afb2d84be021c1c9d125038a0b04a\n"

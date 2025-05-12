@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21188",
       "author": "Jonathan Hung",
       "date": "2009-01-19T16:06:55.000-0500",
       "body": "iteration29\n"
     },
     {
+      "id": "21189",
       "author": "Jonathan Hung",
       "date": "2009-03-30T14:22:20.000-0400",
       "body": "Using Workflow-NG, we can check the state of the content and have contemplate output a proper stamp.\n"

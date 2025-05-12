@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25429",
       "author": "Antranig Basman",
       "date": "2015-04-20T09:53:20.488-0400",
       "body": "I was able to find a form to render this which keeps both \"marked\" and github happy by using the entity reference \\&#42; to represent the \"\\*\" character. Note that the HTML5 entity \\&ast; is not supported - destroyed at least by github\n"
     },
     {
+      "id": "25430",
       "author": "Justin Obara",
       "date": "2022-03-14T12:33:57.784-0400",
       "body": "This appears to have been addressed by using the HTML entity for \\*\n"

@@ -24,16 +24,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25647",
       "author": "Justin Obara",
       "date": "2019-08-07T09:51:49.444-0400",
       "body": "According to Google Search Console this is currently the top page from our docs site.\n"
     },
     {
+      "id": "25648",
       "author": "Jonathan Hung",
       "date": "2019-08-07T09:52:46.692-0400",
       "body": "I feel we should also include something about using SVGs vs. icon fonts. We have a document here, but it is a bit rough / unpolished: <https://wiki.fluidproject.org/display/fluid/Research+SVG+Icons>\n"
     },
     {
+      "id": "25649",
       "author": "Justin Obara",
       "date": "2021-05-13T13:26:18.763-0400",
       "body": "The PR has been mothballed because of the on going discussions around switching to using SVGs instead of icon fonts for icons. See: <https://github.com/fluid-project/infusion-docs/pull/149#issuecomment-839836389>\n"

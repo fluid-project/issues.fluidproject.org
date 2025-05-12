@@ -41,26 +41,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11010",
       "author": "Cindy Li",
       "date": "2015-05-13T13:48:15.647-0400",
       "body": "According to the discussion in #fluid-design - <http://issues.fluidproject.org/browse/FLOE-333>, 12:54PM onwards, the arrow buttons should just scroll the language list, and then the user could use mouse to click on the language button to select their desired language.\n\nThe triangular indicator should stay with the currently-selected language since the language on the screen reveals which language is currently selected.&#x20;\n"
     },
     {
+      "id": "11011",
       "author": "Cindy Li",
       "date": "2015-05-15T15:29:42.064-0400",
       "body": "Thoughts of how to implement this feature:\n\nWhen the back or next button is clicked, find out which language button needs to be moved into the view and use this function for the move - <https://github.com/fluid-project/first-discovery/blob/master/src/js/panels.js#L563>. This function needs to be refactored to be able to take in the moved-to-language as an argument so that it can be shared by moves triggered by clicking back/next buttons and the change on the selected language.\n"
     },
     {
+      "id": "11012",
       "author": "Simon Bates",
       "date": "2015-05-19T17:11:02.626-0400",
       "body": "On May 19, we met to clarify the desired behaviour (see the description above). However, this behaviour may be time consuming to realise given the current implementation of the language panel. In particular, the language list is implemented using radio buttons.\n\nI am looking into alternative solutions to see if we can get the desired high level behaviour, of exploring the available languages without reloading, with a UI that is simpler to implement but sill satisfactory.\n"
     },
     {
+      "id": "11013",
       "author": "Simon Bates",
       "date": "2015-06-04T12:10:38.874-0400",
       "body": "Pull request:\n\n<https://github.com/fluid-project/first-discovery/pull/83>\n"
     },
     {
+      "id": "11014",
       "author": "Justin Obara",
       "date": "2015-06-05T13:02:35.433-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/first-discovery/pull/83> ) into the project repo at 556374661c8eac45bc6ad935b89f040a4f344b53\n"

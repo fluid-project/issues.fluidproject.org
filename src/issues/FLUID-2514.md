@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23682",
       "author": "Colin Clark",
       "date": "2010-02-24T10:44:36.000-0500",
       "body": "Described another way, we have a granularity issue with some of our modules:\n\nIf the all live in the same directory together, they can't be added/removed from a build independently. They form a fully atomic module.\n\nThis can be fixed by moving each jQuery UI widget out into separate directories and creating separate dependency declarations for them.\n"
     },
     {
+      "id": "27803",
       "author": "Justin Obara",
       "date": "2024-07-22T11:59:15.580-0400",
       "body": "I believe this has been addressed in our current npm based build system We have separate modules for logical chunks so hopefully this is fully addressed. If any issues our found a new ticket should be opened.\n"

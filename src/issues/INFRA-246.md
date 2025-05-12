@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26062",
       "author": "Giovanni Tirloni",
       "date": "2020-05-04T14:52:15.315-0400",
       "body": "Mailgun pricing changed and it doesn't include email validations anymore. We'd have to upgrade to the paid plan which feels like a regression since we'd not use most of the features.\n\nI've converted us over to ImprovMX and it seems to be working well.\n"

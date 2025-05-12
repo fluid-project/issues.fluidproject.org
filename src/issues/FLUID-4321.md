@@ -32,11 +32,13 @@
   ],
   "comments": [
     {
+      "id": "24505",
       "author": "Colin Clark",
       "date": "2011-07-04T12:57:41.051-0400",
       "body": "Screenshot from Jeff Cross showing issue with demo portal in Chrome when run from the local file system.\n"
     },
     {
+      "id": "24506",
       "author": "Justin Obara",
       "date": "2011-07-06T10:09:23.429-0400",
       "body": "There is an issue filed for this with Google's chromium project <http://code.google.com/p/chromium/issues/detail?id=40787>\n"

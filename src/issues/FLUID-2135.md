@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21225",
       "author": "Antranig Basman",
       "date": "2009-01-16T10:06:17.000-0500",
       "body": "Fixed at revision 6326\n"
     },
     {
+      "id": "21227",
       "author": "Justin Obara",
       "date": "2009-01-16T10:41:29.000-0500",
       "body": "Verified fix using:\n\nFF3, FF2, Opera 9.5 (Mac OS 10.5)\\\nFF3, (Win Vista)\n"

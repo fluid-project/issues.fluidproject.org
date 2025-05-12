@@ -48,11 +48,13 @@
   ],
   "comments": [
     {
+      "id": "21162",
       "author": "Jonathan Hung",
       "date": "2010-12-15T11:04:18.039-0500",
       "body": "Restored missing dependencies.\n"
     },
     {
+      "id": "21163",
       "author": "Anastasia Cheetham",
       "date": "2010-12-15T12:45:07.909-0500",
       "body": "We should review all the escalated tests before addressing this issue.\n"

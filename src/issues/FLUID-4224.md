@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14344",
       "author": "Justin Obara",
       "date": "2011-05-11T13:37:19.332-0400",
       "body": "In IE 6 the UI Options unit tests don't even run. \\\n<http://build.fluidproject.org/infusion/tests/component-tests/uiOptions/html/UIOptions-test.html>\n"
     },
     {
+      "id": "14349",
       "author": "Cindy Li",
       "date": "2011-05-17T12:48:44.245-0400",
       "body": "Fixed with the merge of <https://fluidproject.atlassian.net/browse/FLUID-4171#icft=FLUID-4171>. The failure of UI Options tests is to be addressed in <https://fluidproject.atlassian.net/browse/FLUID-4234#icft=FLUID-4234>.\n"

@@ -30,16 +30,19 @@
   ],
   "comments": [
     {
+      "id": "11034",
       "author": "Justin Obara",
       "date": "2015-04-29T11:13:36.928-0400",
       "body": "screenshot.png shows the multiple tooltips\n"
     },
     {
+      "id": "11035",
       "author": "Justin Obara",
       "date": "2015-04-29T11:14:59.796-0400",
       "body": "One solution to fix this would be to have an event at the top of the tree (parent component) that is listened to be all of the tooltips. This event will tell all the tooltips to close, and should be fired before a tooltip opens.\n"
     },
     {
+      "id": "11036",
       "author": "Cindy Li",
       "date": "2015-11-12T14:44:42.754-0500",
       "body": "This report has been copied to the GPII bug tracker: <https://issues.gpii.net/browse/GPII-1390> and all activities should be carried on there.\n"

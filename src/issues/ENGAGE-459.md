@@ -40,6 +40,7 @@
   ],
   "comments": [
     {
+      "id": "12725",
       "author": "Colin Clark",
       "date": "2010-02-25T15:30:46.000-0500",
       "body": "This is the same bug as <https://fluidproject.atlassian.net/browse/ENGAGE-457#icft=ENGAGE-457>, but in a different spot. It is caused by the fact that Sveto had to duplicate Yura's buggy view code in the myCollectionService.\n"

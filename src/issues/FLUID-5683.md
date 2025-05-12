@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25480",
       "author": "Cindy Li",
       "date": "2015-09-01T13:24:23.932-0400",
       "body": "According to the discussion with Jan, the announcement for the preference change should only happen when the control for that preference loses focus and the announcement can be just \"preference changed\" instead of giving detailed message such as \"text size changed to 1.2 times\" since browsers already support the announcement of changed value for most (or all) controls.\n\nFor example, when users use slider to change text size from 1 to 1.5. The live region doesn't need to be updated when the value moves from 1 -> 1.1 -> ... -> 1.5. Only when users move focus to the next preference, announce \"preference changed\".\n\nThis is a lower priority issue.\n"
     },
     {
+      "id": "25481",
       "author": "Justin Obara",
       "date": "2016-08-12T13:13:03.089-0400",
       "body": "Perhaps we could use a status region or alert to indicate the type of adjustment made.\n"

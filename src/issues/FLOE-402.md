@@ -31,16 +31,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11500",
       "author": "Justin Obara",
       "date": "2015-06-23T11:17:13.678-0400",
       "body": "Created a new repo at <https://github.com/fluid-project/chartAuthoring>\n"
     },
     {
+      "id": "11501",
       "author": "Justin Obara",
       "date": "2015-06-23T12:27:44.591-0400",
       "body": "Submitted a pull request:\\\n<https://github.com/fluid-project/chartAuthoring/pull/1>\n"
     },
     {
+      "id": "11502",
       "author": "Cindy Li",
       "date": "2015-06-24T13:08:20.133-0400",
       "body": "Merged @ c67342cbedb0d38637c6f46e4f58457eaf487568\n"

@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11070",
       "author": "Jonathan Hung",
       "date": "2017-11-28T15:24:46.051-0500",
       "body": "After some discussion, the plugin should by default use jQuery in Safe Mode. An advanced option should appear in the plugin admin page that will allow the user to disable the jQuery version that comes with the plugin, and use the one they may already have on the site.\n"
     },
     {
+      "id": "11071",
       "author": "Justin Obara",
       "date": "2017-11-28T15:27:45.449-0500",
       "body": "Documentation on using jQuery's noConflict <https://api.jquery.com/jquery.noconflict/>\n"

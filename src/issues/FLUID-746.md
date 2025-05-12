@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16563",
       "author": "Allison Bloodworth",
       "date": "2008-06-09T22:21:25.000-0400",
       "body": "iteration11\n"
     },
     {
+      "id": "16564",
       "author": "Allison Bloodworth",
       "date": "2008-06-10T01:58:36.000-0400",
       "body": "This wasn't working because these items have a URL alias and I was using the alias (category/ui-design-pattern-tags//uportal) rather than the system generated URL (taxonomy/term/12) so it wasn't working. It worked when I changed the URL in the view to the system-generated URL.\n"

@@ -54,26 +54,31 @@
   ],
   "comments": [
     {
+      "id": "19536",
       "author": "Justin Obara",
       "date": "2009-03-26T08:44:59.000-0400",
       "body": "While reviewing a user testing protocol for the reorderer Paul has come across another means to reproduce this issue\n\n1\\) Drag an image from the  first row\n\n2\\) Hold it over an image on the second row as far to the right as possible with the drop target remaining beside the same image\n\n3\\) Drop the avatar\n\nNotice that it drops 1 space too far to the right\n"
     },
     {
+      "id": "19537",
       "author": "Daphne Ogle",
       "date": "2009-03-26T14:37:00.000-0400",
       "body": "Since this bug keeps the user from completing their task (impossible to drop where they want to) we'll hold off on any testing until this is fixed.  Once fixed can someone send out a notice so we remember to double back and do some user testing.  This is the only component that has not been user tested.\n"
     },
     {
+      "id": "19538",
       "author": "Justin Obara",
       "date": "2009-07-27T16:12:23.000-0400",
       "body": "Bug Parade 1.1.1 release\n"
     },
     {
+      "id": "19539",
       "author": "Antranig Basman",
       "date": "2009-08-04T16:22:04.000-0400",
       "body": "Fixed at revision 7705.\n"
     },
     {
+      "id": "19540",
       "author": "Justin Obara",
       "date": "2009-08-07T09:02:23.000-0400",
       "body": "Tested using:\n\nFF2, FF3, FF3.5, Opera 9.6, Safari 3.2, Safari 4 (Mac OS 10.5)\\\nFF3, IE7, IE8 (Win Vista)\n\nAppears to be working properly\n"

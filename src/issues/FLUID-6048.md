@@ -39,6 +39,7 @@
   ],
   "comments": [
     {
+      "id": "24037",
       "author": "Justin Obara",
       "date": "2016-11-08T13:31:24.982-0500",
       "body": "screenshot.png shows that the Mangosteen thumbnail has its `aria-selected` attribute set to `false`.\n"

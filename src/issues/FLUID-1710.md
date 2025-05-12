@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17105",
       "author": "Colin Clark",
       "date": "2008-10-26T18:10:49.000-0400",
       "body": "I've updated the Image Gallery 2 M2 files to depend on 0.6-SNAPSHOT, the latest version of Fluid Infusion. I've also updated AddImages.html in the gallery to use the Uploader 2 codebase.\n"
     },
     {
+      "id": "17106",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:53.995-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

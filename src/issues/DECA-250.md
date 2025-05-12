@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10170",
       "author": "Justin Obara",
       "date": "2012-07-09T15:15:28.808-0400",
       "body": "Refactored exporter.js to have it's own functions for showing the instructions and status. Removed visSwitcher code as it is no longer used by anything.\n\nThe changes are in my bitbucket repo:\\\n<https://bitbucket.org/jobara/decapod-0.6-ui-iteration4>\n"
     },
     {
+      "id": "10172",
       "author": "Justin Obara",
       "date": "2012-07-10T13:50:03.356-0400",
       "body": "Merged into the googlecode repo\n"
     },
     {
+      "id": "10173",
       "author": "Justin Obara",
       "date": "2012-07-10T13:50:50.605-0400",
       "body": "Merged into the googlecode repo\n"

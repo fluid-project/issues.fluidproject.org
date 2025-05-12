@@ -38,6 +38,7 @@
   ],
   "comments": [
     {
+      "id": "19427",
       "author": "Jonathan Hung",
       "date": "2011-05-30T13:55:25.414-0400",
       "body": "Possible Cities:\\\nAmsterdam\\\nBarcelona\\\nCalgary\\\nFresno\\\nGeneva\\\nIstanbul\\\nJakarta\\\nKuala Lumpur \\\nMontreal\\\nNew York\\\nQuebec City\\\nToronto\\\nVancouver\n"

@@ -50,6 +50,7 @@
   ],
   "comments": [
     {
+      "id": "10480",
       "author": "Justin Obara",
       "date": "2012-07-10T15:54:32.036-0400",
       "body": "Due to some functions being private and a bug in Uploader, had to implement a few work arounds to get this functionality in place. Overrode the hover styling when the button is disabled, and removed forced the browseButton to be disabled after adding files to the queue.\n\nThe changes are in my bitbucket repo:\\\n<https://bitbucket.org/jobara/decapod-0.6-ui-iteration5>\n"

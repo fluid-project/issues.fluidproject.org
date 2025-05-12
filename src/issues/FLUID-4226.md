@@ -34,21 +34,25 @@
   ],
   "comments": [
     {
+      "id": "23865",
       "author": "Harris Wong",
       "date": "2011-05-11T13:38:55.087-0400",
       "body": "Screenshot 4226-ss1.png attached for a sample of the failure\n"
     },
     {
+      "id": "23871",
       "author": "Justin Obara",
       "date": "2011-05-17T10:06:27.770-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "23874",
       "author": "Antranig Basman",
       "date": "2011-05-18T15:05:28.368-0400",
       "body": "Tested by harriswong on the various platforms, no longer occurring &#x20;\n"
     },
     {
+      "id": "23876",
       "author": "Justin Obara",
       "date": "2011-06-14T10:01:01.012-0400",
       "body": "I also tried this again on IE 9 Win XP and couldn't reproduce it.\n"

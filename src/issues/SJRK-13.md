@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26388",
       "author": "Gregor Moss",
       "date": "2017-10-23T15:07:18.251-0400",
       "body": "Pull request created with work-around solution to this issue:\n\n<https://github.com/BlueSlug/sjrk-storyTelling/pull/3>\n"

@@ -43,21 +43,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13342",
       "author": "Justin Obara",
       "date": "2016-10-04T13:34:18.394-0400",
       "body": "Some further discussion on this.\\\n<https://pad.gpii.net/p/infusion-module-discussion-oct-4-2016-okg4ntt>\n"
     },
     {
+      "id": "13345",
       "author": "Justin Obara",
       "date": "2019-08-02T08:55:42.811-0400",
       "body": "Some further discussion from the [fluid-work irc channel today](http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2019-08-02.log).\n"
     },
     {
+      "id": "13347",
       "author": "Justin Obara",
       "date": "2019-08-20T11:25:08.444-0400",
       "body": "It seems that workspace support is coming to npm v7, which may be released as early as this fall. More advanced features seem to be coming in v8. \n\n<https://blog.npmjs.org/post/186983646370/npm-cli-roadmap-summer-2019>\n\n> Workspaces\n>\n> First-class support for symbolic links means that workspaces will be trivial to implement. npm v7 will have at least the Workspace feature support of Yarn, and will set the stage for more advanced workspace features in v8.\\\n> At minimum, you’ll be able to keep multiple related packages all together in a single repository, and test changes in an integrated environment, without continually re-linking.\n>\n> Once Workspaces land, it’ll be possible to add more advanced workspace management features. For example, building, versioning, managing permissions, and publishing all the packages within a workspace together with a single command. That likely won’t be in 7.0, and may be pushed out until v8, depending on feedback and user demand. \n\n \n"
     },
     {
+      "id": "13350",
       "author": "Justin Obara",
       "date": "2020-11-10T10:16:21.308-0500",
       "body": " [Workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces) have been implemented in NPM v7 which is currently a development release.\n"

@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24667",
       "author": "Justin Obara",
       "date": "2010-10-04T15:51:18.567-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "24668",
       "author": "Justin Obara",
       "date": "2010-12-10T16:41:05.661-0500",
       "body": "Update fluid.fail. Didn't find any instances where debug mode needed to be turned off\n"
     },
     {
+      "id": "24669",
       "author": "Michelle D'Souza",
       "date": "2010-12-14T12:01:37.967-0500",
       "body": "Reviewed\n"
     },
     {
+      "id": "24670",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T13:23:16.275-0500",
       "body": "Reopening these issues to add the releasecomponent.&#x20;\n"

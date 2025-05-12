@@ -36,11 +36,13 @@
   ],
   "comments": [
     {
+      "id": "26352",
       "author": "Gregor Moss",
       "date": "2017-12-14T18:14:08.174-0500",
       "body": "To consider: are the editor and previewer/viewer contexts to be implementations of a 'base' UI grade, which are in turn subcomponents of the uiManager, or are they simply subcomponent \"instances\" of the UI grade with any custom keys defined directly in the uiManager?\n"
     },
     {
+      "id": "26353",
       "author": "Gregor Moss",
       "date": "2018-01-29T17:09:31.919-0500",
       "body": "Work complete and merged in: <https://github.com/BlueSlug/sjrk-story-telling/pull/1>\n"

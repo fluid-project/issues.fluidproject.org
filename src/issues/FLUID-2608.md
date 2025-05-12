@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14392",
       "author": "Michelle D'Souza",
       "date": "2009-04-20T11:43:12.000-0400",
       "body": "There is no error handling right now for the custom build parameters. This can be done in the javascript portion of the build.&#x20;\n"
     },
     {
+      "id": "14395",
       "author": "Justin Obara",
       "date": "2014-03-02T14:32:29.018-0500",
       "body": "This was fixed with the <https://fluidproject.atlassian.net/browse/FLUID-5120#icft=FLUID-5120>\n"

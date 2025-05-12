@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13580",
       "author": "Justin Obara",
       "date": "2015-06-09T10:53:35.850-0400",
       "body": "The total progress bar no longer changes colour.\n"

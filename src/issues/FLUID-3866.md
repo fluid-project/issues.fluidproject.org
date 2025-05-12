@@ -30,16 +30,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13604",
       "author": "Justin Obara",
       "date": "2010-11-30T15:56:24.398-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "13608",
       "author": "Antranig Basman",
       "date": "2010-12-07T16:27:26.993-0500",
       "body": "Fixed at revision 10335\n"
     },
     {
+      "id": "13611",
       "author": "Golam Chowdhury",
       "date": "2011-03-03T16:33:10.208-0500",
       "body": "Changed the \"Affect Version\" to 1.3.1\n"

@@ -33,16 +33,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18927",
       "author": "Colin Clark",
       "date": "2008-07-31T17:39:11.000-0400",
       "body": "infusion-05-wishlist\n"
     },
     {
+      "id": "18931",
       "author": "Justin Obara",
       "date": "2010-05-07T09:07:11.431-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "18932",
       "author": "Mike Lam",
       "date": "2011-01-05T16:24:52.917-0500",
       "body": "ARIA live regions as well as application roles have been added to the uploader.\n"

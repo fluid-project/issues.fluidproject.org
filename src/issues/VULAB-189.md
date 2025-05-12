@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "27582",
       "author": "Blake E",
       "date": "2009-03-16T15:01:36.000-0400",
       "body": "This patch modifies admin/include/lib/esphtml.forms.inc (which is where the login page generation function is located)\n\nphpESP though it would be wise to hardcode the login page into a php function and call that. I haven't separated the logic from the view with this patch but I have skinned the login page to match the overall design that JohnC created.\n"
     },
     {
+      "id": "27583",
       "author": "Blake E",
       "date": "2009-03-30T12:26:47.000-0400",
       "body": "Thanks Jacob 🙂\n"

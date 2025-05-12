@@ -32,21 +32,25 @@
   ],
   "comments": [
     {
+      "id": "24358",
       "author": "Justin Obara",
       "date": "2011-07-28T11:11:27.782-0400",
       "body": "ScreenShot.png shows the styling issues (yellow knob, missing slider bar)&#x20;\n"
     },
     {
+      "id": "24359",
       "author": "Justin Obara",
       "date": "2011-07-28T11:11:51.376-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24360",
       "author": "Justin Obara",
       "date": "2011-08-03T11:07:13.265-0400",
       "body": "Sent a pull request <https://github.com/fluid-project/infusion/pull/127>\n"
     },
     {
+      "id": "24361",
       "author": "Michelle D'Souza",
       "date": "2011-08-03T14:31:08.075-0400",
       "body": "Pull request merged into project repo at 7176f644776d2b6dd729d14b3a9185443c3916a5\n"

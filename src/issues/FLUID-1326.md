@@ -36,16 +36,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18175",
       "author": "Gonzalo David Silverio",
       "date": "2008-10-30T14:35:03.000-0400",
       "body": "Cursor appears at end Saf 1.3, FF2, FF3 (OSX) - but appears in beginning in Opera\n"
     },
     {
+      "id": "18177",
       "author": "Antranig Basman",
       "date": "2008-11-07T15:57:05.000-0500",
       "body": "Fixed at revision 5979\n"
     },
     {
+      "id": "18180",
       "author": "Justin Obara",
       "date": "2008-11-10T08:45:29.000-0500",
       "body": "Verified using:\n\nFF3 OSX 10.5 \\\nOpera 9.5 (win xp)\n"

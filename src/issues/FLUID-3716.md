@@ -32,26 +32,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14684",
       "author": "Justin Obara",
       "date": "2010-10-04T15:02:03.874-0400",
       "body": "removed from bug parade\n"
     },
     {
+      "id": "14685",
       "author": "Anastasia Cheetham",
       "date": "2010-11-19T12:36:02.021-0500",
       "body": "I've got what I think is a first stab at documentation for the new IoC system:\n\n<http://wiki.fluidproject.org/display/docs/Inversion+of+Control+%28IoC%29>\\\nplus several child pages, listed in the sidebar\n\nas well as API references for some of the key functions, accessible through\\\n<http://wiki.fluidproject.org/display/docs/API+Reference>\n"
     },
     {
+      "id": "14686",
       "author": "Anastasia Cheetham",
       "date": "2011-01-20T15:19:32.671-0500",
       "body": "I'm re-opening this one, as I'd like Antranig to review the docs and sign off on them.\n"
     },
     {
+      "id": "14687",
       "author": "Anastasia Cheetham",
       "date": "2011-09-22T11:01:55.911-0400",
       "body": "Yura has been reviewing these docs, so I've assigned it to him, to resolve when he's finished.\n"
     },
     {
+      "id": "14688",
       "author": "Anastasia Cheetham",
       "date": "2013-09-23T16:07:10.781-0400",
       "body": "This issue is being supplanted by a number of more specific issues.\n"

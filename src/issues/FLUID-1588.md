@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18213",
       "author": "Colin Clark",
       "date": "2008-09-19T10:17:27.000-0400",
       "body": "This was fixed by updating the orientation default to a correct value.\n"
     },
     {
+      "id": "18214",
       "author": "Justin Obara",
       "date": "2008-12-03T11:51:17.000-0500",
       "body": "appears to be fixed\n"

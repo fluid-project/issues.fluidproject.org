@@ -37,6 +37,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17269",
       "author": "Anastasia Cheetham",
       "date": "2008-12-09T12:36:10.000-0500",
       "body": "Ok, I take it back: The drop marker is not black, it's white. But it's narrow enough that sometimes in my testing, it's not visible. Perhaps it could be a bit wider?\n"

@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26245",
       "author": "Gregor Moss",
       "date": "2018-11-30T17:22:23.753-0500",
       "body": "Reproduced, solved, tested and verified using Chrome 70 mobile device emulator set to iPhone 6/7/8, Firefox Quantum 63 in Responsive Design mode at 320 x 480, and Edge&#x20;\n\nWhen testing in Edge 42, the minimum width of the browser (320 px) was less than the minimum supported content width (373px), so it's possible to reduce the browser window to be narrower than the content, which will reproduce the issue. This, as far as I can tell, is not something that can be solved on our end: <https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/13621468/>\n"

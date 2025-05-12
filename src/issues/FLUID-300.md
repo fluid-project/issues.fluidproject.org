@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14907",
       "author": "Colin Clark",
       "date": "2008-02-22T18:17:40.000-0500",
       "body": "Added activate () method to the public API. This basically creates a function that will call the default activate handler specified by the user if the circumstances are appropriate.\n"
     },
     {
+      "id": "14914",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:46.819-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

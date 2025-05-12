@@ -31,21 +31,25 @@
   ],
   "comments": [
     {
+      "id": "12804",
       "author": "Anastasia Cheetham",
       "date": "2011-12-08T15:35:43.080-0500",
       "body": "This screenshot (bad-404.jpg) shows the 404 page with a bad layout.\n"
     },
     {
+      "id": "12805",
       "author": "joanna vass",
       "date": "2011-12-12T12:13:26.791-0500",
       "body": "tweaks for '404 Error'\n\n* all text: black, serif\n* \"Sorry, but the...\" text: increase size\n* alignment: vertically & horizontally center in content area\n"
     },
     {
+      "id": "12806",
       "author": "Michelle D'Souza",
       "date": "2011-12-12T12:15:06.222-0500",
       "body": "I also think we should put more specific contact information in - how would someone know who to contact? Can we link somewhere?&#x20;\n"
     },
     {
+      "id": "12807",
       "author": "Michelle D'Souza",
       "date": "2011-12-12T15:18:49.896-0500",
       "body": "Merged into the project repo at 867ada2be2c1805f7d4875dd877b8f7ab8424510\n"

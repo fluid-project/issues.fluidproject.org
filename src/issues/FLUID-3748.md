@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24584",
       "author": "Justin Obara",
       "date": "2010-10-04T14:01:26.506-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "24585",
       "author": "Anastasia Cheetham",
       "date": "2011-01-04T09:46:51.371-0500",
       "body": "Colin has updated the Uploader docs.\n"

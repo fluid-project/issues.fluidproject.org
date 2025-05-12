@@ -33,6 +33,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22001",
       "author": "Justin Obara",
       "date": "2011-05-17T09:42:22.844-0400",
       "body": "We have nightly and hourly builds of Infusion and the uploader server (this needs to be updated to the new one from cindy when it's ready), and a nightly build of the builder.\n"

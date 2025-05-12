@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18319",
       "author": "Colin Clark",
       "date": "2008-03-02T22:37:09.000-0500",
       "body": "Added a currentSelection () function that returns a jQuery containing the currently selected item.\n"
     },
     {
+      "id": "18321",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:28:00.570-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

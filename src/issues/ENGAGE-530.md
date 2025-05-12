@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12128",
       "author": "Alison Benjamin",
       "date": "2010-03-22T11:21:53.000-0400",
       "body": "<http://wiki.fluidproject.org/display/fluid/Kiosk+Alt+Text>\n"
     },
     {
+      "id": "12129",
       "author": "Alison Benjamin",
       "date": "2010-03-24T17:02:55.000-0400",
       "body": "Note: some of this info has also found its way into the story cards for the last round of wireframes. <http://wiki.fluidproject.org/display/fluid/Kiosk+wireframes%2C+draft+5>\n"

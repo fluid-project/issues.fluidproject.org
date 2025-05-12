@@ -27,26 +27,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23131",
       "author": "Michelle D'Souza",
       "date": "2013-06-12T10:45:27.557-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/323> merged into project repo at ef823a4b799854aa84188579f4c7b2164a84b1b4\n"
     },
     {
+      "id": "23132",
       "author": "y z",
       "date": "2013-06-12T10:47:56.211-0400",
       "body": "Branch with the fix for the issue was committed at: <https://github.com/fluid-project/infusion/commit/ef823a4b799854aa84188579f4c7b2164a84b1b4>\n"
     },
     {
+      "id": "23133",
       "author": "Cindy Li",
       "date": "2014-03-19T10:19:26.512-0400",
       "body": "This might have been broken by the implementation of the new prefs framework.\n\nThe store currently saves the whole rootModel that contains the merged defaults and previously saved prefs. It is causing the problem that all the preferences are saved regardless they are modified or not. The solution is to keep two models: one contains all the default preference values, while the other is the working model that reflects the changes. At save,&#x20;\n\n1\\. make a copy of the working model, \\\n2\\. compare the copy with the default model, \\\n3\\. remove elements whose values are same as default values, \\\n4\\. save this copy into the store.\n\nThese steps will happen in the preference framework rather than the store.\n"
     },
     {
+      "id": "23134",
       "author": "Cindy Li",
       "date": "2014-03-20T09:05:06.080-0400",
       "body": "A pull request is sent to fix this issue: <https://github.com/fluid-project/infusion/pull/482>\n"
     },
     {
+      "id": "23135",
       "author": "Justin Obara",
       "date": "2014-03-20T09:56:42.132-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/482> ) into the project repo at b6db5eeb923625594d24aa2fe0fe7392b3989926\n"

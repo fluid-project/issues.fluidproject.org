@@ -22,6 +22,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26206",
       "author": "Michelle D'Souza",
       "date": "2018-07-06T14:01:51.267-0400",
       "body": "Duplicate of <https://fluidproject.atlassian.net/browse/SNOW-27#icft=SNOW-27>\n"

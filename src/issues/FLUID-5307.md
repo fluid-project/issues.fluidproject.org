@@ -36,21 +36,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23614",
       "author": "Cindy Li",
       "date": "2014-04-10T14:25:18.282-0400",
       "body": "Bosmon\\\ncindyli - can you explain what function the inversion is meant to perform? That is, what sequence of UI actions should lead to the inversion being required\n\ncindyli\\\nBosmon: the three states of audio appear to be three radio buttons on the page. the selection on any of these radio buttons needs to be inverted so it's reflected on the source model. in the case 4 described in the jira, the \"unknown\" radio button is selected initially. If users don't make any change to radio buttons, this \"unknown\" should be inverted to whatever it was sourced from. If users make change to another state and re-select \"unknown\" again, this selection needs to be inverted back to the source of Case 3.\n"
     },
     {
+      "id": "23616",
       "author": "Antranig Basman",
       "date": "2014-04-10T14:47:54.656-0400",
       "body": "Thanks for this very interesting use case, cindy - this is something that the current model transformation system can't accommodate - that is, it is incapable of operating a \"pseudoinverse\" where a particular value (source) is associated with multiple values on the opposing side (target) but has one \"preferred inverse\" - and the desired behaviour of the system is to accept ANY of the associated target values if they occur, but if none of them do, to invert to the preferred value.\n\nIn the current system, you should use a standard transform for the forward direction, but for now implement a custom \"inverse operation\" using a raw ChangeListener that \"reads ahead\" into the target model to make a decision as to whether the value there should be changed. We will implement new machinery in both model transformations and model relay to make this automatic in future.\n\nMy current idea for a \"future framework sketch\" for automating this involves a new grade applied to a \"lens transform\" named \"fluid.pseudoInverse\" or so, which licences the model transformation framework to apply the workflow automatically that you will currently write by hand - that is, in finding a value in the target disagreeing with the \"principal inverse\", to first run it through the opposite leg of the transform to see if it results in a different source value before modifying it. This, in particular, will note the transform as being \"asymmetric\" since clearly this behaviour can only be operated in one direction.\n"
     },
     {
+      "id": "23618",
       "author": "Antranig Basman",
       "date": "2014-04-10T15:28:21.898-0400",
       "body": "Also, this is far too complex a case for the condition transform to handle. It can only make a 2-way choice based on a single boolean value. This needs to be dealt with by upgrades to the valueMapper transform.\n"
     },
     {
+      "id": "23620",
       "author": "Antranig Basman",
       "date": "2014-07-23T17:02:05.867-0400",
       "body": "This is now being handled by the work for <https://fluidproject.atlassian.net/browse/FLUID-5479#icft=FLUID-5479>\n"

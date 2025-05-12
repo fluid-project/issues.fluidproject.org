@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20083",
       "author": "Eli Cochran",
       "date": "2008-07-23T22:08:48.000-0400",
       "body": "Added the appropriate focus actions based on: <http://wiki.fluidproject.org/display/fluid/Uploader+-+Keyboard+Interaction>\n"
     },
     {
+      "id": "20086",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:48.809-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

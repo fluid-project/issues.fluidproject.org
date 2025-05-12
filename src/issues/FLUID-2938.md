@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21737",
       "author": "Colin Clark",
       "date": "2009-06-29T17:36:17.000-0400",
       "body": "This isn't actually a bug, though it is remarkably confusing. Since there may be several decorators attached to a component, the decorator options need to be wrapped in an array, even if there is only one decorator being specified. This code should work:\n\nvar myUploader = fluid.progressiveEnhanceableUploader(\".flc-uploader\", \".fl-progEnhance-basic\", {\\\ndemo: true,\\\nuploadManager: \"fluid.swfUploadManager\",\\\ndecorators: \\[{\\\ntype: \"fluid.swfUploadSetupDecorator\",\\\noptions: {\\\nflashButtonImageURL: \"../images/error.png\"\\\n}\\\n}]\\\n};\n\nNote the square brackets around the value of decorators:\n\nThe larger issue of how decorators are configured will be fixed with the introduction of our new IoC container in Infusion 1.2. Keep an eye out for it soon.\n"

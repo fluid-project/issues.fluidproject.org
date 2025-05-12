@@ -35,16 +35,19 @@
   ],
   "comments": [
     {
+      "id": "26664",
       "author": "Cindy Li",
       "date": "2019-10-22T13:49:39.328-0400",
       "body": "[The pull request](https://github.com/fluid-project/sjrk-story-telling/pull/46) has been merged into the stories-floe-dev branch at [this commit](https://github.com/fluid-project/sjrk-story-telling/commit/dfa89cc9da25016b86c55c7f34cf7f4ee6fed92a).\n"
     },
     {
+      "id": "26665",
       "author": "Gregor Moss",
       "date": "2020-03-19T21:39:07.547-0400",
       "body": "Reopened with new symptoms.\n\nOn page load (any page), the page is blank except for UIO, and the following error is reported: SCRIPT438: Object doesn't support property or method 'find'\n"
     },
     {
+      "id": "26666",
       "author": "Gregor Moss",
       "date": "2020-03-27T17:02:55.954-0400",
       "body": "Reopened after it was automatically closed in error\n"

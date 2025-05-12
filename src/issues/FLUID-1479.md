@@ -45,11 +45,13 @@
   ],
   "comments": [
     {
+      "id": "18666",
       "author": "Justin Obara",
       "date": "2008-09-08T10:45:51.000-0400",
       "body": "'screenshot-1' shows the formatting issues as a nested reordererable in the uPortal example. Notice the way the Kiwano looks\n"
     },
     {
+      "id": "18670",
       "author": "Justin Obara",
       "date": "2008-09-09T09:00:33.000-0400",
       "body": "Appears to have been resolved with along with fix for Fluid-1484\n\nVerified resolved with:\n\nSafari 3 (Mac OS 10.5)\n"

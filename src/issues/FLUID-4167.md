@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19762",
       "author": "Harris Wong",
       "date": "2011-03-30T10:14:39.629-0400",
       "body": "This is related to the HTML5 test for the uploader\n"
     },
     {
+      "id": "19763",
       "author": "Justin Obara",
       "date": "2014-05-22T14:29:52.690-0400",
       "body": "Due to a cross site scripting vulnerability we have removed flash support from the uploader. See <https://fluidproject.atlassian.net/browse/FLUID-5354#icft=FLUID-5354>\n"

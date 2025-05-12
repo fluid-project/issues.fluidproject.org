@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20475",
       "author": "Justin Obara",
       "date": "2008-07-29T10:08:18.000-0400",
       "body": "Tested using FF2 (Win XP)\n"
     },
     {
+      "id": "20476",
       "author": "Justin Obara",
       "date": "2008-07-29T14:42:00.000-0400",
       "body": "Herb tested IE7\\\nJustin tested FF3, Opera 9.5, IE6\n"

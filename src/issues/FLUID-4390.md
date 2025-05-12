@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24437",
       "author": "Colin Clark",
       "date": "2011-08-07T19:32:05.275-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24438",
       "author": "Colin Clark",
       "date": "2011-08-07T19:33:26.872-0400",
       "body": "Here's a fix: <https://github.com/colinbdclark/infusion/tree/FLUID-4390>\n"

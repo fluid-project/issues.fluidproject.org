@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25893",
       "author": "Giovanni Tirloni",
       "date": "2015-08-20T21:53:04.624-0400",
       "body": "Upgraded JIRA to version 6.4.10.\n"

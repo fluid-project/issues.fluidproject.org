@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26374",
       "author": "Cindy Li",
       "date": "2019-12-16T12:28:57.452-0500",
       "body": "[The pull request](https://github.com/fluid-project/sjrk-story-telling/pull/52) has been merged into the project repo stories-floe-dev branch at [this commit](https://github.com/fluid-project/sjrk-story-telling/commit/d2f09c5dc2f0cecc509402356920bb42df61e0e4).\n"

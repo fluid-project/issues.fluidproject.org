@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10439",
       "author": "Boyan Sheytanov",
       "date": "2010-03-15T09:57:06.000-0400",
       "body": "Confirmation dialog added. Test now fail due to that. Need to find a way to test the dialog (simulate a click on the 'Yes' button).\n"

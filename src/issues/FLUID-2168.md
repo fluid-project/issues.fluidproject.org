@@ -34,16 +34,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21178",
       "author": "Eli Cochran",
       "date": "2009-01-28T11:43:48.000-0500",
       "body": "This is a duplicate of <https://fluidproject.atlassian.net/browse/FLUID-2136#icft=FLUID-2136> which caused it.&#x20;\n"
     },
     {
+      "id": "21179",
       "author": "Eli Cochran",
       "date": "2009-01-28T11:51:55.000-0500",
       "body": "Fixed. Checking to see if the progressor exists before we try to remove it.&#x20;\n"
     },
     {
+      "id": "21180",
       "author": "Justin Obara",
       "date": "2009-01-28T12:13:02.000-0500",
       "body": "Verified fix using:\n\nFF3 (Mac OS 10.5)\\\nIE7 (Win XP)\n"

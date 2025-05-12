@@ -40,11 +40,13 @@
   ],
   "comments": [
     {
+      "id": "15229",
       "author": "Justin Obara",
       "date": "2014-04-30T15:08:56.197-0400",
       "body": "screenshot.png shows the tooltip covering the text that was added via the InlineEdit field.\n"
     },
     {
+      "id": "27823",
       "author": "Justin Obara",
       "date": "2024-07-22T14:55:19.087-0400",
       "body": "Could not reproduce with FF 128 on macOS 14.5\n"

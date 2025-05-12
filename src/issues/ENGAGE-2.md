@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11876",
       "author": "Antranig Basman",
       "date": "2009-08-21T12:26:06.000-0400",
       "body": "Fix committed at 7807, please test..\n"
     },
     {
+      "id": "11877",
       "author": "Justin Obara",
       "date": "2009-11-10T14:57:58.000-0500",
       "body": "Closed per previous comment\n"

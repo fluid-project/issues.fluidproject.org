@@ -32,21 +32,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23881",
       "author": "Justin Obara",
       "date": "2015-06-15T11:05:04.777-0400",
       "body": "Antranig Basman can this be closed after with this pull request <https://github.com/fluid-project/infusion/pull/591>\n"
     },
     {
+      "id": "23883",
       "author": "Jonathan Hung",
       "date": "2015-06-18T09:50:29.398-0400",
       "body": "I've started a wiki page here to document the static site. It's not complete, but is a start.\\\n<https://wiki.fluidproject.org/display/fluid/Infusion+Documentation+Architecture+and+Process>\n\nNote that upcoming refactoring related to ILDH work may affect this documentation too.\n"
     },
     {
+      "id": "23884",
       "author": "Anastasia Cheetham",
       "date": "2015-12-14T09:05:20.636-0500",
       "body": "This reference to the \"static environment\" is referring to the Infusion static environment, not the static site generation issue.\n\nAntranig Basman: The pull request you referenced is closed. Is there associated documentation that addresses this issue?\n"
     },
     {
+      "id": "23886",
       "author": "Antranig Basman",
       "date": "2015-12-14T09:43:30.339-0500",
       "body": "The static environment ceased to exist when <https://fluidproject.atlassian.net/browse/FLUID-5249#icft=FLUID-5249> was merged in during January\n"

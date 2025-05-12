@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12379",
       "author": "Erin Yu",
       "date": "2009-05-12T13:09:45.000-0400",
       "body": "The CI guide can be found here:\\\n<http://wiki.fluidproject.org/pages/viewpage.action?pageId=6818521>\n"

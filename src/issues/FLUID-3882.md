@@ -35,21 +35,25 @@
   ],
   "comments": [
     {
+      "id": "18878",
       "author": "y z",
       "date": "2010-12-07T15:45:07.108-0500",
       "body": "This patch modifies renderer utilities to take into consideration a case where the tree contains more than one expander in the expander array.&#x20;\n"
     },
     {
+      "id": "18881",
       "author": "Colin Clark",
       "date": "2010-12-07T15:47:24.789-0500",
       "body": "By order of the King, I declare this issue \" Bug Parade Infusion 1.3 \"\n"
     },
     {
+      "id": "18883",
       "author": "Antranig Basman",
       "date": "2010-12-07T16:21:55.140-0500",
       "body": "Fixed at revision 10349\n"
     },
     {
+      "id": "18885",
       "author": "Antranig Basman",
       "date": "2010-12-07T16:22:21.524-0500",
       "body": "Reviewed for release, patch is sound and minimal\n"

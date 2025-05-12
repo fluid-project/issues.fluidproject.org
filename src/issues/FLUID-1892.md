@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16680",
       "author": "Daphne Ogle",
       "date": "2008-12-02T13:43:14.000-0500",
       "body": "iteration23\n"
     },
     {
+      "id": "16682",
       "author": "Daphne Ogle",
       "date": "2008-12-08T21:18:10.000-0500",
       "body": "Also added a storyboard for batch uploading with metadata.  All storyboards can be accessed from:  <http://wiki.fluidproject.org/display/fluid/Uploader+Design+Overview>\n"

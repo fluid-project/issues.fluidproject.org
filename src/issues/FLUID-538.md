@@ -39,16 +39,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15967",
       "author": "Jonathan Hung",
       "date": "2008-05-15T12:13:05.000-0400",
       "body": "Also seen in\\\n<http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/jquery-tabs/jquery-tabs.html>\n\nTo reproduce:\n\n* if dragging and mouse pointer is just above or below the tabs, releasing mouse will not drop tab at the indicated drop marker.\n* if dragging and mouse pointer is just beyond the last tab, releasing the mouse will not drop tab at the indicated drop marker.\n\nThis example is particularly hard to use because of combination of the tight drop zones and this bug.\n"
     },
     {
+      "id": "15970",
       "author": "Antranig Basman",
       "date": "2008-08-08T10:27:05.000-0400",
       "body": "Resolved as part of comprehensive drag and drop reorganisation at rev 5338 (\"DragManager\" created)\n"
     },
     {
+      "id": "15972",
       "author": "Justin Obara",
       "date": "2008-08-11T08:47:49.000-0400",
       "body": "Verified fix using:\n\nFF2 (Mac OS 10.5, Win XP)\\\nIE7 (Win XP)\n"

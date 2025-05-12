@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19592",
       "author": "Justin Obara",
       "date": "2008-07-07T18:52:45.000-0400",
       "body": "This appears to be fixed in the current build.\n"

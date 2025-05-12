@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11931",
       "author": "Colin Clark",
       "date": "2009-10-27T17:26:16.000-0400",
       "body": "I fixed this at r8515 and r8516\n"
     },
     {
+      "id": "11932",
       "author": "Justin Obara",
       "date": "2009-11-10T14:19:01.000-0500",
       "body": "Closed as per previous comment\n"

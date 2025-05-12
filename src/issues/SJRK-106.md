@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26440",
       "author": "Gregor Moss",
       "date": "2018-12-03T11:00:43.827-0500",
       "body": "After careful consideration and reviewing other projects in fluid-project and fluid-lab repositories, I have chosen to make the following changes:\n\n* \"sjrk-storyTelling-...\" and \"sjrkc-storyTelling-...\" will become \"sjrk-st-...\" and \"sjrkc-st-...\" respectively\n* \"sjrk-storyblock-block-...\" and \"sjrkc-storyblock-block-...\" will \"sjrk-st-block-...\" and \"sjrkc-st-block-...\" respectively\n* \"sjrk-storyblock-...\" and \"sjrkc-storyblock-...\" will \"sjrk-st-block-...\" and \"sjrkc-st-block-...\" respectively\n\nthe latter two should not have any collisions within the newly-combined \"block\" classes\n"
     },
     {
+      "id": "26441",
       "author": "Gregor Moss",
       "date": "2018-12-03T18:03:07.535-0500",
       "body": "Removed a couple of unused classes from the CSS file as well:\n\n* .sjrk-storyTelling-label-container (only a pseudoselector on this is being used, currently)\n* .sjrk-storyTelling-story-previewPane\n* .sjrk-storyTelling-storyPreview\n"

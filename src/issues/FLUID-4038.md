@@ -53,6 +53,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20742",
       "author": "Colin Clark",
       "date": "2011-01-20T12:28:19.534-0500",
       "body": "Renderizing the Uploader depends on having a clear, consolidated model for the Uploader, which will involve refactoring the FileQueue object.\n"

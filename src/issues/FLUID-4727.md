@@ -25,26 +25,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22683",
       "author": "Colin Clark",
       "date": "2012-07-07T11:47:15.562-0400",
       "body": "Assigned to Antranig for review and push.\n"
     },
     {
+      "id": "22684",
       "author": "Kasper Galschiot Markus",
       "date": "2014-03-02T18:01:38.402-0500",
       "body": "Colin Clark perhaps this one can be closed? <http://lists.idrc.ocad.ca/pipermail/commits/2012-July/006484.html>\n"
     },
     {
+      "id": "22686",
       "author": "Colin Clark",
       "date": "2014-03-26T15:14:41.651-0400",
       "body": "Can you verify that this issue has been resolve and close if so, Kasper Galschiot Markus?\n"
     },
     {
+      "id": "22689",
       "author": "Justin Obara",
       "date": "2015-06-10T14:12:36.632-0400",
       "body": "Kasper Galschiot Markus and Antranig Basman can this be closed?\n"
     },
     {
+      "id": "22692",
       "author": "Kasper Galschiot Markus",
       "date": "2015-06-11T05:35:43.893-0400",
       "body": "Fixed with commit <https://github.com/fluid-project/infusion/commit/c65bedcc1709e101dcc015afcca37f2802feeea0>\n"

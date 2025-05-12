@@ -31,16 +31,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12163",
       "author": "Michelle D'Souza",
       "date": "2009-07-13T13:45:23.000-0400",
       "body": "David has started building the markup for this component. We still need to finish building the markup and use the renderer to build out the entire list of artifacts from data provided in a json object. We also need to hook up the related objects list to the artifact component.&#x20;\n"
     },
     {
+      "id": "12164",
       "author": "Michelle D'Souza",
       "date": "2009-08-31T12:15:03.000-0400",
       "body": "A related objects component is likely just a browse component containing related objects.&#x20;\n"
     },
     {
+      "id": "12165",
       "author": "Justin Obara",
       "date": "2009-11-13T10:16:21.000-0500",
       "body": "The related objects component is a browse component that uses a specific search.\n"

@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11487",
       "author": "Cindy Li",
       "date": "2015-05-25T12:58:58.677-0400",
       "body": "Issued a pull request: <https://github.com/fluid-project/first-discovery/pull/60>\n"
     },
     {
+      "id": "11488",
       "author": "Justin Obara",
       "date": "2015-05-25T14:27:21.105-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/first-discovery/pull/60> ) into project repo at 6ecb524301d0f6ce708487f0e96c75363d70f6d6\n"

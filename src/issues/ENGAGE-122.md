@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11912",
       "author": "Justin Obara",
       "date": "2009-11-10T15:18:42.000-0500",
       "body": "This was fixed, if no image is given, there isn't an attempt to render the image\n"

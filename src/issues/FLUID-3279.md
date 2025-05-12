@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "21032",
       "author": "Armin Krauss",
       "date": "2009-10-13T15:59:58.000-0400",
       "body": "This screenshot shows how the network interruption message is not displayed correctly.\n"
     },
     {
+      "id": "21033",
       "author": "Justin Obara",
       "date": "2014-05-22T14:28:50.932-0400",
       "body": "Due to a cross site scripting vulnerability we have removed flash support from the uploader. See <https://fluidproject.atlassian.net/browse/FLUID-5354#icft=FLUID-5354>\n"

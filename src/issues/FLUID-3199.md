@@ -27,26 +27,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13583",
       "author": "Justin Obara",
       "date": "2009-09-22T14:56:26.000-0400",
       "body": "Bug Parade Infusion 1.1.2\n"
     },
     {
+      "id": "13587",
       "author": "Laurel Williams",
       "date": "2009-09-22T15:32:07.000-0400",
       "body": "fixed test (from >0 to >=0) so that \"framework\" was included in modules submitted for build.\n"
     },
     {
+      "id": "13593",
       "author": "Laurel Williams",
       "date": "2009-09-29T14:30:20.000-0400",
       "body": "the fix for this caused a problem with the validation and cache key creation code, where an invalid module name can be accepted. I am re-opening so I can investigate this issue.&#x20;\n"
     },
     {
+      "id": "13597",
       "author": "Laurel Williams",
       "date": "2009-09-29T16:05:14.000-0400",
       "body": "Added a check for type of returned value as integer from the array\\_search function.\n"
     },
     {
+      "id": "13600",
       "author": "Laurel Williams",
       "date": "2009-09-30T09:51:56.000-0400",
       "body": "Jacob reviewed\n"

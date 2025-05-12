@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26119",
       "author": "Michelle D'Souza",
       "date": "2010-03-29T21:24:18.000-0400",
       "body": "Work on this has been started in the <https://fluidproject.atlassian.net/browse/ENGAGE-208#icft=ENGAGE-208> branch.&#x20;\n"
     },
     {
+      "id": "26120",
       "author": "Antranig Basman",
       "date": "2013-08-13T13:57:43.777-0400",
       "body": "This has been tackled recently in \"new new Kettle\" providing a declarative facility based on \"configs\" which can depend on \"modules\", designating the loading of npm modules. Fully modular loading of \"apps\" and their dependencies is now possible.\n"

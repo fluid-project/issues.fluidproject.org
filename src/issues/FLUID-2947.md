@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13856",
       "author": "Justin Obara",
       "date": "2013-09-06T09:12:58.554-0400",
       "body": "Should we consider removing the component progress indicators? Are they still useful?\n"

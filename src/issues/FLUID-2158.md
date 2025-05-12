@@ -32,16 +32,19 @@
   ],
   "comments": [
     {
+      "id": "21875",
       "author": "Justin Obara",
       "date": "2009-01-23T09:54:58.000-0500",
       "body": "'screenshot-1' shows the accordion menu fully expanded\n"
     },
     {
+      "id": "21876",
       "author": "Justin Obara",
       "date": "2009-01-23T11:23:23.000-0500",
       "body": "The ajax call was not bringing in the necessary js files, added them to the head of sakai.html. Also added a function to sakai.js which is called in a script tag on the UIOptions.html page\n"
     },
     {
+      "id": "21877",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:49.290-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

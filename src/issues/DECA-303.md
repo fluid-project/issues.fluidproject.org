@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10210",
       "author": "Justin Obara",
       "date": "2012-09-05T11:06:59.486-0400",
       "body": "Removed the dpi setting from the traced and font matched exports. Did this by updating the exporter demands.\n"

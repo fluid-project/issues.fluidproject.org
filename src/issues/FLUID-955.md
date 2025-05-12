@@ -35,6 +35,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20052",
       "author": "Justin Obara",
       "date": "2008-08-01T09:31:42.000-0400",
       "body": "Appears to have been resolved with the changes made before the release of 0.4\n\nVerified using IE6, IE7 (Win XP)\n"

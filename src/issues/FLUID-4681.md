@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14096",
       "author": "Antranig Basman",
       "date": "2012-03-27T02:53:16.272-0400",
       "body": "Current \"globalDismissal\" code from CSpace Utilities.js:\n\n/\\*\\* \"Global Dismissal Handler\" for the entire page. Attaches a click handler to the\n\n* &#x20;document root that will cause dismissal of any elements (typically dialogs) which\n* &#x20;have registered themselves. Dismissal through this route will automatically clean up\n* &#x20;the record - however, the dismisser themselves must take care to deregister in the case\n* &#x20;dismissal is triggered through the dialog interface itself. \\*/\n\n&#x20;   \\\nvar dismissList = {};\n\n$(document).click(function (event) {\\\nvar target = event.target;\\\nwhile (target) {\\\nif (dismissList\\[target.id]) {\\\nreturn;\\\n}\\\ntarget = target.parentNode;\\\n}\\\nfluid.each(dismissList, function (dismissFunc, key) {\\\ndismissFunc();\\\ndelete dismissList\\[key];\\\n});\\\n});\n\ncspace.util.globalDismissal = function (nodes, dismissFunc) {\\\nnodes = $(nodes);\\\nfluid.each(nodes, function (node) {\\\nvar id = fluid.allocateSimpleId(node);\\\nif (dismissFunc) {\\\ndismissList\\[id] = dismissFunc;\\\n}\\\nelse {\\\ndelete dismissList\\[id];\\\n}\\\n});\\\n};\n"
     },
     {
+      "id": "14098",
       "author": "Michelle D'Souza",
       "date": "2012-04-30T07:14:01.618-0400",
       "body": "Merged into project repo at 88390cc667a227ba4f21e6ba4dfa070d23b1170e\n"

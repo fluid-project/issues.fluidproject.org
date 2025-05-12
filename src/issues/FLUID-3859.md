@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20684",
       "author": "Justin Obara",
       "date": "2010-11-19T12:52:33.263-0500",
       "body": "Appears to be either an NVDA or FF issue\n"
     },
     {
+      "id": "20685",
       "author": "Golam Chowdhury",
       "date": "2011-03-03T16:34:30.277-0500",
       "body": "Changed the \"Affect Version\" to 1.3.1\n"

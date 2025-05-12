@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18290",
       "author": "Colin Clark",
       "date": "2008-09-16T09:58:47.000-0400",
       "body": "dev-iteration43\n"
     },
     {
+      "id": "18293",
       "author": "Jacob Farber",
       "date": "2008-09-17T16:22:36.000-0400",
       "body": "First pass complete. This will probably require more scenarios to become more robust.\n"

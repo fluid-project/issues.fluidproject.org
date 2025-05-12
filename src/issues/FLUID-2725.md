@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22714",
       "author": "Justin Obara",
       "date": "2009-05-14T10:23:26.000-0400",
       "body": "Bug Parade 1.1 release&#x20;\n"
     },
     {
+      "id": "22718",
       "author": "Michelle D'Souza",
       "date": "2011-01-13T16:50:11.048-0500",
       "body": "Reopening these issues in order to change the component to Release.&#x20;\n"

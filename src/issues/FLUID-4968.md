@@ -41,41 +41,49 @@
   ],
   "comments": [
     {
+      "id": "17008",
       "author": "heidi valles",
       "date": "2013-04-02T11:29:33.680-0400",
       "body": "via Joseph re: role=\"presentation\" :\n\nBrowsers create an accessibility tree whose nodes, called \"accessibles\", contain information for ATs to use.  Marking an element with role=\"presentation\" means no accessible is created in the a11y tree for that element.  However, the content of the element is in the tree (as you noted in the jira).  Another quick way to put it is that role=\"presentation\" eliminates the element from the a11y tree.  The Authoring Practices Guide shows some examples:\\\n<http://www.w3.org/WAI/PF/aria-practices/Overview.html#presentation_role>.\n"
     },
     {
+      "id": "17009",
       "author": "Jonathan Hung",
       "date": "2013-04-03T15:45:44.881-0400",
       "body": "Arash and I will begin investigating the pros and cons of icon fonts and hopefully come to an understanding whether or not this is an approach feasible for our components.\n"
     },
     {
+      "id": "17010",
       "author": "Arash Sadr",
       "date": "2013-04-04T10:44:31.201-0400",
       "body": "Here are two links showing \"How to hide any element from page only from Screenreader but not from the page\"\\\n<http://stackoverflow.com/questions/4796752/how-to-hide-any-element-from-page-only-from-screenreader-but-not-from-page-for-n>\\\n<http://a11yproject.com/posts/how-to-hide-content/>\n"
     },
     {
+      "id": "17011",
       "author": "Joseph Scheuhammer",
       "date": "2013-04-04T16:05:21.134-0400",
       "body": "A problem here is that this is a **label** for the control with id 'themeRow::themeInput'.  That entails that the accessible with id 'themeRow::themeInput' will have an accessible name of \"A Default\", since that's what is specified in the \\<label> element.  And, that explains why screen readers are reading the \"A\".\n\nI take it that it's not desirable to have the \"A\" as part of the accessible name.  Then why is it part of the \\<label>?  Put another way:  Is \"A\" logically part of the name of the control?\n\nAlso, I'd have a better feel for what is going here if I knew what kind of control \"themeRow::themeInput\" is.  Based on the screen shot, the right side (with the various \"a\"s) has the text \"colour and contrast\", and that looks like the appropriate label and/or accessible name.  Then again, I don't know the context, so I may be way off.  What is being labelled? What would be meaningful in terms of labelling it?\n\nYou might also consider using \"aria-label\" as an attribute of the control itself, and setting it to what you want the name to be.  Text within aria-label is not rendered on screen. For example:\\\n\\<element id=\"themeRow::themeInput\" aria-label=\"Default\" ...>\n"
     },
     {
+      "id": "17012",
       "author": "Justin Obara",
       "date": "2013-04-05T09:01:16.103-0400",
       "body": "Joseph they are actually radio buttons. They are styled in such a way so as to hide the actual input and allow the user to only interact with the Label instead. I'm not sure how long this link will be active for, but this is an early release of a working example.\\\n<http://demo.floeproject.org/integration-demos/uiOptions/ClimateChange.html>\n"
     },
     {
+      "id": "17013",
       "author": "Anastasia Cheetham",
       "date": "2013-04-08T14:38:23.375-0400",
       "body": "I added a comment to <https://fluidproject.atlassian.net/browse/FLUID-4934#icft=FLUID-4934> that might be relevant here:\\\n<http://issues.fluidproject.org/browse/FLUID-4934?focusedCommentId=23535&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-23535>\n"
     },
     {
+      "id": "17014",
       "author": "Justin Obara",
       "date": "2015-06-15T10:02:08.181-0400",
       "body": "I believe the typical approach these days would be to use aria-hidden=\"true\".\n"
     },
     {
+      "id": "17015",
       "author": "Kaye Mao",
       "date": "2015-07-30T16:57:09.775-0400",
       "body": "Reading of A has been fixed by <https://issues.fluidproject.org/browse/FLUID-4977>\n\nIcon content is duplicated by <https://issues.fluidproject.org/browse/FLUID-5680>\n"

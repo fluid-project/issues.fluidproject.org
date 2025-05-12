@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26146",
       "author": "Antranig Basman",
       "date": "2014-12-17T11:16:01.248-0500",
       "body": "This appears to be a downgrade of express to version 3.3.5 which seems undesirable. But perhaps the diff has been expressed backwards. Also, this dependency should be resolved via npm rather than Fedora repositories so I'm not sure what the force of requirement is.\n"
     },
     {
+      "id": "26147",
       "author": "Antranig Basman",
       "date": "2015-08-26T20:38:25.890-0400",
       "body": "Express was upgraded beyond this version in \"old Kettle\" long ago - also, \"new Kettle\" will bring us up to express trunk\n"

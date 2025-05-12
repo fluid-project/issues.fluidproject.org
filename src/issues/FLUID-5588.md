@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25327",
       "author": "Giovanni Tirloni",
       "date": "2018-04-29T16:19:21.976-0400",
       "body": "I'd like to add that hard-coding URLs in the website configuration makes it hard to deploy the website in various ad-hoc environments, specially for testing, because then a configuration file needs to be modified instead of relying on relative URLs working everywhere.\n"
     },
     {
+      "id": "25328",
       "author": "Justin Obara",
       "date": "2020-03-11T12:33:42.162-0400",
       "body": "Merged PR ( <https://github.com/fluid-project/fluidproject.org/pull/40> ) into the project repo. Note that this doesn't use a helper function, so it assumes that the site is always deployed at root. However both `npm run docpad` which runs a local server and our actual site are hosted at root. Because we are going to be changing the static site generation soon as part of this [GSoC project](https://wiki.fluidproject.org/display/fluid/Google+Summer+of+Code+2020+with+the+Fluid+Project#GoogleSummerofCode2020withtheFluidProject-MigrateFLOEandFluidprojectwebsitestoaModernStaticSiteGenerator), I figure we can handle other uses cases in the new site generator.\n"

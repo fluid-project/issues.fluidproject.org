@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19732",
       "author": "Colin Clark",
       "date": "2008-07-31T16:37:27.000-0400",
       "body": "infusion-05-wishlist\n"
     },
     {
+      "id": "19734",
       "author": "Antranig Basman",
       "date": "2008-08-08T14:20:07.000-0400",
       "body": "ModuleLayout.js was broken out at revision 5332 - I think the List and Grid layouts are probably small enough to remain.\n"
     },
     {
+      "id": "19737",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:53.140-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

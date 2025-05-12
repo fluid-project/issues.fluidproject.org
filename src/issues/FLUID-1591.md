@@ -34,21 +34,25 @@
   ],
   "comments": [
     {
+      "id": "17672",
       "author": "Justin Obara",
       "date": "2008-09-18T17:28:03.000-0400",
       "body": "'screenshot-1' shows the incorrect formating of the sortable grid after one of the sortable list examples has been reorderer\n"
     },
     {
+      "id": "17674",
       "author": "Justin Obara",
       "date": "2008-09-22T12:59:40.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "17676",
       "author": "Jacob Farber",
       "date": "2008-09-22T15:17:53.000-0400",
       "body": "Existed due to a bug in IE6 handling of margins as percentages and floating. \\\n(please see: <http://www.positioniseverything.net/explorer/percentages.html>)\n\nFixed by using pixels instead\n"
     },
     {
+      "id": "17678",
       "author": "Justin Obara",
       "date": "2008-09-22T15:29:16.000-0400",
       "body": "Verified fix using:\n\nIE6 (Win XP)\n"

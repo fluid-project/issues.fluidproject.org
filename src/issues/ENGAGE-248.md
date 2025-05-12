@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11781",
       "author": "Justin Obara",
       "date": "2010-02-05T15:35:28.000-0500",
       "body": "Bug Parade Engage 0.3&#x20;\n"
     },
     {
+      "id": "11782",
       "author": "Colin Clark",
       "date": "2010-02-16T11:50:31.000-0500",
       "body": "The specific issues referenced here--Artifact View and Browse services--have been resolved. In general, we've taken a sweep through all our server-side code to ensure that data feeds don't include view-related concerns such as options or cut points.\n"

@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18459",
       "author": "Daphne Ogle",
       "date": "2008-02-19T13:31:45.000-0500",
       "body": "iteration04\n"
     },
     {
+      "id": "18461",
       "author": "Daphne Ogle",
       "date": "2008-03-18T11:57:25.000-0400",
       "body": "Resolving and creating new task for notes summary in next iteration\n"

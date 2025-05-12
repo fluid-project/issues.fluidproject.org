@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23057",
       "author": "Justin Obara",
       "date": "2017-11-28T14:15:22.624-0500",
       "body": "Alan Harnum I agree that having both a whitelist and blacklist would be helpful. \n"
     },
     {
+      "id": "23058",
       "author": "Alan Harnum",
       "date": "2017-11-29T10:45:38.394-0500",
       "body": "PR opened: <https://github.com/fluid-project/infusion-docs/pull/131>\n"

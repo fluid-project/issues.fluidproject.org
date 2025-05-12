@@ -39,21 +39,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11766",
       "author": "Justin Obara",
       "date": "2010-02-19T17:45:01.000-0500",
       "body": "Seems that VoiceOver is caching its view of the DOM.&#x20;\n\nIt seems that we can force it to update by manually placing focus on one of the new elements.&#x20;\n\nSo we may have to force focus onto something after all DOM manipulations.\n"
     },
     {
+      "id": "11767",
       "author": "James Yoon",
       "date": "2010-02-19T17:52:40.000-0500",
       "body": "a11y issue\n"
     },
     {
+      "id": "11768",
       "author": "y z",
       "date": "2010-03-02T10:15:29.000-0500",
       "body": "Other web based applications for iPhone such as GMail have similar problems with voice over. Focus stays on the previous or dynamically updated elements on the page are not focusable. Some native apps however (such as Skype) have a very good voice over accessibility and have all pages and screens properly updated and accessible.\n"
     },
     {
+      "id": "11769",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:34.122-0500",
       "body": "The repository has been archived.\n"

@@ -38,11 +38,13 @@
   ],
   "comments": [
     {
+      "id": "23112",
       "author": "Justin Obara",
       "date": "2016-11-02T11:15:03.746-0400",
       "body": "screenshot.png shows the uploading size higher than the total size.\n"
     },
     {
+      "id": "23113",
       "author": "Alan Harnum",
       "date": "2016-11-14T15:33:41.764-0500",
       "body": "I've found this problem appears even without removing smaller files from the queue - I've seen it when simply adding a large number of files of varying sizes in Chrome.\n"

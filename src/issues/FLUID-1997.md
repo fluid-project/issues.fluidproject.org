@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "17397",
       "author": "Justin Obara",
       "date": "2008-12-17T09:35:56.000-0500",
       "body": "'screenshot-1' shows the preview window in the wrong location in simple layout\n"
     },
     {
+      "id": "17398",
       "author": "Justin Obara",
       "date": "2009-01-06T09:19:54.000-0500",
       "body": "Appears to have been fixed\n\nVerified using:\n\nIE 6 (Win XP)\\\nIE 7 (Win Vista)\n"

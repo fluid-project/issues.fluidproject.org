@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17315",
       "author": "Antranig Basman",
       "date": "2008-11-06T14:18:32.000-0500",
       "body": "So far, I have adjusted modelChanged so that the signature is (newModel, oldModel, source). We need to review this, also in conjunction with <https://fluidproject.atlassian.net/browse/FLUID-1771#icft=FLUID-1771> - since the \"source\" field might be an annoyance for external users. Perhaps we could go with (newModel, oldModel, that, source)? Should we actually fix pipe-cutter events before doing this? Revision 5965\n"
     },
     {
+      "id": "17317",
       "author": "Eli Cochran",
       "date": "2008-11-07T11:49:38.000-0500",
       "body": "My work is done here. However, Antranig has indicated that the signature may require additional tweaking.\n"
     },
     {
+      "id": "17319",
       "author": "Antranig Basman",
       "date": "2008-12-10T14:37:36.000-0500",
       "body": "Signature is declared agreeable\n"

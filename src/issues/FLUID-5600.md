@@ -26,21 +26,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19957",
       "author": "Justin Obara",
       "date": "2015-03-16T14:43:25.132-0400",
       "body": "Based on the conversation in the channel today with Bosmon, the option in the auxiliary schema should be called \"loaderGrades\".\\\n<https://botbot.me/freenode/fluid-work/2015-03-16/?tz=America/Toronto>\n"
     },
     {
+      "id": "19959",
       "author": "Justin Obara",
       "date": "2015-03-17T10:20:02.310-0400",
       "body": "Submitted a pull request:\\\n<https://github.com/fluid-project/infusion/pull/588>\n"
     },
     {
+      "id": "19961",
       "author": "Justin Obara",
       "date": "2015-03-17T10:22:01.807-0400",
       "body": "submitted a pull request to update the docs:\\\n<https://github.com/fluid-project/infusion-docs/pull/44>\n"
     },
     {
+      "id": "19962",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:16.457-0400",
       "body": "Reopening to change the fix version to 1.9\n"

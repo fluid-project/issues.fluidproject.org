@@ -35,16 +35,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15301",
       "author": "Antranig Basman",
       "date": "2013-03-08T03:35:09.236-0500",
       "body": "Notes on legacyBrowserFileLimit following discussion at San Diego: We agreed to eliminated the support for the peculiar method of XHR file upload required in Firefox 3.6 since this browser is very well outside the range of anything in our modern supported list. However, it was necessary to demonstrate that the new framework could support this requirement gracefully if it had been required. The issue was the highly non-standard signature to \\\nfluid.uploader.html5Strategy.local = function (queue, legacyBrowserFileLimit, options) {\n\nas well as pollution into its implementation. We decided that the new framework could have handled this without code pollution by a combination of the following techniques:\n\ni) A positive tag \"NoFormDataSupport\" to allow us to write a demands block targetting the existing fileSizeLimitSetting in the Firefox 3.6 case\\\nii) A custom mergePolicy for this setting which accumulated by computing the minimum value of all settings issued.\n"
     },
     {
+      "id": "15305",
       "author": "Antranig Basman",
       "date": "2013-05-02T17:28:50.601-0400",
       "body": "Merged in to trunk at revision d0f009b\n"
     },
     {
+      "id": "15307",
       "author": "Justin Obara",
       "date": "2013-08-01T09:53:38.773-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/378> ) into the project repo at af3bc113cb3f66ae2a6ab4d7f1ee1a1958453e4d\n"

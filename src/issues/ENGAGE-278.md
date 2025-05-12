@@ -25,31 +25,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12314",
       "author": "Colin Clark",
       "date": "2010-02-01T11:18:53.000-0500",
       "body": "So far, we've implemented generic icon badge support in Navigation List, and have this working nicely for Exhibition View. We still need to refine the styling in the Catalogue and My Collection list/grid views.\n"
     },
     {
+      "id": "12315",
       "author": "Colin Clark",
       "date": "2010-02-01T11:20:26.000-0500",
       "body": "As further clarification, we are finding that in NavList list view, badge styling is very close to working, while in grid view all the badges are showing at the bottom of the page.\n"
     },
     {
+      "id": "12316",
       "author": "Michelle D'Souza",
       "date": "2010-02-02T10:15:37.000-0500",
       "body": "mccord-pilot\n"
     },
     {
+      "id": "12317",
       "author": "Colin Clark",
       "date": "2010-02-05T11:00:51.000-0500",
       "body": "Media badges are working in Exhibition View previews, but still need to be styled for the Navigation List, which is used in the following components:\n\n* Catalogue Browse\n* Catalogue View\n* My Collection\n"
     },
     {
+      "id": "12318",
       "author": "Justin Obara",
       "date": "2010-02-05T15:52:59.000-0500",
       "body": "Bug Parade Engage 0.3&#x20;\n"
     },
     {
+      "id": "12319",
       "author": "Justin Obara",
       "date": "2010-02-24T12:02:52.000-0500",
       "body": "Looks like it is only not working in my collection at the moment.\n"

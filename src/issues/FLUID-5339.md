@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13450",
       "author": "Justin Obara",
       "date": "2014-04-30T09:04:43.084-0400",
       "body": "It appears that a similar error is causing the Paged Table and Tooltip tests to be failing, as the source of the error is coming from DataBinding.js line 322.\n"
     },
     {
+      "id": "13452",
       "author": "Justin Obara",
       "date": "2014-05-01T09:58:57.901-0400",
       "body": "Submitted a pull request: <https://github.com/fluid-project/infusion/pull/506>\n"
     },
     {
+      "id": "13454",
       "author": "Justin Obara",
       "date": "2014-05-02T09:03:13.629-0400",
       "body": "The pull request ( <https://github.com/fluid-project/infusion/pull/506> ) was merged into the project repo at a80e292a3c2e38e7ee0b3997729c80983c09a7dc\n"

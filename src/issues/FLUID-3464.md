@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23322",
       "author": "Alison Benjamin",
       "date": "2010-03-29T11:59:54.000-0400",
       "body": "see <http://wiki.fluidproject.org/display/fluid/Reorderer+QA+Test+plan+-+WCAG+Image+Reorderer>\\\nSome tests will probably undergo refinement in bug parade \\\nSome test remain unwritten: 1.3.3 Sensory Characteristics; 2.4.4. Link Purpose (In context); 4.1.2. Name, Role, Value 1.4.1. Use of Colour,  1.4.3. Contrast (minimum),\n"

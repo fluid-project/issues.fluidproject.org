@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18486",
       "author": "Daphne Ogle",
       "date": "2008-02-18T15:58:01.000-0500",
       "body": "futuretask\n"
     },
     {
+      "id": "18487",
       "author": "Daphne Ogle",
       "date": "2008-04-04T13:18:59.000-0400",
       "body": "deleted iteration assignement\n"
     },
     {
+      "id": "18491",
       "author": "Eli Cochran",
       "date": "2008-04-15T12:41:09.000-0400",
       "body": "The first draft of the Multi-File Uploader can be found here: <http://wiki.fluidproject.org/display/fluid/Multi-File+Uploader>\n\nThis is primarily a technical specification but it also includes the design rational.&#x20;\n"
     },
     {
+      "id": "18493",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:45.238-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

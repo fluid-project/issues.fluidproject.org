@@ -34,26 +34,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18044",
       "author": "Justin Obara",
       "date": "2009-02-09T09:00:21.000-0500",
       "body": "Bug Parade 0.8 release&#x20;\n"
     },
     {
+      "id": "18046",
       "author": "Antranig Basman",
       "date": "2009-02-13T22:50:18.000-0500",
       "body": "Fixed at revision 6507\n"
     },
     {
+      "id": "18047",
       "author": "Justin Obara",
       "date": "2009-02-16T08:49:11.000-0500",
       "body": "Verified fix using:\n\nTested using FF 2 (Mac OS 10.5, Win XP)\n"
     },
     {
+      "id": "18048",
       "author": "Colin Clark",
       "date": "2009-02-16T22:12:31.000-0500",
       "body": "I committed a minor tweak to Antranig's workaround for <https://fluidproject.atlassian.net/browse/FLUID-2206#icft=FLUID-2206>, commenting out the body variable in the FF2-specific block, since it's not used. Also JSLinted the file. These changes are in r6514.\n\n+1 on FLUID-2206's inclusion in Infusion 0.8.\n"
     },
     {
+      "id": "18049",
       "author": "Justin Obara",
       "date": "2009-02-16T22:36:38.000-0500",
       "body": "Verified fix using:\n\nFF2 (Mac OS 10.5)\n"

@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24987",
       "author": "Justin Obara",
       "date": "2011-01-10T14:23:59.890-0500",
       "body": "Not sure if this still needs to be done. We will be looking into the styling of our components and demos again (infusion 1.4 - 1.5).  If any issues arise we can open specific jiras for them.\n"

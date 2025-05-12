@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12831",
       "author": "Anastasia Cheetham",
       "date": "2011-12-14T12:02:10.819-0500",
       "body": "One thing that must be done to configure Wordpress: Set the thumbnail size.\n\n1\\) In the Wordpress Admin interface, choose Settings -> Media. \\\n2\\) Set the default thumbnail size to W: 240 and H: 160\n"
     },
     {
+      "id": "12832",
       "author": "Anastasia Cheetham",
       "date": "2011-12-14T12:34:25.605-0500",
       "body": "Configure the \"Reading\" settings to ensure the \"Blog page shows at most\" is set large (we're testing with 100). If there are more than this number of entries, the main page will have a link to \"Older posts\" near the bottom.\n"
     },
     {
+      "id": "12833",
       "author": "Michelle D'Souza",
       "date": "2011-12-16T13:59:07.103-0500",
       "body": "Merged into project repo at f3f34e048d8994f2ed162f6f11c8c0935febfe94\n"

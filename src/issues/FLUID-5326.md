@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15934",
       "author": "Justin Obara",
       "date": "2014-05-02T10:56:06.869-0400",
       "body": "Would it be possible to rename this tool? I feel that the term \"tags\" will be a bit overloaded with notion of git tags for the Infusion source code.\n"
     },
     {
+      "id": "15936",
       "author": "Simon Bates",
       "date": "2014-05-26T12:01:38.853-0400",
       "body": "The tool is now ready to use.\n\nFrom Steve:\n\n<https://github.com/sgithens/lichen>\n\nThe README should have everything you need to try it out.\n"

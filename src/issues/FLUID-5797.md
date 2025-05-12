@@ -36,16 +36,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22541",
       "author": "Justin Obara",
       "date": "2015-10-26T10:19:05.557-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/646> ) into the project repo at 8dbcd6f75f1e69ee956c9a2c50774d53602627a3\n"
     },
     {
+      "id": "22542",
       "author": "Justin Obara",
       "date": "2015-10-26T10:46:29.405-0400",
       "body": "We should also change the namespace from fluid\\_2\\_0\\_0\\_beta\\_1 to fluid\\_2\\_0\\_0\n"
     },
     {
+      "id": "22544",
       "author": "Cindy Li",
       "date": "2015-10-27T10:08:52.197-0400",
       "body": "The pull request to change namespace (<https://github.com/fluid-project/infusion/pull/647>) has been merged into the master @ c9d974c3b2a667f963afd0ba90d55fc4e187bc08\n"

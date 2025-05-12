@@ -42,16 +42,19 @@
   ],
   "comments": [
     {
+      "id": "22634",
       "author": "Justin Obara",
       "date": "2016-10-26T16:18:53.543-0400",
       "body": "screenshot.png shows the low contrast of the \"Restart the Demo\" link.\n"
     },
     {
+      "id": "22636",
       "author": "Alan Harnum",
       "date": "2016-10-28T14:03:39.938-0400",
       "body": "Fixing as part of <https://fluidproject.atlassian.net/browse/FLUID-6008#icft=FLUID-6008>. The validator also reports a contrast issue for the \"Submit\" button in its inactive state, but this is an allowable exception per <https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html:> \"Text or images of text that are part of an inactive user interface component, that are pure decoration, that are not visible to anyone, or that are part of a picture that contains significant other visual content, have no contrast requirement.\"\n"
     },
     {
+      "id": "22639",
       "author": "Justin Obara",
       "date": "2016-11-01T16:15:39.978-0400",
       "body": "Addressed with work on <https://fluidproject.atlassian.net/browse/FLUID-6008#icft=FLUID-6008>\n"

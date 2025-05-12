@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11231",
       "author": "Justin Obara",
       "date": "2013-12-10T09:04:53.994-0500",
       "body": "This will include the work to integrate the panels with the editor.\n"
     },
     {
+      "id": "11232",
       "author": "Justin Obara",
       "date": "2013-12-10T09:17:58.327-0500",
       "body": "Example combined model that the editor will be working with and saving to persistence.\n\n{\\\nurl: \"path/to/video.mp4\",\\\nhighContrast: true,\\\nsignLanguage: true,\\\nflashing: flashing, // noFlashing, unknown are alternatives\\\ncaptions: \\[{\\\nsrc: \"path/to/captions.srt\",\\\nlanguage: \"fr-CA\" // language code\\\n}],\\\naudio: \"available\", // unavailable, unknown are alternatives\\\naudioKeywords: \\[\"dialogue\", \"soundtrack\", \"sound effect\"]\\\n}\n"

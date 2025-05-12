@@ -70,46 +70,55 @@
   ],
   "comments": [
     {
+      "id": "22062",
       "author": "Kaye Mao",
       "date": "2015-08-12T09:58:21.112-0400",
       "body": "New user interface styling includes new toggles <https://fluidproject.atlassian.net/browse/FLUID-5738#icft=FLUID-5738>\n"
     },
     {
+      "id": "22064",
       "author": "Justin Obara",
       "date": "2016-07-11T14:48:32.365-0400",
       "body": "The figures attachments are missing; however due to the detailed descriptions, complexity of recreation, and need to completely refactor, I have not replaced them at this time. If someone has time to do that in the future before the on/off toggles are refactored, it would be appreciated.\n"
     },
     {
+      "id": "22067",
       "author": "Justin Obara",
       "date": "2017-01-19T13:54:35.662-0500",
       "body": "The on/off toggles should be restyled as per new designs ( <https://wiki.fluidproject.org/display/fluid/%28Floe%29+User+Interface+%28Learner%29+Options+Mobile+and+Responsive+Design> )&#x20;\n"
     },
     {
+      "id": "22069",
       "author": "Justin Obara",
       "date": "2017-01-19T15:08:29.757-0500",
       "body": "Look into reusing code developed in this PR <https://github.com/fluid-project/infusion/pull/726>\n"
     },
     {
+      "id": "22072",
       "author": "Justin Obara",
       "date": "2017-02-09T15:05:54.535-0500",
       "body": "The on/off toggles should respond to the \"inputs larger\" adjuster.\n"
     },
     {
+      "id": "22074",
       "author": "Justin Obara",
       "date": "2017-02-14T09:44:10.660-0500",
       "body": "First pass at styling using :before and :after pseudo elements. I'm afraid that this will be brittle though.\\\n<https://jsfiddle.net/cu09c3st/6/>\n"
     },
     {
+      "id": "22077",
       "author": "Justin Obara",
       "date": "2017-02-14T15:06:09.589-0500",
       "body": "Another options with more structure. Could clean up the CSS and class usage.\\\n<https://jsfiddle.net/zxm507Lg/1/>\n\nWorking implementation on Safari and Chrome:\\\n<https://jsfiddle.net/zxm507Lg/8/>\n\nCross-browser working implementation:\\\n<https://jsfiddle.net/zxm507Lg/11/>\n"
     },
     {
+      "id": "22080",
       "author": "Cindy Li",
       "date": "2017-04-03T15:18:18.781-0400",
       "body": "The pull request <https://github.com/fluid-project/infusion/pull/811> has been merged into the project repo master branch at bc7374793cd254f84b56750e9c10c3660398d4e1\n"
     },
     {
+      "id": "22082",
       "author": "Cindy Li",
       "date": "2017-04-10T15:12:41.035-0400",
       "body": "[The respective infusion-docs pull request](https://github.com/fluid-project/infusion-docs/pull/119) has been merged into the project repo master branch at 47114433f7ac15feafffc594080118e1f6732eae\n"

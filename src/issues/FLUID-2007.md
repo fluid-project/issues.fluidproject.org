@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "14963",
       "author": "Justin Obara",
       "date": "2008-12-17T11:50:27.000-0500",
       "body": "'screenshot-1' shows the Courier option with the incorrect size for the font and radio button\n"
     },
     {
+      "id": "14966",
       "author": "Justin Obara",
       "date": "2009-01-23T14:25:36.000-0500",
       "body": "example no longer specifies a font family\n"

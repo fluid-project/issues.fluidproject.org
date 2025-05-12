@@ -41,11 +41,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14296",
       "author": "Justin Obara",
       "date": "2010-05-07T14:01:13.281-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "14297",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T14:27:01.952-0400",
       "body": "I'm not able to reproduce this in the latest version of FF in Mac OS, Win 7 or WinXP. In all these cases, a caret does appear.\n"

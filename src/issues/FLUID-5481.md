@@ -41,21 +41,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23737",
       "author": "Antranig Basman",
       "date": "2015-06-03T11:00:03.692-0400",
       "body": "This bug also causes \"jank\" on startup of UIO embedded on a page which has been zoomed in Chrome. On startup, the page will snap to one size, and then to another, even if the user has not selected any adaptation.\n"
     },
     {
+      "id": "23739",
       "author": "Cindy Li",
       "date": "2015-06-08T12:16:32.946-0400",
       "body": "Seems the issue results from how Chrome calculates the line height based on the element's font size and line height em. Have reported to the Chrome bug tracker:&#x20;\n\n<https://code.google.com/p/chromium/issues/detail?id=497790>\n"
     },
     {
+      "id": "23742",
       "author": "Antranig Basman",
       "date": "2015-08-18T22:20:18.949-0400",
       "body": "I am fairly confident that this bug will never be resolved. I suggest we try to hack together an \"ad hoc\" solution, using input from this now fairly-well supported browser measurement:\\\n<http://www.quirksmode.org/blog/archives/2012/06/devicepixelrati.html> - my tests today indicate that window\\.devicePixelRatio is supported on Firefox and Chrome which should be enough coverage. We may run into some problems on retina-resolution devices but I don't think we've done any testing on those anyway.\n"
     },
     {
+      "id": "23743",
       "author": "Justin Obara",
       "date": "2017-09-26T10:55:55.198-0400",
       "body": "Tried using Chrome 61 and Safari 11 on macOS 10.12.6 and couldn't reproduce the issue. \n"

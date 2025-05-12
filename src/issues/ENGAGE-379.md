@@ -45,31 +45,37 @@
   ],
   "comments": [
     {
+      "id": "12708",
       "author": "Colin Clark",
       "date": "2010-02-12T14:29:24.000-0500",
       "body": "Here's the warning icon\n"
     },
     {
+      "id": "12709",
       "author": "Colin Clark",
       "date": "2010-02-12T14:29:57.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12710",
       "author": "Svetoslav Nedkov",
       "date": "2010-02-15T07:53:44.000-0500",
       "body": "Warning icon displayed along the warning text when an incorrect code has been entered. Again the warning icon should be added separately as the patch doesn't include it. There are also a couple of new strings that should be internationalized.\\\nI have made an attempt to make the component more accessible with the aria-label attribute for the code entry fields.\n"
     },
     {
+      "id": "12711",
       "author": "Svetoslav Nedkov",
       "date": "2010-02-25T09:53:05.000-0500",
       "body": "ENGAGE-379b.patch adds the warning icon to the code entry screen.\n"
     },
     {
+      "id": "12712",
       "author": "Svetoslav Nedkov",
       "date": "2010-02-25T10:42:34.000-0500",
       "body": "So I've added the string translation into the patch.\\\nForgot to mention that my second attempt to include the icon in the patch failed, so this one should be added manually, sorry for the troubles.\n"
     },
     {
+      "id": "12713",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:26.696-0500",
       "body": "The repository has been archived.\n"

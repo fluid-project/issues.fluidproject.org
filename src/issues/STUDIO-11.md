@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12795",
       "author": "Colin Clark",
       "date": "2011-12-09T11:12:16.166-0500",
       "body": "I have reviewed and tested Michelle's fix for this issue. Pushed to upstream/development at 17eac7eddc5ae60f9d0735a73f418b49094be565\n"
     },
     {
+      "id": "12796",
       "author": "Colin Clark",
       "date": "2011-12-09T11:14:40.607-0500",
       "body": "Review, tested, and pushed to development.\n"

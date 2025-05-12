@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20448",
       "author": "Antranig Basman",
       "date": "2008-09-07T22:25:38.000-0400",
       "body": "The permissions model has disappeared from the current version of the Reorderer, and is unlikely to reappear for some time (will be re-implemented \"on demand\")\n"
     },
     {
+      "id": "20449",
       "author": "Justin Obara",
       "date": "2008-10-31T08:45:29.000-0400",
       "body": "We are currently not supporting a complex permission structure in the layout reorderer\n"

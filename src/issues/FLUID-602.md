@@ -41,21 +41,25 @@
   ],
   "comments": [
     {
+      "id": "13142",
       "author": "Michelle D'Souza",
       "date": "2008-05-28T10:26:45.000-0400",
       "body": "I think the tests are showing that the progress bar is buggy in IE. When playing with the uploader in IE, I don't see a consistent relationship between the amount of the progress bar that is filled in and the percentage complete.\n\nJonathan has attached a screen shot to show what this looks like.&#x20;\n"
     },
     {
+      "id": "13143",
       "author": "Eli Cochran",
       "date": "2008-05-28T12:00:13.000-0400",
       "body": "I have known for a while that the way that I'm doing percentage updates in the progress indicator was potentially buggy. It comes down to a problem with using percentages at all. They are wonderfully convenient. There is this delightful syntax of \"set something to a width of x%\" built into JS but eventually that has to get converted into pixels so it's better that we do the conversion, store the converted value and do any comparisons and settings based on our numbers not the browsers interpretations of %.&#x20;\n\nSo there's about an hours work there.&#x20;\n"
     },
     {
+      "id": "13144",
       "author": "Eli Cochran",
       "date": "2008-06-16T22:46:46.000-0400",
       "body": "With the many updates that I have made to both the way that progress is tracked and the way that it is displayed this bug is fixed.&#x20;\n"
     },
     {
+      "id": "13145",
       "author": "Justin Obara",
       "date": "2008-11-13T13:32:33.000-0500",
       "body": "Verified fix using:\n\nIE6, IE7 (Win XP)\n"

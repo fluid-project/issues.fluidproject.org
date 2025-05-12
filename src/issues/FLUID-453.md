@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18554",
       "author": "Anastasia Cheetham",
       "date": "2008-04-07T11:01:05.000-0400",
       "body": "It actually does select a sortable list element, but there is absolutely no visual indication of this fact, so you can't tell at all.\n\nI'm not sure what the solution is, since this file is intended as part of a tutorial... I'll think about it.\n"
     },
     {
+      "id": "18556",
       "author": "Anastasia Cheetham",
       "date": "2008-04-07T11:36:34.000-0400",
       "body": "The file has been removed from the test protocol, as it is not suitable for testing purposes.\n"

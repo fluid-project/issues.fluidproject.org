@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "20763",
       "author": "Justin Obara",
       "date": "2008-12-17T10:10:56.000-0500",
       "body": "'screenshot-1' shows the \"Add Tools\" button missing\n"
     },
     {
+      "id": "20764",
       "author": "Justin Obara",
       "date": "2009-05-05T16:37:07.000-0400",
       "body": "Appears to have been fixed, likely with fix for <https://fluidproject.atlassian.net/browse/FLUID-2425#icft=FLUID-2425>\n"

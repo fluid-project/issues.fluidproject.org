@@ -37,11 +37,13 @@
   ],
   "comments": [
     {
+      "id": "13233",
       "author": "Justin Obara",
       "date": "2009-04-06T10:08:11.000-0400",
       "body": "'screenshot-1'  shows the text field expanded to fit the 9 digits\n"
     },
     {
+      "id": "13234",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T11:07:41.437-0400",
       "body": "I've tested this in v1.4, and it is no longer happening.\n"

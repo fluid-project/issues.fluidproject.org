@@ -32,6 +32,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16217",
       "author": "Antranig Basman",
       "date": "2013-01-13T18:20:52.212-0500",
       "body": "It is unlike that this can ever be resolved, given the limits of fidelity in simulating focus events. If the overall browser window is not in focus, no elements in it will receive focus notifications, and so any tests which require to receive these will fail.\n"

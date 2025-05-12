@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18669",
       "author": "Colin Clark",
       "date": "2008-03-25T12:18:57.000-0400",
       "body": "All the List Builder code is committed at:\n\n<https://source.fluidproject.org/svn/sandbox/javascript-workshop/trunk/>\n"
     },
     {
+      "id": "18671",
       "author": "Michelle D'Souza",
       "date": "2011-01-19T08:23:49.864-0500",
       "body": "Reopening these issues in order to add the workshopcomponent to them\n"

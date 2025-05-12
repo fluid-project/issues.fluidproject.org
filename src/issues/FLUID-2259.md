@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "20865",
       "author": "Justin Obara",
       "date": "2009-02-18T10:27:00.000-0500",
       "body": "'screenshot-1' shows the button labels cut off\n"
     },
     {
+      "id": "20866",
       "author": "Justin Obara",
       "date": "2009-03-04T12:38:21.000-0500",
       "body": "Cannot Reproduce\n\nTested using\n\nOpera 9.6 (Win XP)\n"

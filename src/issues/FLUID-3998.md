@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24903",
       "author": "Erin Yu",
       "date": "2010-12-21T14:54:04.355-0500",
       "body": "The same behaviour is observed in Safari5/MacOS10.6.\\\nIn FF3.6/MacOS10.6, however, deleting a file in the queue will disable the uploader. Clicking on Upload will not the upload process.&#x20;\n"
     },
     {
+      "id": "24904",
       "author": "Mike Lam",
       "date": "2010-12-21T16:22:55.920-0500",
       "body": "Not a bug, since the uploader demo itself doesn't actually upload any files any where.   It's just a simulation .   However, see <https://fluidproject.atlassian.net/browse/FLUID-3996#icft=FLUID-3996> as this becomes an issue when we are actually uploading files to a server. &#x20;\n"

@@ -38,11 +38,13 @@
   ],
   "comments": [
     {
+      "id": "11206",
       "author": "Anastasia Cheetham",
       "date": "2012-07-31T17:19:16.295-0400",
       "body": "It might be worth investigating whether or not an IE 'filter' might work:\n\nfilter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='my/image.png', sizingMethod='scale');\n\nNote that this scales the image to fill the container, so won't work unless the container is appropriate (which it likely is not).\n"
     },
     {
+      "id": "11207",
       "author": "Alexey Novak",
       "date": "2012-08-16T13:30:45.734-0400",
       "body": "Should be fixed.\n"

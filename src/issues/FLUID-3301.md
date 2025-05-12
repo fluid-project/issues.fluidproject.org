@@ -39,26 +39,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23593",
       "author": "Cindy Li",
       "date": "2011-04-21T09:34:21.835-0400",
       "body": "Fixed at git commit: 2c758f61c1a2355ba8a5\n\nSet \"arial\" as initial default value of font style, instead of \"serif\".\n"
     },
     {
+      "id": "23596",
       "author": "Cindy Li",
       "date": "2011-05-06T14:00:32.452-0400",
       "body": "This issue needs more considerations. Setting default to \"Arial\" fixes the issue because our demo pages happen to use \"Arial\" font. This fix seems likely introducing another bug that the user's pages are forced to be initialized with \"Arial\" font. The previous default, a empty string, makes more sense in this case. However, with an empty default font, the users have to supply whatever font they use into UIEnhancer defaults block, which may not be a ideal as well.\n"
     },
     {
+      "id": "23600",
       "author": "Anastasia Cheetham",
       "date": "2011-05-06T15:03:40.063-0400",
       "body": "I believe the new designs for UI Options include a \"keep the page's original settings\" option in the various pull-downs: Something that can be selected  to indicated that the Enhancer shouldn't do anything that affects the font family. This should be the default setting when UI Options is first opened. The implementer wouldn't have to inform the Enhancer of what the default font is, since the default is \"whatever the page originally specifies.\"\n"
     },
     {
+      "id": "23603",
       "author": "Justin Obara",
       "date": "2011-05-17T12:42:44.910-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "23606",
       "author": "Cindy Li",
       "date": "2011-05-24T11:19:29.584-0400",
       "body": "This issue is resolved with the new UI Options wireframe design. As Anastania mentioned, a \"default\" font value is introduced and it is the default selection on the font drop down list box. This value means leaving whatever on the user's page, which fits the current behaviour.\n"

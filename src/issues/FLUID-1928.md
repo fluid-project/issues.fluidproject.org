@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17582",
       "author": "Jacob Farber",
       "date": "2008-12-05T12:57:16.000-0500",
       "body": "Sakai demo now uses a sakai widget as its preview concept\n"
     },
     {
+      "id": "17583",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:58.976-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21300",
       "author": "Justin Obara",
       "date": "2009-03-18T14:17:15.000-0400",
       "body": "fixed with move to a jQuery UI Dialog\n\nTested using\n\nSafari 3.2 (Mac OS 10.5)\n"

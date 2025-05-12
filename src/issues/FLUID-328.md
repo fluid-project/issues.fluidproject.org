@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18387",
       "author": "Colin Clark",
       "date": "2008-04-07T13:13:22.000-0400",
       "body": "Moved the default callback into the fluid.Lightbox namespace. Renamed initLightbox() to createLightboxFromIds() to disambiguate. All code was moved into Lightbox.js\n"

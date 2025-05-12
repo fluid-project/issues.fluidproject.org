@@ -46,16 +46,19 @@
   ],
   "comments": [
     {
+      "id": "20004",
       "author": "Justin Obara",
       "date": "2010-07-12T17:02:41.978-0400",
       "body": "reordererTest.zip is sample code demonstrating the error\n"
     },
     {
+      "id": "20009",
       "author": "Justin Obara",
       "date": "2011-01-11T11:31:29.861-0500",
       "body": "reordeerTest v2.zip is the same as the old one but makes use of the custom build, which should make it easier to keep up to date with later releases\n"
     },
     {
+      "id": "20011",
       "author": "Justin Obara",
       "date": "2014-07-30T15:33:47.797-0400",
       "body": "reproduced this issue with Infusion 1.5.\n"

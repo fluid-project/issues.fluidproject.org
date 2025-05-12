@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16095",
       "author": "Michelle D'Souza",
       "date": "2011-01-19T08:23:50.830-0500",
       "body": "Reopening these issues in order to add the workshopcomponent to them\n"

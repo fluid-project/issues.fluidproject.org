@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26239",
       "author": "Gregor Moss",
       "date": "2018-05-18T18:24:06.604-0400",
       "body": "Joseph shared this piece of advice with me a few months ago, and it's worth revisiting:\\\n\"this blog by Steve Faulkner of the Paciello group might help regarding showing/hiding content. The article implies that using the HTML5 \"hidden\" attribute works with screen readers. I haven't had a chance to try it, but, fwiw, here's the link: <https://developer.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/>\"\n"

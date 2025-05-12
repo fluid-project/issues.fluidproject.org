@@ -23,16 +23,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11130",
       "author": "Cindy Li",
       "date": "2012-06-04T10:11:39.653-0400",
       "body": "The pull request has been merged into OER Commons \"staging\" branch @ 2c796c6b17860b637d25b54c9c4eb3d86dc1f2e2\n"
     },
     {
+      "id": "11131",
       "author": "Cindy Li",
       "date": "2012-06-04T12:19:31.787-0400",
       "body": "Andrey noticed the improperly closed label tag on \"browse by subject area\" page.\n"
     },
     {
+      "id": "11132",
       "author": "Cindy Li",
       "date": "2012-06-04T14:51:01.566-0400",
       "body": "The fix on the improperly closed label tag has been merged into \"staging\" branch @ cb23e634cae221c00fbf5935c3bc2a61160f1d6e\n"

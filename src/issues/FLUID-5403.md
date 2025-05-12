@@ -38,16 +38,19 @@
   ],
   "comments": [
     {
+      "id": "16316",
       "author": "Justin Obara",
       "date": "2014-06-04T10:54:05.011-0400",
       "body": "screenshot.png shows the improper styling when contrast is applied\n"
     },
     {
+      "id": "16318",
       "author": "Justin Obara",
       "date": "2014-06-04T11:00:23.470-0400",
       "body": "screenshot1.png shows the issue in safari. It is likely the same problem, but to a much smaller degree.\n"
     },
     {
+      "id": "16319",
       "author": "Justin Obara",
       "date": "2015-06-15T15:12:35.085-0400",
       "body": "Could not reproduce in Safari 8 and Chrome 43\n"

@@ -28,11 +28,13 @@
   ],
   "comments": [
     {
+      "id": "11269",
       "author": "Alexey Novak",
       "date": "2012-08-16T15:17:17.458-0400",
       "body": "Not creating Assembla ticket for this issue since it should be fixed in UIO panel rather than in OER Commons website.\n"
     },
     {
+      "id": "11270",
       "author": "Justin Obara",
       "date": "2015-06-16T14:10:03.207-0400",
       "body": "The reset button has been moved in the prefsFramework / UIO\n"

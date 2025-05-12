@@ -36,16 +36,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24439",
       "author": "Anastasia Cheetham",
       "date": "2011-05-05T15:59:03.283-0400",
       "body": "At Justin's request, I'm updating \"Fix version\" to 1.4 so that we don't forget to at least consider this issue before the release. It will probably take a bit of thinking and considering.\n"
     },
     {
+      "id": "24440",
       "author": "Justin Obara",
       "date": "2011-05-17T09:40:43.583-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24441",
       "author": "Michelle D'Souza",
       "date": "2011-05-26T14:04:16.204-0400",
       "body": "Should be fixed with pull request: <https://github.com/fluid-project/infusion/pull/55>\n"

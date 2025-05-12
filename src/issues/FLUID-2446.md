@@ -48,21 +48,25 @@
   ],
   "comments": [
     {
+      "id": "20077",
       "author": "Justin Obara",
       "date": "2009-04-01T12:38:00.000-0400",
       "body": "'screenshot-1' shows the overlap of the images and the selection section\n"
     },
     {
+      "id": "20079",
       "author": "Colin Clark",
       "date": "2010-03-30T19:28:40.000-0400",
       "body": "This seems like a good candidate for review when we start to do some demo improvements/tweaks for 1.3\n"
     },
     {
+      "id": "20080",
       "author": "Justin Obara",
       "date": "2014-07-09T09:51:07.595-0400",
       "body": "This is being fixed with the changes to <https://fluidproject.atlassian.net/browse/FLUID-5217#icft=FLUID-5217>\n"
     },
     {
+      "id": "20082",
       "author": "Justin Obara",
       "date": "2016-12-20T07:36:15.419-0500",
       "body": "This manual test was removed.\n"

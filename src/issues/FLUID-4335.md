@@ -42,16 +42,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24507",
       "author": "Antranig Basman",
       "date": "2013-01-10T22:46:04.712-0500",
       "body": "This issue is subsumed by the \"IoCSS\" or \"Luke Skywalker options\" work package described in <https://fluidproject.atlassian.net/browse/FLUID-4873#icft=FLUID-4873>\n"
     },
     {
+      "id": "24508",
       "author": "Antranig Basman",
       "date": "2013-05-25T05:41:40.675-0400",
       "body": "There should now be enough framework in existence to support this use case - however, we need explicit tests and an exercise of the functionality in the upcoming UIOptions refactoring.\n"
     },
     {
+      "id": "24509",
       "author": "Antranig Basman",
       "date": "2013-09-19T03:39:38.424-0400",
       "body": "This issue has most likely been resolved by improvements to the framework in the last two years. The so-called \"proleptic binding\" can be achieved via IoCSS distribution, and the automatic deregistration of listeners referred to now occurs.\n"

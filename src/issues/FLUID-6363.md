@@ -37,6 +37,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22388",
       "author": "Justin Obara",
       "date": "2019-07-12T09:34:55.280-0400",
       "body": "Yes, until the prefs framework contains localizable content, it makes sense to not include the panel in that specific demo. There is a prefs framework [example](https://build.fluidproject.org/infusion/examples/framework/preferences/localizationPreference/urlPath/) for localization that can be used to demonstrate the feature.\n"

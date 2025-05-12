@@ -33,26 +33,31 @@
   ],
   "comments": [
     {
+      "id": "15331",
       "author": "Justin Obara",
       "date": "2009-04-02T14:53:52.000-0400",
       "body": "Will require a full set of QA tests after it is resolved.\n"
     },
     {
+      "id": "15334",
       "author": "Colin Clark",
       "date": "2009-04-06T14:54:03.000-0400",
       "body": "Here's a patch that includes a fix: there's something really weird going on with the way Flash resolves relative paths. In IE, it appears to be correctly relative to the HTML file, but on FF, weirdness ensure. We're using an absolute path to ensure it works across all browsers.\n\nThis patch also includes modifications to the clean-build-run.sh script based on the changes in the Infusion WAR file structure. It also includes signfiicant cleanup and simplification of the image-gallery.js file.\n"
     },
     {
+      "id": "15337",
       "author": "Eli Cochran",
       "date": "2009-04-06T15:21:33.000-0400",
       "body": "I have reviewed Colin's patch, <https://fluidproject.atlassian.net/browse/FLUID-2464#icft=FLUID-2464>.a.patch. Looks good, tests well.\n"
     },
     {
+      "id": "15341",
       "author": "Colin Clark",
       "date": "2009-04-06T16:49:08.000-0400",
       "body": "I committed a fix for this at r7049 with permission from the King,\n"
     },
     {
+      "id": "15344",
       "author": "Justin Obara",
       "date": "2009-04-07T16:08:34.000-0400",
       "body": "Verified fix using:\n\nIE 7 (Win Vista)\\\nIE 6, IE 7 (Win XP)&#x20;\n"

@@ -34,16 +34,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21844",
       "author": "Justin Obara",
       "date": "2009-02-04T12:06:46.000-0500",
       "body": "we have upgraded to 1.6rc6, we still need to update to the final release when that is available\n"
     },
     {
+      "id": "21845",
       "author": "Justin Obara",
       "date": "2009-03-11T11:21:50.000-0400",
       "body": "Update all of jQuery UI js files to 1.7. Also updated the MIT Licence to the latest provided from jQuery, and updated our readme to specify the version of jQuery UI\n"
     },
     {
+      "id": "21846",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:46.695-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

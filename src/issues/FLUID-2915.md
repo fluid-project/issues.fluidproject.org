@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17056",
       "author": "Jacob Farber",
       "date": "2009-06-08T13:57:54.000-0400",
       "body": "The interaction path from A to B\n"
     },
     {
+      "id": "17057",
       "author": "Jacob Farber",
       "date": "2009-07-13T13:20:36.000-0400",
       "body": "This was completed for the demo for the all hands meeting in June 2009\n"
     },
     {
+      "id": "17058",
       "author": "Michelle D'Souza",
       "date": "2011-01-24T10:11:00.033-0500",
       "body": "Reopening these issues to add the mobilecomponent\n"

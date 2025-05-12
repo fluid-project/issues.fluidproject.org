@@ -33,26 +33,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15314",
       "author": "Jonathan Hung",
       "date": "2010-10-12T10:08:13.982-0400",
       "body": "Appears to be fixed. Please confirm and close the issue?\n"
     },
     {
+      "id": "15316",
       "author": "Justin Obara",
       "date": "2010-10-13T09:24:10.119-0400",
       "body": "The user can pass in a string to be displayed with the progress bar.\n"
     },
     {
+      "id": "15319",
       "author": "Justin Obara",
       "date": "2010-10-13T15:11:41.630-0400",
       "body": "Closed in error, as the component does not do this yet. Maybe it should be handled through an event that returns the current progress instead.\n"
     },
     {
+      "id": "15322",
       "author": "Justin Obara",
       "date": "2011-01-17T10:34:19.308-0500",
       "body": "Maybe an on update event would help.\n"
     },
     {
+      "id": "15324",
       "author": "Anastasia Cheetham",
       "date": "2014-04-02T15:15:00.917-0400",
       "body": "This still seems to be an issue as of the pre-1.5 evaluation\n"

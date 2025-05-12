@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24188",
       "author": "Justin Obara",
       "date": "2016-11-07T09:27:13.244-0500",
       "body": "One solution to this issue would be to just ensure that the remove button is disabled.\n"
     },
     {
+      "id": "24189",
       "author": "Cindy Li",
       "date": "2016-11-08T09:47:38.314-0500",
       "body": "The pull request <https://github.com/fluid-project/infusion/pull/781> has been merged into the master branch at 5207fa04aa34e10135d557f9a99b47410d1429a7\n"

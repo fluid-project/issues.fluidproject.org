@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17992",
       "author": "Justin Obara",
       "date": "2008-12-15T16:10:21.000-0500",
       "body": "Bug Parade: 0.6 release\n"
     },
     {
+      "id": "17993",
       "author": "Justin Obara",
       "date": "2008-12-18T10:59:56.000-0500",
       "body": "\"Browse Files\" button changed to be non-transparent\n\nVerified Fix using:\n\nFF3 (Win XP) with Flash 10\n"

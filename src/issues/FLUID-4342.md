@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22750",
       "author": "Antranig Basman",
       "date": "2011-08-11T01:24:58.570-0400",
       "body": "Bug Parade Infusion 1.4\n"
     },
     {
+      "id": "22753",
       "author": "Michelle D'Souza",
       "date": "2011-08-25T10:29:02.619-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/137> merged into project repo at 4018514d2d1fa9d235178ff8ea89d4a3c10f2466\n"

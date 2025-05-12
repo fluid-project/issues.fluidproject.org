@@ -56,21 +56,25 @@
   ],
   "comments": [
     {
+      "id": "13331",
       "author": "Justin Obara",
       "date": "2008-06-02T16:01:37.000-0400",
       "body": "screenshot-1 shows that both \"small size.txt\" files were uploaded\n"
     },
     {
+      "id": "13332",
       "author": "Eli Cochran",
       "date": "2008-06-02T17:29:05.000-0400",
       "body": "This is a tricky one...\n\nOne could argue that this is not a bug, since you could upload two files with the same name from different directories that are, in fact, not the same file. There are many scenarios where this might be true.&#x20;\n\nThe question is... in what situations can the back-end support this behavior and what feedback should be given to the user.&#x20;\n"
     },
     {
+      "id": "13333",
       "author": "Justin Obara",
       "date": "2008-10-31T09:51:07.000-0400",
       "body": "design-watched\n"
     },
     {
+      "id": "13335",
       "author": "Anastasia Cheetham",
       "date": "2010-12-22T11:10:06.483-0500",
       "body": "Observed during testing for 1.3\n"

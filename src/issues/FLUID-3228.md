@@ -35,21 +35,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14480",
       "author": "Laurel Williams",
       "date": "2009-10-30T15:54:14.000-0400",
       "body": "I am removing this task from the \"Infusion Builder\" component since it is related to the build but not to the Infusion Builder. Other issues related to the build have been listed under \"Infrastructure\" so I added it there. This is confusing so we may need to clarify where build bugs and tasks belong.\n"
     },
     {
+      "id": "14482",
       "author": "Jacob Farber",
       "date": "2010-03-26T12:01:42.000-0400",
       "body": "I think the hardest part of this task is to just find a proper home for all the different files.\\\nOnce that's done, moving them should be simple.\n"
     },
     {
+      "id": "14485",
       "author": "Colin Clark",
       "date": "2010-03-30T16:59:31.000-0400",
       "body": "This was fixed by James and Justin at r9762\n"
     },
     {
+      "id": "14488",
       "author": "Colin Clark",
       "date": "2010-03-30T17:35:07.000-0400",
       "body": "I reviewed this issue and it has been fixed for Infusion 1.2. I'm sure our download size is much smaller as a result\n"

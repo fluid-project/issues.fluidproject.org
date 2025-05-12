@@ -22,16 +22,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26072",
       "author": "Jonathan Hung",
       "date": "2019-01-22T15:17:00.113-0500",
       "body": "For now I am working around this issue by uploading the file to the Wiki and then linking to it from the IDRC site.\n"
     },
     {
+      "id": "26073",
       "author": "Giovanni Tirloni",
       "date": "2020-04-10T18:32:09.370-0400",
       "body": "Jonathan Hung could you try uploading images directly now? I've changed the settings on that folder to something that may work.\n\n```\nsudo chcon system_u:object_r:httpd_sys_rw_content_t:s0 images\r\nsudo /usr/sbin/semanage fcontext -a -t httpd_sys_rw_content_t /var/www/993da6cd/images\n```\n"
     },
     {
+      "id": "26074",
       "author": "Giovanni Tirloni",
       "date": "2020-05-14T07:35:41.428-0400",
       "body": "The IDRC website has been moved from Joomla to Wordpress/static/Netlify, so I'm closing this issue.\n"

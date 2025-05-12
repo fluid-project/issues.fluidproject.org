@@ -38,16 +38,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19578",
       "author": "Colin Clark",
       "date": "2008-10-20T16:13:37.000-0400",
       "body": "Here's a patch containing a working proof-of-concept of Inline Edit hosting a TinyMCE editor.\n"
     },
     {
+      "id": "17171",
       "author": "Antranig Basman",
       "date": "2008-11-13T21:39:11.000-0500",
       "body": "Merged into trunk at revision 6031. See working demos at manual-tests - automated test cases to follow.\n"
     },
     {
+      "id": "17174",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:59.411-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

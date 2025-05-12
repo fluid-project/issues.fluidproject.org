@@ -36,26 +36,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27503",
       "author": "Blake E",
       "date": "2008-12-08T14:42:50.000-0500",
       "body": "waiting to assign to an iteration.\n"
     },
     {
+      "id": "27504",
       "author": "Blake E",
       "date": "2008-12-15T15:34:56.000-0500",
       "body": "lets wait on this issue which probably won't get resolved until 2009. Thus, take out of any iteration cycles until we are ready.\n"
     },
     {
+      "id": "27505",
       "author": "Blake E",
       "date": "2009-01-12T15:50:14.000-0500",
       "body": "Ok, after a scary talk with the fluid consulting lawyer I've decided to email EllisLab (the main creators of CodeIgniter) with some of our questions and mainly asking them the reasoning behind using their custom license.\n"
     },
     {
+      "id": "27506",
       "author": "Blake E",
       "date": "2009-01-12T15:50:20.000-0500",
       "body": "vulab13\n"
     },
     {
+      "id": "27507",
       "author": "Blake E",
       "date": "2009-01-20T15:55:46.000-0500",
       "body": "CakePHP is being chosen for its rock solid licensing and open-source community. CodeIgniter has failed too many times to be used with any sort of confidence.\n"

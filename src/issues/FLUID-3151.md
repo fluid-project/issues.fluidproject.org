@@ -39,16 +39,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19005",
       "author": "Justin Obara",
       "date": "2009-09-22T10:50:56.000-0400",
       "body": "Bug Parade Infusion 1.1.2&#x20;\n"
     },
     {
+      "id": "19007",
       "author": "Colin Clark",
       "date": "2009-09-30T13:34:46.000-0400",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-3210#icft=FLUID-3210> describes this issue more clearly and is more comprehensive of the various checks we need to do before releasing the demo portal.\n"
     },
     {
+      "id": "19010",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T12:29:05.468-0500",
       "body": "Reopening these issues in order to add the democomponent.&#x20;\n"

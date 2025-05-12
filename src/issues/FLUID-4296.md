@@ -28,26 +28,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16141",
       "author": "Cindy Li",
       "date": "2011-06-20T11:23:12.314-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "16143",
       "author": "Cindy Li",
       "date": "2011-06-24T13:10:00.073-0400",
       "body": "This issue goes away with Justin and Mike's iframe version of fat panel UI Options @ <https://fluidproject.atlassian.net/browse/FLUID-3761#icft=FLUID-3761>\n"
     },
     {
+      "id": "16145",
       "author": "Cindy Li",
       "date": "2011-06-30T16:12:31.435-0400",
       "body": "The issue still persists in other 2 versions of ui options: full page with preview & full page w/o preview.\n"
     },
     {
+      "id": "16147",
       "author": "Michelle D'Souza",
       "date": "2011-09-06T15:03:27.569-0400",
       "body": "In Fat Panel the 'make inputs larger' does not seem to work but the 'emphasize links' does.&#x20;\n"
     },
     {
+      "id": "16149",
       "author": "Justin Obara",
       "date": "2013-09-06T12:55:02.396-0400",
       "body": "The preferences for UIO have changed, but the one for enlarging inputs seems to take effect in the UIO Panel.\n"

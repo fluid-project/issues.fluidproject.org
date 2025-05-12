@@ -24,16 +24,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11483",
       "author": "Justin Obara",
       "date": "2014-08-08T14:30:49.952-0400",
       "body": "Submitted a pull request ( <https://github.com/fluid-project/metadata/pull/33> )\n"
     },
     {
+      "id": "11484",
       "author": "Anastasia Cheetham",
       "date": "2014-08-14T09:57:28.966-0400",
       "body": "This work is also adding focus and hover styling, along with the tooltip.\n"
     },
     {
+      "id": "11485",
       "author": "Cindy Li",
       "date": "2014-08-20T10:57:19.461-0400",
       "body": "Merged into the master branch @ ca6adf9cfe65d4f508da9f54b2da2b0d6e1d22c0\n"

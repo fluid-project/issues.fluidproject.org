@@ -36,21 +36,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19997",
       "author": "Daphne Ogle",
       "date": "2008-05-12T20:11:34.000-0400",
       "body": "iteration09\n"
     },
     {
+      "id": "19999",
       "author": "Daphne Ogle",
       "date": "2008-05-23T19:37:53.000-0400",
       "body": "iteration18\n"
     },
     {
+      "id": "20000",
       "author": "Daphne Ogle",
       "date": "2008-08-12T19:55:17.000-0400",
       "body": "Adding dependency to persona completion since we decided the frequency should be based on personas rather than roles.  This task will have to be rescheduled.\n"
     },
     {
+      "id": "20002",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:59.164-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

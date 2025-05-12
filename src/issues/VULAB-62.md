@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27367",
       "author": "Blake E",
       "date": "2008-10-27T14:54:07.000-0400",
       "body": "vulab5\n"
     },
     {
+      "id": "27368",
       "author": "Blake E",
       "date": "2008-10-30T14:59:32.000-0400",
       "body": "system was only emailing admin accounts. I integrated the $user->email function to send email and also added a 'type' that can passed as an option to auto-generate messages.\n"

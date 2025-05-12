@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15250",
       "author": "Justin Obara",
       "date": "2010-04-19T10:06:34.000-0400",
       "body": "fluid.fail has been turned back on for 1.3 development.\n"
     },
     {
+      "id": "15252",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:23.531-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

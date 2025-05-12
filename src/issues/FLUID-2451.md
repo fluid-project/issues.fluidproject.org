@@ -35,26 +35,31 @@
   ],
   "comments": [
     {
+      "id": "23402",
       "author": "Justin Obara",
       "date": "2009-04-01T13:37:49.000-0400",
       "body": "'screenshot-1' shows the erroneous meta data. Notice that the page is displaying 40 items. The hover text shows a distribution of only 10 students\n"
     },
     {
+      "id": "23404",
       "author": "Justin Obara",
       "date": "2009-05-14T09:33:12.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "23405",
       "author": "Antranig Basman",
       "date": "2009-05-21T15:52:40.000-0400",
       "body": "Fixed at revision 7203 - expanded signature to onRenderPageLinks\n"
     },
     {
+      "id": "23406",
       "author": "Anastasia Cheetham",
       "date": "2009-05-25T12:40:50.000-0400",
       "body": "I've reviewed the changes made for this fix. They look good, and the page link hover text now updates properly.\n"
     },
     {
+      "id": "23407",
       "author": "Justin Obara",
       "date": "2009-05-25T15:12:12.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.6, Safari 3.2 (Mac OS 10.5)\\\nFF3, IE7, IE8 (Win Vista)\n"

@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23020",
       "author": "Alan Harnum",
       "date": "2018-07-25T16:52:52.001-0400",
       "body": "This section of the Preferences Framework documentation may be relevant: <https://docs.fluidproject.org/infusion/development/ConditionalSubpanels.html>\n"
     },
     {
+      "id": "23022",
       "author": "Justin Obara",
       "date": "2018-07-27T07:17:35.972-0400",
       "body": "You're probably already thinking about this, but in case you aren't, you'll also want to be able to stop the enactors for those related adjusters as well. This may also mean being able to reset their values when the language changes. \n\n \n\nSo one scenario may be that you have letter spacing set and you switch to farsi. The letter spacing enactor should revert the page to the default letter spacing. Then you switch back to the previous language and the letter spacing should be applied again. I'd also assume that these changes to the letter spacing enactor shouldn't affect the stored preferences. That is, the store should still contain the set preference for letter spacing even though it isn't applied.\n"

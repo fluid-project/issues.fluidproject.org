@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18452",
       "author": "Shaw-Han Liem",
       "date": "2008-02-04T10:50:20.000-0500",
       "body": "iteration01\n"
     },
     {
+      "id": "18454",
       "author": "Shaw-Han Liem",
       "date": "2008-02-04T11:26:45.000-0500",
       "body": "Contextual Inquiry was completed at York January 29th.\n\nNotes and photos have been added to Confluence.\n"

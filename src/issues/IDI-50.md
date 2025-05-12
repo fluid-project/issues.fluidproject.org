@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12886",
       "author": "Michelle D'Souza",
       "date": "2012-05-25T10:32:17.540-0400",
       "body": "We could do a better job, but basic focus styling has been implemented. Ideally, we'd use 'outline' instead of 'border' but our use of overflow: hidden is not allowing us to use outline to style focus.&#x20;\n"

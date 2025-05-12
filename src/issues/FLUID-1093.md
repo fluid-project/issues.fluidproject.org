@@ -37,26 +37,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15012",
       "author": "Allison Bloodworth",
       "date": "2008-08-05T00:36:44.000-0400",
       "body": "This comment just tracks the iteration assignment for this issue\n\niteration23\n"
     },
     {
+      "id": "15015",
       "author": "Jonathan Hung",
       "date": "2008-08-07T13:05:44.000-0400",
       "body": "\"What is a Good Design Pattern\" is going to be covered in Governance.\n"
     },
     {
+      "id": "15018",
       "author": "Paul Zablosky",
       "date": "2008-12-02T18:16:26.000-0500",
       "body": "The document is close to completion.   All that remains is to resolve Jonathan's comment about the \"Commodity\" reference, and to add a diagram indicating where design patterns reside in design space.\n"
     },
     {
+      "id": "15021",
       "author": "Paul Zablosky",
       "date": "2008-12-18T19:25:51.000-0500",
       "body": "This version of the document can be considered complete.  We should review it in a couple of months and see if it needs any revisions to reflect our state of progress on the OSDPL.  Also, if Paul can come up with an architecture analogy that works, we can add that.  We'll put in a new JIRA task for that. This one is overloaded and should be closed.&#x20;\n"
     },
     {
+      "id": "15025",
       "author": "Paul Zablosky",
       "date": "2008-12-18T19:33:22.000-0500",
       "body": "The page is complete. The \"Draft\" note has been removed.\n"
