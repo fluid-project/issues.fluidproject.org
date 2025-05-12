@@ -36,11 +36,13 @@
   ],
   "comments": [
     {
+      "id": "16469",
       "author": "Justin Obara",
       "date": "2009-01-13T13:55:53.000-0500",
       "body": "'screenshot-1' shows the \"Add Widgets\" and \"Edit Appearance\" buttons side by side in simple layout.\n"
     },
     {
+      "id": "16471",
       "author": "Justin Obara",
       "date": "2009-03-16T10:54:15.000-0400",
       "body": "Appears to have been fixed\n\nTested using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

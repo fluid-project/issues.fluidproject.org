@@ -40,51 +40,61 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18092",
       "author": "Jacob Farber",
       "date": "2008-08-25T15:08:23.000-0400",
       "body": "Using the ESC key to erase a text input field in IE6/IE7 is the native behaviour for IE (see www\\.google.com as an example )&#x20;\n\nI would think this as extremely hazardous native behaviour. Rather than wiping out the field and saving, perhaps it would be more preferable to simply undo the last action and then exit editing the field.\n\nCan we overwrite the native behaviour?\n"
     },
     {
+      "id": "18093",
       "author": "Justin Obara",
       "date": "2008-08-28T09:15:37.000-0400",
       "body": "in the bSpace example (<http://build.fluidproject.org/fluid/sample-code/inline-edit/section-info/section-info.html>)  this only  occurs after pressing the 'esc' key twice after the caret is displayed\n"
     },
     {
+      "id": "18094",
       "author": "Justin Obara",
       "date": "2008-09-22T12:53:27.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "18095",
       "author": "Justin Obara",
       "date": "2009-01-30T10:00:39.000-0500",
       "body": "After erasing a single field with the escape key, just activating other fields will cause them to erase as well.\n"
     },
     {
+      "id": "18096",
       "author": "Antranig Basman",
       "date": "2009-02-06T19:25:17.000-0500",
       "body": "Fixed at revision 6444\n"
     },
     {
+      "id": "18097",
       "author": "Justin Obara",
       "date": "2009-02-09T08:42:20.000-0500",
       "body": "Seems to be working in all but one example.\\\n<http://build.fluidproject.org/fluid/sample-code/inline-edit/announcements/announcements.html>\n"
     },
     {
+      "id": "18098",
       "author": "Antranig Basman",
       "date": "2009-02-09T11:35:32.000-0500",
       "body": "Fixed further, at revision 6448 - it seems IE will only \"sometimes\" allow this cancellation, unless it is on onkeydown, rather than onkeypress\n"
     },
     {
+      "id": "18099",
       "author": "Justin Obara",
       "date": "2009-02-10T08:28:19.000-0500",
       "body": "Verified fix using:\n\nIE6 (Win XP)\\\nIE7 (Win Vista)\n"
     },
     {
+      "id": "18100",
       "author": "Justin Obara",
       "date": "2009-02-10T08:28:56.000-0500",
       "body": "forgot to delete bug parade comment, will reopen and close again after deletion of the comment\n"
     },
     {
+      "id": "18101",
       "author": "Justin Obara",
       "date": "2009-02-10T08:29:37.000-0500",
       "body": "deleted bug parade comment, closing again.\n"

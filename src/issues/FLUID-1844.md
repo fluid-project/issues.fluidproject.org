@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17531",
       "author": "Michelle D'Souza",
       "date": "2009-03-04T15:58:52.000-0500",
       "body": "The selection and setting should be done in points.\n"
     },
     {
+      "id": "17533",
       "author": "Michelle D'Souza",
       "date": "2009-03-16T11:40:56.000-0400",
       "body": "This is almost done. We just waiting to hear from Laurie McArthur on our minimum and maximum settings. Currently we use the range 6pts to 200 pts.&#x20;\n"
     },
     {
+      "id": "17535",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:50.546-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

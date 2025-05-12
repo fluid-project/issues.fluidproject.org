@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25051",
       "author": "Justin Obara",
       "date": "2011-05-17T09:42:31.607-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "25052",
       "author": "Antranig Basman",
       "date": "2011-06-08T05:26:55.103-0400",
       "body": "This was erroneously committed by me during the process of committing an unrelated fix - but the basic resolution of this JIRA is sound, and the remaining failures are being accounted for as a regression against <https://fluidproject.atlassian.net/browse/FLUID-3909#icft=FLUID-3909>\n"

@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26243",
       "author": "Gregor Moss",
       "date": "2018-06-04T15:34:59.933-0400",
       "body": "hasMobileCamera was included by overriding the check function with a function that only returns true, this way the contextAwareness is still used and tested\n"

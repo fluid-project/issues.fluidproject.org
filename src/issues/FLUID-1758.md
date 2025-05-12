@@ -71,61 +71,73 @@
   ],
   "comments": [
     {
+      "id": "17200",
       "author": "Justin Obara",
       "date": "2008-10-30T15:00:00.000-0400",
       "body": "'screenshot-1' shows that there is no drop taget for the themed sortable tab example\n"
     },
     {
+      "id": "17202",
       "author": "Justin Obara",
       "date": "2008-10-30T15:36:30.000-0400",
       "body": "Closed in error\n"
     },
     {
+      "id": "17204",
       "author": "Justin Obara",
       "date": "2008-12-03T13:57:16.000-0500",
       "body": "Bug Parade: 0.6 release\n"
     },
     {
+      "id": "17206",
       "author": "Antranig Basman",
       "date": "2008-12-12T16:14:33.000-0500",
       "body": "I don't see any drop targets in FF2 either, and although there is a sort of one in Opera, it is very misshapen (Windows)\n"
     },
     {
+      "id": "17208",
       "author": "Justin Obara",
       "date": "2008-12-12T16:17:51.000-0500",
       "body": "same issue in safari as with opera\n\nI've updated the environments to include FF\n"
     },
     {
+      "id": "17209",
       "author": "Jacob Farber",
       "date": "2008-12-13T20:28:28.000-0500",
       "body": "Tabs now have more specific and effective drop markers\n"
     },
     {
+      "id": "17211",
       "author": "Jacob Farber",
       "date": "2008-12-13T20:29:01.000-0500",
       "body": "Attached patch implements a more specific drop marker appearance\n"
     },
     {
+      "id": "17213",
       "author": "Anastasia Cheetham",
       "date": "2008-12-15T10:30:20.000-0500",
       "body": "The patch looks ok (to my untrained css eyes) and it does produce nice drop-markers for the tab examples.\n\nBUT: It breaks the drop-markers for the list and grid examples on the same page. Before the patch, they were nice red lines, with the patch there is no red involved, and the grid example is very disorienting.\n"
     },
     {
+      "id": "17215",
       "author": "Anastasia Cheetham",
       "date": "2008-12-15T15:31:59.000-0500",
       "body": "This last patch looks great!\n"
     },
     {
+      "id": "17217",
       "author": "Justin Obara",
       "date": "2008-12-16T09:58:48.000-0500",
       "body": "Still not working in FF2, I will change the environments to reflect this.\n"
     },
     {
+      "id": "17219",
       "author": "Antranig Basman",
       "date": "2009-04-01T14:59:21.000-0400",
       "body": "I do not see this work right on FF3 either - there are sometimes drop targets, but their appearance and width is inconsistent. At the right, I get a thick target - one position to the left, I get a thin target, and leftward of that I get no target at all.\\\n(in 1.0 release)\n"
     },
     {
+      "id": "17221",
       "author": "Justin Obara",
       "date": "2009-11-04T14:37:39.000-0500",
       "body": "This example is no longer used\n"

@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14400",
       "author": "Laurel Williams",
       "date": "2009-12-02T14:32:30.000-0500",
       "body": "Clarified this issue with Colin. A 400 error is being returned for all errors. It would be better if the error string was logged and a single polite error was shown to users. \"I'm sorry.....etc\"\n"
     },
     {
+      "id": "14405",
       "author": "Justin Obara",
       "date": "2014-03-03T11:20:11.558-0500",
       "body": "builder.fluidproject.org has been taken down and there are no immediate plans to replace it. Currently all builds are expected to be generated directly from the grunt build scripts.\n\n<http://fluid.2324889.n4.nabble.com/Infusion-Builder-issues-tp8926.html>\n"

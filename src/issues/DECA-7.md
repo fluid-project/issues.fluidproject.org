@@ -23,16 +23,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10431",
       "author": "Jonathan Hung",
       "date": "2009-06-02T13:17:16.000-0400",
       "body": "I've posted my notes, please add your notes.\n"
     },
     {
+      "id": "10432",
       "author": "Jacob Farber",
       "date": "2009-06-02T13:55:18.000-0400",
       "body": "Your turn I guess\n"
     },
     {
+      "id": "10433",
       "author": "Jonathan Hung",
       "date": "2009-06-12T09:59:11.000-0400",
       "body": "James, can you take a look at the notes posted t Google docs and see if you have anything to add from your notes?\n"

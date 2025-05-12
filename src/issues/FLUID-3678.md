@@ -32,16 +32,19 @@
   ],
   "comments": [
     {
+      "id": "20715",
       "author": "y z",
       "date": "2010-07-19T16:50:39.833-0400",
       "body": "Testcase for the issue.\n"
     },
     {
+      "id": "20716",
       "author": "y z",
       "date": "2010-07-20T11:14:35.992-0400",
       "body": "Looks like it works if cutpoints are specified in resources structure passed to fetchResources and parseTemplates and not to the reRender function in the options.&#x20;\n"
     },
     {
+      "id": "20717",
       "author": "Justin Obara",
       "date": "2014-07-30T15:34:52.609-0400",
       "body": "Antranig Basman is this something that we should fix, or should we not expect reRender to be called directly?\n"

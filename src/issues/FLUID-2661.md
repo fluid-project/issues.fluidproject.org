@@ -34,16 +34,19 @@
   ],
   "comments": [
     {
+      "id": "23522",
       "author": "Justin Obara",
       "date": "2009-05-11T11:24:21.000-0400",
       "body": "\"screenshot-1\" shows the two \"Edit Appearance\" buttons\n"
     },
     {
+      "id": "23523",
       "author": "Justin Obara",
       "date": "2009-05-14T10:10:20.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "23524",
       "author": "Justin Obara",
       "date": "2009-06-02T10:50:25.000-0400",
       "body": "Appears to have been fixed with one of the many changes made during bug parade for 1.1\n\nTested using:\\\nIE 7 (Win Vista)\n"

@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25812",
       "author": "Giovanni Tirloni",
       "date": "2015-08-18T13:57:26.162-0400",
       "body": "Deployed in production: <https://github.com/inclusive-design/ops/tree/master/ansible/roles/rsyslog>\n"
     },
     {
+      "id": "25813",
       "author": "Giovanni Tirloni",
       "date": "2016-08-22T10:14:12.957-0400",
       "body": "In production for over a year now.\n"

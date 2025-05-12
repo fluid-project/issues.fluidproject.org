@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21734",
       "author": "Justin Obara",
       "date": "2010-10-04T14:00:26.217-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "21735",
       "author": "Mike Lam",
       "date": "2010-10-07T11:00:44.705-0400",
       "body": "Appended an image button to the end of the inline edit container. The inline edit is now more screen reader friendly as the button is given an ARIA role of button and the inline edit container is given an ARIA tooltip.  This branch has been merged into trunk and will now be deleted from the incubator.  See <https://fluidproject.atlassian.net/browse/FLUID-2652#icft=FLUID-2652> for more information.\n"
     },
     {
+      "id": "21736",
       "author": "Justin Obara",
       "date": "2010-10-07T13:19:05.932-0400",
       "body": "The tooltip branch is now in trunk\n"

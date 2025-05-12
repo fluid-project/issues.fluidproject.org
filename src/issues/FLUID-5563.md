@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24160",
       "author": "Jonathan Hung",
       "date": "2014-11-24T14:30:59.977-0500",
       "body": "News content has been added. However:\n\n1\\. UIO doesn't work for News\\\n2\\. Blog content hasn't been added\n"
     },
     {
+      "id": "24161",
       "author": "Jonathan Hung",
       "date": "2017-09-12T14:53:37.964-0400",
       "body": "Old links should also redirect properly to blog posts.\n\nExample:\n\n<http://fluidproject.org/blog/2008/07/21/about-this-and-that/>\n\nshould redirect to\n\n<https://fluidproject.org/blog/2008-07-21-about-this-and-that.html>\n\n \n"

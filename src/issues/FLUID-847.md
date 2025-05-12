@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19602",
       "author": "Antranig Basman",
       "date": "2008-11-07T13:13:59.000-0500",
       "body": "Appeared at revision 5965, along with general reform of event and model idiom.\n"
     },
     {
+      "id": "19603",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:57.030-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

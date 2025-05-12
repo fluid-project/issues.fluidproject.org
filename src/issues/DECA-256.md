@@ -41,21 +41,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10200",
       "author": "Justin Obara",
       "date": "2012-07-06T10:19:28.855-0400",
       "body": "Can't reproduce. I had to use the beta version of firebug to run the unit tests, as the stable version is too slow to handle all of the logging. It's possible that the pre-release version I had been using at the time had an issue. I've retested this with Firebug 1.10.0b2 and no errors are thrown.&#x20;\n"
     },
     {
+      "id": "10201",
       "author": "Justin Obara",
       "date": "2012-07-06T11:22:10.920-0400",
       "body": "I tried it again and the issues has reappeared. could have been a temporary respite due to the newer beta version of firebug.\n"
     },
     {
+      "id": "10202",
       "author": "Justin Obara",
       "date": "2012-07-09T13:28:09.633-0400",
       "body": "Refactored the events. Used event aggregation to combine rendering events into a single event. This helps make it clear when all the export types have rendered. Also moved the onReady event to be triggered by the accordion instead of the event binder, since it is the last subcomponent to be initialized.\n\nThe changes can be found in my bitbucket repo:\\\n<https://bitbucket.org/jobara/decapod-0.6-ui-iteration4>\n"
     },
     {
+      "id": "10203",
       "author": "Justin Obara",
       "date": "2012-07-10T13:51:56.312-0400",
       "body": "Merged into the googlecode repo\n"

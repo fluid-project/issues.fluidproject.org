@@ -31,16 +31,19 @@
   ],
   "comments": [
     {
+      "id": "21399",
       "author": "Justin Obara",
       "date": "2009-04-02T14:57:32.000-0400",
       "body": "this will only require testing in a single environment\n"
     },
     {
+      "id": "21400",
       "author": "Colin Clark",
       "date": "2009-04-06T18:33:38.000-0400",
       "body": "I've reviewed this page and it works. Since this is just a simple path change, we should definitely include it in Infusion 1.0.\n"
     },
     {
+      "id": "21401",
       "author": "Justin Obara",
       "date": "2009-04-07T11:14:46.000-0400",
       "body": "Verified fix using:\n\nFF3 (Mac OS 10.5)\n"

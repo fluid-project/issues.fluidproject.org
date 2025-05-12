@@ -49,21 +49,25 @@
   ],
   "comments": [
     {
+      "id": "16742",
       "author": "Cindy Li",
       "date": "2012-08-23T16:31:42.397-0400",
       "body": "With IE8, some dead man's blur unit tests, including the one specified in the title, throw js error: Object doesn't support this property or method.\n\nTo produce,\\\n1\\. In IE8, go to tools -> Internet Options -> Advanced tab -> Browsing section -> Turn on \"Display a notification about every script error\"\\\n2\\. Run <http://build.fluidproject.org/infusion/tests/framework-tests/core/html/FluidView-test.html>\n"
     },
     {
+      "id": "16744",
       "author": "Anastasia Cheetham",
       "date": "2012-10-16T13:20:00.335-0400",
       "body": "deadMansBlur() uses Date.now(), which is not supported in IE8. One suggestion is to use\\\nnew Date().value()\\\ninstead.\n"
     },
     {
+      "id": "16746",
       "author": "Justin Obara",
       "date": "2012-12-17T13:31:47.459-0500",
       "body": "Added a pull request ( <https://github.com/fluid-project/infusion/pull/250> ) to fix this. The change is to implement a fall back to use Date().gettime() instead of Date.now() when the latter doesn't exist.\n"
     },
     {
+      "id": "16748",
       "author": "Michelle D'Souza",
       "date": "2012-12-17T13:45:02.298-0500",
       "body": "Merged pull request <https://github.com/fluid-project/infusion/pull/250> into project repo at 725fd98d6cc3ebbe92f378b8c05738b178dc6516\n"

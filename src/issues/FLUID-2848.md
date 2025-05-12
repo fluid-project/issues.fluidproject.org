@@ -32,11 +32,13 @@
   ],
   "comments": [
     {
+      "id": "22893",
       "author": "Justin Obara",
       "date": "2009-05-29T14:21:30.000-0400",
       "body": "'screenshot-1' shows the broken styling\n"
     },
     {
+      "id": "22896",
       "author": "Justin Obara",
       "date": "2009-06-02T09:34:30.000-0400",
       "body": "Tested on another IE 7 (Win Vista) system, and the error did not occur. Likely issue with test system used before.\n"

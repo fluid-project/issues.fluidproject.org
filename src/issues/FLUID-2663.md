@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16972",
       "author": "Antranig Basman",
       "date": "2009-05-12T12:30:11.000-0400",
       "body": "Fixed at revision 7161 - new \"forceUpdate\" option to initModelChange removes awkward flow for forcing initial page to 0.\n"
     },
     {
+      "id": "16973",
       "author": "Justin Obara",
       "date": "2009-05-13T10:54:27.000-0400",
       "body": "the sakai site settings web page now opens on the fourth content page.\n"

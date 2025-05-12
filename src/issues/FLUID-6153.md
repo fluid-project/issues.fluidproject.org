@@ -32,16 +32,19 @@
   ],
   "comments": [
     {
+      "id": "22345",
       "author": "Alan Harnum",
       "date": "2017-04-21T16:55:52.517-0400",
       "body": "Things I've seen fix this, from quick investigation:\n\n1\\) Changing overflow: auto to overflow: hidden (in theory this should be safe because height: auto should ensure the container is large enough)\n\n2\\) Changing line-height to \"normal\" (while I'm not certain of this, it sounds like line-height and height: auto are known to not play well together in many rendering models).\n"
     },
     {
+      "id": "22346",
       "author": "Justin Obara",
       "date": "2017-04-24T10:24:05.549-0400",
       "body": "The issue appears to only be present in the \"desktop\" view. \n"
     },
     {
+      "id": "22347",
       "author": "Cindy Li",
       "date": "2017-04-24T12:32:36.838-0400",
       "body": "[The pull request](https://github.com/fluid-project/infusion/pull/827) has been merged into the project repo master branch at 56cc1caafba6907f1ecf93cc3baf17b0e357ee97\n"

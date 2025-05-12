@@ -34,21 +34,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16461",
       "author": "Justin Obara",
       "date": "2009-02-06T12:51:37.000-0500",
       "body": "Bug Parade 0.8 release\n"
     },
     {
+      "id": "16463",
       "author": "Antranig Basman",
       "date": "2009-02-16T17:45:44.000-0500",
       "body": "Pager-renderer now working again, with the tests\n"
     },
     {
+      "id": "16465",
       "author": "Justin Obara",
       "date": "2009-02-16T23:06:46.000-0500",
       "body": "tested using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF3, IE6 (Win XP)\n\nIt appeared to be working.\n\nWaiting on a code review to close\n"
     },
     {
+      "id": "16467",
       "author": "Justin Obara",
       "date": "2009-02-16T23:08:21.000-0500",
       "body": "Colin verified this\n\nQuote from a message to the fluid-work list\n\n\"\\* I reviewed the series of commits that fix <https://fluidproject.atlassian.net/browse/FLUID-2179#icft=FLUID-2179> and <https://fluidproject.atlassian.net/browse/FLUID-2192#icft=FLUID-2192>. The Pager is working nicely again in all of the browsers I tested with, and a number of framework improvements came along with this fix.  +1 for inclusion in Infusion 0.8.\"\n"

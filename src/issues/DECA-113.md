@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10230",
       "author": "Colin Clark",
       "date": "2010-06-25T19:10:29.600-0400",
       "body": "Hardcoded paths have been largely removed from the MockServer in favour of the ResourceSource. dserver still needs to updated accordingly.\n"
     },
     {
+      "id": "10231",
       "author": "Colin Clark",
       "date": "2010-07-14T10:25:26.147-0400",
       "body": "Hardcoded paths have been removed completely with the introduction of the ResourceSource, and the removal of the forked servers.\n"

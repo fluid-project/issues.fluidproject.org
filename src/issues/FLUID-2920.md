@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23177",
       "author": "Laurel Williams",
       "date": "2009-08-21T11:35:49.000-0400",
       "body": "Added this to the newly created customBuild component tasks.\n"
     },
     {
+      "id": "23179",
       "author": "Colin Clark",
       "date": "2009-11-04T18:32:24.000-0500",
       "body": "This is an umbrella task and has undoubtedly been resolved in a general way.\n"

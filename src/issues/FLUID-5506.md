@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20109",
       "author": "Antranig Basman",
       "date": "2015-08-20T14:01:54.345-0400",
       "body": "Merged into trunk at revision 282f1a318718eed0b0ec060fb8b4ad254417fd7e\n"
     },
     {
+      "id": "20111",
       "author": "Antranig Basman",
       "date": "2015-08-20T14:06:48.377-0400",
       "body": "Note that the \"partial sorting\" idea was a very long-term red herring. User's don't want, when they designate one item \"before:another\", to simply designate a \"general constraint that it is before another\" - and to be otherwise happy with any ordering consistent with this constraint. What they actually mean to say is, \"in the absence of any specifically intervening item requesting to be placed in the interval between me and another, I should be placed DIRECTLY before another\". Thus the so-called \"constraints\" are not actually \"constraints\", they are actually \"disposition designators\" or some other such unrecognisable term. This is not dissimilar to the kinds of designators accepted by the ancient \"fluid.permuteDom\" utility implemented as part of the Reorderer.\n"

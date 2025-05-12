@@ -60,46 +60,55 @@
   ],
   "comments": [
     {
+      "id": "20817",
       "author": "Colin Clark",
       "date": "2011-01-20T12:01:14.549-0500",
       "body": "The Reorderer should not allow individual elements to be focusable with the Tab key. The container should accept focus with the Tab key, and a second press of it should move focus to the next element past the Reorderer's container.\n"
     },
     {
+      "id": "20819",
       "author": "Golam Chowdhury",
       "date": "2011-01-25T12:41:02.649-0500",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-3946#icft=FLUID-3946>.patch to fix the tabbing issues with layout reorder.\n"
     },
     {
+      "id": "20821",
       "author": "Golam Chowdhury",
       "date": "2011-02-01T15:23:28.263-0500",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-3946#icft=FLUID-3946>.v2.patch contains more tests for checking tab indexes within the container and it's elements.\n"
     },
     {
+      "id": "20822",
       "author": "Golam Chowdhury",
       "date": "2011-02-01T17:23:00.114-0500",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-3946#icft=FLUID-3946>.v3.patch made some changes to the test cases.\n"
     },
     {
+      "id": "20823",
       "author": "Golam Chowdhury",
       "date": "2011-02-04T15:09:00.206-0500",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-3946#icft=FLUID-3946>.v4.patch made some code changes and it passes using both IE8 and FireFox3.6.13.\n"
     },
     {
+      "id": "20824",
       "author": "Golam Chowdhury",
       "date": "2011-02-07T15:50:25.421-0500",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-3946#icft=FLUID-3946>.v5.patch made code changes to test with both default and custom options.\n"
     },
     {
+      "id": "20825",
       "author": "Golam Chowdhury",
       "date": "2011-02-09T15:45:24.226-0500",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-3946#icft=FLUID-3946>.v6.patch made code changes to test with both default and custom options. Also re-factored some codes.\n"
     },
     {
+      "id": "20826",
       "author": "Golam Chowdhury",
       "date": "2011-02-14T16:22:59.365-0500",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-3946#icft=FLUID-3946> patch can be found on <https://github.com/gchowdhury/infusion/tree/FLUID-3946>\n"
     },
     {
+      "id": "20827",
       "author": "Michelle D'Souza",
       "date": "2011-02-15T14:34:58.173-0500",
       "body": "Patch committed at commit 50e048d028639b2d344d327fd4d155e33998c7dc.&#x20;\n"

@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27636",
       "author": "David Makalsky",
       "date": "2008-12-01T10:47:12.000-0500",
       "body": "Code is in SVN and applet available at [http://rascal.xymbo.com](http://rascal.xymbo.com/)\n"

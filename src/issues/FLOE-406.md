@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11015",
       "author": "Cindy Li",
       "date": "2015-08-31T13:05:24.885-0400",
       "body": "The decision is to rename displayLangIndex to viewportFirstLangIndex.\n\nIssued a pull request: <https://github.com/fluid-project/first-discovery/pull/96>\n"
     },
     {
+      "id": "11016",
       "author": "Justin Obara",
       "date": "2015-08-31T13:25:09.605-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/first-discovery/pull/96> ) into the project repo at e11e7ffdaef107e487e8c57962fd8b626fe25cd9\n"

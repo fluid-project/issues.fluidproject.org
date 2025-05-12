@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10481",
       "author": "Colin Clark",
       "date": "2010-07-14T00:47:47.634-0400",
       "body": "This issue was fixed with the introduction of the ResourceSource and configuration for all file paths and Web URLs.\n"

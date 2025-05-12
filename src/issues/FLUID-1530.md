@@ -25,26 +25,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14273",
       "author": "Daphne Ogle",
       "date": "2008-09-09T15:08:17.000-0400",
       "body": "iteration19\n"
     },
     {
+      "id": "14275",
       "author": "Daphne Ogle",
       "date": "2008-09-30T12:52:38.000-0400",
       "body": "This task is on hold until we decide what to do about the complications of reordering announcements.  See the wiki pages for more details on the issues:\n\nScenarios:  <http://wiki.fluidproject.org/display/fluid/Scenarios+-+List+Reorderer>\n\nStoryboard:  <http://wiki.fluidproject.org/display/fluid/Storyboard+-+Make+Important+Announcements+Viewable>\n"
     },
     {
+      "id": "14277",
       "author": "Daphne Ogle",
       "date": "2008-09-30T20:40:09.000-0400",
       "body": "We decided to hold off any doing anymore design work on this since reordering doesn't seem to be the appropriate solution.  See scenarios and storyboards for List Reorder on wiki for discussion.\n"
     },
     {
+      "id": "14279",
       "author": "Daphne Ogle",
       "date": "2008-10-09T12:40:40.000-0400",
       "body": "Gonzalo and I met today and decided to Move ahead with creating storyboards and outlining issues, risks, etc.  The visual will help us tell a story about how this will work.  We will share the story with stakeholders and then make a decision about implementation.\n"
     },
     {
+      "id": "14283",
       "author": "Daphne Ogle",
       "date": "2008-10-13T18:38:59.000-0400",
       "body": "Created 1st iteration.  More work is probably coming but will create additional tasks.\n"

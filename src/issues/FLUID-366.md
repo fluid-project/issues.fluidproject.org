@@ -74,46 +74,55 @@
   ],
   "comments": [
     {
+      "id": "20656",
       "author": "Allison Bloodworth",
       "date": "2008-03-17T20:28:46.000-0400",
       "body": "iteration14\n"
     },
     {
+      "id": "20657",
       "author": "Jonathan Hung",
       "date": "2008-05-21T13:24:16.000-0400",
       "body": "Rev 6 of Screenshot policy. Added Creative Commons section.\n"
     },
     {
+      "id": "20658",
       "author": "Jonathan Hung",
       "date": "2008-05-21T13:26:36.000-0400",
       "body": "Rev 1 of Contributor Guideline\n"
     },
     {
+      "id": "20659",
       "author": "Jonathan Hung",
       "date": "2008-05-21T13:26:59.000-0400",
       "body": "Rev 1 of OSDPL user license.\n"
     },
     {
+      "id": "20660",
       "author": "Jonathan Hung",
       "date": "2008-05-21T13:44:47.000-0400",
       "body": "I added a Creative Commons section to the Screen Shot Policy Proposal.\n\nIn addition, I started 2 other documents which would eventually become the text that would be featured on the OSDPL informing users and contributors the license and copyright issues.\n\nRevise as necessary.\n"
     },
     {
+      "id": "20661",
       "author": "Jonathan Hung",
       "date": "2008-07-23T20:39:56.000-0400",
       "body": "Added Fair Use and 3rd party copyright section to license.\n"
     },
     {
+      "id": "20662",
       "author": "Jonathan Hung",
       "date": "2008-07-23T20:40:19.000-0400",
       "body": "Added 3rd party permissions and explained attribution.\n"
     },
     {
+      "id": "20663",
       "author": "Jonathan Hung",
       "date": "2008-07-29T13:44:10.000-0400",
       "body": "Currently in final draft awaiting feedback.\n"
     },
     {
+      "id": "20664",
       "author": "Jonathan Hung",
       "date": "2008-08-01T10:56:39.000-0400",
       "body": "These documents are now published on the OSDPL:\n\n<http://osdpl.fluidproject.org/content/osdpl-contributors-guide>\\\n<http://osdpl.fluidproject.org/content/copyright-infringement-policy>\\\n<http://osdpl.fluidproject.org/content/osdpl-license>\n"

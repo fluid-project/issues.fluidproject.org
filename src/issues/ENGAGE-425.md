@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11712",
       "author": "James Yoon",
       "date": "2010-02-19T17:02:27.000-0500",
       "body": "a11y issue\n"
     },
     {
+      "id": "11714",
       "author": "Justin Obara",
       "date": "2010-03-01T15:43:36.000-0500",
       "body": "Currently there is a single anchor with several elements inside. VoiceOver seems to be reaching and reading each of these elements and reading them as link, instead of reading all of them together as one.\n"
     },
     {
+      "id": "11715",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:32.079-0500",
       "body": "The repository has been archived.\n"

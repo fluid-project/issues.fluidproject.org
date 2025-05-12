@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24839",
       "author": "Colin Clark",
       "date": "2010-11-18T17:02:46.169-0500",
       "body": "The manual degrade link isn't particularly relevant for users of the HTML 5 version of Uploader. We'll have to reconsider what form it will take in the degraded Flash version of Uploader once we get the full graceful degradation algorithm in place.\n"

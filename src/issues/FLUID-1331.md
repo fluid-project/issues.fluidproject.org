@@ -53,31 +53,37 @@
   ],
   "comments": [
     {
+      "id": "13953",
       "author": "Justin Obara",
       "date": "2008-08-27T15:00:40.000-0400",
       "body": "'screenshot-1' shows the normal avatar\n"
     },
     {
+      "id": "13959",
       "author": "Justin Obara",
       "date": "2008-08-27T15:01:33.000-0400",
       "body": "'screenshot-2' shows the avatar pushed up against the right border of the browser\n"
     },
     {
+      "id": "13965",
       "author": "Jacob Farber",
       "date": "2008-09-08T13:45:03.000-0400",
       "body": "This is appearing in the springboards as well, whereas any container for a draggable item can then influence the avatars size. This is especially obvious when doing a multi-column drag operation.\n"
     },
     {
+      "id": "13968",
       "author": "Justin Obara",
       "date": "2008-09-16T12:15:33.000-0400",
       "body": "Appears to have been fixed with one of the resent changes\n\nVerified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF3, IE7 (Win Vista)\n"
     },
     {
+      "id": "13971",
       "author": "Justin Obara",
       "date": "2008-09-26T11:07:30.000-0400",
       "body": "The issue has reappeared in Safari 3.1 (Mac OS 10.5)\n"
     },
     {
+      "id": "13974",
       "author": "Justin Obara",
       "date": "2008-09-26T11:08:01.000-0400",
       "body": "Updated environment\n"

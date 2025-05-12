@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20477",
       "author": "Justin Obara",
       "date": "2008-08-01T09:36:08.000-0400",
       "body": "May have been resolved along with fixes for the 0.4 release.\n\nVerified using IE6 (Win XP)\n"

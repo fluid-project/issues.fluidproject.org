@@ -27,11 +27,13 @@
   ],
   "comments": [
     {
+      "id": "10978",
       "author": "Alexey Novak",
       "date": "2012-08-16T14:01:59.102-0400",
       "body": "Actually you do not need to increase text size to see this issue. Increasing text size DOES NOT break it. However the right bar looks broken in IE8 without any text size increasing.\n"
     },
     {
+      "id": "10979",
       "author": "Alexey Novak",
       "date": "2012-08-16T14:03:52.890-0400",
       "body": "Assembla ticket created\\\n<https://www.assembla.com/spaces/iskme/tickets/733>\n"

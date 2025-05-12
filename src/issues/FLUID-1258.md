@@ -37,11 +37,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16271",
       "author": "Daphne Ogle",
       "date": "2008-08-21T19:45:02.000-0400",
       "body": "We will likely just add details for inline edit to the fluid personas once they are complete.\n"
     },
     {
+      "id": "16273",
       "author": "Jonathan Hung",
       "date": "2011-01-06T12:34:16.824-0500",
       "body": "Closing - orphaned work.\n"

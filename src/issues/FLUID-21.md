@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19371",
       "author": "Michelle D'Souza",
       "date": "2007-10-22T17:46:20.000-0400",
       "body": "This has likely been fixed in the move to jQuery UI's drag and drop.\n"

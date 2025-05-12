@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10488",
       "author": "Justin Obara",
       "date": "2010-07-16T08:53:19.106-0400",
       "body": "Bug Parade Decapod 0.4&#x20;\n"
     },
     {
+      "id": "10489",
       "author": "Colin Clark",
       "date": "2010-07-20T13:05:15.540-0400",
       "body": "This issue was resolved at revision a8f0190073\n"

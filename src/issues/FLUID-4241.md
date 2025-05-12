@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24023",
       "author": "Justin Obara",
       "date": "2011-05-17T10:01:33.966-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24026",
       "author": "Mike Lam",
       "date": "2011-05-17T13:21:03.336-0400",
       "body": "Buttons have been removed from the demo as we now have full integration tests to ensure all uploader configurations are properly instantiated.  See <https://fluidproject.atlassian.net/browse/FLUID-4243#icft=FLUID-4243> for more details\n"

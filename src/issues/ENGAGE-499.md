@@ -32,16 +32,19 @@
   ],
   "comments": [
     {
+      "id": "12345",
       "author": "Colin Clark",
       "date": "2010-03-08T13:18:12.000-0500",
       "body": "This appears to be a regression. Looks like email addresses are not correctly being sent to Hugues' server.\n"
     },
     {
+      "id": "12346",
       "author": "James Yoon",
       "date": "2010-03-08T17:17:01.000-0500",
       "body": "This is still an issue even after the patch from the morning of March 8, 2010.\n\nSometimes the user receives the email, sometimes not. So far the scores are:\\\n0 successes out of 2 attempts w/ VO (one in each language)\\\n2 successes out of 4 attempts w/out VO (two in each language)\n"
     },
     {
+      "id": "12347",
       "author": "James Yoon",
       "date": "2010-03-09T10:33:57.000-0500",
       "body": "Tested send functionality half a dozen times. Success on all counts.\n"

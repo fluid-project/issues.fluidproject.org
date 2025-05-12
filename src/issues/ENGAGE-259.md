@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12256",
       "author": "vmoulder",
       "date": "2010-02-02T11:54:18.000-0500",
       "body": "Accessibility Guidelines for UI and Physical Kiosk Design: <http://wiki.fluidproject.org/display/fluid/Accessibility+Guidelines+for+UI+and+Physical+Kiosk+Design>\n"

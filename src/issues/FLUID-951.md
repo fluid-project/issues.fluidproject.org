@@ -45,16 +45,19 @@
   ],
   "comments": [
     {
+      "id": "15477",
       "author": "Justin Obara",
       "date": "2008-07-21T14:21:12.000-0400",
       "body": "'screenshot-1' shows the blue highlighting above the yellow highlighting. Look at the edges of the blue highlighting to see the yellow highlighting.\n"
     },
     {
+      "id": "15480",
       "author": "Herb Wideman",
       "date": "2008-12-16T13:50:49.000-0500",
       "body": "In addiiton, after the editable text field has been selected and you hit the spacebar to move into the edit mode, a blue bar is left \"floating\" above the editable text box border.\n"
     },
     {
+      "id": "15483",
       "author": "Justin Obara",
       "date": "2009-11-04T12:22:03.000-0500",
       "body": "This seems to be an Opera feature\n"

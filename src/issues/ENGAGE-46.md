@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12432",
       "author": "Justin Obara",
       "date": "2009-09-03T13:03:05.000-0400",
       "body": "Unit tests have been written\n"
     },
     {
+      "id": "12433",
       "author": "Justin Obara",
       "date": "2009-11-10T11:04:07.000-0500",
       "body": "closed as per previous comment\n"

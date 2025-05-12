@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18378",
       "author": "Shaw-Han Liem",
       "date": "2008-02-06T15:34:34.000-0500",
       "body": "iteration02\n"
     },
     {
+      "id": "18379",
       "author": "Shaw-Han Liem",
       "date": "2008-02-13T14:09:18.000-0500",
       "body": "User test completed Feb 13th and Wiki updated with feedback.\n\n<http://wiki.fluidproject.org/display/fluid/Layout+Custmizer+Results>\n"

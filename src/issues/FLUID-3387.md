@@ -37,6 +37,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23830",
       "author": "Anastasia Cheetham",
       "date": "2009-11-19T15:06:26.000-0500",
       "body": "I've committed a manual test case that illustrates the problem using as simple as possible markup, etc. that I can manage:\n\n<http://source.fluidproject.org/svn/fluid/infusion/trunk/src/webapp/tests/manual-tests/html/data-binding.html>\\\n<http://source.fluidproject.org/svn/fluid/infusion/trunk/src/webapp/tests/manual-tests/js/data-binding.js>\n"

@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26625",
       "author": "Gregor Moss",
       "date": "2020-12-08T17:57:40.603-0500",
       "body": "For the time being, the decision was made to hide the TOC on the Edit page at all times, circumventing the bug. This was done by adding a CSS rule to the Edit page's head which makes the TOC container element \"display: none !important\". Adding this rule to the TOC element inline would make the rule more specific (as inline styling has the highest specificity), but because [the TOC enactor calls jQuery .show() and .hide()](https://github.com/fluid-project/infusion/blob/39773eb69938b6fa0bb9e3ae8f083775d2754f2f/src/framework/preferences/js/Enactors.js#L512-L522) the TOC gets shown when the preference is turned off and then on again (but not when it's turned on intially, apparently).\n\nVarious other approaches were considered and attempted, including:\n\n* setting the model relay between the historian and page components to be one-way from the page to the historian only (this broke the historian's visibility-setting functionality)\n* turning off the TOC panel/preference for this page via overriding the UIO options in the Edit page grade (this would be better, but would take more time to implement than the chosen solution)\n* overriding the TOC template to a blank template (a bit hacky) or to no template (UIO raised errors when this was attempted)\n* modifying/updating fluid-location-bar-relay to configure it to be used the way the Storytelling Tool needs (this was considered only)\n"
     },
     {
+      "id": "26626",
       "author": "Justin Obara",
       "date": "2020-12-09T08:59:44.646-0500",
       "body": "Merged PR ( <https://github.com/fluid-project/sjrk-story-telling/pull/104> ) into the project repo at c52e54e2aed53540cae12718dba3c48e520a0eb4\n"

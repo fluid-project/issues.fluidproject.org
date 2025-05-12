@@ -32,16 +32,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21829",
       "author": "Eli Cochran",
       "date": "2008-05-30T18:13:10.000-0400",
       "body": "This error is caused by the machine having an older version of the flash plugin installed. If you have Flash 8 instead of Flash 9 then you'll see this error.&#x20;\n\nWe need to be able to figure out which version of Flash is installed and put up the correct warning.&#x20;\n"
     },
     {
+      "id": "21830",
       "author": "Colin Clark",
       "date": "2009-04-14T14:33:08.000-0400",
       "body": "This was resolved when we added progressive enhancement support to Uploader.\n"
     },
     {
+      "id": "21831",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:46.097-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

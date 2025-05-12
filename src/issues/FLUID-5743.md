@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22485",
       "author": "Antranig Basman",
       "date": "2015-08-18T13:58:47.602-0400",
       "body": "Correction to the earlier timeline - grade have IN FACT been in \"Arabic order\" since at least late 2013 (dating from the fix of <https://fluidproject.atlassian.net/browse/FLUID-5085#icft=FLUID-5085>). It appeared that they were overriding in the opposite direction in <https://github.com/colinbdclark/bergson/blob/infusion-2.x/tests/js/utils/scheduler-test-utilities.js#L225> because of the <https://fluidproject.atlassian.net/browse/FLUID-5714#icft=FLUID-5714> \"funcName\" overriding bug. The docs were indeed wrong on this issue during the last few years, and are only now being corrected for the <https://fluidproject.atlassian.net/browse/FLUID-5249#icft=FLUID-5249> fix and for this fix.\n"
     },
     {
+      "id": "22487",
       "author": "Antranig Basman",
       "date": "2015-08-20T19:43:55.980-0400",
       "body": "Merged into trunk at revision 6f88f9f4b925a5d3da9e7cd8862e5bd4c9a02b45\n"

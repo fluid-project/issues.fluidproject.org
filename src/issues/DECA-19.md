@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10105",
       "author": "Boyan Sheytanov",
       "date": "2010-01-08T06:36:12.000-0500",
       "body": "This is now fixed - the server generates thumbnail images and returns paths to both the full-sized and the scaled image.\n"

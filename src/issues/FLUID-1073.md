@@ -33,16 +33,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21798",
       "author": "Colin Clark",
       "date": "2008-07-31T16:32:57.000-0400",
       "body": "infusion-05-wishlist\n"
     },
     {
+      "id": "21801",
       "author": "Antranig Basman",
       "date": "2008-08-01T11:29:44.000-0400",
       "body": "Style guide now at <http://wiki.fluidproject.org/display/fluid/Fluid+Component+API>\n"
     },
     {
+      "id": "21802",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:43.553-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

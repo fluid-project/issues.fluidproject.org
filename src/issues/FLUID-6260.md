@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25467",
       "author": "Jonathan Hung",
       "date": "2018-03-12T13:11:34.154-0400",
       "body": "This would be so powerful for an integrator! It would allow us to work with UI Options more easily with specific instances, instead of trying to re-work entire sections of markup + CSS to accommodate UIO.\n"
     },
     {
+      "id": "25468",
       "author": "Justin Obara",
       "date": "2021-10-12T11:27:53.181-0400",
       "body": "Rather than use a class name, we can apply these style changes via [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties). Similar to <https://fluidproject.atlassian.net/browse/FLUID-6605#icft=FLUID-6605>. This would allow an integrator to hook into the custom property for their own styling. \n\nsee: <https://css-tricks.com/a-complete-guide-to-custom-properties/>\n"

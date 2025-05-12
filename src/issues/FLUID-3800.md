@@ -38,26 +38,31 @@
   ],
   "comments": [
     {
+      "id": "16379",
       "author": "Mike Lam",
       "date": "2010-10-18T14:09:01.770-0400",
       "body": "Set default display of keyboard tooltip to false.\n"
     },
     {
+      "id": "16381",
       "author": "Justin Obara",
       "date": "2010-10-18T14:15:21.336-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "16383",
       "author": "Justin Obara",
       "date": "2010-10-18T15:46:37.749-0400",
       "body": "In regards to the patch <https://fluidproject.atlassian.net/browse/FLUID-3800#icft=FLUID-3800>.txt, I think we may want to make the change in the component rather than just in the demo.\n"
     },
     {
+      "id": "16385",
       "author": "Justin Obara",
       "date": "2010-10-18T16:56:46.211-0400",
       "body": "Committed Mike's patch ( FLUID-3800b.txt ) which set the default for the integrations to turn off the edit mode tooltip\n"
     },
     {
+      "id": "16387",
       "author": "Michelle D'Souza",
       "date": "2010-12-01T16:59:10.561-0500",
       "body": "I code reviewed this with a whole group of Inline Edit JIRA issues for 1.3 and it is fine.&#x20;\n"

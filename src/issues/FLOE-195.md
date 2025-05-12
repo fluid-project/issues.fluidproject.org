@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11229",
       "author": "Cindy Li",
       "date": "2014-08-28T10:23:16.537-0400",
       "body": "Issued a pull request: <https://github.com/fluid-project/metadata/pull/38>\n"
     },
     {
+      "id": "11230",
       "author": "Cindy Li",
       "date": "2014-09-03T11:10:15.901-0400",
       "body": "Merged into the project repo @ 677373518d0f376f97b18080b3a0ea47a9a1ead6\n\nThe improvement to simplify the interaction between the match and mismatch buttons will be addressed @ <http://issues.fluidproject.org/browse/FLOE-230>\n"

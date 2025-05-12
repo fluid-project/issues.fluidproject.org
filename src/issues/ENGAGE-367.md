@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12143",
       "author": "Justin Obara",
       "date": "2010-03-17T11:47:24.000-0400",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12144",
       "author": "Antranig Basman",
       "date": "2013-08-17T04:02:16.010-0400",
       "body": "We should really close all outstanding Engage JIRAs since even if the project one day returns, the codebase we start from will be unrecognisably different. In this case, we would use the Model Transformation system which has been under development for the last few years.\n"

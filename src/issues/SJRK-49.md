@@ -37,11 +37,13 @@
   ],
   "comments": [
     {
+      "id": "26415",
       "author": "Gregor Moss",
       "date": "2018-02-21T17:54:03.836-0500",
       "body": "\"Basic functionality\" is restricted to purely client-side changes to bring tool into alignment with new design:\n\n* Simplified content block management\n* No rearranging, just creation and deletion\n* No undo\n\n- Text block\n- Image block\n  * Upload\n  * Camera Capture\n"
     },
     {
+      "id": "26416",
       "author": "Gregor Moss",
       "date": "2018-03-01T12:27:14.727-0500",
       "body": "This has been implemented in the Learning Reflections \"micro-site\"\n"

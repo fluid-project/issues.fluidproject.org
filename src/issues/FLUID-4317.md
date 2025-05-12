@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24085",
       "author": "Cindy Li",
       "date": "2011-07-25T10:21:55.961-0400",
       "body": "The pull request is merged into project repo at 6d6c5ddc4ac62499c026c9d61430459eb73d2e94\n"
     },
     {
+      "id": "24087",
       "author": "Cindy Li",
       "date": "2011-07-25T10:22:07.513-0400",
       "body": "Closed\n"

@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23481",
       "author": "Justin Obara",
       "date": "2010-10-04T14:56:28.376-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "23482",
       "author": "Colin Clark",
       "date": "2010-12-02T13:26:25.379-0500",
       "body": "All Flash 9-specific code was factored out into a separate file at r10310. A prominent note was added to the source code at r10322, resolving this issue from a code perspective. We still need to update the QA plans so that they correctly reflect this change in support.\n"
     },
     {
+      "id": "23483",
       "author": "Michelle D'Souza",
       "date": "2010-12-23T15:39:46.931-0500",
       "body": "Please determine if this is done and should be closed or if it should be put into another release.\n"
     },
     {
+      "id": "23484",
       "author": "Colin Clark",
       "date": "2010-12-23T15:42:35.518-0500",
       "body": "This issue was resolved with a comment in the markup and documentation for Infusion 1.3\n"

@@ -22,6 +22,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11385",
       "author": "Anastasia Cheetham",
       "date": "2012-06-12T10:46:55.489-0400",
       "body": "This only seems to be happening with one of my test resources; the rest are fine. I'm going to assume it's something weird with the one resource\n"

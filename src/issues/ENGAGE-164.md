@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12497",
       "author": "Justin Obara",
       "date": "2010-02-05T14:16:10.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12498",
       "author": "Colin Clark",
       "date": "2010-02-08T16:11:09.000-0500",
       "body": "Sveto has implemented this functionality in a branch. It still needs to be tweaked and merged into the application, which I am working on now. I'm resolving this issue and will file the next steps under specific JIRAs.\n"

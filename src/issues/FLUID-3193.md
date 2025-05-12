@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15087",
       "author": "Justin Obara",
       "date": "2009-09-22T09:41:06.000-0400",
       "body": "Bug Parade Infusion 1.1.2&#x20;\n"
     },
     {
+      "id": "15090",
       "author": "Michelle D'Souza",
       "date": "2009-10-03T14:28:45.000-0400",
       "body": "This issue should be assumed as closed for Infusion 1.1.2 but open for Engage 0.1\n"
     },
     {
+      "id": "15093",
       "author": "Michelle D'Souza",
       "date": "2011-01-13T16:50:10.329-0500",
       "body": "Reopening these issues in order to change the component to Release.&#x20;\n"

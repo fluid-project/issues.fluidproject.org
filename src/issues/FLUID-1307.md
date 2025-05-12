@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18216",
       "author": "Eli Cochran",
       "date": "2008-08-25T13:26:06.000-0400",
       "body": "Added first pass.\n\nStill to do:\n\n* better rollover feedback\n* Undo\n* move the link remediation up to the outer frame\n"
     },
     {
+      "id": "18217",
       "author": "Eli Cochran",
       "date": "2008-11-07T12:03:42.000-0500",
       "body": "Almost there.\n\nStill would like to move the message that you get when you click on a link that doesn't \"do anything\" up to the outer frame but I think that at this time we're good to test.&#x20;\n"

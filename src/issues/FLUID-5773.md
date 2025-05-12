@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14889",
       "author": "Jonathan Hung",
       "date": "2015-12-14T13:40:03.824-0500",
       "body": "We can use the Markdown plugin and override it's renderer for links.  To do this, we may want to use marked.setOptions() and override the link renderer.\n\nSee:\\\n<https://github.com/chjj/marked#Options>\\\n<https://github.com/chjj/marked#renderer>\n"
     },
     {
+      "id": "14892",
       "author": "Simon Bates",
       "date": "2015-12-14T16:17:59.937-0500",
       "body": "It looks like we should be able to set options for Marked using the docpad-plugin-marked `markedOptions`:\n\n<https://github.com/docpad/docpad-plugin-marked/#marked-options>\n"
     },
     {
+      "id": "27925",
       "author": "Justin Obara",
       "date": "2024-07-31T14:20:07.803-0400",
       "body": "I believe this was related to our old docs platform which was redesigned after moving to 11ty.\n"

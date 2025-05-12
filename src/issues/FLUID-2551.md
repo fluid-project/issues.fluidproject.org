@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15329",
       "author": "Eli Cochran",
       "date": "2009-04-10T13:41:22.000-0400",
       "body": "we are released\n"
     },
     {
+      "id": "15332",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:23.077-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

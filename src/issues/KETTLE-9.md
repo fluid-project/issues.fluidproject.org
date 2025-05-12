@@ -36,16 +36,19 @@
   ],
   "comments": [
     {
+      "id": "26122",
       "author": "Michelle D'Souza",
       "date": "2009-12-01T15:16:27.000-0500",
       "body": "I'm putting up a patch that will handle an array of includes files instead of a single string. This is perhaps not enough - we would likely want to support either a single string or an array of file names.&#x20;\n"
     },
     {
+      "id": "26123",
       "author": "Michelle D'Souza",
       "date": "2010-03-29T21:18:22.000-0400",
       "body": "I think this work is done in the <https://fluidproject.atlassian.net/browse/ENGAGE-208#icft=ENGAGE-208> branch.&#x20;\n"
     },
     {
+      "id": "26124",
       "author": "Antranig Basman",
       "date": "2013-08-13T14:01:21.690-0400",
       "body": "\"new new Kettle\" provides standard ways to modularise dependencies (in the form of the \"modules\" directive in a \"config\") for app-specific includes.\n"

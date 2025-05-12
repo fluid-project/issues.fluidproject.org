@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10469",
       "author": "Justin Obara",
       "date": "2012-01-24T15:16:58.130-0500",
       "body": "I've changed the book.py script to remove and not re-add the 'book' directory. There is also a unit test for this.\n\nThe changes are currently in my bitbucket repo\\\n<https://bitbucket.org/jobara/decapod-server-rest>\n"
     },
     {
+      "id": "10471",
       "author": "Justin Obara",
       "date": "2012-05-18T14:19:58.049-0400",
       "body": "Merged into the project repo\n"

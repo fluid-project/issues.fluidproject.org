@@ -27,26 +27,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21803",
       "author": "Shaw-Han Liem",
       "date": "2008-02-04T10:50:20.000-0500",
       "body": "iteration01\n"
     },
     {
+      "id": "21804",
       "author": "Barbara Glover",
       "date": "2008-02-04T12:18:51.000-0500",
       "body": "85% complete - making some final tweaks.  need to finish before user tests start next week. &#x20;\n"
     },
     {
+      "id": "21805",
       "author": "Shaw-Han Liem",
       "date": "2008-02-06T15:14:31.000-0500",
       "body": "iteration02\n"
     },
     {
+      "id": "21807",
       "author": "Barbara Glover",
       "date": "2008-02-08T18:17:19.000-0500",
       "body": "Completed on 2/9.\n"
     },
     {
+      "id": "21809",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:43.771-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

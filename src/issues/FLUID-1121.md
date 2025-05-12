@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20493",
       "author": "Antranig Basman",
       "date": "2008-08-08T15:12:27.000-0400",
       "body": "Fixed at revision 5339, use of ui.droppable.drop now completely removed\n"
     },
     {
+      "id": "20494",
       "author": "Justin Obara",
       "date": "2008-11-13T13:40:58.000-0500",
       "body": "Appears to have been fixed\n"

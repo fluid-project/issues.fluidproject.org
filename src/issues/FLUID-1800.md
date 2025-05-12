@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "20681",
       "author": "Justin Obara",
       "date": "2008-11-13T09:32:58.000-0500",
       "body": "'screenshot-1' shows the pointer and avatar out of sync and the location of the drop target\n"
     },
     {
+      "id": "20682",
       "author": "Justin Obara",
       "date": "2009-02-04T14:43:32.000-0500",
       "body": "May have been resolved with the update to jQuery UI 1.6rc6 or jQuery 1.3.1.&#x20;\n\nTested using FF2 (Mac OS 10.5)\n"

@@ -41,21 +41,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24252",
       "author": "Antranig Basman",
       "date": "2015-07-27T17:46:20.026-0400",
       "body": "Encountered again when writing test case for <https://fluidproject.atlassian.net/browse/FLUID-5717#icft=FLUID-5717> - mildly adjusting the test case so that \"{that}.evaluate\" appears in the direct grade list in the constructor causes it to fail - since the \"raw dynamic grade\" arrives as part of the same batch as the grade defining the invoker (in passes through fluid.expandDynamicGrades' fluid.each(dynamicGrades))\n"
     },
     {
+      "id": "24254",
       "author": "Antranig Basman",
       "date": "2015-08-20T10:11:25.953-0400",
       "body": "Marking as resolved, although a full fix is not possible until we have <https://fluidproject.atlassian.net/browse/FLUID-4982#icft=FLUID-4982> async\n\nMerged into trunk at revision 282f1a318718eed0b0ec060fb8b4ad254417fd7e\n"
     },
     {
+      "id": "24255",
       "author": "Antranig Basman",
       "date": "2015-11-04T13:27:16.725-0500",
       "body": "A further recurrence of this when refactoring Kettle's DataSource hierarchy. In this setup\n\n```java\nfluid.defaults(\"kettle.dataSource\", {\r\n    gradeNames: [\"fluid.component\", \"{that}.getWritableGrade\"],\r\n        getWritableGrade: {\r\n            funcName: \"kettle.dataSource.getWritableGrade\",\r\n            args: [\"{that}\", \"{that}.options.writable\", \"{that}.options.readOnlyGrade\"]\r\n        }\r\n}\r\n\r\nkettle.dataSource.getWritableGrade = function (that, writable, readOnlyGrade) {\r\n    if (writable) {\r\n        return fluid.model.composeSegments(readOnlyGrade, \"writable\");\r\n    }\r\n};\n```\n\nwe fail to pick up the \"writable\" flag if it arrives through gradeNames arguments. This further dispatch should really be done via global distributeOptions but the basic problem would remain - how to reliably hoist something out of the world of configuration into gradeNames. We are constantly playing rearguard, but we can still improve the quality of implementation a notch further before we have the full refactor.\n"
     },
     {
+      "id": "24259",
       "author": "Antranig Basman",
       "date": "2015-11-05T10:42:06.620-0500",
       "body": "This has been somewhat fixed up in the <https://fluidproject.atlassian.net/browse/FLUID-5615#icft=FLUID-5615> branch. I've realised that there is an implicit contradiction in the goals of the grade closure algorithm which have made it hard to realise (we also need to keep in contact with the C3 goals of <https://fluidproject.atlassian.net/browse/FLUID-5800#icft=FLUID-5800>, <https://fluidproject.atlassian.net/browse/FLUID-5085#icft=FLUID-5085>). Grade closure needs to CONTINUE TO CLOSE WHILST GRADES ARE ARRIVING - but on the other hand, the algorithm must provably converge, and not become capable of indefinite, not to say arbitrary computation. \\\nA key to realising what the proper convergence criterion should be is in terms of the SOURCES of grade contributions and not in their OUTPUTS. Especially once we have a C3-like model in which grades are deduplicated before resolution, it will be particularly hard to determine whether the trajectory of the grade complement of the instantiating component is stabilising. What we should instead do is to insist that we only consider that we are making progress whilst accumulating input from new SOURCES - which are, sources in the immediate grade hierarchy, direct arguments, raw dynamic grade sources and finally, distributions.\\\nThe first two sources ALWAYS cause AT LEAST ONE new grade to be contributed into the complement - and so progress can be assessed in that way. Options distributions already now have a unique id assigned to them in the registry of distributions - so we should incorporate this information into the closure process and ensure that we only attempt to react to each distribution source once. Finally, for raw dynamic grades, we can continue with our current approach of simply uniquifying on the IoC reference that it is sourced from. These should be rare and it should be perfectly acceptable to expect a different reference to be contributed if a fresh overriding is required.\n"

@@ -44,31 +44,37 @@
   ],
   "comments": [
     {
+      "id": "17495",
       "author": "Justin Obara",
       "date": "2009-04-02T14:54:59.000-0400",
       "body": "If this is just a missing file or an incorrect path, it can be verified on just one or two configurations. (probably FF and Safari)\n"
     },
     {
+      "id": "17496",
       "author": "Antranig Basman",
       "date": "2009-04-06T19:16:31.000-0400",
       "body": "This patch appears to resolve the issue.\n"
     },
     {
+      "id": "17497",
       "author": "Antranig Basman",
       "date": "2009-04-07T08:41:08.000-0400",
       "body": "Resolved with supplied patch - needs application and review.\n"
     },
     {
+      "id": "17498",
       "author": "Colin Clark",
       "date": "2009-04-07T13:53:23.000-0400",
       "body": "I've reviewed this patch. It looks good and it works. +1\n\nI've asked Antranig to add a comment explaining the nature of the fix, just so we are aware of it in the future.\n"
     },
     {
+      "id": "17499",
       "author": "Antranig Basman",
       "date": "2009-04-07T14:31:20.000-0400",
       "body": "Updated patch with commenting for intention\n"
     },
     {
+      "id": "17500",
       "author": "Justin Obara",
       "date": "2009-04-07T16:07:28.000-0400",
       "body": "Verified fix using:\n\nFF2 (Win XP)\n"

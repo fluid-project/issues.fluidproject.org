@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21796",
       "author": "Eli Cochran",
       "date": "2008-07-23T00:08:45.000-0400",
       "body": "checkmark is no longer selectable\n"
     },
     {
+      "id": "21797",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:42.664-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

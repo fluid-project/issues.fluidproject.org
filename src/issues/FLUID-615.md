@@ -30,21 +30,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19057",
       "author": "Antranig Basman",
       "date": "2008-09-07T22:20:40.000-0400",
       "body": "We need to think about abolishing/merging \"LayoutCustomizer\" component bugs since they should really all be reported against the base Reorderer.\n"
     },
     {
+      "id": "19060",
       "author": "Jacob Farber",
       "date": "2008-10-31T09:53:32.000-0400",
       "body": "I think more details need to be provided....\n"
     },
     {
+      "id": "19064",
       "author": "Justin Obara",
       "date": "2008-10-31T09:56:34.000-0400",
       "body": "design-watched\n"
     },
     {
+      "id": "19066",
       "author": "Justin Obara",
       "date": "2008-10-31T09:58:15.000-0400",
       "body": "This appears to have been fixed with one of the commits to the reorderer\n"

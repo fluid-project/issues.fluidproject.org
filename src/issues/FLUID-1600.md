@@ -44,21 +44,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18542",
       "author": "Justin Obara",
       "date": "2008-09-22T12:50:54.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "18544",
       "author": "Antranig Basman",
       "date": "2008-11-03T14:07:28.000-0500",
       "body": "I am not sure this will be easy to resolve at all. The default browser behaviour appears to be to compute the next tab control at the point of event handling. Creating or removing an element with tabindex in the oncoming focus path does not make the browser change its mind. Therefore it would seem extremely hard to encourage the browser to tab to a control that is not visible at the time the key is pressed.&#x20;\n\nThe only way out I can think of, is to hijack the processing of tab order 100% - to have a model of the document separate from the static tabindex/control order which is delegated to when tab is pressed on an \"owned\" component. This would be quite expensive, as it would require perpetual DOM scans, but it might promise to resolve not only this issue, but a number of other portability concerns such as <https://fluidproject.atlassian.net/browse/FLUID-861#icft=FLUID-861>. It seems a somewhat drastic step though.\n"
     },
     {
+      "id": "18547",
       "author": "Justin Obara",
       "date": "2008-11-04T13:31:30.000-0500",
       "body": "design-watched\n"
     },
     {
+      "id": "18549",
       "author": "Jess Mitchell",
       "date": "2010-12-20T16:31:42.793-0500",
       "body": "This happens the first time there is an edit.  If you Shift+Tab back to the edit field, edit again, press tab, it does go to the undo/redo.\n"

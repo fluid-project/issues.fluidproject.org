@@ -41,21 +41,25 @@
   ],
   "comments": [
     {
+      "id": "16382",
       "author": "Anastasia Cheetham",
       "date": "2012-01-03T14:52:48.851-0500",
       "body": "The attached file (FLUID-4571-tooltip-decorator-test.patch.txt) provides a test case that shows the failure.\n"
     },
     {
+      "id": "16384",
       "author": "Anastasia Cheetham",
       "date": "2012-01-03T14:56:09.243-0500",
       "body": "Sorry, the first attachment didn't have the actual JIRA number in the tests, just a placeholder. This file (\\*-fixed.txt) has the correction.\n"
     },
     {
+      "id": "16386",
       "author": "Antranig Basman",
       "date": "2013-02-19T05:08:38.737-0500",
       "body": "This is definitely a bug in the component. All components will be required to supply a valid set of gradeNames in the upcoming framework revision - going further, all components will also be expected to participate in the \"autoInit\" system. All non-compliant components will be upgraded before this revision, currently floated as being \"Infusion 1.9\".\n"
     },
     {
+      "id": "16388",
       "author": "Antranig Basman",
       "date": "2013-06-11T13:15:30.348-0400",
       "body": "A modern framework-compliant tooltip reached trunk last month as 187df86 so hopefully this issue has now been resolved.\n"

@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18332",
       "author": "Barbara Glover",
       "date": "2008-03-05T15:21:14.000-0500",
       "body": "iteration04\n"
     },
     {
+      "id": "18334",
       "author": "Barbara Glover",
       "date": "2008-03-18T11:57:39.000-0400",
       "body": "This person was a \"no-show\" and we are not rescheduling anymore CIs at this point.\n"

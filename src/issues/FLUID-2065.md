@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21120",
       "author": "Eli Cochran",
       "date": "2009-02-08T17:29:29.000-0500",
       "body": "I've reviewed the Simple Inline Edit API docs, and made some minor revisions where necessary.&#x20;\n\nThere are three things missing from the current docs, they may have been added after 0.7, or it maybe that they are things which we don't want to document because they are of limited utility to the integrator, although I note them because they seem to have some utility:\n\nUnder Supported Events, we don't mention the afterInitEdit event.\n\nUnder Functions, we don't mention that.isEditing() or that.cancel()\n"
     },
     {
+      "id": "21121",
       "author": "Anastasia Cheetham",
       "date": "2009-02-11T10:55:29.000-0500",
       "body": "I've documented afterInitEdit and that.cancel(), waiting for input from Antranig on that.isEditing().\n"
     },
     {
+      "id": "21122",
       "author": "Anastasia Cheetham",
       "date": "2009-02-11T11:29:28.000-0500",
       "body": "All of Eli's comments have now been addressed.\n"

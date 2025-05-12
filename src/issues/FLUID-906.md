@@ -30,16 +30,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20031",
       "author": "Colin Clark",
       "date": "2008-07-22T16:47:25.000-0400",
       "body": "Given that the Pager is still a very young component, and will grow in usefulness through the next couple of releases, I think we can go with a very simple tutorial for the 0.4 release and put our energies into Uploader a11y for now.\n"
     },
     {
+      "id": "20033",
       "author": "Anastasia Cheetham",
       "date": "2008-07-22T19:00:23.000-0400",
       "body": "An outline has been started for this:\\\n<http://wiki.fluidproject.org/display/fluid/Pager+Tutorial>\n"
     },
     {
+      "id": "20036",
       "author": "Anastasia Cheetham",
       "date": "2008-07-24T14:46:49.000-0400",
       "body": "A draft is complete. As I receive feedback, I'll update the document, but I'll consider it done.\n"

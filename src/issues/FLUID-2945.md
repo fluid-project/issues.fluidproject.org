@@ -32,16 +32,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19743",
       "author": "Laurel Williams",
       "date": "2009-06-16T11:35:52.000-0400",
       "body": "Note that the variable (fluid.component.dependencies) above, can be any valid variable. So I should receive the $\\_POST\\[var] and then output that value in the json \"var \".$\\_POST\\[var].\" = {json data};\"&#x20;\n"
     },
     {
+      "id": "19745",
       "author": "Laurel Williams",
       "date": "2009-06-16T15:16:37.000-0400",
       "body": "The above description of how to do this contained some errors and we found a different way to solve the problem.\\\n1\\) var fluid.component.dependencies = {json data} is invalid syntax for setting an object property. The var needs to be removed. However when you do this, then you need to confirm that fluid.component.dependencies actually exists and can be assigned. This is a bit of a pain.\n\n2\\) The alternative was to return fluid.model.setBeanValue(window, \"fluid.component.dependencies\", {json data}); which sets the value to the json data as required.\n"
     },
     {
+      "id": "19747",
       "author": "Laurel Williams",
       "date": "2009-06-16T15:28:11.000-0400",
       "body": "Made this change as per description in last comment and then uploaded to <https://fluidproject.atlassian.net/browse/FLUID-2922#icft=FLUID-2922>\n"

@@ -74,46 +74,55 @@
   ],
   "comments": [
     {
+      "id": "18950",
       "author": "Alison Benjamin",
       "date": "2009-10-14T10:42:05.000-0400",
       "body": "I had the same problem in image reorderer so I have added this component to the jira.&#x20;\n"
     },
     {
+      "id": "18959",
       "author": "Justin Obara",
       "date": "2010-12-03T13:50:05.851-0500",
       "body": "Did some investigation using Safari. It appears that this is all related to a blur event being called on the selectable element.\n\nIn Reorderer.js\n\nLine: 395\\\nselectable.blur(handleBlur) is called\n\nLine: 380\\\nThe handleBlur function calls changeSelectedToDefault\n\nLine: 358\\\nThe changeSelectedToDefault function removes the dragging style\n\nLine: 218\n\nThere is a conditional to see if the dragging style is applied. \\\nSince the dragging style was removed, it has to be re-added before the movement can happen.\n"
     },
     {
+      "id": "18972",
       "author": "Justin Obara",
       "date": "2010-12-03T16:07:43.353-0500",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-3288#icft=FLUID-3288>.patch.txt has a potential fix. Please let me know if it is good enough to go in. Note I haven't had a chance to write any unit tests yet.\n"
     },
     {
+      "id": "18977",
       "author": "Justin Obara",
       "date": "2010-12-07T12:53:14.335-0500",
       "body": "Attached patch (<https://fluidproject.atlassian.net/browse/FLUID-3288#icft=FLUID-3288>.v2.patch.txt) which fixes the event namespacing from the previous patch.\n"
     },
     {
+      "id": "18980",
       "author": "Justin Obara",
       "date": "2010-12-07T14:04:25.845-0500",
       "body": "Attaching patch <https://fluidproject.atlassian.net/browse/FLUID-3288#icft=FLUID-3288>.v3.patch.txt which is the same as <https://fluidproject.atlassian.net/browse/FLUID-3288#icft=FLUID-3288>.v2.patch.txt but with unit tests\n"
     },
     {
+      "id": "18985",
       "author": "Justin Obara",
       "date": "2010-12-07T14:08:42.805-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "18990",
       "author": "Justin Obara",
       "date": "2010-12-07T14:08:52.169-0500",
       "body": "committed the patch, <https://fluidproject.atlassian.net/browse/FLUID-3288#icft=FLUID-3288>.v3.patch.txt, but it still needs to be code reviewed. for the bug parade.\n"
     },
     {
+      "id": "18994",
       "author": "Antranig Basman",
       "date": "2010-12-13T14:40:07.169-0500",
       "body": "I have reviewed the changes in the patch and the changes seem sound, also the test cases thoroughly exercise the behaviour which is fixed.\n"
     },
     {
+      "id": "18999",
       "author": "Justin Obara",
       "date": "2010-12-13T14:52:37.633-0500",
       "body": "I committed, antranig review, it was tested.. time to close\n"

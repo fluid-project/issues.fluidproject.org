@@ -37,11 +37,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20842",
       "author": "Cindy Li",
       "date": "2013-06-05T14:33:10.386-0400",
       "body": "The schema for UIO existing preferences (<https://fluidproject.atlassian.net/browse/FLUID-4903#icft=FLUID-4903>) and new preferences (<https://fluidproject.atlassian.net/browse/FLUID-4904#icft=FLUID-4904>) are sketched out @ <http://wiki.fluidproject.org/display/fluid/Schema+for+UIO+preferences>\n"
     },
     {
+      "id": "20843",
       "author": "Justin Obara",
       "date": "2013-08-15T07:43:15.310-0400",
       "body": "Addressed with work for <https://fluidproject.atlassian.net/browse/FLUID-4907#icft=FLUID-4907>\n"

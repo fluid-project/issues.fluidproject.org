@@ -42,6 +42,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10486",
       "author": "Colin Clark",
       "date": "2010-06-21T16:16:31.319-0400",
       "body": "Recalibration will be enabled by placing a \"Recalibrate\" button in the toolbar on the Capture page.\n"

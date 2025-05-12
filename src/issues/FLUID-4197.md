@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15981",
       "author": "Justin Obara",
       "date": "2011-05-11T14:38:04.882-0400",
       "body": "we should also make sure to update all of the necessary html files to pull it in too.\n"
     },
     {
+      "id": "15983",
       "author": "Antranig Basman",
       "date": "2011-05-11T14:46:24.341-0400",
       "body": "We have a few options on how to deal with this. Right now, JSON is only used to provide better formatted error messages in a few log statements. We could go ahead with the dependency as it is, since converting things to JSON is a pretty fundamental activity and the dependency could possibly arise through other means. Another option would be to upgrade the signature of the fluid.log statement to conform to that of console.log\n\n<http://getfirebug.com/wiki/index.php/Console_API>\n\nIt appears there is extra support (At least on Firefox, and possibly Chrome and others) for \"rich dumping\" of objects, DOM nodes etc - in this way we might be able to avoid the JSON dependence as well as getting better logging. We would need to see what do to on other platforms. Of course ironically the platforms which remove the need for the JSON file are the ones which have support for console.log anyway.\n"
     },
     {
+      "id": "15986",
       "author": "Harris Wong",
       "date": "2011-05-30T15:54:56.217-0400",
       "body": "Related to json2 removal. <https://github.com/fluid-project/infusion/commit/3e45b80f11b88b3b42982c50f23c7eafa3d1244a>\n"

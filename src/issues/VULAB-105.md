@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27362",
       "author": "Jess Mitchell",
       "date": "2008-12-01T16:23:49.000-0500",
       "body": "vulab9\n"
     },
     {
+      "id": "27363",
       "author": "David Makalsky",
       "date": "2008-12-01T18:00:26.000-0500",
       "body": "Fixing in <https://fluidproject.atlassian.net/browse/VULAB-108#icft=VULAB-108>\n"

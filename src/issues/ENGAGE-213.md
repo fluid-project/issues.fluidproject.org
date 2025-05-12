@@ -40,11 +40,13 @@
   ],
   "comments": [
     {
+      "id": "12353",
       "author": "Antranig Basman",
       "date": "2009-12-10T14:02:00.000-0500",
       "body": "Thanks so much for this report and patch, Sveto. I have taken the ideas from it and moved some of the implementation into pure Java code, where it is easier to have correct exception semantics. Some other existing code in env.js has also been subsumed into this, since it had a bare \"close\" statement which could have caused problems.\n"
     },
     {
+      "id": "12354",
       "author": "Antranig Basman",
       "date": "2009-12-15T03:55:36.000-0500",
       "body": "Fixed at revision 8879. However, we still need to upgrade to the \"B\" version of PonderUtilCore for some other minor fixes. A patch is supplied to demonstrate successful use of PUT to a Couch DB from Kettle.\n"

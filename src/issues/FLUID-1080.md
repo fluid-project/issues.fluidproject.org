@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20104",
       "author": "Colin Clark",
       "date": "2008-07-31T17:19:55.000-0400",
       "body": "infusion-05-wishlist\n"
     },
     {
+      "id": "20105",
       "author": "Antranig Basman",
       "date": "2008-08-08T20:55:42.000-0400",
       "body": "Implemented initially at revision 5313 but gradually taking shape through 5335. \\\ncreateDomBinder is now a top-level method in Fluid.js, invokable either in isolation or else automatically through the standard Fluid initialisation call fluid.initView.\n\nWill accept either selectors or direct functions as specifiers of  \"Dom Parts\".\n"
     },
     {
+      "id": "20107",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:56.709-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16187",
       "author": "Jacob Farber",
       "date": "2009-06-29T12:11:49.000-0400",
       "body": "It looks like key areas where JS is required:\n\nEvent management\\\nAnimation triggers\\\nIn some cases, the animations/transitions themselves are done with JS and not CSS3\n"

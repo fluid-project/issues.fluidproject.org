@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19298",
       "author": "Anastasia Cheetham",
       "date": "2008-06-03T16:03:59.000-0400",
       "body": "Mike, I'm having trouble reproducing this. Could let me know specifically which file you encountered this error with by adding the URL to this JIRA?\n"
     },
     {
+      "id": "19300",
       "author": "Michael Elledge",
       "date": "2008-06-04T16:37:30.000-0400",
       "body": "Hi Anastasia--\n\nHere's the URL: <http://build.fluidproject.org/fluid/sample-code/reorderer/jquery-tabs/jquery-tabs.html>\n\nMike\n"
     },
     {
+      "id": "19301",
       "author": "Justin Obara",
       "date": "2008-07-07T17:28:28.000-0400",
       "body": "Appears to be fixed in current version.\n"
     },
     {
+      "id": "19303",
       "author": "Justin Obara",
       "date": "2008-11-13T13:34:38.000-0500",
       "body": "appears to have been fixed\n"

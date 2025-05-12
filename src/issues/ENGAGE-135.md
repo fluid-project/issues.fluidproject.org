@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12213",
       "author": "Justin Obara",
       "date": "2010-02-05T14:15:36.000-0500",
       "body": "The browse component has undergone some refactoring and renders out subcomponents where appropriate\n"

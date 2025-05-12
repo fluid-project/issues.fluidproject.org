@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26579",
       "author": "Gregor Moss",
       "date": "2020-03-19T17:42:21.156-0400",
       "body": "This isn't an issue with the Storytelling Tool, but rather an option in Safari that needs to be enabled...\n\nSee these pages for more information:\n\n<https://corehelpcenter.bqe.com/hc/en-us/articles/115003481673-Tab-key-is-not-working-on-Mac-Safari>\n\n<https://stackoverflow.com/questions/1848390/safari-ignoring-tabindex>\n"

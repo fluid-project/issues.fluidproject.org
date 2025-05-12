@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24153",
       "author": "Cindy Li",
       "date": "2014-05-06T11:18:17.496-0400",
       "body": "Another possibly related issue with model listeners is, applier.modelChanged.removeListener() stops working.\n\nThe code in this unit test: <https://github.com/cindyli/metadata/blob/FLOE-171/tests/js/audioPanelTests.js#L108-L115> uses model listeners to check the new model state after each click on another audio attribute.\n\nAt line 58, each model listener hooked up for every specific model check was removed immediately after the check so that the same check would not be triggered again. However, the issue is that the removal is no longer successful with the new change applier. The unit test ends up running 6 assertions rather than expected 3.\n"
     },
     {
+      "id": "24155",
       "author": "Cindy Li",
       "date": "2014-05-28T09:17:20.972-0400",
       "body": "The pull request that fixes this issue (<https://github.com/fluid-project/infusion/pull/520>) has been merged into the project repo @ f77fac2d2d8ecd7fe5ffd2f497cf404e8f13814b\n"

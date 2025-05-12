@@ -40,21 +40,25 @@
   ],
   "comments": [
     {
+      "id": "21950",
       "author": "heidi valles",
       "date": "2010-12-07T14:48:04.948-0500",
       "body": "overrides fss-reset which puts a 1em bottom margin on all p elements\n"
     },
     {
+      "id": "21952",
       "author": "heidi valles",
       "date": "2010-12-07T14:53:44.899-0500",
       "body": "note : needs <https://fluidproject.atlassian.net/browse/FLUID-3635#icft=FLUID-3635> fix&#x20;\n"
     },
     {
+      "id": "21953",
       "author": "Mike Lam",
       "date": "2010-12-08T17:27:02.659-0500",
       "body": "Combined Heidi's patch with the patch on <https://fluidproject.atlassian.net/browse/FLUID-3635#icft=FLUID-3635>.   The original patch on <https://fluidproject.atlassian.net/browse/FLUID-3635#icft=FLUID-3635> has been refactored so that we are not introducing new hard-coded CSS into the code. &#x20;\n"
     },
     {
+      "id": "21955",
       "author": "Mike Lam",
       "date": "2010-12-08T17:36:39.290-0500",
       "body": "Reviewed and committed!\n"

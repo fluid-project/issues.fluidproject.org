@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22045",
       "author": "Antranig Basman",
       "date": "2011-03-25T00:01:44.019-0400",
       "body": "New recursive implementation of instantiator.clearComponent uses a refactored utility broken out of IoC into public utility fluid.visitComponentChildren\n"

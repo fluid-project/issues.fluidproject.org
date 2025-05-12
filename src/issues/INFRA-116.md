@@ -34,16 +34,19 @@
   ],
   "comments": [
     {
+      "id": "26009",
       "author": "Giovanni Tirloni",
       "date": "2018-02-16T10:01:16.053-0500",
       "body": "Observed that CPU load was very low, server was almost idling. No recent error messages in Confluence's logs (atlassian-confluence.log).\n\nNetstat showed 2055 sockets to port 8090 with 1979 sockets being in CLOSE\\_WAIT state. 1059 were to 127.0.0.1 and 997 were to ::1, suggesting different methods of opening the connection locally. Under normal operation, usually 100 sockets are open, most in TIME\\_WAIT state.\n\nCLOSE\\_WAIT could mean an application error. The attached PDF from Red Hat's Knowledge Base describes the problem in detail.\n\nRestarting Confluence fixes the issue temporarily. Since we don't have a support contract for Confluence, I'm engaging the community to try and identify next steps.\n"
     },
     {
+      "id": "26010",
       "author": "Giovanni Tirloni",
       "date": "2018-02-20T11:43:37.306-0500",
       "body": "Atlassian suggests increase the DB pool. I've increase it from 30 to 60 and will monitor.\n"
     },
     {
+      "id": "26011",
       "author": "Giovanni Tirloni",
       "date": "2018-02-21T09:14:15.086-0500",
       "body": "Increasing the DB pool has not had any negative impact so far. I'm going to close this issue and re-open if the problem happens again.\n"

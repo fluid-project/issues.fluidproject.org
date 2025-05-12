@@ -33,31 +33,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17951",
       "author": "Justin Obara",
       "date": "2009-03-17T13:38:29.000-0400",
       "body": "Bug Parade 1.0 release&#x20;\n"
     },
     {
+      "id": "17953",
       "author": "Eli Cochran",
       "date": "2009-03-18T13:27:32.000-0400",
       "body": "See the patch for <https://fluidproject.atlassian.net/browse/FLUID-2379#icft=FLUID-2379>, that also updates all the Uploader parts to use ui.core.js\n"
     },
     {
+      "id": "17955",
       "author": "Eli Cochran",
       "date": "2009-03-20T11:49:48.000-0400",
       "body": "Fixed with the patch to <https://fluidproject.atlassian.net/browse/FLUID-2379#icft=FLUID-2379>. Written by Colin, reviewed by Eli\n"
     },
     {
+      "id": "17957",
       "author": "Anastasia Cheetham",
       "date": "2009-03-24T14:24:24.000-0400",
       "body": "This change was made in the Uploader code, but the rest of the code base needs to be checked, and the jARIA.js file itself needs to be removed.\n"
     },
     {
+      "id": "17959",
       "author": "Michelle D'Souza",
       "date": "2009-03-25T16:01:11.000-0400",
       "body": "jARIA is still included in the build.properties file, the ui.FLUID-readme and README.txt\n"
     },
     {
+      "id": "17960",
       "author": "Justin Obara",
       "date": "2009-03-26T09:15:34.000-0400",
       "body": "Clean Up Parade 1.0&#x20;\n"

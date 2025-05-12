@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10367",
       "author": "Jonathan Hung",
       "date": "2012-01-11T14:29:48.891-0500",
       "body": "This may not be a critical feature.\n"

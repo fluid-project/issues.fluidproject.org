@@ -31,16 +31,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18541",
       "author": "Allison Bloodworth",
       "date": "2008-03-17T20:38:14.000-0400",
       "body": "iteration06\n"
     },
     {
+      "id": "18548",
       "author": "Jonathan Hung",
       "date": "2008-04-02T16:02:42.000-0400",
       "body": "Upgrade guide can be found here:\\\n<http://drupal.org/upgrade/tutorial-introduction>\n\nSeems pretty straight forward. Hard to anticipate if anything will go wrong during the update.\n\nSince we're running a pretty generic Drupal site, I hope that we won't run into problems.\n\nbackup and creating a test site will be necessary to ensure we do not have downtime during a migration.\n"
     },
     {
+      "id": "18551",
       "author": "Jonathan Hung",
       "date": "2008-04-02T16:09:33.000-0400",
       "body": "My recommendation.\n\nSince CCK and Views is still in development on Drupal 6.x, I think we should get OSDPL working the way we want in Drupal 5.7 since all the modules we need are present and stable.\n\nDo a test upgrade to 6.x once CCK + Views is available for that version. If everything looks good, then we can then do a real upgrade on the live site.\n"

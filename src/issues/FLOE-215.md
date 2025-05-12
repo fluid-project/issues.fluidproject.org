@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11286",
       "author": "Anastasia Cheetham",
       "date": "2014-08-26T14:06:38.904-0400",
       "body": "With the new repository structure, we need to update the manifest, etc.\n"

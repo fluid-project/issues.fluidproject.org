@@ -32,16 +32,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24228",
       "author": "Justin Obara",
       "date": "2009-03-25T11:15:04.000-0400",
       "body": "Clean Up Parade 1.0\n"
     },
     {
+      "id": "24231",
       "author": "Justin Obara",
       "date": "2009-03-31T09:07:28.000-0400",
       "body": "This is what has been done: (\\* indicates that there is more work to be done)\n\n\\*Inline Edit: Simple Text - keep for now, need to update the quick start example with all the functionality from this one\n\n\\*Inline Edit: Drop Down and Rich Text - keep for now, need to convert to starting point or standalone demo\n\nTable of Contents - promote to standalone-demo\n\n\\*Progress -  keep for now, need to convert to quick start example\n\n\\*Scroller - keep for now, need to convert to unit test\n\n\\*Renderer: Component types - keep for now, need to convert to quick start example\n\nRenderer: Radio Buttons - removed\n\nRenderer: Object entry -  removed\n\nRenderer: Test Renderer - removed\n\nRenderer: Tree generation - removed\n\nReorderer: Simple Portlets - removed\n\nReorderer: permissions - removed\n\nReorderer: simple list - removed\n\nReorderer: simple grid - removed\n\nReorderer: multiple reorderer -  removed\n\nReorderer: nested reorderer - removed\n\nReorderer: table reorderer - promoted to standalone-demo\n\n\\*Reorderer: dynamic reorderer - keep for now, needs to be converted to unit test\n\nMenubar - removed\n\n\\*Versioning - keep for now, needs to be converted to unit test\n\nanchors - moved to escalated&#x20;\n"
     },
     {
+      "id": "24235",
       "author": "Justin Obara",
       "date": "2011-05-17T10:46:11.422-0400",
       "body": "The work for this issue is being continued under <https://fluidproject.atlassian.net/browse/FLUID-3904#icft=FLUID-3904>\n"

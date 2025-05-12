@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20738",
       "author": "Allison Bloodworth",
       "date": "2008-05-27T01:30:11.000-0400",
       "body": "iteration10\n"
     },
     {
+      "id": "20740",
       "author": "Allison Bloodworth",
       "date": "2008-06-09T13:54:39.000-0400",
       "body": "This meeting did not take place, so there was no work done other than people responding to the design pattern question of the day emails.\n"

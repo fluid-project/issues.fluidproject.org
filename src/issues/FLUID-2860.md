@@ -34,16 +34,19 @@
   ],
   "comments": [
     {
+      "id": "14322",
       "author": "Justin Obara",
       "date": "2009-06-01T11:45:01.000-0400",
       "body": "'screenshot-1' shows that the status bar remains highlighted in yellow\n"
     },
     {
+      "id": "14327",
       "author": "Anastasia Cheetham",
       "date": "2010-12-22T11:23:22.236-0500",
       "body": "Note that this is the case even if you empty the file queue altogether. To reproduce:\\\n1\\) Use the server version that actually uploads files\\\n2\\) add a single file to the queue\\\n3\\) remove that file from the filesystem\\\n4\\) try to upload\\\n– you'll get the error message and highlight\\\n5\\) remove the offending file from the queue, leaving the queue empty\\\n– the error highlight remains\n"
     },
     {
+      "id": "14331",
       "author": "Justin Obara",
       "date": "2014-07-11T14:49:20.504-0400",
       "body": "We'll need to create a unit test for this, as there is no longer a demo that can be used to reproduce the issue.\n"

@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13395",
       "author": "Antranig Basman",
       "date": "2008-08-11T12:24:00.000-0400",
       "body": "Fixed at revision 5342\n"
     },
     {
+      "id": "13397",
       "author": "Justin Obara",
       "date": "2008-08-12T08:23:12.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, Opera 9.5 (Win XP)\\\nFF3 (Win Vista)\n"

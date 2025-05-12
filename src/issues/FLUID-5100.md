@@ -24,26 +24,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14352",
       "author": "Justin Obara",
       "date": "2013-07-25T07:56:08.840-0400",
       "body": "Can look at the video player (<https://github.com/fluid-project/videoPlayer>) for inspiration on setting up grunt.\n"
     },
     {
+      "id": "14357",
       "author": "Anastasia Cheetham",
       "date": "2013-08-07T16:03:00.372-0400",
       "body": "We discussed this process at the Aug. 7, 2013 Community Workshop. We stumbled a bit at the point of removing the existing ant-based minification from the existing scripts. A bit of further discussion in the channel (un-logged) narrowed our choices down to: continue to try to migrate the build process, one task at a time, over to grunt, or b) start fresh with a grunt-only version.\n\nConcerns over the grunt-only version included time: we're working on this an hour at a time.\n"
     },
     {
+      "id": "14362",
       "author": "Justin Obara",
       "date": "2013-08-14T16:16:29.482-0400",
       "body": "At todays community meeting it was decided that, at least for the time being, we would start the grunt build scripts from scratch.\n"
     },
     {
+      "id": "14365",
       "author": "Justin Obara",
       "date": "2013-08-14T16:16:47.570-0400",
       "body": "My branch:\\\n<https://github.com/jobara/infusion/compare/FLUID-5100>\n\nThe above branch has now be incorporated into the following:\\\n<https://github.com/jobara/infusion/tree/FLUID-5120>\n"
     },
     {
+      "id": "14368",
       "author": "Justin Obara",
       "date": "2014-03-02T14:30:24.022-0500",
       "body": "Resolved with <https://fluidproject.atlassian.net/browse/FLUID-5120#icft=FLUID-5120>\n"

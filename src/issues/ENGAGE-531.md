@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12124",
       "author": "Justin Obara",
       "date": "2010-03-22T13:19:29.000-0400",
       "body": "Bug Parade Engage 0.3&#x20;\n"
     },
     {
+      "id": "12125",
       "author": "Justin Obara",
       "date": "2010-03-22T17:08:33.000-0400",
       "body": "Moved the tab role and aria states from the Drawer to the Handle. Also added the tabpanel role to the Contents.\n"
     },
     {
+      "id": "12126",
       "author": "Justin Obara",
       "date": "2010-03-24T10:11:15.000-0400",
       "body": "Assigned to Antranig for review\n"
     },
     {
+      "id": "12127",
       "author": "Antranig Basman",
       "date": "2010-03-25T09:35:35.000-0400",
       "body": "The fix looks ok to me in terms of code, but assigning to Colin to verify that the use of ARIA roles is indeed correct. I suggest that the variable \"selector\" in drawerAdjust be renamed since by line 91 its use is deceptive, it is clearly no longer a selector but represents DOM nodes. This clarity should cascade upwards to the methods \"openDrawers\" and \"closeDrawers\" whose APIs should be better documented to explain their expectations - an idiom used elsewhere is to refer to a \"jQueryable\".\\\nI also suggest the uses of \"move\" be replaced with \"adjust\" - \"move\" suggests that the drawer nodes are to be physically shifted around the DOM, rather than just have their visual state adjusted. This would make consistency with the internal method named \"drawerAdjust\".\n"

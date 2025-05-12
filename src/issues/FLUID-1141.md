@@ -44,26 +44,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13805",
       "author": "Jacob Farber",
       "date": "2008-08-15T14:09:19.000-0400",
       "body": "Another point: if the draggable avatar was detached from its context, you would not see the numbers re-arranging themselves inappropriately in IE\n"
     },
     {
+      "id": "13807",
       "author": "Justin Obara",
       "date": "2008-09-03T10:25:22.000-0400",
       "body": "This appears to be causing the drop target to persist under the tab in the springboard example\n"
     },
     {
+      "id": "13809",
       "author": "Michelle D'Souza",
       "date": "2008-09-08T14:12:24.000-0400",
       "body": "We will need to ensure that the visual styling of the avatar is preserved when it is placed outside the reorderer container.&#x20;\n"
     },
     {
+      "id": "13812",
       "author": "Antranig Basman",
       "date": "2008-09-08T14:47:29.000-0400",
       "body": "Fixed at revision 5486\n"
     },
     {
+      "id": "13814",
       "author": "Antranig Basman",
       "date": "2009-01-22T15:40:34.000-0500",
       "body": "I think we have determined, over time, that this was actually the wrong approach - we should return to the earlier appraoch of appending the avatar to the body, but also enable it to be \"co-moving\".\n"

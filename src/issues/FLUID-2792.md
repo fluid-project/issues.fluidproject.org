@@ -42,41 +42,49 @@
   ],
   "comments": [
     {
+      "id": "14749",
       "author": "Justin Obara",
       "date": "2009-07-27T16:30:16.000-0400",
       "body": "Bug Parade 1.1.1 release\n"
     },
     {
+      "id": "14751",
       "author": "Armin Krauss",
       "date": "2009-07-29T11:31:13.000-0400",
       "body": "I think the problem happens in the finish() function\n\nvar finish = function (that) {\\\nvar newValue = that.editView\\.value();\\\nvar oldValue = that.model.value;\n\nvar viewNode = that.viewEl\\[0];\\\nvar editNode = that.editField\\[0];\\\nvar ret = that.events.onFinishEdit.fire(newValue, oldValue, editNode, viewNode);\\\nif (ret === false) {\\\nreturn;\\\n}\n\nthat.updateModelValue(newValue);\\\nthat.events.afterFinishEdit.fire(newValue, oldValue, editNode, viewNode);\n\nswitchToViewMode(that);\\\n};\n\nI expect that\n\nvar ret = that.events.onFinishEdit.fire(newValue, oldValue, editNode, viewNode);\\\nif (ret === false) {\\\nreturn;\\\n}\n\nWill do some compare of the Values and decide to return or go on and show undo. The new\\\nand old are different due to \"\\n\" in the old text.\n\nnew\n\n\\<p>After a hiatus, \\<strong>Portishead\\</strong> is back with their first studio album in 6 years. \\<em>Third\\</em> brings back the familiar and the new, and none of this is best exemplified than in the track \\<em>Machine Gun\\</em>. It seems that regardless of how \\<strong>Portishead\\</strong> sounds now, the one thing that has stayed constant is their refusal to be ordinary.\\</p>\n\nold\\\n\\n \\<p>After a hiatus, \\<strong>Portishead\\</strong> is back with their first studio \\n album in 6 years. \\<em>Third\\</em> brings back the familiar and\\n the new, and none of this is best exemplified than in the track\\n \\<em>Machine Gun\\</em>. It seems that regardless of how \\<strong>Portishead\\</strong> \\n sounds now, the one thing that has stayed constant is their refusal to be ordinary.\\n \\</p>\\n\n"
     },
     {
+      "id": "14753",
       "author": "y z",
       "date": "2009-07-31T15:04:06.000-0400",
       "body": "the patch properly cleans up the text content of the tag that is being loaded into the editor the first time.\n"
     },
     {
+      "id": "14755",
       "author": "Antranig Basman",
       "date": "2009-08-04T16:38:58.000-0400",
       "body": "Thanks for this patch, applied at revision 7706\n"
     },
     {
+      "id": "14757",
       "author": "Antranig Basman",
       "date": "2009-08-06T10:43:01.000-0400",
       "body": "Updated patch to account for more wrinkles of whitespace normalisation for TinyMCE\n"
     },
     {
+      "id": "14759",
       "author": "Justin Obara",
       "date": "2009-08-06T13:48:12.000-0400",
       "body": "It seems to still not be working in IE and Opera\n"
     },
     {
+      "id": "14761",
       "author": "Antranig Basman",
       "date": "2009-08-07T13:11:17.000-0400",
       "body": "More thorough fix at rev 7730:\n\nChange of strategy to deal with wider category of normalizations for IE, Opera etc. HTML accessor now changed back to previous release, and new configuration of modelComparator allows pluggable change detection strategies.\n"
     },
     {
+      "id": "14763",
       "author": "Justin Obara",
       "date": "2009-08-07T15:02:03.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, FF3.5, Opera 9.6, Safari 3.2, Safari 4 (Mac OS 10.5)\\\nFF3, IE7, IE8 (Win Vista)\n"

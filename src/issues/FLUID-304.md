@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19441",
       "author": "Anastasia Cheetham",
       "date": "2008-05-27T13:05:40.000-0400",
       "body": "Colin, I've got API documentation at <http://wiki.fluidproject.org/x/fYsk>\n\nIf you could have a quick look to see if it seems adequate, and either close or reopen this issue, that'd be great.\n"
     },
     {
+      "id": "19442",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:28:00.741-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

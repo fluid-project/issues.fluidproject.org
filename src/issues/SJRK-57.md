@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26305",
       "author": "Gregor Moss",
       "date": "2018-04-02T17:05:43.320-0400",
       "body": "pay attention to {uiManager}.storySpeaker's model relay for ttsText and related fields\n"
     },
     {
+      "id": "26306",
       "author": "Gregor Moss",
       "date": "2018-04-25T16:40:27.724-0400",
       "body": "storySpeaker has been updated to compile the contents of each block of a story using a model relay to track any changes automagically. A block's contents will depend on the type of block that it is, and the contents are compiled by model relays in each. E.g. for an image block, it combines the heading, alternative text and description values, while a text block will combine only the heading and text values.\n"

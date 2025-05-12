@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16283",
       "author": "Justin Obara",
       "date": "2009-05-14T14:58:56.000-0400",
       "body": "a11y issue&#x20;\n"
     },
     {
+      "id": "16285",
       "author": "Justin Obara",
       "date": "2009-06-04T09:01:30.000-0400",
       "body": "Appears to have been fixed, likely with the upgrade to the final version of swfupload 2.20\n\nTested using:\\\nFF2 (Flash 10)\n"

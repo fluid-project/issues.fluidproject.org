@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24141",
       "author": "Golam Chowdhury",
       "date": "2011-02-28T11:35:14.095-0500",
       "body": "Found similar issues with IE7 and updated this jira.\n"
     },
     {
+      "id": "24143",
       "author": "Michelle D'Souza",
       "date": "2014-06-25T15:58:45.559-0400",
       "body": "We no longer actively support IE6, IE7 and IE8. We will consider patches for certain issues.\n"

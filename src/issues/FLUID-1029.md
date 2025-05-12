@@ -50,21 +50,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20899",
       "author": "Justin Obara",
       "date": "2008-09-16T14:53:42.000-0400",
       "body": "Affects Uploader 2\n"
     },
     {
+      "id": "20900",
       "author": "Eli Cochran",
       "date": "2008-09-16T19:21:43.000-0400",
       "body": "The filequeue needs to be smart enough that when the queue is focused it shifts the focus to the elements inside the queue.\n"
     },
     {
+      "id": "20901",
       "author": "Justin Obara",
       "date": "2008-09-17T09:00:29.000-0400",
       "body": "I wonder if this is related to <https://fluidproject.atlassian.net/browse/FLUID-325#icft=FLUID-325> : Key presses cause scrolling when selectables are contained in a scrollable element such as a scrolling div\n"
     },
     {
+      "id": "20902",
       "author": "Justin Obara",
       "date": "2010-05-07T12:58:29.429-0400",
       "body": "a11y issue\n"

@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12801",
       "author": "Michelle D'Souza",
       "date": "2011-12-12T11:45:21.195-0500",
       "body": "Merged into project repo at ecf013282478d102e125e08306649b5c8c93cf9b\n"
     },
     {
+      "id": "12802",
       "author": "Anastasia Cheetham",
       "date": "2011-12-12T15:19:13.616-0500",
       "body": "The footer alignment is still not right on the archive pages.\n"
     },
     {
+      "id": "12803",
       "author": "Michelle D'Souza",
       "date": "2011-12-12T15:40:12.463-0500",
       "body": "Merged into project repo at b8302b03a2ec10ae3e6ce087f15bd0a0e5c5b761\n"

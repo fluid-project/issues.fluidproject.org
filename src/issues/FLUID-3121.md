@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22014",
       "author": "Justin Obara",
       "date": "2009-09-21T10:02:28.000-0400",
       "body": "Bug Parade Infusion 1.1.2\n"
     },
     {
+      "id": "22017",
       "author": "Colin Clark",
       "date": "2009-10-02T18:33:09.000-0400",
       "body": "We need to get this fix in soon, and Joan is away on Fridays. Antranig, it's all yours.\n"
     },
     {
+      "id": "22021",
       "author": "Antranig Basman",
       "date": "2009-10-05T00:55:56.000-0400",
       "body": "Fixed at revision 8226 - the core failure is really in fluid.reorderer itself which should satisfy the looser contract and take care of dereferencing by itself. JS docs are updated, but we need to ensure that wiki docs are fixed for the release.\n"
     },
     {
+      "id": "22023",
       "author": "Colin Clark",
       "date": "2009-10-05T15:34:56.000-0400",
       "body": "I've reviewed Antranig's fix for this issue--and the associated unit test-- and it looks good. I double checked the wiki API documentation and it seems to already convey the jQueryable contract for container. We're all set here for 1.1.2.\n"

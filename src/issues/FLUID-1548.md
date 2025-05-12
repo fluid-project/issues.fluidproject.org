@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18958",
       "author": "Anastasia Cheetham",
       "date": "2008-09-16T14:35:41.000-0400",
       "body": "The demos have been updated to the latest API, and now reference the Fluid-all.js file on the server instead of an attached HTML file.\n"

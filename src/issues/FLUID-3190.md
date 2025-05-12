@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13659",
       "author": "Justin Obara",
       "date": "2009-09-21T16:47:39.000-0400",
       "body": "Bug Parade Infusion 1.1.2\n"
     },
     {
+      "id": "13661",
       "author": "Laurel Williams",
       "date": "2009-09-23T09:22:59.000-0400",
       "body": "Modified the mysqlscript to add another column to the cache table to record number of downloads of a particular module. Modified postProcessor.php to initialize and increment this value on download.\n"
     },
     {
+      "id": "13664",
       "author": "Laurel Williams",
       "date": "2009-09-30T09:53:03.000-0400",
       "body": "Jacob reviewed\n"

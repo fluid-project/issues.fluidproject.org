@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22491",
       "author": "Caren Watkins",
       "date": "2021-08-05T11:29:41.892-0400",
       "body": "Classification could be: \\\nGeorgia (serif), Comic Sans (script), Arial (sans serif), Verdana (sans serif). Open Dyslexic is specialized and doesn't fit into the \"traditional\" classification system but I think that is ok, I would think it doesn't need a label\n\nReference resource re: type classification:\n\n<https://www.fonts.com/content/learning/fontology/level-1/type-anatomy/type-classifications> \n"

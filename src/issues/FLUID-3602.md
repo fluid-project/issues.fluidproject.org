@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "15683",
       "author": "heidi valles",
       "date": "2011-01-06T15:36:53.741-0500",
       "body": "I wonder if the spaces are intentional.\n"
     },
     {
+      "id": "15685",
       "author": "Justin Obara",
       "date": "2011-03-15T13:29:30.151-0400",
       "body": "If I'm not mistaken, the spaces between the columns are intentional, to distinguish between the different columns. The spaces at the ends are due to sub-pixel rounding in the browsers. see <https://fluidproject.atlassian.net/browse/FLUID-2447#icft=FLUID-2447>\n"

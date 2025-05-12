@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16325",
       "author": "Justin Obara",
       "date": "2015-06-09T10:16:51.027-0400",
       "body": "Could not reproduce with the latest version of Firefox (v38)\n"
     },
     {
+      "id": "16327",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:27.896-0400",
       "body": "Reopening to change the fix version to 1.9\n"

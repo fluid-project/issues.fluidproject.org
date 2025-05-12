@@ -24,21 +24,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15044",
       "author": "Anastasia Cheetham",
       "date": "2013-06-19T11:17:30.587-0400",
       "body": "This issue has been fixed in the currently ongoing <https://fluidproject.atlassian.net/browse/FLUID-5043#icft=FLUID-5043> branch (<https://github.com/cindyli/infusion/tree/FLUID-5043>) tested June 19 at commit 9b075df2786507025d272a1159fa73fcc2e5bb28\n"
     },
     {
+      "id": "15046",
       "author": "Justin Obara",
       "date": "2013-06-20T08:24:43.359-0400",
       "body": "The work for <https://fluidproject.atlassian.net/browse/FLUID-5043#icft=FLUID-5043> is changing direction and will need to be restarted. I'm reopening this jira to ensure that we do not forget to look into this issue again. Also, it may no longer be solved in work for <https://fluidproject.atlassian.net/browse/FLUID-5043#icft=FLUID-5043>.\n"
     },
     {
+      "id": "15049",
       "author": "y z",
       "date": "2013-07-22T09:30:34.598-0400",
       "body": "Resolved as part of work on the new UIOptions.\n"
     },
     {
+      "id": "15053",
       "author": "Justin Obara",
       "date": "2013-07-22T09:32:25.055-0400",
       "body": "Pull request ( <https://github.com/fluid-project/infusion/pull/360> ) was merged into the project repo at 4fe208404cd0cdafc68dd59fdb7669991b6ab4dd\n"

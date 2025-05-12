@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10396",
       "author": "Justin Obara",
       "date": "2012-06-01T10:12:42.077-0400",
       "body": "Currently it is the decision of the community to remain in Mercurial. if this changes at a later date, this jira should be reopened or a new one created.\n"

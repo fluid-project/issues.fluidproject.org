@@ -43,21 +43,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17243",
       "author": "Anastasia Cheetham",
       "date": "2008-08-11T12:12:07.000-0400",
       "body": "These issues may have the same cause.\n"
     },
     {
+      "id": "17245",
       "author": "Anastasia Cheetham",
       "date": "2008-08-11T12:12:48.000-0400",
       "body": "May be related.\n"
     },
     {
+      "id": "17247",
       "author": "Antranig Basman",
       "date": "2008-09-07T18:03:13.000-0400",
       "body": "Drop Manager, Dom Permutation work merged back into trunk at revision 5476\n"
     },
     {
+      "id": "17249",
       "author": "Justin Obara",
       "date": "2008-09-08T09:13:19.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3 (Mac OS 10.5)\\\nFF2, FF3 (Win XP)\\\nFF3 (Win Vista)\n"

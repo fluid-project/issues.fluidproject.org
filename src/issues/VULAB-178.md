@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "27277",
       "author": "Blake E",
       "date": "2009-02-23T13:46:16.000-0500",
       "body": "Its a simple fix.\n\nI did a find/replace for [http://vulab.yorku.ca](http://vulab.yorku.ca/)\n\nsimple enough. Now urls map to the root directory.\n\nie.\n\nsrc=\"/admin/...\";\n\n🙂&#x20;\n"
     },
     {
+      "id": "27278",
       "author": "Blake E",
       "date": "2009-02-23T14:21:07.000-0500",
       "body": "vulab17\n"

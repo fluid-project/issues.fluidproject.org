@@ -25,31 +25,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22921",
       "author": "Giovanni Tirloni",
       "date": "2018-04-30T09:25:39.946-0400",
       "body": "Tony Atkins \\[RtF] is it necessary to run the browser tests before the node tests since, it seems, the code is instrumented in the former? [IRC dicussions](https://botbot.me/freenode/fluid-tech/msg/99543548/)\n"
     },
     {
+      "id": "22924",
       "author": "Giovanni Tirloni",
       "date": "2018-05-04T09:25:19.800-0400",
       "body": "While trying to implement per-pipeline configuration regarding how to clean files, I faced issue <https://github.com/buildkite/agent/issues/756>. For now the issue described in this JIRA remains and the buildkite agent is configured to use \\`git clean -fqd\\` which will leave behind the files in the \"coverage\" folder (which today was at 1.7GB and started triggering out of memory errors).\n"
     },
     {
+      "id": "22927",
       "author": "Tony Atkins [RtF]",
       "date": "2018-05-07T05:32:33.979-0400",
       "body": "I responded to Giovanni Tirloni on IRC, but just to confirm here for the record, the browser and node instrumentation are completely separate.  We use nyc for the node tests, it hooks Babel into \"require\" and instruments anything that matches the settings in .nycrc automatically.  The order of the tests should not matter at all.\n"
     },
     {
+      "id": "22930",
       "author": "Giovanni Tirloni",
       "date": "2018-05-22T11:44:31.265-0400",
       "body": "Tony Atkins \\[RtF] Thanks! I'm proposing in [PR#900](https://github.com/fluid-project/infusion/pull/900) we delete the coverage and reports directories after each CI build.\n\nThis shouldn't impact the work that is still to be completed for <https://fluidproject.atlassian.net/browse/FLUID-6265#icft=FLUID-6265> in making the reports available somewhere.\n"
     },
     {
+      "id": "22933",
       "author": "Tony Atkins [RtF]",
       "date": "2018-05-23T07:46:50.826-0400",
       "body": "Giovanni Tirloni, I commented on the pull, but I see that you've posted a lot of the details here.  If you were simply running \\`npm test\\`, then the coverage and reports directories should be cleared out by the \\`pretest\\` step.  I guess the CI config runs individual commands instead?  Anyway, if you just issue \\`npm run pretest\\` at the start of each run, that should have the same effect.\n"
     },
     {
+      "id": "22938",
       "author": "Giovanni Tirloni",
       "date": "2018-06-28T10:58:39.623-0400",
       "body": "Mothballing this as the PR is almost 2 months old and it may become unnecessary with the adoption of containers instead of Vagrant. If there's enough interest it can be reopened. PR is being closed too.\n"

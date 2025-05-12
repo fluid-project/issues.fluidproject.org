@@ -35,6 +35,7 @@
   ],
   "comments": [
     {
+      "id": "25623",
       "author": "Antranig Basman",
       "date": "2021-04-22T10:11:15.388-0400",
       "body": "I believe since the impl was simplified a few months ago to avoid the massive model relay CPU usage caused by the cities list, none of \"new-renderer-demo\" is actually being validly used in this project any more so I'll draw up a pull which simplifies the impl by removing them - I think every facility we are now using is part of the plain function of the <https://fluidproject.atlassian.net/browse/FLUID-6580#icft=FLUID-6580> \"new renderer framework\" which just consists of straightforward improvements to core Infusion\n"

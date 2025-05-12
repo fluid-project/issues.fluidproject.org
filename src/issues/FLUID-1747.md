@@ -41,11 +41,13 @@
   ],
   "comments": [
     {
+      "id": "16037",
       "author": "Justin Obara",
       "date": "2008-10-30T13:31:47.000-0400",
       "body": "'screenshot-1' shows that the right border is no longer displayed properly\n"
     },
     {
+      "id": "16039",
       "author": "Justin Obara",
       "date": "2014-06-05T15:24:46.658-0400",
       "body": "This demo has been removed\n"

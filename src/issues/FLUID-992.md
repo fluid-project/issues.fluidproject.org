@@ -53,36 +53,43 @@
   ],
   "comments": [
     {
+      "id": "13571",
       "author": "Justin Obara",
       "date": "2008-07-23T13:47:38.000-0400",
       "body": "'screenshot-1' shows the text field too small for the text it contains and the cursor hidden.\n"
     },
     {
+      "id": "13575",
       "author": "Justin Obara",
       "date": "2008-08-28T09:56:56.000-0400",
       "body": "resolved with fix for fluid-936.&#x20;\n"
     },
     {
+      "id": "13578",
       "author": "Justin Obara",
       "date": "2008-09-22T10:07:00.000-0400",
       "body": "Reopened as original fix for <https://fluidproject.atlassian.net/browse/FLUID-936#icft=FLUID-936> forced the caret to the front. \\\nThis went against the spec, which wanted the caret at the end (<https://fluidproject.atlassian.net/browse/FLUID-1047#icft=FLUID-1047>).&#x20;\n"
     },
     {
+      "id": "13581",
       "author": "Justin Obara",
       "date": "2008-09-22T13:26:54.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "13585",
       "author": "Antranig Basman",
       "date": "2008-11-07T17:08:16.000-0500",
       "body": "Fixed at revision 5980\n"
     },
     {
+      "id": "13588",
       "author": "Justin Obara",
       "date": "2008-11-10T08:47:21.000-0500",
       "body": "Verified fix using:\n\nFF2 (Mac OS 10.5)\\\nFF2, FF3 (Win XP)\\\nFF3 (Win Vista)\n"
     },
     {
+      "id": "13591",
       "author": "Antranig Basman",
       "date": "2008-11-13T21:29:06.000-0500",
       "body": "This fix was found problematic in the case where the field text ended with a non-alphanumeric character. Has been refixed as part of 6031.\n"

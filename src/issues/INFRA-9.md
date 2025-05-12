@@ -23,16 +23,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25879",
       "author": "Giovanni Tirloni",
       "date": "2015-09-04T10:16:27.611-0400",
       "body": "Created SSH servers tor1-prd-ssh01 and tor1-prd-ssh02. Address \"ssh.inclusivedesign.ca\" points at both (round-robin).\n"
     },
     {
+      "id": "25880",
       "author": "Giovanni Tirloni",
       "date": "2017-01-13T11:35:53.544-0500",
       "body": "These boxes were terminated a while ago because of performance issues at the time that were making Ansible very unstable. We should re-implement this.\n"
     },
     {
+      "id": "25881",
       "author": "Giovanni Tirloni",
       "date": "2017-09-21T10:56:03.607-0400",
       "body": "SSH access is restricted at the firewall (requires authentication by trusted user to update firewall rules and allowing src IP of the user).\n"

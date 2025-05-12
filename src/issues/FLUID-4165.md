@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24891",
       "author": "Antranig Basman",
       "date": "2011-04-03T23:33:06.313-0400",
       "body": "Report was correct and issue is now resolved. Top-level options of \"model\" and \"applier\" will now be propagated to the relevant other points of component configuration, via the intermediate route of the modelComponent preInitFunction.\n"

@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21269",
       "author": "Justin Obara",
       "date": "2009-08-12T15:23:42.000-0400",
       "body": "Appears to have been fixed, likely with either the upgrade to the new example or with changes made to 1.1.1\n"

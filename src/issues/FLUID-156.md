@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17888",
       "author": "Anastasia Cheetham",
       "date": "2008-01-07T13:25:03.000-0500",
       "body": "This makes sense. Unfortunately, the SVN configuration that implements this check is repository-wide, meaning we can't turn it off for the sandbox only, since it exists in the same repository as the main fluid code.\n\nI guess this the case where the NOJIRA preface is appropriate.\n"
     },
     {
+      "id": "17890",
       "author": "Justin Obara",
       "date": "2009-03-18T10:46:10.000-0400",
       "body": "Based on the comments, it would appear, that with this version of svn at least, we are unable to change how this works\n"

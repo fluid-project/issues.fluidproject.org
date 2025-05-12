@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13838",
       "author": "Jonathan Hung",
       "date": "2008-04-08T15:20:10.000-0400",
       "body": "What core functionality do we want on the OSDPL? What can be added over time?\n\nMy thoughts of what core functionality should be:\\\n1\\. to allow adding of new design patterns\\\n2\\. basic searching/navigating/browsing design patterns\n\nBasically get it to a state where it can replace the wiki. Additional functionality can be added later. Thoughts?\n"
     },
     {
+      "id": "13841",
       "author": "Allison Bloodworth",
       "date": "2008-06-09T19:30:08.000-0400",
       "body": "futuretask\n"
     },
     {
+      "id": "13844",
       "author": "Allison Bloodworth",
       "date": "2008-07-16T21:18:44.000-0400",
       "body": "We should look at the goal of this task as the creation of a roadmap for functionality we want to have in the OSDPL.&#x20;\n"
     },
     {
+      "id": "13846",
       "author": "Jonathan Hung",
       "date": "2008-08-20T10:03:20.000-0400",
       "body": "Covered by other Jira tasks.\n"

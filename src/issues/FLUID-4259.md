@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24362",
       "author": "Antranig Basman",
       "date": "2011-05-19T04:00:09.677-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24363",
       "author": "Justin Obara",
       "date": "2011-05-19T10:04:02.595-0400",
       "body": "Reviewed, tested, pushed to repo at a1a9981e8ee9cffd781ebf5de1afa8a8f05cec9f\n\nHere's a link to the pull request for reference. <https://github.com/fluid-project/infusion/pull/50>\n"

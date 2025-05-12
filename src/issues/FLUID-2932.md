@@ -31,21 +31,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23187",
       "author": "Justin Obara",
       "date": "2009-07-02T11:36:21.000-0400",
       "body": "module\\_inlineEdit-components=\"components/inlineEdit\"\n\nwe should be able to omit the \"-components\" part as we may be able to parse this out of the location information.\n"
     },
     {
+      "id": "23188",
       "author": "Laurel Williams",
       "date": "2009-07-02T16:16:14.000-0400",
       "body": "This is complete but needs to be tested by parsing within the server code.\n"
     },
     {
+      "id": "23189",
       "author": "Justin Obara",
       "date": "2009-07-03T15:23:12.000-0400",
       "body": "need to remove the old moduleGroups.json file\n"
     },
     {
+      "id": "23190",
       "author": "Justin Obara",
       "date": "2009-07-03T15:26:32.000-0400",
       "body": "the moduleGroups.json file has been removed from trunk\n"

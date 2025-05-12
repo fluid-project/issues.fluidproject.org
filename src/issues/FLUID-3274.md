@@ -50,26 +50,31 @@
   ],
   "comments": [
     {
+      "id": "23250",
       "author": "Justin Obara",
       "date": "2009-10-09T11:20:45.000-0400",
       "body": "'screenshot-1' shows that the download button is missing\n"
     },
     {
+      "id": "23251",
       "author": "Jacob Farber",
       "date": "2009-10-09T11:53:11.000-0400",
       "body": "I attached a patch to force the right color scheme on the button\n"
     },
     {
+      "id": "23252",
       "author": "Colin Clark",
       "date": "2009-10-09T15:10:48.000-0400",
       "body": "I've reviewed the change and it seems sensible. Still waiting to hear from Laurel about its efficacy, but assuming it tests out, I vote +1 on this change.\n"
     },
     {
+      "id": "23253",
       "author": "Colin Clark",
       "date": "2009-10-09T17:25:33.000-0400",
       "body": "Laurel and Justin tested this fix on all of our A-Grade browsers and it works just fine. Jacob committed the fix at r8304\n"
     },
     {
+      "id": "23254",
       "author": "Colin Clark",
       "date": "2009-10-09T17:25:58.000-0400",
       "body": "This one has been fixed by an update to the Builder CSS at r8304\n"

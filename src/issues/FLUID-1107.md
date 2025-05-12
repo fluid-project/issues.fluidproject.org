@@ -35,16 +35,19 @@
   ],
   "comments": [
     {
+      "id": "18070",
       "author": "Justin Obara",
       "date": "2008-08-06T13:27:53.000-0400",
       "body": "'screenshot-1' shows the failed test\n"
     },
     {
+      "id": "18071",
       "author": "Justin Obara",
       "date": "2008-08-26T15:20:08.000-0400",
       "body": "The issue now seems to be that in IE7 there is a runtime error\n\nLine 25: range.select();\\\nError: Unspecified error\n"
     },
     {
+      "id": "18072",
       "author": "Justin Obara",
       "date": "2008-09-26T15:13:44.000-0400",
       "body": "Appears to have been resolved with one of the many changes leading up to the 0.5 release\n\nVerified using:\n\nIE7, IE6 (Win XP)\\\nIE7 (Win Vista)\n"

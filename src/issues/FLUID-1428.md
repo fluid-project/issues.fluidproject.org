@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18601",
       "author": "Jacob Farber",
       "date": "2008-09-15T13:22:20.000-0400",
       "body": "So far, I've heavily borrowed from yui reset css and a concept or two from Eric Meyer's reset css.&#x20;\n"
     },
     {
+      "id": "18604",
       "author": "Jacob Farber",
       "date": "2008-09-15T14:40:44.000-0400",
       "body": "Preliminary research of existing css frameworks is complete\n"

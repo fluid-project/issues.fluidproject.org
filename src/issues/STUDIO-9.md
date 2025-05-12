@@ -31,16 +31,19 @@
   ],
   "comments": [
     {
+      "id": "12856",
       "author": "Anastasia Cheetham",
       "date": "2011-12-07T17:15:59.629-0500",
       "body": "The attached screen-shot (bad-columns.png) illustrates the problems that can arise with the straightforward fl-grid styling.\n"
     },
     {
+      "id": "12857",
       "author": "Anastasia Cheetham",
       "date": "2011-12-08T10:24:17.235-0500",
       "body": "It is proving difficult to find an easy solution to this one. Last night I discussed various options with James and Joanna, including alternate layouts. James expressed a desire for a quick, temporary solution if possible: limit the titles to three lines, the tags to two lines, and set a fixed height for the rows. We should investigate more responsive options asap, possibly using media queries\n"
     },
     {
+      "id": "12858",
       "author": "Anastasia Cheetham",
       "date": "2011-12-09T10:45:18.029-0500",
       "body": "Michelled merged this into the project repo at fcfdbf74863f32a608ca173d564f95095cb1500a\n"

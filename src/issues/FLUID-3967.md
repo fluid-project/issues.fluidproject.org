@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23480",
       "author": "heidi valles",
       "date": "2010-12-20T13:15:28.925-0500",
       "body": "It would also be nice to get feedback when changing values of the controls. Something like \"model updated\" - there's no feedback that the model is changing as controls are used.\n"

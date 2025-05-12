@@ -43,11 +43,13 @@
   ],
   "comments": [
     {
+      "id": "19148",
       "author": "Justin Obara",
       "date": "2008-09-16T12:50:43.000-0400",
       "body": "'screenshot-1' shows the pointer as an arrow when it should be a move cursor\n"
     },
     {
+      "id": "19152",
       "author": "Jonathan Hung",
       "date": "2010-12-08T15:42:51.141-0500",
       "body": "This bug is no longer relevant because demo has been removed. See <https://fluidproject.atlassian.net/browse/FLUID-3731#icft=FLUID-3731>.\n"

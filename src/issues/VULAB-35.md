@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27665",
       "author": "Blake E",
       "date": "2008-09-19T14:27:56.000-0400",
       "body": "vulab1\n"
     },
     {
+      "id": "27666",
       "author": "Ron Owston",
       "date": "2008-09-21T10:07:47.000-0400",
       "body": "Hi Blake, I got my subscription working. Peter Rowley was wondering why there were licensing problems with phpESP.\n"
     },
     {
+      "id": "27667",
       "author": "Blake E",
       "date": "2008-09-26T15:05:19.000-0400",
       "body": "pushed to vulab2\n"
     },
     {
+      "id": "27668",
       "author": "Blake E",
       "date": "2008-10-02T21:53:16.000-0400",
       "body": "we've decided to go with a more modular approach (survey tool plugins using a VULab api) so this issue isn't required (we will be using the phpESP set of questions/types for now)\n"

@@ -42,31 +42,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20596",
       "author": "Anastasia Cheetham",
       "date": "2008-07-15T17:34:08.000-0400",
       "body": "This issue may be addressed by <https://fluidproject.atlassian.net/browse/FLUID-494#icft=FLUID-494>, so that task should be carried out first, and then double-check if this bug is still present.\n"
     },
     {
+      "id": "20597",
       "author": "Eli Cochran",
       "date": "2008-07-25T16:31:48.000-0400",
       "body": "Interesting: in IE6 the swf in all its 1px by 1px glory is part of the tab order. This may be related to this bug. Which I'm having trouble reproducing.&#x20;\n"
     },
     {
+      "id": "20598",
       "author": "Eli Cochran",
       "date": "2008-07-25T16:42:56.000-0400",
       "body": "I've forcibly removed the swf from the tab rotation by programattically adding tabindex=-1. Otherwise I could not reproduce this bug.&#x20;\n"
     },
     {
+      "id": "20599",
       "author": "Justin Obara",
       "date": "2008-07-28T08:24:31.000-0400",
       "body": "Verified fix using IE6 (Win XP)\n"
     },
     {
+      "id": "20600",
       "author": "Justin Obara",
       "date": "2008-12-01T09:45:48.000-0500",
       "body": "The keyboard navigation stops after passing through all of the tabbable elements and returning to the address bar.\n\nThis doesn't seem to happen if there are files in the file queue\n"
     },
     {
+      "id": "20601",
       "author": "Justin Obara",
       "date": "2009-01-14T13:24:48.000-0500",
       "body": "Appears to have been fixed&#x20;\n\nTested using:\\\nIE6 (Win XP, flash 10)\n"

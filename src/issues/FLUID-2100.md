@@ -45,26 +45,31 @@
   ],
   "comments": [
     {
+      "id": "24562",
       "author": "Justin Obara",
       "date": "2010-05-07T13:15:32.919-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "21926",
       "author": "Cindy Li",
       "date": "2010-08-06T15:25:19.569-0400",
       "body": "1\\. set the default value of \"useTooltip\" to \"true\", from \"false\";\\\n2\\. add test case to check the default value of \"useTooltip\" is true.\n"
     },
     {
+      "id": "21928",
       "author": "Colin Clark",
       "date": "2010-08-10T18:56:34.941-0400",
       "body": "I have reviewed Cindy's patch and it looks good. I committed it to Infusion at r9988.\n"
     },
     {
+      "id": "21930",
       "author": "Colin Clark",
       "date": "2010-08-10T18:57:31.577-0400",
       "body": "Justin, can you verify that the fix is indeed in place and close this issue if you're happy with it?\n"
     },
     {
+      "id": "21931",
       "author": "Justin Obara",
       "date": "2010-08-11T13:53:14.997-0400",
       "body": "I tested out the demo, which now displays the tooltip\n"

@@ -35,6 +35,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17503",
       "author": "Michelle D'Souza",
       "date": "2009-04-07T14:18:13.000-0400",
       "body": "Inline edit has an option that determines whether or not the text is highlighted upon selection. Likely that option is not on in the sakai example.&#x20;\n"

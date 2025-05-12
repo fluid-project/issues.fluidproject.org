@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20091",
       "author": "Justin Obara",
       "date": "2008-08-14T12:28:37.000-0400",
       "body": "I wonder if it has something to do with the creation of the avatar.\n"
     },
     {
+      "id": "20093",
       "author": "Justin Obara",
       "date": "2008-09-11T11:26:52.000-0400",
       "body": "Appears to have been fixed with changes implemented since&#x20;\n\nVerified using:\n\nOpera 9.5 (Mac OS 10.5, Win XP) r5476\n"

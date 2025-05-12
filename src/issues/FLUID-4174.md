@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19204",
       "author": "Harris Wong",
       "date": "2011-05-16T15:43:25.724-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "19207",
       "author": "Colin Clark",
       "date": "2011-05-18T12:53:22.967-0400",
       "body": "This was fixed and pushed to the project repo at this revision: <https://github.com/fluid-project/infusion/commit/b1dff44549364139e4e8722eefa7085752daa90d>\n"

@@ -38,16 +38,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18953",
       "author": "Eli Cochran",
       "date": "2008-06-06T13:52:00.000-0400",
       "body": "Note to myself:  we need to surface the queue errors as well as the upload errors.\n"
     },
     {
+      "id": "18956",
       "author": "Colin Clark",
       "date": "2009-04-14T15:02:00.000-0400",
       "body": "New error handling features were added to Infusion 0.8 and 1.0 to support these cases.\n"
     },
     {
+      "id": "18957",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:28:01.930-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

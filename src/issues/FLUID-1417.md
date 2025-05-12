@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13719",
       "author": "Jonathan Hung",
       "date": "2008-09-03T10:49:19.000-0400",
       "body": "Iteration18\n"
     },
     {
+      "id": "13721",
       "author": "Jonathan Hung",
       "date": "2008-09-11T16:07:17.000-0400",
       "body": "Blake, can you look over the permissions to make sure it's sane?\n"
     },
     {
+      "id": "13723",
       "author": "Jonathan Hung",
       "date": "2008-09-30T10:41:36.000-0400",
       "body": "\\-\n"
     },
     {
+      "id": "13724",
       "author": "Jonathan Hung",
       "date": "2008-10-01T09:38:15.000-0400",
       "body": "Done and done.\n"

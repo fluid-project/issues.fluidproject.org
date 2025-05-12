@@ -32,16 +32,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16584",
       "author": "Daphne Ogle",
       "date": "2008-08-01T20:13:44.000-0400",
       "body": "iteration15\n"
     },
     {
+      "id": "16585",
       "author": "Daphne Ogle",
       "date": "2008-08-01T20:15:23.000-0400",
       "body": "Allison,\n\nI put a had drawing on your chair.  Not sure how much you'll be able to read.  These are just some initial thoughts.  I think the main thing is to get something to developers with a story card to implement simple text edit demo in section into.  Good luck!  And if we need to chat briefly next week I'll try to find time.  Call me on my cell.\n"
     },
     {
+      "id": "16586",
       "author": "Allison Bloodworth",
       "date": "2008-08-18T16:30:48.000-0400",
       "body": "I did a storyboard for \"Allow user to edit simple text\" with the name of the section being the only editable field, as this may make more sense to just have this field be editable if the others aren't (though we hopefully will make them all editable later) and we may do something different with the location field later, allowing multiple lines.\n"

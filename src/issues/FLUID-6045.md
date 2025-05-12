@@ -43,6 +43,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23978",
       "author": "Justin Obara",
       "date": "2016-11-08T12:30:17.757-0500",
       "body": "This issue was collateral damage from addressing <https://fluidproject.atlassian.net/browse/FLUID-6028#icft=FLUID-6028>, to combine all of the uploader parts into a single table. This was seen as a better alternative than breaking the accessibility by having the headers separated semantically from the content. At the moment, due to how the scrollTo plugin and progress overlays work, it does not seem possible to find an alternative that doesn't involve a redesign of the uploader component.\n"

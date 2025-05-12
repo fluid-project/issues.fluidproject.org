@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14826",
       "author": "Laurel Williams",
       "date": "2009-07-06T10:45:34.000-0400",
       "body": "The quotes we put in are unnecessary.\n"
     },
     {
+      "id": "14828",
       "author": "Justin Obara",
       "date": "2009-07-06T10:49:58.000-0400",
       "body": "Removed the quotes from the group properties in build.properties\n"

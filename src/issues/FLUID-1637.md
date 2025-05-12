@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20644",
       "author": "Michelle D'Souza",
       "date": "2008-09-29T16:39:59.000-0400",
       "body": "I reviewed the commit. Besides the reference to Eli's server, one other line changed in the file. Since it wasn't working for us prior to the commit (as explained in the Readme) I think this change is fine.\n"
     },
     {
+      "id": "20645",
       "author": "Justin Obara",
       "date": "2008-09-30T08:53:26.000-0400",
       "body": "code was reviewed (see above comments)\n"

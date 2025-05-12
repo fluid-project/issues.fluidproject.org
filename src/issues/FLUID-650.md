@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19549",
       "author": "Michelle D'Souza",
       "date": "2008-05-27T13:13:30.000-0400",
       "body": "I can only recreate this using a portlet with a nested reorderer. It is a problem with the underlying jQuery library. See Fluid-609\n"
     },
     {
+      "id": "19550",
       "author": "Jonathan Hung",
       "date": "2008-05-27T13:31:46.000-0400",
       "body": "Duplicate of 609:\\\n<http://issues.fluidproject.org/browse/FLUID-609>\n\nHappens only with a nested reorderer.\n"

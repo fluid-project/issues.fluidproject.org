@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19645",
       "author": "Allison Bloodworth",
       "date": "2008-06-09T17:56:56.000-0400",
       "body": "I figured out what the problem was with this. It seems like a Drupal bug. When a forum is created, a Drupal Category is automatically created for it. If you go to Administer -> Categories when you are having this problem you will see that \"Forums\" does not have anything in the \"Type\" field. Despite what  it says when you \"Edit vocabulary\" for the Forum about the Type -> Forum topic being \"affixed to the forum vocabulary,\" it appears it isn't at first. I fixed this by adding another content type (e.g. Story) and saving. This added the \"forum topic\" content type (along with the \"Story\" content type) to the \"Forums\" vocabulary, and I could see that it had been added on the Administer -> Categories page. Then I just deleted the \"Story\" content type and \"Forum topic\" remained attached to the \"Forums\" vocabulary. I tested posts to both forums and they work fine now.&#x20;\n"
     },
     {
+      "id": "19646",
       "author": "Jonathan Hung",
       "date": "2008-06-10T11:05:27.000-0400",
       "body": "Confirmed fixed.\n"

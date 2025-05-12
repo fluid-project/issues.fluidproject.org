@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22065",
       "author": "Justin Obara",
       "date": "2010-05-07T14:13:16.271-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "22068",
       "author": "Justin Obara",
       "date": "2014-07-14T10:21:53.369-0400",
       "body": "The interaction is now consistent across supported browsers Chrome 35, FF 30, Safari 7 and IE 11. After pressing enter the selection is saved and focus is lost.\n"

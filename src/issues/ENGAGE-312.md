@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11994",
       "author": "Justin Obara",
       "date": "2010-02-04T15:22:59.000-0500",
       "body": "mccord-pilot&#x20;\n"
     },
     {
+      "id": "11995",
       "author": "Justin Obara",
       "date": "2010-02-08T16:52:15.000-0500",
       "body": "The home component is in and localizable.\n"

@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27841",
       "author": "Justin Obara",
       "date": "2024-07-23T09:45:47.770-0400",
       "body": "`fluid.prefs.create()` has been removed. It was replaced with just a call to `fluid.uiOptions` in Infusion 4.0. See: <https://docs.fluidproject.org/infusion/development/APIChangesFrom3_0To4_0?highlight=fluidprefscreate#instantiation>&#x20;\n"

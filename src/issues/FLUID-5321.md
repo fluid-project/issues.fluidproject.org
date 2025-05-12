@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "16069",
       "author": "Jonathan Hung",
       "date": "2014-04-28T10:10:14.725-0400",
       "body": "This has been fixed and is part of this pull request:\\\n<https://github.com/fluid-project/infusion/pull/496>\n"
     },
     {
+      "id": "16071",
       "author": "Justin Obara",
       "date": "2014-05-08T12:40:27.118-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/496> ) into the project repo at 785721dc2d221d7db1b4c4db1627899aa1ec02bb\n"

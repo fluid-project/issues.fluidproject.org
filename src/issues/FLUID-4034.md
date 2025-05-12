@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17181",
       "author": "Antranig Basman",
       "date": "2011-01-27T17:30:45.182-0500",
       "body": "The last part of this required functionality is now complete at revision 10478, demonstrating a conditional expander used to select and exclude rows being iterated by a parent repetition expander.&#x20;\n"
     },
     {
+      "id": "17183",
       "author": "Golam Chowdhury",
       "date": "2011-03-07T11:21:46.793-0500",
       "body": "Changed affect version to 1.3.1.\n"

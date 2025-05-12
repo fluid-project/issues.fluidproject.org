@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17901",
       "author": "Justin Obara",
       "date": "2008-12-15T16:05:42.000-0500",
       "body": "Bug Parade: 0.6 release\n"
     },
     {
+      "id": "17903",
       "author": "Justin Obara",
       "date": "2008-12-18T11:12:38.000-0500",
       "body": "Verified fix using:\n\nFF3, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n\nusing Flash 10\n"

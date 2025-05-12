@@ -44,11 +44,13 @@
   ],
   "comments": [
     {
+      "id": "25009",
       "author": "Justin Obara",
       "date": "2008-07-16T14:48:43.000-0400",
       "body": "'screenshot-1' shows the focus styling remaining after focus moved\n"
     },
     {
+      "id": "25010",
       "author": "Anastasia Cheetham",
       "date": "2011-01-12T13:21:55.512-0500",
       "body": "The demo in question no longer exists.\n"

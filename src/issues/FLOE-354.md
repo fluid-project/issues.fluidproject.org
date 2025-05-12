@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11508",
       "author": "Anastasia Cheetham",
       "date": "2015-06-01T10:06:03.771-0400",
       "body": "Merged at 65ca7205227b2ca0cb07570b00e42b797e9485e3\n"
     },
     {
+      "id": "11509",
       "author": "Jonathan Hung",
       "date": "2015-06-01T12:59:36.001-0400",
       "body": "I reopened this task - we needed to tweak the CC and the show notifications icon\n"
     },
     {
+      "id": "11510",
       "author": "Justin Obara",
       "date": "2015-06-01T15:39:01.149-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/first-discovery/pull/75> ) into the project repo at 01c4b5d8bd2427ed68f3bf698d84855176192ef6\n"

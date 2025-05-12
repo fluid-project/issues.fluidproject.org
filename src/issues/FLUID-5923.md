@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24198",
       "author": "Avtar Gill",
       "date": "2016-07-05T11:16:41.440-0400",
       "body": "I think the following commented out lines might be the cause:\\\n<https://github.com/fluid-project/ci-service/blob/master/jenkins_jobs/fluid-infusion.yml#L26-L28>\n\nI'll check with Giovanni Tirloni but we may either want to check if using `clean-remote` will still result in issues or uncomment [line #28](https://github.com/fluid-project/ci-service/blob/master/jenkins_jobs/fluid-infusion.yml#L28).\n"
     },
     {
+      "id": "24200",
       "author": "Giovanni Tirloni",
       "date": "2016-07-05T13:22:49.773-0400",
       "body": "SSH access is not allowed so that line, which requires a shell session, would not work. That's probably the reason why it's commented. Files are transferred through SFTP only for security reasons.\n\nThe Publish over SSH plugin does not seem to have a `clean-remote` option, despite what the JJB documentation says [here](http://docs.openstack.org/infra/jenkins-job-builder/publishers.html#publishers.ssh). That option is not available through the Web inteface and there is a bug opened for that [here](https://issues.jenkins-ci.org/browse/JENKINS-33056).\n\nIf this is not causing an issue for end users, I'd suggest waiting for `clean-remote` to be implemented by upstream (or work on it ourselves).\n"
     },
     {
+      "id": "27863",
       "author": "Justin Obara",
       "date": "2024-07-23T11:56:23.898-0400",
       "body": "This has been addressed with recent infrastructure changes.\n"

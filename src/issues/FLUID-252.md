@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18015",
       "author": "Barbara Glover",
       "date": "2008-03-18T09:59:46.000-0400",
       "body": "Gary and I completed walk-through of pager designs and our feedback is posted on wiki.\n"
     },
     {
+      "id": "18017",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:58.385-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

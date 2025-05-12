@@ -22,11 +22,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11112",
       "author": "Alexey Novak",
       "date": "2012-08-16T15:00:13.437-0400",
       "body": "Assembla ticket created\\\n<https://www.assembla.com/spaces/iskme/tickets/740>\n"
     },
     {
+      "id": "11113",
       "author": "Alexey Novak",
       "date": "2012-10-18T11:55:03.748-0400",
       "body": "This issue is invalid since it was local settings specific.\n"

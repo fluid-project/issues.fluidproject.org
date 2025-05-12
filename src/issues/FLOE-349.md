@@ -31,16 +31,19 @@
   ],
   "comments": [
     {
+      "id": "11601",
       "author": "Justin Obara",
       "date": "2015-05-26T09:46:10.931-0400",
       "body": "screenshot.png shows the broken rendering after model change.\n"
     },
     {
+      "id": "11602",
       "author": "Justin Obara",
       "date": "2015-05-26T14:11:29.870-0400",
       "body": "Submitted a pull request:\\\n<https://github.com/fluid-project/first-discovery/pull/64>\n"
     },
     {
+      "id": "11603",
       "author": "Cindy Li",
       "date": "2015-05-26T14:50:09.184-0400",
       "body": "Merged @ e653d73cdb59ffd60a5a0ec7f220f41170aa863a\n"

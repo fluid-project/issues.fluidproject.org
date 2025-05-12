@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16962",
       "author": "Justin Obara",
       "date": "2009-05-26T14:52:39.000-0400",
       "body": "Bug Parade 1.1 release&#x20;\n"
     },
     {
+      "id": "16964",
       "author": "Justin Obara",
       "date": "2009-05-26T14:58:52.000-0400",
       "body": "removed the lib directory from the integrations-demos directory as none of the files it contains are used.\n"
     },
     {
+      "id": "16965",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:17.213-0500",
       "body": "Closing issues that were fixed in 1.1\n"

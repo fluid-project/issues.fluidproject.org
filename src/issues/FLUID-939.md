@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18895",
       "author": "Antranig Basman",
       "date": "2008-07-21T14:53:18.000-0400",
       "body": "Fixed at revision 5246 - \\\nThis is actually a \"recommendatory\" change made to the standard CSS styles - the standard style \"inlineEdit-invitation\" is the style class assigned to the invitation state of the inlineEdit, and for this behaviour, we recommend that to achieve this effect that the style definition receives the following (added to the standard samples in SVN such as \"announcement\" and \"manual test\"):\n\n.inlineEdit-invitation {\\\nbackground-color: #FFECB3;\\\n/\\* See <http://www.quirksmode.org/css/cursor.html#note> for cross-platform recommendation \\*/\\\ncursor: pointer;\\\ncursor: hand;\\\n}\n"
     },
     {
+      "id": "18898",
       "author": "Justin Obara",
       "date": "2008-11-13T13:37:36.000-0500",
       "body": "Appears to have been fixed\n"

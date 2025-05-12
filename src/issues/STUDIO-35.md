@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12818",
       "author": "Michelle D'Souza",
       "date": "2011-12-15T15:31:54.394-0500",
       "body": "Removing the border for UIO is done in the JIRA involving adding a background texture to the right column.&#x20;\n"
     },
     {
+      "id": "12819",
       "author": "Michelle D'Souza",
       "date": "2011-12-15T15:32:59.172-0500",
       "body": "James has asked for a posted on date on the index page.&#x20;\n"
     },
     {
+      "id": "12820",
       "author": "Michelle D'Souza",
       "date": "2011-12-16T17:29:22.258-0500",
       "body": "Reviewed by Colin and merged into project repo at d1351a086496527466ba7aeeccb4eef8cca82218\n"

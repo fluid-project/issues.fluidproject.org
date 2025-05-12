@@ -31,21 +31,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12416",
       "author": "Justin Obara",
       "date": "2009-09-22T14:25:46.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "12417",
       "author": "y z",
       "date": "2009-09-23T16:25:28.000-0400",
       "body": "* besides specUI document need to add a branching mechanism for different databases\n"
     },
     {
+      "id": "12418",
       "author": "Colin Clark",
       "date": "2009-10-14T17:55:39.000-0400",
       "body": "Yura's done a great job of this for Engage 0.1\n"
     },
     {
+      "id": "12419",
       "author": "Justin Obara",
       "date": "2009-11-03T11:30:26.000-0500",
       "body": "closed as per previous comment\n"

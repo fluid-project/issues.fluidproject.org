@@ -28,26 +28,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22984",
       "author": "Justin Obara",
       "date": "2018-03-19T12:40:05.735-0400",
       "body": "If there are other reasons to keep comic sans, we could just add OpenDyslexic. Although I have heard that on some systems Comic Sans isn't available.\n"
     },
     {
+      "id": "22985",
       "author": "Dana",
       "date": "2018-04-10T11:48:32.198-0400",
       "body": "Comic sans and dyslexia: <https://www.thecut.com/2017/03/the-reason-comic-sans-is-a-public-good.html>\n"
     },
     {
+      "id": "22986",
       "author": "Alan Harnum",
       "date": "2019-07-16T13:47:59.495-0400",
       "body": "I should be able to create a pull request for this based on the CISL demo work.\n\nWill use the WOFF file provided by OpenDyslexic: <https://github.com/antijingoist/open-dyslexic/tree/master/woff> and, ideally, the NPM package: <https://www.npmjs.com/package/open-dyslexic>\n"
     },
     {
+      "id": "22987",
       "author": "Justin Obara",
       "date": "2019-07-17T08:52:05.676-0400",
       "body": "In the [fluid-design channel yesterday](http://irc-logs.fluidproject.org/%23fluid-design/%23fluid-design.2019-07-16.log), we talked a bit about how this might be affected by differing languages on the page. That is, does OpenDyslexic support languages other than English and what would happen if it doesn't. We didn't yet come to a conclusion about how to address that, so it is something that still needs to be explored.\n"
     },
     {
+      "id": "22989",
       "author": "Justin Obara",
       "date": "2019-07-29T13:54:42.528-0400",
       "body": "Merged PR ( <https://github.com/fluid-project/infusion/pull/956> ) into the project repo at 058483bcca139731896ad11e4f734034e1d5cc0b\n"

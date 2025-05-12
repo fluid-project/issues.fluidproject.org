@@ -33,31 +33,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20889",
       "author": "Justin Obara",
       "date": "2009-03-12T12:44:26.000-0400",
       "body": "Bug Parade 1.0 release\n"
     },
     {
+      "id": "20890",
       "author": "Michelle D'Souza",
       "date": "2009-03-20T10:50:52.000-0400",
       "body": "This seems to happen when adding the anchors to the document.\n"
     },
     {
+      "id": "20891",
       "author": "Antranig Basman",
       "date": "2009-03-24T02:52:15.000-0400",
       "body": "Fixed at revision 6817.\\\nIt seems that IE is extremely fussy, when dealing with multiple documents perhaps within iframes, that new markup nodes are created using the correct owner document. I spent a while writing raw DOM equivalents, but eventually discovered that jQuery supports syntax like the following:&#x20;\n\nvar node = $(\"\\<div>\\</div>\", container\\[0].ownerDocument);\n\nThis approach was suggested by the following report: <http://dev.jquery.com/ticket/978>\\\nwhere it is reported that the \"ownerDocument\" property is extremely portable, with reference to QuirksMode at <http://www.quirksmode.org/dom/w3c_core.html#t119>\n"
     },
     {
+      "id": "20892",
       "author": "Jacob Farber",
       "date": "2009-03-25T11:28:22.000-0400",
       "body": "Looks good.\n"
     },
     {
+      "id": "20893",
       "author": "Justin Obara",
       "date": "2009-03-25T11:38:17.000-0400",
       "body": "Verified fix using:\n\nIE6 (Win XP)\\\nIE7 (Win Vista)\n"
     },
     {
+      "id": "20894",
       "author": "Anastasia Cheetham",
       "date": "2009-03-25T11:49:25.000-0400",
       "body": "This fix looks fine to me.\n"

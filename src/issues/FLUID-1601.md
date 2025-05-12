@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18882",
       "author": "Justin Obara",
       "date": "2008-09-22T12:49:17.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "18886",
       "author": "Michelle D'Souza",
       "date": "2011-01-30T11:56:38.487-0500",
       "body": "Reopening these issues to add the frameworkcomponent\n"

@@ -43,21 +43,25 @@
   ],
   "comments": [
     {
+      "id": "16831",
       "author": "Justin Obara",
       "date": "2008-10-29T14:56:18.000-0400",
       "body": "'screenshot-1' shows the progress not displaying properly in the total progress bar\n"
     },
     {
+      "id": "16833",
       "author": "Anastasia Cheetham",
       "date": "2010-12-21T13:53:01.326-0500",
       "body": "I'm still noticing this during 1.3 testing, IE6 on Win XP\n"
     },
     {
+      "id": "16835",
       "author": "Anastasia Cheetham",
       "date": "2010-12-21T13:55:21.258-0500",
       "body": "The attached image (uploader-ie6-winXP.jpg) shows what it looks like during 1.3 testing in IE6 on Win XP.\n"
     },
     {
+      "id": "16837",
       "author": "Michelle D'Souza",
       "date": "2014-06-25T15:55:53.841-0400",
       "body": "We are no longer actively supporting IE6, IE7 and IE8. We will consider patches for some issues if they are offered.\n"

@@ -35,16 +35,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14487",
       "author": "Anastasia Cheetham",
       "date": "2014-04-30T16:05:36.536-0400",
       "body": "I have noticed this in IE8 with the Overview Panel: Sometimes, if you close the panel using the 'Close' button, the icons are gone when you re-open the panel. And some of those times, they will re-appear if you close the panel with the icon instead. But it's inconsistent.\n"
     },
     {
+      "id": "14490",
       "author": "Jonathan Hung",
       "date": "2014-06-06T12:43:13.773-0400",
       "body": "To reproduce:\\\n1\\. Load the prefs framework demo: <http://build.fluidproject.org/infusion/demos/prefsFramework/>\\\n2\\. Open the preferences panel and change to yellow on black.\\\n3\\. Notice that the reset icon remains grey and the Fluid Star icon in the Overview Panel remains orange.\n"
     },
     {
+      "id": "14493",
       "author": "Michelle D'Souza",
       "date": "2014-06-25T16:01:17.339-0400",
       "body": "We no longer actively support IE6, IE7 and IE8. We will consider patches for certain issues.\n"

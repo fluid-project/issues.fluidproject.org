@@ -30,6 +30,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15289",
       "author": "Anastasia Cheetham",
       "date": "2011-01-12T13:04:16.050-0500",
       "body": "The code has changed significantly since this was filed, so the line numbers are no longer relevant, but now it seems that the unselect handler is being called twice when the mouse is used: through the selectableBlurHandler and through selectElement(), and it's being called three times when navigation occurs through the keyboard: through the selectableBlurHandler, through selectElement() and through prepareShift().\n"

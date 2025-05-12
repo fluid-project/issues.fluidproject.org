@@ -44,11 +44,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19894",
       "author": "Justin Obara",
       "date": "2008-07-18T14:56:38.000-0400",
       "body": "This is because Safari only supports tab focus of form elements\n"
     },
     {
+      "id": "19896",
       "author": "Anastasia Cheetham",
       "date": "2008-08-07T14:19:23.000-0400",
       "body": "There's nothing we can do about this one.\n"

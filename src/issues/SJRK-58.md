@@ -24,16 +24,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26316",
       "author": "Dana",
       "date": "2018-03-19T16:39:34.573-0400",
       "body": "I think highlighting with a heavy black outline as each block is read is a good idea. I suppose we could also give the block background some colour - I can try a few things out. And it would be great to also have the block labels read out, such as \"text block\", \"image block\" etc\n"
     },
     {
+      "id": "26317",
       "author": "Gregor Moss",
       "date": "2018-05-25T14:42:13.408-0400",
       "body": "We should discuss the issue with Justin Obara and see if there is any way to take advantage of his ongoing work on the new Orator self-voicing component, which will have highlighting as it reads each word.\n"
     },
     {
+      "id": "26318",
       "author": "Gregor Moss",
       "date": "2019-09-12T13:35:28.630-0400",
       "body": "Justin Obara has completed this work in <https://fluidproject.atlassian.net/browse/SJRK-274#icft=SJRK-274>\n"

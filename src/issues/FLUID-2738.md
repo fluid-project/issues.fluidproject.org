@@ -33,21 +33,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16750",
       "author": "Justin Obara",
       "date": "2009-05-15T08:41:23.000-0400",
       "body": "Bug Parade 1.1 release&#x20;\n"
     },
     {
+      "id": "16752",
       "author": "Anastasia Cheetham",
       "date": "2009-05-21T10:59:20.000-0400",
       "body": "Everything seems properly justified now, and the changes seems reasonable to me.\n\nA colon was accidentally removed from the \"Links\" label, which makes it inconsistent with the rest of the labels.\n"
     },
     {
+      "id": "16754",
       "author": "Justin Obara",
       "date": "2009-05-21T11:03:59.000-0400",
       "body": "Reopening for the missing colon to be readded.\n"
     },
     {
+      "id": "16756",
       "author": "Justin Obara",
       "date": "2009-05-21T12:49:09.000-0400",
       "body": "Missing colon has been replaced. Code reviewed this change, it was the only change made.\n\nVerified fix using:\n\nFF2, FF3, Opera 9.6 (Mac OS 10.5)\\\nFF3, IE7, IE8 (Win Vista)\n"

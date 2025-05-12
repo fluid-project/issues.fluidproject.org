@@ -40,21 +40,25 @@
   ],
   "comments": [
     {
+      "id": "15057",
       "author": "Colin Clark",
       "date": "2010-12-22T16:58:29.699-0500",
       "body": "Here's a patch with my modifications to Uploader's README file\n"
     },
     {
+      "id": "15063",
       "author": "Anastasia Cheetham",
       "date": "2010-12-22T17:23:08.901-0500",
       "body": "I've reviewed Colin's edits to the Uploader Readme. This file (FLUID-3944-b.patch.txt) is a slight modification of his changes: a word here, a comma there. The only thing of any significance that I changed was to mention that if you want to limit the offerings of support by leaving out Support.js files, you can't use the concatenated file.\n"
     },
     {
+      "id": "15066",
       "author": "Colin Clark",
       "date": "2010-12-22T17:51:06.200-0500",
       "body": "This issue was resolved for the Infusion 1.3 release at r10449.\n"
     },
     {
+      "id": "15069",
       "author": "Anastasia Cheetham",
       "date": "2010-12-22T17:54:10.908-0500",
       "body": "Looks good.\n"

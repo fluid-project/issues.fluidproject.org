@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12492",
       "author": "Colin Clark",
       "date": "2010-01-26T12:42:53.000-0500",
       "body": "This issue should be resolved in the patch for <https://fluidproject.atlassian.net/browse/ENGAGE-269#icft=ENGAGE-269>. Our new use of fluid.engage.renderUtils.createRendererFunction() also implements a refreshView function, so any changes to the model should be re-renderable simply by calling NavigationList.refreshView()\n"
     },
     {
+      "id": "12493",
       "author": "Colin Clark",
       "date": "2010-02-01T11:51:46.000-0500",
       "body": "This was fixed along with <https://fluidproject.atlassian.net/browse/ENGAGE-269#icft=ENGAGE-269> at r9162\n"

@@ -28,21 +28,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21852",
       "author": "Daphne Ogle",
       "date": "2008-04-04T13:19:43.000-0400",
       "body": "iteration07\n"
     },
     {
+      "id": "21855",
       "author": "Erin Yu",
       "date": "2008-04-15T11:21:32.000-0400",
       "body": "Task is reopened and included in iteration07\n"
     },
     {
+      "id": "21856",
       "author": "Colin Clark",
       "date": "2008-04-15T16:45:27.000-0400",
       "body": "Daphne, I've assigned this task to you because I understand that you'll fill in the Sakai contexts for the File Uploader\n"
     },
     {
+      "id": "21857",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:47.613-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

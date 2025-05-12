@@ -39,26 +39,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17804",
       "author": "Joseph Scheuhammer",
       "date": "2007-11-15T16:03:23.000-0500",
       "body": "Downgraded to critical.  Still intend to fix for the 0.1 release, but no longer a blocker.\n"
     },
     {
+      "id": "17805",
       "author": "Michelle D'Souza",
       "date": "2007-11-22T16:07:08.000-0500",
       "body": "Finally able to consistently reproduce this one! This happens when the user clicks on either of the anchors (either the image or the text) when dragging a thumbnail. Dragging by clicking on the whitespace works fine.&#x20;\n"
     },
     {
+      "id": "17807",
       "author": "Joseph Scheuhammer",
       "date": "2007-11-27T16:04:12.000-0500",
       "body": "After discussing this with Michelle, we have decided to fix this for the next release.\n"
     },
     {
+      "id": "17809",
       "author": "Jonathan Hung",
       "date": "2007-12-11T10:43:14.000-0500",
       "body": "Following Michelle's comment above, this problem only appears to apply to Firefox. Behaviour is fine in IE 6 and 7.\n\nTested on Windows XP. Safari not tested.\n"
     },
     {
+      "id": "17811",
       "author": "Michelle D'Souza",
       "date": "2008-03-11T15:58:14.000-0400",
       "body": "This was fixed by the patch for <https://fluidproject.atlassian.net/browse/FLUID-257#icft=FLUID-257>\n"

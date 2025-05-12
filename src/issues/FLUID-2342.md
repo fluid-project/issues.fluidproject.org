@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21368",
       "author": "Justin Obara",
       "date": "2009-03-13T11:14:36.000-0400",
       "body": "Upgraded jQuery to 1.3.2 and to the latest version of qUnit\n"
     },
     {
+      "id": "21369",
       "author": "Michelle D'Souza",
       "date": "2011-01-30T11:56:34.616-0500",
       "body": "Reopening these issues to add the frameworkcomponent\n"

@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19392",
       "author": "Shaw-Han Liem",
       "date": "2008-02-06T15:33:46.000-0500",
       "body": "iteration02\n"
     },
     {
+      "id": "19393",
       "author": "Barbara Glover",
       "date": "2008-02-11T10:09:23.000-0500",
       "body": "Completed user test 2/11/2008.\n"

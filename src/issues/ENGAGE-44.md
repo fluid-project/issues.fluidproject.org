@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11803",
       "author": "Justin Obara",
       "date": "2009-08-31T14:27:17.000-0400",
       "body": "Cabinet now adds the css classes that it uses, which can be overwritten in the options\n"
     },
     {
+      "id": "11804",
       "author": "Justin Obara",
       "date": "2009-11-10T11:03:24.000-0500",
       "body": "closed as per previous comment\n"

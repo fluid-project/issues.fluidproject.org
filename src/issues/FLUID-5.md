@@ -25,21 +25,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15207",
       "author": "Jonathan Hung",
       "date": "2007-06-28T12:35:18.000-0400",
       "body": "After updating to the latest Dojo and Dijit code, some of this problem is fixed with the following exceptions:\n\nIn IE6 on Windows XP, dropping into an invalid target inside the Lightbox DIV, the selected item appends to the bottom of the list. If you drop the selected item into an invalid target outside the Lightbox DIV, the item disappears.\n\nIn Firefox 2+ on Windows XP, dropping into an invalid target inside the Lightbox DIV, the selected item is inserted at the beginning of the list.\n\nIn Firefox 2+ on Mac, dropping into an invalid target inside or outside the Lightbox DIV, the selected item is inserted at the end of the list (appending seems to be the expected behaviour, since that is what happens in the dojo test files).\n"
     },
     {
+      "id": "15211",
       "author": "Anastasia Cheetham",
       "date": "2007-10-01T14:27:53.000-0400",
       "body": "This issue might be fixed by dojo 0.9, and should only be addressed after the upgrade.\n"
     },
     {
+      "id": "15214",
       "author": "Michelle D'Souza",
       "date": "2007-10-04T17:16:37.000-0400",
       "body": "This was a difficult to repeat problem where a node had been removed from the DOM and due to some combination of event timing and the alignment of the stars dropping the node onto an invalid target never reinserted the node.  To work around the problem, we overrode the dojo onDndCancel in the reorderer and handled the special case.&#x20;\n"
     },
     {
+      "id": "15217",
       "author": "Michelle D'Souza",
       "date": "2007-10-22T13:58:02.000-0400",
       "body": "Since we've moved to jQuery UI's drag and drop this is no longer relevant.&#x20;\n"

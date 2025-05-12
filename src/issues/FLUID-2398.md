@@ -40,41 +40,49 @@
   ],
   "comments": [
     {
+      "id": "18506",
       "author": "Michelle D'Souza",
       "date": "2009-03-25T09:53:24.000-0400",
       "body": "Jacob's suggestion for the implementation of resizing things that are too small: grab the nodes with the fl-font-size-\\[<100] classname, get their computed style, add a size to the node if they are too small.\n"
     },
     {
+      "id": "18510",
       "author": "Michelle D'Souza",
       "date": "2009-03-31T09:43:39.000-0400",
       "body": "Gary's comment from the mailing list:  'It may be worth adding a balloon help text to the Minimum Text Size label that states the behavior, something like: \"Any text smaller than this size will be increased to the size you specify.  All larger text sizes will remain unaffected.\"'\n"
     },
     {
+      "id": "18513",
       "author": "Michelle D'Souza",
       "date": "2009-05-15T11:58:15.000-0400",
       "body": "Fixing this issue implies an API change. The old default site setting of 'textSize' should really be 'minTextSize' in order to be clearly differentiated from 'baseTextSize'.\n"
     },
     {
+      "id": "18514",
       "author": "Michelle D'Souza",
       "date": "2009-05-15T12:01:47.000-0400",
       "body": "I've attached a patch that starts to fix this issue. There are TODOs in the patch that explain what's left.\n"
     },
     {
+      "id": "18515",
       "author": "Michelle D'Souza",
       "date": "2009-05-27T14:43:05.000-0400",
       "body": "Fixing this issue will require an API change which we should be careful to document properly.&#x20;\n"
     },
     {
+      "id": "18519",
       "author": "Justin Obara",
       "date": "2010-05-07T13:20:25.944-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "18523",
       "author": "Justin Obara",
       "date": "2011-05-17T10:41:25.502-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "18527",
       "author": "Michelle D'Souza",
       "date": "2011-06-10T10:19:29.980-0400",
       "body": "The new design of UIOptions changes the user expectations for the text size control. It's now a multiplication factor and the user expects all text on the page to be scaled accordingly.&#x20;\n"

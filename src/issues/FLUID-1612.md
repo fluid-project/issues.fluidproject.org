@@ -59,41 +59,49 @@
   ],
   "comments": [
     {
+      "id": "24928",
       "author": "Joseph Vernuccio",
       "date": "2008-09-25T11:19:10.000-0400",
       "body": "screenshot-1 of bug on Sakai annoucement board.&#x20;\n"
     },
     {
+      "id": "24929",
       "author": "Joseph Vernuccio",
       "date": "2008-09-25T11:20:45.000-0400",
       "body": "screenshot-2 of how the editable text line should appear on the Sakai annoucement board. This example is from the bSpace.\n"
     },
     {
+      "id": "24930",
       "author": "Joseph Vernuccio",
       "date": "2008-09-25T12:30:29.000-0400",
       "body": "Issue seems to repeat itself in FF2 on Mac OS X 10.5.&#x20;\n"
     },
     {
+      "id": "24931",
       "author": "Anastasia Cheetham",
       "date": "2008-12-16T11:33:35.000-0500",
       "body": "NOTE that this error does NOT occur in the bSpace example at\\\n<http://build.fluidproject.org/fluid/sample-code/inline-edit/section-info/section-info.html>\n"
     },
     {
+      "id": "24932",
       "author": "Anastasia Cheetham",
       "date": "2008-12-16T11:35:34.000-0500",
       "body": "In fact, whether or not the text is all selected on edit is an option: the \"selectOnEdit\" option (see <http://wiki.fluidproject.org/display/fluid/Inline+Edit+API> )\n"
     },
     {
+      "id": "24933",
       "author": "Herb Wideman",
       "date": "2008-12-16T12:26:07.000-0500",
       "body": "This \"bug\" is found on the inline edit springboard test page as well; it also occurs when you use the tab key to select the editable text field.\n"
     },
     {
+      "id": "24934",
       "author": "Justin Obara",
       "date": "2009-03-18T11:37:52.000-0400",
       "body": "My 1st Bug\n"
     },
     {
+      "id": "24935",
       "author": "Jonathan Hung",
       "date": "2011-01-04T15:19:47.332-0500",
       "body": "This issue is specific to demonstration code that is no longer being supported. The selectOnEdit option addresses this issue.\n"

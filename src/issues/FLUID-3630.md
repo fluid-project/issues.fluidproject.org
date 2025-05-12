@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23379",
       "author": "Jonathan Hung",
       "date": "2010-12-08T15:41:30.570-0500",
       "body": "This bug is no longer relevant because demo has been removed. See <https://fluidproject.atlassian.net/browse/FLUID-3731#icft=FLUID-3731>.\n"

@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26355",
       "author": "Gregor Moss",
       "date": "2018-05-18T18:29:02.060-0400",
       "body": "The cursor is now a \"pointer\" (aka the hand, for links) over block editor buttons.\n\nText links throughout the site have a consistent style of being underlined. In the Learning Reflections theme, they're default colour (blue/purple), and in the Karisma theme they're black.\n\nWhat hover styles would be appropriate to use and where?\n"

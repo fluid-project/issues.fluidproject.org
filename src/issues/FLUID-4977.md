@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18807",
       "author": "Kaye Mao",
       "date": "2015-06-24T14:52:09.821-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/615>\n"
     },
     {
+      "id": "18812",
       "author": "Justin Obara",
       "date": "2015-07-13T10:57:44.410-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/615> ) into the project repo at 4c2ba7903a0543fdc0f78edc79fd436ef4bee0ae\n"

@@ -38,21 +38,25 @@
   ],
   "comments": [
     {
+      "id": "19083",
       "author": "Justin Obara",
       "date": "2008-06-02T12:39:07.000-0400",
       "body": "Screenshot-1 shows the scrollbar in the correct position, when using FireFox 2 on WinXP.\n"
     },
     {
+      "id": "19084",
       "author": "Justin Obara",
       "date": "2008-06-02T12:40:43.000-0400",
       "body": "screenshot-2 shows the scrollbar in an incorrect position, when using IE7 on WinXP\n"
     },
     {
+      "id": "19087",
       "author": "Eli Cochran",
       "date": "2008-06-16T22:54:52.000-0400",
       "body": "Could not reproduce this bug. It could be that the changes that I made to the way that the scrolling area is structured fixed the bug.&#x20;\n"
     },
     {
+      "id": "19089",
       "author": "Justin Obara",
       "date": "2008-07-08T13:29:38.000-0400",
       "body": "Verified fix using IE7 on winxp\n"

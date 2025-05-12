@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13432",
       "author": "Michelle D'Souza",
       "date": "2011-09-07T16:57:31.645-0400",
       "body": "I think the issue is that the CSSGenerator javascript files are located in the build-scripts directory and are not included in the package that is deployed on the build site. Perhaps the tests should live elsewhere or the build should be modified to include the build-scripts directory.\n"
     },
     {
+      "id": "13434",
       "author": "Justin Obara",
       "date": "2013-09-06T13:50:25.067-0400",
       "body": "The cssGenerator tests are in the uiOptions test directory.\n"
     },
     {
+      "id": "13436",
       "author": "Justin Obara",
       "date": "2014-03-03T11:20:12.711-0500",
       "body": "builder.fluidproject.org has been taken down and there are no immediate plans to replace it. Currently all builds are expected to be generated directly from the grunt build scripts.\n\n<http://fluid.2324889.n4.nabble.com/Infusion-Builder-issues-tp8926.html>\n"

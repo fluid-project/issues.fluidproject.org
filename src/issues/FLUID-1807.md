@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18608",
       "author": "Jonathan Hung",
       "date": "2008-11-18T09:10:26.000-0500",
       "body": "iteration22\n\ntrying to fix in time for Summit. It looks pretty bad.\n"
     },
     {
+      "id": "18611",
       "author": "Jonathan Hung",
       "date": "2008-11-18T12:17:23.000-0500",
       "body": "Fixed by adjusting site header height and padding.\n"

@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24654",
       "author": "Justin Obara",
       "date": "2010-10-04T14:00:04.330-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "24655",
       "author": "Justin Obara",
       "date": "2010-11-04T12:43:25.801-0400",
       "body": "Removed the bspace and sakai announcements integration demos\n"
     },
     {
+      "id": "24656",
       "author": "Michelle D'Souza",
       "date": "2010-12-01T17:00:52.614-0500",
       "body": "I code reviewed this with a whole group of Inline Edit JIRA issues for 1.3 and it is fine.&#x20;\n"

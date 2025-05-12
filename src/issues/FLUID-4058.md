@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20225",
       "author": "y z",
       "date": "2011-02-11T10:04:47.069-0500",
       "body": "This JIRA is invalide since there's no mechanism of guaranteeing uniqueness in the array.\n"

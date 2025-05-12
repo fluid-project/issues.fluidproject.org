@@ -45,11 +45,13 @@
   ],
   "comments": [
     {
+      "id": "17348",
       "author": "Daphne Ogle",
       "date": "2008-04-29T16:53:17.000-0400",
       "body": "futuretask\n"
     },
     {
+      "id": "17349",
       "author": "Jonathan Hung",
       "date": "2008-08-21T12:08:54.000-0400",
       "body": "Covered by other issues.\n"

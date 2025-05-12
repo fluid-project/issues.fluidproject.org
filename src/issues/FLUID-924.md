@@ -48,21 +48,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15659",
       "author": "Allison Bloodworth",
       "date": "2008-07-16T21:01:54.000-0400",
       "body": "Main Page ideas:\n\n* create a visual like the web patterns library uses: <http://groups.ischool.berkeley.edu/ui_designpatterns/webpatterns2/webpatterns/home.php>\n* show short summaries of recent patterns like Yahoo! uses: <http://developer.yahoo.com/ypatterns/>\n* We could also invite people to rate patterns, but I'm not sure if we want to require a user account to do this?\n* \"Recent Patterns\" box\n* a prominent Search or Tag cloud so the user can start browsing&#x20;\n\nNavigation ideas:\n\n* quick access to the patterns\n* a clear expression of pattern hierarchy (currently parents and children are at the same level, which is not ideal)\n* accessible menus, ideally which can be navigated with the arrow keys\n"
     },
     {
+      "id": "15661",
       "author": "Jonathan Hung",
       "date": "2008-10-01T10:04:47.000-0400",
       "body": "iteration22\n\ndoing some of this work at All-Hands meeting through user testing.\n"
     },
     {
+      "id": "15664",
       "author": "Jonathan Hung",
       "date": "2008-10-01T10:05:48.000-0400",
       "body": "Going to do short iterations of this task and repeat over the course of the project. The objective is to constantly evaluate the site and identify priority tasks to tackle.\n"
     },
     {
+      "id": "15666",
       "author": "Jonathan Hung",
       "date": "2008-12-03T08:56:17.000-0500",
       "body": "This high level task is done, but thanks to user testing we have identified some areas in which navigation, browsing, structure, and general usability can be improved.\n"

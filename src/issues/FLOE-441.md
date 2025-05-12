@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11039",
       "author": "Alan Harnum",
       "date": "2016-01-26T12:16:44.459-0500",
       "body": "Subject of this PR: <https://github.com/fluid-project/chartAuthoring/pull/11>\n"
     },
     {
+      "id": "11040",
       "author": "Alan Harnum",
       "date": "2016-02-10T16:05:27.123-0500",
       "body": "PR merged.\n"

@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11119",
       "author": "Cindy Li",
       "date": "2015-08-21T13:52:38.965-0400",
       "body": "Issued a pull request: <https://github.com/fluid-project/chartAuthoring/pull/5>\n"
     },
     {
+      "id": "11120",
       "author": "Justin Obara",
       "date": "2015-08-27T15:44:25.560-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/chartAuthoring/pull/5> ) into the project repo at bf5e2ebd595f0028b2749248a40d902d84e7546a\n"

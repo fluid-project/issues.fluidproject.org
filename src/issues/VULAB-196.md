@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27380",
       "author": "Colin Clark",
       "date": "2007-11-27T13:14:28.000-0500",
       "body": "The directory structure has been created and is available at::\n\n<https://source.fluidproject.org/svn/vulab/>\n"
     },
     {
+      "id": "27381",
       "author": "Colin Clark",
       "date": "2007-11-29T12:42:10.000-0500",
       "body": "Done.\n"

@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23557",
       "author": "Colin Clark",
       "date": "2010-03-31T17:28:37.000-0400",
       "body": "While we're at it, let's create a tutorial that teaches users how to upgrade their own unit tests, too.\n"
     },
     {
+      "id": "23558",
       "author": "Justin Obara",
       "date": "2010-04-13T12:03:55.000-0400",
       "body": "The upgrade to qunit was complete. There was some documentation written on the migration page <http://wiki.fluidproject.org/display/fluid/Upgrading+to+Infusion+1.2>\n"

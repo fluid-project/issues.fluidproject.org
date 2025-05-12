@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27626",
       "author": "Blake E",
       "date": "2008-12-01T12:05:42.000-0500",
       "body": "vulab9\n"
     },
     {
+      "id": "27627",
       "author": "Blake E",
       "date": "2008-12-08T14:17:28.000-0500",
       "body": "this is due to the jquery plugin that is being used. I'll see if I can kill the overlay that is causing the two clicks.\n"
     },
     {
+      "id": "27628",
       "author": "Blake E",
       "date": "2008-12-08T14:21:41.000-0500",
       "body": "I think I'd have to take out the use of a thickbox (the name of the jquery plugin being used) altogether.\n\nBasically its just centering an iFrame so redoing this could solve some of the iframe positioning issues as well.\n"
     },
     {
+      "id": "27629",
       "author": "Blake E",
       "date": "2008-12-08T14:31:23.000-0500",
       "body": "So I've redone the way the iFrame is shown and hidden (using my own jquery code rather then the jquery plugin)\n\nNow there is only one click and the top grey bar (which contained the start/finish links) disappears as it isn't needed once the finish is clicked.\n"

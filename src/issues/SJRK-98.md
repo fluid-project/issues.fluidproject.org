@@ -75,21 +75,25 @@
   ],
   "comments": [
     {
+      "id": "26442",
       "author": "Gregor Moss",
       "date": "2018-05-29T15:00:48.268-0400",
       "body": "Is there any more information about the browser used on the device?\n\nI have emulated the device via the Android Virtual Device Manager, and the site seems to load in the factory Android Browser (v 5.1.1), though the CSS does not seem to be rendering properly (See Screenshot\\_1527619833.png). The two navigational buttons on the Welcome page seem to work, even though they are not visible.\n\nThe other pages are similarly not displaying properly:\n\n* Screenshot\\_1527619968.png\n* Screenshot\\_1527619993.png\n* Screenshot\\_1527620219.png\n* Screenshot\\_1527620226.png\n* Screenshot\\_1527620230.png\n* Screenshot\\_1527620253.png\n\nNext step is to try with only 88 MB left on the disk\n"
     },
     {
+      "id": "26443",
       "author": "Gregor Moss",
       "date": "2018-05-29T15:07:55.119-0400",
       "body": "Language switching does not work in the emulated Android Browser, nor does the text-to-speech. \n"
     },
     {
+      "id": "26444",
       "author": "Gregor Moss",
       "date": "2018-05-29T15:14:38.104-0400",
       "body": "The CSS is likely not showing properly as all of the colours on the site are set via CSS variables, which is not supported in Android Browser (which hasn't been available on Android since 4.2, so it's interesting that it's in the emulator). Likewise for CSS Grid Layout (see <https://fluidproject.atlassian.net/browse/SJRK-95#icft=SJRK-95>)\n\nEdit: I've concluded there may be CSS issues specific to this emulated browser\n"
     },
     {
+      "id": "26445",
       "author": "Gregor Moss",
       "date": "2018-05-29T16:35:37.769-0400",
       "body": "The site loads, looks and works as expected on a Nexus 7 (2012) running Android 5.1.1 and Chrome 53.0.2785.124, except for the CSS Grid Layout rules. I was successfully able to author a story with only a text block. Saving a story with an image block (uploaded or captured, didn't matter) did not work.\n\nEdit: as mentioned in <https://fluidproject.atlassian.net/browse/SJRK-99#icft=SJRK-99>, the image saving issues are potentially solved\n"

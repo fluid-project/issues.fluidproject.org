@@ -26,21 +26,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12421",
       "author": "Justin Obara",
       "date": "2009-09-22T14:48:13.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "12422",
       "author": "Colin Clark",
       "date": "2009-09-24T14:37:17.000-0400",
       "body": "We'll need to move fluid.littleComponent() from Kettle into the Infusion framework as part of this issue.\n"
     },
     {
+      "id": "12423",
       "author": "Colin Clark",
       "date": "2009-10-09T18:42:52.000-0400",
       "body": "Yura, another one for you--probably fixed, but take a look just in case.\n"
     },
     {
+      "id": "12424",
       "author": "Justin Obara",
       "date": "2009-11-03T11:54:23.000-0500",
       "body": "Verified with Yura that this is ready to be closed\n"

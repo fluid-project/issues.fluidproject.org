@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14824",
       "author": "Antranig Basman",
       "date": "2011-09-15T18:29:47.260-0400",
       "body": "Bug Parade Infusion 1.4\n"
     },
     {
+      "id": "14827",
       "author": "Antranig Basman",
       "date": "2011-09-15T19:09:52.877-0400",
       "body": "Investigation so far: The line that fails is the call to jQuery doing the DOM manipulation to insert the anchor element:\\\nanchor.insertBefore(element); \\\nTableOfContents.js line 32\\\nIt appears this is related to cross-iframe manipulation. I had hoped that it was a simple domain protection issue that would work fine when done over HTTP, but the same failure occurs in the daily build site. \\\nIt may be that we are using the \"wrong jQuery\" to perform this manipulation since the code runs fine when the iframe is not involved. Continuing to investigate\n"
     },
     {
+      "id": "14830",
       "author": "Michelle D'Souza",
       "date": "2011-09-22T15:46:47.718-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/167> merged into project repo at d78557c041276a973ba245ff43438b866d0e0fe4\n"

@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21172",
       "author": "Justin Obara",
       "date": "2009-02-10T08:59:00.000-0500",
       "body": "Appears to have been fixed with a recent update to uploader\n\nTested using:\n\nIE7 (Win Vista)\\\nIE6 (Win XP)\\\nSafari (Mac OS 10.5)&#x20;\n"

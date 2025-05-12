@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12735",
       "author": "Colin Clark",
       "date": "2010-03-04T19:37:22.000-0500",
       "body": "Fixed at r9577\n"
     },
     {
+      "id": "12736",
       "author": "Colin Clark",
       "date": "2010-03-04T19:37:33.000-0500",
       "body": "Bug Parade Engage 0.3\n"

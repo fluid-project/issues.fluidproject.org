@@ -23,16 +23,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12987",
       "author": "Jonathan Hung",
       "date": "2013-10-03T10:53:43.234-0400",
       "body": "Related to this bug, the drop-shadow on the sticky nav bar causes interactive elements to be unclickable using the mouse.\n\ni.e.  \\\n1\\. go to the People section.\\\n2\\. Scroll down a little so the top sticky nav covers some of the content.\\\n3\\. Try clicking a name that appears in the drop shadow in the side bar.\\\n4\\. Notice that the link is unclickable.\n"
     },
     {
+      "id": "12988",
       "author": "Anastasia Cheetham",
       "date": "2015-01-15T10:07:30.083-0500",
       "body": "I found a CSS solution that will apparently move the anchors out from under the sticky nav bar:\\\n<http://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header>\\\nI haven't tried it yet, though; and this won't help the shadow issue.\n"
     },
     {
+      "id": "12989",
       "author": "Anastasia Cheetham",
       "date": "2015-01-15T10:09:13.786-0500",
       "body": "The shadow is not passing click events through to underlying elements. This can be overcome:\\\n<http://stackoverflow.com/questions/3680429/click-through-a-div-to-underlying-elements>\n"

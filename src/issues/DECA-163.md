@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10355",
       "author": "Jonathan Hung",
       "date": "2012-02-10T12:53:10.710-0500",
       "body": "Importing will be a lot more lightweight in Decapod going forward. It will not be a separate page / UI to perform the action, but will be an action directly executable from the image manager.\n"

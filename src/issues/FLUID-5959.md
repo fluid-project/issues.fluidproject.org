@@ -33,16 +33,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23799",
       "author": "Justin Obara",
       "date": "2017-01-09T13:01:35.881-0500",
       "body": "Move it to the repo, so that different repos can have different coding and commit standards / governance strategies. This would be useful to allow emerging projects and could be related to different standards for unit testing, design, commit access, and etc.\n\nShould provide templates for governance policies, and possibly outline mentorship for emerging projects.\n"
     },
     {
+      "id": "23801",
       "author": "Justin Obara",
       "date": "2017-10-02T09:46:42.731-0400",
       "body": "If we can get all the community pieces in place that would be great. <https://github.com/fluid-project/infusion/community>\n"
     },
     {
+      "id": "23802",
       "author": "Justin Obara",
       "date": "2018-03-13T13:25:30.469-0400",
       "body": "PR Merged into master\n"

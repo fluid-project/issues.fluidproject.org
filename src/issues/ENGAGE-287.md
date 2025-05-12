@@ -36,36 +36,43 @@
   ],
   "comments": [
     {
+      "id": "12384",
       "author": "Michelle D'Souza",
       "date": "2010-02-02T10:16:09.000-0500",
       "body": "mccord-pilot\n"
     },
     {
+      "id": "12385",
       "author": "Colin Clark",
       "date": "2010-02-05T13:56:10.000-0500",
       "body": "Jess has been helping Hugues with the process of translating our strings; she's planning to make a patch containing all the new string bundles.\n"
     },
     {
+      "id": "12386",
       "author": "Jess Mitchell",
       "date": "2010-02-05T15:35:04.000-0500",
       "body": "Here's a patch to update the French language strings for codeEntry.\n"
     },
     {
+      "id": "12387",
       "author": "Justin Obara",
       "date": "2010-02-05T15:53:36.000-0500",
       "body": "Bug Parade Engage 0.3&#x20;\n"
     },
     {
+      "id": "12388",
       "author": "Jess Mitchell",
       "date": "2010-02-05T15:58:45.000-0500",
       "body": "Language translation for FR for all of /trunk.\n"
     },
     {
+      "id": "12389",
       "author": "Jess Mitchell",
       "date": "2010-02-05T16:19:42.000-0500",
       "body": "Something happened to tags, now it's updated.\n"
     },
     {
+      "id": "12390",
       "author": "Justin Obara",
       "date": "2010-02-08T17:08:47.000-0500",
       "body": "The patches here have all been committed. Any additional ones needed will be filed in their own jiras\n"

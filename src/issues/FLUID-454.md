@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18841",
       "author": "Anastasia Cheetham",
       "date": "2008-04-07T10:59:14.000-0400",
       "body": "Oddly, if you do keep the Ctrl key held down, the item **will** move if you press the arrow key a second time.\n\nThis incorrect behaviour is NOT present in FF on Win, nor in FF (2 or 3) on Mac.\n"
     },
     {
+      "id": "18843",
       "author": "Anastasia Cheetham",
       "date": "2008-04-07T14:23:35.000-0400",
       "body": "Duplicates <https://fluidproject.atlassian.net/browse/FLUID-401#icft=FLUID-401>\n"

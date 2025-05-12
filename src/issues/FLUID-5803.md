@@ -31,16 +31,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23647",
       "author": "Anastasia Cheetham",
       "date": "2016-01-22T14:19:09.135-0500",
       "body": "I have a start on this in a branch: <https://github.com/acheetham/infusion-docs/tree/FLUID-5803>\n"
     },
     {
+      "id": "27926",
       "author": "Justin Obara",
       "date": "2024-07-31T14:22:51.603-0400",
       "body": "There is documentation about localization for the prefs framework but it isn’t part of the tutorial.\n\n<https://docs.fluidproject.org/infusion/development/LocalizationInThePreferencesFramework>&#x20;\n"
     },
     {
+      "id": "27955",
       "author": "Justin Obara",
       "date": "2024-08-01T07:29:48.873-0400",
       "body": "Migrated to <https://github.com/fluid-project/infusion-docs/issues/294>&#x20;\n"

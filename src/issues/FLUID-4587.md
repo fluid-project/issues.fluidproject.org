@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13911",
       "author": "Michelle D'Souza",
       "date": "2012-02-02T11:26:16.650-0500",
       "body": "I'm currently thinking of starting with this video:&#x20;\n\n<http://www.oercommons.org/courses/what-is-a-mammal/view>\\\n<http://www.youtube.com/watch?v=0jw74pfWfxA>\n"
     },
     {
+      "id": "13913",
       "author": "Michelle D'Souza",
       "date": "2012-02-03T14:12:21.617-0500",
       "body": "I spoke to James and we've decided to make a demo which looks like the following page but uses our video player:\n\n<http://beyondpenguins.ehe.osu.edu/issue/polar-mammals/what-is-a-mammal-answers-from-ross-macphee>\n"
     },
     {
+      "id": "13916",
       "author": "Michelle D'Souza",
       "date": "2012-02-17T16:39:27.433-0500",
       "body": "Merged into project repo at a1c69337aafdaf0f7a41b9eb095d698d65c25766\n"

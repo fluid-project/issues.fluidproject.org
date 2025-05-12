@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10198",
       "author": "Justin Obara",
       "date": "2012-07-05T13:15:01.285-0400",
       "body": "Changed has\\_key to \"key in d\".\n\nThe changes are in my bitbucket repo:\\\n<https://bitbucket.org/jobara/decapod-0.6-server-iteration4>\n"
     },
     {
+      "id": "10199",
       "author": "Justin Obara",
       "date": "2012-07-10T13:48:48.288-0400",
       "body": "Merged into the googlecode repo\n"

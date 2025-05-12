@@ -38,16 +38,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13665",
       "author": "Justin Obara",
       "date": "2010-05-07T13:50:41.882-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "13667",
       "author": "Jess Mitchell",
       "date": "2010-12-22T10:52:33.292-0500",
       "body": "in FF4 on Mac OS 10.6 focus moves downward, but pressing Shift+Tab once does move to the undo/redo, but there is no focus shown in styling.\n"
     },
     {
+      "id": "13670",
       "author": "Jonathan Hung",
       "date": "2011-01-07T14:56:25.491-0500",
       "body": "To elaborate on Jess' comment.\n\nPressing Tab after saving changes to Tiny MCE editor puts focus on the Edit link on CK Editor.\\\nPressing Tab after saving changes to CK Editor places focus on the browser's location bar.\\\nIn all cases the Undo / Redo links never get focus.\\\nThere is no style when putting focus on Undo/Redo links.\n\nTested Infusion 1.3, FF3.6 Win7\n"

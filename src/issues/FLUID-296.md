@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18416",
       "author": "Anastasia Cheetham",
       "date": "2011-01-21T13:38:09.473-0500",
       "body": "The description of this issue is too vague to determine whether or not it's still an issue.\n"

@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25110",
       "author": "Arnold Tagne",
       "date": "2016-03-09T08:19:24.146-0500",
       "body": "Hi @Jonathan Hung I see you made the changes as discussed on the IRC channel yesterday. \\\nPlease how do I assign the issue to myself ?\n\nirc: Awesome\\_A\n"

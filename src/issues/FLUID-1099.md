@@ -39,11 +39,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20495",
       "author": "Gary Thompson",
       "date": "2008-09-03T12:27:24.000-0400",
       "body": "iteration20\n"
     },
     {
+      "id": "20496",
       "author": "Gary Thompson",
       "date": "2008-10-15T12:45:19.000-0400",
       "body": "There were not any CSS changes needed.\n"

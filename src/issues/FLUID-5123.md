@@ -33,21 +33,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20905",
       "author": "Justin Obara",
       "date": "2013-10-08T08:47:44.351-0400",
       "body": "Seems that this is needed after all. (see: <https://fluidproject.atlassian.net/browse/FLUID-5171#icft=FLUID-5171>)\n"
     },
     {
+      "id": "20906",
       "author": "Justin Obara",
       "date": "2013-10-08T11:29:05.667-0400",
       "body": "Seems that it isn't actually related, as <https://fluidproject.atlassian.net/browse/FLUID-5171#icft=FLUID-5171> was fixed by making the invokers dynamic.\n"
     },
     {
+      "id": "20907",
       "author": "Justin Obara",
       "date": "2013-10-08T13:01:44.489-0400",
       "body": "Addressed with work for <https://fluidproject.atlassian.net/browse/FLUID-5161#icft=FLUID-5161>\n"
     },
     {
+      "id": "20908",
       "author": "Justin Obara",
       "date": "2013-10-08T13:39:34.682-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/414> ) into the project repo at b4422d732612a84ba429f3866b97786e627d8fb1\n"

@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13364",
       "author": "Allison Bloodworth",
       "date": "2008-06-10T16:45:40.000-0400",
       "body": "iteration11\n"
     },
     {
+      "id": "13367",
       "author": "Jonathan Hung",
       "date": "2008-06-12T15:49:25.000-0400",
       "body": "Created the Pattern Editor role for users and changed the Authenticated User role. For a summary of the current access permissions, see this link:\\\n<http://osdpl.fluidproject.org/admin/user/access> (must be an administrator to view / edit).\n\nFor the Authenticated User:\n\n* reduced access to modules / features not required.\n* can create and edit own Design Patterns, forum posts, comments, images, and user profile.\n* can't edit anyone else's content.\n\nFor Pattern Edtior:\n\n* can't edit any other user's content except Design Patterns and images\n"
     },
     {
+      "id": "13369",
       "author": "Allison Bloodworth",
       "date": "2008-06-21T02:04:01.000-0400",
       "body": "Since we've now reduced the permissions for any user who is not an administrator, we want to give pattern editor permissions to anyone who is on the Fluid UX team. I just did this to finish up this task.\n"

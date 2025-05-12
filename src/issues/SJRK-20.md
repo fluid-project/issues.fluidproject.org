@@ -42,11 +42,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26421",
       "author": "Alan Harnum",
       "date": "2017-11-09T16:11:02.057-0500",
       "body": "Possibilities:\n\n* allow the user to generate an authorship token that they will keep track of in order to manage their story or stories. one token per 'author' (users might want to have more than one persona that they could have separate tokens for)\n* tokens should be cryptographically random and secure (i.e. non-predictable), and not exposed to the general user-base\n* show the user the stories that 'belong' to them\n* allow them to access an editing interface to adjust the story content, privacy, or other aspects of it\n"
     },
     {
+      "id": "26422",
       "author": "Alan Harnum",
       "date": "2017-11-09T16:12:41.922-0500",
       "body": "If we decide to implement user account management, we should consider third-party authentication systems like Google, Facebook, OAuth, etc\n"

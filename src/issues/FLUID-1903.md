@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18655",
       "author": "Allison Bloodworth",
       "date": "2008-12-03T15:02:39.000-0500",
       "body": "iteration24\n"
     },
     {
+      "id": "18658",
       "author": "Daphne Ogle",
       "date": "2009-01-07T19:00:29.000-0500",
       "body": "No immediate changes.  Jiras will be entered for future changes and things we still want to puzzle over.\n"
     },
     {
+      "id": "18662",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:48.265-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

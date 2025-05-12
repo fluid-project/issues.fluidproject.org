@@ -48,36 +48,43 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17823",
       "author": "Anastasia Cheetham",
       "date": "2009-03-27T09:31:18.000-0400",
       "body": "Right now, the general idea with licensing is \"Fluid's license unless otherwise stated\" and the otherwise-stating is accomplished by including the other license file in with the other-licensed code.\n\nIf we move the licenses away from the code, how should we associated the license with the code? Were you imagining that we'd create a sub-folder called \"license\"?\n"
     },
     {
+      "id": "17828",
       "author": "Colin Clark",
       "date": "2009-03-30T10:27:06.000-0400",
       "body": "We shouldn't move the licenses away from code in the repository. This separate licenses folder should be created as a product of the build scripts. I think we can punt this issue until 1.1\n"
     },
     {
+      "id": "17832",
       "author": "Justin Obara",
       "date": "2009-05-12T13:39:20.000-0400",
       "body": "Changed the copySourceToBuild target. 1) Moved in the work of copying over the README.txt 2) exclude LICENSE files from being copied over with all other files 3) Copy licenses into a license directory\n"
     },
     {
+      "id": "17834",
       "author": "Justin Obara",
       "date": "2009-05-12T13:39:36.000-0400",
       "body": "Please review\n"
     },
     {
+      "id": "17835",
       "author": "Justin Obara",
       "date": "2009-05-13T12:40:41.000-0400",
       "body": "a  slight bit of refactoring is needed\n"
     },
     {
+      "id": "17837",
       "author": "Justin Obara",
       "date": "2009-05-14T08:55:23.000-0400",
       "body": "Refactored the copying of the README.txt file, by removing it from a \\<fileset> and placing it within its own \\<copy>\n"
     },
     {
+      "id": "17839",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:16.094-0500",
       "body": "Closing issues that were fixed in 1.1\n"

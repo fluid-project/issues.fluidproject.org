@@ -49,16 +49,19 @@
   ],
   "comments": [
     {
+      "id": "20165",
       "author": "Justin Obara",
       "date": "2008-07-23T13:29:52.000-0400",
       "body": "'screenshot-1' shows that only the chacacters before the apostrophe are shown, if double clicked in front of the apostrophe\n"
     },
     {
+      "id": "20167",
       "author": "Justin Obara",
       "date": "2008-07-23T13:30:40.000-0400",
       "body": "'screenshot-2' shows that only the apostrophe and characters after it are selected if double clicked after the apostrophe\n"
     },
     {
+      "id": "20170",
       "author": "Justin Obara",
       "date": "2009-11-04T12:24:35.000-0500",
       "body": "This seems to be how Firefox handles double clicking of text\n"

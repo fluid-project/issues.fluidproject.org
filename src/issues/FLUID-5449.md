@@ -34,26 +34,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14240",
       "author": "Justin Obara",
       "date": "2014-06-17T13:45:03.765-0400",
       "body": "Submitted a pull request\\\n<https://github.com/fluid-project/infusion/pull/536>\n"
     },
     {
+      "id": "14242",
       "author": "Cindy Li",
       "date": "2014-06-19T14:43:17.454-0400",
       "body": "Merged into the project repo @ 7be53d11b3b7d67ba8eb1ca827801ecf8cca974b\n"
     },
     {
+      "id": "14244",
       "author": "Cindy Li",
       "date": "2014-06-19T15:16:03.176-0400",
       "body": "The version number in the package.json file must conform to semver ([http://semver.org](http://semver.org/)) and be parseable by <https://www.npmjs.org/doc/misc/semver.html>\n\nJustin issued another pull request <https://github.com/fluid-project/infusion/pull/537> for it.\n"
     },
     {
+      "id": "14246",
       "author": "Cindy Li",
       "date": "2014-06-19T15:16:18.007-0400",
       "body": "Merged into the project repo @ ee38480e66f43313c3a6c8febe4362cba3e89b47\n"
     },
     {
+      "id": "14248",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:35.914-0400",
       "body": "Reopening to change the fix version to 1.9\n"

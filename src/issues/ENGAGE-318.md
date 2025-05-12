@@ -31,16 +31,19 @@
   ],
   "comments": [
     {
+      "id": "12557",
       "author": "Michelle D'Souza",
       "date": "2010-02-03T14:43:25.000-0500",
       "body": "mccord-pilot\n"
     },
     {
+      "id": "12558",
       "author": "y z",
       "date": "2010-02-04T13:10:51.000-0500",
       "body": "Fixed with this patch\n"
     },
     {
+      "id": "12560",
       "author": "y z",
       "date": "2010-02-04T13:11:11.000-0500",
       "body": "Patch with fixed importer is attached to this jira\n"

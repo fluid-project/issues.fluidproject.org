@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23034",
       "author": "Giovanni Tirloni",
       "date": "2018-07-25T15:38:41.338-0400",
       "body": "Because BuildKite lacks a truly effective way to cleanup a failed build, when a CI job fails at \"setup\" stage, a VM is left hanging and the agent is permanently broken. This is not caused by using \"prepublish\" but it's a side-effect in practice that has led to CI failures due to linting errors.\n"

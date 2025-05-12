@@ -42,16 +42,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20065",
       "author": "Michelle D'Souza",
       "date": "2008-10-01T13:37:00.000-0400",
       "body": "dev-iteration45\n"
     },
     {
+      "id": "20067",
       "author": "Michelle D'Souza",
       "date": "2008-10-01T13:38:28.000-0400",
       "body": "This will require using the client side renderer.\n"
     },
     {
+      "id": "20069",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:47.723-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

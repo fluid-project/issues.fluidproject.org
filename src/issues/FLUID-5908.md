@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24298",
       "author": "Antranig Basman",
       "date": "2016-05-19T15:45:34.236-0400",
       "body": "Note that this bug was not observed earlier (since we do have several test cases for this-ist records, both invokers and listeners, in FluidIoCTests.js) is that it depends on the special-case resolution in fluid.event.resolveListenerRecord which reads\n\n```java\nexpanded.listener = (standard && (expanded.args && listener !== \"fluid.notImplemented\" || firer)) ? fluid.event.dispatchListener(that, listener, eventName, expanded) : listener;\n```\n\nSo any listener record which has arguments is wrapped by the fluid.event.dispatchListener process and so hides the \"strange applicable record\" from event.addListener.\n"

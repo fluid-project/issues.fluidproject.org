@@ -37,31 +37,37 @@
   ],
   "comments": [
     {
+      "id": "19625",
       "author": "Justin Obara",
       "date": "2008-09-02T11:09:27.000-0400",
       "body": "'screenshot-1' shows the pointer remaining as an arrow over the portlet's title bar.&#x20;\n"
     },
     {
+      "id": "19626",
       "author": "Justin Obara",
       "date": "2008-09-16T11:55:32.000-0400",
       "body": "It appears that the title bar extends too high and this extension is not a draggable region\n"
     },
     {
+      "id": "19627",
       "author": "Justin Obara",
       "date": "2008-09-22T12:58:57.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "19628",
       "author": "Jacob Farber",
       "date": "2008-09-23T15:03:41.000-0400",
       "body": "portlet-top now includes cursor:move&#x20;\n"
     },
     {
+      "id": "19629",
       "author": "Michelle D'Souza",
       "date": "2008-09-23T15:52:11.000-0400",
       "body": "I code reviewed revision 5656 and it looks fine.\n"
     },
     {
+      "id": "19630",
       "author": "Justin Obara",
       "date": "2008-09-23T15:59:45.000-0400",
       "body": "Verified fix using:\n\nIE 6 (Win XP)\n"

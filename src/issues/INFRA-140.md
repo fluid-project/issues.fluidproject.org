@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25941",
       "author": "Giovanni Tirloni",
       "date": "2018-05-30T14:19:12.005-0400",
       "body": "All infusion tests pass with Firefox 60 and Chrome 66 in headless mode.\n"
     },
     {
+      "id": "25943",
       "author": "Giovanni Tirloni",
       "date": "2018-06-18T17:13:07.189-0400",
       "body": "Investigation is complete.\n\nA new docker image was created: <https://github.com/idi-ops/docker-node-browsers>\n\nAnd a PR for Infusion was submitted: <https://github.com/fluid-project/infusion/pull/909>\n"

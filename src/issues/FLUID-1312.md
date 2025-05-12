@@ -50,21 +50,25 @@
   ],
   "comments": [
     {
+      "id": "21662",
       "author": "Justin Obara",
       "date": "2008-08-26T11:46:56.000-0400",
       "body": "'screenshot-1' shows the inline edit field in edit mode with the \"xxxx\" not visible.\n"
     },
     {
+      "id": "21663",
       "author": "Justin Obara",
       "date": "2008-08-26T11:48:32.000-0400",
       "body": "'screenshot-2' shows the inline edit field in edit mode with the \"xxxx\" visible after mouse selection\n"
     },
     {
+      "id": "21664",
       "author": "Justin Obara",
       "date": "2008-08-26T11:49:23.000-0400",
       "body": "'screenshot-3' shows the \"xxxx\" displayed properly when out of edit mode\n"
     },
     {
+      "id": "21665",
       "author": "Justin Obara",
       "date": "2009-05-05T10:34:26.000-0400",
       "body": "Appears to have been fixed\n"

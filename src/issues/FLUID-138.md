@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21902",
       "author": "Colin Clark",
       "date": "2007-12-22T11:53:30.000-0500",
       "body": "I removed the entire bin and java folders, as well as build and properties files in the project root. This leaves us with only the licenses, test runner, and app folder.\n\nIdeally, we should move this out of the repository and into our maven repo instead.\n"
     },
     {
+      "id": "21903",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:56.620-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

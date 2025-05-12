@@ -30,6 +30,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26018",
       "author": "Giovanni Tirloni",
       "date": "2018-01-23T09:14:19.138-0500",
       "body": "Just would like to update that this is still required. Every time there are new RPM packages, the mirrors take a long time to synchronize and we're left with non-deterministic deployment (yum running on each of our servers will connect to a different mirror and break due to missing files or wrong checksums).\n"

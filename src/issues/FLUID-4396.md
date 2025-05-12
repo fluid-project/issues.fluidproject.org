@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22660",
       "author": "Antranig Basman",
       "date": "2011-08-10T15:56:42.455-0400",
       "body": "This is a message generated from within the autoInit pathway in the framework which reflects a set of mismatched assumptions. A decision made a few releases ago was for the correct behaviour for a view component whose \"container\" selector did not match any markup, to construct no component and return \"null\" instead. However, once a view component is made \"autoInit\", the component's creator function continues to assume that a component value must always be returned, and also has no specific insight into the case that it was a view component. For future releases this whole set of assumptions needs to be reevaluated - my personal preference is for\n\ni) the \"no component on no markup\" behaviour to be completed and made consistent, and\\\nii) an IoC debugging system be put into place that allows other insight into why a component \"failed\" more subtle than our current blunt instrument of fluid.fail() which aborts the entire current creation stack.\n\nIn the meantime I have added a \"diagnosis\" branch to the autoInit pathway that replaces the \"that is null\" message with a more informative report, which will allow the current framework behaviour we have committed to for 1.4 to remain unchanged.\n"
     },
     {
+      "id": "22665",
       "author": "Michelle D'Souza",
       "date": "2011-08-23T11:26:56.513-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/135> merged into project repo at e48a753fa466679898f902de034763fb2e931947\n"

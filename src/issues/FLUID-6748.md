@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25152",
       "author": "Justin Obara",
       "date": "2022-08-02T07:18:45.754-0400",
       "body": "Part of the reasoning to drop the panel index from the store is that the [new designs for UIO](https://www.figma.com/file/ADa4A8lMGuUmhNM1Kro2S7/UIO_2.0?node-id=724%3A5554) have a vertical presentation and will not include the panel index as is currently needed with the horizontal scrolling through all panels in mobile.\n"

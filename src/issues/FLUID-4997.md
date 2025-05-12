@@ -58,16 +58,19 @@
   ],
   "comments": [
     {
+      "id": "15378",
       "author": "heidi valles",
       "date": "2013-05-14T11:03:06.844-0400",
       "body": "From <http://192.168.2.11/git_heidi/infusion/src/webapp/demos/uploader/html/uploader.html>\n\nNeed the following icons:\n\nAdd (green circle w white plus sign)\\\nDelete (red circle w white X)\\\nUploaded (green checkmark)\n"
     },
     {
+      "id": "15380",
       "author": "Jonathan Hung",
       "date": "2013-06-10T12:43:22.977-0400",
       "body": "Created font based on the attached SVG files.\n"
     },
     {
+      "id": "15384",
       "author": "Justin Obara",
       "date": "2013-07-02T14:55:14.745-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/346> ) into the project repo at 8dd707097e3fb4503abff6e821bb16e0ff26e813\n"

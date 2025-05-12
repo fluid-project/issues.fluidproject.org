@@ -22,11 +22,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25564",
       "author": "Justin Obara",
       "date": "2019-09-24T10:01:27.232-0400",
       "body": "We should also explore if BEM should be used for just styling classes or also for JS selectors.\n"
     },
     {
+      "id": "25565",
       "author": "Justin Obara",
       "date": "2019-09-24T10:02:11.686-0400",
       "body": "Ned Zimmerman found the following BEM linter:\n\n<https://github.com/simonsmith/stylelint-selector-bem-pattern> which is a wrapper for <https://github.com/postcss/postcss-bem-linter>\n"

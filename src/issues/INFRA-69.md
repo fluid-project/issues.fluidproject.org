@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25937",
       "author": "Alan Harnum",
       "date": "2015-11-26T16:22:39.310-0500",
       "body": "Sync is now done, and the Pi is configured with cron to perform:\n\n* a nightly backup sync at 2 am\n* a daily restart (for stability) at 11 am\n\nWe can close this loop once it's installed in Colin's office, though we'll want to monitor it for a few days after that to make sure it's stable.\n"

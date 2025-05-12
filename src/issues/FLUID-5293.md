@@ -40,16 +40,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20927",
       "author": "Michelle D'Souza",
       "date": "2014-04-04T15:19:27.258-0400",
       "body": "There is a pull request for this issue: <https://github.com/fluid-project/infusion/pull/484>\n"
     },
     {
+      "id": "20928",
       "author": "Antranig Basman",
       "date": "2014-04-08T20:00:23.005-0400",
       "body": "This headline issue has accumulated several subcases, each of which exhibited different failures in different parts of the framework. Other issues raised during this process include <https://fluidproject.atlassian.net/browse/FLUID-5294#icft=FLUID-5294> and <https://fluidproject.atlassian.net/browse/FLUID-5303#icft=FLUID-5303>\n"
     },
     {
+      "id": "20929",
       "author": "Michelle D'Souza",
       "date": "2014-05-13T15:19:17.128-0400",
       "body": "Merged into project repo at 2f678db1c38960c902f14afc725d1a77ae70c08a\n"

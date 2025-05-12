@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "18447",
       "author": "Jacob Farber",
       "date": "2008-08-26T14:38:10.000-0400",
       "body": "Readme contents\n"
     },
     {
+      "id": "18450",
       "author": "Anastasia Cheetham",
       "date": "2008-08-26T18:27:42.000-0400",
       "body": "This readme file has been committed.\n"

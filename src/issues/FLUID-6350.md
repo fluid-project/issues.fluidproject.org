@@ -24,16 +24,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23062",
       "author": "Tony Atkins [RtF]",
       "date": "2018-11-12T09:08:40.004-0500",
       "body": "The third approach (running individual tests) takes a lot longer, results in bloated log output, and fills up the drive on a standard Vagrant VM before it completes.  Although it's possible to work around this, we should discuss the problem and a range of approaches in the next architecture meeting.\n\nThe fourth approach is probably workable, but as we have a mixture of Fluid IoC tests and direct jqUnit tests in the package, we can't just (for example) make a common caseHolder.  Instead we'd need some kind of static function that adds an additional async test at then end of each run, which only completes once the coverage results are sent.  This would require switching off the current usage of the QUnit.done hook and manually calling the coverage callback.\n\nI did some more research about the first approach just to confirm that the most recent version of QUnit.composite is able to wait for a child page to complete an asynchronous action hooked into QUnit.done by a child page to complete before closing the child iframe.\n"
     },
     {
+      "id": "23063",
       "author": "Tony Atkins [RtF]",
       "date": "2018-11-12T09:29:17.720-0500",
       "body": "I just did some research regarding [the QUnit.config.testsArriving mechanism used by the Fluid IoC test framework](https://github.com/fluid-project/infusion/blob/master/tests/lib/qunit/js/qunit.js#L1467) to ensure that QUnit waits long enough for tests to arrive.  If we absolutely cannot upgrade QUnit, one option would be to add a second marker variable that is meant to be set and cleared by asynchronous activities that must be completed between the last test and the synchronous \"done\" call.\n"
     },
     {
+      "id": "23064",
       "author": "Tony Atkins [RtF]",
       "date": "2018-11-14T12:49:05.320-0500",
       "body": "In tonight's architecture meeting, we discussed reusing and expanding the current pattern used by the Fluid IoC test framework, which involves setting a key variable and then checking that value and deferring shutdown as needed.\n\nHere's the bit that sets the variable.\n\n<https://github.com/fluid-project/infusion/blob/bfbbf740eddd18ec17b604d0e4a785ec3033383d/tests/test-core/utils/js/IoCTestUtils.js#L837>\n\nAnd here we check for that and wait:\n\n<https://github.com/fluid-project/infusion/blob/master/tests/lib/qunit/js/qunit.js#L1467>\n\nWhat we need is a more general mechanism for registering arbitrary asynchronous activities that should block the normal shutdown, and one that is reached by all calls to QUnit, including those that do not use the Fluid IoC test framework.\n\nI'm thinking of making an \"asyncDone\" endpoint that can be used to register arbitrary functions and promises that must complete before shutdown completes.  This would use a fluid.promise.sequence, and ideally some kind of prioritisation mechanism.\n"

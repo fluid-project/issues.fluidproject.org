@@ -33,16 +33,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13274",
       "author": "Antranig Basman",
       "date": "2008-09-07T18:03:31.000-0400",
       "body": "Drop Manager, Dom Permutation work merged back into trunk at revision 5476\n"
     },
     {
+      "id": "13275",
       "author": "Justin Obara",
       "date": "2008-09-08T09:18:10.000-0400",
       "body": "Appears to be fixed. Assigning it to Michelle to close, as she was the reporter.\n"
     },
     {
+      "id": "13276",
       "author": "Michelle D'Souza",
       "date": "2008-09-08T10:05:13.000-0400",
       "body": "This issue is fixed, however, moving portlets with the keyboard in the uPortal example no longer works correctly. Justin is looking into the particulars and will file a new bug.&#x20;\n"

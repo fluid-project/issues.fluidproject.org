@@ -38,11 +38,13 @@
   ],
   "comments": [
     {
+      "id": "20510",
       "author": "Jacob Farber",
       "date": "2008-08-12T14:27:24.000-0400",
       "body": "First pass on the springboard for the Layout Customizer. \\\nThis patch contains some very basic HTML and CSS, based on what Eli and I are working on (more here: <http://wiki.fluidproject.org/display/fluid/Fluid+Component+Sample+Code> )\n\nSome things mentioned here will need to be fleshed out a great deal more over time (like the high-contrast theme mentioned and the Fluid.States.css)\n"
     },
     {
+      "id": "20511",
       "author": "Jacob Farber",
       "date": "2008-08-19T16:12:49.000-0400",
       "body": "Minor updates and changes.\n"

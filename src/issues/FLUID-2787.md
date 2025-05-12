@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16408",
       "author": "Anastasia Cheetham",
       "date": "2009-05-27T17:05:50.000-0400",
       "body": "The patch for <https://fluidproject.atlassian.net/browse/FLUID-2788#icft=FLUID-2788> fixes this one as well.\n"
     },
     {
+      "id": "16410",
       "author": "Justin Obara",
       "date": "2009-05-28T08:38:49.000-0400",
       "body": "Verified fix using:\n\nIE7, IE6 (Win XP)\\\nIE7 (Win Vista)&#x20;\n"

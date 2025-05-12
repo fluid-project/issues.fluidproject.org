@@ -36,21 +36,25 @@
   ],
   "comments": [
     {
+      "id": "21371",
       "author": "Justin Obara",
       "date": "2008-04-28T14:26:23.000-0400",
       "body": "screeenshot-1 shows a portlet after it has been dropped in an empty column. Note that it fills the entire column, touching the portletson the left. It is also offset from the top of the column.\n"
     },
     {
+      "id": "21372",
       "author": "Justin Obara",
       "date": "2008-04-28T14:29:14.000-0400",
       "body": "screenshot-2 shows an example of the incorrect drop target at the bottom of a column. Note that it stretches the width of the column and is lower in position than the correct drop target should be.\n"
     },
     {
+      "id": "21373",
       "author": "Michelle D'Souza",
       "date": "2008-04-29T09:44:13.000-0400",
       "body": "This was a styling issue that is now fixed.\n"
     },
     {
+      "id": "21374",
       "author": "Justin Obara",
       "date": "2008-04-30T22:53:54.000-0400",
       "body": "verified in IE6 (WinXP)\n"

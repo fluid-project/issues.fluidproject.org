@@ -37,26 +37,31 @@
   ],
   "comments": [
     {
+      "id": "24704",
       "author": "Justin Obara",
       "date": "2010-10-07T13:24:46.970-0400",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "24705",
       "author": "Mike Lam",
       "date": "2010-10-15T14:34:12.454-0400",
       "body": "Edit field focus will trigger edit mode tooltip to display.  No mouseover focus in edit mode. &#x20;\n"
     },
     {
+      "id": "24706",
       "author": "Mike Lam",
       "date": "2010-10-15T15:52:42.242-0400",
       "body": "Code cleanup and refactoring.\n"
     },
     {
+      "id": "24707",
       "author": "Justin Obara",
       "date": "2010-10-15T16:27:19.426-0400",
       "body": "Committed Mike's patch ( keyboardTooltipPart2.txt ) which added in the edit mode tooltip on focus.\n"
     },
     {
+      "id": "24708",
       "author": "Michelle D'Souza",
       "date": "2010-12-01T16:59:54.409-0500",
       "body": "I code reviewed this with a whole group of Inline Edit JIRA issues for 1.3 and it is fine.&#x20;\n"

@@ -39,86 +39,103 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15575",
       "author": "Anastasia Cheetham",
       "date": "2013-11-20T11:19:05.101-0500",
       "body": "Justin pointed out that this restructuring could be a factor for the build scripts, too.\n"
     },
     {
+      "id": "15577",
       "author": "Anastasia Cheetham",
       "date": "2013-11-20T16:30:20.292-0500",
       "body": "See the comment on <https://fluidproject.atlassian.net/browse/FLUID-5215#icft=FLUID-5215> for how we decided to restructure things\n"
     },
     {
+      "id": "15579",
       "author": "Anastasia Cheetham",
       "date": "2013-11-21T13:22:07.459-0500",
       "body": "Also, this change will affect the build site(s) that link to the demos folder, i.e. the link on build.fluidproject.org currently links to <http://build.fluidproject.org/infusion/demos/> – that will have to change to <http://build.fluidproject.org/infusion/demos/showcase/>\n\nLikewise, <http://fluidproject.org/products/infusion/> has a link to <http://fluidproject.org/products/infusion/infusion-demos> which redirects to <http://fluidproject.org/releases/1.4/demos/> – that will have to redirect to <http://fluidproject.org/releases/1.5/demos/showcase> after the release\n"
     },
     {
+      "id": "15582",
       "author": "Anastasia Cheetham",
       "date": "2013-11-27T17:01:31.643-0500",
       "body": "In progress, at <https://github.com/acheetham/infusion/tree/FLUID-5217>\\\nSo far, showcase and standalone demos moved, and tests moved.\n\nBuild scripts seem broken (wrt demos and tests) even in master, so not yet addressed in this branch.\n"
     },
     {
+      "id": "15583",
       "author": "Anastasia Cheetham",
       "date": "2013-12-03T16:26:24.775-0500",
       "body": "Pull request issued: <https://github.com/fluid-project/infusion/pull/444>\n"
     },
     {
+      "id": "15585",
       "author": "Anastasia Cheetham",
       "date": "2014-03-26T15:33:39.364-0400",
       "body": "This will need to be redone, and we'll want to do it as the very last thing, after all other changes have been merged in.\n"
     },
     {
+      "id": "15587",
       "author": "Justin Obara",
       "date": "2014-05-28T15:47:01.794-0400",
       "body": "In talking at the community meeting today the recommendation was to move all the demos directories, lib and tests to be siblings of source. The built version should remain the same. However, we could not decide how to best reorganize the various demos.\n"
     },
     {
+      "id": "15589",
       "author": "Justin Obara",
       "date": "2014-05-29T08:55:27.543-0400",
       "body": "Discussion on the fluid-work mailing list\\\n<http://fluid.2324889.n4.nabble.com/Directory-restructuring-on-hold-td9046.html>\n"
     },
     {
+      "id": "15591",
       "author": "Justin Obara",
       "date": "2014-06-19T09:25:13.481-0400",
       "body": "We talked in detail about this at the community meeting yesterday. Anastasia forwarded the notes to the mailing list.\\\n<http://fluid.2324889.n4.nabble.com/Documentation-decisions-td9105.html>\n"
     },
     {
+      "id": "15593",
       "author": "Anastasia Cheetham",
       "date": "2014-06-19T10:22:17.990-0400",
       "body": "Here's my understanding of the new folder hierarchy resulting from yesterday's discussions:\n\nsrc/\\\nframework/\\\ncomponents/\\\nlib/\\\nmodule/\\\ndemos/\\\nexamples/\\\ntests/\n\nFor the demos and tests folder, their hierarchies will remain pretty much what they are now, except for: Within the tests folder, the manual-tests content will be renamed or otherwise organized to make it more clear which components are being tested. This might involve the creation of folders.\n\nFor the examples folder, the hierarchy should mirror, as much as reasonable, the hierarchy of the source folder. In general:\n\nexamples/\\\nframework/\\\ncore/\\\nprefs/\\\nrenderer/\\\ncomponents/\\\ncomponentX/\\\nshared/\\\ncss/\\\nshared.css\\\nhtml/\\\nshared.html\\\njs/\\\nshared.js\\\ndemoX/\\\ncss/\\\nfile.css\\\nhtml/\\\nfile.html\\\njs/\\\nfile.js\\\ndemoY/\\\ncss/\\\nfile.css\\\nhtml/\\\nfile.html\\\njs/\\\nfile.js\\\ncomponentY/\\\netc..\n"
     },
     {
+      "id": "15596",
       "author": "Justin Obara",
       "date": "2014-06-26T11:08:47.106-0400",
       "body": "Submitted a pull request:\\\n<https://github.com/fluid-project/infusion/pull/539>\n"
     },
     {
+      "id": "15598",
       "author": "Cindy Li",
       "date": "2014-07-10T10:01:43.488-0400",
       "body": "Merged into the project repo @ 78593a2af5d62fe724404d9f5585a85c5c90ca9f\n"
     },
     {
+      "id": "15600",
       "author": "Justin Obara",
       "date": "2014-07-10T15:34:56.971-0400",
       "body": "the path to the tests directory in the devIncludes.json file in the module directory needs to be updated to point at the tests dir which has moved up a level.\n"
     },
     {
+      "id": "15601",
       "author": "Justin Obara",
       "date": "2014-07-10T15:36:10.968-0400",
       "body": "Filed another pull request to fix the devIncludes.json file\\\n<https://github.com/fluid-project/infusion/pull/543>\n"
     },
     {
+      "id": "15603",
       "author": "Justin Obara",
       "date": "2014-07-11T08:48:47.997-0400",
       "body": "Pull request ( <https://github.com/fluid-project/infusion/pull/543> ) was merged at 63d7180d3825fe572c0c08e6d89d61f6b3e2b7e7\n"
     },
     {
+      "id": "15605",
       "author": "Justin Obara",
       "date": "2014-07-11T10:51:10.492-0400",
       "body": "Pull request ( <https://github.com/fluid-project/build.fluidproject.org/pull/11> ) has been merged to update the build site links at 920ce6e90808d70ce021db761610e8610d1c56f3\n"
     },
     {
+      "id": "15607",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:10.938-0400",
       "body": "Reopening to change the fix version to 1.9\n"

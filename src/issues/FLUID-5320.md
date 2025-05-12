@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15123",
       "author": "Justin Obara",
       "date": "2014-04-25T12:00:54.947-0400",
       "body": "The cause of the issues seems to be that IE reports the multiplier value as opposed to the line height in px values. In IE 10 and 11, the px value is reported when using jQuery's \"css\" method, however IE 8 and 9 still report the same value as sourced from the currentStyle property.&#x20;\n\nOne possible solution will be to combine getLineHeight and numerizeLineHeight into a single method that just gets the multiplier value directly.&#x20;\n"
     },
     {
+      "id": "15126",
       "author": "Justin Obara",
       "date": "2014-04-25T14:47:12.829-0400",
       "body": "Submitted a pull request <https://github.com/fluid-project/infusion/pull/499>\n"
     },
     {
+      "id": "15129",
       "author": "Cindy Li",
       "date": "2014-04-29T10:36:08.377-0400",
       "body": "Merged into the project repo @ cc8d78b3c82b968849335ee3da524fe3b2cb9cda\n"

@@ -45,16 +45,19 @@
   ],
   "comments": [
     {
+      "id": "12590",
       "author": "James Yoon",
       "date": "2010-02-22T11:28:51.000-0500",
       "body": "a11y issue\n"
     },
     {
+      "id": "12592",
       "author": "Justin Obara",
       "date": "2010-02-24T17:18:00.000-0500",
       "body": "There is a stub of a failing test in the home components unit tests that needs to be updated.\n"
     },
     {
+      "id": "12593",
       "author": "Michelle D'Souza",
       "date": "2010-03-10T13:51:06.000-0500",
       "body": "We need some tests for the alt text localization.&#x20;\n"

@@ -26,26 +26,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16027",
       "author": "Aman varshney",
       "date": "2016-03-18T08:08:24.644-0400",
       "body": "@Blagoj Dimovski Can I work on this Issue ?\n"
     },
     {
+      "id": "16029",
       "author": "Justin Obara",
       "date": "2016-03-18T09:27:52.908-0400",
       "body": "Aman varshney I don't know of anyone working on this at the moment, but you'll probably want to talk to the designers about it first.\n\nDana and Jonathan Hung do you have any ideas/feedback about how the interaction should be?\n"
     },
     {
+      "id": "16031",
       "author": "Aman varshney",
       "date": "2016-03-19T07:07:03.276-0400",
       "body": "Can you please help me. As I am working on this issue I could not find how \" \\* \"(left sidebar) formed /infusion/demos/uiOption/index.html and which css files including in it.\n"
     },
     {
+      "id": "16033",
       "author": "Justin Obara",
       "date": "2016-03-21T08:39:43.154-0400",
       "body": "Aman varshney it's part of the Overview Panel component. <https://github.com/fluid-project/infusion/tree/master/src/components/overviewPanel>\n"
     },
     {
+      "id": "16035",
       "author": "Blagoj Dimovski",
       "date": "2016-03-21T12:14:31.527-0400",
       "body": "@Aman Varshney I think that you're the only one working on the issue, so yes you can work. Just follow Justin Obara's directions.\n"

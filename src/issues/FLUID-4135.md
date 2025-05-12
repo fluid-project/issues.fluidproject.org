@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22063",
       "author": "Antranig Basman",
       "date": "2011-03-25T00:11:42.595-0400",
       "body": "This is now stable and in trunk for a week or so.\n"

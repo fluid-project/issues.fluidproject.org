@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22245",
       "author": "Justin Obara",
       "date": "2017-04-16T21:05:58.005-0400",
       "body": "I spent sometime looking into this today and it seems that the issue has to do with the time it takes to apply the \"OpenSans\" font to the prefs editor; for which the markup has just been injected. If this font-family is not declared in the CSS or a different text style is chosen in the prefs settings, the panel loads correctly.\n\nThis is likely not an issue with the non-lazy loading because it has time to apply the font-family before the panel is shown. So the issue is just not noticed.\n\nOne potential solution would be to not use the OpenSans font for mobile.\n"
     },
     {
+      "id": "22247",
       "author": "Justin Obara",
       "date": "2017-04-25T15:19:04.758-0400",
       "body": "This could only be reproduced on the iOS Simulator, but not on an actual iOS device.\n"

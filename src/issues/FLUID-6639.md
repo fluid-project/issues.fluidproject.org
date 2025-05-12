@@ -32,16 +32,19 @@
   ],
   "comments": [
     {
+      "id": "25258",
       "author": "Justin Obara",
       "date": "2021-06-29T16:34:49.560-0400",
       "body": "Wasn't able to reproduce on Pixel 5 running Android 11 and Chrome 91.0.4472.120\n"
     },
     {
+      "id": "25259",
       "author": "Jonathan Hung",
       "date": "2021-07-05T10:42:39.112-0400",
       "body": "It seems that if the Display Size setting on the device is other than Default, this test would fail.\n\nBy setting the display size to small, you will be able to reproduce this.\n"
     },
     {
+      "id": "25260",
       "author": "Jonathan Hung",
       "date": "2021-07-05T15:33:23.356-0400",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-6650#icft=FLUID-6650> now covers this issue.\n"

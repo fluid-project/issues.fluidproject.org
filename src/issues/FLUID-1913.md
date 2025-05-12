@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17870",
       "author": "Jonathan Hung",
       "date": "2009-02-05T09:55:07.000-0500",
       "body": "For now I have removed the tag cloud block from the site. There is another Jira task to evaluate the usefulness of tag clouds with respect to improving other navigation schemes.\n"
     },
     {
+      "id": "17872",
       "author": "Jonathan Hung",
       "date": "2009-02-05T10:05:37.000-0500",
       "body": "iteration26\n"

@@ -27,26 +27,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14560",
       "author": "Justin Obara",
       "date": "2009-09-22T09:40:54.000-0400",
       "body": "Bug Parade Infusion 1.1.2&#x20;\n"
     },
     {
+      "id": "14561",
       "author": "Justin Obara",
       "date": "2009-10-05T18:26:42.000-0400",
       "body": "commented out message.fail(). There didn't appear to be any instances of debug mode being used by the renderer.\n"
     },
     {
+      "id": "14563",
       "author": "Colin Clark",
       "date": "2009-10-05T18:48:02.000-0400",
       "body": "I've reviewed Justin's commit, tested it, and compared it with similar changes for past releases. It looks good.\n"
     },
     {
+      "id": "14565",
       "author": "Jacob Farber",
       "date": "2009-10-06T14:27:59.000-0400",
       "body": "Reviewed by Colin\n"
     },
     {
+      "id": "14566",
       "author": "Michelle D'Souza",
       "date": "2011-01-13T16:50:10.062-0500",
       "body": "Reopening these issues in order to change the component to Release.&#x20;\n"

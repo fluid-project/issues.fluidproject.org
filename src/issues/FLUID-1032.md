@@ -39,11 +39,13 @@
   ],
   "comments": [
     {
+      "id": "15667",
       "author": "Justin Obara",
       "date": "2008-07-28T10:15:32.000-0400",
       "body": "'screenshot-1' shows the invisible file queue\n"
     },
     {
+      "id": "15669",
       "author": "Justin Obara",
       "date": "2008-09-16T14:57:33.000-0400",
       "body": "Appears to have been fixed with re-write of Uploader\n\nVerified using:\\\nIE 6 (Win XP)\n"

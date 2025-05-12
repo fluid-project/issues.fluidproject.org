@@ -43,21 +43,25 @@
   ],
   "comments": [
     {
+      "id": "19885",
       "author": "Jacob Farber",
       "date": "2009-09-30T14:53:53.000-0400",
       "body": "PRE build interface concept\n"
     },
     {
+      "id": "19887",
       "author": "Jacob Farber",
       "date": "2009-09-30T14:54:20.000-0400",
       "body": "POST build interface concept\n"
     },
     {
+      "id": "19888",
       "author": "Laurel Williams",
       "date": "2009-10-01T15:07:53.000-0400",
       "body": "This file contains the text changes for the builder headings.\n"
     },
     {
+      "id": "19890",
       "author": "Colin Clark",
       "date": "2009-10-05T18:39:37.000-0400",
       "body": "I've reviewed these changes. While I think there's room for improvement in a few places, they're not directly related to this issue and minor enough not to cause us to block the release.\n"

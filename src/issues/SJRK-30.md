@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26351",
       "author": "Alan Harnum",
       "date": "2017-11-09T16:01:39.140-0500",
       "body": "Consider ways to make the story authoring via images only, if the author decided to do it that way.\n\nPerhaps choosing from a set of cards or symbolic images? Communication boards. How would we decide what is in the set of images? Adding images is not the same as choosing from a predefined set of pictograms\n\nAccessibility considerations relating to image use:\n\n* alternative text input for each image\n* record audio which is transcribed to provide alternative text\n* we should encourage authors to provide alternative content, keeping in mind the complexity of the interface\n"

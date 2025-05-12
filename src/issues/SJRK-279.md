@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26473",
       "author": "Gregor Moss",
       "date": "2019-09-10T14:23:07.749-0400",
       "body": "The ideal would be to notify the user when they are about to delete a block that has content. Reading out some or all of the content of the block would be helpful in this case.\n\nPerhaps issue a warning *only* when a block with content is about to be deleted, or a summary of block(s) that are about to be deleted when the delete button is pressed.\n"

@@ -33,6 +33,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20726",
       "author": "Justin Obara",
       "date": "2008-11-27T09:44:48.000-0500",
       "body": "will work when virtual pc cursor mode is turned off\n"

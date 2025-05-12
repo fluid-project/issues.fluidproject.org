@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20555",
       "author": "Daphne Ogle",
       "date": "2009-02-02T21:17:57.000-0500",
       "body": "iteration28\n"
     },
     {
+      "id": "20556",
       "author": "Daphne Ogle",
       "date": "2009-03-17T11:25:34.000-0400",
       "body": "Decisions have been made about what components to test.  A student group will be testing UPloader, INline Edit & Image Reorderer in late March, early April.\n"

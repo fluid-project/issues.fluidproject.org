@@ -30,21 +30,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21236",
       "author": "Herb Wideman",
       "date": "2009-04-01T09:47:29.000-0400",
       "body": "This seems to be resolved with the 1.0 beta in FF3/XP\n"
     },
     {
+      "id": "21237",
       "author": "Herb Wideman",
       "date": "2009-04-01T10:43:27.000-0400",
       "body": "Also resolved with 1.0 beta in Opera9.6/XP\n"
     },
     {
+      "id": "21238",
       "author": "Eli Cochran",
       "date": "2009-04-01T12:28:59.000-0400",
       "body": "I forgot to update this JIRA a few days ago. With updating Progress to the new class name scheme, I fixed the manual test for Progress. Basically the selectors had gotten out of sync with the implementation. So refreshing the selectors fixed the tests.&#x20;\n"
     },
     {
+      "id": "21239",
       "author": "Justin Obara",
       "date": "2009-04-08T09:15:44.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\\\nFF3, IE6 (Win 2000)&#x20;\n"

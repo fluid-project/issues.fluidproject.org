@@ -29,26 +29,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13334",
       "author": "Justin Obara",
       "date": "2009-03-17T11:13:09.000-0400",
       "body": "Bug Parade 1.0 release&#x20;\n"
     },
     {
+      "id": "13336",
       "author": "Antranig Basman",
       "date": "2009-03-24T16:25:56.000-0400",
       "body": "Fixed at revision 6830. Please note that since jquery.keyboard-a11y makes references during its initialisation to keycodes defined in ui.core.js, the core file must now be included first.\n"
     },
     {
+      "id": "13337",
       "author": "Michelle D'Souza",
       "date": "2009-03-25T16:12:00.000-0400",
       "body": "I reviewed the code commits for this issue and tested the changed files. It all looks good.\n"
     },
     {
+      "id": "13338",
       "author": "Justin Obara",
       "date": "2009-03-26T11:25:07.000-0400",
       "body": "Verified fix using:\n\nFF3 (Win Vista)\\\nIE6 (Win XP)\\\nOpera 9.6 (Mac OS 10.5)\n"
     },
     {
+      "id": "13340",
       "author": "Michelle D'Souza",
       "date": "2011-01-30T11:56:36.182-0500",
       "body": "Reopening these issues to add the frameworkcomponent\n"

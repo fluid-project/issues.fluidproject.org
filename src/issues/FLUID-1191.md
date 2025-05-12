@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13328",
       "author": "Daphne Ogle",
       "date": "2008-08-18T17:13:01.000-0400",
       "body": "Erin & Daphne to complete this work\n"
     },
     {
+      "id": "13330",
       "author": "Erin Yu",
       "date": "2008-09-03T13:24:24.000-0400",
       "body": "iteration17\n"

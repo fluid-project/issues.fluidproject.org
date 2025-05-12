@@ -44,16 +44,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21693",
       "author": "Antranig Basman",
       "date": "2008-08-08T14:25:38.000-0400",
       "body": "This is as a result of the jQuery \"domManip\" function deciding to reevaluate any script blocks that it finds inside markup that it mangles. Obviously for init blocks which are simply being moved from one place to the other, this is not the desired behaviour. Unfortunately it is hard to think of a way to detach and then reattach a DOM node without causing JQuery to believe that the markup is \"new\" - for applications where we are very sure we are simply \"shuffling\" the dom, we might want to look into doing this by other means - it will certainly be cheaper and faster in any case.\n"
     },
     {
+      "id": "21694",
       "author": "Antranig Basman",
       "date": "2008-09-07T18:02:53.000-0400",
       "body": "Drop Manager, Dom Permutation work merged back into trunk at revision 5476\n\nIt turns out that even without the use of JQuery, the \\<script> blocks are being evaluated on reattachment in any case. These have needed to be manually \"cleansed\" out of the DOM on move.\n"
     },
     {
+      "id": "21695",
       "author": "Justin Obara",
       "date": "2008-09-08T09:09:41.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5 (Mac OS 10.5, Win XP)\\\nFF3 (Win Vista)\n"

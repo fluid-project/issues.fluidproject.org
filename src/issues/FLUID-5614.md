@@ -41,11 +41,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25178",
       "author": "Antranig Basman",
       "date": "2015-05-22T13:49:38.550-0400",
       "body": "It appears that this bug is more basic and threatening than was first thought - it seems capable of corrupting even plain options definitions that appear along two different paths through \"deep trees\" - see discussion in IRC at <https://botbot.me/freenode/fluid-work/2015-05-22/?msg=39911542&page=1>\n"
     },
     {
+      "id": "25179",
       "author": "Cindy Li",
       "date": "2016-01-29T16:49:23.675-0500",
       "body": "A use case of a failure with broadcasting \"deep trees\" options: <https://github.com/cindyli/universal/tree/GPII-1521-distributeOptions>\n\nThe distributeOptions target in question: <https://github.com/cindyli/universal/blob/GPII-1521-distributeOptions/gpii/node_modules/preferencesServer/src/preferencesServer.js#L105>\n\nTo produce the failure:\\\n1\\. Use the new universal with node 4.2.1\\\n2\\. Start GPII with the config file \"preferencesServer.development.all.local\"\n\n```java\nNODE_ENV=preferencesServer.development.all.local node gpii.js\n```\n\n3\\. This error is thrown:\n\n```java\nError in invoker record: could not resolve members func, funcName or method to a function implementation - got undefined from {\r\n    \"func\": \"{dataStore}.findAuthorizedClientsByUserId\",\r\n    \"funcName\": undefined,\r\n    \"listener\": undefined,\r\n    \"this\": undefined,\r\n    \"method\": undefined,\r\n    \"componentSource\": \"gpii.oauth2.authorizationService\"\r\n}\n```\n\nThe error was due to \"inMemoryDataStore\" that's constructed at preferencesServer.js, line 96 is not distributed to the target.\n\nCurrently, switching the target to use line 106 fixes the issue.\n"

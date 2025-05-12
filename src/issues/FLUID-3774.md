@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24648",
       "author": "Justin Obara",
       "date": "2010-10-04T15:44:49.455-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "24649",
       "author": "Anastasia Cheetham",
       "date": "2010-10-14T12:56:22.458-0400",
       "body": "I've started a draft of this page, as a child of the 1.3 Release Status page:\\\n<http://wiki.fluidproject.org/display/fluid/Infusion+1.3+Sneak+Peek+Features>\n\nI'm not sure if this level of detail is sufficient? In addition to this page, anything that is actually sneak peek will be marked as such in the specific documentation.\n"

@@ -36,26 +36,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25031",
       "author": "Cindy Li",
       "date": "2011-05-06T13:33:37.691-0400",
       "body": "This issue is a duplication of <https://fluidproject.atlassian.net/browse/FLUID-3762#icft=FLUID-3762>.\n"
     },
     {
+      "id": "25032",
       "author": "Cindy Li",
       "date": "2011-05-09T13:08:39.859-0400",
       "body": "Changes are done in commit code: b5974e3939f8e2d91dbabb1b0e0e6366d9897b2d\n\nUnder code review.\n"
     },
     {
+      "id": "25033",
       "author": "Justin Obara",
       "date": "2011-05-17T11:29:58.461-0400",
       "body": "has been pushed up to the project repo\n"
     },
     {
+      "id": "25034",
       "author": "Cindy Li",
       "date": "2011-06-08T10:24:59.262-0400",
       "body": "According to the code review, removed the uiEnhancer from the sub-component list of fluid.uiOptions. Only expose the necessary parts of the uiEnhancer instead of the whole to fluid.uiOptions.\n"
     },
     {
+      "id": "25035",
       "author": "Michelle D'Souza",
       "date": "2011-06-13T12:44:47.821-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/73> merged into the project repo at 08651ef62ce1594ccf4ac91af61f0d18173f5a48\n"

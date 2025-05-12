@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20868",
       "author": "Cindy Li",
       "date": "2010-08-27T10:22:43.362-0400",
       "body": "This multi-line inline editor can be achieve with rich text inline editor by adjusting the rich text editor settings to hide all the toolbars.\n"

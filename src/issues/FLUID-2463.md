@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23508",
       "author": "Justin Obara",
       "date": "2009-04-07T16:10:33.000-0400",
       "body": "All sub-issues have been closed\n"
     },
     {
+      "id": "23509",
       "author": "Michelle D'Souza",
       "date": "2011-01-13T16:50:09.698-0500",
       "body": "Reopening these issues in order to change the component to Release.&#x20;\n"

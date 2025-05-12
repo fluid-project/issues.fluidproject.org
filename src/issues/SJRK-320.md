@@ -30,6 +30,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26395",
       "author": "Gregor Moss",
       "date": "2020-01-16T16:01:50.474-0500",
       "body": "Work on this issue can be found in this branch: <https://github.com/BlueSlug/sjrk-story-telling/tree/SJRK-320>\n"

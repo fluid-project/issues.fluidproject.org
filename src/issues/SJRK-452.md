@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "26642",
       "author": "Justin Obara",
       "date": "2021-02-24T11:21:51.722-0500",
       "body": "This is being worked on in the branch for <https://fluidproject.atlassian.net/browse/SJRK-404#icft=SJRK-404>. The solution is to create the initial story on block creation or story model change (to account for metadata additions). In addition the storyId was moved into the model for the editor block and uploader component. This is because we need to have dynamic access to the storyId which may be set after the block itself has been created. However, there is still the potential case where the story hasn't finished creation on the server before the user attempts to upload an image. In that case they may still see the error initially, but should be able to re-upload the image after the story has been created. \n"
     },
     {
+      "id": "26643",
       "author": "Justin Obara",
       "date": "2021-03-15T12:18:51.870-0400",
       "body": "Addressed alongside <https://fluidproject.atlassian.net/browse/SJRK-404#icft=SJRK-404>.\n\n[The pull request](https://github.com/fluid-project/sjrk-story-telling/pull/111) that implements this feature has been merged into the main branch at [this commit](https://github.com/fluid-project/sjrk-story-telling/commit/e8fb396d078ee557b6ee58b7d58805ddc9d47fe1).\n"

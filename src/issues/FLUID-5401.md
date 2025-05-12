@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23579",
       "author": "Justin Obara",
       "date": "2015-06-15T15:10:23.521-0400",
       "body": "Now that we are using the Web Speech API the issue is slightly different. For one FF is not currently supported, but Chrome and Safari are. Secondly, on re-openning the panel, it seems something from the panel is read instead of the content on the page continuing.\n"
     },
     {
+      "id": "27828",
       "author": "Justin Obara",
       "date": "2024-07-22T15:13:11.000-0400",
       "body": "Could not reproduce with FF 128 and Safari 17.5 on macOS 14.5\n"

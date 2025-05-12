@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18844",
       "author": "Allison Bloodworth",
       "date": "2008-12-03T13:33:09.000-0500",
       "body": "iteration25\n"
     },
     {
+      "id": "18848",
       "author": "Allison Bloodworth",
       "date": "2009-03-05T12:19:27.000-0500",
       "body": "We sent an email to the list in lieu of a more formal show and tell.\n"

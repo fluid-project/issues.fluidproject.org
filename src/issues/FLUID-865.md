@@ -34,6 +34,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19847",
       "author": "Justin Obara",
       "date": "2008-11-03T09:02:27.000-0500",
       "body": "Appears to have been fixed with one of the commits leading up to the 0.6beta\n"

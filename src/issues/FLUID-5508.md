@@ -43,26 +43,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22331",
       "author": "Antranig Basman",
       "date": "2014-11-18T20:16:36.890-0500",
       "body": "I felt sure that some work had been done on this issue, but there seems to be none. Note that the framework automatically supplies a synthesized member \"componentSource\" to each listener record, which is currently used only for the relatively worthless requirement of synthesizing soft namespace names. It appears that given this is invoked directly from fluid.rawDefaults, that it is actually suitable for this purpose - the name of the field is slightly misleading. There seems huge scope for confusion with this implementation since the rules for \"collision of soft namespaces\" (which is to behave as if there is no collision and register both listeners) directly conflict with the rules apparently required by this JIRA (collision actually causes replacement). As the JIRA observes, it is the exact listener record itself which must be tagged, and in an entirely unique way - as opposed to the human-readable \"woolly\" way which leads to the soft namespace string.\n"
     },
     {
+      "id": "22333",
       "author": "Antranig Basman",
       "date": "2015-08-20T16:11:07.867-0400",
       "body": "Listeners are now fully tagged with \"componentSource\" annotations as part of the <https://fluidproject.atlassian.net/browse/FLUID-5733#icft=FLUID-5733> work - this should be easy to resolve if it is not already\n"
     },
     {
+      "id": "22337",
       "author": "Antranig Basman",
       "date": "2015-09-07T16:07:22.066-0400",
       "body": "A further and more intractable version of this issue has transpired with respect to \"members\". The user has a grade (ironically the same one as in this headline JIRA) named \"flock.synth\" which contains a highly expensive \"members\" definition. This definition is contributed twice, which is undesirable. This has regressed as a result of the stopgap fix for <https://fluidproject.atlassian.net/browse/FLUID-5668#icft=FLUID-5668>. \"members\" no longer follow the default workflow for grade merging, which operates MERGING BEFORE EXPANSION. Instead, especially since the \"model\" area of components we still attempt to implement as a standard \"member\", we needed to take control of the expansion behaviour manually. Also, a case emerged (the <https://fluidproject.atlassian.net/browse/FLUID-5668#icft=FLUID-5668> case) where a kind of \"proto model\" was assembled from various contributions - where merging after expansion was clearly required.\\\nIt's hard to see a clear way out of this - perhaps only by significantly improving both the \"members\" workflow as well as our support for mergePolicies which will allow user's policies in this respect to be expressed clearly.\n"
     },
     {
+      "id": "22340",
       "author": "Antranig Basman",
       "date": "2015-09-07T16:19:43.398-0400",
       "body": "As a current experiment, adding a mergePolicy of \"members.synthDef\": \"replace\" had no effect on the double contribution\n"
     },
     {
+      "id": "22341",
       "author": "Antranig Basman",
       "date": "2016-08-18T10:01:01.228-0400",
       "body": "This was effectively fixed with the <https://fluidproject.atlassian.net/browse/FLUID-5800#icft=FLUID-5800> fix in <https://github.com/fluid-project/infusion/pull/648> although we still have a good deal of work required in this area for <https://fluidproject.atlassian.net/browse/FLUID-5668#icft=FLUID-5668> and related issues\n"

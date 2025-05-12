@@ -35,16 +35,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23877",
       "author": "Anastasia Cheetham",
       "date": "2013-11-20T16:24:25.116-0500",
       "body": "We discussed this in the Community Meeting on Nov. 20 and came up with the following overall hierarchy:\n\nsrc\\\nframework\\\ncomponents\\\nlib\\\nmodule\\\ndemos\\\nshowcase\\\ninstructional\\\nintegration <- to be destroyed\\\nstandalone\\\ntests\n\nFor the demos/instructional folder, the hierarchy should mirror, as much as reasonable, the hierarchy of the source folder. In general:\n\ndemos/instructional\\\nframework\\\ncore\\\nprefs\\\nrenderer\\\ncomponents\\\ncomponentX\\\nshared\\\ncss\\\nshared.css\\\nhtml\\\nshared.html\\\njs\\\nshared.js\\\ndemoX\\\ncss\\\nfile.css\\\nhtml\\\nfile.html\\\njs\\\nfile.js\\\ndemoY\\\ncss\\\nfile.css\\\nhtml\\\nfile.html\\\njs\\\nfile.js\\\ncomponentY\\\netc\n"
     },
     {
+      "id": "23878",
       "author": "Justin Obara",
       "date": "2021-06-22T15:25:27.969-0400",
       "body": "Perhaps something like this could be facilitated through [codepen](https://codepen.io/) or similar system.\n"
     },
     {
+      "id": "27931",
       "author": "Justin Obara",
       "date": "2024-07-31T15:16:23.827-0400",
       "body": "Migrated to <https://github.com/fluid-project/infusion-docs/issues/271>&#x20;\n"

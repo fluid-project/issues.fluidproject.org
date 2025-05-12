@@ -34,6 +34,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20376",
       "author": "Antranig Basman",
       "date": "2014-11-18T20:22:46.594-0500",
       "body": "This issue was resolved as part of the <https://fluidproject.atlassian.net/browse/FLUID-4258#icft=FLUID-4258> model relay-aware \"new ChangeApplier\" work. \"Guards\" are removed and the configuration achieving the above effect looks like this:\n\nmodelRelay: \\[{\\\ntarget: \"pageCount\",\\\nsingleTransform: {\\\ntype: \"fluid.transforms.free\",\\\nargs: {\\\n\"totalRange\": \"{that}.model.totalRange\",\\\n\"pageSize\": \"{that}.model.pageSize\"\\\n},\\\nfunc: \"fluid.pager.computePageCount\"\\\n}\n\n(from Pager.js)\n"

@@ -38,16 +38,19 @@
   ],
   "comments": [
     {
+      "id": "17563",
       "author": "Colin Clark",
       "date": "2008-11-29T13:37:15.000-0500",
       "body": "Here is a patch with a basic sketch of SWFUpload 2.2.0 in action. What a horrible, horrible library!\n"
     },
     {
+      "id": "17564",
       "author": "Justin Obara",
       "date": "2008-12-03T13:59:06.000-0500",
       "body": "Bug Parade: 0.6 release\n"
     },
     {
+      "id": "17566",
       "author": "Michelle D'Souza",
       "date": "2011-01-28T12:17:22.973-0500",
       "body": "Reopening these issues to add the uploadercomponent to them.&#x20;\n"

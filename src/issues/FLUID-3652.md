@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22071",
       "author": "Justin Obara",
       "date": "2010-04-30T17:05:22.000-0400",
       "body": "This is now in place in the incubator.\n\nIncubator URL:\\\n<https://source.fluidproject.org/svn/incubator/mfss_firefox>\n\nServed Demo:\\\n<http://build.fluidproject.org:8095/incubator/mfss_firefox/infusion-branch/src/webapp/demos/fss/mobile/demo.html>\n"

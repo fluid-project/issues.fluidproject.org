@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19129",
       "author": "Michelle D'Souza",
       "date": "2008-05-27T11:37:18.000-0400",
       "body": "The only subtask that is remaining is a minor issue that depends on a fix to jQuery UI.&#x20;\n"
     },
     {
+      "id": "19132",
       "author": "Michelle D'Souza",
       "date": "2008-09-02T12:51:19.000-0400",
       "body": "All the subtasks are now closed\n"

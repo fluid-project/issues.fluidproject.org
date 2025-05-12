@@ -47,6 +47,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24963",
       "author": "Jonathan Hung",
       "date": "2011-01-06T12:35:38.666-0500",
       "body": "Closing - orphaned work.\n"

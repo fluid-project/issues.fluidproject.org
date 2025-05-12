@@ -41,21 +41,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16525",
       "author": "Jacob Farber",
       "date": "2009-05-22T15:26:03.000-0400",
       "body": "When the box is uncked, does that mean to have the opposite effect (removing that style) or no effect (simply not adding that style)\n"
     },
     {
+      "id": "16526",
       "author": "Jen Chow",
       "date": "2010-12-20T15:36:44.620-0500",
       "body": "On Fluid demo portal on IE6, bold setting under easier to find isn't deactivating when box is unchecked. Underline is working properly though.&#x20;\n"
     },
     {
+      "id": "16527",
       "author": "Justin Obara",
       "date": "2011-05-17T10:38:54.367-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "16528",
       "author": "heidi valles",
       "date": "2011-06-22T15:32:43.628-0400",
       "body": "The bold and underline checkboxes have been removed from UIO and replaced with \"emphasise links\"\n"

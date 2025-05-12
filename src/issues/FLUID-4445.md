@@ -40,16 +40,19 @@
   ],
   "comments": [
     {
+      "id": "22736",
       "author": "Cindy Li",
       "date": "2011-09-15T16:28:38.620-0400",
       "body": "Attached a screen shot \"IE6-noFlash.png\" of how the image gallery looks like in IE6 when the flash is uninstalled but active scripting is enabled. Instead of having the single file uploader displayed, a broken multi-file uploader shows up.\n"
     },
     {
+      "id": "22739",
       "author": "Cindy Li",
       "date": "2011-09-20T14:17:29.836-0400",
       "body": "Sent a pull request: <https://github.com/fluid-project/image-gallery/pull/1>\n"
     },
     {
+      "id": "22741",
       "author": "Colin Clark",
       "date": "2011-09-23T17:25:29.333-0400",
       "body": "I tested and pushed Cindy's changes to the master image-gallery repository. <https://github.com/fluid-project/image-gallery/pull/1>\n\nI made one minor tweak to the casing of the eventOpts variable.\n"

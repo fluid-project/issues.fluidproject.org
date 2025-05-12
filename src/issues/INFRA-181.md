@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25735",
       "author": "Giovanni Tirloni",
       "date": "2020-05-19T13:12:03.165-0400",
       "body": "Instead of upgrading ownCloud we will migrate to nextCloud (the fork that has more mindshare now).\n"

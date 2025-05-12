@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14099",
       "author": "Colin Clark",
       "date": "2008-08-19T18:44:31.000-0400",
       "body": "dev-iteration41\n"
     },
     {
+      "id": "14101",
       "author": "Colin Clark",
       "date": "2008-08-28T23:46:07.000-0400",
       "body": "An early version of the DemoUploadManager has been implemented and tested.\n"
     },
     {
+      "id": "14103",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:51.285-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

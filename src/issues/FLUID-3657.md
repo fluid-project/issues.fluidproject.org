@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22096",
       "author": "Antranig Basman",
       "date": "2010-05-19T01:54:14.860-0400",
       "body": "The directive \"parentFullID\" has been removed as of this release. \"this is not recommended functionality and has been withdrawn (full IDs are not guaranteed to remain stable within the tree, although as of this revision they still are - modified value is currently written to field \"finalID\"\"\n"

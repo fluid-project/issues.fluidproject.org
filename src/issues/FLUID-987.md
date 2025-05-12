@@ -52,16 +52,19 @@
   ],
   "comments": [
     {
+      "id": "13871",
       "author": "Justin Obara",
       "date": "2008-09-02T11:15:23.000-0400",
       "body": "'screenshot-1' shows the incorrect pointer style&#x20;\n"
     },
     {
+      "id": "13874",
       "author": "Jacob Farber",
       "date": "2008-10-31T10:20:06.000-0400",
       "body": "flora theme forced cursor to pointer, so added a rule to \"cursor:move\"\n"
     },
     {
+      "id": "13876",
       "author": "Justin Obara",
       "date": "2008-11-03T09:50:57.000-0500",
       "body": "Verified fix using:\n\nFF2 (Mac OS 10.5)\\\nFF3(Win XP)\\\nIE7 (Win Vista)\n"

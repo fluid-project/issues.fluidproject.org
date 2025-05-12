@@ -39,11 +39,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24203",
       "author": "Kaye Mao",
       "date": "2015-08-05T17:06:22.884-0400",
       "body": "Pull request: <https://github.com/fluid-project/infusion/pull/619>\n"
     },
     {
+      "id": "24205",
       "author": "Justin Obara",
       "date": "2015-09-30T10:55:52.420-0400",
       "body": "New pull request which updates the previous one to the the current master branch of infusion,\\\n<https://github.com/fluid-project/infusion/pull/640>\n"

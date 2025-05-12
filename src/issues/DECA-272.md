@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10326",
       "author": "Justin Obara",
       "date": "2012-07-05T13:04:17.757-0400",
       "body": "pdf.py will now update the status with the stage from genpdf's progress file when the getStatus method is called and an export is in progress.\n\nThe changes are in my bitbucket repo:\\\n<https://bitbucket.org/jobara/decapod-0.6-server-iteration4>\n"
     },
     {
+      "id": "10327",
       "author": "Justin Obara",
       "date": "2012-07-10T13:45:56.958-0400",
       "body": "Merged into the googlecode repo\n"

@@ -51,16 +51,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17683",
       "author": "Jonathan Hung",
       "date": "2008-12-02T16:21:52.000-0500",
       "body": "Iteration29\n"
     },
     {
+      "id": "17685",
       "author": "Jonathan Hung",
       "date": "2009-01-09T12:13:30.000-0500",
       "body": "Notes:\n\n* feature more patterns on the front page.\n* add a \"New Patterns\" block or something to show new content recently added to the site.\n* make a more interesting page for a user when they are logged in.\n"
     },
     {
+      "id": "17687",
       "author": "Jonathan Hung",
       "date": "2009-03-20T11:57:34.000-0400",
       "body": "Addressed with V3 of the front page.\n"

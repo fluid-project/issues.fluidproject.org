@@ -39,21 +39,25 @@
   ],
   "comments": [
     {
+      "id": "11211",
       "author": "Anastasia Cheetham",
       "date": "2012-07-19T16:32:14.613-0400",
       "body": "Michelle, when you say \"The width of the content should increase so that the table of contents can show about 5 words on a line,\" do you mean the width of the ToC sidebar on the left?\n"
     },
     {
+      "id": "11212",
       "author": "Michelle D'Souza",
       "date": "2012-07-19T17:48:07.384-0400",
       "body": "Yes, that is what I meant. I just checked in with Joanna, can you make it so that there is a minimum width on the authoring tool? It should be the same as the max width on the rest of the site and should change with font size.&#x20;\n"
     },
     {
+      "id": "11213",
       "author": "Michelle D'Souza",
       "date": "2012-07-19T17:50:02.569-0400",
       "body": "There should also be a max width that gives the author an idea of what their page will look like published on the OER Commons site.\n"
     },
     {
+      "id": "11214",
       "author": "Alexey Novak",
       "date": "2012-08-16T14:34:02.063-0400",
       "body": "All listed issues seems to be fixed on the production.\n"

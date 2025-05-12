@@ -36,16 +36,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22026",
       "author": "Antranig Basman",
       "date": "2015-03-25T13:57:53.955-0400",
       "body": "This can be closed once we have merged in <https://github.com/fluid-project/infusion/pull/577> which demonstrates that the diff algorithm is fully responsive\n"
     },
     {
+      "id": "22028",
       "author": "Anastasia Cheetham",
       "date": "2015-11-03T13:19:48.076-0500",
       "body": "The pull request mentioned above (#577) has been mothballed. Should this docs issue be closed now?\n"
     },
     {
+      "id": "22032",
       "author": "Antranig Basman",
       "date": "2015-11-04T09:15:55.286-0500",
       "body": "The work specifically listed here is concluded. We have a stalled pull request for <https://fluidproject.atlassian.net/browse/FLUID-5490#icft=FLUID-5490> as #577 since we can't unilaterally apply a single policy with respect to \"clearing source and target\" in relay rules - this needs to become a further configuration option to a relay rule, and there will not be time to return to this work before the next ChangeApplier rewrite begins, which itself will have to come after <https://fluidproject.atlassian.net/browse/FLUID-4982#icft=FLUID-4982>\n"

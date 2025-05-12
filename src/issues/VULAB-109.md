@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27343",
       "author": "David Makalsky",
       "date": "2008-12-01T18:01:26.000-0500",
       "body": "This inherits from <https://fluidproject.atlassian.net/browse/VULAB-28#icft=VULAB-28>\n\nVULAB9, vulab10\n"
     },
     {
+      "id": "27344",
       "author": "David Makalsky",
       "date": "2008-12-15T15:23:36.000-0500",
       "body": "readme.txt file created, committed and pointed to in the wiki <http://wiki.fluidproject.org/display/fluid/Open+Virtual+Usability+Lab>\n"

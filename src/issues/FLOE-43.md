@@ -104,71 +104,85 @@
   ],
   "comments": [
     {
+      "id": "11401",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T14:28:58.201-0400",
       "body": "ISKME and Green site images should have high contrast versions.&#x20;\n"
     },
     {
+      "id": "11402",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T14:31:11.122-0400",
       "body": "The actions drop down and the icon for the link to an external resource on the browse results page should have high contrast versions.&#x20;\n"
     },
     {
+      "id": "11403",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T14:33:53.512-0400",
       "body": "On the contribute page, the buttons and open author image should have high contrast versions.&#x20;\n"
     },
     {
+      "id": "11404",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T14:36:58.241-0400",
       "body": "On the profile page, the resource summaries have coloured outlines that should conform to the high contrast theme.&#x20;\n"
     },
     {
+      "id": "11405",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T14:38:38.543-0400",
       "body": "The right border on the profile page is broken.&#x20;\n"
     },
     {
+      "id": "11406",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T14:40:14.535-0400",
       "body": "On the profile preferences page, the icon in the tab and the asterisk should follow the theme colours.&#x20;\n"
     },
     {
+      "id": "11407",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T14:41:50.225-0400",
       "body": "The drop down arrow beside the user name needs to have a high contrast version.&#x20;\n"
     },
     {
+      "id": "11408",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T14:42:41.782-0400",
       "body": "The asterisks on the feedback page should follow the theme colours.&#x20;\n"
     },
     {
+      "id": "11409",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T14:45:29.923-0400",
       "body": "Icons on the resource page need high contrast versions. This includes the make a copy, download, delete and return to top icons.&#x20;\n"
     },
     {
+      "id": "11410",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T14:50:20.660-0400",
       "body": "On the resource summary page, the saved button and the accompanying drop down need high contrast versions.&#x20;\n"
     },
     {
+      "id": "11411",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T14:50:58.334-0400",
       "body": "The edit and delete icons on the resource summary page need high contrast versions.&#x20;\n"
     },
     {
+      "id": "11412",
       "author": "Michelle D'Souza",
       "date": "2012-07-03T14:54:30.706-0400",
       "body": "The preview image place holder and the view resources button need high contrast versions.\n"
     },
     {
+      "id": "11413",
       "author": "Michelle D'Souza",
       "date": "2012-07-16T16:25:45.738-0400",
       "body": "Could I get high contrast images for:&#x20;\n\n[http://www.oercommons.org](http://www.oercommons.org/)\\\n1\\. the ISKME image\\\n2\\. the arrow beside the user name\n\n<http://www.oercommons.org/browse/general_subject/humanities>\\\n1\\. the arrow beside 'Actions' \\\n2\\. the external resource icon\n\n<http://www.oercommons.org/authoring/707-engineering-design-the-living-canopy/view>\\\n1\\. make a copy icon\\\n2\\. download icon\\\n3\\. return to top icon\\\n4\\. trash icon\\\n5\\. return to edit icon&#x20;\n\n<http://www.oercommons.org/libraries/the-adventures-of-rama>\\\n1\\. the drop down arrow near 'Save'\\\n2\\. the folder icon when you click the above drop down arrow\\\n3\\. the edit icon\\\n4\\. the delete icon\\\n5\\. the preview placeholder\n"
     },
     {
+      "id": "11414",
       "author": "Anastasia Cheetham",
       "date": "2012-07-25T10:16:35.406-0400",
       "body": "I've attached a screenshot of the icons that become visible when an image is added to the content (in OpenAuth)). I'm not sure if that's already on your list.\n"

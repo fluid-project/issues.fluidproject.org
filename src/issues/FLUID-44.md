@@ -46,46 +46,55 @@
   ],
   "comments": [
     {
+      "id": "16691",
       "author": "Anastasia Cheetham",
       "date": "2007-10-04T15:55:33.000-0400",
       "body": "These issues might be related - the strange behaviour observed in <https://fluidproject.atlassian.net/browse/FLUID-6#icft=FLUID-6> might actually be <https://fluidproject.atlassian.net/browse/FLUID-44#icft=FLUID-44>, and not related to dojo's copy functionality.\n"
     },
     {
+      "id": "16693",
       "author": "Michelle D'Souza",
       "date": "2007-10-22T17:39:31.000-0400",
       "body": "To see this behaviour on windows, in step 3 you must drag and drop an item that has not already been selected.&#x20;\n\nThe behaviour on the Mac is slightly different in that ctrl-mouse click brings up the context menu which interferes with the drag. When the context menu is dismissed the styling remains in an incorrect state.\n"
     },
     {
+      "id": "16695",
       "author": "Joseph Scheuhammer",
       "date": "2007-11-27T14:43:48.000-0500",
       "body": "Moving to the next release.\n"
     },
     {
+      "id": "16697",
       "author": "Justin Obara",
       "date": "2008-08-13T13:25:57.000-0400",
       "body": "updated the Browsers that this issue affects\n"
     },
     {
+      "id": "16699",
       "author": "Antranig Basman",
       "date": "2008-09-18T01:49:19.000-0400",
       "body": "I am not able to reproduce this issue currently (FF2 Windows), it may have been fixed in the recent reworking. Please reverify, thanks.\n"
     },
     {
+      "id": "16701",
       "author": "Justin Obara",
       "date": "2008-09-18T09:50:15.000-0400",
       "body": "'screenshot-1' shows the focus styling styll applied to the Dragonfruit even though the Kiwano is being dragged\n"
     },
     {
+      "id": "16703",
       "author": "Justin Obara",
       "date": "2008-09-18T09:50:38.000-0400",
       "body": "Can still reproduce issue, also added a screenshot\n"
     },
     {
+      "id": "16705",
       "author": "Justin Obara",
       "date": "2008-09-18T09:54:16.000-0400",
       "body": "Here are some steps to reproduce:\n\n1\\) tab to an image in the lightbox\n\n2\\) press and hold the ctrl key. While doing that click in some whitespace on the screen\n\n3\\) release the ctrl key. Notice that the focus styling remains on the image\n"
     },
     {
+      "id": "16706",
       "author": "Antranig Basman",
       "date": "2008-09-18T13:41:35.000-0400",
       "body": "Fixed at revision 5587\n"

@@ -32,31 +32,37 @@
   ],
   "comments": [
     {
+      "id": "13636",
       "author": "Mike Lam",
       "date": "2010-12-09T17:50:21.873-0500",
       "body": "Update the progress text of the uploader in the DOM.\n"
     },
     {
+      "id": "13638",
       "author": "Mike Lam",
       "date": "2010-12-09T17:50:45.836-0500",
       "body": "Update the progress text of the uploader in the DOM.\n"
     },
     {
+      "id": "13640",
       "author": "Mike Lam",
       "date": "2010-12-09T18:37:08.494-0500",
       "body": "Removed previous hacky patch.   Included the proper patch.\n"
     },
     {
+      "id": "13642",
       "author": "Justin Obara",
       "date": "2010-12-10T10:37:12.201-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "13644",
       "author": "Justin Obara",
       "date": "2010-12-10T10:37:17.028-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "13646",
       "author": "Justin Obara",
       "date": "2010-12-10T10:37:59.131-0500",
       "body": "Michelle reviewed and committed\n"

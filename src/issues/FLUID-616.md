@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19116",
       "author": "Eli Cochran",
       "date": "2008-05-23T12:05:39.000-0400",
       "body": "Many things all conspired to make the old implementation impossible. \\\nThe tbody element was both the scrolling element and the element that needed to be measured in order to know whether you needed to set the element to scrolling. \\\nSo you can't test the height of the element since you're also setting the height of the element to get it to scroll. (Is this making sense)\\\nSo instead of checking the height of the element, you check the offsetHeight of the element.\\\nBut IE doesn't support offsetHeight. (OK, it supports it but gets it wrong).\\\nSo you have to have a different element handle the scroll from the tbody which handles the height.\\\nExcept that height also isn't supported on tbody elements in IE so you have to test against the entire table element.\\\nBut you don't want to include headers and footers.\n\nAnd so, I exploded the table into three separate parts so I could scroll the middle. All because IE is wack!\n"
     },
     {
+      "id": "19120",
       "author": "Justin Obara",
       "date": "2008-12-02T15:18:53.000-0500",
       "body": "appears to have been fixed\n"

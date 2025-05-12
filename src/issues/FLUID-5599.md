@@ -33,21 +33,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13260",
       "author": "Justin Obara",
       "date": "2015-02-25T13:02:53.335-0500",
       "body": "The reference to the JAVA naming scheme for resource bundle fallback based on language\\\n<http://docs.oracle.com/javase/7/docs/api/java/util/ResourceBundle.html#getBundle(java.lang.String,%20java.util.Locale,%20java.lang.ClassLoader>)\n\nImplementing this as far as baseName\\_language\\_country would be good enough for now\n\nSee today's channel conversation with Bosmon7\\\n<https://botbot.me/freenode/fluid-work/2015-02-25/?tz=America/Toronto>\n"
     },
     {
+      "id": "13262",
       "author": "Cindy Li",
       "date": "2015-05-04T15:17:16.499-0400",
       "body": "Merged Antranig's pull request (<https://github.com/fluid-project/infusion/pull/596>) for implementing the localised resource fetcher into the master branch @ 735a2f084bc72cc71338a5856cfae49268374e56\n\nIssued another pull reqeust (735a2f084bc72cc71338a5856cfae49268374e58) to upgrade the prefs framework to fetch localized message bundles.\n"
     },
     {
+      "id": "13263",
       "author": "Antranig Basman",
       "date": "2015-05-07T10:44:46.580-0400",
       "body": "Merged into trunk at revision 76c6189 , incorporating fixes to FluidRequests.js as well as the prefs framework\n"
     },
     {
+      "id": "13264",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:35.811-0400",
       "body": "Reopening to change the fix version to 1.9\n"

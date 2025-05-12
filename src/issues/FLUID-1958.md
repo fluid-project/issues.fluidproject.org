@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17874",
       "author": "Antranig Basman",
       "date": "2008-12-11T12:59:52.000-0500",
       "body": "Fixed at revision 6196\n"
     },
     {
+      "id": "17875",
       "author": "Justin Obara",
       "date": "2008-12-11T13:52:17.000-0500",
       "body": "Bug Parade 0.6 release\n"
     },
     {
+      "id": "17877",
       "author": "Justin Obara",
       "date": "2008-12-11T13:52:45.000-0500",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

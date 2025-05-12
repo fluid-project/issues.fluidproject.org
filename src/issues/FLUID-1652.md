@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16802",
       "author": "Michelle D'Souza",
       "date": "2008-11-06T12:39:28.000-0500",
       "body": "The basic restyling based on class name injection is now done. Refinements may need to be done to restyle hostile markup.\n"
     },
     {
+      "id": "16804",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:52.154-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

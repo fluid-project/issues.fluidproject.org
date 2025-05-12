@@ -36,11 +36,13 @@
   ],
   "comments": [
     {
+      "id": "11376",
       "author": "Justin Obara",
       "date": "2015-06-05T10:18:12.326-0400",
       "body": "screenshot.png shows the partially visible and interactive fourth language option, when text size is maxed.\n"
     },
     {
+      "id": "11377",
       "author": "Cindy Li",
       "date": "2015-11-12T14:41:29.910-0500",
       "body": "This report has been copied to the GPII bug tracker: <https://issues.gpii.net/browse/GPII-1450> and all activities should be carried on there.\n"

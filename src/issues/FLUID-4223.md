@@ -39,16 +39,19 @@
   ],
   "comments": [
     {
+      "id": "24491",
       "author": "Harris Wong",
       "date": "2011-05-11T13:38:04.051-0400",
       "body": "Some testcase fails screenshot\n"
     },
     {
+      "id": "24492",
       "author": "Harris Wong",
       "date": "2011-05-16T15:27:05.286-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24493",
       "author": "Mike Lam",
       "date": "2011-06-24T12:45:39.559-0400",
       "body": "This has been fixed a while ago.  All the tests are passing in IE.\n"

@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18574",
       "author": "Antranig Basman",
       "date": "2008-09-17T22:30:45.000-0400",
       "body": "Downgraded to minor since occurs just on this platform combination. However, this issue should be reevaluated in the light of the fix to <https://fluidproject.atlassian.net/browse/FLUID-160#icft=FLUID-160>.\n"
     },
     {
+      "id": "18577",
       "author": "Justin Obara",
       "date": "2008-09-18T09:45:17.000-0400",
       "body": "Can no longer seem to reproduce this issue.&#x20;\n\nMay have been fixed with fix for <https://fluidproject.atlassian.net/browse/FLUID-160#icft=FLUID-160>\n"

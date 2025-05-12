@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15170",
       "author": "Michelle D'Souza",
       "date": "2009-01-19T13:21:05.000-0500",
       "body": "0.7 was released.\n"
     },
     {
+      "id": "15173",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:20.932-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

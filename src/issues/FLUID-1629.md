@@ -38,11 +38,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19171",
       "author": "Justin Obara",
       "date": "2010-05-07T14:41:37.484-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "19174",
       "author": "Jonathan Hung",
       "date": "2010-12-09T09:35:07.057-0500",
       "body": "Closed because demo has been removed from the repository. See Fluid-3731.\n"

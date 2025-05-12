@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22685",
       "author": "Justin Obara",
       "date": "2009-04-09T17:47:21.000-0400",
       "body": "moved the selectobox plugin into the lib folder in manual-tests\n"
     },
     {
+      "id": "22688",
       "author": "Eli Cochran",
       "date": "2009-04-09T17:50:39.000-0400",
       "body": "Justin's fix works\n"

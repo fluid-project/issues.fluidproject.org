@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13980",
       "author": "Justin Obara",
       "date": "2011-02-28T15:55:42.157-0500",
       "body": "1.3.1 is out.\n"

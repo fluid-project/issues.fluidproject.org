@@ -27,26 +27,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12691",
       "author": "Justin Obara",
       "date": "2010-02-08T17:03:58.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12692",
       "author": "Colin Clark",
       "date": "2010-02-08T17:15:29.000-0500",
       "body": "We just need to double-check that this has been done fully. Sveto, can you confirm?\n"
     },
     {
+      "id": "12693",
       "author": "Colin Clark",
       "date": "2010-02-18T10:18:57.000-0500",
       "body": "Justin committed new translations for Artifact Collect View against <https://fluidproject.atlassian.net/browse/ENGAGE-352#icft=ENGAGE-352>, and Sveto tells me that there are a handful of other strings that still need to be translated.\n"
     },
     {
+      "id": "12694",
       "author": "Colin Clark",
       "date": "2010-02-18T11:06:35.000-0500",
       "body": "My Collection is indeed internationalizable. A few lingering strings need to be translated, which have been filed under <https://fluidproject.atlassian.net/browse/ENGAGE-403#icft=ENGAGE-403>.\n"
     },
     {
+      "id": "12695",
       "author": "Colin Clark",
       "date": "2010-02-18T11:06:45.000-0500",
       "body": "This one is ready to go for Engage 0.3b\n"

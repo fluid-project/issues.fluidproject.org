@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17196",
       "author": "Colin Clark",
       "date": "2008-01-01T19:58:01.000-0500",
       "body": "There seems to be a problem in Opera (on both platforms) where negative tab indices return \"0\" instead of the correct value. So if you set the tabindex to -1, it will report 0 on a call to jQuery(element).tabIndex().\n"
     },
     {
+      "id": "17198",
       "author": "Colin Clark",
       "date": "2008-01-02T13:27:21.000-0500",
       "body": "Implemented and committed. Awaiting code review from Simon, Michelle, and Eli before forwarding along to the jQuery community.\n"

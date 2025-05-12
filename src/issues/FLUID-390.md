@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18724",
       "author": "Allison Bloodworth",
       "date": "2008-03-18T20:55:34.000-0400",
       "body": "iteration07\n"
     },
     {
+      "id": "18726",
       "author": "Justin Obara",
       "date": "2008-07-11T13:27:31.000-0400",
       "body": "This bug appears to be a task. \\\nI have switched it from a bug to a task.\n"

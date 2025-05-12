@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23750",
       "author": "Cindy Li",
       "date": "2016-03-04T13:06:40.423-0500",
       "body": "Issued a pull request: <https://github.com/fluid-project/infusion/pull/676>\n"
     },
     {
+      "id": "23751",
       "author": "Cindy Li",
       "date": "2016-03-18T16:08:50.397-0400",
       "body": "The pull request is closed as a more proper solution is created at <https://issues.fluidproject.org/browse/FLUID-5878>\n"

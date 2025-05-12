@@ -46,31 +46,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17920",
       "author": "Justin Obara",
       "date": "2009-02-06T12:57:22.000-0500",
       "body": "Bug Parade 0.8 release\n"
     },
     {
+      "id": "17922",
       "author": "Justin Obara",
       "date": "2009-02-09T08:53:49.000-0500",
       "body": "Seems to only be an issue with FF2 now.\n\nquote from Antranig's comment on <https://fluidproject.atlassian.net/browse/FLUID-2203#icft=FLUID-2203>\\\n\"Secondly, there is much improved behaviour on initial focusing - that is, the control is correctly focused and the caret is moved to the end of the editable area on edit, at least, on those browsers which correctly implement the respective rich text control's APIs. This doesn't work on FF2, but it is possible that our hard-won hack in fluid.setCaretToEnd could be brought in to patch up this particular case.\"\n"
     },
     {
+      "id": "17924",
       "author": "Justin Obara",
       "date": "2009-02-09T08:54:42.000-0500",
       "body": "Update environments\n"
     },
     {
+      "id": "17926",
       "author": "Antranig Basman",
       "date": "2009-02-16T17:44:52.000-0500",
       "body": "I have tried fairly strenuously to get this to work, but the only really productive thing to do in FF2 is to disable any attempts to set focus to these kinds of controls since on TinyMCE this can even cause it to lock up and become uneditable. Since this only affects one (aging) browser I have downgraded it to minor and punted it forwards.\n"
     },
     {
+      "id": "17929",
       "author": "Justin Obara",
       "date": "2010-05-07T14:42:49.132-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "17930",
       "author": "Jonathan Hung",
       "date": "2011-01-07T15:26:18.530-0500",
       "body": "Occurs in FF3 as well. Sometimes the caret is not rendered, but typing will reveal that an invisible caret is at the end of the text.\n"

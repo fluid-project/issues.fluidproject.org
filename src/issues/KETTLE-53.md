@@ -30,16 +30,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26142",
       "author": "Antranig Basman",
       "date": "2017-01-05T07:48:27.313-0500",
       "body": "This is most likely a duplicate of <https://issues.fluidproject.org/browse/KETTLE-51> - would you like to test Cindy Li 's fix for it?\n\n<https://github.com/fluid-project/kettle/pull/29>\n"
     },
     {
+      "id": "26143",
       "author": "Tony Atkins [RtF]",
       "date": "2017-01-05T08:41:09.202-0500",
       "body": "Thanks, this very much seems like the same issue.  I will test her branch/commit with the proof-of-concept code and report back shortly.\n"
     },
     {
+      "id": "26144",
       "author": "Tony Atkins [RtF]",
       "date": "2017-01-05T08:48:21.170-0500",
       "body": "Confirmed, Cindy's fix addresses the problem.  I will close this as a duplicate.\n"

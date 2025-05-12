@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17878",
       "author": "Michelle D'Souza",
       "date": "2008-03-12T11:10:04.000-0400",
       "body": "We are moving our tests over to jqUnit and will be getting rid of 'exposeTestFunctionNames'.\n"

@@ -30,21 +30,25 @@
   ],
   "comments": [
     {
+      "id": "26596",
       "author": "Dana",
       "date": "2020-07-15T14:58:11.665-0400",
       "body": "Gregor Moss, Justin Obara Something else I just noticed about the media placeholders. In Safari and Firefox (and not in Chrome), the image block placeholder has a frame (unfocusable) around it that shouldn't be there, to be consistent with the other blocks, and make it clear that it is not focusable.\n"
     },
     {
+      "id": "26597",
       "author": "Justin Obara",
       "date": "2020-07-15T15:39:08.362-0400",
       "body": "Dana I believe this is filed as <https://fluidproject.atlassian.net/browse/SJRK-226#icft=SJRK-226>. Could you please confirm if that's the same issue you are experiencing.\n"
     },
     {
+      "id": "26598",
       "author": "Dana",
       "date": "2020-07-16T12:14:22.114-0400",
       "body": "Justin Obara thanks, yep, looks like 226 covers this issue.\n"
     },
     {
+      "id": "26599",
       "author": "Cindy Li",
       "date": "2020-07-17T14:23:14.307-0400",
       "body": "[The pull request](https://github.com/fluid-project/sjrk-story-telling/pull/89) that fixes this issue has been merged into project repo master branch at [this commit](https://github.com/fluid-project/sjrk-story-telling/commit/90e928055ae20890a1dfc7773ce9616aa29bbbdb).\n"

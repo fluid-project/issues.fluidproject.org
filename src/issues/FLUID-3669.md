@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20006",
       "author": "Justin Obara",
       "date": "2010-06-07T09:00:17.941-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "20007",
       "author": "Jonathan Hung",
       "date": "2011-01-11T09:52:43.784-0500",
       "body": "With all the changes to Inline Edit in Infusion 1.3, this task should be evaluated to see if it has been sufficiently addressed.\n"
     },
     {
+      "id": "20012",
       "author": "Justin Obara",
       "date": "2014-07-30T15:28:42.524-0400",
       "body": "There are have been a number of changes since this was filed, as well as updates to the various screen readers. This will need to be retested.\n"

@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25876",
       "author": "Giovanni Tirloni",
       "date": "2018-02-02T05:55:41.539-0500",
       "body": "Waiting for HTML/images for the redirect message.\n"
     },
     {
+      "id": "25877",
       "author": "Giovanni Tirloni",
       "date": "2018-02-21T07:33:03.352-0500",
       "body": "Converted website configuration from PHP to static and deployed code supplied by David Pereyra.\n\nRelevant commit: <https://github.com/inclusive-design/ops/commit/56d348d7f8d2cdc9189a73a00c35440db412b684>\n"

@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27603",
       "author": "Blake E",
       "date": "2008-12-08T16:44:07.000-0500",
       "body": "Currently phpESP has the following types in its database:\n\nOn the left we have the name, and the right we have the database table it uses. Notice that same type questions have the same tablename.\n\nYes/No \t \t        response\\_bool\\\nText Box \t \t        response\\_text\\\nEssay Box  \t        response\\_text\\\nRadio Buttons \t \tresponse\\_single\\\nCheck Boxes \t \tresponse\\_multiple\\\nDropdown Box  \tresponse\\_single\\\nRate (scale 1..5)  \tresponse\\_rank\\\nDate \t \t        response\\_date\\\nNumeric \t \t        response\\_text\n"
     },
     {
+      "id": "27605",
       "author": "Blake E",
       "date": "2008-12-08T16:49:32.000-0500",
       "body": "As I see it, I imagine the following core question types:\n\nQuestion\\\n1\\. Boolean Questions - Yes/No, True/False, etc.\\\n2\\. Text Input - Comments, Essay, Simple Text Forms.\\\n3\\. Multiple Choice - Checkboxes, Radios, Dropdown Menus.\\\n4\\. Rating Scales - Rating x...y, etc.\\\n5\\. Date - Birthdays, enrollment dates, etc.etc.\n\nThis is good enough to send out to the list, do it tomorrow morning so people have time to read it (mornings are best for list)\n"
     },
     {
+      "id": "27606",
       "author": "Blake E",
       "date": "2008-12-08T16:49:40.000-0500",
       "body": "its almost done. lets push to vulab13\n"
     },
     {
+      "id": "27607",
       "author": "Blake E",
       "date": "2009-01-12T16:12:43.000-0500",
       "body": "I have the initial research finished and I'll come back to this issue once we get a little more into the code planning.\n"

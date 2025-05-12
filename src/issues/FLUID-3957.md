@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "13199",
       "author": "Antranig Basman",
       "date": "2010-12-20T16:32:00.042-0500",
       "body": "Thanks for the report, Heidi - here is a patch which as well as fixing the doctype to transitional, fixes a few other problems with the markup so that it validates successfully\n"
     },
     {
+      "id": "13200",
       "author": "Golam Chowdhury",
       "date": "2011-01-14T14:40:07.442-0500",
       "body": "Successfully validated using the following site:\\\n[http://validator.w3.org](http://validator.w3.org/)\n"

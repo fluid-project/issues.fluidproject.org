@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25070",
       "author": "Antranig Basman",
       "date": "2015-08-20T22:06:27.420-0400",
       "body": "We should probably just fold the thing called node-jqUnit into the framework image - this will eliminate boggle about whether it has Infusion as a dependency or not. Although it only depends on a very small part of the framework, I think there is little prospect of our turning that part of the framework into a \"micromodule\" any time soon.\n"
     },
     {
+      "id": "25071",
       "author": "Alan Harnum",
       "date": "2016-10-21T11:43:08.625-0400",
       "body": "The <https://fluidproject.atlassian.net/browse/FLUID-5986#icft=FLUID-5986> PR discussion at <https://github.com/fluid-project/infusion/pull/767#discussion_r84359182> has some relevance to this issue.\n"

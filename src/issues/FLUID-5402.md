@@ -39,16 +39,19 @@
   ],
   "comments": [
     {
+      "id": "22890",
       "author": "Justin Obara",
       "date": "2014-06-05T13:03:06.796-0400",
       "body": "screenshot.png shows the misaligned table of contents toggle, when line spacing is increased.\n"
     },
     {
+      "id": "22892",
       "author": "Anastasia Cheetham",
       "date": "2014-06-09T13:08:42.896-0400",
       "body": "Probably just missing stylesheets.\n"
     },
     {
+      "id": "27829",
       "author": "Justin Obara",
       "date": "2024-07-22T15:15:12.963-0400",
       "body": "Could not reproduce with FF 128 on macOS 14.5\n"

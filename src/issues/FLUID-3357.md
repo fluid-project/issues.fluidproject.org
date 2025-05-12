@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21705",
       "author": "Antranig Basman",
       "date": "2009-11-04T21:13:28.000-0500",
       "body": "Have committed a test case for this, but cannot make it fail. Can you investigate and compare with your code?\n"
     },
     {
+      "id": "21706",
       "author": "Colin Clark",
       "date": "2010-03-30T19:14:04.000-0400",
       "body": "Yura, can you verify whether this bug is real, or should we just close the issue?\n"
     },
     {
+      "id": "21707",
       "author": "Antranig Basman",
       "date": "2011-01-17T13:00:42.766-0500",
       "body": "I don't think this is a real bug, since it has not been mentioned in a while - there are test cases to verify the described functionality\n"

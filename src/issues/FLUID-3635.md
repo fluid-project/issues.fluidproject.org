@@ -40,41 +40,49 @@
   ],
   "comments": [
     {
+      "id": "22073",
       "author": "Justin Obara",
       "date": "2010-10-04T15:22:44.843-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "22076",
       "author": "heidi valles",
       "date": "2010-11-22T12:09:29.962-0500",
       "body": "Can recreate this on the manual-tests html page, but I think this code is out of date. When setting defaultViewText to \"\" in the simple inline edit demo, it works fine (except for a minor styling issue), the area is click-able.\n"
     },
     {
+      "id": "22078",
       "author": "heidi valles",
       "date": "2010-11-24T15:54:34.617-0500",
       "body": "Never mind! Can recreate by editing value to be one space, or defaultViewText to = \" \" (once space). Empty is still clickable, just styled wrong (<https://fluidproject.atlassian.net/browse/FLUID-3860#icft=FLUID-3860>)&#x20;\n"
     },
     {
+      "id": "22081",
       "author": "Mike Lam",
       "date": "2010-11-30T15:19:42.997-0500",
       "body": "Add vertical padding to empty inline edit so that it will work with IE8.  Styling is off with all the padding issues.   See <https://fluidproject.atlassian.net/browse/FLUID-3860#icft=FLUID-3860>.\n"
     },
     {
+      "id": "22083",
       "author": "Mike Lam",
       "date": "2010-12-06T10:17:45.716-0500",
       "body": "Added more vertical padding (from 10 to 16px) so that the textEditButton can render properly. &#x20;\n"
     },
     {
+      "id": "22085",
       "author": "Michelle D'Souza",
       "date": "2010-12-08T11:28:42.614-0500",
       "body": "I think we should move the padding into a CSS class and in the javascript code we can add or remove the class as appropriate. In the current implementation we hardcode padding to '16' in the javascript which means that changing the size of the image will cause this bug to reappear.&#x20;\n"
     },
     {
+      "id": "22087",
       "author": "Mike Lam",
       "date": "2010-12-08T17:35:54.825-0500",
       "body": "Refactored original patch so that no newly hard-coded styling is introduced into the code. &#x20;\n"
     },
     {
+      "id": "22090",
       "author": "Mike Lam",
       "date": "2010-12-08T17:36:26.840-0500",
       "body": "Reviewed and committed!\n"

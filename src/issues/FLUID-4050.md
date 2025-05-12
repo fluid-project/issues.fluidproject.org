@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21702",
       "author": "Antranig Basman",
       "date": "2011-02-04T04:07:39.567-0500",
       "body": "Fixed at git revision 97baeb6 - fix handles cases of input type = text, radio, free attribute decorator and link targets - this **should** be exhaustive but it is possible that a case has been missed.\n"
     },
     {
+      "id": "21703",
       "author": "Michelle D'Souza",
       "date": "2011-02-04T12:27:31.468-0500",
       "body": "Tested in collectionspace - double quotes are now encoded correctly.&#x20;\n"

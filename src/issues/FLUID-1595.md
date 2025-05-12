@@ -50,41 +50,49 @@
   ],
   "comments": [
     {
+      "id": "16812",
       "author": "Justin Obara",
       "date": "2008-09-19T09:00:31.000-0400",
       "body": "'screenshot-1' shows the stretched file queue\n"
     },
     {
+      "id": "16814",
       "author": "Justin Obara",
       "date": "2008-09-19T09:03:27.000-0400",
       "body": "Affects uploader 2\n"
     },
     {
+      "id": "16816",
       "author": "Eli Cochran",
       "date": "2008-09-19T12:02:43.000-0400",
       "body": "Will probably affect Uploader1 as well now. I think that I have a fix. Let's see what I can cook up. I'm surprised that this didn't happen before.&#x20;\n"
     },
     {
+      "id": "16818",
       "author": "Eli Cochran",
       "date": "2008-09-19T15:11:49.000-0400",
       "body": "This is basically the same bug as <https://fluidproject.atlassian.net/browse/FLUID-962#icft=FLUID-962> it just manifests its self differently on different browsers and both of these bugs will be to come up with a way to automatically truncate the text of long files names. I thought that there was a bug written for that, but I can't find it.&#x20;\n"
     },
     {
+      "id": "16820",
       "author": "Laurel Williams",
       "date": "2009-05-29T15:06:53.000-0400",
       "body": "In Opera 9.64 Winxp the name of the file does not wrap, so you don't even see the full name of the file.\n"
     },
     {
+      "id": "16822",
       "author": "Alison Benjamin",
       "date": "2009-10-14T10:29:22.000-0400",
       "body": "I have had this problem (not seeing the entirety of a long file name) in Safari 4 / OS X 10.5.\n"
     },
     {
+      "id": "16824",
       "author": "Alison Benjamin",
       "date": "2009-10-14T10:31:16.000-0400",
       "body": "Sorry I also forgot to comment - also had this problem in FF3.&#x20;\n"
     },
     {
+      "id": "16826",
       "author": "Michelle D'Souza",
       "date": "2014-06-25T15:55:53.689-0400",
       "body": "We are no longer actively supporting IE6, IE7 and IE8. We will consider patches for some issues if they are offered.\n"

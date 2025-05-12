@@ -42,21 +42,25 @@
   ],
   "comments": [
     {
+      "id": "21759",
       "author": "Justin Obara",
       "date": "2009-04-04T12:03:04.000-0400",
       "body": "'screenshot-1' shows the text labels in the buttons do not scale properly with the text to the left\n"
     },
     {
+      "id": "21760",
       "author": "Justin Obara",
       "date": "2009-05-14T09:15:52.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "21761",
       "author": "Justin Obara",
       "date": "2009-05-14T10:11:56.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "21762",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:18.149-0500",
       "body": "Closing issues that were fixed in 1.1\n"

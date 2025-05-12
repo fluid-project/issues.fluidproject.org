@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21747",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T12:18:09.600-0400",
       "body": "In IE7, the source files never show up in the right hand side of the page. In IE8, they are present, but the line feeds are gone: the HTML and JS are all on a single line.\n"
     },
     {
+      "id": "21748",
       "author": "Anastasia Cheetham",
       "date": "2014-07-31T16:05:06.066-0400",
       "body": "We are no longer supporting IE7 and 8\n"

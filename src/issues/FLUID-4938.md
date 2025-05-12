@@ -92,11 +92,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14816",
       "author": "Michelle D'Souza",
       "date": "2013-04-08T14:09:09.099-0400",
       "body": "The pull request for this issue should address the related issues.&#x20;\n"
     },
     {
+      "id": "14819",
       "author": "Michelle D'Souza",
       "date": "2013-04-08T14:34:46.705-0400",
       "body": "We need to make sure we test for the multiple horizontal scroll bar issue that we had hacked around for the demo. We were seeing two scroll bars in the fat panel which made scrolling inside the panel look broken in Chrome.&#x20;\n"

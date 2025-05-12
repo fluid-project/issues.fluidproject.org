@@ -32,6 +32,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25066",
       "author": "Antranig Basman",
       "date": "2017-09-28T07:31:24.347-0400",
       "body": "This should be implemented at least to the extent that the valueMapper example pasted on <https://fluidproject.atlassian.net/browse/FLUID-6179#icft=FLUID-6179> can function without the additional path specification - note that for a relay specification with valueMapper we need to write the following:\n\n```java\nsingleTransform: {\r\n            type: \"fluid.transforms.valueMapper\",\r\n            defaultInputPath: \"\", // required due to FLUID-6179 not yet resolved\r\n            match: [{\r\n                inputValue: null,\r\n                outputValue: \"{that}.options.icons.keyedOut\"\r\n            }],\r\n            noMatch: \"{that}.options.icons.keyedIn\"\r\n        }\n```\n"

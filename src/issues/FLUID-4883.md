@@ -45,11 +45,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25665",
       "author": "Justin Obara",
       "date": "2015-06-12T11:57:16.820-0400",
       "body": "Antranig Basman are \"latched events\" still in the plans?\n"
     },
     {
+      "id": "25666",
       "author": "Antranig Basman",
       "date": "2015-06-12T16:27:49.310-0400",
       "body": "Yes, they are - although the urgency for them will be reduced once we have the async ginger world. Eventually we need to bridge over the gap between \"observing a boolean options value\" and \"waiting for a latched event\". Also, all of our init lifecycle events are gone other than onCreate which reduces the urgency still further. It's possible that there will be no formal facility called \"latched events\" once we have implemented the \"changeApplier for options\" that one day will appear, but until then we should keep this JIRA open as a reminder. I'd call this a \"3.0 feature\". Since this JIRA was written I had the \"kebab shop realisation\" that our complex boiling cases would in the end all be handled by transforming relay rules.\n"

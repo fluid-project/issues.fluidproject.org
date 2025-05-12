@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14433",
       "author": "Michelle D'Souza",
       "date": "2011-08-23T11:17:58.770-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "14440",
       "author": "Anastasia Cheetham",
       "date": "2011-08-23T11:19:54.580-0400",
       "body": "This is a case-sensitivity issue: The default preview filename is \"UIOptionsPreview\\.html\" but my preview file is called \"uiOptionsPreview\\.html\"  Locally, my Firefox doesn't care, so I didn't catch it. I'll rename.\n"
     },
     {
+      "id": "14444",
       "author": "Anastasia Cheetham",
       "date": "2011-08-23T11:26:17.563-0400",
       "body": "I've renamed the file and submitted a pull request (#141).\n"
     },
     {
+      "id": "14447",
       "author": "Michelle D'Souza",
       "date": "2011-08-23T11:50:02.384-0400",
       "body": "Merged into project repo at 3876dd49bd312f682fafa6ba95f7f8ab351ccaa7\n"

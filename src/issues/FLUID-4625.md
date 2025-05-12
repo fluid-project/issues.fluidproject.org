@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15833",
       "author": "Antranig Basman",
       "date": "2012-02-29T00:18:19.126-0500",
       "body": "The supplied fix quickly changes the logic just in matchPath, but the tests we write are against the functional behaviour of model listeners.\\\nIn practice we may want a better implementation which explodes composite changes into\\\nsmaller increments so that we can avoid unnecessary notifications, but this at least covers the case\\\nof missed notifications\n\nNote that this logic originally came from  \\\n<https://github.com/rsf/PonderUtilCore/blob/master/src/uk/org/ponder/beanutil/support/ListBeanPredicateModel.java>\\\nin this version, the treatment of \"spec\" and \"path\" is completely asymmetric, which is at least consistent. It's hard to recall what motivated the current framework \"partially asymmetric\" version which treats changes at the root differently to those at other places.\n"
     },
     {
+      "id": "15835",
       "author": "Michelle D'Souza",
       "date": "2012-03-21T15:38:24.560-0400",
       "body": "Merged into project repo at 1ff854d2bf0a8d71fbb33c9bfb9e70e8dec1c1d6\n"

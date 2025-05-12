@@ -42,6 +42,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12489",
       "author": "Michelle D'Souza",
       "date": "2010-02-01T11:45:33.000-0500",
       "body": "Tags have been removed\n"

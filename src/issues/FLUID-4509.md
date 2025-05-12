@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "16738",
       "author": "Anastasia Cheetham",
       "date": "2011-10-06T11:51:46.502-0400",
       "body": "This screenshot (uio-show-button-ie6.png) shows the blue background extending across the page.\n"
     },
     {
+      "id": "16740",
       "author": "Michelle D'Souza",
       "date": "2014-06-25T15:55:53.460-0400",
       "body": "We are no longer actively supporting IE6, IE7 and IE8. We will consider patches for some issues if they are offered.\n"

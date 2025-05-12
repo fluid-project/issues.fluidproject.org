@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14330",
       "author": "Antranig Basman",
       "date": "2014-04-02T16:37:16.185-0400",
       "body": "In this release we bundle a ripped-off version of jQuery's browser detect code with the framework, since it has been removed from jQuery 1.9 and later\n"

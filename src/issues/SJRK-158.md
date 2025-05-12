@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26272",
       "author": "Gregor Moss",
       "date": "2018-07-11T11:26:44.990-0400",
       "body": "Work has been completed for the UI project, Server project is encapsulated in a pull request to Alan's repo: <https://github.com/waharnum/sjrk-story-telling-server/pull/8>\n"

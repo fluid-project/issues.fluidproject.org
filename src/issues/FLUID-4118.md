@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21918",
       "author": "Harris Wong",
       "date": "2011-02-24T17:18:54.804-0500",
       "body": "have the following error on IE8:\\\n\\---------------------------------------------------\r\\\nLine: 5\\\nCharacter: 97\\\nCode: 0\\\nError Message: Permission denied\\\nURL: <http://tinymce-fluid.appspot.com/tiny_mce_popup.js>\\\n\\---------------------------------------------------\r\\\nLine: 10\\\nCharacter: 1\\\nCode: 0\\\nError Message: 'tinyMCEPopup.editor.baseURI' is null or not an object\\\nURL: <http://tinymce-fluid.appspot.com/utils/form_utils.js>\\\n\\---------------------------------------------------\r\\\nLine: 5\\\nCharacter: 760\\\nCode: 0\\\nError Message: 'this.params' is null or not an object\\\nURL: <http://tinymce-fluid.appspot.com/tiny_mce_popup.js>\n"

@@ -32,16 +32,19 @@
   ],
   "comments": [
     {
+      "id": "14817",
       "author": "Justin Obara",
       "date": "2009-08-10T14:49:05.000-0400",
       "body": "\"screenshot-1\" shows the failing unit test\n"
     },
     {
+      "id": "14821",
       "author": "Justin Obara",
       "date": "2009-08-10T14:49:22.000-0400",
       "body": "This may be an issue of running the test locally as they seem to run fine from the server.\n"
     },
     {
+      "id": "14823",
       "author": "y z",
       "date": "2010-04-15T11:45:42.000-0400",
       "body": "Tests are passing now\n"

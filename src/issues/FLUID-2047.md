@@ -41,21 +41,25 @@
   ],
   "comments": [
     {
+      "id": "17404",
       "author": "Justin Obara",
       "date": "2009-01-05T10:59:23.000-0500",
       "body": "'screenshot-1' shows the page links above the previous and next links, instead of in front of them\n"
     },
     {
+      "id": "17405",
       "author": "Justin Obara",
       "date": "2009-01-06T12:08:32.000-0500",
       "body": "Bug Parade  0.7 release\n"
     },
     {
+      "id": "17406",
       "author": "Antranig Basman",
       "date": "2009-01-07T15:33:51.000-0500",
       "body": "Fixed at revision 6278\n"
     },
     {
+      "id": "17407",
       "author": "Justin Obara",
       "date": "2009-01-08T08:32:21.000-0500",
       "body": "Verified fix using:\n\nFF2, FF3, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE7 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

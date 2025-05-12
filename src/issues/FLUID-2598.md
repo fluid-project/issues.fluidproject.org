@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21559",
       "author": "Antranig Basman",
       "date": "2009-04-14T16:11:34.000-0400",
       "body": "Support for declarative attribute removal committed at revision 7118\n"
     },
     {
+      "id": "21560",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:16.405-0500",
       "body": "Closing issues that were fixed in 1.1\n"

@@ -34,16 +34,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21388",
       "author": "Justin Obara",
       "date": "2009-03-17T12:15:27.000-0400",
       "body": "Bug Parade 1.0 release&#x20;\n"
     },
     {
+      "id": "21389",
       "author": "Michelle D'Souza",
       "date": "2009-03-19T12:04:48.000-0400",
       "body": "Changing the path to the template fixed the issue. I reviewed Jacob's commit and it looks good.\n"
     },
     {
+      "id": "21390",
       "author": "Justin Obara",
       "date": "2009-03-20T14:47:11.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.6, Safari 3.2 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.6 (Win XP)\n"

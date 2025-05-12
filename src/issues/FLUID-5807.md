@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23668",
       "author": "Antranig Basman",
       "date": "2015-11-03T14:09:30.396-0500",
       "body": "Discoveries so far - the corruption appears to be part of the PROCESS OF ACCESS TO THE STACK MEMBER ITSELF - for example, the following two lines within the constructor of fluid.FluidError(descended from an Error)\n\n```java\nthis.stack = new Error().stack;\r\n        console.log(this.stack);\n```\n\nshow the same truncated stack - that is, the one belonging to the prototype, not ours. One wonders what is so tough about member access that the node team cannot get it right.\n"
     },
     {
+      "id": "23670",
       "author": "Antranig Basman",
       "date": "2015-11-04T08:39:39.302-0500",
       "body": "Simplified implementation available in new pull request\n"

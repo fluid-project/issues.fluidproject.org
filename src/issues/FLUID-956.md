@@ -41,11 +41,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19529",
       "author": "Justin Obara",
       "date": "2008-07-24T15:19:02.000-0400",
       "body": "This doesn't occur if the Uploader is open\n"
     },
     {
+      "id": "19530",
       "author": "Justin Obara",
       "date": "2008-07-28T09:01:55.000-0400",
       "body": "Appears to be fixed, may have been resolved along with fix to Fluid-873.\n\nVerified using:\n\nIE6, IE7(Win XP)&#x20;\n"

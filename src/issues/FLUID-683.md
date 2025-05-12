@@ -41,11 +41,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19306",
       "author": "Eli Cochran",
       "date": "2008-06-16T22:51:36.000-0400",
       "body": "With the various changes to the way that the progress is tracked and displayed this bug is fixed.&#x20;\n"
     },
     {
+      "id": "19307",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:53.011-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

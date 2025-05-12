@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24774",
       "author": "Justin Obara",
       "date": "2010-11-19T16:04:50.458-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "24775",
       "author": "Colin Clark",
       "date": "2010-12-02T15:37:32.048-0500",
       "body": "Mike implemented the fix for this during our \"AEGIS demo sprint\" in November 2010\n"
     },
     {
+      "id": "24776",
       "author": "Colin Clark",
       "date": "2010-12-02T15:37:57.730-0500",
       "body": "Mike implemented a series of fixes for this issue, resolving it at r10287 of the <https://fluidproject.atlassian.net/browse/FLUID-3722#icft=FLUID-3722> Uploader branch.\n"

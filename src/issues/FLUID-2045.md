@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21799",
       "author": "Eli Cochran",
       "date": "2009-02-27T21:19:18.000-0500",
       "body": "Happy green status bars.\n"
     },
     {
+      "id": "21800",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:42.847-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

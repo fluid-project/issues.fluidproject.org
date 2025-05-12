@@ -48,16 +48,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21822",
       "author": "Jonathan Hung",
       "date": "2008-10-30T09:44:23.000-0400",
       "body": "iteration22\n"
     },
     {
+      "id": "21823",
       "author": "Jonathan Hung",
       "date": "2008-11-18T14:23:17.000-0500",
       "body": "This task is done pending the user testing at the Fluid Summit.\n"
     },
     {
+      "id": "21824",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:45.453-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

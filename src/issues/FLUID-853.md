@@ -40,11 +40,13 @@
   ],
   "comments": [
     {
+      "id": "16096",
       "author": "Anastasia Cheetham",
       "date": "2008-07-04T18:32:01.000-0400",
       "body": "I've attached a path file that adds an 'invitationText' style that is applied to the invitation text when it is visible. This is on top of the patch applied for <https://fluidproject.atlassian.net/browse/FLUID-852#icft=FLUID-852>.\n"
     },
     {
+      "id": "16098",
       "author": "Anastasia Cheetham",
       "date": "2008-07-15T20:32:54.000-0400",
       "body": "Fixed, and merged from the branch back into trunk.\n"

@@ -30,21 +30,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11843",
       "author": "Armin Krauss",
       "date": "2009-06-30T13:34:07.000-0400",
       "body": "Both issues are describing the same work to be done\n"
     },
     {
+      "id": "11844",
       "author": "Jacob Farber",
       "date": "2009-08-06T13:45:52.000-0400",
       "body": "Doesnt this seem like a duplicate of stuff outlined in <https://fluidproject.atlassian.net/browse/FLUID-2889#icft=FLUID-2889> ?\n"
     },
     {
+      "id": "11845",
       "author": "Armin Krauss",
       "date": "2009-08-06T13:50:01.000-0400",
       "body": "I agree with Jacob. <https://fluidproject.atlassian.net/browse/FLUID-2889#icft=FLUID-2889> has a sub issue that exactly is the same: <https://fluidproject.atlassian.net/browse/FLUID-3015#icft=FLUID-3015>\n"
     },
     {
+      "id": "11846",
       "author": "Armin Krauss",
       "date": "2009-08-18T15:14:13.000-0400",
       "body": "Same as Fluid 3015\n"

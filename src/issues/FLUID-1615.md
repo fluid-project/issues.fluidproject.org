@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16819",
       "author": "Justin Obara",
       "date": "2009-02-04T15:28:56.000-0500",
       "body": "renamed LightboxRSF.html to ImageReordererRSF.html\n"
     },
     {
+      "id": "16821",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:45.011-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

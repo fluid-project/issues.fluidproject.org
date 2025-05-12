@@ -33,31 +33,37 @@
   ],
   "comments": [
     {
+      "id": "21222",
       "author": "Justin Obara",
       "date": "2009-03-19T12:50:24.000-0400",
       "body": "'screenshot-1' shows the \"Easier to see\" section missing the labels and radio buttons\n"
     },
     {
+      "id": "21223",
       "author": "Justin Obara",
       "date": "2009-03-19T12:51:38.000-0400",
       "body": "Bug Parade 1.0 release&#x20;\n"
     },
     {
+      "id": "21224",
       "author": "Michelle D'Souza",
       "date": "2009-03-19T16:58:52.000-0400",
       "body": "I wasn't able to reproduce this. Is it a specific operating system?\n"
     },
     {
+      "id": "21226",
       "author": "Justin Obara",
       "date": "2009-03-20T08:53:49.000-0400",
       "body": "This issue should be fixed with <https://fluidproject.atlassian.net/browse/FLUID-2380#icft=FLUID-2380>\n"
     },
     {
+      "id": "21228",
       "author": "Jacob Farber",
       "date": "2009-03-20T09:04:57.000-0400",
       "body": "I can confirm this has been fixed as mentioned above -  I can no longer reproduce this on the latest build.\n"
     },
     {
+      "id": "21229",
       "author": "Justin Obara",
       "date": "2009-03-24T08:28:06.000-0400",
       "body": "Verified fix using:\n\nIE6 (Win XP)&#x20;\n"

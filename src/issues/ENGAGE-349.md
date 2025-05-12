@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11703",
       "author": "Michelle D'Souza",
       "date": "2010-03-09T14:55:04.000-0500",
       "body": "The javascript is all concatenated now but the CSS still needs to be.&#x20;\n"
     },
     {
+      "id": "11704",
       "author": "Colin Clark",
       "date": "2010-03-09T15:30:02.000-0500",
       "body": "CSS concatenation has been an issue in Infusion as well. The issue is image URLs in individual stylesheets. If we concat together multiple stylesheets, we'll also need to move all the images around so that they remain relative to the concatenated file. It should be possible, but will require some extra code in our build process.\n"
     },
     {
+      "id": "11705",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:32.500-0500",
       "body": "The repository has been archived.\n"

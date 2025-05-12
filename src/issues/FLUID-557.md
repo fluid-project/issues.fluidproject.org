@@ -30,16 +30,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20044",
       "author": "Daphne Ogle",
       "date": "2008-04-29T17:07:12.000-0400",
       "body": "iteration08\n"
     },
     {
+      "id": "20046",
       "author": "Daphne Ogle",
       "date": "2008-05-12T15:43:58.000-0400",
       "body": "File Uploader v2 (based on implementation feedback from community), smart pager, in-line edit\n"
     },
     {
+      "id": "20047",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:46.337-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

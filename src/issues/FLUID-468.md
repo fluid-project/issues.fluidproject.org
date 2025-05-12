@@ -28,26 +28,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18632",
       "author": "Anastasia Cheetham",
       "date": "2008-04-08T14:57:22.000-0400",
       "body": "Regarding the Portlet Layout Manager:\\\nThere was much discussion on the list, and I tried to call for a vote. I posted the following summary:\n\nThere seems to me to be two halves to the issue:\\\n1\\) what it is that is being manipulated, and\\\n2\\) what we call the manipulation.\n\nNominations for the first half:\n\nCellular\\\nContent\\\nModule\\\nPortlet\\\nSection\n\nNominations for the second half:\n\nReorderer\\\nOrganizer\\\nLayout Tool\\\nManager\\\nLayout Manager\\\nShuffler\n\nThere was one vote for \"Portlet Reorderer\" and one for \"Module Layout Tool.\" That's all.\n"
     },
     {
+      "id": "18635",
       "author": "Michelle D'Souza",
       "date": "2008-04-10T13:59:03.000-0400",
       "body": "The naming suggestions for the release bundle are documented on the wiki: <http://wiki.fluidproject.org/display/fluid/Naming+the+Fluid+Software+Package>\n"
     },
     {
+      "id": "18639",
       "author": "Michelle D'Souza",
       "date": "2008-04-16T08:42:34.000-0400",
       "body": "It was close but Fluid Infusion was selected as the name of the release bundle.\n"
     },
     {
+      "id": "18641",
       "author": "Anastasia Cheetham",
       "date": "2008-04-17T10:34:10.000-0400",
       "body": "The new name for the portlet reorderer/portlet layout manager is Layout Customizer.\n"
     },
     {
+      "id": "18644",
       "author": "Anastasia Cheetham",
       "date": "2008-04-17T12:01:43.000-0400",
       "body": "The names have been selected and announced, and wiki, jira and code changes have been made.\n"

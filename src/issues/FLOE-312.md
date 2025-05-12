@@ -51,26 +51,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11585",
       "author": "Simon Bates",
       "date": "2015-05-11T15:25:48.679-0400",
       "body": "In addition, say \"shift is on\" when the shift key is latched, but only when Sticky Keys is on (consistent with showing the shift indicator).\n"
     },
     {
+      "id": "11586",
       "author": "Anastasia Cheetham",
       "date": "2015-05-12T13:12:15.385-0400",
       "body": "Murilo noticed that the text field prompt says \"...now.\" This was decided when we thought we were going to put keyboard focus onto the text entry field automatically. Now that we've decided we're not going to do that, saying \"now\" is bad. Let's change it to \"... here\" as in \"Type the @ symbol here\" or \"Type the % symbol here\"\n"
     },
     {
+      "id": "11587",
       "author": "Simon Bates",
       "date": "2015-05-14T16:56:49.487-0400",
       "body": "I have filed a separate issue for the completion of the reading of updated descriptions: <http://issues.fluidproject.org/browse/FLOE-337>\n"
     },
     {
+      "id": "11588",
       "author": "Simon Bates",
       "date": "2015-05-14T17:39:47.391-0400",
       "body": "<https://github.com/fluid-project/first-discovery/pull/47>\n"
     },
     {
+      "id": "11589",
       "author": "Justin Obara",
       "date": "2015-05-15T15:32:30.576-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/first-discovery/pull/47> )  into the project repo at 06616a4944329f90674196cf541afb0d41934196\n"

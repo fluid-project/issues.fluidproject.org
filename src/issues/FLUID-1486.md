@@ -30,36 +30,43 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23547",
       "author": "Antranig Basman",
       "date": "2008-09-08T17:12:49.000-0400",
       "body": "I believe this has been resolved along with the day's fixes.\n"
     },
     {
+      "id": "23548",
       "author": "Justin Obara",
       "date": "2008-09-09T09:31:01.000-0400",
       "body": "Same symptom, but different error.\n\nError: 'mindist' is null or not an object\\\nLine: 514\\\nCode: if(lockedcollect.mindist < minelem.mindist) {\\\nFile: GeometricManager.js\n"
     },
     {
+      "id": "23549",
       "author": "Antranig Basman",
       "date": "2008-09-09T22:20:42.000-0400",
       "body": "Sorry, I missed the IE7 specification on this the first time.... that puts a whole different complexion on things 😛\n\nFrankly, that error seems impossible.... since I can see no way that non-numeric values can get into \"mindist\" along any code path. We may have to wheel out the heavy artillery on this one, in the form of the Studio debugger thingery. From what I can see, this seems to work correctly on every other platform...\n"
     },
     {
+      "id": "23550",
       "author": "Justin Obara",
       "date": "2008-09-10T09:11:08.000-0400",
       "body": "If you move a portlet using the mouse, before following the steps in the description, the issue doesn't seem to occur.\n"
     },
     {
+      "id": "23551",
       "author": "Justin Obara",
       "date": "2008-09-10T12:04:42.000-0400",
       "body": "This also occurs in Firefox but with different steps.\n\nSteps to reproduce on firefox:\n\n1\\) Open the uPortal example from the daily build site:\\\n<http://build.fluidproject.org/fluid/sample-code/reorderer/portal/portal.html>&#x20;\n\n2\\) Using the keyboard move all of the portlets from the right column to the left column. On the last portlet push left again. notice that it will cause an error (visible using firebug)\n"
     },
     {
+      "id": "23552",
       "author": "Antranig Basman",
       "date": "2008-09-10T14:32:38.000-0400",
       "body": "Fixed at revision 5503\n"
     },
     {
+      "id": "23553",
       "author": "Justin Obara",
       "date": "2008-09-11T09:13:17.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3 (Mac OS 10.5)\\\nFF3, IE7 (Win Vista)\n"

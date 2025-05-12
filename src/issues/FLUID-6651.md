@@ -31,11 +31,13 @@
   ],
   "comments": [
     {
+      "id": "25244",
       "author": "Justin Obara",
       "date": "2021-07-06T07:45:30.662-0400",
       "body": "screenshot.PNG shows the \"Play\" button for the selection reader, with the selection highlight no longer visible.\n"
     },
     {
+      "id": "25245",
       "author": "Justin Obara",
       "date": "2021-07-06T07:46:24.661-0400",
       "body": "This is likely an issue with Safari on iPad OS\n"

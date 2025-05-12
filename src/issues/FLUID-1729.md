@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20385",
       "author": "Eli Cochran",
       "date": "2008-10-29T14:09:32.000-0400",
       "body": "Progress for files is hidden without animation now, which fixes the case where the hide animation was still running while the Progress was already moving the progress bar in prep for the next upload\n"
     },
     {
+      "id": "20386",
       "author": "Justin Obara",
       "date": "2008-12-03T11:53:50.000-0500",
       "body": "appears to be fixed\n"

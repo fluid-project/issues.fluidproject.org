@@ -41,36 +41,43 @@
   ],
   "comments": [
     {
+      "id": "17600",
       "author": "Justin Obara",
       "date": "2009-02-17T15:31:19.000-0500",
       "body": "'screenshot-1' shows simplified layout chosen, but the preview not displaying the simplified layout\n"
     },
     {
+      "id": "17605",
       "author": "Justin Obara",
       "date": "2009-03-12T11:29:24.000-0400",
       "body": "Bug Parade 1.0 release\n"
     },
     {
+      "id": "17608",
       "author": "Anastasia Cheetham",
       "date": "2009-03-20T15:54:55.000-0400",
       "body": "I think this bug is actually caused by the problem described in <https://fluidproject.atlassian.net/browse/FLUID-2392#icft=FLUID-2392> - I suspect fixing 2392 will fix this bug.\n"
     },
     {
+      "id": "17611",
       "author": "Antranig Basman",
       "date": "2009-03-23T21:27:10.000-0400",
       "body": "After going to the trouble of implementing the \"superApplier\", this bug actually appears to be a manifestation of this really disgraceful IE bug:\n\n<http://webbugtrack.blogspot.com/2007/11/bug-193-onchange-does-not-fire-properly.html>\n"
     },
     {
+      "id": "17616",
       "author": "Antranig Basman",
       "date": "2009-03-23T21:49:28.000-0400",
       "body": "Fixed at revision 6814.\n"
     },
     {
+      "id": "17621",
       "author": "Jacob Farber",
       "date": "2009-03-25T11:31:14.000-0400",
       "body": "Looks good.\n"
     },
     {
+      "id": "17624",
       "author": "Justin Obara",
       "date": "2009-03-25T11:44:57.000-0400",
       "body": "Verified fix using:\n\nIE 7 (Win Vista)\\\nIE 6 (Win XP)\n"

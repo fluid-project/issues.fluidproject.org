@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19924",
       "author": "Jacob Farber",
       "date": "2008-07-25T11:26:34.000-0400",
       "body": "Seemed to be a problem with jQuery UI's modal dialogs. Turning modality off should fix the issue for now.\n"
     },
     {
+      "id": "19927",
       "author": "Justin Obara",
       "date": "2008-07-25T11:28:11.000-0400",
       "body": "Verified fixed using FF2, FF3, IE6, IE7 (Win XP)\n"

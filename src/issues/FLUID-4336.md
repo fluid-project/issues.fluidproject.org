@@ -31,16 +31,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22459",
       "author": "Justin Obara",
       "date": "2015-06-09T14:11:11.240-0400",
       "body": "Antranig Basman is this taken care of with <https://github.com/fluid-project/infusion/pull/591>\n"
     },
     {
+      "id": "22460",
       "author": "Antranig Basman",
       "date": "2015-06-09T20:02:10.758-0400",
       "body": "Yes, fluid.eventedComponent has been abolished in that branch\n"
     },
     {
+      "id": "22462",
       "author": "Antranig Basman",
       "date": "2015-08-20T21:42:58.272-0400",
       "body": "Merged into trunk at revision 282f1a318718eed0b0ec060fb8b4ad254417fd7e\n"

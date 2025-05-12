@@ -46,11 +46,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16476",
       "author": "Anastasia Cheetham",
       "date": "2014-04-02T15:39:28.685-0400",
       "body": "Justin, could you double-check this, and if it's still an issue, could you clarify what the action should be, and what the 'default action' you're observing is?\n"
     },
     {
+      "id": "16478",
       "author": "Justin Obara",
       "date": "2014-05-26T15:34:21.888-0400",
       "body": "Anastasia Cheetham i re-tested this today. It seems that it is no longer an issue in Chrome, Firefox, or Safari. However it's still present in IE (i've updated the environments). The behaviour should be to capture the keyboard short cut so that no action occurs. What happens in IE is that you will be using ctrl-k, when you get to the end, a new browser tab is opened.\n"

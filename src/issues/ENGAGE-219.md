@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11771",
       "author": "Antranig Basman",
       "date": "2009-12-18T14:32:26.000-0500",
       "body": "This is concerning - but on the other hand, there should never be asynchronous ajax calls from the server side, which must represent a form of coding error - since we lack the threading primitives in Javascript to cause these to operate usefully, even if we had decided that their use was desirable.\n"
     },
     {
+      "id": "11772",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:30.785-0500",
       "body": "The repository has been archived.\n"

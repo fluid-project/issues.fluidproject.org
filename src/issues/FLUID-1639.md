@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18552",
       "author": "Michelle D'Souza",
       "date": "2008-09-30T10:42:53.000-0400",
       "body": "The multi-reorderer issue is fixed. \\\nA new issue, <https://fluidproject.atlassian.net/browse/FLUID-1640#icft=FLUID-1640> has been created for the menubar issue.\n"
     },
     {
+      "id": "18555",
       "author": "Anastasia Cheetham",
       "date": "2008-09-30T10:54:50.000-0400",
       "body": "I've reviewed Michelle's fix to the multi-reorderer - it looks good.\n\nThe menu bar issue is too complicated for release day. See <https://fluidproject.atlassian.net/browse/FLUID-1640#icft=FLUID-1640>.\n"

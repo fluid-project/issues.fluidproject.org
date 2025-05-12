@@ -47,26 +47,31 @@
   ],
   "comments": [
     {
+      "id": "22756",
       "author": "Harris Wong",
       "date": "2010-11-26T11:52:19.886-0500",
       "body": "Screenshots: ss01.png. ss02.png. ss03.png.&#x20;\n"
     },
     {
+      "id": "22760",
       "author": "Harris Wong",
       "date": "2010-11-26T11:52:40.913-0500",
       "body": "Screenshot ss04.png\n"
     },
     {
+      "id": "22764",
       "author": "Justin Obara",
       "date": "2010-11-26T13:24:13.479-0500",
       "body": "May relate to <https://fluidproject.atlassian.net/browse/FLUID-3089#icft=FLUID-3089> as it may be that the columns are stacking.\n"
     },
     {
+      "id": "22772",
       "author": "Justin Obara",
       "date": "2016-07-08T10:01:27.624-0400",
       "body": "I tried this again today. I am able to put items into the first column only if i'm trying to move an item ( from left to right ) to where the locked portlet in the middle column is. This is likely because it pushes the item to the next closes valid drop target to the left of itself.  However, I can not directly move items to the empty column.\n"
     },
     {
+      "id": "22777",
       "author": "Justin Obara",
       "date": "2016-07-08T10:04:55.837-0400",
       "body": "Updated screenshots. The originals were all broken. I added new ones and updated the description.\n"

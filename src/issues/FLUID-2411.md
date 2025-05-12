@@ -34,6 +34,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17508",
       "author": "Justin Obara",
       "date": "2009-05-25T12:39:53.000-0400",
       "body": "Appears to have been fixed with one of the other changes leading up to the 1.1 release\n\nVerified using:\n\nOpera 9.6 (Win XP, Mac OS 10.5)\n"

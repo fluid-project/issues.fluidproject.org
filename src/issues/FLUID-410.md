@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18419",
       "author": "Allison Bloodworth",
       "date": "2008-04-02T15:32:58.000-0400",
       "body": "iteration06\n"
     },
     {
+      "id": "18422",
       "author": "Jonathan Hung",
       "date": "2008-04-15T11:10:00.000-0400",
       "body": "Decided not to go with Drupal 6.x at the moment due to lack of availability of a stable CCK modeul release.\n\nMigration is well documented in Drupal's forum:\\\n<http://drupal.org/forum/21>\n\nUpgrade \"should\" be as easy and running upgrade.php in the v6 release package, but of course gotchas may appear with respect to customizations.\n"

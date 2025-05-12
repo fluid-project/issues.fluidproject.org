@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14969",
       "author": "Laurel Williams",
       "date": "2009-09-02T15:24:54.000-0400",
       "body": "Added and changed the following:\n\nAdded a new div to CustomBuild.html with a download message in it. Moved the download form into the #customBuild div\\\nAdded css class to new div to hide the download message initially.\\\nAdded code to builder.js to toggle the #customBuild div to 'hidden' and the new div to 'shown'\n\nNot sure if this is the best place to do this or if some of the functionality should be in the component itself...am hoping that the reviewer will comment on this.\n"

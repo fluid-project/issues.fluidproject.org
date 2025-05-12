@@ -43,16 +43,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14634",
       "author": "Anastasia Cheetham",
       "date": "2008-04-21T12:50:09.000-0400",
       "body": "The cursor position issue within this bug is related to comments in <https://fluidproject.atlassian.net/browse/FLUID-395#icft=FLUID-395>.\n"
     },
     {
+      "id": "14635",
       "author": "Anastasia Cheetham",
       "date": "2008-04-21T12:51:41.000-0400",
       "body": "The sample file exhibiting this behaviour is now found at\\\n<http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/portal/portal.html>\n\nThe appearance of the avatar is a general issue being discussed as part of the UX issues for reorderable portlets.\n"
     },
     {
+      "id": "14637",
       "author": "Anastasia Cheetham",
       "date": "2008-04-28T16:14:05.000-0400",
       "body": "This is a duplicate of <https://fluidproject.atlassian.net/browse/FLUID-521#icft=FLUID-521>\n"

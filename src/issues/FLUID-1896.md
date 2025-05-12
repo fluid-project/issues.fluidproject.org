@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17227",
       "author": "Jonathan Hung",
       "date": "2009-01-08T12:36:47.000-0500",
       "body": "This issue can be fixed as we address the issue of moving some of the left-sidebar items to the header and revamping the front page. For now a low priority since there are changes coming in near future,\n\niteration29\n"
     },
     {
+      "id": "17230",
       "author": "Jonathan Hung",
       "date": "2009-03-20T11:51:55.000-0400",
       "body": "Thanks to updates to the front page, navigating categories is a bit more obvious.\n"

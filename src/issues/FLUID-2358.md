@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13441",
       "author": "Justin Obara",
       "date": "2009-03-17T09:41:18.000-0400",
       "body": "Bug Parade 1.0 release&#x20;\n"
     },
     {
+      "id": "13443",
       "author": "Justin Obara",
       "date": "2009-03-20T11:13:32.000-0400",
       "body": "Appears to have been fixed with one of the many bug parade fixes\n\nTested using:\n\nIE7 (Win Vista)\n"

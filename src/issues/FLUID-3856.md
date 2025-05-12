@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20348",
       "author": "Colin Clark",
       "date": "2010-11-18T17:57:17.992-0500",
       "body": "I've committed a fix for this at r10292. Michelle, can you verify that it's working?\n"
     },
     {
+      "id": "20349",
       "author": "Michelle D'Souza",
       "date": "2010-11-19T09:18:27.218-0500",
       "body": "It works - and thankfully with lots of the duplicated code removed. 🙂\n"
     },
     {
+      "id": "20350",
       "author": "Justin Obara",
       "date": "2010-11-19T10:44:24.461-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"

@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "20618",
       "author": "Justin Obara",
       "date": "2010-04-09T09:44:38.000-0400",
       "body": "screenshot-1 shows the accordion panel showing up too far too the right\n"
     },
     {
+      "id": "20619",
       "author": "Michelle D'Souza",
       "date": "2011-03-04T15:47:42.575-0500",
       "body": "This is no longer an issue since the accordion was removed in the new designs of UI Options.&#x20;\n"

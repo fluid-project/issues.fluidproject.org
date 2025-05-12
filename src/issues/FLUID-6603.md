@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25529",
       "author": "Antranig Basman",
       "date": "2021-03-17T09:08:18.455-0400",
       "body": "As the pull request was written, the annotation was written in the wrong direction\n\n```java\nforward: {\r\n   excludeSource: \"init\"\r\n}\n```\n\nacts to prevent the source value flowing towards the target on initialisation (forward direction). However, the source value is the one on the subcomponent, and the target is on the parent. The rule should instead read\n\n```java\nbackward: {\r\n   excludeSource: \"init\"\r\n}\n```\n\nTherefore this feature is \"working as designed\" - however I have merged the test case in the pull request with the required fix since it supplies helpful extra coverage.\n"

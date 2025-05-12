@@ -38,6 +38,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19686",
       "author": "Justin Obara",
       "date": "2009-06-04T14:56:46.000-0400",
       "body": "Image has been updated\n"

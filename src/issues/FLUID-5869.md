@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23745",
       "author": "Antranig Basman",
       "date": "2016-02-24T21:14:15.276-0500",
       "body": "The \"quick fix\" for the headline issue is to wrap the body of \"gpii.firstDiscovery.panel.keyboard.relayEvents\" in a \"fluid.invokeLater\" block. Ensuring that the existing model transaction is completely finished before we attempt to interact with the model again is the most direct way of heading off the problem of \"self-reaction\". Note that many popular reactive frameworks, e.g. Facebook's \"react\", prohibit synchronous bidirectional dataflow precisely for this reason.\n"
     },
     {
+      "id": "23746",
       "author": "Antranig Basman",
       "date": "2016-02-24T21:54:07.760-0500",
       "body": "Investigation of the exact cause of the \"corrupt\" material shows that it consists of the \"init\" model of the root \"fluid.prefs.prefsEditor\". This always contains an entry of \"gpii\\_firstDiscovery\\_stickyKeys: false\", and WHENEVER this component is \"caught up\" in an init transaction (which it will be, whenever any component to which it is joined by relay goes through init - for example, one of the createOnInit \"keyboardInput\" components described in the headline JIRA), this value will be replayed through it. This is relevant, because THIS is the change that links together the two faulty recursive firings of \"gpii.firstDiscovery.panel.keyboard.relayEvents\". The first construction of the keyboardInput causes this change to be relayed into the root model which triggers a further refresh, triggering a fresh reconstruction of the keyboardInput component.\n\nAnother route for this is from the \"init\" transaction of the parent component \"gpii.firstDiscovery.panel.keyboard\" which also holds \"stickyKeysEnabled: false\" for much the same reason. This component isn't itself being reconstructed, but its init model will be replayed whenever it is connected to a component which is.\n\nThis issue hasn't surfaced so clearly before since we have not tested \"reset\" in such a complex context. In this case, the \"undefined\" value of the root model causes numerous links to operate in reverse which normally only operate forwards - as a result of the rule that \"any value takes precedence over undefined\".\n\nAnother form of \"quick fix\" might be to remove any component from an init transaction list when it is destroyed - which is only reasonable after all.\n"
     },
     {
+      "id": "23748",
       "author": "Antranig Basman",
       "date": "2016-02-25T15:49:31.176-0500",
       "body": "It looks like a \"quick fix\" is even more direct than might have been thought - simply guarding the offending access to the shadow is good enough to allow the relay to finish without error. Actively deregistering the component seems problematic in any case since the collection of transaction records is itself being iterated over at the point the component is destroyed.\n"

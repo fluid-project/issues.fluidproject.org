@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13628",
       "author": "Justin Obara",
       "date": "2015-06-09T13:18:28.035-0400",
       "body": "Jonathan Hung could you try the progress example for the bidirectional animation. <http://build.fluidproject.org/infusion/examples/components/progress/bidirectionalAnimation/>\n\nI believe the animation direction depends on whether the progress is increasing or decreasing. So I'm not sure if there is really a bug here.\n"

@@ -33,6 +33,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24978",
       "author": "Jonathan Hung",
       "date": "2011-01-06T15:17:39.703-0500",
       "body": "Styling issue dealing with a deprecated demo. Closing.\n"

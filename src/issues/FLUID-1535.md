@@ -36,16 +36,19 @@
   ],
   "comments": [
     {
+      "id": "17465",
       "author": "Justin Obara",
       "date": "2008-09-10T11:21:42.000-0400",
       "body": "'screenshot-1' shows the calendar portlet above the locked portlet\n"
     },
     {
+      "id": "17466",
       "author": "Antranig Basman",
       "date": "2008-09-10T14:31:46.000-0400",
       "body": "Fixed at revision 5503\n"
     },
     {
+      "id": "17467",
       "author": "Justin Obara",
       "date": "2008-09-11T09:03:14.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3 (Mac OS 10.5)\\\nFF3 (Win Vista)\n"

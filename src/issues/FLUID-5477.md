@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20051",
       "author": "Anastasia Cheetham",
       "date": "2014-08-12T09:05:25.902-0400",
       "body": "Merged, though there are still issues with the ConfirmAccount plugin. That will have to go under a new JIRA.\n"

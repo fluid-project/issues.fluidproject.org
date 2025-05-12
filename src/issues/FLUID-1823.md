@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17185",
       "author": "Eli Cochran",
       "date": "2008-11-18T16:20:48.000-0500",
       "body": "This was on of the nastiest little bugs that I've dealt with in a while. SWUpload fires a \"file error\" event for file removal, so when the file was being removed, another thread was swapping the file status as the file was being removed by the event attached to the file remove button. This now doesn't happen because I check whether the error is a regular error or a \"file remove\" error by checking the file status. This comment has now slipped over the edge into TMI.&#x20;\n"
     },
     {
+      "id": "17187",
       "author": "Justin Obara",
       "date": "2008-11-19T08:34:07.000-0500",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF3, IE6 (Win XP)\n"

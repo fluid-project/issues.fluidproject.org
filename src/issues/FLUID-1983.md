@@ -35,31 +35,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18062",
       "author": "Justin Obara",
       "date": "2009-01-14T09:45:13.000-0500",
       "body": "Current work around is to use graceful degradation. See <https://fluidproject.atlassian.net/browse/FLUID-2073#icft=FLUID-2073>\n"
     },
     {
+      "id": "21063",
       "author": "Justin Obara",
       "date": "2009-02-11T08:54:12.000-0500",
       "body": "It appears that swfupload 2.20 beta 5 should give us this support back. We should upgrade to beta 5.&#x20;\n"
     },
     {
+      "id": "21064",
       "author": "Justin Obara",
       "date": "2009-02-11T08:54:18.000-0500",
       "body": "Bug Parade 0.8 release\n"
     },
     {
+      "id": "21065",
       "author": "Eli Cochran",
       "date": "2009-02-11T12:30:17.000-0500",
       "body": "* upgraded to SWFUpload beta 5\n* removed graceful degradation for Flash 9/IE\n* removed specific configuration for Flash 9 required for older versions of SWFUpload but kept backwards compat.\n* added code to mimic the SWFUpload 2.10 behaviour of hiding the flash movie in a 1px container at the end of the body\n"
     },
     {
+      "id": "21066",
       "author": "Colin Clark",
       "date": "2009-02-11T13:22:08.000-0500",
       "body": "Eli and I pair programmed on this commit, so it has been code reviewed.\n"
     },
     {
+      "id": "21067",
       "author": "Justin Obara",
       "date": "2009-02-11T16:00:52.000-0500",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\\\nFF3, IE6 (Win 2000)\n"

@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20178",
       "author": "Justin Obara",
       "date": "2008-07-25T16:30:44.000-0400",
       "body": "Updated behaviour:\n\nIE7, IE6:\n\ncan shift-tab back into the file queue. There is no focus styling on any of the files, but you can tap an arrow key to move across files (notice scroll bar moving). \\\nIf you play with the arrow and delete keys, you can delete items in IE7. In IE6 the whole file queue will delete.\n\nOpera 9.5:\n\nOn win xp, will put focus on the entire file queue\n"
     },
     {
+      "id": "20180",
       "author": "Justin Obara",
       "date": "2008-07-25T16:32:47.000-0400",
       "body": "FF2, FF3 (mac os 10.5, win xp)\\\nOpera 9.5 (mac os 10.5)\n\nWorking properly provided you don't delete the focused file from the queue\n"
     },
     {
+      "id": "20183",
       "author": "Justin Obara",
       "date": "2008-07-28T08:59:07.000-0400",
       "body": "Appears to be fixed, may have been resolved along with fix to Fluid-1028.\n\nVerified using:\n\nFF2, FF3, Opera 9.5 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)&#x20;\n"

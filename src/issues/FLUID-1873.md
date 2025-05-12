@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20724",
       "author": "Eli Cochran",
       "date": "2008-12-04T19:27:18.000-0500",
       "body": "Cleaned up CSS.\n\n* removed some stray comments\n* removed the older pop-up progress styles\n* simplified the caption style down to display: none\n* moved a couple of small styles over from the fluid-infusion.css file so \\\n  &#x20; that if you didn't use the infusion file you would still get nice styling.&#x20;\n"
     },
     {
+      "id": "20725",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:55.259-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

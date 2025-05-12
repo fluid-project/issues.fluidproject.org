@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14127",
       "author": "Jonathan Hung",
       "date": "2014-10-28T15:09:44.221-0400",
       "body": "Currently new Fluid website is using UIO and the default 1.25 line-height is not enough. If possible I would like to be able to change the value to 1.6.\n"
     },
     {
+      "id": "14129",
       "author": "Anastasia Cheetham",
       "date": "2014-11-05T12:21:25.730-0500",
       "body": "Justin and I walked through the process for a UIO component integrator to override a default, and it is onerous, to say the least.  We decided that: UIO users get UIO out of the box, as is, no customizations. If you want customizations, use the Builder yourself. I will update the docs to remove the wrong instructions.\n"
     },
     {
+      "id": "14131",
       "author": "Justin Obara",
       "date": "2014-11-10T11:01:54.986-0500",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion-docs/pull/36> ) into the infusion-docs repo at 74a40a1c83cbbd9a77735d885398ec65010b3465\n"

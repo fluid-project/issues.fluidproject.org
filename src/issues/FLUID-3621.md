@@ -36,11 +36,13 @@
   ],
   "comments": [
     {
+      "id": "13774",
       "author": "Justin Obara",
       "date": "2010-04-09T10:50:58.000-0400",
       "body": "screenshot-1 shows the font size in the buttons unchanged.\n"
     },
     {
+      "id": "13775",
       "author": "Michelle D'Souza",
       "date": "2011-09-06T13:53:57.229-0400",
       "body": "This is a duplicate of <https://fluidproject.atlassian.net/browse/FLUID-4376#icft=FLUID-4376>\n"

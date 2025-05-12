@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19357",
       "author": "Laurel Williams",
       "date": "2009-11-26T11:59:49.000-0500",
       "body": "the error is targetlump is undefined...line 1018 of fluidRenderer.js\n"
     },
     {
+      "id": "19359",
       "author": "Colin Clark",
       "date": "2010-03-30T19:22:41.000-0400",
       "body": "The Menu component was a learning exercise and isn't intended for release or use. As a result, this issue can be resolved.\n"

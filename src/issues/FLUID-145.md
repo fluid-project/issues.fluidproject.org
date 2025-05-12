@@ -38,11 +38,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18294",
       "author": "Michelle D'Souza",
       "date": "2007-12-14T13:38:22.000-0500",
       "body": "This is because there is code in the Reorderer that ignores 'blur' events in IE.  The problem is that putting focus on the link inside the item causes a 'blur' on the reorderer which subsequently removes the 'active' styling from the reorderer so it appears that the reorderer is not usable.&#x20;\n"
     },
     {
+      "id": "18295",
       "author": "Michelle D'Souza",
       "date": "2008-03-12T12:09:22.000-0400",
       "body": "This issue was fixed as part of <https://fluidproject.atlassian.net/browse/FLUID-256#icft=FLUID-256>\n"

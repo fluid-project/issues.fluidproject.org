@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11323",
       "author": "Cindy Li",
       "date": "2015-04-24T11:24:45.222-0400",
       "body": "According to the conversation with Antranig in the fluid-work channel - <https://botbot.me/freenode/fluid-work/2015-04-24/?tz=America/Havana>, from 11:00AM, using the empty string \"\" at the left hand side of \"tooltipContentMap\" can resolve the issue. No special handling is needed.\n"

@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22092",
       "author": "Justin Obara",
       "date": "2010-09-07T10:20:26.414-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "22094",
       "author": "Justin Obara",
       "date": "2010-09-09T14:06:20.194-0400",
       "body": "We can start by adding a user option to switch between the types of reorderer. For the image reorderer we will probably have to do some work to separate out the type of reorderer it uses.\n"

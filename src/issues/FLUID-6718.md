@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25479",
       "author": "Tony Atkins [RtF]",
       "date": "2022-02-15T07:37:18.524-0500",
       "body": "In reviewing with Antranig, seems like post <https://fluidproject.atlassian.net/browse/FLUID-6594#icft=FLUID-6594> intentionally updated to only produce minified bundles, which took over the main names.\n"

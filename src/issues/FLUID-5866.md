@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23776",
       "author": "Antranig Basman",
       "date": "2016-02-22T08:31:30.314-0500",
       "body": "Note that with the current implementations, priorities from a \"priorityHolder\" cannot be mixed with those outside it - the behaviour is that these output priorities are assigned fixed numbers starting at -10 and decreasing.\n"
     },
     {
+      "id": "23777",
       "author": "Antranig Basman",
       "date": "2016-03-07T19:00:05.547-0500",
       "body": "This implementation was a good \"shower idea\" but doesn't in fact helpfully meet any use cases. As well as the confusing disadvantage mentioned in the previous question, it is not in fact necessary for sorting model listeners around the global skeleton - the existing implementation is good enough to do this already - see revised test case in <https://github.com/fluid-project/infusion/pull/683/files> - and it is also not good enough to deal with the other use case of being able to expand the repertoire of \"extremal priorities\" - since there is no ability in the current implementation to generate numerical priorities that actually compare greater than a standard extremal priority\n"
     },
     {
+      "id": "23779",
       "author": "Cindy Li",
       "date": "2016-04-20T09:38:16.823-0400",
       "body": "The pull request <https://github.com/fluid-project/infusion/pull/683> has been merged into the master branch at 6b79a758ba43ce98f6305603b2e5f73d4fbf8652\n"

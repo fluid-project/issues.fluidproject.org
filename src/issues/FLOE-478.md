@@ -36,6 +36,7 @@
   ],
   "comments": [
     {
+      "id": "11111",
       "author": "Jonathan Hung",
       "date": "2021-08-20T15:04:09.857-0400",
       "body": "This issue has been migrated to Github issues:\\\n<https://github.com/inclusive-design/guide.inclusivedesign.ca/issues/70>\\\n<https://github.com/inclusive-design/guide.inclusivedesign.ca/issues/71>\n"

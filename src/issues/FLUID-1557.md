@@ -43,16 +43,19 @@
   ],
   "comments": [
     {
+      "id": "18857",
       "author": "Justin Obara",
       "date": "2008-09-15T14:44:37.000-0400",
       "body": "'screenshot-1' shows the set up of the columns. Notice that column 3 is empty.&#x20;\n"
     },
     {
+      "id": "18860",
       "author": "Antranig Basman",
       "date": "2008-09-16T13:24:09.000-0400",
       "body": "Fixed at revision 5538\n"
     },
     {
+      "id": "18862",
       "author": "Justin Obara",
       "date": "2008-09-17T10:09:46.000-0400",
       "body": "FF2, FF3, Opera 9.5(Mac OS 10.5)\\\nFF2, FF3, Opera 9.5 (Win XP)\\\nFF3 (Win Vista)\n"

@@ -34,16 +34,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17072",
       "author": "Michelle D'Souza",
       "date": "2008-09-26T12:53:12.000-0400",
       "body": "The issue is perhaps one of documentation. If there are items that are selectable but not movable the 'selectables' and 'dropTargets' selectors must be specified to the reorderer.&#x20;\n"
     },
     {
+      "id": "17073",
       "author": "Eli Cochran",
       "date": "2008-09-26T14:03:50.000-0400",
       "body": "Reviewed and tested Michelle's check in (#5694)\n"
     },
     {
+      "id": "17074",
       "author": "Justin Obara",
       "date": "2008-09-26T14:27:28.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15383",
       "author": "Eli Cochran",
       "date": "2008-07-25T15:31:30.000-0400",
       "body": "Fixed along with all the other button focus problems by explicitly focusing after certain actions.&#x20;\n"
     },
     {
+      "id": "15386",
       "author": "Justin Obara",
       "date": "2008-07-25T15:33:32.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\n"

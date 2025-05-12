@@ -37,41 +37,49 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24097",
       "author": "Justin Obara",
       "date": "2011-02-22T12:27:26.263-0500",
       "body": "Doesn't seem to be a problem when using the keyboard only\n"
     },
     {
+      "id": "24098",
       "author": "Harris Wong",
       "date": "2011-06-07T16:41:01.804-0400",
       "body": "This seems to be related to the tooltip plugin.  If we look at the richtext inline edit demo, then we will notice that \"title\" is only added when we mouseover the element.   After some investigation, the problem seems to come from the options within fluid.tooltip().  More precisely, the following option seems to be the problem:\n\ncontent: function () {\\\nreturn \"Tooltip\";\\\n},\n\nWhen \"title\" is not defined in an element and the above option is specified, then a \"mouseover\" event will add a \"title\" attribute to the element, but does not remove the attribute on \"mouseout\". &#x20;\n"
     },
     {
+      "id": "24100",
       "author": "Harris Wong",
       "date": "2011-06-07T16:42:49.768-0400",
       "body": "More information on the option, <http://wiki.jqueryui.com/w/page/12138112/Tooltip>, look for \"content\"\n"
     },
     {
+      "id": "24102",
       "author": "Harris Wong",
       "date": "2011-06-07T17:22:06.173-0400",
       "body": "Added unit test, can be found on my github branch here: <https://github.com/harriswong/infusion/tree/FLUID-3909>\n"
     },
     {
+      "id": "24103",
       "author": "Harris Wong",
       "date": "2011-06-08T10:29:07.503-0400",
       "body": "This occurs with just the jquery tooltip ui.  It's fixed in a later commit: <https://github.com/jquery/jquery-ui/commit/917d2b135891339cb02ce9cda5721faecae2a3ae>\n"
     },
     {
+      "id": "24106",
       "author": "Harris Wong",
       "date": "2011-06-20T16:21:29.646-0400",
       "body": "Our tooltip version is Dec 03, 2010: <https://github.com/jquery/jquery-ui/commit/1fd34199efa9ddc35276b415cad8e7e37a6cc856#ui/jquery.ui.tooltip.js>\\\nThe update mentioned above is May 29, 2011: <https://github.com/jquery/jquery-ui/commit/917d2b135891339cb02ce9cda5721faecae2a3ae>\n\nOur current tooltip.js does not include this fix.  The full history tree of jquery UI 1.9 tooltip is here: <https://github.com/jquery/jquery-ui/commits/master/ui/jquery.ui.tooltip.js>. &#x20;\n\nNote: One of the reasons we did not upgrade tooltip to the newest version is destroy() becomes \\_destroy() in the newer tooltip version, and some of our functions started failing.\n"
     },
     {
+      "id": "24108",
       "author": "y z",
       "date": "2012-08-15T15:58:09.755-0400",
       "body": "Also happens when rich inline edit is closed on focus out.\n"
     },
     {
+      "id": "27810",
       "author": "Justin Obara",
       "date": "2024-07-22T13:49:46.445-0400",
       "body": "Could not reproduce with Safari 17.5 and FF 128 on macOS 14.5\n"

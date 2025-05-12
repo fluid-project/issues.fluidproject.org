@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11454",
       "author": "Alexey Novak",
       "date": "2012-11-28T11:07:19.145-0500",
       "body": "This problem is addressed in <http://issues.fluidproject.org/browse/FLOE-97>\\\nUsers now can use keyboard shortcuts or quick focus navigation shortcuts in order to execute write toolbar function for the selected text.\n"

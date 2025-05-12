@@ -34,16 +34,19 @@
   ],
   "comments": [
     {
+      "id": "26490",
       "author": "Gregor Moss",
       "date": "2019-04-01T13:30:14.243-0400",
       "body": "We want to disable the saving of empty blocks. If at some point we revisit this and decide that we want to enable that, we can.\n"
     },
     {
+      "id": "26491",
       "author": "Gregor Moss",
       "date": "2019-04-01T13:31:58.138-0400",
       "body": "Some stories saved in the Storytelling Project efforts in the last few months have empty blocks exhibiting this behaviour. We won't be addressing those for the time being.\n"
     },
     {
+      "id": "26492",
       "author": "Cindy Li",
       "date": "2019-05-09T09:59:16.179-0400",
       "body": "[The pull request](https://github.com/fluid-project/sjrk-story-telling/pull/23/files) has been merged into the project repo at [this commit](https://github.com/fluid-project/sjrk-story-telling/commit/a2066b42b7f6991789d567b2ed6794ddb10536bd).\n"

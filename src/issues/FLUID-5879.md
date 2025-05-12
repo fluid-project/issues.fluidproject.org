@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24285",
       "author": "Justin Obara",
       "date": "2016-03-21T10:12:15.068-0400",
       "body": "A possible solution would be to make use of the [:not()](https://developer.mozilla.org/en/docs/Web/CSS/:not) pseudo class in our [styles](https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/css/stylus/Enactors.styl) and explicitly exclude some class. Maybe \"fl-icon\" or something.&#x20;\n"
     },
     {
+      "id": "24286",
       "author": "Justin Obara",
       "date": "2017-08-17T15:53:38.498-0400",
       "body": "Merge PR ( <https://github.com/fluid-project/infusion/pull/841> ) into the project repo at 2e5bd5bf9be43ecf0f5303cf3a206b866e35ba6f\n"

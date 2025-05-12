@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27401",
       "author": "Former user",
       "date": "2008-09-25T02:23:48.000-0400",
       "body": "\\#SPAM#\n"
     },
     {
+      "id": "27402",
       "author": "Blake E",
       "date": "2008-10-20T10:59:37.000-0400",
       "body": "issue depreciated for Services Based Issues pertaining to the plugin method and integration with VULab.\n"

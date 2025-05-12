@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26029",
       "author": "Giovanni Tirloni",
       "date": "2018-02-28T08:59:09.247-0500",
       "body": "Updated to VirtualBox 5.2.8 and vagrant 2.0.2 (plugins had to be repaired for GPII only). Tested with Infusion successfully (<https://ci.fluidproject.org/job/fluid-infusion/147/>)\n"

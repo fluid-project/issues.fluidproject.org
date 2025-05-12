@@ -35,16 +35,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13303",
       "author": "Antranig Basman",
       "date": "2008-09-07T18:37:47.000-0400",
       "body": "Corrected at revision 5477\n"
     },
     {
+      "id": "13304",
       "author": "Michelle D'Souza",
       "date": "2008-09-08T10:48:33.000-0400",
       "body": "This is still a problem. To see the issue, tab to the second list in the manual test and try to move item 1 below item 3.&#x20;\n"
     },
     {
+      "id": "13305",
       "author": "Antranig Basman",
       "date": "2008-09-08T12:45:54.000-0400",
       "body": "It seems that this was really two issues, and two different ones rather than a specific issue with non-movable items. The particular sample in question has a \"fault\" with its CSS styles in that the item collapses when it is in the \"keyboard moving\" mode. Secondly, even correcting the timing of geometry updates, revealed a further issue that the geometry manager did not quite behave correctly in the case of elements which abutted completely - a \"half-open correction\" needed to be added to allow both wrapping and downward motion to work correctly at the same time...\n\nRevision 5483\n"

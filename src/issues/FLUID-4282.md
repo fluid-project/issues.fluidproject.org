@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24423",
       "author": "Justin Obara",
       "date": "2011-06-14T09:44:25.358-0400",
       "body": "This might be a good place to use HTML5's input type number.\n"

@@ -36,31 +36,37 @@
   ],
   "comments": [
     {
+      "id": "18039",
       "author": "Justin Obara",
       "date": "2008-12-15T16:08:52.000-0500",
       "body": "Bug Parade: 0.6 release\n"
     },
     {
+      "id": "18040",
       "author": "Eli Cochran",
       "date": "2008-12-15T17:00:11.000-0500",
       "body": "I have added a check inside SWFUploadManager to check that.queue.isUploading before doing a browse. Could probably do a little better on the styling in this case but this'll do for now.\n"
     },
     {
+      "id": "18041",
       "author": "Colin Clark",
       "date": "2008-12-15T19:13:29.000-0500",
       "body": "I've reviewed Eli's fix and it looks good.\n"
     },
     {
+      "id": "18042",
       "author": "Eli Cochran",
       "date": "2008-12-15T19:26:08.000-0500",
       "body": "Nice, clean and simple code fix\n"
     },
     {
+      "id": "18043",
       "author": "Colin Clark",
       "date": "2008-12-15T19:42:11.000-0500",
       "body": "There was a second aspect to this fix that became clear after more testing: the Add more button wasn't working after an upload had been completed. This is because SWFUPloadManager wasn't setting isUploading to false when an upload batch is finished. Here's a patch with a two-line fix.\n"
     },
     {
+      "id": "18045",
       "author": "Justin Obara",
       "date": "2008-12-18T11:13:39.000-0500",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, Opera 9.5 (Win XP)\\\nFF3 (Win Vista)\n"

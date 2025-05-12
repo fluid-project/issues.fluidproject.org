@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "25076",
       "author": "Justin Obara",
       "date": "2017-04-27T12:19:55.987-0400",
       "body": "screenshot.png shows an example of the misaligned headers.\n"
     },
     {
+      "id": "25077",
       "author": "Justin Obara",
       "date": "2021-06-22T13:22:59.785-0400",
       "body": "No longer support IE 11\n"

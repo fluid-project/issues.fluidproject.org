@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12511",
       "author": "vmoulder",
       "date": "2010-01-19T18:08:48.000-0500",
       "body": "work is completed information can be found on this wiki page - <http://wiki.fluidproject.org/display/fluid/Benchmarking+-+kiosk+physical+design>\n"

@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10416",
       "author": "Justin Obara",
       "date": "2012-05-25T13:48:21.544-0400",
       "body": "This should have been resolved for Decapod 0.4\n"

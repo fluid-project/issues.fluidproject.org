@@ -42,16 +42,19 @@
   ],
   "comments": [
     {
+      "id": "16391",
       "author": "John Kremer",
       "date": "2011-02-22T10:44:55.322-0500",
       "body": "Error message when uploading a single file that alreay exists.\n"
     },
     {
+      "id": "16393",
       "author": "John Kremer",
       "date": "2011-02-22T10:47:22.905-0500",
       "body": "Error message when uploading a file that exists from AddImages page as oppose to Add Single Image\n"
     },
     {
+      "id": "16395",
       "author": "Justin Obara",
       "date": "2015-06-09T10:48:46.567-0400",
       "body": "The image gallery uploader demo no longer exists.\n"

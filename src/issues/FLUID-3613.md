@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16127",
       "author": "Justin Obara",
       "date": "2010-05-07T14:13:04.631-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "16131",
       "author": "Harris Wong",
       "date": "2010-08-06T16:24:53.432-0400",
       "body": "Have discussed this with Cindy, Justin and Joseph.  This is not a bug. &#x20;\n\nThe alt text is replaced by the 'aria-labelledby' attribute in its parent node (the wrapper).  The parent node with the attribute 'role=\"image\"' will be read by the screen reader as an image, and the 'aria-labelled-by' attribute will be read as its alt text.  Example is on the fluid demo site, <http://build.fluidproject.org/infusion/demos/reorderer/imageReorderer/demo.html>.  More info about the ARIA role can be found here: <http://www.w3.org/WAI/PF/aria/roles#presentation>.\n\nHaving that said, the ImageReorderer might not be the perfect kit to use for reordering images since not all users want to have text description underneath the photos like the demo.  In that case, users might want to consider using the GridReorderer instead.\n"
     },
     {
+      "id": "16133",
       "author": "Justin Obara",
       "date": "2010-08-18T11:15:13.667-0400",
       "body": "As per previous comment from Harris\n"

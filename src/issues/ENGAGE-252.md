@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12563",
       "author": "Justin Obara",
       "date": "2010-02-05T15:50:51.000-0500",
       "body": "Bug Parade Engage 0.3&#x20;\n"
     },
     {
+      "id": "12564",
       "author": "y z",
       "date": "2010-02-11T15:38:35.000-0500",
       "body": "This bug is fixed with commit r9364 by Colin.\n"
     },
     {
+      "id": "12565",
       "author": "y z",
       "date": "2010-02-11T15:38:49.000-0500",
       "body": "This bug is fixed with commit r9364 by Colin.\n"
     },
     {
+      "id": "12566",
       "author": "Colin Clark",
       "date": "2010-02-12T14:33:12.000-0500",
       "body": "I reviewed and committed Yura's completely reworked Artifact View, which resolves this issue.\n\nA couple of outstanding issues for related artifacts still exist, but have been filed as separate JIRAs:\n\n1\\. Some related artifacts just aren't in the system\\\n2\\. Related artifact images are not currently displaying properly\\\n3\\. Some of Hugues' data contains mangled special characters\n"

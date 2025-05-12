@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26509",
       "author": "Colin Clark",
       "date": "2020-04-30T18:10:40.164-0400",
       "body": "All modern browsers support the H.264 codec in an MPEG-4 container. Most browsers, with the exception of Safari, also support videos encoded with the VP8 and VP9 codecs within WebM containers. It sounds like the AV1 codec has also been adopted by all modern browsers except Safari (Apple is extremely conservative about codecs because of patent fears, not to mention the issue of hardware decoders to save battery life), and it looks like both WebM and MP4 containers are supported. <https://caniuse.com/#search=video%20format>\n\nWe probably can't detect codecs within a file that hasn't yet been uploaded, so I'd guess that we're safe to filter on the various MP4 and WebM MIME types. Presumably we'll also need to validate on the server side in case someone's editing our markup in the inspector tools.\n\nIn the future, we can consider a back-end process that uses ffmpeg to re-encode videos on the fly to H.264/m4v, but that's likely a big feature.\n"
     },
     {
+      "id": "26510",
       "author": "Gregor Moss",
       "date": "2020-04-30T18:16:19.506-0400",
       "body": "Thanks for that detail, Colin! I expect that once <https://fluidproject.atlassian.net/browse/SJRK-289#icft=SJRK-289> has been completed server-side, this should make the codec detection, validation and potential conversion of media files more feasible.\n"

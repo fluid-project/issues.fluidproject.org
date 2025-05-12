@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20287",
       "author": "Antranig Basman",
       "date": "2010-09-23T16:51:37.680-0400",
       "body": "Fixed at revision 10040\n"
     },
     {
+      "id": "20288",
       "author": "Golam Chowdhury",
       "date": "2011-03-03T16:46:28.240-0500",
       "body": "Changed the \"Affect Version\" to 1.3.1.\n"

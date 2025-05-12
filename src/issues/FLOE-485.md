@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11107",
       "author": "Aashay Singhal",
       "date": "2017-02-24T17:29:40.819-0500",
       "body": "I wanted to work on this task. I tried to figure out what docs you are talking about but didn't find anything. Can you please elaborate on what docs you are talking about so that I can fix their order as required?\n"
     },
     {
+      "id": "11108",
       "author": "Jonathan Hung",
       "date": "2021-08-20T14:46:34.244-0400",
       "body": "This issue has been migrated to Github Issues:\\\n<https://github.com/inclusive-design/guide.inclusivedesign.ca/issues/69>\n"

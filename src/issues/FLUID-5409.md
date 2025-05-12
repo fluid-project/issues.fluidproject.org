@@ -33,16 +33,19 @@
   ],
   "comments": [
     {
+      "id": "14722",
       "author": "Justin Obara",
       "date": "2014-06-06T09:37:16.432-0400",
       "body": "screenshot.png shows the enabled \"speak text\" and \"magnification\" adjusters appearing to be off.\n"
     },
     {
+      "id": "14723",
       "author": "Justin Obara",
       "date": "2014-06-09T15:01:10.560-0400",
       "body": "Submitted a pull request:\\\n<https://github.com/fluid-project/infusion/pull/525>\n"
     },
     {
+      "id": "14724",
       "author": "Michelle D'Souza",
       "date": "2014-06-10T15:36:32.362-0400",
       "body": "Merged at 9b6b2ada67b9444fbeab0a844f72ef42fc8cc1b8\n"

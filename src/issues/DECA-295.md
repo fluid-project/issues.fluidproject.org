@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10076",
       "author": "Jonathan Hung",
       "date": "2012-08-30T16:18:39.611-0400",
       "body": "Although desirable, we may not get to this feature during project funding period. The grant specifies that PDF is not a preservation format, so colour is not immediately required.\n"

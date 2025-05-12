@@ -39,11 +39,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22705",
       "author": "Justin Obara",
       "date": "2011-03-23T15:50:46.588-0400",
       "body": "re-opening to fix the resolution status, which currently says unresolved\n"
     },
     {
+      "id": "22708",
       "author": "Justin Obara",
       "date": "2011-03-23T15:53:02.652-0400",
       "body": "after some investigation, I'm not sure this should have ever been closed. Leaving as reopened\n"

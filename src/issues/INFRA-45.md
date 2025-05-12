@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25992",
       "author": "Giovanni Tirloni",
       "date": "2015-09-17T16:27:24.629-0400",
       "body": "One solution is to carve a /28 or /29 out of the /24, just for Vidyo. One problem is that our IP address space is scattered, but this will improve when we shutdown Nebula. The other problem is that the IPs being used by Vidyo today fall outside the nearest /28 (205.211.169.57 to .62). We would need to reconfigure the appliances and fix DNS. It would be even better to relocate them to the top of the address space within a /29 (e.g. 205.211.169.248/29).\n\nAnother solution is to get rid of the PVLAN, let the Vidyo appliances into the same general VLAN as all other servers. It would still be possible to isolate them through access lists in Arista.\n"
     },
     {
+      "id": "25993",
       "author": "Giovanni Tirloni",
       "date": "2016-08-22T09:09:22.305-0400",
       "body": "The solution adopted as to remove PVLANs and get all our servers on the same VLAN. It is assumed the Vidyo servers won't pose any greater risk than our own servers, and they are the only 3rd-party devices in our network.\n"

@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19094",
       "author": "Anastasia Cheetham",
       "date": "2008-06-09T15:53:07.000-0400",
       "body": "We have unit tests for construction, public api, and some event handler binding. We need more tests for event handler bindings\n"
     },
     {
+      "id": "19097",
       "author": "Michelle D'Souza",
       "date": "2008-06-12T14:21:08.000-0400",
       "body": "All the basic tests have now been written. New tests need to be added as more features are developed.&#x20;\n"

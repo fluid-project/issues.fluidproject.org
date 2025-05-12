@@ -32,21 +32,25 @@
   ],
   "comments": [
     {
+      "id": "21345",
       "author": "Justin Obara",
       "date": "2009-03-17T12:36:58.000-0400",
       "body": "'screenshot-1' shows the text fields empty\n"
     },
     {
+      "id": "21346",
       "author": "Justin Obara",
       "date": "2009-03-19T09:21:32.000-0400",
       "body": "Bug Parade 1.0 release\n"
     },
     {
+      "id": "21347",
       "author": "Justin Obara",
       "date": "2009-03-19T09:21:44.000-0400",
       "body": "also happens on cancel\n"
     },
     {
+      "id": "21348",
       "author": "Justin Obara",
       "date": "2009-03-24T18:10:55.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.6, Safari 3.2 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.6 (Win XP)\\\nFF3, IE7 (Win Vista\n"

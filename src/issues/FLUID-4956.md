@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16239",
       "author": "Jonathan Hung",
       "date": "2013-04-01T10:44:39.429-0400",
       "body": "This was being caused by Apple's system preferences of showing scrollbars always.\\\nTo fix, go to:\\\n1\\. System preferences > General > Show scroll bars\\\n2\\. Set to \"When Scroll\" or \"Automatic\"\n"
     },
     {
+      "id": "16241",
       "author": "Jonathan Hung",
       "date": "2013-04-01T17:00:33.699-0400",
       "body": "Reopening this issue because it appears to be an issue on Chrome Windows.\n"

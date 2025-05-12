@@ -46,36 +46,43 @@
   ],
   "comments": [
     {
+      "id": "19945",
       "author": "Justin Obara",
       "date": "2008-07-24T20:32:35.000-0400",
       "body": "'screenshot-1' shows the errors with the styling around the scrollbar\n"
     },
     {
+      "id": "19947",
       "author": "Justin Obara",
       "date": "2008-09-16T14:17:32.000-0400",
       "body": "this affects Uploader 2\n"
     },
     {
+      "id": "19949",
       "author": "Eli Cochran",
       "date": "2008-09-17T20:07:53.000-0400",
       "body": "changed the CSS so that the Uploader will no longer push out of it's rectangle on IE6\n"
     },
     {
+      "id": "19951",
       "author": "Justin Obara",
       "date": "2008-09-18T09:11:36.000-0400",
       "body": "Verified fix using:\n\nIE 6 (Win XP, Win 2000)\n"
     },
     {
+      "id": "19954",
       "author": "Eli Cochran",
       "date": "2008-09-18T14:18:52.000-0400",
       "body": "This was fixed in Uploader2, should roll code into Uploader1 for 0.5\n"
     },
     {
+      "id": "19956",
       "author": "Eli Cochran",
       "date": "2008-09-19T11:58:47.000-0400",
       "body": "Fixes from Uploader2 applied to Uploader1 for 0.5 release\n"
     },
     {
+      "id": "19958",
       "author": "Justin Obara",
       "date": "2008-09-19T14:05:45.000-0400",
       "body": "Verified fix using:\n\nIE6 (Win XP)\n"

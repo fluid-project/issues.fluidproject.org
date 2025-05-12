@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10153",
       "author": "Justin Obara",
       "date": "2012-05-17T13:51:36.299-0400",
       "body": "Re-implemented the importStatus component. It had been lacking the ability to add additional valid files, and didn't have a true model. This was all addressed.\n\nThe changes can be found in my bitbucket repo:\\\n<https://bitbucket.org/jobara/decapod-ui-05release>\n"
     },
     {
+      "id": "10154",
       "author": "Justin Obara",
       "date": "2012-05-18T14:48:00.457-0400",
       "body": "Merged into the project repo\n"

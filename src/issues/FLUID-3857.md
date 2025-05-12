@@ -33,21 +33,25 @@
   ],
   "comments": [
     {
+      "id": "24840",
       "author": "y z",
       "date": "2010-11-18T22:57:59.175-0500",
       "body": "Hi Antranig, could you please review the patch with tests\n"
     },
     {
+      "id": "24841",
       "author": "y z",
       "date": "2010-11-19T00:52:25.088-0500",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-3857#icft=FLUID-3857>.patch.txt - final patch with updated names for the fluid.remove\\_if jqUnit assertions.\n"
     },
     {
+      "id": "24842",
       "author": "Justin Obara",
       "date": "2010-11-19T13:13:47.287-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "24844",
       "author": "Antranig Basman",
       "date": "2010-11-19T14:04:00.129-0500",
       "body": "Applied and reviewed at revision 10296\n"

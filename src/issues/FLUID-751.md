@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19597",
       "author": "Allison Bloodworth",
       "date": "2008-06-10T02:57:26.000-0400",
       "body": "iteration11\n"
     },
     {
+      "id": "19598",
       "author": "Jonathan Hung",
       "date": "2008-06-13T10:43:28.000-0400",
       "body": "Seems like the reindex from the Search module doesn't work.\n\nInstead use command from the Administer -> Logs -> Status Report -> Cron maintenance tasks -> Click \"You can run cron manually\".\n\nSearch now works fine.\n\nWe should automate this... that's another task.\n"
     },
     {
+      "id": "19599",
       "author": "Jonathan Hung",
       "date": "2008-06-23T16:58:50.000-0400",
       "body": "Finished for now. New task would be to automate the reindexing. See this issue:\\\n<http://issues.fluidproject.org/browse/FLUID-776>\n"

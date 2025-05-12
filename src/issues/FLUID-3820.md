@@ -40,31 +40,37 @@
   ],
   "comments": [
     {
+      "id": "24745",
       "author": "Justin Obara",
       "date": "2010-10-29T14:20:17.834-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "24746",
       "author": "Cindy Li",
       "date": "2010-11-03T09:47:35.836-0400",
       "body": "\"FLUID-3820-1.patch.txt\" does:\n\n1\\. Ant build script accepts mysql database name as a parameter named as \"mysql\\_db\\_name\". The new parameter is optional with the default value \"build\\_cache\", the db name infusion builder previously uses.\n\n2\\. Pointed .externals to infusion library 1.2.1, instead of 1.1.2, for the infusion builds.&#x20;\n\n3\\. The structure and scripts of test suite (JqUnit) in infusion library 1.2.1 is different from that in 1.1.2. Adjusted infusion builder unit tests to cater for the new JqUnit\n"
     },
     {
+      "id": "24747",
       "author": "Jamon Jamon",
       "date": "2010-11-03T16:10:26.728-0400",
       "body": "Including an external (non version controlled) infusion-builder.properties file in ${home}/infusion-builder.properties allows storing database credentials semi-securely while also using them in an ant build.xml file per the following patch:\n\nIndex: build.xml\\\n\\===================================================================\\\n— build.xml   (revision 10175)\\\n+++ build.xml   (working copy)\\\n -4,6 +4,7 \n\n\\<property environment=\"env\" />\\\n\\<property file=\"build.properties\" />\\\n\\+       \\<property file=\"${home}/infusion-builder.properties\" />\n\n\\<target name=\"setup\\_server\\_props\" description=\"Loads server properties\">\\\n\\<property file=\"server\\_build.properties\" />\n"
     },
     {
+      "id": "24748",
       "author": "Cindy Li",
       "date": "2010-11-05T12:20:29.055-0400",
       "body": "\"FLUID-3820-2.patch.txt\" improves at:\n\n1\\. Applied Jamon's suggestion to have an external non-svn ant property file for database credentials;\\\n2\\. Corrected test suite title from \"inline editor\" to \"infusion builder\";\\\n3\\. Removed 'new' when calling a creator function in the test javascript file.\n"
     },
     {
+      "id": "24749",
       "author": "Michelle D'Souza",
       "date": "2010-11-08T13:16:38.981-0500",
       "body": "I've reviewed committed your second patch Cindy - please close the JIRA if you are happy with what was committed.&#x20;\n"
     },
     {
+      "id": "24750",
       "author": "Cindy Li",
       "date": "2010-11-08T13:18:23.843-0500",
       "body": "Issue closed.\n"

@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12268",
       "author": "Justin Obara",
       "date": "2010-02-01T12:23:22.000-0500",
       "body": "The styling in the wireframes is different now and this is no longer an issue\n"

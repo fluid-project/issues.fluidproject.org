@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16427",
       "author": "Cindy Li",
       "date": "2014-02-14T11:43:57.443-0500",
       "body": "Sent a pull request that has a unit test for this issue: <https://github.com/fluid-project/infusion/pull/468>\n"
     },
     {
+      "id": "16429",
       "author": "Colin Clark",
       "date": "2014-03-18T04:03:40.762-0400",
       "body": "I have reviewed, tested, and pushed this fix to the project repo's master branch at revision a145ef1f753ff61d514c00bcde60f3aa91fbb17b.\n\nCindy Li, can you confirm that this issue is indeed fixed and close the ticket if so?\n"
     },
     {
+      "id": "16431",
       "author": "Cindy Li",
       "date": "2014-03-18T11:24:15.451-0400",
       "body": "Confirmed the issue is fixed.\n"

@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12226",
       "author": "Justin Obara",
       "date": "2010-02-05T15:35:15.000-0500",
       "body": "Bug Parade Engage 0.3&#x20;\n"
     },
     {
+      "id": "12227",
       "author": "Colin Clark",
       "date": "2010-02-08T17:37:54.000-0500",
       "body": "The bulk of this was completed last week by integrating Navigation List into all components.\n"

@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12202",
       "author": "James Yoon",
       "date": "2009-09-16T17:19:07.000-0400",
       "body": "Basic mobile design testing platform created, and it's awesome.\n\nCode is up in the repository at <http://source.fluidproject.org/svn/scratchpad/mobile-design-testing-platform>\n\nSee it in action here:\\\n<http://build.fluidproject.org:8095/incubator/mobileTestingPlatform/>\n\n(best seen in mobile Safari--iPhone, iPod touch, iPhone simulator, whathaveyou)\n"
     },
     {
+      "id": "12203",
       "author": "James Yoon",
       "date": "2009-09-16T17:28:09.000-0400",
       "body": "Build site changed to: <http://build.fluidproject.org:8095/incubator/mobiledesigntestingplatform/>\n"

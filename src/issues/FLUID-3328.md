@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14664",
       "author": "Antranig Basman",
       "date": "2009-11-29T00:36:50.000-0500",
       "body": "Fixed at revision 8765\n"
     },
     {
+      "id": "14666",
       "author": "Anastasia Cheetham",
       "date": "2010-01-29T09:03:33.000-0500",
       "body": "Confirmed.\n"

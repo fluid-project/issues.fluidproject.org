@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12540",
       "author": "Michelle D'Souza",
       "date": "2010-02-01T10:50:49.000-0500",
       "body": "Most of this task is done. We still need to shorten the caption for the thumbnail when it is longer then the thumbnail width.\n"
     },
     {
+      "id": "12541",
       "author": "Justin Obara",
       "date": "2010-02-05T15:49:21.000-0500",
       "body": "Bug Parade Engage 0.3&#x20;\n"
     },
     {
+      "id": "12542",
       "author": "Colin Clark",
       "date": "2010-02-08T17:42:34.000-0500",
       "body": "This issue was resolved last week except for caption truncating, which has been filed as a separate issue against Nav List.\n"

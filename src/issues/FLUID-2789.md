@@ -43,26 +43,31 @@
   ],
   "comments": [
     {
+      "id": "17027",
       "author": "Eli Cochran",
       "date": "2009-05-27T19:52:09.000-0400",
       "body": "I've done a little research and this is a known bug with the SWFUpload and Opera. In the words of Gyphie:&#x20;\n\n— QUOTE FROM: <http://www.swfupload.org/forum/generaldiscussion/1182> —\n\n\"I've found that Opera performs the worst in these tests. Basically you can't hide or perform any DOM node movements in Opera without breaking Flash movies that use External Interface to communicate to the browser.\n\nThe work-around is to only change the Flash Movie size to 0x0 (but I'd test that you may have to do 1x1) and reposition the movie. You can't hide it or it's parent.\"\n\n— END QUOTE —\n\nThe Upload button also fails in Opera running locally, even with out toggling. This problem may be related although I'm having trouble debugging.&#x20;\n"
     },
     {
+      "id": "17028",
       "author": "Eli Cochran",
       "date": "2009-05-28T18:27:28.000-0400",
       "body": "The solution that we've settled on is to \"hide\" the Uploader in a different way. Hiding using the standard .hide() and show() methods in jQuery will break the Uploader in Opera. However, we can hide by setting the height, width and padding of the Uploader to 0 and also setting visibility to hidden.&#x20;\n\nThe two patches offer up use both use this approach\\\n<https://fluidproject.atlassian.net/browse/FLUID-2789#icft=FLUID-2789>.a.allbrowsers.patch :: hides the Uploader using this hack on all browsers\\\n<https://fluidproject.atlassian.net/browse/FLUID-2789#icft=FLUID-2789>.b.justOpera.patch :: special-cases Opera for this fix\n"
     },
     {
+      "id": "17029",
       "author": "Eli Cochran",
       "date": "2009-05-29T12:46:15.000-0400",
       "body": "We've decided to go with the Opera only fix, but we're changing the test for Opera since jQuery has deprecated $.browser.opera. After much hunting, we found (window\\.opera) which appears to only return as defined on Opera!\n"
     },
     {
+      "id": "17030",
       "author": "Eli Cochran",
       "date": "2009-05-29T13:11:58.000-0400",
       "body": "Anastasia has committed the revised opera-only fix and we are good to go.&#x20;\n"
     },
     {
+      "id": "17031",
       "author": "Justin Obara",
       "date": "2009-05-29T13:35:10.000-0400",
       "body": "Verified fix using:\n\nOpera 9.6 (Mac OS 10.5, Win XP)\n"

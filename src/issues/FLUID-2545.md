@@ -30,21 +30,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21528",
       "author": "Justin Obara",
       "date": "2009-05-20T14:47:12.000-0400",
       "body": "Bug Parade 1.1 release&#x20;\n"
     },
     {
+      "id": "21530",
       "author": "Jacob Farber",
       "date": "2009-05-25T10:02:52.000-0400",
       "body": "This ticket raises questions: \\\n1\\) Since keyboard-a11y is a plugin that can exist outside of Fluid, are our naming conventions appropriate?\\\n2\\) If they are appropriate, and since its not a component, should it follow component-specific class name conventions?&#x20;\n"
     },
     {
+      "id": "21531",
       "author": "Colin Clark",
       "date": "2009-05-25T11:35:53.000-0400",
       "body": "This is by design, and is not a bug. Here's my rationale:\n\n1\\. The jquery.keyboard-a11y plugin is not an Infusion component. It's designed to be used for all kinds of purposes, and by people who don't even know what a component is. As a result, it needn't follow our component conventions.\n\n2\\. The choice of the default selector was intended to be as generic as possible--a likely convention people might like to use for their selectable elements. Our flc- class name conventions, on the other hand, are designed to be as specific as possible.\n\nLet's take this one of the bug parade and close the issue.\n"
     },
     {
+      "id": "21532",
       "author": "Colin Clark",
       "date": "2009-05-25T11:40:06.000-0400",
       "body": "I'm closing this one, since it's not really a bug.\n"

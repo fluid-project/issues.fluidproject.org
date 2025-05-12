@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15581",
       "author": "Laurel Williams",
       "date": "2009-06-03T10:57:24.000-0400",
       "body": "Added a code snipit into initUIOptions as noted below.\n\nvar initUIOptions = function() {\\\nvar options = {\\\nlisteners: {\\\nafterRender: function() {\\\n$('.uiOptions .fl-col:eq(0)').accordion({\\\nheader: 'h2',\\\nclearStyle: true,\\\nautoHeight: false\\\n});\\\n$('.uiOptions .fl-col h2:eq(0)').focus();\\\n},\\\nonCancel: function() {\\\n$(\"#uiOptionsContainer\").dialog(\"close\");\\\n},\\\nonSave: function() {\\\n$(\"#uiOptionsContainer\").dialog(\"close\");\\\n}\\\n}\\\n};\n\n// solves the uri security issue\\\n// remove if we can get relative uri working\\\n//locate .flc-uiOptions-preview-frame in the template\\\n//replace the src parameter with the appropriate value\\\n$(\".flc-uiOptions-preview-frame\").attr(\"src\", \"http\\://\" + location.host +\\\n\"/uploads/ui-options/UIOptionsPreview\\.html\");\n\nuiOptions = fluid.uiOptions(\"#uiOptionsContainer\", options);\\\n$(\"#uiOptionsContainer\").dialog('option', 'position', 'center');\\\n};\n"
     },
     {
+      "id": "15584",
       "author": "Laurel Williams",
       "date": "2009-06-04T14:52:43.000-0400",
       "body": "Ended up removing this code after forcing website to have [http://fluidproject.org](http://fluidproject.org/) url only. <https://fluidproject.atlassian.net/browse/FLUID-2909#icft=FLUID-2909>\n"

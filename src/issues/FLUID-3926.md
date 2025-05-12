@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16152",
       "author": "Antranig Basman",
       "date": "2010-12-16T22:14:37.423-0500",
       "body": "This seems like a timing race - note that the error will always go away on refreshing the page, in those cases where it appears. It looks like for a new tab the browser is probably slightly more busy during startup than in the other cases.\n"
     },
     {
+      "id": "16154",
       "author": "Antranig Basman",
       "date": "2013-01-13T18:22:28.806-0500",
       "body": "I believe this is really the same issue as the \"top-level browser window\" focus issue\n"

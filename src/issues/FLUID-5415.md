@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22383",
       "author": "Justin Obara",
       "date": "2016-03-01T12:39:07.142-0500",
       "body": "Currently our IE support is only IE 11, we need to retest in IE 11.\n"
     },
     {
+      "id": "22389",
       "author": "Justin Obara",
       "date": "2016-09-01T16:30:29.997-0400",
       "body": "Cannot reproduce this issue in IE 11 ( the currently supported version of IE) and MS Edge.\n"

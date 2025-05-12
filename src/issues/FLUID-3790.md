@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23409",
       "author": "Justin Obara",
       "date": "2010-10-15T10:30:03.823-0400",
       "body": "The button has the \"disabled\" attribute attached when it is disabled. Since this is present, the aria-disabled attribute shouldn't be needed.\n"

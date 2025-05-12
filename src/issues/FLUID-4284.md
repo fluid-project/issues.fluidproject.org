@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24093",
       "author": "Cindy Li",
       "date": "2011-06-06T09:28:07.293-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24096",
       "author": "Justin Obara",
       "date": "2011-07-26T10:39:40.234-0400",
       "body": "Appears to have been fixed at 6d6c5ddc4ac62499c026c9d61430459eb73d2e94\n"

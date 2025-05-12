@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22189",
       "author": "Justin Obara",
       "date": "2010-08-27T10:25:00.963-0400",
       "body": "The failed get request are coming because the portal will try to pull in files related to a demo(html, css, js, and data), whether or not they exist. This is to display them in the tabbed panel to the right. The failed get for the build.xml file is because this is used to test the same origin policy. The path and demo name are set in the demo.html file specific to a demo. We may want to rethink our strategy here as it may appear to users that there is a problem.\n"
     },
     {
+      "id": "22193",
       "author": "Anastasia Cheetham",
       "date": "2011-01-10T14:46:08.844-0500",
       "body": "Justin, I'm not able to reproduce this (though I might not be clear on how to do so). Could you double-check if this is still an issue and if so, set the 'affects' version? Even if so, it might become moot once we redesign the demo portal.\n"
     },
     {
+      "id": "22196",
       "author": "Justin Obara",
       "date": "2014-07-14T10:30:09.278-0400",
       "body": "The demo portal was removed as of 1.5\n"

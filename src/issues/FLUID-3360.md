@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15452",
       "author": "Colin Clark",
       "date": "2009-11-04T19:00:35.000-0500",
       "body": "This issue is a more specific articulation of one of the tasks noted in <https://fluidproject.atlassian.net/browse/FLUID-2931#icft=FLUID-2931>.\n"
     },
     {
+      "id": "15455",
       "author": "Laurel Williams",
       "date": "2009-12-02T13:55:08.000-0500",
       "body": "A script was created which cleans up temporary files every 24 hours. It needs to be installed as a cron job on the server to work. The script was written to clean up the files on the deploy server, so will need to be altered and installed as a cron job to clean up files on other servers such as the daily build server.\n\nlocation of the script is /infusion-builder-secure/scripts/cleanup.sh\n"

@@ -41,16 +41,19 @@
   ],
   "comments": [
     {
+      "id": "14208",
       "author": "Justin Obara",
       "date": "2015-06-10T14:03:29.929-0400",
       "body": "This is probably set by the browser, but more investigation is needed.\n"
     },
     {
+      "id": "14210",
       "author": "Justin Obara",
       "date": "2016-07-08T11:07:16.447-0400",
       "body": "Replace missing screenshot.\n"
     },
     {
+      "id": "27817",
       "author": "Justin Obara",
       "date": "2024-07-22T14:29:38.875-0400",
       "body": "There is little to no support for styling options of a select element.\n"

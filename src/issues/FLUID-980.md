@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13527",
       "author": "Antranig Basman",
       "date": "2008-07-23T18:22:53.000-0400",
       "body": "Deletable with \"DELETE\", although I cannot verify Apple-DELETE on my systems...\n"
     },
     {
+      "id": "13531",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:52.652-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

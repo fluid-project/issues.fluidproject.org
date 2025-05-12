@@ -34,16 +34,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16667",
       "author": "Michelle D'Souza",
       "date": "2013-07-26T15:15:23.262-0400",
       "body": "We should probably move this manual test to a unit test so this issue is caught faster in the future.&#x20;\n"
     },
     {
+      "id": "16669",
       "author": "Antranig Basman",
       "date": "2014-02-09T03:47:20.917-0500",
       "body": "A fix is at <https://github.com/fluid-project/infusion/pull/463> - the issue to automate this test is at <https://fluidproject.atlassian.net/browse/FLUID-4049#icft=FLUID-4049> which I have linked and commented\n"
     },
     {
+      "id": "16671",
       "author": "Justin Obara",
       "date": "2014-03-03T11:31:00.594-0500",
       "body": "The pull request was merged into the project repo at 796e6cdc49399308b528b8fc5721462c07add56e\n"

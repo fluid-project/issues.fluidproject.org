@@ -25,21 +25,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19255",
       "author": "Jonathan Hung",
       "date": "2008-06-23T16:48:38.000-0400",
       "body": "This Work is dependent on other Wiki work being done first.\n"
     },
     {
+      "id": "19256",
       "author": "Jess Mitchell",
       "date": "2008-07-22T22:25:25.000-0400",
       "body": "Iteration updated\n"
     },
     {
+      "id": "19259",
       "author": "Paul Zablosky",
       "date": "2008-08-05T12:31:53.000-0400",
       "body": "Track iteration in description in this comment\n\niteration20\n"
     },
     {
+      "id": "19261",
       "author": "Jess Mitchell",
       "date": "2011-01-20T10:27:51.868-0500",
       "body": "Outdated.\n"

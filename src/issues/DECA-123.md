@@ -42,16 +42,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10400",
       "author": "James Yoon",
       "date": "2010-07-14T10:49:53.817-0400",
       "body": "After 0.4, we'll create finer-grained styling JIRAs to avoid mega-JIRAs like this one.\n"
     },
     {
+      "id": "10401",
       "author": "Jonathan Hung",
       "date": "2010-07-19T10:09:27.279-0400",
       "body": "This Jira is to create a proper Decapod style, without inheriting the Coal theme.\n"
     },
     {
+      "id": "10402",
       "author": "Jonathan Hung",
       "date": "2012-02-10T12:50:26.166-0500",
       "body": "With Decapod 0.5, styling has started from scratch and does not use existing Infusion themes.\n"

@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20060",
       "author": "Colin Clark",
       "date": "2009-04-29T17:45:48.000-0400",
       "body": "I've committed this to trunk in r7132.\n"
     },
     {
+      "id": "20061",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:19.006-0500",
       "body": "Closing issues that were fixed in 1.1\n"

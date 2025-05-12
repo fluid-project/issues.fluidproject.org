@@ -32,6 +32,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22300",
       "author": "Simon Bates",
       "date": "2015-06-15T15:23:04.852-0400",
       "body": "Comments from Antranig in #fluid-work:\n\n\\[14:49] \\<Bosmon> simonjb - another useful piece of work would be to adjust the implementation so that it automatically skips disabled DOM nodes in fluid.tooltip.resolveTooltipTarget\\\n\\[14:49] \\<Bosmon> simonjb - <https://github.com/fluid-project/infusion/blob/master/src/components/tooltip/js/Tooltip.js#L61>\\\n\\[14:49] \\<Bosmon> This was something that we hacked in the FD tool at the last moment\\\n\\[14:50] \\<Bosmon> but it requires the implementor to explicitly add the wacky :not(\\[disabled]) annotation at the end of the tooltip items selector\\\n\\[14:50] \\<Bosmon> simonjb: <https://github.com/fluid-project/first-discovery/blob/master/src/js/firstDiscoveryEditor.js#L129>\n"

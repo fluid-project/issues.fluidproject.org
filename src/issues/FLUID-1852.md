@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17675",
       "author": "Michelle D'Souza",
       "date": "2009-01-21T09:14:24.000-0500",
       "body": "Inline Edits should also be highlighted. Make sure to include one on the test page for this functionality.&#x20;\n"
     },
     {
+      "id": "17677",
       "author": "Michelle D'Souza",
       "date": "2009-03-17T10:50:27.000-0400",
       "body": "The colour highlighting still needs to be implemented.&#x20;\n"
     },
     {
+      "id": "17679",
       "author": "Michelle D'Souza",
       "date": "2014-04-02T16:36:12.757-0400",
       "body": "Designs for UIO have moved well past this stage.&#x20;\n"

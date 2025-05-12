@@ -43,16 +43,19 @@
   ],
   "comments": [
     {
+      "id": "15527",
       "author": "Justin Obara",
       "date": "2008-09-02T13:33:58.000-0400",
       "body": "'screenshot-1' shows that there is no padding between portlets\n"
     },
     {
+      "id": "15529",
       "author": "Justin Obara",
       "date": "2008-11-03T09:02:58.000-0500",
       "body": "closed in error, reopenned\n"
     },
     {
+      "id": "15531",
       "author": "Justin Obara",
       "date": "2014-05-26T15:25:40.095-0400",
       "body": "This demo has been removed.\n"

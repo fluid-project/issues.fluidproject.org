@@ -34,21 +34,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17921",
       "author": "Michelle D'Souza",
       "date": "2007-11-06T15:32:33.000-0500",
       "body": "This now works in Lightbox.html and unordered-list.html but does not work in uportal-sortable-tabs-mockup.html. When the focus is put on the anchor in the tab, the keyboard reordering will not work after a mouse drag and drop unless you move focus away from the tabs and move focus back again. Since it was requested that the action of clicking on the tabs be disabled for user testing, I removed the functionality of focusing on the anchor in the tab. This, of course, does not fix what ever the underlying problem is and it should be looked into. &#x20;\n"
     },
     {
+      "id": "17923",
       "author": "Anastasia Cheetham",
       "date": "2007-11-28T14:14:22.000-0500",
       "body": "These might actually be the same bug?\n"
     },
     {
+      "id": "17925",
       "author": "Jonathan Hung",
       "date": "2007-12-12T15:13:50.000-0500",
       "body": "Can't reproduce this problem on WinXP in FF 2 and IE 7. Could it be Mac only?\n"
     },
     {
+      "id": "17927",
       "author": "Michelle D'Souza",
       "date": "2008-03-11T16:04:07.000-0400",
       "body": "I think this was fixed while working on <https://fluidproject.atlassian.net/browse/FLUID-257#icft=FLUID-257>.\n"

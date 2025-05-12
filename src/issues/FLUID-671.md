@@ -47,11 +47,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24944",
       "author": "Armin Krauss",
       "date": "2009-10-08T15:04:52.000-0400",
       "body": "Is there any plan to improve the error messaging on the test server? I did Uploader tests with IE 6 (Flash 9) on Win XP and if I remove a file from the file system while uploading the message is generic \"File upload error: a network error occured\"\n"
     },
     {
+      "id": "24945",
       "author": "Mike Lam",
       "date": "2011-01-05T15:41:35.962-0500",
       "body": "Duplicate JIRA.   See <https://fluidproject.atlassian.net/browse/FLUID-2355#icft=FLUID-2355>\n"

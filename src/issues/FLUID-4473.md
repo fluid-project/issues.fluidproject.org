@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16909",
       "author": "Justin Obara",
       "date": "2011-09-28T11:02:16.427-0400",
       "body": "This is working fine in FF 6.\n\nAlso IE 9 works properly with the UIO Demo\\\n<http://build.fluidproject.org/infusion/demos/uiOptions/html/uiOptions.html>\n"
     },
     {
+      "id": "16911",
       "author": "Michelle D'Souza",
       "date": "2011-09-29T15:58:58.185-0400",
       "body": "Through a conversation in the channel we've decided to go with 'normal' equating to 1.2 em. \\\n<http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2011-09-29>\n"
     },
     {
+      "id": "16913",
       "author": "Michelle D'Souza",
       "date": "2011-09-30T16:24:41.310-0400",
       "body": "Merged into project repo at ebfda190bbf4060371c6392ec8edfcb72e6036c1\n"

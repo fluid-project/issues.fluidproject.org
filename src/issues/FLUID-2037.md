@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13691",
       "author": "Justin Obara",
       "date": "2008-12-19T09:15:33.000-0500",
       "body": "I believe this is because some of them aren't sortable. The issue may be that the pointer changes still over all elements instead of just the sortable ones\n"
     },
     {
+      "id": "13694",
       "author": "Jacob Farber",
       "date": "2008-12-19T13:05:43.000-0500",
       "body": "The cursor for the orderable elements is now different from the non-orderable ones. I cannot test the cursor on a Safari for the Mac, but the cursor shows up in Safari for XP. Since nobody seems to be reading the context anyways, I think it may be time for 2 explicitly different examples of this functionality.\n"

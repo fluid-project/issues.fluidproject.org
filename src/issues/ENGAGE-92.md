@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12281",
       "author": "Justin Obara",
       "date": "2009-09-22T14:25:19.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "12282",
       "author": "Justin Obara",
       "date": "2009-11-03T11:58:35.000-0500",
       "body": "Child task has been closed, and we are pulling data from two museums\n"

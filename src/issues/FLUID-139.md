@@ -35,16 +35,19 @@
   ],
   "comments": [
     {
+      "id": "17940",
       "author": "Jonathan Hung",
       "date": "2007-12-17T14:01:26.000-0500",
       "body": "Added implementation for CTRL keys in Fluid.js.\\\nReplaced dojo.keys with fluid.keys in Reorderer.js\n"
     },
     {
+      "id": "17942",
       "author": "Michelle D'Souza",
       "date": "2008-01-10T16:14:25.000-0500",
       "body": "There are currently still references to dojo in comments which mark places that we may want to refactor to use jQuery.&#x20;\n"
     },
     {
+      "id": "17944",
       "author": "Colin Clark",
       "date": "2008-08-09T14:29:32.000-0400",
       "body": "This one is a joy to close. 🙂\n"

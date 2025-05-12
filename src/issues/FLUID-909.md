@@ -60,51 +60,61 @@
   ],
   "comments": [
     {
+      "id": "20112",
       "author": "Justin Obara",
       "date": "2008-07-16T13:21:19.000-0400",
       "body": "\"screenshot-1\" shows the additional space at the end of a row\n"
     },
     {
+      "id": "20114",
       "author": "Justin Obara",
       "date": "2008-07-16T13:22:24.000-0400",
       "body": "\"screenshot-2\" shows the additional row created when trying to drag to the avatar to the end of a row\n"
     },
     {
+      "id": "20117",
       "author": "Justin Obara",
       "date": "2008-09-22T15:14:17.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "20119",
       "author": "Jacob Farber",
       "date": "2008-09-22T15:31:51.000-0400",
       "body": "drop marker was taking up too much space, so its now utilizing the same technique as fluid.states.css drop marker to have no impact on layout\n"
     },
     {
+      "id": "20122",
       "author": "Justin Obara",
       "date": "2008-09-22T15:39:53.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"
     },
     {
+      "id": "20124",
       "author": "Justin Obara",
       "date": "2008-09-23T08:52:02.000-0400",
       "body": "Needed to add fix version\n"
     },
     {
+      "id": "20127",
       "author": "Justin Obara",
       "date": "2008-09-23T08:52:11.000-0400",
       "body": "Needed to add fix version\n"
     },
     {
+      "id": "20129",
       "author": "Eli Cochran",
       "date": "2008-09-25T15:38:16.000-0400",
       "body": "This bug is back but not quite the same as before. See the screen shots above. &#x20;\n\n909-Drag\\_bug\\_before.jpg and 909-Drag\\_bug\\_after.jpg\n\nI saw this on FF3 on both Mac and Windows. The window was six across in rows 1 and 2, two across in row 3 with the window width just barely wide enough to accommodate the six images.&#x20;\n\nWhen dragging an image to the bottom of the window below row 3 then the images in rows 1 and 2 will shift down to the next row.\n\nOn Windows there is an additionally oddity, perhaps a different bug but related. When grabbing the image when the window is in this \"tight\" state, the avatar is sometimes offset from the pointer, extremely so for the rightmost images. (I will try to get a screenshot.)\n"
     },
     {
+      "id": "20133",
       "author": "Eli Cochran",
       "date": "2008-09-25T17:25:01.000-0400",
       "body": "Added a screenshot for the misplaced avatar. Unfortunately the screenshot did not capture the pointer. However from the position of the drop target you can kinda get the idea of just how off it was.&#x20;\n"
     },
     {
+      "id": "20135",
       "author": "Justin Obara",
       "date": "2008-10-31T09:11:11.000-0400",
       "body": "Appears to have been fixed with one of the updates to the Image Reorderer. May have had something to do with the drop target size.\n"

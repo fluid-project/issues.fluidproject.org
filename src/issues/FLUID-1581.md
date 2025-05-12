@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18643",
       "author": "Eli Cochran",
       "date": "2008-09-17T16:43:40.000-0400",
       "body": "Fixed in the Progress component by removing the wrapper selector since the displayElement is the same\n"

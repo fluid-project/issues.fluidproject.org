@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27678",
       "author": "Blake E",
       "date": "2008-10-30T16:15:38.000-0400",
       "body": "I'm going to use a jquery simpleModal plugin.\n"
     },
     {
+      "id": "27679",
       "author": "Blake E",
       "date": "2008-11-03T11:23:32.000-0500",
       "body": "vulab6\n"
     },
     {
+      "id": "27680",
       "author": "Blake E",
       "date": "2008-11-04T14:05:31.000-0500",
       "body": "the delete button works! modal with fadeouts etc.\n"

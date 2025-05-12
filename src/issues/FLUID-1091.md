@@ -32,16 +32,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19665",
       "author": "Allison Bloodworth",
       "date": "2008-08-05T00:27:27.000-0400",
       "body": "iteration16\n"
     },
     {
+      "id": "19666",
       "author": "Jonathan Hung",
       "date": "2008-08-19T11:59:16.000-0400",
       "body": "I will take on this task as part of my Jira gardening. No longer a shared task.\n"
     },
     {
+      "id": "19667",
       "author": "Jonathan Hung",
       "date": "2008-08-21T16:40:56.000-0400",
       "body": "Done\n"

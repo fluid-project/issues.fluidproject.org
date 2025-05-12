@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11234",
       "author": "Cindy Li",
       "date": "2013-12-20T13:51:59.599-0500",
       "body": "Merged into project repo at d97f758\n"

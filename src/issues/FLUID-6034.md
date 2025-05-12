@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23976",
       "author": "Justin Obara",
       "date": "2016-11-07T08:46:50.661-0500",
       "body": "This issue is lacking on details, but I'm assuming that you are referring to tabbing through the images. In that case this is the intended behaviour. The Image reorderer demo allows a user to tab to the group of images and arrow around them and move them. If there are other issues, please re-open and update the issue with more details.\n"

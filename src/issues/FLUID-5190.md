@@ -28,21 +28,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23027",
       "author": "Anastasia Cheetham",
       "date": "2013-10-25T10:12:35.422-0400",
       "body": "A discussion with Justin this morning reminded me that this would be a serious problem for someone who wanted to use more than one slider in a single panel.\n"
     },
     {
+      "id": "23029",
       "author": "Cindy Li",
       "date": "2013-10-25T13:42:36.094-0400",
       "body": "A pull request has been issued: <https://github.com/fluid-project/infusion/pull/424>\n"
     },
     {
+      "id": "23031",
       "author": "Cindy Li",
       "date": "2013-10-31T14:20:08.232-0400",
       "body": "After more discussion with Anastasia, Justin and Antranig, a decision was made to use the model relay to link fluid.prefs.textfieldSlider with panels, rather than continuing with the old fashion of model path.\n\nThe previous pull request has been closed in favor of the new implementation @ <https://github.com/fluid-project/infusion/pull/431>\n"
     },
     {
+      "id": "23033",
       "author": "Justin Obara",
       "date": "2013-11-08T11:14:04.612-0500",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/431> ) into the project repo at 722535cdc902f57bb449e7c3b17d96930a2feefc\n"

@@ -22,11 +22,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11209",
       "author": "Anastasia Cheetham",
       "date": "2012-07-31T14:22:05.499-0400",
       "body": "The presence of the 'send this link' form on the page seems to be caused by the IE limitations on CSS (max 31 files, max 4095 rules): The CSS that would normally format and hide the 'send this link' form is not getting loaded. Setting\\\nCOMPRESS = True\\\nin development.py and restarting the VM will cause all the CSS and JS to be compressed and loaded, and the form goes away.\n\nThe background on the number in the left panel, on the other hand, is still a problem.\n"
     },
     {
+      "id": "11210",
       "author": "Alexey Novak",
       "date": "2012-08-16T14:05:48.998-0400",
       "body": "Cannot reproduce. (by Cindy and Alex)\n"

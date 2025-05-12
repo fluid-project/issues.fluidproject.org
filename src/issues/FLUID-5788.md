@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23733",
       "author": "Jonathan Hung",
       "date": "2015-10-07T15:25:19.301-0400",
       "body": "For now, we will document both docpad.js and the README.md file to instruct users to change it.\n"

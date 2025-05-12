@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21290",
       "author": "Antranig Basman",
       "date": "2009-01-28T11:45:13.000-0500",
       "body": "Test fixed at revision 6357 - apologies\n"
     },
     {
+      "id": "21291",
       "author": "Justin Obara",
       "date": "2009-01-28T12:13:24.000-0500",
       "body": "Verified fix using:\n\nFF3 (Mac OS 10.5)\\\nIE7 (Win XP)\n"

@@ -31,11 +31,13 @@
   ],
   "comments": [
     {
+      "id": "25366",
       "author": "Philip Tchernavskij",
       "date": "2020-07-15T16:10:13.499-0400",
       "body": "In resolving this bug, we should also deal with the related bug that malformed messages sent over an established model binding WebSocket connection can result in fatal errors. In particular, I have more than once accidentally sent a model value directly, rather than wrapping it in a JSON record with \\`path\\` and \\`value\\` entries. This is probably as simple as wrapping the message-receiving function in a try-catch block, since we can't do meaningful error reporting to the client over the connection.\n"
     },
     {
+      "id": "25367",
       "author": "Philip Tchernavskij",
       "date": "2020-07-29T22:36:27.448-0400",
       "body": "I've resolved the motivating bugs for this issue, but in the meantime have ventured into a breaking API change that requires some thought. The model binding API has so far been based on asymmetric messaging, where the client sends the equivalent of relative ChangeApplier arguments packaged as objects containing \"value\" and \"path\" members, and the server sends the updated value relative to the path the model was bound at, upon establishing the model binding and after each successful model update is processed.\n\nIf we want to deal coherently with malformed requests, we have to choose between a) quietly consuming the malformed message without making any changes, b) responding as before, with the (unchanged) model value, c) trying to respond with some sort of error feedback. c feels nicer, and Kettle already has a scheme for sending \"typed\" messages. It should not complicate client implementations significantly, and would produce better feedback in interactive clients / client development.\n\nThe question then becomes what are straightforward choices for message type names? So far, I have used \"initial\", \"changed\", and \"error\" as the possible types used by the server. I would be most comfortable with stealing some well-used type names from elsewhere.\n"

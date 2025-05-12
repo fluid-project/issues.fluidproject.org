@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22627",
       "author": "Tony Atkins [RtF]",
       "date": "2018-01-12T05:25:54.672-0500",
       "body": "To quote Alfredo Matas when discussing this earlier:\n\n> <https://github.com/fluid-project/infusion/Vagrantfile> , seems very similar to the universal one to me 11:01\\\n> I think that using the same definition of the used at universal repo, and changing the lasts steps to this: <https://github.com/fluid-project/infusion/blob/master/package.json#L22-L25>\\\n> \\*to use these lines\n"
     },
     {
+      "id": "22629",
       "author": "Alfredo Matas",
       "date": "2018-01-12T05:41:56.395-0500",
       "body": "In fact, with the plugin we can run the tests inside a Windows VM as well as we do in the Fedora.\n\nThis can be also a good recent example:\n\n<https://github.com/colinbdclark/Flocking/blob/master/.vagrant.yml>\n"
     },
     {
+      "id": "22631",
       "author": "Tony Atkins [RtF]",
       "date": "2020-12-16T08:11:47.596-0500",
       "body": "IMO this is no longer needed.  CI testing of Infusion is now handled using GitHub actions.\n"

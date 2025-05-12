@@ -37,21 +37,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19524",
       "author": "Mike Lam",
       "date": "2010-12-22T14:40:07.756-0500",
       "body": "Asynchronous XHR is responsible for this wackiness.   XHR processes are executed without any guarantee that the previous file has been completed uploaded to the server.  We may want to wait for the current file to completely upload to the server before processing the next so that it is consistent with the SWF Uploader. &#x20;\n"
     },
     {
+      "id": "19525",
       "author": "Colin Clark",
       "date": "2011-01-21T17:36:27.548-0500",
       "body": "These two issues appear to have the same underlying fix--we should be uploading files one at a time.\n"
     },
     {
+      "id": "19526",
       "author": "Mike Lam",
       "date": "2011-01-27T11:09:06.135-0500",
       "body": "Related to <https://fluidproject.atlassian.net/browse/FLUID-4017#icft=FLUID-4017>.   Patch has been posted for review.\n"
     },
     {
+      "id": "19527",
       "author": "Mike Lam",
       "date": "2011-03-03T16:29:41.460-0500",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-4017#icft=FLUID-4017> has been fixed and pushed into the main repository.\n"

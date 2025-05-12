@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15906",
       "author": "Justin Obara",
       "date": "2015-01-26T09:31:43.935-0500",
       "body": "Submitted a pull request\\\n<https://github.com/fluid-project/infusion/pull/579>\n"
     },
     {
+      "id": "15908",
       "author": "Justin Obara",
       "date": "2015-01-26T12:17:46.485-0500",
       "body": "Pull request ( <https://github.com/fluid-project/infusion/pull/579> ) was merged into the project repo at 6cf6ba418880076ea009c5bbb68173863c6fb80a\n"
     },
     {
+      "id": "15910",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:12.979-0400",
       "body": "Reopening to change the fix version to 1.9\n"

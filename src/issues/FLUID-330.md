@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22593",
       "author": "Michelle D'Souza",
       "date": "2008-04-28T14:24:21.000-0400",
       "body": "The Reorderer documentation should explain what the instruction message is intended for.&#x20;\n"
     },
     {
+      "id": "22594",
       "author": "Daphne Ogle",
       "date": "2008-05-13T16:26:20.000-0400",
       "body": "futuretask\n"
     },
     {
+      "id": "22596",
       "author": "Anastasia Cheetham",
       "date": "2011-01-10T14:14:00.836-0500",
       "body": "Checking this after 1.3: I might be missing something, but as far as I can tell, the Reorderer itself doesn't have any internal concept of the keyboard instructions – these seem to be external to the Reorderer. We should double-check if this is intended, and either address it, or close this JIRA.\n"
     },
     {
+      "id": "27909",
       "author": "Justin Obara",
       "date": "2024-07-31T06:56:00.078-0400",
       "body": "I’m going to close this issue as it isn’t exactly clear what is intended and the related issues have all been closed off already as either fixed or won’t do.&#x20;\n\nThe demos provide instructions for keyboard interactions and serve as an example of how one might want to convey instructions to a user. However, the reordered itself does not provide a UI for these instructions.\n"

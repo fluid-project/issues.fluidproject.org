@@ -33,21 +33,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22954",
       "author": "Jacob Farber",
       "date": "2009-05-25T14:45:26.000-0400",
       "body": "FSS already has a very basic mechanism to lay out listed form controls, like:\\\n\\<form class=\"fl-controls-right\">\\\n\\<ol>\\\n\\<li>\\\n\\<label class=\"fl-label\" for=\"xxxxx\">Example Label\\</label>\\\n\\<input type=\"xxxxx\" id=\"xxxxx\" />\\\n\\</li>\\\n\\</ol>\\\n\\</form>\n\nWould look like;\n\n| ------------\\[label]  | \\[control]------- |\n| --------------------- | ----------------- |\n\n...and if you used .fl-controls-left, you would see:\n\n| \\[label]------------ | \\[control]------- |\n| -------------------- | ----------------- |\n\nhowever for UI Options the markup is in flux, since we're experimenting with best screen reader techniques.\n"
     },
     {
+      "id": "22958",
       "author": "Jacob Farber",
       "date": "2010-03-26T11:55:02.000-0400",
       "body": "Does the current implementation meet your needs?\n"
     },
     {
+      "id": "22961",
       "author": "Justin Obara",
       "date": "2011-04-26T14:02:54.934-0400",
       "body": "We have some styles contributed from CollectionSpace, see <http://wiki.fluidproject.org/display/fluid/FSS+Contributor+Gallery>\n"
     },
     {
+      "id": "22963",
       "author": "Anastasia Cheetham",
       "date": "2014-04-02T16:29:56.666-0400",
       "body": "We're deprecating FSS.\n"

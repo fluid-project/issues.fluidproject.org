@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16943",
       "author": "Colin Clark",
       "date": "2009-04-06T15:11:22.000-0400",
       "body": "I've added these to SVN. they probably need some refactoring.\n"
     },
     {
+      "id": "16944",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:57.167-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

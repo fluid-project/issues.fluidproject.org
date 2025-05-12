@@ -27,11 +27,13 @@
   ],
   "comments": [
     {
+      "id": "11221",
       "author": "Alexey Novak",
       "date": "2012-08-16T11:06:26.518-0400",
       "body": "Assembla ticket created\\\n<https://www.assembla.com/spaces/iskme/tickets/722>\n"
     },
     {
+      "id": "11222",
       "author": "Alexey Novak",
       "date": "2012-10-18T15:11:06.655-0400",
       "body": "Update on the ticket since text size changes and only color is not changed (in Safari).\n"

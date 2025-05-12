@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21515",
       "author": "Justin Obara",
       "date": "2009-05-05T14:06:05.000-0400",
       "body": "It is sort of losing focus, as focus is being moved to other browser elements (i.e. the zoom size and address bar). However, the styling is not removed.\n"
     },
     {
+      "id": "21517",
       "author": "Justin Obara",
       "date": "2014-07-09T09:50:25.842-0400",
       "body": "Opera is no longer a supported browser.\n"

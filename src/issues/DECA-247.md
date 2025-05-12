@@ -38,16 +38,19 @@
   ],
   "comments": [
     {
+      "id": "10165",
       "author": "Justin Obara",
       "date": "2012-05-14T14:00:42.387-0400",
       "body": "Screenshot.png shows the download link displaying \"Download Link\" instead of \"Download PDF\"\n"
     },
     {
+      "id": "10166",
       "author": "Justin Obara",
       "date": "2012-05-14T14:52:01.766-0400",
       "body": "Fixed the issue by changing the string for the download link to be \"Download PDF\" also fixed a bug that had prevented the string from being passed all the way down. The changes are in my bitbucket repo:\n\n<https://bitbucket.org/jobara/decapod-ui-05release>\n"
     },
     {
+      "id": "10167",
       "author": "Justin Obara",
       "date": "2012-05-18T14:46:56.718-0400",
       "body": "Merged into the project repo\n"

@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19262",
       "author": "Allison Bloodworth",
       "date": "2008-06-09T18:32:14.000-0400",
       "body": "The three Solution Image Attribution fields are due to the fact that that field is marked as allowing \"multiple\" entries. Solution Image is also marked as allowing multiple entries, but because you can upload one image at a time, you only see one at a time. To make things cleaner (temporarily), I made both Solution Image Attribution and Solution Image allow only a single entry. We will fix this more permanently when we can group related fields in the Bug 589:  Modify pattern data entry form to allow entry of multiple examples (<http://issues.fluidproject.org/browse/FLUID-589>).\n"

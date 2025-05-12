@@ -45,11 +45,13 @@
   ],
   "comments": [
     {
+      "id": "19908",
       "author": "Justin Obara",
       "date": "2008-09-02T13:31:18.000-0400",
       "body": "'screenshot-1' shows the calendar  pushing out of the calendar portlet\n"
     },
     {
+      "id": "19909",
       "author": "Justin Obara",
       "date": "2014-06-05T15:21:25.364-0400",
       "body": "This demo has been removed\n"

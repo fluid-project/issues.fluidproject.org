@@ -32,11 +32,13 @@
   ],
   "comments": [
     {
+      "id": "21301",
       "author": "Justin Obara",
       "date": "2009-03-06T10:25:38.000-0500",
       "body": "'screenshot-1' shows the radio buttons that aren't rendered correctly.\n"
     },
     {
+      "id": "21302",
       "author": "Justin Obara",
       "date": "2009-03-12T12:45:13.000-0400",
       "body": "Appears to have been fixed\n\nTested using\n\nIE6 (Win XP)\\\nIE7 (Win Vista)\n"

@@ -32,16 +32,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12848",
       "author": "Anastasia Cheetham",
       "date": "2011-12-12T15:41:09.170-0500",
       "body": "This issue is actually filed against Infusion, as FLUID-4426.\n"
     },
     {
+      "id": "12849",
       "author": "Anastasia Cheetham",
       "date": "2011-12-15T15:04:45.786-0500",
       "body": "Speaking to Joseph about this, we came to the conclusion that the fat panel is similar to a single accordion panel.&#x20;\n\nIt uses tablist, tab and tabpanel ARIA attributes to try to give some feedback to the user. It's better, but still not great, and some browsers don't fare quite as well as others. Still needs some work.\n\nJoseph also feels that the toggle button should be marked up as an actual ARIA toggle button, i.e. it should have an 'aria-pressed' state of true or false.\n"
     },
     {
+      "id": "12850",
       "author": "Justin Obara",
       "date": "2014-03-04T11:53:58.355-0500",
       "body": "The fluid studios site has been taken down. There are no current plans to replace it.\n"

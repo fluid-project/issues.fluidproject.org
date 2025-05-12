@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12328",
       "author": "Justin Obara",
       "date": "2009-08-27T20:49:37.000-0400",
       "body": "In the current implementation of the cabinet component, the header is not the responsibility of the cabinet but of what ever is integrating it with it's contents.\n"

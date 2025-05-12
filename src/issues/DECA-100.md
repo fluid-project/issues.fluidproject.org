@@ -40,11 +40,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10029",
       "author": "Jonathan Hung",
       "date": "2010-06-14T12:23:37.322-0400",
       "body": "Evaluate after 0.5 release after bugs relating to capture left-right have been fixed.\n"
     },
     {
+      "id": "10030",
       "author": "Jonathan Hung",
       "date": "2010-07-15T16:34:01.684-0400",
       "body": "Stitching will be removed in future releases.\n"

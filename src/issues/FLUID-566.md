@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21940",
       "author": "Eli Cochran",
       "date": "2008-05-30T18:41:36.000-0400",
       "body": "This is fixed for IE7.\\\nStill having some problems in IE6.\n"
     },
     {
+      "id": "21942",
       "author": "Eli Cochran",
       "date": "2008-06-16T22:47:23.000-0400",
       "body": "With the many updates that I have made to both the way that progress is tracked and the way that it is displayed this bug is fixed.&#x20;\n"
     },
     {
+      "id": "21943",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:28:00.210-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

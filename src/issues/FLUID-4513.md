@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13525",
       "author": "Justin Obara",
       "date": "2011-10-11T10:16:19.719-0400",
       "body": "I believe the correct fix for this issue will be to remove the dependence on the setTimeout completely. From the comments, it seems that the issue is the event is buried too deeply, perhaps this could be exposed at a higher level.\n\n\" // TODO: Very unsatisfactory - the TOC resources are the final thing we wait on, and the\\\n// event for this is very deeply buried\"\n"

@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23378",
       "author": "Justin Obara",
       "date": "2018-03-12T09:42:00.744-0400",
       "body": "In the past we were removing the build directory as it was initially intended as an intermediary step. However there was a desire to have some of the artifacts from the build available without having to go through the zip. We have since provided all of the generated/built artifacts in the dist directory so we may again be able to just clean out the build directory at the end of a build. \n\nAlan Harnum and Antranig Basman, do you have any thoughts on this?\n"
     },
     {
+      "id": "27878",
       "author": "Justin Obara",
       "date": "2024-07-24T12:52:44.906-0400",
       "body": "Likely fixed after moving off of grunt in favour of npm scripts.\n"

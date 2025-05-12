@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14104",
       "author": "Jonathan Hung",
       "date": "2008-10-14T14:13:16.000-0400",
       "body": "Can be solved by using the Fluid-Clean theme. See this task:\\\n<http://issues.fluidproject.org/browse/FLUID-1681>\n"
     },
     {
+      "id": "14107",
       "author": "Jonathan Hung",
       "date": "2008-10-21T14:43:01.000-0400",
       "body": "Iteration20\n\nActually this problem was not fixed because the story teaser block was moved from the sidebar to the main content area. This makes the header text fit better in the overall context (whereas it really didn't fit nicely in the sidebar).\n"

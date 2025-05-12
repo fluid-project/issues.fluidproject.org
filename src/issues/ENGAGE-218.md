@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12462",
       "author": "Michelle D'Souza",
       "date": "2009-12-16T12:34:47.000-0500",
       "body": "The refactoring in FLUID-3407 caused this bug\n"
     },
     {
+      "id": "12463",
       "author": "Michelle D'Souza",
       "date": "2009-12-27T18:42:10.000-0500",
       "body": "It appears that the build scripts are broken due to moving the definition of 'base-dir' out of the build.xml file and into the build.properties file.\n"

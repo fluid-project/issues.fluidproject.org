@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18231",
       "author": "Anastasia Cheetham",
       "date": "2007-11-30T13:46:10.000-0500",
       "body": "Done!\n"
     },
     {
+      "id": "18232",
       "author": "Colin Clark",
       "date": "2007-12-01T01:12:17.000-0500",
       "body": "This page is great and the 0.1 release looks great!\n"
     },
     {
+      "id": "18234",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:21.088-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

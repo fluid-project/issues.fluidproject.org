@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25583",
       "author": "Alan Harnum",
       "date": "2017-02-28T13:14:29.339-0500",
       "body": "CC Justin Obara Jonathan Hung\n"
     },
     {
+      "id": "25584",
       "author": "Justin Obara",
       "date": "2017-02-28T13:35:35.746-0500",
       "body": "Perhaps we change the way the dist directory works. At the moment it really only contains things that are generated with the build ( i.e JS builds, compiled CSS ). However for things like the preferences framework there are additional artifacts that are required, such as html templates, JSON message bundles, other CSS dependencies, and etc. It had been assumed that these would just be sourced in place, which works okay for NPM builds, but seems to be an issue with the CDN.&#x20;\n\nAlthough for NPM this will result in duplication of resources between the src and dist directory.\n"
     },
     {
+      "id": "25585",
       "author": "Alan Harnum",
       "date": "2017-02-28T13:47:36.520-0500",
       "body": "We should (for CDN purposes) be able to source them in place by expanding the **npmfilemap** options at <https://github.com/cdnjs/cdnjs/blob/master/ajax/libs/infusion/package.json#L13-L20>\n\nThe **npmfilemap** configuration determines what files will be taken from the NPM tarball. Currently this takes all files from the /dist directory only, but we could change this and make a PR to them.\n"

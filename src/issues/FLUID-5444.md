@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18260",
       "author": "Justin Obara",
       "date": "2015-06-16T11:57:06.593-0400",
       "body": "Likely fixed when the manual test was updated post 1.5\n"
     },
     {
+      "id": "18263",
       "author": "Justin Obara",
       "date": "2015-06-26T09:50:46.388-0400",
       "body": "Reopening to change the fix version to 1.9\n"

@@ -30,11 +30,13 @@
   ],
   "comments": [
     {
+      "id": "11523",
       "author": "Justin Obara",
       "date": "2015-06-05T11:54:07.451-0400",
       "body": "screenshot.png shows the incorrect focus styling on the \"turn voice on/off\" button\n"
     },
     {
+      "id": "11524",
       "author": "Cindy Li",
       "date": "2015-11-12T14:40:32.902-0500",
       "body": "This report has been copied to the GPII bug tracker: <https://issues.gpii.net/browse/GPII-1453> and all activities should be carried on there.\n"

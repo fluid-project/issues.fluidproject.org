@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12906",
       "author": "Anastasia Cheetham",
       "date": "2012-05-25T10:55:48.785-0400",
       "body": "The alignment and double-chevrons have been taken care of. The others have not.\n\nRegarding the dates: They could be styled as desired by pulling the individual bits from wordpress separately.\n"

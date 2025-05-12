@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12380",
       "author": "Jess Mitchell",
       "date": "2009-07-03T16:25:12.000-0400",
       "body": "<http://wiki.fluidproject.org/display/fluid/The+Detroit+Institute+of+Arts>\n"

@@ -36,6 +36,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10479",
       "author": "Justin Obara",
       "date": "2012-05-25T13:34:59.398-0400",
       "body": "The capture work flow has been removed. When capture returns, any new issues should be filed under a new jira.\n"

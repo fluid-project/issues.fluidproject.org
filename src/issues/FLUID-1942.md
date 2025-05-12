@@ -33,26 +33,31 @@
   ],
   "comments": [
     {
+      "id": "17520",
       "author": "Justin Obara",
       "date": "2008-12-08T12:06:14.000-0500",
       "body": "Bug Parade 0.6 release\n"
     },
     {
+      "id": "17522",
       "author": "Colin Clark",
       "date": "2008-12-08T17:24:44.000-0500",
       "body": "Here's a patch that does the following:\n\n1\\. Removes the minified version of swfobject.js in favour of the unminified version\\\n2\\. Updates the build scripts to copy the correct licenses and include ProgressiveEnhancement.js along with swfobject.js\\\n3\\. Fixes a minor bug in the order of library inclusion in Fluid-all.js\\\n4\\. Removes swfupload.swfobject.js, which is not used in Uploader 2\\\n5\\. License renaming for swfuploader and swfobject\n\nApologies for the size of this patch, but you'll notice that the vast majority of it is the addition and removal of the swfobject files.\n"
     },
     {
+      "id": "17525",
       "author": "Justin Obara",
       "date": "2008-12-10T09:10:21.000-0500",
       "body": "Quote from Antranig's code reivew comment on the fluid-work list\n\n\"Hi there - I have looked at this patch, and it appears benign to me.\n\nCheers,\\\nA.\"\n"
     },
     {
+      "id": "17527",
       "author": "Justin Obara",
       "date": "2008-12-10T09:11:09.000-0500",
       "body": "Verified fix.\n\nTested no js condition using \\\nFF2 and FF3 (Win XP)\n"
     },
     {
+      "id": "17529",
       "author": "Justin Obara",
       "date": "2008-12-10T09:11:28.000-0500",
       "body": "re-openned issue to edit a comment\n"

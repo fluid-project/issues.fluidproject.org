@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18462",
       "author": "Michelle D'Souza",
       "date": "2011-05-26T13:29:51.587-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "18466",
       "author": "Michelle D'Souza",
       "date": "2011-06-03T12:31:27.875-0400",
       "body": "Merged into <https://fluidproject.atlassian.net/browse/FLUID-4267#icft=FLUID-4267> branch at 4faf4acfa010d11919ee9df0cd93113f7548b09e\n"

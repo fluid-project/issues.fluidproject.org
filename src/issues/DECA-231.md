@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10406",
       "author": "Jonathan Hung",
       "date": "2012-01-31T11:23:31.428-0500",
       "body": "The trick is to figure a good way of hosting the new images since they are large. Also these images should be downloadable during the installation procedure (maybe should be optional?).\n\nA possible place to host file is the SVN repo.\n"
     },
     {
+      "id": "10407",
       "author": "Justin Obara",
       "date": "2012-05-18T14:50:29.169-0400",
       "body": "The mock images currently used by the server and ui for testing and demoing are working fine with Decapod.\n"

@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18786",
       "author": "Anastasia Cheetham",
       "date": "2008-04-21T15:54:49.000-0400",
       "body": "This is actually an issue with the test protocol. The Lightbox avatar is actually not supposed to be translucent. The protocol has been updated to reflect this.\n"

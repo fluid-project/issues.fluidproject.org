@@ -37,6 +37,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25483",
       "author": "Justin Obara",
       "date": "2021-10-06T09:37:03.700-0400",
       "body": "Some discussions from the fluid-work matrix channel.\n\n<https://matrix.to/#/!mDigWuPWilYGiEcOCA:matrix.org/$L4cwFVfRdFJAag_csZ1-CSfcr5M9D41l6UV3656z15s?via=matrix.org>\n\nCodepen example: <https://codepen.io/jobara/pen/BaROLEq>\n\nThe gist is that we'd likely need to explicitly style the prefs editor, for all the parts that are affected by preferences. When adding a new preference we'd need to ensure that the base styling is added to the prefs editor as well. \n\nSome other gotchas of CSS custom properties: <https://twitter.com/5t3ph/status/1415114455831175169>\n"

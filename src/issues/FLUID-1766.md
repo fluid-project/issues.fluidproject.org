@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18086",
       "author": "Antranig Basman",
       "date": "2008-11-11T11:18:33.000-0500",
       "body": "I currently can't verify this issue. I have added a test case to the \"manual tests\" for InlineEdit which makes a second call to fluid.inlineEdits as above, and it seems to be working fine.\n"

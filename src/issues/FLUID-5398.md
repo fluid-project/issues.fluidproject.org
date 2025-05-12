@@ -32,11 +32,13 @@
   ],
   "comments": [
     {
+      "id": "13254",
       "author": "Justin Obara",
       "date": "2014-06-03T14:39:25.493-0400",
       "body": "screenshot.png shows that the last two files in the queue have the green bar to the left, even though they haven't yet been uploaded.\n"
     },
     {
+      "id": "27827",
       "author": "Justin Obara",
       "date": "2024-07-22T15:05:23.708-0400",
       "body": "Could not reproduce with FF 128 on macOS 14.5\n"

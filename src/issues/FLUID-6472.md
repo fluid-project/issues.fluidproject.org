@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25314",
       "author": "Philip Tchernavskij",
       "date": "2020-03-23T21:24:19.554-0400",
       "body": "Colin Clark has fixed up `nexus-science-lab-synths`, and moved it to the `fluid-project` organization on GitHub. `simonbates/p4a-sensorAPI` and `waharnum/chartAuthoring` likely still require some work.\n"
     },
     {
+      "id": "25315",
       "author": "Philip Tchernavskij",
       "date": "2020-03-24T17:33:46.206-0400",
       "body": "Colin and I have completed the work necessary to make the demos build with updated dependencies. However, we haven't evaluated whether they still work.  We'll continue this work from his fork of the repository before creating a PR:\n\n<https://github.com/colinbdclark/infusion-nexus-demos/tree/FLUID-6472>\n"

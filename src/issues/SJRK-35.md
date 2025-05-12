@@ -21,11 +21,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26413",
       "author": "Alan Harnum",
       "date": "2017-11-09T16:26:42.629-0500",
       "body": "Consider:\n\n* crowdsourcing translations\n* user experience of choosing UI langauge\n"
     },
     {
+      "id": "26414",
       "author": "Gregor Moss",
       "date": "2019-09-11T17:43:38.201-0400",
       "body": "The various existing message bundles have fallen out of date with the English bundle. They should be updated to match.\n"

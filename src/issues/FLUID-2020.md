@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17386",
       "author": "Justin Obara",
       "date": "2009-01-06T12:14:11.000-0500",
       "body": "Bug Parade  0.7 release\n"
     },
     {
+      "id": "17387",
       "author": "Justin Obara",
       "date": "2009-01-13T10:34:46.000-0500",
       "body": "fixed at r6299 with committed patches from <https://fluidproject.atlassian.net/browse/FLUID-1982#icft=FLUID-1982>\n\nVerified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

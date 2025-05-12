@@ -39,16 +39,19 @@
   ],
   "comments": [
     {
+      "id": "16991",
       "author": "Jacob Farber",
       "date": "2009-05-27T16:20:18.000-0400",
       "body": "Patch addresses the hasLayout bug in IE 6 + 7 and how it affects our AT-friendly markup\n"
     },
     {
+      "id": "16992",
       "author": "Anastasia Cheetham",
       "date": "2009-05-27T17:03:35.000-0400",
       "body": "I've reviewed this patch, discussed it briefly with Jacob, and tested in IE6, IE7 and FF3 on Mac. It looks good to me.\n"
     },
     {
+      "id": "16993",
       "author": "Justin Obara",
       "date": "2009-05-28T08:39:03.000-0400",
       "body": "Verified fix using:\n\nIE7, IE6 (Win XP)\\\nIE7 (Win Vista)&#x20;\n"

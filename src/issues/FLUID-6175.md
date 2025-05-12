@@ -45,16 +45,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15786",
       "author": "Justin Obara",
       "date": "2018-04-05T16:16:48.278-0400",
       "body": "Unicode values for play (U+25B6) and pause (U+2016)\n"
     },
     {
+      "id": "15788",
       "author": "Justin Obara",
       "date": "2018-04-19T12:54:02.809-0400",
       "body": "Discussion with Antranig Basman in the fluid-work IRC channel about how to add the UI as an enactor.\n\n<https://botbot.me/freenode/fluid-work/2018-04-19/?msg=99166163&page=2>\n\nIn summary we'll port over the fluid.newViewComponent ( <https://github.com/fluid-project/fluid-authoring/blob/FLUID-4884/src/js/ViewComponentSupport.js#L20> ). This will allow it to either use an existing container or render out its own.\n"
     },
     {
+      "id": "15791",
       "author": "Justin Obara",
       "date": "2018-07-20T10:45:28.054-0400",
       "body": "Addressed with PR ( <https://github.com/fluid-project/infusion/pull/903> ) for <https://fluidproject.atlassian.net/browse/FLUID-6177#icft=FLUID-6177> merged into the project repo at 272cf702d5bf749172c0ba2015ba00dcceb526b1\n"

@@ -44,6 +44,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19465",
       "author": "Gary Thompson",
       "date": "2008-08-05T13:31:07.000-0400",
       "body": "This task was deferred for integration and is now another jira task.\n"

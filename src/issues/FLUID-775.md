@@ -33,16 +33,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15708",
       "author": "Allison Bloodworth",
       "date": "2008-06-25T00:32:55.000-0400",
       "body": "change to instructions above:     \\* Hover message appears after hovering for <2 seconds.\\\nAdditional item: Put a (reasonably-sized) min-width on empty fields so that the yellow background shows up on rollover\n"
     },
     {
+      "id": "15710",
       "author": "Colin Clark",
       "date": "2008-07-22T23:17:26.000-0400",
       "body": "For the 0.4 release, we have implemented all the features of Story #1, with the exception of the Undo feature.\n\nI've moved the Undo issue into a separate bug, and am resolving this umbrella issue.\n"
     },
     {
+      "id": "15712",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:55.057-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

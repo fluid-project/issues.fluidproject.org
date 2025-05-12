@@ -52,26 +52,31 @@
   ],
   "comments": [
     {
+      "id": "19196",
       "author": "Eli Cochran",
       "date": "2008-05-29T19:14:58.000-0400",
       "body": "Added the proper focus formatting for the buttons\n"
     },
     {
+      "id": "19198",
       "author": "Jonathan Hung",
       "date": "2008-06-03T14:29:34.000-0400",
       "body": "Confirmed fixed.\n"
     },
     {
+      "id": "19201",
       "author": "Jonathan Hung",
       "date": "2008-06-03T14:30:46.000-0400",
       "body": "Was too hasty in closing this bug. IE7 has issues.\n"
     },
     {
+      "id": "19202",
       "author": "Jonathan Hung",
       "date": "2008-06-03T14:32:26.000-0400",
       "body": "Not enough contrast in IE7. Cancel button is in focus.\n"
     },
     {
+      "id": "19205",
       "author": "Eli Cochran",
       "date": "2008-06-17T12:53:09.000-0400",
       "body": "File 663-btn-hilite.png shows new button highlight for keyboard interaction under IE6. Should be the same for IE7 but I haven't tested it\n"

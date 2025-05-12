@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18139",
       "author": "Jacob Farber",
       "date": "2008-09-09T11:02:20.000-0400",
       "body": "changed \\\nthat.container.append(editContainer);\\\nto\\\nthat.viewEl.after(editContainer);\n\nto immediately append the input container\n"

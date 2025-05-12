@@ -44,11 +44,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25161",
       "author": "Anastasia Cheetham",
       "date": "2013-06-13T13:38:53.595-0400",
       "body": "This issue is very closely related to <https://fluidproject.atlassian.net/browse/FLUID-5052#icft=FLUID-5052>, but that issue also addresses the use cases where the integrator's path to MyInfusion.js might not be what an automatic head rewrite script would assume.\n"
     },
     {
+      "id": "27814",
       "author": "Justin Obara",
       "date": "2024-07-22T14:06:17.438-0400",
       "body": "Resolved with <https://fluidproject.atlassian.net/browse/FLUID-6749>\n"

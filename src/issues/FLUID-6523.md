@@ -45,21 +45,25 @@
   ],
   "comments": [
     {
+      "id": "25262",
       "author": "Justin Obara",
       "date": "2020-07-16T08:52:58.334-0400",
       "body": "I investigated the issue with the play button getting selected. Part of the problem here is that when the selection leaves the containing element the browser (Chrome) flips the selection to the play button. This happens as the next event, so there is no intermediate step where the selection has no selection or whitespace. It basically goes from selecting \"selection.\" to \"play\". Therefore the button isn't removed before it has a chance to be selected.\n\nOther potential solutions investigated:\n\n* [user-select](https://developer.mozilla.org/en-US/docs/Web/CSS/user-select)\n  * Set user-select to none. While there is no visual selection of the play button text, and copying of the text is disabled, the selection from window\\.getSelection() still includes the play button text.\n* [Selection.removeRange()](https://developer.mozilla.org/en-US/docs/Web/API/Selection/removeRange)\n  * I am able to use [Selection.containsNode()](https://developer.mozilla.org/en-US/docs/Web/API/Selection/containsNode) to determine if the play button is included in the selection. From there I am able to create a new Range to pass into the removeRange method. However, this doesn't remove the play button text from the selection. In looking at the example in the documentation it appears that you can only remove ranges that are already included in the selection. In the case illustrated here it is likely going to be a single range for the entire selection.\n\n- Limit the selection to a specific element.\n  * Window\\.getSelection() can only be called at the window/document level. We'd have to manually parse only the text that is within the specified container elements. This can be difficult when the selection starts/ends outside of our element and if it contains just a portion of a text node. Also it may be confusing for a user that only some of the selection is being read back. If we modify the selection there are other potential issues for the user, e.g visual styling, copying text, etc.\n\n \n"
     },
     {
+      "id": "25263",
       "author": "Cindy Li",
       "date": "2020-07-16T15:46:00.200-0400",
       "body": "[The pull request](https://github.com/fluid-project/infusion/pull/1000) that fixes the majority of this issue has been merged into the project repo master branch at [this commit](https://github.com/fluid-project/infusion/commit/8d59c6ce77ed83a0c8c8c70f1195636cfcc02797).\n\nThe remaining issue updated on 2020-07-15 stays open.\n"
     },
     {
+      "id": "25264",
       "author": "Gregor Moss",
       "date": "2020-07-16T15:56:18.146-0400",
       "body": "As requested in Cindy Li's comment on the current pull request ([#1000](https://github.com/fluid-project/infusion/pull/1000#issuecomment-659468378)), the issue is reproducible in Windows 10 Pro v1909 using Chrome 83 and Edge 44. That's pre-Chromium Edge, though I suspect it also occurs in newer versions of Edge since it occurs in Chrome.\n\nThe reproduction steps are the same as are listed in the original description.\n"
     },
     {
+      "id": "25265",
       "author": "Justin Obara",
       "date": "2020-07-20T07:48:53.560-0400",
       "body": "It is still possible to select only the play button. See update 2020-07-15\n"

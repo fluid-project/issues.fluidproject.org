@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21501",
       "author": "Colin Clark",
       "date": "2009-04-08T15:40:34.000-0400",
       "body": "I updated all the daily build scripts in SVN.\n"
     },
     {
+      "id": "21503",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:28:01.791-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

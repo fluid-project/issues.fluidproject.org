@@ -33,31 +33,37 @@
   ],
   "comments": [
     {
+      "id": "15950",
       "author": "Justin Obara",
       "date": "2009-10-05T08:54:10.000-0400",
       "body": "Bug Parade Infusion 1.1.2&#x20;\n"
     },
     {
+      "id": "15952",
       "author": "Justin Obara",
       "date": "2009-10-05T15:30:42.000-0400",
       "body": "reviewed Yura's patch.txt, and have committed it to the repository\n"
     },
     {
+      "id": "15954",
       "author": "Jacob Farber",
       "date": "2009-10-05T15:53:45.000-0400",
       "body": "Reviewed, looks good.\n"
     },
     {
+      "id": "15956",
       "author": "Colin Clark",
       "date": "2009-10-14T18:33:48.000-0400",
       "body": "This has been completed for Infusion 1.1.2\n"
     },
     {
+      "id": "15958",
       "author": "Justin Obara",
       "date": "2009-11-03T10:52:35.000-0500",
       "body": "as per previous comment\n"
     },
     {
+      "id": "15960",
       "author": "Michelle D'Souza",
       "date": "2011-01-13T16:50:10.921-0500",
       "body": "Reopening these issues in order to change the component to Release.&#x20;\n"

@@ -44,26 +44,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22668",
       "author": "Justin Obara",
       "date": "2008-09-19T11:20:04.000-0400",
       "body": "This may be because the inline edit fields are in an iframe.\n\nClicking anywhere inside the iframe will allow you to tab to the inline edit fields\n"
     },
     {
+      "id": "22670",
       "author": "Justin Obara",
       "date": "2008-09-22T12:52:33.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "22672",
       "author": "Antranig Basman",
       "date": "2008-11-03T14:26:40.000-0500",
       "body": "yes, this is an iframe issue, since there is no corresponding problem with the announcements or other samples. Per the comments on <https://fluidproject.atlassian.net/browse/FLUID-1600#icft=FLUID-1600>, we cannot alter this behaviour without hijacking tab navigation entirely. It may not even be possible to affect this case at all.\n"
     },
     {
+      "id": "22675",
       "author": "Justin Obara",
       "date": "2010-05-07T13:05:16.193-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "22677",
       "author": "Justin Obara",
       "date": "2014-07-07T15:38:18.176-0400",
       "body": "Opera is no longer a supported browser.\n"

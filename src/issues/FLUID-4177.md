@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25040",
       "author": "Justin Obara",
       "date": "2011-05-17T09:40:55.416-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "25043",
       "author": "Michelle D'Souza",
       "date": "2011-06-20T16:41:17.929-0400",
       "body": "Downgrading to major because the most critical part of the work is done and in the project repo.&#x20;\n"
     },
     {
+      "id": "25045",
       "author": "heidi valles",
       "date": "2011-06-22T15:35:00.918-0400",
       "body": "Tabs, sliding panel, and fat panel components added in 1.4\n"

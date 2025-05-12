@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19790",
       "author": "Anastasia Cheetham",
       "date": "2008-07-08T19:40:27.000-0400",
       "body": "Justin, if you happen to pick up the thumbnail that is already grey because it has focus, then the avatar will have the same solid grey (it is a clone of the thumbnail). This is expected behaviour.\n\nCould you double-check if this is what is happening?\n"
     },
     {
+      "id": "19792",
       "author": "Justin Obara",
       "date": "2008-07-08T19:51:11.000-0400",
       "body": "Yes that was the issue. Closed, as this was the expected behaviour.\n"

@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14996",
       "author": "Laurel Williams",
       "date": "2009-12-11T16:20:26.000-0500",
       "body": "Bug Parade Builder 1.1.2&#x20;\n"
     },
     {
+      "id": "14999",
       "author": "Laurel Williams",
       "date": "2009-12-11T16:23:26.000-0500",
       "body": "corrected this by removing use of empty function and instead using compare with empty string. created a test to confirm that this works.\n"
     },
     {
+      "id": "15002",
       "author": "Colin Clark",
       "date": "2009-12-15T19:04:51.000-0500",
       "body": "I've reviewed Laurel's fix for this issue and the associated unit test. +1 for Builder 1.1.2\n"

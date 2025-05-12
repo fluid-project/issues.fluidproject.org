@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10078",
       "author": "Justin Obara",
       "date": "2012-11-27T16:13:14.324-0500",
       "body": "Documentation needed:\\\n\\==================\n\nApplication Help Docs (ships in repo):\n\n* README (update existing)\n\nWiki Help Docs:\n\n* Administrator guide\n  * localization (<http://wiki.fluidproject.org/display/fluid/Decapod+Administrator+Guide>)\n  * timeout values (server/ui) (<http://wiki.fluidproject.org/display/fluid/Decapod+0.7+Cherrypy+server+configuration>)\n  * cherrypy server config (<http://wiki.fluidproject.org/display/fluid/Decapod+0.7+Cherrypy+server+configuration>)\n  * client server relationship and limitations about capture and dewarp needing to have the client and server on the same machine (<http://wiki.fluidproject.org/display/fluid/Decapod+Administrator+Guide>)\n  * permissions and directory structure??&#x20;\n\n- Hardware guide\n\n* Installation procedure\n\n- Update dependencies (<http://wiki.fluidproject.org/display/fluid/Decapod+Dependencies>)\n"

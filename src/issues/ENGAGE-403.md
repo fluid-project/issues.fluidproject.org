@@ -27,31 +27,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12261",
       "author": "Colin Clark",
       "date": "2010-02-18T11:03:07.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12262",
       "author": "Colin Clark",
       "date": "2010-02-18T11:03:33.000-0500",
       "body": "Yura, once you've got translations from Hugues, can you put a patch on this ticket that updates all the relevant files?\n"
     },
     {
+      "id": "12263",
       "author": "y z",
       "date": "2010-02-19T16:02:31.000-0500",
       "body": "Majority of the strings there are implemented except for \"Guestbook for This Exhibition\"  and the date when the comment was added. \"Guestbook for This Exhibition\" was actually missed and not translated yet.\n"
     },
     {
+      "id": "12264",
       "author": "y z",
       "date": "2010-02-19T17:27:59.000-0500",
       "body": "the translation for \"Guestbook for This Exhibition\" is \"Livre d'or de l'exposition\"\n"
     },
     {
+      "id": "12265",
       "author": "Jess Mitchell",
       "date": "2010-02-22T16:36:28.000-0500",
       "body": "jessm: yura: so we're good to resolve?\\\n\\[2:22pm] yura: i think so\\\n\\[2:22pm] yura: jessm: ^\n"
     },
     {
+      "id": "12266",
       "author": "James Yoon",
       "date": "2010-02-22T16:53:45.000-0500",
       "body": "Tested on 02/22/2010, 4:19 PM EST.\n\nLooks good.\n"

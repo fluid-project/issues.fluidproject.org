@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21642",
       "author": "Justin Obara",
       "date": "2010-05-07T13:55:47.054-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "21643",
       "author": "Justin Obara",
       "date": "2014-07-14T09:32:32.995-0400",
       "body": "The issue isn't present in IE 11, and IE 7 is no longer a supported browser.\n"

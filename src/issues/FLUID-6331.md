@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22406",
       "author": "Tony Atkins [RtF]",
       "date": "2018-08-30T04:42:44.294-0400",
       "body": "<https://github.com/fluid-project/eslint-config-fluid/pull/6>\n"

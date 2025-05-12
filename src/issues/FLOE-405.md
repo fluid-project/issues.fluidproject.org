@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11367",
       "author": "Alan Harnum",
       "date": "2016-02-10T16:14:04.726-0500",
       "body": "Bumping this issue and assigning it to myself. Also retitling from a specific mention of Bower, which may not be in the mix as opposed to straight NPM.\n\nGetting this to \"production\" will require changes to how build.fluidproject.org/chartAuthoring is deployed as well - currently the build process assumes it can simply clone the repo to a subdirectory and serve it as a static site. Will create a separate issue for that once this change is in the repo.\n"
     },
     {
+      "id": "11368",
       "author": "Alan Harnum",
       "date": "2016-03-16T10:56:11.056-0400",
       "body": "PR: <https://github.com/fluid-project/chartAuthoring/pull/14>\n"

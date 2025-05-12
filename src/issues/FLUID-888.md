@@ -38,16 +38,19 @@
   ],
   "comments": [
     {
+      "id": "19972",
       "author": "Justin Obara",
       "date": "2008-07-10T14:55:04.000-0400",
       "body": "'screenshot-1' shows the single tab, in edit mode\n"
     },
     {
+      "id": "19974",
       "author": "Justin Obara",
       "date": "2008-07-10T14:56:26.000-0400",
       "body": "'screenshot-2' shows the double tab, outside of edit mode\n"
     },
     {
+      "id": "19977",
       "author": "Justin Obara",
       "date": "2008-07-10T18:51:14.000-0400",
       "body": "I did some more testing on this and it turns out that the string used actually had two tab calls.\n\nThe issue was that the first tab only move 1 character and the second moved the full tab, in the text editor.\\\nThis was because of the amount of text before the first tab call. The tab in inline edit was read as two full tabs.\n"

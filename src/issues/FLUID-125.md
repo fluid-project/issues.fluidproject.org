@@ -32,16 +32,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17892",
       "author": "Jonathan Hung",
       "date": "2007-12-12T15:36:44.000-0500",
       "body": "\\<script  type=\"text/javascript\">  fluid.initLightbox(\" ... \");\\</script> disappears from the code when switching to Alpha sort.\n\nOnce selecting Alpha sort order, the Gallery frame refreshes and the Fluid Lightbox Javascript disappears.\n"
     },
     {
+      "id": "17894",
       "author": "Jonathan Hung",
       "date": "2007-12-13T11:03:59.000-0500",
       "body": "If this behaviour is intentional (i.e. no dragging when alpha sorted), then there should be some onscreen indication that dragging is not possible.\n"
     },
     {
+      "id": "17898",
       "author": "Jonathan Hung",
       "date": "2007-12-18T15:22:34.000-0500",
       "body": "Keyboard functionality is intentionally not available in Alphabetical sort.\\\nSee related: <http://bugs.sakaiproject.org/jira/browse/GAL-63>\n"

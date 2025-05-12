@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20540",
       "author": "Colin Clark",
       "date": "2008-09-16T12:57:24.000-0400",
       "body": "Anastasia, can you provide more details about this task?\n"
     },
     {
+      "id": "20541",
       "author": "Anastasia Cheetham",
       "date": "2008-09-30T08:57:03.000-0400",
       "body": "Undo has been implemented in the Sakai Announcements example, the bSpace Section Info example, and in the manual test page.\n"

@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26471",
       "author": "Avtar Gill",
       "date": "2018-11-19T17:39:55.306-0500",
       "body": "The new site has been deployed. Remaining tasks:\n\n* The resources should be collapsible, e.g. <https://floeproject.org/resources.html>\n* SVGs need PNG fallbacks. I plan on testing the non-Modernizr approach mentioned here: <https://css-tricks.com/svg-fallbacks/#article-header-id-4>\n* Skip links are required\n* Mobile UIO panel not displaying in Firefox on iOS (works on Safari)\n* Mobile UIO text should be smaller\n* Mobile CTA button should be larger\n* Increase padding for mobile nav and text containers\n* Fix visited links colour\n* Featured resources bottom padding should be increased\n* A static site generator like Hugo should be used, I'll use a separate Jira for this\n"
     },
     {
+      "id": "26472",
       "author": "Avtar Gill",
       "date": "2018-11-20T11:25:57.502-0500",
       "body": "It was suggested in the planning meeting that the dev version of Infusion 3.0 and UIO should be used.\n"

@@ -33,16 +33,19 @@
   ],
   "comments": [
     {
+      "id": "16639",
       "author": "Laurel Williams",
       "date": "2009-12-04T11:05:03.000-0500",
       "body": "To test this, must run the build and ensure that each js file is compressed\n"
     },
     {
+      "id": "16641",
       "author": "Laurel Williams",
       "date": "2009-12-04T14:14:58.000-0500",
       "body": "The attached patch file FLUID-3405-1.patch.txt changes the version of the yui compressor used for the build. It removes the old yui compressor, adds in the new one and changes the build.properties file to point to the new yui compressor file.\n"
     },
     {
+      "id": "16643",
       "author": "Laurel Williams",
       "date": "2009-12-07T16:15:15.000-0500",
       "body": "Have attached a patch for this.\n"

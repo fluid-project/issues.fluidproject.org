@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21900",
       "author": "Antranig Basman",
       "date": "2009-01-19T21:14:23.000-0500",
       "body": "This was essentially concluded for 0.6 in that all the basic parsing code, component support and test cases were committed. There is perhaps a requirement to allow the automatic fetch of message bundle files to be integrated into a standard \"fetchResources\" workflow, but it would be best to wait for user feedback regarding the existing features.&#x20;\n"
     },
     {
+      "id": "21901",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:56.035-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

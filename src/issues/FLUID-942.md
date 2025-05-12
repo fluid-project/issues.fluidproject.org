@@ -58,16 +58,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19881",
       "author": "Justin Obara",
       "date": "2008-07-18T14:56:15.000-0400",
       "body": "This is because Safari only supports tab focus of form elements\n"
     },
     {
+      "id": "19884",
       "author": "Justin Obara",
       "date": "2009-08-12T16:18:50.000-0400",
       "body": "This is a limitation of the browser\n"
     },
     {
+      "id": "19886",
       "author": "Justin Obara",
       "date": "2009-08-13T08:33:15.000-0400",
       "body": "closed with wrong resolution, reopenning and closing with \"Won't Fix\"\n"

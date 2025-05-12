@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19505",
       "author": "Anastasia Cheetham",
       "date": "2008-06-11T10:34:51.000-0400",
       "body": "Platform Differences:\n\nFF2 on Mac and Windows: both other editors get the 'finish'\\\nFF3 on Mac (Minefield): only the last editor on page gets the 'finish'\\\nFF3 Windows: both other editors get the 'finish'\\\nIE6 and IE7: both editors get the 'finish'\n"
     },
     {
+      "id": "19507",
       "author": "Michelle D'Souza",
       "date": "2008-06-17T09:39:50.000-0400",
       "body": "This was fixed by removing the click handler on the body.&#x20;\n"

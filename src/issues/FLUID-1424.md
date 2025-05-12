@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14281",
       "author": "Michelle D'Souza",
       "date": "2008-10-01T13:49:03.000-0400",
       "body": "dev-iteration45\n"
     },
     {
+      "id": "14285",
       "author": "Colin Clark",
       "date": "2008-10-09T23:23:44.000-0400",
       "body": "This was implemented through the use of Fluid's model events system.\n"
     },
     {
+      "id": "14286",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:57.265-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

@@ -32,16 +32,19 @@
   ],
   "comments": [
     {
+      "id": "17750",
       "author": "Justin Obara",
       "date": "2008-12-02T12:35:54.000-0500",
       "body": "fluid-1887-patch.txt\n\ncorrects the relative paths inside pager.html\n"
     },
     {
+      "id": "17751",
       "author": "Anastasia Cheetham",
       "date": "2008-12-03T11:10:05.000-0500",
       "body": "I've updated the build site to the new path.\n"
     },
     {
+      "id": "17753",
       "author": "Justin Obara",
       "date": "2008-12-03T11:31:38.000-0500",
       "body": "All updates appear to be working\n"

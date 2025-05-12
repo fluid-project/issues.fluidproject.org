@@ -35,21 +35,25 @@
   ],
   "comments": [
     {
+      "id": "17368",
       "author": "Antranig Basman",
       "date": "2008-10-30T13:49:21.000-0400",
       "body": "This turned out to be quite a simple issue in the end - innerHTML on these other browsers maps nodes to upper case, which was not being compensated for when checking for the list of special \"HTML closed tags\" which are allowed to violate the XHTML spec. A patch is attached, in the hopes this can get in before this release.\n"
     },
     {
+      "id": "17369",
       "author": "Anastasia Cheetham",
       "date": "2008-10-30T13:57:17.000-0400",
       "body": "I've tested this first patch. It fixes the problem in Opera (Mac and Windows) but not in IE.\n"
     },
     {
+      "id": "17370",
       "author": "Antranig Basman",
       "date": "2008-10-31T14:13:32.000-0400",
       "body": "Fixed at revision 5945\n"
     },
     {
+      "id": "17371",
       "author": "Anastasia Cheetham",
       "date": "2008-10-31T14:57:06.000-0400",
       "body": "I've tested the fix, and it works now: tests pass, and demos work.\n"

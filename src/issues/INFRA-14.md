@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25843",
       "author": "Giovanni Tirloni",
       "date": "2015-09-04T09:35:43.177-0400",
       "body": "All Wordpress websites have iThemes Security plugin installed and they're all at Wordpress 4.3 version.\n\nAdditionally, minor version upgrades are now automatic for Wordpress so no work is required.\n"

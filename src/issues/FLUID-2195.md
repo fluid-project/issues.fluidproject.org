@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21285",
       "author": "Anastasia Cheetham",
       "date": "2009-02-04T12:04:45.000-0500",
       "body": "The renderer unit tests do have tests for UIMessage rendering. Tests should be added that catch this bug as part of the process of fixing it.\n"
     },
     {
+      "id": "21286",
       "author": "Antranig Basman",
       "date": "2009-02-04T12:38:13.000-0500",
       "body": "Fixed at revision 6419 - In fact we do not support any other kinds of MessageSource than \"data\" right now, so it could be argued that the current implementation is just being \"generous\" 😛\\\nTo be honest, I don't directly recall what other kinds of MessageSource were planned right now, but hopefully this will become obvious again once/if we start working more heavily with I18Ned templates. It will become possible to write a test for this issue once we do support a second type of MessageSource 😛\n"

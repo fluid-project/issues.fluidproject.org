@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "15834",
       "author": "y z",
       "date": "2010-04-01T12:42:16.000-0400",
       "body": "Steps to reproduce:\n\n* Go to <http://build.fluidproject.org/infusion/demos/inlineEdit/rich/demo.html>\n* Click on FCKEditor example and add b at the beginning of the text.\n* Click Save.\n* Notice there is a giant cursor on the web page closer to the right bottom side.\n"
     },
     {
+      "id": "15836",
       "author": "Jonathan Hung",
       "date": "2011-01-10T14:07:59.345-0500",
       "body": "Using Infusion 1.3, I am unable to reproduce this bug in IE8 on Win 7.\n"

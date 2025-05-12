@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12141",
       "author": "Antranig Basman",
       "date": "2010-02-12T18:31:04.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12142",
       "author": "Antranig Basman",
       "date": "2010-02-13T02:03:07.000-0500",
       "body": "Believed fixed at rev 9396 - please review\n"

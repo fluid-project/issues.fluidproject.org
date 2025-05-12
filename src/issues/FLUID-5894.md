@@ -34,6 +34,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25485",
       "author": "Antranig Basman",
       "date": "2021-02-15T13:21:34.435-0500",
       "body": "This needs to be embedded in an expanded profile of JSON5, e.g. JSON-R. Note that this notion was considered out of scope for JSON5 itself: \n\n<https://github.com/json5/json5/issues/106>\n\nSome related work is at <https://github.com/EricSmekens/jsep/blob/master/src/jsep.js> which whilst substantially more minimal than esprima is probably **still** a bit too bulky for our purposes (c. 700 lines unminified although claims minified is pretty fine at \\~4K)\n"

@@ -33,16 +33,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24163",
       "author": "Justin Obara",
       "date": "2015-12-03T12:26:28.006-0500",
       "body": "We'll probably want to pull in the latest version of Qunit at this time too.\n"
     },
     {
+      "id": "24164",
       "author": "Justin Obara",
       "date": "2016-08-18T08:13:56.816-0400",
       "body": "It does not seem that we'll be able to upgrade Qunit at this time based on this comment: <https://issues.fluidproject.org/browse/FLUID-5810?focusedCommentId=31422&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-31422>\n"
     },
     {
+      "id": "24166",
       "author": "Justin Obara",
       "date": "2016-09-16T09:29:46.281-0400",
       "body": "Current versions:\\\njQuery - 3.1.0\\\njQuery UI - 1.12.1\n"

@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12657",
       "author": "Colin Clark",
       "date": "2010-02-08T16:23:30.000-0500",
       "body": "I've committed a fix for this in the My Collection branch.\n"
     },
     {
+      "id": "12658",
       "author": "Colin Clark",
       "date": "2010-02-08T16:23:48.000-0500",
       "body": "Fixed at r9318\n"

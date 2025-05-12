@@ -33,6 +33,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17694",
       "author": "Antranig Basman",
       "date": "2008-12-10T14:20:58.000-0500",
       "body": "We are already using display:none to hide the field. This issue will be reopened as a fresh issue to investigate workarounds for this JAWS bug.\n"

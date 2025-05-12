@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11612",
       "author": "Jess Mitchell",
       "date": "2010-02-17T12:46:18.000-0500",
       "body": "this is a data rendering issue, not a css/html issue\n"
     },
     {
+      "id": "11613",
       "author": "James Yoon",
       "date": "2010-02-22T09:44:19.000-0500",
       "body": "a11y issue\n"
     },
     {
+      "id": "11614",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:21.500-0500",
       "body": "The repository has been archived.\n"

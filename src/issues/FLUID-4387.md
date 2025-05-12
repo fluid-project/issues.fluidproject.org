@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18818",
       "author": "Justin Obara",
       "date": "2011-08-05T08:34:10.754-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "18823",
       "author": "Justin Obara",
       "date": "2011-08-05T08:35:13.550-0400",
       "body": "Merged the pull request git://github.com/colinbdclark/infusion.git into the project repo at fdddc40faa60e89b54a753fe7ba3d89c8d7acc2e\n"

@@ -48,11 +48,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23114",
       "author": "Allison Bloodworth",
       "date": "2008-07-21T19:36:40.000-0400",
       "body": "I'm not sure solution ii) is really inline with what I think is a major goal of this component: giving the user a preview of what their changes will look like/how they will change the page.&#x20;\n\nCertainly the transition from view to edit mode shouldn't change the screen layout, but perhaps the editing of the element should. For instance, in the Announcements Inline edit example (<http://build.fluidproject.org/fluid/sample-code/inline-edit/announcements/announcements.html>), if the user types so many characters into the Subject field that that field expands in the table (either to the right or downwards), ideally, we would like to show that real-time as it occurs.I think the ideal interaction would be that upon entering edit mode, the text entry field expands to be the width of the current column (showing the user that is how many characters they can type without changing the layout). Then if we allow users to type more characters when they get to the end of the field and expand the column, then the text entry field should expand along with that column of the table. Coversely, if the field would wrap to the next line (as it is currently doing in the Announcements example), ideally that presentation would also be shown to the user (probably by having the text box & row expand downward) as they are editing.&#x20;\n"
     },
     {
+      "id": "23115",
       "author": "Jonathan Hung",
       "date": "2011-01-04T14:24:26.408-0500",
       "body": "Still an issue in Infusion 1.3, since editable field size is an unresolved issue (<https://fluidproject.atlassian.net/browse/FLUID-1528#icft=FLUID-1528>)\n"

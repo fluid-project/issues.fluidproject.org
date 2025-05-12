@@ -83,26 +83,31 @@
   ],
   "comments": [
     {
+      "id": "15890",
       "author": "Justin Obara",
       "date": "2008-07-22T14:26:59.000-0400",
       "body": "'screenshot-1' shows the text being entered\n"
     },
     {
+      "id": "15892",
       "author": "Justin Obara",
       "date": "2008-07-22T14:27:36.000-0400",
       "body": "'screenshot-2' shows the text after it is entered\n"
     },
     {
+      "id": "15894",
       "author": "Justin Obara",
       "date": "2008-07-22T14:28:38.000-0400",
       "body": "'screenshot-3' shows the text upon re-entering edit mode\n"
     },
     {
+      "id": "15896",
       "author": "Justin Obara",
       "date": "2008-09-22T12:54:05.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "15898",
       "author": "Antranig Basman",
       "date": "2008-11-13T21:33:12.000-0500",
       "body": "See comments on <https://fluidproject.atlassian.net/browse/FLUID-886#icft=FLUID-886>. Whitespace normalisation is a standard aspect of HTML.\n"

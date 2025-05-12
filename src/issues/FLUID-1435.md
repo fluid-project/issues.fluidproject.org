@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13955",
       "author": "Colin Clark",
       "date": "2008-09-16T09:59:56.000-0400",
       "body": "dev-iteration43\n"
     },
     {
+      "id": "13958",
       "author": "Jacob Farber",
       "date": "2008-09-17T16:21:09.000-0400",
       "body": "First pass complete, using Sakai's inline edit example\n"
     },
     {
+      "id": "13963",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:49.351-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

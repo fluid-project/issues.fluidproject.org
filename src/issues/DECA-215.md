@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10032",
       "author": "Justin Obara",
       "date": "2012-02-01T13:57:17.224-0500",
       "body": "I've implemented the server side file validation. It will now only accept png, jpeg, and tiff files. If a different type is uploaded it will reject it and return a 415 status. I've written new unit tests for the validation. I will attempt to also write tests for the server to ensure that a 415 is returned on error.&#x20;\n\nThe changes are currently in my bitbucket repo <https://bitbucket.org/jobara/decapod-server-validation>\n"
     },
     {
+      "id": "10033",
       "author": "Justin Obara",
       "date": "2012-02-02T12:54:41.315-0500",
       "body": "I've added unit tests to verify the response from the server\n"
     },
     {
+      "id": "10034",
       "author": "Justin Obara",
       "date": "2012-05-18T14:20:44.048-0400",
       "body": "Merged into the project repo\n"

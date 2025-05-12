@@ -34,16 +34,19 @@
   ],
   "comments": [
     {
+      "id": "20834",
       "author": "Boyan Sheytanov",
       "date": "2009-11-25T10:29:39.000-0500",
       "body": "This patch should resolve the bug. It was caused by a typo in the Reorderer.js where we iterate over all selectables in a for statement, and modify them all on each iteration (in the body of the for statement). When we modify only the current selectable, the bug is no longer present. All occurences of \"selectables\" (plural) in the body of the for statement have been replaced by \"selectable\" (singular).\n"
     },
     {
+      "id": "20835",
       "author": "Antranig Basman",
       "date": "2009-11-26T17:59:58.000-0500",
       "body": "Thanks for this fix Boyan, it correctly identifies the typo and fixes it. I have committed the fix at revision 8757. It was really helpful to have a working patch along with the issue report. Some administrative details:\\\ni) When making patches, please select \"Project\" as the patch root rather than \"multiProject\" since otherwise it becomes hard or impossible for others to apply the patch 😛\\\nii) It is even more helpful if every fix includes a test case fixture or adjustment of an existing one that demonstrates the issue, to prevent regressions in the future. In the course of making a test case for this issue in ImageReorderer.js I discovered that we actually so far had no test cases at all for the \"onSelect\" event function !!\\\niii) JIRA status discipline - an issue should not be marked as \"Fixed\" unless the issue is actually resolved in trunk. When posting patches for review, the issue should instead just be \"Assigned\" generally to the component or framework lead. When an issue is \"Fixed\" by the committer, at this stage it should be then assigned to the testing lead (currently Justin) who can then consider to take it to the \"Closed\" status.\n"
     },
     {
+      "id": "20836",
       "author": "Justin Obara",
       "date": "2009-11-27T09:10:53.000-0500",
       "body": "I added in a missing comma.&#x20;\n\nUnit tests appear to be running.\n"

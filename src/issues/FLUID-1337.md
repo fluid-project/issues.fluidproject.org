@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18455",
       "author": "Antranig Basman",
       "date": "2008-09-07T18:16:14.000-0400",
       "body": "Drop Manager, Dom Permutation work merged back into trunk at revision 5476.\n"
     },
     {
+      "id": "18457",
       "author": "Justin Obara",
       "date": "2008-11-13T13:42:45.000-0500",
       "body": "Appears to have been fixed\n"

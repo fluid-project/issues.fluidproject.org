@@ -45,16 +45,19 @@
   ],
   "comments": [
     {
+      "id": "17229",
       "author": "Justin Obara",
       "date": "2008-08-13T13:18:17.000-0400",
       "body": "'screenshot-1' shows the avatar frozen over the drop target\n"
     },
     {
+      "id": "17231",
       "author": "Justin Obara",
       "date": "2008-08-13T13:19:05.000-0400",
       "body": "'screenshot-2' shows all of the moveable portlets frozen over a drop target\n"
     },
     {
+      "id": "17233",
       "author": "Justin Obara",
       "date": "2008-08-22T15:30:44.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.5 (Win XP)\\\nFF3 (Win Vista)\n"

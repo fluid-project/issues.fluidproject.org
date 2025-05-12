@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16622",
       "author": "Michelle D'Souza",
       "date": "2007-11-07T12:01:09.000-0500",
       "body": "This is a bug in the image gallery and should be moved to the sakai JIRA.\n"
     },
     {
+      "id": "16623",
       "author": "Eli Cochran",
       "date": "2007-11-14T12:32:03.000-0500",
       "body": "Duplicate of GAL-50 in Image Gallery, assigned to Eli Cochran\\\n<http://jira.sakaiproject.org/jira/browse/GAL-50>\n"

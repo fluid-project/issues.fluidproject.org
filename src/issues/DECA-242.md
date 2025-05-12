@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10466",
       "author": "Justin Obara",
       "date": "2012-05-14T13:40:47.151-0400",
       "body": "Resolved with changes to DECE-218. It had been caused by using a demands block to bind the listener to the decapod.eventBinder. There were two instances of the eventBinder; one for pdfExporter and one for exportPoller. The fix was to use distinct names for each instance of the eventBinder and use a demands block to redirect the function call to point at eventBinder (e.g. decapod.pdfExporter.eventBinder -> decapod.eventBinder).&#x20;\n"
     },
     {
+      "id": "10467",
       "author": "Justin Obara",
       "date": "2012-05-18T14:46:15.826-0400",
       "body": "Merged into the project repo\n"

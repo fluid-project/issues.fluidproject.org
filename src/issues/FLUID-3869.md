@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17704",
       "author": "Justin Obara",
       "date": "2010-12-01T18:00:51.740-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "17706",
       "author": "Jonathan Hung",
       "date": "2010-12-03T10:07:42.096-0500",
       "body": "Could not reproduce this problem on two other systems (Mac and Windows). Closing.\n"

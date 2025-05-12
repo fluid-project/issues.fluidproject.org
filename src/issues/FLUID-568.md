@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19000",
       "author": "Anastasia Cheetham",
       "date": "2008-05-07T09:52:18.000-0400",
       "body": "This has been changed to set and reset on start and stop of dragging (mouse or keyboard based).\n"
     },
     {
+      "id": "19002",
       "author": "Anastasia Cheetham",
       "date": "2008-06-04T09:29:29.000-0400",
       "body": "I was wrong, we **do** do this properly\n"
     },
     {
+      "id": "19004",
       "author": "Michelle D'Souza",
       "date": "2008-06-05T15:50:45.000-0400",
       "body": "dev-iteration35\n"

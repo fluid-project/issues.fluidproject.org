@@ -24,26 +24,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10950",
       "author": "Justin Obara",
       "date": "2013-12-10T10:37:57.644-0500",
       "body": "For the sake of the demo, the placeholder markup will be replaced by real video markup with the necessary metadata included.\n"
     },
     {
+      "id": "10951",
       "author": "Justin Obara",
       "date": "2013-12-11T10:35:54.863-0500",
       "body": "Submitted a pull request <https://github.com/fluid-project/metadata/pull/4>\n"
     },
     {
+      "id": "10952",
       "author": "Justin Obara",
       "date": "2013-12-17T08:56:10.652-0500",
       "body": "Pull request ( <https://github.com/fluid-project/metadata/pull/4> ) merged into the project repo at 5faf68d0c06c3541bd21910018d1450f280a50c1\n"
     },
     {
+      "id": "10953",
       "author": "Justin Obara",
       "date": "2013-12-17T08:56:55.527-0500",
       "body": "Submitted another pull request to update the metadata written out for a video element. \\\n<https://github.com/fluid-project/metadata/pull/9>\n"
     },
     {
+      "id": "10954",
       "author": "Justin Obara",
       "date": "2013-12-18T11:58:50.881-0500",
       "body": "Pull request ( <https://github.com/fluid-project/metadata/pull/9> ) was merged into the project repo at 8260b36e77b87e4e40eee33d57f18971e817915c\n"

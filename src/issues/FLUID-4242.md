@@ -40,11 +40,13 @@
   ],
   "comments": [
     {
+      "id": "23661",
       "author": "Justin Obara",
       "date": "2011-05-16T13:32:48.230-0400",
       "body": "Screenshot.png shows the uploader buttons to the right of the uploader component\n"
     },
     {
+      "id": "23663",
       "author": "Mike Lam",
       "date": "2011-05-17T13:24:35.156-0400",
       "body": "Uploader buttons have been removed from the demo as we now have full integration tests to test all uploader configurations.  See <https://fluidproject.atlassian.net/browse/FLUID-4243#icft=FLUID-4243>\n"

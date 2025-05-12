@@ -42,16 +42,19 @@
   ],
   "comments": [
     {
+      "id": "23451",
       "author": "Joseph Vernuccio",
       "date": "2008-09-25T15:57:17.000-0400",
       "body": "screenshot-1 shows an example of the spacing/break that occurs after only editing inline edit field 3 with large separated characters.&#x20;\n"
     },
     {
+      "id": "23452",
       "author": "Justin Obara",
       "date": "2008-10-30T16:14:11.000-0400",
       "body": "This is likely caused by the other cells constricting and forcing their content to display on additional lines.\n"
     },
     {
+      "id": "23453",
       "author": "Jonathan Hung",
       "date": "2011-01-06T12:45:55.898-0500",
       "body": "This demo has been removed and is likely a styling issue. Closing.\n"

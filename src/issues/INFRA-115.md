@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25965",
       "author": "Giovanni Tirloni",
       "date": "2018-02-15T10:48:59.079-0500",
       "body": "Issue is caused by a bug in Confluence 6.7.0 and will be fixed in 6.7.2 (not release yet)\n\n<https://jira.atlassian.com/browse/CONFSERVER-54888>\n"
     },
     {
+      "id": "25966",
       "author": "Giovanni Tirloni",
       "date": "2018-03-09T08:12:46.374-0500",
       "body": "Updated to Confluence 6.7.2 and favicon is back.\n"

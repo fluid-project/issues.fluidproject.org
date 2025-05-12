@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17577",
       "author": "Daphne Ogle",
       "date": "2008-12-01T12:54:50.000-0500",
       "body": "iteration23\n"
     },
     {
+      "id": "17579",
       "author": "Daphne Ogle",
       "date": "2008-12-09T18:37:43.000-0500",
       "body": "<http://wiki.fluidproject.org/display/fluid/List+Reorderer+Storycards>\n"
     },
     {
+      "id": "17581",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:45.709-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

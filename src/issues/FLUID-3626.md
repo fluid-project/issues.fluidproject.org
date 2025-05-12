@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14772",
       "author": "Jonathan Hung",
       "date": "2011-01-06T15:48:47.446-0500",
       "body": "Now appears to be an issue with most / all demos? Tested all FSS demos, pager, renderer, layout reorderer, grid reorderer.\n\nInfusion 1.3 Tested with IE6 WinXP.\n"
     },
     {
+      "id": "14774",
       "author": "Anastasia Cheetham",
       "date": "2014-04-02T16:42:03.740-0400",
       "body": "We're deprecating FSS, not supporting IE6 and gettting rid of the demo portal.\n"

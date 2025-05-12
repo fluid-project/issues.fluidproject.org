@@ -48,16 +48,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19673",
       "author": "Anastasia Cheetham",
       "date": "2008-07-08T18:25:54.000-0400",
       "body": "Subsequent tabs are actually moving focus among the tabs (with no visual ques). This is a result of the inherent jQuery tabs keyboard interaction: <http://ui.jquery.com/functional_demos/#ui.tabs>\n\nThe inherent jQuery tabs keyboard interaction seems to be different than what we've implemented (and what general guidelines recommend, i.e. tab **to** a group, then arrow around **in** the group). Not sure how we should deal with this.\n"
     },
     {
+      "id": "19674",
       "author": "Anastasia Cheetham",
       "date": "2008-07-09T17:37:10.000-0400",
       "body": "Justin, could you revisit this one, and check if focus is simply moving amongs the tabs without any visual indication? (if you hit enter, it should activate a tab, confirming that you've moved focus).\n\nThe fact that you can tab amongst the tabs is a bug in jQuery: <http://ui.jquery.com/bugs/ticket/3079>\n"
     },
     {
+      "id": "19675",
       "author": "Justin Obara",
       "date": "2008-07-09T17:49:06.000-0400",
       "body": "No, the focus is not moving at all.\n\nPressing 'tab' multiple times and then pressing 'enter', still activates the same jQuery tab.\n\nWhen you press 'tab' after putting focus on the first jQuery tab the message at the bottom of the FF2 browser says:\\\n<http://build.fluidproject.org/fluid/sample-code/reorderer/jquery-tabs/jquery-tabs.html#fragment-0>\n\nIf you use the arrow keys to move focus to the next jQuery tab and press the 'tab' key, the message says:\\\n<http://build.fluidproject.org/fluid/sample-code/reorderer/jquery-tabs/jquery-tabs.html#fragment-1>\n"

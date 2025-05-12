@@ -41,26 +41,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23503",
       "author": "Laurel Williams",
       "date": "2009-04-28T15:22:55.000-0400",
       "body": "I think we could consider this done.\n"
     },
     {
+      "id": "23504",
       "author": "Michelle D'Souza",
       "date": "2009-05-15T11:33:32.000-0400",
       "body": "There are problems with the current tutorial that should be fixed up.&#x20;\n"
     },
     {
+      "id": "23505",
       "author": "Jorge Silva",
       "date": "2009-05-15T11:51:15.000-0400",
       "body": "Added a bunch of detail and reminders.\n"
     },
     {
+      "id": "23506",
       "author": "Laurel Williams",
       "date": "2009-06-01T14:00:34.000-0400",
       "body": "JS - do you have time to try out the newly edited version of the tutorial.\n"
     },
     {
+      "id": "23507",
       "author": "Jorge Silva",
       "date": "2009-06-04T09:08:17.000-0400",
       "body": "I made some corrections to steps 4, 6 and 7. It should be pretty accurate now\\... should I close the ticket? (it wouldn't be a bad idea to have someone else go through the whole thing one last time).\n"

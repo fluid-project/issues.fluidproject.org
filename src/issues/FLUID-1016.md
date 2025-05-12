@@ -41,11 +41,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19934",
       "author": "Eli Cochran",
       "date": "2008-07-25T13:39:21.000-0400",
       "body": "This was an issue with the div that wrapped the file queue only becoming focusable once it became scrolling\\\nbut the focus should really be on the queue anyway, so I set the queue to tabindex=0 and the wrapper to tabindex=-1\n"
     },
     {
+      "id": "19937",
       "author": "Justin Obara",
       "date": "2008-07-28T08:20:52.000-0400",
       "body": "Verified fix using FF3 (Mac OS 10.5, Win XP)\n"

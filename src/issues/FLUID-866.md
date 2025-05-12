@@ -47,11 +47,13 @@
   ],
   "comments": [
     {
+      "id": "19966",
       "author": "Justin Obara",
       "date": "2008-09-02T13:32:39.000-0400",
       "body": "'screenshot-1' shows the lightbox portlet missing the right border\n"
     },
     {
+      "id": "19968",
       "author": "Justin Obara",
       "date": "2014-06-05T15:20:54.350-0400",
       "body": "This demo has been removed.\n"

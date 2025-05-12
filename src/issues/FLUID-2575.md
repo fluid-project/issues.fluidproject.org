@@ -36,21 +36,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21572",
       "author": "Colin Clark",
       "date": "2009-04-09T16:26:35.000-0400",
       "body": "This issue can be seen when using the Pager component with a \"rangeAnnotator\" tool tip, such as in the Sakai Site Settings pager example. In IE 6, you'll notice that the tool tip actually hovers underneath the selectbox on the line below.\n\n<http://build.fluidproject.org/infusion/integration-demos/sakai/html/pager-site-setting.html>\n\nThis issue can be worked around by linking  jquery.bgiframe.js, located in lib/jquery/core/js, into your page.\n"
     },
     {
+      "id": "21573",
       "author": "Michelle D'Souza",
       "date": "2009-05-05T14:05:49.000-0400",
       "body": "The bgiframe has now been moved into the jquery plugin directory. It still requires a module dependency json file and Pager needs to depend on it.&#x20;\n"
     },
     {
+      "id": "21574",
       "author": "Justin Obara",
       "date": "2009-05-13T11:38:31.000-0400",
       "body": "Added the json dependency file for jquery.bgiframe.js and added it to Pager's set of dependencies\n"
     },
     {
+      "id": "21575",
       "author": "Justin Obara",
       "date": "2009-11-13T09:00:38.000-0500",
       "body": "Closed as per previous comment\n"

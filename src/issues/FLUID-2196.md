@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23462",
       "author": "Jonathan Hung",
       "date": "2009-02-04T14:35:53.000-0500",
       "body": "iteration28\\\niteration29\n"
     },
     {
+      "id": "23463",
       "author": "Paul Zablosky",
       "date": "2009-04-06T19:33:47.000-0400",
       "body": "See the Work Log for a history of all the changes to the UX Walkthrough pages and their structure in the Design Handbook.\n"
     },
     {
+      "id": "23464",
       "author": "Jess Mitchell",
       "date": "2011-01-20T14:24:32.269-0500",
       "body": "At some point a fresh evaluation of the Design Handbook and the Inclusive Learning Handbook will be completed.  Until then these JIRAs are no longer indicative of the work that needs to happen.\n"

@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15830",
       "author": "Michelle D'Souza",
       "date": "2012-06-29T16:11:08.795-0400",
       "body": "Merged into project repo at 1f04a22ae5f3520c4939cfbc3fced034e02743e0\n"
     },
     {
+      "id": "15832",
       "author": "Chris Hubick",
       "date": "2014-07-07T17:14:09.646-0400",
       "body": "It would be great if whatever limited time Infusion developers have for project maintenance could be directed towards at least remaining compatible with current JQuery releases.  As I'm sure is the case with most clients, I use JQuery in my project for a lot of purposes besides just the Fluid Reorderer, and this bug has been preventing me from upgrading, which is starting to impact compatibility and features in other areas.\n\nIt's nice that Infusion will now work with at least JQuery 1.7, but they've since moved up to the 2.1.x release series.  Has the forthcoming Infusion 1.5 release at least been smoke-tested against JQuery 2.1?\n\nI'm glad to hear the 1.5 release is at least now imminent - Much Thanks :warning: for your continued work on this project.\n"

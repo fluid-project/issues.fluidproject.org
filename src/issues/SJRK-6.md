@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26408",
       "author": "Gregor Moss",
       "date": "2017-09-05T17:30:20.765-0400",
       "body": "I've created a Grunt plugin and integrated both it and the couch-config component into sjrk-storyTelling-server: <https://github.com/BlueSlug/sjrk-storyTelling-server/tree/SJRK-6>\n"
     },
     {
+      "id": "26409",
       "author": "Gregor Moss",
       "date": "2017-10-23T17:12:22.442-0400",
       "body": "PR created, ready for review: <https://github.com/waharnum/sjrk-storyTelling-server/pull/3>\n"
     },
     {
+      "id": "26410",
       "author": "Gregor Moss",
       "date": "2017-11-02T13:22:35.739-0400",
       "body": "PR at <https://github.com/waharnum/sjrk-storyTelling-server/pull/3> has been merged\n"

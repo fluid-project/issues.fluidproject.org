@@ -44,6 +44,7 @@
   ],
   "comments": [
     {
+      "id": "10057",
       "author": "Jonathan Hung",
       "date": "2012-02-10T14:35:24.594-0500",
       "body": "TYPE2 PDF from ORIGINAL DIGITAL DOCUMENT:\\\nDecapod-1-1-1.pdf generated using <http://source.fluidproject.org/svn/design/decapod/testing-images/1-1-1.png> (< 1MB)\n\nTYPE2 PDF from PHOTO of SAME (but printed) DOCUMENT\\\nDecapod-2-1-1.pdf generated using <http://source.fluidproject.org/svn/design/decapod/testing-images/2-1-1.png> (\\~17MB)\n"

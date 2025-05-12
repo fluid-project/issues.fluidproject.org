@@ -30,6 +30,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26517",
       "author": "Justin Obara",
       "date": "2019-09-25T17:20:03.305-0400",
       "body": "The Orator component was actually designed to only read the text nodes. It ignores hidden text and also doesn't read things like alt text off of images. It is designed to be a tool to synthesize the visible text on the page, as opposed to something more akin to a screen reader. You could probably modify this behaviour, but would probably require writing a new Dom parser(s) and may need to modify some parts that control the highlighting of text. \n"

@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27681",
       "author": "Blake E",
       "date": "2008-10-27T13:46:52.000-0400",
       "body": "vulab5\n"
     },
     {
+      "id": "27682",
       "author": "Blake E",
       "date": "2008-11-03T11:24:04.000-0500",
       "body": "round 2 of bugfixes beings! (Next iteration won't create parent issue)\n"

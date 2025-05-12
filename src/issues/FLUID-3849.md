@@ -39,16 +39,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21973",
       "author": "Justin Obara",
       "date": "2010-11-19T16:16:42.029-0500",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "21975",
       "author": "Harris Wong",
       "date": "2010-11-30T12:16:32.036-0500",
       "body": "Justin and I tried adding aria-sort into the pager demo, but NVDA-main-3946 and JAWS 12.0 didn't report the sort strategy (ascending/descending) after you click on the column with a mouse or keyboard. We have looked into the actual accessibility DOM tree with Accessibility Probe, there is a \"sort=ascending\" property in the attribute within ia2. This means that the aria-sort are reflected on FF3.6 but the screen readers are not picking it up. We believe it is a problem with the screen readers and we are waiting for a reply from them.&#x20;\n"
     },
     {
+      "id": "21977",
       "author": "Anastasia Cheetham",
       "date": "2010-12-13T17:30:06.932-0500",
       "body": "The fixes committed against this and <https://fluidproject.atlassian.net/browse/FLUID-3848#icft=FLUID-3848> look good, and work well to address the issues.\n"

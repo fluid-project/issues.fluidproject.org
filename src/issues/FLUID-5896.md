@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21985",
       "author": "Cindy Li",
       "date": "2016-05-02T16:31:48.818-0400",
       "body": "A helpful article on how to manual push a sub-directory to gh-pages branch: <https://gist.github.com/cobyism/4730490>\n"
     },
     {
+      "id": "21995",
       "author": "Cindy Li",
       "date": "2016-05-03T09:32:16.046-0400",
       "body": "Issued a pull request to rename the docpad-config.js to docpad.js: <https://github.com/fluid-project/infusion-docs/pull/87>\n"

@@ -42,16 +42,19 @@
   ],
   "comments": [
     {
+      "id": "19035",
       "author": "Justin Obara",
       "date": "2008-10-28T11:01:48.000-0400",
       "body": "You are able to edit the inline edit fields by tabbing to them or clicking on them with your mouse. In the case described above, I believe what is happening is that the caret is moving away from the inline edit field and can be placed on any text in the page.\n"
     },
     {
+      "id": "19039",
       "author": "Justin Obara",
       "date": "2010-05-07T13:08:45.194-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "19041",
       "author": "Jonathan Hung",
       "date": "2011-01-06T12:54:35.190-0500",
       "body": "Does not seem to be an issue with the 1.3 Inline Edit. Closing.\n"

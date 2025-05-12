@@ -50,16 +50,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22336",
       "author": "Justin Obara",
       "date": "2009-05-14T13:59:18.000-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "22338",
       "author": "Justin Obara",
       "date": "2009-11-06T16:18:17.000-0500",
       "body": "In JAWS it announces the images that have moved, in NVDA it doesn't say anything.\n"
     },
     {
+      "id": "22339",
       "author": "Justin Obara",
       "date": "2011-01-10T15:39:33.388-0500",
       "body": "Sub-issues were fixed for Infusion 1.3\n"

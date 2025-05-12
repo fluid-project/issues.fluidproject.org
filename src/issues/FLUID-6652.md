@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25624",
       "author": "Justin Obara",
       "date": "2021-07-06T08:09:45.042-0400",
       "body": "This is likely due to the entire panel being re-rendered when the switch is activated; which causes the focus position to be lost.\n"

@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21689",
       "author": "Antranig Basman",
       "date": "2008-09-18T13:00:35.000-0400",
       "body": "Fixed at revision 5586\n"
     },
     {
+      "id": "21690",
       "author": "Justin Obara",
       "date": "2008-09-30T11:26:44.000-0400",
       "body": "Verified using:\n\nFF2 (Mac OS 10.5)\n"

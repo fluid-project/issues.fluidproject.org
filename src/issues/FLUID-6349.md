@@ -26,26 +26,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23050",
       "author": "Justin Obara",
       "date": "2018-11-05T07:12:30.247-0500",
       "body": "Tony Atkins \\[RtF] is this something you may be able to track down?\n"
     },
     {
+      "id": "23051",
       "author": "Tony Atkins [RtF]",
       "date": "2018-11-05T10:07:26.594-0500",
       "body": "Hi, Justin Obara.  This is definitely a problem with Testem and/or my wrapper around it.  I'm tracking the work here:\n\n<https://issues.gpii.net/browse/GPII-3500>\n"
     },
     {
+      "id": "23052",
       "author": "Tony Atkins [RtF]",
       "date": "2018-11-05T10:50:48.789-0500",
       "body": "Turns out it's a problem with our fork of QUnit using a different variable name here:\n\n<https://github.com/fluid-project/infusion/blob/78e76b7a5efa4016c24dba92a77ed25787deffc4/tests/lib/qunit/js/qunit.js#L344>\n\nIt should be \"runtime\", if that's populated the timing data shows up with no changes to gpii-testem.  I'll create a quick pull against infusion to fix it.\n"
     },
     {
+      "id": "23053",
       "author": "Tony Atkins [RtF]",
       "date": "2018-11-05T10:58:28.969-0500",
       "body": "See: <https://github.com/fluid-project/infusion/pull/943>\n"
     },
     {
+      "id": "23054",
       "author": "Justin Obara",
       "date": "2018-11-06T09:44:21.639-0500",
       "body": "Merged PR ( <https://github.com/fluid-project/infusion/pull/943> ) into the project repo at d726d64d66e997f011077443047b005a9b344b19\n"

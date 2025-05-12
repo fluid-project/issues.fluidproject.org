@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11783",
       "author": "Colin Clark",
       "date": "2009-10-08T14:44:42.000-0400",
       "body": "Bug Parade Engage 0.1&#x20;\n"
     },
     {
+      "id": "11784",
       "author": "Michelle D'Souza",
       "date": "2009-10-13T16:17:16.000-0400",
       "body": "Kettle now works both from the created WAR and from eclipse.&#x20;\n"
     },
     {
+      "id": "11785",
       "author": "Justin Obara",
       "date": "2009-11-03T11:52:18.000-0500",
       "body": "For the 0.1 release, the option for running from eclipse our from a war file were provided\n"

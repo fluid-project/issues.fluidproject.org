@@ -30,6 +30,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12099",
       "author": "Justin Obara",
       "date": "2009-11-24T14:50:28.000-0500",
       "body": "Moved the default image to the Browse component's images directory.\n"

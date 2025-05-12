@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17791",
       "author": "Jonathan Hung",
       "date": "2007-06-29T11:40:21.000-0400",
       "body": "This bug does not happen if an item has been selected using keyboard access.\n"
     },
     {
+      "id": "17793",
       "author": "Anastasia Cheetham",
       "date": "2007-10-01T14:25:00.000-0400",
       "body": "This might be affected by upgrading to dojo 0.9, and probably shouldn't be addressed until after the upgrade.\n"
     },
     {
+      "id": "17795",
       "author": "Michelle D'Souza",
       "date": "2007-10-22T17:41:57.000-0400",
       "body": "This is no longer an issue since the move to jQuery UI's drag and drop.&#x20;\n"

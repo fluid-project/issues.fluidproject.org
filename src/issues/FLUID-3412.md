@@ -27,26 +27,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22988",
       "author": "Laurel Williams",
       "date": "2009-12-07T10:02:34.000-0500",
       "body": "because of the accessibility issue I think we should add this task to the Bug Parade Builder 1.1.2&#x20;\n"
     },
     {
+      "id": "22993",
       "author": "Laurel Williams",
       "date": "2009-12-08T13:38:17.000-0500",
       "body": "Altered the markup and js to add a hidden span to the checkbox label which contains the module description.\n"
     },
     {
+      "id": "22995",
       "author": "Laurel Williams",
       "date": "2009-12-09T15:03:17.000-0500",
       "body": "Re-opening to fix two issues:\\\n1\\) remove flc class on span..not needed\\\n2\\) programmatically add style from defaults block.\n"
     },
     {
+      "id": "22998",
       "author": "Laurel Williams",
       "date": "2009-12-09T15:36:04.000-0500",
       "body": "removed flc style where it shouldn't have been and added programmatic setting for the hidden style.\n"
     },
     {
+      "id": "23000",
       "author": "Colin Clark",
       "date": "2009-12-10T21:04:42.000-0500",
       "body": "I've reviewed Laurel's change to the hard-baked class name for the hidden style and it looks good.\n"

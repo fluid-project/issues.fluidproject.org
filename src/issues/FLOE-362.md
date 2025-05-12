@@ -28,6 +28,7 @@
   ],
   "comments": [
     {
+      "id": "11504",
       "author": "Jonathan Hung",
       "date": "2015-05-28T16:09:20.653-0400",
       "body": "Fixed with <https://fluidproject.atlassian.net/browse/FLOE-352#icft=FLOE-352>. It seems that by adding some text, the problem is gone.\n"

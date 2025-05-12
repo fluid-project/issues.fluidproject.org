@@ -42,16 +42,19 @@
   ],
   "comments": [
     {
+      "id": "17251",
       "author": "Justin Obara",
       "date": "2008-08-11T12:57:32.000-0400",
       "body": "'screenshot-1' shows the portlet being dragged up from the bottom and no drop target being shown. You are able to drop it here though.\n"
     },
     {
+      "id": "17253",
       "author": "Antranig Basman",
       "date": "2008-09-07T17:59:21.000-0400",
       "body": "Drop Manager, Dom Permutation work merged back into trunk at revision 5476\n"
     },
     {
+      "id": "17255",
       "author": "Justin Obara",
       "date": "2008-09-08T08:57:49.000-0400",
       "body": "verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

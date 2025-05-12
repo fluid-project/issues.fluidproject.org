@@ -41,11 +41,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15931",
       "author": "Anastasia Cheetham",
       "date": "2008-04-21T16:20:08.000-0400",
       "body": "Since over and out events arrive in unpredictable order, we can't rely on these events to decide when to show/hide the drop marker. We need to either allow dropping at the end of the list (if dwelling past the end) or find a better way to determine the over/out.\n"
     },
     {
+      "id": "15933",
       "author": "Michelle D'Souza",
       "date": "2008-04-28T13:58:49.000-0400",
       "body": "This is a duplicate of <https://fluidproject.atlassian.net/browse/FLUID-479#icft=FLUID-479>\n"

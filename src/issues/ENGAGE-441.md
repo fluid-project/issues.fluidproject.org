@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "12032",
       "author": "y z",
       "date": "2010-03-12T11:08:50.000-0500",
       "body": "There's a bug in fss where fl-offScreen-hidden is documented as the class that will make content invisible to screen reader. This class will actually be accessible to screen reader since putting content of screen is still readable. Reported in FLUID-3525\n"
     },
     {
+      "id": "12033",
       "author": "Michelle D'Souza",
       "date": "2010-03-12T13:59:16.000-0500",
       "body": "Yura and I looked at this more closely and determined that the div with id=guestbook-template which is using fl-offScreen-hidden is actually not used anywhere so we will remove it.&#x20;\n"

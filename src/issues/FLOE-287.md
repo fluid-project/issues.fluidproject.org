@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11048",
       "author": "Jonathan Hung",
       "date": "2015-03-25T16:25:27.398-0400",
       "body": "Dev 9 version of the sim is now working in the EPUB.&#x20;\n\nGithub: <https://github.com/jhung/EPUB/tree/FLOE-287>\n\nOriginal version: <http://www.colorado.edu/physics/phet/dev/html/forces-and-motion-basics/1.1.5-dev.9/forces-and-motion-basics_en.html?screens=1>\n"
     },
     {
+      "id": "11049",
       "author": "Jonathan Hung",
       "date": "2016-07-29T10:10:42.217-0400",
       "body": "The forces and motion basics sim isn't really an ideal choice now. John Travoltage may be more appropriate. This would require changing the chapter in the exemplar though which is additional work.\n"

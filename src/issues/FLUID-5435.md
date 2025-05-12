@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14710",
       "author": "Anastasia Cheetham",
       "date": "2014-06-09T11:45:01.131-0400",
       "body": "We decided that we need to investigate this a bit further to determine exactly what the cause of the failure is, and possibly redesign the test.\n"
     },
     {
+      "id": "14712",
       "author": "Justin Obara",
       "date": "2015-06-16T11:28:05.007-0400",
       "body": "The Fluid-0.3 version has been replaced by the 1.5 version in this manual test.\n"
     },
     {
+      "id": "14714",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:16.554-0400",
       "body": "Reopening to change the fix version to 1.9\n"

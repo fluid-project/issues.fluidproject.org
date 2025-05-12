@@ -27,36 +27,43 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19314",
       "author": "Anastasia Cheetham",
       "date": "2008-06-09T12:34:59.000-0400",
       "body": "This should also include upgrading jQuery UI to 1.5 (released today, June 9, 2008)\n"
     },
     {
+      "id": "19315",
       "author": "Michelle D'Souza",
       "date": "2008-06-25T16:06:32.000-0400",
       "body": "Make that jQuery UI 1.5.1 (released tomorrow, June 26, 2008)&#x20;\n"
     },
     {
+      "id": "19481",
       "author": "Anastasia Cheetham",
       "date": "2008-07-03T21:09:06.000-0400",
       "body": "Other than the fact that the fix to <http://dev.jquery.com/ticket/2599> doesn't seem to have address the Reorderer issue of destroying the 'droppable' of the avatar, the port seems complete. I've handed it off to Justin for a thorough testing (on the branch). Once he's confirmed that it's working well, I'll merge the branch into trunk.\n"
     },
     {
+      "id": "19485",
       "author": "Anastasia Cheetham",
       "date": "2008-07-07T16:52:24.000-0400",
       "body": "Justin found the following issue that seems to be apparent only in the upgraded branch. I'll investigate.\n\n1\\) nested reorderables slow to move (mouse dnd)  after portlet moved\n\na) drag lightbox portlet to right column\\\nb) attempt to drag one of the fruit to a new location\n\nseems to be mainly in FF, but also a bit in IE\n"
     },
     {
+      "id": "19488",
       "author": "Anastasia Cheetham",
       "date": "2008-07-07T17:20:16.000-0400",
       "body": "Indeed - it is slower, and the drop marker becomes fatter as well.\n"
     },
     {
+      "id": "19490",
       "author": "Anastasia Cheetham",
       "date": "2008-07-08T13:45:26.000-0400",
       "body": "This performance issue is actually related to a bug that was present before the upgrade, but has only become apparent since the upgrade: <https://fluidproject.atlassian.net/browse/FLUID-856#icft=FLUID-856>.&#x20;\n\nIn the given test case, a second Reorderer is being created for the Lightbox, and hence a second dropMarker. Before the upgrade, it didn't actually affect anything, but something in the upgrade resulted in the second dropMarker actually being moved/shown/hidden (it wasn't before), which resulted in the increased width and performance degradation.\n"
     },
     {
+      "id": "19493",
       "author": "Michelle D'Souza",
       "date": "2011-01-30T11:56:38.703-0500",
       "body": "Reopening these issues to add the frameworkcomponent\n"

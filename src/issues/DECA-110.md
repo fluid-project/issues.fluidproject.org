@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10099",
       "author": "Colin Clark",
       "date": "2010-07-12T18:05:56.283-0400",
       "body": "I've committed the install/uninstall scripts to the default repository in the install-scripts directory.\n"

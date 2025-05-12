@@ -39,26 +39,31 @@
   ],
   "comments": [
     {
+      "id": "12153",
       "author": "Armin Krauss",
       "date": "2009-06-18T15:28:59.000-0400",
       "body": "My first version of an artifact page that does some rendering and is very static sofar.\n\nNext steps are to pull in CouchDB data and use the mobile FSS style sheets\n"
     },
     {
+      "id": "12154",
       "author": "Armin Krauss",
       "date": "2009-06-30T17:40:10.000-0400",
       "body": "At the moment Armin is trying to get a rudiment example into SVN\n"
     },
     {
+      "id": "12155",
       "author": "Justin Obara",
       "date": "2009-09-21T16:42:04.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "12156",
       "author": "Colin Clark",
       "date": "2009-10-14T16:30:06.000-0400",
       "body": "Yura and Justin have done excellent work on this umbrella issue, and the work is complete for Engage 0.1\n"
     },
     {
+      "id": "12157",
       "author": "Justin Obara",
       "date": "2009-11-03T11:50:04.000-0500",
       "body": "Closed  as per previous comment\n"

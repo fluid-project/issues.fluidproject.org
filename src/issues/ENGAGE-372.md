@@ -36,6 +36,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12648",
       "author": "Colin Clark",
       "date": "2010-02-11T11:09:01.000-0500",
       "body": "Bug Parade Engage 0.3\n"

@@ -37,21 +37,25 @@
   ],
   "comments": [
     {
+      "id": "24696",
       "author": "Justin Obara",
       "date": "2010-10-04T14:00:36.915-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "24697",
       "author": "Mike Lam",
       "date": "2010-10-12T11:24:04.440-0400",
       "body": "Remove the display text from the tab index.\n"
     },
     {
+      "id": "24698",
       "author": "Justin Obara",
       "date": "2010-10-13T15:57:57.493-0400",
       "body": "Committed Mike's patch ( tabIndexPatchPart2.txt ) which sets the display texts tabindex to -1\n"
     },
     {
+      "id": "24699",
       "author": "Michelle D'Souza",
       "date": "2010-12-01T17:01:16.911-0500",
       "body": "I code reviewed this with a whole group of Inline Edit JIRA issues for 1.3 and it is fine.&#x20;\n"

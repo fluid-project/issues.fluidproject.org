@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21112",
       "author": "Eli Cochran",
       "date": "2009-02-03T15:15:32.000-0500",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-2189#icft=FLUID-2189>: Changed the AddImages.html to point to jQuery 1.3.1\n"
     },
     {
+      "id": "21113",
       "author": "Justin Obara",
       "date": "2009-02-03T15:31:06.000-0500",
       "body": "Verified fix using:\n\nFF3 (Mac OS 10.5)\n"

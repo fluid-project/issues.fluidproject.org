@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "13278",
       "author": "Anastasia Cheetham",
       "date": "2011-10-06T15:14:22.227-0400",
       "body": "This screenshow (uio-large-text-not-on-buttons.png) shows the font increased using the Fat Panel, with the still-small text on the buttons (in IE7).\n"
     },
     {
+      "id": "13279",
       "author": "Michelle D'Souza",
       "date": "2014-06-25T15:55:54.204-0400",
       "body": "We are no longer actively supporting IE6, IE7 and IE8. We will consider patches for some issues if they are offered.\n"

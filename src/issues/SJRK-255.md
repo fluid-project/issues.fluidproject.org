@@ -47,26 +47,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26558",
       "author": "Antranig Basman",
       "date": "2019-07-17T16:43:44.247-0400",
       "body": "Could you describe in a little more detail what the race condition is and what components it involves? In your pull request <https://github.com/fluid-project/sjrk-story-telling/pull/33> you mention \"race condition relating to a bug with UIO implementation\" - is the bug actually in the UIO implementation itself, and if so, has a JIRA been filed for that?\n"
     },
     {
+      "id": "26559",
       "author": "Gregor Moss",
       "date": "2019-07-18T13:42:32.721-0400",
       "body": "[Antranig Basman](http://secure/ViewProfile.jspa?name=antranig) of course. This branch should capture the bug: <https://github.com/BlueSlug/sjrk-story-telling/commits/SJRK-237-race-condition>\n\n \n\nOnce you have the server and database running, you should be able to reproduce it by running the tests on this page:\\\n<http://localhost:8081/tests/html/storyTellingServerUI-Tests.html>\n\n \n\nThe bug involves the last two sequence items (see the latest commit for the relevant code). I haven't been able to reproduce it today, for some reason, even after a few dozen tries, so that's mildly perplexing.\n"
     },
     {
+      "id": "26560",
       "author": "Gregor Moss",
       "date": "2019-08-01T16:29:52.489-0400",
       "body": "Antranig Basman I've added more detail on reproduction and error messages received. Sorry for the delay 🙂\n\n \n"
     },
     {
+      "id": "26561",
       "author": "Antranig Basman",
       "date": "2019-08-05T06:40:02.225-0400",
       "body": "Hi Gregor Moss - thanks for the reproduction instructions, luckily it turns out I can reproduce the problem quite easily. I'm investigating the root cause which appears to be the message bundle not loading correctly for 2nd and subsequent UIO instances but in the meantime I've raised <https://github.com/fluid-project/sjrk-story-telling/pull/35> in which to accumulate suggestions for refactoring. My sense is at the moment there is a fault in the very-oldfashioned resource loading code in Infusion master, which is being exacerbated by there being a lot of component leaks in the SJRK implementation. Once I find the root cause of the race we should be able to patch it in Infusion but at the same time we should also head off the issue by removing the leaks in SJRK which should also result in better performance and a design that is easier to work with.\n"
     },
     {
+      "id": "26562",
       "author": "Cindy Li",
       "date": "2020-01-22T16:43:55.406-0500",
       "body": "[The pull request](https://github.com/fluid-project/sjrk-story-telling/pull/53) has been merged into stories-floe-dev branch at [this commit](https://github.com/fluid-project/sjrk-story-telling/commit/58c559545a3788925e5236c407e7b8999aba0a50) so Gregor Moss can build upon them for other Jiras.\n\n[The initial pull request against re-review branch](https://github.com/fluid-project/sjrk-story-telling/pull/35) is preserved in order to accommodate further review on the source branch by Antranig Basman or others.\n"

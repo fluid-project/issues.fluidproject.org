@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19889",
       "author": "Anastasia Cheetham",
       "date": "2009-06-01T13:52:13.000-0400",
       "body": "We now have a Sneak Peek version of a Rich Text Inline Edit.\n"
     },
     {
+      "id": "19891",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:15.705-0500",
       "body": "Closing issues that were fixed in 1.1\n"

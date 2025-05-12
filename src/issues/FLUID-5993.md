@@ -32,6 +32,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22647",
       "author": "Justin Obara",
       "date": "2016-10-27T16:33:58.561-0400",
       "body": "It turns out that there wasn't really an issue with the code, however, the build site was broken because it was serving old files. ( see: <https://fluidproject.atlassian.net/browse/FLUID-6003#icft=FLUID-6003> )\n"

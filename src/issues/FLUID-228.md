@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19400",
       "author": "Jonathan Hung",
       "date": "2008-02-15T15:24:07.000-0500",
       "body": "Should we have a non-minified version of our distribution? Should the non-minified go into the same package as the minified or do we want two seperate zip files available for downloading?\n"

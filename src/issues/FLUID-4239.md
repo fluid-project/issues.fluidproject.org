@@ -28,21 +28,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18610",
       "author": "Justin Obara",
       "date": "2011-05-17T09:39:53.743-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "18615",
       "author": "Harris Wong",
       "date": "2011-05-30T16:54:53.706-0400",
       "body": "As well as:\\\nGET <http://localhost/fluid/infusion/src/webapp/integration-demos/sakai/js/sakai.js> 404 (Not Found)\n"
     },
     {
+      "id": "18619",
       "author": "Harris Wong",
       "date": "2011-05-31T14:45:11.606-0400",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-4239#icft=FLUID-4239>: Added missing RendererUtilities.js.  Took out jquery.ui.position.js and jquery.ui.draggable.js since they are not needed in this demo.  Also took out sakai.js since the file does not exist.\n\nPull request: <https://github.com/fluid-project/infusion/pull/60>\n"
     },
     {
+      "id": "18623",
       "author": "Harris Wong",
       "date": "2011-05-31T14:45:45.687-0400",
       "body": "Needs commit\n"

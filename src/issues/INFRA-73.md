@@ -34,6 +34,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25852",
       "author": "Giovanni Tirloni",
       "date": "2018-01-23T09:10:42.533-0500",
       "body": "We're not using supervisor anymore. I'm closing this for now, feel free to re-open if I missed something.\n\nExamples:\n\n \\* <https://github.com/GPII/universal/blob/master/Dockerfile>\n\n \\* <https://github.com/gpii-ops/docker-preferences-dataloader/blob/master/Dockerfile>\n\nI think there are other nice ideas (sidecars, etc) but maybe we should create new JIRAs specifically for that? That seems to fall in GPII's area of responsibility at the moment (with their Kubernetes [automation](https://github.com/gpii-ops/gpii-infra) work).\n"

@@ -104,21 +104,25 @@
   ],
   "comments": [
     {
+      "id": "10334",
       "author": "James Yoon",
       "date": "2010-06-08T13:02:49.239-0400",
       "body": "For calibration wireframes, see: <http://wiki.fluidproject.org/display/fluid/Decapod+1.0+Wireframes>\\\nFor calibration storycards, see: <http://wiki.fluidproject.org/display/fluid/Decapod+storycards+-+Calibration>\n"
     },
     {
+      "id": "10335",
       "author": "Justin Obara",
       "date": "2010-07-14T09:17:58.186-0400",
       "body": "Independent left-right calibration has been implemented. Any new issues should be filed under their own jiras.\n"
     },
     {
+      "id": "10336",
       "author": "Colin Clark",
       "date": "2010-07-15T19:29:46.844-0400",
       "body": "Reopening due to new server features required\n"
     },
     {
+      "id": "10337",
       "author": "Justin Obara",
       "date": "2011-10-06T15:02:06.711-0400",
       "body": "all sub-tasks were completed for 0.4\n"

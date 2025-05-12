@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16859",
       "author": "Anastasia Cheetham",
       "date": "2007-11-26T16:46:18.000-0500",
       "body": "The Sakai demo site database backup has been updated with the new spelling.\n\nThe uPortal demo site changes have not yet been committed, but the spelling change has been made to the necessary files, so when the do get committed, the spelling will be correct.\n"
     },
     {
+      "id": "16861",
       "author": "Anastasia Cheetham",
       "date": "2007-11-29T12:24:07.000-0500",
       "body": "The uPortal images have now been committed. No testing yet, since it doesn't work right now.\n"
     },
     {
+      "id": "16863",
       "author": "Colin Clark",
       "date": "2007-11-29T12:58:17.000-0500",
       "body": "Done.\n"

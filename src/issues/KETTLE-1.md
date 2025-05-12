@@ -30,6 +30,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26121",
       "author": "Antranig Basman",
       "date": "2013-08-13T14:02:20.356-0400",
       "body": "\"new new Kettle\" currently does no rewriting, but since its architecture no longer relies on the same code affected by this JIRA, this issue is being closed.\n"

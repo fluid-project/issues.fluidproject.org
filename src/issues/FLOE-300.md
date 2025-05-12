@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11529",
       "author": "Simon Bates",
       "date": "2015-04-22T14:30:04.421-0400",
       "body": "Make a component for the help button and use the \"gpii.firstDiscovery.msgLookup\" grade.\n"
     },
     {
+      "id": "11530",
       "author": "Simon Bates",
       "date": "2015-04-30T16:39:44.803-0400",
       "body": "<https://github.com/fluid-project/first-discovery/pull/36>\n"
     },
     {
+      "id": "11531",
       "author": "Justin Obara",
       "date": "2015-05-01T15:03:22.209-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/first-discovery/pull/36> ) into the project repo at 6369ea7f093756a07d0e67e7503c323f467ee276\n"

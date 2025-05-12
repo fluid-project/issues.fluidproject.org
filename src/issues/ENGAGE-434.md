@@ -52,6 +52,7 @@
   ],
   "comments": [
     {
+      "id": "12234",
       "author": "Antranig Basman",
       "date": "2010-03-04T02:32:55.000-0500",
       "body": "These two patches, against engage-core and engage-kettle, enable the use of minified/concatted build files \"MyEngage.js\" (which must be placed in engage root) and \"MyInfusion.js\" (which must be placed in infusion/src/webapp).\n"

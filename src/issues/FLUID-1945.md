@@ -69,56 +69,67 @@
   ],
   "comments": [
     {
+      "id": "17840",
       "author": "Anastasia Cheetham",
       "date": "2008-12-09T12:04:06.000-0500",
       "body": "If the appropriate demos don't get created in time for 0.6, then at a minimum, the title of the drop-down sample page needs to be fixed (a very  minor HTML change).\n"
     },
     {
+      "id": "17842",
       "author": "y z",
       "date": "2009-05-15T14:18:49.000-0400",
       "body": "patch for the issue\n"
     },
     {
+      "id": "17844",
       "author": "Justin Obara",
       "date": "2009-05-16T20:23:36.000-0400",
       "body": "There is some refactoring needed in the patch (see below)\n\n1\\) Some of the \\<scripts> are loaded in the wrong order\n\n2\\) Don't need to use $(document).ready inside the js file\n"
     },
     {
+      "id": "17848",
       "author": "y z",
       "date": "2009-05-19T15:56:31.000-0400",
       "body": "Updated the patch for the issue:\n\n* removed unnecessary $(document).ready\n* arranged the scripts insertion in the right order\n"
     },
     {
+      "id": "17851",
       "author": "y z",
       "date": "2009-05-19T16:02:14.000-0400",
       "body": "This patch (v3) will work with the tiny\\_mce moved to the CDN on <http://fltinymce.appspot.com/>\\\nfckeditor does not support the 3rd party domains at least untill 3.x so it is left intact.\n"
     },
     {
+      "id": "17856",
       "author": "y z",
       "date": "2009-05-21T12:19:38.000-0400",
       "body": "Latest patch that has all extra examples added :\\\n-HC theme example\\\n-stand alone fckerditor, tiny\\_mce examples\\\n-stand alone simple editor's examples\\\ntiny\\_mce works from CDN\n"
     },
     {
+      "id": "17858",
       "author": "y z",
       "date": "2009-05-21T16:08:22.000-0400",
       "body": "* added undo functionality (including customisation) to all inline edits\n* removed old inline edit tests from quick start examples and manual tests\n* moved new code to quick start examples\n"
     },
     {
+      "id": "17860",
       "author": "y z",
       "date": "2009-05-22T12:01:48.000-0400",
       "body": "latest inline text editor demo patch:\n\n* some refactoring done in .js file\n* removed redundant class from css\n* fixed IE bug\n"
     },
     {
+      "id": "17862",
       "author": "y z",
       "date": "2009-05-22T14:36:35.000-0400",
       "body": "final refactoring\n"
     },
     {
+      "id": "17864",
       "author": "Justin Obara",
       "date": "2009-05-22T16:52:05.000-0400",
       "body": "Committed Yura's patch (version 7) with a few modifications. 1) didn't remove the manual tests for inline edit at this time, will review this page for removal at a later date. 2) changed the names of the files in the quickstart examples to be InlineEdit, instead of inline-edit, and 3) removed a left over css reference to the selectbox.css\n"
     },
     {
+      "id": "17866",
       "author": "Justin Obara",
       "date": "2009-05-22T16:55:27.000-0400",
       "body": "Forgot that dropdown didn't make it into this patch as there is a bug with the css from the selectbox that has to get worked out first.\n"

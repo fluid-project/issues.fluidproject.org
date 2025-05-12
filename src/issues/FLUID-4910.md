@@ -43,11 +43,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24554",
       "author": "heidi valles",
       "date": "2011-07-07T10:34:22.348-0400",
       "body": "From testing components with UIO:\\\n-Reorderer: req'd css should be moved to FSS instead of req'd by implementer to add, and added to themes as well\\\n-Inline Edit: theming needed for icons, invitation text, invitation background hover/active. \"Make inputs larger\" doesn't affect it, but James says that is fine since it's a special case.\\\n-Pager: colour of links not themed (get dk blue on black links for w/b for ex)\\\n-Progress: for all themes, progress bar fill colour same as bg colour. There's a border around the bar which helps but seems like opposite colour would be better\n"
     },
     {
+      "id": "24555",
       "author": "Justin Obara",
       "date": "2015-06-12T11:58:29.702-0400",
       "body": "Dana I've assigned this jira to you, but feel free to pass it along to someone else if you think it is more appropriate.\n"

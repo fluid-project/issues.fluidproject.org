@@ -46,26 +46,31 @@
   ],
   "comments": [
     {
+      "id": "17308",
       "author": "Colin Clark",
       "date": "2008-05-22T18:43:30.000-0400",
       "body": "Patch showing the implementation of reorderList() and reorderGrid().\n"
     },
     {
+      "id": "17311",
       "author": "Colin Clark",
       "date": "2008-05-28T18:59:00.000-0400",
       "body": "We've written these functions now and they're working nicely. Still to do:\n\n* Write a unit test for reorderLayout() itself; we test all the underlying functionality, and have a markup example, but need a unit test for the top-level function\n* Update reorderList() and reorderGrid() to optionally take a map of selectors allowing users to independently specify movables, selectables, drop targets, grab handle\n* Also pass through the options to those functions\n* Refactor reorderLayout() and initLayoutCustomizer() to take an orderChangedCallback function\n* Simplify initLayoutCustomizer()\n"
     },
     {
+      "id": "17314",
       "author": "Michelle D'Souza",
       "date": "2008-05-29T18:31:26.000-0400",
       "body": "Attaching a patch with an implementation to allow a map of selectors or a single selector as a parameter to reorderList and reorderGrid. The rest of the above tasks have been done and committed.&#x20;\n"
     },
     {
+      "id": "17316",
       "author": "Colin Clark",
       "date": "2008-05-30T18:41:30.000-0400",
       "body": "Fixed!\n"
     },
     {
+      "id": "17318",
       "author": "Michelle D'Souza",
       "date": "2008-06-05T11:37:27.000-0400",
       "body": "The new API is now being used in some of the examples.\n"

@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17918",
       "author": "Antranig Basman",
       "date": "2007-11-06T11:40:34.000-0500",
       "body": "Apologies for this awful oversight. There is a new utility class \"XMLUtil\" which now does the work of flattening out \"Eighteen IDs\" into an XML-compatible form with very little bit-loss... this utility is now in RSF trunk also and when the next RSF release appears we can remove the copy of the utility I placed in Gallery.\n"

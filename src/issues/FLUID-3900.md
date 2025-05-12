@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21685",
       "author": "Mike Lam",
       "date": "2011-02-22T11:44:58.155-0500",
       "body": "Two strategies were implemented to stop uploading:  \\\n1\\)  Flash strategy stops uploading once the current file has been processed\\\n2\\)  All other strategies immediately stop uploading. &#x20;\n\nA comment from Colin Clark's commit:  \\\n\"Flash waits for the current file to completely in order to avoid a bug in either SWFUpload or (possibly) our Image Gallery demo where the upload process hangs on a previously-stopped file.\"\n"
     },
     {
+      "id": "21686",
       "author": "Mike Lam",
       "date": "2011-02-22T11:45:48.369-0500",
       "body": "The fix has been committed to the master repository.\n"

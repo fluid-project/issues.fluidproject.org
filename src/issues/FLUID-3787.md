@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24684",
       "author": "Michelle D'Souza",
       "date": "2010-12-23T15:50:09.017-0500",
       "body": "Justin, what should be do with issues like this?&#x20;\n"
     },
     {
+      "id": "24685",
       "author": "Golam Chowdhury",
       "date": "2011-01-11T10:13:15.859-0500",
       "body": "ARIA Live region seems to not working with IE8. Please see the following link for compatibility \\\n<http://tink.co.uk/2009/06/screen-reader-support-for-ajax-live-regions/>\n"

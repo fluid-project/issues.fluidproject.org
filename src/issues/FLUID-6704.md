@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25144",
       "author": "Justin Obara",
       "date": "2021-12-16T14:38:37.121-0500",
       "body": "Merged PR ( <https://github.com/fluid-project/infusion/pull/1067> ) into the project repo at 0b24a595780b19f7367eb42e254964e77555e1a0\n"
     },
     {
+      "id": "25145",
       "author": "Antranig Basman",
       "date": "2021-12-17T08:30:28.571-0500",
       "body": "Needless to say, we decided to resolve this in favour of allowing markup templates to be localised - this means that we have ditched for now the use case of \"markup-driven polymorphism\" described in the PPIG paper - except in the minority cases where the markup is already statically in the document. It's sad, but Infusion will not be up to this before the Infusion 6 rewrite where we can split apart the time-dependence of our current \"workflow stages\" and also allow components to undergo grade evolution arbitrarily late in their lives. That is - the grade resolution system will itself become \"modellised\" and the system will dynamically accommodate any kind of adaptation in live, including in \"grade contents\".\n\nWe put these in quotes because there will cease to be any distinction between \"model material\" and general \"options\" as well as ceasing to be a distinction between \"grade contents\" and \"instantiated components\".\n"

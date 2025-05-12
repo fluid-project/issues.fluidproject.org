@@ -38,21 +38,25 @@
   ],
   "comments": [
     {
+      "id": "24663",
       "author": "Justin Obara",
       "date": "2010-12-10T13:50:23.178-0500",
       "body": "FLUID-3776-patch.txt updates the copyrights&#x20;\n"
     },
     {
+      "id": "24664",
       "author": "Justin Obara",
       "date": "2010-12-10T15:15:08.967-0500",
       "body": "FLUID-3776-v2.patch.txt updates the previous patch with a change to the way Antranig's copyright is displayed\n"
     },
     {
+      "id": "24665",
       "author": "Michelle D'Souza",
       "date": "2010-12-11T13:25:18.388-0500",
       "body": "Committed at revision 10390\n"
     },
     {
+      "id": "24666",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T13:23:40.287-0500",
       "body": "Reopening these issues to add the releasecomponent.&#x20;\n"

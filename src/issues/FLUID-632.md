@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13151",
       "author": "Erin Yu",
       "date": "2008-06-05T15:16:03.000-0400",
       "body": "OpenCollection project is on hold. Because of the uncertainty in project plans, we're not able to identify contexts of inline edit; however, I presume there will be a lot of overlap between contexts found in Sakai and uPortal and contexts in a Collections Management Software.\n"

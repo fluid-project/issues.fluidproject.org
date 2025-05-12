@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13631",
       "author": "Justin Obara",
       "date": "2010-04-13T16:05:20.000-0400",
       "body": "Removed the SNAPSHOT flag from the version number. Now all version numbers should read Infusion 1.2\n"
     },
     {
+      "id": "13634",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:22.483-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

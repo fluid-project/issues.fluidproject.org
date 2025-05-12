@@ -42,16 +42,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20765",
       "author": "Simon Bates",
       "date": "2016-10-26T17:38:09.095-0400",
       "body": "This issue is also present on the Layout Reorderer.\n\nTo reproduce:\n\n* Open <http://build.fluidproject.org/infusion/demos/reorderer/layoutReorderer/>\n* Move an item with the mouse\n* Move focus with tab\n\nExpected:\n\n* Focus indicator to be removed from the previously moved item\n\nActual:\n\n* The focus indicator persists even though the item is no longer focused\n"
     },
     {
+      "id": "20766",
       "author": "Simon Bates",
       "date": "2016-10-26T17:41:36.775-0400",
       "body": "I've added \"2.0\" to the affected versions and generalized the title from \"List Reorderer\" to \"Reorderer\".\n"
     },
     {
+      "id": "20767",
       "author": "Justin Obara",
       "date": "2021-07-12T14:43:14.693-0400",
       "body": "This doesn't seem to happen if selection is moved, but the items not reordered.\n"

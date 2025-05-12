@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16627",
       "author": "Daphne Ogle",
       "date": "2008-08-01T12:32:44.000-0400",
       "body": "iteration14\n"
     },
     {
+      "id": "16629",
       "author": "Allison Bloodworth",
       "date": "2008-08-05T17:49:09.000-0400",
       "body": "The only Spec page we have is for Inline Edit (<http://wiki.fluidproject.org/display/fluid/Inline+Edit+Specification>), so I made the change there and confirmed with Colin that it was what he wanted.\n"

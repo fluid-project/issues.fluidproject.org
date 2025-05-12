@@ -22,11 +22,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25761",
       "author": "Giovanni Tirloni",
       "date": "2018-07-30T13:39:35.944-0400",
       "body": "Re-opening since are usage of Docker containers affords a private registry for faster deployments.\n"
     },
     {
+      "id": "25763",
       "author": "Giovanni Tirloni",
       "date": "2020-04-13T08:00:27.124-0400",
       "body": "AWS/Azure/GCP all offer private docker registry services.\n"

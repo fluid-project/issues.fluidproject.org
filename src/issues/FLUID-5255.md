@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16113",
       "author": "Cindy Li",
       "date": "2014-06-11T10:18:57.868-0400",
       "body": "A new grade \"fluid.uiOptions.distributeTocTemplate\" is added into uiOptions component. It's responsible for passing down the \"tocTemplate\" option to the right spot on the tree.\n\nThe new API to specify the path to the toc template as an option:\n\nfluid.uiOptions.prefsEditor(\".flc-prefsEditor-separatedPanel\", {\\\ngradeNames: \"fluid.uiOptions.distributeTocTemplate\",\\\ntocTemplate: customizedTocTemplate\\\n});\n\nA pull request is issued: <https://github.com/fluid-project/infusion/pull/528>\n"
     },
     {
+      "id": "16115",
       "author": "Justin Obara",
       "date": "2014-06-16T09:46:54.699-0400",
       "body": "merged pull request ( <https://github.com/fluid-project/infusion/pull/528> ) into the project repo at b54f331ccd569525a9d057b21fce7a7a69e66b0b\n"

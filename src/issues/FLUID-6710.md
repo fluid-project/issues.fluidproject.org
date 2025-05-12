@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25187",
       "author": "Justin Obara",
       "date": "2022-01-27T09:55:36.835-0500",
       "body": "Some [discussion](https://matrix.to/#/!JcoHDrfLedPQdFhAXn:matrix.org/$vF9LHcugAAj_k4LJ5xN-90lWX2gjHb6Lv1OBmRoCiEg?via=matrix.org) on the reasoning from the Fluid Tech matrix channel.\n\n \n\n* Switching to ES6 modules in the future\n* Infusion expects a single component tree\n* Potentially more risks in the node vs browser environment\n* Need to cut scope\n"
     },
     {
+      "id": "25188",
       "author": "Justin Obara",
       "date": "2022-02-03T17:16:54.688-0500",
       "body": "Merged PR ( <https://github.com/fluid-project/infusion/pull/1069> ) into the project repo at 466f09760ca4a8984a56ad37f6abd526287cee12\n"

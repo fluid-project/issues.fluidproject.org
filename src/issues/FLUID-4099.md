@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "20029",
       "author": "John Kremer",
       "date": "2011-02-22T10:53:31.381-0500",
       "body": "No way to access the add multiple images page from here.\n"
     },
     {
+      "id": "20030",
       "author": "Anastasia Cheetham",
       "date": "2014-07-30T15:22:46.359-0400",
       "body": "This demo is no longer operational.\n"

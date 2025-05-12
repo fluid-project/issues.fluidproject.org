@@ -23,21 +23,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25493",
       "author": "Justin Obara",
       "date": "2019-01-20T13:24:43.615-0500",
       "body": "I've created a wiki page with my initial thoughts at <https://wiki.fluidproject.org/display/fluid/Project+Governance+Options>\n"
     },
     {
+      "id": "25494",
       "author": "Justin Obara",
       "date": "2019-09-24T10:15:24.162-0400",
       "body": "Should also consider creating 1 or more repository templates to make creating new repos easier.\n\n<https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/>\n"
     },
     {
+      "id": "25495",
       "author": "Justin Obara",
       "date": "2019-09-24T12:39:48.375-0400",
       "body": "Ned Zimmerman has also suggested adding default community health files in GitHub.\n\n<https://help.github.com/en/articles/creating-a-default-community-health-file-for-your-organization>\n"
     },
     {
+      "id": "25496",
       "author": "Justin Obara",
       "date": "2019-12-12T06:49:15.145-0500",
       "body": "The [Electron Governance](https://electronjs.org/governance) page has a nice layout.\n"

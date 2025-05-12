@@ -23,16 +23,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12834",
       "author": "Michelle D'Souza",
       "date": "2011-12-12T10:11:31.567-0500",
       "body": "The CKEditor toolbar can be customized through the admin interface. Colin has done this on the live site.&#x20;\n"
     },
     {
+      "id": "12835",
       "author": "Michelle D'Souza",
       "date": "2011-12-12T10:33:16.844-0500",
       "body": "Cindy made a good point that if we modify the config file that we include in the repo then fresh installs will be easier.&#x20;\n"
     },
     {
+      "id": "12836",
       "author": "Michelle D'Souza",
       "date": "2011-12-12T13:55:07.087-0500",
       "body": "Merged into project repo at 7d6ed414fbf61735c69aa5b88da2526ceca81d36\n"

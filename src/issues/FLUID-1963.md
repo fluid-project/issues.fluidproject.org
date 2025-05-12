@@ -43,26 +43,31 @@
   ],
   "comments": [
     {
+      "id": "16363",
       "author": "Michelle D'Souza",
       "date": "2008-12-15T12:36:08.000-0500",
       "body": "Patch file that initializes the UI Options component only once.&#x20;\n"
     },
     {
+      "id": "16365",
       "author": "Michelle D'Souza",
       "date": "2008-12-15T12:41:40.000-0500",
       "body": "This regression was reintroduced in revision 6190. The problem is that the UI Options component was being initialized every time the 'Edit Appearance' button was pressed. I've created a patch that initializes the component only on the first time the button is pressed.&#x20;\n"
     },
     {
+      "id": "16367",
       "author": "Michelle D'Souza",
       "date": "2008-12-15T12:52:39.000-0500",
       "body": "Linted patch with license.&#x20;\n"
     },
     {
+      "id": "16369",
       "author": "Anastasia Cheetham",
       "date": "2008-12-15T12:58:39.000-0500",
       "body": "I have reviewed this patch, and it looks good to me.\n"
     },
     {
+      "id": "16371",
       "author": "Justin Obara",
       "date": "2008-12-15T14:12:20.000-0500",
       "body": "Verified fix using&#x20;\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

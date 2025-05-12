@@ -34,26 +34,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20154",
       "author": "Justin Obara",
       "date": "2009-03-12T12:58:20.000-0400",
       "body": "Bug Parade release comment removed\n"
     },
     {
+      "id": "20158",
       "author": "Eli Cochran",
       "date": "2009-03-24T19:41:09.000-0400",
       "body": "On re-reading this bug, I realize that it is fixed.&#x20;\n\nAfter Browsing on FF, the focus does not get set but for Upload and Stop Upload, it's working\n"
     },
     {
+      "id": "20159",
       "author": "Justin Obara",
       "date": "2009-03-25T09:17:02.000-0400",
       "body": "I'm still experiencing this. It only happens on the server version, not in the demo.\n"
     },
     {
+      "id": "20161",
       "author": "Anastasia Cheetham",
       "date": "2011-10-03T11:17:47.947-0400",
       "body": "Testing for the 1.4 release, I'm noticing this problem in IE9 on Win 7, also with the server version but not the demo.\n"
     },
     {
+      "id": "20163",
       "author": "Justin Obara",
       "date": "2014-07-08T11:05:14.958-0400",
       "body": "This issue was fixed in the demo version a long time ago. The sever demo was taken down recently (won't fix).\n"

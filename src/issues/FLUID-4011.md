@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23268",
       "author": "Mike Lam",
       "date": "2010-12-22T14:58:39.323-0500",
       "body": "Duplicate JIRA:   See <https://fluidproject.atlassian.net/browse/FLUID-3879#icft=FLUID-3879>\n"
     },
     {
+      "id": "23269",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:22.884-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

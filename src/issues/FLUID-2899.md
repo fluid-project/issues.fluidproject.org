@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23155",
       "author": "Eli Cochran",
       "date": "2009-06-02T18:49:24.000-0400",
       "body": "Cut a new 1.1 tag with the correct version string\n"
     },
     {
+      "id": "23156",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:19.585-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

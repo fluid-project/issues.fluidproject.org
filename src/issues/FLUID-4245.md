@@ -48,26 +48,31 @@
   ],
   "comments": [
     {
+      "id": "24371",
       "author": "Justin Obara",
       "date": "2011-05-16T13:44:22.275-0400",
       "body": "fss-base-screenshot and fss-reset-screenshot show the demos with the missing comparisons.\n"
     },
     {
+      "id": "24372",
       "author": "Justin Obara",
       "date": "2011-05-17T09:39:42.671-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24373",
       "author": "Harris Wong",
       "date": "2011-05-30T14:30:18.927-0400",
       "body": "Attached fss-base-may-30-2011.png and fss-reset-may-30-2011.png, which shows that the problem no longer occurs in IE8 WinXP. &#x20;\n"
     },
     {
+      "id": "24374",
       "author": "Harris Wong",
       "date": "2011-05-31T14:53:16.308-0400",
       "body": "Cannot reproduce as of:\\\ncommit 01a994f19c5adcba2594ac322a828961a02daada\\\nDate:   Mon May 30 15:45:40 2011 -0600\n"
     },
     {
+      "id": "24375",
       "author": "Justin Obara",
       "date": "2011-06-14T09:50:03.561-0400",
       "body": "I tried again with IE8 Win XP today and couldn't reproduce the issue.\n"

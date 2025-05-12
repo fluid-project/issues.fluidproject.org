@@ -40,16 +40,19 @@
   ],
   "comments": [
     {
+      "id": "12537",
       "author": "James Yoon",
       "date": "2010-02-22T11:28:34.000-0500",
       "body": "a11y issue\n"
     },
     {
+      "id": "12538",
       "author": "Justin Obara",
       "date": "2010-03-02T15:26:31.000-0500",
       "body": "The flag seem to be only for presentation and the title beside it already reads \"language selection\", which is what the flag is to indicate. I think in this case it may be suitable to have alt text of \"\".\n"
     },
     {
+      "id": "12539",
       "author": "James Yoon",
       "date": "2010-03-08T10:08:41.000-0500",
       "body": "I agree that the flag icon is mainly an aesthetic ornamentation, and whatever semantic significance it carries is duplicated in the title text (in a way, the title text *is* the alt text to the flag icon). An empty alt text seems appropriate to me too.\n"

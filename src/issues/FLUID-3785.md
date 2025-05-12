@@ -37,21 +37,25 @@
   ],
   "comments": [
     {
+      "id": "24709",
       "author": "Justin Obara",
       "date": "2010-10-07T13:25:03.821-0400",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "24710",
       "author": "Mike Lam",
       "date": "2010-10-08T11:08:20.034-0400",
       "body": "Ensure dotted underlining CSS class is added.\n"
     },
     {
+      "id": "24711",
       "author": "Justin Obara",
       "date": "2010-10-08T14:59:01.722-0400",
       "body": "Committed Mike's patch ( FLUID-3785WithTests.txt ) which fixed the styling issues and added unit tests to make sure the styles were being added properly.\n"
     },
     {
+      "id": "24712",
       "author": "Michelle D'Souza",
       "date": "2010-12-01T17:00:18.037-0500",
       "body": "I code reviewed this with a whole group of Inline Edit JIRA issues for 1.3 and it is fine.&#x20;\n"

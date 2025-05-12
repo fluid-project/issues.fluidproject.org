@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10356",
       "author": "Jonathan Hung",
       "date": "2011-09-15T09:55:33.880-0400",
       "body": "Images are now in the repository: <http://source.fluidproject.org/svn/design/decapod/testing-images/>\n"

@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16758",
       "author": "Antranig Basman",
       "date": "2015-06-09T20:05:10.656-0400",
       "body": "There's been no further feedback on this issue and this area of the framework has changed so much in 4 years that we are unlikely to reproduce it in the same form. Especially, attempting to bind a \"container\" onto a \"selector\" is a terrible hack that should never be necessary/effective.\n"
     },
     {
+      "id": "16760",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:07.265-0400",
       "body": "Reopening to change the fix version to 1.9\n"

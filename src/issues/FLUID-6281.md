@@ -31,16 +31,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24055",
       "author": "Justin Obara",
       "date": "2018-05-17T16:32:34.698-0400",
       "body": "Submitted a PR with a test case verifying the issue. <https://github.com/fluid-project/infusion/pull/902>\n"
     },
     {
+      "id": "24056",
       "author": "Antranig Basman",
       "date": "2018-05-17T17:03:31.220-0400",
       "body": "This is a subcase of <https://fluidproject.atlassian.net/browse/FLUID-6148#icft=FLUID-6148> and is hopefully resolved by that work. Could you check out your test case with the pull that is in progress for that, and perhaps any other review that occurs to you - cheers!\n"
     },
     {
+      "id": "24058",
       "author": "Justin Obara",
       "date": "2018-05-22T09:40:03.434-0400",
       "body": "Antranig Basman it looks like <https://fluidproject.atlassian.net/browse/FLUID-6148#icft=FLUID-6148> fixes this, as the tests pass in that branch. I did a skim, far too quick for a change of such complexity, of the <https://fluidproject.atlassian.net/browse/FLUID-6148#icft=FLUID-6148> PR and nothing immediately stood out.\n"

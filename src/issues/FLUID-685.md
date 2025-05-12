@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "17343",
       "author": "Justin Obara",
       "date": "2008-06-02T13:00:13.000-0400",
       "body": "screenshot-1 shows a side-by-side comparison of the file open dialogs called by FF2 (on the left) and IE7 (on the right) in WinXP.\n\nNotice the icons on the left.\n"
     },
     {
+      "id": "17345",
       "author": "Eli Cochran",
       "date": "2008-06-03T15:12:12.000-0400",
       "body": "not sure why this is happening. sounds as if FF and IE actually have their own customized File Open dialogs.&#x20;\n\nBut there really isn't a way for me to control that aspect of the functionality, and I'm not sure that it's really a problem.&#x20;\n"

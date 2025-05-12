@@ -42,11 +42,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16011",
       "author": "Antranig Basman",
       "date": "2013-02-19T14:54:55.521-0500",
       "body": "Resolved by merge of <https://fluidproject.atlassian.net/browse/FLUID-4330#icft=FLUID-4330> branch at revision 91d5d1\n"
     },
     {
+      "id": "16013",
       "author": "Antranig Basman",
       "date": "2013-02-21T02:02:42.868-0500",
       "body": "I can't believe this is finally implemented....\n"

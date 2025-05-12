@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19272",
       "author": "Michelle D'Souza",
       "date": "2008-06-25T16:03:34.000-0400",
       "body": "This is working as expected. Changing focus is effectively doing a 'cancel' action rather then a 'save'. This is easily changed. Designers: what is the correct behaviour?\n"
     },
     {
+      "id": "19275",
       "author": "Michelle D'Souza",
       "date": "2008-06-25T19:43:45.000-0400",
       "body": "Daphne mentioned on list that the interaction at this time does not have a cancel - it should always save.&#x20;\n"
     },
     {
+      "id": "19276",
       "author": "Michelle D'Souza",
       "date": "2008-06-25T19:58:11.000-0400",
       "body": "dev-iteration37\n"
     },
     {
+      "id": "19278",
       "author": "Anastasia Cheetham",
       "date": "2008-07-11T13:59:48.000-0400",
       "body": "The component now always saves, as Daphne described.\n"

@@ -28,21 +28,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18018",
       "author": "Justin Obara",
       "date": "2009-02-13T14:05:14.000-0500",
       "body": "Bug Parade 0.8 release\n"
     },
     {
+      "id": "18020",
       "author": "Anastasia Cheetham",
       "date": "2009-02-13T15:38:46.000-0500",
       "body": "The uportal code is now being pulled from trunk and re-deployed as part of the nightly restart script. In addition, the gallery portlet has been removed, since it is very out-of-date.\n\nThe database does not get reset nightly.\n"
     },
     {
+      "id": "18022",
       "author": "Colin Clark",
       "date": "2009-02-16T21:37:56.000-0500",
       "body": "I've reviewed Simon and Anastasia's two commits for this issue, r6499 and r6503. They look good overall. There's clearly a bit more work to do to setup the uPortal environment correctly, as reflected by the totally commented-out reset\\_hsql.sh file, but that can come later.\n\nThis isn't actually part of the Infusion release, but it managed to get on the bug parade nonetheless. +1.\n"
     },
     {
+      "id": "18024",
       "author": "Justin Obara",
       "date": "2009-02-16T22:47:52.000-0500",
       "body": "Verified that the uPortal demo is still functioning after a rebuild.\n"

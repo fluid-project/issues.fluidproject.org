@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "23478",
       "author": "y z",
       "date": "2010-12-20T15:18:55.715-0500",
       "body": "Broken test case attached.\n"
     },
     {
+      "id": "23479",
       "author": "Michelle D'Souza",
       "date": "2014-04-02T15:46:47.014-0400",
       "body": "The new implementation of the renderer will do away with this functionality.\n"

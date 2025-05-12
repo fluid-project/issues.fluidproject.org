@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14465",
       "author": "Colin Clark",
       "date": "2009-12-04T18:01:46.000-0500",
       "body": "Bug Parade Builder 1.1.2\n"
     },
     {
+      "id": "14468",
       "author": "Laurel Williams",
       "date": "2009-12-07T10:34:54.000-0500",
       "body": "clarified that copyToScrBundle target performs the concatination of the files and copyToDeployBundle target calls minifyBuild.\\\ncopyToSrcBundle is performed before copyToDeploy bundle in the customBuild target.\n"
     },
     {
+      "id": "14470",
       "author": "Laurel Williams",
       "date": "2009-12-07T16:15:43.000-0500",
       "body": "Nothing required here\n"

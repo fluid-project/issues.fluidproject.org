@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26469",
       "author": "Simon Bates",
       "date": "2019-01-23T17:36:23.518-0500",
       "body": "<https://github.com/fluid-project/sjrk-story-telling-server/pull/7>\n"
     },
     {
+      "id": "26470",
       "author": "Gregor Moss",
       "date": "2019-01-24T12:27:37.428-0500",
       "body": "I have tested the updated public site and I am no longer seeing this issue.\n"

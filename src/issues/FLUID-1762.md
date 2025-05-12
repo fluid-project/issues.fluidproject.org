@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17070",
       "author": "Eli Cochran",
       "date": "2008-11-14T15:26:55.000-0500",
       "body": "This is fixed for now, but I'm about to rewrite this puppy, so this is a good thing to keep testing for.\n"
     },
     {
+      "id": "17071",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:57.901-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

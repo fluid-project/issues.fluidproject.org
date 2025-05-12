@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26453",
       "author": "Alan Harnum",
       "date": "2018-07-12T11:04:37.857-0400",
       "body": "Kettle itself actually does this in some places via an alternate function: <https://github.com/fluid-project/kettle/blob/9ff8c535d095249b03ea299dde42c503ebe1bd99/kettle.js#L44-L48>\n\nI'm closing this one because it reflects current \"best practice\" in Kettle itself for getting access to the useful request functions outside of a testing context.\n"

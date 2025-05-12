@@ -21,16 +21,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11023",
       "author": "Anastasia Cheetham",
       "date": "2012-06-12T10:29:31.017-0400",
       "body": "I have a start on this in a branch:\\\n<https://github.com/acheetham/OER-Commons/tree/FLOE-29>\n"
     },
     {
+      "id": "11024",
       "author": "Michelle D'Souza",
       "date": "2012-08-03T18:10:36.663-0400",
       "body": "Let's keep HTML5 best practices in mind when we address this issue. Meaning, there can be many heading level 1s on the page as long as the containing markup makes sense.&#x20;\n"
     },
     {
+      "id": "11025",
       "author": "Alexey Novak",
       "date": "2012-10-18T16:00:02.429-0400",
       "body": "There is some work undergoing on the Front page for OER Commons with proper practices. I will keep this JIRA open until the work will be completed and pushed to the master. Until then we need to wait and to see if this JIRA will be closed or valid.\n"

@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26248",
       "author": "Gregor Moss",
       "date": "2019-05-22T14:06:29.864-0400",
       "body": "Here is the most recent online design: <https://xd.adobe.com/view/41fa65f5-a6f1-44fe-65db-ee617069dddd-37cb/?fullscreen>\n"
     },
     {
+      "id": "26249",
       "author": "Gregor Moss",
       "date": "2019-05-28T08:25:28.633-0400",
       "body": "The design has been implemented. Some issues persist, but they are captured in other reports already (<https://fluidproject.atlassian.net/browse/SJRK-80#icft=SJRK-80>, <https://fluidproject.atlassian.net/browse/SJRK-206#icft=SJRK-206>, etc.)\n"

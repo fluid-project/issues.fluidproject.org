@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10143",
       "author": "Justin Obara",
       "date": "2012-01-12T13:35:33.357-0500",
       "body": "The bulk of this work will be to update the install script to pull in the new version and make sure that it can be uninstalled easily as well.\n"
     },
     {
+      "id": "10144",
       "author": "Justin Obara",
       "date": "2012-02-10T07:18:38.534-0500",
       "body": "Changed the install scripts to remove python-cherrypy3 from the decapod-apt.sh script and added the installation of cherrypy 3.2.2 by via wget and checkinstall to the decapod-decapod.sh script.\n\nThe changes are in my bitbucket repo\\\n<https://bitbucket.org/jobara/decapod-default-install>\n"
     },
     {
+      "id": "10145",
       "author": "Justin Obara",
       "date": "2012-05-18T14:20:23.831-0400",
       "body": "Merged into the project repo\n"

@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18701",
       "author": "Jonathan Hung",
       "date": "2008-09-08T15:08:26.000-0400",
       "body": "Iteration17\n"
     },
     {
+      "id": "18705",
       "author": "Jonathan Hung",
       "date": "2008-09-08T15:13:55.000-0400",
       "body": "Work on this task will be reproduced on the Components Gallery.\n"

@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25372",
       "author": "Colin Clark",
       "date": "2014-09-13T14:02:36.732-0400",
       "body": "Reviewed, tested and merged.\n"
     },
     {
+      "id": "25373",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:06.457-0400",
       "body": "Reopening to change the fix version to 1.9\n"

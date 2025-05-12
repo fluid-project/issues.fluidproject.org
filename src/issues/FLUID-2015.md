@@ -35,6 +35,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17887",
       "author": "Jonathan Hung",
       "date": "2011-01-06T15:05:02.693-0500",
       "body": "Promoted sub-issue to an issue, and closing this bug.\n"

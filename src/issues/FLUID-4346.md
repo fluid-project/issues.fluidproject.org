@@ -32,21 +32,25 @@
   ],
   "comments": [
     {
+      "id": "15730",
       "author": "Harris Wong",
       "date": "2011-07-19T12:19:52.721-0400",
       "body": "The screen shot demonstrates the gap on the last bullet, between \"Humans\" and \"CATT\"\n"
     },
     {
+      "id": "15732",
       "author": "Anastasia Cheetham",
       "date": "2011-09-19T15:59:00.919-0400",
       "body": "I've just tested this issue in IE7 native, on Win XP. I am no longer seeing any gap. Harris, perhaps you could re-test in your IE7 mode so we can determine whether or not the issue has been resolved, or if it's an issue with the 'IE7 mode' ?\n"
     },
     {
+      "id": "15734",
       "author": "Harris Wong",
       "date": "2011-09-19T16:07:33.522-0400",
       "body": "Yes it was the IE9 ith IE7 browse mode.  I will test it on the VM to confirm. &#x20;\n"
     },
     {
+      "id": "15736",
       "author": "Michelle D'Souza",
       "date": "2014-06-25T15:58:45.389-0400",
       "body": "We no longer actively support IE6, IE7 and IE8. We will consider patches for certain issues.\n"

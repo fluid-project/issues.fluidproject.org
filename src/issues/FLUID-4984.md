@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14276",
       "author": "Jonathan Hung",
       "date": "2013-04-22T16:35:52.443-0400",
       "body": "This problem appears to be caused by conflicting FSS styling. For example, for the \"Arial\" option, the follow styles are applied:\n\n.fl-font-uio-comic-sans, .fl-font-uio-comic-sans \\* {\\\nfont-family: \"Comic Sans MS\",sans-serif !important;\\\n}\\\n.fl-font-uio-arial, .fl-font-uio-arial \\* {\\\nfont-family: \"Arial\" !important;\\\n}\n\nTo fix this, we would need to ensure the font style we want is invoked last. This likely means overriding some FSS styles in the UIOptions.css file.\n"

@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19018",
       "author": "Jess Mitchell",
       "date": "2008-07-09T21:00:57.000-0400",
       "body": "JM: let's do 5 user tests total per component – perhaps Toronto can do 2 accessible tests and Berkeley 3 or at the least the two sites can collaborate and will total to 5 users.\n"
     },
     {
+      "id": "19023",
       "author": "Daphne Ogle",
       "date": "2008-08-01T20:22:07.000-0400",
       "body": "Tested 3 users at Berkeley.\n"
     },
     {
+      "id": "19026",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:42.602-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

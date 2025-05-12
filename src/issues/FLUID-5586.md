@@ -28,26 +28,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23810",
       "author": "Antranig Basman",
       "date": "2015-08-20T14:21:40.166-0400",
       "body": "Astonishingly this is still unresolved in Infusion 2.0.0-beta.1\n"
     },
     {
+      "id": "23812",
       "author": "Colin Clark",
       "date": "2015-09-29T19:21:54.272-0400",
       "body": "In case others are confused, here is an example of a change path record that will fail due to the fact that we are doing a falsey check on the changePath attribute [deep within the guts of the IoC system](https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/FluidIoC.js#L1495).\n\n```java\nfluid.defaults(\"cat.hugo\", {\r\n                gradeNames: \"fluid.modelComponent\",\r\n\r\n                model: {},\r\n\r\n                listeners: {\r\n                    onCreate: [\r\n                        {\r\n                            changePath: \"\",\r\n                            value: {\r\n                                meow: \"raow!\"\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            });\n```\n\nIs the best workaround, currently, to use a listener specification like this instead?\n\n```java\n{\r\n        func: \"{that}.applier.change\"\r\n        args: [...]\r\n     }\n```\n"
     },
     {
+      "id": "23813",
       "author": "Antranig Basman",
       "date": "2015-09-30T04:00:42.791-0400",
       "body": "Now I think of it, the best workaround is actually to use a changePath of \\[] - array paths are better on several considerations than strings, since future versions of the framework will be able to easily support IoC references in place of segments, and this also sidesteps annoyances such as escaping issues - as well as being just a tiny bit faster.\n"
     },
     {
+      "id": "23815",
       "author": "Colin Clark",
       "date": "2015-09-30T10:54:02.523-0400",
       "body": "I'm probably just confused, but I modified my test like this:\n\n{\\\nchangePath: \\[],\\\nvalue: {\\\nmeow: \"raow!\"\\\n}\\\n}\n\nand I get an error inside fluid.parseValidModelReference() where it appears to assume that the changePath value will always be a string.\n"
     },
     {
+      "id": "23817",
       "author": "Antranig Basman",
       "date": "2016-03-01T13:59:01.381-0500",
       "body": "In the scheme implemented in pull request <https://github.com/fluid-project/infusion/pull/671> , this is now supported by means of expressions like:\n\n```java\nchangePath: {\r\n    segs: [],\r\n},\r\nvalue: { meow: \"raow!\" }\n```\n\n(every place a model path is accepted in the framework now also accepts a structure holding {segs: \\<array>, context: \\<optional component path>} )\n"

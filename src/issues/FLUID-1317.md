@@ -61,21 +61,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18194",
       "author": "Justin Obara",
       "date": "2008-09-22T12:52:47.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "18195",
       "author": "Anastasia Cheetham",
       "date": "2008-09-24T10:39:24.000-0400",
       "body": "Opera seems to do keyboard access in a very different way than is typical. Shift+arrow can be used to move focus to links, and various combinations of shift+arrow and tab can be used to get focus to any element on the page.\n\nI'm not sure how we deal with this issue.\n"
     },
     {
+      "id": "18196",
       "author": "Antranig Basman",
       "date": "2008-11-03T12:57:28.000-0500",
       "body": "Fixed at revision 5953\n"
     },
     {
+      "id": "18197",
       "author": "Justin Obara",
       "date": "2008-11-04T08:23:17.000-0500",
       "body": "Verified fix using:\n\nOpera 9.5 (Mac OS 10.5, Win XP)&#x20;\n"

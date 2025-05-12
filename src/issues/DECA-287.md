@@ -60,11 +60,13 @@
   ],
   "comments": [
     {
+      "id": "10422",
       "author": "tamir@tamirhassan.com",
       "date": "2013-01-27T12:03:52.545-0500",
       "body": "The reason is because the line-finding stage of layout analysis has failed and the lines have not been found – and used for further processing.\n\nI've tried it out with the current version and get a much better result – only the page number at the top is missing.\n\nIdeally, all content not recognized as text lines would be included as part of a background image.&#x20;\n"
     },
     {
+      "id": "10423",
       "author": "tamir@tamirhassan.com",
       "date": "2013-01-27T12:05:08.641-0500",
       "body": "(this comment relates to the file test-t3.pdf) This is the output that I got when running genpdf on the same pdf (t3).  Only the page number at the top (not recognized as text?) is missing.  Tamir\n"

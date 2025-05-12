@@ -38,6 +38,7 @@
   ],
   "comments": [
     {
+      "id": "25522",
       "author": "Justin Obara",
       "date": "2021-06-28T13:39:57.053-0400",
       "body": "text-size-decreased.png and text-size-increased.png show that the textfield and textarea are not responding to the text size changes.\n"

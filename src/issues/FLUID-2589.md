@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21519",
       "author": "Justin Obara",
       "date": "2009-04-14T09:52:16.000-0400",
       "body": "I've updated the location information. I don't know if there was anything else that has changed that should be mentioned\n"
     },
     {
+      "id": "21520",
       "author": "Antranig Basman",
       "date": "2009-04-14T13:35:32.000-0400",
       "body": "I added information about the new file, DataBinding.js, as well as the general dependency set for the renderer. I am not sure I can think of anything else that has changed/is relevant.\n"

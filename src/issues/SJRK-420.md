@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26360",
       "author": "Justin Obara",
       "date": "2020-11-11T16:16:51.493-0500",
       "body": "Possible solution from an old stackoverflow discussion is to force the page to reload.\n\n<https://stackoverflow.com/questions/8788802/prevent-safari-loading-from-cache-when-back-button-is-clicked/13123626#13123626>\n"

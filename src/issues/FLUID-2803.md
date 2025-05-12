@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "13808",
       "author": "Justin Obara",
       "date": "2009-05-28T11:14:53.000-0400",
       "body": "\"screenshot-1\" shows the large gap between the slider and its textfield\n"
     },
     {
+      "id": "13810",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T11:01:48.219-0400",
       "body": "The UIO dialog has been redesigned, and this is no longer an issue.\n"

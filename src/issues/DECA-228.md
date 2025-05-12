@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10141",
       "author": "Justin Obara",
       "date": "2012-05-07T13:36:23.723-0400",
       "body": "There were only a couple of files needing changes after removing the old code from 0.5. These last few changes are in my bitbucket repo <https://bitbucket.org/jobara/decapod-ui-iteration3>\n"
     },
     {
+      "id": "10142",
       "author": "Justin Obara",
       "date": "2012-05-18T14:27:48.348-0400",
       "body": "Merged into the project repo\n"

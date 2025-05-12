@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24341",
       "author": "Antranig Basman",
       "date": "2015-12-09T08:30:51.669-0500",
       "body": "It's a design decision. Objects with \"undefined\" values are unnatural and invalid for interchange, and should not be used. fluid.copy is consistent with the wider body of algorithms which operate on JSON-like values such as $.extend, fluid.transform, etc. It's a widespread idiom (or axiom) within JavaScript that a standard means of cloning an object should be to convert it to JSON and then re-parse it - in fact in many environments such as CouchDB this is the only standard means provided.\n"
     },
     {
+      "id": "24343",
       "author": "Kasper Galschiot Markus",
       "date": "2015-12-09T08:35:27.238-0500",
       "body": "Awesome! Thanks for clearing that up, Antranig Basman\n"

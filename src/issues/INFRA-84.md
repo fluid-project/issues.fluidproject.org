@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25757",
       "author": "Giovanni Tirloni",
       "date": "2016-08-22T09:38:10.377-0400",
       "body": "OwnCloud has been running for a few months now at [https://files.inclusivedesign.ca](https://files.inclusivedesign.ca/) (hosted on i-0033 as a Docker container using the official image).\n\nThere have been issues with files that do not get synchronized or can't be deleted. They have required manual intervention (either accessing the SQLite3 database directly to erase locks or restarting ownCloud).\n"

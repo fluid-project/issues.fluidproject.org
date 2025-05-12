@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10191",
       "author": "Justin Obara",
       "date": "2012-06-15T15:33:45.280-0400",
       "body": "I have updated the install scripts to hot patch the iulib and ocropus clones during installation, to work with Ubuntu 12.04. The install will still work for 10.04 as well, as it will only apply the patch to Ubuntu 12.04.\\\n<https://bitbucket.org/jobara/decapod-0.6-install-iteration1>\n"
     },
     {
+      "id": "10192",
       "author": "Justin Obara",
       "date": "2012-06-18T12:41:56.965-0400",
       "body": "I tested the above in Ubuntu 10.04 and Ubuntu 12.04 and they both seemed to be working.&#x20;\n\nTests:\\\nRan server unit tests, all passed.\\\nGenerated a pdf of each type, all seemed okay.\n"
     },
     {
+      "id": "10193",
       "author": "Justin Obara",
       "date": "2012-06-26T13:39:06.746-0400",
       "body": "Merged into the project repo\n"

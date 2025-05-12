@@ -33,16 +33,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25028",
       "author": "Justin Obara",
       "date": "2009-03-25T11:16:42.000-0400",
       "body": "Clean Up Parade 1.0\n"
     },
     {
+      "id": "25029",
       "author": "Justin Obara",
       "date": "2009-04-07T09:11:39.000-0400",
       "body": "Added/Updated copyright comment to the top of all of our js files.&#x20;\n\nThere appears to be licenses for the js files that we depend on\n"
     },
     {
+      "id": "25030",
       "author": "Michelle D'Souza",
       "date": "2011-01-13T16:50:10.528-0500",
       "body": "Reopening these issues in order to change the component to Release.&#x20;\n"

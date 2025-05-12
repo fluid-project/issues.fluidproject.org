@@ -37,26 +37,31 @@
   ],
   "comments": [
     {
+      "id": "17905",
       "author": "Justin Obara",
       "date": "2008-12-12T09:08:16.000-0500",
       "body": "Bug Parade 0.6 release\n"
     },
     {
+      "id": "17907",
       "author": "Jacob Farber",
       "date": "2008-12-12T15:02:46.000-0500",
       "body": "FF2 inline-block workaround\n"
     },
     {
+      "id": "17909",
       "author": "Jacob Farber",
       "date": "2008-12-12T15:10:15.000-0500",
       "body": "Added FF2 specific workaround for inline-block\n"
     },
     {
+      "id": "17911",
       "author": "Antranig Basman",
       "date": "2008-12-12T16:16:09.000-0500",
       "body": "This fix looks ok to me (the tabs display under FF2 - Windows), however, because of <https://fluidproject.atlassian.net/browse/FLUID-1758#icft=FLUID-1758>, there is still no drop marker\n"
     },
     {
+      "id": "17913",
       "author": "Justin Obara",
       "date": "2008-12-12T16:19:33.000-0500",
       "body": "Verified fix using\n\nFF2 (Mac OS 10.5, Win XP)\n"

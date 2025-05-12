@@ -35,16 +35,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17548",
       "author": "Anastasia Cheetham",
       "date": "2008-11-12T14:58:43.000-0500",
       "body": "This has been **started**, with\\\n<http://wiki.fluidproject.org/display/fluid/Subcomponents>\\\nI'm considering breaking it down into two pages, one aimed at component developers, one aimed at component users/integrators.\n\nAlso, any component that supports optional subcomponents (e.g. inline edit supporting undo) should document that fact in their own documentation.\n"
     },
     {
+      "id": "17550",
       "author": "Anastasia Cheetham",
       "date": "2009-01-05T12:50:20.000-0500",
       "body": "A draft has been started, at\\\n<http://wiki.fluidproject.org/display/fluid/Subcomponents>\\\nbut it needs more work.\n"
     },
     {
+      "id": "17552",
       "author": "Anastasia Cheetham",
       "date": "2009-02-19T11:32:32.000-0500",
       "body": "Duplicated by the 0.8 release task <https://fluidproject.atlassian.net/browse/FLUID-2232#icft=FLUID-2232>\n"

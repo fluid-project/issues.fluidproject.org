@@ -27,26 +27,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14258",
       "author": "Justin Obara",
       "date": "2009-09-22T10:56:58.000-0400",
       "body": "Bug Parade Infusion 1.1.2&#x20;\n"
     },
     {
+      "id": "14260",
       "author": "Jacob Farber",
       "date": "2009-09-22T10:57:43.000-0400",
       "body": "After the Lance Speelmon update, some class names needed to be refactored. Ensure the old names have been updated to the new ones (e.g. fl-list becomes fl-listmenu)\n"
     },
     {
+      "id": "14263",
       "author": "Justin Obara",
       "date": "2009-09-30T09:26:41.000-0400",
       "body": "I have reviewed these commits and tested them in the iphone simulator. They seem to be working.\n\nI did notice that the tags component and the demos don't seem to use the iPhone theme. Should they? Also the tags component doesn't seem to be properly styled in the artifact page.\n"
     },
     {
+      "id": "14265",
       "author": "Jacob Farber",
       "date": "2009-09-30T16:13:18.000-0400",
       "body": "fl-button has been added to the tags template, but will need heavy tweaking in order to look right everywhere\n"
     },
     {
+      "id": "14267",
       "author": "Justin Obara",
       "date": "2009-09-30T17:21:21.000-0400",
       "body": "I have reviewed the commits and they seem to be  okay. There looks to be some more work needed on components such as tags but there is another jira for that ( <https://fluidproject.atlassian.net/browse/FLUID-3218#icft=FLUID-3218> ). I have also tested the affected pages in the iphone simulator and they appear to look appropriate.\n"

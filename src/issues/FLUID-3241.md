@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18305",
       "author": "Mike Lam",
       "date": "2011-01-05T11:55:48.673-0500",
       "body": "Resolved in Infusion 1.3\n"

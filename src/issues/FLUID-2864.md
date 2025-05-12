@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16105",
       "author": "Antranig Basman",
       "date": "2009-06-01T15:15:27.000-0400",
       "body": "Added material to README.txt\n"
     },
     {
+      "id": "16106",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:17.449-0500",
       "body": "Closing issues that were fixed in 1.1\n"

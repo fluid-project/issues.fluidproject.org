@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11829",
       "author": "y z",
       "date": "2009-06-02T10:23:08.000-0400",
       "body": "Database server is set up for Linux and the wiki page with the set up steps : <http://wiki.fluidproject.org/display/fluid/Setting+Up+CouchDB>\n"
     },
     {
+      "id": "11830",
       "author": "Justin Obara",
       "date": "2009-11-10T10:41:10.000-0500",
       "body": "Closed as per previous comment\n"

@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26436",
       "author": "Gregor Moss",
       "date": "2018-06-25T11:20:16.639-0400",
       "body": "Confirmed issue persists in Chrome 67 on Windows 10.\n\nPossibly related: clicking the button in English will interrupt and stop the speaker, and clicking it once more will start it over. In Spanish, by contrast, clicking the button will immediately restart it without stopping it, every time.\n"
     },
     {
+      "id": "26437",
       "author": "Gregor Moss",
       "date": "2019-10-10T12:51:11.163-0400",
       "body": "This needs to be re-tested once the Orator can speak in Spanish 🙂\n"
     },
     {
+      "id": "26438",
       "author": "Gregor Moss",
       "date": "2020-04-13T20:37:06.059-0400",
       "body": "Issue persists in Chrome 81 on Windows 10\n"
     },
     {
+      "id": "26439",
       "author": "Justin Obara",
       "date": "2020-04-14T08:47:30.644-0400",
       "body": "Are there Spanish voices, speech synthesizers, installed on your machine? Also it might depend on which particular locale you are using. e.g. es-es, es-mx\n"

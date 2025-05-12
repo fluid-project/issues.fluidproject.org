@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20695",
       "author": "Justin Obara",
       "date": "2010-06-07T08:57:35.634-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "20696",
       "author": "Mike Lam",
       "date": "2011-01-05T15:24:42.190-0500",
       "body": "Keyboard navigation has been greatly improved with the new HTML5 mutli-file uploader.   ARIA live regions have also been added to provide better feedback on uploading progress.\n"

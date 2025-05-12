@@ -38,26 +38,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21861",
       "author": "Antranig Basman",
       "date": "2009-01-22T15:42:02.000-0500",
       "body": "Eli, could you comment on this issue and determine whether you still need more functionality from the InlineEdit/Undo combo? Cheers.\n"
     },
     {
+      "id": "21862",
       "author": "Eli Cochran",
       "date": "2009-05-05T11:31:46.000-0400",
       "body": "While not fixed. I did find a work around by attaching events to the elements themselves. Perhaps there is a better way to do it but this will do.&#x20;\n"
     },
     {
+      "id": "21863",
       "author": "Eli Cochran",
       "date": "2009-05-05T11:32:39.000-0400",
       "body": "sorry should not have resolved fixed. reopening to resolve will not fix\n"
     },
     {
+      "id": "21864",
       "author": "Eli Cochran",
       "date": "2009-05-05T11:32:55.000-0400",
       "body": "should have been \"Won't fix\"\n"
     },
     {
+      "id": "21865",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:47.852-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23170",
       "author": "Jacob Farber",
       "date": "2009-06-02T11:32:54.000-0400",
       "body": "Do we see a common approach? Do they all suffer from the same limitations?\n"
     },
     {
+      "id": "23171",
       "author": "Jacob Farber",
       "date": "2009-06-29T12:03:18.000-0400",
       "body": "Some of the things we're finding is the combined use of javascript  and CSS3 for animations.\\\nThere are issues with existing frameworks that prevent exhaustive research: prohibitive licenses, code obfuscation, broken code, etc\n"

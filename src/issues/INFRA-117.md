@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26012",
       "author": "Giovanni Tirloni",
       "date": "2018-02-19T14:14:51.584-0500",
       "body": "This is a regression is Packer 1.2.0: <https://github.com/hashicorp/packer/issues/5885>\n"

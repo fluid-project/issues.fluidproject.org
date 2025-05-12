@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16404",
       "author": "Eli Cochran",
       "date": "2009-05-18T16:25:39.000-0400",
       "body": "The first two of these are done. Still considering whether there is time to add the third.\n"
     },
     {
+      "id": "16406",
       "author": "Colin Clark",
       "date": "2010-03-30T14:01:13.000-0400",
       "body": "The Cancel and Done buttons in the Image Gallery are indeed working, as are all the other events. This one is fixed.&#x20;\n"

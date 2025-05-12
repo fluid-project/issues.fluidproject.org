@@ -33,26 +33,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13349",
       "author": "Michelle D'Souza",
       "date": "2013-07-30T14:47:57.494-0400",
       "body": "Here is the nightly build of the Infusion Builder: <http://build.fluidproject.org/infusionBuilder/html/InfusionBuilder.html>\\\nand the tests for it: <http://build.fluidproject.org/infusionBuilder/tests/html/InfusionBuilder-tests.html>\n"
     },
     {
+      "id": "13351",
       "author": "heidi valles",
       "date": "2013-07-30T15:57:08.839-0400",
       "body": "<https://github.com/fluid-project/builder/pull/3>\n"
     },
     {
+      "id": "13353",
       "author": "Justin Obara",
       "date": "2013-09-06T14:03:20.595-0400",
       "body": "The pull request was merged\n"
     },
     {
+      "id": "13355",
       "author": "Michelle D'Souza",
       "date": "2013-12-04T13:33:37.271-0500",
       "body": "The tests for the builder are still failing.\n"
     },
     {
+      "id": "13357",
       "author": "Justin Obara",
       "date": "2014-03-02T14:29:09.189-0500",
       "body": "The online builder tool has been taken down. Builds should now be handled by the grunt build script.\n"

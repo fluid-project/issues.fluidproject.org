@@ -31,16 +31,19 @@
   ],
   "comments": [
     {
+      "id": "23295",
       "author": "Justin Obara",
       "date": "2010-01-04T16:11:28.000-0500",
       "body": "Bug Parade Builder 1.1.2&#x20;\n"
     },
     {
+      "id": "23296",
       "author": "Laurel Williams",
       "date": "2010-01-05T13:01:46.000-0500",
       "body": "This patch alters the deploy script to edit the cleanup.sh to be an executable file. It also changes cleanup.sh to fix the directory names to the newer \"infusionBuilder\" format.\n"
     },
     {
+      "id": "23297",
       "author": "Justin Obara",
       "date": "2010-01-06T12:11:37.000-0500",
       "body": "Committed Laurel's patch (FLUID-3458-1.patch.txt) which changes the buildscripts to make the cleanup script executable and also adjusts the cleanup script to cleanup the proper directory (due to a name change in a previous commit).\n"

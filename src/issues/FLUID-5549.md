@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20797",
       "author": "Anastasia Cheetham",
       "date": "2015-04-14T15:39:08.674-0400",
       "body": "Merged at 399fc7dbb16a452a2681452879677c1918bf45bd\n"
     },
     {
+      "id": "20798",
       "author": "Anastasia Cheetham",
       "date": "2015-04-16T16:22:25.116-0400",
       "body": "We're going to move \"latest\" to \"development\"\n"
     },
     {
+      "id": "20799",
       "author": "Anastasia Cheetham",
       "date": "2015-04-17T10:39:40.203-0400",
       "body": "Updated to development and merged at 1ce8a1ef33fd32bae32a0a8012a376bad2676a46\n"

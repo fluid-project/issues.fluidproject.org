@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10938",
       "author": "beth.mejsullivan",
       "date": "2014-06-18T13:42:06.950-0400",
       "body": "[http://validator.idpf.org](http://validator.idpf.org/) - International Digital Publishing Forum (IDPF) EPUB Validator Beta (uses EpubCheck)\\\n<https://github.com/idpf/epubcheck> - EpubCheck an initiative that is managed by the IDPF\n\nAdded to the wiki. Epubcheck seems to be a standard, but have yet to work with it myself. Maybe test out later when attempting to create an epub document.\n"

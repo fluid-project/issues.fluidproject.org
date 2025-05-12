@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12632",
       "author": "Colin Clark",
       "date": "2010-02-08T17:58:13.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12633",
       "author": "Justin Obara",
       "date": "2010-02-16T11:28:12.000-0500",
       "body": "Worked with yura to fix up the styling. Modified the image a bit to remove the transparent padding. And fixed up the positioning for the grid and list views. Also added the media badge to the browse and catalogue pages.\n"
     },
     {
+      "id": "12634",
       "author": "James Yoon",
       "date": "2010-02-22T17:26:26.000-0500",
       "body": "Tested on 02/22/2010, 4:52 PM EST.\n\nLooks good to me. Issue closed.\n"

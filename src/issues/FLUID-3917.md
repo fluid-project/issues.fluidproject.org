@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15112",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T13:00:03.415-0400",
       "body": "James, could you let us know what **should** be happening with the highlights?\n"

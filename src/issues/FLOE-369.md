@@ -51,16 +51,19 @@
   ],
   "comments": [
     {
+      "id": "11355",
       "author": "Kaye Mao",
       "date": "2015-06-03T10:33:08.859-0400",
       "body": "If the text size is continually decreased, eventually the nav bar icons from step 6 onwards will shift to the left until they completely disappear.&#x20;\n"
     },
     {
+      "id": "11356",
       "author": "Cindy Li",
       "date": "2015-06-03T10:45:04.372-0400",
       "body": "Issued a pull request: <https://github.com/fluid-project/first-discovery/pull/82>\n"
     },
     {
+      "id": "11357",
       "author": "Justin Obara",
       "date": "2015-06-03T13:28:02.089-0400",
       "body": "Merge pull request ( <https://github.com/fluid-project/first-discovery/pull/82> ) into the project repo at 7fbc298d282045ec966296e1f319d381f9c45120\n"

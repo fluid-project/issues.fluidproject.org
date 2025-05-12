@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23194",
       "author": "Justin Obara",
       "date": "2018-07-03T14:07:20.802-0400",
       "body": "We have started to use CLA Assistant to track CLAs for our GitHub repos.\n\n \n"

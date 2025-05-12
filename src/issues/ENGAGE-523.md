@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12744",
       "author": "Justin Obara",
       "date": "2010-03-17T13:23:23.000-0400",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12745",
       "author": "Justin Obara",
       "date": "2010-03-23T16:32:37.000-0400",
       "body": "Added the ability for the navlist to map data for its model on its own.&#x20;\n"
     },
     {
+      "id": "12746",
       "author": "Justin Obara",
       "date": "2010-03-24T10:11:32.000-0400",
       "body": "Assigned to Antranig for review\n"
     },
     {
+      "id": "12747",
       "author": "Antranig Basman",
       "date": "2010-03-25T08:42:26.000-0400",
       "body": "I don't agree that this functionality should be part of the component - and certainly shouldn't be implemented by custom code delivered as part of the component file. In general, responsibility for mapping models really should fall upon the component's user and not on the component - but we should supply framework-standard functionality to help with this. In general we have developed a dangerous profusion of custom model-mapping schemes within Engage and I suggest that this implementation should probably be removed or migrated to a utility file pending a more thorough solution.\n"

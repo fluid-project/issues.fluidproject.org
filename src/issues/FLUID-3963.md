@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14036",
       "author": "Justin Obara",
       "date": "2010-12-20T22:20:43.846-0500",
       "body": "It could be that jQuery's mouse dragging support doesn't work in IE 9\n"
     },
     {
+      "id": "14041",
       "author": "Michelle D'Souza",
       "date": "2014-04-02T15:45:17.130-0400",
       "body": "This is no longer an issue.&#x20;\n"

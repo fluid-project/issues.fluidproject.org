@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26392",
       "author": "Gregor Moss",
       "date": "2018-12-18T14:44:01.540-0500",
       "body": "Consider whether to keep query string handling around as a backwards-compatibility measure. There are some stories which may be created and shared on social media. This implies that we will be hosting the tool, so this may not be desired.\n"

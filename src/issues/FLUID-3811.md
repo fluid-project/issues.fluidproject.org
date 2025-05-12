@@ -42,36 +42,43 @@
   ],
   "comments": [
     {
+      "id": "15416",
       "author": "Justin Obara",
       "date": "2010-10-20T09:55:56.059-0400",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "15419",
       "author": "Jonathan Hung",
       "date": "2010-12-08T12:39:49.803-0500",
       "body": "The accepted solution to disable IE caching does not work for our demo. <http://support.microsoft.com/kb/234067>\n\nTurning off caching in all browsers (<http://stackoverflow.com/questions/1341089/using-meta-tags-to-turn-off-caching-in-all-browsers>) doesn't have any effect either.\n\nOne solution suggested to put the META tags in a HEAD element after the closing BODY element, but this did not work (not to mention causing bad structure).\n"
     },
     {
+      "id": "15422",
       "author": "Jonathan Hung",
       "date": "2010-12-08T12:54:31.386-0500",
       "body": "I wonder if this problem is caused by the fact the text field is not inside a FORM element? More investigation is required.\n"
     },
     {
+      "id": "15425",
       "author": "heidi valles",
       "date": "2010-12-13T13:13:37.447-0500",
       "body": "some options here: <http://stackoverflow.com/questions/52213/browser-refresh-behaviour>\n"
     },
     {
+      "id": "15428",
       "author": "Jonathan Hung",
       "date": "2010-12-17T12:45:56.209-0500",
       "body": "Screenshot of the builder page after selection was made previously and the page is refreshed. Checkboxes are cached, but download is disabled and no selection styling is applied.\n"
     },
     {
+      "id": "15432",
       "author": "Jonathan Hung",
       "date": "2010-12-17T12:48:19.179-0500",
       "body": "This could be related to <https://fluidproject.atlassian.net/browse/FLUID-3845#icft=FLUID-3845> - disabling autocomplete may fix this problem in IE.\n"
     },
     {
+      "id": "15435",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T13:31:15.255-0400",
       "body": "I can't reproduce either or these issued. If they can be reproduced, they should probably be two separate issues.\n"

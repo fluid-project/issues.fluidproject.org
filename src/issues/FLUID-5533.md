@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24202",
       "author": "Justin Obara",
       "date": "2017-01-19T12:41:22.452-0500",
       "body": "We've gone away from the idea of a floating button to open the UIO panel on mobile, instead we'll recommend either a bar at the top of the page, or a button in the app's / sites's settings or menu. This should all be configurable by an integrator.&#x20;\n"

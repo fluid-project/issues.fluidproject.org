@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25594",
       "author": "Justin Obara",
       "date": "2019-10-31T13:34:17.685-0400",
       "body": "In looking into this further, there is a question of how to best make use of the split out auxiliary schema grades. The biggest hurdle is with UIO which makes use of a pre-assembled grade. (See: <https://github.com/fluid-project/infusion/blob/master/src/components/uiOptions/js/UIOptions.js#L19-L21> ). This means that it is already too late to change the preferences by an integrator with a schema. \n\nThis has me thinking though that we might be able to have an invoker as a grade. It would call fluid.prefs.builder and return the assembled grade as a grade name to UIO. Actually this could replace fluid.prefs.create.\n\nWe should also explore the possibility of just replacing fluid.prefs.builder, fluid.prefs.create, and fluid.uiOptions.prefsEditor all with a single component that took care of all of these things. In this case all prefs editors would be created with the same component, but with different configuration for the auxiliary schemas used.\n"

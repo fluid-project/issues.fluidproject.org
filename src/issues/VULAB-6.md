@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27394",
       "author": "Former user",
       "date": "2008-09-17T22:54:38.000-0400",
       "body": "\\#SPAM#\n"
     },
     {
+      "id": "27395",
       "author": "Blake E",
       "date": "2008-10-20T10:56:14.000-0400",
       "body": "this is a large issue so I won't be associating it directly with any iteration as it is a greater goal of the beta release and a ongoing issue for entire project and all issues to follow.\n"
     },
     {
+      "id": "27396",
       "author": "Blake E",
       "date": "2008-11-03T11:49:53.000-0500",
       "body": "depreciated for <https://fluidproject.atlassian.net/browse/VULAB-69#icft=VULAB-69> (investigation into framework)\n"

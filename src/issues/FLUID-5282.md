@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23147",
       "author": "Colin Clark",
       "date": "2014-03-18T20:51:57.436-0400",
       "body": "I have reviewed, tested, and pushed this fix to the project repo's master branch at revision 527d757fe8a1020a9356416e49791c7c925b8b3d.\n\nCindy Li can you confirm that this fix resolves the issue and close it if so?\n"
     },
     {
+      "id": "23148",
       "author": "Cindy Li",
       "date": "2014-03-25T10:11:07.786-0400",
       "body": "Confirmed the merged fix does resolve the issue.\n"

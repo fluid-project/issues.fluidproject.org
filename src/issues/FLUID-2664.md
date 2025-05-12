@@ -32,21 +32,25 @@
   ],
   "comments": [
     {
+      "id": "16947",
       "author": "y z",
       "date": "2009-05-19T16:10:36.000-0400",
       "body": "This patch removes redundant tiny\\_mce editor from the repository, all dependencies are fixed by the patch(v3) for <https://fluidproject.atlassian.net/browse/FLUID-1945#icft=FLUID-1945>.\n"
     },
     {
+      "id": "16948",
       "author": "Justin Obara",
       "date": "2009-05-22T17:07:21.000-0400",
       "body": "Committed Yura's patch to remove Tiny\\_MCE from the repository. The only change was to remove a reference to the tiny\\_mce directory from the README.txt file\n"
     },
     {
+      "id": "16949",
       "author": "Colin Clark",
       "date": "2010-04-06T09:58:19.000-0400",
       "body": "I punted FCKEditor from the repository at r9803. This one should be good to go.\n"
     },
     {
+      "id": "16950",
       "author": "Justin Obara",
       "date": "2010-04-06T10:15:09.000-0400",
       "body": "Doesn't look like this has caused any regressions.\n"

@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21185",
       "author": "Anastasia Cheetham",
       "date": "2009-02-18T15:08:11.000-0500",
       "body": "Not sure about licensing on the jquery-tests scripts.\n"
     },
     {
+      "id": "21186",
       "author": "Anastasia Cheetham",
       "date": "2009-02-18T15:11:11.000-0500",
       "body": "Colin confirms: licensing on jquery-tests scripts should be as is (i.e. different than the rest of fluid).\n"
     },
     {
+      "id": "21187",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:22.138-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

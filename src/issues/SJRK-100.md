@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26246",
       "author": "Gregor Moss",
       "date": "2018-06-06T19:09:19.479-0400",
       "body": "The view preference is now saved (tests should be added, see <https://fluidproject.atlassian.net/browse/SJRK-140#icft=SJRK-140>)\n"

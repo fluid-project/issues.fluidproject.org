@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "12731",
       "author": "Svetoslav Nedkov",
       "date": "2010-02-25T07:22:09.000-0500",
       "body": "Patch <https://fluidproject.atlassian.net/browse/ENGAGE-456#icft=ENGAGE-456>.patch adds tests for verifying that the My Collection send email feature sends the correct parameters to the server side script.\n"
     },
     {
+      "id": "12732",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:32.781-0500",
       "body": "The repository has been archived.\n"

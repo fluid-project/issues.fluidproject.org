@@ -33,41 +33,49 @@
   ],
   "comments": [
     {
+      "id": "24313",
       "author": "Colin Clark",
       "date": "2011-01-20T12:11:47.740-0500",
       "body": "At the moment, I suspect the attribute is ignored because we're specifying it in an invalid format. The \"accept\" attribute should contain a list of MIME types, not file extensions.\n"
     },
     {
+      "id": "24316",
       "author": "Mike Lam",
       "date": "2011-01-25T13:08:34.364-0500",
       "body": "Convert all file types from the queue settings into valid HTML5 mime types.\n"
     },
     {
+      "id": "24319",
       "author": "Mike Lam",
       "date": "2011-01-25T13:13:02.939-0500",
       "body": "Renamed patch to the appropriate JIRA\n"
     },
     {
+      "id": "24320",
       "author": "Mike Lam",
       "date": "2011-01-25T13:17:28.343-0500",
       "body": "Awaiting review.\n"
     },
     {
+      "id": "24323",
       "author": "Mike Lam",
       "date": "2011-02-07T13:28:05.444-0500",
       "body": "I have refactored the patch originally attached to the JIRA.   The file type to mime type conversion only needs to happen once.   A pull request has been made on gitHub.\n"
     },
     {
+      "id": "24325",
       "author": "Mike Lam",
       "date": "2011-02-08T14:20:14.665-0500",
       "body": "After much discussion, we have decided that parsing formatted strings is not the proper approach to solving this problem.  MIME types are preferred over standard file types and is more desirable to be the default format for file inclusion.  An array of MIME types would work better.\n"
     },
     {
+      "id": "24327",
       "author": "Justin Obara",
       "date": "2011-05-17T09:50:10.257-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24329",
       "author": "Mike Lam",
       "date": "2011-05-17T13:51:05.676-0400",
       "body": "The solution has been reviewed and pushed into the repository. &#x20;\n\nThe effects of this fix are not evident yet.  However, when modern HTML5 browsers properly interpret and support MIME types, this solution will automatically take effect. &#x20;\n"

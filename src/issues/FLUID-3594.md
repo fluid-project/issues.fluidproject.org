@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15701",
       "author": "James Yoon",
       "date": "2010-04-06T13:19:41.000-0400",
       "body": "Issue has to do with the js key code. In Safari, ctrl-m and \"Enter\" are both key code 13 on key press, whereas in Firefox they are separate key codes (109 and 13, respectively).\n"
     },
     {
+      "id": "15703",
       "author": "Justin Obara",
       "date": "2011-01-11T10:49:26.979-0500",
       "body": "No longer have this demo. Issue appears to be with Safari. This can be demonstrated by testing out the keystrokes on this site ( <http://asquare.net/javascript/tests/KeyCode.html> ).\n"

@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27324",
       "author": "Blake E",
       "date": "2008-11-04T16:32:49.000-0500",
       "body": "this issue grew a little too large to be completed in this iteration, and with the bugs that arose it's being pushed to vulab7\n"
     },
     {
+      "id": "27325",
       "author": "Blake E",
       "date": "2008-11-12T13:00:23.000-0500",
       "body": "I've added a pop-up style system to the activation style. I'm re-adding the date deactivation and the manual deactivation to the activated project options.\\\n(creating specific issue)\n"

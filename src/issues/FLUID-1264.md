@@ -43,11 +43,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13065",
       "author": "Daphne Ogle",
       "date": "2008-08-21T20:05:18.000-0400",
       "body": "iteration19\n"
     },
     {
+      "id": "13066",
       "author": "Daphne Ogle",
       "date": "2008-10-13T21:01:31.000-0400",
       "body": "Won't fix at this point.  We may decide we need to revisit simple text and dropdown to identify and flesh our primary and secondary scenarios but for now we'll close and move forward since we are so far along in design.\n\nAlso, primary & secondary scenarios should be brought into design process for rich text editing.\n"

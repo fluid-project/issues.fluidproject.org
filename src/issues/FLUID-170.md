@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18880",
       "author": "Shaw-Han Liem",
       "date": "2008-02-04T10:50:20.000-0500",
       "body": "iteration01\n"
     },
     {
+      "id": "18884",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:50.953-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

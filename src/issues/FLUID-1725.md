@@ -38,11 +38,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17144",
       "author": "Eli Cochran",
       "date": "2008-10-29T14:25:00.000-0400",
       "body": "appears to be fixed\n"
     },
     {
+      "id": "17145",
       "author": "Justin Obara",
       "date": "2008-10-29T14:28:49.000-0400",
       "body": "I believe it was fixed with r5890\n"

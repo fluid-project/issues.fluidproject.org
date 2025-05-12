@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21007",
       "author": "Justin Obara",
       "date": "2008-10-01T15:06:37.000-0400",
       "body": "Tested that release is working using:\n\nFF3, IE6 (Win XP)\n"
     },
     {
+      "id": "21008",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:22.956-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

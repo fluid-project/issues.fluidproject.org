@@ -42,21 +42,25 @@
   ],
   "comments": [
     {
+      "id": "16887",
       "author": "Joseph Vernuccio",
       "date": "2008-09-25T15:36:22.000-0400",
       "body": "screenshot - 1 showing the highlighted inline edit field after deleting all input.&#x20;\n"
     },
     {
+      "id": "16889",
       "author": "Joseph Vernuccio",
       "date": "2008-09-25T15:37:01.000-0400",
       "body": "Highlight of field seems to be removed if you mouse over it after hitting enter.\n"
     },
     {
+      "id": "16891",
       "author": "Justin Obara",
       "date": "2009-03-04T13:46:12.000-0500",
       "body": "This will happen any time you use the \"enter\" key to leave edit mode and don't have the mouse move on and off  it.\n"
     },
     {
+      "id": "16894",
       "author": "Justin Obara",
       "date": "2014-07-07T16:03:21.126-0400",
       "body": "This demo is no longer exists\n"

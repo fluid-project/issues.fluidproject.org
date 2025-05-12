@@ -32,16 +32,19 @@
   ],
   "comments": [
     {
+      "id": "20306",
       "author": "Justin Obara",
       "date": "2010-11-19T14:02:57.267-0500",
       "body": "Currently when something is dragged over a locked element and dropped, it will go to the closest valid drop point. That is likely what is being displayed in the screenshot.\n"
     },
     {
+      "id": "20307",
       "author": "Jonathan Hung",
       "date": "2010-11-19T15:47:29.405-0500",
       "body": "To make the interaction clearer to the user, the proposed solution is to remove the warning message and display the nearest drop marker if the user is hovering over a locked module during a drag and drop action.\n\nHowever, by removing the warning message, we are removing the demonstration of a Layout Reorderer feature. Thoughts?\n"
     },
     {
+      "id": "20308",
       "author": "Jonathan Hung",
       "date": "2010-11-19T16:19:27.695-0500",
       "body": "More user testing is required to determine if this interaction is confusing or not. Changing the issue to reflect this.\n"

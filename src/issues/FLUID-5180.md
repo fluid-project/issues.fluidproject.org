@@ -40,31 +40,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23098",
       "author": "Justin Obara",
       "date": "2013-10-15T15:08:12.898-0400",
       "body": "Discussion in <http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-10-15>\n"
     },
     {
+      "id": "23099",
       "author": "Justin Obara",
       "date": "2013-10-16T09:43:43.257-0400",
       "body": "The above strategy has issues when dealing with prefixed message keys. For example the ones used in contrast <https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/messages/contrast.json>\n\nThese are prefixed because they correspond to messages that should be used in an array of strings.&#x20;\n"
     },
     {
+      "id": "23101",
       "author": "Antranig Basman",
       "date": "2013-10-16T15:11:03.176-0400",
       "body": "Hi Justin - I suggest you adopt a different prefixing character for your strings, for example the hyphen \"-\" that we use in our CSS class names. Even if we were to adopt the escaping parser for these EL expressions, it would mean an unsightly and confusing escaping of your existing prefixes as for example contrast\\\\.bw etc.\n"
     },
     {
+      "id": "23104",
       "author": "Justin Obara",
       "date": "2013-10-17T13:19:17.837-0400",
       "body": "Antranig, I took your suggestion and changed the prefix to \"-\" so now we would have something like \"contrast-wb\".\n\nHowever I'm having trouble with the IoC resolution. If I try to resolve the values in the strings block, I get an error that the messageResolver doesn't exist. If I try to resolve it in the protoTree, I'm getting the string literal instead of the expanded value. (for optionnames).\\\n<http://pastie.org/private/hudscqyg1vl5zp59smlw>\n"
     },
     {
+      "id": "23106",
       "author": "Justin Obara",
       "date": "2013-10-18T13:11:56.706-0400",
       "body": "Submitted pull request <https://github.com/fluid-project/infusion/pull/419>\n"
     },
     {
+      "id": "23107",
       "author": "Justin Obara",
       "date": "2013-10-28T08:49:29.606-0400",
       "body": "pull request merged at 861d635d56c7546c764d23cf40e7f96e85516b17\n"

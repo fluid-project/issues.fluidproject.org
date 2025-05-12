@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12329",
       "author": "Justin Obara",
       "date": "2010-02-10T13:44:29.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12330",
       "author": "Justin Obara",
       "date": "2010-02-10T13:51:33.000-0500",
       "body": "On line 144 there was a closing bracket in the wrong spot, so localPath wasn't being sent along. Which create a path like .../html/undefined.&#x20;\n"
     },
     {
+      "id": "12331",
       "author": "Colin Clark",
       "date": "2010-02-12T14:25:46.000-0500",
       "body": "I've reviewed Justin's fix for this issue and it looks good and works. +1 for inclusion in Engage 0.3b\n"

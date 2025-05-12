@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18437",
       "author": "Michelle D'Souza",
       "date": "2008-04-07T13:49:08.000-0400",
       "body": "This is because the example permissions in the portlets.js file allows for moving portlets of higher precedence below portlets with no precedence.&#x20;\n"
     },
     {
+      "id": "18439",
       "author": "Michelle D'Souza",
       "date": "2008-04-28T13:49:58.000-0400",
       "body": "This example has been moved to the 'manual' tests area and is only for development purposes.&#x20;\n"

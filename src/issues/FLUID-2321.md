@@ -33,36 +33,43 @@
   ],
   "comments": [
     {
+      "id": "13482",
       "author": "Justin Obara",
       "date": "2009-03-09T09:17:55.000-0400",
       "body": "'screenshot-1' shows the page links displayed vertically\n"
     },
     {
+      "id": "13484",
       "author": "Justin Obara",
       "date": "2009-03-12T12:05:52.000-0400",
       "body": "Bug Parade 1.0 release\n"
     },
     {
+      "id": "13486",
       "author": "Jacob Farber",
       "date": "2009-03-17T14:05:51.000-0400",
       "body": "Commented out the table cells used for alignment, used some floats in overrides.css to put it on one line.\n"
     },
     {
+      "id": "13488",
       "author": "Anastasia Cheetham",
       "date": "2009-03-20T16:53:16.000-0400",
       "body": "I've chatted with Jacob about this. The fix looks good, but the commented-out tables in the sample HTML should actually be removed.\n"
     },
     {
+      "id": "13490",
       "author": "Justin Obara",
       "date": "2009-03-23T09:11:02.000-0400",
       "body": "The commented out code should be removed\n"
     },
     {
+      "id": "13493",
       "author": "Anastasia Cheetham",
       "date": "2009-03-23T16:07:20.000-0400",
       "body": "The commented code has been removed, and the HTML looks lovely now.\n"
     },
     {
+      "id": "13495",
       "author": "Justin Obara",
       "date": "2009-03-23T16:18:44.000-0400",
       "body": "Verified fix using:\n\nFF2 (Mac OS 10.5, Win XP)&#x20;\n"

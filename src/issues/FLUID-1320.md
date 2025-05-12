@@ -49,36 +49,43 @@
   ],
   "comments": [
     {
+      "id": "14158",
       "author": "Anastasia Cheetham",
       "date": "2008-09-04T12:04:29.000-0400",
       "body": "Interesting. This will actually be the case any time the text that is typed is the same as the 'empty field' invitation text. If the invitation text is different than the default \"Click here to edit,\" then you would have to type the different text to see this bug. You can try this on the manual test page:\\\n<http://build.fluidproject.org/fluid/tests/fluid-tests/manual/inline-edit/InlineEdit.html>\n\nThe problem is caused by the way the inline edit decides whether or not the field contains text that the user typed, or the invitation text. It compares the text to the invitation text, and if they are the same, it assumes that the invitation text is there because the user left the field empty.\n"
     },
     {
+      "id": "14160",
       "author": "Justin Obara",
       "date": "2009-03-18T11:08:20.000-0400",
       "body": "My 1st Bug\n"
     },
     {
+      "id": "14162",
       "author": "Justin Obara",
       "date": "2009-07-27T16:20:13.000-0400",
       "body": "Bug Parade 1.1.1 release\n"
     },
     {
+      "id": "14164",
       "author": "y z",
       "date": "2009-08-06T10:06:41.000-0400",
       "body": "Patch fixes the error with Click here to edit&#x20;\n"
     },
     {
+      "id": "14166",
       "author": "Antranig Basman",
       "date": "2009-08-06T19:56:45.000-0400",
       "body": "Committed to trunk and branch - thanks for patch.\n"
     },
     {
+      "id": "14168",
       "author": "y z",
       "date": "2009-08-07T16:24:39.000-0400",
       "body": "added and fixed test cases for inline edit\n"
     },
     {
+      "id": "14170",
       "author": "Justin Obara",
       "date": "2009-08-08T10:27:46.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, FF3.5, Opera 9.6, Safari 3, Safari 4 (Mac OS 10.5)\\\nFF2, FF3, IE7, Opera 9.6 (Win XP)\n"

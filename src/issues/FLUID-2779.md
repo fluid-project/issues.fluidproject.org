@@ -45,16 +45,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25228",
       "author": "sparsh paliwal",
       "date": "2016-03-02T15:16:20.290-0500",
       "body": "Hi I am new to infusion. I guess to solve this bug we can simply use css cursor property when :active. But for the part prev/next links in Pager, from my basic understanding of infusion we need to make a event for previousNext subcomponent <https://wiki.fluidproject.org/display/docs/Pager+API#PagerAPI-PreviousNextsubcomponent> which would solve both the things for greying out(<https://fluidproject.atlassian.net/browse/FLUID-3921#icft=FLUID-3921>) and putting the arrow, and not the hand in the prev/next link.&#x20;\n\nI am sorry if this is a basic question I have tried reading tutorial for infusion and Event System and this is what I have understand, please help me get on right path if I am wrong.\n"
     },
     {
+      "id": "25229",
       "author": "Justin Obara",
       "date": "2016-03-03T08:40:08.420-0500",
       "body": "sparsh paliwal I've updated the description to include a link to pager demo. The parent of the previous/next link gets a class \"fl-pager-disabled\" added to it when it should be disabled. The active page link gets a class of \"fl-pager-currentPage\" added to it. You should be able to make use of these classes to create the appropriate styles needed.&#x20;\n"
     },
     {
+      "id": "25230",
       "author": "sparsh paliwal",
       "date": "2016-03-03T09:40:26.433-0500",
       "body": "@Justin Thank you very much. I have sent PR for the fix of this issue and FUILD-3921.\n\n<https://github.com/fluid-project/infusion/pull/674>\n"

@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12088",
       "author": "Justin Obara",
       "date": "2010-03-19T09:59:47.000-0400",
       "body": "Changed the way that the initial opening / closing of drawers is handled so that events are no longer fired on init.\n"

@@ -75,11 +75,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22959",
       "author": "Gregor Moss",
       "date": "2018-07-27T14:50:00.449-0400",
       "body": "We have added a top-level option (\"defaultLocale\") to UIO to set the default locale for the entire component.\n"
     },
     {
+      "id": "22960",
       "author": "Justin Obara",
       "date": "2018-09-04T15:36:04.649-0400",
       "body": "Merged PR ( <https://github.com/fluid-project/infusion/pull/917> ) into project repo at 780f34d7b213d43a9d2bd4ba561f23c74a47aaa9\n"

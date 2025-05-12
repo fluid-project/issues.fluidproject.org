@@ -36,26 +36,31 @@
   ],
   "comments": [
     {
+      "id": "27684",
       "author": "Blake E",
       "date": "2009-01-29T13:19:15.000-0500",
       "body": "patch that should clear out the trunk/web.\n\nPLEASE REVIEW (I don't wanna break anything)\n\nNote: the trunk/web has been tagged AND branched by dmakalsky.\n"
     },
     {
+      "id": "27685",
       "author": "Colin Clark",
       "date": "2009-01-29T14:19:31.000-0500",
       "body": "Blake pointed out that some directories and files didn't get removed. I'll fix this.\n"
     },
     {
+      "id": "27686",
       "author": "Colin Clark",
       "date": "2009-01-29T14:22:52.000-0500",
       "body": "I've deleted the last remaining directories. A blank slate for Blake to rock the framework with.\n"
     },
     {
+      "id": "27687",
       "author": "Blake E",
       "date": "2009-01-29T14:23:49.000-0500",
       "body": "vulab15\n"
     },
     {
+      "id": "27688",
       "author": "Blake E",
       "date": "2009-01-29T14:24:06.000-0500",
       "body": "huzzah! CakePHP here I come!\n"

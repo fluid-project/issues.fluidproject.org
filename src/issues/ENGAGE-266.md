@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12068",
       "author": "Justin Obara",
       "date": "2010-02-24T14:50:46.000-0500",
       "body": "description not used in browse anymore\n"

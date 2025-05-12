@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24964",
       "author": "Justin Obara",
       "date": "2010-05-07T14:06:21.451-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "24965",
       "author": "Mike Lam",
       "date": "2011-01-05T16:07:21.194-0500",
       "body": "Resolved for Infusion 1.3 release.\n"

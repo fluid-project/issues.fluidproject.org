@@ -34,6 +34,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26548",
       "author": "Cindy Li",
       "date": "2020-03-02T15:57:53.652-0500",
       "body": "[The pull request](https://github.com/fluid-project/sjrk-story-telling/pull/56) that fixes this issue has been merged into the project repo master branch at [this commit](https://github.com/fluid-project/sjrk-story-telling/commit/94a55d18c52e605dc9c7292fd0bc75b6d8887b03).\n"

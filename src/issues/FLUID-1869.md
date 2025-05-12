@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16049",
       "author": "Jacob Farber",
       "date": "2009-06-05T16:10:35.000-0400",
       "body": "This should be more of a configuration option\n"
     },
     {
+      "id": "16051",
       "author": "Colin Clark",
       "date": "2011-01-27T19:18:10.588-0500",
       "body": "This issue was resolved at r10479 by removing the Scroller component altogether and hooking up scrollability using IoC, so that it can be easily replaced.\n"
     },
     {
+      "id": "16053",
       "author": "Colin Clark",
       "date": "2011-01-27T19:18:28.158-0500",
       "body": "Fixed with the removal of the Scroller component\n"

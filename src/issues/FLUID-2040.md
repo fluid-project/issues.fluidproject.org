@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16580",
       "author": "Allison Bloodworth",
       "date": "2008-12-19T18:04:50.000-0500",
       "body": "iteration24\n"
     },
     {
+      "id": "16581",
       "author": "Allison Bloodworth",
       "date": "2009-01-06T11:51:11.000-0500",
       "body": "We've decided to do 2-3 tests, focusing on the time picking part of the interaction: \\\n1\\) Paper prototype of the tabbed date-time picker with a default date already populated, probably with separate date & time fields\\\n2\\) Paper prototype of the tabbed date-time picker without a default date, probably with a single date-time field\\\n3\\) Interactive prototype of the rolling time picker if the one super-critical issue (AM/PM not working properly) is fixed\n"

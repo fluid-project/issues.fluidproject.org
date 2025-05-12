@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24261",
       "author": "Justin Obara",
       "date": "2013-11-27T15:46:52.710-0500",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/439> ) at 73889463d799973a3a858c921d7bd2f9361c5906\n"
     },
     {
+      "id": "24262",
       "author": "Michelle D'Souza",
       "date": "2013-11-27T16:08:05.777-0500",
       "body": "Merged pull request ( <https://github.com/fluid-project/prefsEditors/pull/58> ) at 902dd27de37c6f8879694829ee59175d951dd0e0\n"
     },
     {
+      "id": "24264",
       "author": "Antranig Basman",
       "date": "2016-05-03T22:32:51.494-0400",
       "body": "The tests for this issue were found to be very faulty whilst tracking down sites of misuse of jqUnit.assertDeepEq while resolving <https://fluidproject.atlassian.net/browse/FLUID-5901#icft=FLUID-5901>. They include the following problems:\n\ni) registering an onCreate listener after a component has been created\\\nii) issuing \"expect\" calls out of line with respect to the sequence of actual test fixtures\\\niii) making a faulty call to assertDeepEq with simply a value of \"false\" which counted as a pass as a result of <https://fluidproject.atlassian.net/browse/FLUID-5901#icft=FLUID-5901>\\\niv) Issuing inline configuration to a creator function rather than defining a grade\n\nThe test was commented out as part of the fix for <https://fluidproject.atlassian.net/browse/FLUID-5901#icft=FLUID-5901> and needs to be rewritten\n"

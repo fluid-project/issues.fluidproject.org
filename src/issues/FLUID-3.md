@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17797",
       "author": "Antranig Basman",
       "date": "2007-06-27T09:47:48.000-0400",
       "body": "I'm not convinced we need to supply localised text outside of a server environment?\\\nThe standalone distribution is only for previewing and test, and any strings which are seen there are largely for \"bulk\" which could be just as easily in any language (Latin is a commonly chosen one!)\\\nOr are we imagining a requirement where we would hand out samples of the Lightbox files where the user review would actually be on the message content? In that case we would need to localise **all** the content, including the image fruit labels... 😛\n"

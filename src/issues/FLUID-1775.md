@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15276",
       "author": "Michelle D'Souza",
       "date": "2008-11-06T11:22:18.000-0500",
       "body": "dev-iteration46\n"
     },
     {
+      "id": "15282",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:47.455-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

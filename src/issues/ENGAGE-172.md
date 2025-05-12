@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12254",
       "author": "Colin Clark",
       "date": "2009-10-22T19:04:27.000-0400",
       "body": "This was updated at r8469\n"
     },
     {
+      "id": "12255",
       "author": "Justin Obara",
       "date": "2009-11-10T14:18:21.000-0500",
       "body": "Closed as per previous comment\n"

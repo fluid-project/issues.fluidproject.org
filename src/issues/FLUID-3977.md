@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24901",
       "author": "Justin Obara",
       "date": "2011-02-18T15:19:47.467-0500",
       "body": "It looks like this is due to a missing dependency on FluidView\\.js. However, the page still seems to function properly, which leads me to wonder if the real bug is using the DMB in this case.\n"
     },
     {
+      "id": "24902",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T12:46:04.872-0400",
       "body": "I'm unable to reproduce this in v1.4.\n"

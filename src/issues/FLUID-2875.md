@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23175",
       "author": "Justin Obara",
       "date": "2009-06-03T13:35:36.000-0400",
       "body": "Updated progress indicators\n"
     },
     {
+      "id": "23176",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:22.544-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

@@ -40,11 +40,13 @@
   ],
   "comments": [
     {
+      "id": "22569",
       "author": "Justin Obara",
       "date": "2016-02-11T13:06:54.843-0500",
       "body": "I couldn't reproduce this issue on Fedora 22\n"
     },
     {
+      "id": "22571",
       "author": "Antranig Basman",
       "date": "2016-02-12T11:09:55.642-0500",
       "body": "This is a duplicate of <https://issues.fluidproject.org/browse/FLUID-5481>\n"

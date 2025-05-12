@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18001",
       "author": "Justin Obara",
       "date": "2008-07-29T09:45:36.000-0400",
       "body": "Tested using FF2 (Win XP)\n"
     },
     {
+      "id": "18003",
       "author": "Justin Obara",
       "date": "2008-07-29T14:46:09.000-0400",
       "body": "Herb tested IE7\\\nEli tested FF3, IE6\\\nJustin tested FF2, Opera 9.5\n"
     },
     {
+      "id": "18005",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:19.930-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

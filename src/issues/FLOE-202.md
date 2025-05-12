@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10939",
       "author": "Jonathan Hung",
       "date": "2014-08-08T10:22:44.389-0400",
       "body": "I am looking into using Pandoc as a open source tool to create EPUB 3. Currently investigating how HTML markup is preserved during the conversion to EPUB.\n"
     },
     {
+      "id": "10940",
       "author": "Jonathan Hung",
       "date": "2014-08-15T14:10:46.966-0400",
       "body": "We will be using Pandoc for the exemplar.\n"

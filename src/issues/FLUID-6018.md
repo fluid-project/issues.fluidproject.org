@@ -48,31 +48,37 @@
   ],
   "comments": [
     {
+      "id": "23937",
       "author": "Justin Obara",
       "date": "2016-11-01T17:39:38.588-0400",
       "body": "screenshot.png shows the slider in the yellow on black contrast but without the contrast theme applied to it. This screenshot was taken with Safari 10 and all that is visible is the white slider knob.\n"
     },
     {
+      "id": "23939",
       "author": "Alan Harnum",
       "date": "2016-11-03T07:42:09.883-0400",
       "body": "PR: <https://github.com/fluid-project/infusion/pull/775>\n"
     },
     {
+      "id": "23940",
       "author": "Alan Harnum",
       "date": "2016-11-03T14:01:01.575-0400",
       "body": "Current approach seems to work well on latest Firefox and Chrome. See attached \"edge and IE11 native sliders.png\" for appearance of native slider in the two current MS browsers.\n\nGood: slider responds to contrast adjustments.\n\nBad: In IE11, the track continues to have the blue \"progress\" bar effect.\n"
     },
     {
+      "id": "23942",
       "author": "Alan Harnum",
       "date": "2016-11-03T16:20:09.481-0400",
       "body": "<https://github.com/fluid-project/infusion/pull/775/commits/8977a645807dbcf1f67008fd5da696d0496c5292> addresses the \"progress bar\" issue.\n"
     },
     {
+      "id": "23944",
       "author": "Alan Harnum",
       "date": "2016-11-04T13:46:48.254-0400",
       "body": "Merged: <https://github.com/fluid-project/infusion/commit/783779e872feb3bfe7110529a189de361de54f8c>\n"
     },
     {
+      "id": "23945",
       "author": "Justin Obara",
       "date": "2016-11-04T13:47:10.199-0400",
       "body": "Addressed with work for <https://fluidproject.atlassian.net/browse/FLUID-6017#icft=FLUID-6017>\n"

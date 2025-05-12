@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18275",
       "author": "Anastasia Cheetham",
       "date": "2008-04-02T10:02:45.000-0400",
       "body": "This bug duplicates <https://fluidproject.atlassian.net/browse/FLUID-397#icft=FLUID-397>.\n"
     },
     {
+      "id": "18278",
       "author": "Justin Obara",
       "date": "2008-07-10T19:45:36.000-0400",
       "body": "Verified fix in FF2 (Mac OS X)\n"

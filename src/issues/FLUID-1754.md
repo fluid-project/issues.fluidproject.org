@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17192",
       "author": "Justin Obara",
       "date": "2008-10-30T15:44:27.000-0400",
       "body": "This is a new design decision\n"

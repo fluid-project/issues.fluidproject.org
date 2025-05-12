@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26434",
       "author": "Gregor Moss",
       "date": "2018-05-25T16:03:36.755-0400",
       "body": "The issue seems to be occurring as a result of the page's uiLanguage value being changed when the block add buttons are being clicked. Additionally, something is setting the value to \"undefined\" after the initial creation, and this is likely the root cause of the issue.\n"
     },
     {
+      "id": "26435",
       "author": "Gregor Moss",
       "date": "2018-05-25T17:05:45.825-0400",
       "body": "The bug was cause by the page loading the language from the cookie, but if the cookie was not set then it would set the language to \"undefined\", triggering the editor DOM to be redrawn, removing any dynamically added elements before the context change could be registered\n"

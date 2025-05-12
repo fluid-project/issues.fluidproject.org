@@ -33,16 +33,19 @@
   ],
   "comments": [
     {
+      "id": "18704",
       "author": "Anastasia Cheetham",
       "date": "2008-04-15T14:29:54.000-0400",
       "body": "I've created an alternative sortable-tabs example that makes a set of jQuery tabs orderable:\n\n<http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/jquery-tabs/jquery-tabs.html>\n\nIt is fully functional, but the styles really need the eye of a designer.\n"
     },
     {
+      "id": "18706",
       "author": "Anastasia Cheetham",
       "date": "2008-04-15T14:31:59.000-0400",
       "body": "Erin, could you look at this page, and suggest improvements for the styling applied when using the keyboard to re-order tabs, and with the drag-and-drop hover and drop marker styles?\n\n<http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/jquery-tabs/jquery-tabs.html>\n\nLet me know if you have any questions.\n"
     },
     {
+      "id": "18709",
       "author": "Anastasia Cheetham",
       "date": "2008-04-17T17:46:32.000-0400",
       "body": "This is Erin's mockup of how the reorderable jQuery tabs example should be styled for keyboard reordering. This styling has now been implemented.\n"

@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14915",
       "author": "Justin Obara",
       "date": "2009-08-11T14:37:50.000-0400",
       "body": "Error 1:\\\nuncaught exception: Permission denied to get property Window\\.tinymce\n\nError 2:\\\nthis.params has no properties\\\nline 5 (tiny\\_mce\\_popups.js)\n"
     },
     {
+      "id": "14918",
       "author": "Jonathan Hung",
       "date": "2011-01-07T14:58:16.123-0500",
       "body": "Still an issue in Infusion 1.3. Tested FF3.6, Win7\n"

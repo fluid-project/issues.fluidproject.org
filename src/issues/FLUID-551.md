@@ -30,16 +30,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13189",
       "author": "Daphne Ogle",
       "date": "2008-04-29T13:07:37.000-0400",
       "body": "This issue is being reduced in priority, because the preferred styling (of an avatar that is a transparent copy of the portlet) will eliminate this issue.\n"
     },
     {
+      "id": "13190",
       "author": "Anastasia Cheetham",
       "date": "2008-07-03T19:45:28.000-0400",
       "body": "This seems to be fixed now. It should be tested using the manual test page, at\\\n<http://build.fluidproject.org/fluid/tests/fluid-tests/manual/portal/simple-portlets.html>\\\nsince the uPortal example doesn't exhibit the problem.\n"
     },
     {
+      "id": "13191",
       "author": "Michelle D'Souza",
       "date": "2008-09-02T12:50:56.000-0400",
       "body": "This issue was fixed in jQuery UI.\n"

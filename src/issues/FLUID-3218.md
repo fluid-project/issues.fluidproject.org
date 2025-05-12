@@ -38,31 +38,37 @@
   ],
   "comments": [
     {
+      "id": "14979",
       "author": "Jacob Farber",
       "date": "2009-09-30T23:26:33.000-0400",
       "body": "Tag component patch: Uploaded patch with class name additions and style tweaks for when used with the iphone theme\n"
     },
     {
+      "id": "14982",
       "author": "Jacob Farber",
       "date": "2009-10-01T00:25:01.000-0400",
       "body": "Description patch: adds a stylized \"+\" or \"-\" button for the iphone theme\n"
     },
     {
+      "id": "14985",
       "author": "Jacob Farber",
       "date": "2009-10-01T11:14:27.000-0400",
       "body": "Added tag and description styles when used with iphone theme\n"
     },
     {
+      "id": "14988",
       "author": "Justin Obara",
       "date": "2009-10-01T12:31:38.000-0400",
       "body": "Bug Parade Infusion 1.1.2\n"
     },
     {
+      "id": "14991",
       "author": "Justin Obara",
       "date": "2009-10-01T12:56:39.000-0400",
       "body": "Just did a code review and testing. Everything looks okay, except the placement of the \"+\" is not centred.\n"
     },
     {
+      "id": "14994",
       "author": "Justin Obara",
       "date": "2009-10-02T13:38:19.000-0400",
       "body": "I have reviewed and tested the latest update to this, which fixed the issue with the placement of the \"+\".&#x20;\n"

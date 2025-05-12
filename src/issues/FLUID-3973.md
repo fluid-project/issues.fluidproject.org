@@ -37,6 +37,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15210",
       "author": "Michelle D'Souza",
       "date": "2013-09-05T16:09:39.939-0400",
       "body": "This full page version of UI Options is no longer the recommended way to use UI Options. It is now only in manual tests to provide an example of how it would be possible to use UI Options in a full page mode. The PCP and PMT which were designed as part of the Cloud For All project show an example of a well designed full page UI Options. These do not include the reset and save and apply buttons.&#x20;\n\n<http://wiki.fluidproject.org/display/fluid/Preference+Editing+Tools+Design>\n"

@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23804",
       "author": "Justin Obara",
       "date": "2016-11-02T17:00:56.506-0400",
       "body": "According to this [story card](https://wiki.fluidproject.org/display/Infusion13/Uploader+Storycards#UploaderStorycards-story2) it seems that in fact we do not want to be able to delete the file from the queue after an upload has begun. Rather the label should be updated to not include the information about deleting the file.\n"
     },
     {
+      "id": "23806",
       "author": "Cindy Li",
       "date": "2016-11-03T14:48:11.425-0400",
       "body": "The pull request <https://github.com/fluid-project/infusion/pull/774> has been merged into the master branch at b7d67b0211a919939cdbc1adaf5d9bb6c315147f\n"

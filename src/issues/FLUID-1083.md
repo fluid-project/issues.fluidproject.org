@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16673",
       "author": "Colin Clark",
       "date": "2008-07-31T17:37:16.000-0400",
       "body": "infusion-06-wishlist\n"
     },
     {
+      "id": "16675",
       "author": "Colin Clark",
       "date": "2009-02-09T12:39:07.000-0500",
       "body": "This issue was resolved in Infusion 0.6.\n"

@@ -44,16 +44,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21659",
       "author": "Allison Bloodworth",
       "date": "2008-08-05T00:31:23.000-0400",
       "body": "Iteration23\n"
     },
     {
+      "id": "21660",
       "author": "Jonathan Hung",
       "date": "2008-12-10T16:13:31.000-0500",
       "body": "* On the first tab, Examples should appear below fields, and instructions preceding the field.\n* Help text for synonyms and keywords should be clarified. If I want to enter \"inline edit\" \"edit\" and \"edit in place\" do I enter them with spaces in between, quotes, commas or what?\n"
     },
     {
+      "id": "21661",
       "author": "Jonathan Hung",
       "date": "2008-12-12T13:03:28.000-0500",
       "body": "The Delete and Submit buttons can not be relabeled because Drupal relies on it being called \"Delete\" and \"Submit\". So an alternative to this would be to group the buttons in a fieldset and label that field to indicate the scope. See <https://fluidproject.atlassian.net/browse/FLUID-1969#icft=FLUID-1969>.\n\nFor now, not going to worry about making instructions and examples being inconsistent for keywords, category, and synonyms. The fix would require adding fieldsets and modifying the template. For now, the help text has been improved to give better instruction.\n"

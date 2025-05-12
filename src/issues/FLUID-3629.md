@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20049",
       "author": "beth.mejsullivan",
       "date": "2014-05-30T16:04:56.702-0400",
       "body": "I found a same issue while testing this test plan <http://wiki.fluidproject.org/display/fluid/Reorderer+QA+Test+Plan+-+Image+Reorderer>.\n\nEnvironment MacOSX 10.8.5, Firefox 29.0.1,Chrome 35.0.1916.114&#x20;\n\n\"\\\nTest 2: Move to Last Position\n\nProcedure\\\nOpen the browser and navigate to the specified URL\\\nUsing the mouse, hover over one of the images\\\nUsing the mouse, press and hold the 'left-mouse-button' down\\\nUsing the mouse, drag the avatar after the last image\\\nUsing the mouse, release the 'left-mouse-button' over a drop target\\\nExpected Results\\\nThe avatar should drop and move the image to the new location\\\nThe other images should shift to fill in the empty space where the image was originally located\\\nStop Test\\\nRefresh the browser to return the page to its initial state\\\n\"\n"

@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25777",
       "author": "Giovanni Tirloni",
       "date": "2020-04-13T08:20:39.081-0400",
       "body": "We will need a different strategy in AWS/Azure/GCP (possibly using EBS snapshots).\n"

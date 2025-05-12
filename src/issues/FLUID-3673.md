@@ -29,26 +29,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21645",
       "author": "Justin Obara",
       "date": "2010-06-17T14:46:54.895-0400",
       "body": "Moved the entire testswarm directory from the lib directory to the jqunit directory\n"
     },
     {
+      "id": "21646",
       "author": "Justin Obara",
       "date": "2010-06-21T11:28:16.555-0400",
       "body": "This actually didn't work. the path was specified relative to the js file instead of the html file it gets injected into\n"
     },
     {
+      "id": "21647",
       "author": "Justin Obara",
       "date": "2010-06-22T07:51:07.434-0400",
       "body": "The testswarm server also hosts a copy of the inject.js script. Now pointing at that version of the file instead of distributing one in the source code.\n"
     },
     {
+      "id": "21648",
       "author": "Justin Obara",
       "date": "2010-06-22T14:32:43.487-0400",
       "body": "using windows.location doesn't work either as it uses the window\\.location from the iframe instead of from the parent page.&#x20;\n"
     },
     {
+      "id": "21649",
       "author": "Justin Obara",
       "date": "2014-07-14T10:28:19.183-0400",
       "body": "We no longer use testswarm and this file has been removed.\n"

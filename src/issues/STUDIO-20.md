@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12791",
       "author": "Michelle D'Souza",
       "date": "2011-12-15T16:30:59.902-0500",
       "body": "It seems that the white line is caused by the way some browsers render buttons. I couldn't find a way to clear this style however moving the button up by 1 pixel does get rid of the line. Is this a horrible solution?\n"
     },
     {
+      "id": "12792",
       "author": "Michelle D'Souza",
       "date": "2011-12-16T13:45:37.417-0500",
       "body": "Reviewed by Colin and merged into project repo at 37098eee86c43fe84a11f54b543e73f3fce111b4\n"

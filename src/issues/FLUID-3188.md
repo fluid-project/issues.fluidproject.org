@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14220",
       "author": "Laurel Williams",
       "date": "2009-09-21T16:31:50.000-0400",
       "body": "This cannot be done as the filename is hardcoded into the build.xml.\n"
     },
     {
+      "id": "14222",
       "author": "Laurel Williams",
       "date": "2009-10-22T16:26:57.000-0400",
       "body": "I think this should be re-visited as the version number is already being obtained in PostClass.php\n"
     },
     {
+      "id": "14225",
       "author": "Laurel Williams",
       "date": "2009-11-04T15:25:45.000-0500",
       "body": "removed SRC\\_FILE\\_NAME and MIN\\_FILE\\_NAME from config.php and replaced with dynamically creating these values in postProcessor.php. Refactored config.php slightly to accommodate the change (changed the instructions about how to use and moved the defines around a bit as suggested by Justin in today's review).&#x20;\n"

@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "13956",
       "author": "Justin Obara",
       "date": "2011-09-21T14:08:16.113-0400",
       "body": "ScreenShot.png shows the expanded container. Notice how it has grown downwards.\n"
     },
     {
+      "id": "13962",
       "author": "Anastasia Cheetham",
       "date": "2014-07-30T15:41:50.026-0400",
       "body": "Can't reproduce this in IE11, nor any other supported browsers.\n"

@@ -46,11 +46,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18845",
       "author": "Anastasia Cheetham",
       "date": "2008-04-28T15:54:24.000-0400",
       "body": "This issue is being reduced in priority, because the preferred styling (of an avatar that is a transparent copy of the portlet) will eliminate this issue.\n"
     },
     {
+      "id": "18847",
       "author": "Daphne Ogle",
       "date": "2008-04-29T12:54:18.000-0400",
       "body": "Replaced by Fluid-551\n"

@@ -57,11 +57,13 @@
   ],
   "comments": [
     {
+      "id": "16060",
       "author": "Justin Obara",
       "date": "2008-07-11T19:26:59.000-0400",
       "body": "'screenshot-1' shows the keyboard navigation instructions snapped to the right edge of the browser\n"
     },
     {
+      "id": "16061",
       "author": "Justin Obara",
       "date": "2009-11-04T11:56:15.000-0500",
       "body": "These instructions no longer appear in the new demo. If they are added again, this issue may reappear. If that is the case, this should be reopened.\n"

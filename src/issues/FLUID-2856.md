@@ -39,26 +39,31 @@
   ],
   "comments": [
     {
+      "id": "24342",
       "author": "Justin Obara",
       "date": "2009-06-01T09:02:09.000-0400",
       "body": "'screenshot-1' shows the textfield slider with the 1 appended to the value.\n"
     },
     {
+      "id": "24346",
       "author": "Justin Obara",
       "date": "2009-06-02T09:29:48.000-0400",
       "body": "possibly doing a \"+\" operation while the value is of type string\n"
     },
     {
+      "id": "24348",
       "author": "Justin Obara",
       "date": "2011-05-17T09:56:59.678-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24350",
       "author": "Michelle D'Souza",
       "date": "2011-06-21T10:46:07.005-0400",
       "body": "I am no longer able to reproduce this - perhaps it was fixed when all the component refactoring happened.&#x20;\n"
     },
     {
+      "id": "24352",
       "author": "Cindy Li",
       "date": "2011-06-27T11:27:29.708-0400",
       "body": "Confirmed that this issue is no longer re-producible.\n"

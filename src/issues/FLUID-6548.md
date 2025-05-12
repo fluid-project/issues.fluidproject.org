@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25436",
       "author": "Justin Obara",
       "date": "2020-09-16T09:59:52.152-0400",
       "body": "Comparison of deprecated valid-jsdoc rules compared to the eslint-plugin-config.\n\n<https://github.com/gajus/eslint-plugin-jsdoc/wiki/Comparison-with-deprecated-JSdoc-related-ESLint-rules>\n"

@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20239",
       "author": "Giovanni Tirloni",
       "date": "2018-04-18T10:11:51.711-0400",
       "body": "It seems enough to rename \"prepublish\" to \"prepare\" in package.json\n"

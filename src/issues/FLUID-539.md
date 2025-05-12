@@ -63,31 +63,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13281",
       "author": "Antranig Basman",
       "date": "2008-09-17T22:36:30.000-0400",
       "body": "Fixed at revision 5567\n"
     },
     {
+      "id": "13282",
       "author": "Justin Obara",
       "date": "2008-09-18T09:33:00.000-0400",
       "body": "Tested in (FF2, Opera 9.5 (Mac OS 10.5, WinXP)  and the issue still occurs.\n"
     },
     {
+      "id": "13283",
       "author": "Antranig Basman",
       "date": "2008-09-18T17:36:38.000-0400",
       "body": "This has been investigated in some detail now, with no real understanding of the issue emerging. There is a possibility that the particular markup used here is implicated - that is, an anchor tag within the \\<li> which occupies more physical space than its parent. Basically a tab order cycle results, with the next focus target after the active tab being considered the container itself, possibly via the intermediate of the anchor. An interesting focus effect has been observed on FF2 whereby a container with tabindex is considered focused if one of the elements within it are focused. This is particularly visible in the portal sample - putting focus onto one of the dropdowns for example on the top right portlet.&#x20;\n\nThere was an experimentation with a \"dynamic tabindex\" version of the keyboard accessibility plugin, but this appears to create more instability in focus than it resolves.\n"
     },
     {
+      "id": "13284",
       "author": "Justin Obara",
       "date": "2008-09-22T12:57:29.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "13285",
       "author": "Antranig Basman",
       "date": "2009-01-30T11:11:25.000-0500",
       "body": "This issue needs to be escalated to Mozilla - from what I can recall of the investigation, we seemed to verify that the issue was not dependent on any Javascript which was fired during the tab keypress, therefore it has to be a defect in the browser. If it doesn't occur in FF3, that just leaves Opera...\n"
     },
     {
+      "id": "13286",
       "author": "Jonathan Hung",
       "date": "2010-12-09T10:11:06.647-0500",
       "body": "No longer appears to be an issue. Tested Dec 9, 2010 on FF3.6 and IE8, Windows.\n"

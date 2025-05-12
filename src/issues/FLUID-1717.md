@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21882",
       "author": "Daphne Ogle",
       "date": "2008-10-28T17:38:20.000-0400",
       "body": "iteration22\n"
     },
     {
+      "id": "21883",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:50.156-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15713",
       "author": "Anastasia Cheetham",
       "date": "2013-09-30T12:54:34.167-0400",
       "body": "I've searched the wiki for 'gradeNames' and ensured that any examples I found have 'autoInit' in the array of grade names. The only exception is the Getting Started tutorial, which needs more focussed attention and is covered by its own JIRA (<https://fluidproject.atlassian.net/browse/FLUID-5158#icft=FLUID-5158>).\n"
     },
     {
+      "id": "15715",
       "author": "Justin Obara",
       "date": "2014-05-20T12:57:30.656-0400",
       "body": "We should confirm that all of the docs that were moved to the infusion-docs repo ( <https://github.com/fluid-project/infusion-docs> ) are correct.\n"
     },
     {
+      "id": "15717",
       "author": "Anastasia Cheetham",
       "date": "2015-04-24T15:17:24.439-0400",
       "body": "All the markdown files are correct.\n"

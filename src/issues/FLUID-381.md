@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15138",
       "author": "Daphne Ogle",
       "date": "2008-04-29T13:24:35.000-0400",
       "body": "1st iteration delivered with beta 0.3 release.  Created a new task to iterate on this based on design changes from user testing.\n"
     },
     {
+      "id": "15141",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:53.779-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

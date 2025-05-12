@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16874",
       "author": "James Yoon",
       "date": "2011-09-12T16:41:05.806-0400",
       "body": "If acceptable, non-failing files are in the mix, the \"Add more\" button is appropriately enabled.\n"
     },
     {
+      "id": "16876",
       "author": "Colin Clark",
       "date": "2011-09-23T17:33:19.772-0400",
       "body": "Antranig has offered to write unit tests for Mike's fix to this issue.\n"
     },
     {
+      "id": "16877",
       "author": "Michelle D'Souza",
       "date": "2011-09-28T11:47:22.939-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/173> merged into project repo at 896ff93122142aceb9f097c888c5d9fa6f885be6\n"

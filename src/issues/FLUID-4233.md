@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23069",
       "author": "Antranig Basman",
       "date": "2011-05-13T03:28:09.755-0400",
       "body": "The test case supplied by JURA could be made to fail by use of \"args\" in the demands block. Aliasing is a tricky issue in general, although it seems that for now, all the remaining avenues for corruption are plugged up. The case of pseudoarguments is handled by the wholesale copying of \"componentRecord\" at the head of embodyDemands, all locally expanded values are safe through the removal of the \"noCopy\" default option in stackResolverOptions, which just leaves the case of values which reach deferred expansion through expandComponentOptions, which is the headline issue of this bug. This is resolved by explicitly adding a fluid.copy to the aliased material as the expansion record is constructed on line 429.\n\nIt might be well worth though, constructing a \"general invariant testcase\" against the whole of FluidIoCTests, to assert that every record entered into the dependentStore has the same value it had on input. \"Frozen objects\" from ECMAScript 6 or so would be a great help here...\n"

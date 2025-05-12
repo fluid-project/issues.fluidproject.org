@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27538",
       "author": "Blake E",
       "date": "2009-01-12T16:52:53.000-0500",
       "body": "vulab13\n"
     },
     {
+      "id": "27539",
       "author": "Blake E",
       "date": "2009-03-23T16:29:55.000-0400",
       "body": "oops! missed this one. BUt we got this issue ironed out and into the svn.\n"

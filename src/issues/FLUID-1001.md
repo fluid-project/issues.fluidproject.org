@@ -39,11 +39,13 @@
   ],
   "comments": [
     {
+      "id": "20043",
       "author": "Justin Obara",
       "date": "2008-07-23T18:37:51.000-0400",
       "body": "'screenshot-1' shows the failed unit tests\n"
     },
     {
+      "id": "20045",
       "author": "Justin Obara",
       "date": "2008-07-24T16:51:54.000-0400",
       "body": "Duplicates Fluid-832\n"

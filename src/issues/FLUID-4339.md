@@ -35,21 +35,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20990",
       "author": "Cindy Li",
       "date": "2011-07-13T13:40:18.448-0400",
       "body": "The css classes that are used to style drop down list options are from fluid.uiEnhancer.options.classnameMap, which is supplied thru demands blocks @ <https://github.com/fluid-project/infusion/blob/master/src/webapp/components/uiOptions/js/UIOptions.js#L228-244>\n\nFat panel has its own demands blocks to overwrite the ones above @ <https://github.com/fluid-project/infusion/blob/master/src/webapp/components/uiOptions/html/FatPanelUIOptionsFrame.html#L74-90>, which is a spot worth to look at to ensure:\n\n1\\. Th demands blocks are resolved successfully\\\n2\\. The values in classnameMap passed in from the demands blocks are expected.\n"
     },
     {
+      "id": "20991",
       "author": "Harris Wong",
       "date": "2011-07-21T17:05:49.992-0400",
       "body": "Seems like FatPanelUIOptions.js line 114 resets the text style. It calls UIEnhancer.js line 152\\~154 to update the model to the settingsStore.  Could it be that the UpdateModel is not applying settings correctly?\n"
     },
     {
+      "id": "20992",
       "author": "Justin Obara",
       "date": "2015-06-09T14:13:04.671-0400",
       "body": "\"colour and contrast\" no longer uses a drop down.\n"
     },
     {
+      "id": "27813",
       "author": "Justin Obara",
       "date": "2024-07-22T14:04:23.794-0400",
       "body": "There is little to no support for styling the options of a select element.\n"

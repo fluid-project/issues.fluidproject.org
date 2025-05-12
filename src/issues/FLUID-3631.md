@@ -33,16 +33,19 @@
   ],
   "comments": [
     {
+      "id": "14207",
       "author": "Justin Obara",
       "date": "2010-04-12T15:45:34.000-0400",
       "body": "screenshot-1 shows that the blue header is not replaced in the \"Medium contrast grey scale\" contrast theme.\n"
     },
     {
+      "id": "14209",
       "author": "Justin Obara",
       "date": "2010-05-07T14:13:37.688-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "14211",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T10:49:33.843-0400",
       "body": "We no longer offer medium-contrast themes in UIO.\n"

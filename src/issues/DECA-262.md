@@ -40,16 +40,19 @@
   ],
   "comments": [
     {
+      "id": "10157",
       "author": "Justin Obara",
       "date": "2012-07-09T16:02:50.515-0400",
       "body": "Implementing <https://fluidproject.atlassian.net/browse/DECA-281#icft=DECA-281> will remove this issue.\n"
     },
     {
+      "id": "10158",
       "author": "Justin Obara",
       "date": "2012-07-10T12:38:14.071-0400",
       "body": "This issue is caused by FLUID-4728\n"
     },
     {
+      "id": "10159",
       "author": "Justin Obara",
       "date": "2012-07-10T15:54:19.944-0400",
       "body": "Due to some functions being private and a bug in Uploader, had to implement a few work arounds to get this functionality in place. Overrode the hover styling when the button is disabled, and removed forced the browseButton to be disabled after adding files to the queue.\n\nThe changes are in my bitbucket repo:\\\n<https://bitbucket.org/jobara/decapod-0.6-ui-iteration5>\n"

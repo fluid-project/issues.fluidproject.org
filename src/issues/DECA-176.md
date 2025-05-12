@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10021",
       "author": "Justin Obara",
       "date": "2011-10-14T15:28:25.160-0400",
       "body": "I've updated to Infusion 1.4 in my clone housed in bitbucket\\\n<https://bitbucket.org/jobara/decapod-ui>\\\n<https://bitbucket.org/jobara/decapod-server>\n"
     },
     {
+      "id": "10022",
       "author": "Justin Obara",
       "date": "2012-01-10T09:21:05.916-0500",
       "body": "Upgraded to a custom version of Infusion 1.4\n"

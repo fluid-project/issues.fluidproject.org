@@ -37,11 +37,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23263",
       "author": "Anastasia Cheetham",
       "date": "2009-10-07T16:45:57.000-0400",
       "body": "I've updated the API page at <http://wiki.fluidproject.org/display/fluid/Image+Reorderer+API> and I'm moving on to the tutorial.\n"
     },
     {
+      "id": "23264",
       "author": "Colin Clark",
       "date": "2010-03-30T14:09:06.000-0400",
       "body": "The Image Reorderer documentation was sufficiently updated at 1.1.2. A tutorial might be nice sometime, but the id-based form of finding elements is now clearly deprecated throughout our existing documentation.\n"

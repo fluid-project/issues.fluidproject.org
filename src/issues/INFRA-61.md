@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25947",
       "author": "Alan Harnum",
       "date": "2015-11-24T16:48:16.190-0500",
       "body": "Pull request open at <https://github.com/idi-ops/ansible-nodejs/pull/18>\n"
     },
     {
+      "id": "25948",
       "author": "Alan Harnum",
       "date": "2015-11-26T13:30:15.605-0500",
       "body": "Merged.\n"

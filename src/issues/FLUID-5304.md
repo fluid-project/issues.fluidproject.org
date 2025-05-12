@@ -43,11 +43,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14202",
       "author": "Antranig Basman",
       "date": "2020-08-24T16:10:26.964-0400",
       "body": "Note that it was recognised during work on the Nexus model binding endpoint at <https://github.com/fluid-project/infusion-nexus/pull/25#discussion_r475864274> that in addition to the compiler spilling its \"shape cache\" when discovering a value of a JSONically different shape that disrupts later merge compositing, it would also do so on discovering an expansion site which varied in asynchrony.\n"
     },
     {
+      "id": "14204",
       "author": "Antranig Basman",
       "date": "2020-09-23T12:07:36.251-0400",
       "body": "Note that this work will also have to incorporate moving to a C3-like algorithm as per <https://issues.fluidproject.org/browse/FLUID-5800>\n"

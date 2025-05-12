@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15078",
       "author": "Michelle D'Souza",
       "date": "2009-09-24T17:40:03.000-0400",
       "body": "I've reviewed the commit and it looks good.&#x20;\n"
     },
     {
+      "id": "15081",
       "author": "Colin Clark",
       "date": "2009-10-14T18:17:41.000-0400",
       "body": "This was committed before bug parade ended for Infusion 1.1.2 at r8089. Michelle reviewed it.\n"
     },
     {
+      "id": "15084",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:47:16.123-0500",
       "body": "Closing issues that were fixed in 1.1.2\n"

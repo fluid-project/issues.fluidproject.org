@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20481",
       "author": "Jacob Farber",
       "date": "2008-07-25T17:02:44.000-0400",
       "body": "I believe this is part of a documented bug for IE, where you can't append to a node unless you are a direct child of the node and the DOM is finished being parsed.\\\nPlease see ( <http://support.microsoft.com/kb/927917/en-us> )\n"
     },
     {
+      "id": "20482",
       "author": "Colin Clark",
       "date": "2008-07-31T17:24:54.000-0400",
       "body": "This was fixed in Infusion 0.4 by wrapping only the tooltip initialization code in a jQuery.ready call. This means that, if the user is employing a script block, the inline editor will instantiated first, and once the rest of the DOM is ready, the tooltip will be added.\n"

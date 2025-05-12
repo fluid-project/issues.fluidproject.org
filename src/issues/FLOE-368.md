@@ -31,11 +31,13 @@
   ],
   "comments": [
     {
+      "id": "11353",
       "author": "Anastasia Cheetham",
       "date": "2015-06-02T15:45:37.092-0400",
       "body": "This screenshot shows what it looks like\n"
     },
     {
+      "id": "11354",
       "author": "Cindy Li",
       "date": "2015-06-03T15:12:53.509-0400",
       "body": "The pull request (<https://github.com/fluid-project/first-discovery/pull/81>) has been merged @ 2468e0c545976ed65d500f41213aa7813cbef952\n"

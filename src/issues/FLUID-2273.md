@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21319",
       "author": "Anastasia Cheetham",
       "date": "2009-02-19T17:46:49.000-0500",
       "body": "This link explains the issue:\\\n<http://ejohn.org/blog/tightened-local-file-security/>\n"
     },
     {
+      "id": "21320",
       "author": "Anastasia Cheetham",
       "date": "2009-02-19T18:00:34.000-0500",
       "body": "This issue also affects the TableOfContents-test file\n"
     },
     {
+      "id": "21321",
       "author": "Michelle D'Souza",
       "date": "2009-03-05T13:38:15.000-0500",
       "body": "This can be worked around by using about:config in FireFox to set security.fileuri.strict\\_origin\\_policy to false.&#x20;\n"

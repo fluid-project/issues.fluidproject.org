@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15985",
       "author": "Anastasia Cheetham",
       "date": "2009-02-13T16:34:54.000-0500",
       "body": "The current documentation versioning process is untenable. We are moving to generated API docs, which will be versioned, but for this release, we won't version the API docs.\n"
     },
     {
+      "id": "15989",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:22.601-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

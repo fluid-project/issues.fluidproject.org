@@ -22,11 +22,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25884",
       "author": "Giovanni Tirloni",
       "date": "2018-01-23T09:12:31.071-0500",
       "body": "I don't remember what this is about anymore.\n\nThere is some work with cabling that needs to be done but that's related to ressurecting the old Nebula servers (either through their 10GbE cabling, which will require work on the embedded Arista switches, or by re-using the red 1GbE cables for a production network).\n"
     },
     {
+      "id": "25885",
       "author": "Giovanni Tirloni",
       "date": "2020-04-13T08:01:23.656-0400",
       "body": "We're moving to a 3rd-party cloud provider soon-ish and will be decommissioning the datacenter servers.\n"

@@ -33,16 +33,19 @@
   ],
   "comments": [
     {
+      "id": "24551",
       "author": "Justin Obara",
       "date": "2011-08-03T13:39:54.461-0400",
       "body": "ScreenShot.png shows the broken tabs.\n"
     },
     {
+      "id": "24552",
       "author": "Justin Obara",
       "date": "2011-08-03T13:40:58.036-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24553",
       "author": "Antranig Basman",
       "date": "2011-08-15T15:33:09.975-0400",
       "body": "I believe this issue may already be fixed by my consolidated fixes for <https://fluidproject.atlassian.net/browse/FLUID-4397#icft=FLUID-4397> - I made various styling fixes as part of that package since I noticed that styling class names were not being used consistently. Please retest since I can't reproduce on my machine - thanks\n"

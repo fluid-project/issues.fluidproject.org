@@ -33,16 +33,19 @@
   ],
   "comments": [
     {
+      "id": "20264",
       "author": "Golam Chowdhury",
       "date": "2010-09-07T11:14:16.365-0400",
       "body": "Updated the readme.txt in patch <https://fluidproject.atlassian.net/browse/FLUID-3700#icft=FLUID-3700>.patch.txt\\\nFollowing are the comments in the readme.txt:\\\nUpdated the license for fastXmlPull, upgraded swfobject 2.2 to fix the issue on IE\n"
     },
     {
+      "id": "20265",
       "author": "Mike Lam",
       "date": "2010-09-08T13:53:11.490-0400",
       "body": "README.txt updated with 1.2.1 fixes.&#x20;\n"
     },
     {
+      "id": "20266",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:20.195-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

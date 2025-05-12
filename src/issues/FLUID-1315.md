@@ -52,26 +52,31 @@
   ],
   "comments": [
     {
+      "id": "14231",
       "author": "Justin Obara",
       "date": "2008-08-27T10:52:57.000-0400",
       "body": "'screenshot-1' shows the original format of the inline edit field\n"
     },
     {
+      "id": "14232",
       "author": "Justin Obara",
       "date": "2008-08-27T10:54:07.000-0400",
       "body": "'screenshot-2' shows the inline edit field removed after entering a single space character as the value. Notice how the spacing for the inline edit field is removed.\n"
     },
     {
+      "id": "14234",
       "author": "Justin Obara",
       "date": "2008-10-30T17:01:07.000-0400",
       "body": "Appears to be fixed with changes made to the bSpace example. May be it had to do with changing the button from an icon to text.\n"
     },
     {
+      "id": "14237",
       "author": "Anastasia Cheetham",
       "date": "2009-08-10T14:02:39.000-0400",
       "body": "This issue is still happening in Safari 3 on Mac OS 10.5. I see it in the Quick Start page, bSpace example and the Announcements example.\n"
     },
     {
+      "id": "14239",
       "author": "Justin Obara",
       "date": "2009-08-11T13:48:51.000-0400",
       "body": "Updated the environments\n"

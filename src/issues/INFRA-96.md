@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25995",
       "author": "Giovanni Tirloni",
       "date": "2017-11-10T11:39:57.376-0500",
       "body": "Snort enabled on the pfSense firewall.\n\nLogs are sent to the central log servers (i-0001/0002 currently, /var/log/hosts/gateway) and monitoring/alerting of those entries should be implemented separately in the future.\n"

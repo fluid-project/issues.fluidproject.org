@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17332",
       "author": "Anastasia Cheetham",
       "date": "2008-04-21T12:20:04.000-0400",
       "body": "The uPortal 3 reorderable portlets mockup now has the Lightbox in one of it's portlets. This is a functional example of nested reorderers.\n"

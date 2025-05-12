@@ -37,11 +37,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25084",
       "author": "Antranig Basman",
       "date": "2013-05-22T00:26:41.358-0400",
       "body": "Many of these points were handled as part of the <https://fluidproject.atlassian.net/browse/FLUID-5011#icft=FLUID-5011> work - in particular i) a) and iii) and part of ii) and iv) - also a further improvement of v) extracting all markup used by the component implementation into options\n"
     },
     {
+      "id": "25085",
       "author": "Justin Obara",
       "date": "2016-08-12T13:01:56.713-0400",
       "body": "close and refile what's remaining as specific issues.\n"

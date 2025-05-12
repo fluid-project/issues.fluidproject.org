@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22827",
       "author": "Laurel Williams",
       "date": "2009-10-07T16:14:16.000-0400",
       "body": "Added FF 3.5 to the mix\n"
     },
     {
+      "id": "22830",
       "author": "Laurel Williams",
       "date": "2009-10-07T16:51:27.000-0400",
       "body": "Added IE 8 to the mix\n"
     },
     {
+      "id": "22833",
       "author": "Laurel Williams",
       "date": "2009-10-08T10:18:08.000-0400",
       "body": "Added IE7\n"
     },
     {
+      "id": "22835",
       "author": "Colin Clark",
       "date": "2010-03-30T18:38:55.000-0400",
       "body": "This issue is a duplicate of <https://fluidproject.atlassian.net/browse/FLUID-3558#icft=FLUID-3558> and has been fixed at r9746\n"

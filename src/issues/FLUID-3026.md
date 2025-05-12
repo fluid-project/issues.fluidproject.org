@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21056",
       "author": "Justin Obara",
       "date": "2010-05-07T13:45:16.027-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "21057",
       "author": "Justin Obara",
       "date": "2014-07-11T14:57:55.635-0400",
       "body": "This is a fairly old task and recent version of jQuery UI have vastly improved aria support\n"

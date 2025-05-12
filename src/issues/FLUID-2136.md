@@ -35,21 +35,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14002",
       "author": "Eli Cochran",
       "date": "2009-01-16T12:59:22.000-0500",
       "body": "When we remove a row we also remove it's progressor from the DOM.&#x20;\n\nNote: we're still leaving behind the progressor when a file has uploaded successfully even though it will never be used again. The problem with removing the progressor when a file is successful is that the progressor will be removed before it gets a chance to display 100% progress. There is some rethinking of the flow of the Uploader that could fix this but it doesn't seem worth messing with.&#x20;\n"
     },
     {
+      "id": "14005",
       "author": "Eli Cochran",
       "date": "2009-01-26T13:40:44.000-0500",
       "body": "Reopening because I broke the File Queue tests with this change. Basically if we try to remove a file that was never added or not there, it blows up. Good lesson on why we have tests.&#x20;\n"
     },
     {
+      "id": "14009",
       "author": "Eli Cochran",
       "date": "2009-01-28T11:51:45.000-0500",
       "body": "Fixed. Checking to see if the progressor exists before we try to remove it.&#x20;\n"
     },
     {
+      "id": "14012",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:59.975-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

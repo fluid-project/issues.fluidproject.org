@@ -62,56 +62,67 @@
   ],
   "comments": [
     {
+      "id": "19789",
       "author": "Jonathan Hung",
       "date": "2007-12-12T15:09:45.000-0500",
       "body": "Additional information:\n\n* In IE when dragging out of bounds, the thumbnail will stick to the boundary where the mouse exited until the mouse returns to the div containing the Lightbox. When the mouse returns to the Lightbox div, the thumbnail snaps back to its original position.\n\nMay 28, 2008:\n\nIn FF2, it is possible to drag an orderable WAAAY off the screen. The horizontal scrollbar keeps expanding as user continues to move the mouse in a direction.\n"
     },
     {
+      "id": "19791",
       "author": "Justin Obara",
       "date": "2008-07-18T12:39:05.000-0400",
       "body": "When there are nested reorderables, such as on the uportal demo page (<http://build.fluidproject.org/fluid/sample-code/reorderer/portal/portal.html>), this bug allows you to drag two avatars.\n\nSteps to reproduce:\n\n1\\) Go to the uPortal demo page from the daily buid site:\\\n<http://build.fluidproject.org/fluid/sample-code/reorderer/portal/portal.html>\n\n2\\) Drag an element (fruit image) from the lightbox portal off screen and release the mouse\n\n3\\) Place the pointer back on the screen and drag a portlet. Notice that you now have two avatars.\n"
     },
     {
+      "id": "19793",
       "author": "Justin Obara",
       "date": "2008-07-18T12:41:25.000-0400",
       "body": "'screenshot-1' shows the two avatars being dragged\n"
     },
     {
+      "id": "19794",
       "author": "Justin Obara",
       "date": "2008-08-13T13:33:23.000-0400",
       "body": "The IE7 behaviour does not appear to occur anymore.\n\nUpdated the Environments that the issue affects\n"
     },
     {
+      "id": "19796",
       "author": "Antranig Basman",
       "date": "2008-09-07T22:40:54.000-0400",
       "body": "It appears that the FIrefox side of the issue simply cannot be resolved - we do not obtain any notification of mouse events whilst the cursor is out of the browser bounds, and cannot even query the current button state. If you can verify the IE behaviour as ok, and can no longer demonstrate the \"double avatar\" phenomenon, we will have to sadly close this issue as \"incomplete\".\n"
     },
     {
+      "id": "19798",
       "author": "Justin Obara",
       "date": "2008-09-08T09:52:04.000-0400",
       "body": "The IE7 behaviour, as described in the description no longer occurs. However, the \"double avatar' phenomenon is still reproducible\n"
     },
     {
+      "id": "19800",
       "author": "Justin Obara",
       "date": "2008-09-10T13:56:21.000-0400",
       "body": "The 'double avatar' no longer seems to be reproducible\n"
     },
     {
+      "id": "19801",
       "author": "Justin Obara",
       "date": "2008-09-11T12:32:49.000-0400",
       "body": "Okay I've managed to reproduce the \"double avatar\" issue. It works in reverse now. You need to pick up a portlet from the side so that when the avatar shrinks the pointer is left off of it( see Fluid-1334). You drag it out of the window and then can pick up an image from the lightbox portlet.\n"
     },
     {
+      "id": "19803",
       "author": "Justin Obara",
       "date": "2008-09-11T12:34:01.000-0400",
       "body": "'screenshot-2' shows a variant of the double avatar issue.\n"
     },
     {
+      "id": "19805",
       "author": "Eli Cochran",
       "date": "2008-09-25T18:28:37.000-0400",
       "body": "The behavior that I observed is a little different:\n\nIE7: Drag off screen, the avatar becomes \"decoupled\" from the pointer so that when you drag the pointer back into the window the avatar lags behind until the avatar comes completely back into the window then it snaps back to the pointer.&#x20;\n\nJust noticed that this is written up as <https://fluidproject.atlassian.net/browse/FLUID-894#icft=FLUID-894>\n"
     },
     {
+      "id": "19807",
       "author": "Justin Obara",
       "date": "2014-05-26T15:39:36.975-0400",
       "body": "Couldn't reproduce in the latest supported browsers. This is likely do to changes in the new browsers, or refactoring to the Reorderer.\n"

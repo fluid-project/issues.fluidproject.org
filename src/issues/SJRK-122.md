@@ -37,16 +37,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26549",
       "author": "Gregor Moss",
       "date": "2018-07-17T12:09:10.950-0400",
       "body": "Alan Harnum can you please remind me what the use of this will be?\n"
     },
     {
+      "id": "26550",
       "author": "Gregor Moss",
       "date": "2019-09-25T16:25:47.567-0400",
       "body": "Updated after review feedback for <https://fluidproject.atlassian.net/browse/SJRK-268#icft=SJRK-268>: <https://github.com/fluid-project/sjrk-story-telling/pull/39#discussion_r328089356>\n"
     },
     {
+      "id": "26551",
       "author": "Cindy Li",
       "date": "2020-08-04T12:30:55.909-0400",
       "body": "[The pull request](https://github.com/fluid-project/sjrk-story-telling/pull/92) that fixes this issue has been merged into the project repo master branch at [this commit](https://github.com/fluid-project/sjrk-story-telling/commit/f3ad5428bc4594aa4d9e0b103cd220d46065f986).\n"

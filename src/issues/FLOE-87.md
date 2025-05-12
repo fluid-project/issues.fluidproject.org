@@ -22,6 +22,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11225",
       "author": "Alexey Novak",
       "date": "2012-10-18T12:00:09.619-0400",
       "body": "Released.\n"

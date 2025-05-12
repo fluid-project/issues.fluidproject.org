@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17697",
       "author": "Daphne Ogle",
       "date": "2008-12-03T18:19:28.000-0500",
       "body": "iteration29\n"
     },
     {
+      "id": "17698",
       "author": "Justin Obara",
       "date": "2011-01-10T15:54:20.230-0500",
       "body": "Closing - orphaned work\n"

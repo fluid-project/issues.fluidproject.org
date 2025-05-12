@@ -37,16 +37,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25005",
       "author": "Justin Obara",
       "date": "2008-09-22T12:54:48.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "25006",
       "author": "Justin Obara",
       "date": "2008-10-28T12:35:02.000-0400",
       "body": "This is also the case with sortable jQuery UI Tabs\n"
     },
     {
+      "id": "25007",
       "author": "Anastasia Cheetham",
       "date": "2011-01-12T13:17:34.617-0500",
       "body": "The demos in question have been removed.\n"

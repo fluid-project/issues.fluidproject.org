@@ -36,16 +36,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13258",
       "author": "Eli Cochran",
       "date": "2008-05-23T12:06:50.000-0400",
       "body": "IE doesn't support height and scrolling on tbody elements.\n\nAnd so, I exploded the table into three separate parts so I could scroll the middle. All because IE is wack!\n"
     },
     {
+      "id": "13259",
       "author": "Eli Cochran",
       "date": "2008-05-23T12:07:51.000-0400",
       "body": "Different bug same fix as <https://fluidproject.atlassian.net/browse/FLUID-616#icft=FLUID-616>\n"
     },
     {
+      "id": "13261",
       "author": "Justin Obara",
       "date": "2008-12-02T15:10:20.000-0500",
       "body": "appears to have been fixed\n"

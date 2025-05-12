@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25958",
       "author": "Giovanni Tirloni",
       "date": "2020-04-29T10:39:15.171-0400",
       "body": "New template based on CentOS 7.8 has been created and deployed to hypervisors.\n\n091aa50c013341efae8ba699c2bc1bb8b26ef19ccc744034bfa377b3cf1de0c3aabba0bc4c7d8259eef0de33bb48f6c30b0b0c55cdd5b0c6f582b771b9f575b9  artifacts/qemu/template-centos7-x86\\_64.qcow2.xz\n\ni-0019 redeployed based on it as a test.\n"

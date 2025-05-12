@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24961",
       "author": "y z",
       "date": "2010-04-15T16:33:01.000-0400",
       "body": "FCK Editor is now deprecated. However new CKEditor still has the same problem.\n"
     },
     {
+      "id": "24962",
       "author": "Jonathan Hung",
       "date": "2011-01-07T13:19:03.385-0500",
       "body": "Fixed with Infusion 1.3. Tested with IE8, IE6, and FF3.6.\n"

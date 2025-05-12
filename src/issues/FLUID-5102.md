@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15107",
       "author": "Justin Obara",
       "date": "2013-10-04T11:26:19.671-0400",
       "body": "This can be handled by supplying the correct configuration to the templateLoader\n"

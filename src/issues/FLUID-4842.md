@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15578",
       "author": "Antranig Basman",
       "date": "2013-02-01T04:11:43.421-0500",
       "body": "Now in trunk\n"
     },
     {
+      "id": "15580",
       "author": "Justin Obara",
       "date": "2014-03-03T12:36:16.852-0500",
       "body": "Pull request ( <https://github.com/fluid-project/infusion/pull/248> ) was merged into the project repo at 99e40f45638960c207a0ff151e5b8cb49231844d\n"

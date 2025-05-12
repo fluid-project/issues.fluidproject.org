@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23003",
       "author": "Colin Clark",
       "date": "2008-09-10T14:44:31.000-0400",
       "body": "So this would require us to do two things:\n\n1\\. Automatically wrap the view text in a new element within the JavaScript code for the component.\\\n2\\. If an edit field is located in the DOM, we'd have to make an implicit association between the view text and the edit field for each inline editor.\n"
     },
     {
+      "id": "23005",
       "author": "Antranig Basman",
       "date": "2008-11-13T21:38:18.000-0500",
       "body": "The container around the editable view is now no longer required as part of the fix for <https://fluidproject.atlassian.net/browse/FLUID-844#icft=FLUID-844>. I don't believe it is possible to implement any further simplification as requested in this issue. Where do you propose the editable view be placed, in your \\<td> sample? I don't believe it would be correct to structurally modify the target markup for the InlineEdit control by means of \"rehousing\", say, the text \"EDIT ME\". How would the user expect to find this text again? The remaining part of this issue is a duplicate of <https://fluidproject.atlassian.net/browse/FLUID-945#icft=FLUID-945>.\n"

@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23416",
       "author": "Jonathan Hung",
       "date": "2011-01-10T14:19:47.144-0500",
       "body": "Fixed in Infusion 1.3\n"

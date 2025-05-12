@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18817",
       "author": "Jonathan Hung",
       "date": "2009-03-30T14:05:32.000-0400",
       "body": "iteration30\n"
     },
     {
+      "id": "18820",
       "author": "Jonathan Hung",
       "date": "2011-01-21T13:00:50.837-0500",
       "body": "Folded into <https://fluidproject.atlassian.net/browse/FLUID-2164#icft=FLUID-2164>\n"

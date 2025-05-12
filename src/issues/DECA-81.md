@@ -35,21 +35,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10328",
       "author": "Jonathan Hung",
       "date": "2010-06-10T16:39:22.524-0400",
       "body": "Changed priority, now to be implemented for 0.4/0.5 instead of 0.6 due to poor performance on VMWare and Apple hardware.\n"
     },
     {
+      "id": "10329",
       "author": "Justin Obara",
       "date": "2010-07-14T11:21:38.406-0400",
       "body": "Bug Parade Decapod 0.4\n"
     },
     {
+      "id": "10330",
       "author": "Colin Clark",
       "date": "2010-07-15T19:05:10.011-0400",
       "body": "I've updated the server to only stitch and share images with a maximum dimension of 900 px, which for most images should get us close to James' suggested 1400 x 900 (I think) dimensions.\n"
     },
     {
+      "id": "10331",
       "author": "Colin Clark",
       "date": "2010-07-19T11:31:48.375-0400",
       "body": "This issue was resolved by introducing a new image processing routine for resizing. We now resize images to a longest dimension of 800 px before stitching and generating thumbnails.\n"

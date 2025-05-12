@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10405",
       "author": "Boyan Sheytanov",
       "date": "2010-01-08T06:39:07.000-0500",
       "body": "As discussed on the demo on Thursday, the issue can now be marked resolved. There are some things that can be improved, but they are not directly connected to delivering the first version of the Capure screen and thus will be addressed while developing the other Decapod components.\n"

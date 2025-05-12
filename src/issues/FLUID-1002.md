@@ -38,16 +38,19 @@
   ],
   "comments": [
     {
+      "id": "20487",
       "author": "Justin Obara",
       "date": "2008-07-23T19:22:10.000-0400",
       "body": "'screenshot-1' shows the persistent mouse selection highlighting\n"
     },
     {
+      "id": "20488",
       "author": "Anastasia Cheetham",
       "date": "2008-08-18T10:55:49.000-0400",
       "body": "This issue only seems to present itself with table cells, not divs, paragraphs, or other types of elements. I've added an example of a table to the manual test page to illustrate the difference.\n"
     },
     {
+      "id": "20489",
       "author": "Justin Obara",
       "date": "2008-10-31T08:53:49.000-0400",
       "body": "Appears to have been fixed with one of the updates to inline edit\n"

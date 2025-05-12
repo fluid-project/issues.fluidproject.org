@@ -48,16 +48,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23015",
       "author": "Justin Obara",
       "date": "2013-12-09T08:35:05.797-0500",
       "body": "More conversation on the pull request\\\n<https://github.com/fluid-project/infusion/pull/443>\n"
     },
     {
+      "id": "23017",
       "author": "Michelle D'Souza",
       "date": "2014-05-13T13:56:30.096-0400",
       "body": "Merged into project repo at f5403d5027923475e0c4314005f6723d2e732759\n"
     },
     {
+      "id": "23018",
       "author": "Antranig Basman",
       "date": "2019-08-01T09:30:58.612-0400",
       "body": "Note that we now by policy implement a different behaviour - any component action triggered after destruction, e.g. an invoker or listener call, is now a no-op\n"

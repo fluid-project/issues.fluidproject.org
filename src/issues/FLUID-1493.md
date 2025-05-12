@@ -41,11 +41,13 @@
   ],
   "comments": [
     {
+      "id": "18708",
       "author": "Justin Obara",
       "date": "2008-09-09T10:27:09.000-0400",
       "body": "'screenshot-1' shows the right border of the drop target missing\n"
     },
     {
+      "id": "18710",
       "author": "Justin Obara",
       "date": "2008-09-11T10:21:14.000-0400",
       "body": "Verified fix using:\n\nIE6 (Win XP)\n"

@@ -39,6 +39,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25068",
       "author": "Antranig Basman",
       "date": "2021-08-08T13:48:59.805-0400",
       "body": "The old renderer will be retired in the Infusion 5.0 release and no further improvements will be made to it. The new renderer is incapable of this kind of corruption since its template representation always nests properly.\n"

@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27465",
       "author": "Blake E",
       "date": "2008-10-27T14:53:39.000-0400",
       "body": "vulab5\n"
     },
     {
+      "id": "27466",
       "author": "Blake E",
       "date": "2008-11-03T11:22:20.000-0500",
       "body": "demo info and accounts emailed to list.\n"

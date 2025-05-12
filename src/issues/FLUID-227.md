@@ -33,6 +33,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19471",
       "author": "Jonathan Hung",
       "date": "2008-02-13T11:33:45.000-0500",
       "body": "Once SVn has been re-arranged, the ant build script should be modified to not use the ${build} directory. Instead ant script should minify and output directly to ${dist}.\n"

@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21589",
       "author": "Jacob Farber",
       "date": "2009-05-04T12:20:47.000-0400",
       "body": "<http://jqueryui.com/download>\n"
     },
     {
+      "id": "21590",
       "author": "Laurel Williams",
       "date": "2009-05-25T12:39:45.000-0400",
       "body": "Here is a template for the custom build component.\n"
     },
     {
+      "id": "21591",
       "author": "Laurel Williams",
       "date": "2009-05-25T12:41:39.000-0400",
       "body": "Sorry - I resolved the wrong issue -  I was intending to resove a sub task.\n"
     },
     {
+      "id": "21592",
       "author": "Jacob Farber",
       "date": "2009-06-08T13:46:49.000-0400",
       "body": "the last task on this list is Laurel's, so it just makes sense you could close the whole thing when your done\n"

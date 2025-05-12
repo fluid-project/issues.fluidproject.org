@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18246",
       "author": "Colin Clark",
       "date": "2008-02-24T12:57:53.000-0500",
       "body": "Added an extra context flag for when focus is in the process of leaving the container. This is only set on Shift Tab keydown, and now allows users to successfully shift-tab out of the container by temporarily bypassing auto-select on focus.\n"
     },
     {
+      "id": "18248",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:52.337-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

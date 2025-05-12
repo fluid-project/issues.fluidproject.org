@@ -23,16 +23,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25942",
       "author": "Giovanni Tirloni",
       "date": "2018-02-02T05:56:12.829-0500",
       "body": "<https://lists.gpii.net/pipermail/architecture/2018-February/004743.html>\n"
     },
     {
+      "id": "25944",
       "author": "Giovanni Tirloni",
       "date": "2018-02-02T05:56:44.577-0500",
       "body": "```\nStart: Fri Feb 2 10:54:08 2018\r\nHOST: h-0005.tor1.inclusivedesign.ca Loss% Snt Last Avg Best Wrst StDev\r\n 1.|-- gateway 0.0% 60 0.2 0.2 0.1 0.4 0.0\r\n 2.|-- 205.211.169.3 0.0% 60 0.8 3.9 0.4 196.9 25.3\r\n 3.|-- 205.211.168.4 0.0% 60 0.5 0.8 0.4 7.4 1.1\r\n 4.|-- gi0-0-1-17.210.nr11.b011027-0.yyz02.atlas.cogentco.com 0.0% 60 1.3 1.3 1.0 4.0 0.4\r\n 5.|-- 154.24.42.69 0.0% 60 1.2 1.2 0.9 5.0 0.5\r\n 6.|-- te0-0-1-9.ccr31.yyz02.atlas.cogentco.com 0.0% 60 0.9 0.9 0.6 1.3 0.0\r\n 7.|-- level3.yyz02.atlas.cogentco.com 0.0% 60 1.1 1.3 1.0 9.7 1.1\r\n 8.|-- ae-2-4.bear2.Washington111.Level3.net 90.0% 60 18.2 18.2 18.1 18.4 0.0\r\n 9.|-- GITHUB-INC.bear2.Washington111.Level3.net 0.0% 60 18.2 18.2 17.9 21.5 0.5\r\n 10.|-- ??? 100.0 60 0.0 0.0 0.0 0.0 0.0\r\n 11.|-- ??? 100.0 60 0.0 0.0 0.0 0.0 0.0\r\n 12.|-- lb-192-30-253-113-iad.github.com 0.0% 60 18.2 18.3 17.9 28.9 1.4\n```\n"
     },
     {
+      "id": "25945",
       "author": "Giovanni Tirloni",
       "date": "2018-02-08T09:20:28.447-0500",
       "body": "It seems the packet loss has decreased. It's still not perfect but good enough (seems like how Cogent operates). Closing for now.\n"

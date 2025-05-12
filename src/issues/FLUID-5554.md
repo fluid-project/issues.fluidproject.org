@@ -30,26 +30,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16897",
       "author": "Anastasia Cheetham",
       "date": "2014-11-12T10:23:02.408-0500",
       "body": "Justin suggests that this fix should go into the 1.5.x branch as well as master.\n"
     },
     {
+      "id": "16899",
       "author": "Anastasia Cheetham",
       "date": "2014-11-12T10:45:00.607-0500",
       "body": "Two pull requests:\\\nmaster: <https://github.com/fluid-project/infusion/pull/568>\\\n1.5.x: <https://github.com/fluid-project/infusion/pull/569>\n"
     },
     {
+      "id": "16901",
       "author": "Justin Obara",
       "date": "2014-11-12T12:49:32.296-0500",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/568> ) into the master branch of the project repo at de2ea6df7df284829621f99c1a89ba50ebfcea2d\n"
     },
     {
+      "id": "16906",
       "author": "Justin Obara",
       "date": "2014-11-12T14:35:38.253-0500",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/569> ) into the infusion-1.5.x branch of the project repo at 266bec518687521c2611951bc29fb6baa87d4ef6\n"
     },
     {
+      "id": "16908",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:30.907-0400",
       "body": "Reopening to change the fix version to 1.9\n"

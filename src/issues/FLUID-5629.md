@@ -26,21 +26,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15417",
       "author": "YashJipkate",
       "date": "2020-03-01T01:03:57.627-0500",
       "body": "I think this is because the URLs are now different. But the pages (in the given example - DeclarativeThisismInIoC.html) are still present. So they are essentially not destroyed. Like the page is now on <https://docs.fluidproject.org/infusion/development/DeclarativeThisismInIoC.html>.\n\nDoes this mean that the blog posts are restored? Or is there something I am missing?\n"
     },
     {
+      "id": "15420",
       "author": "Justin Obara",
       "date": "2020-03-02T08:00:44.193-0500",
       "body": "From the description of the issue, it sounds like these posts used to live with another site and have now been moved to the docs. We may just need to validate all the URLs in the docs site to make sure they are pointing at the correct locations.\n"
     },
     {
+      "id": "15424",
       "author": "YashJipkate",
       "date": "2020-04-08T16:25:18.290-0400",
       "body": "The link checker tests are passing on the master branch. And any page that could have given 404 would be caught by the test. So, I think it is safe to assume that the links are all pointing to valid locations. \n"
     },
     {
+      "id": "27954",
       "author": "Justin Obara",
       "date": "2024-08-01T07:00:16.525-0400",
       "body": "Merged [PR #269](https://github.com/fluid-project/infusion-docs/pull/269)\n"

@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10225",
       "author": "Jonathan Hung",
       "date": "2010-06-14T15:50:55.117-0400",
       "body": "If there is enough time, add a breadcrumb navigation for 0.4/0.5.\\\nIf there isn't enough time, at minimum there should be a link or button on the Export screen to redirect user back to Capture.\n"
     },
     {
+      "id": "10226",
       "author": "James Yoon",
       "date": "2010-07-14T10:26:04.077-0400",
       "body": "As of 0.4, it's hard coded into the markup/styling. This might be better if it's dynamically generated.\n\nConsiderations:\n\n* Need to highlight the current location on the breadcrumb\n* Need to list out path from current page down to root (home/book management)\n"

@@ -39,16 +39,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13080",
       "author": "Antranig Basman",
       "date": "2008-08-14T21:23:31.000-0400",
       "body": "This is probably, but not certainly caused by the double-evaluation issue to be resolved by <https://fluidproject.atlassian.net/browse/FLUID-32#icft=FLUID-32>\n"
     },
     {
+      "id": "13081",
       "author": "Antranig Basman",
       "date": "2008-09-07T18:05:21.000-0400",
       "body": "Drop Manager, Dom Permutation work merged back into trunk at revision 5476\n\nThis should have been resolved as a result of \"script cleansing\" implemented as part of the Permuter.\n"
     },
     {
+      "id": "13082",
       "author": "Justin Obara",
       "date": "2008-09-08T09:19:28.000-0400",
       "body": "Assigning  it to Anastasia to close as she was the reporter\n"

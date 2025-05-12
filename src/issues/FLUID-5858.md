@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22563",
       "author": "Justin Obara",
       "date": "2016-02-11T11:19:44.184-0500",
       "body": "I attempted to reproduce this on a Surface Pro 3 running Windows 10.&#x20;\n\nI ran the tests 3 times using Firefox 44.0.1,  one time had an error with the enactors tests.\\\nI ran the tests 3 times using Firefox 44.0.1 in private browsing mode, all cases the tests all passed.\n\nNOTE: I had cleared the browser history and cache before starting the above.\n\nIt might be an issue with browser caching between test runs?\n"
     },
     {
+      "id": "22566",
       "author": "Giovanni Tirloni",
       "date": "2016-02-11T11:36:48.918-0500",
       "body": "I cleared the cache between runs.&#x20;\n\nYesterday I was running the tests on one laptop and this morning I reproduced the issue on a different laptop. Although \"reproduced\" probably means I \"lucked out\" because it's inconsistent.\n\nI was running firefox with \"--safe-mode\" to disable extensions/plugins.\n"

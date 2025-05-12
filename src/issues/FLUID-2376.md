@@ -27,26 +27,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16451",
       "author": "Joseph Scheuhammer",
       "date": "2009-03-17T15:41:04.000-0400",
       "body": "Switching \"Component\" from the \"Image Reorderer\" to \"Reorderer\" as this applies to any use that involves drag-and-drop (not just images).\n"
     },
     {
+      "id": "16453",
       "author": "Justin Obara",
       "date": "2009-03-20T15:55:07.000-0400",
       "body": "Bug Parade 1.0 release&#x20;\n"
     },
     {
+      "id": "16455",
       "author": "Anastasia Cheetham",
       "date": "2009-03-24T13:50:00.000-0400",
       "body": "The changes made for this fix are consistent with the description. But:\\\nIn the test file, the text strings describing the expected test results were not updated to reflect the new naming and values. This is relatively minor, but if tests actually fail, the incorrect text might make debugging the failing tests a bit confusing.\n"
     },
     {
+      "id": "16457",
       "author": "Anastasia Cheetham",
       "date": "2009-03-24T14:23:05.000-0400",
       "body": "Ok, the test files have been updated. Looks great.\n"
     },
     {
+      "id": "16459",
       "author": "Justin Obara",
       "date": "2009-03-24T18:07:09.000-0400",
       "body": "Verified fix using:\n\nFF3 (Mac OS 10.5)\n"

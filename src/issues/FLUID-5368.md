@@ -37,11 +37,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15534",
       "author": "Antranig Basman",
       "date": "2014-05-15T03:30:26.897-0400",
       "body": "I've resolved this by providing a new facility for modelRelay governed by new fields \"forward\" and \"backward\" since the relay you have set up is ambiguous as it stands. Without a hint from the user the framework can't tell in which direction synchronisation is required. In the absence of the hint, the relay system is picking a sychronisation direction at random based on its condition when it encounters the relay.\n"
     },
     {
+      "id": "15536",
       "author": "Cindy Li",
       "date": "2014-05-28T09:13:58.244-0400",
       "body": "The pull request (<https://github.com/fluid-project/infusion/pull/520>) has been merged into the project repo @ f77fac2d2d8ecd7fe5ffd2f497cf404e8f13814b\n"

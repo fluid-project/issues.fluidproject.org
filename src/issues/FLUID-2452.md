@@ -35,16 +35,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23418",
       "author": "Antranig Basman",
       "date": "2009-04-02T15:16:29.000-0400",
       "body": "I can reproduce the latter error. \\\nI am not sure I understand the former error - a URL is simply text, and shouldn't the effect of pasting this into an editor be to paste this text? The simpler editor is not configured with any affordances to create links.\n"
     },
     {
+      "id": "23419",
       "author": "Antranig Basman",
       "date": "2009-04-02T15:18:57.000-0400",
       "body": "The solution to the latter error is described at <http://drupal.org/node/344230>\n"
     },
     {
+      "id": "23420",
       "author": "Justin Obara",
       "date": "2009-04-14T09:56:44.000-0400",
       "body": "fixed with <https://fluidproject.atlassian.net/browse/FLUID-2438#icft=FLUID-2438>\n"

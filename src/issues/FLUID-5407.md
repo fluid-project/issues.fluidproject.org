@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25618",
       "author": "Justin Obara",
       "date": "2014-06-05T13:25:51.684-0400",
       "body": "~~screenshot.png shows the background around the table of contents isn't themed.~~\n\nThe screenshot was deleted during a system upgrade.\n"
     },
     {
+      "id": "25619",
       "author": "Stanislav Shterev",
       "date": "2016-05-10T14:28:24.327-0400",
       "body": "I fixed the bug by changing background-color to background in the Themes.styl file in order to remove the background images when a contrast theme is added. <https://github.com/styki/infusion/tree/FLUID-5407>\n"
     },
     {
+      "id": "25620",
       "author": "Justin Obara",
       "date": "2017-08-14T09:07:16.487-0400",
       "body": "This issue seems to be present whether or not the Table of Contents is enabled; however, it is more visible when it is.\n"
     },
     {
+      "id": "25621",
       "author": "Justin Obara",
       "date": "2021-06-29T17:08:21.038-0400",
       "body": "Can no longer reproduce this issue. Possibly fixed with recent changes to the contrast themes such as <https://fluidproject.atlassian.net/browse/FLUID-6549#icft=FLUID-6549>\n"

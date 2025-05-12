@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23499",
       "author": "Justin Obara",
       "date": "2009-03-25T11:36:25.000-0400",
       "body": "Clean Up Parade 1.0&#x20;\n"
     },
     {
+      "id": "23500",
       "author": "Eli Cochran",
       "date": "2009-03-31T17:50:13.000-0400",
       "body": "repairFromUpload() has been changed to refreshAfterUpload()\n"
     },
     {
+      "id": "23501",
       "author": "Colin Clark",
       "date": "2009-04-01T00:28:13.000-0400",
       "body": "I've committed the changes for fluid.keyForValue(), fluid.assembleModel(), and the ChangeApplier-related names.\n"
     },
     {
+      "id": "23502",
       "author": "Colin Clark",
       "date": "2009-04-01T00:29:17.000-0400",
       "body": "Name changes are in and backwards compatibility has been preserved where necessary. The four commits to this issue should be code reviewed before closing.\n"

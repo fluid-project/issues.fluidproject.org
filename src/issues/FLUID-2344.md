@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20872",
       "author": "Justin Obara",
       "date": "2009-03-13T09:37:11.000-0400",
       "body": "Removed trailing comma on line 242 or DataBinding.js\n"
     },
     {
+      "id": "20873",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:54.895-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

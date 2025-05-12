@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25125",
       "author": "Antranig Basman",
       "date": "2019-11-05T18:58:08.026-0500",
       "body": "Note that this issue only actually affects \"contextualised\" relays such as the fluid.transform.free block shown - direct or implicit relays get played through the relay system live, whereas contextualised relays such as above only get played after the conclusion of a \"half-transaction\" triggered by modelTransaction.commit().\n"
     },
     {
+      "id": "25126",
       "author": "Antranig Basman",
       "date": "2019-11-06T07:07:50.180-0500",
       "body": "Looks like this was not an issue in the old framework because of the old crude \"initModelEvent\" system which always notified via creating a fresh blank transaction with the original model value.\n"

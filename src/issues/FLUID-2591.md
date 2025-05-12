@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22384",
       "author": "Antranig Basman",
       "date": "2009-04-13T15:30:58.000-0400",
       "body": "Interim fix at revision 7110. However, we need to review this overall architecture - right now there is the situation that the header is being rerendered along with the body - even though there is no account taken of the only state which may change in it!\\\nRight now the \"direct selector\", that is the rsf:id elements within the header, refer to the renderable elements, rather than referring to the overall cells, which are the target of the styling for sort.\n"
     },
     {
+      "id": "22387",
       "author": "Justin Obara",
       "date": "2009-04-14T09:14:35.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.6, Safari 3.2 (Mac OS 10.5)\\\nFF3, IE7 (Win Vista)\n"

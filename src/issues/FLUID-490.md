@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20624",
       "author": "Allison Bloodworth",
       "date": "2008-04-10T15:44:08.000-0400",
       "body": "iteration08\n"
     },
     {
+      "id": "20625",
       "author": "Colin Clark",
       "date": "2008-04-16T18:39:51.000-0400",
       "body": "I'm updating this time estimate to reflect only those who are listed on the UX project spreadsheet; Allison, Daphne, Erin, Paul, and Gary. I hope lots of others are able to join us, but we don't need to track their time. 🙂\n"

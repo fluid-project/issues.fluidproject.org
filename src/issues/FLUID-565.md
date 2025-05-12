@@ -36,21 +36,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21956",
       "author": "Joseph Scheuhammer",
       "date": "2008-05-02T15:51:05.000-0400",
       "body": "ARIA spec with respect to active descendant:\\\n<http://www.w3.org/TR/wai-aria/#activedescendant>\n\nBest practices example:\\\n<http://www.w3.org/TR/wai-aria-practices/#focus_activedescendant>\n"
     },
     {
+      "id": "21959",
       "author": "Justin Obara",
       "date": "2009-03-24T10:04:44.000-0400",
       "body": "Bug Parade 1.0 release&#x20;\n"
     },
     {
+      "id": "21961",
       "author": "Anastasia Cheetham",
       "date": "2009-03-24T14:06:09.000-0400",
       "body": "This fix looks, good, but I found one file that still mentions ariadescendent:\\\n/src/webapp/sample-code/keyboard-a11y/jquery-ui-tabs/jquery-ui-accessible-tabs.js\n"
     },
     {
+      "id": "21964",
       "author": "Justin Obara",
       "date": "2009-03-24T17:36:31.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.6, Safari 3.2 (Mac OS 10.5)\\\nFF3, IE7 (Win Vista)\n"

@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10411",
       "author": "Justin Obara",
       "date": "2012-04-13T12:06:41.578-0400",
       "body": "The big issue of the key being wrong, has been addressed.\n\nCurrently in my bitbucket repo:\\\n<https://bitbucket.org/jobara/decapod-server-iteration3>\n\nThe second part, the format of the url, has been filed under <https://fluidproject.atlassian.net/browse/DECA-241#icft=DECA-241>. It is still usable by the Decapod UI in the current format, though.\n"
     },
     {
+      "id": "10412",
       "author": "Justin Obara",
       "date": "2012-05-18T14:25:34.393-0400",
       "body": "Merged into the project repo\n"

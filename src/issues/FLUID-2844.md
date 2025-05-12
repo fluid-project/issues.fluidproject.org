@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "14957",
       "author": "Antranig Basman",
       "date": "2009-05-29T12:42:24.000-0400",
       "body": "Unfortunately, this is another site where sample code had not been updated for the API change caused by Fluid-2477. At the time, it seemed that this only affected those users who were supplying a \"bindings\" structure which contained an entry for \"handler\" - but it in fact affects all users who have supplied an activation handler in the primary arguments too.\n"
     },
     {
+      "id": "14960",
       "author": "Justin Obara",
       "date": "2009-05-29T13:19:53.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.6 (Mac OS 10.5)\\\nIE6, IE8 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23489",
       "author": "Colin Clark",
       "date": "2010-12-22T15:38:24.091-0500",
       "body": "This issue was resolved several releases ago by introducing the clean-build-run.sh script.\n"

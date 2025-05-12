@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14142",
       "author": "Justin Obara",
       "date": "2009-05-25T16:11:02.000-0400",
       "body": "Bug Parade 1.1 release&#x20;\n"
     },
     {
+      "id": "14144",
       "author": "Justin Obara",
       "date": "2009-05-25T16:56:27.000-0400",
       "body": "For the time being, have removed css concatenation from the build process. Post 1.1 will determine a strategy to handle the image paths.\n"

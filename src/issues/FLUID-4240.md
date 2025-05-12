@@ -27,31 +27,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15955",
       "author": "Colin Clark",
       "date": "2011-05-16T12:40:52.828-0400",
       "body": "\\[12:39pm] colinclark: mlam, Justin\\_o, it seems like the salient point from this bug is that in order to get Uploader to stop the way it should, you need to press the Stop button as many times as there are files in the queue\\\n\\[12:39pm] colinclark: anastasiac's Variation B at the bottom of her JIRA\\\n\\[12:40pm] colinclark: If you have 5 files, you have to click Stop 5 times to get it to do the right thing\\\n\\[12:40pm] colinclark: Fewer clicks will eventually get it to to stop\\\n\\[12:40pm] colinclark: but not where you'd expect it to\n"
     },
     {
+      "id": "15957",
       "author": "Anastasia Cheetham",
       "date": "2011-05-16T12:42:46.570-0400",
       "body": "It seems that the Uploader might be automatically trying to resume the upload after stop is clicked, and getting confused as to what it's resuming: The progress seems to continue on the same file, but the status at the bottom increments to the \"next\" file. So it seems to be partly resuming the same file, and partly working its way through the queue.\n"
     },
     {
+      "id": "15959",
       "author": "Justin Obara",
       "date": "2011-05-17T10:05:14.807-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "15961",
       "author": "Mike Lam",
       "date": "2011-05-17T13:41:47.924-0400",
       "body": "Fixed.   The demo remote uploader was missing a flag to tell the queue to stop uploading files.\n"
     },
     {
+      "id": "15963",
       "author": "Justin Obara",
       "date": "2011-05-18T09:05:10.593-0400",
       "body": "going to change the status to needs commit\n"
     },
     {
+      "id": "15965",
       "author": "Colin Clark",
       "date": "2011-05-26T18:51:56.728-0400",
       "body": "Reviewed and committed to the project repo: <https://github.com/colinbdclark/infusion/commit/5181d10116a0a15c713971ba5c86c068e5a01a17>\n"

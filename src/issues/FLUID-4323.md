@@ -38,11 +38,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24547",
       "author": "Michelle D'Souza",
       "date": "2011-07-14T23:08:39.159-0400",
       "body": "This is being built in a branch in my github repo: <https://github.com/michelled/infusion/commits/FLUID-4323>\n\nAs of commit 92ea998cef449a47ea3dab5fb06bf48290f589d8 the following styling tasks are left:\\\n1\\. highlight the browse all tab\\\n2\\. move the search box and search buttons to the right\\\n3\\. add space on the right of the bread crumbs\\\n4\\. move the heading to the line below the bread crumbs\\\n5\\. centre the number of search results\\\n6\\. style the text in the 'refine your search' section\\\n7\\. move the pager bar to the right of the column\\\n8\\. add more options to the 'refine your search' section\\\n9\\. fix the nested columns in the centre column\\\n10\\. add more search results to the centre column\\\n11\\. style the titles in the right column\\\n12.centre the footer text\n"
     },
     {
+      "id": "24548",
       "author": "Michelle D'Souza",
       "date": "2011-07-15T00:34:40.565-0400",
       "body": "As of commit 9ecdfd21d76b1473d6d040016c312e458fb47504 the following styling and markup tasks are remaining: \\\n1\\. fix the nested columns in the centre column \\\n2\\. highlight the browse all tab \\\n3\\. move the pager bar to the right of the column \\\n4\\. line up the toggle icon with the first item in each group in the left column\n"

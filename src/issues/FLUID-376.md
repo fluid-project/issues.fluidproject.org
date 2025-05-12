@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19521",
       "author": "Allison Bloodworth",
       "date": "2008-03-18T00:49:08.000-0400",
       "body": "futuretask\n"
     },
     {
+      "id": "19522",
       "author": "Jonathan Hung",
       "date": "2008-08-21T16:40:17.000-0400",
       "body": "This task is now captured elsewhere in other (smaller) bugs.\n"

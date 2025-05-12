@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22231",
       "author": "Justin Obara",
       "date": "2010-10-04T14:01:22.042-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "22232",
       "author": "Anastasia Cheetham",
       "date": "2010-12-02T10:42:57.044-0500",
       "body": "So far, the only change to the public API is the addition of the 'disableWrap' option, which has been added to the documentation.\n"

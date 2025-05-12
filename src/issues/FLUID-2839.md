@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22888",
       "author": "Daphne Ogle",
       "date": "2009-05-28T22:38:18.000-0400",
       "body": "I can't figure out how to move between easier to see and easier to find at all with the keyboard.\n"
     },
     {
+      "id": "22891",
       "author": "Michelle D'Souza",
       "date": "2009-06-01T14:31:18.000-0400",
       "body": "The interface uses a jQuery UI accordion. In order to switch to another pane in the accordion, use the arrow keys to highlight the title bar of the other pane and then press enter.&#x20;\n"

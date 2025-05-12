@@ -32,21 +32,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17232",
       "author": "Justin Obara",
       "date": "2009-03-12T11:25:39.000-0400",
       "body": "Bug Parade 1.0 release\n"
     },
     {
+      "id": "17234",
       "author": "Antranig Basman",
       "date": "2009-03-17T15:24:04.000-0400",
       "body": "Fixed at revision 6764 - note new API, updateModelValue for InlineEdit\n"
     },
     {
+      "id": "17236",
       "author": "Anastasia Cheetham",
       "date": "2009-03-17T17:06:38.000-0400",
       "body": "I've reviewed and tested the changes for this, and they look good to me. Undo no longer has this requirement. I'll update the Undo documentation accordingly.\n"
     },
     {
+      "id": "17238",
       "author": "Justin Obara",
       "date": "2009-03-17T17:22:20.000-0400",
       "body": "closed based on the above review and testing\n"

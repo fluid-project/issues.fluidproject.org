@@ -40,16 +40,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24099",
       "author": "Justin Obara",
       "date": "2011-05-17T10:29:17.092-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24101",
       "author": "Harris Wong",
       "date": "2011-07-26T11:18:42.555-0400",
       "body": "Resolved June 20, on commit 795aa19c567e62b38ec058ac58eda28e05cbb820:\\\n<https://github.com/harriswong/infusion/commit/795aa19c567e62b38ec058ac58eda28e05cbb820#src/webapp/tests/component-tests/tableOfContents/js/TableOfContentsTests.js>\n"
     },
     {
+      "id": "24104",
       "author": "Justin Obara",
       "date": "2011-07-28T09:23:55.791-0400",
       "body": "This appears to be in the project repo\\\n<https://github.com/fluid-project/infusion/blob/master/src/webapp/components/tableOfContents/js/TableOfContents.js#L43-45>\n"

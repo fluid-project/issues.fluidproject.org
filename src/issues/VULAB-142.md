@@ -42,26 +42,31 @@
   ],
   "comments": [
     {
+      "id": "27530",
       "author": "Blake E",
       "date": "2009-01-05T16:33:29.000-0500",
       "body": "pushed to vulab13\n"
     },
     {
+      "id": "27531",
       "author": "Blake E",
       "date": "2009-01-09T15:25:13.000-0500",
       "body": "Since we currently have a help link that links to survey creation help, I am going to add survey creation help into the wiki help page and change the current help link to point to the wiki.\n"
     },
     {
+      "id": "27532",
       "author": "Blake E",
       "date": "2009-01-12T16:10:18.000-0500",
       "body": "The changes have been completed but I am unable to upload/test them on vulab.yorku.ca. I've moved this issue to a dependency on fixing the server access/configuration.\n"
     },
     {
+      "id": "27533",
       "author": "Blake E",
       "date": "2009-01-15T13:54:59.000-0500",
       "body": "Simple Link Change to the Navigation.\n\nI added a link for \"VULab Help\" which links to wiki help page, and \"Survey Help\" which continues to link to the system help page (which is primarily for survey creation help)\n"
     },
     {
+      "id": "27534",
       "author": "David Makalsky",
       "date": "2009-01-29T10:53:03.000-0500",
       "body": "patch applied\n"

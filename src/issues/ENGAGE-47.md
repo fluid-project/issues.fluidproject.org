@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12434",
       "author": "Justin Obara",
       "date": "2009-09-04T09:49:29.000-0400",
       "body": "Component now adds it's css classes programmatically\n"
     },
     {
+      "id": "12435",
       "author": "Justin Obara",
       "date": "2009-11-10T11:04:31.000-0500",
       "body": "closed as per previous comment\n"

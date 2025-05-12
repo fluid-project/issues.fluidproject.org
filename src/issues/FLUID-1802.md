@@ -43,11 +43,13 @@
   ],
   "comments": [
     {
+      "id": "19994",
       "author": "Justin Obara",
       "date": "2008-11-13T11:43:24.000-0500",
       "body": "'screenshot-1' shows the move cursor. Trying to perform DnD from this position won't work\n"
     },
     {
+      "id": "19996",
       "author": "Justin Obara",
       "date": "2014-06-05T15:24:32.283-0400",
       "body": "This demo has been removed\n"

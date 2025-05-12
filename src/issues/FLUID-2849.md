@@ -38,31 +38,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22215",
       "author": "Justin Obara",
       "date": "2010-05-07T13:33:59.565-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "22217",
       "author": "Colin Clark",
       "date": "2010-09-09T10:33:08.387-0400",
       "body": "This issue stretched the boundary of the Uploader with its parent application, but is something we should find a way to fix. Obvious solutions involve storing a state cookie that remembers the user's setting, or perhaps recommending that application developers persist this choice themselves in some way such as a query parameter.&#x20;\n\nThis issue also relates indirectly to the issue of allowing users to globally control avoidance of Flash (or complex UIs) via UI Options.\n"
     },
     {
+      "id": "22219",
       "author": "Justin Obara",
       "date": "2010-10-04T15:37:43.375-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "22222",
       "author": "Anastasia Cheetham",
       "date": "2010-11-15T13:40:43.622-0500",
       "body": "Testing the new HTML5 version, this bug is still present.\n"
     },
     {
+      "id": "22223",
       "author": "Michelle D'Souza",
       "date": "2010-12-23T15:46:38.576-0500",
       "body": "Please check if this is done and either close it or put it into another release.\n"
     },
     {
+      "id": "22225",
       "author": "Anastasia Cheetham",
       "date": "2011-01-04T09:41:27.525-0500",
       "body": "This issue is moot now, with the new Progressive Enhancement work.\n"

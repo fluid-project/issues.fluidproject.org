@@ -25,26 +25,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12110",
       "author": "James Yoon",
       "date": "2010-02-19T16:30:31.000-0500",
       "body": "a11y issue\n"
     },
     {
+      "id": "12111",
       "author": "Jess Mitchell",
       "date": "2010-02-19T17:07:16.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12112",
       "author": "James Yoon",
       "date": "2010-02-22T10:18:33.000-0500",
       "body": "A quick stopgap solution might be to use \"Image of \\[artifact name]\" as the alt text for artifact images, \"Thumbnail of \\[artifact name]\" as the alt text for artifact thumbnails, \"Image of \\[exhibition name]\" as the alt text for exhibition images, and \"Thumbnail of \\[exhibition name]\" as the alt text for exhibition thumbnails.\n"
     },
     {
+      "id": "12113",
       "author": "Justin Obara",
       "date": "2010-02-23T12:45:16.000-0500",
       "body": "Set the alt text of museum related images to be either the artifact or exhibition title.\n"
     },
     {
+      "id": "12114",
       "author": "Colin Clark",
       "date": "2010-02-23T13:02:40.000-0500",
       "body": "While this issue is a little heavy-handed, I think it will work just fine for Engage 0.3b. In the future, we should ensure that alt text is more configurable for the NavList, so that we don't enforce a contract where all NavList item images are automatically given an alt text equivalent to their title.\n"

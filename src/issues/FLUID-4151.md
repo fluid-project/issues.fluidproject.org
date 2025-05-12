@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14421",
       "author": "Harris Wong",
       "date": "2011-05-30T15:54:41.682-0400",
       "body": "Related to json2 removal. <https://github.com/fluid-project/infusion/commit/3e45b80f11b88b3b42982c50f23c7eafa3d1244a>\n"
     },
     {
+      "id": "14425",
       "author": "Michelle D'Souza",
       "date": "2012-02-01T10:40:23.338-0500",
       "body": "Merged into project repo at cf52d6763037be7298c97e5fc31a7e9c7372db9e\n"
     },
     {
+      "id": "14428",
       "author": "Antranig Basman",
       "date": "2012-02-02T01:03:41.360-0500",
       "body": "Reopening this issue since many more improvements are necessary - should probably be kept open indefinitely\n"

@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "24095",
       "author": "Justin Obara",
       "date": "2016-11-14T15:54:54.844-0500",
       "body": "screenshot.png shows the default contrast theme selected, but the focus styling on the low contrast theme.\n"
     },
     {
+      "id": "27873",
       "author": "Justin Obara",
       "date": "2024-07-23T13:27:06.493-0400",
       "body": "Internet Explorer is no longer supported\n"

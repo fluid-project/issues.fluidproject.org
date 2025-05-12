@@ -26,36 +26,43 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14278",
       "author": "Anastasia Cheetham",
       "date": "2013-10-31T14:13:23.728-0400",
       "body": "I've tested Justin's branch for <https://fluidproject.atlassian.net/browse/FLUID-5201#icft=FLUID-5201>, which fixes the slider rendering, and now this problem (i.e. the controls not reflecting the defaults) is showing up for the slider, as well. Also, the range information in the primary schema is not being applied to the rendered component, either.\n"
     },
     {
+      "id": "14280",
       "author": "Justin Obara",
       "date": "2013-10-31T14:36:34.976-0400",
       "body": "There are two issues at play here. 1) the initial model value is not set for the sub panels 2) the selection renderer tree components do not have their valuebinding rebased.\n"
     },
     {
+      "id": "14282",
       "author": "Justin Obara",
       "date": "2013-10-31T15:16:13.416-0400",
       "body": "I have fixes to both of the underlying issues mentioned in the previous comment in my <https://fluidproject.atlassian.net/browse/FLUID-5202#icft=FLUID-5202> branch.\\\n<https://github.com/jobara/infusion/tree/FLUID-5202>\n"
     },
     {
+      "id": "14284",
       "author": "Justin Obara",
       "date": "2013-10-31T15:54:22.604-0400",
       "body": "Sent a pull request <https://github.com/fluid-project/infusion/pull/432>\n"
     },
     {
+      "id": "14287",
       "author": "Anastasia Cheetham",
       "date": "2013-11-01T08:53:10.346-0400",
       "body": "I've tested Justin's <https://fluidproject.atlassian.net/browse/FLUID-5200#icft=FLUID-5200> branch in my branch, where I initially noticed the problems:\\\n<https://github.com/acheetham/infusion/tree/PFID>\\\nThe drop-downs are now correctly being initialized to the default values, but the sliders are still not getting the default or the range values. It's possible this may be related to <https://fluidproject.atlassian.net/browse/FLUID-5203#icft=FLUID-5203>, but the problem occurs even when there is only one slider in the panel.\n"
     },
     {
+      "id": "14289",
       "author": "Justin Obara",
       "date": "2013-11-04T10:02:53.290-0500",
       "body": "Yes that will be addressed with the wok for <https://fluidproject.atlassian.net/browse/FLUID-5203#icft=FLUID-5203>\n"
     },
     {
+      "id": "14291",
       "author": "Justin Obara",
       "date": "2013-11-07T15:06:08.071-0500",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/432> ) into the project repo at e4475f1d0ca14eb6d6cc506bb273a04088b0cd18\n"

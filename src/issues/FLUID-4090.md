@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21776",
       "author": "Justin Obara",
       "date": "2011-02-24T12:59:23.666-0500",
       "body": "I couldn't reproduce this using IE 6 in my win xp virtual machine. I wonder if this had something to do with running the IE6 standalone.\n"

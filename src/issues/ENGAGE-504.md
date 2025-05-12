@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12138",
       "author": "y z",
       "date": "2010-03-08T17:43:33.000-0500",
       "body": "There's a way to consistently recreate this issue if you follow this steps:\\\n1\\) open engage app in chromeless mode\\\n2\\) choose language i.e. english\\\n3\\) go to enter object code\\\n4\\) enter object code i.e. 10\\\n5\\) click on collect and then go to my collection by clicking on the sliding message\\\n6\\) click on send (notice that dialog is fully expanded) and then click cancel\\\n7\\) click on home button\\\n8\\) from the home page click on my collection again\\\n9\\) click on send and notice that you recreated the bug\n"
     },
     {
+      "id": "12139",
       "author": "Antranig Basman",
       "date": "2010-03-08T18:29:15.000-0500",
       "body": "I followed these steps on my Android phone (Motorola Droid) and couldn't reproduce the issue. Looks like it truly is iPod specific.&#x20;\n"
     },
     {
+      "id": "12140",
       "author": "James Yoon",
       "date": "2010-03-09T10:34:38.000-0500",
       "body": "Lookin' good now.\n"

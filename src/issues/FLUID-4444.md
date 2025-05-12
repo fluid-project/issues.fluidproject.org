@@ -35,26 +35,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14693",
       "author": "heidi valles",
       "date": "2011-09-13T11:54:06.097-0400",
       "body": "<http://build.fluidproject.org/infusion/components/uploader/html/Uploader.html>   works\n"
     },
     {
+      "id": "14694",
       "author": "Colin Clark",
       "date": "2011-09-16T15:29:11.442-0400",
       "body": "Assigning to Mike because he produced a fix for this issue\n"
     },
     {
+      "id": "14695",
       "author": "Colin Clark",
       "date": "2011-09-16T15:29:51.531-0400",
       "body": "Mike's pull request for this issue is available at: <https://github.com/fluid-project/infusion/pull/166>\n"
     },
     {
+      "id": "14696",
       "author": "Colin Clark",
       "date": "2011-09-16T15:31:37.349-0400",
       "body": "Assigning to Justin for code review\n"
     },
     {
+      "id": "14697",
       "author": "Justin Obara",
       "date": "2011-09-16T17:38:20.721-0400",
       "body": "Merged Mike's pull request into the project repo at f2f18094eeb6aa02b6ee54b7e594e6af3a3cea0d\n"

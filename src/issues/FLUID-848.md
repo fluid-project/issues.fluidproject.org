@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21916",
       "author": "Colin Clark",
       "date": "2008-07-31T17:26:47.000-0400",
       "body": "This was fixed in time for 0.4 by simply unwrapping the jQueries.\n"
     },
     {
+      "id": "21917",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:59.491-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

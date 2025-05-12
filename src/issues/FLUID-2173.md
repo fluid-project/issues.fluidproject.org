@@ -39,6 +39,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21268",
       "author": "Justin Obara",
       "date": "2009-02-02T08:59:38.000-0500",
       "body": "Appears to have been resolved with the latest release\n\nTested using:\n\nFF2, FF3 (Mac OS 10.5)\\\nFF3 (Win Vista)\n\nand confirmed by Gonzalo, who initially found this error\n"

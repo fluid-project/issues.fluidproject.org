@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15569",
       "author": "Justin Obara",
       "date": "2016-03-16T08:53:29.696-0400",
       "body": "This is actually not a bug, but a design decision. By design the panel itself does not apply the it's changes until it has been closed and reopened. This serves a couple purposes.\n\n* The main content acts as a preview to the changes. Minimizing the chance that a user could set preferences that they could no longer use the tool with\n* apply changes like text size and etc could move the controls around the screen as the user is interacting with them. By not applying the changes right away, the user has a consistent control panel to work with while adjusting preferences.\n"

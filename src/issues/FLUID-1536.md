@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24986",
       "author": "Antranig Basman",
       "date": "2008-09-19T02:24:19.000-0400",
       "body": "This is probably insoluble. Our strategy for tabbing onto a container involves focus momentarily passing through the container and then being displaced onto the active item. Opera is also unlike the other browsers in its tendency to try to visually honour DOM updates in the middle of an event cycle rather than decently waiting for the end. Further, the blue focus box is a hardwired part of the browser's styling and does not seem to be accessible to user control.&#x20;\n"
     },
     {
+      "id": "24988",
       "author": "Justin Obara",
       "date": "2011-01-10T14:54:21.825-0500",
       "body": "Appears to have been fixed. Possibly with one of the changes made for the Infusion 1.3 release\n"

@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21818",
       "author": "Anastasia Cheetham",
       "date": "2009-04-07T11:35:14.000-0400",
       "body": "Added UI core and UI widgets to dependencies.\n"
     },
     {
+      "id": "21819",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:44.517-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

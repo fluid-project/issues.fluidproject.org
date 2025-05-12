@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19388",
       "author": "Justin Obara",
       "date": "2008-10-29T11:23:12.000-0400",
       "body": "It appears that in both <https://fluidproject.atlassian.net/browse/FLUID-1726#icft=FLUID-1726> and this one (<https://fluidproject.atlassian.net/browse/FLUID-1727#icft=FLUID-1727>) the file with File ID: SWFUpload\\_0\\_0 is the only one uploaded. In the case where a file is added and removed it is still linked with this file id after it has been removed from the file queue\n"
     },
     {
+      "id": "19389",
       "author": "Justin Obara",
       "date": "2008-10-29T15:47:55.000-0400",
       "body": "appears to be fixed with r5896\n"

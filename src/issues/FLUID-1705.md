@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17081",
       "author": "Daphne Ogle",
       "date": "2008-10-23T13:51:59.000-0400",
       "body": "Iteration22\n"
     },
     {
+      "id": "17082",
       "author": "Erin Yu",
       "date": "2008-12-03T11:48:40.000-0500",
       "body": "The designers collectively decided not to carry out this user testing in Toronto, since the testing in Berkeley was very successful and we felt that we would learn more from testing other components before the summit.&#x20;\n"

@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27307",
       "author": "David Makalsky",
       "date": "2008-12-22T10:47:42.000-0500",
       "body": "vulab12\n"
     },
     {
+      "id": "27308",
       "author": "David Makalsky",
       "date": "2008-12-22T10:54:56.000-0500",
       "body": "vulab12\n"
     },
     {
+      "id": "27309",
       "author": "Blake E",
       "date": "2009-03-23T16:29:27.000-0400",
       "body": "with a small fix to the url linking to the video, rascal server will be on yorku. Currently the server is running perfectly, its a small fix that was installed as an interim to yorku's rascal server running.\n"

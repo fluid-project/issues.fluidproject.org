@@ -31,31 +31,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17737",
       "author": "Justin Obara",
       "date": "2009-02-06T12:02:14.000-0500",
       "body": "Bug Parade  0.8 release\n"
     },
     {
+      "id": "17739",
       "author": "Anastasia Cheetham",
       "date": "2009-02-11T12:37:51.000-0500",
       "body": "I searched the code base for console.log, and didn't find anything else in our code besides nested.html. I updated that file to use fluid.log, and now IE doesn't complain anymore.\n"
     },
     {
+      "id": "17742",
       "author": "Antranig Basman",
       "date": "2009-02-16T18:38:14.000-0500",
       "body": "I have reviewed this, and found some stray references in \"versioning/list.html\". These have been updated to fluid.log, but unfortunately the sample doesn't seem to work any more - the 0.8 version of the reorderer no longer works,\\\napparently because of some form of JQuery UI conflict. Other than this, I confirmed that no unguarded references to \"console\" occur in our codeset. Some 3rd party code (jquery.selectbox, tinyMCE, testrunner, etc.) do make use of console.log, as do we as an option in Fluid.js, but these either perform a guard to check for existence, or (more disagreeably in the case of 3rd party code) assign a dummy value to it. We can sign this one off\n"
     },
     {
+      "id": "17745",
       "author": "Colin Clark",
       "date": "2009-02-16T21:28:33.000-0500",
       "body": "I've reviewed both Anastasia's (r6481) and Antranig's (r6511) commits, and they're just fine. +1 on these for inclusion in Infusion 0.8.\n"
     },
     {
+      "id": "17746",
       "author": "Justin Obara",
       "date": "2009-02-16T22:24:36.000-0500",
       "body": "Verified fix on the two pages mentioned in the above comments, using:\n\nIE 6 (Win XP)\n"
     },
     {
+      "id": "17748",
       "author": "Michelle D'Souza",
       "date": "2011-01-30T11:56:39.366-0500",
       "body": "Reopening these issues to add the frameworkcomponent\n"

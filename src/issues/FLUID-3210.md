@@ -39,36 +39,43 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17680",
       "author": "Colin Clark",
       "date": "2009-09-24T18:17:55.000-0400",
       "body": "Bug Parade Infusion 1.1.2\n\n(approved by the King and his Proxy)\n"
     },
     {
+      "id": "17682",
       "author": "Colin Clark",
       "date": "2009-09-30T13:35:36.000-0400",
       "body": "We also want to ensure that all links point to our live wiki, not to the final report archive.\n"
     },
     {
+      "id": "17684",
       "author": "Colin Clark",
       "date": "2009-09-30T13:36:36.000-0400",
       "body": "Bug Parade Infusion 1.1.2\n"
     },
     {
+      "id": "17686",
       "author": "Michelle D'Souza",
       "date": "2009-10-05T15:41:08.000-0400",
       "body": "Colin and I talked about this and decided that the way we'll implement the freeze is by tagging a final report version of Infusion and linking the final report externals to that.&#x20;\n"
     },
     {
+      "id": "17688",
       "author": "Jacob Farber",
       "date": "2009-10-05T16:48:52.000-0400",
       "body": "All the wiki links still need to be updated to point to the live wiki\n"
     },
     {
+      "id": "17690",
       "author": "Michelle D'Souza",
       "date": "2009-10-05T17:11:36.000-0400",
       "body": "I checked all the wiki links that Jacob fixed - they are all fine.\n"
     },
     {
+      "id": "17693",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T12:28:49.842-0500",
       "body": "Reopening these issues in order to add the democomponent.&#x20;\n"

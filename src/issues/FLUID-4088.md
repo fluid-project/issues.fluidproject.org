@@ -43,16 +43,19 @@
   ],
   "comments": [
     {
+      "id": "21780",
       "author": "Justin Obara",
       "date": "2011-02-18T13:52:58.175-0500",
       "body": "Screenshot shows the pencil and undo icons not properly aligned\n"
     },
     {
+      "id": "21781",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T12:26:30.813-0400",
       "body": "These new screenshots (inline-edit-icon-alignment-\\*.png) were taken of v1.4. They show that the alignment in the \"title\" of the demo seems to be ok, but the alignment of the caption is not.\n"
     },
     {
+      "id": "21782",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T13:05:13.382-0400",
       "body": "This issue duplicated <https://fluidproject.atlassian.net/browse/FLUID-3913#icft=FLUID-3913>\n"

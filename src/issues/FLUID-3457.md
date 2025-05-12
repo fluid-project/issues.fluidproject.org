@@ -36,11 +36,13 @@
   ],
   "comments": [
     {
+      "id": "15494",
       "author": "Steven Githens",
       "date": "2009-12-30T09:33:36.000-0500",
       "body": "Attaching a patch.  If the FCK Editor is a regular one placed on the page (ie. not a Fluid Inline edit), the 'that' from the lookup will be null.\n"
     },
     {
+      "id": "15497",
       "author": "Antranig Basman",
       "date": "2009-12-31T14:03:27.000-0500",
       "body": "Thanks for this patch - applied at revision 8946. Merry New Year!\n\nIt appears that this \"failure\" was actually occuring on all browsers, but only generated a visible fault on IE8.\n"

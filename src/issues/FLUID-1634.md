@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19133",
       "author": "Antranig Basman",
       "date": "2009-04-02T14:30:42.000-0400",
       "body": "I think this was largely addressed in the big refactoring before 0.6 - can we close this?\n"
     },
     {
+      "id": "19137",
       "author": "Justin Obara",
       "date": "2009-04-08T09:42:36.000-0400",
       "body": "This one is hard to determine as the machine I am testing on is older. It seems to be reasonable though, so I'll close it.\n"

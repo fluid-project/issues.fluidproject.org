@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "10420",
       "author": "Jonathan Hung",
       "date": "2012-06-26T10:35:03.292-0400",
       "body": "An early design has been created, but lacks the exact details of the stages for Types 1 to 3.\n"
     },
     {
+      "id": "10421",
       "author": "Jonathan Hung",
       "date": "2012-06-26T11:00:28.540-0400",
       "body": "Type 1 stages: \"books2pages\", \"ocro2pdf.py\", \"**END**\"\n\nType 2 stages: \"books2pages\", \"pages2lines\", \"lines2fsts\", \"fsts2text\", \"ocro2pdf.py\", \"**END**\"\n\nType 3 stages: \"books2pages\", \"pages2lines\", \"lines2fsts\", \"fsts2text\", \"binned-inter\", \"ocro2pdf.py\", \"**END**\"\n"

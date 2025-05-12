@@ -35,26 +35,31 @@
   ],
   "comments": [
     {
+      "id": "27620",
       "author": "Blake E",
       "date": "2008-10-10T12:05:30.000-0400",
       "body": "vulab3\n"
     },
     {
+      "id": "27621",
       "author": "Blake E",
       "date": "2008-10-10T12:27:08.000-0400",
       "body": "I'm currently trying to get the error\\_reporting properly setup.\n\nphpESP legacy code has error\\_reporting completely reporting (notices included) or completely turned off (errors are suppressed)\n"
     },
     {
+      "id": "27622",
       "author": "Blake E",
       "date": "2008-10-10T12:31:25.000-0400",
       "body": "I found where the E\\_ALL option was triggered.\n\nit was in /admin/inclue/func.inc\n\nNow, the system will only have the error\\_reporting set in phpESP.ini.php for entire system.\n"
     },
     {
+      "id": "27623",
       "author": "Blake E",
       "date": "2008-10-10T12:34:54.000-0400",
       "body": "please review for commit.\n"
     },
     {
+      "id": "27624",
       "author": "Blake E",
       "date": "2008-10-10T12:35:31.000-0400",
       "body": "see attached <https://fluidproject.atlassian.net/browse/VULAB-44#icft=VULAB-44>.patch and comments/worklog for details\n"

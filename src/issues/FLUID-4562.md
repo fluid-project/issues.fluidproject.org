@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23781",
       "author": "Cindy Li",
       "date": "2011-11-29T14:55:19.335-0500",
       "body": "The issue seems a result of our improper default value for the cookie \"expiry\" attribute, which is blank by default:\n\n<https://github.com/fluid-project/infusion/blob/master/src/webapp/components/uiOptions/js/Store.js#L60>\n\nAccording to <http://www.tutorialspoint.com/javascript/javascript_cookies.htm>, which says,\n\nExpires : The date the cookie will expire. If this is blank, the cookie will expire when the visitor quits the browser.\n\nSo, a blank default apparently is not enough if what we meant is to keep the user-selected settings forever. We probably should consider to have a default expiry value of 50 years from now.\n"
     },
     {
+      "id": "23782",
       "author": "Justin Obara",
       "date": "2015-06-10T13:53:47.018-0400",
       "body": "I'm not really sure what we want the default to be for the cookie expiration.&#x20;\n\n* browser quit\n* some number of days\n* forever\n* etc.\n\nDana and Jonathan Hung did you have any thoughts?\n"

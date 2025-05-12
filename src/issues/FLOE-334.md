@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11188",
       "author": "Cindy Li",
       "date": "2015-05-13T13:45:52.409-0400",
       "body": "A duplicate of <http://issues.fluidproject.org/browse/FLOE-333>\n"

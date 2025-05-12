@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20134",
       "author": "Allison Bloodworth",
       "date": "2008-08-05T19:36:56.000-0400",
       "body": "Iteration20\n"
     },
     {
+      "id": "20136",
       "author": "Jonathan Hung",
       "date": "2008-10-23T12:56:32.000-0400",
       "body": "Have not noticed this to be a problem. Perhaps it is fixed or Login Toboggan has improved things.\n\nI propose closing this and re-opening if it occurs again.\n"
     },
     {
+      "id": "20138",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:28:01.406-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

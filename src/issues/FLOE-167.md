@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11262",
       "author": "Jonathan Hung",
       "date": "2014-01-21T09:09:53.144-0500",
       "body": "Since we are using a static site that is not generated using templates, we will need to manually add the javascript to each page. A bit inefficient, but doable.\n"
     },
     {
+      "id": "11263",
       "author": "Jonathan Hung",
       "date": "2014-04-24T12:05:18.205-0400",
       "body": "Done\n"

@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15402",
       "author": "Justin Obara",
       "date": "2008-10-31T09:53:14.000-0400",
       "body": "design-watched\n"
     },
     {
+      "id": "15405",
       "author": "Justin Obara",
       "date": "2008-12-19T08:25:38.000-0500",
       "body": "Resume button not pressent in the current version of uploader\n"

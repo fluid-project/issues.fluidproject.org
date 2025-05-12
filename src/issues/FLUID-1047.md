@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20466",
       "author": "Justin Obara",
       "date": "2008-08-14T14:52:24.000-0400",
       "body": "The caret appears to be placed in the same location when using either the mouse or the keyboard.\n"
     },
     {
+      "id": "20467",
       "author": "Eli Cochran",
       "date": "2008-08-14T14:54:44.000-0400",
       "body": "Issues has be regressed and can no longer be reproduced.\n"

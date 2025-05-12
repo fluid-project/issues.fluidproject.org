@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18939",
       "author": "Daphne Ogle",
       "date": "2008-04-29T13:03:53.000-0400",
       "body": "iteration08\n"
     },
     {
+      "id": "18941",
       "author": "Erin Yu",
       "date": "2008-05-27T11:13:10.000-0400",
       "body": "Gary provided styling for the locked portlets and the keyboard interaction.\n"
     },
     {
+      "id": "18942",
       "author": "Jonathan Hung",
       "date": "2008-05-27T16:06:24.000-0400",
       "body": "Visual cues appear to work nicely.\n"

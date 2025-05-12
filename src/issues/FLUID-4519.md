@@ -45,11 +45,13 @@
   ],
   "comments": [
     {
+      "id": "13209",
       "author": "Cindy Li",
       "date": "2011-10-12T10:11:46.206-0400",
       "body": "UIEnhancer currently sets calculated em value of \"line-height\" on the \\<body> tag to achieve the line spacing adjustment. However, rather than this em value being inherited by the descendant elements of \\<body>, it was the computed px value that's calculated based on the \\<body> font size. Since the descendant elements that have larger font size are supposed to have larger line height, the px value that's computed based on the \\<body> font size would be too small for them which results in the overlapping.\n\nThe potential solution is, rather than applying em value onto \\<body> line-height, apply the multiplier number value instead.\n\nThe reference doc of the valid \"line-height\" values: <http://www.w3schools.com/cssref/pr_dim_line-height.asp>\n\nA useful presentation of how \"line-height\" is inherited and calculated: <http://www.slideshare.net/maxdesign/line-height>\n"
     },
     {
+      "id": "13210",
       "author": "Justin Obara",
       "date": "2013-10-04T09:33:22.902-0400",
       "body": "Seems to have been fixed.\n"

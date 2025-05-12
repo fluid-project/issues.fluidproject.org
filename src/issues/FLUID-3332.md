@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15342",
       "author": "Jess Mitchell",
       "date": "2011-01-20T10:25:40.455-0500",
       "body": "Work unresolved, closing JIRA.\n"

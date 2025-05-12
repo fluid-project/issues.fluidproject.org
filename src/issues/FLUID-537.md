@@ -42,16 +42,19 @@
   ],
   "comments": [
     {
+      "id": "20670",
       "author": "Michelle D'Souza",
       "date": "2008-04-28T13:11:47.000-0400",
       "body": "It seems that clicking on the 'margin' selects all the elements. Changing 'margin' to 'padding' may work.\n"
     },
     {
+      "id": "20671",
       "author": "Justin Obara",
       "date": "2008-09-16T10:27:22.000-0400",
       "body": "'screenshot-1' shows all of the images selected\n"
     },
     {
+      "id": "20672",
       "author": "Justin Obara",
       "date": "2009-05-05T09:46:16.000-0400",
       "body": "Appears to have been fixed, possibly as some last minute styling fixes\n"

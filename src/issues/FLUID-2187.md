@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21152",
       "author": "Justin Obara",
       "date": "2009-03-12T14:11:52.000-0400",
       "body": "fixed with updrage to jQuery UI 1.7\n"

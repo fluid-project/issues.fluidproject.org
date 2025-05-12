@@ -23,21 +23,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25334",
       "author": "Ned Zimmerman",
       "date": "2020-10-27T12:51:55.195-0400",
       "body": "Currently supported browsers: <https://wiki.fluidproject.org/display/fluid/Browser+Support>\n"
     },
     {
+      "id": "25335",
       "author": "Ned Zimmerman",
       "date": "2020-10-27T13:33:23.573-0400",
       "body": "Justin Obara I've created a shareable config and requested a transfer to you so you can add it to the fluid-project organization.\n"
     },
     {
+      "id": "25336",
       "author": "Ned Zimmerman",
       "date": "2020-10-27T13:34:05.339-0400",
       "body": "<https://github.com/greatislander/browserslist-config-fluid>\n"
     },
     {
+      "id": "25337",
       "author": "Justin Obara",
       "date": "2020-11-02T11:24:39.825-0500",
       "body": "Merged PR ( <https://github.com/fluid-project/infusion/pull/1018> ) into the project repo at a332ffefb66ff07c718cac734238d4cd6c1ffcd1\n"

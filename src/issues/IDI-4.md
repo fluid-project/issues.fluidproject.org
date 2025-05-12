@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12901",
       "author": "Anastasia Cheetham",
       "date": "2012-04-18T14:41:00.624-0400",
       "body": "Changes to date merged into development branch as of commit 6af3ba3949220f3760bc7bfc6094991d5e9135ec.\n\nWaiting on images from the designers for more work.\n"
     },
     {
+      "id": "12902",
       "author": "Anastasia Cheetham",
       "date": "2012-04-28T12:55:18.789-0400",
       "body": "This is now up on the dev server, pretty close to the final designs. Any more work is covered by new JIRAs.\n"

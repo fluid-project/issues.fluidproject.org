@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15637",
       "author": "Justin Obara",
       "date": "2010-04-13T15:07:45.000-0400",
       "body": "Committed an updated readme for the infusion 1.2 release.\n\nAccidentally committed before completing the commit log.\n"
     },
     {
+      "id": "15639",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:23.253-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

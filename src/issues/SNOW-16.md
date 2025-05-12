@@ -22,6 +22,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26204",
       "author": "Eloisa Guerrero",
       "date": "2018-02-09T11:46:48.840-0500",
       "body": "Simplified the block of code in snow\\_front\\_panel\\_sticky() instead of removing while loop:\n\n```java\nfunction snow_front_panel_sticky( $atts = array() ) {\r\n    /* Default Parameters */\r\n    $myatts = array(\r\n        'post__in'  => get_option( 'sticky_posts' ),\r\n        'posts_per_page' => 1\r\n    );\r\n    /* Merge category__and with the above parameters */\r\n    $allatts = array_merge($atts, $myatts);\n```\n"

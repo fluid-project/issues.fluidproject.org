@@ -26,31 +26,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24167",
       "author": "Justin Obara",
       "date": "2017-01-17T16:46:04.159-0500",
       "body": "Accepted proposal from the work list.\n\n1\\. Always keep the version of master set to the next major release number. So, since we've released 2.0.0, master should be set up to publish development releases for 3.0.0. When we eventually cut 3.0.0, it will be incremented to 4.0.0, and so on. The reality is that we know we're going be moving fast and making lots of big changes over the next while as new framework features emerge (such as the new Renderer), so we might as well assume that our next release will be a major one.\n\n2\\. If we do find the need to cut a smaller 2.0.y or a 2.x.y maintenance release due to major bugs or features, we simply do what we've done in the past and use a release branch, apply or back port any fixes we need into this branch when the demand builds up, and then cut a release as needed.\n"
     },
     {
+      "id": "24169",
       "author": "Justin Obara",
       "date": "2017-01-17T16:46:31.044-0500",
       "body": "We'll also need to clean up the erroneous releases by marking them as deprecated and sending out a communication to the mailing list about it.\n"
     },
     {
+      "id": "24171",
       "author": "Cindy Li",
       "date": "2017-01-18T11:29:12.519-0500",
       "body": "The pull request <https://github.com/fluid-project/infusion/pull/800> has been merged into the project repo master branch at 16a963d63dce313ab3f2e3a81c725c2cbef0af79.\n"
     },
     {
+      "id": "24172",
       "author": "Cindy Li",
       "date": "2017-01-18T12:08:17.158-0500",
       "body": "Justin Obara, I didn't close this JIRA in case you wanna use it to cover the work on deprecating the erroneous releases.&#x20;\n"
     },
     {
+      "id": "24174",
       "author": "Cindy Li",
       "date": "2017-01-18T14:25:41.674-0500",
       "body": "The other pull request <https://github.com/fluid-project/infusion/pull/803> to clean up ReleaseNotes has been merged into the project repo master branch at 368093ea995de1d5ea6865b2936ad19a4c217584\n"
     },
     {
+      "id": "24175",
       "author": "Justin Obara",
       "date": "2017-01-19T15:43:41.421-0500",
       "body": "I attempted to [deprecate](https://docs.npmjs.com/cli/deprecate) the erroneous dev releases (  2.0.0-dev.20161219T154515Z.0f2ccc8 and 2.0.0-dev.20161219T170555Z.5778f7e ). However, I'm getting a 403 error when I attempt to run the deprecation command. I've submitted a support request to NPM. Although there is already an issue filed that sounds very similar ( <https://github.com/npm/npm/issues/15330> )\n"

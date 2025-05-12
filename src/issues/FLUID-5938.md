@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23060",
       "author": "Antranig Basman",
       "date": "2019-07-30T10:21:32.443-0400",
       "body": "Note that the gpii.test.settleStructure implementation is currently not quite written suitably - rather than reject the entire structure at the first rejection, it should instead honour the general \"settle\" concept by proceeding to resolve all remaining promises and then produce a summary of those which rejected, with a structure such as\n\n```java\n{\r\n   isError: true,\r\n   rejectedPaths: [ .... list of paths holding individual rejections ...],\r\n   structure: <the settled structure with original promises replaced by resolved payloads >\r\n}\n```\n"

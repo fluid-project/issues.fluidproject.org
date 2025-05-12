@@ -33,26 +33,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15157",
       "author": "Justin Obara",
       "date": "2008-12-04T08:42:58.000-0500",
       "body": "Bug Parade: 0.6 release\n"
     },
     {
+      "id": "15160",
       "author": "Eli Cochran",
       "date": "2008-12-08T19:53:03.000-0500",
       "body": "jQuery animation code can't keep up and needs to have animations dequeued during removes\n"
     },
     {
+      "id": "15163",
       "author": "Antranig Basman",
       "date": "2008-12-12T15:36:48.000-0500",
       "body": "Fixed at revision 6215\n"
     },
     {
+      "id": "15166",
       "author": "Eli Cochran",
       "date": "2008-12-12T15:59:16.000-0500",
       "body": "I have reviewed Antranig's fix and I like it... oh, it works and it's written very nicely\n"
     },
     {
+      "id": "15169",
       "author": "Justin Obara",
       "date": "2008-12-15T16:41:23.000-0500",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

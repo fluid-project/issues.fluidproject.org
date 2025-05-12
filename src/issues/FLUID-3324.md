@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23278",
       "author": "Laurel Williams",
       "date": "2009-10-22T16:14:08.000-0400",
       "body": "created the structure as described.\n"
     },
     {
+      "id": "23279",
       "author": "Laurel Williams",
       "date": "2009-11-06T16:26:50.000-0500",
       "body": "move the infusion-builder directory into a docs directory to aid in the release process.\n"
     },
     {
+      "id": "23280",
       "author": "Laurel Williams",
       "date": "2009-11-09T11:28:14.000-0500",
       "body": "moved infusion-builder directory into a parent directory called docs to facilitate release. Removed docs/infusion-builder/php/builder-local.php. Updated .externals to point to new infusion location.\n"

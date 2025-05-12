@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11929",
       "author": "vmoulder",
       "date": "2010-03-01T19:17:08.000-0500",
       "body": "This work is ongoing reference <http://wiki.fluidproject.org/display/fluid/FE+-+Kiosk>\n"

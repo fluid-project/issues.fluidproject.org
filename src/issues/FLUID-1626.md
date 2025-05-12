@@ -55,11 +55,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14363",
       "author": "Michelle D'Souza",
       "date": "2008-12-17T12:18:50.000-0500",
       "body": "The command key only seems to work for me if I press the direction key twice. ie. Command + up + up moves a portlet up once.&#x20;\n"
     },
     {
+      "id": "14366",
       "author": "Justin Obara",
       "date": "2009-08-13T12:58:41.000-0400",
       "body": "Browser support for Infusion 1.2 ( <http://wiki.fluidproject.org/display/fluid/Prior+Browser+Support> ) does not include Opera 9.6 for Mac OS\n"

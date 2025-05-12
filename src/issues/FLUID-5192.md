@@ -33,21 +33,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22257",
       "author": "Michelle D'Souza",
       "date": "2014-03-27T15:05:28.760-0400",
       "body": "joanna vassDanaJustin Obara There was some conversation about whether or not this is an issue that we should actually fix. Justin, could you clarify what the questions are and perhaps we can move towards fixing or closing this issue.&#x20;\n"
     },
     {
+      "id": "22259",
       "author": "Justin Obara",
       "date": "2015-06-15T10:49:28.579-0400",
       "body": "I believe the questions are around whether or not those icons should actually have any aria-labels at all. They appear to be purely presentational.\n"
     },
     {
+      "id": "22261",
       "author": "Justin Obara",
       "date": "2016-08-12T08:00:18.303-0400",
       "body": "The slider icons were marked with role=presentation as a fix for <https://fluidproject.atlassian.net/browse/FLUID-5680#icft=FLUID-5680>. The associated strings should be removed from the message bundles and any other scaffolding left to insert them in the components should be removed.\n"
     },
     {
+      "id": "22262",
       "author": "Cindy Li",
       "date": "2016-08-12T10:22:33.897-0400",
       "body": "The pull request has been merged into the master branch at 8c675a5a4a90a1e8d50074ae08541e067bcb64fe\n"

@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20008",
       "author": "Shaw-Han Liem",
       "date": "2008-02-13T15:08:30.000-0500",
       "body": "futuretask\n"
     },
     {
+      "id": "20010",
       "author": "Allison Bloodworth",
       "date": "2008-07-16T21:13:17.000-0400",
       "body": "We won't use any screenshots that are of proprietary applications or websites in our design patterns for now.\n"

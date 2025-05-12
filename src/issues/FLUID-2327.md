@@ -34,21 +34,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17528",
       "author": "Anastasia Cheetham",
       "date": "2009-04-22T11:34:01.000-0400",
       "body": "Erin, we really need to get some images in before we announce Infusion 1.0 to a wider audience\n"
     },
     {
+      "id": "17530",
       "author": "Erin Yu",
       "date": "2009-04-27T15:46:02.000-0400",
       "body": "Images were made and uploaded to <http://wiki.fluidproject.org/display/fluid/Components>\n"
     },
     {
+      "id": "17532",
       "author": "Anastasia Cheetham",
       "date": "2009-04-29T11:40:43.000-0400",
       "body": "Actually, I'm sorry I didn't give you this feedback earlier:\n\nThe \"Grid Reorderer\" image you selected, on this page\\\n<http://wiki.fluidproject.org/display/fluid/Reorderer>\\\nis actually a snapshot of the Layout Reorderer from the Quick-Start Examples. The Grid Reorderer can be seen on\\\n<http://build.fluidproject.org/infusion/standalone-demos/quick-start-examples/reorderer/html/Reorderer.html>\\\nExample 3, Sortable Grid&#x20;\n"
     },
     {
+      "id": "17534",
       "author": "Colin Clark",
       "date": "2010-03-30T13:18:07.000-0400",
       "body": "Looks like all the Infusion component images are correctly set in the wiki. Closing this one to reduce cruft.\n"

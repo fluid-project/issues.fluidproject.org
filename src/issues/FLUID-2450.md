@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21613",
       "author": "Justin Obara",
       "date": "2010-05-07T14:44:13.735-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "21614",
       "author": "Jonathan Hung",
       "date": "2011-01-06T16:05:07.521-0500",
       "body": "Affects Infusion 1.3.\n"

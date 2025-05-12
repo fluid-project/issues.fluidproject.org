@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16617",
       "author": "Allison Bloodworth",
       "date": "2008-05-14T00:10:53.000-0400",
       "body": "iteration11\n"
     },
     {
+      "id": "16618",
       "author": "Allison Bloodworth",
       "date": "2008-06-09T22:13:39.000-0400",
       "body": "Here are the instructions on how to do this using arguments: <http://drupal.org/node/149138>. I used this method for patterns\\_by\\_term and patterns\\_by\\_category.\n\nIt appears that each Title field can be used: if you use two, the first puts whatever argument you use (e.g. %1 = \"UI Design Pattern Category) in the breadcrumbs, the second puts a title on the page. If you just use the first or second argument alone, you just get a title for the page. There is some weirdness that happens (e.g. \"%2\" in the breadcrumbs if you put it in the first title field) if you put the wrong argument in the wrong title field.\n"

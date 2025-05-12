@@ -33,21 +33,25 @@
   ],
   "comments": [
     {
+      "id": "24885",
       "author": "Colin Clark",
       "date": "2010-12-17T18:52:11.235-0500",
       "body": "I've committed a simple server debugging script written in PHP by Cindy, which is very helpful in debugging Upload issues with the server. It's located in the scratchpad: <https://source.fluidproject.org/svn/scratchpad/uploader/simple-server-debug>\n"
     },
     {
+      "id": "24886",
       "author": "Mike Lam",
       "date": "2010-12-20T10:12:58.314-0500",
       "body": "Removed a space in the multi-part request so that the Uploader will upload files properly to PHP-based servers in FF 3.6\n"
     },
     {
+      "id": "24887",
       "author": "Michelle D'Souza",
       "date": "2010-12-20T15:46:08.083-0500",
       "body": "Yep, the patch indeed removes the invalid leading space. Reviewed and ready to commit.\n"
     },
     {
+      "id": "24888",
       "author": "Colin Clark",
       "date": "2010-12-20T16:22:54.764-0500",
       "body": "I committed MIke's patch at r10443 after Michelle reviewed it.\n"

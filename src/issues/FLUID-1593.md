@@ -35,21 +35,25 @@
   ],
   "comments": [
     {
+      "id": "20626",
       "author": "Justin Obara",
       "date": "2008-09-18T17:45:50.000-0400",
       "body": "'screenshot-1' shows the avatar for \"Am\" is far away from the pointer\n"
     },
     {
+      "id": "20627",
       "author": "Justin Obara",
       "date": "2008-09-22T12:59:27.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "20628",
       "author": "Eli Cochran",
       "date": "2008-09-22T17:43:32.000-0400",
       "body": "I've been playing around with this bug and it's actually quite hard to reproduce. I can still do it if I grab one of the grid elements as I move the mouse very quickly on the run (so to speak). Otherwise the avatar tracks pretty closely.&#x20;\n\nThis was running on XP, Service Pack 3, on a 1.73 GHz Pentium M with 1GB of RAM\n\nNo doubt that on a slower machine or with many processes running we could still reproduce this bug but I would suggest closing it.&#x20;\n"
     },
     {
+      "id": "20629",
       "author": "Justin Obara",
       "date": "2008-09-23T08:44:21.000-0400",
       "body": "Appears to have been resolved with one of the recent changes.\n\nVerified fix using:\\\nIE6 (Win XP, Win 2000)\n"

@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23124",
       "author": "Justin Obara",
       "date": "2016-08-22T10:10:09.164-0400",
       "body": "It appears that the \";\" is stripped out of the compressed version only. I could also not reproduce the case where an error or warning is thrown by a browser related to it.\n"

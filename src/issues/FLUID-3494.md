@@ -42,41 +42,49 @@
   ],
   "comments": [
     {
+      "id": "23423",
       "author": "Antranig Basman",
       "date": "2010-10-20T11:46:01.446-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "23424",
       "author": "Antranig Basman",
       "date": "2010-10-25T02:59:44.447-0400",
       "body": "Attached as a patch so this may be applied (opportunistically) to earlier versions of Infusion\n"
     },
     {
+      "id": "23425",
       "author": "Antranig Basman",
       "date": "2010-10-25T03:12:50.839-0400",
       "body": "Resolved at revision 10155\n"
     },
     {
+      "id": "23426",
       "author": "Michelle D'Souza",
       "date": "2010-10-29T13:35:36.579-0400",
       "body": "The only issue I see with this is the lack of tests for fastXmlPull. In talking with Antranig, we have determined that the renderer tests also cover fastXmlPull. Writing tests for fastXmlPull in its current state will be difficult and result in tests that are difficult to maintain. At some point we will want to clean it up, tighten up the API and write some tests for fastXmlPull.&#x20;\n"
     },
     {
+      "id": "23427",
       "author": "Anastasia Cheetham",
       "date": "2010-11-02T16:10:12.970-0400",
       "body": "I found one tiny problem: On line 296, the reference to attrStartRegex should be that.attrStartRegex.\n"
     },
     {
+      "id": "23428",
       "author": "Justin Obara",
       "date": "2010-11-03T09:17:54.924-0400",
       "body": "the unit tests are also failing in ie8 related to attrStartRegex\n"
     },
     {
+      "id": "23429",
       "author": "Antranig Basman",
       "date": "2010-11-04T04:23:29.162-0400",
       "body": "Thanks for catching this, folks - committing this correction at 10177 allows IE tests to run again.\n"
     },
     {
+      "id": "23430",
       "author": "Michelle D'Souza",
       "date": "2010-12-13T15:23:48.442-0500",
       "body": "This was reviewed and tested.\n"

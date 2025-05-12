@@ -37,11 +37,13 @@
   ],
   "comments": [
     {
+      "id": "12844",
       "author": "Anastasia Cheetham",
       "date": "2011-12-08T11:43:43.967-0500",
       "body": "This screenshot (IE8-bad-studios-styling.jpg) shows what the Studios site looks like in IE8.\n"
     },
     {
+      "id": "12845",
       "author": "Michelle D'Souza",
       "date": "2011-12-15T10:42:41.075-0500",
       "body": "Merged into project repo at 9f49d91bdf223e1f154e9c517327b7e55cae0bb5\n"

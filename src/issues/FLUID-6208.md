@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25136",
       "author": "Antranig Basman",
       "date": "2020-04-24T10:44:58.065-0400",
       "body": "Encountered again when writing a relay rule that looks so:\n\n```java\nfluid.defaults(\"hortis.mapWithSunburst\", {\r\n    modelRelay: {\r\n        mapFocusedTooltipToSunburst: {\r\n            target: \"{sunburst}.model.rowFocus\",\r\n            singleTransform: {\r\n                type: \"fluid.transforms.free\",\r\n                func: \"hortis.mapBlockToFocusedTaxa\",\r\n                args: [\"{map}.model.mapBlockTooltipId\", \"{map}\", \"{sunburst}\"]\r\n                \r\n            }\r\n        }\r\n    },\n```\n\nand\n\n```java\nhortis.mapBlockToFocusedTaxa = function (mapBlockTooltipId, map, sunburst) {\r\n    var togo = {};\r\n    if (mapBlockTooltipId) {\r\n        var bucket = map.toPlot[mapBlockTooltipId];\r\n        if (bucket) {\r\n            fluid.each(bucket.byTaxonId, function (obs, taxonId) {\r\n                togo[taxonId] = true;\r\n            });\r\n        }\r\n    }\r\n    return togo;\r\n};\n```\n"

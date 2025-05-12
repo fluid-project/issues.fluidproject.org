@@ -42,21 +42,25 @@
   ],
   "comments": [
     {
+      "id": "17408",
       "author": "Justin Obara",
       "date": "2008-12-08T09:57:13.000-0500",
       "body": "'screenshot-1' shows the font spacing on wide\n"
     },
     {
+      "id": "17409",
       "author": "Justin Obara",
       "date": "2008-12-08T09:58:04.000-0500",
       "body": "'screenshot-2' shows the incorrect font spacing displayed for the \"no preference\" option\n"
     },
     {
+      "id": "17410",
       "author": "Justin Obara",
       "date": "2008-12-08T09:59:20.000-0500",
       "body": "'screenshot-3' shows want the font spacing should be dispalyed as\n"
     },
     {
+      "id": "17411",
       "author": "Justin Obara",
       "date": "2008-12-18T11:48:04.000-0500",
       "body": "Appears to have been fixed.\n\nTested with&#x20;\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

@@ -34,21 +34,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20676",
       "author": "Harris Wong",
       "date": "2011-05-16T15:43:50.650-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "20677",
       "author": "Harris Wong",
       "date": "2011-05-27T16:17:23.270-0400",
       "body": "Checked demo and unit tests.  Unit tests also passed fine on the ones without DataBinding.js. &#x20;\n"
     },
     {
+      "id": "20678",
       "author": "Harris Wong",
       "date": "2011-05-30T13:10:20.560-0400",
       "body": "DataBinding.js are included in the following:\n\nstandalone-demos\\\nintegration-demos\\\ndemos\n\nmanual-tests\\\ncomponent-tests\\\nframework-tests\n"
     },
     {
+      "id": "20679",
       "author": "Harris Wong",
       "date": "2011-05-30T14:03:48.637-0400",
       "body": "All the issues have been caught. &#x20;\n"

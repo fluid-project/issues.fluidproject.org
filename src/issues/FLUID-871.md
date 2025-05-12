@@ -58,11 +58,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13523",
       "author": "Jess Mitchell",
       "date": "2008-07-22T22:25:49.000-0400",
       "body": "Iteration18\n"
     },
     {
+      "id": "13526",
       "author": "Jonathan Hung",
       "date": "2008-10-01T09:36:10.000-0400",
       "body": "Done for now. Simple and gets the job done.\n"

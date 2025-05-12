@@ -41,16 +41,19 @@
   ],
   "comments": [
     {
+      "id": "19775",
       "author": "Justin Obara",
       "date": "2008-07-16T14:33:22.000-0400",
       "body": "'screenshot-1' shows the failed unit test\n"
     },
     {
+      "id": "19778",
       "author": "Justin Obara",
       "date": "2008-07-23T17:40:29.000-0400",
       "body": "'screenshot-2' shows other failed unit tests\n"
     },
     {
+      "id": "19780",
       "author": "Justin Obara",
       "date": "2008-08-06T13:24:20.000-0400",
       "body": "Appears to have been fixed in the latest build\n"

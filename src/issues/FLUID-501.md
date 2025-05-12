@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23492",
       "author": "Allison Bloodworth",
       "date": "2008-04-15T12:56:38.000-0400",
       "body": "iteration07\n"
     },
     {
+      "id": "23493",
       "author": "Jonathan Hung",
       "date": "2008-04-28T14:25:29.000-0400",
       "body": "<http://www.uidesignpatterns.org/> now points to osdpl.fluidproject.org/\n"

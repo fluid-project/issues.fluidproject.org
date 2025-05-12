@@ -38,11 +38,13 @@
   ],
   "comments": [
     {
+      "id": "21581",
       "author": "Justin Obara",
       "date": "2009-04-13T10:43:54.000-0400",
       "body": "'screenshot-1' shows the icons half above the top of the portlet\n"
     },
     {
+      "id": "21582",
       "author": "Justin Obara",
       "date": "2014-06-05T15:20:32.677-0400",
       "body": "The demo no longer exists.\n"

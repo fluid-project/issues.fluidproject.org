@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12579",
       "author": "Justin Obara",
       "date": "2010-02-05T15:46:29.000-0500",
       "body": "Bug Parade Engage 0.3&#x20;\n"
     },
     {
+      "id": "12580",
       "author": "Justin Obara",
       "date": "2010-02-24T11:54:05.000-0500",
       "body": "This should have been fixed in all of our services. This should be reviewed.\n"

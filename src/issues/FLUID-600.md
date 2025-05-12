@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19030",
       "author": "Allison Bloodworth",
       "date": "2008-06-10T13:32:33.000-0400",
       "body": "futuretask\n"
     },
     {
+      "id": "19033",
       "author": "Jonathan Hung",
       "date": "2008-08-19T15:11:04.000-0400",
       "body": "Further investigation in a Drupal forum will depend if Governance or Architecture specify a need for it.\n"
     },
     {
+      "id": "19037",
       "author": "Jonathan Hung",
       "date": "2008-08-19T15:12:01.000-0400",
       "body": "Nothing to do until Phase 2 is done. This will be closed and re-opened if necessary.\n"

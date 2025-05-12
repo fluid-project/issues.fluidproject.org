@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13492",
       "author": "Dinuka Desilva",
       "date": "2016-03-03T11:29:13.958-0500",
       "body": "Is there anyone currently working on this? I would like to give it a try 🙂\n"
     },
     {
+      "id": "13494",
       "author": "Justin Obara",
       "date": "2016-03-04T08:47:30.498-0500",
       "body": "Dinuka Desilva feel free to work on this. This was originally filed quite a while ago in terms of Chrome and NVDA releases, so you may want to start by testing it first.&#x20;\n"
     },
     {
+      "id": "13496",
       "author": "Justin Obara",
       "date": "2016-11-08T15:49:52.646-0500",
       "body": "Tried this again with Chrome 54 and NVDA 2016.3 on Win 10. It did give some brief information about reordering, but it was just the positions. (e.g. from 2 to 3). And there was no feedback for changing selection.\n"

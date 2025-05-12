@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18090",
       "author": "Allison Bloodworth",
       "date": "2008-08-05T17:42:38.000-0400",
       "body": "iteration17\n"
     },
     {
+      "id": "18091",
       "author": "Gary Thompson",
       "date": "2008-09-12T18:41:23.000-0400",
       "body": "Page created:\\\n<http://wiki.fluidproject.org/display/fluid/Layout+Customizer+Specification>\n\nThe bulk is there, but may still need some massaging.\n"

@@ -36,16 +36,19 @@
   ],
   "comments": [
     {
+      "id": "20809",
       "author": "Justin Obara",
       "date": "2009-01-13T14:04:29.000-0500",
       "body": "'screenshot-1' shows the overlapping text\n"
     },
     {
+      "id": "20810",
       "author": "Justin Obara",
       "date": "2009-02-20T13:50:40.000-0500",
       "body": "Still a problem but more so with Text over lapping radio buttons&#x20;\n"
     },
     {
+      "id": "20811",
       "author": "Justin Obara",
       "date": "2009-03-12T14:15:28.000-0400",
       "body": "Appears to have been fixed\n\nTested using:\n\nIE7 (Win Vista)\n"

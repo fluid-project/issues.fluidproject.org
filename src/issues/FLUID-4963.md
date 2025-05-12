@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17701",
       "author": "Anastasia Cheetham",
       "date": "2013-04-01T16:19:15.778-0400",
       "body": "Cindy and I investigated solutions for this. Using the DOM 'scrollIntoView()' function works helps in Firefox (and improves the experience in Chrome), but in IE9, it scrolls the current to the far left of the fatPanel (and not just \"into view\"), which creates a very jarring, disconcerting experience.\n\nWe couldn't get the 'scrollTo' plugin to work in Firefox, In Chrome, it caused controls to scroll to the specified position even when they were clicked on using the mouse, which created disconcerting moving targets.\n\nSince the current functionality is acceptable in Chrome, we're going to leave this for now, and return to it.\n"
     },
     {
+      "id": "27818",
       "author": "Justin Obara",
       "date": "2024-07-22T14:38:51.867-0400",
       "body": "Could not reproduce with FF 128 on macOS 14.5\n"

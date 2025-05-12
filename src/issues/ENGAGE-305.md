@@ -48,26 +48,31 @@
   ],
   "comments": [
     {
+      "id": "11998",
       "author": "Colin Clark",
       "date": "2010-01-30T16:53:48.000-0500",
       "body": "I've attached a zip file containing PNGs exported from the wireframes.\n"
     },
     {
+      "id": "11999",
       "author": "Justin Obara",
       "date": "2010-02-05T14:12:20.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12000",
       "author": "Colin Clark",
       "date": "2010-02-08T17:19:26.000-0500",
       "body": "This was implemented last week in the My Collection branch. It still needs to be merged into trunk, which I am doing.\n"
     },
     {
+      "id": "12001",
       "author": "James Yoon",
       "date": "2010-02-10T10:31:57.000-0500",
       "body": "Reopening to add new button image attachments\n"
     },
     {
+      "id": "12002",
       "author": "Justin Obara",
       "date": "2010-02-12T12:25:35.000-0500",
       "body": "Committed at r9379\n"

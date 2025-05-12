@@ -35,21 +35,25 @@
   ],
   "comments": [
     {
+      "id": "16276",
       "author": "Justin Obara",
       "date": "2008-12-01T09:56:59.000-0500",
       "body": "'screenshot-1' shows the uploader after it has finished uploading the additional files\n"
     },
     {
+      "id": "16278",
       "author": "Eli Cochran",
       "date": "2008-12-03T14:15:18.000-0500",
       "body": "Interesting bug... and perplexing as the file queue is behaving differently on the server vs. local. On the server the queue seems to still contain the files which were already uploaded.  Which is, of course, a big ol' hint as to what's going on.&#x20;\n"
     },
     {
+      "id": "16280",
       "author": "Eli Cochran",
       "date": "2008-12-03T19:14:39.000-0500",
       "body": "now updating the internal status of our queue on all significant file upload events.&#x20;\n"
     },
     {
+      "id": "16282",
       "author": "Justin Obara",
       "date": "2008-12-04T08:40:29.000-0500",
       "body": "Verified fix using:\n\nFF2, Safari 3 (Mac OS 10.5)\\\nFF3, IE7 (Win Vista)\n"

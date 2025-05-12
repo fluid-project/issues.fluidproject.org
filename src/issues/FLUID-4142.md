@@ -30,6 +30,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22895",
       "author": "Antranig Basman",
       "date": "2011-03-14T04:38:06.996-0400",
       "body": "A test case was constructed to test what it seemed like this bug was - but in fact there is not such a bug. The error is in the specification of the demands block supplied above, since the component options specified in the arguments to the demands block are corrupted by the extra key \"options\". When using the \"full arguments form\" of a demands block, the component's options are simply presented literally (in this case, as the 2nd argument). The \"options\" key is only used when breaking down the arguments list into the \"pseudo-argument\" form where keys are added directly to the demands block or subcomponent specification.\n"

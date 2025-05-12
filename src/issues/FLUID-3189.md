@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14905",
       "author": "Justin Obara",
       "date": "2009-09-21T16:47:28.000-0400",
       "body": "Bug Parade Infusion 1.1.2\n"
     },
     {
+      "id": "14908",
       "author": "Laurel Williams",
       "date": "2009-09-22T15:38:06.000-0400",
       "body": "Appended the fluid version to the cache key (side effect was changing the directory name where the cached files are stored - since the key is also the directory name).\n"
     },
     {
+      "id": "14911",
       "author": "Laurel Williams",
       "date": "2009-09-29T16:40:35.000-0400",
       "body": "I accidentally committed the changes to PostClass.php for this fix under <https://fluidproject.atlassian.net/browse/FLUID-3149#icft=FLUID-3149>. See revision 8047 to find this.\n"
     },
     {
+      "id": "14913",
       "author": "Laurel Williams",
       "date": "2009-09-30T09:51:31.000-0400",
       "body": "Jacob reviewed\n"

@@ -31,16 +31,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14725",
       "author": "Michelle D'Souza",
       "date": "2008-05-27T13:56:44.000-0400",
       "body": "There hasn't been a decision around how to organize the tutorials in svn.&#x20;\n"
     },
     {
+      "id": "14726",
       "author": "Anastasia Cheetham",
       "date": "2011-01-20T09:33:36.962-0500",
       "body": "We are planning a redesign and restructuring of the demos, tutorials and documentation for 1.5. For that release, we should keep this issue in mind and ensure that tutorial code is appropriately available/distributed.\n"
     },
     {
+      "id": "14728",
       "author": "Justin Obara",
       "date": "2014-03-02T14:33:57.563-0500",
       "body": "Instructional demos are included in the Infusion All package. This was included in the <https://fluidproject.atlassian.net/browse/FLUID-5120#icft=FLUID-5120> fix.\n"

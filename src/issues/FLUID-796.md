@@ -36,21 +36,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15524",
       "author": "Jess Mitchell",
       "date": "2008-07-09T21:12:07.000-0400",
       "body": "JM: let's do 5 user tests total per component – perhaps Toronto can do 2 accessible tests and Berkeley 3 or at the least the two sites can collaborate and will total to 5 users.\n"
     },
     {
+      "id": "15526",
       "author": "Daphne Ogle",
       "date": "2008-07-24T20:27:22.000-0400",
       "body": "iteration20\n\nScheduled users for Wednesday so moving to next iteration.\n"
     },
     {
+      "id": "15528",
       "author": "Allison Bloodworth",
       "date": "2008-08-05T00:40:32.000-0400",
       "body": "I'm not sure we'll be ready to do testing of inline edit this iteration as we are just putting together storyboards for a new context, Section Info. Unless we want to do paper prototypes, we'll need to wait until inline edit is implemented in this context by the developers.\n"
     },
     {
+      "id": "15530",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:44.809-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

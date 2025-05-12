@@ -39,16 +39,19 @@
   ],
   "comments": [
     {
+      "id": "10443",
       "author": "Justin Obara",
       "date": "2010-07-12T11:30:40.784-0400",
       "body": "Added a screenshot which shows the page in the wrong position after the drag and drop operation\n"
     },
     {
+      "id": "10444",
       "author": "Justin Obara",
       "date": "2010-07-14T09:26:54.925-0400",
       "body": "Currently we removed drag and drop due to this issue.\n"
     },
     {
+      "id": "10445",
       "author": "Justin Obara",
       "date": "2012-05-25T13:40:56.646-0400",
       "body": "The calibration work flow has been removed from this release\n"

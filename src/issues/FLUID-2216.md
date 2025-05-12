@@ -32,16 +32,19 @@
   ],
   "comments": [
     {
+      "id": "21202",
       "author": "Justin Obara",
       "date": "2009-02-10T09:20:40.000-0500",
       "body": "'screenshot-1' shows that \"Easier to see\" doesn't completely collapse when \"Easier to find\" is openned\n"
     },
     {
+      "id": "21203",
       "author": "Justin Obara",
       "date": "2009-02-10T09:26:21.000-0500",
       "body": "appears to have started with r6452\n"
     },
     {
+      "id": "21204",
       "author": "Justin Obara",
       "date": "2009-02-11T11:25:17.000-0500",
       "body": "Appears to have been resolved at r6467\n\nTested using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12675",
       "author": "Alison Benjamin",
       "date": "2010-03-24T17:04:54.000-0400",
       "body": "This wiki page has been created illustration some physical/UI design options for Button Nav (and also screen reader features)\\\n<http://wiki.fluidproject.org/pages/viewpage.action?pageId=12911258>\n\nWire frames and story cards starting from Draft 5 assume button nav as well.&#x20;\n"

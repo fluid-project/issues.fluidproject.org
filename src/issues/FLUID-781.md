@@ -36,6 +36,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13317",
       "author": "Justin Obara",
       "date": "2008-08-28T12:53:38.000-0400",
       "body": "There is a new example of inline edit, which also contains undo/redo functionality. (<http://build.fluidproject.org/fluid/sample-code/inline-edit/section-info/section-info.html>)\n"

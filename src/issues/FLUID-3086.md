@@ -30,6 +30,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18448",
       "author": "Justin Obara",
       "date": "2009-11-09T09:12:13.000-0500",
       "body": "The e-mail column gets focus styling when clicked.\n"

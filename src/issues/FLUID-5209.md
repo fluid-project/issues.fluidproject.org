@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23847",
       "author": "Justin Obara",
       "date": "2016-08-30T12:56:36.104-0400",
       "body": "Did not namespace listeners that are bound to events of other components using IoC. These have not be namespace due to <https://fluidproject.atlassian.net/browse/FLUID-5948#icft=FLUID-5948>\n"
     },
     {
+      "id": "23848",
       "author": "Cindy Li",
       "date": "2016-08-30T13:03:27.630-0400",
       "body": "The pull request <https://github.com/fluid-project/infusion/pull/742> has been merged into the project master branch at b11549a25f77fc83d5d989f77fbec1f396d474e2\n"

@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13157",
       "author": "Anastasia Cheetham",
       "date": "2008-04-08T15:37:00.000-0400",
       "body": "This is not a bug. The cursor is changing to an I-beam because it is over top of text. The same change happens over any text.\n"
     },
     {
+      "id": "13158",
       "author": "Herb Wideman",
       "date": "2008-04-08T15:53:26.000-0400",
       "body": "Then the real issue is the same as mentioned in another issue: the failure of the mouse pointer to distinguish by its shape between moveable and immovable elements...\n"

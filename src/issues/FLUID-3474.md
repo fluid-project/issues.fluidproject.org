@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20302",
       "author": "Laurel Williams",
       "date": "2010-01-08T08:49:02.000-0500",
       "body": "While I'm not sure exactly what is causing this, I do have an idea of how to aviod it. The logic in builder.php is as follows:\\\n1\\) if get\\['var'] is in the $\\_GET variable then default to the jsonProcessor.php code - show the download page\\\n2\\) if post\\['selection\\_choice'], etc. is in the $\\_POST variable then process the build request\\\n3\\) if neither of the above then show an error page (likely someone is trying to hack).\n\nA better way to handle this might be to default to the first alternative unless the post variables are in place. This will prevent hacking but also return a sensible result in all cases.\n"
     },
     {
+      "id": "20303",
       "author": "Justin Obara",
       "date": "2014-03-03T11:20:12.398-0500",
       "body": "builder.fluidproject.org has been taken down and there are no immediate plans to replace it. Currently all builds are expected to be generated directly from the grunt build scripts.\n\n<http://fluid.2324889.n4.nabble.com/Infusion-Builder-issues-tp8926.html>\n"

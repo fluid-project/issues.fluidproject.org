@@ -38,16 +38,19 @@
   ],
   "comments": [
     {
+      "id": "12629",
       "author": "y z",
       "date": "2010-02-04T15:35:21.000-0500",
       "body": "Patch that updates catalogue service to pass the correct navigation list model.\n"
     },
     {
+      "id": "12630",
       "author": "Colin Clark",
       "date": "2010-02-04T15:51:20.000-0500",
       "body": "I committed Yura's patch at r9276\n"
     },
     {
+      "id": "12631",
       "author": "y z",
       "date": "2010-02-04T16:44:29.000-0500",
       "body": "Added missing markup on all html pages that have navList markup already.\n"

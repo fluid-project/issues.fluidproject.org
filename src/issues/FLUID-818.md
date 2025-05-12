@@ -37,21 +37,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19447",
       "author": "Eli Cochran",
       "date": "2008-06-24T19:01:57.000-0400",
       "body": "Observed during testing for multi-instance verification\n"
     },
     {
+      "id": "19448",
       "author": "Eli Cochran",
       "date": "2008-06-24T19:28:12.000-0400",
       "body": "The file for multi-uploader testing can be found at: tests/fluid-tests/manual/multi-uploader/index.html\n"
     },
     {
+      "id": "19449",
       "author": "Eli Cochran",
       "date": "2008-06-24T19:31:02.000-0400",
       "body": "instantiated each progress using the Uploader container, not the file queue. The uploader container selector should always be unique, of course it might not be.&#x20;\n"
     },
     {
+      "id": "19450",
       "author": "Justin Obara",
       "date": "2008-12-03T11:44:27.000-0500",
       "body": "appears to have been fixed\n"

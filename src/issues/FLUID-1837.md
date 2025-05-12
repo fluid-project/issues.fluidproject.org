@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20708",
       "author": "Michelle D'Souza",
       "date": "2009-02-10T15:43:59.000-0500",
       "body": "The background image option is now on its own instead of being a side effect of the high contrast theme.\n"

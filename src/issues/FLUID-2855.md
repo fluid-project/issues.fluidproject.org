@@ -40,11 +40,13 @@
   ],
   "comments": [
     {
+      "id": "19311",
       "author": "Justin Obara",
       "date": "2009-06-01T08:50:29.000-0400",
       "body": "'screenshot-1' shows the slider thumb, with the invisible slider bar\n"
     },
     {
+      "id": "19313",
       "author": "Justin Obara",
       "date": "2010-05-07T13:32:20.632-0400",
       "body": "a11y issue\n"

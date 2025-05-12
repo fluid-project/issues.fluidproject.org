@@ -35,16 +35,19 @@
   ],
   "comments": [
     {
+      "id": "27310",
       "author": "Blake E",
       "date": "2008-12-22T12:23:15.000-0500",
       "body": "vulab12\n"
     },
     {
+      "id": "27311",
       "author": "Blake E",
       "date": "2008-12-22T12:29:30.000-0500",
       "body": "Issue has been fixed by cleaning up the js functions and improved the js logging (it should only be triggered for those who have firebug installed)\n\nthe stopRecording js function wasn't being called properly.\\\nPlease review attached patch.\n"
     },
     {
+      "id": "27312",
       "author": "Blake E",
       "date": "2008-12-22T15:34:45.000-0500",
       "body": "patch commited by dmakalsky.\n"

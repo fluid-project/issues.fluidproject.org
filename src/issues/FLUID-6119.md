@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24239",
       "author": "Gregor Moss",
       "date": "2017-09-19T15:02:50.959-0400",
       "body": "Unable to reproduce the bug in Chrome 61.0.3163.91 or Firefox 55.0.2/55.0.3, both on Windows 10. It seems to work fine for me in those browsers, currently.\n\nPossibly related, including a potential fix: <https://bugs.chromium.org/p/chromium/issues/detail?id=679437>\n"
     },
     {
+      "id": "24240",
       "author": "Justin Obara",
       "date": "2017-09-20T09:18:15.488-0400",
       "body": "Tried with Win 7 using Chrome 61.0.3163.91 and could no longer reproduce.\n"

@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10487",
       "author": "Colin Clark",
       "date": "2010-06-08T15:04:42.306-0400",
       "body": "I resolved this issue in decapod-ui master at r410826ea9ed4 by linking to a new decapod-infusion repository containing only the Infusion 1.2 tag without excess history.\n"

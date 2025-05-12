@@ -33,16 +33,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19950",
       "author": "Justin Obara",
       "date": "2015-03-24T12:59:59.292-0400",
       "body": "Submitted a pull request:\\\n<https://github.com/fluid-project/infusion/pull/590>\n"
     },
     {
+      "id": "19952",
       "author": "Cindy Li",
       "date": "2015-03-26T09:23:38.000-0400",
       "body": "Merged @ a930d31ca6430dad67566e712ccad5d333d74ddb\n"
     },
     {
+      "id": "19953",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:20.642-0400",
       "body": "Reopening to change the fix version to 1.9\n"

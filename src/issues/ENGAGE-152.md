@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12484",
       "author": "Justin Obara",
       "date": "2010-02-05T14:16:34.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12485",
       "author": "Colin Clark",
       "date": "2010-02-08T16:12:31.000-0500",
       "body": "Sveto has implemented this using the Navigation List in a branch. It still needs to be merged with trunk, which I am doing now.\n"

@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18787",
       "author": "Justin Obara",
       "date": "2011-05-17T10:23:55.631-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "18792",
       "author": "Antranig Basman",
       "date": "2011-05-18T15:14:40.487-0400",
       "body": "This is implemented in 1.4. There are a few anomalies such as <https://fluidproject.atlassian.net/browse/FLUID-4236#icft=FLUID-4236> raised by the fact that the arguments to the decorator function (component creator) behave as if they were literally supplied using \"arguments\" rather than using pseudoarguments.\n"

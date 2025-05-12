@@ -31,21 +31,25 @@
   ],
   "comments": [
     {
+      "id": "18798",
       "author": "Antranig Basman",
       "date": "2017-12-16T13:25:58.144-0500",
       "body": "It appears that the crucial element tipping the framework into the incorrect sorting is the nested default value supplied from the test environment, since the gist at <https://gist.github.com/colinbdclark/5b92588349bb1430fa74853256e72757> attempting to isolate the problem doesn't exhibit it.\n"
     },
     {
+      "id": "18801",
       "author": "Antranig Basman",
       "date": "2017-12-16T13:29:37.885-0500",
       "body": "It's been known for a while that this was an area in which the framework's behaviour was underdetermined and underimplemented - see comment at <https://github.com/fluid-project/infusion/blob/5dd8f82d9237174336c23e9c88c09fdebeab3003/src/framework/core/js/DataBinding.js#L346>\n"
     },
     {
+      "id": "18805",
       "author": "Antranig Basman",
       "date": "2017-12-16T13:38:49.785-0500",
       "body": "Useful screenshot showing incoming model values during the init transaction. Note that since none of the instantiating components have been marked as \"completeOnInit\" since they are all currently in construction, the sort done on the previous line has no stable effect, whereas we need to arrange to sort the the record for the \"aconite.video\" component to the last position.&#x20;\n\n<!-- media: file fbc86116-5464-4a14-8057-8798a670a86a -->\n"
     },
     {
+      "id": "18808",
       "author": "Colin Clark",
       "date": "2018-01-22T12:15:18.811-0500",
       "body": "I reviewed and merged this fix at 350441a9bd6dfc8fbb8a1753bfbb8fadd6c2dcc9, and published a dev release, version 3.0.0-dev.20180122T170655Z.350441a9b, to npm.\n"

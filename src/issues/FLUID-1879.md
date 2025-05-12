@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17554",
       "author": "Jonathan Hung",
       "date": "2008-12-03T10:24:09.000-0500",
       "body": "iteration23\n"
     },
     {
+      "id": "17556",
       "author": "Jonathan Hung",
       "date": "2008-12-11T09:54:11.000-0500",
       "body": "For now, filters have been removed until it is deemed necessary. It was confusing users and the categories navigation on the left sidebar was sufficient.\n"

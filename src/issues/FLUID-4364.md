@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24454",
       "author": "Justin Obara",
       "date": "2011-07-28T09:18:04.578-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24455",
       "author": "Justin Obara",
       "date": "2011-08-04T12:28:29.269-0400",
       "body": "Appears to have been fixed with one of the other recent changes to UIO\n"

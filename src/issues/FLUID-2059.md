@@ -35,16 +35,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14032",
       "author": "Justin Obara",
       "date": "2009-01-06T14:21:35.000-0500",
       "body": "Bug Parade 0.7 release\n"
     },
     {
+      "id": "14035",
       "author": "Colin Clark",
       "date": "2009-01-07T16:13:38.000-0500",
       "body": "It looks to me like this isn't really a bug. See the initSubcomponents unit test in FluidJSTests. Can someone review this for me?\n"
     },
     {
+      "id": "14037",
       "author": "Justin Obara",
       "date": "2009-01-12T10:58:21.000-0500",
       "body": "This is not a bug, but rather an input error that had not yet been documented. It has now been added to the documentation: <http://wiki.fluidproject.org/display/fluid/Subcomponents>.\n"

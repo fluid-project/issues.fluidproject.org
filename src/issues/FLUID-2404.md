@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21466",
       "author": "Justin Obara",
       "date": "2009-03-25T12:37:03.000-0400",
       "body": "Clean Up Parade 1.0&#x20;\n"
     },
     {
+      "id": "21468",
       "author": "Antranig Basman",
       "date": "2009-03-30T20:14:48.000-0400",
       "body": "Samples, test cases, base styling files and core component updated at 6953.... I think I caught everything, but naturally it will need a check over.\n"
     },
     {
+      "id": "21470",
       "author": "Justin Obara",
       "date": "2009-11-13T08:59:43.000-0500",
       "body": "Closed as per previous comment, there have been other changes since that should have caught any missing pieces.\n"

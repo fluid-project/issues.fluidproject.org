@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20283",
       "author": "Michelle D'Souza",
       "date": "2008-11-25T13:53:27.000-0500",
       "body": "There is a branch with Undo implemented in UIOptions. Whether or not this makes sense from a design standpoint is still debatable. The changes to UIOptions should be merged with trunk and a manual test should be created.&#x20;\n"
     },
     {
+      "id": "20284",
       "author": "Michelle D'Souza",
       "date": "2008-11-25T15:13:47.000-0500",
       "body": "dev-iteration47\n"
     },
     {
+      "id": "20285",
       "author": "Michelle D'Souza",
       "date": "2008-11-27T16:05:04.000-0500",
       "body": "UI Options now technically supports Undo however Undo is not recommended for use because of user experience issues. Currently, the undo will undo the last setting which in the case of UI Options is unlikely to be what the user wants. Probably with UI Options we'll want a batch undo operation. Also, the visual design of Undo in UI Options has not been explored.\n"
     },
     {
+      "id": "20286",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:44.205-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

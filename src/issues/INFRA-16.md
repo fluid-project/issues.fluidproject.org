@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25798",
       "author": "Giovanni Tirloni",
       "date": "2015-08-07T11:26:04.494-0400",
       "body": "tor1-prd-app06 has been dedicated to AChecker but there were some problems running it with PHP 5.4.\n\nCindy Li did some work to update the code and it looks much better. However, she still sees some minor differences between when AChecker is running on the old Ubuntu server and when it's running on the new CentOS VM.\n\nWork on this is on hold and AChecker is again running from the Ubuntu server (courseware). That server was stripped down of anythign and only AChecker is running there.\n\nNext step is to point AChecker back to tor1-prd-app06 and work on the remaining code issues.\n"
     },
     {
+      "id": "25799",
       "author": "Giovanni Tirloni",
       "date": "2015-08-17T13:56:34.659-0400",
       "body": "The remaining issues that Cindy has identified were classified as low-priority and will be fixed when she has some free time (no ETA). Since the security of our environment is high-priority, I went ahead and moved AChecker permanently to tor1-prd-app06.\n"

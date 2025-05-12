@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19939",
       "author": "Colin Clark",
       "date": "2008-07-31T16:51:41.000-0400",
       "body": "infusion-05-wishlist\n"
     },
     {
+      "id": "19941",
       "author": "Antranig Basman",
       "date": "2008-09-18T00:05:26.000-0400",
       "body": "All subtasks resolved as of revision 5572.\n"
     },
     {
+      "id": "19943",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:59.662-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

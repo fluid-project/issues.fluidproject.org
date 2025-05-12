@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25807",
       "author": "Avtar Gill",
       "date": "2018-03-07T16:23:13.249-0500",
       "body": "I'm aiming to make a PR for this next week. For reference there's a way to create a global timeout using the Buildkite web UI but we're using pipeline configs:\n\n<https://github.com/buildkite/feedback/issues/170>\n\nThe workaround will be to add `timeout_in_minutes` to [each step](https://github.com/fluid-project/infusion/blob/master/.buildkite/pipeline.yml).\n"
     },
     {
+      "id": "25808",
       "author": "Giovanni Tirloni",
       "date": "2018-03-28T13:07:15.388-0400",
       "body": "Avtar submitted [PR#884](https://github.com/fluid-project/infusion/pull/884) which added timeouts.\n"

@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12039",
       "author": "Armin Krauss",
       "date": "2009-08-18T15:18:59.000-0400",
       "body": "At the moment the \"Cabinet\" in the Artifact component is not using Justin's cabinet component. The cabinet component should replace the existing solution\n"
     },
     {
+      "id": "12040",
       "author": "Justin Obara",
       "date": "2009-09-21T16:40:51.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "12041",
       "author": "y z",
       "date": "2009-09-23T16:20:44.000-0400",
       "body": "* Need to integrate wireframe pictures for cabinet drawers.\n* Cabinet header bug with tags.\n"
     },
     {
+      "id": "12042",
       "author": "Justin Obara",
       "date": "2009-11-03T11:59:15.000-0500",
       "body": "the main integration has been complete, other issues should be filed on their own\n"

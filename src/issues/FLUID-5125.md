@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22873",
       "author": "Antranig Basman",
       "date": "2013-09-07T04:26:42.646-0400",
       "body": "Hi cindyli - unfortunately this behaviour is \"working as designed\". The demands block is applicable to the sibling component, since the context name \"fluid.tests.fluid5125Sub1\" is resolvable from there, since the component is part of the set of \"siblings of ancestors\". For example - were you to use the context \"{fluid5125Sub1}\" within the 2nd subcomponent, it would be resolvable by the standard resolution rules, and hence it is also valid as a context name for the purposes of demands resolution.\n\nSee our standard \"yellow squares\" diagram for an illustration: <http://wiki.fluidproject.org/display/docs/Demand+Resolution>\n\nAlthough this behaviour may seem peculiar, it can't be altered without changing the meaning of all demands blocks and causing many current uses of them, e.g. for progressiveEnhancement to fail. As I mentioned in the channel today, it is safer to start relying on the \"distributeOptions\" mechanism instead since the downward-matching selectors that it uses are free from this possibly awkward interpretation applied to the upward-matching contexts used for matching demands blocks contexts - as well as the fact that recent discoveries (see GPII architecture list for today, 7/9/13) suggest that we should deprecate the use of demands blocks altogether and remove them from the framework.\n"

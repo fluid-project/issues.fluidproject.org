@@ -40,26 +40,31 @@
   ],
   "comments": [
     {
+      "id": "11786",
       "author": "Colin Clark",
       "date": "2009-10-05T21:01:50.000-0400",
       "body": "Here are two patches, one for the kettle directory and one for engage, which implement a nearly-working version of this fix.\n"
     },
     {
+      "id": "11787",
       "author": "Justin Obara",
       "date": "2009-10-06T13:30:59.000-0400",
       "body": "Bug Parade Engage 0.1&#x20;\n"
     },
     {
+      "id": "11788",
       "author": "Colin Clark",
       "date": "2009-10-06T14:24:24.000-0400",
       "body": "This issue should also address issues of duplication within Engage, including things like the fact that Browse and Artifact have very similar, yet separate code.\n"
     },
     {
+      "id": "11789",
       "author": "Colin Clark",
       "date": "2009-10-09T18:32:31.000-0400",
       "body": "This issue was resolved by my commits to engage-server and -client at r8258 and 8259, with subsequent tweaks from Yura and Antranig.\n"
     },
     {
+      "id": "11790",
       "author": "Justin Obara",
       "date": "2009-11-03T11:56:03.000-0500",
       "body": "Closed as per previous comment\n"

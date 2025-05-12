@@ -32,11 +32,13 @@
   ],
   "comments": [
     {
+      "id": "21097",
       "author": "Justin Obara",
       "date": "2009-01-21T10:47:33.000-0500",
       "body": "'screenshot-1' shows the Font style radio buttons unselected\n"
     },
     {
+      "id": "21099",
       "author": "Michelle D'Souza",
       "date": "2009-02-11T12:18:07.000-0500",
       "body": "This is no longer an issue because the radio buttons have been replaced with a drop down in the new design.&#x20;\n"

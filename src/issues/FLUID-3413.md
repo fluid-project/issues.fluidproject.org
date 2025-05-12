@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20608",
       "author": "Laurel Williams",
       "date": "2009-12-07T09:42:54.000-0500",
       "body": "Bug Parade Builder 1.1.2&#x20;\n"
     },
     {
+      "id": "20609",
       "author": "Laurel Williams",
       "date": "2009-12-08T14:15:35.000-0500",
       "body": "Fixed all but one set of broken tests. Have altered what is expected to be displayed upon rendering in the area of module names and descriptions. Have left the group description tests for now, as the group description has been removed from the main interface. Will have to add this back programmatically for the tests.\n"
     },
     {
+      "id": "20610",
       "author": "Laurel Williams",
       "date": "2009-12-08T15:43:22.000-0500",
       "body": "removed the final broken tests.\n"
     },
     {
+      "id": "20611",
       "author": "Colin Clark",
       "date": "2009-12-10T21:02:01.000-0500",
       "body": "I've reviewed Laurel's fixes and the tests are indeed passing again with the exception of this known issue:\n\n<http://issues.fluidproject.org/browse/FLUID-3231>\n\nWe're good to go on this one.\n"

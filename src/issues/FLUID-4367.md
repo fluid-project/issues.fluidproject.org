@@ -33,21 +33,25 @@
   ],
   "comments": [
     {
+      "id": "24433",
       "author": "Justin Obara",
       "date": "2011-07-28T12:57:53.505-0400",
       "body": "ScreenShot.png shows an example of the borders not changing colour with the selected contrast theme. Note that in this image they should have been black.\n"
     },
     {
+      "id": "24434",
       "author": "Justin Obara",
       "date": "2011-07-28T12:58:01.581-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24435",
       "author": "Justin Obara",
       "date": "2011-07-29T15:10:06.468-0400",
       "body": "Sent a pull request <https://github.com/fluid-project/infusion/pull/126>\n"
     },
     {
+      "id": "24436",
       "author": "Michelle D'Souza",
       "date": "2011-07-29T16:55:43.353-0400",
       "body": "pull request merged into project repo at b382be11bb6e6239fc4756576bf7836f0a8b6858\n"

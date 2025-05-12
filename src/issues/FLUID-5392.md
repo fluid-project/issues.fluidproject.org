@@ -33,6 +33,7 @@
   ],
   "comments": [
     {
+      "id": "25605",
       "author": "Justin Obara",
       "date": "2014-06-03T11:19:50.588-0400",
       "body": "screenshot.png shows that invitation text that is displayed after clicking on an empty inline edit.\n"

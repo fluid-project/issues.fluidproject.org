@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13891",
       "author": "Allison Bloodworth",
       "date": "2008-08-07T14:14:16.000-0400",
       "body": "\\-\n"
     },
     {
+      "id": "13894",
       "author": "Jonathan Hung",
       "date": "2009-01-23T15:43:18.000-0500",
       "body": "Could this be a possible solution?\n\n\"imagefield\\_import.module will allow users with the proper role to be able to import a large number of images into a CCK content type that contains an imagefield.\"\n\n<http://drupal.org/project/imagefield_import>\n"

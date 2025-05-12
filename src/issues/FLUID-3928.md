@@ -34,16 +34,19 @@
   ],
   "comments": [
     {
+      "id": "16308",
       "author": "Justin Obara",
       "date": "2010-12-16T14:50:24.946-0500",
       "body": "\"screenshot-1\" shows how multiple images can obtain focus styling at once\n"
     },
     {
+      "id": "16310",
       "author": "Justin Obara",
       "date": "2015-06-09T09:07:36.825-0400",
       "body": "Cannot reproduce in IE 11 which is only currently supported version of IE\n"
     },
     {
+      "id": "16312",
       "author": "Justin Obara",
       "date": "2015-06-26T09:50:48.511-0400",
       "body": "Reopening to change the fix version to 1.9\n"

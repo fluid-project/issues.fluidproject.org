@@ -31,16 +31,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26279",
       "author": "Alan Harnum",
       "date": "2017-11-07T16:37:26.967-0500",
       "body": "The upstream project repo has been created: <https://github.com/fluid-project/sjrk-story-telling-server>\n\nA fork with the content of the original repo is ready for PR at: <https://github.com/waharnum/sjrk-story-telling-server>\n"
     },
     {
+      "id": "26280",
       "author": "Alan Harnum",
       "date": "2017-11-07T16:50:37.730-0500",
       "body": "This should be the final repo reviewed, because it depends on the other three (sjrk-story-telling, fluid-couch-config and grunt-fluid-couch-config)\n"
     },
     {
+      "id": "26281",
       "author": "Gregor Moss",
       "date": "2019-03-08T01:41:16.057-0500",
       "body": "With the merging of the UI and Server repos, this is unnecessary\n"

@@ -31,21 +31,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16547",
       "author": "Colin Clark",
       "date": "2008-09-15T16:43:59.000-0400",
       "body": "This one isn't a blocker, since I'm not sure we have any concrete examples that require this behaviour. If we can't fix it, let's remove it from the Springboards.\n"
     },
     {
+      "id": "16548",
       "author": "Justin Obara",
       "date": "2008-09-18T17:09:37.000-0400",
       "body": "Also occurs in example 1 of the Reorderer Springboard\\\n<http://build.fluidproject.org/fluid/fluid-components/html/Reorderer.html>\n"
     },
     {
+      "id": "16549",
       "author": "Justin Obara",
       "date": "2008-09-22T12:59:59.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "16550",
       "author": "Jacob Farber",
       "date": "2008-09-22T15:07:19.000-0400",
       "body": "Removed example due to it being reliant on legacy approach to locked portlets. \"Dead\" portlets should really be locked portlets.\n"

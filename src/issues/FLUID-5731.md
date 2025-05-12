@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16967",
       "author": "Kaye Mao",
       "date": "2015-08-04T10:36:42.722-0400",
       "body": "In system preferences > keyboard > shortcuts > make sure \"all controls\" is checked\n\nThis default setting affects the use of tab navigation in firefox and safari\n"

@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24739",
       "author": "Jonathan Hung",
       "date": "2010-10-18T14:27:11.774-0400",
       "body": "Bug Parade 1.3\n"
     },
     {
+      "id": "24740",
       "author": "Jonathan Hung",
       "date": "2011-01-11T10:14:36.604-0500",
       "body": "Work done as part of development. Ongoing screen reader testing is required.\n"

@@ -42,11 +42,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15151",
       "author": "Colin Clark",
       "date": "2008-07-31T17:43:24.000-0400",
       "body": "infusion-05-wishlist\n"
     },
     {
+      "id": "15154",
       "author": "Justin Obara",
       "date": "2011-03-15T14:19:18.020-0400",
       "body": "all sub-issues have been closed, and new jiras related to the uploader's error handling have been filed.\n"

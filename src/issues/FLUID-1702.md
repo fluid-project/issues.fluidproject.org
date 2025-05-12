@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17114",
       "author": "Antranig Basman",
       "date": "2008-10-23T11:52:45.000-0400",
       "body": "Fixed at revision 5808 with (manual) test case at <https://source.fluidproject.org/svn/fluid/components/trunk/src/webapp/tests/fluid-tests/manual/dynamic-reorderer/index.html>\\\nAutomated tests still required.\n"
     },
     {
+      "id": "17115",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:53.373-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

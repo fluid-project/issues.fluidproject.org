@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11732",
       "author": "y z",
       "date": "2010-03-10T17:10:27.000-0500",
       "body": "This issue causes an error in the stand alone where about and view both use the same demo data. About will try to initialize navigation list that it doesn't have the container for in html nor it has the resource in place (since there's no screenNavigator shared resources).\n"
     },
     {
+      "id": "11733",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:26.581-0500",
       "body": "The repository has been archived.\n"

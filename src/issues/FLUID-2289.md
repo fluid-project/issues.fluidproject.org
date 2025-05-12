@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15310",
       "author": "Michelle D'Souza",
       "date": "2009-03-17T10:43:56.000-0400",
       "body": "It is not clear that this is a better interface for setting text spacing. From looking at ATs we find that they often just have an on/off \"more space between letters\" option.\n"
     },
     {
+      "id": "15313",
       "author": "Michelle D'Souza",
       "date": "2011-03-03T16:19:35.243-0500",
       "body": "This feature has been removed in the current designs.&#x20;\n"

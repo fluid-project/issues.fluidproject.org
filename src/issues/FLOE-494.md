@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11379",
       "author": "Justin Obara",
       "date": "2016-12-13T09:55:34.692-0500",
       "body": "Should also provide documentation for how to develop the UIO wordpress plugin.\n"
     },
     {
+      "id": "11380",
       "author": "Cindy Li",
       "date": "2016-12-15T13:20:53.332-0500",
       "body": "The pull request <https://github.com/fluid-project/uio-wordpress-plugin/pull/4> has been merged into the project repo master branch at 2967766f6896de5169e1e5a2b9c4ac08cde6563a\n"

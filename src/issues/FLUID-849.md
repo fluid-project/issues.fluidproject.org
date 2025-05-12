@@ -32,16 +32,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19189",
       "author": "Colin Clark",
       "date": "2008-07-01T22:42:38.000-0400",
       "body": "I've committed a working version of this, but we still need a good unit test for it. I haven't yet been able to figure out how to query a text field element to determine which characters are selected.\n"
     },
     {
+      "id": "19192",
       "author": "Colin Clark",
       "date": "2008-07-31T17:27:43.000-0400",
       "body": "Fixed in time for Infusion 0.4.\n"
     },
     {
+      "id": "19194",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:44.154-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

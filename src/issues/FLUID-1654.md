@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20140",
       "author": "Michelle D'Souza",
       "date": "2008-11-25T13:43:01.000-0500",
       "body": "Currently the interface matches step 2 of the original wireframes. These are expected to change drastically after 0.6.&#x20;\n"

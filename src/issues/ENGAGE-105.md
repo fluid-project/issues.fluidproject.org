@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12290",
       "author": "Colin Clark",
       "date": "2009-10-09T18:35:50.000-0400",
       "body": "This was resolved for both artifact View and Browse by Yura at r8271 as part of the fix to <https://fluidproject.atlassian.net/browse/ENGAGE-96#icft=ENGAGE-96>.\n"
     },
     {
+      "id": "12291",
       "author": "Justin Obara",
       "date": "2009-11-10T13:54:01.000-0500",
       "body": "Closed as per previous comment\n"

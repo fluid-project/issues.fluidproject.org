@@ -39,16 +39,19 @@
   ],
   "comments": [
     {
+      "id": "24066",
       "author": "Justin Obara",
       "date": "2014-06-05T12:53:08.351-0400",
       "body": "screenshot.png shows the background from the previous contrast theme still present after reseting the preference settings.\n"
     },
     {
+      "id": "24067",
       "author": "Justin Obara",
       "date": "2014-06-05T13:00:49.895-0400",
       "body": "Also happens on the full with preview examples.\\\n<http://build.fluidproject.org/infusion/tests/manual-tests/html/prefsEditorFullWithPreview.html>\\\n<http://build.fluidproject.org/infusion/tests/manual-tests/html/prefsEditorFullWithPreviewSchema.html>\n"
     },
     {
+      "id": "27831",
       "author": "Justin Obara",
       "date": "2024-07-22T15:18:58.354-0400",
       "body": "Internet Explorer is no longer supported\n"

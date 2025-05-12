@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26047",
       "author": "Alan Harnum",
       "date": "2018-09-18T11:34:43.514-0400",
       "body": "Added \"restart:always\" as a service policy in the compose definition files, as per <https://github.com/inclusive-design/website-cities/blob/4a244dbf6528285a4050cdd9cfc4178cd3897889/docker-compose.yml#L7>\n"

@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13801",
       "author": "Justin Obara",
       "date": "2008-08-26T14:55:09.000-0400",
       "body": "downgraded from blocker to critical, as uploader is under going major changes\n"
     },
     {
+      "id": "13803",
       "author": "Eli Cochran",
       "date": "2008-11-14T16:08:42.000-0500",
       "body": "No longer using the cursor state, buttons and links are actually enabled and disabled in the DOM by various Uploader events\n"

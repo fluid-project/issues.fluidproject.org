@@ -27,26 +27,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25015",
       "author": "Justin Obara",
       "date": "2009-09-28T14:16:02.000-0400",
       "body": "Bug Parade Infusion 1.1.2\n"
     },
     {
+      "id": "25016",
       "author": "Colin Clark",
       "date": "2009-10-05T14:02:55.000-0400",
       "body": "I've removed the old ImageReordererRSF.html template from the Image Reorderer. In the off change that an RSF-based user is actually using this template, or if someone is ajaxing it into their application, we should add a note to the README file explaining the change and how they can address any problems it may cause:\n\n\"The old ImageReordererRSF.html template, used by RSF-based applications with the Image Reorderer, has been removed from this Infusion release because it can be confusing for users. If you rely on this template, you can retrieve the file from the Infusion 1.1.1 release here: <http://source.fluidproject.org/svn/fluid/infusion/tags/fluid-1.1.1/src/webapp/components/reorderer/html/ImageReordererRSF.html>\"\n"
     },
     {
+      "id": "25017",
       "author": "Jacob Farber",
       "date": "2009-10-15T11:08:44.000-0400",
       "body": "Readme has been updated and frozen\n"
     },
     {
+      "id": "25019",
       "author": "Justin Obara",
       "date": "2009-11-03T10:48:24.000-0500",
       "body": "as per previous comment\n"
     },
     {
+      "id": "25021",
       "author": "Michelle D'Souza",
       "date": "2011-01-13T16:50:09.589-0500",
       "body": "Reopening these issues in order to change the component to Release.&#x20;\n"

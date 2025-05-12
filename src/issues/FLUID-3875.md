@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13858",
       "author": "Justin Obara",
       "date": "2010-12-03T08:50:49.576-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "13862",
       "author": "Colin Clark",
       "date": "2010-12-12T23:08:19.264-0500",
       "body": "Mike has addressed the first issue mentioned here, along with unit tests for the whole implementation. While there's certainly more work that needs to be done here, I think we can go ahead and ship for Infusion 1.3.\n"
     },
     {
+      "id": "13864",
       "author": "Colin Clark",
       "date": "2010-12-12T23:09:03.477-0500",
       "body": "Changing the priority of this issue for the Infusion 1.3 release based on the fact that we have addressed the most substantial issues. The issue will stay open to be resolved fully for Infusion 1.4\n"
     },
     {
+      "id": "13867",
       "author": "Colin Clark",
       "date": "2011-01-21T09:23:16.644-0500",
       "body": "The core issues here have been resolved, and I've split out the remaining tasks into separate JIRAs, <https://fluidproject.atlassian.net/browse/FLUID-4040#icft=FLUID-4040> and <https://fluidproject.atlassian.net/browse/FLUID-4041#icft=FLUID-4041>.\n"

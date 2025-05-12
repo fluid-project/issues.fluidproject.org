@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10408",
       "author": "Justin Obara",
       "date": "2012-05-14T15:47:09.562-0400",
       "body": "We could try switching from the clearStyle option to autoHeight\\\n<http://jqueryui.com/demos/accordion/#option-autoHeight>\n"
     },
     {
+      "id": "10409",
       "author": "Jonathan Hung",
       "date": "2012-05-16T10:34:34.989-0400",
       "body": "I have put in a fixed height for the ds-pdfExporter-exportDetails class. This makes all those accordion drawers the same height, but the problem is that it affects all accordion drawers at the moment.\n"
     },
     {
+      "id": "10410",
       "author": "Justin Obara",
       "date": "2012-05-23T12:21:34.089-0400",
       "body": "merged into the project repo\n"

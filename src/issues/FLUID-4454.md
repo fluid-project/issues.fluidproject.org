@@ -52,16 +52,19 @@
   ],
   "comments": [
     {
+      "id": "16300",
       "author": "Justin Obara",
       "date": "2011-09-16T10:57:19.849-0400",
       "body": "Screenshot.png shows background images clashing with the contrast theme\n"
     },
     {
+      "id": "16302",
       "author": "Anastasia Cheetham",
       "date": "2011-10-11T15:40:54.038-0400",
       "body": "This issue also seems to affect \"widgets.\" The attached screenshot (sakai-demo-bad-widget-borders.png) shows the borders of the widgets not being properly set to the high-contrast theme colours.\n"
     },
     {
+      "id": "16304",
       "author": "Justin Obara",
       "date": "2013-10-04T10:59:37.311-0400",
       "body": "This demo has been removed.\n"

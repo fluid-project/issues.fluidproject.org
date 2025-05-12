@@ -37,6 +37,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25283",
       "author": "Antranig Basman",
       "date": "2019-11-28T16:00:22.974-0500",
       "body": "Note that this is not necessarily a problem, since as it has turned out in the context of use, this was the desirable behaviour on most occasions. In practice it seems that we \"forgot\" in between the filing of <https://fluidproject.atlassian.net/browse/FLUID-5258#icft=FLUID-5258> and <https://fluidproject.atlassian.net/browse/FLUID-6214#icft=FLUID-6214> that the behaviour to resolve at the source was explicitly implemented, as seen in this implementation of fluid.generateExpandBlock:\n\n```java\nfluid.generateExpandBlock = function (record, that, mergePolicy, localRecord) {\r\n        var expanded = fluid.expandOptions(record.options, record.contextThat || that, mergePolicy, localRecord, {defer: true});\n```\n\nNote that the inconsistency noted in <https://fluidproject.atlassian.net/browse/FLUID-5258#icft=FLUID-5258> remains, in that material distributed into listener and invoker arguments will resolve at the target rather than the source.\n"

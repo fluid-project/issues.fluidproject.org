@@ -30,16 +30,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21666",
       "author": "Justin Obara",
       "date": "2010-03-16T09:33:44.000-0400",
       "body": "I believe this was intentional and is used in cases for example where we want to hide labels offscreen so they are accessible by the screen reader but not visibly part of the ui. I'm assigning this to Jacob to confirm.\n"
     },
     {
+      "id": "21667",
       "author": "Jacob Farber",
       "date": "2010-03-23T11:40:58.000-0400",
       "body": "Yes, this is by design. See comment above the class name:  \"/\\* hide text for screen readers. \\*/\"\n"
     },
     {
+      "id": "21668",
       "author": "y z",
       "date": "2010-03-23T11:52:44.000-0400",
       "body": "The comment \"/\\* hide text for screen readers. \\*/\" for the style is a little misleading. This was the reason it was originally misused in the first place in attempt to hide elements from the screen reader. As Justin mentions it in his comment this style hides stuff off screen so it is accessible by the screen reader but not in the visible part of the ui.\n"

@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12838",
       "author": "Johnny Taylor",
       "date": "2012-04-26T11:51:48.058-0400",
       "body": "This issue is something I've had previous experience with. It's caused by the overflow:auto rule on line 186 of the ul.fl-grid selector in the fss-layout.css style sheet. It turns out a fix isn't hard to get around it. Put an overflow:visible on the ul.fl-grid in your style sheet. It solves the issue, as the scroll bars go away, but I'm unsure if it introduces another issue. The way I understand the property it shouldn't, but you never know. Getting back to my previous experience why is overflow:auto even there in the first place?\n"
     },
     {
+      "id": "12839",
       "author": "Justin Obara",
       "date": "2014-03-04T11:53:58.668-0500",
       "body": "The fluid studios site has been taken down. There are no current plans to replace it.\n"

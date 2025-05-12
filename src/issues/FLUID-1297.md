@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18145",
       "author": "Jonathan Hung",
       "date": "2008-10-21T14:19:22.000-0400",
       "body": "Iteration20\n\nUpgrading from v1.2 ImageCache to v2 fixed this problem.\n\nIn the process I've also changed the ImageCache scaling action to use the new scale and crop action.\n"

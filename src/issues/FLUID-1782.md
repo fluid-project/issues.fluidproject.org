@@ -41,16 +41,19 @@
   ],
   "comments": [
     {
+      "id": "24968",
       "author": "Justin Obara",
       "date": "2008-11-10T09:00:36.000-0500",
       "body": "'screenshot-1' shows the undo button over top of the text\n"
     },
     {
+      "id": "24969",
       "author": "Justin Obara",
       "date": "2009-01-14T10:36:30.000-0500",
       "body": "The undo button has been moved to the far right, so this issue happens less frequently and with less obstruction\n"
     },
     {
+      "id": "24970",
       "author": "Jonathan Hung",
       "date": "2011-01-06T12:55:57.500-0500",
       "body": "Does not appear to be an issue with V1.3 of Inline Edit.\n"

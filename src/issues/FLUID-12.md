@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17989",
       "author": "Anastasia Cheetham",
       "date": "2007-10-09T16:13:54.000-0400",
       "body": "The bot has been set up. Conversations are logged to the wiki, at <http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs>\n"

@@ -33,6 +33,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15745",
       "author": "Justin Obara",
       "date": "2009-02-06T12:58:26.000-0500",
       "body": "Bug Parade 0.8 release\n"

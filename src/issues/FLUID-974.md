@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20088",
       "author": "Colin Clark",
       "date": "2008-10-21T23:16:35.000-0400",
       "body": "I've closed this issue because it is now superceded by the Uploader 2 tasks.\n"

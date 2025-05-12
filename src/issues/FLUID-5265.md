@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21058",
       "author": "Justin Obara",
       "date": "2014-02-04T10:25:24.362-0500",
       "body": "Submitted a pull request <https://github.com/fluid-project/grunt-modulefiles/pull/3> that will return an object containing files and directory arrays.\n"
     },
     {
+      "id": "21059",
       "author": "Cindy Li",
       "date": "2014-02-04T11:47:26.534-0500",
       "body": "Merged into the project repo @ aef0991f7e7f406224ca9c63821bee1fecfdd06d\n"
     },
     {
+      "id": "21060",
       "author": "Cindy Li",
       "date": "2014-02-04T13:55:03.251-0500",
       "body": "Merged more into the project repo @ eb782abaca89400099dcfe5ec8436c7cddbf9e14\n"

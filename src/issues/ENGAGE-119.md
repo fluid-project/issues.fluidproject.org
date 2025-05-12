@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11888",
       "author": "Colin Clark",
       "date": "2009-10-13T17:49:00.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "11889",
       "author": "Justin Obara",
       "date": "2009-10-14T10:53:43.000-0400",
       "body": "changed async to true\n"
     },
     {
+      "id": "11890",
       "author": "Justin Obara",
       "date": "2009-11-03T11:51:38.000-0500",
       "body": "closed as the change to async fixed the issue.\n"

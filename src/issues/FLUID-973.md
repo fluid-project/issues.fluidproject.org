@@ -48,46 +48,55 @@
   ],
   "comments": [
     {
+      "id": "19478",
       "author": "Justin Obara",
       "date": "2008-07-22T15:18:05.000-0400",
       "body": "'sreenshot-1' shows the error message displayed by IE\n"
     },
     {
+      "id": "19479",
       "author": "Anastasia Cheetham",
       "date": "2008-07-25T10:15:47.000-0400",
       "body": "Interesting. In my IE7, I get the error dialog, but the page is actually loaded behind it, and when I dismiss the error, I don't even have to hit the back button - the page is still there, and the Inline Edits work.\n"
     },
     {
+      "id": "19480",
       "author": "Anastasia Cheetham",
       "date": "2008-07-25T10:21:37.000-0400",
       "body": "This seems to be related to the new tooltip functionality:\n\nIf the jquery.tooltip.js plugin is NOT included in the source (making the tooltip not work), this error does NOT occur.\n"
     },
     {
+      "id": "19482",
       "author": "Anastasia Cheetham",
       "date": "2008-07-25T10:51:08.000-0400",
       "body": "Oddly, other than causing the error dialog, the tooltip functionality still seems to be fine.\n"
     },
     {
+      "id": "19483",
       "author": "Anastasia Cheetham",
       "date": "2008-07-25T11:14:12.000-0400",
       "body": "This was a known issue in the tooltip plugin. The initalization neede to be wrapped in the document  ready() function.\n"
     },
     {
+      "id": "19484",
       "author": "Colin Clark",
       "date": "2008-07-25T13:33:16.000-0400",
       "body": "Anastasia,\n\nI'm curious about your fix here. Does this imply that every instantiation of an InlineEdit component, to be successful, now needs to be wrapped in a ready() call? If so, I'm concerned about this. You've worked around the particular issue, but it points to a larger problem we should address.\n"
     },
     {
+      "id": "19486",
       "author": "Colin Clark",
       "date": "2008-07-25T13:34:11.000-0400",
       "body": "I'm reopening this issue because I want to make sure that we've fully considered this issue and its impact on users of the InlineEdit. Is it right to force them to wrap any instantiation of our code in a jQuery.ready call?\n"
     },
     {
+      "id": "19487",
       "author": "Anastasia Cheetham",
       "date": "2008-07-25T16:17:41.000-0400",
       "body": "Moved the waiting for page load to the tooltip initialization only, instead of the whole inline edit.\n"
     },
     {
+      "id": "19489",
       "author": "Justin Obara",
       "date": "2008-07-25T16:23:47.000-0400",
       "body": "Verified fix using IE6 and IE7 (win xp)\n"

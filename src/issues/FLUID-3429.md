@@ -49,36 +49,43 @@
   ],
   "comments": [
     {
+      "id": "15005",
       "author": "Justin Obara",
       "date": "2009-12-11T15:10:32.000-0500",
       "body": "Bug Parade Builder 1.1.2&#x20;\n"
     },
     {
+      "id": "15008",
       "author": "Colin Clark",
       "date": "2009-12-11T16:45:30.000-0500",
       "body": "Here's a patch containing revisions to the first column of modules in the Builder. This is still a draft, and mainly posted here so I don't accidentally lose these changes over the weekend.\n"
     },
     {
+      "id": "15011",
       "author": "Colin Clark",
       "date": "2009-12-15T13:23:49.000-0500",
       "body": "Here's a second patch, which replaces the first version, containing new text for the third party libraries. Still need to do the Components column.\n"
     },
     {
+      "id": "15014",
       "author": "Colin Clark",
       "date": "2009-12-15T16:40:27.000-0500",
       "body": "The title of the Builder page is \"Infusion Builder Demo,\" so we should also change that as part of this fix.\n"
     },
     {
+      "id": "15017",
       "author": "Colin Clark",
       "date": "2009-12-16T10:54:50.000-0500",
       "body": "Here's the penultimate patch, with changes to all modules. Still a bit of tweaking of the component descriptions left to do.\n"
     },
     {
+      "id": "15020",
       "author": "Colin Clark",
       "date": "2009-12-16T11:06:29.000-0500",
       "body": "This should be the final patch with changes to the titles and descriptions for all modules in Infusion.\n"
     },
     {
+      "id": "15023",
       "author": "Justin Obara",
       "date": "2009-12-17T11:08:39.000-0500",
       "body": "This one seems to be done, new issues will be filed under new jiras\n"

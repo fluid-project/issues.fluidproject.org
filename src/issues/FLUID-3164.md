@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15030",
       "author": "Justin Obara",
       "date": "2009-09-09T09:55:38.000-0400",
       "body": "added listReorderer demo\n"
     },
     {
+      "id": "15033",
       "author": "Justin Obara",
       "date": "2009-09-09T10:25:31.000-0400",
       "body": "The following commits were accidentally made against <https://fluidproject.atlassian.net/browse/FLUID-1364#icft=FLUID-1364>\\\nr7897\\\nr7899\n"
     },
     {
+      "id": "15036",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T12:28:15.117-0500",
       "body": "Reopening these issues in order to add the democomponent.&#x20;\n"

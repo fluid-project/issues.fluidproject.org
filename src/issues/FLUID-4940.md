@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13601",
       "author": "Alexey Novak",
       "date": "2013-03-21T16:40:27.748-0400",
       "body": "The FatPanel iframe had a wrong include for jquery which was pointing to a jquery.js which does not exist. This would cause an iframe to have a jQuery object to be undefined and eventually lead to the issue described in the JIRA.\\\nClosing the issue since it is not the bug.\n"

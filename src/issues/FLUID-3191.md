@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14573",
       "author": "Justin Obara",
       "date": "2009-09-21T16:48:27.000-0400",
       "body": "Bug Parade Infusion 1.1.2\n"
     },
     {
+      "id": "14575",
       "author": "Laurel Williams",
       "date": "2009-09-23T10:37:45.000-0400",
       "body": "Added comments to the file to describe how to determine the file names.\n"
     },
     {
+      "id": "14576",
       "author": "Laurel Williams",
       "date": "2009-09-30T09:52:47.000-0400",
       "body": "Jacob reviewed\n"

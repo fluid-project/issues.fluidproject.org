@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11255",
       "author": "Cindy Li",
       "date": "2015-03-26T12:18:16.948-0400",
       "body": "The pull request <https://github.com/fluid-project/uio-wordpress-plugin/pull/1> has been merged into the master branch @ f94e9a3d1cc520c69be1c4a63d2bca6ae7ba0121\n"

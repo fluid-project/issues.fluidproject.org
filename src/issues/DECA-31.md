@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10221",
       "author": "Jonathan Hung",
       "date": "2010-03-10T17:10:02.000-0500",
       "body": "With Rev 9650 there is better styling for the drag avatar. However, the border does not show up if user is dragging item that was not selected.\n"
     },
     {
+      "id": "10222",
       "author": "Jonathan Hung",
       "date": "2010-03-11T13:44:21.000-0500",
       "body": "With Rev 9654, this issue should be resolved. Could not get a border to render with the drag avatar, but adding a background colour gave it the necessary visual boundary.\n"

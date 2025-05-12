@@ -40,11 +40,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19849",
       "author": "Anastasia Cheetham",
       "date": "2008-07-08T18:20:51.000-0400",
       "body": "I'm not sure this one is a bug. The behaviour you describe is the way jQuery tabs just work, independent of the Reorderer. Try\\\n<http://ui.jquery.com/functional_demos/#ui.tabs>\n\nThe issue seems to be that in step 3) of your process, 'focus' is moving to the next tab, there's just no visual indication. Hitting enter at this point activates the new tab. You can see this more clearly if you hit tab more than once (and keep track in your head of where you are).\n\nI guess the question is: Should the Reorderer be adding visual styling to this already existing behaviour? Not sure...\n"
     },
     {
+      "id": "19852",
       "author": "Anastasia Cheetham",
       "date": "2008-07-09T17:35:13.000-0400",
       "body": "This is actually not a bug in our code: tabbing through the tabs is not the way you're supposed to navigate tabs. The fact that you can with jQuery tabs is a bug in jQuery, which I filed:\n\n<http://ui.jquery.com/bugs/ticket/3079>\n"

@@ -55,51 +55,61 @@
   ],
   "comments": [
     {
+      "id": "22206",
       "author": "Justin Obara",
       "date": "2010-11-04T09:28:27.618-0400",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "22209",
       "author": "Jonathan Hung",
       "date": "2010-11-04T09:51:09.725-0400",
       "body": "Attached draft design.\n"
     },
     {
+      "id": "22212",
       "author": "Jonathan Hung",
       "date": "2010-11-04T12:03:22.993-0400",
       "body": "Updated draft\n"
     },
     {
+      "id": "22214",
       "author": "Anastasia Cheetham",
       "date": "2010-11-09T17:16:29.331-0500",
       "body": "This patch (<https://fluidproject.atlassian.net/browse/FLUID-3822#icft=FLUID-3822>.patch.sortable-columns.txt) is a first pass at adding sortable columns to the demo. It works, technically, but it's still doing some things it shouldn't do. Still needs work.\n"
     },
     {
+      "id": "22218",
       "author": "Cindy Li",
       "date": "2010-11-12T11:51:04.790-0500",
       "body": "\"FLUID-3822.patch.js-1.txt\" does:&#x20;\n\n1\\. moved the js functions from \"sakai\" name space to \"demo\";\\\n2\\. make \"email\" column sortable;\\\n3\\. fix errors from JSLint&#x20;\n"
     },
     {
+      "id": "22221",
       "author": "Jonathan Hung",
       "date": "2010-12-13T15:27:51.129-0500",
       "body": "Reviewed by Heidi Valles and Jonathan Hung using\n\n* Win7 IE8, FF3.6, NVDA 2010.2\n* Mac FF, Safari with  voice over&#x20;\n"
     },
     {
+      "id": "22224",
       "author": "Jonathan Hung",
       "date": "2010-12-13T15:31:59.180-0500",
       "body": "Done.\n"
     },
     {
+      "id": "22227",
       "author": "Michelle D'Souza",
       "date": "2010-12-14T11:42:26.353-0500",
       "body": "Functionally reviewed by Mike, awaiting code review from Antranig.&#x20;\n"
     },
     {
+      "id": "22230",
       "author": "Anastasia Cheetham",
       "date": "2011-01-10T14:33:41.977-0500",
       "body": "The demo implemented for 1.3 addresses these issues.\n"
     },
     {
+      "id": "22233",
       "author": "Golam Chowdhury",
       "date": "2011-03-03T16:42:45.295-0500",
       "body": "Changed the \"Affect Version\" to 1.3.1.\n"

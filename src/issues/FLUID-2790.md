@@ -32,6 +32,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24646",
       "author": "Antranig Basman",
       "date": "2010-09-26T17:20:09.414-0400",
       "body": "Fixed at revision 10048\n"

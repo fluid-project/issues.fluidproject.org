@@ -22,11 +22,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12929",
       "author": "Michelle D'Souza",
       "date": "2012-05-25T11:55:21.998-0400",
       "body": "It seems that opening the UIO panel is causing the issues.&#x20;\n"
     },
     {
+      "id": "12930",
       "author": "Michelle D'Souza",
       "date": "2014-06-25T15:55:54.369-0400",
       "body": "We are no longer actively supporting IE6, IE7 and IE8. We will consider patches for some issues if they are offered.\n"

@@ -24,16 +24,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11280",
       "author": "Justin Obara",
       "date": "2015-04-09T12:44:00.039-0400",
       "body": "Submitted a pull request\\\n<https://github.com/fluid-project/first-discovery/pull/30>\n"
     },
     {
+      "id": "11281",
       "author": "Justin Obara",
       "date": "2015-04-09T12:47:28.918-0400",
       "body": "The close button was removed because there isn't a reliable way to programatically close the browser window/tab.\\\n<https://developer.mozilla.org/en-US/docs/Web/API/Window/close>\n"
     },
     {
+      "id": "11282",
       "author": "Cindy Li",
       "date": "2015-04-10T12:21:30.762-0400",
       "body": "The pull request has been merged into the master branch @ 49c33db40d06488736c014fff76816e35cf4627b\n"

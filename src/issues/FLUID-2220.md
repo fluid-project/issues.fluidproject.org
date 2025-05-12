@@ -27,31 +27,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21190",
       "author": "Justin Obara",
       "date": "2009-02-11T10:52:05.000-0500",
       "body": "Bug Parade 0.8 release\n"
     },
     {
+      "id": "21191",
       "author": "Antranig Basman",
       "date": "2009-02-11T11:44:49.000-0500",
       "body": "Fixed at revision 6478\n"
     },
     {
+      "id": "21192",
       "author": "Justin Obara",
       "date": "2009-02-11T12:05:16.000-0500",
       "body": "Verified fix using:\n\nIE 6 (Win XP)\\\nIE 7 (Win Vista)&#x20;\n"
     },
     {
+      "id": "21193",
       "author": "Justin Obara",
       "date": "2009-02-11T12:08:42.000-0500",
       "body": "Forgot to mark this one for review\\... will reopen and mark as resolved\n"
     },
     {
+      "id": "21194",
       "author": "Anastasia Cheetham",
       "date": "2009-02-11T15:01:33.000-0500",
       "body": "I've reviewed the fix for this, and it looks fine.\n"
     },
     {
+      "id": "21195",
       "author": "Justin Obara",
       "date": "2009-02-11T16:01:45.000-0500",
       "body": "Verified fix using:\n\nIE 6 (Win XP)\\\nIE 7 (Win Vista)&#x20;\n"

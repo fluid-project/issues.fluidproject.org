@@ -39,11 +39,13 @@
   ],
   "comments": [
     {
+      "id": "20188",
       "author": "Eli Cochran",
       "date": "2008-12-15T18:13:23.000-0500",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-1980#icft=FLUID-1980>.a.patch file fixes a few of the items listed above, specifically:\\\nA\\\nB\\\nC\\\nD\\\nE and \\\nF\n\nG is still not fixed\n"
     },
     {
+      "id": "20190",
       "author": "Justin Obara",
       "date": "2009-02-04T10:53:07.000-0500",
       "body": "Current uploader springboard has been removed\n"

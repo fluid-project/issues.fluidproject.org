@@ -49,21 +49,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20387",
       "author": "Eli Cochran",
       "date": "2008-09-16T19:20:31.000-0400",
       "body": "This is a duplicate of <https://fluidproject.atlassian.net/browse/FLUID-1029#icft=FLUID-1029>\n"
     },
     {
+      "id": "20388",
       "author": "Justin Obara",
       "date": "2008-09-17T08:52:11.000-0400",
       "body": "This  one is similar to Fluid-1029 but not quite a duplicate.\n\nThe difference being:\n\nIn Fluid-1029 a keypress and hold moves the scroll bar\n\nIn this issues a keytype (keypress and release) moves both selection and the scroll bar\n"
     },
     {
+      "id": "20389",
       "author": "Justin Obara",
       "date": "2010-05-07T13:07:07.726-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "20390",
       "author": "Colin Clark",
       "date": "2010-12-22T15:46:13.135-0500",
       "body": "Firefox 2 issue--we no longer support this browser as A-Grade, and it has been out of the market for long enough to not actively support it. If we're lucky, this is something that will be fixed in a future update to the Scroller component.\n"

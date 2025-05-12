@@ -39,11 +39,13 @@
   ],
   "comments": [
     {
+      "id": "14733",
       "author": "Anastasia Cheetham",
       "date": "2011-05-05T10:09:23.806-0400",
       "body": "These two screen shots show how the \"rust\" them looks in versions 1.3 and 1.4\n"
     },
     {
+      "id": "14735",
       "author": "heidi valles",
       "date": "2011-07-07T09:53:43.734-0400",
       "body": "Rust has been deprecated.\n"

@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "10360",
       "author": "Boyan Sheytanov",
       "date": "2009-10-27T06:30:51.000-0400",
       "body": "Attached is a patch of the changes made to the original dserver.py file. Camera capture was commented out and capture method was rewritten to return jpeg images from a folder \"testData\" by a given index. The capture button of the UI should call this method, with a starting index of 0 and incrementing it each time it is clicked.\n"
     },
     {
+      "id": "10361",
       "author": "Boyan Sheytanov",
       "date": "2009-10-27T06:33:12.000-0400",
       "body": "The code in the patch should be enough in order to start testing while building the UI. Still more can be done if we decide to keep the Python & CherryPy implementation.\n"

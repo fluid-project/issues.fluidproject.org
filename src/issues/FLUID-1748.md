@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20701",
       "author": "Jacob Farber",
       "date": "2008-10-31T10:38:32.000-0400",
       "body": "I have no idea whats behind this.... as mentioned in the IRC logs, i agree with you that this is something jquery ui should handle.\n"
     },
     {
+      "id": "20702",
       "author": "Justin Obara",
       "date": "2009-01-30T10:28:12.000-0500",
       "body": "Appears to have been fixed\n\nTested using:\\\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF3, IE7 (Win Vista)\n"

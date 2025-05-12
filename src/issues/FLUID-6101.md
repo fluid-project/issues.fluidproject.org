@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25669",
       "author": "YashJipkate",
       "date": "2020-04-08T10:03:49.672-0400",
       "body": "If I understand correctly, this is regarding the use of \\<div> element in the ToC placeholder instead of \\<nav> elements in the infusion-docs. Upon inspection of the pages. It seems that the ToC nav is not used to display any content and it remains unrendered. I removed the ToC element and saw that the generated site had no regressions.\n\nI think we should remove the ToC placeholder altogether instead of modifying it. \n\nWhat do you think?\n"
     },
     {
+      "id": "25670",
       "author": "Justin Obara",
       "date": "2022-03-14T13:27:02.116-0400",
       "body": "Addressed in PR [FLUID-6420/GH-219: Update UIO and docs for Infusion 4.x (Resolves #219)](https://github.com/fluid-project/infusion-docs/pull/220)\n"

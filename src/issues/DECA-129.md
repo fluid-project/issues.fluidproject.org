@@ -35,21 +35,25 @@
   ],
   "comments": [
     {
+      "id": "10348",
       "author": "Jonathan Hung",
       "date": "2010-07-09T15:12:48.698-0400",
       "body": "Try using these images in the repository:\\\n<http://source.fluidproject.org/svn/design/decapod/Resources/Images/Books/Ferns/>\n"
     },
     {
+      "id": "10349",
       "author": "Colin Clark",
       "date": "2010-07-14T00:31:22.830-0400",
       "body": "James sent along some good-quality sample images from IUPR that he's recommending we use instead of the ferns book. I'll attach them to this JIRA.\n"
     },
     {
+      "id": "10350",
       "author": "Colin Clark",
       "date": "2010-07-14T00:34:26.822-0400",
       "body": "James' choice for good quality images to use with testing and the --no-cameras mode. These images came from the IUPR team, I believe.\n"
     },
     {
+      "id": "10351",
       "author": "Justin Obara",
       "date": "2010-07-14T11:17:19.206-0400",
       "body": "Bug Parade Decapod 0.4\n"

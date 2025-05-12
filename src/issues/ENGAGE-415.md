@@ -36,16 +36,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11641",
       "author": "Jess Mitchell",
       "date": "2010-02-19T14:58:34.000-0500",
       "body": "cropped images are used everywhere else.\n"
     },
     {
+      "id": "11642",
       "author": "y z",
       "date": "2010-03-02T15:10:19.000-0500",
       "body": "Currently myCollection is using artifactView view to fetch the artifacts. They are consequently mapped using a standard artifact mapping thus the thumbnail image is actually the largest image available for the artifact. This needs to fixed using a new couchdb data source model.\n"
     },
     {
+      "id": "11643",
       "author": "Justin Obara",
       "date": "2017-12-22T09:44:30.604-0500",
       "body": "The repository has been archived.\n"

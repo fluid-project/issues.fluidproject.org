@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18032",
       "author": "Colin Clark",
       "date": "2010-02-23T16:46:53.000-0500",
       "body": "I don't know how this issue could ever really be resolved, so it's being closed. For the most part, I think we've done a good job of switching to Infusion instead of generic Fluid, with the main exception of our tags in SVN.\n"

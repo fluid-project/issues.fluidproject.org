@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25092",
       "author": "Antranig Basman",
       "date": "2013-11-19T12:23:56.466-0500",
       "body": "Hi - this is indeed a bug in the framework which we should fix, but I think it is of low priority since the use case for matching all subcomponents without qualification is quite weak - in fact, it could be seen to be positively harmful since it prohibits the \"openness\" of the subcomponent set, in that we do usually expect that subcomponents can be freely contributed by 5th parties without penalties. In the medium term we suggested a workaround based on the use of grade qualification in the IoCSS expression to {that > fluid.prefs.enactor} - see recent IRC discussion at <http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-11-19>\n"

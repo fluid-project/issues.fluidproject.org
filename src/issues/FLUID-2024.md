@@ -40,31 +40,37 @@
   ],
   "comments": [
     {
+      "id": "17726",
       "author": "Justin Obara",
       "date": "2008-12-18T09:49:48.000-0500",
       "body": "This occurs in both the Sakai Announcements and the bSpace examples\n"
     },
     {
+      "id": "17728",
       "author": "Justin Obara",
       "date": "2009-02-06T12:55:14.000-0500",
       "body": "Bug Parade 0.8 release\n"
     },
     {
+      "id": "17729",
       "author": "Jacob Farber",
       "date": "2009-02-12T09:43:29.000-0500",
       "body": "Patch uses 2 methods to stop page jumping: rewrites default href to a non-jumping fragment and prevents default anchor behaviour\n"
     },
     {
+      "id": "17731",
       "author": "Jacob Farber",
       "date": "2009-02-12T11:53:31.000-0500",
       "body": "New patch only returns false\n"
     },
     {
+      "id": "17733",
       "author": "Antranig Basman",
       "date": "2009-02-12T12:01:37.000-0500",
       "body": "I find this new patch wholly admirable\n"
     },
     {
+      "id": "17735",
       "author": "Justin Obara",
       "date": "2009-02-12T12:49:07.000-0500",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\\\nFF3, IE6 (Win 2000)&#x20;\n"

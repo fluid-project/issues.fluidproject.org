@@ -39,6 +39,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25103",
       "author": "Antranig Basman",
       "date": "2015-08-20T14:34:11.343-0400",
       "body": "Note: this behaviour will probably be implemented together with the INTENTIONAL SHADOW required by the Nexus work and <https://fluidproject.atlassian.net/browse/FLUID-5614#icft=FLUID-5614>\n"

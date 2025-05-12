@@ -36,16 +36,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15212",
       "author": "Colin Clark",
       "date": "2009-10-13T18:31:12.000-0400",
       "body": "Gears support is one promising alternative to Flash for the Uploader\n"
     },
     {
+      "id": "15215",
       "author": "Justin Obara",
       "date": "2010-05-07T13:57:11.168-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "15218",
       "author": "Mike Lam",
       "date": "2011-01-04T16:00:34.840-0500",
       "body": "See <https://fluidproject.atlassian.net/browse/FLUID-3718#icft=FLUID-3718>.   An HTML5 multi-file uploader has been implemented for the 1.3 release. &#x20;\n"

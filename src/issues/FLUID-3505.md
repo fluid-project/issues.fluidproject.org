@@ -35,6 +35,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22056",
       "author": "Antranig Basman",
       "date": "2010-08-02T03:16:32.471-0400",
       "body": "This issue is resolved by the fix to <https://fluidproject.atlassian.net/browse/FLUID-3675#icft=FLUID-3675> - or at least, that fix creates a reasonably consistent way of passing \"models\" (or anything else which might be destroyed by copying) through the options merging pipeline. This is done by specifying the \"preserve\" merging strategy at the options path holding the destructible thing (e.g. \"model\"). More work is required on \"component grading\" in order to make this automatically applied to options which have a standard layout.\n"

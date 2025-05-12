@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23889",
       "author": "Anastasia Cheetham",
       "date": "2013-06-06T14:52:03.645-0400",
       "body": "There was a discussion in the channel today about issues around the timing of the creation of the UIEnhancer:\\\n<http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-06-06>\n\nThe question is: What happens if the 3rd party app happens to be created before the UIEnhancer is created and added to the static environment? There's no way for the 3rd party to request notification, or anything like that.\n"
     },
     {
+      "id": "23892",
       "author": "Antranig Basman",
       "date": "2013-06-12T14:18:51.258-0400",
       "body": "Hi Yura - this sounds like a great function. Could you perhaps provide a code sketch that illustrates what the user of the system might write in this case?\n"
     },
     {
+      "id": "23893",
       "author": "y z",
       "date": "2013-06-12T14:56:49.058-0400",
       "body": "Anastasia, would you be able to point us to some of the code fragments used in the wordpress plugin?\n"

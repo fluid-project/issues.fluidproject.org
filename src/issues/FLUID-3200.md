@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14972",
       "author": "Justin Obara",
       "date": "2009-09-23T12:02:25.000-0400",
       "body": "Bug Parade Infusion 1.1.2&#x20;\n"
     },
     {
+      "id": "14974",
       "author": "Laurel Williams",
       "date": "2009-09-23T12:08:31.000-0400",
       "body": "changed the permissions for mkdir from 755 to 0755, which corrected the problem.\n"
     },
     {
+      "id": "14977",
       "author": "Laurel Williams",
       "date": "2009-09-30T11:42:05.000-0400",
       "body": "Jacob reviewed\n"

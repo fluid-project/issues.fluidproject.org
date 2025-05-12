@@ -31,26 +31,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14126",
       "author": "Justin Obara",
       "date": "2011-09-07T14:57:35.708-0400",
       "body": "on mac laptop style keyboards you have to use fn+del this is because the delete key is actually backspace, but will switch to a true delete key when you hold down the function key.\n"
     },
     {
+      "id": "14128",
       "author": "heidi valles",
       "date": "2011-09-07T15:22:24.135-0400",
       "body": "The issue is that on Mac laptop keyboards Delete = Fn+Delete\n\nWe need to include this information in the hover, or with keyboard instructions somewhere. (Documentation on the wiki isn't sufficient - needs to be stated within the component)\n"
     },
     {
+      "id": "14130",
       "author": "Justin Obara",
       "date": "2015-06-09T14:19:57.671-0400",
       "body": "Maybe the correct terminology would be to specify that it's a forward delete. I don't think we want to be too specific about the implementation of various keyboards.\n"
     },
     {
+      "id": "14132",
       "author": "Anastasia Cheetham",
       "date": "2015-07-29T11:25:23.344-0400",
       "body": "Testing this at both 1.5 and with the new \"monster branch\" that will become 1.9:question:, this error is still happening.\n"
     },
     {
+      "id": "14134",
       "author": "Justin Obara",
       "date": "2015-07-30T08:26:13.464-0400",
       "body": "The monster branch will be part of 2.0. What's in master before it goes in, will be part of branch that we will split off for a possible 1.9 release. (it may just remain as a branch).\n"

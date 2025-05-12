@@ -59,26 +59,31 @@
   ],
   "comments": [
     {
+      "id": "21939",
       "author": "Justin Obara",
       "date": "2008-12-03T12:07:36.000-0500",
       "body": "Bug Parade  0.6 release\n"
     },
     {
+      "id": "21941",
       "author": "Anastasia Cheetham",
       "date": "2008-12-12T11:04:43.000-0500",
       "body": "I'd appreciate a review of this approach:\n\n1\\) Use the WebAIM-recommended approach of placing screen-reader-specific instructions in a div that is off-screen and tiny (<http://www.webaim.org/techniques/css/invisiblecontent/#hidingfromsighted>).\n\n2\\) Remove the visible instructions from the tab order so screen-reader users don't hear both sets.\n\nThe result is that JAWS users hear screen-reader specific instructions, and sighted users see different instructions.\n\nProblems: This patch doesn't yet deal with internationalization issues - there's the \"message-bundle:\" id, but now there are two messages, etc.\n"
     },
     {
+      "id": "21945",
       "author": "Anastasia Cheetham",
       "date": "2008-12-12T15:22:14.000-0500",
       "body": "I've committed these changes, cleaned up a bit more and applied to all necessary files.\\\nThe message-bundle issue is now in <https://fluidproject.atlassian.net/browse/FLUID-1970#icft=FLUID-1970>.\n"
     },
     {
+      "id": "21946",
       "author": "Antranig Basman",
       "date": "2008-12-12T15:57:11.000-0500",
       "body": "This approach seems reasonable to me, but needs review by a genuine AT user.\n"
     },
     {
+      "id": "21948",
       "author": "Justin Obara",
       "date": "2008-12-12T16:21:25.000-0500",
       "body": "Closing for now, will reopen if further investigation warants\n\nVerified fix using&#x20;\n\nJaws 9 with IE6, FF3, FF2 (Win XP)\n"

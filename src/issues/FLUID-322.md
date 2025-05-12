@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18528",
       "author": "Daphne Ogle",
       "date": "2008-03-05T15:52:34.000-0500",
       "body": "iteration04\n"
     },
     {
+      "id": "18530",
       "author": "Daphne Ogle",
       "date": "2008-03-05T16:42:16.000-0500",
       "body": "Reduced time estimate to account for Judy's time on this task.  She is considered a volunteer for planning purposes so her time should not be accounted for.  The total time estimate on the this is 1.25 days.\n"
     },
     {
+      "id": "18532",
       "author": "Daphne Ogle",
       "date": "2008-04-29T16:48:51.000-0400",
       "body": "Should have been resolved some time ago\n"

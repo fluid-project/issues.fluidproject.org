@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13715",
       "author": "Eli Cochran",
       "date": "2008-07-29T13:14:26.000-0400",
       "body": "the css is correct, in that the cursor changes to the \"Move\" cursor which in IE is the four pointed arrow and not a hand.&#x20;\n\nThere really isn't an equivalent for the FF hand for Move.&#x20;\n"
     },
     {
+      "id": "13717",
       "author": "Justin Obara",
       "date": "2008-08-01T09:41:39.000-0400",
       "body": "Changed test plan to include the both the hand and the cross, as per Eli's comments\n"

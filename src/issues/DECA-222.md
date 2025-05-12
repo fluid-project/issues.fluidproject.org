@@ -24,16 +24,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10314",
       "author": "Justin Obara",
       "date": "2012-01-20T10:51:25.349-0500",
       "body": "can possibly look at using cherrypy.url\\\n<http://docs.cherrypy.org/stable/refman/cherrypy.html?highlight=cherrypy.url#cherrypy.url>\\\n<http://tools.cherrypy.org/wiki/RoutesUrlGeneration>\n"
     },
     {
+      "id": "10315",
       "author": "Justin Obara",
       "date": "2012-01-30T12:15:22.664-0500",
       "body": "I've refactored resouresource.py by making use of the cherrypy.url function and looking into cherrypy's request object's config. The unit tests were updated too and should all be running after these changes.&#x20;\n\nThe work is currently in my bitbucket repo.\\\n<https://bitbucket.org/jobara/decapod-server-rest>\n"
     },
     {
+      "id": "10316",
       "author": "Justin Obara",
       "date": "2012-05-18T14:18:24.295-0400",
       "body": "Merged into the project repo\n"

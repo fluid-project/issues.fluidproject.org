@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10214",
       "author": "Justin Obara",
       "date": "2012-10-04T14:46:42.527-0400",
       "body": "Implemented dual camera capture\n"

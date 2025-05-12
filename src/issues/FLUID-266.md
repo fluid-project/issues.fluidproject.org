@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18687",
       "author": "Daphne Ogle",
       "date": "2008-02-19T14:29:58.000-0500",
       "body": "iteration03\n"
     },
     {
+      "id": "18689",
       "author": "Shaw-Han Liem",
       "date": "2008-02-29T11:29:11.000-0500",
       "body": "Added these instructions to the \"How to Plan an Iteration\" Page:\n\n<http://wiki.fluidproject.org/display/fluid/How+to+Plan+an+Iteration>\n"

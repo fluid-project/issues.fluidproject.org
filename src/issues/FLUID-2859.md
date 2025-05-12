@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23193",
       "author": "Justin Obara",
       "date": "2014-07-11T14:47:57.389-0400",
       "body": "We'd need to use the accept attribute on the input; however, it seems that there is very little support for it. <https://developer.mozilla.org/en/docs/Web/HTML/Element/Input>\n"

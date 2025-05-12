@@ -38,21 +38,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12297",
       "author": "Justin Obara",
       "date": "2010-02-08T17:27:34.000-0500",
       "body": "Bug Parade Engage 0.3&#x20;\n"
     },
     {
+      "id": "12298",
       "author": "Antranig Basman",
       "date": "2010-02-12T19:21:15.000-0500",
       "body": "I am investigating this, but currently finding this working on a standalone build on Windows.\n"
     },
     {
+      "id": "12299",
       "author": "Antranig Basman",
       "date": "2010-02-13T02:17:35.000-0500",
       "body": "Apparently an issue due to spurious removal of leading \"/\" in a pathname when roundtripping through canonicalisation functions. Believed resolved at rev 9397\n"
     },
     {
+      "id": "12300",
       "author": "Antranig Basman",
       "date": "2010-02-18T12:55:34.000-0500",
       "body": "Now appears fixed on the daily build site by the commit at 9426.\n"

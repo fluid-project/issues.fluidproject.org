@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11235",
       "author": "Jonathan Hung",
       "date": "2014-01-10T16:04:47.420-0500",
       "body": "I've been thinking about this issue and I feel that a demo that handles the viewing of Metadata would better be served by a Learner Options demo (where a learner adjusts their options and the content reacts with the metadata). Thoughts?\n"

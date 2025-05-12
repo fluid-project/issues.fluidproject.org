@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26546",
       "author": "Gregor Moss",
       "date": "2019-11-15T18:02:12.513-0500",
       "body": "it may have to do with specifically how each page is loaded and options are relayed to it within storyTellingServerUI.js. Does passing in the options parameter with distributeOptions get overwritten by other distributeOptions blocks? should they all have \"priority\" and/or \"namespace\" set?\n"
     },
     {
+      "id": "26547",
       "author": "Cindy Li",
       "date": "2019-11-19T09:11:13.729-0500",
       "body": "Solved with the merge of \\[the pull request for SJRK-297]\\(<https://github.com/fluid-project/sjrk-story-telling/pull/47>).\n"

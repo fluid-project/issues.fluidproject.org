@@ -24,16 +24,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19115",
       "author": "Jonathan Hung",
       "date": "2015-07-31T12:32:14.367-0400",
       "body": "For now I have removed the transitions on .docs-template-TOC-container so that there is no animation.\n"
     },
     {
+      "id": "19118",
       "author": "Jonathan Hung",
       "date": "2015-09-21T10:27:13.207-0400",
       "body": "We may actually be able to implement this again with the new work that was done for <https://fluidproject.atlassian.net/browse/FLUID-5746#icft=FLUID-5746>.\n"
     },
     {
+      "id": "27845",
       "author": "Justin Obara",
       "date": "2024-07-23T10:16:36.614-0400",
       "body": "appears to have been addressed with the migration to 11ty\n"

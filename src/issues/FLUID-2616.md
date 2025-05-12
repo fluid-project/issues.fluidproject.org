@@ -40,21 +40,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22723",
       "author": "Michelle D'Souza",
       "date": "2010-09-28T18:47:15.356-0400",
       "body": "While we are doing this work we should provide a pluggable way to interact with the UI Options component after if has been initialized - sliding drawer and dialog should be implemented.&#x20;\n"
     },
     {
+      "id": "22726",
       "author": "heidi valles",
       "date": "2010-10-05T09:05:10.716-0400",
       "body": "split this issue into two - 1) UIO to load its own template (this) 2) sliding panel shipped w/ UIO (<https://fluidproject.atlassian.net/browse/FLUID-3781#icft=FLUID-3781>)\n"
     },
     {
+      "id": "22728",
       "author": "Colin Clark",
       "date": "2011-03-10T13:51:57.450-0500",
       "body": "I have resolved this issue in the <https://fluidproject.atlassian.net/browse/FLUID-2616#icft=FLUID-2616> branch of my Github fork and submitted a pull request to Michelle.\\\n<https://github.com/fluid-project/infusion/pull/23>\n"
     },
     {
+      "id": "22730",
       "author": "Michelle D'Souza",
       "date": "2011-03-17T14:12:32.618-0400",
       "body": "Merged into project repo at b38e94fd17c3631f26e24aaa6a532fd28469fa3f\n"

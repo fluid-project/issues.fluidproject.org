@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21534",
       "author": "Antranig Basman",
       "date": "2009-05-12T11:09:24.000-0400",
       "body": "Fixed at revision 7161 - fl-pager-disabled has to be a top-level style, fl-pager-current is not used.\n"
     },
     {
+      "id": "21535",
       "author": "Justin Obara",
       "date": "2009-05-13T10:55:51.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.6, Safari 3.2 (Mac OS 10.5)\\\nFF3, IE7, IE8 (Win Vista)\n"

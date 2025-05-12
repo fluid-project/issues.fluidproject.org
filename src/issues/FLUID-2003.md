@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "18000",
       "author": "Justin Obara",
       "date": "2008-12-17T11:08:11.000-0500",
       "body": "'screenshot-1' shows the text being too long for the button\n"
     },
     {
+      "id": "18002",
       "author": "Justin Obara",
       "date": "2009-01-23T14:24:24.000-0500",
       "body": "example has been changed and no longer has a \"Save and Apply Preferences\" button\n"

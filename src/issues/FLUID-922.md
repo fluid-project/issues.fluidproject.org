@@ -48,11 +48,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20837",
       "author": "Justin Obara",
       "date": "2008-10-31T09:01:15.000-0400",
       "body": "It is displaying just before it fiinishes uploading.\n"
     },
     {
+      "id": "20838",
       "author": "Justin Obara",
       "date": "2009-01-14T13:18:44.000-0500",
       "body": "It appears as though the mouse hover styling is covering the progress bar\n"

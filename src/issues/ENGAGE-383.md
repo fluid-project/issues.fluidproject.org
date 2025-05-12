@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12341",
       "author": "Colin Clark",
       "date": "2010-02-12T17:07:46.000-0500",
       "body": "This is known behaviour in Couch DB, as outlined in this document on how view collation works:\n\n<http://wiki.apache.org/couchdb/View_collation>\n\nIt does raise the distinct possibility that, when deployed on a different VM, we'll have problems with JSON serialization and Couch Views. Time to write our own Couch-specific JSON serializer.\n"

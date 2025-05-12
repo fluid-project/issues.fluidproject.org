@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17935",
       "author": "Anastasia Cheetham",
       "date": "2011-10-14T14:46:07.814-0400",
       "body": "We'll hopefully be refining the process itself before 1.5, so we can revise the docs based on the new process.\n"
     },
     {
+      "id": "17938",
       "author": "Justin Obara",
       "date": "2016-10-19T15:51:40.266-0400",
       "body": "I've updated the [Release Process](https://wiki.fluidproject.org/display/fluid/Release+Process) page and linked resources as needed.\n"

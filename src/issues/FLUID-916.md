@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13504",
       "author": "Eli Cochran",
       "date": "2008-07-24T18:12:06.000-0400",
       "body": "Fixed this by removing an extra reference to the Flora theme from jQuery UI\n"
     },
     {
+      "id": "13506",
       "author": "Justin Obara",
       "date": "2008-07-25T08:25:50.000-0400",
       "body": "Verified fixed using IE6 (Win XP)\n"

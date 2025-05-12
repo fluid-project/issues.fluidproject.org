@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18312",
       "author": "Anastasia Cheetham",
       "date": "2008-04-07T13:33:50.000-0400",
       "body": "The upgrade to jQuery 1.2.3 has eliminated this problem. The patch is no longer necessary.\n"
     },
     {
+      "id": "18315",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:57.487-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14922",
       "author": "Allison Bloodworth",
       "date": "2008-05-13T13:00:24.000-0400",
       "body": "Iteration21\n"
     },
     {
+      "id": "14925",
       "author": "Jonathan Hung",
       "date": "2008-07-07T18:54:50.000-0400",
       "body": "Added 1 day to the original estimate for this bug. Appears to be a bigger task than originally anticipated.\n"
     },
     {
+      "id": "14928",
       "author": "Allison Bloodworth",
       "date": "2008-08-05T00:09:02.000-0400",
       "body": "This module **may** solve this problem for images (only): <http://drupal.org/project/node_images>, but requires further investigation.&#x20;\n\nAnother option would be to create a custom compound field, as described here: <http://www.darcynorman.net/2008/05/02/creating-a-custom-compound-field-for-cck/>.&#x20;\n\nAnother option to solve this problem generally, though it doesn't seem to work for images, is to use this module: <http://drupal.org/project/fieldgroup_table>. It often seems not to be working, but you need to remember both to select \"multiple\" on the group's configuration page **as well as** all the data elements which are in the group. This tripped me up before.\n\nThis thread: <http://drupal.org/node/232184> also says, \"As nothing provided this feature (I heard CCK will allow this when released for Drupal 6...), I was obliged to develop my own \"all-in-one\" CCK Field\" so it may be worth investigating Drupal 6 to see if it works there.\n"

@@ -35,16 +35,19 @@
   ],
   "comments": [
     {
+      "id": "21276",
       "author": "Justin Obara",
       "date": "2009-02-17T16:12:52.000-0500",
       "body": "'screenshot-1' shows the page displaying only the header after switching to simplified layout\n"
     },
     {
+      "id": "21277",
       "author": "Justin Obara",
       "date": "2009-02-17T16:13:28.000-0500",
       "body": "on Win XP, it seems that if you don't change the contrast it will display right away when switching to simplified layout\n"
     },
     {
+      "id": "21278",
       "author": "Justin Obara",
       "date": "2009-03-18T14:18:13.000-0400",
       "body": "Appears to have been fixed\n\nTested using\n\nIE 7 (Win Vista)\n"

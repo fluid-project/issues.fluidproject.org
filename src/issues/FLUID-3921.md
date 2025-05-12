@@ -52,26 +52,31 @@
   ],
   "comments": [
     {
+      "id": "22454",
       "author": "Justin Obara",
       "date": "2013-09-06T12:36:07.580-0400",
       "body": "screenshot.png shows the \"Next\" link not greyed out when on the last page.\n"
     },
     {
+      "id": "22455",
       "author": "Justin Obara",
       "date": "2014-06-03T12:01:17.829-0400",
       "body": "This issue only affects the main pager demo.\\\n<http://build.fluidproject.org/infusion/demos/pager/>\n"
     },
     {
+      "id": "22456",
       "author": "sparsh paliwal",
       "date": "2016-03-03T09:41:22.060-0500",
       "body": "I have sent PR for the fix of this issue and FUILD-2779.\n\n<https://github.com/fluid-project/infusion/pull/674>\n"
     },
     {
+      "id": "22457",
       "author": "sparsh paliwal",
       "date": "2016-03-07T12:16:37.863-0500",
       "body": "sparsh paliwal\n\nWhat should happen is the text \"Previous\" should no longer look like a link. If a link doesn't do anything, it should look disabled.\n"
     },
     {
+      "id": "22458",
       "author": "Justin Obara",
       "date": "2016-07-08T10:14:12.893-0400",
       "body": "Removed the missing screenshot (screenshot.png)\n"

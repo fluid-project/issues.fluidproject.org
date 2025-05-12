@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15927",
       "author": "Laurel Williams",
       "date": "2009-07-16T11:17:46.000-0400",
       "body": "Files include\\\nconfig\\_generalized.php and builder.php\n"
     },
     {
+      "id": "15928",
       "author": "Laurel Williams",
       "date": "2009-07-16T11:21:18.000-0400",
       "body": "Have added howto blocks in each file, which may need to be revised if the files changes. Test instructions on installation on the webserver\n"

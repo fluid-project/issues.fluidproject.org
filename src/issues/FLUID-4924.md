@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15805",
       "author": "Justin Obara",
       "date": "2015-06-15T09:48:07.029-0400",
       "body": "Kasper Galschiot Markus this is a pretty open ended jira, can it be closed and new ones opened for the specific model transformations that are needed. I'm going to guess we have most of them in already.\n"
     },
     {
+      "id": "15807",
       "author": "Kasper Galschiot Markus",
       "date": "2015-06-15T12:16:36.842-0400",
       "body": "The relevant model transformations have been moved from GPII to infusion by now. As justin suggests, new JIRAs will be created if we think we need to move more modeltransformations to infusion\n"

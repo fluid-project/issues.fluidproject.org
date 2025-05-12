@@ -45,11 +45,13 @@
   ],
   "comments": [
     {
+      "id": "15565",
       "author": "Justin Obara",
       "date": "2008-04-28T13:26:32.000-0400",
       "body": "screenshot-1 shows the border of a missing icon, after tabbing over to it.\n"
     },
     {
+      "id": "15567",
       "author": "Justin Obara",
       "date": "2014-06-05T15:22:32.402-0400",
       "body": "This demo has been removed\n"

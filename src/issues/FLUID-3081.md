@@ -38,11 +38,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14703",
       "author": "Justin Obara",
       "date": "2010-05-07T13:50:55.893-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "14704",
       "author": "heidi valles",
       "date": "2011-09-23T15:13:20.665-0400",
       "body": "If there are keyboard shortcuts for CKEditor we should provide an accessible link to this shortcut list\n"

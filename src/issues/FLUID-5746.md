@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14021",
       "author": "Jonathan Hung",
       "date": "2015-09-15T15:28:48.689-0400",
       "body": "When the sidebar is in an expanded state, the text should read: \"Hide Topics\".\\\nWhen the sidebar is collapsed, the text should read: \"Show Topics\".\n"

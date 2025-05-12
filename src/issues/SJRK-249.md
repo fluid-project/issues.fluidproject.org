@@ -30,11 +30,13 @@
   ],
   "comments": [
     {
+      "id": "26250",
       "author": "Dana",
       "date": "2019-06-10T12:27:43.419-0400",
       "body": "also noticed that the background image scales up when any of the UIO sizing preferences are set (font size, line spacing, enhance inputs)\n"
     },
     {
+      "id": "26251",
       "author": "Dana",
       "date": "2019-07-09T13:23:51.024-0400",
       "body": "Latest fix has caused the background image to repeat more than once, as seen on the right hand edge of the attached image. Can we fix it so that the background image repeats just once?\n"

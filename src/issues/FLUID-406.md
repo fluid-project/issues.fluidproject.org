@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18259",
       "author": "Anastasia Cheetham",
       "date": "2008-03-27T16:13:48.000-0400",
       "body": "This seems to be an issue with jQuery.ui - it is replicatable in the demo file that comes with the distribution.\n\nI have filed a ticket with jQuery: <http://dev.jquery.com/ticket/2601>\n"
     },
     {
+      "id": "18261",
       "author": "Anastasia Cheetham",
       "date": "2008-03-27T17:07:15.000-0400",
       "body": "Fixed using Scott Gonzalez tip in <http://dev.jquery.com/ticket/2601>\n"

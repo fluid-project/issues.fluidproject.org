@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27348",
       "author": "Blake E",
       "date": "2008-12-08T14:10:13.000-0500",
       "body": "I left in some debugging that is designed for my firefox plugin \"firebug\". Its designed to print out text to a \"console\".\n\nThe point is, I left those commands in and if the firefox plugin \"firebug\" isn't installed it causes a fatal error and stops the progression of the javascript application.\n"
     },
     {
+      "id": "27349",
       "author": "Blake E",
       "date": "2008-12-08T14:11:41.000-0500",
       "body": "vulab9\n"

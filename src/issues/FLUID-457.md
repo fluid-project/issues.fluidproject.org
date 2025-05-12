@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13110",
       "author": "Anastasia Cheetham",
       "date": "2008-04-21T12:54:23.000-0400",
       "body": "This is an issue of poor styling. The sortable tabs example has been replaced by \\\n<http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/jquery-tabs/jquery-tabs.html>\n"

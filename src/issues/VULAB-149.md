@@ -47,21 +47,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27546",
       "author": "Blake E",
       "date": "2009-01-12T15:59:05.000-0500",
       "body": "vulab13\n"
     },
     {
+      "id": "27547",
       "author": "Blake E",
       "date": "2009-01-12T15:59:34.000-0500",
       "body": "I will write email to John S at YorkU Networking to resolve this.\n"
     },
     {
+      "id": "27548",
       "author": "Blake E",
       "date": "2009-01-15T11:15:07.000-0500",
       "body": "emailed.\n\nalso, should be noted that phpmyadmin was reinstalled and configured to limit access by ip for increased security 🙂 ping me for access.\n"
     },
     {
+      "id": "27549",
       "author": "Blake E",
       "date": "2009-01-20T16:12:22.000-0500",
       "body": "ftp is totally against the rules of the yorku server admins so we need to brainstorm options. I'm going to be working on my own personal server but that is an interim fix to get the code rolling out asap.\n\nemailing list 🙂\n"

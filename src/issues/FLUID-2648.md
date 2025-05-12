@@ -45,21 +45,25 @@
   ],
   "comments": [
     {
+      "id": "14505",
       "author": "Laurel Williams",
       "date": "2009-05-05T12:16:23.000-0400",
       "body": "This patch resolves both this issue 2648 and 2639.\n\nWould like reviewers to check cssFiles order in particular since it was difficult to be sure if I'd gotten that right. Jacob to check FSS dependencies in particular and ensure they are in the appropriate order.\n\nAlso please feel free to alter name and long descriptions if you think your favourite component isn't being represented fully. This was just a first attempt.\n"
     },
     {
+      "id": "14509",
       "author": "Laurel Williams",
       "date": "2009-05-05T14:14:08.000-0400",
       "body": "revised patch to include only changes to name and description\n"
     },
     {
+      "id": "14511",
       "author": "Laurel Williams",
       "date": "2009-05-05T15:08:31.000-0400",
       "body": "removed trailing comma from fss file\n"
     },
     {
+      "id": "14514",
       "author": "Laurel Williams",
       "date": "2009-05-05T21:40:00.000-0400",
       "body": "Checked this. The files are as expected.\n"

@@ -35,26 +35,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10261",
       "author": "Justin Obara",
       "date": "2010-04-20T13:46:41.000-0400",
       "body": "If the server times out, the user should get error feedback\n"
     },
     {
+      "id": "10262",
       "author": "Justin Obara",
       "date": "2010-04-20T13:50:44.000-0400",
       "body": "Errors in scripts should be gracefully handled and the user informed about them.\n"
     },
     {
+      "id": "10263",
       "author": "Jonathan Hung",
       "date": "2010-07-14T09:23:51.780-0400",
       "body": "While exporting a busy spinner should appear so the user knows that the system is performing an operation. Otherwise the user will have no idea that the system is active, crashed, or waiting for input.\n"
     },
     {
+      "id": "10264",
       "author": "Justin Obara",
       "date": "2010-07-14T11:17:47.446-0400",
       "body": "Bug Parade Decapod 0.4\n"
     },
     {
+      "id": "10265",
       "author": "Jonathan Hung",
       "date": "2010-07-26T15:04:08.333-0400",
       "body": "Confirmed fixed for Decapod 0.4.\n"

@@ -53,21 +53,25 @@
   ],
   "comments": [
     {
+      "id": "13827",
       "author": "Justin Obara",
       "date": "2011-01-27T09:34:56.541-0500",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-2329#icft=FLUID-2329>.patch.txt reconfigures the defaults to use the rendered version of pager as the default.\n"
     },
     {
+      "id": "13829",
       "author": "Justin Obara",
       "date": "2011-01-27T09:58:55.197-0500",
       "body": "FLUID-2329-v2.patch.txt same as the previous patch, but updated the integration and standalone demos as well.\n"
     },
     {
+      "id": "13830",
       "author": "Michelle D'Souza",
       "date": "2011-01-28T13:08:46.974-0500",
       "body": "I think it would be better to change the defaults of the pager bar itself and then the pager would not override defaults for it.&#x20;\n"
     },
     {
+      "id": "13832",
       "author": "Justin Obara",
       "date": "2011-01-28T13:53:57.919-0500",
       "body": "FLUID-2329-v3.patch.txt updates the fluid.pager.pagerBar defaults to use the rendered version, instead of having the parent component override it's defaults.\n"

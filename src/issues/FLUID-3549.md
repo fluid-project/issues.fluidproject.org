@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23525",
       "author": "Colin Clark",
       "date": "2010-03-30T13:31:41.000-0400",
       "body": "Bug Parade Infusion 1.2\n"
     },
     {
+      "id": "23526",
       "author": "Justin Obara",
       "date": "2010-04-20T10:15:13.000-0400",
       "body": "Links updated to point at the 1.2 demos\n"

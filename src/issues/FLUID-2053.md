@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18115",
       "author": "Eli Cochran",
       "date": "2009-02-19T11:24:14.000-0500",
       "body": "We are, more or less, back at parity between IE7 and FF3 in functionality and Flash compatibility and nearly there with IE6 (there are still some bugs outstanding with poor Flash version detection with IE6 which can throw an error but it's a separate JIRA.)&#x20;\n"
     },
     {
+      "id": "18116",
       "author": "Justin Obara",
       "date": "2009-02-19T13:17:46.000-0500",
       "body": "all sub issues have been closed\n"

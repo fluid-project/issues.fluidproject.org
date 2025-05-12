@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19572",
       "author": "Joseph Scheuhammer",
       "date": "2007-09-14T15:29:53.000-0400",
       "body": "Recent refactoring of the GridLayoutHandler and the creation of a ListLayoutHandler have led to a better way calling of Reorderer.\\_findReorderableParent().  Now the caller passes \\_findReorderableParent() a list of \"orderables\" within the grid, instead of all the immediate child elements of the grid,  \\_findReorderableParent() no longer makes use of \"getAttribute()\" in its dom traversal.\n\nThe result is there is no longer an attempt to call \"getAttribute()\" on the document object when a click occurs outside of the all of the thumbnails, but still inside the grid (the lightbox \\<div>).\n\nUnfortunately, this does not remove the bug.  The search still continues up the DOM tree to the parent of the Document object, which is null, and, for some reason, this null object is passed to the drag-and-drop handlers with an eventual message that \"null\" has no properties.\n\nSo: partially fixed, but more research needs to be done.\n"
     },
     {
+      "id": "19573",
       "author": "Michelle D'Souza",
       "date": "2007-10-22T17:10:17.000-0400",
       "body": "Since the recent move to using jQuery UI's drag and drop this is no longer an issue.\n"

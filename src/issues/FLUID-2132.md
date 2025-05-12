@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20807",
       "author": "Jonathan Hung",
       "date": "2009-01-22T13:51:37.000-0500",
       "body": "iteration25\n"
     },
     {
+      "id": "20808",
       "author": "Jonathan Hung",
       "date": "2009-01-22T13:52:27.000-0500",
       "body": "Inadvertently fixed using Panels. Panels has the ability to over-ride titles of blocks, so now the \"Welcome to ...\" string does not appear.\n"

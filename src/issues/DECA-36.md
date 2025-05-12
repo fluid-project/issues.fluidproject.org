@@ -31,21 +31,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10254",
       "author": "Jonathan Hung",
       "date": "2010-06-17T13:20:50.948-0400",
       "body": "Problem still exists. Tested again on Ubuntu 9.10, Infusion 1.2, and FF 3.5.8.\n"
     },
     {
+      "id": "10255",
       "author": "Jonathan Hung",
       "date": "2010-07-14T16:33:22.708-0400",
       "body": "Ubuntu 9.10, FF 3.6.2, Infusion 1.2, decapod-ui 199:1536be1d9a41&#x20;\n\nBehaviour has changed - when dragging to the bottom edge, the whole browser pane scrolls and not the thumbnail panel.\n"
     },
     {
+      "id": "10256",
       "author": "Jonathan Hung",
       "date": "2010-07-14T16:35:04.518-0400",
       "body": "Elevate for bug parade?\n"
     },
     {
+      "id": "10257",
       "author": "Justin Obara",
       "date": "2012-05-25T13:30:22.801-0400",
       "body": "The ui for managing the pages has been removed.&#x20;\n"

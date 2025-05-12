@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17518",
       "author": "Justin Obara",
       "date": "2008-12-17T15:39:33.000-0500",
       "body": "fixed at r6246\n\nverified using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

@@ -26,21 +26,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10146",
       "author": "Justin Obara",
       "date": "2012-05-16T09:01:51.384-0400",
       "body": "Server Dependencies:\\\n\\================\n\n* Python 2.6.5\n* Cherrypy 3.2.2\n* ImageMagick 6.5.7-8 (convert in pdf.py line 49)\n\nUI Dependenceis:\n\n\\=============\n\nAll self contained in the source code\n\ngenpdf Dependencies:\\\n\\=================\n\n???\n"
     },
     {
+      "id": "10147",
       "author": "Justin Obara",
       "date": "2012-05-18T16:20:30.166-0400",
       "body": "Removed photo from the installation. We will have to gather a comprehensive list of dependencies for 0.6, in the meantime it's hard to tell what is/n't needed.\n"
     },
     {
+      "id": "10148",
       "author": "Justin Obara",
       "date": "2012-05-22T13:32:30.423-0400",
       "body": "Need to update to the latest version of genpdf and and it's dependencies\n"
     },
     {
+      "id": "10149",
       "author": "Justin Obara",
       "date": "2012-06-04T09:19:22.834-0400",
       "body": "The install scripts have been updated. Removed many unused dependencies and added in a a few new ones.&#x20;\n"

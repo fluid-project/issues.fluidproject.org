@@ -55,11 +55,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14765",
       "author": "Eli Cochran",
       "date": "2009-06-02T17:19:29.000-0400",
       "body": "Release has been released into the wild\n"
     },
     {
+      "id": "14767",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:20.874-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

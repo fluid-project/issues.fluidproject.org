@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17586",
       "author": "Colin Clark",
       "date": "2007-11-27T14:14:27.000-0500",
       "body": "The documentation I'm working on will cover:\n\n1\\. How to write your own orderableFinder function, describing the trade-offs of various approaches.\\\n2\\. How to write your own oderableCallback function, which posts the order of elements to the server.\n\nI've been developing sample code for this tutorial, available at:&#x20;\n\n<https://source.fluidproject.org/svn/fluid/components/trunk/src/webapp/component-templates/test/markupExamples/reorderer/concrete/scheduler/>\n"
     },
     {
+      "id": "17589",
       "author": "Colin Clark",
       "date": "2007-11-28T17:31:40.000-0500",
       "body": "I've committed sample code which will be included in 0.1. The tutorial itself will be written post-0.1.\n"

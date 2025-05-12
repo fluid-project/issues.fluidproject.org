@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27483",
       "author": "Blake E",
       "date": "2008-12-08T14:43:02.000-0500",
       "body": "vulab10\n"
     },
     {
+      "id": "27484",
       "author": "Blake E",
       "date": "2008-12-09T09:01:42.000-0500",
       "body": "Closing this issue in favour of more specific issues (Data Model Planning, and Database Schema Planing Documents for this iteration)\n"

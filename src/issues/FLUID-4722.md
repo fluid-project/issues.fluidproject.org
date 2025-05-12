@@ -42,11 +42,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15759",
       "author": "Antranig Basman",
       "date": "2012-08-16T02:27:21.598-0400",
       "body": "These events and also framework assistance for auto-removal of listeners added through boiling will be provided as part of the <https://fluidproject.atlassian.net/browse/FLUID-4257#icft=FLUID-4257> work\n"
     },
     {
+      "id": "15760",
       "author": "Antranig Basman",
       "date": "2012-08-22T14:59:02.215-0400",
       "body": "Functionality delivered for <https://fluidproject.atlassian.net/browse/FLUID-4257#icft=FLUID-4257> now includes support for automatically deregistering listeners which were attached from components with shorter scopes. We probably need some more test cases to cover a few more special cases. The semantic implemented is that listeners that are registered **BY** any component - that is - which appear in its configuration - are cleared when the component is cleared - whether the listeners actually bind onto the cleared component or not.\n"

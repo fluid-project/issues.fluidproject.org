@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15613",
       "author": "Justin Obara",
       "date": "2013-10-18T13:16:21.895-0400",
       "body": "Submitted pull request <https://github.com/fluid-project/infusion/pull/419>\n\nProvided a new selector for the label. This allows the toggleButton and it's label to be separate elements. Allowing for more complex markup in the toggle button.\n"
     },
     {
+      "id": "15615",
       "author": "Justin Obara",
       "date": "2014-03-26T16:12:55.264-0400",
       "body": "pull request merged at 861d635d56c7546c764d23cf40e7f96e85516b17\n"

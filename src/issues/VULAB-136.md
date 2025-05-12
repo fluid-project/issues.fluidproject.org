@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27542",
       "author": "David Makalsky",
       "date": "2008-12-22T10:47:25.000-0500",
       "body": "vulab12\n"
     },
     {
+      "id": "27543",
       "author": "Blake E",
       "date": "2009-03-23T16:31:27.000-0400",
       "body": "this issue is old now, and David is not a currently active developer on this project, so I'm marking as incomplete - although I do think he handled this.\n"

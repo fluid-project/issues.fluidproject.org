@@ -35,16 +35,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15490",
       "author": "Colin Clark",
       "date": "2008-12-08T11:38:00.000-0500",
       "body": "Mike, can you provide more details on how you think the navigation doesn't work as expected? We certainly ensure that all the essential controls are navigable with the keyboard. We treat the file queue as a standard list, in which users can select individual files using the up and down arrow keys, and they can remove files from the queue using the delete key. This is roughly consistent with the experience a user might get in navigating a list of files in their desktop OS, for example.\n\nWhat other behaviour are you expecting?\n"
     },
     {
+      "id": "15495",
       "author": "Justin Obara",
       "date": "2009-05-14T15:01:22.000-0400",
       "body": "a11y issue&#x20;\n"
     },
     {
+      "id": "15498",
       "author": "Anastasia Cheetham",
       "date": "2014-04-02T15:08:31.765-0400",
       "body": "We feel the keyboard control is adequate.\n"

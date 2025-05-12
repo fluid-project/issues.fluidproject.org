@@ -31,16 +31,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18961",
       "author": "Michelle D'Souza",
       "date": "2008-05-26T10:50:56.000-0400",
       "body": "I cannot recreate this consistently. It seems related to the size of the browser window.\n"
     },
     {
+      "id": "18963",
       "author": "Justin Obara",
       "date": "2008-10-31T09:58:34.000-0400",
       "body": "design-watched\n"
     },
     {
+      "id": "18965",
       "author": "Justin Obara",
       "date": "2009-05-05T09:54:24.000-0400",
       "body": "Appears to have been fixed.\n"

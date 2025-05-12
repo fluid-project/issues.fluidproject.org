@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20782",
       "author": "Justin Obara",
       "date": "2009-04-13T10:26:49.000-0400",
       "body": "Couldn't reproduce this issue. It may have been the case where the large amount of text caused the undo button to appear offscreen. A scroll bar is inserted. If this was tested on the bSpace example, the scrollbar would have been part of the iFrame, which may have caused it to appear below the fold.\n"

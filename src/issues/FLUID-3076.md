@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14927",
       "author": "Laurel Williams",
       "date": "2009-08-05T14:49:48.000-0400",
       "body": "updataModules in customBuild.js should operate only on copies of the arrays. in one place it operates on the actual array. Correct this.\n"
     },
     {
+      "id": "14930",
       "author": "Laurel Williams",
       "date": "2009-08-05T14:51:36.000-0400",
       "body": "completed\n"

@@ -24,16 +24,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11154",
       "author": "Cindy Li",
       "date": "2015-08-31T15:05:30.885-0400",
       "body": "Issued a pull request: <https://github.com/fluid-project/first-discovery/pull/97>\n"
     },
     {
+      "id": "11155",
       "author": "Justin Obara",
       "date": "2015-09-01T10:07:10.881-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/first-discovery/pull/97> ) into the project repo at c185add99fa33ad67ff4b1178a06c0214a837c24\n"
     },
     {
+      "id": "11156",
       "author": "Justin Obara",
       "date": "2015-09-01T10:08:39.936-0400",
       "body": "The style() function doesn't need to be bound with a model path. It should only be called when the panel is rendered to apply button styles. The comment for this task has been removed from the code.\n"

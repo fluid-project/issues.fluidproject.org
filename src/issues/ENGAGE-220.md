@@ -41,11 +41,13 @@
   ],
   "comments": [
     {
+      "id": "11940",
       "author": "y z",
       "date": "2010-01-13T18:31:24.000-0500",
       "body": "First pass on complete exhibition and catalogue wireframes. Needs more review, suggestions and refinements.&#x20;\n"
     },
     {
+      "id": "11942",
       "author": "y z",
       "date": "2010-01-15T10:36:05.000-0500",
       "body": "Worked with Justin to review and refine the code\n"

@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12895",
       "author": "Anastasia Cheetham",
       "date": "2012-04-28T12:59:02.973-0400",
       "body": "The button is now styled properly on the dev site, but the panel is not yet done. Designs are on the wiki page\\\n<http://wiki.fluidproject.org/display/fluid/IDI+website+mockups+%28April+2012+ratified%29>\n"
     },
     {
+      "id": "12896",
       "author": "Anastasia Cheetham",
       "date": "2012-05-01T17:13:02.527-0400",
       "body": "Panel is now done\n"

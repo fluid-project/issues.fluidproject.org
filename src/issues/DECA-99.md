@@ -29,31 +29,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10272",
       "author": "Justin Obara",
       "date": "2010-04-29T13:10:08.000-0400",
       "body": "we have decided to move the ui code over to the mercurial repository in google code\n"
     },
     {
+      "id": "10273",
       "author": "Justin Obara",
       "date": "2010-04-29T15:22:47.000-0400",
       "body": "I have moved the ui and server code over to the mercurial repository\n\nold SVN repo: <https://source.fluidproject.org/svn/fluid/decapod/trunk>\n\nnew Mercurial Repos\n\nserver: <https://server.decapod.googlecode.com/hg>\\\nui: <https://ui.decapod.googlecode.com/hg>\n"
     },
     {
+      "id": "10274",
       "author": "Justin Obara",
       "date": "2010-05-05T11:07:40.309-0400",
       "body": "Reopening because the previous work did not capture the majority of the history from the code's life in svn\n"
     },
     {
+      "id": "10275",
       "author": "Colin Clark",
       "date": "2010-05-14T13:44:47.354-0400",
       "body": "Now that we've moved the code into Mercurial, our next step should be to update the install documentation and scripts to reference the new location for our source code.\n"
     },
     {
+      "id": "10276",
       "author": "Justin Obara",
       "date": "2010-05-17T13:02:51.619-0400",
       "body": "Updated the installation instructions to reference the googlecode repo for the checkout. <http://wiki.fluidproject.org/display/fluid/Download+and+Install+Decapod+0.3>&#x20;\n\nNote: The instructions may seem slightly strange. It is because I've added in a tag for the Decapod 0.3 release. However, at that time the ui and server code was still colocated and their was no subrepo for Infusion\n"
     },
     {
+      "id": "10277",
       "author": "Justin Obara",
       "date": "2010-06-14T15:08:08.200-0400",
       "body": "all relevant code has been moved from svn to hg at the decapod.googlecode.com\n"

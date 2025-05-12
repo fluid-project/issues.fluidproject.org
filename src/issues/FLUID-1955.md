@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23117",
       "author": "Justin Obara",
       "date": "2010-05-07T13:14:56.494-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "23118",
       "author": "Justin Obara",
       "date": "2014-07-08T10:56:31.164-0400",
       "body": "Could have been fixed with updates to inline edit or with later versions of Jaws.\n"

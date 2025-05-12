@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24468",
       "author": "heidi valles",
       "date": "2011-07-07T10:51:54.545-0400",
       "body": "Attempted fat panel and content with tabs - each tab loading component demo via ajax. Expected too much magic and didn't work.&#x20;\n"

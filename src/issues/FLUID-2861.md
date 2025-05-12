@@ -35,16 +35,19 @@
   ],
   "comments": [
     {
+      "id": "22816",
       "author": "Laurel Williams",
       "date": "2009-06-01T11:57:47.000-0400",
       "body": "here is a screenshot of this issue\n"
     },
     {
+      "id": "22818",
       "author": "Justin Obara",
       "date": "2009-11-06T15:08:25.000-0500",
       "body": "I believe this is the focus styling on the Uploader's container\n"
     },
     {
+      "id": "22822",
       "author": "Mike Lam",
       "date": "2011-01-05T12:16:43.046-0500",
       "body": "Can't reproduce in Infusion 1.3 in any browser/platform combination.\n"

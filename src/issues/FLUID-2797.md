@@ -34,41 +34,49 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16486",
       "author": "Daphne Ogle",
       "date": "2009-05-27T20:44:39.000-0400",
       "body": "This seems to work fine on the Renderer version\n"
     },
     {
+      "id": "16488",
       "author": "sparsh paliwal",
       "date": "2016-03-01T02:35:31.274-0500",
       "body": "The Example under test is no longer found. Please can anyone update the link.\n"
     },
     {
+      "id": "16490",
       "author": "Justin Obara",
       "date": "2016-03-01T09:41:12.419-0500",
       "body": "This specific demo no longer exists, but a similar issue occurs with the current demo ( <http://build.fluidproject.org/infusion/demos/pager/> ) and two of the current examples ( <http://build.fluidproject.org/infusion/examples/components/pager/annotateSortedColumn/> and <http://build.fluidproject.org/infusion/examples/components/pager/initialPageIndex/>). However the issue in these cases only appears with the \"next\" button.\n"
     },
     {
+      "id": "16493",
       "author": "Blagoj Dimovski",
       "date": "2016-03-28T16:12:27.659-0400",
       "body": "Is anyone working on the issue? If not, I could get started.&#x20;\n"
     },
     {
+      "id": "16495",
       "author": "Justin Obara",
       "date": "2016-03-29T08:07:16.795-0400",
       "body": "Blagoj Dimovski I do not believe that anyone else is working on this issue, feel free to work on it.\n"
     },
     {
+      "id": "16624",
       "author": "Blagoj Dimovski",
       "date": "2016-03-31T11:14:40.378-0400",
       "body": "@Justin Obara, I've started working on the issue, I will post updates through the weekend.\n"
     },
     {
+      "id": "16626",
       "author": "sushant mehta",
       "date": "2018-03-16T10:36:52.277-0400",
       "body": "@Justin can I start working on this issue???\n"
     },
     {
+      "id": "16628",
       "author": "Justin Obara",
       "date": "2018-03-19T08:57:36.648-0400",
       "body": "sushant mehta yes you can work on this issue.\n"

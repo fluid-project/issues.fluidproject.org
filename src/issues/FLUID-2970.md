@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14048",
       "author": "Anastasia Cheetham",
       "date": "2009-06-29T14:49:05.000-0400",
       "body": "I have restarted Continuum, and successfully rebuilt all of the projects.\n\nThe Fluid nightly and the Uploader server were **not** configured to send email notifications - I have updated them to email the commits list (as the other projects do).\n\nI'm not sure why the system got stuck back on June 10 - maybe this is something that Jamon can help figure out?\n"
     },
     {
+      "id": "14050",
       "author": "Anastasia Cheetham",
       "date": "2009-06-30T09:05:19.000-0400",
       "body": "It seems the builds are still not happening automatically. Will investigate...\n"
     },
     {
+      "id": "14053",
       "author": "Anastasia Cheetham",
       "date": "2011-01-20T09:27:36.290-0500",
       "body": "The nightly builds have been working consistently for some time now.\n"

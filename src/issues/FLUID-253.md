@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16537",
       "author": "Barbara Glover",
       "date": "2008-02-19T12:33:25.000-0500",
       "body": "iteration03\n"
     },
     {
+      "id": "16538",
       "author": "Barbara Glover",
       "date": "2008-03-05T10:11:21.000-0500",
       "body": "This will be an ongoing activity\n"

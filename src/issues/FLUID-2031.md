@@ -60,31 +60,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20404",
       "author": "Justin Obara",
       "date": "2009-05-14T14:59:05.000-0400",
       "body": "a11y issue&#x20;\n"
     },
     {
+      "id": "20405",
       "author": "joan garcia",
       "date": "2009-10-08T10:57:00.000-0400",
       "body": "The same thing a11y issue happens with Flash 10, FF3.5, Linux Ubuntu Jaunty.&#x20;\n"
     },
     {
+      "id": "20406",
       "author": "joan garcia",
       "date": "2009-10-08T10:57:40.000-0400",
       "body": "The same thing a11y issue happens with Flash 10, FF3.0.xx, Linux Ubuntu Jaunty.&#x20;\n"
     },
     {
+      "id": "20407",
       "author": "Colin Clark",
       "date": "2010-03-30T18:54:52.000-0400",
       "body": "For the browsers that this issue applies to, we should fix the problem by deprecating the Flash-based Uploader and replacing it with a new version based on HTML 5.\n"
     },
     {
+      "id": "20408",
       "author": "Anastasia Cheetham",
       "date": "2010-11-15T13:39:36.783-0500",
       "body": "Testing the new HTML5 version, this issue has been addressed: the Browse Files button is perfectly accessible.\n"
     },
     {
+      "id": "20409",
       "author": "Mike Lam",
       "date": "2011-01-05T10:50:37.026-0500",
       "body": "Fixed in Infusion 1.3\n"

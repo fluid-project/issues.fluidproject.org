@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13919",
       "author": "Jonathan Hung",
       "date": "2009-01-19T16:07:01.000-0500",
       "body": "iteration30\n"
     },
     {
+      "id": "13922",
       "author": "Jonathan Hung",
       "date": "2009-03-30T14:22:53.000-0400",
       "body": "with recent comment spam, perhaps it's worth implementing this sooner than later.\n"

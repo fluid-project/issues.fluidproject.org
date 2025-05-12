@@ -52,16 +52,19 @@
   ],
   "comments": [
     {
+      "id": "26601",
       "author": "Justin Obara",
       "date": "2020-06-02T08:37:54.934-0400",
       "body": "Gregor Moss perhaps the [Layout Reorderer](https://build.fluidproject.org/infusion/demos/reorderer/layoutReorderer/) might be a closer example of what you're looking for.\n"
     },
     {
+      "id": "26602",
       "author": "Dana",
       "date": "2020-06-10T14:24:43.274-0400",
       "body": "Gregor Moss I attached an updated mockup to show the drag and drop handle positioning, as well as assets for handle, up arrow, and down arrow.\n"
     },
     {
+      "id": "26603",
       "author": "Cindy Li",
       "date": "2020-06-30T15:40:47.850-0400",
       "body": "[The pull request](https://github.com/fluid-project/sjrk-story-telling/pull/84) that fixes this issue has been merged into the project repo master branch at [this commit](https://github.com/fluid-project/sjrk-story-telling/commit/124ca75934d39db06645c1cd017a7966efa6da49).\n"

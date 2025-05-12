@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12054",
       "author": "Justin Obara",
       "date": "2009-11-12T14:47:48.000-0500",
       "body": "updated build scripts. The directories it created in the war still had the old names. These have now been updated.\\\nengage-core -> fluid-engage-core\\\ninfusion -> fluid-infusion\n"

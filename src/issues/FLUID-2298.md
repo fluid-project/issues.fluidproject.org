@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21359",
       "author": "Antranig Basman",
       "date": "2009-02-27T23:20:38.000-0500",
       "body": "Fixed at revision 6619\n"
     },
     {
+      "id": "21360",
       "author": "Justin Obara",
       "date": "2009-02-28T08:56:08.000-0500",
       "body": "Tested again using the same code that produced the error. It is now working properly.&#x20;\n\nComponent tree had a structure that looked like this. The offender had been the decorator on a branch.\n\nvar progressComponentTree = {\\\nchildren: \\[\\\n{\\\nID: \"progress-bars:\",\\\ndecorators: {identify: \"in-design-bar\"},\\\nchildren: \\[\\\n{\\\nID: \"fl-progress\"\\\n}\\\n]\\\n},\\\n{\\\nID: \"progress-bars:\",\\\ndecorators: {identify: \"in-dev-bar\"},\\\nchildren: \\[\\\n{\\\nID: \"fl-progress\"\\\n}\\\n]\\\n},\\\n{\\\nID: \"progress-bars:\",\\\ndecorators: {identify: \"stable-bar\"},\\\nchildren: \\[\\\n{\\\nID: \"fl-progress\"\\\n}\\\n]\\\n}\\\n]\\\n};\n"

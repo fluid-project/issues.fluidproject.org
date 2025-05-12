@@ -32,26 +32,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11004",
       "author": "Antranig Basman",
       "date": "2015-05-28T14:17:45.303-0400",
       "body": "I observed this too - I can confirm that if you hover over the voice button itself, it works every time. For me, attempting to click anywhere on the text will fail, almost every time. I spent a little time investigating the issue last week but so far inconclusively. It appears that whatever the issue is, it is something native to jQuery and jQuery UI since I didn't see any framework code executing during the \"spurious repositioning of the tooltip\". As far as I could see, somehow something was directly relaying a \"click\" event to a \"mouseenter\" event. I can investigate some more if this issue is considered high priority.\n"
     },
     {
+      "id": "11005",
       "author": "Antranig Basman",
       "date": "2015-06-01T14:18:07.236-0400",
       "body": "Justin Obara believes this issue is related to <https://fluidproject.atlassian.net/browse/FLOE-361#icft=FLOE-361> - we should recheck whether this issue is solved once his branch is merged in\n"
     },
     {
+      "id": "11006",
       "author": "Justin Obara",
       "date": "2015-06-02T08:26:11.445-0400",
       "body": "While it is probably less of an issue after <https://fluidproject.atlassian.net/browse/FLOE-361#icft=FLOE-361>, this bug still exists as the tooltip is still positioned over the button. It's likely caused by the fact that it wants to be positioned above the button but there is no space left in the window.\n"
     },
     {
+      "id": "11007",
       "author": "Justin Obara",
       "date": "2015-06-02T14:23:33.707-0400",
       "body": "Submitted a pull request:\\\n<https://github.com/fluid-project/first-discovery/pull/80>\n"
     },
     {
+      "id": "11008",
       "author": "Cindy Li",
       "date": "2015-06-03T16:18:46.761-0400",
       "body": "Merged @ eef82cb336341e4f86767674f9e637610f28585b\n"

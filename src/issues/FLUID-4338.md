@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13831",
       "author": "Antranig Basman",
       "date": "2011-11-11T14:50:18.165-0500",
       "body": "Not sure exactly how this was originally observed - since there is **some** tendency to be able to find such components through an exploration of the subcomponents of the parent - that is, to find them on the way DOWN even if you don't find them on the way up. However it was possible to construct a test case for this issue since finding them on the way down will trigger a circularity failure since they are not yet properly attached to the tree and so fail during ginger construction.\n"
     },
     {
+      "id": "13833",
       "author": "Antranig Basman",
       "date": "2013-02-01T04:16:27.802-0500",
       "body": "Delivered for 1.4\n"

@@ -45,26 +45,31 @@
   ],
   "comments": [
     {
+      "id": "15134",
       "author": "Justin Obara",
       "date": "2009-01-14T10:02:28.000-0500",
       "body": "'screenshot-1' shows the mouse pointer not changing from an arrow when it is over a single line item\n"
     },
     {
+      "id": "15137",
       "author": "Justin Obara",
       "date": "2009-01-14T10:03:28.000-0500",
       "body": "'screenshot-2' shows the pointer as a hand, over the multiline item. This is how it should appear whenever it is over a reorderable item\n"
     },
     {
+      "id": "15140",
       "author": "Justin Obara",
       "date": "2009-03-18T11:08:09.000-0400",
       "body": "My 1st Bug\n"
     },
     {
+      "id": "15142",
       "author": "Justin Obara",
       "date": "2009-05-05T12:26:58.000-0400",
       "body": "It appears that the cursor changes on the sub-list items.\n"
     },
     {
+      "id": "15145",
       "author": "Justin Obara",
       "date": "2014-07-07T15:38:17.881-0400",
       "body": "Opera is no longer a supported browser.\n"

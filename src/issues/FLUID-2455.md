@@ -36,21 +36,25 @@
   ],
   "comments": [
     {
+      "id": "14456",
       "author": "Justin Obara",
       "date": "2009-04-01T14:14:33.000-0400",
       "body": "'screenshot-1' shows the missing background behind the warning text\n"
     },
     {
+      "id": "14458",
       "author": "Justin Obara",
       "date": "2009-04-13T11:54:24.000-0400",
       "body": "Renamed the class \"dropWarning\" to \"flc-reorderer-dropWarning\" it had been missed during our round of class name changes\n"
     },
     {
+      "id": "14461",
       "author": "Justin Obara",
       "date": "2009-04-13T11:55:10.000-0400",
       "body": "Jacob, could you please verify and close this issue if the fix is okay.\n"
     },
     {
+      "id": "14464",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:17.359-0500",
       "body": "Closing issues that were fixed in 1.1\n"

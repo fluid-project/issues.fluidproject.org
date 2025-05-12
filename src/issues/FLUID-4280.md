@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13793",
       "author": "Jonathan Hung",
       "date": "2011-06-02T15:47:46.755-0400",
       "body": "This bug may actually not be a bug since it's unlikely that a user will be able to change the file types supported by the uploader. If this is the case, then the demo should document this issue clearly.\n"
     },
     {
+      "id": "13795",
       "author": "Justin Obara",
       "date": "2015-06-09T13:29:39.682-0400",
       "body": "The image gallery uploader demo no longer exists\n"

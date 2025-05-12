@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19380",
       "author": "Antranig Basman",
       "date": "2011-05-30T17:26:31.860-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "19381",
       "author": "Antranig Basman",
       "date": "2011-05-30T17:57:32.065-0400",
       "body": "Reviewed and merged\n"

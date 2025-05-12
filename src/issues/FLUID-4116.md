@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16732",
       "author": "Mike Lam",
       "date": "2011-02-24T16:35:56.533-0500",
       "body": "It should be noted here that this issue can't be reproduced in Justin's WinXP SP2 version as well as my WinXP SP3 version.\n"
     },
     {
+      "id": "16734",
       "author": "Justin Obara",
       "date": "2014-05-22T14:30:25.665-0400",
       "body": "Due to a cross site scripting vulnerability we have removed flash support from the uploader. See <https://fluidproject.atlassian.net/browse/FLUID-5354#icft=FLUID-5354>\n"

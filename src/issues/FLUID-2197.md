@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21220",
       "author": "Antranig Basman",
       "date": "2009-02-04T16:05:42.000-0500",
       "body": "Implemented at revision 6426.\n\nThere is an existing rendering option \"debugMode = true\" which has been expanded to provide this rendering diagnostic information. As well as informing on all mismatches (both template to tree and the reverse) in a horrible pink, there is also branching information recorded in comments embedded in the resulting markup.\n\nWhilst being on the client suggests that the use of the horrible pink is a little less important than it was in the server-world, it still seems substantially helpful, since in complex cases with very big templates, it would be valuable to get a clear sense of **where** in a template a mismatch has occured, which in standard console.log statements would be more difficult to match up.\n"
     },
     {
+      "id": "21221",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:57.438-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

@@ -29,6 +29,7 @@
   ],
   "comments": [
     {
+      "id": "26528",
       "author": "Gregor Moss",
       "date": "2020-07-27T15:55:26.424-0400",
       "body": "We are planning not to support pre-Chromium Edge in the future (affects versions 44.\\* and earlier), so this may not be resolved for affected versions.\n\n* <https://issues.fluidproject.org/secure/AddComment!default.jspa?id=33848>\n"

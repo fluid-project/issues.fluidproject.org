@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14818",
       "author": "Michelle D'Souza",
       "date": "2008-11-25T15:14:18.000-0500",
       "body": "dev-iteration47\n"
     },
     {
+      "id": "14820",
       "author": "Jacob Farber",
       "date": "2008-11-26T15:52:33.000-0500",
       "body": "First pass complete\n"
     },
     {
+      "id": "14822",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:56.669-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

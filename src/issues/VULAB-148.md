@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27303",
       "author": "Blake E",
       "date": "2009-01-09T15:28:19.000-0500",
       "body": "vulab12\n"
     },
     {
+      "id": "27304",
       "author": "Blake E",
       "date": "2009-01-09T15:30:10.000-0500",
       "body": "I've create a temp. site on my own server to allow myself and johnc to work easier with the tool we're accustomed to. ftp and the tools that integrate with it.\n\n[http://vulab.electserver.com](http://vulab.electserver.com/)\n\nnote. both myself and johnc have ftp access.\n"
     },
     {
+      "id": "27305",
       "author": "Blake E",
       "date": "2009-01-09T15:32:06.000-0500",
       "body": "note: this space I've created on electserver is merelya staging ground for the html pages of VULab 0.5B.\n\nWe are staging on electserver so we do not create addition errors with the 0.5B release as we are changing the html structure and style of many vulab pages.\n"
     },
     {
+      "id": "27306",
       "author": "Blake E",
       "date": "2009-01-09T16:00:04.000-0500",
       "body": "ok.\n\nSo I have the header / footers and the main styles uploaded on the staging html area at [http://vulab.electserver.com](http://vulab.electserver.com/)\n\nI'll continue to create the subpages etc,etc and update JIRA.\n"

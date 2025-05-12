@@ -37,6 +37,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10357",
       "author": "Justin Obara",
       "date": "2012-06-01T11:55:04.200-0400",
       "body": "Still an issue in Decapod 0.5. Tried with the jpeg image from <https://fluidproject.atlassian.net/browse/DECA-157#icft=DECA-157> ( <http://issues.fluidproject.org/secure/attachment/11152/decapod-0003.jpg> )\n"

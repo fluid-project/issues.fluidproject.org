@@ -33,21 +33,25 @@
   ],
   "comments": [
     {
+      "id": "20334",
       "author": "Colin Clark",
       "date": "2010-12-20T15:46:22.189-0500",
       "body": "Here's a patch from Mike and I, which adds an additional \"legacyBrowserFileLimit\" option to the HTML 5 strategy so that users can cap file sizes selectively for Firefox 3.6.\n"
     },
     {
+      "id": "20335",
       "author": "Michelle D'Souza",
       "date": "2010-12-20T16:01:33.074-0500",
       "body": "The patch looks good - you can commit.\n"
     },
     {
+      "id": "20336",
       "author": "Colin Clark",
       "date": "2010-12-20T16:23:37.994-0500",
       "body": "Fix committed at r10444.\n"
     },
     {
+      "id": "20337",
       "author": "Colin Clark",
       "date": "2010-12-20T16:24:18.333-0500",
       "body": "Fixed, tested and committed.\n"

@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21001",
       "author": "Justin Obara",
       "date": "2014-07-11T14:39:22.937-0400",
       "body": "This demo has been removed\n"
     },
     {
+      "id": "21002",
       "author": "Justin Obara",
       "date": "2015-06-26T09:50:53.561-0400",
       "body": "Reopening to change the fix version to 1.9\n"

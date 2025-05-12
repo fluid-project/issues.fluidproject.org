@@ -36,11 +36,13 @@
   ],
   "comments": [
     {
+      "id": "11349",
       "author": "Anastasia Cheetham",
       "date": "2015-06-01T11:11:15.104-0400",
       "body": "the scrolling issue needs to be split out into a separate jira\n"
     },
     {
+      "id": "11350",
       "author": "Cindy Li",
       "date": "2015-06-02T14:26:40.712-0400",
       "body": "Merged the pull request <https://github.com/fluid-project/first-discovery/pull/79> @ 1ce657cebbc24d72129d8ec78430eff1be9174a9\n"

@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22902",
       "author": "Laurel Williams",
       "date": "2009-10-16T17:00:06.000-0400",
       "body": "If we change the styling on the h3 from\\\n.infusion\\_panel h3 {\\\nbackground:transparent url(uploads/images/panel\\_TL\\_corner.png) no-repeat scroll left top;\\\ncolor:#FFFFFF;\\\nmargin:0;\\\npadding:10px 0 50px;\\\ntext-align:center;\\\nposition:absolute;\\\nwidth:100%;\\\n}\n\nto\n\n.infusion\\_panel h3 {\\\nbackground:transparent url(uploads/images/panel\\_TL\\_corner.png) no-repeat scroll left top;\\\ncolor:#FFFFFF;\\\nmargin:0;\\\npadding:10px 0 25px;\\\ntext-align:center;\\\nposition:absolute;\\\nwidth:100%;\\\n}\n\n*\n  *\n    * Change the bottom padding from 50px to 25px \\*\\*\\*\n\nit still looks pretty good (tested only on FF3.5 winXP) and links in the top row of text in these panels will still be clickable.\n"
     },
     {
+      "id": "22905",
       "author": "Laurel Williams",
       "date": "2009-10-19T14:49:57.000-0400",
       "body": "Resolved this issue by removing the link (Jess's suggestion). This will remain an issue for other links in the first two lines of these text blocks in the infusion page, unless the css is changed.\n"

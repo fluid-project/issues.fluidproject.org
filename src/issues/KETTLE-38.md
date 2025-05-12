@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26150",
       "author": "Antranig Basman",
       "date": "2016-12-04T17:27:00.076-0500",
       "body": "This was fixed prior to the 1.0 release, but in favour of the \"readOnlyGrade\" system which is documented in <https://fluidproject.atlassian.net/browse/KETTLE-49#icft=KETTLE-49> to still be less than desirably clear\n"

@@ -34,16 +34,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14891",
       "author": "Eli Cochran",
       "date": "2009-06-03T09:21:09.000-0400",
       "body": "Updated the Infusion reference in the Image Gallery POM to 1.2-SHAPSHOT\n"
     },
     {
+      "id": "14894",
       "author": "Eli Cochran",
       "date": "2009-06-03T14:18:15.000-0400",
       "body": "done\n"
     },
     {
+      "id": "14897",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:23.389-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

@@ -43,26 +43,31 @@
   ],
   "comments": [
     {
+      "id": "24539",
       "author": "David Bolter",
       "date": "2008-04-23T23:31:21.000-0400",
       "body": "changes the arrow behaviour to perform a select, adds aria labelledby relations between tab and associated panel\n"
     },
     {
+      "id": "24540",
       "author": "David Bolter",
       "date": "2008-04-25T12:05:09.000-0400",
       "body": "This updated patch adds aria states:posinset, activedescendant, labelledby; auto-selection of tabs via arrow keys. Todo: move activedescendant to mouse/key common event point (but as is it is rather illustrative of the mouse-keyboard interaction topic)\n\nFYI - I'm done with this issue at least for the near future. Feel free to ping me though.\n"
     },
     {
+      "id": "24541",
       "author": "David Bolter",
       "date": "2008-06-04T15:11:18.000-0400",
       "body": "changed \"this\" to \"tab\" (for readability etc) (paired:DB,CC)\n"
     },
     {
+      "id": "24542",
       "author": "David Bolter",
       "date": "2008-06-04T15:12:30.000-0400",
       "body": "using each param instead of \"this\" for readability etc (paired:DB,CC)\n"
     },
     {
+      "id": "24543",
       "author": "Colin Clark",
       "date": "2008-06-06T22:19:33.000-0400",
       "body": "Thanks so much for your patches, David! I've applied the patch and it works really nicely.\n"

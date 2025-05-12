@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "25119",
       "author": "Justin Obara",
       "date": "2021-10-20T11:52:19.238-0400",
       "body": "screenshot.png shows the UI Options demo in a mobile view. The \"black on white\" contrast is being previewed on the page, and the page colour is and panel colour all blend together with no visual separation.\n"
     },
     {
+      "id": "25120",
       "author": "Justin Obara",
       "date": "2021-10-20T14:45:54.249-0400",
       "body": "Will address in the <https://fluidproject.atlassian.net/browse/FLUID-6605#icft=FLUID-6605> PR <https://github.com/fluid-project/infusion/pull/1060>\n"

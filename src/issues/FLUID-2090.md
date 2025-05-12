@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21175",
       "author": "Jonathan Hung",
       "date": "2009-03-20T11:54:06.000-0400",
       "body": "Fixed.&#x20;\n\nIllustration of what a design pattern is addressed on this page:\\\n<http://osdpl.fluidproject.org/content/what-is-a-design-pattern>\n"

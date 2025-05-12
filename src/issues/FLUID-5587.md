@@ -38,11 +38,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23932",
       "author": "Antranig Basman",
       "date": "2015-01-14T16:26:40.615-0500",
       "body": "This issue was \"re-realised\" whilst trying to repair Kettle's model for contributing error handlers to dataSources nested within a server. The \"ancient\" system simply coupled every dataSource handler to a request's onError method, via an entire component named \"errback\". This at least was targetable as a whole via IoCSS. However, moving to a more correct design supplied the linkage in a distributeOptions block held in the server. However, it became realised that **THIS** distribution itself couldn't be targetted for removal - the semantics for multiple sources of advice fighting over the same target are unclear, and in any case, accumulative - one could only reliably arrange to add further grades to the target. We need a reliable way for a derived server to entirely eliminate or completely replace the distribution which arrives from the base server grade.\n"
     },
     {
+      "id": "23934",
       "author": "Antranig Basman",
       "date": "2015-08-20T15:26:06.311-0400",
       "body": "Merged into trunk at revision 282f1a318718eed0b0ec060fb8b4ad254417fd7e\n"

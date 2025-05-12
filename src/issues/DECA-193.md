@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10052",
       "author": "Justin Obara",
       "date": "2012-01-11T14:30:59.660-0500",
       "body": "I've started working on this in a repo bitbucket\\\n<https://bitbucket.org/jobara/decapod-server-rest>\n"
     },
     {
+      "id": "10053",
       "author": "Justin Obara",
       "date": "2012-01-18T14:19:26.491-0500",
       "body": "I've made the changes and pushed them up to my bitbucket repo. \\\n<https://bitbucket.org/jobara/decapod-server-rest>\n"
     },
     {
+      "id": "10054",
       "author": "Justin Obara",
       "date": "2012-05-18T14:16:54.695-0400",
       "body": "Merged into the project repo\n"

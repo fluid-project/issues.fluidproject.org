@@ -38,16 +38,19 @@
   ],
   "comments": [
     {
+      "id": "15273",
       "author": "Justin Obara",
       "date": "2010-04-09T16:38:18.000-0400",
       "body": "screenshot-1 shows the correct position of the progress indicator in the upper progress bar, the lower one shows the incorrect position\n"
     },
     {
+      "id": "15279",
       "author": "Justin Obara",
       "date": "2014-11-05T14:33:37.332-0500",
       "body": "This manual test has been replaced\n"
     },
     {
+      "id": "15285",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:00.386-0400",
       "body": "Reopening to change the fix version to 1.9\n"

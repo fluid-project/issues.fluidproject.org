@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25737",
       "author": "Giovanni Tirloni",
       "date": "2018-05-10T19:47:49.527-0400",
       "body": "Kernel updated to 2.6.32-696.28.1.el6.x86\\_64\n"

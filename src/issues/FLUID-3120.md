@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15076",
       "author": "Colin Clark",
       "date": "2010-03-30T19:08:05.000-0400",
       "body": "This issue was addressed with the introduction of the demo portal in Infusion 1.1\n"
     },
     {
+      "id": "15079",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:18.936-0500",
       "body": "Closing issues that were fixed in 1.1\n"

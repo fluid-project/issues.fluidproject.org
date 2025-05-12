@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13502",
       "author": "Antranig Basman",
       "date": "2011-03-29T23:09:42.176-0400",
       "body": "Now resolved in trunk, together with the ability to issue demands blocks against the uploader in such a configuration. This relies on the new directive \"fluid.alias\" and requires that the INNER demand block (e.g. the one which forward from fluid.uploaderImpl to fluid.multiFileUploader) does not issue any requests for options or arguments. We could expand support in the future if we find such a thing is required, but the algorithm might be quite complex.\n"

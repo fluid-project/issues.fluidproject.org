@@ -50,21 +50,25 @@
   ],
   "comments": [
     {
+      "id": "18219",
       "author": "Jacob Farber",
       "date": "2008-08-21T15:31:03.000-0400",
       "body": "Checkbox hotspot expands beyond the checkbox proper\n"
     },
     {
+      "id": "18220",
       "author": "Justin Obara",
       "date": "2008-09-02T11:05:42.000-0400",
       "body": "'screenshot-1' shows the hover message displayed when the pointer is hovering to the far right of the text.\n"
     },
     {
+      "id": "18221",
       "author": "Antranig Basman",
       "date": "2008-11-13T22:04:55.000-0500",
       "body": "This was probably fixed by the fix for <https://fluidproject.atlassian.net/browse/FLUID-1310#icft=FLUID-1310> at revision 6034 - please reverify.\n"
     },
     {
+      "id": "18223",
       "author": "Justin Obara",
       "date": "2008-12-03T11:50:27.000-0500",
       "body": "appears to have been fixed\n"

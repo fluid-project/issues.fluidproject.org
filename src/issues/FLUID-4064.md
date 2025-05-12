@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21725",
       "author": "Colin Clark",
       "date": "2011-02-22T10:23:39.092-0500",
       "body": "A number of LICENSE.txt files don't properly reflect the license under which we've chosen to redistribute third party code with Infusion, in the case of dually-licensed code. We should modify the LICENSE.txt to include only the terms of the license we've chosen, not the others. Files I've noticed:\n\njQuery-LICENSE.txt\\\nfastXmlPull-LICENSE.txt\n"
     },
     {
+      "id": "21726",
       "author": "Justin Obara",
       "date": "2011-02-22T16:07:53.663-0500",
       "body": "Pushed colin's pull request at efb1eefea2224e2dfccc\n"

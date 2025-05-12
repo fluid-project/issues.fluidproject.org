@@ -26,21 +26,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24820",
       "author": "Justin Obara",
       "date": "2010-11-15T12:48:59.502-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "24821",
       "author": "Mike Lam",
       "date": "2010-11-15T16:23:17.733-0500",
       "body": "Added \"The file queue is empty\" text to table summary containing all the queued files if there are no files in the queue.   Whenever the focus is back on the queue, NVDA reads the table summary to update the user on the queue state.\n"
     },
     {
+      "id": "24822",
       "author": "Anastasia Cheetham",
       "date": "2010-11-16T11:19:23.926-0500",
       "body": "Confirmed. Much clearer now.\n"
     },
     {
+      "id": "24823",
       "author": "Anastasia Cheetham",
       "date": "2010-11-19T12:33:39.933-0500",
       "body": "I've reviewed the code for this (actually committed against <https://fluidproject.atlassian.net/browse/FLUID-3852#icft=FLUID-3852>) and it looks fine.\n"

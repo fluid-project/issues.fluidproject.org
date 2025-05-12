@@ -38,26 +38,31 @@
   ],
   "comments": [
     {
+      "id": "13407",
       "author": "Justin Obara",
       "date": "2009-03-18T11:01:02.000-0400",
       "body": "Bug Parade 1.0 release\n"
     },
     {
+      "id": "13408",
       "author": "Justin Obara",
       "date": "2009-03-18T11:04:36.000-0400",
       "body": "'screenshot-1' shows issue with the low contrast theme\n"
     },
     {
+      "id": "13410",
       "author": "Justin Obara",
       "date": "2009-03-18T11:05:23.000-0400",
       "body": "'screenshot-2' shows the issue with the medium contrast grey-scale\n"
     },
     {
+      "id": "13412",
       "author": "Anastasia Cheetham",
       "date": "2009-03-24T13:43:31.000-0400",
       "body": "The changes made for this fix look fine. As to the resulting level of contrast, that's probably a subjective judgment that will have to be made through user testing.\n"
     },
     {
+      "id": "13414",
       "author": "Justin Obara",
       "date": "2009-03-24T17:22:14.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.6, Safari 3.2 (Mac OS 10.5)\\\nFF3, IE7 (Win Vista)\n"

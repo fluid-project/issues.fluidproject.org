@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18225",
       "author": "Shaw-Han Liem",
       "date": "2008-02-19T13:11:30.000-0500",
       "body": "iteration03\n"
     },
     {
+      "id": "18227",
       "author": "Eli Cochran",
       "date": "2008-03-05T15:24:56.000-0500",
       "body": "Done to the best of our current knowledge. Will open a small task for the next iteration for design changes as implementation goes forward.&#x20;\n"

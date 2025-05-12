@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12436",
       "author": "Colin Clark",
       "date": "2009-10-13T16:54:56.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "12437",
       "author": "Justin Obara",
       "date": "2009-10-14T10:57:15.000-0400",
       "body": "modified the navigationList to render the default url provided in the template. Also have gone and updated the browse component and respective mapper functions to make use of this new functionality\n"
     },
     {
+      "id": "12438",
       "author": "Justin Obara",
       "date": "2009-11-03T11:51:17.000-0500",
       "body": "closed as per previous comment\n"

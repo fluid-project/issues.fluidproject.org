@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11027",
       "author": "Justin Obara",
       "date": "2015-10-06T12:49:03.823-0400",
       "body": "congratulationsPrefsServerIntegration\\_en-US.json:\n\n{\\\n\"message\": \"\\<p>You're almost done!\\</p> \\<p>If you are happy with your choices, select the finish button. Select the back button to make changes.\\</p> \\<p>Note: once you select finish, you will not be able to make further changes.\\<p/>\"\\\n}\n\ntoken\\_en-US.son:\n\n{\\\n\"message\": \"To apply your preferences to any device (a computer, a tablet, a mobile phone, etc), record the following token:\",\\\n\"error\": \"Sorry, a token could not be generated at this time.\"\\\n}\n"
     },
     {
+      "id": "11028",
       "author": "Cindy Li",
       "date": "2015-11-12T14:31:59.928-0500",
       "body": "This report has been copied to the GPII bug tracker: <https://issues.gpii.net/browse/GPII-1483> and all activities should be carried on there.\n"

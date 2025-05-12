@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25267",
       "author": "Antranig Basman",
       "date": "2014-12-03T14:36:01.844-0500",
       "body": "This looks like a helpful patch, but I think we should mothball this area of functionality for a while. It has never been terribly well implemented and not very powerful - and all the known uses of it (particularly in the GPII universal) have disappeared. We will keep tracking these use cases and see if we can evaluate what kinds of features we might need to cover them - in particular we need to implement a more regexp-like model including numbered backreferences so that the various segments matched by \"\\*\" can be distinguished in the output paths.\n"

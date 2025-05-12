@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10248",
       "author": "Justin Obara",
       "date": "2012-05-25T13:36:08.639-0400",
       "body": "There are no sliding status messages in the current version\n"

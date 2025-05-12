@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15921",
       "author": "Jonathan Hung",
       "date": "2011-01-11T10:07:55.626-0500",
       "body": "The more general question is:\\\nIs it possible to activate an inline edit component using an additional control (as well as keeping the default behaviour)?\\\nThe example to illustrate this is the label / field form example mentioned in the above bug.\n"
     },
     {
+      "id": "15923",
       "author": "Jonathan Hung",
       "date": "2014-07-15T14:36:17.547-0400",
       "body": "Not an issue with the component.\n"

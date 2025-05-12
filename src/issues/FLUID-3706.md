@@ -33,16 +33,19 @@
   ],
   "comments": [
     {
+      "id": "22102",
       "author": "Golam Chowdhury",
       "date": "2010-09-03T16:04:42.122-0400",
       "body": "Patch <https://fluidproject.atlassian.net/browse/FLUID-3706#icft=FLUID-3706>.patch.txt change the version number from 1.2 to 1.2.1\n"
     },
     {
+      "id": "22104",
       "author": "Mike Lam",
       "date": "2010-09-08T13:45:57.294-0400",
       "body": "Patch committed to update branch 1.2.1.\n"
     },
     {
+      "id": "22107",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T13:23:26.134-0500",
       "body": "Reopening these issues to add the releasecomponent.&#x20;\n"

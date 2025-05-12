@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25963",
       "author": "Giovanni Tirloni",
       "date": "2018-03-22T15:48:30.822-0400",
       "body": "Released version 20180322 of the centos7 and fedora27 boxes.\n"

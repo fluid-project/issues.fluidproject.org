@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13183",
       "author": "Justin Obara",
       "date": "2015-06-15T10:56:17.373-0400",
       "body": "The process was changed to have the messageLoader fetch the bundles for each panel separately and pass these down to the panel's own messageResolver. See <https://fluidproject.atlassian.net/browse/FLUID-5597#icft=FLUID-5597>\n"
     },
     {
+      "id": "13184",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:01.720-0400",
       "body": "Reopening to change the fix version to 1.9\n"

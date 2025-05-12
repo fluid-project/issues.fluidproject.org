@@ -32,16 +32,19 @@
   ],
   "comments": [
     {
+      "id": "24828",
       "author": "Justin Obara",
       "date": "2010-11-19T10:41:03.522-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "24829",
       "author": "Harris Wong",
       "date": "2010-11-23T10:42:02.666-0500",
       "body": "In the demo css, .demo-LayoutReorderer-movable-dragging uses \"left: 10px\", which sets the left edge of the dragging element to the right by 10px.  This property somehow introduced the problem mentioned in this jira.  I have created a patch which uses 'margin' instead of 'left' to address this problem. &#x20;\n"
     },
     {
+      "id": "24830",
       "author": "Justin Obara",
       "date": "2010-11-26T11:00:58.968-0500",
       "body": "Worked with Harris to manually apply his patch ( FLUID-3858-patch.txt ), since the code base had changed after he created it. This  fixes the issue where you couldn't move a portlet into the right most column if it was empty. I've committed it to trunk.\n"

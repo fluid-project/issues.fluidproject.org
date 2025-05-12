@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22698",
       "author": "Justin Obara",
       "date": "2009-04-13T10:19:44.000-0400",
       "body": "I have updated the progress indicators so that they now link to a stable version of fluid-infusion (1.0 from the website). I have also made some minor edits to the status of several components.&#x20;\n"
     },
     {
+      "id": "22702",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:19.039-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

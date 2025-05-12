@@ -31,16 +31,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15040",
       "author": "Justin Obara",
       "date": "2009-08-06T13:49:28.000-0400",
       "body": "Bug Parade 1.1.1 release&#x20;\n"
     },
     {
+      "id": "15043",
       "author": "Antranig Basman",
       "date": "2009-08-07T12:51:46.000-0400",
       "body": "Two issues - \\\nFirstly, issuing \"cancel\" would cause a corruption of the \"isEditing\" state, since it is listening for the presence of afterFinishEdit which is not fired.\\\nSecondly, an obscure Firefox issue requires that updates to a control which has received the escape key must be processed outside the event stack - since an apparently unpreventable effect of the Escape key is to restore the field to its initial value when the event returns. It may be that this is actually the **effect** of the preventDefault processing trying to defeat the natural default behaviour of clearing the field. In any case, this is required.\n"
     },
     {
+      "id": "15047",
       "author": "Justin Obara",
       "date": "2009-08-07T15:01:43.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, FF3.5, Opera 9.6, Safari 3.2, Safari 4 (Mac OS 10.5)\\\nFF3, IE7, IE8 (Win Vista)\n"

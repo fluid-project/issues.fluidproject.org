@@ -39,21 +39,25 @@
   ],
   "comments": [
     {
+      "id": "21672",
       "author": "Justin Obara",
       "date": "2009-01-16T13:52:53.000-0500",
       "body": "'screenshot-1' shows the skinning links in the wrong location\n"
     },
     {
+      "id": "21673",
       "author": "Michelle D'Souza",
       "date": "2009-03-03T09:48:32.000-0500",
       "body": "I think this was fixed some time ago by a change in the implementation of the simple layout feature.&#x20;\n"
     },
     {
+      "id": "21674",
       "author": "Justin Obara",
       "date": "2009-03-03T09:52:14.000-0500",
       "body": "still happening in safari\n"
     },
     {
+      "id": "21675",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T11:17:20.279-0400",
       "body": "Testing version 1.4 with\\\n<http://build.fluidproject.org/infusion/integration-demos/uportal/html/portal.html>\\\nI cannot reproduce this.\n"

@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16952",
       "author": "Eli Cochran",
       "date": "2009-04-10T13:42:27.000-0400",
       "body": "renamed the release bundle zips to infusion-\\<version>.zip and infusion-\\<version>-src.zip\n"
     },
     {
+      "id": "16953",
       "author": "Michelle D'Souza",
       "date": "2011-01-13T16:50:09.996-0500",
       "body": "Reopening these issues in order to change the component to Release.&#x20;\n"

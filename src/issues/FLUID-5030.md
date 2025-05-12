@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14794",
       "author": "Antranig Basman",
       "date": "2013-06-03T17:21:48.485-0400",
       "body": "When rewritten to the following, the test case works correctly -&#x20;\n\n/\\*\\* <https://fluidproject.atlassian.net/browse/FLUID-5030#icft=FLUID-5030> - \"createOnEvent\" and events from additive grades are not merged in properly \\*\\*/\n\nfluid.defaults(\"fluid.tests.fluid5030Grade\", {\\\ngradeNames: \\[\"fluid.eventedComponent\"],\\\nevents: {\\\ncreationEvent: null\\\n},\\\nlisteners: {\\\ncreationEvent: {\\\nlistener: \"fluid.tests.fluid5030listener\",\\\nargs: \"{that}\"\\\n}\\\n},\\\ncomponents: {\\\nsubComponent: {\\\ncreateOnEvent: \"creationEvent\"\\\n}\\\n}\\\n});\n\nfluid.defaults(\"fluid.tests.fluid5030Root\", {\\\ngradeNames: \\[\"fluid.eventedComponent\", \"fluid.tests.fluid5030Grade\", \"autoInit\"],\\\ncomponents: {\\\nsubComponent: {\\\ntype: \"fluid.tests.fluid5030Sub\"\\\n}\\\n}\\\n});\n\nfluid.defaults(\"fluid.tests.fluid5030Sub\", {\\\ngradeNames: \\[\"fluid.eventedComponent\", \"autoInit\"]\\\n});\n\nfluid.tests.fluid5030listener = function (that) {\\\nthat.creationEventFired = true;\\\n};\n\njqUnit.test(\"FLUID-5030 - createOnEvent and events from additive grades are not merged in properly\", function () {\\\nvar root = fluid.tests.fluid5030Root();\n\njqUnit.assertNotUndefined(\"The event defined in the grade component is merged in\", root.events.creationEvent);\\\njqUnit.assertFalse(\"The createOnEvent is not fired\", root.creationEventFired);\\\njqUnit.assertUndefined(\"The subcomponent that should be created on createOnEvent is not created\", root.subComponent);\\\n});\n\nThis is exposing the fact that the issue is in fact a different one - I reported this as <https://fluidproject.atlassian.net/browse/FLUID-5032#icft=FLUID-5032> and closing in favour of that issue: You will notice that in the test you submitted, there are TWO failures rather than one - the first test, that the event defined in the grade component also fails, as well as the unexpected early creation of the subcomponent which is meant to be delayed until an event. This shows that actually none of the material in \"fluid.tests.fluid5030Grade\" is reaching the component, not just the \"createOnEvent\" annotation.\n"
     },
     {
+      "id": "14797",
       "author": "Antranig Basman",
       "date": "2013-06-03T17:22:21.918-0400",
       "body": "Closed in favour of <https://fluidproject.atlassian.net/browse/FLUID-5032#icft=FLUID-5032>\n"

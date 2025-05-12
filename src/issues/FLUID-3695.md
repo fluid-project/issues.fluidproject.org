@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "22184",
       "author": "y z",
       "date": "2010-08-30T11:33:09.402-0400",
       "body": "Replaces trim with jQuery.trim\n"
     },
     {
+      "id": "22187",
       "author": "Anastasia Cheetham",
       "date": "2014-04-02T15:24:55.651-0400",
       "body": "Fixed in pre-1.5 evaluation\n"

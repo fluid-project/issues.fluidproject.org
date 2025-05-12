@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20883",
       "author": "Justin Obara",
       "date": "2014-05-01T12:42:36.614-0400",
       "body": "Submitted a pull request <https://github.com/fluid-project/infusion/pull/507>\\\nThis pull requires the change for <https://fluidproject.atlassian.net/browse/FLUID-5339#icft=FLUID-5339>\n"
     },
     {
+      "id": "20884",
       "author": "Cindy Li",
       "date": "2014-05-02T10:48:05.567-0400",
       "body": "Merged into the project repo @ 33ef4a5150f638a481f7bc4891f0f09ce8e3d0a5\n"

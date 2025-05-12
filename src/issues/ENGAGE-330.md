@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12182",
       "author": "Justin Obara",
       "date": "2010-02-05T15:33:00.000-0500",
       "body": "fixed by having the getCookie function check if a value was returned before it tries to parse.\n"

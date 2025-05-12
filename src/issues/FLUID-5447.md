@@ -36,16 +36,19 @@
   ],
   "comments": [
     {
+      "id": "15714",
       "author": "Justin Obara",
       "date": "2015-06-16T12:02:59.410-0400",
       "body": "It's probably because the main content area floats over the hide/show tab.\n"
     },
     {
+      "id": "15718",
       "author": "Justin Obara",
       "date": "2015-06-16T12:03:58.496-0400",
       "body": "screenshot.png shows the hide/show tab below the page content. Note that the reset button is visible, but the hide button is not.\n"
     },
     {
+      "id": "27835",
       "author": "Justin Obara",
       "date": "2024-07-23T07:51:46.624-0400",
       "body": "In recent versions of this demo increasing the font size along with letter and word spacing will cause the buttons to wrap in their container and partially render below the page content.\n"

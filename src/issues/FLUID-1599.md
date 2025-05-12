@@ -31,16 +31,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19049",
       "author": "Colin Clark",
       "date": "2008-09-22T11:01:07.000-0400",
       "body": "I fixed this issue by actually committing the HTML files I had forgotten.\n"
     },
     {
+      "id": "19052",
       "author": "Justin Obara",
       "date": "2008-09-22T11:03:33.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF3, IE7 (Win Vista)\n"
     },
     {
+      "id": "19056",
       "author": "Justin Obara",
       "date": "2008-09-22T12:57:54.000-0400",
       "body": "Bug Parade: 0.5 release\n"

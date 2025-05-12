@@ -35,16 +35,19 @@
   ],
   "comments": [
     {
+      "id": "27569",
       "author": "Blake E",
       "date": "2009-02-23T14:20:49.000-0500",
       "body": "vulab17\n"
     },
     {
+      "id": "27570",
       "author": "Blake E",
       "date": "2009-02-24T16:58:20.000-0500",
       "body": "This is it! the patch to rule all patches 🙂\n\nJohnC's redesign is here - I've not added his changes to the project creation process, and will patch that separately.\n\nThe Major changes are to images and style.css\n\nMinor changes to the global template (adding/removing style/class/id parameters)\n\nNjoy!\n"
     },
     {
+      "id": "27571",
       "author": "Blake E",
       "date": "2009-03-30T13:35:50.000-0400",
       "body": "patch never got applied? I'm re-opening..\n"

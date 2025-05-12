@@ -74,71 +74,85 @@
   ],
   "comments": [
     {
+      "id": "23527",
       "author": "Justin Obara",
       "date": "2010-10-04T14:00:46.598-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "23528",
       "author": "Mike Lam",
       "date": "2010-12-14T17:52:22.517-0500",
       "body": "JS linted bottom 3 framework files\n"
     },
     {
+      "id": "23529",
       "author": "Anastasia Cheetham",
       "date": "2010-12-14T18:01:38.139-0500",
       "body": "This file (FLUID-3757-lintingFramework-DOMUtil-Doc-Debug.patch.txt) delints the following framework files: FluidDOMUtilities.js, FluidDocument.js, FluidDebugging.js\n"
     },
     {
+      "id": "23530",
       "author": "Anastasia Cheetham",
       "date": "2010-12-14T18:11:22.391-0500",
       "body": "This file (FLUID-3757-jslint\\_standalondemos.patch.txt) is Heidi's de-linting of the stand-alone demos.\n"
     },
     {
+      "id": "23531",
       "author": "Anastasia Cheetham",
       "date": "2010-12-14T18:16:11.652-0500",
       "body": "This file (FLUID-3757-jslint\\_componenttest.patch.txt) is Heidi's patch for the component test files. I'm not sure if it covers **all** of the tests - Heidi had to leave.\n"
     },
     {
+      "id": "23532",
       "author": "heidi valles",
       "date": "2010-12-15T10:41:21.247-0500",
       "body": "linting for /tests/manual-tests attached\n"
     },
     {
+      "id": "23533",
       "author": "heidi valles",
       "date": "2010-12-15T10:42:08.613-0500",
       "body": "Yes, component test patch is for entire dir\n"
     },
     {
+      "id": "23534",
       "author": "Anastasia Cheetham",
       "date": "2010-12-15T10:48:32.147-0500",
       "body": "This file (FLUID-3757-delint-frameworkTests.patch.txt) contains the de-linting of all JS files in the framework-tests folder. Not all files required changes.\n"
     },
     {
+      "id": "23535",
       "author": "Anastasia Cheetham",
       "date": "2010-12-15T11:50:48.689-0500",
       "body": "I've reviewed and committed Heidi's delinting of the component tests.\n"
     },
     {
+      "id": "23536",
       "author": "heidi valles",
       "date": "2010-12-15T12:05:38.260-0500",
       "body": "delinting of /tests/test-core patch\n"
     },
     {
+      "id": "23537",
       "author": "Anastasia Cheetham",
       "date": "2010-12-15T12:27:01.616-0500",
       "body": "I've reviewed and committed Heidi's patch that de-lints the test-core folder.\n"
     },
     {
+      "id": "23538",
       "author": "Anastasia Cheetham",
       "date": "2010-12-15T12:36:19.385-0500",
       "body": "I've reviewed and committed Heidi's de-linting of the standalone demos.\n"
     },
     {
+      "id": "23539",
       "author": "Anastasia Cheetham",
       "date": "2010-12-15T16:21:03.654-0500",
       "body": "Mike has linted some of the other framework files - he'll attach the patch after 1.3 QA\n"
     },
     {
+      "id": "23540",
       "author": "Justin Obara",
       "date": "2011-01-17T09:55:20.117-0500",
       "body": "Linting performed except for the framework code, which will be done for 1.3.1.\n"

@@ -45,31 +45,37 @@
   ],
   "comments": [
     {
+      "id": "21074",
       "author": "Justin Obara",
       "date": "2009-01-21T10:55:20.000-0500",
       "body": "'screenshot-1' shows that page after saving with \"No preference\" options\n"
     },
     {
+      "id": "21075",
       "author": "Justin Obara",
       "date": "2009-01-21T10:56:07.000-0500",
       "body": "'screenshot-2' shows the default style of the page on load\n"
     },
     {
+      "id": "21076",
       "author": "Justin Obara",
       "date": "2009-02-06T12:02:06.000-0500",
       "body": "Bug Parade  0.8 release\n"
     },
     {
+      "id": "21077",
       "author": "Michelle D'Souza",
       "date": "2009-02-11T12:10:05.000-0500",
       "body": "There is still an error with the text size. I'll open a new issue for it.&#x20;\n"
     },
     {
+      "id": "21078",
       "author": "Anastasia Cheetham",
       "date": "2009-02-11T15:19:36.000-0500",
       "body": "I've reviewed this fix, and it looks good to me. I've also linked the issue to the new issue that Michelle created for the font size, just in case.\n"
     },
     {
+      "id": "21079",
       "author": "Justin Obara",
       "date": "2009-02-12T10:26:01.000-0500",
       "body": "Verified fix using;\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\\\nFF3, IE6 (Win 2000)\n"

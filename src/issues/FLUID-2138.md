@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21130",
       "author": "Jonathan Hung",
       "date": "2009-02-18T15:30:58.000-0500",
       "body": "iteration27\n"
     },
     {
+      "id": "21131",
       "author": "Jonathan Hung",
       "date": "2009-02-18T15:33:09.000-0500",
       "body": "With a new layout, the left sidebar is now significantly condensed.\n"

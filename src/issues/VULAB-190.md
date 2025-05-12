@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "27281",
       "author": "Blake E",
       "date": "2009-03-16T15:58:17.000-0400",
       "body": "The first testing bundle of VULAB!\n"
     },
     {
+      "id": "27282",
       "author": "Blake E",
       "date": "2009-03-23T16:28:37.000-0400",
       "body": "enjoy and test away! (see attached .zip)\n"

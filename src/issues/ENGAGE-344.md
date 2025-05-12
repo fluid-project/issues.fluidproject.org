@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12678",
       "author": "Colin Clark",
       "date": "2010-02-08T16:25:39.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12680",
       "author": "Colin Clark",
       "date": "2010-02-17T01:31:29.000-0500",
       "body": "My Collection was merged with trunk at r9417. This needs code review. Antranig, can I walk you through all the changes tomorrow?\n"

@@ -32,21 +32,25 @@
   ],
   "comments": [
     {
+      "id": "25457",
       "author": "Justin Obara",
       "date": "2019-07-26T09:52:29.439-0400",
       "body": "It seems that both the Orator and Self Voicing enactor tests are stopping after a call to [fluid.tests.orator.selection.selectNode](https://github.com/fluid-project/infusion/blob/master/tests/component-tests/orator/js/OratorTests-Utils.js#L109-L117), which doesn't seem to trigger the next event. \n"
     },
     {
+      "id": "25458",
       "author": "Justin Obara",
       "date": "2019-07-29T13:06:37.460-0400",
       "body": "It seems that the issue is around the \"selectionchange\" event not firing, or at least not hitting any bound listeners, when programmatically changing the selection within an iframe. This is what happens in the fluid.tests.orator.selection.selectNode method. Users initiated selections are still triggering the \"selectionchange\" event, so this is really only an issue in the tests. Specifically the all-tests which are run through an iframe. Also, if we log the selection after making a programmatic change, the selection is correct. Which further points to it being an issue with the event.\n\n \n\nI also tested the \\[dev channel version of MS Edge|<https://www.microsoftedgeinsider.com/en-us/download/>], which is the chromium based version, it does not exhibit the issue.\n"
     },
     {
+      "id": "25459",
       "author": "Justin Obara",
       "date": "2019-07-29T13:08:30.295-0400",
       "body": "test.zip contains a couple of simple examples for testing this issue. test.html will automatically trigger a programatic selection and output the results to a DOM node and to the console. frame.html runs test.html in an iframe.\n"
     },
     {
+      "id": "25460",
       "author": "Justin Obara",
       "date": "2020-11-10T10:33:05.506-0500",
       "body": "Chromium based versions of MS Edge have been officially released for a while, and do not exhibit this issue.\n"

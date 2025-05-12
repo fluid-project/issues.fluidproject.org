@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25047",
       "author": "Justin Obara",
       "date": "2011-05-17T12:10:59.548-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "25048",
       "author": "Anastasia Cheetham",
       "date": "2011-07-11T13:59:32.418-0400",
       "body": "I've issued a pull request for the JSLinting of the code. This doesn't include any work on comments, etc.\n"
     },
     {
+      "id": "25049",
       "author": "Michelle D'Souza",
       "date": "2011-07-11T15:08:34.058-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/106> was merged into project repo at b3da83e8b62aa3bf7deb8b72b3921557722df781\n"
     },
     {
+      "id": "25050",
       "author": "Michelle D'Souza",
       "date": "2011-09-28T16:26:37.039-0400",
       "body": "Hi Justin,\n\nI think commits against this JIRA should no longer be allowed. Please close it if you agree.&#x20;\n"

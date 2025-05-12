@@ -24,16 +24,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11271",
       "author": "Cindy Li",
       "date": "2014-10-21T12:35:11.122-0400",
       "body": "The problem is caused by the page redirection. The decision is to remove PouchDB from the metadata demo since the demo is good enough for its purpose without showing the previously saved data.\n"
     },
     {
+      "id": "11272",
       "author": "Cindy Li",
       "date": "2014-10-23T12:57:26.876-0400",
       "body": "Issued a pull request: <https://github.com/fluid-project/metadata/pull/46>\n"
     },
     {
+      "id": "11273",
       "author": "Justin Obara",
       "date": "2014-10-27T12:55:49.479-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/metadata/pull/46> ) into the project repo at 9733e7cdc8999642710839f56226d38447036a0e\n"

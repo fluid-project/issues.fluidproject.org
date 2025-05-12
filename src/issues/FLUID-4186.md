@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19212",
       "author": "Justin Obara",
       "date": "2011-04-29T14:08:13.353-0400",
       "body": "Split the Reset file into fss-reset-global.css, fss-reset-context.css, fss-base-global.css, fss-base-context.css. This allows users to pick the parts that they want as well as to use the changes globally or scoped to a specific context. The fss-reset.css file is there for backwards compatability, but is deprecated.\n"
     },
     {
+      "id": "19216",
       "author": "Justin Obara",
       "date": "2011-04-29T14:08:31.819-0400",
       "body": "Merged into the master branch of the project repo at b4fcfdf8996a146f90701fba6bb00d9b237f2420\n"

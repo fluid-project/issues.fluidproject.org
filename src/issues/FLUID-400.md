@@ -39,16 +39,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18729",
       "author": "Michelle D'Souza",
       "date": "2008-04-07T15:22:32.000-0400",
       "body": "The nested scheduler example needs some cleaning up.\n"
     },
     {
+      "id": "18730",
       "author": "Antranig Basman",
       "date": "2008-04-11T10:37:48.000-0400",
       "body": "Note that currently (just before 0.3 release) I see the somewhat opposite problem in the sample - \\\n<http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/todo-list/sortable-styled-todo-list.html>\\\nFor example, when moving the drop target outside the list entirely, the visual representation of the target remains (red bar), yet the drop is not accepted. I think it is important to make sure that in absolutely all cases, the visual appearance of the drop indicator coincides with the possibility of making a drop.\n"
     },
     {
+      "id": "18734",
       "author": "Justin Obara",
       "date": "2008-07-04T19:37:18.000-0400",
       "body": "Cannot reproduce the issue in current build.&#x20;\n\nTested on:\n\nMac 0S X (FF2)\n\nWinXP (FF2, FF3, IE6, IE7)\n"

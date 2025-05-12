@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18945",
       "author": "Daphne Ogle",
       "date": "2008-04-29T13:25:11.000-0400",
       "body": "iteration08\n"
     },
     {
+      "id": "18947",
       "author": "Gary Thompson",
       "date": "2008-05-13T12:03:26.000-0400",
       "body": "Final designs have been posted:\\\n<http://wiki.fluidproject.org/x/9Q8a>\n\nThis included a change to Layout Preview interaction, modifying the locked portlet visual presentation, and redesigning the locked portlet message.\n"

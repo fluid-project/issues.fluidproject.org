@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18629",
       "author": "Erin Yu",
       "date": "2008-09-15T14:13:59.000-0400",
       "body": "iteration19\n"
     },
     {
+      "id": "18631",
       "author": "Erin Yu",
       "date": "2008-10-15T10:37:59.000-0400",
       "body": "The personas for Date Picker remain the same as the Fluid Personas. Closing without logging work done.\n"

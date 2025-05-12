@@ -37,11 +37,13 @@
   ],
   "comments": [
     {
+      "id": "24017",
       "author": "Justin Obara",
       "date": "2009-05-28T13:31:07.000-0400",
       "body": "'screenshot-1' shows the \"Edit Appearance\" button holding on to focus when the dialog opens\n"
     },
     {
+      "id": "24020",
       "author": "Justin Obara",
       "date": "2011-05-17T11:22:03.328-0400",
       "body": "no longer using a dialog for UI Options\n"

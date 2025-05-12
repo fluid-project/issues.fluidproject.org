@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14842",
       "author": "Laurel Williams",
       "date": "2009-07-16T11:57:46.000-0400",
       "body": "I chose to use SimpleTest <http://www.simpletest.org/> for the testing framework. We may wish to install this on the server where infusion resides so that the tests can be run via the web interface.\n"
     },
     {
+      "id": "14845",
       "author": "Laurel Williams",
       "date": "2009-09-03T14:21:46.000-0400",
       "body": "I think all of the unit tests required are there...unless someone can think of anything else to test.\n"

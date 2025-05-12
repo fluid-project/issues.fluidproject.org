@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22121",
       "author": "Anastasia Cheetham",
       "date": "2010-10-01T15:00:44.159-0400",
       "body": "The existing framwork functions page has been updated to reflect any changes to existing functions. New pages (in the new docs space) have been created for any new functions. The next step is to migrate the existing function documentation to the new space, so that each function gets its own page. This has been started (working throught the functions in Fluid.js alphabetically): I got as far as fluid.clear().\n"
     },
     {
+      "id": "22125",
       "author": "Justin Obara",
       "date": "2010-10-04T15:01:43.115-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"

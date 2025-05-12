@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20874",
       "author": "Justin Obara",
       "date": "2009-02-18T09:02:22.000-0500",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-2121#icft=FLUID-2121> and this issue can likely both be solved by switching to a jQuery Dialog. However, our resent attempts to do so resulted in the dialog breaking in both IE and Opera.\n"
     },
     {
+      "id": "20875",
       "author": "Justin Obara",
       "date": "2009-03-20T10:22:27.000-0400",
       "body": "this is fixed now that we have moved to a jQuery UI dialog\n"

@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11134",
       "author": "Alan Harnum",
       "date": "2016-09-06T16:00:25.093-0400",
       "body": "Fixed in PR at <https://github.com/fluid-project/chartAuthoring/pull/14>, since it turned out to only require a small change.\n"

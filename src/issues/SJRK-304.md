@@ -39,11 +39,13 @@
   ],
   "comments": [
     {
+      "id": "26519",
       "author": "Gregor Moss",
       "date": "2019-10-11T13:27:28.793-0400",
       "body": "The hiding and showing of these elements is achieved entirely in CSS using selectors that are supported as far back as IE9, or IE7 in the case of the + (adjacent sibling) selector.\n\nInspecting the instructions element in the Edge DevTools window after adding a new block makes that element hidden, which is quite odd, although the result is what is normally expected. If the newly-added block is then removed, both the instructions **and** the editing area are hidden. Re-inspecting the instruction element at this point will then make it show once more. This leads me to believe it may be a bug within Edge, or some special circumstances that must be met before repainting occurs.\n"
     },
     {
+      "id": "26520",
       "author": "Gregor Moss",
       "date": "2020-07-27T15:53:57.699-0400",
       "body": "We are planning not to support pre-Chromium Edge in the future (affects versions 44.\\* and earlier), so this may not be resolved for affected versions.\n"

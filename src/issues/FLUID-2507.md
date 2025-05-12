@@ -36,11 +36,13 @@
   ],
   "comments": [
     {
+      "id": "21543",
       "author": "Justin Obara",
       "date": "2009-04-03T13:56:16.000-0400",
       "body": "'screenshot-1' shows the trail of borders left behind\n"
     },
     {
+      "id": "21544",
       "author": "Justin Obara",
       "date": "2009-08-13T13:03:03.000-0400",
       "body": "Browser support for Infusion 1.2 ( <http://wiki.fluidproject.org/display/fluid/Prior+Browser+Support> ) does not include Opera 9.6 for Mac OS\n"

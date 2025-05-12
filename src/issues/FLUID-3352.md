@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23308",
       "author": "Colin Clark",
       "date": "2009-11-04T18:29:35.000-0500",
       "body": "For the first release of the Infusion Builder, we'll go with a simple, standalone look and feel. There's no need for integration with our website, nor for complex headers, footers or breadcrumbs as a result.\n"

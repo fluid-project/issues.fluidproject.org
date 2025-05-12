@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14049",
       "author": "Cindy Li",
       "date": "2012-03-01T11:28:33.479-0500",
       "body": "Merged into \"mediawiki-1.18.1\" branch @ 9471f5ec096c48470ee2bcb7ae9a4e76f148dad3\n\nThe merge goes into \"mediawiki-1.18.1\" branch rather than the \"master\" because \"mediawiki-1.18.1\" is the most-recent upgrade branch that the production is currently built upon and under testing stage without getting merged into \"master\" yet. \"mediawiki-1.18.1\" will eventually be merged into \"master\".\n"
     },
     {
+      "id": "14051",
       "author": "Cindy Li",
       "date": "2012-03-01T11:28:43.006-0500",
       "body": "Issue fixed.\n"

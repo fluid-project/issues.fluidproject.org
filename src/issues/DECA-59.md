@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10354",
       "author": "Jonathan Hung",
       "date": "2010-03-30T13:36:22.000-0400",
       "body": "Removed references to functionality that didn't exist. Should be added back in when ready.\n\n* import from disc\n* import from memory card\n* help\n"

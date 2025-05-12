@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "28072",
       "author": "Justin Obara",
       "date": "2024-10-31T06:37:03.525-0400",
       "body": "At the dev meeting yesterday we discussed if the contrast.scss file is still needed. It’s the drop in styling for the contrast theme that includes all the `!important` declarations. However, as discussed it is still useful as an easier integration, and or start to using UIO.&#x20;\n\nSimon Bates also suggested to improve the documentation to   mention an additional intermediate approach of an integrator creating their own similar override style sheet instead, to reduce the amount of of overrides they may have to deal with . This would be for the case where an integrator may not have access to fully use the css custom properties from the contrast base file but also doesn’t want/need all the overrides from the contrast file. (i.e. using a platform to build there site and don’t have knowledge of or access to all the styles but can add additional css files.)\n"
     },
     {
+      "id": "28107",
       "author": "Justin Obara",
       "date": "2024-12-05T07:32:32.992-0500",
       "body": "[PR #1110](https://github.com/fluid-project/infusion/pull/1110) merged into the project repo at [9dfe6ec](https://github.com/fluid-project/infusion/commit/9dfe6eccbb6026d101eb4b62d49e3ec4dcd80d92).\n"

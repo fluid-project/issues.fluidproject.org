@@ -33,21 +33,25 @@
   ],
   "comments": [
     {
+      "id": "24650",
       "author": "Justin Obara",
       "date": "2010-10-04T15:50:36.811-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "24651",
       "author": "Jonathan Hung",
       "date": "2010-12-13T16:01:06.843-0500",
       "body": "Patch with DOS line endings removed.\n"
     },
     {
+      "id": "24652",
       "author": "Colin Clark",
       "date": "2010-12-15T10:41:37.231-0500",
       "body": "I reviewed Antranig's commit for DOS line endings, ran all the unit tests, and it looks good. +1 for inclusion in 1.3.\n"
     },
     {
+      "id": "24653",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T13:23:44.177-0500",
       "body": "Reopening these issues to add the releasecomponent.&#x20;\n"

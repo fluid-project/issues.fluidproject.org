@@ -53,26 +53,31 @@
   ],
   "comments": [
     {
+      "id": "17210",
       "author": "Anastasia Cheetham",
       "date": "2009-03-20T12:42:38.000-0400",
       "body": "This screen capture shows the transparent UI Options dialog in the Fluid website.\n"
     },
     {
+      "id": "17212",
       "author": "Jacob Farber",
       "date": "2009-03-20T12:50:45.000-0400",
       "body": "Patch includes a basic set of colors. Themes will now override them,\n"
     },
     {
+      "id": "17214",
       "author": "Anastasia Cheetham",
       "date": "2009-03-20T13:20:40.000-0400",
       "body": "Jacob's patch goes a long way - but there are still some element that are not quite right - see second attachment.\n\nThere seems to be an area above the white background - where the close box is - that is still transparent.\n"
     },
     {
+      "id": "17216",
       "author": "Justin Obara",
       "date": "2009-05-14T09:06:58.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "17218",
       "author": "Laurel Williams",
       "date": "2009-05-21T11:04:51.000-0400",
       "body": "This does solve the problem, but the resolution to 2380 will make this look even better.\n"

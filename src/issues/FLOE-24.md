@@ -23,16 +23,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10944",
       "author": "Anastasia Cheetham",
       "date": "2012-06-25T14:47:40.430-0400",
       "body": "The extra \"Table of Contents\" always showing will be addressed in Infusion, through <http://issues.fluidproject.org/browse/FLUID-4723>. Once that's updated, we'll update the version of Infusion that OER Commons uses.\n"
     },
     {
+      "id": "10945",
       "author": "Anastasia Cheetham",
       "date": "2012-06-25T15:11:49.501-0400",
       "body": "I've issued a pull request for the header fix for Infusion: <https://github.com/fluid-project/infusion/pull/224>\n"
     },
     {
+      "id": "10946",
       "author": "Anastasia Cheetham",
       "date": "2012-06-26T14:43:45.534-0400",
       "body": "FLUID-4723 is fixed and the fix is in. I've upgraded Infusion in OER Commons.\n\nIt looks like the gap is also a problem that's present in Infusion and not in OER C: It appears in the UIO demo on the single-page versions (where the ToC should not be shown). I've created a JIRA for that: FLUID-4724\n"

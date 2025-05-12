@@ -31,21 +31,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21812",
       "author": "Justin Obara",
       "date": "2009-03-25T11:15:48.000-0400",
       "body": "Clean Up Parade 1.0\n"
     },
     {
+      "id": "21813",
       "author": "Justin Obara",
       "date": "2009-05-14T08:52:50.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "21814",
       "author": "Anastasia Cheetham",
       "date": "2009-06-01T16:03:44.000-0400",
       "body": "I've added the version info to the list of third party software in the README file.\n"
     },
     {
+      "id": "21815",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:16.838-0500",
       "body": "Closing issues that were fixed in 1.1\n"

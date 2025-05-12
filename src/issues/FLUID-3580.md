@@ -40,16 +40,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13133",
       "author": "Jonathan Hung",
       "date": "2010-11-09T15:10:15.214-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "13134",
       "author": "Jonathan Hung",
       "date": "2010-12-06T20:46:55.556-0500",
       "body": "New pager demo passes W3C Validator with XHTML 1.1 and UTF-8 encoding.\n"
     },
     {
+      "id": "13135",
       "author": "Justin Obara",
       "date": "2010-12-07T07:03:09.227-0500",
       "body": "Closing, since it is now passing w3c validation\n"

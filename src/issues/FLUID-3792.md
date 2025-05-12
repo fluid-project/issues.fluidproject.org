@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21584",
       "author": "Jonathan Hung",
       "date": "2011-01-11T10:13:29.457-0500",
       "body": "graceful degradation not required for the demo.\n"

@@ -33,16 +33,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15949",
       "author": "Anastasia Cheetham",
       "date": "2008-11-13T14:30:35.000-0500",
       "body": "I've started a wiki page for this:\\\n<http://wiki.fluidproject.org/display/fluid/DOM+Binder>\n"
     },
     {
+      "id": "15951",
       "author": "Anastasia Cheetham",
       "date": "2009-01-05T12:06:19.000-0500",
       "body": "This documentation has been started, at\\\n<http://wiki.fluidproject.org/display/fluid/DOM+Binder>\\\nbut more work is still needed.\n"
     },
     {
+      "id": "15953",
       "author": "Anastasia Cheetham",
       "date": "2009-06-01T11:00:10.000-0400",
       "body": "Enough work has gone into this page that I think we can consider this JIRA resolved.\n"

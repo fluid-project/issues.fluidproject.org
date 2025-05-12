@@ -61,21 +61,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22047",
       "author": "Shaw-Han Liem",
       "date": "2008-01-31T15:38:06.000-0500",
       "body": "This is the behaviour we are deciding on for this case. The basic idea here is to show the drop affordance nearest to where the image will actually appear when dropped (even if this is different from where the mouse cursor is).\n\n1\\. Dragging on the first item in a row (Left half of thumbnail): \\\nWe should show the drop affordance directly to the left of the item.\n\n2\\. Dragging on the last item in a row (Right half of thumbnail):\\\nWe should show the drop affordance to the left of the first item in the NEXT row.\n"
     },
     {
+      "id": "22052",
       "author": "Anastasia Cheetham",
       "date": "2008-02-15T10:06:01.000-0500",
       "body": "Actually, the two points described in the previous comment do hold if the item being dragged was not pulled from ahead of the drop target, but the points do not hold if dragged item was pulled from after the drop target location.\n\nConsider the simple case of two rows (for ease of discussion):\n\nIf the dragged item was pulled from the first row, then if it is dropped at the end of the first row or the start of the second row, it will wind up at the end of of the first row.\n\nIf the dragged item was pulled from the second row, then if it is dropped at the end of the first row of the start of the second row, it will wind up at the start of the second row.\n\nThus IF we want to give an indication of where the image will appear after it is dropped, we would need to take into account where it was pulled from in addition to other considerations.\n"
     },
     {
+      "id": "22058",
       "author": "Antranig Basman",
       "date": "2008-08-15T16:42:11.000-0400",
       "body": "Unfortunately, even with the current work on <https://fluidproject.atlassian.net/browse/FLUID-1148#icft=FLUID-1148>, this issue is still not resolved - it is more problematic than it appears, and some of the analysis above isn't quite right.\n\nThe issue arises because we are using \"natural DOM flowing\" for layout. Therefore elements (and indeed also the drop marker!) will naturally tend to appear \"just where there is room for them\". So the current behaviour is actually consistent, and undesirable - there is \"almost always\" room for a drop marker at the end of a row, but there is \"never\" room for a whole cell (since otherwise it would have appeared there). Therefore the drop marker always appears at the end of the \"first row\" (in Anastasia's walkthrough), but the actual item always appears at the start of the second row.\n\nIt's hard to see on the face of it how we could resolve this, except by some rather odd requirements on the way we create drop markers (or the way we conceive of cells). One way to do this would be to create the drop marker **inside** the cell which starts the 2nd row - however, this represents a form of \"DOM fascism\" and may well in some cases create invalid markup (imagine the case where a cell is a \\<tr>).&#x20;\n\nWell, actually, the above issue highlights some further problems - we could never actually have a drop marker within a table that was not itself a \\<tr> element. Therefore it seems the only way out of this is to add a parameterisation for the drop marker placement \"strategy\" as well as its creation.\n"
     },
     {
+      "id": "22066",
       "author": "Justin Obara",
       "date": "2008-10-31T10:09:05.000-0400",
       "body": "design-watched\n"

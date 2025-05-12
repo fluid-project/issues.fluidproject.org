@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27406",
       "author": "Blake E",
       "date": "2008-10-20T10:50:55.000-0400",
       "body": "vulab4\n"
     },
     {
+      "id": "27407",
       "author": "Blake E",
       "date": "2008-10-20T10:54:34.000-0400",
       "body": "I've created the class object file /admin/includes/lib/vulab.sessions.php\\\nwill help in the management of sessions and thus data retention.\n"
     },
     {
+      "id": "27408",
       "author": "Blake E",
       "date": "2008-10-27T11:41:27.000-0400",
       "body": "included with \"include\\_all.php\".\\\nSession file will populate with more options as integration begins.\n"

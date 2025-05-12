@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21868",
       "author": "Colin Clark",
       "date": "2008-02-22T14:37:21.000-0500",
       "body": "Reworked the plugin's focus management so that focus and blur control the selection/unselection process.\n"
     },
     {
+      "id": "21869",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:50.912-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

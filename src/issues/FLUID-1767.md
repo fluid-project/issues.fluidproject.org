@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21914",
       "author": "Antranig Basman",
       "date": "2008-11-07T13:10:34.000-0500",
       "body": "Fixed at revision 5977. There is a new \"submitOnEnter\" property, which if unassigned (the default) will infer from the tag type of the edit view, whether the enter key should be interpreted as a submission or left to propagate as default. If the property is set, it allows the interpretation of Enter to be forced.\n"
     },
     {
+      "id": "21915",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:58.450-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

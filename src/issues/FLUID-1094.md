@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13766",
       "author": "Antranig Basman",
       "date": "2008-08-08T14:14:40.000-0400",
       "body": "Considerable performance improvements as of revision 5338 - disabled \"refreshPositions\" and took a lot of DOM traversing code out of the mouse move loop. We are now using only roughly as much CPU per tick as the framework DnD code, as seen by the profiler - it feels very much snappier.\n"
     },
     {
+      "id": "13770",
       "author": "Justin Obara",
       "date": "2008-08-11T08:39:05.000-0400",
       "body": "Verified fix using FF2 (Mac OS 10.5, Win XP)\n"

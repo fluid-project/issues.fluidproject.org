@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16334",
       "author": "Anastasia Cheetham",
       "date": "2007-08-08T10:38:34.000-0400",
       "body": "Our system admin is adding the SVN plug-in to our JIRA application. Once this is done, the linking work. We should go ahead and add the JIRA key to our SVN commit messages in readiness.\n"
     },
     {
+      "id": "16336",
       "author": "Anastasia Cheetham",
       "date": "2007-08-10T11:12:55.000-0400",
       "body": "This is now set up. Please record JIRA keys (e.g. \"FLUID-13\") in the SVN commit logs for any related commits.\n"

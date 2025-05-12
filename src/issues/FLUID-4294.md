@@ -28,21 +28,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13522",
       "author": "heidi valles",
       "date": "2011-06-17T13:33:17.191-0400",
       "body": "for checkbox, setting height: 1.5em and width: 1.5em should be good\n"
     },
     {
+      "id": "13529",
       "author": "Cindy Li",
       "date": "2011-06-17T16:20:13.507-0400",
       "body": "At page refresh, the UI Options settings \"emphasize links\" and \"make input larger\" are applies to the whole page except UI Options interface itself. This is because fluid.uiOptions is instantiated and renders its interface after the instantiation of fluid.uiEnhancer. At the time that these 2 settings look for \\<a> or \\<input> tags inside \\<body>, the ones inside UI Options itself are not rendered yet. Other settings are applied successfully because those css classes are applied to uiEnhancer container, which is \\<body>.\n"
     },
     {
+      "id": "13532",
       "author": "Justin Obara",
       "date": "2011-07-28T09:51:51.967-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "13535",
       "author": "Justin Obara",
       "date": "2011-07-28T09:52:34.547-0400",
       "body": "When talking to James the other day about UIO, he was suggesting the the checkboxes should be quadruple the original size.\n"

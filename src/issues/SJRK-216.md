@@ -32,6 +32,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26495",
       "author": "Cindy Li",
       "date": "2019-02-19T14:33:00.226-0500",
       "body": "[The server side pull request](https://github.com/fluid-project/sjrk-story-telling-server/pull/14) has been merged into the project repo at [this commit](https://github.com/fluid-project/sjrk-story-telling-server/commit/c0543b572b7c1ddbc8953abd90556dcbb880f4d0).\n\n[The client side pull request](https://github.com/fluid-project/sjrk-story-telling/pull/16) has been merged into the project repo at [this commit](https://github.com/cindyli/sjrk-story-telling/commit/0a595a6bc6b44dd86a391858eee109bb0d277d6f).\n\nHowever, some code review comments on the client side pull request haven't been addressed. <https://fluidproject.atlassian.net/browse/SJRK-228#icft=SJRK-228> has been created for these comments addressed when Gregor Moss comes back from vacation.\n"

@@ -36,6 +36,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10187",
       "author": "Boyan Sheytanov",
       "date": "2010-03-15T09:51:37.000-0400",
       "body": "Design discussion is needed for determining what we will need.\n"

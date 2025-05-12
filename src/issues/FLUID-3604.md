@@ -40,21 +40,25 @@
   ],
   "comments": [
     {
+      "id": "21472",
       "author": "Colin Clark",
       "date": "2010-04-05T19:08:03.000-0400",
       "body": "Here is a patch that includes the following features:\n\n1\\. Added support for CKEditor 3.x (fluid.inlineEditor.CKEditor)\\\n2\\. Tidy up and refactoring of the InlineEditIntegrations.js file\\\n3\\. Linting and tabs to spaces (huge apologies for doing this in the same patch)\\\n4\\. Updated the Rich Text Inline Edit demo to use CKEditor instead of FCK\\\n5\\. Linked to CKEditor from a CDN so we can remove all of the old FCK\\\n6\\. Tidied up the Rich Text Inline Edit demo HTML and code\n"
     },
     {
+      "id": "21474",
       "author": "Antranig Basman",
       "date": "2010-04-06T08:11:04.000-0400",
       "body": "This patch includes all the changes of the previous \"b\" patch, as well as\\\ni) removed duplicate definition of editModeRenderer\\\nii) Special \"hacked\" HTML comparator to deal with the oddity where CKEditor inserts whitespace after the initial opening tag. This can not be dealt with in a general way since it would ignore whitespace that might be significant elsewhere in the document.\n"
     },
     {
+      "id": "21477",
       "author": "Colin Clark",
       "date": "2010-04-06T09:45:36.000-0400",
       "body": "I committed support for CKEditor 3 at r9802.\n"
     },
     {
+      "id": "21479",
       "author": "Justin Obara",
       "date": "2010-04-06T10:14:36.000-0400",
       "body": "Did a quick test and it looks like it is working fine.\n"

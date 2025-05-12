@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10245",
       "author": "Jonathan Hung",
       "date": "2010-04-12T13:03:01.000-0400",
       "body": "Purchased.\n"

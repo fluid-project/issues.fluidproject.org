@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14846",
       "author": "Justin Obara",
       "date": "2013-11-13T10:07:42.552-0500",
       "body": "A new merge policy should be used to merge the arrays for selectorsToIgnore.\n\nfluid.prefs.compositePanel.arrayMergePolicy = function (target, source) {\\\ntarget = fluid.makeArray(target);\\\nsource = fluid.makeArray(source);\\\nfluid.each(source, function (selector) {\\\nif ($.inArray(selector, target) < 0) {\\\ntarget.push(selector);\\\n}\\\n});\\\nreturn target;\\\n};\n"
     },
     {
+      "id": "14852",
       "author": "Justin Obara",
       "date": "2013-11-13T10:46:42.717-0500",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/434> ) into the project repo at f2b1a416d81c2be1afde8b348cb60bac5257314f\n"

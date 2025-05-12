@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20048",
       "author": "Eli Cochran",
       "date": "2008-07-25T14:11:16.000-0400",
       "body": "by making the queue not the uploader the selectable element we ensure that the rows only focus when the parent queue is part of the focus chain\n"
     },
     {
+      "id": "20050",
       "author": "Justin Obara",
       "date": "2008-07-28T09:13:20.000-0400",
       "body": "Verified Fix using:\n\nFF2, FF3, Opera 9.5 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7, Opera 9.5 (Win XP)\n"

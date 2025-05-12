@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23082",
       "author": "Aaron Brown",
       "date": "2009-03-26T16:44:44.000-0400",
       "body": "Correction:  This may not in fact be a real issue.  I have found that by declaring the flashURL option in a different way, the Browse button loads as it should.  It appears to me that this is actually a bug :question: in the sample code provided in the wiki tutorial, not in the javascript.  My apologies.\n\nSolution:\\\nWiki tutorial says:\\\nvar myUpload = new fluid.progressiveEnhanceableUploader(\".fl-uploader\", \".fl-progressive-enhanceable\", {\\\nuploadManager: {\\\n// Set the uploadURL to the URL for posting files to your server.\\\nuploadURL: \"<http://myserver.com/uploadFiles>\",\n\n// This option points to the location of the SWFUpload Flash object that ships with Fluid Infusion.\\\nflashURL: \"fluid-1.0/fluid-components/swfupload/swfupload.swf\"\\\n},\\\n// ... \\[snip] ...\n\nAs written, the uploadManager options are ignored. When uploadURL and flashURL are enclosed in an \"options\" hash, all works as intended.\n\nQuick fix that should probably be cleaned up:\\\nvar myUpload = new fluid.progressiveEnhanceableUploader(\".fl-uploader\", \".fl-progressive-enhanceable\", {\\\nuploadManager: {\\\noptions: {\\\n// Set the uploadURL to the URL for posting files to your server.\\\nuploadURL: \"<http://myserver.com/uploadFiles>\",\n\n// This option points to the location of the SWFUpload Flash object that ships with Fluid Infusion.\\\nflashURL: \"fluid-1.0/fluid-components/swfupload/swfupload.swf\"\\\n}\\\n},\\\n// ... \\[snip] ...\n"
     },
     {
+      "id": "23085",
       "author": "Justin Obara",
       "date": "2009-05-05T13:30:45.000-0400",
       "body": "The tutorial appears to have been updated\n"

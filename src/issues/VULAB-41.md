@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27397",
       "author": "Blake E",
       "date": "2008-10-03T11:38:46.000-0400",
       "body": "vulab3\n"
     },
     {
+      "id": "27398",
       "author": "Blake E",
       "date": "2008-10-07T12:40:57.000-0400",
       "body": "I imagine that the core systems will fall into some major objects:\n\n* Survey Plug-in Services\n* \\- organized in /services/ folder for cleanliness (next to godliness)\n* \\- to interact with the survey data layer\n* \\- the /services/ folder should include all api files to integrate within the system (for future reference)\n\n- Project Object Layer\n- \\- create/manage/all project data.\n\n* Survey Data Layer\n* \\- save urls for survey tool\n* \\- pull unique id from survey to tie to project\n* \\- Results\n* \\- - system?\n* \\- - plug-in survey tool results system?\n\n- Core System Layer\n- \\- Workflow control (outside of the survey tool)\n- \\- Sessions management\n- \\- All major functions not outlined\n"
     },
     {
+      "id": "27399",
       "author": "Blake E",
       "date": "2008-10-07T12:43:19.000-0400",
       "body": "note: I've named \"the api\" to \"services\"\n"
     },
     {
+      "id": "27400",
       "author": "Blake E",
       "date": "2008-10-20T10:41:36.000-0400",
       "body": "research complete. Writing document for wiki/list.\n"

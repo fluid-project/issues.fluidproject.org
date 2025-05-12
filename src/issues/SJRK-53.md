@@ -48,6 +48,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26423",
       "author": "Gregor Moss",
       "date": "2018-03-27T16:50:53.813-0400",
       "body": "This has been achieved. Stories have a \"content\" key which contains the model data of each block from the editor, and this is then used by the viewer to reconstruct the block UI's\n"

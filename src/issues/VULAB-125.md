@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27286",
       "author": "Blake E",
       "date": "2008-12-11T16:26:43.000-0500",
       "body": "vulab10\n"
     },
     {
+      "id": "27287",
       "author": "Blake E",
       "date": "2008-12-11T19:59:11.000-0500",
       "body": "I published the first draft of what I see the database schema as:\n\n<http://wiki.fluidproject.org/display/fluid/VULab+Database+Schema+Planning>\n\nI'm going to post this out to the list in the morning 🙂 **sets reminder**\n"
     },
     {
+      "id": "27288",
       "author": "Blake E",
       "date": "2008-12-15T11:07:52.000-0500",
       "body": "With the help of Dave I got a decent database map created.\n\n🙂\n\n<http://wiki.fluidproject.org/display/fluid/VULab+Database+Schema+Planning>\n"

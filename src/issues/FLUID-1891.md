@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17617",
       "author": "Daphne Ogle",
       "date": "2008-12-08T21:29:16.000-0500",
       "body": "We made visual improvements to the progress bar to make it pop rather than adding another message.\n"

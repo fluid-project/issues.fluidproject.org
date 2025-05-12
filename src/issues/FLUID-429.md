@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18713",
       "author": "Colin Clark",
       "date": "2008-04-04T12:14:03.000-0400",
       "body": "Fixed by switching from clone(true) to clone() in addListElement().\n"
     },
     {
+      "id": "18715",
       "author": "Michelle D'Souza",
       "date": "2011-01-19T08:23:50.648-0500",
       "body": "Reopening these issues in order to add the workshopcomponent to them\n"

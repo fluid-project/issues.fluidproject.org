@@ -37,16 +37,19 @@
   ],
   "comments": [
     {
+      "id": "24892",
       "author": "James Yoon",
       "date": "2010-12-21T13:28:55.438-0500",
       "body": "Capture.PNG : files being uploaded\\\nCapture 2.PNG: add information screen, which doesn't show any of the files that were uploaded\n"
     },
     {
+      "id": "24893",
       "author": "Mike Lam",
       "date": "2011-01-06T11:03:24.576-0500",
       "body": "May be directly related to <https://fluidproject.atlassian.net/browse/FLUID-4007#icft=FLUID-4007>\n"
     },
     {
+      "id": "24895",
       "author": "Justin Obara",
       "date": "2015-06-09T10:09:42.618-0400",
       "body": "This demo no longer exists\n"

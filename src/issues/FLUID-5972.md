@@ -24,16 +24,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24191",
       "author": "Antranig Basman",
       "date": "2016-10-04T10:53:17.750-0400",
       "body": "The use case is fine, but the implementation strategy is inappropriate - we can't support a fresh re-entry into the top of fluid.model.transformWithRules because there is a whole ecology of other use cases which the transformation system needs to support, including:\\\ni) The \"collectInputPaths\" strategy for the entire system\\\nii) Support for inverting transforms\\\niii) Integration with the modelRelay infrastructure\\\netc.\n\nThis should be rewritten to use the standard \"expand\" or \"getValue\" primitives that the transformer exposes internally which you can see in transforms which process multiple values such as \\\n<https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/ModelTransformationTransforms.js#L123>\\\nand\\\n<https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/ModelTransformationTransforms.js#L239>\\\nand\\\n<https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/ModelTransformationTransforms.js#L285>\n"
     },
     {
+      "id": "24193",
       "author": "Tony Atkins [RtF]",
       "date": "2016-10-05T08:47:27.642-0400",
       "body": "Kasper Galschiot Markus, Antranig Basman, would either of you care to comment on what `transformer` is likely to be on this line:\n\n<https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/ModelTransformationTransforms.js#L116>\n\nI would like to:\n\n1. Add JSDocs throughout the file if possible.\n2. Understand the implications of this variable for my own work on the array handler.\n"
     },
     {
+      "id": "24195",
       "author": "Antranig Basman",
       "date": "2016-10-05T08:53:54.392-0400",
       "body": "Note that there is a huge amount of work documenting the transforms in this pull: <https://github.com/fluid-project/infusion-docs/pull/86> - this is probably mostly back in my court but has been tough to review because of the absolutely giant diff.\n\n`transformer` on line 116 is the \"core transformer engine\" which is created here: <https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/ModelTransformation.js#L612>\n"

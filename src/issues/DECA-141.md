@@ -31,16 +31,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10301",
       "author": "Justin Obara",
       "date": "2010-07-14T15:05:40.869-0400",
       "body": "Bug Parade Decapod 0.4&#x20;\n"
     },
     {
+      "id": "10302",
       "author": "James Yoon",
       "date": "2010-07-14T15:09:07.390-0400",
       "body": "Fixed here: <http://bitbucket.org/jameswy/decapod-ui/changeset/85d66f5a7b56>\n"
     },
     {
+      "id": "10303",
       "author": "Justin Obara",
       "date": "2010-07-15T09:54:45.603-0400",
       "body": "Reviewed james' changes and pushed to the master.&#x20;\n"

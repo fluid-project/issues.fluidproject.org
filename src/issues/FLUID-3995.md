@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24882",
       "author": "Colin Clark",
       "date": "2011-01-17T11:10:46.646-0500",
       "body": "Stray comma removed at r10460.\n"
     },
     {
+      "id": "24883",
       "author": "Colin Clark",
       "date": "2011-01-17T11:11:00.054-0500",
       "body": "Fixed for Infusion 1.3.1\n"

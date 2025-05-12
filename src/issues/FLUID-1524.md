@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18913",
       "author": "Allison Bloodworth",
       "date": "2008-11-12T14:32:48.000-0500",
       "body": "iteration23\n"
     },
     {
+      "id": "18917",
       "author": "Allison Bloodworth",
       "date": "2008-12-19T17:55:27.000-0500",
       "body": "Initial iteration of storycards completed and sent out for feedback.\n"

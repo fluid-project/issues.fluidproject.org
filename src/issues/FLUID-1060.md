@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19963",
       "author": "Jacob Farber",
       "date": "2008-08-15T14:25:42.000-0400",
       "body": "I made a patch for ticket <https://fluidproject.atlassian.net/browse/FLUID-1061#icft=FLUID-1061> that takes care of this as well\n"
     },
     {
+      "id": "19965",
       "author": "Justin Obara",
       "date": "2008-08-18T09:38:13.000-0400",
       "body": "Verified fix using:\n\nIE6 (Win XP)\n"

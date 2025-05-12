@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16420",
       "author": "Shaw-Han Liem",
       "date": "2008-02-04T11:25:11.000-0500",
       "body": "iteration01\n"
     },
     {
+      "id": "16424",
       "author": "Shaw-Han Liem",
       "date": "2008-02-06T13:50:10.000-0500",
       "body": "iteration02\n"

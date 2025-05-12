@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25160",
       "author": "Anastasia Cheetham",
       "date": "2013-11-21T15:57:53.606-0500",
       "body": "Of course, if the integrator is designing their own templates, they're probably going to have their own styles, in which case they'll have to copy the SeparatedPanelPrefsEditorFrame.html in order to add the link to the css file.\n"
     },
     {
+      "id": "27822",
       "author": "Justin Obara",
       "date": "2024-07-22T14:52:41.127-0400",
       "body": "The iframe was removed with FLUID-6749\n"

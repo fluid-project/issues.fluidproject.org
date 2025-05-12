@@ -37,26 +37,31 @@
   ],
   "comments": [
     {
+      "id": "24834",
       "author": "Justin Obara",
       "date": "2010-11-22T13:54:24.162-0500",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "24835",
       "author": "Harris Wong",
       "date": "2010-11-25T13:10:17.114-0500",
       "body": "In Fluid.js, when mergeImpl is called by fluid.merge() line: 580, the \"thisPolicy\" parameter in mergeImpl() line 519 will be set to undefined.  Then, when source\\['orientation'] get called in line 528, it will jump into the last condition at line 548 and passes.  Namely, !fluid.mergePolicyIs(thisPolicy, \"reverse\") will pass because thisPolicy was set to \"undefined\".  This causes the conditional statement to return true, and overwrite the orientation to 1 (which means vertical).  &#x20;\n\nI suspect the condition at line 548 should use \"newPolicy\" instead of \"thisPolicy\", since the variable \"newPolicy\" morphs itself depending on the \"thisPolicy\" type.  I have created a patch to address this, please review. &#x20;\n"
     },
     {
+      "id": "24836",
       "author": "Harris Wong",
       "date": "2010-11-25T16:34:21.138-0500",
       "body": "Test case \"reverse merge: object with multiple keys\" added for FluidJSTests.js.  This test case covers multiple keys within the target and source parameters for fluid.merge().  This testcase also test against the changes from the previous patch, <https://fluidproject.atlassian.net/browse/FLUID-3862#icft=FLUID-3862>.patch.txt.\n"
     },
     {
+      "id": "24837",
       "author": "Antranig Basman",
       "date": "2010-12-10T15:58:23.615-0500",
       "body": "Thanks for this patch, Mike - reviewed and committed at revision 10385. Note that we will be deprecating the \"reverse\" merge policy in this release in favour of (yet to be implemented) facilities in the IoC system that will be provided in 1.4\n"
     },
     {
+      "id": "24838",
       "author": "Anastasia Cheetham",
       "date": "2010-12-13T14:56:49.892-0500",
       "body": "I've verified that this fix is committed to the codebase, despite the fact that JIRA seems to have missed the commit.\n"

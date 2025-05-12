@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12078",
       "author": "Colin Clark",
       "date": "2010-03-01T16:56:27.000-0500",
       "body": "I fixed this midway through our push for Engage 0.3b1\n"
     },
     {
+      "id": "12079",
       "author": "Colin Clark",
       "date": "2010-03-01T16:56:40.000-0500",
       "body": "Fixed during Engage 0.3b1 bug parade\n"

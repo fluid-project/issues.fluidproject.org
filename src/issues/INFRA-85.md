@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25805",
       "author": "Giovanni Tirloni",
       "date": "2017-09-03T14:11:30.880-0400",
       "body": "IDI assets are using Let's Encrypt with DNS validation.\n\n<https://github.com/idi-ops/ansible-letsencrypt-route53>\\\n<https://github.com/inclusive-design/ops/blob/master/ansible/host_vars/i-0040.tor1.inclusivedesign.ca>\n"

@@ -31,16 +31,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11251",
       "author": "Justin Obara",
       "date": "2014-01-14T09:41:49.008-0500",
       "body": "Here's a good description of how this should be marked up.\\\n<http://webaim.org/techniques/forms/controls#radio>\n"
     },
     {
+      "id": "11252",
       "author": "Justin Obara",
       "date": "2014-01-14T11:04:40.796-0500",
       "body": "Submitted a pull request <https://github.com/fluid-project/metadata/pull/18>\\\nNote that this doesn't change the behaviour found in <https://fluidproject.atlassian.net/browse/FLOE-142#icft=FLOE-142>\n"
     },
     {
+      "id": "11253",
       "author": "Cindy Li",
       "date": "2014-01-20T11:46:32.718-0500",
       "body": "Merged into the project repo @ a4c3121c46905a616d1905fc2a2a2fb604eb58c8\n"

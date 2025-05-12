@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17126",
       "author": "Justin Obara",
       "date": "2008-09-25T10:38:38.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "17127",
       "author": "Michelle D'Souza",
       "date": "2008-09-25T14:08:36.000-0400",
       "body": "Rename is complete and code is reviewed.&#x20;\n"
     },
     {
+      "id": "17128",
       "author": "Justin Obara",
       "date": "2008-09-25T14:51:52.000-0400",
       "body": "Layout Reorderer appears to be working fine after the name changes\n"

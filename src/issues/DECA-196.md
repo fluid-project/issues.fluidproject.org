@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10391",
       "author": "Justin Obara",
       "date": "2012-05-25T13:55:18.233-0400",
       "body": "Decapod 0.5\\\n\\==========\n\ngenpdf:\\\n\\[1] python-reportlab\\\n\\[2] fontforge\\\n\\[3] fontforge-extras\\\n\\[4] python-fontforge\\\n\\[5] autotrace\\\n\\[6] potrace\\\n\\[7] python-matplotlib\\\n\\[8] python-scipy\\\n\\[9] python-scipy-dbg\n"
     },
     {
+      "id": "10392",
       "author": "Justin Obara",
       "date": "2012-06-01T10:11:03.266-0400",
       "body": "The list of dependencies is now being tracked and updated on the the wiki.\\\n<http://wiki.fluidproject.org/display/fluid/Decapod+Dependencies>\n"

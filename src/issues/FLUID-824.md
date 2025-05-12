@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23007",
       "author": "Colin Clark",
       "date": "2008-06-27T17:29:39.000-0400",
       "body": "Replaced Tabs constructor with a \"that-ist\" creator function. Removed the use of prototypes, favouring simple property assignment and the new fluid.defaults() api.\n"

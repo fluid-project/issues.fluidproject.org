@@ -34,16 +34,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18241",
       "author": "Michelle D'Souza",
       "date": "2009-12-16T12:31:44.000-0500",
       "body": "The refactoring in <https://fluidproject.atlassian.net/browse/FLUID-3407#icft=FLUID-3407> caused this bug\n"
     },
     {
+      "id": "18243",
       "author": "Michelle D'Souza",
       "date": "2010-01-06T14:59:58.000-0500",
       "body": "I'm unable to recreate this issue.\n"
     },
     {
+      "id": "18245",
       "author": "y z",
       "date": "2010-01-06T16:27:06.000-0500",
       "body": "After testing the build script with the latest version of fluid-all confirmed that the files are now correct for both minified and unminified options.\n"

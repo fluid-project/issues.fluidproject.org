@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17378",
       "author": "Eli Cochran",
       "date": "2009-03-24T19:41:47.000-0400",
       "body": "I changed this while I was working on one of the other bugs in this cycle but I forgot to note it.&#x20;\n"
     },
     {
+      "id": "17379",
       "author": "Justin Obara",
       "date": "2009-03-25T09:13:52.000-0400",
       "body": "Verified fix using:\n\nFF3 (Mac OS 10.5)\n"

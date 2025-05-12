@@ -41,16 +41,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20260",
       "author": "Justin Obara",
       "date": "2014-11-20T14:03:46.743-0500",
       "body": "Submitted pull requests:\n\n1.5.x: <https://github.com/fluid-project/infusion/pull/574>\n\n2.0: <https://github.com/fluid-project/infusion/pull/573>\n"
     },
     {
+      "id": "20261",
       "author": "Cindy Li",
       "date": "2014-11-24T10:25:06.422-0500",
       "body": "The pull request for 1.5.x (<https://github.com/fluid-project/infusion/pull/574>) has been merged into the infusion-1.5.x branch @ faf39f0c388636a3c7bfbbb2db7727c5d1bd0fbc\n\nThe pull request for 2.0 (<https://github.com/fluid-project/infusion/pull/573>) has been merged into the master branch @ df5f8cfabf815a4086b778e73125c3c952dda4ec\n"
     },
     {
+      "id": "20262",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:16.634-0400",
       "body": "Reopening to change the fix version to 1.9\n"

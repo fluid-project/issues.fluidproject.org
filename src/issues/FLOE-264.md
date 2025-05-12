@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11461",
       "author": "Justin Obara",
       "date": "2015-05-28T15:15:44.608-0400",
       "body": "Anastasia Cheetham could you add a screen shot for this. You can take a screen shot of the iPad screen by pressing the home and sleep button at the same time.\n"
     },
     {
+      "id": "11462",
       "author": "Jonathan Hung",
       "date": "2015-06-01T10:13:59.916-0400",
       "body": "I tested on an iPad and the buttons look fine. \\\n+1 on screen capture.\n"

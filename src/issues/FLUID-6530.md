@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "25094",
       "author": "Justin Obara",
       "date": "2020-07-20T07:45:59.614-0400",
       "body": "I think the issue is actually related to what is described in the \"Expected\" section of the description above. That is, the font family is inherited. The selection reader play button is appended to the selection's offset parent or the selection's start container's parent node. This means that it is inheriting the font family from those containers. (See: <https://github.com/fluid-project/infusion/blob/8d59c6ce77ed83a0c8c8c70f1195636cfcc02797/src/components/orator/js/Orator.js#L1146-L1158> )\n\nWe should investigate appending to the body element instead. We'll need to determine if this affects the positioning of the play button. Also this change may address <https://fluidproject.atlassian.net/browse/FLUID-6523#icft=FLUID-6523>. Another option would be to use a tooltip library like [tippy](https://atomiks.github.io/tippyjs/) and others. \n"
     },
     {
+      "id": "25095",
       "author": "Justin Obara",
       "date": "2020-07-20T09:50:50.828-0400",
       "body": "Appending the play button to the body results in the positioning of the button being incorrect. Likely due to <https://fluidproject.atlassian.net/browse/FLUID-6394#icft=FLUID-6394>\n"

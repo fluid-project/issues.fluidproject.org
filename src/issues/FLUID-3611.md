@@ -36,6 +36,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20680",
       "author": "Jonathan Hung",
       "date": "2011-01-10T14:31:25.643-0500",
       "body": "Tested in Win7, occurs in both IE8 and FF3.6.\n"

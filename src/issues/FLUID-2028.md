@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17393",
       "author": "Eli Cochran",
       "date": "2009-03-24T19:46:52.000-0400",
       "body": "I could not reproduce this bug. Although we didn't do anything specific to fix it, I'm wondering if we inadvertently managed to fix it.&#x20;\n"
     },
     {
+      "id": "17394",
       "author": "Justin Obara",
       "date": "2009-06-04T09:22:21.000-0400",
       "body": "Appears to have been fixed, possibly  with the upgrade to the final version of swfupload 2.20\n\nTested using:\n\nFF2, FF3, IE6, IE7 (Win XP)\\\nFF3, IE7 (Win Vista)&#x20;\n"

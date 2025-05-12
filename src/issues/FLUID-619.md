@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18320",
       "author": "Allison Bloodworth",
       "date": "2008-07-16T21:14:00.000-0400",
       "body": "iteration30\n"
     },
     {
+      "id": "18323",
       "author": "Jonathan Hung",
       "date": "2009-03-20T11:32:45.000-0400",
       "body": "Comparing the Drupal 5.15 factory package to the OSDPL Drupal 5.15 installation, all modifications are isolated to the ./files directory and the ./sites/default directory.\n\nSVN should version control these two directories at minimum.\n"
     },
     {
+      "id": "18326",
       "author": "Jonathan Hung",
       "date": "2011-01-20T12:55:19.229-0500",
       "body": "Using SVN to version our installation of Drupal is not ideal. The inclusion of a Drupal installation, binaries, and the issue of version controlling a database need to be addressed.\n"

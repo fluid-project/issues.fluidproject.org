@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25111",
       "author": "Justin Obara",
       "date": "2021-07-07T11:06:51.526-0400",
       "body": "On macOS you can use command-control-arrow keys in place of control-arrow keys.\n"
     },
     {
+      "id": "25112",
       "author": "Justin Obara",
       "date": "2021-07-12T14:27:47.220-0400",
       "body": "With VoiceOver enabled. Selecting with the arrow keys doesn't work properly as the arrow keys are also used for screen reader navigation.\n"

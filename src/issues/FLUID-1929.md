@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17716",
       "author": "Jacob Farber",
       "date": "2008-12-05T13:37:30.000-0500",
       "body": "Close button is now in upper right hand corner\n"
     },
     {
+      "id": "17718",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:50.599-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

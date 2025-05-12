@@ -34,16 +34,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13088",
       "author": "Colin Clark",
       "date": "2008-07-31T16:58:58.000-0400",
       "body": "infusion-05-wishlist\n"
     },
     {
+      "id": "13090",
       "author": "Justin Obara",
       "date": "2010-05-07T09:38:08.453-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "13092",
       "author": "Anastasia Cheetham",
       "date": "2011-01-20T16:38:06.430-0500",
       "body": "The keyboard accessibility plugin provides the ability to specify additional key bindings for activation of items, but even for components that use the plugin, access to this option is not surfaced up to the component's options.\n"

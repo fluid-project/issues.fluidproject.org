@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10436",
       "author": "Jonathan Hung",
       "date": "2010-04-20T10:25:28.000-0400",
       "body": "May be fixed by using scaled version of images. (<https://fluidproject.atlassian.net/browse/DECA-81#icft=DECA-81>)\n"
     },
     {
+      "id": "10437",
       "author": "Justin Obara",
       "date": "2012-05-25T13:33:13.074-0400",
       "body": "The preview has been removed.\n"

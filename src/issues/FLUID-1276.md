@@ -37,11 +37,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14370",
       "author": "Michael Elledge",
       "date": "2008-09-03T14:31:22.000-0400",
       "body": "I will volunteer for this.\n"
     },
     {
+      "id": "14372",
       "author": "Jonathan Hung",
       "date": "2011-01-06T12:36:24.097-0500",
       "body": "Closing - orphaned work.\n"

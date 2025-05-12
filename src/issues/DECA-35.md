@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10453",
       "author": "Jonathan Hung",
       "date": "2010-06-10T16:36:28.224-0400",
       "body": "This may not be an issue any more with the new implementation of calibration for Left-Right capture. Confirm fixed and close for 0.4/0.5\n"
     },
     {
+      "id": "10454",
       "author": "Jonathan Hung",
       "date": "2010-06-16T13:45:52.993-0400",
       "body": "Replaced by new designs.\n"

@@ -44,16 +44,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25113",
       "author": "Antranig Basman",
       "date": "2014-07-23T17:02:23.794-0400",
       "body": "New suggested name - \"principal inverse\" system\n"
     },
     {
+      "id": "25114",
       "author": "Kasper Galschiot Markus",
       "date": "2016-05-10T10:12:20.691-0400",
       "body": "Some random notes from <https://pad.gpii.net/p/model-transformation-questions-apr-2016-7a72owa>\n\n* Fallback values for standardTransformFunction (ie. \"input\") are not invertable. If both input and inputPath are provided, we have no way of knowing from what the output value was calculated. On the other hand, if both (the original) input/inputPath are provided, one could argue that the following would hold:       &#x20;\n  * IF we can do the inverse transform with some confidence and get a sensible value out of it, write that to the original inputPath.\n  * ELSE use the value from \\`input\\` and print that out to \\`inputPath\\`. This would mean though, that we risk having a value at \\`inputPath\\` where we didn't have a value before.\n  * This looks like it is not unrelated to <https://fluidproject.atlassian.net/browse/FLUID-5337#icft=FLUID-5337>\n\n- For full inversion: So what is \"x\" in this case, is it *only* the values (inputPaths) relevant to the transform we're talking about, or is it anything – because if the latter, we will only be able to satisfy this condition if x *only* contains inputPaths used by A\n- In some cases we need to screw up the original model when inverting to be able to satisfy A(B(A:cross\\_mark:)) = A:cross\\_mark:, eg:\n  * linearScale:\n    * If it uses paths in the source model for scale and offset, we can invert, but it will be by setting the original input value path to a the result and not set scale and offset, which would be untrue to our original model\n      * Ignore this since we will abolish all use of paths before long\n  * count is the same case (but significantly more screwed up)&#x20;\n\n* Partly inversibility is great - but the question remains to what extent we allow polluting our input model... And what we consider \"acceptable pollution\" of it. (ie. addition of potentially non-existing key vs. not adding potentially existing keys, etc)\n"
     },
     {
+      "id": "25115",
       "author": "Antranig Basman",
       "date": "2018-10-25T21:04:10.656-0400",
       "body": "No idea why the github hook randomly decided to resolve this issue based on a 5 yr old pull request\n"

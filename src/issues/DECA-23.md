@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10098",
       "author": "Boyan Sheytanov",
       "date": "2010-03-09T06:09:39.000-0500",
       "body": "As the workflow for the first release changed significantly, this issue is now outdated.\n"

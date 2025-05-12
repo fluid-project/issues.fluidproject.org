@@ -30,6 +30,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26452",
       "author": "Gregor Moss",
       "date": "2020-01-24T13:31:54.938-0500",
       "body": "This would should not include what is in SJRK-256's scope. The aim is to remove this one extra value which, at time of writing, is essentially only used to determine whether to load custom theme files. The work in <https://fluidproject.atlassian.net/browse/SJRK-265#icft=SJRK-265>/<https://fluidproject.atlassian.net/browse/SJRK-230#icft=SJRK-230> will likely affect this.\n\nA quick solve could be to check for truthiness of clientConfig.theme rather than comparing it against a baseTheme value.\n"

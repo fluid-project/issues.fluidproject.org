@@ -36,31 +36,37 @@
   ],
   "comments": [
     {
+      "id": "24462",
       "author": "Anastasia Cheetham",
       "date": "2008-03-04T14:40:50.000-0500",
       "body": "Another issue:\\\nThe ariaRole() method is improperly adding the \"wairole:\" prefix in FF3 (should only do it for FF2)\n"
     },
     {
+      "id": "24463",
       "author": "Anastasia Cheetham",
       "date": "2008-03-04T14:58:25.000-0500",
       "body": "The ariaRole() function should not be altering the tabindices.\n"
     },
     {
+      "id": "24464",
       "author": "Colin Clark",
       "date": "2008-03-05T10:43:34.000-0500",
       "body": "Here's a simple refactoring of jARIA to fix the \"wairole:\" bug in FF3, get rid of the the tabindex manipulation, remove the old ARIA css microformat parsing, and general cleanup.\n\nI don't want to circulate this more widely because it is still untested and I wrote it while attending a workshop today. It's just an experiment at this point. Let me know how it works for you.\n"
     },
     {
+      "id": "24465",
       "author": "Michelle D'Souza",
       "date": "2008-04-28T14:19:46.000-0400",
       "body": "We should ensure that we are up to date with jARIA.&#x20;\n"
     },
     {
+      "id": "24466",
       "author": "Colin Clark",
       "date": "2008-05-15T22:45:28.000-0400",
       "body": "I've submitted the ariaRole() patch to Chris Hoffman and he's merged it into the latest version of jARIA. It is available at:\n\n<http://www.outstandingelephant.com/jquery/plugins/jARIA.js>\n"
     },
     {
+      "id": "24467",
       "author": "Michelle D'Souza",
       "date": "2009-04-03T22:22:38.000-0400",
       "body": "Now that we've switched to using the ARIA support that's built into jquery ui core we don't depend on jARIA.\n"

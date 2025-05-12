@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25078",
       "author": "Justin Obara",
       "date": "2022-05-12T14:22:54.977-0400",
       "body": "Added a test case <https://github.com/fluid-project/infusion/pull/1080>\n"
     },
     {
+      "id": "25079",
       "author": "Antranig Basman",
       "date": "2022-07-05T09:00:36.726-0400",
       "body": "From comment thread on pull #1080:\n\nFrom amb26:\n\nCheers [@jobara](https://github.com/jobara) - I reworked this test case in [#1081](https://github.com/fluid-project/infusion/pull/1081) which resolves the circular reference problem. As I remarked in the channel, the problem is caused by the \"misaligned\" material in the parent grade which can't avoid trying to resolve a reference into its model from its options as it constructs, which is not permitted in Infusion. If/when Infusion 6 is written, this class of problem will be removed by removing the distinction between \"models\" and \"general options\" but until then I'm not sure we can do much better about issuing a helpful diagnostic although I can try. Hopefully this reworking is good enough to let you make progress on your panelIndex issue\n\nFrom jobara:\n\n[@amb26](https://github.com/amb26) I was able to get past this issue in UIO+ by passing in a grade that contained the model configuration. Similar to what you described except I used the gradeNames directly.\n"
     },
     {
+      "id": "25080",
       "author": "Antranig Basman",
       "date": "2022-07-05T09:01:28.511-0400",
       "body": "Closed since we found an effective workaround and big improvements in this experience will need to wait for a framework rewrite\n"

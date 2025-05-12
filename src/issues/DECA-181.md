@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10128",
       "author": "Justin Obara",
       "date": "2012-05-25T13:49:05.351-0400",
       "body": "Image management has been remove from decapod 0.5\n"

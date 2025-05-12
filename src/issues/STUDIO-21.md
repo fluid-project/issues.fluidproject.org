@@ -30,16 +30,19 @@
   ],
   "comments": [
     {
+      "id": "12808",
       "author": "Anastasia Cheetham",
       "date": "2011-12-09T14:48:02.937-0500",
       "body": "This screenshot (uio-toc-button-alignment-problem.jpg) shows how the UIO ToC affects the layout of the page.\n"
     },
     {
+      "id": "12809",
       "author": "Anastasia Cheetham",
       "date": "2011-12-12T14:59:08.058-0500",
       "body": "I showed this to Joanna and asked for advice. She recommended that the table of contents be displayed in the main area, to the right of the sidebar, ahead of the content in that main section.\n"
     },
     {
+      "id": "12810",
       "author": "Michelle D'Souza",
       "date": "2011-12-12T15:37:33.988-0500",
       "body": "Merged into project repo at bc20f902b79ae077f6a2a50f2cbebe5ae7351f5e\n"

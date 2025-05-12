@@ -41,21 +41,25 @@
   ],
   "comments": [
     {
+      "id": "19855",
       "author": "Anastasia Cheetham",
       "date": "2008-07-10T20:23:34.000-0400",
       "body": "This has been implemented in the <https://fluidproject.atlassian.net/browse/FLUID-755#icft=FLUID-755> branch.\n"
     },
     {
+      "id": "19857",
       "author": "Anastasia Cheetham",
       "date": "2008-07-10T20:23:57.000-0400",
       "body": "Not in trunk yet...\n"
     },
     {
+      "id": "19859",
       "author": "Anastasia Cheetham",
       "date": "2008-07-10T20:25:04.000-0400",
       "body": "This patch makes the use of invitation text optional, and adds padding if there is no invitation text.\n"
     },
     {
+      "id": "19862",
       "author": "Anastasia Cheetham",
       "date": "2008-07-15T20:33:21.000-0400",
       "body": "Fixed, and merged from the branch back into trunk.\n"

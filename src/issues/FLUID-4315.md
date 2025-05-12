@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24521",
       "author": "Cindy Li",
       "date": "2011-06-28T15:31:10.202-0400",
       "body": "A pull request is sent: <https://github.com/fluid-project/build-scripts/pull/1>\n\nWaiting for code review.\n"
     },
     {
+      "id": "24522",
       "author": "Cindy Li",
       "date": "2011-06-28T15:31:45.289-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24523",
       "author": "Cindy Li",
       "date": "2011-09-27T10:18:37.241-0400",
       "body": "Colin merged into \"build-scripts\" project repo @ 86afb471067d58cdc16e6e4989e59b18adf57399\n"
     },
     {
+      "id": "24524",
       "author": "Cindy Li",
       "date": "2011-09-27T10:18:57.389-0400",
       "body": "Issue closed.\n"

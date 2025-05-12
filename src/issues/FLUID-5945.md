@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22302",
       "author": "Justin Obara",
       "date": "2016-12-08T16:06:00.435-0500",
       "body": "Builds of Infusion are included on the Infusion 2.0 release page on GitHub and a version is published to NPM.\n\nsee:&#x20;\n\n* <https://github.com/fluid-project/infusion/releases/tag/infusion-2.0>\n* <https://www.npmjs.com/package/infusion>\n"

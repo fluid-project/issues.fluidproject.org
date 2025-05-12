@@ -41,11 +41,13 @@
   ],
   "comments": [
     {
+      "id": "18811",
       "author": "Joseph Vernuccio",
       "date": "2008-09-18T14:49:01.000-0400",
       "body": "screenshot - 1, results of running unit test and example of grey shadow box highlighting.&#x20;\n"
     },
     {
+      "id": "18814",
       "author": "y z",
       "date": "2010-04-15T16:40:25.000-0400",
       "body": "Fixed since we are now using new CSS for qUnit\n"

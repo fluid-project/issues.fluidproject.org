@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26037",
       "author": "Giovanni Tirloni",
       "date": "2018-03-23T08:42:35.997-0400",
       "body": "This should probably wait until the GSoC project is done and we can use a modern stack (MySQL 5.6+ and PHP 7+).\n"
     },
     {
+      "id": "26038",
       "author": "Giovanni Tirloni",
       "date": "2018-06-28T11:05:49.631-0400",
       "body": "Not a priority. Will re-evaluate when there's funding for an active project.\n"

@@ -40,16 +40,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12374",
       "author": "Antranig Basman",
       "date": "2009-10-05T11:50:43.000-0400",
       "body": "Some experimentation shows that it is unreliable to name directories differently to project files within Eclipse - so to ensure consistency, the externals, as well as the project names align. It should not be necessary to rename the base SVN paths themselves - from the channel today:\n\n(09:18:05) colinclark: So we're all on the same page, you proposal is:\n\n(09:18:14) colinclark: fluid-all/\\\n(09:18:31) colinclark:     fluid-infusion/  -> <https://source.fluidproject.org/svn/fluid/infusion>\\\n(09:19:15) colinclark:   fluid-engage-client/ -> <http://source.fluidproject.org/svn/incubator/engage-client/trunk/>\\\n(09:19:33) colinclark:   fluid-engage-server/ -> <http://source.fluidproject.org/svn/incubator/engage-sketches/>\\\n(09:20:00) colinclark: And to go with this, we'll ensure that the client and server directories are properly named when we promote them from the incubator to core.\n\n(09:18:13) Bosmo1: But we would have to make sure that any project \"cross-links\" were made assuming the fluid- prefix was in place\\\n(09:18:36) Bosmo1: So, I left some things behind in the <https://fluidproject.atlassian.net/browse/ENGAGE-96#icft=ENGAGE-96> work that still assume the \"inter-project relative path\" is simply \"infusion\"\n"
     },
     {
+      "id": "12375",
       "author": "Justin Obara",
       "date": "2009-10-05T18:48:49.000-0400",
       "body": "Bug Parade Engage 0.1&#x20;\n"
     },
     {
+      "id": "12376",
       "author": "Michelle D'Souza",
       "date": "2009-10-19T12:32:13.000-0400",
       "body": "When this is done, the build scripts for Engage will need to be updated\n"

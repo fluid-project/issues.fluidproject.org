@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21312",
       "author": "Colin Clark",
       "date": "2009-02-09T12:37:38.000-0500",
       "body": "Fixed by not wrapping the decorators: option in an array. There is only of them, after all.\n"
     },
     {
+      "id": "21313",
       "author": "Justin Obara",
       "date": "2009-02-10T08:38:36.000-0500",
       "body": "verified fix using:\n\nFF2, FF3 (Mac OS 10.5)\\\nFF3, IE7 (Win Vista)\n"
     },
     {
+      "id": "21314",
       "author": "Justin Obara",
       "date": "2009-02-10T08:38:57.000-0500",
       "body": "forgot to delete bug parade comment will reopen close\n"
     },
     {
+      "id": "21315",
       "author": "Justin Obara",
       "date": "2009-02-10T08:39:52.000-0500",
       "body": "deleted bug parade comment, will reclose\n"

@@ -37,6 +37,7 @@
   ],
   "comments": [
     {
+      "id": "11460",
       "author": "Jonathan Hung",
       "date": "2013-12-09T11:03:49.183-0500",
       "body": "Font has been generated and attached to this JIRA. The font can also be found on the FLOE Metadata Editor Design wiki page:\\\n<http://wiki.fluidproject.org/display/fluid/FLOE+Metadata+Authoring+Design>\n"

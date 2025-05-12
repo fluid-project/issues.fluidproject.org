@@ -35,16 +35,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18858",
       "author": "Daphne Ogle",
       "date": "2009-05-28T14:41:35.000-0400",
       "body": "The arrow should also display on rollover (like in google spreadsheets).\n"
     },
     {
+      "id": "18863",
       "author": "Justin Obara",
       "date": "2014-07-11T14:41:31.074-0400",
       "body": "This demo is no longer in use.\n"
     },
     {
+      "id": "18867",
       "author": "Justin Obara",
       "date": "2015-06-26T09:50:52.858-0400",
       "body": "Reopening to change the fix version to 1.9\n"

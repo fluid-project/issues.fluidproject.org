@@ -31,16 +31,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24947",
       "author": "Anastasia Cheetham",
       "date": "2008-07-22T18:59:48.000-0400",
       "body": "Another tutorial that was started, but needs updating is\\\n<http://wiki.fluidproject.org/display/fluid/Draft+-+Lightbox+Tutorial>\n"
     },
     {
+      "id": "24948",
       "author": "Colin Clark",
       "date": "2008-09-16T12:58:13.000-0400",
       "body": "dev-iteration44\n"
     },
     {
+      "id": "24949",
       "author": "Jonathan Hung",
       "date": "2011-01-05T10:58:17.471-0500",
       "body": "Removed fragment at the end of the document so the content ends more cleanly. However, this issue will not be fixed since the version is rather old.\n"

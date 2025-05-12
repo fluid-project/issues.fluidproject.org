@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23318",
       "author": "Justin Obara",
       "date": "2013-09-06T13:56:21.047-0400",
       "body": "This is by design. Any dependencies that are depended on by more than one module will remain until either it is removed, or all of the modules depending on it have been deselected.\n"

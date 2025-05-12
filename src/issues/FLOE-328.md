@@ -30,6 +30,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11314",
       "author": "Cindy Li",
       "date": "2015-05-11T10:51:11.942-0400",
       "body": "The model change happens too early before the panel is rendered and results in tooltips being wiped out when the panel finishes rendering.\n"

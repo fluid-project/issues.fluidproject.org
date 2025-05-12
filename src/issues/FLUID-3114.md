@@ -40,31 +40,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22838",
       "author": "Justin Obara",
       "date": "2009-08-20T11:17:41.000-0400",
       "body": "Seems like something changed between FF3 and FF3.5.\n\nNot sure exactly what that was yet though. Here are some links from the swfupload forum about issues people have had with FF 3.5\n\n<http://swfupload.org/forum/generaldiscussion/1672>\n\n<http://swfupload.org/forum/generaldiscussion/1641>\n"
     },
     {
+      "id": "22841",
       "author": "Colin Clark",
       "date": "2009-08-21T17:25:53.000-0400",
       "body": "The error is occurring in SWFUpload's code: setButtonDisabled(). We invoke this method inside our SWFUploadSetupDecorator, which is responsible for setting up a Flash 10-specific configuration of SWFUpload. This code is responsible for disabling the Flash-based \"Browse Files\" button, using a public API provided by SWFUpload.\n\nThis has become a pretty familiar scenario with SWFUpload: whenever a browser of Flash upgrade comes along, SWFUpload breaks. In this case, their setButtonDisabled() method is exploding. I haven't had a chance to fully triage the problem, but there is a temporary workaround:\n\nIf you're okay with the fact that users will be able to open the file dialog while an upload is in progress, removing lines 118 and 121 of SWFUploadManager.js--or better yet, wrapping those lines in a try/catch will squelch the error. This is quite a hack, and we'll make sure we find a reasonable fix that doesn't involve patching code directly.\n"
     },
     {
+      "id": "22844",
       "author": "Matt Zumwalt",
       "date": "2009-08-28T14:06:28.000-0400",
       "body": "FYI, when I comment out the lines that call setButtonDisabled, I just get another error \"Call to StartUpload failed\".  Upload still works fine in Safari with the hack in place.:\n\nuncaught exception: Call to StartUpload failed\\\nanonymous(\"StartUpload\", \\[undefined])Infusion...251482117 (line 14610)\\\nanonymous(Object name=fileID)Infusion...251482117 (line 14651)\\\nanonymous()Infusion...251482117 (line 16240)\\\nanonymous()Infusion...251482117 (line 16824)\\\nanonymous(Object originalEvent=Event click type=click)Infusion...251482117 (line 2693)\\\nanonymous()Infusion...251482117 (line 2468\n\nPS - alternate hack - edit the function definition for SWFUpload.prototype.setButtonDisabled so that it skips calling the Flash method.\n\nSWFUpload.prototype.setButtonDisabled = function (isDisabled) {\\\nthis.settings.button\\_disabled = isDisabled;\\\n// this.callFlash(\"SetButtonDisabled\", \\[isDisabled]);\\\n};\n\n... though this still gives me the \"Call to StartUpload failed\" error on my machine 😞\n"
     },
     {
+      "id": "22848",
       "author": "Justin Obara",
       "date": "2009-09-21T09:45:35.000-0400",
       "body": "Bug Parade Infusion 1.1.2\n"
     },
     {
+      "id": "22851",
       "author": "Eli Cochran",
       "date": "2009-09-30T17:33:39.000-0400",
       "body": "I've reviewed the code for this bug and it looks good. Also tested in FF3.5 using the demo version of the uploader. &#x20;\n"
     },
     {
+      "id": "22854",
       "author": "Eli Cochran",
       "date": "2009-10-02T13:32:11.000-0400",
       "body": "Resolved per Colin's code and my review\n"

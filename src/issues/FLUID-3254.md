@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14630",
       "author": "Laurel Williams",
       "date": "2009-10-30T16:25:40.000-0400",
       "body": "I looked into this issue a little and determined that this seems to be a known problem with IE8 and animated gifs. Is there another way to include a spinner that wouldn't cause this problem in IE8?\n"
     },
     {
+      "id": "14632",
       "author": "Justin Obara",
       "date": "2014-03-03T11:20:13.503-0500",
       "body": "builder.fluidproject.org has been taken down and there are no immediate plans to replace it. Currently all builds are expected to be generated directly from the grunt build scripts.\n\n<http://fluid.2324889.n4.nabble.com/Infusion-Builder-issues-tp8926.html>\n"

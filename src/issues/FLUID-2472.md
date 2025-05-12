@@ -44,36 +44,43 @@
   ],
   "comments": [
     {
+      "id": "14161",
       "author": "Justin Obara",
       "date": "2009-04-02T11:46:47.000-0400",
       "body": "'screenshot-1' shows the text inside the combobox much smaller than the rest of the text on the page.\n"
     },
     {
+      "id": "14163",
       "author": "Justin Obara",
       "date": "2009-05-14T09:29:21.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "14165",
       "author": "Antranig Basman",
       "date": "2009-05-20T21:16:20.000-0400",
       "body": "I can't imagine this is resolvable if it is not implemented by the browser. We should mark this as \"escalate\" (at least, if it can be verified that it is not the effect of using a dynamically injected style sheet rather than a statically included one).\n"
     },
     {
+      "id": "14167",
       "author": "Justin Obara",
       "date": "2010-05-07T13:18:53.558-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "14169",
       "author": "Michelle D'Souza",
       "date": "2011-06-27T16:09:42.898-0400",
       "body": "This is not an issue with Safari 5\n"
     },
     {
+      "id": "14171",
       "author": "Michelle D'Souza",
       "date": "2011-06-27T16:13:57.801-0400",
       "body": "Non A-Grade&#x20;\n"
     },
     {
+      "id": "14173",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T11:10:17.034-0400",
       "body": "Testing this in v1.4, I cannot reproduce it: the text in the drop-downs seems to resize appropriately.\n"

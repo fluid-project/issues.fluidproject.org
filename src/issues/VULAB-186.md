@@ -34,16 +34,19 @@
   ],
   "comments": [
     {
+      "id": "27527",
       "author": "Blake E",
       "date": "2009-02-24T16:47:22.000-0500",
       "body": "vulab17\n"
     },
     {
+      "id": "27528",
       "author": "Blake E",
       "date": "2009-02-24T16:51:13.000-0500",
       "body": "this patch simply replaces all of the absolute references to relative to root.\n"
     },
     {
+      "id": "27529",
       "author": "Blake E",
       "date": "2009-03-30T13:39:12.000-0400",
       "body": "patch not applied to trunk, I'm re-opening.\n"

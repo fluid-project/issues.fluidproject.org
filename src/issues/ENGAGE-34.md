@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12775",
       "author": "Michelle D'Souza",
       "date": "2009-09-23T17:50:07.000-0400",
       "body": "Three things still need to be done: \\\n1\\. the rendering code needs to be moved to somewhere that the artifact component can get at it and the artifact component needs to decide whether or not to do rendering tasks on the client or server\\\n2\\. the artifact.html pages in kettle and engage-client need to be merged\\\n3\\. demo data needs to be provided in the engage-client html file so that it can be loaded from the file system.&#x20;\n"
     },
     {
+      "id": "11776",
       "author": "Justin Obara",
       "date": "2009-11-10T10:56:23.000-0500",
       "body": "This is an umbrella issue whose children are all closed\n"

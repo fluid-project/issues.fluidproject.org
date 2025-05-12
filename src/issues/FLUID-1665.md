@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13379",
       "author": "Eli Cochran",
       "date": "2008-11-07T11:48:13.000-0500",
       "body": "Fixed in Uploader 2, the Remove button is dimmed and inactive during upload in Uploader 2.\n"
     },
     {
+      "id": "13382",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:53.534-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

@@ -25,26 +25,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16291",
       "author": "Justin Obara",
       "date": "2013-03-20T09:32:43.348-0400",
       "body": "Added a test case in a branch on my github repo\\\n<https://github.com/jobara/infusion/tree/FLUID-4939>\n"
     },
     {
+      "id": "16293",
       "author": "Michelle D'Souza",
       "date": "2013-03-22T12:21:06.923-0400",
       "body": "Merged pull request <https://github.com/fluid-project/infusion/pull/272> into project repo at e6152e3\n"
     },
     {
+      "id": "16295",
       "author": "Justin Obara",
       "date": "2013-03-22T13:26:37.130-0400",
       "body": "Found another variant of the issue. This time it happens when there is a circular grade reference. For example if the component adds a grade that had included the component itself as a grade. The framework is supposed to ignore duplicate grades, so this should work. I've added another test to my branch for this.\n\nExample:\n\nfluid.defaults(\"fluid.someComp\", { \\\ngradeNames: \\[\"fluid.littleComponent\", \"autoInit\"] \\\nfinalInitFunction: \"fluid.someComp.finalInit\" \\\n});&#x20;\n\nfluid.someComp.finalInit = function (that) { //do something};&#x20;\n\nfluid.defaults(\"fluid.newGrade\", {\\\ngradeNames: \\[\"fluid.someComp\", \"autoInit\"]\\\n});\n\n// This will cause fluid.someComp.finalInit to be executed twice. \\\nfluid.someComp({ \\\ngradeNames: \\[\"fluid.newGrade\"] \\\n});&#x20;\n"
     },
     {
+      "id": "16298",
       "author": "Antranig Basman",
       "date": "2013-03-24T15:26:36.636-0400",
       "body": "Thanks for the additional test case, jobara - this has now also a fix applied\n"
     },
     {
+      "id": "16299",
       "author": "Michelle D'Souza",
       "date": "2013-03-25T11:05:40.502-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/273> merged into project repo at 8211b41\n"

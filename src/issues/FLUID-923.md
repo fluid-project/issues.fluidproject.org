@@ -41,11 +41,13 @@
   ],
   "comments": [
     {
+      "id": "19553",
       "author": "Justin Obara",
       "date": "2008-07-16T20:01:06.000-0400",
       "body": "'screenshot-1' shows the incorrect value in the progress bar\n"
     },
     {
+      "id": "19554",
       "author": "Justin Obara",
       "date": "2008-12-01T12:53:15.000-0500",
       "body": "FF2, FF3 (Mac OS 10.5)\\\nIE6 (Win XP)\n"

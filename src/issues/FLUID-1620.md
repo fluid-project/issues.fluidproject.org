@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23545",
       "author": "Jacob Farber",
       "date": "2008-10-02T11:01:23.000-0400",
       "body": "converted divs to spans to avoid display:block problems with show/hide\n"
     },
     {
+      "id": "23546",
       "author": "Justin Obara",
       "date": "2008-10-02T11:23:05.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3 (Mac OS 10.5)\\\nFF2, FF3 (Win XP)\\\nFF3 (Win Vista)\n"

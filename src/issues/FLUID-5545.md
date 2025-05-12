@@ -43,11 +43,13 @@
   ],
   "comments": [
     {
+      "id": "15737",
       "author": "Cindy Li",
       "date": "2014-11-10T11:01:54.359-0500",
       "body": "Since the decision made for <https://fluidproject.atlassian.net/browse/FLUID-5532#icft=FLUID-5532> is to redesign and implement a mobile-first UIO, instead of tweaking the styling for the overview panel, we tried another approach to simply hide the overview panel for mobile devices. However, in order for media query to kick in for smaller device width, especially for iOS devices, \"viewport meta tag\" needs to be used. The use of this meta tag causes some demos, such as pager and prefsFramework, only show their top left corner on mobile since those demos are designed for desktops. After a discussion with Dana and Justin, the decision is not to remove the overview panel, just leave as it is that shows the desktop versions on mobile to let users zoom.\n"
     },
     {
+      "id": "15740",
       "author": "Justin Obara",
       "date": "2016-07-11T14:34:03.597-0400",
       "body": "Cindy Li could you please update these screenshots. They are missing, and I'm not exactly sure what they were of. ( e.g. current state, with the viewport meta tag, or a design )\n"

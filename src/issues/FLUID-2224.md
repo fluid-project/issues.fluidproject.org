@@ -29,31 +29,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21196",
       "author": "Justin Obara",
       "date": "2009-02-12T10:05:45.000-0500",
       "body": "Bug Parade 0.8 release\n"
     },
     {
+      "id": "21197",
       "author": "Justin Obara",
       "date": "2009-02-12T10:06:50.000-0500",
       "body": "swfuploader unit tests are also failing\n"
     },
     {
+      "id": "21198",
       "author": "Colin Clark",
       "date": "2009-02-12T17:38:44.000-0500",
       "body": "The DemoUploadManager tests are failing due to SWFUpload b5's insistence on having a DOM element to squash, even in Flash 9.\n\nThe SWFUploadManager tests were failing because of \"features\" that we were able to remove from the code now that SWFUpload b5 fixed a few issues.\n"
     },
     {
+      "id": "21199",
       "author": "Colin Clark",
       "date": "2009-02-16T23:07:09.000-0500",
       "body": "Fixed as of revision 6494.\n"
     },
     {
+      "id": "21200",
       "author": "Justin Obara",
       "date": "2009-02-17T08:58:18.000-0500",
       "body": "Tested this fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF3, IE7 (Win Vista)\n\nWill close after code review\n"
     },
     {
+      "id": "21201",
       "author": "Eli Cochran",
       "date": "2009-02-17T09:40:15.000-0500",
       "body": "I have reviewed Colin's fix and it looks great. Perhaps the most tongue-in-cheek code that we have in our code-base, but completely correct.\n"

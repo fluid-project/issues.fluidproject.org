@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11219",
       "author": "Alexey Novak",
       "date": "2012-08-16T11:13:05.213-0400",
       "body": "Seems to be fixed.\n"

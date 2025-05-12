@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24049",
       "author": "Justin Obara",
       "date": "2015-11-27T10:33:09.889-0500",
       "body": "Have started working on this in my <https://github.com/jobara/fluid-publish/tree/FLUID-5799> branch.\n\ni) added an option to specify the remote name, it will default to \"upstream\" but can be changed via the --options command line argument.\n"
     },
     {
+      "id": "24051",
       "author": "Justin Obara",
       "date": "2016-08-04T15:17:22.872-0400",
       "body": "Talked more about this in the IRC channel today ( <https://botbot.me/freenode/fluid-work/2016-08-04/?msg=70783796&page=1> ). Will add templates for the hints as well and output those when an error occurs.\n"
     },
     {
+      "id": "24052",
       "author": "Justin Obara",
       "date": "2018-03-15T14:59:33.166-0400",
       "body": "PR ( <https://github.com/fluid-project/fluid-publish/pull/5>  ) merged into the project repo.\n"

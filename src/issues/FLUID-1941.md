@@ -36,31 +36,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20743",
       "author": "Justin Obara",
       "date": "2008-12-10T11:06:17.000-0500",
       "body": "Note that the styling doesn't change\n"
     },
     {
+      "id": "20744",
       "author": "Justin Obara",
       "date": "2009-02-06T12:57:56.000-0500",
       "body": "Bug Parade 0.8 release\n"
     },
     {
+      "id": "20745",
       "author": "Anastasia Cheetham",
       "date": "2009-02-13T15:51:50.000-0500",
       "body": "This implementation looks, good, except for the same thing that seems to be happening in <https://fluidproject.atlassian.net/browse/FLUID-2241#icft=FLUID-2241>. Since the change fixes the bug, and there is another JIRA for the new issue, I think it's safe to close this one. I'll comment on 2241 regarding Cancel behaviour.\n"
     },
     {
+      "id": "20746",
       "author": "Justin Obara",
       "date": "2009-02-13T15:58:03.000-0500",
       "body": "Verified fix using:\n\nFF2, FF3, Safari 3 (Mac OS 10.5)\\\nFF2, FF3 (Win XP)\\\nFF3 (Win Vista)\n"
     },
     {
+      "id": "20747",
       "author": "Michelle D'Souza",
       "date": "2009-06-01T12:20:37.000-0400",
       "body": "This issue came back likely in revision 7210 when the 'close' icon was removed in favour of the close icon in the jQuery UI dialog.&#x20;\n"
     },
     {
+      "id": "20748",
       "author": "y z",
       "date": "2010-04-15T13:33:44.000-0400",
       "body": "Can't reproduce anymore.\n"

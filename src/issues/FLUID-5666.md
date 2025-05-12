@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23863",
       "author": "Cindy Li",
       "date": "2015-11-20T15:43:15.282-0500",
       "body": "Issued a pull request: <https://github.com/fluid-project/infusion/pull/656>\n"
     },
     {
+      "id": "23864",
       "author": "Cindy Li",
       "date": "2015-11-30T16:05:52.952-0500",
       "body": "The pull request has been merged into the master branch @ 543da2eacf3f3a03843d5a72a6364b1465706742\n"

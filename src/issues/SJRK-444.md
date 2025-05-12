@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26628",
       "author": "Justin Obara",
       "date": "2021-01-25T15:31:50.363-0500",
       "body": "I have been looking into [sessionStore](https://www.npmjs.com/package/sessionstore) for saving the session to the couchDB database. However, it isn't clear that it actually clears expired sessions from the database. <https://github.com/robinfehr/sessionstore/blob/master/lib/databases/couchdb.js>\n"

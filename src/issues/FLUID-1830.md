@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17350",
       "author": "Antranig Basman",
       "date": "2009-02-13T22:18:56.000-0500",
       "body": "This was actually implemented for 0.7... or maybe even 0.6.\n"
     },
     {
+      "id": "17351",
       "author": "Justin Obara",
       "date": "2009-11-13T08:56:53.000-0500",
       "body": "Closed as per previous comment\n"

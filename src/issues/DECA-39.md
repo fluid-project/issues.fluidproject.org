@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10249",
       "author": "Jonathan Hung",
       "date": "2010-03-05T10:19:16.000-0500",
       "body": "Waiting for gPhoto camera detection.\n"

@@ -47,11 +47,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20812",
       "author": "Justin Obara",
       "date": "2011-01-04T14:05:24.181-0500",
       "body": "Confirmed the issue on Mac OS 10.6 with Safari 5. There hadn't been any environments listed before so I am not sure where else this is a problem. One thing to note, is that the issue only seems to occur when clicking on the whitespace inside the reorderer's container.&#x20;\n"
     },
     {
+      "id": "20813",
       "author": "Justin Obara",
       "date": "2014-06-26T13:14:53.577-0400",
       "body": "Updated environments, description, and affects version.\n"

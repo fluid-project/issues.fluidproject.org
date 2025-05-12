@@ -28,21 +28,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23204",
       "author": "Justin Obara",
       "date": "2009-06-11T12:01:42.000-0400",
       "body": "Moved fluid.moduleLayout = fluid.moduleLayout || {}; inside of the closure\n"
     },
     {
+      "id": "23205",
       "author": "Antranig Basman",
       "date": "2009-08-05T07:05:47.000-0400",
       "body": "Committed to branch for 1.1.1 release\n"
     },
     {
+      "id": "23206",
       "author": "Justin Obara",
       "date": "2009-08-05T08:16:48.000-0400",
       "body": "Bug Parade 1.1.1 release\n"
     },
     {
+      "id": "23207",
       "author": "Justin Obara",
       "date": "2009-08-06T13:36:51.000-0400",
       "body": "The back porting into the 1.1.x branch appears to be the same as in trunk.\n\nTested using:\n\nFF3, FF3.5 (Mac OS 10.5)\\\nIE 7 (Win Vista)\n"

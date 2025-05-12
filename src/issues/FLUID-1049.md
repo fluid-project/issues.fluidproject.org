@@ -31,21 +31,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17274",
       "author": "Eli Cochran",
       "date": "2008-08-05T20:08:12.000-0400",
       "body": "There is **no way** to know that a file is a duplicate until the file is sent to the server. The server actually compares the binaries of the files, it doesn't care about file names since the files may have come from different directories or been changed on the local machine between uploads.\n"
     },
     {
+      "id": "17276",
       "author": "Eli Cochran",
       "date": "2008-08-05T20:08:28.000-0400",
       "body": "See previous note\n"
     },
     {
+      "id": "17278",
       "author": "Erin Yu",
       "date": "2008-08-06T12:20:18.000-0400",
       "body": "I think the experience of waiting for the file to upload completely to find out if that the same file already exists is less than desirable.&#x20;\n\nIs it possible to check for the file names in the queue when user clicks Upload, against the file names in the destination folder on the server, and display a warning message if there is a duplicate. The message would read, for example, \"There is already a file named \"filename.doc\". Replace it? \\[Replace]  \\[Remove from queue]\" and the user can make the decision to overwrite the file or cancel that file.\n"
     },
     {
+      "id": "17281",
       "author": "Justin Obara",
       "date": "2008-09-30T11:15:51.000-0400",
       "body": "closed for now, may reopen later if a proper strategy can be devised\n"

@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18369",
       "author": "Michelle D'Souza",
       "date": "2008-07-15T20:18:16.000-0400",
       "body": "We will actually move to the 'thatism' style instead.&#x20;\n"
     },
     {
+      "id": "18371",
       "author": "Colin Clark",
       "date": "2008-07-16T21:29:30.000-0400",
       "body": "As Michelle's comment notes, we're moving away from the use of prototypes, so this bug is no longer relevant.\n"

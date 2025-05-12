@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21980",
       "author": "Colin Clark",
       "date": "2008-08-19T11:30:40.000-0400",
       "body": "The Uploader refactoring plan is in place, and documented on the Architecture Sketches page in the wiki: <http://wiki.fluidproject.org/display/fluid/Architecture+Sketches>\n\nRefactoring is taking place in the uploader2 directory of the sandbox.\n"
     },
     {
+      "id": "21983",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:59.205-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21937",
       "author": "Antranig Basman",
       "date": "2008-11-07T13:20:40.000-0500",
       "body": "A full set of arguments are now passed to the \"finish\" family and \"modelChanged\" notifications. Note that \"finishedEditing\" itself will be removed from the framework as per <https://fluidproject.atlassian.net/browse/FLUID-1770#icft=FLUID-1770>. At revision 5965\n"
     },
     {
+      "id": "21938",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:28:00.097-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

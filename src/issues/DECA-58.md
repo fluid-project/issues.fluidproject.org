@@ -32,31 +32,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10008",
       "author": "Jonathan Hung",
       "date": "2010-04-20T09:37:19.000-0400",
       "body": "This may not be a bug.\n\n* Either by design or caused by differences in image resolution (one large image, and one small image).\n* May also be related to the version of Ocropus and Genpdf script.\n"
     },
     {
+      "id": "10009",
       "author": "Jonathan Hung",
       "date": "2010-06-10T14:58:01.701-0400",
       "body": "This issue may be resolved with the latest gen-pdf script. If such pages are encountered, the script defauls to PDF level 1 (image based).\n"
     },
     {
+      "id": "10010",
       "author": "Jonathan Hung",
       "date": "2010-07-14T16:19:10.206-0400",
       "body": "Confirmed not an issue. Ubuntu 9.10, FF 3.6, genpdf changeset 34.\n"
     },
     {
+      "id": "10011",
       "author": "Jonathan Hung",
       "date": "2010-07-23T10:45:13.233-0400",
       "body": "I have reopened this issue. I can reproduce it using the D-Day images: \\\n<http://source.fluidproject.org/svn/design/decapod/Resources/Images/Books/D-Day/colour/>\n\nPage 13 is omitted from the generated PDF.\n"
     },
     {
+      "id": "10012",
       "author": "Justin Obara",
       "date": "2012-05-25T15:40:32.532-0400",
       "body": "I did a test of this and it appears to be fixed. When we update genpdf for the 0.5 release again, we'll have to double check it.\n"
     },
     {
+      "id": "10013",
       "author": "Justin Obara",
       "date": "2012-06-01T10:31:59.802-0400",
       "body": "Tried again with the supplied images. It skips D-Day-08.jpg still\n"

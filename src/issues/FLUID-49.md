@@ -30,21 +30,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19003",
       "author": "Anastasia Cheetham",
       "date": "2007-11-12T15:08:57.000-0500",
       "body": "A branch has been created in SVN for this work:\\\n<https://source.fluidproject.org/svn/fluid/components/branches/FLUID-49>\n"
     },
     {
+      "id": "19008",
       "author": "Anastasia Cheetham",
       "date": "2008-01-07T13:54:20.000-0500",
       "body": "For the record, the initial branch was r4448.\n"
     },
     {
+      "id": "19012",
       "author": "Anastasia Cheetham",
       "date": "2008-01-14T12:24:28.000-0500",
       "body": "The branch has been merged back into trunk, and work is proceeding in the trunk\n"
     },
     {
+      "id": "19017",
       "author": "Justin Obara",
       "date": "2011-01-04T11:23:31.341-0500",
       "body": "all sub-tasks have been closed or resolved already\n"

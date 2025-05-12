@@ -85,36 +85,43 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25595",
       "author": "Antranig Basman",
       "date": "2015-08-20T10:05:00.603-0400",
       "body": "Merged into trunk at revision 282f1a318718eed0b0ec060fb8b4ad254417fd7e\n"
     },
     {
+      "id": "25596",
       "author": "Antranig Basman",
       "date": "2016-04-12T17:54:24.244-0400",
       "body": "See <https://fluidproject.atlassian.net/browse/FLUID-5887#icft=FLUID-5887>, <https://fluidproject.atlassian.net/browse/FLUID-5800#icft=FLUID-5800> - our approach to \"members\" is still woefully wrong, especially when expanders can arise through multiple points in the grade hierarchy.\n"
     },
     {
+      "id": "25597",
       "author": "Antranig Basman",
       "date": "2016-05-08T13:51:45.169-0400",
       "body": "See discussion on \"local MergePolicy\" aired in IRC at <https://botbot.me/freenode/fluid-work/2015-09-11/?msg=49513398&page=1> - it's hard to imagine resolving this issue without such a scheme\n"
     },
     {
+      "id": "25598",
       "author": "Antranig Basman",
       "date": "2016-08-12T11:48:01.430-0400",
       "body": "A partial fix for this is in trunk (at the 2.0 level) but we will keep this issue open since fixing this fully requires the <https://fluidproject.atlassian.net/browse/FLUID-4925#icft=FLUID-4925> rewrite\n"
     },
     {
+      "id": "25599",
       "author": "Tony Atkins [RtF]",
       "date": "2018-01-12T09:15:06.154-0500",
       "body": "Antranig Basman, would this shortcoming also explain why I can't use {arguments}.1 when setting up a member variable in a dynamic component?\n"
     },
     {
+      "id": "25600",
       "author": "Tony Atkins [RtF]",
       "date": "2018-01-12T10:08:04.328-0500",
       "body": "Just to clarify, this demonstrates what I mean:\n\n<https://gist.github.com/the-t-in-rtf/6a85c3cf9676d227748a20180a09b929>\n\nThe dynamic component that expects to initialise a member variable causes a failure, as {arguments}.0 is not expanded in the process of creating the component's options, but is rather left to the new component itself to make sense of.\n"
     },
     {
+      "id": "25601",
       "author": "Antranig Basman",
       "date": "2021-08-08T13:56:51.698-0400",
       "body": "Dealing with expansion semantics in such a fundamental way has been pushed off until the 6.x rewrite where the entire options pipeline will be rewritten using mats.\n"

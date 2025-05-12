@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23807",
       "author": "Justin Obara",
       "date": "2014-05-22T14:26:44.902-0400",
       "body": "Due to a cross site scripting vulnerability we have removed flash support from the uploader. See <https://fluidproject.atlassian.net/browse/FLUID-5354#icft=FLUID-5354>. However we could still add a message to use a browser that supports HTML5 upload.\n"
     },
     {
+      "id": "23809",
       "author": "Justin Obara",
       "date": "2017-01-16T14:08:06.225-0500",
       "body": "HTML5 Uploading now works on all supported browsers.\n"

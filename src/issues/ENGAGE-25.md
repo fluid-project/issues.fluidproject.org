@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12037",
       "author": "Justin Obara",
       "date": "2009-09-21T16:42:23.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "12038",
       "author": "Justin Obara",
       "date": "2009-11-03T12:01:32.000-0500",
       "body": "Tags are being pulled in from couchDB\n"

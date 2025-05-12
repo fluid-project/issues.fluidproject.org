@@ -52,61 +52,73 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20581",
       "author": "Laurel Williams",
       "date": "2009-12-02T13:26:32.000-0500",
       "body": "ensure that focus styling is present in new design (<https://fluidproject.atlassian.net/browse/FLUID-3250#icft=FLUID-3250>)\n"
     },
     {
+      "id": "20582",
       "author": "Laurel Williams",
       "date": "2009-12-02T13:29:05.000-0500",
       "body": "New design could try to address the problem in <https://fluidproject.atlassian.net/browse/FLUID-3254#icft=FLUID-3254> where the download spinner does not spin in IE\n"
     },
     {
+      "id": "20583",
       "author": "Laurel Williams",
       "date": "2009-12-02T13:30:39.000-0500",
       "body": "The new design should address the problem that the download button does not show enabled and disabled state. (<https://fluidproject.atlassian.net/browse/FLUID-3249#icft=FLUID-3249>)\n"
     },
     {
+      "id": "20584",
       "author": "Laurel Williams",
       "date": "2009-12-02T13:33:25.000-0500",
       "body": "Do we want to rethink the design with the spinner for the download page, since it never stops spinning. (<https://fluidproject.atlassian.net/browse/FLUID-3233#icft=FLUID-3233>)\n"
     },
     {
+      "id": "20585",
       "author": "Laurel Williams",
       "date": "2009-12-02T13:35:25.000-0500",
       "body": "Do we need to revisit the design of the download page based on FLUID-3233?\n"
     },
     {
+      "id": "20586",
       "author": "Colin Clark",
       "date": "2009-12-04T18:04:00.000-0500",
       "body": "Bug Parade Builder 1.1.2\n"
     },
     {
+      "id": "20587",
       "author": "Jacob Farber",
       "date": "2009-12-09T11:32:52.000-0500",
       "body": "The current design is considered complete.\n"
     },
     {
+      "id": "20588",
       "author": "Justin Obara",
       "date": "2009-12-09T14:09:56.000-0500",
       "body": "a couple more changes needed\n"
     },
     {
+      "id": "20589",
       "author": "Jacob Farber",
       "date": "2009-12-10T17:19:56.000-0500",
       "body": "Since it's been clarified that the builder page must be presentable on its own, another layer of design was applied. It now looks comparable to the Demo portal.\n"
     },
     {
+      "id": "20590",
       "author": "Jacob Farber",
       "date": "2009-12-11T13:00:17.000-0500",
       "body": "More tweaks required for readability\n"
     },
     {
+      "id": "20591",
       "author": "Justin Obara",
       "date": "2009-12-16T12:18:27.000-0500",
       "body": "needs a minor fix to the spinner css\n"
     },
     {
+      "id": "20592",
       "author": "Justin Obara",
       "date": "2009-12-18T15:59:28.000-0500",
       "body": "The spinner is working for safari now.\n"

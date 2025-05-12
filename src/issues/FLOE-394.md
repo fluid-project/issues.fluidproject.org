@@ -30,11 +30,13 @@
   ],
   "comments": [
     {
+      "id": "11029",
       "author": "Justin Obara",
       "date": "2015-06-05T16:10:26.219-0400",
       "body": "screenshot.png shows the stickyKeys simulator active not the assessment screen\n"
     },
     {
+      "id": "11030",
       "author": "Cindy Li",
       "date": "2015-11-12T14:36:41.975-0500",
       "body": "This report has been copied to the GPII bug tracker: <https://issues.gpii.net/browse/GPII-1464> and all activities should be carried on there.\n"

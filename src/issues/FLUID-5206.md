@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25072",
       "author": "Justin Obara",
       "date": "2021-06-22T13:07:24.369-0400",
       "body": "There is a Prefs Framework related example ( <https://build-infusion.fluidproject.org/examples/framework/preferences/localizationpreference/urlpath/> ), but I'm assuming this issue is looking for a more general example of how this would work with any component. \n"
     },
     {
+      "id": "27930",
       "author": "Justin Obara",
       "date": "2024-07-31T14:43:24.204-0400",
       "body": "Migrated to <https://github.com/fluid-project/infusion-docs/issues/270>&#x20;\n"

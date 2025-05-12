@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22628",
       "author": "Anastasia Cheetham",
       "date": "2013-05-22T11:12:45.627-0400",
       "body": "This problem was discovered during the upgrade of the VideoPlayer to the latest Infusion: The Mammals test page instantiates three videoPlayers, and the problem occurred there.\n"
     },
     {
+      "id": "22630",
       "author": "Michelle D'Souza",
       "date": "2013-05-30T17:09:13.445-0400",
       "body": "Merged into project repo at adf8f15415227832386ed3d6d92c8c1678a558c3\n"

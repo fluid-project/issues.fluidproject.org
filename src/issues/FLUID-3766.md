@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22597",
       "author": "Antranig Basman",
       "date": "2010-12-10T15:48:54.798-0500",
       "body": "This was fixed for the 1.3 release - requires test case\n"

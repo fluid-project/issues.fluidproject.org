@@ -33,6 +33,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14832",
       "author": "Antranig Basman",
       "date": "2013-12-10T07:32:14.477-0500",
       "body": "A partial attempt was made to resolve this issue which is recorded at <https://github.com/amb26/infusion/tree/FLUID-5208> - however this work had to be abandoned, as this feature seems as if it will generate too much fragility in the framework's processing. In general, material which is moved wholesale from place to place in a component's options structure runs the risk of inconsistent processing by custom mergePolicies and other site-specific workflow - for example, it is likely to miss out on the quite specialised workflow enjoyed by listeners, modelListeners and the like. We recommend instead that material be assembled in an aligned way - that is, in an options location which agrees with its final position, and composited together using grade merging. Movement between differently named paths in an options structure (that is, in units that are significantly larger than single values) should be avoided.\n"

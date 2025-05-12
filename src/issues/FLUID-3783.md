@@ -40,11 +40,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13388",
       "author": "Justin Obara",
       "date": "2010-10-05T11:10:43.485-0400",
       "body": "Updated the multiple-infusions-tests example in the scratchpad to display the issue, using allocateSimpleId\n"
     },
     {
+      "id": "13390",
       "author": "Anastasia Cheetham",
       "date": "2014-04-02T15:33:40.230-0400",
       "body": "Antranig says this has been fixed for a while.\n"

@@ -39,21 +39,25 @@
   ],
   "comments": [
     {
+      "id": "15938",
       "author": "Anastasia Cheetham",
       "date": "2011-10-03T10:45:19.082-0400",
       "body": "This file (uploader-yellow-outline.png) shows the yellow outline looking smaller than the button.\n"
     },
     {
+      "id": "15940",
       "author": "Jonathan Hung",
       "date": "2011-10-03T11:02:46.063-0400",
       "body": "IE 8, Win7\n"
     },
     {
+      "id": "15942",
       "author": "Justin Obara",
       "date": "2015-06-10T10:44:24.896-0400",
       "body": "Cannot reproduce in IE 11 (which is currently the latest version of  IE supported), also this was likely an issue with the Flash version, which has been removed.\n"
     },
     {
+      "id": "15944",
       "author": "Justin Obara",
       "date": "2015-06-26T09:51:24.704-0400",
       "body": "Reopening to change the fix version to 1.9\n"

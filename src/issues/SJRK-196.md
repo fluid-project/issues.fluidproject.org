@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26496",
       "author": "Gregor Moss",
       "date": "2019-04-01T13:48:11.620-0400",
       "body": "Consider:\n\n* a story with only a title\n* only an an author name\n* only keywords\n\nwhat should we do?\n"
     },
     {
+      "id": "26497",
       "author": "Gregor Moss",
       "date": "2019-04-01T15:59:14.042-0400",
       "body": "In the case of:\n\n* just keywords - it doesn't make sense to publish in this case as the keywords are meant to describe the story. there's no story to describe\n* just an author - we're creating a collection of stories and not a list of people/authors, so this also doesn't make much sense\n* just a title - philosophically speaking, an empty story with only a title may have value, but for our purposes and for the time being we're going to prevent this\n"

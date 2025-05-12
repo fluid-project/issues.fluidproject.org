@@ -42,11 +42,13 @@
   ],
   "comments": [
     {
+      "id": "20267",
       "author": "Colin Clark",
       "date": "2010-08-30T10:54:04.442-0400",
       "body": "Two patches--one for the 1.1.x branch and against trunk (hopefully this will apply cleanly in the not-yet-created 1.2.x branch), which fix the licensing and attribution errors in Infusion's fast XML pull parser.\n"
     },
     {
+      "id": "20268",
       "author": "Mike Lam",
       "date": "2010-09-08T13:53:48.726-0400",
       "body": "Applied 1.2.1 patch to update license information.\n"

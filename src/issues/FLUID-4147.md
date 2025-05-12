@@ -37,6 +37,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27911",
       "author": "Justin Obara",
       "date": "2024-07-31T07:25:52.856-0400",
       "body": "I’m not seeing separate pages for Inline Edit API and Simple Inline Edit API in either the [docs site](https://docs.fluidproject.org/infusion/development/to-do/InlineEditAPI) nor the [wiki](https://fluidproject.atlassian.net/wiki/spaces/docs/pages/7079510/Inline+Edit+API). So perhaps this was already done.\n"

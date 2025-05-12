@@ -37,16 +37,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18914",
       "author": "Allison Bloodworth",
       "date": "2008-06-10T14:02:34.000-0400",
       "body": "Iteration20\n"
     },
     {
+      "id": "18916",
       "author": "Jonathan Hung",
       "date": "2008-10-14T14:13:03.000-0400",
       "body": "Can be solved by using the Fluid-Clean theme. See this task:\\\n<http://issues.fluidproject.org/browse/FLUID-1681>\n"
     },
     {
+      "id": "18918",
       "author": "Jonathan Hung",
       "date": "2008-10-21T14:32:45.000-0400",
       "body": "Fixed with Fluid-1681.\n"

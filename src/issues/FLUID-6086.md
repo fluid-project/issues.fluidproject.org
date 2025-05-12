@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22343",
       "author": "Cindy Li",
       "date": "2016-11-24T14:18:52.107-0500",
       "body": "The pull request <https://github.com/fluid-project/infusion/pull/790> has been merged into the master branch at 17a345b96f19c11fed4bef5cd45b2be01a5cf03c\n"

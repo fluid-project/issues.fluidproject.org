@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14568",
       "author": "Laurel Williams",
       "date": "2009-08-25T15:09:09.000-0400",
       "body": "created a constant \"DIRECTORY\\_DIVIDER\" in config.php and used in postProcessor.php\n"
     },
     {
+      "id": "14570",
       "author": "Laurel Williams",
       "date": "2009-10-22T16:23:27.000-0400",
       "body": "Re-opening because I did not solve this problem to my liking. \\\nShould convert directory separators to universal ones (ie. Windows and Unix can both use)\\\nShould use built in php constant DIRECTORY\\_SEPARATOR where needed\n"
     },
     {
+      "id": "14571",
       "author": "Laurel Williams",
       "date": "2009-10-30T15:38:20.000-0400",
       "body": "Removed references to DIRECTORY\\_SEPARATOR and replaced with \"/\"\n"

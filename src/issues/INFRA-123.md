@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26025",
       "author": "Giovanni Tirloni",
       "date": "2018-02-27T13:08:18.475-0500",
       "body": "CentOS 7.x x86\\_64 mirror is available here: <http://mirror.inclusivedesign.ca/centos>\n\nCentOS doesn't use MirrorManager (or it's not clear to find information about that), like Fedora. So adding a private mirror and a netblock isn't possible so the yum repo configuration needs to be managed properly. In Fedora we just continue using the metalink/mirrorlist and let it point users to the right private server.\n\nWorking on this last piece.\n"
     },
     {
+      "id": "26027",
       "author": "Giovanni Tirloni",
       "date": "2018-03-13T16:03:17.118-0400",
       "body": "All CentOS 7.x hosts have been configured to use the private mirror (<https://github.com/inclusive-design/ops/blob/master/environments/00_cross_env_vars#L33-L57>)\n\nFuture improvements:\n\n* Mirror CentOS 6.x for i-0000 (low impact)\n* Manage repo configuration for h-0005 in Ansible (today the automation situation with this host is less than ideal)\n"

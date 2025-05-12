@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20040",
       "author": "Antranig Basman",
       "date": "2008-07-23T15:26:40.000-0400",
       "body": "As part of the resolution of <https://fluidproject.atlassian.net/browse/FLUID-993#icft=FLUID-993>, this functionality is now available since the \"selectables\" element of the \"that\" context for the selectable context is accessible through the new global method $.fn.getSelectableContext() . It is possible that a little tidy-up might be needed to head off some of the more obvious ways of getting the component into an inconsistency (removing the current selectable element? etc.)\n"
     },
     {
+      "id": "20042",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:43.610-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

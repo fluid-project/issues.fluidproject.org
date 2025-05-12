@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16994",
       "author": "Eli Cochran",
       "date": "2009-05-28T13:24:23.000-0400",
       "body": "The error in the Opera Error Console when the Upload button is clicked is:\n\nJavaScript - file://localhost/opt/fluid-infusion/src/webapp/components/uploader/html/Uploader.html\\\nEvent thread: click\\\nUnhandled exception: \"Call to SetButtonDisabled failed\"\n\nsame error as you get with <https://fluidproject.atlassian.net/browse/FLUID-2789#icft=FLUID-2789>\n"
     },
     {
+      "id": "16995",
       "author": "Justin Obara",
       "date": "2009-11-06T14:15:30.000-0500",
       "body": "Cannot seem to be able to reproduce this issue any more\n"

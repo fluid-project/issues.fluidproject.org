@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21325",
       "author": "Justin Obara",
       "date": "2009-02-11T08:40:26.000-0500",
       "body": "Bug Parade 0.8 release&#x20;\n"
     },
     {
+      "id": "21326",
       "author": "Michelle D'Souza",
       "date": "2009-02-11T12:56:41.000-0500",
       "body": "the 'easier to find' section should also be removed since none of the functionality is available yet.&#x20;\n"
     },
     {
+      "id": "21327",
       "author": "Anastasia Cheetham",
       "date": "2009-02-13T15:32:11.000-0500",
       "body": "The changes made for this look good to me.\n"
     },
     {
+      "id": "21328",
       "author": "Justin Obara",
       "date": "2009-02-13T15:48:32.000-0500",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.5 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

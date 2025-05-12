@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15479",
       "author": "Erin Yu",
       "date": "2008-06-03T12:00:15.000-0400",
       "body": "Revisit persona scales to see the personas correctly represent the patterns identified\\\nAdd bullets points to summarize each persona\\\nMeet to review\n"
     },
     {
+      "id": "15482",
       "author": "Daphne Ogle",
       "date": "2008-06-09T14:30:31.000-0400",
       "body": "Combined in other persona work\n"

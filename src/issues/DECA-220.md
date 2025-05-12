@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10317",
       "author": "Justin Obara",
       "date": "2012-01-18T13:30:49.236-0500",
       "body": "The changes for the import update are in my bitbucket repos\n\n<https://bitbucket.org/jobara/decapod-ui-rest>\\\n<https://bitbucket.org/jobara/decapod-server-rest>\n\nRequires changes from <https://fluidproject.atlassian.net/browse/DECA-193#icft=DECA-193>\n"
     },
     {
+      "id": "10318",
       "author": "Justin Obara",
       "date": "2012-05-18T14:17:28.099-0400",
       "body": "Merged into the project repo\n"

@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20230",
       "author": "heidi valles",
       "date": "2011-01-06T16:17:36.019-0500",
       "body": "We'll open more specific jiras when the time comes. Basically this is asking for hints that 1) provide contextual/semantic class names or aria roles to pieces of content or 2) allow implementers to specify how to deal with certain content (fss-ignore). Check out <http://www.instapaper.com/publishers> for ideas too.\n"

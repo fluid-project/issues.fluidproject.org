@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18488",
       "author": "Harris Wong",
       "date": "2011-05-16T15:41:15.934-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "18490",
       "author": "Antranig Basman",
       "date": "2011-05-23T21:30:37.669-0400",
       "body": "A simple scheme as described has been implemented, covering the obvious cases. However, more thought is still needed in the long term about our ultimate approach to \"methods\".\n"

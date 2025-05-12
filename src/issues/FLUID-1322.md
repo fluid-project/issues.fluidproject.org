@@ -41,31 +41,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18188",
       "author": "Justin Obara",
       "date": "2008-09-19T11:58:38.000-0400",
       "body": "Appears to be fixed now that the undo/redo are links\n\nVerified using:\\\nFF2, FF3 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7 (Win XP)\\\nFF3, IE7 (Win Vista)\n"
     },
     {
+      "id": "18189",
       "author": "Justin Obara",
       "date": "2008-09-25T09:02:09.000-0400",
       "body": "Now that the icon is back the undo/redo button is no longer in the correct tab order.&#x20;\n\nThis could be because it is prepended instead of appended\n"
     },
     {
+      "id": "18190",
       "author": "Justin Obara",
       "date": "2008-09-25T09:02:37.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "18191",
       "author": "Jacob Farber",
       "date": "2008-09-25T10:14:33.000-0400",
       "body": "Used append() instead of prepend(), removed CSS-P data\n"
     },
     {
+      "id": "18192",
       "author": "Michelle D'Souza",
       "date": "2008-09-25T11:14:15.000-0400",
       "body": "Reviewed and suggested some cleanup. Jacob did the cleanup and I reviewed that as well. Good fix. 🙂\n"
     },
     {
+      "id": "18193",
       "author": "Justin Obara",
       "date": "2008-09-25T11:14:58.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5 (Mac OS 10.5)\\\nFF2, FF3, IE6, IE7 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

@@ -43,11 +43,13 @@
   ],
   "comments": [
     {
+      "id": "19766",
       "author": "Justin Obara",
       "date": "2008-07-21T14:19:48.000-0400",
       "body": "'screeenshot-1' shows the inline edit fields as displayed in IE\n"
     },
     {
+      "id": "19768",
       "author": "Justin Obara",
       "date": "2008-07-25T10:48:38.000-0400",
       "body": "Appears to be working.\n"

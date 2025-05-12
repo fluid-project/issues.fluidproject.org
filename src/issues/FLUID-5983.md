@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22603",
       "author": "Antranig Basman",
       "date": "2016-10-26T12:40:22.749-0400",
       "body": "This was found not to be the bug it was thought. The problem is that the line var containerMarkup = renderMarkup() is reentrant into the system, causing a re-evaluation of the same container whose evaluation was responsible for the current stack. Whilst in normal conditions we will not evaluate expanders more than once, we need to improve diagnostics (and the use of our \"currently in evaluation\" marker) to report this condition earlier with a hard failure.\n"

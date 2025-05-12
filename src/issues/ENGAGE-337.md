@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12622",
       "author": "Colin Clark",
       "date": "2010-02-08T16:26:50.000-0500",
       "body": "Justin and I addressed this issue by rolling back the changes to Engage App in the My Collection branch. Instead, we're implementing a custom acceptor for the collect/uncollect operations in order to maintain the resource-oriented style in My Collection.\n"
     },
     {
+      "id": "12623",
       "author": "Colin Clark",
       "date": "2010-02-08T16:27:14.000-0500",
       "body": "This issue was fixed at r9318\n"

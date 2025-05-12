@@ -38,6 +38,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25582",
       "author": "Justin Obara",
       "date": "2021-03-24T10:30:30.158-0400",
       "body": "We had talked in the [matrix channel](https://matrix.to/#/!mDigWuPWilYGiEcOCA:matrix.org/$zFoFxVZKZfZh49N6r37bexLVj_KNaovM59aOWTf4mMU?via=matrix.org) about this a while back. What we could do for those that want a drop in solution, is to provide the existing behaviour as a separate set of style sheets that can be optionally used. These would still make use of the custom properties as outlined in this issue, but provide the same behaviour as the enactors do today. \n"

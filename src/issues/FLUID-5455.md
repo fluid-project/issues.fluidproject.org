@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23102",
       "author": "Cindy Li",
       "date": "2014-06-25T08:48:41.844-0400",
       "body": "Submitted the pull request: <https://github.com/fluid-project/infusion-docs/pull/19>\n"
     },
     {
+      "id": "23103",
       "author": "Simon Bates",
       "date": "2014-07-04T13:39:59.002-0400",
       "body": "Has been merged\n"

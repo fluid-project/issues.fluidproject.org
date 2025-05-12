@@ -39,16 +39,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21944",
       "author": "Antranig Basman",
       "date": "2008-08-08T21:01:50.000-0400",
       "body": "Could we reconfirm this is what we want to do? In recent discussions we have seemed to tend towards a universal standard of 1st-args-as-selectors rather than ids. Also recently I came across a test failure for constructing a layout, based on the assumption that it would have to have an id which was not in the test markup. Certainly for inlineEdit, for example, I recall thinking that we would actually like to unify instantiation so that we have an option to return an array-of-that in the case of multiple selection, as well as single-that for single selection... due to the miracle of that-ism this is at least an option we have 😛\n"
     },
     {
+      "id": "21947",
       "author": "Antranig Basman",
       "date": "2008-09-10T22:18:28.000-0400",
       "body": "Closing this, since I believe our current container semantics are the ones desired (imposed by standard initView -> fluid.container environment)\n"
     },
     {
+      "id": "21949",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:28:00.648-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

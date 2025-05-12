@@ -32,6 +32,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14721",
       "author": "Michelle D'Souza",
       "date": "2013-03-14T17:34:18.465-0400",
       "body": "Two places where you can see this type of configuration are:&#x20;\n\n1\\) In the ModelTransformation code:\\\n<https://github.com/fluid-project/infusion/blob/08f3b382d9d556c5c8d21b2f16e65851ed8a1c62/src/webapp/framework/core/js/ModelTransformations.js#L644-L653>\n\n2\\) In the GPII Lifecycle Manager:\\\n<https://github.com/GPII/universal/blob/164e165a1f74b5436e158825f7dda88c1487f2d7/gpii/node_modules/lifecycleManager/src/LifecycleManager.js#L138-L144>\n"

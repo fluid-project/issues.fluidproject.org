@@ -42,31 +42,37 @@
   ],
   "comments": [
     {
+      "id": "15059",
       "author": "Eli Cochran",
       "date": "2009-03-18T13:03:27.000-0400",
       "body": "Patches purges the ARIA plug-in for ui-core.js\\\nand fixing the missing ARIA from total progress.\n"
     },
     {
+      "id": "15061",
       "author": "Justin Obara",
       "date": "2009-03-18T15:55:16.000-0400",
       "body": "Bug Parade 1.0 release\n"
     },
     {
+      "id": "15064",
       "author": "Justin Obara",
       "date": "2009-03-18T17:24:19.000-0400",
       "body": "add aria labelledby property to the flash button as well.\n"
     },
     {
+      "id": "15067",
       "author": "Eli Cochran",
       "date": "2009-03-19T18:58:32.000-0400",
       "body": "upgraded to the ui.core.js implementation and added back in the selector for the ariaElement to progress\n"
     },
     {
+      "id": "15071",
       "author": "Colin Clark",
       "date": "2009-03-24T18:25:12.000-0400",
       "body": "I've reviewed Eli's changes for the issue and they look fine. +1\n"
     },
     {
+      "id": "15074",
       "author": "Justin Obara",
       "date": "2009-03-24T18:32:43.000-0400",
       "body": "Verified fix using:\n\nFF3 (Mac OS 10.5)\n"

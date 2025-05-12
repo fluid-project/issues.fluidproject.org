@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24874",
       "author": "heidi valles",
       "date": "2010-11-18T14:03:18.327-0500",
       "body": "if you don't have flash installed, you get the degraded non-js version of uploader. This check is likely leftover from when uploader was flash. prob happens on all browsers\n"
     },
     {
+      "id": "24875",
       "author": "Mike Lam",
       "date": "2010-11-18T15:36:57.005-0500",
       "body": "Removed basic enhancement instantiation from the HTML markup to fix the no Flash issue.\n"
     },
     {
+      "id": "24876",
       "author": "Justin Obara",
       "date": "2010-11-19T10:34:46.631-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"

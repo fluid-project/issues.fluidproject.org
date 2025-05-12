@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18920",
       "author": "Michelle D'Souza",
       "date": "2008-04-28T13:38:28.000-0400",
       "body": "The plugins have been moved out of the sandbox for the 0.3beta1 release. They still need to be merged.\n"
     },
     {
+      "id": "18922",
       "author": "Colin Clark",
       "date": "2008-05-12T21:00:13.000-0400",
       "body": "I moved the tabindex code into a separate closure so it's clearer that it is a separate module from the key nav code.\n"

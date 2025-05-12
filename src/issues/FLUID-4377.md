@@ -32,21 +32,25 @@
   ],
   "comments": [
     {
+      "id": "14980",
       "author": "Justin Obara",
       "date": "2011-07-28T14:49:50.228-0400",
       "body": "ScreenShot.png shows the issues with the tabs and the reset button. Notice the lack of contrast for the tabs and the reset button not updating its style at all.\n"
     },
     {
+      "id": "14983",
       "author": "Justin Obara",
       "date": "2011-07-28T14:50:01.440-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "14986",
       "author": "Justin Obara",
       "date": "2011-08-10T13:41:12.581-0400",
       "body": "Sent a pull request <https://github.com/fluid-project/infusion/pull/134>\n"
     },
     {
+      "id": "14989",
       "author": "Michelle D'Souza",
       "date": "2011-08-18T16:15:57.529-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/134> merged into project repo at fc7ac1db340fc4786b6bcddd4cf818991929cdee\n"

@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10306",
       "author": "Colin Clark",
       "date": "2010-07-26T15:06:25.165-0400",
       "body": "Bug Parade Decapod 0.4\n"
     },
     {
+      "id": "10307",
       "author": "Jonathan Hung",
       "date": "2010-07-28T11:29:59.156-0400",
       "body": "Finished and uploaded to the Googlecode site.\n"

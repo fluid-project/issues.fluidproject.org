@@ -47,51 +47,61 @@
   ],
   "comments": [
     {
+      "id": "13552",
       "author": "Jonathan Hung",
       "date": "2010-12-09T13:49:10.409-0500",
       "body": "Patch to fix misleading tooltip text.\n"
     },
     {
+      "id": "13554",
       "author": "Jonathan Hung",
       "date": "2010-12-15T16:46:23.161-0500",
       "body": "Tooltip text is appropriate for keyboard users, but not mouse users. This is because the interactions are different for both.\n"
     },
     {
+      "id": "13556",
       "author": "Colin Clark",
       "date": "2011-01-21T17:33:32.501-0500",
       "body": "Heidi and Jess, can you work together on this issue once you've finished the higher-priority Uploader issues (including the FSS demo of the scrollable table classes)?\n"
     },
     {
+      "id": "13559",
       "author": "heidi valles",
       "date": "2011-01-26T17:06:16.457-0500",
       "body": "Commented out rich text invitation style and edited the hover text. Basic fix. Working now on making it look like James's mockup from <https://fluidproject.atlassian.net/browse/FLUID-3801#icft=FLUID-3801> to see if it won't take too much more time.\n"
     },
     {
+      "id": "13561",
       "author": "heidi valles",
       "date": "2011-01-31T10:17:23.272-0500",
       "body": "Hey Jon, could you check this one over and review the code before committing? Thanks!&#x20;\n"
     },
     {
+      "id": "13564",
       "author": "Colin Clark",
       "date": "2011-02-09T16:39:50.141-0500",
       "body": "Hi Heidi, Justin, Michelle and I took a look at your patch for this issue and have two suggestions:\n\n1\\. We should avoid commenting out code, and instead remove it entirely if it's no longer necessary. \\\n2\\. Can you have James or Jess review the invitation text to make sure it's awesome for users?\n\nJustin will commit the patch once you've had a chance to make those changes.\n"
     },
     {
+      "id": "13567",
       "author": "heidi valles",
       "date": "2011-02-10T13:05:48.397-0500",
       "body": "branch with fixes up at <https://github.com/heidiv/infusion/tree/FLUID-3887>\n"
     },
     {
+      "id": "13570",
       "author": "Justin Obara",
       "date": "2011-02-11T15:41:56.711-0500",
       "body": "Pushed Heidi's changes at 0eeadd6682a72c9cd4c0\n"
     },
     {
+      "id": "13573",
       "author": "Justin Obara",
       "date": "2011-02-11T15:42:00.165-0500",
       "body": "Pushed Heidi's changes at 0eeadd6682a72c9cd4c0\n"
     },
     {
+      "id": "13574",
       "author": "Justin Obara",
       "date": "2011-02-14T13:36:19.875-0500",
       "body": "just reopening to change the resolution to resolved\n"

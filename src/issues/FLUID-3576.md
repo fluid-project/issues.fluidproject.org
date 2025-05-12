@@ -33,16 +33,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20299",
       "author": "Justin Obara",
       "date": "2010-05-07T14:10:28.130-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "20300",
       "author": "Jonathan Hung",
       "date": "2010-10-12T13:01:12.834-0400",
       "body": "Sufficiently addressed with the new demo.\n"
     },
     {
+      "id": "20301",
       "author": "Colin Clark",
       "date": "2010-10-12T14:02:23.007-0400",
       "body": "Jonathan's new demo should address the issues this user reported with the older demo, so we're good to go. A separate ticket will be filed to do some user testing on our new demos.\n"

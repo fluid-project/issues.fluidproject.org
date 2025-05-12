@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18888",
       "author": "Erin Yu",
       "date": "2008-09-15T14:10:09.000-0400",
       "body": "iteration17\n"
     },
     {
+      "id": "18891",
       "author": "Erin Yu",
       "date": "2008-09-15T14:12:38.000-0400",
       "body": "Due to the limited timeframe, this task is disolved into other tasks.\n"

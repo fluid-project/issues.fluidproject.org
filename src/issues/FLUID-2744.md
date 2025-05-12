@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17054",
       "author": "Justin Obara",
       "date": "2009-05-19T14:21:19.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "17055",
       "author": "Justin Obara",
       "date": "2009-06-02T10:45:42.000-0400",
       "body": "Appears to have been resolved with one of the many changes to the uploader during bug parade\n"

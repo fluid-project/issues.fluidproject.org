@@ -35,31 +35,37 @@
   ],
   "comments": [
     {
+      "id": "15272",
       "author": "heidi valles",
       "date": "2010-11-17T12:19:15.906-0500",
       "body": "remove button background images. will solve IE6 opacity issue as well (change bg colour instead)\n"
     },
     {
+      "id": "15275",
       "author": "Justin Obara",
       "date": "2010-11-19T08:58:41.374-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "15278",
       "author": "heidi valles",
       "date": "2010-11-19T14:39:18.861-0500",
       "body": "This patch replaces button images and opacity with background/foreground colours for both enabled and disabled states.\n\nIE renders disabled button text with a drop shadow and I don't think this can be controlled with css.\n"
     },
     {
+      "id": "15281",
       "author": "heidi valles",
       "date": "2010-11-19T14:53:26.412-0500",
       "body": "my patch includes style fixes from 3841\n"
     },
     {
+      "id": "15284",
       "author": "Anastasia Cheetham",
       "date": "2010-12-13T15:35:18.400-0500",
       "body": "I've reviewed Heidi's fix for this and it looks good. I've committed it, but Justin: You should test this on Vista before closing it, since that's where the problem was observed. I only have XP.\n"
     },
     {
+      "id": "15288",
       "author": "Justin Obara",
       "date": "2010-12-13T16:36:54.521-0500",
       "body": "Tested on IE in Windows Vista. All looking good now.\n"

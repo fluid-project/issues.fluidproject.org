@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19409",
       "author": "Joseph Scheuhammer",
       "date": "2008-02-02T23:17:17.000-0500",
       "body": "Although using the keyboard to navigate among all of the portlets, but not allow fixed ones to move nor be replaced by another is fixed, the movement behaviour of portlets at the ends of columns may not be correct.\n"
     },
     {
+      "id": "19410",
       "author": "Michelle D'Souza",
       "date": "2008-02-12T11:04:01.000-0500",
       "body": "Styling should not change when a non-movable portlet is selected and 'ctrl' is pressed.&#x20;\n"

@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18117",
       "author": "Jess Mitchell",
       "date": "2011-01-20T14:35:55.643-0500",
       "body": "see collectionspace.org\n"

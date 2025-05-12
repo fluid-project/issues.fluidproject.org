@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16396",
       "author": "Eli Cochran",
       "date": "2009-05-20T09:32:31.000-0400",
       "body": "This was checked in a while back, but I forgot to resolve the bug.\n"
     },
     {
+      "id": "16398",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:17.512-0500",
       "body": "Closing issues that were fixed in 1.1\n"

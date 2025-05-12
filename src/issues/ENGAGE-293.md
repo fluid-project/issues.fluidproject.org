@@ -56,61 +56,73 @@
   ],
   "comments": [
     {
+      "id": "12567",
       "author": "Michelle D'Souza",
       "date": "2010-02-02T10:21:22.000-0500",
       "body": "mccord-pilot\n"
     },
     {
+      "id": "12568",
       "author": "James Yoon",
       "date": "2010-02-05T10:30:12.000-0500",
       "body": "Icons for object code entry screen:\n\n* Warning (for invalid code entry)\n* Delete (for backspacing on entered codes)\n"
     },
     {
+      "id": "12569",
       "author": "Svetoslav Nedkov",
       "date": "2010-02-08T08:00:01.000-0500",
       "body": "Patch replacing lucene views with native couch views. The artifact model has been changed a bit and this is also reflected in the patch. Finally this patch fixes a bug with switching invalid message style to normal style for the top screen message.\n"
     },
     {
+      "id": "12570",
       "author": "Svetoslav Nedkov",
       "date": "2010-02-10T08:07:28.000-0500",
       "body": "Basically the same patch but against a fresh trunk and manually changed fluid-engage to fluid-engage-kettle.\n"
     },
     {
+      "id": "12571",
       "author": "Justin Obara",
       "date": "2010-02-11T20:07:38.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12572",
       "author": "Justin Obara",
       "date": "2010-02-11T20:22:20.000-0500",
       "body": "I have committed <https://fluidproject.atlassian.net/browse/ENGAGE-293#icft=ENGAGE-293>.native-couch-view\\.patch with several changes.\n\nHere is a link to an e-mail thread about it.\\\n<http://old.nabble.com/Object-Entry-Code-Review-to27557626.html>\n"
     },
     {
+      "id": "12573",
       "author": "Svetoslav Nedkov",
       "date": "2010-02-12T09:03:33.000-0500",
       "body": "<https://fluidproject.atlassian.net/browse/ENGAGE-293#icft=ENGAGE-293>.patch fixes the unit tests for code entry and fixes the layout for FF.\n"
     },
     {
+      "id": "12574",
       "author": "Svetoslav Nedkov",
       "date": "2010-02-12T09:06:59.000-0500",
       "body": "Images to go with the above patch.\n"
     },
     {
+      "id": "12575",
       "author": "Svetoslav Nedkov",
       "date": "2010-02-12T10:59:35.000-0500",
       "body": "ENGAGE-293-2.patch contains the same set of changes as <https://fluidproject.atlassian.net/browse/ENGAGE-293#icft=ENGAGE-293>.patch, with the difference that the internationalized delete button is used.\n"
     },
     {
+      "id": "12576",
       "author": "Justin Obara",
       "date": "2010-02-12T12:27:39.000-0500",
       "body": "Committed Sveto's latest patch ENGAGE-293-2.patch, which fixes the broken unit tests, the alignment of the buttons, abd the response from the service. I added in the new images from <https://fluidproject.atlassian.net/browse/ENGAGE-305#icft=ENGAGE-305> (which Sveto had done locally but couldn't add to the patch). These new images should also fix the horizontal scroll issue. I did have to make some changes which was to go back to a single image for the delete button. This will simplify the code. The background should probably be done in css anyways. So we should look into that for the next version.\n"
     },
     {
+      "id": "12577",
       "author": "Justin Obara",
       "date": "2010-02-12T12:28:14.000-0500",
       "body": "Assigning this to colin. Could you please take another pass over this before we close it.\n"
     },
     {
+      "id": "12578",
       "author": "Colin Clark",
       "date": "2010-02-12T14:31:29.000-0500",
       "body": "I've reviewed Sveto and Justin's changes to Object Code Entry and they look good. +1 for inclusion in Engage 0.3b\n"

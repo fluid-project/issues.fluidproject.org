@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10980",
       "author": "Michelle D'Souza",
       "date": "2013-12-09T15:24:40.483-0500",
       "body": "Some of this work has been merged into the project repo at d7409eab6dbb0a1e2bd54f1b37d1fd14c2c1410f\n\nThere are some changes that need to be made:&#x20;\n\n1\\. We should not hard code the colour of the indicators in the class names. We should also change the references to 'indicatorColor' to make it clear that we are actually concerned about state.\\\n2\\. We should remove the duplication in the indicator tests.&#x20;\n"
     },
     {
+      "id": "10981",
       "author": "Cindy Li",
       "date": "2013-12-20T15:53:11.761-0500",
       "body": "Merged into the project repo @ 14307be84664e74dddfd01b5813d87450d810055\n"

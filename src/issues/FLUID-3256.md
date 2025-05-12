@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16508",
       "author": "Justin Obara",
       "date": "2009-10-20T10:12:12.000-0400",
       "body": "Unfortunately Keyboard accessibility in Safari 3 was very limited.\n"

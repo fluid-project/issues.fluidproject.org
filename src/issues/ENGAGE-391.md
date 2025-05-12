@@ -40,11 +40,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12589",
       "author": "Sambhavi Chandrashekar",
       "date": "2010-02-17T15:27:08.000-0500",
       "body": "Bug Parade Engage 0.3&#x20;\n"
     },
     {
+      "id": "12591",
       "author": "Sambhavi Chandrashekar",
       "date": "2010-02-24T12:46:49.000-0500",
       "body": "a11y issue\n"

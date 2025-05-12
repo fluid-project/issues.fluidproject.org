@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25756",
       "author": "Giovanni Tirloni",
       "date": "2020-04-15T10:17:42.287-0400",
       "body": "I think this was fixed in another ticket:\n\n```\n# ls -dZ images/\r\ndrwxr-xr-x. 993da6cd www system_u:object_r:httpd_sys_rw_content_t:s0 images/\n```\n"

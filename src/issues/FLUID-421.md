@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15654",
       "author": "Daphne Ogle",
       "date": "2008-04-02T18:26:46.000-0400",
       "body": "iteration09\n"
     },
     {
+      "id": "15656",
       "author": "Allison Bloodworth",
       "date": "2008-05-27T01:45:50.000-0400",
       "body": "iteration10\n"

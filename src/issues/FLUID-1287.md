@@ -60,6 +60,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22166",
       "author": "Justin Obara",
       "date": "2009-12-08T11:18:49.000-0500",
       "body": "Daniel McCallum on the Infusion-Users list was indicating that they would like to be able to constrain the dragging of the item within a container.\n\n<http://fluidproject.org/pipermail/infusion-users/2009-December/000101.html>\n\nOn line 315 of Reorderer.js we are using jquery's draggable. \\\nWe could add the \"containment\" option.\n\n<http://jqueryui.com/demos/draggable/#constrain-movement>\n\nAllowing the user to specify a container, and possibly defaulting to the components container.\n"

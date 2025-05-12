@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20560",
       "author": "Allison Bloodworth",
       "date": "2008-08-05T13:12:27.000-0400",
       "body": "iteration21\n"
     },
     {
+      "id": "20561",
       "author": "Justin Obara",
       "date": "2011-01-10T14:33:36.642-0500",
       "body": "I closed off the open sub-issues. Sorry Gary if you were still working on these, please re-open if need be.\n"

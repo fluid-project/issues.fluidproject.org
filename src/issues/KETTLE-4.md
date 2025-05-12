@@ -22,11 +22,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26117",
       "author": "Justin Obara",
       "date": "2010-03-03T12:10:21.000-0500",
       "body": "removed the empty html directories from the repository, as kettle now properly canonicalises the urls\n"
     },
     {
+      "id": "26118",
       "author": "Antranig Basman",
       "date": "2013-08-13T14:03:12.881-0400",
       "body": "This facility is currently not present in \"new new Kettle\", but since the codebase affected by this issue has changed, this issue is being closed.\n"

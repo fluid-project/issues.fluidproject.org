@@ -27,26 +27,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21576",
       "author": "Justin Obara",
       "date": "2009-05-08T12:31:42.000-0400",
       "body": "Have completed the first Pass at it, now being reviewed and refactored by Laurel\n"
     },
     {
+      "id": "21577",
       "author": "Laurel Williams",
       "date": "2009-05-15T08:55:18.000-0400",
       "body": "The page is here: <http://wiki.fluidproject.org/display/fluid/How+to+Create+a+Fluid+Component>\n"
     },
     {
+      "id": "21578",
       "author": "Laurel Williams",
       "date": "2009-05-15T15:59:49.000-0400",
       "body": "I have reviewed the document, corrected some typo's and reorganized slightly.\n\nColin and I discussed two issues <http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2009-05-15:>\\\n1\\) There is no reflection in this document about why you would want to write a fluid component. I'm not sure that we really want to add to the document in this way, but certainly, knowing the advantages of using fluid would be important.\n\n2\\) I feel that the part at the end <http://wiki.fluidproject.org/display/fluid/Flutter+without+Fluid> needs some elaboration if it is to be useful. The reader is encouraged to download code, but there is no code tour, only a summary comparison of the advantages of using fluid.\n\nMy recommendation is a separate document addressing these two issues which is linked to the original document in some way. The idea of WHY can be discussed more fully in a separate page.\n"
     },
     {
+      "id": "21579",
       "author": "Laurel Williams",
       "date": "2009-05-15T16:00:15.000-0400",
       "body": "Over to you Colin.\n"
     },
     {
+      "id": "21580",
       "author": "Justin Obara",
       "date": "2014-07-11T14:22:00.853-0400",
       "body": "This is from an old example.&#x20;\n"

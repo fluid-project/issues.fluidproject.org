@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14811",
       "author": "Laurel Williams",
       "date": "2009-08-28T10:48:12.000-0400",
       "body": "Justin - I'm not sure we need to do this. I think it is just necessary to create a single set of controls to do what is required and allow others to re-design what they want. Personally, I'm finding I want to completely revise the look of the page once I had put it up on the website, and I'm doing things like moving controls around, etc. I'm guessing that if anyone else wants to use the component, their likely to do the same thing.\n\nCan you please comment on this?\n\nLaurel &#x20;\n"
     },
     {
+      "id": "14814",
       "author": "Laurel Williams",
       "date": "2009-09-03T14:25:05.000-0400",
       "body": "Unless the designers feel we need this for the website, put this on the won't fix pile for now.\n"

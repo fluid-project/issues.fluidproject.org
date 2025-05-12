@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16696",
       "author": "Justin Obara",
       "date": "2015-06-16T11:29:35.786-0400",
       "body": "This was addressed with work for <https://fluidproject.atlassian.net/browse/FLUID-5217#icft=FLUID-5217>\n"
     },
     {
+      "id": "16698",
       "author": "Justin Obara",
       "date": "2015-06-26T09:50:46.076-0400",
       "body": "Reopening to change the fix version to 1.9\n"

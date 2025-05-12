@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "15308",
       "author": "Justin Obara",
       "date": "2009-06-02T10:16:01.000-0400",
       "body": "'screenshot-1' shows the non-standard radio buttons for Table of Contents.\n"
     },
     {
+      "id": "15311",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T10:56:22.216-0400",
       "body": "The UIO dialog doesn't use radio buttons anymore.\n"

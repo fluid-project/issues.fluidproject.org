@@ -40,21 +40,25 @@
   ],
   "comments": [
     {
+      "id": "21546",
       "author": "Daphne Ogle",
       "date": "2009-05-27T20:28:36.000-0400",
       "body": "FF3 Mac OSX 10.5 on the Sakai demo (<http://build.fluidproject.org/infusion/integration-demos/sakai/html/pager-site-setting.html#>)\n\nI started with displaying 20 per page and the first user on the page was student22.  When I changed to display 30 per page the first student on the page is student32 so the students I was seeing were gone.  I'll attach screen shots of each in case that helps somehow.\n"
     },
     {
+      "id": "21547",
       "author": "Daphne Ogle",
       "date": "2009-05-27T20:29:55.000-0400",
       "body": "Displaying 20\n"
     },
     {
+      "id": "21548",
       "author": "Daphne Ogle",
       "date": "2009-05-27T20:30:29.000-0400",
       "body": "Displaying 30 changes the students in view\n"
     },
     {
+      "id": "21549",
       "author": "y z",
       "date": "2010-04-15T13:58:51.000-0400",
       "body": "This is expected behavior, given that the first page would contain first 30 records and thus the second one will have second 30 (30-60) instead of next 20 (20-40)\n"

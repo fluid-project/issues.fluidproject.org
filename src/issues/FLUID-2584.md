@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21566",
       "author": "Justin Obara",
       "date": "2009-04-14T09:50:08.000-0400",
       "body": "I believe I have recorded all of the necessary changes.\n"
     },
     {
+      "id": "21567",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:18.647-0500",
       "body": "Closing issues that were fixed in 1.1\n"

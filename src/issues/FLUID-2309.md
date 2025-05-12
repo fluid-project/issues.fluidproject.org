@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20913",
       "author": "Justin Obara",
       "date": "2009-03-12T12:47:01.000-0400",
       "body": "Bug Parade 1.0 release\n"
     },
     {
+      "id": "20914",
       "author": "Michelle D'Souza",
       "date": "2009-03-26T11:25:15.000-0400",
       "body": "Antranig fixed this issue while porting to ui.core a11y\n"

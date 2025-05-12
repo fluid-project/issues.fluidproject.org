@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12487",
       "author": "Michelle D'Souza",
       "date": "2009-11-03T16:26:11.000-0500",
       "body": "Also the eclipse projects should have the same name as the folders\n"
     },
     {
+      "id": "12488",
       "author": "Justin Obara",
       "date": "2009-11-10T15:21:20.000-0500",
       "body": "This appears to have been fixed.\n\n<http://source.fluidproject.org/svn/fluid/engage/>\n"

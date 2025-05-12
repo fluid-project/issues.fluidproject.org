@@ -33,21 +33,25 @@
   ],
   "comments": [
     {
+      "id": "16466",
       "author": "Laurel Williams",
       "date": "2009-05-25T12:43:10.000-0400",
       "body": "Here is a template for a fluid component that we can start with.\n"
     },
     {
+      "id": "16468",
       "author": "Laurel Williams",
       "date": "2009-05-25T12:43:29.000-0400",
       "body": "See attached component template.\n"
     },
     {
+      "id": "16470",
       "author": "Laurel Williams",
       "date": "2009-06-08T10:39:43.000-0400",
       "body": "Justin committed this code\n"
     },
     {
+      "id": "16472",
       "author": "Michelle D'Souza",
       "date": "2011-01-24T10:04:56.409-0500",
       "body": "Reopening these issue in order to add the buildercomponent.&#x20;\n"

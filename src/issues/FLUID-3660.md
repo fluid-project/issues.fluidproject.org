@@ -33,16 +33,19 @@
   ],
   "comments": [
     {
+      "id": "22048",
       "author": "Justin Obara",
       "date": "2010-05-27T14:32:14.831-0400",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-3660#icft=FLUID-3660>.patch.txt adds the inject.js script as well as a function in jqunit that automatically adds in the inject script when tests are run in the testswarm environment\n"
     },
     {
+      "id": "22050",
       "author": "Colin Clark",
       "date": "2010-05-31T11:45:16.599-0400",
       "body": "I've reviewed Justin's patch and suggested one change--we're missing () in the call to new Date. Once Justin's makes this change and tests it, this patch looks ready to be committed.\n"
     },
     {
+      "id": "22051",
       "author": "Justin Obara",
       "date": "2010-05-31T12:04:47.924-0400",
       "body": "Committed the inject.js script as well as changes to jqunit.js to automatically insert inject.js when the test is run in the testswarm environment\n"

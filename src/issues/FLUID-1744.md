@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19284",
       "author": "Justin Obara",
       "date": "2008-10-30T14:40:30.000-0400",
       "body": "Appears to be not working still&#x20;\n"
     },
     {
+      "id": "19287",
       "author": "Anastasia Cheetham",
       "date": "2008-10-30T14:44:04.000-0400",
       "body": "Now it's **really** fixed.\n"
     },
     {
+      "id": "19288",
       "author": "Justin Obara",
       "date": "2008-10-30T14:48:52.000-0400",
       "body": "Verified fix using FF3 (Win Vista)&#x20;\n"

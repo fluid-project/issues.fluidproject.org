@@ -38,6 +38,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24134",
       "author": "Anastasia Cheetham",
       "date": "2008-06-24T21:00:49.000-0400",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-702#icft=FLUID-702> referred to the requirement of not showing the page links if the total number of items in the list is less than the number of items shown per page, but the Pager implemented for 702 was mark-up driven, and hence couldn't implement this.\n"

@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20143",
       "author": "Barbara Glover",
       "date": "2008-02-19T10:56:20.000-0500",
       "body": "iteration03\n"
     },
     {
+      "id": "20144",
       "author": "Barbara Glover",
       "date": "2008-02-19T14:01:16.000-0500",
       "body": "3 people attending\n"
     },
     {
+      "id": "20146",
       "author": "Barbara Glover",
       "date": "2008-02-28T13:34:02.000-0500",
       "body": "Closing and reopening because I messed up the \"time spent\" field and there's no way to delete.\n"

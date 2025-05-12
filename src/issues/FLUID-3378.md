@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23281",
       "author": "Colin Clark",
       "date": "2010-03-30T13:25:14.000-0400",
       "body": "This issue will be moot when we move to the new IoC system, as decorators will be assignable without the component specifically having to enable support for it. I don't think we can change the API of either Inline Edit or the Uploader at this point, so we'll have to live with the inconsistency.\n\nFuture components, if they add support for decorators before we have the IoC system, should use the option name \"decorators.\"\n"
     },
     {
+      "id": "23282",
       "author": "Colin Clark",
       "date": "2010-03-30T13:27:05.000-0400",
       "body": "Can't fix this issue in Inline Edit without breaking API compatibility, and we won't need to sweat this at all when the new IoC system is in place.\n"

@@ -34,16 +34,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19679",
       "author": "Colin Clark",
       "date": "2008-07-31T16:22:45.000-0400",
       "body": "infusion-05-wishlist\n"
     },
     {
+      "id": "19680",
       "author": "Colin Clark",
       "date": "2008-10-21T23:14:13.000-0400",
       "body": "A large number of Safari-related bugs were fixed for the 0.5 releases. One minor bug remains in InlineEdit, and it has been promoted to a separate issue. Otherwise, this goal was accomplished during the 0.5 milestone.\n"
     },
     {
+      "id": "19681",
       "author": "Justin Obara",
       "date": "2011-03-08T08:59:48.135-0500",
       "body": "as per colin's comment above\n"

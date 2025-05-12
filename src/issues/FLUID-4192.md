@@ -35,16 +35,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14864",
       "author": "Antranig Basman",
       "date": "2012-02-29T00:33:44.905-0500",
       "body": "Note that IoCRendererComponent was abolished (or rather, made the default) in order to reduce the likelihood of this error\n"
     },
     {
+      "id": "14867",
       "author": "Antranig Basman",
       "date": "2012-03-21T03:21:51.342-0400",
       "body": "After <https://fluidproject.atlassian.net/browse/FLUID-4626#icft=FLUID-4626>, this remains a serious problem. For example, using the \"model relay component\" to defer the construction of videoPlayer components to the point where uiOptions has constructed and fetches its model, gives rise to a classic instantiator failure - despite the new \"instantiator stack code\" apparently being prepared to have a heterogeneous stack of instantiators, there's currently no code path for one to arrive. New instantiators are still only created when the stack is found to be empty.\\\nIt's unclear whether we can do much about this before <https://fluidproject.atlassian.net/browse/FLUID-4392#icft=FLUID-4392> work lands... an essential part of this work was enhancing the \"localRecord\" (and probably doing away with it entirely in its silly role of replacing the component options) to explicitly include any instantiator which is in progress. Still hard to deal with \"broken trees\" without an explicit notation available at construct time whether a component is meant to be a subcomponent or not. Which as usual implies doing away with \"initSubcomponent\". This probably implies Fluid 2.0.\\\nA nasty workaround is to wrap a listener dispatch like the one above with a setTimeout() to make sure that it executes with an empty stack.\n"
     },
     {
+      "id": "14871",
       "author": "Antranig Basman",
       "date": "2013-02-19T14:53:36.500-0500",
       "body": "Resolved by merge of <https://fluidproject.atlassian.net/browse/FLUID-4330#icft=FLUID-4330> branch at revision 91d5d1\n"

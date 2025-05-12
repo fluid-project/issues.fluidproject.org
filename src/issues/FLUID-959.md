@@ -35,16 +35,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19979",
       "author": "Justin Obara",
       "date": "2008-07-28T09:24:30.000-0400",
       "body": "Only failing test 5.2, in latest build\n"
     },
     {
+      "id": "19981",
       "author": "Anastasia Cheetham",
       "date": "2008-07-29T15:45:37.000-0400",
       "body": "The test has been changed to reflect browser differences.\n"
     },
     {
+      "id": "19984",
       "author": "Justin Obara",
       "date": "2008-07-29T15:53:59.000-0400",
       "body": "Verified fix using IE6, IE7\n"

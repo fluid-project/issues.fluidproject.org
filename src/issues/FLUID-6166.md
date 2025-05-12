@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16890",
       "author": "Cindy Li",
       "date": "2017-07-11T10:53:26.675-0400",
       "body": "[The pull request](https://github.com/fluid-project/infusion/pull/832) has been merged into the project repo master branch at 8402ae7dc880e5bf4b990980e01b161ba6f3138e\n"
     },
     {
+      "id": "16892",
       "author": "Justin Obara",
       "date": "2017-07-11T15:39:10.764-0400",
       "body": "I'm noticing that there are some issues with the name, where some things still refer to \"styledRadioButton\" instead of \"themePicker\"\n"
     },
     {
+      "id": "16893",
       "author": "Cindy Li",
       "date": "2017-07-11T16:37:24.830-0400",
       "body": "[The pull request](https://github.com/fluid-project/infusion/pull/835) to fix the bug described in the comment above has been merged into the project repo master branch at 1c59e6068068a1c8498b377050575af47ca327ae\n"

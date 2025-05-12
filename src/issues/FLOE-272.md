@@ -51,11 +51,13 @@
   ],
   "comments": [
     {
+      "id": "11549",
       "author": "Jonathan Hung",
       "date": "2015-02-13T08:51:24.681-0500",
       "body": "Android issues discovered so far:\n\n* Image-01 Text size adjuster is not centred to screen\n* Image-02 The contrast theme buttons are pushed below the indicator\n* Image-03 When focused on the + button, the focus border overlaps with the label\n* Image-04 The arrow icon overlaps with the focus border on the next and previous buttons.\n"
     },
     {
+      "id": "11550",
       "author": "Justin Obara",
       "date": "2015-02-13T09:06:48.279-0500",
       "body": "screenshot-safari-mac-os-x.png shows that in Safari 8 on Mac OS 10.10 there are some visible artifacts around the white border of the back/next arrows. One possible way to address this would be to use a transparent border instead of a white border.\n"

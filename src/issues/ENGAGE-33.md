@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11861",
       "author": "Armin Krauss",
       "date": "2009-08-18T15:19:39.000-0400",
       "body": "Integrate Tagging for the 0.1 release\n"
     },
     {
+      "id": "11862",
       "author": "Justin Obara",
       "date": "2009-09-21T16:40:42.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "11863",
       "author": "Colin Clark",
       "date": "2009-10-14T16:29:46.000-0400",
       "body": "Yura and Justin have done excellent work on this umbrella issue, and the work is complete for Engage 0.1. In this release, we have support for viewing tags only.\n"
     },
     {
+      "id": "11864",
       "author": "Justin Obara",
       "date": "2009-11-03T11:50:25.000-0500",
       "body": "Closed as per previous comment\n"

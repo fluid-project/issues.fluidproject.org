@@ -34,6 +34,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17399",
       "author": "Anastasia Cheetham",
       "date": "2009-01-12T10:53:17.000-0500",
       "body": "As per IRC logs of 2009-01-09 (<http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2009-01-09>), the subcomponent documentation should clarify the use of the 'type' field in setting options: the definition of the defaults must use the type field explicitly, but implementors can set options using the shorthand.\n"

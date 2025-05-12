@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23208",
       "author": "Jacob Farber",
       "date": "2009-06-18T12:27:17.000-0400",
       "body": "Template has been delivered\n"
     },
     {
+      "id": "23209",
       "author": "Laurel Williams",
       "date": "2009-08-17T09:52:41.000-0400",
       "body": "Need template revised to include buttons for \"select all\" and \"un-select all\"\n"
     },
     {
+      "id": "23210",
       "author": "Jacob Farber",
       "date": "2009-08-21T14:30:59.000-0400",
       "body": "The sakai UI Options demo has 2 sample buttons at the bottom. You could always use those to start.\n"
     },
     {
+      "id": "23211",
       "author": "Laurel Williams",
       "date": "2009-08-28T12:25:00.000-0400",
       "body": "After discussion with Jacob, we simply re-wrote the \\<span> as a button. It is a clean alternative and can be easily change to use another design.\n"

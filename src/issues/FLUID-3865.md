@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23605",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T13:28:54.409-0400",
       "body": "I think the issue is not so much that there isn't focus styling, it's that you can't properly tab to the toolbar: Try clickin in the toolbar area and then tabbing - you do get a focus highlight. Still a problem, but a different problem.\n"
     },
     {
+      "id": "23607",
       "author": "Justin Obara",
       "date": "2014-07-18T09:36:23.296-0400",
       "body": "The focus styling appears. I've tried with Chrome 35, FF 30, Safari 7 (Mac OS 10.9) and IE 11 (Win 7).\n"

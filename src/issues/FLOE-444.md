@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11526",
       "author": "Alan Harnum",
       "date": "2016-01-18T11:05:15.601-0500",
       "body": "All containers except for the actual FDS container are now running the official rebuilt versions.\n\nFDS is waiting on this PR: <https://github.com/GPII/first-discovery-server/pull/5>\n"
     },
     {
+      "id": "11527",
       "author": "Alan Harnum",
       "date": "2016-01-26T10:24:02.514-0500",
       "body": "The deployed First Discovery Server container is now using the official image from <https://github.com/GPII/first-discovery-server>&#x20;\n"

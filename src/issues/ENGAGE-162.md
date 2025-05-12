@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12160",
       "author": "Justin Obara",
       "date": "2010-02-05T14:22:05.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12161",
       "author": "Colin Clark",
       "date": "2010-02-08T16:15:59.000-0500",
       "body": "Sveto has implemented this issue in his branch. It still needs to be merged with trunk, which I am doing.\n"

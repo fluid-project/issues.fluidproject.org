@@ -32,11 +32,13 @@
   ],
   "comments": [
     {
+      "id": "24158",
       "author": "Justin Obara",
       "date": "2016-11-15T14:00:15.550-0500",
       "body": "screenshot.png shows the contrast selection indicator mostly obscured by the default contrast option, when the maximum line-spacing is set.\n"
     },
     {
+      "id": "27874",
       "author": "Justin Obara",
       "date": "2024-07-24T11:29:25.399-0400",
       "body": "Could not reproduce with Safari 17.5 on macOS 14.5\n"

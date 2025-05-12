@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18921",
       "author": "Allison Bloodworth",
       "date": "2008-09-15T19:50:55.000-0400",
       "body": "iteration18\n"
     },
     {
+      "id": "18923",
       "author": "Daphne Ogle",
       "date": "2008-09-30T21:11:15.000-0400",
       "body": "<http://wiki.fluidproject.org/display/fluid/Robin+McCoy+(Faculty+-+Business+School>)\n"

@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12778",
       "author": "Michelle D'Souza",
       "date": "2011-12-15T16:00:42.789-0500",
       "body": "The log in button has now moved into the sidebar and this is no longer an issue.&#x20;\n"

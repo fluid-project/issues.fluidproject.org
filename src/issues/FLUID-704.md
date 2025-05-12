@@ -58,11 +58,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23676",
       "author": "Justin Obara",
       "date": "2009-05-14T15:10:08.000-0400",
       "body": "a11y issue&#x20;\n"
     },
     {
+      "id": "23677",
       "author": "Justin Obara",
       "date": "2017-01-16T09:24:18.604-0500",
       "body": "Tried again with JAWS 17 on Win 8.1 using Firefox 50 and IE 11. They both will say \"Browse Files Button\", although in IE 11 there are both an edit field and the button (See: <https://fluidproject.atlassian.net/browse/FLUID-6065#icft=FLUID-6065>)\n"

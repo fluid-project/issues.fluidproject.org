@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10006",
       "author": "Justin Obara",
       "date": "2010-07-14T11:26:44.209-0400",
       "body": "Bug Parade Decapod 0.4\n"
     },
     {
+      "id": "10007",
       "author": "Justin Obara",
       "date": "2012-05-25T13:31:11.149-0400",
       "body": "You can only export when images are provided for import\n"

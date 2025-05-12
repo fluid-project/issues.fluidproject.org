@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16968",
       "author": "Justin Obara",
       "date": "2009-05-14T10:26:30.000-0400",
       "body": "Bug Parade 1.1 release&#x20;\n"
     },
     {
+      "id": "16969",
       "author": "Anastasia Cheetham",
       "date": "2009-05-25T13:06:08.000-0400",
       "body": "Currently, the only use of debugMode=true for the Renderer is in a manual test file, which should be left as it.\n\nRegarding fluid.fail(): <https://fluidproject.atlassian.net/browse/FLUID-1404#icft=FLUID-1404> says:\\\n\"...change it to a throw() for the release only, then change it back so we can debug easily...\"\\\nThe code in SVN right now actually already has the call to message.fail() commented out, and an error is thrown. It looks like we made this change for the last release, and never changed it back.\n\nSo nothing actually needs to be done for this JIRA.\n"
     },
     {
+      "id": "16970",
       "author": "Anastasia Cheetham",
       "date": "2009-05-25T13:07:11.000-0400",
       "body": "Already done - see earlier comment.\n"
     },
     {
+      "id": "16971",
       "author": "Michelle D'Souza",
       "date": "2011-01-13T16:50:10.587-0500",
       "body": "Reopening these issues in order to change the component to Release.&#x20;\n"

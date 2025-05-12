@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10377",
       "author": "Justin Obara",
       "date": "2012-10-12T14:41:54.749-0400",
       "body": "After talking things over with Michelle, Cindy, and Jon we came up with this structure\n\ncore\n\n* components\n* styles\\\n  export\n* components\\\n  dewarp\\\n  capture\\\n  lib\\\n  mock-book\\\n  tests\n* core\n* export\n* dewarp\n* capture\n"

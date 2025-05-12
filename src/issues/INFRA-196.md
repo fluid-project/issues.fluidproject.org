@@ -22,11 +22,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26075",
       "author": "Giovanni Tirloni",
       "date": "2020-04-13T08:19:29.484-0400",
       "body": "This is a pro feature in UptimeRobot\n"
     },
     {
+      "id": "26076",
       "author": "Giovanni Tirloni",
       "date": "2020-05-14T14:50:12.015-0400",
       "body": "We are using Let's Encrypt which requires certificates to be renewed every 3 months. The automation has been working for a while now.\n\nWe're not using paid wildcard certificates anymore (that were required by Vidyo), so I'll close this ticket for now.\n"

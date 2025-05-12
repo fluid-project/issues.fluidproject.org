@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21552",
       "author": "Justin Obara",
       "date": "2009-04-02T14:57:12.000-0400",
       "body": "If this is just a missing file or an incorrect path, it can be verified on just one or two configurations. (probably IE)\n\nIf this requires a bigger fix, it will need a full QA session to verify the fix.\n"
     },
     {
+      "id": "21553",
       "author": "Colin Clark",
       "date": "2009-04-06T18:37:30.000-0400",
       "body": "How do I reproduce this issue?\n\nIf this one isn't an obvious fix, let's punt it to Infusion 1.1 or later. We're planning to convert these manual tests to springboards, so I'd be curious if this error continues to occur then.\n"
     },
     {
+      "id": "21554",
       "author": "Justin Obara",
       "date": "2009-04-07T11:23:15.000-0400",
       "body": "May have been inadvertently fixed.\n"

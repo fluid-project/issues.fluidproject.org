@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24059",
       "author": "Justin Obara",
       "date": "2011-05-17T10:26:34.642-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24062",
       "author": "Antranig Basman",
       "date": "2011-05-18T16:53:27.209-0400",
       "body": "Implemented using the utility \"fluid.clearComponent\" together with the directive \"onCreateEvent\" which allows this use case to be met without bothering the user with details of the instantiator\n"
     },
     {
+      "id": "24065",
       "author": "Antranig Basman",
       "date": "2017-03-30T21:46:08.303-0400",
       "body": "This JIRA was written in a pretty unclear way and it is no longer clear what is referred to by \"the contextual information\". In the post <https://fluidproject.atlassian.net/browse/FLUID-6148#icft=FLUID-6148> framework, the techniques used in this test case (overwriting of component options, manual calls to fluid.initDependent) are no longer supported, and so the test has been reverted to a standard \"createOnEvent\" workflow. It's no longer clear what effect was intended by the following strange line:\n\n```java\nreins.child1.options.components.child2 = fluid.copy(fluid.defaults(\"fluid.tests.reinstantiation\").components.child1.options.components.child2);\n```\n"

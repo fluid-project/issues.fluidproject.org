@@ -26,21 +26,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22522",
       "author": "Justin Obara",
       "date": "2016-09-16T09:20:43.521-0400",
       "body": "Potentially this issue could be related to this jQuery issue ( <https://bugs.jquery.com/ticket/15098> ). The jQuery issue has been fixed, but we are on an older version of jQuery which would still be affected. After <https://fluidproject.atlassian.net/browse/FLUID-5825#icft=FLUID-5825> is addressed we should re-evaluate this issue.\n"
     },
     {
+      "id": "22524",
       "author": "Justin Obara",
       "date": "2016-09-22T08:40:12.847-0400",
       "body": "An example of how this can be tested.&#x20;\n\n<https://www.pastery.net/hwpxts/>\n\nNote: the line \"vagrant snapshot restore just-provisioned\", can be omitted.\n"
     },
     {
+      "id": "22527",
       "author": "Giovanni Tirloni",
       "date": "2016-09-28T09:05:09.408-0400",
       "body": "Cannot reproduce issue any more using the master branch (Fedora 24 host, Firefox 49).\n"
     },
     {
+      "id": "22528",
       "author": "Justin Obara",
       "date": "2016-09-28T09:06:48.920-0400",
       "body": "After upgrading to the latest jQuery and jQuery UI ( <https://fluidproject.atlassian.net/browse/FLUID-5825#icft=FLUID-5825> ) this issue can no longer be reproduced. It's likely that it was resolved with changes to jQuery.\n"

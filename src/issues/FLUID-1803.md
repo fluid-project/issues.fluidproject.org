@@ -35,31 +35,37 @@
   ],
   "comments": [
     {
+      "id": "17538",
       "author": "Eli Cochran",
       "date": "2008-11-13T14:45:46.000-0500",
       "body": "Added a patch <https://fluidproject.atlassian.net/browse/FLUID-1803#icft=FLUID-1803>.patches that changes the default style key from defaultViewText to defaultViewStyle and updates the references to it\n"
     },
     {
+      "id": "17539",
       "author": "Antranig Basman",
       "date": "2008-11-13T22:10:38.000-0500",
       "body": "Looks like this was resolved with test case at revision 6022.\n"
     },
     {
+      "id": "17541",
       "author": "Justin Obara",
       "date": "2008-11-14T09:02:11.000-0500",
       "body": "The styling information appears to be present, but the class is still removed.&#x20;\n\n\\<span class=\"\" style=\"padding-right: 3px;\" tabindex=\"0\" role=\"wairole:button\">Astronomy 7A P 001 LEC\\</span>\n\nIs this the correct behaviour?\n"
     },
     {
+      "id": "17542",
       "author": "Eli Cochran",
       "date": "2008-11-14T09:40:44.000-0500",
       "body": "No it isn't. So now I'm confused as my commit doesn't seem to have taken.\n"
     },
     {
+      "id": "17543",
       "author": "Eli Cochran",
       "date": "2008-11-14T09:48:20.000-0500",
       "body": "I've looked into it and I'm not seeing the same behavior. Once rendered, I see:\\\n\\<span class=\"text sectionName\" style=\"padding-right: 3px;\" tabindex=\"0\" role=\"button\">\n"
     },
     {
+      "id": "17545",
       "author": "Justin Obara",
       "date": "2008-11-17T08:51:08.000-0500",
       "body": "I'm now seeing the correct behaviour..\n\nVerified fix using:\n\nFF2 (Mac OS 10.5)\n"

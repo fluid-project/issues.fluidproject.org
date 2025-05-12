@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19690",
       "author": "Justin Obara",
       "date": "2014-05-27T11:03:40.537-0400",
       "body": "Submitted a pull request:\\\n<https://github.com/fluid-project/infusion/pull/523>\n"
     },
     {
+      "id": "19692",
       "author": "Michelle D'Souza",
       "date": "2014-05-29T15:54:31.868-0400",
       "body": "Merged at 21ec1ab8c06e9f7ac5de90d11499f0fbe29f61c4\n"

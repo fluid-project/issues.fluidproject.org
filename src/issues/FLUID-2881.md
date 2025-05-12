@@ -33,6 +33,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23160",
       "author": "Antranig Basman",
       "date": "2010-12-10T15:47:50.810-0500",
       "body": "This facility is now implemented and will be delivered as part of the 1.3 release in \"Sneak peek\" format. Several specific improvements and bug fixes will be targetted in specific JIRAs for the next few releases - including \"component grades\", \"merge priority\" and \"the global ginger world\".\n"

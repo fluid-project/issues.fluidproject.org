@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14155",
       "author": "Justin Obara",
       "date": "2011-07-29T12:21:44.754-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "14157",
       "author": "Michelle D'Souza",
       "date": "2011-08-31T13:39:48.747-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/139> merged into project repo at 18180764a8f36ea8b8bccd23e8a4fe9c07c65106\n"

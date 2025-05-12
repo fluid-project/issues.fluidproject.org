@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13451",
       "author": "Jonathan Hung",
       "date": "2011-01-07T12:56:38.509-0500",
       "body": "Tested Infusion 1.3, Win 7 FF3.6.\n\nBy adding a width style of 50% to the \"demo-richInlineEdit-container-tinyMCE\" and \"demo-richInlineEdit-container-ckEditor\", I was not able to reproduce this issue.\n\nFurther testing is required since the method of activation has changed (only the \"Edit\" link is clickable, not the whole paragraph).\n"
     },
     {
+      "id": "13453",
       "author": "Justin Obara",
       "date": "2014-07-09T10:08:34.864-0400",
       "body": "Currently their is an explicit link to click on in.\n"

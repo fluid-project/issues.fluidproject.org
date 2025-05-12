@@ -33,16 +33,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23696",
       "author": "Anastasia Cheetham",
       "date": "2011-10-14T15:15:53.764-0400",
       "body": "As of 1.4, annotateColumnRange is still a top level option. The other two no longer are.\n"
     },
     {
+      "id": "23697",
       "author": "Justin Obara",
       "date": "2014-07-09T10:09:16.431-0400",
       "body": "Antranig Basman do you have thoughts on this issue?\n"
     },
     {
+      "id": "23699",
       "author": "Justin Obara",
       "date": "2017-01-16T09:54:32.029-0500",
       "body": "It seems that there has been some refactoring to the pager component which changes the implementation related to the rangeAnnotator. There is still a [fluid.pagedTable.rangeAnnotator](https://github.com/fluid-project/infusion/blob/master/src/components/pager/js/PagedTable.js#L26-L28) grade; however, this grade doesn't appear to be used at all. It seems to be used more like a call to fluid.registerNamespace with a method in its namespace used as a [listener](https://github.com/fluid-project/infusion/blob/master/src/components/pager/js/PagedTable.js#L101).\n"

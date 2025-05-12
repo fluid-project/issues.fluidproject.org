@@ -33,6 +33,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20988",
       "author": "Michelle D'Souza",
       "date": "2012-05-17T12:04:19.254-0400",
       "body": "Merged into project repo at 35d490f8007947b92748ca9ebf790955eac71d82\n"

@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18873",
       "author": "Eli Cochran",
       "date": "2008-11-14T15:25:14.000-0500",
       "body": "Total Progress now updates rather nicely.\n"
     },
     {
+      "id": "18875",
       "author": "Justin Obara",
       "date": "2008-12-03T11:56:01.000-0500",
       "body": "appears to be fixed\n"

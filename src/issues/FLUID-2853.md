@@ -28,21 +28,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23195",
       "author": "Justin Obara",
       "date": "2009-11-06T14:41:26.000-0500",
       "body": "was not able to reproduce this issue.\n"
     },
     {
+      "id": "23196",
       "author": "Anastasia Cheetham",
       "date": "2009-11-06T14:51:52.000-0500",
       "body": "Steps to reproduce:\n\n1\\) On your hard-drive, find a JPEG image to test with.\\\n2\\) Rename the file so that it has no file extension at all.\\\n3\\) Add it to the Uploader queue\n\nNote that the filename in the queue now includes a \".jpg\" extension.\n"
     },
     {
+      "id": "23197",
       "author": "Colin Clark",
       "date": "2009-11-07T13:04:41.000-0500",
       "body": "Hi Anastasia,\n\nI also can't reproduce this issue. Are you sure you're correctly removing the file extension from the file? In Mac OS X, if you edit the file name directly in the Finder and remove the file extension, it doesn't actually remove it. It just enables Finder's \"Hide extension\" option for the file.\n\nTo fully remove a file extension on the Mac, choose Get Info, remove it the name, and you'll get a confirmation dialog asking if you really want to remove the file extension. When I do this, Uploader reflects the correct file name, sans extension.\n\nCan you double-check this and close the issue if you can't reproduce as well? After that, if you're still feeling indignant, maybe send a note to Steve Jobs? 😛\n"
     },
     {
+      "id": "23198",
       "author": "Anastasia Cheetham",
       "date": "2009-11-09T09:22:42.000-0500",
       "body": "I had no idea that the Finder doesn't actually do what I tell it to do. I hate it when that happens...\n"

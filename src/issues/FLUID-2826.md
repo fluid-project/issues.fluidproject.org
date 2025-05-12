@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14516",
       "author": "Justin Obara",
       "date": "2009-06-05T08:44:19.000-0400",
       "body": "I am seeing the \"Easier to Find\" accordion tab highlighted when it is not opened.\n\nTo reach it with the keyboard, you would need to arrow to it from the \"Easier to See\" accordion tab. This may be why it wasn't noticed.\n"

@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10174",
       "author": "James Yoon",
       "date": "2010-07-21T10:05:02.139-0400",
       "body": "On relevance of issue:\n\nWhile we might not think it reasonable that users try and use the Storm as a camera for Decapod, the problem is still relevant for at least two reasons:\\\n1\\) A user could conceivably have their phone connected to the computer when Decapod is running, for reasons that are entirely independent of Decapod (e.g., they're charging their phone, they're syncing it, etc.)\\\n2\\) This hanging issue might exist for other unsupported cameras\n"
     },
     {
+      "id": "10175",
       "author": "Justin Obara",
       "date": "2012-05-25T15:51:16.133-0400",
       "body": "The calibration workflow was removed from the Decapod 0.5 release\n"

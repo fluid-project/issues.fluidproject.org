@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13903",
       "author": "Anastasia Cheetham",
       "date": "2010-02-25T15:27:20.000-0500",
       "body": "Alternatively, I could create a copy of the existing 'things', add my 'thung's to it, then request a single change on the whole thing... That doesn't seem entirely optimal either.\n"
     },
     {
+      "id": "13905",
       "author": "Antranig Basman",
       "date": "2014-10-30T18:16:50.775-0400",
       "body": "In time, the ChangeApplier will be extended to support custom array insertion events as well as fixed to allow the DELETE operation to remove an array element. See IRC discussion in #fluid-work at <https://botbot.me/freenode/fluid-work/2014-09-17/?msg=21823956&page=2>\n"

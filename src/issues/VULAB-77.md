@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27472",
       "author": "Blake E",
       "date": "2008-11-04T15:41:02.000-0500",
       "body": "vulab6\n"
     },
     {
+      "id": "27473",
       "author": "Blake E",
       "date": "2008-11-04T15:41:30.000-0500",
       "body": "I think this may have been due to development happening on the site while the testing was happening.\n\nI am unable to re-create.\n"
     },
     {
+      "id": "27474",
       "author": "Blake E",
       "date": "2008-11-10T11:22:28.000-0500",
       "body": "I think this was caused by a mixture of editing and poor path inclusions in configuration files. I haven't seen this error again.\n"

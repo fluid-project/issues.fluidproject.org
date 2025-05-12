@@ -37,26 +37,31 @@
   ],
   "comments": [
     {
+      "id": "17100",
       "author": "Justin Obara",
       "date": "2009-07-27T16:28:06.000-0400",
       "body": "Bug Parade 1.1.1 release\n"
     },
     {
+      "id": "17101",
       "author": "y z",
       "date": "2009-07-30T11:48:03.000-0400",
       "body": "patch fixes the flickering problem:\n\n* added new css class for rich inline edit invitation style (that has no border)\n* added the newly created css class as a default invitation style for richinlineeditors (both tinymce and fck)\n* changed markup for quickstart example for inline edit that fixes changes incorrect \\<span> tags that contain \\<p> tags onto \\<div> tags.\n"
     },
     {
+      "id": "17102",
       "author": "y z",
       "date": "2009-07-30T13:04:16.000-0400",
       "body": "changed the name of the css class&#x20;\n"
     },
     {
+      "id": "17103",
       "author": "Jacob Farber",
       "date": "2009-07-31T10:00:06.000-0400",
       "body": "I reviewed the code, and everything looks good.\n"
     },
     {
+      "id": "17104",
       "author": "Justin Obara",
       "date": "2009-07-31T10:32:36.000-0400",
       "body": "Verified fix using:\n\nIE 7, FF3 (Win Vista)\\\nSafari 3, Safari 4, Opera 9.6, FF3.5 (Mac OS 10.5)\n"

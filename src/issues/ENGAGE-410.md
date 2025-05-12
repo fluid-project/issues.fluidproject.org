@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12342",
       "author": "y z",
       "date": "2010-02-19T11:28:22.000-0500",
       "body": "a11y issue\n"
     },
     {
+      "id": "12343",
       "author": "y z",
       "date": "2010-02-19T13:00:15.000-0500",
       "body": "Tested it again on 2 different devices and the issue is gone.\n"

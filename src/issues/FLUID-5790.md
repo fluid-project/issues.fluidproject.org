@@ -43,26 +43,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25506",
       "author": "Antranig Basman",
       "date": "2015-10-08T14:31:43.619-0400",
       "body": "Some relevant lore - this is more standardly known as \"cancellation:\"\n\n<https://esdiscuss.org/topic/cancelable-promises>\\\n<https://github.com/petkaantonov/bluebird/issues/415>\n\nIt seems that we should implement a new \"disposition\" for promises of \"cancelled\" - and an attempt to use a cancelled promise is a noop, not a failure. We can also improve our DataSources to allow propagation of cancellation back to the infrastructure that is performing the I/O.\n"
     },
     {
+      "id": "25507",
       "author": "Antranig Basman",
       "date": "2015-10-08T14:39:05.971-0400",
       "body": "<http://webreflection.blogspot.co.uk/2015/09/on-cancelable-promises.html> uses the name \"abort\" rather than \"cancel\" and considers that it should be equivalent to a rejection, which seems suspect to me - in the light of the very particular semantics we have for \"destruction\" of the surrounding superstructure of components. Note that for event firers we simply called this method \"destroy\". It might indeed be a helpful feature to produce a standard component factory for promises - and in fact to start properly bridging the gap between events and promises. See ancient discussion on \"latched events\" at <https://fluidproject.atlassian.net/browse/FLUID-4883#icft=FLUID-4883> - but these \"promise factories\" differ from those since in theory there can be numerous such promises in flight. However, note that the original use case for this JIRA could have been handled by a \"latched event\" attached to the request.\n\nTo avoid confusing people we might well start speaking of, say, \"component promises\" or \"component-bound promises\" rather than \"latched events\".\n"
     },
     {
+      "id": "25508",
       "author": "Cindy Li",
       "date": "2016-10-20T13:31:09.035-0400",
       "body": "The pull request <https://github.com/fluid-project/infusion/pull/730> has been merged into the master branch at 2ae5da176294899a2c73b333aa27bdefeaa33b80 to support nullable invokers.\n"
     },
     {
+      "id": "25509",
       "author": "Antranig Basman",
       "date": "2016-10-20T19:12:17.417-0400",
       "body": "Reopening since <https://github.com/fluid-project/infusion/pull/730> still only represents partial support for the full feature set imagined. We now have nullable events and invokers, but still not cancelable promises\n"
     },
     {
+      "id": "25510",
       "author": "Antranig Basman",
       "date": "2019-08-08T17:24:03.215-0400",
       "body": "Some further lore developed in the 4 years since then - \\\n<https://github.com/tc39/proposal-cancelable-promises/issues/70> - the sad story of an ES proposal that got trashed through opposition from Google, but the thread shows widespread support and appreciation for such a feature, and all the objections are pretty esoteric.\n\n<https://medium.com/@benlesh/promise-cancellation-is-dead-long-live-promise-cancellation-c6601f1f5082> - treatment by the author of \"Observable\" showing why the promises ecosystem is from his viewpoint suspect. The fact that there are so many \"live/asynchronous value\" idioms crowding into this space shows that all of them must be wrong.\n"

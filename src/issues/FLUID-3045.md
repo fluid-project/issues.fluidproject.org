@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20673",
       "author": "Colin Clark",
       "date": "2010-03-30T19:18:01.000-0400",
       "body": "This issue is filed against 1.5 because it is largely a concern for the new IoC system.\n"
     },
     {
+      "id": "20674",
       "author": "Antranig Basman",
       "date": "2013-05-25T05:39:51.419-0400",
       "body": "The current implementations of \"fluid.initSubcomponents\" as well as \"fluid.initDependent\" will indeed throw an error if no type is defined for the component. fluid.initSubcomponent itself and related functions will be deprecated for Fluid 1.9 and removed for Fluid 2.0\n"

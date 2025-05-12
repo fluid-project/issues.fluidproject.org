@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15100",
       "author": "Colin Clark",
       "date": "2010-05-07T10:13:20.749-0400",
       "body": "Jen's batched pager code is now available here: <https://source.fluidproject.org/svn/incubator/batched-pager/trunk/>\n"
     },
     {
+      "id": "15103",
       "author": "Colin Clark",
       "date": "2010-05-07T10:14:23.212-0400",
       "body": "I committed Jen's batched Pager example to the incubator at r9863\n"

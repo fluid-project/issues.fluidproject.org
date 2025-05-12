@@ -32,11 +32,13 @@
   ],
   "comments": [
     {
+      "id": "14768",
       "author": "Anastasia Cheetham",
       "date": "2011-09-30T14:03:08.386-0400",
       "body": "This (uploader-error.png) screen shot shows the error message that occurs when a file is removed from the queue.\n"
     },
     {
+      "id": "14770",
       "author": "Justin Obara",
       "date": "2015-06-10T10:23:18.314-0400",
       "body": "The uploader server demo no longer exists.\n"

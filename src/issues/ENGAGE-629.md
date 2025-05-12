@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12240",
       "author": "James Yoon",
       "date": "2009-10-06T15:50:24.000-0400",
       "body": "<http://wiki.fluidproject.org/display/fluid/Notes+from+MMI+visit%2C+micro-engagement+chat+%28Sept.+3%2C+2009%29>\n"

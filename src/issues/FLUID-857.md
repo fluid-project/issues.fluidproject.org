@@ -35,16 +35,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19458",
       "author": "Anastasia Cheetham",
       "date": "2008-07-07T21:30:41.000-0400",
       "body": "There is a blur handler (assigned in bindKeyHighlight()) that should take care of this, but for some reason, when a click is the cause of a blur, the blur handler is not triggered - the DebugFocus tool does indicate the blur is happening, but the 'focusOff() handler isn't triggered.\n"
     },
     {
+      "id": "19459",
       "author": "Antranig Basman",
       "date": "2008-07-18T17:03:46.000-0400",
       "body": "The problem was due to making a call to viewEl.focus() from inside the general finish() handler. If the finish() handler were itself being invoked as a result of a focus change operation, this seemed to result in some form of race condition in the browser with generally undefined behaviour - the focus and blur handlers would be called in an essentially random order, with some handlers being aborted.\n\nFor now, a very simple solution was just to move the call from outside finish() into bindEditFinish(), to ensure that we only issued the focus change if the edit were concluding due to a keyboard activity.&#x20;\n\nAll the tests pass and the manual test also works, however this may not be the ideal global solution, since it doesn't really cover the general requirement of where to put focus - in the case, for example, the edit operation is programmatically cancelled, the focus is probably in an undefined position. We don't currently have a test case for this, but if we did I guess it would go in Block 6, \"Edit-Finish\". If we wanted to address this issue more generally, we would probably need to set up a global event interception framework (as discussed post-standup today) so that it would be always possible to tell, for example, whether an event handler of a particular kind were on the stack.\n"
     },
     {
+      "id": "19460",
       "author": "Justin Obara",
       "date": "2008-12-03T11:47:58.000-0500",
       "body": "appears to have been fixed\n"

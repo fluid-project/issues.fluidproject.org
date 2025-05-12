@@ -39,26 +39,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23408",
       "author": "Justin Obara",
       "date": "2009-05-14T08:59:02.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "23410",
       "author": "Antranig Basman",
       "date": "2009-05-25T23:09:05.000-0400",
       "body": "It is possible that this is an IE8-specific bug with respect to visibility calculation. On the other hand, something else may be going on. To aid debugging, please try commenting out the \"assertVisState\" test on line 582, as well as all lines following \"var redoControl\", reduce the test count to 9 and report whether the \"Model state should now be\" test 9 now passes.\n\nNote that the specific test in error is \"Self-rendering with undo control \".\n"
     },
     {
+      "id": "23411",
       "author": "Justin Obara",
       "date": "2009-05-26T12:43:56.000-0400",
       "body": "Following the above directions, will result in no failing tests\n"
     },
     {
+      "id": "23412",
       "author": "Laurel Williams",
       "date": "2009-10-06T15:57:31.000-0400",
       "body": "This unit test is now numbered 30.9 (and is still failing in IE8)\n"
     },
     {
+      "id": "23413",
       "author": "Golam Chowdhury",
       "date": "2010-10-08T14:14:58.723-0400",
       "body": "It seems like the  jquery is(':hidden') where hidden selector is broken in IE8 and here are my findings:\n\n<http://forum.jquery.com/topic/hidden-visible-broken-in-ie8>\n\n<http://www.code-styling.de/english/jquery-132-causes-problems-at-ie-8>\n"

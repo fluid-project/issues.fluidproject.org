@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18796",
       "author": "Justin Obara",
       "date": "2011-05-17T10:11:49.379-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "18800",
       "author": "Antranig Basman",
       "date": "2011-05-18T16:52:21.933-0400",
       "body": "Implemented with the described features in 1.4\n"

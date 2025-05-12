@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12697",
       "author": "vmoulder",
       "date": "2010-03-30T14:47:52.000-0400",
       "body": "REF: Physical Kiosk (Draft 1) <http://wiki.fluidproject.org/display/fluid/Physical+Kiosk+%28Draft+1%29>\n"

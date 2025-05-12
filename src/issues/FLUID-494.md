@@ -48,21 +48,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18816",
       "author": "Michelle D'Souza",
       "date": "2008-07-18T20:26:29.000-0400",
       "body": "The 'add files' button in the pop-up example file has strange focus swallowing behaviour. I've changed the button to a span temporarily in order to be able to add keyboard support for the uploader but we really should go back to a button and figure out why it hogs keyboard focus.&#x20;\n"
     },
     {
+      "id": "18819",
       "author": "Jacob Farber",
       "date": "2008-07-22T15:20:38.000-0400",
       "body": "Some progress has been made bypassing the \"greedy\" button tab behaviour by turning off dialog modality. (see jquery.ui bug #3123 @ <http://ui.jquery.com/bugs/ticket/3123>)\n"
     },
     {
+      "id": "18821",
       "author": "Eli Cochran",
       "date": "2008-07-31T16:41:15.000-0400",
       "body": "All the tasks have been completed the Uploader \"is\" keyboard accessible\n"
     },
     {
+      "id": "18822",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:53.465-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

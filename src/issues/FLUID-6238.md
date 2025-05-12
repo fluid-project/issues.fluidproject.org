@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17654",
       "author": "Justin Obara",
       "date": "2020-12-16T08:51:28.791-0500",
       "body": "With <https://fluidproject.atlassian.net/browse/FLUID-6529#icft=FLUID-6529> we added codecov configuration to display code coverage in PR checks and merges to main. These will fail the check status in GitHub if the code coverage drops. This is only handled on GitHub though, and not when run locally.\n"

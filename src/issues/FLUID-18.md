@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19933",
       "author": "Anastasia Cheetham",
       "date": "2007-10-01T14:31:56.000-0400",
       "body": "dojo 0.9 may add ARIA roles. This should be re-examined after we upgrade.\n"
     },
     {
+      "id": "19935",
       "author": "Anastasia Cheetham",
       "date": "2007-10-01T14:33:22.000-0400",
       "body": "Even if dojo adds ARIA roles and updates them appropriately on drag/drop, we need to ensure that they are also updated on keyboard access\n"
     },
     {
+      "id": "19936",
       "author": "Anastasia Cheetham",
       "date": "2007-10-04T15:57:06.000-0400",
       "body": "The states are set and updated appropriately.\n"

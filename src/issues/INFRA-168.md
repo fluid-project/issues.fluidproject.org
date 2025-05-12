@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25890",
       "author": "Giovanni Tirloni",
       "date": "2018-04-27T19:18:40.161-0400",
       "body": "A PR update by Eloisa was deployed correctly (<https://ci.inclusivedesign.ca/blue/organizations/jenkins/website-snow-dev.idrc.ocad.ca-snow_theme/detail/website-snow-dev.idrc.ocad.ca-snow_theme/120/pipeline)>\n\n \n\nThis was caused by enabling SELinux enforcing mode and needed changes in the nginx-static playbook/role.\n"

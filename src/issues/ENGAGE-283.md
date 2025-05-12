@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12311",
       "author": "Michelle D'Souza",
       "date": "2010-02-02T10:17:42.000-0500",
       "body": "mccord-pilot\n"
     },
     {
+      "id": "12312",
       "author": "Antranig Basman",
       "date": "2010-02-12T13:26:29.000-0500",
       "body": "Framework support for this function has been in trunk for about a week - assigning back for management of detailed work of I18Ning individual components\n"
     },
     {
+      "id": "12313",
       "author": "Justin Obara",
       "date": "2010-02-24T13:55:51.000-0500",
       "body": "Just need to review and close <https://fluidproject.atlassian.net/browse/ENGAGE-289#icft=ENGAGE-289> and <https://fluidproject.atlassian.net/browse/ENGAGE-290#icft=ENGAGE-290>\n"

@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13541",
       "author": "Jonathan Hung",
       "date": "2013-03-28T07:20:33.675-0400",
       "body": "Instructions on updating font sets can be found in the comments section of <https://fluidproject.atlassian.net/browse/FLUID-4949#icft=FLUID-4949>: <http://issues.fluidproject.org/browse/FLUID-4949?focusedCommentId=23508&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-23508>\n"

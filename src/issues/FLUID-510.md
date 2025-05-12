@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23496",
       "author": "Allison Bloodworth",
       "date": "2008-07-16T21:06:31.000-0400",
       "body": "I've done quite a but of work to unclutter the sidebar, creating a new \"Community\" section. Recent Posts has been placed in the \"Community\" section where it is now visible at a glance. There are probably some more improvements we could make, but I would not put the entire \"My Options\" section in the top-right corner, but we may want to consider putting just the login fields there (or a link to login, see <http://openedpractices.org/>).\n"
     },
     {
+      "id": "23497",
       "author": "Jonathan Hung",
       "date": "2008-08-21T11:56:49.000-0400",
       "body": "Streamlined a little more. Waiting for a more thorough UX review.\n\nDone for now.\n\nIteration16\n"

@@ -21,6 +21,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26585",
       "author": "Justin Obara",
       "date": "2020-10-21T08:50:05.353-0400",
       "body": "It would be preferable to not call managedComponent.singleFileUploader.resetUploadState() directly as noted in the description. A better option would be to have resetUploadState functionality triggered by the onDestroy method of the related component. However there is currently an issue in the framework that prevents this (see: <https://fluidproject.atlassian.net/browse/FLUID-6558#icft=FLUID-6558>). This has also been further discussed in comments of <https://fluidproject.atlassian.net/browse/SJRK-400#icft=SJRK-400>\n"

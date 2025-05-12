@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16335",
       "author": "Eli Cochran",
       "date": "2009-06-05T14:35:50.000-0400",
       "body": "I think that we're good.\n"
     },
     {
+      "id": "16337",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:42.329-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

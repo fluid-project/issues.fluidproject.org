@@ -33,21 +33,25 @@
   ],
   "comments": [
     {
+      "id": "27510",
       "author": "Blake E",
       "date": "2008-12-16T11:42:50.000-0500",
       "body": "/.htaccess and /public/.htaccess were changed to add an \"Options\" directive (this was causing a failure before)\n"
     },
     {
+      "id": "27512",
       "author": "Blake E",
       "date": "2008-12-16T11:43:48.000-0500",
       "body": "vulab11\n"
     },
     {
+      "id": "27514",
       "author": "Blake E",
       "date": "2008-12-16T11:47:45.000-0500",
       "body": "fixes directives in /.htaccess and /public/.htaccess to clean up the Internal 500 Errors.\n"
     },
     {
+      "id": "27515",
       "author": "Blake E",
       "date": "2008-12-18T11:24:34.000-0500",
       "body": "2 commits were made against this issue and its resolved!\n"

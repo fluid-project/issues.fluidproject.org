@@ -37,11 +37,13 @@
   ],
   "comments": [
     {
+      "id": "26607",
       "author": "Justin Obara",
       "date": "2020-12-03T10:54:55.114-0500",
       "body": "I've implemented a view to get stories by authorID and storyId for <https://fluidproject.atlassian.net/browse/SJRK-405#icft=SJRK-405>. However, at the moment it may not be re-usable to pull in all of the stories from a particular author. Hopefully the view end point is enough, currently called storiesByAuthor. For <https://fluidproject.atlassian.net/browse/SJRK-405#icft=SJRK-405> we filter the results with ?key=\\[authorID, storyId]. Hopefully based on [CouchDB view collation](https://docs.couchdb.org/en/latest/ddocs/views/joins.html#using-view-collation) we'll be able to use that same view to return all of the stories by the author instead of just a particular one; e.g. ?startkey=\\[authorID]. We may also need to override the url datasource's resolveURL method. See this [conversation](https://matrix.to/#/!JcoHDrfLedPQdFhAXn:matrix.org/$J2web5x6s_mxLnJuhkzNhXv8WOD1FuguLzYACjuIvY0?via=matrix.org) from the matrix technology channel.\n"
     },
     {
+      "id": "26608",
       "author": "Gregor Moss",
       "date": "2020-12-14T15:16:04.249-0500",
       "body": "If we allow logging in and accessing this page while authoringEnabled is false, we should indicate to the user, somehow, that authoring is not enabled and restrict access to editing/deleting stories appropriately. If we don't allow logging in while authoringEnabled is false, disregard this note 🙂\n"

@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15266",
       "author": "Justin Obara",
       "date": "2009-12-17T12:09:58.000-0500",
       "body": "Have added in a copy of jqUnit from trunk. This is a temporary measure and should be removed once the version of Infusion that the builder uses is updated.\n"
     },
     {
+      "id": "15269",
       "author": "Michelle D'Souza",
       "date": "2009-12-17T12:58:50.000-0500",
       "body": "Justin fixed the issue and I've reviewed it.&#x20;\n"

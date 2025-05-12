@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17085",
       "author": "Colin Clark",
       "date": "2008-10-29T21:11:13.000-0400",
       "body": "This was resolved by keeping track of the bytesUploaded for each file in SWFUploadManager. onFileSuccess, we check if that value is 0 and simply set it to the total size of the file.\n"
     },
     {
+      "id": "17086",
       "author": "Justin Obara",
       "date": "2008-12-03T11:55:00.000-0500",
       "body": "appears to be fixed\n"

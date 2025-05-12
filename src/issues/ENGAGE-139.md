@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12152",
       "author": "vmoulder",
       "date": "2009-11-04T12:23:21.000-0500",
       "body": "Task has been completed\n"

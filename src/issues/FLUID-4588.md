@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13136",
       "author": "Justin Obara",
       "date": "2012-02-02T14:49:24.967-0500",
       "body": "Instead of just taking a 200 status as a success, anything in the range of 200 to 204 inclusive is now accepted. I didn't take the full range of 2xx responses as they did not all seem applicable to file uploads through the uploader. The unit tests have also be updated.&#x20;\n\nPull request: \\\n<https://github.com/fluid-project/infusion/pull/200>\n"
     },
     {
+      "id": "13137",
       "author": "Colin Clark",
       "date": "2012-02-02T15:22:55.635-0500",
       "body": "I've reviewed Justin's code, tested it out, and pushed to the project repo.\n"
     },
     {
+      "id": "13138",
       "author": "Colin Clark",
       "date": "2012-02-02T15:23:43.117-0500",
       "body": "Reviewed, pushed, closed.\n"

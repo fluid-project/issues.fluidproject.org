@@ -23,11 +23,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25938",
       "author": "Giovanni Tirloni",
       "date": "2015-08-18T13:57:54.223-0400",
       "body": "Deployed in production: <https://github.com/inclusive-design/ops/tree/master/ansible/roles/iptables>\n"
     },
     {
+      "id": "25939",
       "author": "Giovanni Tirloni",
       "date": "2015-09-04T09:33:16.205-0400",
       "body": "Added iptables\\_nat and iptables\\_nat\\_device options to configure masquerading. It's currently used with the VPN servers.\n"

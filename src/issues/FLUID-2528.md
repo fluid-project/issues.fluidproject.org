@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21586",
       "author": "Michelle D'Souza",
       "date": "2009-04-06T11:27:44.000-0400",
       "body": "Please also check the dependencies of swfobject and swfupload in the 'lib' folder.&#x20;\n"
     },
     {
+      "id": "21587",
       "author": "Eli Cochran",
       "date": "2009-04-08T13:30:26.000-0400",
       "body": "I've reviewed and tested the dependences for both Progress and Uploader\n"
     },
     {
+      "id": "21588",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:58.918-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

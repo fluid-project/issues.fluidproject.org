@@ -35,11 +35,13 @@
   ],
   "comments": [
     {
+      "id": "24879",
       "author": "Colin Clark",
       "date": "2010-12-20T17:37:22.300-0500",
       "body": "This patch fixes two bugs in our Flash 9 support: 1. We were pulling styles from the wrong nickname in the demands block for flash9SetupDOM and 2. we weren't providing a button peer ID, causing SWFUpload to freak.\n"
     },
     {
+      "id": "24880",
       "author": "Colin Clark",
       "date": "2010-12-20T19:12:22.906-0500",
       "body": "Patch committed at r10445, reviewed by Antranig (<http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2010-12-20>)\n"

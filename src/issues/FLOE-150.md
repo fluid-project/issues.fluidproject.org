@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11474",
       "author": "Jonathan Hung",
       "date": "2014-01-13T15:26:40.175-0500",
       "body": "It appears that this is also fixed by using the \\<br> workaround for the contenteditable div as documented in the comment for <https://fluidproject.atlassian.net/browse/FLOE-151#icft=FLOE-151>. See that comment for details. <http://issues.fluidproject.org/browse/FLOE-151?focusedCommentId=24100>\n"

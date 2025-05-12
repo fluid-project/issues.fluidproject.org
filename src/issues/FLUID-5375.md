@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19898",
       "author": "Cindy Li",
       "date": "2014-05-16T15:23:59.827-0400",
       "body": "Submitted a pull request to demonstrate the issue: <https://github.com/fluid-project/infusion/pull/521>\n"
     },
     {
+      "id": "19899",
       "author": "Cindy Li",
       "date": "2014-05-28T09:15:58.013-0400",
       "body": "The pull request that fixes this issue (<https://github.com/fluid-project/infusion/pull/520>) has been merged into the project repo @ f77fac2d2d8ecd7fe5ffd2f497cf404e8f13814b\n"

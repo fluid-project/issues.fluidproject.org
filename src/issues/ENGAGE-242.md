@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12561",
       "author": "Justin Obara",
       "date": "2010-02-05T15:52:29.000-0500",
       "body": "Bug Parade Engage 0.3&#x20;\n"
     },
     {
+      "id": "12562",
       "author": "Colin Clark",
       "date": "2010-02-08T17:34:20.000-0500",
       "body": "This is a duplicate of <https://fluidproject.atlassian.net/browse/ENGAGE-357#icft=ENGAGE-357>\n"

@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20518",
       "author": "Eli Cochran",
       "date": "2008-08-05T19:47:56.000-0400",
       "body": "The pop-up version needs ui.draggable in order for the dialog to be draggable.&#x20;\n\nAlso noticed that inline/uploader.html still references jquery.tabindex.js\n"
     },
     {
+      "id": "20519",
       "author": "Eli Cochran",
       "date": "2008-08-05T20:03:47.000-0400",
       "body": "Removed references to jquery.tabindex.js and to ui.core.js in uploader/inline/uploader.js\n"

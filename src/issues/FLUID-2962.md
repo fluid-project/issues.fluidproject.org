@@ -46,16 +46,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19772",
       "author": "Antranig Basman",
       "date": "2010-02-09T19:57:44.000-0500",
       "body": "See <https://fluidproject.atlassian.net/browse/FLUID-3494#icft=FLUID-3494> - fastXmlPull also needs fixing.\n"
     },
     {
+      "id": "19774",
       "author": "Justin Obara",
       "date": "2014-07-11T15:01:10.373-0400",
       "body": "This was fixed in work for Infusion 1.5 however note that:\n\n\"making it ready for the server-side\" no longer means \"make it thread safe\"\n\n(see channel logs: <https://botbot.me/freenode/fluid-work/2014-07-11/?tz=America/Toronto> )\n"
     },
     {
+      "id": "19776",
       "author": "Justin Obara",
       "date": "2014-07-11T15:02:22.444-0400",
       "body": "This was completed on work for <https://fluidproject.atlassian.net/browse/FLUID-4609#icft=FLUID-4609>\n"

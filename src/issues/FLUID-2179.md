@@ -33,21 +33,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21181",
       "author": "Justin Obara",
       "date": "2009-02-06T12:52:02.000-0500",
       "body": "Bug Parade 0.8 release\n"
     },
     {
+      "id": "21182",
       "author": "Antranig Basman",
       "date": "2009-02-16T17:48:31.000-0500",
       "body": "New pager architecture using \"columnDefs\", cellRoot -> dataOffset. All versions of pager now working again\n"
     },
     {
+      "id": "21183",
       "author": "Colin Clark",
       "date": "2009-02-16T22:54:32.000-0500",
       "body": "I've reviewed this code. There are some aspects that could use some TLC: JSLinting, lack of substantial new unit tests, some deep nesting that could be flattened to improve readability. Nonetheless, this is a lot of great new functionality and it works fairly well.\n\nThis component has undergone a great deal of change, both architecturally and in terms of functionality. It's probably not quite ready to come out of \"Preview\" status for 0.8, but these changes and fixes are definitely worth shipping. +1 for inclusion in Infusion 0.8.&#x20;\n"
     },
     {
+      "id": "21184",
       "author": "Justin Obara",
       "date": "2009-02-16T23:04:54.000-0500",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF3, IE6 (Win XP)\n"

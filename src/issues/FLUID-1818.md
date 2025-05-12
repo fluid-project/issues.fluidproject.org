@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14835",
       "author": "Jacob Farber",
       "date": "2008-11-18T12:45:59.000-0500",
       "body": "Stopped default action on browse button if there is any\n"
     },
     {
+      "id": "14838",
       "author": "Justin Obara",
       "date": "2008-11-18T14:33:12.000-0500",
       "body": "Verified fix using:\n\nFF2, Opera 9.5, Safari 3.1 (Mac OS 10.5)\n"

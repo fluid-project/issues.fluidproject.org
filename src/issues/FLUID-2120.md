@@ -45,21 +45,25 @@
   ],
   "comments": [
     {
+      "id": "14629",
       "author": "Justin Obara",
       "date": "2009-01-13T13:47:08.000-0500",
       "body": "'screenshot-1' shows the text of the button, outside of the button's borders\n"
     },
     {
+      "id": "14631",
       "author": "Justin Obara",
       "date": "2009-04-17T09:01:46.000-0400",
       "body": "'screenshot-2' shows how the issue looks currently\n"
     },
     {
+      "id": "14633",
       "author": "Justin Obara",
       "date": "2009-04-17T09:02:46.000-0400",
       "body": "Currently the text will remain over the button, but the button itself will stretch and appear disjointed.\n"
     },
     {
+      "id": "14636",
       "author": "Michelle D'Souza",
       "date": "2011-09-06T14:14:05.977-0400",
       "body": "This is no longer an issue when using the fat panel.\n"

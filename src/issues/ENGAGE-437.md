@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12348",
       "author": "Colin Clark",
       "date": "2010-02-22T18:08:50.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12349",
       "author": "Colin Clark",
       "date": "2010-02-22T19:46:48.000-0500",
       "body": "I have committed a fix for this at r9476. Antranig, can you review and close the issue you approve?\n"
     },
     {
+      "id": "12350",
       "author": "Antranig Basman",
       "date": "2010-02-22T19:49:43.000-0500",
       "body": "I approve this change, and we collectively note that this Lucene view must be destroyed in due time.\n"

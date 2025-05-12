@@ -35,16 +35,19 @@
   ],
   "comments": [
     {
+      "id": "17846",
       "author": "Mike Lam",
       "date": "2011-01-25T12:02:26.254-0500",
       "body": "Small fix to pass in files that were just added to the queue, rather than the sum of all the files queued.\n"
     },
     {
+      "id": "17849",
       "author": "Mike Lam",
       "date": "2011-01-25T13:17:04.135-0500",
       "body": "Awaiting review.\n"
     },
     {
+      "id": "17854",
       "author": "Mike Lam",
       "date": "2011-02-04T13:18:43.079-0500",
       "body": "Bug fixed from <https://fluidproject.atlassian.net/browse/FLUID-4033#icft=FLUID-4033> patch. &#x20;\n"

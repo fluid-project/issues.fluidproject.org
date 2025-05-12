@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14473",
       "author": "Laurel Williams",
       "date": "2009-10-26T13:48:56.000-0400",
       "body": "Added code to rendering of type selections to allow renderer access to the elements via id. Added method resetTypeSelections to reset the model value to minified, check the minified radio button and then fire the model changed event. Called the method from the unselect function.\n"

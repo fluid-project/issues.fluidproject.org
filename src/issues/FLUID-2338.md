@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16865",
       "author": "Justin Obara",
       "date": "2009-03-12T12:26:08.000-0400",
       "body": "Bug Parade 1.0 release\n"
     },
     {
+      "id": "16867",
       "author": "Michelle D'Souza",
       "date": "2011-01-13T16:50:10.983-0500",
       "body": "Reopening these issues in order to change the component to Release.&#x20;\n"

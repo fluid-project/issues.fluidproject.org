@@ -33,16 +33,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14670",
       "author": "Jonathan Hung",
       "date": "2013-04-02T14:43:26.983-0400",
       "body": "This is definitely possible using the :selection pseudo class.\n\ni.e.\\\np.red::selection {\\\nbackground: #ffb7b7;\\\n}\n\nSource: <http://css-tricks.com/overriding-the-default-text-selection-color-with-css/>\n"
     },
     {
+      "id": "14673",
       "author": "Arash Sadr",
       "date": "2013-04-03T10:43:08.892-0400",
       "body": "Thats great,\\\nI found a similar article (<http://www.paulund.co.uk/change-browser-highlight-colour>) about this issue.\n"
     },
     {
+      "id": "14675",
       "author": "Justin Obara",
       "date": "2016-07-08T11:11:47.132-0400",
       "body": "Removed missing images\n"

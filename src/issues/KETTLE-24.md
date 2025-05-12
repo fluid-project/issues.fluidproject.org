@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26149",
       "author": "Antranig Basman",
       "date": "2015-08-26T20:44:31.917-0400",
       "body": "when.js was removed from Kettle trunk in favour of Infusion's \"micro-promises\" as part of the general cleanup covered under GPII-434, at revision fc5cbca280473bd2eba0c4b69974370c249088d1 on Nov 26th 2014\n"

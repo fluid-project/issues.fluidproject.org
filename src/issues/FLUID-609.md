@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19214",
       "author": "Anastasia Cheetham",
       "date": "2008-07-03T19:49:05.000-0400",
       "body": "Update: In the process of updating to jQuery 1.2.6 and 1.5.1 I checked this jQuery ticket: it is still open, and the bug still seems to be present.\n"
     },
     {
+      "id": "19215",
       "author": "Antranig Basman",
       "date": "2008-09-07T18:14:47.000-0400",
       "body": "Since we have abandoned use of JQuery droppable, this issue should be resolved.\n\nDrop Manager, Dom Permutation work merged back into trunk at revision 5476\n"

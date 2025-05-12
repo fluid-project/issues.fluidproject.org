@@ -34,26 +34,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15766",
       "author": "Justin Obara",
       "date": "2015-02-25T17:01:02.631-0500",
       "body": "See conversation with Bosmon7 in the today's IRC channel logs.\\\n<https://botbot.me/freenode/fluid-work/2015-02-25/?tz=America/Toronto>\n"
     },
     {
+      "id": "15768",
       "author": "Justin Obara",
       "date": "2015-03-16T10:57:18.192-0400",
       "body": "Additional conversation with Bosmon in today's IRC channel logs.\\\n<https://botbot.me/freenode/fluid-work/2015-03-16/?tz=America/Toronto>\n\nThe conversation was regarding composite panels. The idea here is to update the rebaseTree logic to replace the messageKeys with the literal outputs from the sub panel's message bundle.\n"
     },
     {
+      "id": "15771",
       "author": "Justin Obara",
       "date": "2015-03-18T13:44:41.567-0400",
       "body": "Submitted a pull request:\\\n<https://github.com/fluid-project/infusion/pull/589>\n"
     },
     {
+      "id": "15773",
       "author": "Justin Obara",
       "date": "2015-04-02T11:57:26.205-0400",
       "body": "Pull request ( <https://github.com/fluid-project/infusion/pull/589> ) was merged into the project repo at 809231c7525798ead15f214497721b6ea9e619f7\n"
     },
     {
+      "id": "15775",
       "author": "Justin Obara",
       "date": "2015-06-26T09:50:49.193-0400",
       "body": "Reopening to change the fix version to 1.9\n"

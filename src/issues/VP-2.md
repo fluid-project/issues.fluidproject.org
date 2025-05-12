@@ -35,21 +35,25 @@
   ],
   "comments": [
     {
+      "id": "26710",
       "author": "heidi valles",
       "date": "2012-10-30T12:47:24.989-0400",
       "body": "volume button should be yellow bg with black icon\n"
     },
     {
+      "id": "26711",
       "author": "heidi valles",
       "date": "2012-10-31T16:59:20.071-0400",
       "body": "After a chat with Michelle clarifying J's mockups, the button should only change when the slider is active, which is I think only do-able with javascript (if slider handle is focused, change style on mute button). Not sure we want to do this right now.\n\nI did fix the style so that the hover style applies when hovering over slider. However, wb and yb don't have hover-styles for the mute button (the default/other themes give a fadey border).\n"
     },
     {
+      "id": "26712",
       "author": "heidi valles",
       "date": "2012-12-12T14:22:32.836-0500",
       "body": "The styling happens when the volume container is focused. This works fine for keyboard users, but when accessing the slider via mouse, the container doesn't seem to contain the slider, and the focus styling doesn't apply.\n\nOverall, colours/shadowing/icons for the buttons, when active/hover, should be revisited to add consistency across the themes.&#x20;\n"
     },
     {
+      "id": "26713",
       "author": "Jonathan Hung",
       "date": "2013-01-21T15:23:10.822-0500",
       "body": "Very likely the same issue. The button does not take the hover style when the slider is in use.\n"

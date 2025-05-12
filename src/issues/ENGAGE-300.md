@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11990",
       "author": "Colin Clark",
       "date": "2010-02-01T17:49:06.000-0500",
       "body": "Here's a thread from fluid-work describing the technical issues involved with chromeless home screens on the iPhone:\n\n<http://old.nabble.com/Chromelessness-in-Engage-0.3-td27388098.html>\n\nNote that Android phones don't really have this problem because the browser is, by default, mostly chromeless.\n"
     },
     {
+      "id": "11991",
       "author": "Colin Clark",
       "date": "2010-02-01T17:52:40.000-0500",
       "body": "This issue was resolved for all current top-level pages in Engage 0.3 at r9221.\n"
     },
     {
+      "id": "11992",
       "author": "Colin Clark",
       "date": "2010-02-01T17:53:28.000-0500",
       "body": "James, I'll give you the pleasure of closing this one after you've had a chance to test it.\n\nPresumably then we'll file a new bug about the fact that users can't go back because there's no navigation bar yet. 😉\n"
     },
     {
+      "id": "11993",
       "author": "James Yoon",
       "date": "2010-02-03T11:24:30.000-0500",
       "body": "Works as advertised!\n"

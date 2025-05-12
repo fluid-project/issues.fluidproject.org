@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26779",
       "author": "Anastasia Cheetham",
       "date": "2012-01-06T13:52:15.705-0500",
       "body": "We've decided to stick with toggle buttons and manually bind, for now, since implementing the checkboxes proved more trouble than it's worth, and the toggle button is more semantically correct anyway.\n"

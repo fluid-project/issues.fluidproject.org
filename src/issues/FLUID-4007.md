@@ -32,11 +32,13 @@
   ],
   "comments": [
     {
+      "id": "13553",
       "author": "Colin Clark",
       "date": "2010-12-22T12:45:15.361-0500",
       "body": "Here's a screencast of the quirkiness I'm seeing in the Uploader's counting abilities.\n"
     },
     {
+      "id": "13555",
       "author": "Justin Obara",
       "date": "2017-12-22T10:13:12.987-0500",
       "body": "The image-gallery repo has been archived\n"

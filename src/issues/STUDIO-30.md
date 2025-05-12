@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12825",
       "author": "Michelle D'Souza",
       "date": "2011-12-14T16:47:56.005-0500",
       "body": "Note that back works as expected on Safari.\n"
     },
     {
+      "id": "12826",
       "author": "Michelle D'Souza",
       "date": "2011-12-15T15:25:08.273-0500",
       "body": "Merged into project repo at 5e8a9dc74e380645d5b96e0d314de2cde6907fc0\n"

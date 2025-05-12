@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27669",
       "author": "David Makalsky",
       "date": "2008-09-29T16:41:37.000-0400",
       "body": "VULAB2\n"
     },
     {
+      "id": "27670",
       "author": "David Makalsky",
       "date": "2008-10-27T13:29:19.000-0400",
       "body": "all config info is now in the FTPQueue, I will further externalize this is a subsequent release.\n"

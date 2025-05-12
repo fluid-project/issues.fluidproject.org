@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16109",
       "author": "Justin Obara",
       "date": "2013-04-30T16:22:06.096-0400",
       "body": "I took the files that were on the server and removed the backups and unused images. This has been pushed up to a new repo in our github space. \\\n<https://github.com/fluid-project/build.fluidproject.org>\n\nWhat's left:\\\n1\\) Decide wether the build site should itself use the built version of Infusion or have a static version, and update as needed.&#x20;\n\nOther:\n\n1\\) Redesign the build site (look and feel)\\\n2\\) Have a staging site and live site.\n"
     },
     {
+      "id": "16111",
       "author": "Justin Obara",
       "date": "2013-07-22T08:54:54.156-0400",
       "body": "Merged into the project repo at 2e505839505076418b7b8201de81515039792fa0\n"

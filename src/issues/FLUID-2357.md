@@ -27,26 +27,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14530",
       "author": "Justin Obara",
       "date": "2009-03-17T09:30:57.000-0400",
       "body": "I'm guessing that as changes are being made, they are written to the cookie, on refresh the page is redrawn based on what is in the cookie. If this is the case, only writing to the cookie on \"Save and apply\" should fix this issue.\n"
     },
     {
+      "id": "14532",
       "author": "Justin Obara",
       "date": "2009-03-17T09:31:49.000-0400",
       "body": "Bug Parade 1.0 release&#x20;\n"
     },
     {
+      "id": "14535",
       "author": "Michelle D'Souza",
       "date": "2009-03-19T09:02:29.000-0400",
       "body": "The preview really shouldn't be saving to a cookie so the solution is to make a temporary settings store and use that for the preview's uiEnhancer.\n"
     },
     {
+      "id": "14538",
       "author": "Jacob Farber",
       "date": "2009-03-19T09:46:11.000-0400",
       "body": "Tried it out, and it works nicely\n"
     },
     {
+      "id": "14806",
       "author": "Justin Obara",
       "date": "2009-03-19T10:00:17.000-0400",
       "body": "Verified fix using the following:\n\nFF2, FF3, Opera 9.6, Safari 3.2 (Mac OS 10.5)\\\nFF2, FF3, IE6, Opera 9.6 (Win XP)\\\nFF3, IE7 (Win Vista)\n"

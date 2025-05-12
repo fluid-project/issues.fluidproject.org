@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12325",
       "author": "vmoulder",
       "date": "2009-11-18T19:32:27.000-0500",
       "body": "The MoA contextual inquiry results can be found here - <http://wiki.fluidproject.org/display/fluid/Visit+to+the+Museum+of+Anthropology+(MOA)+-+Nov+3%2C+2009>\n"

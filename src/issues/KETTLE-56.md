@@ -22,11 +22,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26178",
       "author": "Antranig Basman",
       "date": "2017-01-09T21:23:29.210-0500",
       "body": "Well, anticipating the <https://fluidproject.atlassian.net/browse/FLUID-5750#icft=FLUID-5750> \"options flattening revolution\", we should simply accept \"whatever other\" options are in its definition as component options - and this is only consistent with our existing acceptance of top-level \"gradeNames\".\n"
     },
     {
+      "id": "26179",
       "author": "Antranig Basman",
       "date": "2020-06-12T14:40:30.350-0400",
       "body": "This is in progress in the <https://fluidproject.atlassian.net/browse/KETTLE-78#icft=KETTLE-78> pull: <https://github.com/fluid-project/kettle/pull/52>\n"

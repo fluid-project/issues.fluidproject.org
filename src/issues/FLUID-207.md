@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19401",
       "author": "Shaw-Han Liem",
       "date": "2008-02-06T15:17:00.000-0500",
       "body": "iteration02\n"
     },
     {
+      "id": "19402",
       "author": "Barbara Glover",
       "date": "2008-02-08T17:32:25.000-0500",
       "body": "Completed contextual inquiry and added notes with photos to wiki space.\n"

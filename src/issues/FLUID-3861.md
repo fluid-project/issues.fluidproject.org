@@ -42,26 +42,31 @@
   ],
   "comments": [
     {
+      "id": "15962",
       "author": "Justin Obara",
       "date": "2010-11-22T14:04:21.953-0500",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "15964",
       "author": "heidi valles",
       "date": "2010-11-25T16:37:34.817-0500",
       "body": "Think we can simply delete line 184, that.editField.focus();  in the components InlineEdit.js\\\nDoesn't seem to change anything (other than fix this bug) by removing it. still testing...\n"
     },
     {
+      "id": "15966",
       "author": "heidi valles",
       "date": "2010-11-26T10:49:21.684-0500",
       "body": "removes line 184, that.editField.focus();&#x20;\n"
     },
     {
+      "id": "15968",
       "author": "Mike Lam",
       "date": "2010-12-02T17:07:01.593-0500",
       "body": "I have tested Heidi's patch and everything in both simple and rich text inline edit is working as expected.  &#x20;\n"
     },
     {
+      "id": "15969",
       "author": "Michelle D'Souza",
       "date": "2010-12-03T12:14:40.170-0500",
       "body": "Code was reviewed and committed at revision 10331.\n"

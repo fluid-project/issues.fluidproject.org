@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21597",
       "author": "Justin Obara",
       "date": "2010-04-19T10:02:49.000-0400",
       "body": "Updated the version numbers to 1.3-SNAPSHOT\n"
     },
     {
+      "id": "21598",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T13:23:39.138-0500",
       "body": "Reopening these issues to add the releasecomponent.&#x20;\n"

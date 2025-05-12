@@ -34,6 +34,7 @@
   ],
   "comments": [
     {
+      "id": "26326",
       "author": "Gregor Moss",
       "date": "2019-02-07T13:37:02.449-0500",
       "body": "Ran into an issue with gpii-binder and referred it to Tony, who has provided a dev release of the package until his PR is merged.\n\nIssue: <https://issues.gpii.net/browse/GPII-3699>\n\nDev release version: 1.0.5-dev.20190207T095932Z.9b324b8.GPII-3699\n"

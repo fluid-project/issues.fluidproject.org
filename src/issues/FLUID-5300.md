@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22122",
       "author": "Antranig Basman",
       "date": "2016-04-15T12:01:10.399-0400",
       "body": "Two changes have altered the terrain around this issue since it was filed - \\\ni) <https://fluidproject.atlassian.net/browse/FLUID-5867#icft=FLUID-5867> altered the default framework behaviour on encountering nested transforms to be consistent with this behaviour\\\nii) We supported the \"literalValue\": \"x\" syntax to more compactly encode literal values\n"
     },
     {
+      "id": "22124",
       "author": "Antranig Basman",
       "date": "2016-04-15T12:04:42.185-0400",
       "body": "With these changes, cindy's transform becomes&#x20;\n\n```javascript\n{\r\n    type: \"fluid.transforms.valueMapper\",\r\n    inputPath: \"hazard\",\r\n    options: {\r\n        \"flashing\": {\r\n            \"outputValue\": {\r\n                \"hasHazard\": true\r\n                \"sound\": true\r\n            }\r\n        }\r\n    }\r\n};\n```\n\nwhich I think is pretty reasonable\n"

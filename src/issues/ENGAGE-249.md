@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12218",
       "author": "Michelle D'Souza",
       "date": "2010-01-18T16:19:26.000-0500",
       "body": "Fixed at r9025\n"
     },
     {
+      "id": "12219",
       "author": "Michelle D'Souza",
       "date": "2010-01-18T16:19:52.000-0500",
       "body": "Thanks to Antranig for catching this one while reviewing our code.\n"
     },
     {
+      "id": "12220",
       "author": "Antranig Basman",
       "date": "2010-01-18T16:22:52.000-0500",
       "body": "I see this as fixed 🙂\n"

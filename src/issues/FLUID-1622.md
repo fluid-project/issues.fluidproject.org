@@ -41,16 +41,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15505",
       "author": "Justin Obara",
       "date": "2008-11-04T13:00:18.000-0500",
       "body": "Other tab order issues:\n\nAfter putting focus on one of the images push shift-tab, then tab. Notice that you are not back on the image\n\nAfter reordering or changing selection with the keyboard, pressing tab then shift-tab will also not put on you back on the image.\n"
     },
     {
+      "id": "15509",
       "author": "Justin Obara",
       "date": "2010-05-07T13:09:17.066-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "15512",
       "author": "Justin Obara",
       "date": "2011-01-10T15:04:12.227-0500",
       "body": "updated affects version and the steps to reproduce.\n"

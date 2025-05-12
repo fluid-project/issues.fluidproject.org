@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17182",
       "author": "Colin Clark",
       "date": "2008-10-29T21:05:45.000-0400",
       "body": "This was fixed by simply incrementing currentBatch.fileIdx instead of trying to correspond it to SWFUpload's flaky event data structures.\n"
     },
     {
+      "id": "17184",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:55.400-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

@@ -38,21 +38,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16177",
       "author": "Anastasia Cheetham",
       "date": "2014-09-18T15:30:00.034-0400",
       "body": "Apparently, Steve has updated the source code for infusion-tags. We should revisit the tool and make a final decision on whether or not to use it.\n"
     },
     {
+      "id": "16179",
       "author": "Antranig Basman",
       "date": "2015-10-13T16:31:06.433-0400",
       "body": "I had a look at the tool and from where I am this evening, it looks like it will be too much work to adapt it to produce what we want. We would like i) for it to produce markdown, not HTML, and also it currently makes no attempt to parse our JavaDoc-inspired doc comments. This area of our API is extremely stable and it shouldn't be too much overhead to keep some manually generated pages in sync, as well as this allowing for more human curating of the content with some commentary and grouping of related APIs etc.\n"
     },
     {
+      "id": "16181",
       "author": "Anastasia Cheetham",
       "date": "2015-12-10T11:10:57.880-0500",
       "body": "Antranig Basman Given the changes made to the docs for <https://fluidproject.atlassian.net/browse/FLUID-5791#icft=FLUID-5791>, do you thing we should close this issue (and FLUID=5329) as \"won't do\"?\n"
     },
     {
+      "id": "27918",
       "author": "Justin Obara",
       "date": "2024-07-31T14:10:17.543-0400",
       "body": "There hasn’t been much traction on this for a while and our doc site runs independently at the moment. If we want to switch back to something automated we may want to do it from the docs site side and use 11ty to generate the docs from an infusion build.\n"

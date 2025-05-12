@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13994",
       "author": "Justin Obara",
       "date": "2012-02-14T10:13:15.812-0500",
       "body": "I've made the necessary changes and verified that the unit tests are still passing. I've sent a pull request for the changes.\\\n<https://github.com/fluid-project/infusion/pull/202>\n"
     },
     {
+      "id": "13997",
       "author": "Colin Clark",
       "date": "2012-02-14T12:33:35.752-0500",
       "body": "I've reviewed, tested, and pushed Justin's fix to master.\n"
     },
     {
+      "id": "14000",
       "author": "Colin Clark",
       "date": "2012-02-14T12:34:01.413-0500",
       "body": "Resolved and fixed in Infusion master at fc0f49ffd55700159f6c66a5a1135b126cc04329\n"

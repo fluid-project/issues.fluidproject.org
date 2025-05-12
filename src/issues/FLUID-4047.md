@@ -31,6 +31,7 @@
   ],
   "comments": [
     {
+      "id": "14152",
       "author": "Eric Dalquist",
       "date": "2011-02-01T12:11:09.286-0500",
       "body": "New default sorting function along with a default sorting callback impl and two example value extractors for dates and numbers.\n\nThis would be used like:\\\ncolumnDefs: \\[ \\\n{key: \"date\",   valuebinding: \"\\*.date\",   sortable: true, sortValueExtractor : dateExtractor},\\\n{key: \"status\", valuebinding: \"\\*.status\", sortable: true, sortFunction: hrs.pager.statusComparator},\\\n{key: \"total\",  valuebinding: \"\\*.total\",  sortable: true, sortValueExtractor : hrs.pager.currencyExtractor},\\\n{key: \"type\",   valuebinding: \"\\*.type\",   sortable: true},\\\n{key: \"title\",  valuebinding: \"\\*.title\",  sortable: true}\\\n]\n"

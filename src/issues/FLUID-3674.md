@@ -44,16 +44,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13904",
       "author": "Justin Obara",
       "date": "2010-10-04T15:05:07.912-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "13907",
       "author": "Antranig Basman",
       "date": "2013-08-22T16:01:48.120-0400",
       "body": "We plan to abandon the \"model semantic\" described in this JIRA but instead allow cooperating models and appliers to remain isolated in terms of object references. The idea of \"preserving trunk references\" is problematic, verging on impossible, in a scenario where one component wishes to apply a change which would morally wipe out the root model reference of another component. Instead we will make use of the \"ModelRelay\" system which is currently under development for UIOptions and other components.\n"
     },
     {
+      "id": "13910",
       "author": "Antranig Basman",
       "date": "2014-02-20T04:32:32.442-0500",
       "body": "Merged into trunk at revision 3873109a964f9837c9b6d7c4a81e94ac2a9add11\n"

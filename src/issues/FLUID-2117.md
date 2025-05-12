@@ -31,11 +31,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21904",
       "author": "Anastasia Cheetham",
       "date": "2009-01-29T13:45:26.000-0500",
       "body": "There was another discussion regarding this issue on the channel:\\\n<http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2009-01-29>\n"
     },
     {
+      "id": "21905",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:57.533-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

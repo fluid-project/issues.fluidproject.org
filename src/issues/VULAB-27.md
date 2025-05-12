@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27443",
       "author": "David Makalsky",
       "date": "2008-09-19T14:13:10.000-0400",
       "body": "VULAB1\n"
     },
     {
+      "id": "27444",
       "author": "David Makalsky",
       "date": "2008-09-24T11:12:25.000-0400",
       "body": "a getter in ScreencastApplet called ScreencastApplet.getSessionid() has been created.  To access it via javascript on a page that has the applet embedded, simply call the getter as follows:\n\nfunction getSessionIdFromApplet(){\\\ndocument.example.id.value=document.rascal.getSessionid();\n\n}\n\nassuming the applet is named rascal as per the snippet below:\n\n\\<APPLET name=\"rascal\" ARCHIVE=\"rascal.jar,jvftplib.jar\" CODE=org.fluidproject.vulab.rac.ScreencastApplet.class WIDTH=200 HEIGHT=100>\\</APPLET>\n"
     },
     {
+      "id": "27445",
       "author": "David Makalsky",
       "date": "2008-09-24T11:12:37.000-0400",
       "body": "adding time\n"
     },
     {
+      "id": "27446",
       "author": "David Makalsky",
       "date": "2008-09-24T11:13:03.000-0400",
       "body": "time added\n"

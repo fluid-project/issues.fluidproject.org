@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26162",
       "author": "Kasper Galschiot Markus",
       "date": "2015-08-05T12:15:05.777-0400",
       "body": "Commit with hotfix for part of this issue: <https://github.com/fluid-project/kettle/pull/20>\n"
     },
     {
+      "id": "26163",
       "author": "Colin Clark",
       "date": "2015-08-06T10:13:51.309-0400",
       "body": "Reviewed and merged at ef796237b7b157df6837a970a8b798370ef14144.\n"
     },
     {
+      "id": "26164",
       "author": "Antranig Basman",
       "date": "2015-08-06T13:29:29.031-0400",
       "body": "We should keep this open until a more comprehensive fix with test cases arrives in the large branch\n"

@@ -40,26 +40,31 @@
   ],
   "comments": [
     {
+      "id": "14381",
       "author": "Justin Obara",
       "date": "2009-06-01T10:04:48.000-0400",
       "body": "'screenshot-1' shows focus on the hidden browse files button and the OS File Open dialog displayed by clicking on it.\n"
     },
     {
+      "id": "14384",
       "author": "y z",
       "date": "2010-04-05T18:06:49.000-0400",
       "body": "Also acts the same way in WIN7 IE8\n"
     },
     {
+      "id": "14386",
       "author": "Justin Obara",
       "date": "2010-10-04T15:34:00.891-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "14389",
       "author": "Michelle D'Souza",
       "date": "2010-12-23T15:39:14.311-0500",
       "body": "Please determine if this is done and should be closed or if it should be put into another release.\n"
     },
     {
+      "id": "14391",
       "author": "Justin Obara",
       "date": "2014-05-22T14:29:26.214-0400",
       "body": "Due to a cross site scripting vulnerability we have removed flash support from the uploader. See <https://fluidproject.atlassian.net/browse/FLUID-5354#icft=FLUID-5354>\n"

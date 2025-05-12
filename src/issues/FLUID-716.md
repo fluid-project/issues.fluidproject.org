@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15004",
       "author": "Allison Bloodworth",
       "date": "2008-06-09T13:46:36.000-0400",
       "body": "iteration11\n"
     },
     {
+      "id": "15006",
       "author": "Allison Bloodworth",
       "date": "2008-06-23T16:51:47.000-0400",
       "body": "Jonathan also attended.\n"

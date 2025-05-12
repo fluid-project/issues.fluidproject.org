@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24424",
       "author": "Harris Wong",
       "date": "2011-05-16T15:42:38.707-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "24425",
       "author": "Antranig Basman",
       "date": "2011-06-02T23:29:06.175-0400",
       "body": "Restricted resolution rules are now implemented as per the \"YELLOW SQUARES\" diagram at <http://wiki.fluidproject.org/display/docs/Demand+Resolution>\n\nIt is still possible for some non-determinism in resolution but only in some perverse cases where sibling components have demands blocks issued against each other's contexts.\n"

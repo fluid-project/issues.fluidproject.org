@@ -33,6 +33,7 @@
   ],
   "comments": [
     {
+      "id": "25538",
       "author": "Justin Obara",
       "date": "2021-06-29T11:05:27.921-0400",
       "body": "screenshot.png shows the clipped and overlapping text when letter spacing is at the maximum size.\n"

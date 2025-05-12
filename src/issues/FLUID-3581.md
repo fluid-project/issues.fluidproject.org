@@ -30,16 +30,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24797",
       "author": "Justin Obara",
       "date": "2010-05-07T14:08:23.654-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "24798",
       "author": "Jonathan Hung",
       "date": "2010-11-09T15:08:31.746-0500",
       "body": "Fixed with new styling as part of work toward the updated pager demo.\n"
     },
     {
+      "id": "24799",
       "author": "Justin Obara",
       "date": "2010-11-10T10:21:01.642-0500",
       "body": "Fixed with commits to <https://fluidproject.atlassian.net/browse/FLUID-3822#icft=FLUID-3822>\n"

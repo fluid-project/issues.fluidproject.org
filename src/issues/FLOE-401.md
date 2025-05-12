@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11574",
       "author": "Alan Harnum",
       "date": "2015-08-18T09:18:56.246-0400",
       "body": "We should now be able to close this one, correct?\n"
     },
     {
+      "id": "11575",
       "author": "Alan Harnum",
       "date": "2015-09-14T11:23:52.128-0400",
       "body": "Closing this one - research was finshed a while back.\n"

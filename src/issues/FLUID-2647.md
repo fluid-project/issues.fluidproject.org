@@ -28,16 +28,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20828",
       "author": "Justin Obara",
       "date": "2009-05-04T15:10:15.000-0400",
       "body": "Modified the build.js and build.xml files to allow for automated URL rewriting. This will replace the references to the individual js files to a reference to the single js file, which they are concatenated into. (i.e. InfusionAll.js)\n"
     },
     {
+      "id": "20829",
       "author": "Justin Obara",
       "date": "2009-05-04T15:11:05.000-0400",
       "body": "Michelle, please code review my commit for this issue\n"
     },
     {
+      "id": "20830",
       "author": "Justin Obara",
       "date": "2009-05-04T17:08:29.000-0400",
       "body": "Michelle reviewed it.\n"

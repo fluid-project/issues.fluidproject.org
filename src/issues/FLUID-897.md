@@ -33,21 +33,25 @@
   ],
   "comments": [
     {
+      "id": "21825",
       "author": "Erin Yu",
       "date": "2008-07-14T20:19:03.000-0400",
       "body": "dev-iteration38\n"
     },
     {
+      "id": "21826",
       "author": "Michelle D'Souza",
       "date": "2008-07-15T20:02:28.000-0400",
       "body": "We will likely use ATutor since they are in the midst of integrating the Uploader into their application.\n"
     },
     {
+      "id": "21827",
       "author": "Colin Clark",
       "date": "2008-07-16T15:58:26.000-0400",
       "body": "We will be using ATutor as our user test bed for Uploader. Now that we're on the verge of fixing <https://fluidproject.atlassian.net/browse/FLUID-904#icft=FLUID-904>, this Uploader should be ready for testing in ATutor.\n"
     },
     {
+      "id": "21828",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:45.899-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

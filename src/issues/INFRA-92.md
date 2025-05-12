@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25959",
       "author": "Giovanni Tirloni",
       "date": "2017-10-31T11:06:50.672-0400",
       "body": "CentOS 7.4 KVM images created and deployed to KVM hypervisors.\n"

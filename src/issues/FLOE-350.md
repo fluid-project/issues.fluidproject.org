@@ -47,21 +47,25 @@
   ],
   "comments": [
     {
+      "id": "11337",
       "author": "Anastasia Cheetham",
       "date": "2015-05-26T16:46:32.121-0400",
       "body": "Regarding the last screenshot, I wonder if this is because the checkmark is being \"applied\" to the text size icon, but it's happening after the scroll happens?\n"
     },
     {
+      "id": "11338",
       "author": "Jonathan Hung",
       "date": "2015-05-28T11:35:39.755-0400",
       "body": "About that last screen shot:\n\n* it only happens in Safari.\n* it only happens when the \"Select to go to Next Step\" Tooltip has not changed positions. If you move the mouse slightly to change the position of the tooltip, the checkmark disappears.\n* if using keyboard, the checkmark would disappear if you change focus off the Next button.\n"
     },
     {
+      "id": "11339",
       "author": "Justin Obara",
       "date": "2015-05-28T13:05:20.410-0400",
       "body": "Jonathan Hung could you please file a new jira for the last issue\n"
     },
     {
+      "id": "11340",
       "author": "Justin Obara",
       "date": "2015-05-28T13:07:51.620-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/first-discovery/pull/69> ) into the project repo at 10f39477fdeb871883e21916b7407e3f698880e7\n"

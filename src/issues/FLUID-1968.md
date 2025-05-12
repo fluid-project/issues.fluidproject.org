@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17895",
       "author": "Jonathan Hung",
       "date": "2008-12-12T12:47:58.000-0500",
       "body": "iteration24\n"
     },
     {
+      "id": "17897",
       "author": "Jonathan Hung",
       "date": "2009-01-08T12:33:26.000-0500",
       "body": "All relevant issues from that document are now JIRA issues.&#x20;\n"

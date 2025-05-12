@@ -59,11 +59,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15660",
       "author": "Anastasia Cheetham",
       "date": "2008-07-11T19:59:48.000-0400",
       "body": "Just to clarify point # 4 above, the avatar returns toward the cursor as the scroll bar reduces in size. It isn't actually related to whether or not the pointer is over top of the lighbox, but rather whether or not there is a scroll bar.\n"
     },
     {
+      "id": "15662",
       "author": "Justin Obara",
       "date": "2009-02-03T14:25:22.000-0500",
       "body": "Appears to have been fixed at r6398 as part of  the jQuery upgrade (<https://fluidproject.atlassian.net/browse/FLUID-2180#icft=FLUID-2180>)\n\nTested using:\\\nIE 6 (Win XP, Win 2000)\\\nIE 7 (Win XP, Win Vista)\n"

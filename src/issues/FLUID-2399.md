@@ -46,26 +46,31 @@
   ],
   "comments": [
     {
+      "id": "21473",
       "author": "Alison Benjamin",
       "date": "2009-05-05T15:13:19.000-0400",
       "body": "FF3:\\\nJAWS does not read the label associated with radio buttons and checkboxes. \\\nE.g.: for the path Easier to find > Links > underline option\n\nJAWS reads\\\n\"Easier to find\" & \"underline checkbox not checked\"&#x20;\n\nIE 7: JAWS reads \"underline checkbox not checked\"\n\nIn both cases the label \"links\" is not read so it is not explicit what the checkbox refers to.&#x20;\n"
     },
     {
+      "id": "21475",
       "author": "Alison Benjamin",
       "date": "2009-05-14T13:27:55.000-0400",
       "body": "Here is a patch implementing fieldset & legend tags.&#x20;\n"
     },
     {
+      "id": "21476",
       "author": "Alison Benjamin",
       "date": "2009-05-15T10:56:29.000-0400",
       "body": "This patch was committed by Michelle. The behaviour has changed in that now JAWS reads \"Links, Easier to find, underline checkbox not checked\", etc giving context for checkbox options.&#x20;\n"
     },
     {
+      "id": "21478",
       "author": "Jacob Farber",
       "date": "2009-05-20T11:33:48.000-0400",
       "body": "This isnt quite valid HTML, i think we need another solution\n"
     },
     {
+      "id": "21480",
       "author": "Alison Benjamin",
       "date": "2009-05-21T11:04:14.000-0400",
       "body": "I have closed this issue because it duplicates <https://fluidproject.atlassian.net/browse/FLUID-2741#icft=FLUID-2741>.&#x20;\n"

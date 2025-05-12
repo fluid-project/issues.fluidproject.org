@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18740",
       "author": "Antranig Basman",
       "date": "2008-09-10T14:34:42.000-0400",
       "body": "Fixed at revision 5503\n"
     },
     {
+      "id": "18742",
       "author": "Justin Obara",
       "date": "2008-09-11T09:17:12.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3 (Mac OS 10.5)\\\nFF3, IE7 (Win Vista)\n"

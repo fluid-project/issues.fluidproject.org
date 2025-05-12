@@ -29,6 +29,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19045",
       "author": "Antranig Basman",
       "date": "2008-10-29T11:52:26.000-0400",
       "body": "If a form scope was supplied for a set of values, the logical test for scoping inside fluid.value() was inverted, leading to all the correctly scoped values being discarded rather than retained. Fixed at revision 5882 with adjustment to test cases\n"

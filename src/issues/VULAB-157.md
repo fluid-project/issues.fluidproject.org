@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27508",
       "author": "Blake E",
       "date": "2009-01-26T16:29:12.000-0500",
       "body": "vulab13\n"
     },
     {
+      "id": "27509",
       "author": "Blake E",
       "date": "2009-01-26T16:29:48.000-0500",
       "body": "put into the database, although some tweaking will happen as we integrate into VULab.\n"

@@ -28,26 +28,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20602",
       "author": "Colin Clark",
       "date": "2009-12-04T18:04:23.000-0500",
       "body": "Bug Parade Builder 1.1.2\n"
     },
     {
+      "id": "20603",
       "author": "Justin Obara",
       "date": "2009-12-07T10:00:46.000-0500",
       "body": "This should be done as the last step in bug parade.\n"
     },
     {
+      "id": "20604",
       "author": "Laurel Williams",
       "date": "2009-12-16T11:49:36.000-0500",
       "body": "move primer out of the infusionBuilder/docs directory since we are not releasing it. Please don't delete it...just put it somewhere else.\n"
     },
     {
+      "id": "20605",
       "author": "Laurel Williams",
       "date": "2009-12-17T08:44:23.000-0500",
       "body": "Primer was not moved out of the infusion builder as suggested above. Re-assigning to Justin to perform this task.\n"
     },
     {
+      "id": "20606",
       "author": "Justin Obara",
       "date": "2009-12-17T09:16:23.000-0500",
       "body": "I believe this one is done now. Since the infusion builder has been moved to the infrastructure directory in svn and the primer code has been put back into the incubator.\n"

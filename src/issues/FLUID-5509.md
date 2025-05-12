@@ -35,21 +35,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19474",
       "author": "Antranig Basman",
       "date": "2014-12-03T15:45:47.084-0500",
       "body": "I was sure a fix had been tested for this issue but it appears to only exist \"in my mind\".\n"
     },
     {
+      "id": "19475",
       "author": "Antranig Basman",
       "date": "2015-08-20T14:09:04.909-0400",
       "body": "STILL apparently only \"in my mind\"\n"
     },
     {
+      "id": "19476",
       "author": "Antranig Basman",
       "date": "2015-08-20T14:45:29.600-0400",
       "body": "No - actually resolved in <https://fluidproject.atlassian.net/browse/FLUID-5249#icft=FLUID-5249> branch on Apr 17 2015 - <https://github.com/amb26/infusion/commit/06d4ea1dfcdbc407ad5c2ecccd54c5d500fb2232>\n"
     },
     {
+      "id": "19477",
       "author": "Antranig Basman",
       "date": "2015-08-20T14:45:48.593-0400",
       "body": "Merged into trunk at revision 282f1a318718eed0b0ec060fb8b4ad254417fd7e\n"

@@ -28,6 +28,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10419",
       "author": "Justin Obara",
       "date": "2012-09-26T14:29:52.526-0400",
       "body": "if there is a memory card in the camera, the OS will try to mount it. If it is mounted the camera will be locked and gphoto won't be able to use it to capture images. Unmounting the memory card will fix the issue.\n\nThere does not seem to be a way in gphoto to get it to automatically unmount the memory card.\n"

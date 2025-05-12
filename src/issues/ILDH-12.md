@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13043",
       "author": "Jonathan Hung",
       "date": "2014-07-22T11:55:04.686-0400",
       "body": "<http://handbook.floeproject.org/index.php/Resources> should be deleted as it was replaced by <http://handbook.floeproject.org/index.php/EPUB_3_resources>.\n"

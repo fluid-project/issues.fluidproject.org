@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10220",
       "author": "Michelle D'Souza",
       "date": "2010-03-23T10:11:46.000-0400",
       "body": "Camera detection and capturing images is not working consistently with either the Canon or Nikon cameras.&#x20;\n"

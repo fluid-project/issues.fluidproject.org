@@ -41,11 +41,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23542",
       "author": "Antranig Basman",
       "date": "2010-04-06T13:22:57.000-0400",
       "body": "Fixed at revision 9806. Failure in core framework during <https://fluidproject.atlassian.net/browse/FLUID-3527#icft=FLUID-3527> for jQuery version update.\n"
     },
     {
+      "id": "23543",
       "author": "Colin Clark",
       "date": "2010-04-07T11:41:20.000-0400",
       "body": "I've reviewed Antranig's fix for this issue at r9806 and it looks good. +1 for inclusion in Infusion 1.2\n"

@@ -22,11 +22,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10942",
       "author": "Cindy Li",
       "date": "2012-08-01T09:04:50.281-0400",
       "body": "Cannot reproduce. Might be caused by uncompressed css.\n"
     },
     {
+      "id": "10943",
       "author": "Alexey Novak",
       "date": "2012-08-16T14:15:07.352-0400",
       "body": "Cannot reproduce\n"

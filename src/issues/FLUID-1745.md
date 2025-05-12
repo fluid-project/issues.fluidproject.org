@@ -38,21 +38,25 @@
   ],
   "comments": [
     {
+      "id": "17172",
       "author": "Justin Obara",
       "date": "2008-10-30T12:54:20.000-0400",
       "body": "'screenshot-1' shows the text \"DNA Polymorphism Exam on Thursday\" in one line, when the mouse isn't hovering over it.\n"
     },
     {
+      "id": "17173",
       "author": "Justin Obara",
       "date": "2008-10-30T12:55:27.000-0400",
       "body": "'screenshot-2' shows the text \"DNA Polymorphism Exam on Thursday\" on two lines when the mouse hovers over it.\n"
     },
     {
+      "id": "17175",
       "author": "Jacob Farber",
       "date": "2008-10-30T12:58:17.000-0400",
       "body": "removed negative margin bug\n"
     },
     {
+      "id": "17177",
       "author": "Justin Obara",
       "date": "2008-11-13T13:44:18.000-0500",
       "body": "Verified fix using:\n\nFF3 (Mac OS 10.5, Win 2000, Win Vista, Win XP)\\\nFF2 (Mac OS 10.5, Win XP)\n"

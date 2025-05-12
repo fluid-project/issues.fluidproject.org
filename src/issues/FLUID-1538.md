@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18567",
       "author": "Antranig Basman",
       "date": "2008-09-10T22:37:54.000-0400",
       "body": "This has been experimentally fixed at revision 5512 (untested since I have no IE7 here) - has it improved any?\n"
     },
     {
+      "id": "18571",
       "author": "Justin Obara",
       "date": "2008-09-11T11:27:24.000-0400",
       "body": "Verified fix using:\n\nIE7 (Win XP, Win Vista)\n"

@@ -24,6 +24,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22131",
       "author": "YashJipkate",
       "date": "2020-04-08T15:45:24.189-0400",
       "body": "The 'Renderer Components' and the 'Renderer Component Trees' sections are already fixed in the latest master branch. I have fixed the other two parts in \\[this PR|<https://github.com/fluid-project/infusion-docs/pull/179>]\n\nFor the 2nd point of 'HowToUseTheRenderer', I have used permalink for the concerned block of code it links to so that the links do not point to any unexpected lines. I did this because I think that saying 'See fluid.render on this page' would be too vague.\n"

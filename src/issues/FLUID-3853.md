@@ -41,31 +41,37 @@
   ],
   "comments": [
     {
+      "id": "24867",
       "author": "Justin Obara",
       "date": "2010-11-18T16:31:19.339-0500",
       "body": "Attaching two patches to add the application role to the container of the pager component. FLUID-3853-aegis.patch.txt should be used for the aegis demo branch and FLUID-3853-trunk.patch.txt is good to use for trunk.\n"
     },
     {
+      "id": "24868",
       "author": "Justin Obara",
       "date": "2010-11-18T16:33:53.021-0500",
       "body": "Michelle code reviewed the patches and I committed FLUID-3853-aegis.patch.txt into the aegis branch\n"
     },
     {
+      "id": "24869",
       "author": "Colin Clark",
       "date": "2010-11-18T18:09:38.595-0500",
       "body": "This patch can be committed to trunk as-is.\n"
     },
     {
+      "id": "24870",
       "author": "Justin Obara",
       "date": "2010-11-19T10:19:07.357-0500",
       "body": "\"Bug Parade Infusion 1.3\"&#x20;\n"
     },
     {
+      "id": "24871",
       "author": "Justin Obara",
       "date": "2010-11-19T12:16:15.647-0500",
       "body": "Committed FLUID-3853-trunk.patch.txt to trunk\n"
     },
     {
+      "id": "24872",
       "author": "Justin Obara",
       "date": "2010-11-19T12:18:19.956-0500",
       "body": "All the patches have been committed and reviewed\n"

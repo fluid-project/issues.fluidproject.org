@@ -50,11 +50,13 @@
   ],
   "comments": [
     {
+      "id": "19455",
       "author": "Justin Obara",
       "date": "2008-07-21T14:57:02.000-0400",
       "body": "'screenshot-1' shows the two avatars\n"
     },
     {
+      "id": "19456",
       "author": "Justin Obara",
       "date": "2008-08-28T10:05:00.000-0400",
       "body": "may have been resolved with one of the recent updates to reorderer\n"

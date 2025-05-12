@@ -37,11 +37,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16168",
       "author": "Antranig Basman",
       "date": "2008-09-07T22:17:02.000-0400",
       "body": "Fixed with \"Geometric Manager\" @ rev 5476\n"
     },
     {
+      "id": "16170",
       "author": "Justin Obara",
       "date": "2008-09-09T09:09:50.000-0400",
       "body": "Verified fix using:\n\nIE7 (Win Vista)\n"

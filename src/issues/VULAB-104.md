@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27354",
       "author": "Blake E",
       "date": "2008-12-01T16:13:35.000-0500",
       "body": "vulab9\n"
     },
     {
+      "id": "27355",
       "author": "Ron Owston",
       "date": "2008-12-05T01:03:27.000-0500",
       "body": "Blake, that's an excellent idea! Please do this.\n"
     },
     {
+      "id": "27356",
       "author": "Blake E",
       "date": "2008-12-08T14:16:35.000-0500",
       "body": "A nice little animated gif with a message saying: \"We are uploading your testing video and audio, this can take a few minutes\"\n"

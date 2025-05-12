@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25173",
       "author": "Justin Obara",
       "date": "2022-05-09T07:47:26.093-0400",
       "body": "Not sure if these can help remove any framework utilities, but it might help simplify some implementations throughout. \n\n* [Nullish coalescing operator (??)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator)\n* [Logical nullish assignment (??=)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator)\n* [Optional chaining (?.)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) \n\n \n\nFor example when I don't have access to fluid.get I've started using the optional chaining. For example I could look for some nested value and provide a default if undefined or null: `let val = root?.seg1?.[variableName] ?? \"default`\n"
     },
     {
+      "id": "25174",
       "author": "Antranig Basman",
       "date": "2022-05-09T08:01:29.035-0400",
       "body": "Thanks Justin Obara - these are worth knowing about and are now usable across our environments since node 12, in which they are not supported, had end of life a couple of weeks ago.\n"
     },
     {
+      "id": "25175",
       "author": "Justin Obara",
       "date": "2022-05-11T16:32:45.956-0400",
       "body": "Merged PR ( <https://github.com/fluid-project/infusion/pull/1074> ) into the project repo at cb81275477b52afc3e07105adf107086fdc7cc43\n"

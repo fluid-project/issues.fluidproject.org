@@ -53,21 +53,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18349",
       "author": "Michelle D'Souza",
       "date": "2008-04-07T15:30:32.000-0400",
       "body": "Note that this bug applies to the jquery.keyboard-a11y plugin, not necessarily to the Reorderer.\n"
     },
     {
+      "id": "18352",
       "author": "Justin Obara",
       "date": "2008-09-22T12:57:41.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "18354",
       "author": "Justin Obara",
       "date": "2010-05-07T09:26:00.880-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "18355",
       "author": "Justin Obara",
       "date": "2011-01-04T13:06:14.873-0500",
       "body": "Could no longer reproduce this issue, it may have been fixed along with other changes for the 1.3 release.\n"

@@ -54,11 +54,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19542",
       "author": "Jonathan Hung",
       "date": "2008-10-14T14:11:18.000-0400",
       "body": "Iteration20\n"
     },
     {
+      "id": "19543",
       "author": "Jonathan Hung",
       "date": "2008-10-21T14:34:36.000-0400",
       "body": "After some reviewing, we will go with the Clean theme as it fixes a number of related bugs.\n"

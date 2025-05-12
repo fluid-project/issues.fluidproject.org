@@ -29,6 +29,7 @@
   ],
   "comments": [
     {
+      "id": "26460",
       "author": "Gregor Moss",
       "date": "2020-04-20T21:22:59.370-0400",
       "body": "I attempted to complete this work earlier today, but I ran into trouble since the logo SVG contains raster image data instead of paths, so even if I set a fill colour, it doesn't show. I will need to find another solution, or potentially find another SVG as a basis.\n"

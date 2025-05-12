@@ -32,11 +32,13 @@
   ],
   "comments": [
     {
+      "id": "20118",
       "author": "Justin Obara",
       "date": "2010-12-16T13:17:50.480-0500",
       "body": "\"screenshot-1\" shows how the content doesn't resize to fit the page.\n"
     },
     {
+      "id": "20120",
       "author": "Justin Obara",
       "date": "2014-07-30T15:51:14.886-0400",
       "body": "IE 6 is no longer a supported browser.\n"

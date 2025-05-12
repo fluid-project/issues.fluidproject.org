@@ -33,6 +33,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17075",
       "author": "Colin Clark",
       "date": "2008-10-29T14:43:44.000-0400",
       "body": "This has been implemented by adding progress bar support to Uploader and FileQueueView.\n"

@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25463",
       "author": "Justin Obara",
       "date": "2017-05-29T10:54:38.057-0400",
       "body": "I'm also finding a similar issue with trying to use the \"{arguments}\" context name in a members block.\n\nsee: <https://botbot.me/freenode/fluid-work/2017-05-29/?msg=86288307&page=1>\n"
     },
     {
+      "id": "25464",
       "author": "Antranig Basman",
       "date": "2017-11-08T12:34:47.018-0500",
       "body": "Wow, I can't believe this didn't get fixed...  must have fallen into an informational black spot ...\n"
     },
     {
+      "id": "25465",
       "author": "Tony Atkins [RtF]",
       "date": "2018-01-12T11:46:55.336-0500",
       "body": "This also happens within member blocks, as demonstrated here:\n\n<https://gist.github.com/the-t-in-rtf/6a85c3cf9676d227748a20180a09b929>\n"
     },
     {
+      "id": "25466",
       "author": "Antranig Basman",
       "date": "2019-09-30T09:16:21.436-0400",
       "body": "This is now fixed in the <https://fluidproject.atlassian.net/browse/FLUID-6148#icft=FLUID-6148> branch <https://github.com/fluid-project/infusion/pull/824>\n"

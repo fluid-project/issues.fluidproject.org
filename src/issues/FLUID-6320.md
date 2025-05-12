@@ -24,16 +24,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "25511",
       "author": "Justin Obara",
       "date": "2018-09-17T13:53:14.896-0400",
       "body": "Related UIO+ issue: <https://issues.gpii.net/browse/GPII-3286>\n"
     },
     {
+      "id": "25512",
       "author": "Ned Zimmerman",
       "date": "2021-02-16T11:49:34.239-0500",
       "body": "I encountered this while using the Orator on [stories.sojustrepairit.org](https://stories.sojustrepairit.org) on Edge (version 88.0.705.68 running on macOS 11.2.1).\n"
     },
     {
+      "id": "27881",
       "author": "Justin Obara",
       "date": "2024-07-24T13:06:48.265-0400",
       "body": "Could not reproduce with Chrome 126 on macOS 14.5\n"

@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18282",
       "author": "Jonathan Hung",
       "date": "2008-09-03T10:27:46.000-0400",
       "body": "Iteration19\n"
     },
     {
+      "id": "18286",
       "author": "Jonathan Hung",
       "date": "2008-10-02T22:42:02.000-0400",
       "body": "Public / not public is going to be handled by published / unpublished states built in Drupal.\n"

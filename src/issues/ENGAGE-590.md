@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12401",
       "author": "Jess Mitchell",
       "date": "2009-07-03T16:24:32.000-0400",
       "body": "closed out and located at: <http://wiki.fluidproject.org/display/fluid/COSI+-+Center+of+Science+and+Industry>\n"

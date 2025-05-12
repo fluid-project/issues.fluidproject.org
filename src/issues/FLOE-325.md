@@ -25,36 +25,43 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11307",
       "author": "Anastasia Cheetham",
       "date": "2015-05-08T15:54:34.318-0400",
       "body": "When I use the tool, the preferences are not actually saved and re-applied to the tool. If I change the font size (for example) and then reload the tool, my font size changes are not re-applied; the default font size is applied. Does this mean that there's a bug in the saving of preferences, if it's supposed to be saving?\n"
     },
     {
+      "id": "11308",
       "author": "Justin Obara",
       "date": "2015-05-12T09:28:05.851-0400",
       "body": "Anastasia Cheetham there was a bug with saving to the store. This has been fixed in <https://fluidproject.atlassian.net/browse/FLOE-314#icft=FLOE-314>\n"
     },
     {
+      "id": "11309",
       "author": "Justin Obara",
       "date": "2015-05-12T09:32:43.201-0400",
       "body": "Rather than overloading ctrl-r and conflating it with a straight browser reload. I suggest we use ctrl-option/alt-r. This will also prevent confusion where there are other means of reloading the page that doesn't trigger a reset of the tool. (e.g. navigating away and coming back, clicking the refresh button).\n"
     },
     {
+      "id": "11310",
       "author": "Justin Obara",
       "date": "2015-05-14T11:24:41.185-0400",
       "body": "Filed a pull request:\\\n<https://github.com/fluid-project/first-discovery/pull/46>\n"
     },
     {
+      "id": "11311",
       "author": "Cindy Li",
       "date": "2015-05-14T14:14:20.667-0400",
       "body": "The pull request has been merged into the project master @ 2fe3b9cf148417938168502abaeb43605f7dfa1f\n"
     },
     {
+      "id": "11312",
       "author": "Anastasia Cheetham",
       "date": "2015-05-14T15:00:46.120-0400",
       "body": "This doesn't seem to be working in Chrome, for me\n"
     },
     {
+      "id": "11313",
       "author": "Anastasia Cheetham",
       "date": "2015-05-14T15:05:27.209-0400",
       "body": "Seems to work now, not sure what the problem was.\n"

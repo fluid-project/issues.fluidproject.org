@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11791",
       "author": "Justin Obara",
       "date": "2010-02-05T14:15:57.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "11792",
       "author": "y z",
       "date": "2010-02-08T17:36:30.000-0500",
       "body": "Duplicate of <http://issues.fluidproject.org/browse/ENGAGE-351>\n"

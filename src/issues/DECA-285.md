@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10394",
       "author": "Justin Obara",
       "date": "2012-06-18T15:27:32.896-0400",
       "body": "Updated the server to support configuration like server.socket\\_host. Also added a unit test to verify it.\n\nThe changes are in my bitbucket repo:\\\n<https://bitbucket.org/jobara/decapod-0.6-server-iteration2>\n"
     },
     {
+      "id": "10395",
       "author": "Justin Obara",
       "date": "2012-07-03T10:38:05.542-0400",
       "body": "merged into the googlecode project repo\n"

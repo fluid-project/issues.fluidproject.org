@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24908",
       "author": "Anastasia Cheetham",
       "date": "2010-12-21T14:23:17.897-0500",
       "body": "A comment about this: If we're going to keep a file size limit, we should implement some form of feedback in cases where a file is rejected because of size. Currently, there's none so \\\na) if you only tried one file, nothing happens, but you don't know why\\\nb) if you selected several files and one is rejected, you might not even notice because the others show up in the queue\n"
     },
     {
+      "id": "24909",
       "author": "Colin Clark",
       "date": "2011-02-17T17:06:01.372-0500",
       "body": "There are two actual bugs here:\n\n1\\. We ship the Uploader by default with a 20 Mb file limit. Is this a good default to ship with?\\\n2\\. The HTML5 strategy for the Uploader assumes the file size limit is specified in megabytes, when it's actually kilobytes. As a result, the file size limit on modern HTML5 browsers is actually 1000x higher than the specified size.\n"
     },
     {
+      "id": "24910",
       "author": "Justin Obara",
       "date": "2014-05-22T14:28:03.566-0400",
       "body": "Due to a cross site scripting vulnerability we have removed flash support from the uploader. See <https://fluidproject.atlassian.net/browse/FLUID-5354#icft=FLUID-5354>\n"

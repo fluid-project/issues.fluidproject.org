@@ -23,6 +23,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26623",
       "author": "Gregor Moss",
       "date": "2020-12-13T17:39:57.794-0500",
       "body": "When this is tackled, care should be taken to configure nyc to include the DB functions, as the work of <https://fluidproject.atlassian.net/browse/SJRK-405#icft=SJRK-405> excludes them\n"

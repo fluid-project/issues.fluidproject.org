@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14926",
       "author": "Joseph Scheuhammer",
       "date": "2007-11-07T16:55:49.000-0500",
       "body": "The Reorderer now adds the class 'orderable-avatar' to the element that represents the avatar.  Note that since the avatar is a clone of the orderable to be moved, it already has the same classes as that orderable.  In the Lightbox, these classes are:\n\n* float\n* orderable-default, or orderable-selected \\*\n* ui-draggable (added by jQuery UI)\n* ui-droppable (added by jQuery UI)\n\n- the avatar has the 'orderable-default' or 'orderable-selected' class depending on whether the item dragged was the currently focussed item or not when it was picked up.\n"
     },
     {
+      "id": "14931",
       "author": "Michelle D'Souza",
       "date": "2011-01-28T12:09:45.049-0500",
       "body": "Reopening these issues to add the reorderercomponent to them.\n"

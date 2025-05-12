@@ -40,11 +40,13 @@
   ],
   "comments": [
     {
+      "id": "18954",
       "author": "Harris Wong",
       "date": "2010-08-24T14:25:46.433-0400",
       "body": "Replaced SWFObject v2.1 to SWFObject v2.2.  Changed the version number on the readme file and the swfobject-LICENSE file.\n"
     },
     {
+      "id": "18966",
       "author": "Mike Lam",
       "date": "2010-09-08T13:42:56.266-0400",
       "body": "Committed and available to trunk, 1.1.3, 1.2.1, and 1.3. &#x20;\n"

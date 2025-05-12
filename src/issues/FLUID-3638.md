@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21616",
       "author": "Justin Obara",
       "date": "2010-04-14T14:25:02.000-0400",
       "body": "tagged the 1.2 release\n\n<http://source.fluidproject.org/svn/fluid/infusion/tags/infusion-1.2/>\n"
     },
     {
+      "id": "21617",
       "author": "Justin Obara",
       "date": "2010-04-19T09:02:59.000-0400",
       "body": "Downloadable package up on the website \\\n<http://fluidproject.org/products/infusion/download-infusion/>\n"
     },
     {
+      "id": "21618",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:23.598-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24586",
       "author": "Justin Obara",
       "date": "2010-10-04T14:01:17.701-0400",
       "body": "\"Bug Parade Infusion 1.3\"\n"
     },
     {
+      "id": "24587",
       "author": "Colin Clark",
       "date": "2010-12-22T15:36:38.472-0500",
       "body": "This issue was addressed for Infusion 1.3\n"

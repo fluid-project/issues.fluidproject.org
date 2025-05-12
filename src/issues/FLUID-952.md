@@ -48,16 +48,19 @@
   ],
   "comments": [
     {
+      "id": "15899",
       "author": "Justin Obara",
       "date": "2008-09-02T13:28:50.000-0400",
       "body": "'screenshot-1' shows the pointer away from the avatar\n"
     },
     {
+      "id": "15901",
       "author": "Justin Obara",
       "date": "2009-01-23T14:01:56.000-0500",
       "body": "\"Focused Fix Day Wish List\"&#x20;\n"
     },
     {
+      "id": "15903",
       "author": "Justin Obara",
       "date": "2009-02-03T14:23:42.000-0500",
       "body": "Appears to have been fixed at r6398 as part of  the jQuery upgrade (<https://fluidproject.atlassian.net/browse/FLUID-2180#icft=FLUID-2180>)\n\nTested using:\\\nIE 6 (Win XP, Win 2000)\\\nIE 7 (Win XP, Win Vista)\n"

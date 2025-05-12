@@ -36,26 +36,31 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17450",
       "author": "Justin Obara",
       "date": "2008-09-24T13:58:56.000-0400",
       "body": "Bug Parade: 0.5 release\n"
     },
     {
+      "id": "17451",
       "author": "Jacob Farber",
       "date": "2008-09-24T14:00:58.000-0400",
       "body": "Perhaps it would help if event propogation is stopped immediately after our event, preventing the text selection from happening?\n"
     },
     {
+      "id": "17452",
       "author": "Justin Obara",
       "date": "2008-12-03T13:52:50.000-0500",
       "body": "Bug Parade 0.6 release\n"
     },
     {
+      "id": "17453",
       "author": "Antranig Basman",
       "date": "2008-12-12T14:03:44.000-0500",
       "body": "Opera delivers two \"click\" events \"back-to-back\" - that is, before reflecting any visibilty changes for button states in the UI. As a general recommendation, the \"model\" for any component should be resistant to corruption from any combination of events incoming from the outside, even if it believes it issues control requests to destroy or hide the relevant triggering controls.\n\nFixed at revision 6209\n"
     },
     {
+      "id": "17454",
       "author": "Justin Obara",
       "date": "2008-12-12T16:30:54.000-0500",
       "body": "The commit was code reviewed by Colin Clark (only needed to be linted)\n\nAfter linting,\n\nI Verified the fix using\n\nOpera 9.5 (Win XP)\n"

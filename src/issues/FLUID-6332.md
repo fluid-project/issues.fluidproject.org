@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22393",
       "author": "Giovanni Tirloni",
       "date": "2018-08-29T12:53:48.617-0400",
       "body": "<https://github.com/fluid-project/infusion/pull/927>\n"
     },
     {
+      "id": "22394",
       "author": "Justin Obara",
       "date": "2018-08-29T13:57:06.160-0400",
       "body": "Merged PR ( <https://github.com/fluid-project/infusion/pull/927> ) into the project repo at c62b79db0ebe0eb669f1e4011cbee0f2e90b8727\n"

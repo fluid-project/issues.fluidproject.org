@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26247",
       "author": "Gregor Moss",
       "date": "2017-09-07T20:42:34.720-0400",
       "body": "Fixed issue, pull request created:\n\n<https://github.com/waharnum/sjrk-storyTelling/pull/6/>\n"

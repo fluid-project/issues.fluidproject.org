@@ -40,21 +40,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11914",
       "author": "Justin Obara",
       "date": "2010-02-05T14:12:29.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "11915",
       "author": "y z",
       "date": "2010-02-11T15:35:57.000-0500",
       "body": "This bug is fixed with commit r9364 by Colin.\n"
     },
     {
+      "id": "11916",
       "author": "y z",
       "date": "2010-02-11T15:36:18.000-0500",
       "body": "This bug is fixed with commit r9364 by Colin.\n"
     },
     {
+      "id": "11917",
       "author": "Colin Clark",
       "date": "2010-02-12T14:21:36.000-0500",
       "body": "I reviewed and committed Yura's patch with a completely reworked Artifact View. It fixes this issue.\n"

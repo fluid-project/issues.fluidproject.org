@@ -45,21 +45,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19366",
       "author": "Michelle D'Souza",
       "date": "2008-10-01T13:36:35.000-0400",
       "body": "dev-iteration45\n"
     },
     {
+      "id": "19367",
       "author": "Anastasia Cheetham",
       "date": "2009-03-06T09:00:02.000-0500",
       "body": "We also need convenience methods for creating the \"rendered\" version of the Pager, possibly including the required info as actual parameters, and not options, e.g.\n\nfluid.renderedPager(container, dataModel, options)\n"
     },
     {
+      "id": "19368",
       "author": "Michelle D'Souza",
       "date": "2009-04-07T15:53:10.000-0400",
       "body": "We need to create a springboard to see if we require convenience methods.&#x20;\n"
     },
     {
+      "id": "19369",
       "author": "Anastasia Cheetham",
       "date": "2014-04-02T14:56:40.893-0400",
       "body": "Pager has been redesigned, and this work is no longer necessary.\n"

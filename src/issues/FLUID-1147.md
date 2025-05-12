@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18589",
       "author": "Anastasia Cheetham",
       "date": "2011-01-20T11:06:50.586-0500",
       "body": "As of Jan. 2011, the page is linked to from:\\\nUsing Jira\\\nRelease Package QA Test Plan\\\nCurrent Needs\\\nRelease Testing Tasks\\\nQuality&#x20;\n\nJustin, do you think that's adequate? can we close this one?\n"
     },
     {
+      "id": "18592",
       "author": "Justin Obara",
       "date": "2011-01-20T14:26:00.647-0500",
       "body": "As per anastasia's comment about the locations that the \"Testing Fluid Components\" page is linked to, I think this can be closed.\n"

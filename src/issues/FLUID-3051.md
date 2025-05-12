@@ -43,16 +43,19 @@
   ],
   "comments": [
     {
+      "id": "19499",
       "author": "Justin Obara",
       "date": "2009-07-22T11:44:12.000-0400",
       "body": "Attached the source and minified version of the fluid-0.8.1 release\n"
     },
     {
+      "id": "19501",
       "author": "Justin Obara",
       "date": "2009-07-23T08:55:26.000-0400",
       "body": "The 0.8.1 release is now availble\n\nSVN: <https://source.fluidproject.org/svn/fluid/infusion/tags/fluid-0.8.1/>\n\nWiki: <http://wiki.fluidproject.org/display/fluid/Fluid+Infusion+0.8>\n"
     },
     {
+      "id": "19503",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T13:23:10.793-0500",
       "body": "Reopening these issues to add the releasecomponent.&#x20;\n"

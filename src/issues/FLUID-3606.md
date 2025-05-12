@@ -35,21 +35,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23561",
       "author": "Justin Obara",
       "date": "2010-05-07T14:10:20.305-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "23562",
       "author": "Jonathan Hung",
       "date": "2011-01-10T16:05:09.358-0500",
       "body": "Duplicate of <https://fluidproject.atlassian.net/browse/FLUID-3632#icft=FLUID-3632>\n"
     },
     {
+      "id": "21453",
       "author": "Golam Chowdhury",
       "date": "2011-02-28T12:25:59.626-0500",
       "body": "Can't tab out of edit with rich text inline edit using Tiny MCE exist with Chrome 9 on XP.\n"
     },
     {
+      "id": "21457",
       "author": "Golam Chowdhury",
       "date": "2011-02-28T12:27:16.768-0500",
       "body": "This issue exist with Chrome 9/XP.\n"

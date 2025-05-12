@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18088",
       "author": "Anastasia Cheetham",
       "date": "2009-03-25T10:55:10.000-0400",
       "body": "Eric Dalquist is setting us up a Nexus account, so that we can use the jasig repository for this. We'll have to test our pom files...\n"
     },
     {
+      "id": "18089",
       "author": "Colin Clark",
       "date": "2011-01-20T09:26:09.526-0500",
       "body": "A Maven repository, hosted by Jasig, was created for Fluid years ago. This one is sufficiently fixed. 🙂\n"

@@ -34,36 +34,43 @@
   ],
   "comments": [
     {
+      "id": "12465",
       "author": "Tona Monjo",
       "date": "2009-10-21T15:53:53.000-0400",
       "body": "I've also found the same bug on my iPhone. The title extends only one line and appears truncated  at the browsing page, but not at the actifact's page.&#x20;\n"
     },
     {
+      "id": "12466",
       "author": "Justin Obara",
       "date": "2010-02-05T15:50:10.000-0500",
       "body": "Bug Parade Engage 0.3&#x20;\n"
     },
     {
+      "id": "12467",
       "author": "Justin Obara",
       "date": "2010-02-09T17:10:45.000-0500",
       "body": "I've been looking into this and it seems that it won't be possible with the current way the navBar is laid out.&#x20;\n\nThe ellipsis, when used in a table require that the table have a fixed layout.\n\n<http://www.blakems.com/archives/000077.html>\n"
     },
     {
+      "id": "12468",
       "author": "Justin Obara",
       "date": "2010-02-10T13:16:31.000-0500",
       "body": "This jira is all complete, except for my collection (in a branch) and artifact view (the frog is guarding the code)\n"
     },
     {
+      "id": "12469",
       "author": "Justin Obara",
       "date": "2010-02-12T13:06:56.000-0500",
       "body": "artifact view is complete, just waiting on my collection\n"
     },
     {
+      "id": "12470",
       "author": "Justin Obara",
       "date": "2010-02-16T12:03:38.000-0500",
       "body": "Worked with Yura to implement  some restyling and had mark up changes to the nav bar. Basically we pulled the table-cells which prevented the ellipsis.\n"
     },
     {
+      "id": "12471",
       "author": "James Yoon",
       "date": "2010-02-22T17:20:24.000-0500",
       "body": "Tested on 02/22/2010, 4:46 PM EST.\n\nLooks good. Issue closed.\n"

@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19713",
       "author": "Justin Obara",
       "date": "2014-02-18T07:43:10.607-0500",
       "body": "Comment about location of 3rd party licences in build from the list.\\\n<http://fluid.2324889.n4.nabble.com/Where-license-files-should-reside-in-the-infusion-build-td8917.html>\n"
     },
     {
+      "id": "19715",
       "author": "Cindy Li",
       "date": "2014-02-18T09:15:09.844-0500",
       "body": "A pull request has been issued: <https://github.com/fluid-project/infusion/pull/470>\n"
     },
     {
+      "id": "19716",
       "author": "Justin Obara",
       "date": "2014-02-19T10:40:01.302-0500",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/470> ) into the project repo at a0b955e15268f7e59f465fecb776cca38c4d8b61\n"

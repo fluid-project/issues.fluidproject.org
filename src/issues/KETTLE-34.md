@@ -23,21 +23,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26157",
       "author": "Tony Atkins [RtF]",
       "date": "2015-11-02T08:10:56.625-0500",
       "body": "Can I get a link to the pull request for this?  I would like to start working on an alternative CouchDB dataSource and would rather not have to work around the lack of inline credentials.\n"
     },
     {
+      "id": "26158",
       "author": "Tony Atkins [RtF]",
       "date": "2015-11-02T08:14:48.422-0500",
       "body": "This is supposed to have been fixed by this pull request:  <https://github.com/fluid-project/kettle/pull/21>\n\nLooks like this is the commit with the fix?  <https://github.com/amb26/kettle/commit/4047ebf80be4d7df624aaf6efd2f47da10022a4a>\n"
     },
     {
+      "id": "26159",
       "author": "Antranig Basman",
       "date": "2015-11-02T08:23:51.404-0500",
       "body": "Yes, that is it - although I'll be working on this area directly a bit more this afternoon, and reverting my previous change to the format of the \"termMap\" which I had made last month\n"
     },
     {
+      "id": "26160",
       "author": "Tony Atkins [RtF]",
       "date": "2015-11-02T09:05:44.522-0500",
       "body": "Thanks for the warning, I will hold off for a day or two and focus on cleaning up the PTD code a bit first.\n"

@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15974",
       "author": "lahabana",
       "date": "2011-06-17T04:53:20.298-0400",
       "body": "here is a correction of the issue:\\\n<https://github.com/lahabana/infusion/blob/master/src/webapp/framework/core/js/Fluid.js#L1715-1726>\n"
     },
     {
+      "id": "15976",
       "author": "Antranig Basman",
       "date": "2013-05-22T00:22:47.478-0400",
       "body": "This has been corrected some time ago in trunk and has test cases\n"

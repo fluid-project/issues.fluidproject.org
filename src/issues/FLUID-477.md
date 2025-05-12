@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18824",
       "author": "Anastasia Cheetham",
       "date": "2008-04-09T09:19:08.000-0400",
       "body": "The list of files has been updated (along with a note about using only the generic lightbox for screen reader testing).\\\nWhen the filename of the uPortal portlets example is changed, the link will have to change.\n"

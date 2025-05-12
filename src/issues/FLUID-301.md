@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18516",
       "author": "Barbara Glover",
       "date": "2008-02-28T15:06:14.000-0500",
       "body": "iteration03\n"
     },
     {
+      "id": "18518",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:50.241-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

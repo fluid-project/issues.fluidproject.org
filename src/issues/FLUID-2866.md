@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17059",
       "author": "Michelle D'Souza",
       "date": "2011-02-28T16:45:18.374-0500",
       "body": "Closing issues that were fixed in 1.1\n"

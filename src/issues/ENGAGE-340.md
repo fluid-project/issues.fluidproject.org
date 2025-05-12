@@ -26,11 +26,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12285",
       "author": "James Yoon",
       "date": "2010-02-08T14:48:21.000-0500",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12286",
       "author": "Justin Obara",
       "date": "2010-02-24T12:24:27.000-0500",
       "body": "This was fixed when the images were changed, and reviewed with <https://fluidproject.atlassian.net/browse/ENGAGE-293#icft=ENGAGE-293>, <https://fluidproject.atlassian.net/browse/ENGAGE-305#icft=ENGAGE-305>\n"

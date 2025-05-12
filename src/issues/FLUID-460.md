@@ -41,21 +41,25 @@
   ],
   "comments": [
     {
+      "id": "13159",
       "author": "Justin Obara",
       "date": "2008-04-07T13:28:35.000-0400",
       "body": "screenshot-1 shows the starting position of the elements, and the format they should appear in.\n"
     },
     {
+      "id": "13160",
       "author": "Justin Obara",
       "date": "2008-04-07T13:30:49.000-0400",
       "body": "screenshot-2 shows the error after a few attempts of drag & drop\n"
     },
     {
+      "id": "13161",
       "author": "Justin Obara",
       "date": "2008-04-07T13:32:06.000-0400",
       "body": "screenshot-3 shows an example of where to drop the element to cause the issue.\n"
     },
     {
+      "id": "13162",
       "author": "Michelle D'Souza",
       "date": "2008-04-28T14:14:26.000-0400",
       "body": "This example has been retired. There is an example of nested reorderers in the portlets example.&#x20;\n"

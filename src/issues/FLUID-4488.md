@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15179",
       "author": "Anastasia Cheetham",
       "date": "2011-09-30T16:44:07.800-0400",
       "body": "This issue might be related to <https://fluidproject.atlassian.net/browse/FLUID-4478#icft=FLUID-4478>, which involves the image gallery ignoring file size limits.\n"
     },
     {
+      "id": "15182",
       "author": "Justin Obara",
       "date": "2015-06-10T10:43:11.685-0400",
       "body": "The image gallery uploader demo no longer exists.\n"

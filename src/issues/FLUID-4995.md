@@ -39,16 +39,19 @@
   ],
   "comments": [
     {
+      "id": "16022",
       "author": "heidi valles",
       "date": "2013-05-07T09:53:12.175-0400",
       "body": "UIO Icons needed:\n\nheader icons:\\\ntext size\\\ntext style\\\nline spacing\\\ncontrast\\\nTOC\\\nlinks\\\nTTS\\\nsimplify\n\nother:\\\nindicator arrow for contrast\\\ncrossout diag dotted line for contrast default\n\nlines on slider handle\n\nnext arrow\\\nprev arrow\n\nsmall A\\\nbig A\\\nnarrow lines\\\nspaced lines\n\ntabs:\\\nreset undo arrow\\\ndisplay pref gear\n"
     },
     {
+      "id": "16024",
       "author": "heidi valles",
       "date": "2013-06-04T12:02:48.677-0400",
       "body": "There's a known issue in IE8 - font icons sometimes do not update until interacted-with. See <http://andymcfee.com/2012/04/icon-fonts-pseudo-elements-and-ie8/> for details.&#x20;\n\nFiled under: <https://fluidproject.atlassian.net/browse/FLUID-5034#icft=FLUID-5034>\n"
     },
     {
+      "id": "16026",
       "author": "Justin Obara",
       "date": "2013-06-05T10:34:56.224-0400",
       "body": "Merged in pull request ( <https://github.com/fluid-project/infusion/pull/324> ) into the project repo at 377269139b5efefd90eaba06ea3178f7d29f56a1\n"

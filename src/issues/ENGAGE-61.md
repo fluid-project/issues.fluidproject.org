@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12415",
       "author": "vmoulder",
       "date": "2009-09-26T14:05:44.000-0400",
       "body": "Revised wireframes <http://wiki.fluidproject.org/display/fluid/Kiosk+wireframes>\n"

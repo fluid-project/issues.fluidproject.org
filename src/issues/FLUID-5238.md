@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21040",
       "author": "Antranig Basman",
       "date": "2014-01-29T04:14:56.420-0500",
       "body": "Sections now present in <http://wiki.fluidproject.org/display/docs/Subcomponent+Declaration> and <http://wiki.fluidproject.org/display/docs/Component+Configuration+Options> as suggested.\n"
     },
     {
+      "id": "21041",
       "author": "Antranig Basman",
       "date": "2014-01-29T04:15:45.891-0500",
       "body": "Tests for both facilities have been in trunk for a while - b) description above is incorrect - a component is created on every firing, the difference from standard subcomponents is that no existing subcomponent is destroyed first.\n"

@@ -27,21 +27,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18075",
       "author": "Colin Clark",
       "date": "2008-09-16T10:04:32.000-0400",
       "body": "Eli, can you post these to the wiki since my copy of Graffle hates me?\n"
     },
     {
+      "id": "18076",
       "author": "Colin Clark",
       "date": "2008-09-16T10:04:38.000-0400",
       "body": "dev-iteration43\n"
     },
     {
+      "id": "18077",
       "author": "Eli Cochran",
       "date": "2008-10-02T15:59:10.000-0400",
       "body": "Updated and uploaded latest version of the Uploader Architecture drawing\n"
     },
     {
+      "id": "18078",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:56.485-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

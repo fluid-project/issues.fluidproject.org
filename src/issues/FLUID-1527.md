@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24951",
       "author": "Anastasia Cheetham",
       "date": "2009-03-10T12:09:53.000-0400",
       "body": "Has this task been completed? We do have\\\n<http://wiki.fluidproject.org/display/fluid/Uploader>\n"
     },
     {
+      "id": "24952",
       "author": "Mike Lam",
       "date": "2011-01-05T15:52:02.636-0500",
       "body": "Modified uploader demo has already been made.   The link at the top of the page to switch between a single file upload and the multi-file flash uploader has been removed.    Progressive enhancement has been made to select the uploader strategy based on the user's browser.   If a new demo is to be created, a new JIRA will be made.\n"

@@ -27,31 +27,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22820",
       "author": "Justin Obara",
       "date": "2018-03-09T08:41:37.372-0500",
       "body": "It seems that after a reset, when the code filters down to the write method from the remoteModelComponent, the diff between the local and remote models ( <https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/RemoteModel.js#L232> ) returns a falsey value. The result of this is to not send anything to the actual store because the component believes that it is already in sync. \n"
     },
     {
+      "id": "22823",
       "author": "Justin Obara",
       "date": "2018-03-09T08:50:33.655-0500",
       "body": "Further investigation yields that when the preference is set in the separated panel it is automatically stored. However, the remote model isn't updated. This is why when a reset occurs the local and remote model both appear to be in the reset state and the reset values are not sent to the store.\n"
     },
     {
+      "id": "22826",
       "author": "Justin Obara",
       "date": "2018-03-09T09:33:07.663-0500",
       "body": "It seems that the prefs framework configuration is missing an \"afterWrite\" listener to do a fetch. Fetches are what update the \"remote\" model. \n"
     },
     {
+      "id": "22829",
       "author": "Justin Obara",
       "date": "2018-03-09T09:33:59.765-0500",
       "body": "being worked on with changes for <https://fluidproject.atlassian.net/browse/FLUID-6204#icft=FLUID-6204>\n"
     },
     {
+      "id": "22831",
       "author": "Justin Obara",
       "date": "2018-03-09T11:22:27.805-0500",
       "body": "I spoke with Antranig Basman in the fluid-work IRC channel today regarding this.\n\n<https://botbot.me/freenode/fluid-work/2018-03-09/?msg=97684144&page=1>\n\n \n"
     },
     {
+      "id": "22834",
       "author": "Justin Obara",
       "date": "2018-03-12T11:10:01.832-0400",
       "body": "From a discussion in the fluid-work IRC channel today, Antranig Basman said:\n\n> I suggested updating the remote model after a write, but only after updating the IPC backing to actually give a reliable receipt for the handling of the remote write message\\\n> And to update the docs to clarify that this is what the resolution of the write promise is actually meant to mean 🙂\\\n> That is, it means a successful write, not just a successful writing of a message to write 🙂\n"

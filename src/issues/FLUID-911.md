@@ -40,16 +40,19 @@
   ],
   "comments": [
     {
+      "id": "13192",
       "author": "Justin Obara",
       "date": "2008-07-16T14:25:53.000-0400",
       "body": "'screenshot-1' shows the frozen avatar\n"
     },
     {
+      "id": "13193",
       "author": "Antranig Basman",
       "date": "2008-09-07T22:22:37.000-0400",
       "body": "This is a duplicate of numerous issues issued against the base \"Reorderer\", I suggest we destroy/merge the LayoutCustomizer and Reorderer categories. Fixed with \"Geometric Manager\" etc.\n"
     },
     {
+      "id": "13194",
       "author": "Justin Obara",
       "date": "2008-09-08T09:45:24.000-0400",
       "body": "Verified fix using:\n\nFF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)\\\nFF2, FF3, Opera 9.5 (Win XP)\\\nFF3 (Win Vista)\n"

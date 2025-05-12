@@ -25,16 +25,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20794",
       "author": "Michelle D'Souza",
       "date": "2007-11-07T11:45:11.000-0500",
       "body": "This is likely an issue in resources not in the lightbox or gallery.\n"
     },
     {
+      "id": "20795",
       "author": "Eli Cochran",
       "date": "2007-11-14T16:51:54.000-0500",
       "body": "I could not reproduce this problem on FF on the Mac. Please attempt to reproduce and provide more info.\n"
     },
     {
+      "id": "20796",
       "author": "Justin Obara",
       "date": "2007-11-19T13:51:47.000-0500",
       "body": "This issues appears to be corrected in current build. Tried to reproduce on Mac using Firefox and on WinXP using Firefox and IE7.\n"

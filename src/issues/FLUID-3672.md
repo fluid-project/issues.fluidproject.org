@@ -40,16 +40,19 @@
   ],
   "comments": [
     {
+      "id": "21892",
       "author": "Laurel Williams",
       "date": "2010-06-14T14:17:49.826-0400",
       "body": "FLUID-3672-1.patch.txt includes a test to show the problem. Essentially, if you create an event firer, add a listener of type function, remove the listener and then fire the event, the listener has not been removed and runs.\n\nThis patch also includes the fix for the problem, which includes a test for listeners of type 'function'.\n"
     },
     {
+      "id": "21893",
       "author": "Laurel Williams",
       "date": "2010-06-17T11:11:40.364-0400",
       "body": "Attached patch (#2) is a second version of a fix for this problem, very similar to the first patch. The if statement in this case has been pared down to a minimal if statement with a test for the $$guid.\n"
     },
     {
+      "id": "21894",
       "author": "Anastasia Cheetham",
       "date": "2010-06-17T11:53:16.561-0400",
       "body": "I've committed Laurel's patch for this.\n"

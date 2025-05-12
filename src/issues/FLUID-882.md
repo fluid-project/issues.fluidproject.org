@@ -33,16 +33,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19804",
       "author": "Michelle D'Souza",
       "date": "2008-07-09T17:38:50.000-0400",
       "body": "I've added a manual example called 'anchors' that demonstrates the issue.\n"
     },
     {
+      "id": "19806",
       "author": "Justin Obara",
       "date": "2010-05-07T09:53:43.121-0400",
       "body": "a11y issue\n"
     },
     {
+      "id": "19809",
       "author": "Michelle D'Souza",
       "date": "2011-01-20T11:08:36.203-0500",
       "body": "I tested this issue with Firefox 2.0.0.20 and was unable to reproduce it.&#x20;\n"

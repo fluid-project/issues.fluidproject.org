@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "15723",
       "author": "Justin Obara",
       "date": "2011-02-28T12:51:17.361-0500",
       "body": "Updated the pom file at b30123a9ab545638bc16\n"

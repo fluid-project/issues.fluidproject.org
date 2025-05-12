@@ -31,6 +31,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18799",
       "author": "Justin Obara",
       "date": "2008-07-07T14:20:33.000-0400",
       "body": "Appears to be fixed in the current build.&#x20;\n\nDouble clicking checks the checkbox and highlights the text in IE6 and IE7\n"

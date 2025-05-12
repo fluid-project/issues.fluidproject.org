@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26273",
       "author": "Dana",
       "date": "2017-11-22T12:05:37.661-0500",
       "body": "Hi Eloisa, site looks great, a few minor things:\n\n* for the text at the bottom of the page, instead of \"Join Us\" please change it to \"Contact Us\"\n* I think it would be better if the links opened new tabs (instead of in same tab)\n* Please change the resources order to the following:\n  * What Is Inclusive Design?\n  * The Inclusive Design Guide\n  * The Inclusive Learning Design Handbook\n  * Empathy (video)\n  * Introduction to User Interface Options (video)\n  * Storytelling and Story-Gathering Resources, Tools and Examples\n  * Youth Guides to Action\n  * The Youth Effect doc\n\nAlan Harnum does this sound good to you?\n\nThanks!\n\n \n"
     },
     {
+      "id": "26274",
       "author": "Alan Harnum",
       "date": "2017-11-22T16:27:31.628-0500",
       "body": "The re-ordering sounds good to me.\n\nGenerally speaking, I am cautious about making links open in a new tab / window, per this WCAG guideline: <https://www.w3.org/TR/WCAG20-TECHS/G200.html> - however, this is existing practice on some of our other sites, like <https://handbook.floeproject.org/>, provided an indicator exists - can we do the reordering for now and discuss the issue of opening in new tabs / windows a bit further?\n"

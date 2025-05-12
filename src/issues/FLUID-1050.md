@@ -36,31 +36,37 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20414",
       "author": "Justin Obara",
       "date": "2008-09-16T14:59:34.000-0400",
       "body": "Affects Uploader 2\n"
     },
     {
+      "id": "20415",
       "author": "Eli Cochran",
       "date": "2008-12-04T19:33:30.000-0500",
       "body": "added back in the href into the \\<a> tag.\n"
     },
     {
+      "id": "20416",
       "author": "Justin Obara",
       "date": "2008-12-08T08:50:02.000-0500",
       "body": "still doesn't work in Opera 9.5 on both Mac OS 10.5 and Win XP\n"
     },
     {
+      "id": "20417",
       "author": "Michelle D'Souza",
       "date": "2008-12-17T11:46:22.000-0500",
       "body": "I was also unable to remove files from the queue using the keyboard in Opera.&#x20;\n"
     },
     {
+      "id": "20418",
       "author": "Justin Obara",
       "date": "2009-02-19T13:41:40.000-0500",
       "body": "Opera uses CTRL+(up/down arrow key) to navigate between links\n"
     },
     {
+      "id": "20419",
       "author": "Justin Obara",
       "date": "2009-02-19T13:46:10.000-0500",
       "body": "Appears to have been fixed\n\nTested with:\n\nIE 6, FF3 (Win 2000)\n"

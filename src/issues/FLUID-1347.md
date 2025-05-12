@@ -29,16 +29,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18182",
       "author": "Eli Cochran",
       "date": "2008-09-16T13:23:35.000-0400",
       "body": "Generic progress is done. There will need to be some iceing added to the widget to work with the cleverness of the Uploader design\n"
     },
     {
+      "id": "18183",
       "author": "Eli Cochran",
       "date": "2008-10-21T12:53:51.000-0400",
       "body": "Progress Bar with Unit Tests is complete in Uploader2 trunk! Yeah!\n"
     },
     {
+      "id": "18184",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:45.380-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

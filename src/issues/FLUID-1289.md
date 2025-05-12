@@ -43,21 +43,25 @@
   ],
   "comments": [
     {
+      "id": "15687",
       "author": "Justin Obara",
       "date": "2008-09-02T11:07:21.000-0400",
       "body": "'screenshot-1' shows the improper style of the pointer\n"
     },
     {
+      "id": "15691",
       "author": "Justin Obara",
       "date": "2008-10-31T08:33:05.000-0400",
       "body": "Still happens, but not all the time. Maybe it has to do with speed at which mouse is moved.\n"
     },
     {
+      "id": "15692",
       "author": "Jacob Farber",
       "date": "2008-10-31T10:24:12.000-0400",
       "body": "Cursor change solved many duplciate cursor related bugs\n"
     },
     {
+      "id": "15694",
       "author": "Jacob Farber",
       "date": "2008-10-31T10:24:47.000-0400",
       "body": "See linked issue (<https://fluidproject.atlassian.net/browse/FLUID-987#icft=FLUID-987>)\n"

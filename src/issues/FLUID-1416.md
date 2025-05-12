@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18501",
       "author": "Jonathan Hung",
       "date": "2008-09-03T10:46:13.000-0400",
       "body": "Iteration20\n"
     },
     {
+      "id": "18505",
       "author": "Jonathan Hung",
       "date": "2008-10-16T16:33:41.000-0400",
       "body": "Exposed filters for different states in the Design Pattern view.\n"

@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26277",
       "author": "Alan Harnum",
       "date": "2019-01-17T06:36:21.403-0500",
       "body": "I've increased the VM's hard disk size to 650GB from 160G. Since about 100G was used, there's now half a terabyte available for storage.\n\n \n\n**df -h** output:\n\n`Filesystem Size Used Avail Use% Mounted on`\\\n`/dev/vda1 650G 94G 557G 15% /`\n"

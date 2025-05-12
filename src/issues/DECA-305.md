@@ -34,11 +34,13 @@
   ],
   "comments": [
     {
+      "id": "10425",
       "author": "Justin Obara",
       "date": "2012-09-05T10:32:44.400-0400",
       "body": "Screenshot.png shows the misaligned output field\n"
     },
     {
+      "id": "10426",
       "author": "Jonathan Hung",
       "date": "2012-11-20T10:36:17.269-0500",
       "body": "Low priority for Deca 0.7 release.\n"

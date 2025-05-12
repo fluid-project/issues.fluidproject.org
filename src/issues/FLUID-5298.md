@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22655",
       "author": "Justin Obara",
       "date": "2014-04-01T16:20:49.759-0400",
       "body": "From what I can tell it happens when onerec in fluid.annotateListeners is a string instead of an object literal. I suppose this is similar to <https://fluidproject.atlassian.net/browse/FLUID-5297#icft=FLUID-5297> except that it was let through by most browsers because it uses dot notation instead of array notation.\n"
     },
     {
+      "id": "22658",
       "author": "Justin Obara",
       "date": "2014-04-08T15:23:57.313-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/infusion/pull/488> ) into the project repo at e77d48f49d07f88e7dff4befc547874da29b6c01\n"

@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12344",
       "author": "Jess Mitchell",
       "date": "2010-02-24T11:44:02.000-0500",
       "body": "Colin cut the release\n"

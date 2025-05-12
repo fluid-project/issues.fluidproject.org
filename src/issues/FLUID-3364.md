@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23306",
       "author": "Antranig Basman",
       "date": "2009-11-05T17:13:39.000-0500",
       "body": "Fixed at revision 8598 with test case... parsing of attribute names now conforms to XML standard.\n"
     },
     {
+      "id": "23307",
       "author": "Justin Obara",
       "date": "2009-11-13T09:45:21.000-0500",
       "body": "Interesting that sveto ran into this problem <https://fluidproject.atlassian.net/browse/ENGAGE-179#icft=ENGAGE-179>, but we had assumed that it was just an issue with the structure of the code. I assume we won't often run into this issue in our own implementations as we tend to add aria programatically, but this should solve any issues for our integrators. Did a quick test and it seems.\n"

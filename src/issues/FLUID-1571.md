@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20558",
       "author": "Justin Obara",
       "date": "2009-05-14T10:13:09.000-0400",
       "body": "Bug Parade 1.1 release\n"
     },
     {
+      "id": "20559",
       "author": "Mike Lam",
       "date": "2011-01-05T15:35:24.564-0500",
       "body": "Expanded unit test coverage.   Numerous tests were added to test the file queue functions. &#x20;\n"

@@ -35,6 +35,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21452",
       "author": "Laurel Williams",
       "date": "2009-04-06T15:38:43.000-0400",
       "body": "In IE8 the tabs are still visible if you go back to the field to edit it, but that they appear as a single space after editing is complete. I'm not sure about the other 2 browsers mentioned above.\n"

@@ -35,11 +35,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17800",
       "author": "Justin Obara",
       "date": "2007-11-19T15:25:37.000-0500",
       "body": "In IE7 this occurs when you attempt to drag the image with the mouse over the white padding arround the image name, to the right of the image, and to the left of the image.\n\nIn IE6 this occurs when you attempt to drag the image with the mouse over the white padding below the image name.\n"
     },
     {
+      "id": "17802",
       "author": "Jonathan Hung",
       "date": "2007-12-18T14:30:16.000-0500",
       "body": "Appears to be a duplicate of Fluid-143.\n"

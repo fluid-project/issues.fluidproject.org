@@ -34,11 +34,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16634",
       "author": "Colin Clark",
       "date": "2007-11-15T15:52:39.000-0500",
       "body": "LayoutHandlers were moved from Fluid.js to Reorderer.js. Everything else left in this utilities file is fairly generic and appropriate. We'll revisit this approach by folding all of our code into a single Fluid.js file post-0.1.\n"
     },
     {
+      "id": "16636",
       "author": "Michelle D'Souza",
       "date": "2011-01-30T11:56:37.642-0500",
       "body": "Reopening these issues to add the frameworkcomponent\n"

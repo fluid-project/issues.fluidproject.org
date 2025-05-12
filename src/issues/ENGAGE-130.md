@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12472",
       "author": "Colin Clark",
       "date": "2009-10-16T14:42:16.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "12473",
       "author": "Justin Obara",
       "date": "2009-10-16T14:48:24.000-0400",
       "body": "Resolved at r8362\n"
     },
     {
+      "id": "12474",
       "author": "Justin Obara",
       "date": "2009-11-03T11:28:15.000-0500",
       "body": "closed as per previous comment\n"

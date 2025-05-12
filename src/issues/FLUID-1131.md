@@ -52,11 +52,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20531",
       "author": "Jonathan Hung",
       "date": "2008-08-29T16:07:37.000-0400",
       "body": "\\-\n"
     },
     {
+      "id": "20532",
       "author": "Jonathan Hung",
       "date": "2008-10-01T09:45:00.000-0400",
       "body": "Duplicated by other work currently happening in OSDPL (i.e. Blake and Jonathan are implementing some of the tasks).\n"

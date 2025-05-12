@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16458",
       "author": "Harris Wong",
       "date": "2011-02-24T16:33:57.287-0500",
       "body": "As well for Chrome\n"
     },
     {
+      "id": "16460",
       "author": "Anastasia Cheetham",
       "date": "2014-08-06T11:27:16.883-0400",
       "body": "This still happens in that the editor window is a fixed width, and if the browser window is narrower than that, horizontal scrolling is required. However, a) we're no longer using the demo portal, so a very narrow \"window\" doesn't happen the way it used to, and b) this page has been relegated to a test page instead of a demo.\n"

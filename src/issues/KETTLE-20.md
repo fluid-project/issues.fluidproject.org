@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26131",
       "author": "Antranig Basman",
       "date": "2014-01-14T19:51:51.037-0500",
       "body": "We should take the opportunity at the same time to fix logging in another crucial case, where there is NOT a current request and we receive an unhandled exception notification. This blocked the characterisation of <http://issues.gpii.net/browse/GPII-520>\n"
     },
     {
+      "id": "26132",
       "author": "Antranig Basman",
       "date": "2014-07-30T12:19:47.706-0400",
       "body": "Merged into Kettle trunk at revision 78410a0c99326a5b7b4173bf84fbb1c6d3ce9de0 on 7 Feb 2014\n"

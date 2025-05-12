@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19071",
       "author": "y z",
       "date": "2010-04-05T18:12:37.000-0400",
       "body": "This is also an issue in FF 3.6 in WIN 7\n"
     },
     {
+      "id": "19075",
       "author": "Mike Lam",
       "date": "2011-01-05T11:54:56.906-0500",
       "body": "Resolved in Infusion 1.3\n"

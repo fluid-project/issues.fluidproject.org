@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11533",
       "author": "Alan Harnum",
       "date": "2016-01-26T15:07:33.869-0500",
       "body": "tracked it down to a leftover model relay issue from an earlier attempt at connecting the inlinedit components to other models, which i'd forgotten to remove from the component definition after i realized it wouldn't work; turns out it was working, but only in the wrong direction\n"

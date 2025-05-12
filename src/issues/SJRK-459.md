@@ -26,16 +26,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "26645",
       "author": "Justin Obara",
       "date": "2021-03-08T12:28:39.659-0500",
       "body": "I tried the following possible solutions, the last one is the one that seemed to work.\n\n1. change the support check to test if canPlayType returns \"probably\".\n   1. Caused the tests to fail in Safari.\n2. provide multiple sources in the video element.\n   1. The video was still trying to use the mp4 format despite having access to both the mp4 and webm versions. It also didn't appear to matter what order the sources were added in.\n3. change the context check to see if webm is supported and fallback to mp4 instead of the other way around.\n   1. this appears to work.\n\n \n\n \n"
     },
     {
+      "id": "26646",
       "author": "Justin Obara",
       "date": "2021-03-08T12:32:27.997-0500",
       "body": "Being worked on along with <https://fluidproject.atlassian.net/browse/SJRK-455#icft=SJRK-455>\n"
     },
     {
+      "id": "26647",
       "author": "Justin Obara",
       "date": "2021-03-15T11:19:11.845-0400",
       "body": "Address in the PR for <https://fluidproject.atlassian.net/browse/SJRK-455#icft=SJRK-455>\n\nMerged PR ( <https://github.com/fluid-project/sjrk-story-telling/pull/114> ) at ffa60fe828fa816fadca949aaccbec6f682b7ebe\n"

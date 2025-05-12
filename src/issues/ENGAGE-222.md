@@ -25,6 +25,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12174",
       "author": "Justin Obara",
       "date": "2010-01-12T09:33:12.000-0500",
       "body": "resolved at r8974\n\nRefactored the paging to conform to the model used by the, forthcoming, Pager from Infusion. The only difference being that the model used here has the pageCount included.\n"

@@ -30,21 +30,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "13679",
       "author": "Justin Obara",
       "date": "2015-06-09T08:44:41.209-0400",
       "body": "Antranig Basman do you have any thoughts on this issue?\n"
     },
     {
+      "id": "13681",
       "author": "Antranig Basman",
       "date": "2015-06-09T09:43:34.911-0400",
       "body": "\"preventable\" events are a real rarity and the real danger with them is that people might try to use them - it's hard to think of any genuine use cases, and on the other hand, I've found new users to Infusion trying to use them everywhere since they are attracted to them by the documentation. Making any change to the current behaviour would also be difficult - since we make the contract that \"the return value of received by the event firer is the first return value from a handler which is not undefined\". Returning true in the case of non-prevention would then break the contract that any explicit return from a handler is received by the firer. If you're ok with it, I'd vote for closing this issue as a \"Won't Fix\".\n"
     },
     {
+      "id": "13683",
       "author": "Justin Obara",
       "date": "2015-06-09T12:52:51.079-0400",
       "body": "I'm okay with won't fix. It's likely that most, if not all, cases that did or would use preventable events would be better handled via the change applier (model relay, model listeners, transformations).\n"
     },
     {
+      "id": "13685",
       "author": "Justin Obara",
       "date": "2015-06-09T12:53:05.574-0400",
       "body": "See Antranig's comments\n"

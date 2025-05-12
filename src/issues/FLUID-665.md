@@ -50,11 +50,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "20881",
       "author": "Justin Obara",
       "date": "2009-05-14T15:10:22.000-0400",
       "body": "a11y issue&#x20;\n"
     },
     {
+      "id": "20882",
       "author": "Justin Obara",
       "date": "2014-07-07T14:13:09.910-0400",
       "body": "I tried this again with JAWS 15 and it was working fine.\n"

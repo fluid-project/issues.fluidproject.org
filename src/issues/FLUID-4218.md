@@ -51,66 +51,79 @@
   ],
   "comments": [
     {
+      "id": "23761",
       "author": "Anastasia Cheetham",
       "date": "2011-05-13T14:13:23.166-0400",
       "body": "Mock-ups showing potential yellow/black themes:\\\n<http://wiki.fluidproject.org/display/fluid/User+interface+options+mocked+up+in+Inclusive+Learning+Handbook>\n"
     },
     {
+      "id": "23764",
       "author": "Justin Obara",
       "date": "2011-05-17T10:07:09.885-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "23767",
       "author": "James Yoon",
       "date": "2011-06-06T09:28:08.982-0400",
       "body": "UIO vector file download available at: <http://wiki.fluidproject.org/display/fluid/User+interface+options%2C+Infusion+1.4%2C+draft+1+mockups>\n"
     },
     {
+      "id": "23770",
       "author": "Anastasia Cheetham",
       "date": "2011-06-06T11:14:20.566-0400",
       "body": "I have issued a pull request for a code review of the work I've done on this so far:\\\n<https://github.com/fluid-project/infusion/pull/64>\n"
     },
     {
+      "id": "23773",
       "author": "Jonathan Hung",
       "date": "2011-06-07T10:42:27.436-0400",
       "body": "I have created widget graphics for Yellow Black FSS theme. Includes, More, Gripper, title and button graphics, and Close. See the attached file yellowBlack-widgets.zip\n"
     },
     {
+      "id": "23775",
       "author": "Michelle D'Souza",
       "date": "2011-06-09T09:56:45.438-0400",
       "body": "Merged into the project repo at 03c6c3473e9c9a7afedd9ad1c7cd0a9d5544d264.&#x20;\n\nThere is still some work that needs to be done especially regarding the sliders.&#x20;\n"
     },
     {
+      "id": "23778",
       "author": "Michelle D'Souza",
       "date": "2011-06-20T15:54:51.449-0400",
       "body": "Reassigning to Anastasia as per irc conversation: <http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2011-06-08> \\[13:58:20 CDT(-0500)]&#x20;\n"
     },
     {
+      "id": "23783",
       "author": "Jonathan Hung",
       "date": "2011-06-21T13:15:10.192-0400",
       "body": "Updated widget icons for FSS contrast themes.\n"
     },
     {
+      "id": "23788",
       "author": "Anastasia Cheetham",
       "date": "2011-06-21T14:20:35.031-0400",
       "body": "I've issued a pull request for changes that update the themes to use the new icons:\\\n<https://github.com/fluid-project/infusion/pull/81>\n"
     },
     {
+      "id": "23791",
       "author": "Michelle D'Souza",
       "date": "2011-06-27T12:24:39.358-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/81> merged into project repo at 909a16cb0be457d654f1507b74089990b9d21dec\n"
     },
     {
+      "id": "23797",
       "author": "Anastasia Cheetham",
       "date": "2011-06-27T13:15:58.637-0400",
       "body": "Reopening this issue in order to implement Jonathan's new high-contrast button outlines.\n"
     },
     {
+      "id": "23803",
       "author": "Anastasia Cheetham",
       "date": "2011-06-27T13:25:22.996-0400",
       "body": "I've implemented the new button images for the high-contrast themes, and issued a pull request:\\\n<https://github.com/fluid-project/infusion/pull/89>\n"
     },
     {
+      "id": "23811",
       "author": "Michelle D'Souza",
       "date": "2011-06-30T10:30:01.107-0400",
       "body": "Pull request <https://github.com/fluid-project/infusion/pull/89> merged into project repo at 13db839e4f0aa7b44f8415b43e961c1826f5a008\n"

@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23371",
       "author": "Justin Obara",
       "date": "2009-12-11T13:57:58.000-0500",
       "body": "Bug Parade Builder 1.1.2&#x20;\n"
     },
     {
+      "id": "23372",
       "author": "Justin Obara",
       "date": "2009-12-16T09:20:45.000-0500",
       "body": "Added in a link to the Infusion Builder demo and to its unit tests.\n"

@@ -32,6 +32,7 @@
   ],
   "comments": [
     {
+      "id": "20238",
       "author": "Justin Obara",
       "date": "2010-04-13T17:28:28.000-0400",
       "body": "patch <https://fluidproject.atlassian.net/browse/FLUID-3647#icft=FLUID-3647>.patch.txt will only call blur() if the return of selectionContext.selectedElement() is truethy.\n"

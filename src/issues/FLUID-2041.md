@@ -36,11 +36,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19562",
       "author": "Colin Clark",
       "date": "2009-10-13T18:32:24.000-0400",
       "body": "Converting from SWFUpload to FancyUpload might provide us with a more stable platform with a better code base, though still requiring Flash\n"
     },
     {
+      "id": "19563",
       "author": "Colin Clark",
       "date": "2010-03-30T14:05:18.000-0400",
       "body": "With HTML 5 upload now finally viable, I don't see any reason to switch to Fancy Upload.\n"

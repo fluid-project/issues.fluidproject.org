@@ -34,6 +34,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "23740",
       "author": "Antranig Basman",
       "date": "2015-06-10T20:23:18.018-0400",
       "body": "In the \"new renderer\" this will be handled by a Fluid component of the new type which is associated with a boolean model field. The \"old renderer\" itself will not be improved further and all the functionality it currently offers (e.g. binding to native HTML functions in DOM elements) will be unbundled for general use.\n"

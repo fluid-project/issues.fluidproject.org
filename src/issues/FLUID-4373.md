@@ -35,16 +35,19 @@
   ],
   "comments": [
     {
+      "id": "15277",
       "author": "Justin Obara",
       "date": "2011-07-28T14:09:39.869-0400",
       "body": "ScreenShot.png shows the focus styling around the container of the options. Notice the dotted underline.\n"
     },
     {
+      "id": "15280",
       "author": "Justin Obara",
       "date": "2011-07-28T14:09:48.314-0400",
       "body": "Bug Parade Infusion\n"
     },
     {
+      "id": "15283",
       "author": "Justin Obara",
       "date": "2013-09-06T13:33:45.128-0400",
       "body": "No longer an issue with the redesigned panels.\n"

@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11834",
       "author": "Michelle D'Souza",
       "date": "2009-08-21T13:46:44.000-0400",
       "body": "We need to deal with the trailing comma that appears when the tags are rendered.&#x20;\n"
     },
     {
+      "id": "11835",
       "author": "Justin Obara",
       "date": "2009-09-21T16:42:43.000-0400",
       "body": "Bug Parade Engage 0.1\n"
     },
     {
+      "id": "11836",
       "author": "Justin Obara",
       "date": "2009-11-03T14:31:58.000-0500",
       "body": "The component makes use of the renderer\n"

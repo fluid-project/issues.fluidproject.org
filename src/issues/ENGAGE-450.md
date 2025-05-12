@@ -42,26 +42,31 @@
   ],
   "comments": [
     {
+      "id": "12058",
       "author": "Justin Obara",
       "date": "2010-03-17T11:15:43.000-0400",
       "body": "Bug Parade Engage 0.3\n"
     },
     {
+      "id": "12059",
       "author": "Justin Obara",
       "date": "2010-03-17T13:54:41.000-0400",
       "body": "<https://fluidproject.atlassian.net/browse/ENGAGE-450#icft=ENGAGE-450>.patch.txt contains a patch to wrap the header text in an anchor. This will at least let voiceover users know that the header is actionable. However, it is causing an error with the screen navigator by changing the # in the url. This will need to be addressed before this patch can be applied.\n"
     },
     {
+      "id": "12060",
       "author": "Justin Obara",
       "date": "2010-03-22T15:33:42.000-0400",
       "body": "committed patch <https://fluidproject.atlassian.net/browse/ENGAGE-450#icft=ENGAGE-450>.patch.txt with some changes. Basically now preventing the default click action of the link in the header because this is what was breaking the screen navigator. Also added in functionality to inject the \\<a> if it isn't currently present. Unit tests have been provided.\n"
     },
     {
+      "id": "12061",
       "author": "Justin Obara",
       "date": "2010-03-24T10:10:17.000-0400",
       "body": "Assigned to Antranig for review\n"
     },
     {
+      "id": "12062",
       "author": "Antranig Basman",
       "date": "2010-03-25T09:46:20.000-0400",
       "body": "This fix is unstable since it makes the implicit assumption that the selector \"header\" consists just of a single classname. At the least, it should check whether this is at least slightly appropriate (initial character plus internal non-whitespace, non-symbol check with a regexp) perhaps. It should never just blindly remove the first character from a selector string. \\\nBut to be clearer, the entire strategy appears unstable - there should be a separate means of accounting for which elements should have click handlers bound rather than attempting to displace the \"header class\". It should be rewritten to revert to simply using the \"selectors.header\" property as a DOM binder argument as before.\n"

@@ -33,11 +33,13 @@
   ],
   "comments": [
     {
+      "id": "24979",
       "author": "Jonathan Hung",
       "date": "2011-01-07T16:18:23.775-0500",
       "body": "Same image being used from <https://fluidproject.atlassian.net/browse/FLUID-3246#icft=FLUID-3246>.\n"
     },
     {
+      "id": "24980",
       "author": "Justin Obara",
       "date": "2016-07-08T10:17:09.261-0400",
       "body": "Replaced the missing screenshot (<https://fluidproject.atlassian.net/browse/FLUID-3246#icft=FLUID-3246>.png) with a new one (screenshot.png) that shows the same styling for hover and keyboard focus.\n"

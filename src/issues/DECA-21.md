@@ -35,6 +35,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10232",
       "author": "Colin Clark",
       "date": "2010-07-14T00:51:06.037-0400",
       "body": "This was addressed during server refactoring for 0.4. We expect to be able to create all relevant directories such as the location of captured images and the generated PDF. This is done on server startup.\n"

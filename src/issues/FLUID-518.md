@@ -31,16 +31,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18754",
       "author": "Anastasia Cheetham",
       "date": "2008-09-30T08:59:38.000-0400",
       "body": "A tutorial was started for the Layout Customizer, but needs completion. A Layout Reorderer integration tutorial was started, but needs updating based on the latest API changes. This issues should be given high priority after the 0.5 release.\n"
     },
     {
+      "id": "18757",
       "author": "Michelle D'Souza",
       "date": "2008-10-01T13:59:19.000-0400",
       "body": "dev-iteration44\\\ndev-iteration47\n"
     },
     {
+      "id": "18759",
       "author": "Anastasia Cheetham",
       "date": "2008-12-01T11:14:08.000-0500",
       "body": "Finally completed:\\\n<http://wiki.fluidproject.org/display/fluid/Layout+Reorderer+Tutorial>\n"

@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19511",
       "author": "Daphne Ogle",
       "date": "2008-04-15T13:22:27.000-0400",
       "body": ".5 days for 2 people\n"
     },
     {
+      "id": "19513",
       "author": "Daphne Ogle",
       "date": "2008-04-29T13:26:25.000-0400",
       "body": "Removed iteration since this is a parent task.  Subtasks are assigned an iteration.\n"
     },
     {
+      "id": "19514",
       "author": "Erin Yu",
       "date": "2008-05-28T11:03:15.000-0400",
       "body": "Closing the issue since all of its sub-tasks are now closed\n"

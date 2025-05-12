@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "11503",
       "author": "Cindy Li",
       "date": "2015-05-15T15:37:04.921-0400",
       "body": "According to <http://www.w3schools.com/cssref/sel_lang.asp>, css can be applied based on the language code. Anastasia experimented and it seemed working fine. So, the solution is altered: rather than applying a css class to the container, a \"lang\" attribute will be added to the \\<html> element. Also, this attribute change needs to be performed by the language panel instead of the language enactor which reloads the page and causes added attribute being wiped out.\n\nIssued a pull request: <https://github.com/fluid-project/first-discovery/pull/48>\n"
     },
     {
+      "id": "11505",
       "author": "Justin Obara",
       "date": "2015-05-19T08:58:05.702-0400",
       "body": "Merged pull request ( <https://github.com/fluid-project/first-discovery/pull/48> ) into the project repo at 06a3f7e63ed3398c92696599669bd9e79ab775b7\n"

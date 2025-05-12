@@ -26,6 +26,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12513",
       "author": "Justin Obara",
       "date": "2010-01-20T16:30:04.000-0500",
       "body": "There is now a seperate page for information about an exhbition\n"

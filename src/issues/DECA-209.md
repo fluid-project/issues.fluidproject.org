@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10332",
       "author": "Justin Obara",
       "date": "2012-09-04T13:30:10.594-0400",
       "body": "Currently Ocropus 0.6 is the latest version\n"
     },
     {
+      "id": "10333",
       "author": "Jonathan Hung",
       "date": "2013-01-21T11:13:40.142-0500",
       "body": "This may already be done. Please confirm by testing the installation using latest build in the google code repo.\n"

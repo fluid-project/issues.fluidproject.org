@@ -25,11 +25,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "12270",
       "author": "Michelle D'Souza",
       "date": "2010-02-02T10:16:42.000-0500",
       "body": "mccord-pilot\n"
     },
     {
+      "id": "12271",
       "author": "y z",
       "date": "2010-02-03T16:16:13.000-0500",
       "body": "All views are in updated and in place as well as committed into the scratchpad.\n"

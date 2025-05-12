@@ -30,6 +30,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14241",
       "author": "Jonathan Hung",
       "date": "2011-01-10T15:53:50.887-0500",
       "body": "Tested with IE8, Chrome 4 and FF3.6 Win7:\n\n* Selecting original item in list will collapse dropdown (using keyboard or mouse)\n* Pressing ESC will collapse the dropdown.\n* Pressing dropdown control will not collapse the dropdown.\n"

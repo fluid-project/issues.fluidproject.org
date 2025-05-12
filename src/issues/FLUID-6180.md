@@ -35,16 +35,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24279",
       "author": "Justin Obara",
       "date": "2017-08-21T11:58:29.670-0400",
       "body": "I spoke with Dana and she suggested that the state of the panel should persist, similar to how the preferences persist.\n"
     },
     {
+      "id": "24280",
       "author": "Justin Obara",
       "date": "2017-10-19T13:12:36.323-0400",
       "body": "A good portion of this has been achieved in <https://fluidproject.atlassian.net/browse/FLUID-5534#icft=FLUID-5534>. However, it only covers the case when scrolling is performed using the left/right arrow buttons. The remaining work is to ensure persistence when the adjuster is scrolled into view by other means (e.g. swiping, sliding, using the keyboard)\n"
     },
     {
+      "id": "24282",
       "author": "Justin Obara",
       "date": "2017-11-06T08:17:24.447-0500",
       "body": "PR ( <https://github.com/fluid-project/infusion/pull/853> ) merged into project repo at 328153ec6b1a222c72b3da0e59b239124f1edebe\n"

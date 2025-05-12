@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21170",
       "author": "Antranig Basman",
       "date": "2009-02-17T12:28:58.000-0500",
       "body": "Pushing out to post 1.0 - we have no space before release for new component development\n"
     },
     {
+      "id": "21171",
       "author": "Michelle D'Souza",
       "date": "2009-05-14T09:26:45.000-0400",
       "body": "The wireframes for UI Options changed to have a TextfieldSlider instead of a Slider Inline Edit. The TextFieldSlider component was created in time for 1.0.&#x20;\n"

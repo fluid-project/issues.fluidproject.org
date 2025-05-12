@@ -70,31 +70,37 @@
   ],
   "comments": [
     {
+      "id": "25659",
       "author": "Antranig Basman",
       "date": "2013-03-10T20:50:35.758-0400",
       "body": "This improvement may also be what we need to handle another vexed case in the speculated future framework - the ability to issue context- or options-holding directives from child components which designate the creation of FURTHER SIBLING SUBCOMPONENTS. This was considered one way out of the \"progressive enhanced uploader\" conundrum whereby the uploader appears as TWO components, a container which designates context tags, and the child component which holds the \"actual uploader\" which is enhanced by these tags. In the current \"modernised uploader\" we have papered over this as much as possible by use of a manually written nickname of \"uploader\" on the \"real uploader\" and Skywalker definitions to forward all options from the parent to the child, but it is still something of an annoyance (although nowhere near as nasty as the \"alias\" system in the \"old framework\").\n\nBy definition, since we have already embarked on the process of iterating over child components when we evaluate material from a child component, under anything like the current system we would not be prepared to react to any development which caused further child component definitions to come into existence since we have already marked the path \"components\" as evaluated within the options structure. If it was possible to use the putative \"shadow structure\" described in this JIRA as a source of such flags, it might be possible to mark the path \"components\" as \"dirty for recursion\" once again at any point in the process.\n"
     },
     {
+      "id": "25660",
       "author": "Antranig Basman",
       "date": "2013-03-12T04:28:01.663-0400",
       "body": "Note - when creating a test case fixing a further problem in the ginger system (inability to merge \"string\" on top of null, due to a faulty deep recursion caused by the \"evaluateFully\" system) it was realised that the original fault reported here (in \"members\") was actually triggered by the original bug, that is, that \"members\" has not been entered into the \"noexpand\" registry in the root mergePolicy. This makes it less likely that the headline bug described here can be observed in practice, although anecdotally it had been seen in a few other cases.\n"
     },
     {
+      "id": "25661",
       "author": "Antranig Basman",
       "date": "2016-10-14T13:47:19.440-0400",
       "body": "A clear test case for a core failure case for this issue emerged during the fluid authoring work. We have an expander which evaluates to a complex structure, which accepts as an argument elements from a structure which has other members which read from its return value - see fluid.tests.retrunking in FluidIoCTests.js in pull request <https://github.com/fluid-project/infusion/pull/763> .\n\nThe fix in that pull request only bodges over the problem. We have a more general case of the problem when we attempt to evaluate the expander arguments - it should be possible to express the policy that \"arguments which are supplied to expanders are fully evaluated\". However, the attached screenshot shows how very deep and winding the call stack is above fluid.expandExpander - only once we get back via traverseWithStrategy to the list of mounted strategies with fluid.getForComponent do we have a possibility to re-enter into the system - unfortunately there is no way within our very flawed \"trundler API\" to express the fact that we want to bypass the standard workflow of returning \"any concrete object first found by preference\" but instead re-enter into the fluid.fetchMergeChildren workflow with the equivalent of our \"evaluateFully\" flag set to true -&#x20;\n\n<!-- media: file aa9b70e8-2cc5-4e6f-9d07-dcf09e75ce55 -->\n\n&#x20;\\- that is, the workflow initiated by the \"initter\" of fluid.makeMergeOptions:\n\n```java\noptions.initter = function () {\r\n            // This hack is necessary to ensure that the FINAL evaluation doesn't balk when discovering a trunk path which was already\r\n            // visited during self-driving via the expander. This bi-modality is sort of rubbish, but we currently don't have \"room\"\r\n            // in the strategy API to express when full evaluation is required - and the \"flooding API\" is not standardised. See FLUID-4930\r\n            options.evaluateFully = true;\r\n            fluid.fetchMergeChildren(options.target, 0, [], options.sources, options.mergePolicy, options);\r\n        };\n```\n"
     },
     {
+      "id": "25662",
       "author": "Justin Obara",
       "date": "2016-10-17T10:20:32.497-0400",
       "body": "Antranig Basman based on your comment above, does it mean that this issue should remain open after <https://github.com/fluid-project/infusion/pull/763> is merged?\n"
     },
     {
+      "id": "25663",
       "author": "Antranig Basman",
       "date": "2016-10-17T11:12:48.610-0400",
       "body": "Justin Obara - Yes, that's right, because this issue now depends on <https://fluidproject.atlassian.net/browse/FLUID-5981#icft=FLUID-5981> which will not be fixed in this cycle\n"
     },
     {
+      "id": "25664",
       "author": "Justin Obara",
       "date": "2016-10-18T12:43:24.814-0400",
       "body": "Merged PR ( <https://github.com/fluid-project/infusion/pull/763> ) into the project repo at 4ba51be6ec9528379ee08438995e3be5df6c2f18\n"

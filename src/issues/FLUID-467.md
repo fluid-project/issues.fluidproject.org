@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17337",
       "author": "Anastasia Cheetham",
       "date": "2008-04-08T09:59:41.000-0400",
       "body": "The documentation has been updated to better indicate that the tab key is used to move focus to the collection of reorderable elements, but the arrow keys (or i/k/m/j) are used to select other reorderable elements.\n"
     },
     {
+      "id": "17338",
       "author": "Anastasia Cheetham",
       "date": "2008-04-08T10:34:32.000-0400",
       "body": "The wiki holding the test protocol is temporarily unable to save, so I'm reopening this until I can finish making the fix to the documentation.\n"

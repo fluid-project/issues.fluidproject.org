@@ -40,6 +40,7 @@
   ],
   "comments": [
     {
+      "id": "21344",
       "author": "Justin Obara",
       "date": "2009-04-01T14:34:13.000-0400",
       "body": "'screenshot-1' shows the avatar being dragged but not really visible\n"

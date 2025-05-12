@@ -35,21 +35,25 @@
   ],
   "comments": [
     {
+      "id": "14945",
       "author": "Justin Obara",
       "date": "2012-07-26T14:47:52.728-0400",
       "body": "<https://fluidproject.atlassian.net/browse/FLUID-4737#icft=FLUID-4737>.patch is a unit test showing the issue. You can also look at the <https://fluidproject.atlassian.net/browse/FLUID-4737#icft=FLUID-4737> branch in my github repo:\\\n<https://github.com/jobara/infusion/tree/FLUID-4737>\n"
     },
     {
+      "id": "14948",
       "author": "Justin Obara",
       "date": "2012-07-26T14:52:34.429-0400",
       "body": "In debugging I've tracked it back to resolveArgs in fluidRenderer.js\\\n<https://github.com/fluid-project/infusion/blob/master/src/webapp/framework/renderer/js/fluidRenderer.js#L800-806>\n\nmore specifically to it's call to upgradeBound, which is also defined in fluidRenderer.js\\\n<https://github.com/fluid-project/infusion/blob/master/src/webapp/framework/renderer/js/fluidRenderer.js#L115-128>\n"
     },
     {
+      "id": "14951",
       "author": "Justin Obara",
       "date": "2012-07-30T10:14:19.195-0400",
       "body": "I tried this with the old style component tree, and had the same problem.&#x20;\n"
     },
     {
+      "id": "14954",
       "author": "Colin Clark",
       "date": "2012-08-02T22:01:20.913-0400",
       "body": "Reviewed and pushed to master at revision be0b2ff095fa3ea1b1cb4abd3e38e41462d333d1\n"

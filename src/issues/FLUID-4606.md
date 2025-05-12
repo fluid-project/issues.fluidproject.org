@@ -28,11 +28,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "24345",
       "author": "Alan Harnum",
       "date": "2016-11-09T11:57:47.799-0500",
       "body": "Updated the name and description in light of <https://issues.fluidproject.org/browse/FLUID-6053>\n"
     },
     {
+      "id": "27816",
       "author": "Justin Obara",
       "date": "2024-07-22T14:28:22.398-0400",
       "body": "As part of <https://fluidproject.atlassian.net/browse/FLUID-6605> css custom properties were added to allow for integrators to style other widgets and elements based on the size changes.\n"

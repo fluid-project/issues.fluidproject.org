@@ -33,11 +33,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19547",
       "author": "Cindy Li",
       "date": "2011-08-08T13:43:00.711-0400",
       "body": "Resolved and merged into project repo @ commit# d06946a552c869ef6078d7c28af4fbc0c734871e\n"
     },
     {
+      "id": "19548",
       "author": "Cindy Li",
       "date": "2011-08-08T13:43:09.065-0400",
       "body": "Issue closed.\n"

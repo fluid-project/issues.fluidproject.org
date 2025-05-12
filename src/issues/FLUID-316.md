@@ -24,11 +24,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17882",
       "author": "Daphne Ogle",
       "date": "2008-03-05T15:41:40.000-0500",
       "body": "iteration04\n"
     },
     {
+      "id": "17884",
       "author": "Daphne Ogle",
       "date": "2008-03-13T17:29:15.000-0400",
       "body": "Closing this issue since we cancelled this week's meeting.  No time was spent on it.\n"

@@ -38,11 +38,13 @@
   ],
   "comments": [
     {
+      "id": "19733",
       "author": "Jonathan Hung",
       "date": "2011-09-30T10:26:45.913-0400",
       "body": "Screenshot of one large file already uploaded, and another large file in process of being uploaded.\n"
     },
     {
+      "id": "19735",
       "author": "Justin Obara",
       "date": "2014-05-22T14:27:35.008-0400",
       "body": "Due to a cross site scripting vulnerability we have removed flash support from the uploader. See <https://fluidproject.atlassian.net/browse/FLUID-5354#icft=FLUID-5354>\n"

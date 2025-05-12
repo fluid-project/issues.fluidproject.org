@@ -79,66 +79,79 @@
   ],
   "comments": [
     {
+      "id": "20391",
       "author": "Justin Obara",
       "date": "2008-07-10T13:40:27.000-0400",
       "body": "'screenshot-1' shows how the '&' symbol looks in edit mode\n"
     },
     {
+      "id": "20392",
       "author": "Justin Obara",
       "date": "2008-07-10T13:41:11.000-0400",
       "body": "'screenshot-2' shows how the '&' looks outside of edit mode\n"
     },
     {
+      "id": "20393",
       "author": "Justin Obara",
       "date": "2008-07-10T13:43:57.000-0400",
       "body": "'screenshot-3' shows an example of a non-standard character/symbol in edit mode. It's supposed to be a smiley face.\n"
     },
     {
+      "id": "20394",
       "author": "Justin Obara",
       "date": "2008-07-10T13:45:37.000-0400",
       "body": "'screenshot-4' shows the same non-standard character/symbol as 'screenshot-3', but this time out of edit mode. Notice how it's now represented by a small square.\n"
     },
     {
+      "id": "20395",
       "author": "Anastasia Cheetham",
       "date": "2008-07-11T19:57:38.000-0400",
       "body": "Daphne, could you try this out, and see what you think? Is this an issue? It's probably a side effect of the font that this sample page uses, but let me know what you think.\n"
     },
     {
+      "id": "20396",
       "author": "Daphne Ogle",
       "date": "2008-07-14T19:52:38.000-0400",
       "body": "This is weird.  The \"&\" is particularly handled bad here.  I can't figure out what font it is being displayed in.  The real problem is that, at least to me, it doesn't even look like an ampersand in the font it's displayed in.\n\nWhile checking this out I found that the edits are happening in a different font generally than display.  So on the daily build site Justin points to, the text is displayed in Times but when edit mode kicks in it displays in Arial.   In this particular case it isn't a big deal but will be when users are editing formatted text.  We know users want a wysiwyg interaction.\n\nI'm attaching a screen shot that show the 2 different fonts. &#x20;\n\nCan the component know what font the application is using for display of that field and use the same?\n"
     },
     {
+      "id": "20397",
       "author": "Daphne Ogle",
       "date": "2008-07-14T19:54:12.000-0400",
       "body": "screen shot showing different fonts used in display versus edit mode.\n"
     },
     {
+      "id": "20398",
       "author": "Daphne Ogle",
       "date": "2008-07-17T17:50:42.000-0400",
       "body": "Another complication with the different display versus edit font is that the text is larger than the edit field so the user can't see all the text they want to edit once they are in edit mode.  I'm assuming we are calculating text field size based on the text pre-edit.  This doesn't seem to happen in Safari only in Firefox (both on macs, not sure about PCs)\n"
     },
     {
+      "id": "20399",
       "author": "Justin Obara",
       "date": "2008-08-26T09:36:39.000-0400",
       "body": "The font styling issue does not seem to occur in the bspace example (<http://build.fluidproject.org/fluid/sample-code/inline-edit/section-info/section-info.html>), or it could be that the font styling is similar.\n"
     },
     {
+      "id": "20400",
       "author": "Justin Obara",
       "date": "2008-10-31T09:34:11.000-0400",
       "body": "design-watched\n"
     },
     {
+      "id": "20401",
       "author": "Daphne Ogle",
       "date": "2009-03-13T15:16:38.000-0400",
       "body": "Unassigning so this can go into the development pool of bugs.\n"
     },
     {
+      "id": "20402",
       "author": "Jonathan Hung",
       "date": "2011-01-04T13:26:40.687-0500",
       "body": "This issue is covered by the Simple Inline Edit Test plan.\\\nInfusion 1.3 release testing did not reveal any issues related to mis-coding of characters.\n"
     },
     {
+      "id": "20403",
       "author": "Jonathan Hung",
       "date": "2011-01-04T13:34:21.530-0500",
       "body": "Fixed in Infusion 1.3.\n"

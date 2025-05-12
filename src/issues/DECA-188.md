@@ -51,21 +51,25 @@
   ],
   "comments": [
     {
+      "id": "10384",
       "author": "Jonathan Hung",
       "date": "2011-10-31T12:15:10.263-0400",
       "body": "Original computer generated image.\n"
     },
     {
+      "id": "10385",
       "author": "Jonathan Hung",
       "date": "2011-10-31T12:59:44.099-0400",
       "body": "generated PDF of image 1-1-1.png\n"
     },
     {
+      "id": "10386",
       "author": "Jonathan Hung",
       "date": "2011-10-31T13:01:01.362-0400",
       "body": "generated PDF of image 2-1-1.png (photograph of computer generated document).\n"
     },
     {
+      "id": "10387",
       "author": "tamir@tamirhassan.com",
       "date": "2013-01-27T12:21:44.954-0500",
       "body": "I've tried it out on the current (latest) version and can't notice any significant difference between the OCR quality of either document.\n"

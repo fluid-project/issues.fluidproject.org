@@ -32,11 +32,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "19967",
       "author": "Antranig Basman",
       "date": "2008-08-08T14:22:36.000-0400",
       "body": "Due to performance improvements in the event loop, it is probable that this condition can now occur rarely if at all - please could you recheck with the current build? (After end of today), Cheers.\n"
     },
     {
+      "id": "19970",
       "author": "Justin Obara",
       "date": "2008-08-11T08:44:37.000-0400",
       "body": "Still occurs, but is less noticeable. I will close for now, but will re-open if user testing or anyone else feels that it is an issue.\n"

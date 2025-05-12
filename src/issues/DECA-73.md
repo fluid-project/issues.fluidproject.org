@@ -27,6 +27,7 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10320",
       "author": "Justin Obara",
       "date": "2012-06-08T14:39:41.449-0400",
       "body": "Capture removed from Decapod 0.5 release\n"

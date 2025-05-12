@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "27524",
       "author": "Blake E",
       "date": "2008-12-16T11:55:24.000-0500",
       "body": "vulab12\n"
     },
     {
+      "id": "27525",
       "author": "Blake E",
       "date": "2008-12-22T12:59:18.000-0500",
       "body": "I have a simple spreadsheet with explanations and workflow here:\\\n<http://spreadsheets.google.com/pub?key=pc-kQ_3BYJoieI6TJKzvLUQ&gid=0>\n\nNote: this is designed for those who understand the basic goals of VULab Web and have a programming/database background.\n"

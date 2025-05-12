@@ -29,11 +29,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "18989",
       "author": "Eli Cochran",
       "date": "2008-06-16T22:55:53.000-0400",
       "body": "With the various changes to the way that the progress is tracked and displayed this bug is fixed.&#x20;\n"
     },
     {
+      "id": "18991",
       "author": "Justin Obara",
       "date": "2008-12-02T15:17:04.000-0500",
       "body": "appears to have been fixed\n"

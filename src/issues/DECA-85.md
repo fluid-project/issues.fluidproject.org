@@ -27,16 +27,19 @@
   "attachments": [],
   "comments": [
     {
+      "id": "10450",
       "author": "Boyan Sheytanov",
       "date": "2010-03-15T12:32:34.000-0400",
       "body": "Item 1. from description finished\n"
     },
     {
+      "id": "10451",
       "author": "Michelle D'Souza",
       "date": "2010-03-25T16:36:23.000-0400",
       "body": "We need to come up with a more maintainable solution for the mock server. Currently it is almost completely cut and pasted from the real server which means that changes to one require the same changes be made to the other.&#x20;\n"
     },
     {
+      "id": "10452",
       "author": "Justin Obara",
       "date": "2010-06-14T15:14:06.847-0400",
       "body": "this issue is a bit broad and the pieces of it are being worked on in various other areas.\n"

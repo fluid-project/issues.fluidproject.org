@@ -30,11 +30,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "21118",
       "author": "Anastasia Cheetham",
       "date": "2009-04-09T10:50:45.000-0400",
       "body": "I'm not sure if this is really a bug, or a bad test case: The code is using the grid reorderer configuration, but the visual styling is for a vertical list. This will cause confusion in the expectation of up/down functionality.\n\nI suggest that either the styling be converted to a grid (i.e. horizonal, and flowing) or the list reorderer be used instead. This might actually change the behaviour, and render the issue moot.\n"
     },
     {
+      "id": "21119",
       "author": "Justin Obara",
       "date": "2009-11-05T15:09:17.000-0500",
       "body": "This appears to now be working.\n\nTested using IE 8 Win Vista, FF 2 and FF3.5 Mac OS 10.6\n"

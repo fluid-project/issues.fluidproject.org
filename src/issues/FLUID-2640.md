@@ -29,21 +29,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16794",
       "author": "Jorge Silva",
       "date": "2009-05-05T09:09:44.000-0400",
       "body": "Specific output is:\n\nFetching external item into 'fluid/infrastructure/gallery-build/fluid-components'\\\nsvn: URL '<https://source.fluidproject.org/svn/fluid/components/trunk>' doesn't exist\n\ndidn't see any other warnings.\n"
     },
     {
+      "id": "16796",
       "author": "Anastasia Cheetham",
       "date": "2009-05-06T10:43:20.000-0400",
       "body": "I've updated all of the externals references to reflect the new SVN structure.\n"
     },
     {
+      "id": "16799",
       "author": "Justin Obara",
       "date": "2009-05-06T15:46:28.000-0400",
       "body": "There may be examples in the sandbox that need to have their externals fixed.\n"
     },
     {
+      "id": "16801",
       "author": "Colin Clark",
       "date": "2010-03-30T19:03:29.000-0400",
       "body": "The specific areas mentioned by Anastasia have been fixed, and any new broken externals should be filed as a specific issue. Fixed!\n"

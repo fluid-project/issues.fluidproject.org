@@ -33,21 +33,25 @@
   "attachments": [],
   "comments": [
     {
+      "id": "17325",
       "author": "Michelle D'Souza",
       "date": "2008-04-17T10:41:29.000-0400",
       "body": "Oops, forgot to run it by Erin!&#x20;\n"
     },
     {
+      "id": "17326",
       "author": "Anastasia Cheetham",
       "date": "2008-04-17T14:20:10.000-0400",
       "body": "Erin, could you have a look at the styling of the Reorderer on this page\n\n<http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/portal/portal.html>\n\nand if it looks fine, close this issue?\n"
     },
     {
+      "id": "17328",
       "author": "Anastasia Cheetham",
       "date": "2008-04-28T16:01:12.000-0400",
       "body": "This work is basically done. Any remaining issues are captured in other existing issues.\n"
     },
     {
+      "id": "17330",
       "author": "Jonathan Hung",
       "date": "2008-05-27T16:07:18.000-0400",
       "body": "Work looks to be complete.\n"

@@ -41,11 +41,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "14199",
       "author": "Anastasia Cheetham",
       "date": "2011-10-03T16:28:20.264-0400",
       "body": "Testing for 1.4, this issue seems to be gone. Using the new showcase demo, I can easily use the mouse to drag the sliders in either of the full-page versions and in the fat-panel. Perhaps we should close this one?\n"
     },
     {
+      "id": "14201",
       "author": "Anastasia Cheetham",
       "date": "2011-10-17T10:43:01.935-0400",
       "body": "Justin, I'm unable to reproduce problem one in IE9 on version 1.4.  If you concur, could you close this?\n"

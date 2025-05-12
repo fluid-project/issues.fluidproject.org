@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "16566",
       "author": "Colin Clark",
       "date": "2009-04-14T14:34:50.000-0400",
       "body": "This was resolved in Infusion 0.8.\n"
     },
     {
+      "id": "16567",
       "author": "Michelle D'Souza",
       "date": "2011-02-22T16:27:48.167-0500",
       "body": "Closing issues that were resolved for 1.0 and earlier releases.&#x20;\n"

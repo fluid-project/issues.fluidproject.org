@@ -27,11 +27,13 @@
   "attachments": [],
   "comments": [
     {
+      "id": "22177",
       "author": "Mike Lam",
       "date": "2010-09-08T13:50:24.971-0400",
       "body": "1.2.1 release tag created in SVN repository.\n"
     },
     {
+      "id": "22179",
       "author": "Michelle D'Souza",
       "date": "2011-01-14T10:30:21.028-0500",
       "body": "Reopening these issues so I can add the release component to them.&#x20;\n"

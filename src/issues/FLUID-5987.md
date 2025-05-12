@@ -51,31 +51,37 @@
   ],
   "comments": [
     {
+      "id": "22612",
       "author": "Justin Obara",
       "date": "2016-10-24T12:58:56.669-0400",
       "body": "screenshot.png shows the panel opened a sliver, after clicking \"show display preferences\"\n"
     },
     {
+      "id": "22613",
       "author": "Antranig Basman",
       "date": "2016-10-24T15:40:59.727-0400",
       "body": "We should make sure we have an automated test case for this issue if possible. If it is not possible, we should add it to a register of tasks that we will deal with when we can start writing webdriver-backed full UI tests.\n"
     },
     {
+      "id": "22615",
       "author": "Justin Obara",
       "date": "2016-10-24T16:28:52.367-0400",
       "body": "Antranig Basman I'd say it'd definitely get covered by a webdriver-backed UI test as we'd need to be manipulating the adjusters and etc inside the panel. A jQunit style test might be a bit more difficult.\n"
     },
     {
+      "id": "22617",
       "author": "Justin Obara",
       "date": "2016-10-24T16:53:47.299-0400",
       "body": "Antranig Basman I attempted to write a test for this case but am having trouble. The values for the iframe document height ( 981 ) and panel height ( 69 ) seem to be way off in the test instance. I tried modifiying the test file both before and after the fix was applied and both seemed to return the same values. ( using FF ).\n"
     },
     {
+      "id": "22618",
       "author": "Cindy Li",
       "date": "2016-10-25T12:18:18.864-0400",
       "body": "The pull request to fix the infusion code <https://github.com/fluid-project/infusion/pull/768> has been merged into the master at a74754234ccf34e43465063bbbdf8971bb4075b0\n\nKeeping it open for adding webdriver-backed UI tests later when it's doable with infusion.\n"
     },
     {
+      "id": "22620",
       "author": "Cindy Li",
       "date": "2016-10-25T12:30:29.857-0400",
       "body": "Closing this issue as the need for writing web-driven tests has been created as a separate JIRA: <https://issues.fluidproject.org/browse/FLUID-5989>\n"
