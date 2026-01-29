@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> KETTLE-52  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" KETTLE-52 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/KETTLE-52/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/KETTLE-52/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/KETTLE" data-pagefind-filter="project">Kettle</a></li>
+                <li><a href="/browse/KETTLE-52/">KETTLE-52</a></li>
+            </ol>
+        </nav>
+        <h1>KETTLE-52: Add documentation/examples for using kettle.dataSource.URL with cookies....</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/KETTLE-52">KETTLE-52</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?reporter=Tony%20Atkins%20%5BRtF%5D">Tony Atkins [RtF]</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-01-03T05:07:28.585-0500" prefix="">2017-01-03T05:07:28.585-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-01-09T09:47:27.566-0500" prefix="">2017-01-09T09:47:27.566-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In reviewing earlier work with an eye towards migrating to using dataSource grades in place of node requests, I encountered the common pattern where I need to first login in, and ensure that subsequent requests use the same cookie jar as the first request, i.e. a cookie jar that contains the session cookie received after successfully logging in.</p>
+<p>In looking at <a href="https://github.com/fluid-project/kettle/blob/master/lib/dataSource-url.js#L37">the code</a>, it looks like there is support for cookie jars, and that it's very similar to kettle.request.  It would be helpful if this were covered in the docs, especially with a simple example.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26145">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2017-01-09T09:47:27.566-0500">2017-01-09T09:47:27.566-0500</relative-time></i></p>
+                        <p>Looks like the current implementation has half-rotted - it dates from the pre-maturity days of Kettle and there seem to be no tests for use of dataSources together with cookies. Also, the only implementation of "cookieJar" is inappropriately within kettle.test.dataSource. Finally, it appears that Tony Atkins [RtF]'s investigations show that the dataSource integration with cookies is readOnly - cookies are only read from the jar and never written. And indeed, following fixing all of this and writing tests for it, we then need docs.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/KETTLE-51/"><span class="aria-hidden">←</span> Previous: KETTLE-51</a>
+        <a class="mx-1" href="/browse/KETTLE-53/">Next: KETTLE-53 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

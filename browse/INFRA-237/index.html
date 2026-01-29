@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-237  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-237 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-237/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-237/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-237/">INFRA-237</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-237: mirror: Errors after updating to CentOS 7.7</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-237">INFRA-237</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-04-20T13:55:20.390-0400" prefix="">2020-04-20T13:55:20.390-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-04-20T14:27:56.569-0400" prefix="">2020-04-20T14:27:56.569-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>From i-0033:</p>
+<pre><code class="hljs"><span class="hljs-meta"># yum install gcc</span>
+Loaded plugins<span class="hljs-punctuation">:</span> fastestmirror<span class="hljs-punctuation">,</span> versionlock
+Determining fastest mirrors
+managed__centos<span class="hljs-punctuation">-</span>base                                                                                                                                                                          <span class="hljs-string">| 3.6 kB  00:00:00     </span>
+managed__centos<span class="hljs-punctuation">-</span>extras                                                                                                                                                                        <span class="hljs-string">| 3.4 kB  00:00:00     </span>
+managed__centos<span class="hljs-punctuation">-</span>updates                                                                                                                                                                       <span class="hljs-string">| 3.4 kB  00:00:00     </span>
+managed__docker                                                                                                                                                                               <span class="hljs-string">| 3.5 kB  00:00:00     </span>
+managed__epel                                                                                                                                                                                 <span class="hljs-string">| 4.7 kB  00:00:00     </span>
+managed__idi                                                                                                                                                                                  <span class="hljs-string">| 2.9 kB  00:00:00     </span>
+<span class="hljs-punctuation">(</span><span class="hljs-number">1</span>/<span class="hljs-number">10</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">:</span> managed__centos<span class="hljs-punctuation">-</span>base/<span class="hljs-number">7</span>/x86_64/group_gz                                                                                                                                                <span class="hljs-string">| 166 kB  00:00:00     </span>
+<span class="hljs-punctuation">(</span><span class="hljs-number">2</span>/<span class="hljs-number">10</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">:</span> managed__centos<span class="hljs-punctuation">-</span>updates/<span class="hljs-number">7</span>/x86_64/primary_db                                                                                                                                           <span class="hljs-string">| 2.5 MB  00:00:00     </span>
+<span class="hljs-punctuation">(</span><span class="hljs-number">3</span>/<span class="hljs-number">10</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">:</span> managed__docker/x86_64/updateinfo                                                                                                                                                     <span class="hljs-string">|   55 B  00:00:00     </span>
+managed__epel/x86_64/group_gz  FAILED                                          
+http<span class="hljs-punctuation">:</span><span class="hljs-comment">//mirror.incd.ca/epel/7/x86_64/repodata/c9f40040677b457cbb2e69a9ac92b943a1808c71a1d04771cb439133e5bd0c2a-comps-Everything.x86_64.xml.gz: [Errno 14] HTTPS Error 404 - Not Found  0.0 B/s | 166 kB  --:--:-- ETA </span>
+Trying other mirror.
+To address this issue please refer to the below wiki article 
+
+https<span class="hljs-punctuation">:</span><span class="hljs-comment">//wiki.centos.org/yum-errors</span>
+
+If above article doesn't help to resolve this issue please use https://bugs.centos.org/.
+
+(4/10): managed__centos-base/7/x86_64/primary_db                                                                                                                                              | 6.0 MB  00:00:00     
+(5/10): managed__centos-extras/7/x86_64/primary_db                                                                                                                                            | 180 kB  00:00:00     
+(6/10): managed__docker/x86_64/primary_db                                                                                                                                                     |  41 kB  00:00:00     
+managed__epel/x86_64/updateinf FAILED                                          
+http://mirror.incd.ca/epel/7/x86_64/repodata/<span class="hljs-number">990768</span>aef5c<span class="hljs-number">6447</span>7e<span class="hljs-number">3743</span>e6bcbab0cbbf5cbff148ce9e8f4e434cdea59f8db12-updateinfo.xml.bz2: [Errno 14] HTTPS Error 404 - Not Found           ]  0.0 B/s | 166 kB  --:--:-- ETA 
+Trying other mirror.
+managed__epel/x86_64/primary_d FAILED                                          
+http://mirror.incd.ca/epel/7/x86_64/repodata/ba7b0c2ddb303e8a<span class="hljs-number">2482</span>a11d726bba184e<span class="hljs-number">9594</span>ce<span class="hljs-number">3970</span>e<span class="hljs-number">3825</span>d7dedc6f110eb9c-primary.sqlite.bz2: [Errno 14] HTTPS Error 404 - Not Found           ]  0.0 B/s | 166 kB  --:--:-- ETA 
+Trying other mirror.
+(7/10): managed__idi/x86_64/primary_db                                                                                                                                                        | 7.5 kB  00:00:00     
+managed__epel/x86_64/primary_d FAILED                                          
+http://mirror.incd.ca/epel/7/x86_64/repodata/ba7b0c2ddb303e8a<span class="hljs-number">2482</span>a11d726bba184e<span class="hljs-number">9594</span>ce<span class="hljs-number">3970</span>e<span class="hljs-number">3825</span>d7dedc6f110eb9c-primary.sqlite.bz2: [Errno 14] HTTPS Error 404 - Not Found           ]  0.0 B/s |    0 B  --:--:-- ETA 
+Trying other mirror.
+http://mirror.incd.ca/epel/7/x86_64/repodata/ba7b0c2ddb303e8a<span class="hljs-number">2482</span>a11d726bba184e<span class="hljs-number">9594</span>ce<span class="hljs-number">3970</span>e<span class="hljs-number">3825</span>d7dedc6f110eb9c-primary.sqlite.bz2: [Errno 14] HTTPS Error 404 - Not Found
+Trying other mirror.
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26020">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2020-04-20T14:27:48.452-0400">2020-04-20T14:27:48.452-0400</relative-time></i></p>
+                        <p>Mirror is unreliable. Switched to a different mirror.</p>
+<pre><code class="hljs">commit 80b7dc7558b698d660e3e71e32a3b659ac6caaef (HEAD -&gt; master, origin/master, origin/HEAD)
+Author: Giovanni Tirloni &lt;giovanni.tirloni<span class="hljs-variable">@gmail</span>.com&gt;
+Date:   Mon Apr <span class="hljs-number">20</span> <span class="hljs-number">15</span>:<span class="hljs-number">24</span>:<span class="hljs-number">21</span> <span class="hljs-number">2020</span> -<span class="hljs-number">0300</span>
+
+    mirror: <span class="hljs-regexp">s/mirrors.rit.edu/mirror.csclub.uwaterloo.ca/</span>
+
+diff --git a/misc/mirror/mirror.sh b/misc/mirror/mirror.sh
+<span class="hljs-keyword">index</span> 06499a7..1f3ec0a <span class="hljs-number">100755</span>
+--- a/misc/mirror/mirror.sh
++++ b/misc/mirror/mirror.sh
+ -<span class="hljs-number">24</span>,<span class="hljs-number">21</span> +<span class="hljs-number">24</span>,<span class="hljs-number">21</span>  exlock_now || <span class="hljs-keyword">exit</span> <span class="hljs-number">1</span>
+ <span class="hljs-comment"># Fedora</span>
+ <span class="hljs-comment">#</span>
+ BASEDIR=<span class="hljs-string">"<span class="hljs-subst">${HOME}</span>/public_html/fedora"</span>
+-MIRROR=<span class="hljs-string">"mirrors.rit.edu"</span>
++MIRROR=<span class="hljs-string">"mirror.csclub.uwaterloo.ca"</span>
+ RSYNC_OPTS=(-avuH --<span class="hljs-keyword">no</span>-motd --<span class="hljs-keyword">delete</span>-after --<span class="hljs-keyword">delete</span>-excluded --exclude source --exclude SRPMS --exclude debug --exclude ppc --exclude ppc64 --exclude ppc64le --exclude i386 --exclude s390 --exclude s390x --exclude sparc --exclude sparc64 --exclude aarch64 --exclude armhfp --exclude arm)
+ 
+-rsync <span class="hljs-string">"<span class="hljs-subst">${RSYNC_OPTS[<span class="hljs-variable">@]</span>}</span>"</span> <span class="hljs-string">"rsync://<span class="hljs-subst">${MIRROR}</span>/fedora/releases/31/"</span> <span class="hljs-string">"<span class="hljs-subst">${BASEDIR}</span>/releases/31"</span>
++rsync <span class="hljs-string">"<span class="hljs-subst">${RSYNC_OPTS[<span class="hljs-variable">@]</span>}</span>"</span> <span class="hljs-string">"rsync://<span class="hljs-subst">${MIRROR}</span>/fedora-enchilada/linux/releases/31/"</span> <span class="hljs-string">"<span class="hljs-subst">${BASEDIR}</span>/releases/31"</span>
+ 
+-rsync <span class="hljs-string">"<span class="hljs-subst">${RSYNC_OPTS[<span class="hljs-variable">@]</span>}</span>"</span> <span class="hljs-string">"rsync://<span class="hljs-subst">${MIRROR}</span>/fedora/updates/31/"</span> <span class="hljs-string">"<span class="hljs-subst">${BASEDIR}</span>/updates/31"</span>
++rsync <span class="hljs-string">"<span class="hljs-subst">${RSYNC_OPTS[<span class="hljs-variable">@]</span>}</span>"</span> <span class="hljs-string">"rsync://<span class="hljs-subst">${MIRROR}</span>/fedora-enchilada/linux/updates/31/"</span> <span class="hljs-string">"<span class="hljs-subst">${BASEDIR}</span>/updates/31"</span>
+ 
+ <span class="hljs-comment">#</span>
+ <span class="hljs-comment"># EPEL</span>
+ <span class="hljs-comment">#</span>
+ BASEDIR=<span class="hljs-string">"<span class="hljs-subst">${HOME}</span>/public_html/epel"</span>
+-MIRROR=<span class="hljs-string">"mirrors.rit.edu"</span>
+-RSYNC_OPTS=(-avuH --<span class="hljs-keyword">no</span>-motd --<span class="hljs-keyword">delete</span>-after --<span class="hljs-keyword">delete</span>-excluded --exclude debug)
++MIRROR=<span class="hljs-string">"mirror.csclub.uwaterloo.ca"</span>
++RSYNC_OPTS=(-avuH --<span class="hljs-keyword">no</span>-motd --<span class="hljs-keyword">delete</span>-after --<span class="hljs-keyword">delete</span>-excluded --exclude debug --exclude .~tmp~)
+ 
+-rsync <span class="hljs-string">"<span class="hljs-subst">${RSYNC_OPTS[<span class="hljs-variable">@]</span>}</span>"</span> <span class="hljs-string">"rsync://<span class="hljs-subst">${MIRROR}</span>/epel/7/x86_64/"</span> <span class="hljs-string">"<span class="hljs-subst">${BASEDIR}</span>/7/x86_64"</span>
++rsync <span class="hljs-string">"<span class="hljs-subst">${RSYNC_OPTS[<span class="hljs-variable">@]</span>}</span>"</span> <span class="hljs-string">"rsync://<span class="hljs-subst">${MIRROR}</span>/fedora-enchilada/epel/7/x86_64/"</span> <span class="hljs-string">"<span class="hljs-subst">${BASEDIR}</span>/7/x86_64"</span>
+ 
+ <span class="hljs-comment">#</span>
+ <span class="hljs-comment"># CentOS</span>
+</code></pre>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-236/"><span class="aria-hidden">←</span> Previous: INFRA-236</a>
+        <a class="mx-1" href="/browse/INFRA-238/">Next: INFRA-238 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

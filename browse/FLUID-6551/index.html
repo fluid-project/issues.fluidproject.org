@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6551  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6551 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6551/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6551/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6551/">FLUID-6551</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6551: Explore options for CSS preprocessing</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6551">FLUID-6551</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Ned Zimmerman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Ned%20Zimmerman">Ned Zimmerman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-09-15T07:50:27.671-0400" prefix="">2020-09-15T07:50:27.671-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-10-29T13:18:09.111-0400" prefix="">2020-10-29T13:18:09.111-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently Infusion uses <a href="https://stylus-lang.com/">Stylus</a> as a CSS preprocessor. It's worth exploring whether Stylus is the best choice or whether it might be worth switching to <a href="https://sass-lang.com/">SCSS</a>.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25450">
+                        <p class="mb-0"><b>Ned Zimmerman</b> <i>commented <relative-time datetime="2020-09-24T10:40:19.856-0400">2020-09-24T10:40:19.856-0400</relative-time></i></p>
+                        <p>I've taken a look at a variety of Fluid and IDRC projects to see what preprocessors (if any) they use:</p>
+<ul>
+<li><a href="https://github.com/codelearncreate/c2lc-website">c2lc-website</a>&#160;uses CSS&#160;with no preprocessor</li>
+<li><a href="https://github.com/codelearncreate/c2lc-coding-environment">c2lc-coding-environment</a>&#160;uses SCSS</li>
+<li><a href="https://github.com/fluid-project/docs-inclusive-learning">docs-inclusive-learning</a>&#160;uses Stylus</li>
+<li><a href="https://github.com/fluid-project/floeproject.org">floeproject.org</a>&#160;uses CSS with no preprocessor</li>
+<li><a href="https://github.com/fluid-project/fluidproject.org">fluidproject.org</a>&#160;uses CSS with no preprocessor</li>
+<li><a href="https://github.com/inclusive-design/guide.inclusivedesign.ca">guide.inclusivedesign.ca</a>&#160;uses Stylus</li>
+<li><a href="https://github.com/inclusive-design/idrc">idrc</a> uses SCSS</li>
+<li><a href="https://github.com/fluid-project/infusion">infusion</a>&#160;uses Stylus</li>
+<li><a href="https://github.com/fluid-project/sjrk-story-telling">sjrk-story-telling</a>&#160;uses CSS with no preprocessor</li>
+<li><a href="https://github.com/inclusive-design/snow-theme">snow-theme</a>&#160;uses Stylus</li>
+<li><a href="https://github.com/fluid-project/sojustrepairit.org">sojustrepairit.org</a>&#160;uses CSS with no preprocessor</li>
+<li><a href="https://github.com/inclusive-design/website-cities">website-cities</a>&#160;uses CSS with no preprocessor</li>
+<li><a href="https://github.com/inclusive-design/wecount.inclusivedesign.ca">wecount.inclusivedesign.ca</a> uses SCSS</li>
+</ul>
+<p></p>
+<p>Of those that use a preprocessor, three use SCSS and four use Stylus.</p>
+
+                    </li>
+                    
+                    <li id="comment-25451">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2020-10-09T05:07:39.407-0400">2020-10-09T05:07:39.407-0400</relative-time></i></p>
+                        <blockquote>
+<p>infusion uses Stylus</p>
+</blockquote>
+<p>I know there's a plan to split out the components from Infusion, but until that's done, the Infusion repo also has CSS files without a preprocessor, such as:</p>
+<p><a href="https://github.com/fluid-project/infusion/blob/master/src/components/inlineEdit/css/InlineEdit.css">https://github.com/fluid-project/infusion/blob/master/src/components/inlineEdit/css/InlineEdit.css</a></p>
+
+                    </li>
+                    
+                    <li id="comment-25452">
+                        <p class="mb-0"><b>Ned Zimmerman</b> <i>commented <relative-time datetime="2020-10-28T10:43:03.163-0400">2020-10-28T10:43:03.163-0400</relative-time></i></p>
+                        <p>Related to this is <a href="/browse/FLUID-6566/">FLUID-6566</a>, which would involve processing all CSS (and compiled Stylus) using Autoprefixer.</p>
+
+                    </li>
+                    
+                    <li id="comment-25453">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2020-10-29T13:18:09.092-0400">2020-10-29T13:18:09.092-0400</relative-time></i></p>
+                        <p>As part of the work on <a href="/browse/FLUID-6496/">FLUID-6496</a> the CSS Preprocessing in Infusion was migrated to Sass</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6550/"><span class="aria-hidden">←</span> Previous: FLUID-6550</a>
+        <a class="mx-1" href="/browse/FLUID-6552/">Next: FLUID-6552 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

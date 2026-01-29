@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-87  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-87 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-87/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-87/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-87/">FLOE-87</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-87: Folder widget in OER Commons is missing keyboard interaction and throwing an error</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-87">FLOE-87</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLOE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Alexey%20Novak">Alexey Novak</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-08-27T17:09:23.078-0400" prefix="">2012-08-27T17:09:23.078-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2012-10-18T12:00:09.621-0400" prefix="">2012-10-18T12:00:09.621-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This issue is related to <a href="https://www.assembla.com/spaces/iskme/tickets/745">https://www.assembla.com/spaces/iskme/tickets/745</a></p>
+<p>Also it appears to be that the folder list widget in the top right corner of a summary page for any OER resource shares some of its functionality with the folder list on My OER page on the left. This widget on My OER page loses keyboard focus once user attempts to Delete a folder or Cancels Folder deletion.<br>
+Also it appears that the folder widget on the top right on a summary page for any OER resource does not have a proper keyboard interactions if user:<br>
+1) Focuses Create New Folder<br>
+2) Clicks Enter<br>
+3) Does not enter any information<br>
+4) Clicks Enter again<br>
+5) The selectable list is broken and it is easy to lose a focus</p>
+<p>Current work about the problem could be found here:<br>
+<a href="https://github.com/anvk/OER-Commons/tree/OER-745">https://github.com/anvk/OER-Commons/tree/OER-745</a></p>
+<p>Also attaching IM conversation about the issue<br>
+[2:31] &lt;Alexey Novak&gt; Michelle can you take a look into this one and let me know what you think <a href="https://github.com/anvk/OER-Commons/compare/ISKME:staging...anvk:<a href=" browse="" OER-745="" "="">OER-745</a>"&gt;https://github.com/anvk/OER-Commons/compare/ISKME:staging...anvk:<a href="/browse/OER-745/">OER-745</a><br>
+[2:36] &lt;Alexey Novak&gt; and let me know if I need to explain on what is going on and why this code is in this branch<br>
+[2:36] &lt;Michelle&gt; did you test it?<br>
+[2:36] &lt;Alexey Novak&gt; yup. but I still need to test on IE<br>
+[2:36] &lt;Michelle&gt; you have a typo - there's no way it's actually running the fadeInCallback<br>
+[2:38] &lt;Alexey Novak&gt; oh wait I found more things<br>
+[2:38] &lt;Alexey Novak&gt; but I still did not find a typo<br>
+[2:39] &lt;Michelle&gt; well, line 423 will never get run.<br>
+[2:39] &lt;Michelle&gt; but I think you'd better figure out when it's supposed to run so you can test once you fix the code<br>
+[2:40] &lt;Michelle&gt; are you sure we want to call refresh on the selectables list both on refresh and on fadein?<br>
+[2:41] &lt;Alexey Novak&gt; well so far as I remember fadeIn is when we create a menu and Create is when we actually create a new folder and we want to refresh the list of folders<br>
+[2:42] &lt;Michelle&gt; why wouldn't we use the same callback then?<br>
+[2:42] &lt;Alexey Novak&gt; ha - great point !<br>
+[2:42] &lt;Alexey Novak&gt; well I thought that maybe we would want to change execution one day<br>
+[2:43] &lt;Alexey Novak&gt; but you are right maybe by that point the developer will make a logic separation<br>
+[2:43] &lt;Alexey Novak&gt; but right now we could reuse the same callback<br>
+[2:54] &lt;Alexey Novak&gt; ok I remembered why we do a refresh on click - because an input appears and we want to update list of things we can keyboard focus. The problem that this input appears and disappears so we have to update our list of selectables<br>
+[2:54] &lt;Alexey Novak&gt; I also got one callback instead of 2<br>
+[2:55] &lt;Alexey Novak&gt; but kill me I do not see a typo<br>
+[2:55] &lt;Alexey Novak&gt; and the code works in FF no problem <br>
+[2:56] &lt;Michelle&gt; if you've switched to one callback you might have got rid of the issue (fadeInCallback was spelled faidInCallback)<br>
+[2:56] &lt;Michelle&gt; but I'm worried that you haven't tested properly<br>
+[2:56] &lt;Michelle&gt; testing that code path should have made the problem clear<br>
+[2:57] &lt;Alexey Novak&gt; I see. Then no worries - I will spend 10 −15 minutes trying to break thing<br>
+[2:57] &lt;Alexey Novak&gt;  <br>
+[2:57] &lt;Alexey Novak&gt; I also will ask Yura to spend 1-2 minutes trying to break it<br>
+[2:57] &lt;Alexey Novak&gt; btw - I think I found an OER issue related to this widget<br>
+[2:57] &lt;Alexey Novak&gt; it seems that when you create folders through My OER page the increment for total folders does not change<br>
+[2:58] &lt;Alexey Novak&gt; should I file it to Andrey and the gang<br>
+[2:58] &lt;Michelle&gt; well, file it<br>
+[2:58] &lt;Michelle&gt; I don't think it's our business to assign it<br>
+[2:59] &lt;Alexey Novak&gt; ok then I just create it without assigning<br>
+[2:59] &lt;Alexey Novak&gt; and I will spend extra time testing the widget to ensure that it works properly<br>
+[2:59] &lt;Michelle&gt; ok<br>
+[2:59] &lt;Michelle&gt; have you pushed your updated code?<br>
+[3:00] &lt;Alexey Novak&gt; in few seconds it will be there <br>
+[3:01] &lt;Alexey Novak&gt; <a href="https://github.com/anvk/OER-Commons/compare/ISKME:staging...anvk:<a href=" browse="" OER-745="" "="">OER-745</a>"&gt;https://github.com/anvk/OER-Commons/compare/ISKME:staging...anvk:<a href="/browse/OER-745/">OER-745</a><br>
+[3:01] &lt;Alexey Novak&gt; I see why I could not recreate a problem - because I killed faidIn callback<br>
+[3:01] &lt;Alexey Novak&gt; anyhow test time<br>
+[3:03] &lt;Michelle&gt; why do you access refreshCallback through the callbacks object on line 67?<br>
+[3:04] &lt;Alexey Novak&gt; *no explanation<br>
+[3:05] &lt;Michelle&gt; I guess I would either pull it out the way you have done on line 41 and use the variable that you've created, or I would not create the variable and always access it through the callbacks object<br>
+[3:06] &lt;Alexey Novak&gt; actually if you call callbacks.refreshCallback() it would fail<br>
+[3:07] &lt;Alexey Novak&gt; since it is undefined in some cases<br>
+[3:07] &lt;Alexey Novak&gt; so it is a pretty bad on my part<br>
+[3:08] &lt;Alexey Novak&gt; I guess it could be just done through variable. But I do not know what is better to call an empty dummy function or make an if statement to see if variable exists<br>
+[3:08] &lt;Michelle&gt; since it doesn't happen a lot, the performance difference is going to be negligible<br>
+[3:09] &lt;Michelle&gt; but the code clarity is probably better if we use the variable<br>
+[3:09] &lt;Alexey Novak&gt; sorry and by variable you mean something like refreshCallback = callbacks.refreshCallback || function () {}; ?<br>
+[3:10] &lt;Michelle&gt; yeah, the refershCallback variable that you create on line 41<br>
+3:38 : Away Message: Away<br>
+3:41 : Michelle came back<br>
+[4:19] &lt;Alexey Novak&gt; ok here we go  <a href="https://github.com/anvk/OER-Commons/compare/ISKME:staging...anvk:<a href=" browse="" OER-745="" "="">OER-745</a>"&gt;https://github.com/anvk/OER-Commons/compare/ISKME:staging...anvk:<a href="/browse/OER-745/">OER-745</a><br>
+[4:20] &lt;Alexey Novak&gt; I found few keyboard interaction issues while testing, so this pull request have fixes for those<br>
+[4:28] &lt;Michelle&gt; what is the focus element and why does it change?<br>
+[4:30] &lt;Alexey Novak&gt; for lines 64-78. Basically there are 2 things which can happen when you click Create and an input appears. 1 if you entered something and clicked Enter a new folder name appears and it will get a focus. If you did not enter anything and click Enter then input disappears and Create New link has a focus. Right now if you do not enter and click Enter on an input, it disappears and focus is lost in limbo<br>
+[4:30] &lt;Alexey Novak&gt;  <br>
+[4:31] &lt;Alexey Novak&gt; for line 129 to 151<br>
+[4:31] &lt;Alexey Novak&gt; basically it is the menu on My OER page it does not have proper keyboard interactions when you want to remove a folder<br>
+[4:32] &lt;Alexey Novak&gt; but with the code in pullrequest if you click Cancel then the item you wanted to delete will gain focus. And if you click Delete then next item in the list will gain focus<br>
+[4:32] &lt;Alexey Novak&gt; if there was only 1 item in the list and you deleted it then link Create New Folder will get a focus since it is always the last link in the list<br>
+[4:33] &lt;Alexey Novak&gt; there is still 1 known issue left which I'm aware of<br>
+[4:34] &lt;Michelle&gt; I feel uncomfortable with the strategy for finding the thing to focus on. if the markup changes, this will break<br>
+[4:34] &lt;Michelle&gt; and it's scattered around, so it will require fixes in many places<br>
+[4:35] &lt;Michelle&gt; is there a concept in this code of a current folder?<br>
+[4:36] &lt;Alexey Novak&gt; let me double check. So far as I know there are none. I mean there is a concept that you are viewing all resources which belong to a folder but it does not give you any reasonable date to control the widget<br>
+[4:36] &lt;Alexey Novak&gt; *reasonable data<br>
+[4:40] &lt;Alexey Novak&gt; Basically, me and Anastasia worked on the My Folder widget for the single OER page. Which worked fine and looked great (except of the case when you enter empty input and click enter). The bug Andrey found is related to the fact that the same widget (for some reason) is been used in My OER page as well. So I had to fix up the code for it using his conventions. But when I started testing I decided to test that widget on My OER page and noticed that keyboard focus is lost when you start removing folders (and I found few more bugs not related to our work we did)<br>
+[4:40] &lt;Alexey Novak&gt; so I started putting those keyboard focus fixes depending on different actions you have, it is what you see and additional code in my pull request<br>
+[4:40] &lt;Alexey Novak&gt;  <br>
+[4:40] &lt;Alexey Novak&gt; I hope it makes sense<br>
+[4:42] &lt;Michelle&gt; yeah, I could tell what you were doing and I'm glad you found and tried to address the keyboard issues<br>
+[4:42] &lt;Michelle&gt; but, it feels to me that with the hardcoding of the element a<br>
+[4:42] &lt;Alexey Novak&gt; I have no idea how we missed those when all of us did testing, but oh well...<br>
+[4:42] &lt;Alexey Novak&gt; yes harcoding element a is not a pretty one<br>
+[4:42] &lt;Michelle&gt; and the repeated bits of code, that this will be a brittle fix<br>
+[4:42] &lt;Alexey Novak&gt; it is. but there is no nothing of components in this code. Just jquery manipulation<br>
+[4:43] &lt;Alexey Novak&gt; so I'm not sure what to do about this "a" issue <br>
+[4:44] &lt;Alexey Novak&gt; so far as I understand server generates the markup using templating. I wish we could create some kinda objects when it is done<br>
+[4:44] &lt;Michelle&gt; also, around line 77, we used to just do the refresh when we had success but now it's happening on fail too - is that intentional?<br>
+[4:44] &lt;Alexey Novak&gt; it is<br>
+[4:45] &lt;Alexey Novak&gt; basically - we missed the case when input is empty and user presses Enter with Anastasia<br>
+[4:45] &lt;Alexey Novak&gt; if we do not refresh then input disappears but still part of the selectable<br>
+[4:45] &lt;Alexey Novak&gt; which means that keyboard focus can be lost once this input gains a focus<br>
+[4:45] &lt;Alexey Novak&gt; it is related to this input which appears and disappears all the time<br>
+[4:45] &lt;Alexey Novak&gt; like a mosquito when you want to sleep<br>
+[4:50] &lt;Alexey Novak&gt; ha! Those guys learn fast I just saw this line of code var $this = $(this);<br>
+[4:51] &lt;Alexey Novak&gt; almost like that but $this. Before they would just do this.functionBlah... now they have a variable for this<br>
+[4:56] &lt;Michelle&gt; how about abstracting out the behaviour for finding the element to focus on and calling focus on it. at least that we all the code will be contained in one place<br>
+[4:57] &lt;Alexey Novak&gt; we could do this, one thing that it will be very specific to the folder div. Since we want to access a specific a in a specific div<br>
+[4:58] &lt;Michelle&gt; it could take in the folder as a parameter<br>
+[4:58] &lt;Michelle&gt; and if it doesn't get a parameter could default to the button<br>
+[4:59] &lt;Alexey Novak&gt; interesting...<br>
+[4:59] &lt;Alexey Novak&gt; let me try this<br>
+[4:59] &lt;Michelle&gt; also, I think we have to stop talking privately like this<br>
+[4:59] &lt;Michelle&gt; now if AC has to pick this up she'll have no knowledge of our conversation <br>
+[5:00] &lt;Alexey Novak&gt; well the fix is almost done... not sure what should be picked up here or you think there will be a need to change something more<br>
+[5:00] &lt;Michelle&gt; a regression for esxample<br>
+[5:00] &lt;Michelle&gt; in the future</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-11225">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-10-18T12:00:09.619-0400">2012-10-18T12:00:09.619-0400</relative-time></i></p>
+                        <p>Released.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-86/"><span class="aria-hidden">←</span> Previous: FLOE-86</a>
+        <a class="mx-1" href="/browse/FLOE-89/">Next: FLOE-89 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

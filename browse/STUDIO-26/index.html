@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> STUDIO-26  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" STUDIO-26 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/STUDIO-26/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/STUDIO-26/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/STUDIO" data-pagefind-filter="project">Fluid Studios</a></li>
+                <li><a href="/browse/STUDIO-26/">STUDIO-26</a></li>
+            </ol>
+        </nav>
+        <h1>STUDIO-26: Customize CKEditor toolbar</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/STUDIO-26">STUDIO-26</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/STUDIO/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/STUDIO/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Cindy Li</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/STUDIO/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-12-09T17:46:36.599-0500" prefix="">2011-12-09T17:46:36.599-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T13:02:04.024-0500" prefix="">2014-03-03T13:02:04.024-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The CKEditor toolbar should be customized in line with <a href="http://dev.studios.fluidproject.org/?p=24">http://dev.studios.fluidproject.org/?p=24</a></p>
+<p>Since the CKEditor plugin needs to go through the installation process due to the fact that this process inserts some data into DB and we currently don't have a good solution to dump out the data we need. So the proposed solution is:</p>
+<p>1. Save the original CKEditor plugin zip file with the original wordpress in the branch "wordpress"<br>
+2. Save CKEditor plugin zip file that has been modified for fluid studio which contains the customized toolbar in "development" and "master"(production) branches</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-12834">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2011-12-12T10:11:31.567-0500">2011-12-12T10:11:31.567-0500</relative-time></i></p>
+                        <p>The CKEditor toolbar can be customized through the admin interface. Colin has done this on the live site. </p>
+
+                    </li>
+                    
+                    <li id="comment-12835">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2011-12-12T10:33:16.844-0500">2011-12-12T10:33:16.844-0500</relative-time></i></p>
+                        <p>Cindy made a good point that if we modify the config file that we include in the repo then fresh installs will be easier. </p>
+
+                    </li>
+                    
+                    <li id="comment-12836">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2011-12-12T13:55:07.087-0500">2011-12-12T13:55:07.087-0500</relative-time></i></p>
+                        <p>Merged into project repo at 7d6ed414fbf61735c69aa5b88da2526ceca81d36</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/STUDIO-25/"><span class="aria-hidden">←</span> Previous: STUDIO-25</a>
+        <a class="mx-1" href="/browse/STUDIO-27/">Next: STUDIO-27 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

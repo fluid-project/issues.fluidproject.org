@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5930  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5930 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5930/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5930/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5930/">FLUID-5930</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5930: Framework clears injected subcomponents before onDestroy</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5930">FLUID-5930</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-07-20T08:37:02.695-0400" prefix="">2016-07-20T08:37:02.695-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-10-20T13:31:31.986-0400" prefix="">2016-10-20T13:31:31.986-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p><a href="/browse/FLUID-5812/">FLUID-5812</a> has improved the fluid.clearComponent workflow somewhat, but the current implementation is still capable of "surprising" the user. The general contract should be that at the time of an "onDestroy" event handler, no effects from destruction of the component's tree should yet be visible. However, in the case where a component has subcomponents which have been injected, these are aggressively cleared first - here is the current relevant section from fluid.clearComponent:</p>
+<pre><code class="hljs language-java"><span class="hljs-number">1026</span>:            <span class="hljs-keyword">if</span> (created) {
+<span class="hljs-number">1027</span>:                <span class="hljs-comment">// Clear injected instance of this component from all other paths - historically we didn't bother</span>
+<span class="hljs-number">1028</span>:                <span class="hljs-comment">// to do this since injecting into a shorter scope is an error - but now we have resolveRoot area</span>
+<span class="hljs-number">1029</span>:                fluid.each(childShadow.injectedPaths, function (troo, injectedPath) {
+<span class="hljs-number">1030</span>:                    <span class="hljs-type">var</span> <span class="hljs-variable">parentPath</span> <span class="hljs-operator">=</span> fluid.model.getToTailPath(injectedPath);
+<span class="hljs-number">1031</span>:                    <span class="hljs-type">var</span> <span class="hljs-variable">otherParent</span> <span class="hljs-operator">=</span> that.pathToComponent[parentPath];
+<span class="hljs-number">1032</span>:                    that.clearComponent(otherParent, fluid.model.getTailPath(injectedPath), child);
+<span class="hljs-number">1033</span>:                });
+<span class="hljs-number">1034</span>:                fluid.visitComponentChildren(child, function (gchild, gchildname, segs, i) {
+<span class="hljs-number">1035</span>:                    <span class="hljs-type">var</span> <span class="hljs-variable">parentPath</span> <span class="hljs-operator">=</span> that.composeSegments.apply(<span class="hljs-literal">null</span>, segs.slice(<span class="hljs-number">0</span>, i));
+<span class="hljs-number">1036</span>:                    that.clearComponent(child, gchildname, <span class="hljs-literal">null</span>, options, <span class="hljs-literal">true</span>, parentPath);
+<span class="hljs-number">1037</span>:                }, options, that.parseEL(childPath));
+<span class="hljs-number">1038</span>:                fluid.doDestroy(child, name, component);
+<span class="hljs-number">1039</span>:                fluid.clearDistributions(childShadow);
+<span class="hljs-number">1040</span>:                fluid.clearListeners(childShadow);
+<span class="hljs-number">1041</span>:                fluid.fireEvent(child, <span class="hljs-string">"afterDestroy"</span>, [child, name, component]);
+<span class="hljs-number">1042</span>:                delete that.idToShadow[child.id];
+<span class="hljs-number">1043</span>:            } <span class="hljs-keyword">else</span> {
+<span class="hljs-number">1044</span>:                fluid.remove_if(childShadow.injectedPaths, function (troo, path) {
+<span class="hljs-number">1045</span>:                    <span class="hljs-keyword">return</span> path === childPath;
+<span class="hljs-number">1046</span>:                });
+            }
+</code></pre>
+<p>This implementation has become a bit "belt and braces" in that there are two distinct sites where "injectedPaths" may be cleared - once at line 1029 where other paths at which <strong>this</strong> (concrete) component has been injected are cleared, and again at line 1044 where non-concrete child paths of a concrete component have their path records cleared out.</p>
+<p>We need to take the block at line 1029 and move it below the "doDestroy" call at line 1038.</p>
+<p>This emerged whilst refactoring the LifecycleManager for <a href="/browse/GPII-580/">GPII-580</a>. We implemented the proto-framework "DynamicComponentIndexer" which looks as follows:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"gpii.indexedDynamicComponent"</span>, {
+        gradeNames: <span class="hljs-string">"fluid.component"</span>,
+        components: {
+            <span class="hljs-comment">// This reference needs to be overridden by the concrete grade user</span>
+            <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> Enhance "notImplemented" scheme to support custom messages when user has not overridden material</span>
+            <span class="hljs-comment">// which requires to be overridden</span>
+            dynamicIndexTarget: <span class="hljs-string">"{fluid.notImplemented}.mustBeOverridden"</span>,
+        },
+        <span class="hljs-comment">// The path of the collection/member at which the index is to be held</span>
+        dynamicIndexTargetPath: <span class="hljs-string">"{fluid.notImplemented}.mustBeOverridden"</span>,
+        <span class="hljs-comment">// The path in this component at which the key is to be found</span>
+        dynamicIndexKeyPath: <span class="hljs-string">"{fluid.notImplemented}.mustBeOverridden"</span>,
+        listeners: {
+            <span class="hljs-string">"onCreate.indexedDynamicComponent"</span>: <span class="hljs-string">"gpii.indexedDynamicComponent.onCreate"</span>,
+            <span class="hljs-string">"onDestroy.indexedDynamicComponent"</span>: <span class="hljs-string">"gpii.indexedDynamicComponent.onDestroy"</span>
+        }
+    });
+
+    gpii.indexedDynamicComponent.onCreate = function (that) {
+        <span class="hljs-type">var</span> <span class="hljs-variable">key</span> <span class="hljs-operator">=</span> fluid.getForComponent(that, that.options.dynamicIndexKeyPath);
+        <span class="hljs-type">var</span> <span class="hljs-variable">ourPath</span> <span class="hljs-operator">=</span> fluid.pathForComponent(that);
+        <span class="hljs-type">var</span> <span class="hljs-variable">memberName</span> <span class="hljs-operator">=</span> ourPath[ourPath.length - <span class="hljs-number">1</span>];
+        <span class="hljs-type">var</span> <span class="hljs-variable">index</span> <span class="hljs-operator">=</span> fluid.get(that.dynamicIndexTarget, that.options.dynamicIndexTargetPath);
+        index[key] = memberName;
+    };
+
+    gpii.indexedDynamicComponent.onDestroy = function (that) {
+        <span class="hljs-type">var</span> <span class="hljs-variable">key</span> <span class="hljs-operator">=</span> fluid.getForComponent(that, that.options.dynamicIndexKeyPath);
+        <span class="hljs-type">var</span> <span class="hljs-variable">index</span> <span class="hljs-operator">=</span> fluid.get(that.dynamicIndexTarget, that.options.dynamicIndexTargetPath);
+        delete index[key];
+    };
+</code></pre>
+<p>In the sample usage, we have</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"gpii.lifecycleManager.sessionIndexer"</span>, {
+        gradeNames: <span class="hljs-string">"gpii.indexedDynamicComponent"</span>,
+        components: {
+            dynamicIndexTarget: <span class="hljs-string">"{gpii.lifecycleManager}"</span>
+        },
+        dynamicIndexTargetPath: <span class="hljs-string">"sessionIndex"</span>,
+        dynamicIndexKeyPath: <span class="hljs-string">"options.userToken"</span>
+    });
+</code></pre>
+<p>During the destruction of <code>gpii.lifecycleManager</code>, its injected paths are cleared out early - then when we come to destroy the session, we have a failure during <code>onDestroy</code> where index becomes undefined.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22060">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2016-10-20T13:31:25.557-0400">2016-10-20T13:31:25.557-0400</relative-time></i></p>
+                        <p>The pull request <a href="https://github.com/fluid-project/infusion/pull/730">https://github.com/fluid-project/infusion/pull/730</a> has been merged into the master branch at 2ae5da176294899a2c73b333aa27bdefeaa33b80</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5929/"><span class="aria-hidden">←</span> Previous: FLUID-5929</a>
+        <a class="mx-1" href="/browse/FLUID-5931/">Next: FLUID-5931 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

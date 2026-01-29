@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5552  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5552 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5552/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5552/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5552/">FLUID-5552</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5552: Upgrade the Prefs Framework to use the core Model Relay functionality instead of its own.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5552">FLUID-5552</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-11-11T11:02:55.711-0500" prefix="">2014-11-11T11:02:55.711-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-11-03T11:27:26.129-0500" prefix="">2015-11-03T11:27:26.129-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.9</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The core Infusion Framework uses the new model relay functionality, but the Prefs Framework still uses its own model relay framework. This makes upgrading the video player rather complicated.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20351">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-12-08T11:49:52.293-0500">2014-12-08T11:49:52.293-0500</relative-time></i></p>
+                        <p>Note the upgrading the video player ( <a href="/browse/VP-295/">VP-295</a> ) with the new modelRelay system can't go ahead without <a href="/browse/FLUID-5249/">FLUID-5249</a> ("global instantiators")</p>
+
+                    </li>
+                    
+                    <li id="comment-20352">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2015-01-26T10:04:13.841-0500">2015-01-26T10:04:13.841-0500</relative-time></i></p>
+                        <p>I've started working on this in the branch: <a href="https://github.com/cindyli/infusion/tree/FLUID-5552">https://github.com/cindyli/infusion/tree/FLUID-5552</a></p>
+<p>Most pieces are back working except one last issue. To produce: </p>
+<p>1. Open examples/framework/preferences/conditionalAdjusters-singlePanel/ in a browser where a debugger is turned on;<br>
+2. Turn on "speak text" preference, adjust the slider for "Words-per-min", click on "reset" button;<br>
+3. This javascript error occurs: </p>
+<p>ASSERTION FAILED: Cannot resolve reference {change}.value from component { typeName: "fluid.textfieldSlider.textfield" gradeNames: ["fluid.textfieldSlider.textfield","fluid.viewRelayComponent","fluid.commonViewComponent","fluid.standardRelayComponent","fluid.modelRelayComponent","fluid.commonModelComponent"] id: byh4wskj-1519} which has been destroyed</p>
+<p>The error doesn't occur if "Words-per-min" and other prefs in conditional panels have never been adjusted.</p>
+<p>The same issue can be produced with all conditional panel examples.</p>
+<p>Clicking on the reset button triggers:<br>
+1. Reset the central model to the default which resets "speak text" to false and "words-per-min" to its original value. This should also triggers the model relay for the "Words-per-min" prefs value to be relayed to "Words-per-min" text field slider;<br>
+2. Resetting "speak text" prefs to false results in the destroy of its conditional panels including the "words-per-min" text field slider. A refreshView() is called right after the destroy to stop showing these conditional panels - <a href="https://github.com/cindyli/infusion/blob/FLUID-5552/src/framework/preferences/js/Panels.js#L334-L340">https://github.com/cindyli/infusion/blob/FLUID-5552/src/framework/preferences/js/Panels.js#L334-L340</a></p>
+<p>The debugging log shows the destroy of the "words-per-min" text field slider (line 337) happens before the error occurs. So it seems even though the text field slider should have been destroyed, the model relay onto it continues to happen.</p>
+
+                    </li>
+                    
+                    <li id="comment-20353">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2015-01-27T10:16:29.655-0500">2015-01-27T10:16:29.655-0500</relative-time></i></p>
+                        <p>Issued a pull request: <a href="https://github.com/fluid-project/infusion/pull/582">https://github.com/fluid-project/infusion/pull/582</a></p>
+<p>This pull request is dependent on Antranig's pull request that fixes <a href="/browse/FLUID-5592/">FLUID-5592</a>: <a href="https://github.com/fluid-project/infusion/pull/581">https://github.com/fluid-project/infusion/pull/581</a></p>
+
+                    </li>
+                    
+                    <li id="comment-20354">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-03-19T12:26:15.785-0400">2015-03-19T12:26:15.785-0400</relative-time></i></p>
+                        <p>Pull request ( <a href="https://github.com/fluid-project/infusion/pull/582">https://github.com/fluid-project/infusion/pull/582</a> ) was merged into the project repo at 18939c0dd614901bfc434a29f880aa332600a239</p>
+
+                    </li>
+                    
+                    <li id="comment-20355">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-26T09:51:29.045-0400">2015-06-26T09:51:29.045-0400</relative-time></i></p>
+                        <p>Reopening to change the fix version to 1.9</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5551/"><span class="aria-hidden">←</span> Previous: FLUID-5551</a>
+        <a class="mx-1" href="/browse/FLUID-5553/">Next: FLUID-5553 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5676  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5676 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5676/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5676/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5676/">FLUID-5676</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5676: Renderer should return to applying jQuery.empty() when blasting old markup, to ensure that UI widgets are properly disposed</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5676">FLUID-5676</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Duplicate">Duplicate</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-06-03T14:41:48.484-0400" prefix="">2015-06-03T14:41:48.484-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-06-16T13:54:53.628-0400" prefix="">2015-06-16T13:54:53.628-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Renderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Long ago, we decided to sideline the standard jQuery pipeline for removing markup from the document, based on $.remove() and $.empty() - in the days of CollectionSpace, we were faced with extremely large UIs for which the cost of $.empty() was too high, particularly in Firefox. At least on the supported browsers at that time, assigning "" to innerHTML was found to be orders of magnitude faster and adequately stable - although it seems we still have a very old switch which continues to use $.empty() on IE presumably for reasons of stability.</p>
+<p><a href="https://github.com/fluid-project/infusion/blob/master/src/framework/renderer/js/fluidRenderer.js#L1497">https://github.com/fluid-project/infusion/blob/master/src/framework/renderer/js/fluidRenderer.js#L1497</a></p>
+<p>Today in work on the First Discovery tool we encountered YET ANOTHER tooltip accumulation bug, triggered by the fact that we were obliterating the markup holding a button over which a tooltip was displayed as part of the early part of renderer workflow - and only later trying to call the Infusion destructor for the component wrapping it, which was then no longer able to communicate to jQuery UI which tooltip should be destroyed.</p>
+<p>The performance impact of $.empty() has probably ceased to be significant years ago, and we should just switch back to using it on all platforms. Note that during that era, jQuery UI destructors couldn't be relied upon to work reliably in any case: <a href="https://forum.jquery.com/topic/jquery-empty-does-not-destroy-ui-widgets-whereas-jquery-remove-does-using-ui-1-8-4">https://forum.jquery.com/topic/jquery-empty-does-not-destroy-ui-widgets-whereas-jquery-remove-does-using-ui-1-8-4</a></p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5675/"><span class="aria-hidden">←</span> Previous: FLUID-5675</a>
+        <a class="mx-1" href="/browse/FLUID-5677/">Next: FLUID-5677 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

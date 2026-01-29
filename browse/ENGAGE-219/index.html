@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> ENGAGE-219  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" ENGAGE-219 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/ENGAGE-219/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/ENGAGE-219/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/ENGAGE" data-pagefind-filter="project">Fluid Engage</a></li>
+                <li><a href="/browse/ENGAGE-219/">ENGAGE-219</a></li>
+            </ol>
+        </nav>
+        <h1>ENGAGE-219: Asynchronous server side ajax calls throw an exception</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/ENGAGE-219">ENGAGE-219</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/ENGAGE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/ENGAGE/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/ENGAGE/?reporter=Svetoslav%20Nedkov">Svetoslav Nedkov</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-12-18T09:11:22.000-0500" prefix="">2009-12-18T09:11:22.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-12-22T09:44:30.787-0500" prefix="">2017-12-22T09:44:30.787-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3b</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The first time when performing an asynchronous ajax call through jQuery from the server side of Engage an exception is thrown. Subsequent ajax calls don't cause an exception. The call itself is successfully executed and from what I have tried the response is received too, so I'm not much sure about what functional impact this exception has.</p>
+<p>It was observed with a PUT operation, but with a GET operation the same exception is thrown. </p>
+<p>How to reproduce - make a simple ajax call on the server side with async set to true:</p>
+<p>$.ajax({<br>
+url: "<a href="http://google.com/">http://google.com</a>",<br>
+async: true<br>
+});</p>
+<p>The problem seems to stem from the browser environment env.js  and probably it needs to be modified in order to fix this issue. As an alternative as we already spoke we can try to switch to the newer versions of the browser environment, which is found here:</p>
+<p><a href="http://www.envjs.com/">http://www.envjs.com/</a></p>
+<p>Here is the stacktrace showing the exception:</p>
+<p>Exception in thread "Thread-5" org.mozilla.javascript.EcmaError: TypeError: Cannot read property "readyState" from null (/home/sveto/workspace.mycollection/fluid-engage/src/main/webapp/../../../../fluid-infusion/src/webapp/lib/jquery/core/js/jquery.js#3555)<br>
+at org.mozilla.javascript.ScriptRuntime.constructError(ScriptRuntime.java:3753)<br>
+at org.mozilla.javascript.ScriptRuntime.constructError(ScriptRuntime.java:3731)<br>
+at org.mozilla.javascript.ScriptRuntime.typeError(ScriptRuntime.java:3759)<br>
+at org.mozilla.javascript.ScriptRuntime.typeError2(ScriptRuntime.java:3778)<br>
+at org.mozilla.javascript.ScriptRuntime.undefReadError(ScriptRuntime.java:3791)<br>
+at org.mozilla.javascript.ScriptRuntime.getObjectProp(ScriptRuntime.java:1487)<br>
+at org.mozilla.javascript.gen.<em>home_sveto_workspace_mycollection_fluid_engage_src_main_webapp</em>____________fluid_infusion_src_webapp_lib_jquery_core_js_jquery_js_3._c_anonymous_286(/home/sveto/workspace.mycollection/fluid-engage/src/main/webapp/../../../../fluid-infusion/src/webapp/lib/jquery/core/js/jquery.js:3555)<br>
+at org.mozilla.javascript.gen.<em>home_sveto_workspace_mycollection_fluid_engage_src_main_webapp</em>____________fluid_infusion_src_webapp_lib_jquery_core_js_jquery_js_3.call(/home/sveto/workspace.mycollection/fluid-engage/src/main/webapp/../../../../fluid-infusion/src/webapp/lib/jquery/core/js/jquery.js)<br>
+at org.mozilla.javascript.optimizer.OptRuntime.callName0(OptRuntime.java:108)<br>
+at org.mozilla.javascript.gen._home_sveto_workspace_mycollection_fluid_engage_src_main_webapp_kettle_js_env_js_1._c_anonymous_12(/home/sveto/workspace.mycollection/fluid-engage/src/main/webapp/kettle/js/env.js:72)<br>
+at org.mozilla.javascript.gen._home_sveto_workspace_mycollection_fluid_engage_src_main_webapp_kettle_js_env_js_1.call(/home/sveto/workspace.mycollection/fluid-engage/src/main/webapp/kettle/js/env.js)<br>
+at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:426)<br>
+at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3157)<br>
+at org.mozilla.javascript.gen._home_sveto_workspace_mycollection_fluid_engage_src_main_webapp_kettle_js_env_js_1.call(/home/sveto/workspace.mycollection/fluid-engage/src/main/webapp/kettle/js/env.js)<br>
+at org.mozilla.javascript.Context$1.run(Context.java:511)<br>
+at org.mozilla.javascript.Context.call(Context.java:522)<br>
+at org.mozilla.javascript.Context.call(Context.java:509)<br>
+at org.mozilla.javascript.JavaAdapter.callMethod(JavaAdapter.java:556)<br>
+at adapter1.run(&lt;adapter&gt;)<br>
+at java.lang.Thread.run(Thread.java:619)</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Mandriva Linux 2009, jetty-6.1.18, env.js, FF 3.0.15</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-11771">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2009-12-18T14:32:26.000-0500">2009-12-18T14:32:26.000-0500</relative-time></i></p>
+                        <p>This is concerning - but on the other hand, there should never be asynchronous ajax calls from the server side, which must represent a form of coding error - since we lack the threading primitives in Javascript to cause these to operate usefully, even if we had decided that their use was desirable.</p>
+
+                    </li>
+                    
+                    <li id="comment-11772">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-12-22T09:44:30.785-0500">2017-12-22T09:44:30.785-0500</relative-time></i></p>
+                        <p>The repository has been archived.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/ENGAGE-218/"><span class="aria-hidden">←</span> Previous: ENGAGE-218</a>
+        <a class="mx-1" href="/browse/ENGAGE-220/">Next: ENGAGE-220 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

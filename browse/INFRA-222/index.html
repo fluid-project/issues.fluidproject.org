@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-222  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-222 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-222/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-222/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-222/">INFRA-222</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-222: Inclusive Cities Hugo rendering a page incorrectly</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-222">INFRA-222</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alan Harnum</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Simon%20Bates">Simon Bates</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-10-10T13:18:30.726-0400" prefix="">2018-10-10T13:18:30.726-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-10-11T12:08:51.120-0400" prefix="">2018-10-11T12:08:51.120-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The Hackathon page on the Inclusive Cities site is being rendered incorrectly. The page is being rendered, and contains the common page structure (header, title, footer, UIO), but its content is missing.</p>
+<ul>
+<li>Rendered page: <a href="https://cities.inclusivedesign.ca/ideas/hackathon/">https://cities.inclusivedesign.ca/ideas/hackathon/</a></li>
+<li>Page source: <a href="https://github.com/inclusive-design/website-cities/blob/master/content/ideas/hackathon/index.md">https://github.com/inclusive-design/website-cities/blob/master/content/ideas/hackathon/index.md</a></li>
+</ul>
+<p>The CI build is using version 0.47.1 of Hugo:</p>
+<ul>
+<li><a href="https://github.com/idi-ops/docker-hugo/blob/master/Dockerfile">https://github.com/idi-ops/docker-hugo/blob/master/Dockerfile</a></li>
+</ul>
+<p>I've not been able to reproduce the issue yet. The page renders as expected in the following scenarios:</p>
+<ul>
+<li>Hugo 0.47.1 on Windows</li>
+<li>Hugo 0.47.1 on Ubuntu Linux under WSL, with website content on Windows NTFS filesystem</li>
+<li>Hugo 0.47.1 on Ubuntu Linux under WSL, with website content on WSL filesystem</li>
+</ul>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p><a href="https://ci.incd.ca/job/stack-cities.inclusivedesign.ca/">https://ci.incd.ca/job/stack-cities.inclusivedesign.ca/</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26048">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2018-10-10T13:27:10.952-0400">2018-10-10T13:27:10.952-0400</relative-time></i></p>
+                        <p>No errors are reported by Hugo in CI.</p>
+<p>For example, see:</p>
+<ul>
+<li><a href="https://ci.incd.ca/job/stack-cities.inclusivedesign.ca/29/console">https://ci.incd.ca/job/stack-cities.inclusivedesign.ca/29/console</a></li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-26049">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2018-10-11T12:02:44.336-0400">2018-10-11T12:02:44.336-0400</relative-time></i></p>
+                        <p>This turned out to be the following issue:</p>
+<ul>
+<li>a number of large images were being resized by Hugo on some pages</li>
+<li>Hugo has a timeout setting for rendering a page (10 seconds by default) that was being exceeded in the resource-restricted container environment, but not in desktop environments</li>
+<li>Hugo also only uses WARN rather than ERROR when this happens, so pages end up empty</li>
+<li>Hugo also only reports WARN when run in verbose mode, and the build container wasn't doing this</li>
+</ul>
+<p>These changes were made:</p>
+<ul>
+<li>Timeout was increased in the Hugo config file: <a href="https://github.com/inclusive-design/website-cities/blob/master/config.toml#L4">https://github.com/inclusive-design/website-cities/blob/master/config.toml#L4</a></li>
+<li>Hugo build container configured to run in verbose mode: <a href="https://github.com/idi-ops/docker-hugo/blob/master/Dockerfile#L12">https://github.com/idi-ops/docker-hugo/blob/master/Dockerfile#L12</a></li>
+</ul>
+<p>The site is now rendering correctly.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-221/"><span class="aria-hidden">←</span> Previous: INFRA-221</a>
+        <a class="mx-1" href="/browse/INFRA-223/">Next: INFRA-223 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

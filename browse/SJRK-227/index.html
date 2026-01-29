@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-227  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-227 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-227/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-227/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-227/">SJRK-227</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-227: Add handling for datasource onError event</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-227">SJRK-227</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SJRK/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-02-15T15:15:58.950-0500" prefix="">2019-02-15T15:15:58.950-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-04-25T09:48:31.494-0400" prefix="">2019-04-25T09:48:31.494-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool Server</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The datasources defined in sjrk.storyTelling.server's server component do not currently have listeners attached to the onError event, and there are cases when it will fail silently. For instance, when the database server is not running and an attempt to call a datasource invoker on it is made.</p>
+<p>Add some handling for these events, logging or otherwise.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26512">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2019-04-16T17:48:25.819-0400">2019-04-16T17:48:25.819-0400</relative-time></i></p>
+                        <p>An attempt was made to add integration tests for the listeners I added which call fluid.log, but there was no straightforward way to do so at this time. In newer versions of Infusion (as of October 2018), there is the fluid.loggingEvent which can be taken advantage of for setting up tests, but this depends on <a href="/browse/SJRK-244/">SJRK-244</a> being completed.</p>
+
+                    </li>
+                    
+                    <li id="comment-26513">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2019-04-25T09:48:31.489-0400">2019-04-25T09:48:31.489-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/sjrk-story-telling/pull/22">The pull request</a> has been merged into the project repo stories-floe-dev branch at <a href="https://github.com/fluid-project/sjrk-story-telling/commit/9448cb4f4372ca1f5afb79503ceb24b155d07e77">this commit</a>.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-226/"><span class="aria-hidden">←</span> Previous: SJRK-226</a>
+        <a class="mx-1" href="/browse/SJRK-228/">Next: SJRK-228 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

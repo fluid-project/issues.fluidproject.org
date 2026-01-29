@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-978  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-978 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-978/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-978/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-978/">FLUID-978</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-978: Add the ability to add and remove elements from the list of selectables in the keyboard-a11y plugin</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-978">FLUID-978</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Sub-task">Sub-task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-07-22T18:43:29.000-0400" prefix="">2008-07-22T18:43:29.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-02-22T16:27:43.611-0500" prefix="">2011-02-22T16:27:43.611-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Keyboard Accessibility</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently, there is no way to modify the list of selectables in the keyboard accessibility plugin. This makes it really hard to have a dynamic list of items, such as the File Queue in the Uploader component. We need an API that allows us to add and remove elements from the list of selectables. Here's the API I'm thinking:</p>
+<p>.addSelectable(element, atIndex);<br>
+.removeSelectable(element);</p>
+<p>It would be particularly nice if both methods took either a single element or a list of elements (jQueries).</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20040">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-07-23T15:26:40.000-0400">2008-07-23T15:26:40.000-0400</relative-time></i></p>
+                        <p>As part of the resolution of <a href="/browse/FLUID-993/">FLUID-993</a>, this functionality is now available since the "selectables" element of the "that" context for the selectable context is accessible through the new global method $.fn.getSelectableContext() . It is possible that a little tidy-up might be needed to head off some of the more obvious ways of getting the component into an inconsistency (removing the current selectable element? etc.)</p>
+
+                    </li>
+                    
+                    <li id="comment-20042">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2011-02-22T16:27:43.610-0500">2011-02-22T16:27:43.610-0500</relative-time></i></p>
+                        <p>Closing issues that were resolved for 1.0 and earlier releases. </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-976/"><span class="aria-hidden">←</span> Previous: FLUID-976</a>
+        <a class="mx-1" href="/browse/FLUID-979/">Next: FLUID-979 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

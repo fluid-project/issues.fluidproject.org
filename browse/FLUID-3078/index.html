@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3078  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3078 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3078/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3078/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3078/">FLUID-3078</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3078: move checkAll and uncheckAll functionality from builder.js to customBuild component</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3078">FLUID-3078</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Laurel Williams</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Laurel%20Williams">Laurel Williams</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-08-07T09:52:30.000-0400" prefix="">2009-08-07T09:52:30.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-10-22T16:24:19.000-0400" prefix="">2009-10-22T16:24:19.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Infusion Builder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19492">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-08-07T09:55:58.000-0400">2009-08-07T09:55:58.000-0400</relative-time></i></p>
+                        <p>Currently the checkall and uncheckall functionality is held in builder.js - a file which represents the code that the component user would create to add customBuild to a web page. This functionality is likely to be wanted, so move it into the component.</p>
+<p>After discussing this with JO and AC - we decided:<br>
+1) to move checkAll and unCheckAll into the default selectors<br>
+2) to add some setup code which checks the html code for existence of these selectors. If the selectors exist then click handlers are added to the html elements bearing these selectors so that when clicked the modules are all checked, or all unchecked.</p>
+
+                    </li>
+                    
+                    <li id="comment-19494">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-08-07T10:40:59.000-0400">2009-08-07T10:40:59.000-0400</relative-time></i></p>
+                        <p>Moved these elements over and refactored the code in response. Also required changes to the test code to accommodate the new functionality in the component. TODO still - add some tests for when the checkall and uncheckall buttons do not exist  in the interface.</p>
+
+                    </li>
+                    
+                    <li id="comment-19496">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-08-28T13:16:06.000-0400">2009-08-28T13:16:06.000-0400</relative-time></i></p>
+                        <p>Actually, my last TODO doesn't make sense. If the checkall and uncheckall buttons do not exist, then the click handlers are not added. There is no way to test that this doesn't happen because there is no "error" state if this occurs. Other tests already in place to ensure that click handler is added appropriately and performs the expected task. So this task is completed.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3077/"><span class="aria-hidden">←</span> Previous: FLUID-3077</a>
+        <a class="mx-1" href="/browse/FLUID-3080/">Next: FLUID-3080 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

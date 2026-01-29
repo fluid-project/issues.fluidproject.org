@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2351  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2351 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2351/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2351/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2351/">FLUID-2351</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2351: [Uploader] rev 6621 of Uploader.js and Progress.js crash FF on the server</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2351">FLUID-2351</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Eli Cochran</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Eli%20Cochran">Eli Cochran</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-03-16T11:18:11.000-0400" prefix="">2009-03-16T11:18:11.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-03-26T10:24:01.000-0400" prefix="">2009-03-26T10:24:01.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.8</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Uploader</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>May be just a fluke with my server but I can consistently crash FF3 running the Uploader from my local server. This is revision 6621. Revision 6566 on builds.fluidproject.org does not display the same behavior.</p>
+<p>Lets see:<br>
+Server version only<br>
+Flash 10<br>
+Firefox 3 (I tried disabling all my add-ons, no luck)</p>
+<p>The reproducible steps are: <br>
+1. Click Browse Files<br>
+2. Add a few files to the queue<br>
+3. Click Upload<br>
+4. Let all files complete<br>
+5. Click Browse Files again<br>
+6. Add a few files<br>
+7. Click Upload</p>
+<p>Result: FF immediately exits</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF3/Flash 10, running uploader from server</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-2351/FLUID-2351.etc.a.patch">
+                            
+                                FLUID-2351.etc.a.patch
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23388">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2009-03-16T11:19:50.000-0400">2009-03-16T11:19:50.000-0400</relative-time></i></p>
+                        <p>rolled my server back to 6566 and the crash stopped. now rolling forward slowly to see where the big bad is.</p>
+
+                    </li>
+                    
+                    <li id="comment-23389">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2009-03-16T13:18:02.000-0400">2009-03-16T13:18:02.000-0400</relative-time></i></p>
+                        <p>commented out the offending lines in Uploader.js:</p>
+<p>that.locate("totalFileProgressBar").addClass(that.options.styles.completed);<br>
+that.locate("totalFileProgressBar").removeClass(that.options.styles.completed);</p>
+<p>and added a comment to that effect.</p>
+<p>This isn't a fix, it's just a temporary measure so that I can work on error messages</p>
+
+                    </li>
+                    
+                    <li id="comment-23390">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-03-16T14:29:31.000-0400">2009-03-16T14:29:31.000-0400</relative-time></i></p>
+                        <p>Bug Parade 1.0 release</p>
+
+                    </li>
+                    
+                    <li id="comment-23391">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2009-03-19T22:28:08.000-0400">2009-03-19T22:28:08.000-0400</relative-time></i></p>
+                        <p>Not sure that we can easily fix this one. Or even difficultly fix this one. </p>
+<p>Because in trying to fix this bug, I discovered that this bug and <a href="/browse/FLUID-2334/">FLUID-2334</a> (progress bars positioned in the wrong place) are related. </p>
+<p>So, I managed to reduce the FF crash from a crash to intermittent hang. Better, but suddenly <a href="/browse/FLUID-2334/">FLUID-2334</a>, which before I'd only seen in the demo version started happening in the server version. </p>
+<p>So what's happening is interesting. In both cases, bugs are being caused by SWFUpload's insistence on refreshing the Flash object on the page if anything in it's DOM ancestry changes. </p>
+<p>In the case of this crash, we get a funny race condition that crashes FF or occasionally hangs SWFUpload (not unlike the Pause bug by the way).</p>
+<p>In the case of <a href="/browse/FLUID-2334/">FLUID-2334</a>, we get recycled file ids because the refreshed Flash object doesn't remember that it had already used that id. </p>
+<p>This gives me a little insight on how to fix the bug... move the button out of the DOM ancestry... wonky... but it might work. Or I could move the styling for the total progress bar out of the ancestry, that might work as well.</p>
+<p>Anyway, I should have noticed a while back that when I commented out the feature to stop the crash, the other bug (<a href="/browse/FLUID-2334/">FLUID-2334</a>) stopped happening.</p>
+<p>Sorry for the ramble, but it's that kind of a bug! </p>
+
+                    </li>
+                    
+                    <li id="comment-23392">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2009-03-19T22:29:41.000-0400">2009-03-19T22:29:41.000-0400</relative-time></i></p>
+                        <p>Same feature, changing the styling of the Uploader footer causes both <a href="/browse/FLUID-2334/">FLUID-2334</a> and <a href="/browse/FLUID-2351/">FLUID-2351</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23393">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2009-03-20T20:15:00.000-0400">2009-03-20T20:15:00.000-0400</relative-time></i></p>
+                        <p>Uploading the <a href="/browse/FLUID-2351/">FLUID-2351</a>.etc.a.patch</p>
+<p>After much thought and a lot of code I figured out that if I used the existing progress bar to indicated total doness for the Uploader instead of changing the footer (where the Flash object lives) that I could avoid the FF crash and a bunch of other problems. It also opened up an opportunity to fix a bunch of other bugs. </p>
+<p>This patch fixes:</p>
+<ul>
+<li><a href="/browse/FLUID-2351/">FLUID-2351</a></li>
+<li><a href="/browse/FLUID-2334/">FLUID-2334</a></li>
+<li><a href="/browse/FLUID-1974/">FLUID-1974</a></li>
+</ul>
+<p>and moves <a href="/browse/FLUID-2355/">FLUID-2355</a> one more step closer to completion!</p>
+<p>Mr. Colin Clark participated in a walk-through of the code, I made the recommended changes, so I'm checking it in. Still should be reviewed.</p>
+
+                    </li>
+                    
+                    <li id="comment-23394">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2009-03-20T20:15:57.000-0400">2009-03-20T20:15:57.000-0400</relative-time></i></p>
+                        <p>Enclosed Fluid-2351.etc.a.patch fixes this bug. See comment above.</p>
+
+                    </li>
+                    
+                    <li id="comment-23395">
+                        <p class="mb-0"><b>Jacob Farber</b> <i>commented <relative-time datetime="2009-03-26T10:12:23.000-0400">2009-03-26T10:12:23.000-0400</relative-time></i></p>
+                        <p>Reviewed, and it works for me.</p>
+
+                    </li>
+                    
+                    <li id="comment-23397">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-03-26T10:24:01.000-0400">2009-03-26T10:24:01.000-0400</relative-time></i></p>
+                        <p>Verified fix using:</p>
+<p>FF3/Flash 10, running uploader from server </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-2350/"><span class="aria-hidden">←</span> Previous: FLUID-2350</a>
+        <a class="mx-1" href="/browse/FLUID-2352/">Next: FLUID-2352 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

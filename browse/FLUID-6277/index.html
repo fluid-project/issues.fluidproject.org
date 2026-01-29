@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6277  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6277 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6277/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6277/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6277/">FLUID-6277</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6277: Tests on instrumented code increased memory usage</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6277">FLUID-6277</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Do">Won't Do</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-04-28T13:34:59.801-0400" prefix="">2018-04-28T13:34:59.801-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:20.105-0400" prefix="">2024-07-22T10:35:20.105-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Testing Infrastructure</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>CI builds are failing intermittently a the "node tests" step due to out of memory errors:</p>
+<p><a href="https://buildkite.com/fluid-project/fluid-infusion/builds/207#1fea0683-0a51-4c27-907e-30534e2b4430">https://buildkite.com/fluid-project/fluid-infusion/builds/207#1fea0683-0a51-4c27-907e-30534e2b4430</a><br>
+<a href="https://buildkite.com/fluid-project/fluid-infusion/builds/208#9fbce57d-1493-460c-a449-868b8e625ae4">https://buildkite.com/fluid-project/fluid-infusion/builds/208#9fbce57d-1493-460c-a449-868b8e625ae4</a></p>
+<pre><code class="hljs">FATAL <span class="hljs-keyword">ERROR</span>: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap <span class="hljs-keyword">out</span> of <span class="hljs-keyword">memory</span>
+</code></pre>
+<p>Initial investigation shows that memory usage of the node process currently goes up to 1.4GB in CI:</p>
+<pre><code class="hljs"><span class="hljs-keyword">USER</span>       <span class="hljs-title">PID</span> %CPU %MEM    VSZ   RSS TTY      STAT <span class="hljs-literal">START</span>   TIME COMMAND
+vagrant  <span class="hljs-number">13778</span> <span class="hljs-number">89.3</span> <span class="hljs-number">72.2</span> <span class="hljs-number">2374052</span> <span class="hljs-number">1473868</span> pts/<span class="hljs-number">1</span> Dl+  <span class="hljs-number">12</span>:<span class="hljs-number">24</span>   <span class="hljs-number">1</span>:<span class="hljs-number">15</span> <span class="hljs-keyword">node</span> <span class="hljs-title">node_modules</span>/nyc/bin/nyc.js <span class="hljs-keyword">node</span> <span class="hljs-title">tests</span>/<span class="hljs-keyword">node</span><span class="hljs-title">-tests</span>/basic-<span class="hljs-keyword">node</span><span class="hljs-title">-tests</span>.js
+</code></pre>
+<p>Testing on a non-CI machine with a fresh repo clone, the "node tests" shows the memory usage is 600MB. After the "browser tests" are executed (and the code is instrumented), the memory usage increases to 900-1100MB in tests.</p>
+<p>CI re-uses the git repository from previous builds and cleans it using `git -fd`, leaving behind files that in .gitignore (like `reports` and `coverage`). Files in this directory will accumulate (since some of them are named after the firefox/chrome versions available at the time) and after a while, CI builds will start failing again. After a fresh clone in CI, the node process used 435MB.</p>
+<p><a href="https://buildkite.com/fluid-project/fluid-infusion/builds/211#a9ecd1c5-2a06-407c-bca1-fce9374a17ea">https://buildkite.com/fluid-project/fluid-infusion/builds/211#a9ecd1c5-2a06-407c-bca1-fce9374a17ea</a></p>
+<p>So, there are a few problems:</p>
+<ul>
+<li>Instrumented code is making node tests run dangerously close to the VM memory limit</li>
+<li>Accumulation of files is increasing memory usage of Instambul</li>
+<li>CI is re-using repository from previous runs (to improve build times) and leading to these issues</li>
+<li>CI steps (within a single build) could clean the repository but this breaks vagrant. A solution where CI excludes certain directories from `git clean` would work but could be fragile (since now the logic must be duplicated in build scripts and CI definition).</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22921">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-04-30T09:25:39.946-0400">2018-04-30T09:25:39.946-0400</relative-time></i></p>
+                        <p>Tony Atkins [RtF] is it necessary to run the browser tests before the node tests since, it seems, the code is instrumented in the former? <a href="https://botbot.me/freenode/fluid-tech/msg/99543548/">IRC dicussions</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22924">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-05-04T09:25:19.800-0400">2018-05-04T09:25:19.800-0400</relative-time></i></p>
+                        <p>While trying to implement per-pipeline configuration regarding how to clean files, I faced issue <a href="https://github.com/buildkite/agent/issues/756">https://github.com/buildkite/agent/issues/756</a>. For now the issue described in this JIRA remains and the buildkite agent is configured to use `git clean -fqd` which will leave behind the files in the "coverage" folder (which today was at 1.7GB and started triggering out of memory errors).</p>
+
+                    </li>
+                    
+                    <li id="comment-22927">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-05-07T05:32:33.979-0400">2018-05-07T05:32:33.979-0400</relative-time></i></p>
+                        <p>I responded to Giovanni Tirloni on IRC, but just to confirm here for the record, the browser and node instrumentation are completely separate.&#160; We use nyc for the node tests, it hooks Babel into "require" and instruments anything that matches the settings in .nycrc automatically.&#160; The order of the tests should not matter at all.</p>
+
+                    </li>
+                    
+                    <li id="comment-22930">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-05-22T11:44:31.265-0400">2018-05-22T11:44:31.265-0400</relative-time></i></p>
+                        <p>Tony Atkins [RtF] Thanks! I'm proposing in <a href="https://github.com/fluid-project/infusion/pull/900">PR#900</a> we delete the coverage and reports directories after each CI build.</p>
+<p>This shouldn't impact the work that is still to be completed for <a href="/browse/FLUID-6265/">FLUID-6265</a> in making the reports available somewhere.</p>
+
+                    </li>
+                    
+                    <li id="comment-22933">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-05-23T07:46:50.826-0400">2018-05-23T07:46:50.826-0400</relative-time></i></p>
+                        <p>Giovanni Tirloni, I commented on the pull, but I see that you've posted a lot of the details here.  If you were simply running `npm test`, then the coverage and reports directories should be cleared out by the `pretest` step.  I guess the CI config runs individual commands instead?  Anyway, if you just issue `npm run pretest` at the start of each run, that should have the same effect.</p>
+
+                    </li>
+                    
+                    <li id="comment-22938">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-06-28T10:58:39.623-0400">2018-06-28T10:58:39.623-0400</relative-time></i></p>
+                        <p>Mothballing this as the PR is almost 2 months old and it may become unnecessary with the adoption of containers instead of Vagrant. If there's enough interest it can be reopened. PR is being closed too.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6276/"><span class="aria-hidden">←</span> Previous: FLUID-6276</a>
+        <a class="mx-1" href="/browse/FLUID-6278/">Next: FLUID-6278 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

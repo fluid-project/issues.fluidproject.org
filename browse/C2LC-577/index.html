@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-577  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-577 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-577/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-577/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-577/">C2LC-577</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-577: Make $FlowFixMe exclusions more specific.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-577">C2LC-577</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>To Do</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter=Tony%20Atkins%20%5BRtF%5D">Tony Atkins [RtF]</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2022-01-05T09:57:10.897-0500" prefix="">2022-01-05T09:57:10.897-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2022-09-21T11:42:27.200-0400" prefix="">2022-09-21T11:42:27.200-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Environment</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When researching C2LC-576, I tried looking at the flow check output with warnings:</p>
+<pre><code class="hljs language-java">npx flow check --include-warnings
+</code></pre>
+<p>This revealed warnings about most of our <code>$FlowFixMe</code> usages.   We should, but are not specifying which errors to ignore, as in this example:</p>
+<pre><code class="hljs language-java">{
+      <span class="hljs-string">"kind"</span>:<span class="hljs-string">"infer"</span>,
+      <span class="hljs-string">"level"</span>:<span class="hljs-string">"warning"</span>,
+      <span class="hljs-string">"suppressions"</span>:[],
+      <span class="hljs-string">"message"</span>:[
+        {
+          <span class="hljs-string">"context"</span>:<span class="hljs-string">"        // $FlowFixMe event target doesn't know value"</span>,
+          <span class="hljs-string">"descr"</span>:<span class="hljs-string">"Suppression is missing a code. Please update this suppression to use an error code: `$FlowFixMe[prop-missing]`"</span>,
+          <span class="hljs-string">"type"</span>:<span class="hljs-string">"Blame"</span>,
+          <span class="hljs-string">"loc"</span>:{
+            <span class="hljs-string">"source"</span>:<span class="hljs-string">"/Users/duhrer/Source/rtf/c2lc-coding-environment/src/WorldSelector.js"</span>,
+            <span class="hljs-string">"type"</span>:<span class="hljs-string">"SourceFile"</span>,
+            <span class="hljs-string">"start"</span>:{<span class="hljs-string">"line"</span>:<span class="hljs-number">65</span>,<span class="hljs-string">"column"</span>:<span class="hljs-number">9</span>,<span class="hljs-string">"offset"</span>:<span class="hljs-number">1917</span>},
+            <span class="hljs-string">"end"</span>:{<span class="hljs-string">"line"</span>:<span class="hljs-number">65</span>,<span class="hljs-string">"column"</span>:<span class="hljs-number">53</span>,<span class="hljs-string">"offset"</span>:<span class="hljs-number">1962</span>}
+          },
+          <span class="hljs-string">"path"</span>:<span class="hljs-string">"/Users/duhrer/Source/rtf/c2lc-coding-environment/src/WorldSelector.js"</span>,
+          <span class="hljs-string">"line"</span>:<span class="hljs-number">65</span>,
+          <span class="hljs-string">"endline"</span>:<span class="hljs-number">65</span>,
+          <span class="hljs-string">"start"</span>:<span class="hljs-number">9</span>,
+          <span class="hljs-string">"end"</span>:<span class="hljs-number">53</span>
+        }
+      ],
+      <span class="hljs-string">"error_codes"</span>:[]
+    }
+</code></pre>
+<p>This ticket covers resolving these warnings.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-576/"><span class="aria-hidden">←</span> Previous: C2LC-576</a>
+        <a class="mx-1" href="/browse/C2LC-578/">Next: C2LC-578 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

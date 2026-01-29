@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6404  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6404 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6404/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6404/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6404/">FLUID-6404</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6404: Calling destroy() during onDestroy listener of createOnEvent component with subcomponents causes corruption of framework records</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6404">FLUID-6404</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-09-27T10:53:28.673-0400" prefix="">2019-09-27T10:53:28.673-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:30.453-0400" prefix="">2024-07-22T10:35:30.453-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This issue only affects the in-progress <a href="/browse/FLUID-6148/">FLUID-6148</a> branch.</p>
+<p>The following situation arose in updating the GPII electron app code to the upcoming framework. There is a survey dialog component,&#160;"gpii.app.surveyDialog" which by virtue of inherting from gpii.app.resizable, has a child component as follows:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"gpii.app.resizable"</span>, {
+    gradeNames: [<span class="hljs-string">"fluid.component"</span>],
+.... 
+    components: {
+        refreshDialogTimeout: {
+            type: <span class="hljs-string">"gpii.app.timer"</span>,
+            options: {
+                listeners: {
+                    onTimerFinished: {
+                        func: <span class="hljs-string">"gpii.app.resizable.refreshDialog"</span>,
+                        args: <span class="hljs-string">"{resizable}"</span>
+                    }
+                }
+            }
+        }
+    },
+}
+</code></pre>
+<p>This component is mounted in a "gpii.app.survey" as follows:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"gpii.app.survey"</span>, {
+    gradeNames: <span class="hljs-string">"gpii.app.dialogWrapper"</span>,
+    components: {
+        dialog: {
+            type: <span class="hljs-string">"gpii.app.surveyDialog"</span>,
+            options: {
+                config: {
+                    destroyOnClose: <span class="hljs-literal">true</span>,
+                    surveyUrl: <span class="hljs-string">"{arguments}.0"</span>,
+                    closeOnSubmit: <span class="hljs-string">"{arguments}.1"</span>,
+                    attrs: <span class="hljs-string">"{arguments}.2"</span>
+                }
+            }
+        }
+    },
+</code></pre>
+<p>where the "createOnEvent" annotation is added in by</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"gpii.app.dialogWrapper"</span>, {
+    gradeNames: <span class="hljs-string">"fluid.modelComponent"</span>,    components: {
+        dialog: {
+            type: <span class="hljs-string">"gpii.app.dialog"</span>,
+            createOnEvent: <span class="hljs-string">"onDialogCreate"</span>
+        }
+    },
+</code></pre>
+<p>Repeated invocation of "gpii.app.survey.show" as follows:</p>
+<pre><code class="hljs language-java">gpii.app.survey.show = function (that, options) {
+    that.events.onDialogCreate.fire(options.url, options.closeOnSubmit, options.window);
+};
+</code></pre>
+<p>Causes an unfortunate problem because of the following piece of initialisation, listening to the native dialog "close" event</p>
+<pre><code class="hljs language-java">gpii.app.dialog.positionOnInit = function (that) {
+    <span class="hljs-keyword">if</span> (that.options.config.positionOnInit) {
+        that.setPosition();
+    }    <span class="hljs-keyword">if</span> (that.options.config.destroyWithWindow) {
+        that.dialog.on(<span class="hljs-string">"closed"</span>, function () {
+            <span class="hljs-comment">// ensure there isn't some inconsistency</span>
+            <span class="hljs-comment">// it might be the case that the component is destroyed before</span>
+            <span class="hljs-comment">// the BrowserWindow itself</span>
+            <span class="hljs-keyword">if</span> (!fluid.isDestroyed(that)) {
+                that.destroy();
+            }
+        });
+    }
+};
+</code></pre>
+<p>which, in turn, is triggered by an "onDestroy" listener for the dialog as follows:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"gpii.app.dialog"</span>, {
+    gradeNames: [<span class="hljs-string">"gpii.app.localisedMessagesReceiver"</span>, <span class="hljs-string">"gpii.app.resizable"</span>],
+....
+     listeners: {
+....
+        <span class="hljs-string">"onDestroy.cleanupElectron"</span>: {
+            <span class="hljs-built_in">this</span>: <span class="hljs-string">"{that}.dialog"</span>,
+            method: <span class="hljs-string">"destroy"</span>,
+            priority: <span class="hljs-string">"last"</span>
+        }
+    }
+}
+</code></pre>
+<p>What happens is, since the destruction process is only in its first stages, the dialog component passes the "isDestroyed()" check and we then proceed to issue a fresh potentia for the component's destruction, which begins to execute synchronously.</p>
+<p>Unfortunately we are partway through the workflow in instantiator.clearComponent</p>
+<pre><code class="hljs language-java">that.clearComponent = function (component, name, child, options, nested, path) {
+
+....
+            <span class="hljs-keyword">if</span> (created) {
+                fluid.visitComponentChildren(child, function (gchild, gchildname, segs, i) {
+                    <span class="hljs-type">var</span> <span class="hljs-variable">parentPath</span> <span class="hljs-operator">=</span> that.composeSegments.apply(<span class="hljs-literal">null</span>, segs.slice(<span class="hljs-number">0</span>, i));
+                    that.clearComponent(child, gchildname, <span class="hljs-literal">null</span>, options, <span class="hljs-literal">true</span>, parentPath);
+                }, options, that.parseEL(childPath));
+                fluid.doDestroy(child, name, component); <span class="hljs-comment">// call "onDestroy", null out events and invokers, setting lifecycleStatus to "destroyed"</span>
+                options.destroyRecs.push({child: child, childShadow: childShadow, name: name, component: component, shadow: shadow});
+            } <span class="hljs-keyword">else</span> {
+                fluid.remove_if(childShadow.injectedPaths, function (troo, path) {
+                    <span class="hljs-keyword">return</span> path === childPath;
+                });
+            }
+....
+            delete that.pathToComponent[childPath];
+            delete shadow.childComponents[name];
+            <span class="hljs-keyword">if</span> (!nested) {
+                delete component[name]; <span class="hljs-comment">// there may be no entry - if creation is not concluded</span>
+                <span class="hljs-comment">// Do actual destruction for the whole tree here, including "afterDestroy" and deleting shadows</span>
+                fluid.each(options.destroyRecs, that.clearConcreteComponent);
+            }
+        };
+        <span class="hljs-keyword">return</span> that;
+</code></pre>
+<p>at the point of "fluid.doDestroy". Once this returns, we have actually recreated fresh components in the place of the old ones as a result of the recreation potentia queued by "createOnEvent" and so when we end up calling "delete that.pathToComponent[childPath];" when back on this stack frame we end up destroying the shadow records for the new component, creating a horrific "hole" in the component map.</p>
+<p>The soundest way of tackling this is to probably introduce a new component lifecycle stage "destroying" to match the existing one "constructing" which will also pave the way for asynchronous destruction which has been a framework feature requested for a while.</p>
+<p>We can then strengthen the checks in fluid.doDestroy and fluid.isDestroyed to take in this new lifecycle condition, whilst retaining the old strength in sites, e.g. that check whether invokers and listeners should be nulled out.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6403/"><span class="aria-hidden">←</span> Previous: FLUID-6403</a>
+        <a class="mx-1" href="/browse/FLUID-6405/">Next: FLUID-6405 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

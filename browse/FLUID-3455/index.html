@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3455  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3455 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3455/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3455/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3455/">FLUID-3455</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3455: temp file cleanup could be moved into the php code (postProcessor.php) and removed from scripted cron job</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3455">FLUID-3455</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Laurel%20Williams">Laurel Williams</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-12-18T15:44:22.000-0500" prefix="">2009-12-18T15:44:22.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T11:20:11.950-0500" prefix="">2014-03-03T11:20:11.950-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Infusion Builder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently, a shell script is used to clean up files in the tmp directory. This must be installed as a cron job. This task could be moved into the php code.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3455/FLUID-3455-1.patch.txt">
+                            
+                                FLUID-3455-1.patch.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13418">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2010-01-21T14:52:22.000-0500">2010-01-21T14:52:22.000-0500</relative-time></i></p>
+                        <p>I've added a patch <a href="/browse/FLUID-3455/">FLUID-3455</a>-1.patch.txt which includes code to remove the temp directories. This needs to be tested on unix for two reasons.<br>
+1) I hard coded "/" as the directory separator, as it didn't work to use DIRECTORY_SEPARATOR on windows, but "/" did work.<br>
+2) I ran across a windows maximum file length limitation of 260 characters and could not delete directories which had files in it with that length or more in the total path name. So the function deleteDirectories does not fully work for a windows machine if the path names are extremely long. Infusion is pretty deep, so this can happen. But mostly we want this function to work on unix, so this may not matter.</p>
+
+                    </li>
+                    
+                    <li id="comment-13420">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-03-03T11:20:11.949-0500">2014-03-03T11:20:11.949-0500</relative-time></i></p>
+                        <p>builder.fluidproject.org has been taken down and there are no immediate plans to replace it. Currently all builds are expected to be generated directly from the grunt build scripts.</p>
+<p><a href="http://fluid.2324889.n4.nabble.com/Infusion-Builder-issues-tp8926.html">http://fluid.2324889.n4.nabble.com/Infusion-Builder-issues-tp8926.html</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3454/"><span class="aria-hidden">←</span> Previous: FLUID-3454</a>
+        <a class="mx-1" href="/browse/FLUID-3456/">Next: FLUID-3456 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

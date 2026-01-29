@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5833  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5833 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5833/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5833/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5833/">FLUID-5833</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5833: The test written in IoC testing framework runs fine on its own but throws error in all-tests.html</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5833">FLUID-5833</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-12-18T12:07:06.556-0500" prefix="">2015-12-18T12:07:06.556-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-02-04T15:16:03.836-0500" prefix="">2016-02-04T15:16:03.836-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC Testing Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The test to re-produce this issue is,</p>
+<p><a href="https://github.com/cindyli/universal/blob/GPII-1245-odd/gpii/node_modules/gpii-oauth2/gpii-oauth2-authz-server/webTests/components/privacySettings/html/PrivacySettingsWithPrefs-test.html">https://github.com/cindyli/universal/blob/GPII-1245-odd/gpii/node_modules/gpii-oauth2/gpii-oauth2-authz-server/webTests/components/privacySettings/html/PrivacySettingsWithPrefs-test.html</a></p>
+<p>When running this test on its own, all tests pass. However, when including it as a part of all-tests.html (<a href="https://github.com/cindyli/universal/blob/GPII-1245-odd/gpii/node_modules/gpii-oauth2/gpii-oauth2-authz-server/webTests/all-tests.html">https://github.com/cindyli/universal/blob/GPII-1245-odd/gpii/node_modules/gpii-oauth2/gpii-oauth2-authz-server/webTests/all-tests.html</a>), a javascript error is thrown:</p>
+<p>Expected at least one assertion, but none were run - call expect(0) to accept zero assertions.<br>
+Source: <br>
+QUnit.asyncTest@<a href="http://localhost/gpii/node_modules/universal/node_modules/infusion/tests/lib/qunit/js/qunit.js:401:3">http://localhost/gpii/node_modules/universal/node_modules/infusion/tests/lib/qunit/js/qunit.js:401:3</a></p>
+<p>After investigation, the issue is caused by the missing "name" field in the "tests" block. Rewriting this block (<a href="https://github.com/cindyli/universal/blob/GPII-1245-odd/gpii/node_modules/gpii-oauth2/gpii-oauth2-authz-server/webTests/components/privacySettings/js/PrivacySettingsWithPrefsTests.js#L46-L51">https://github.com/cindyli/universal/blob/GPII-1245-odd/gpii/node_modules/gpii-oauth2/gpii-oauth2-authz-server/webTests/components/privacySettings/js/PrivacySettingsWithPrefsTests.js#L46-L51</a>) by adding a "name" field resolves the issue. </p>
+<p>The block that works:<br>
+tests: [{<br>
+name: "a test",<br>
+sequence: [{<br>
+....<br>
+}]<br>
+}]</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Firefox, Chrome. Didn't test with Safari and IE</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19946">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-12-18T14:58:51.002-0500">2015-12-18T14:58:51.002-0500</relative-time></i></p>
+                        <p>Thanks for this report, Cindy Li, which is very interesting. It was very helpful that you were able to find the clue that the missing "name" property in the test fixtures was the issue. My feeling is that this is an issue that has eventually been handed up to us from the underlying QUnit implementation, since there are many places in its code base where it makes a simple "truthy" check for config.currentModule - e.g.<br>
+<a href="https://github.com/fluid-project/infusion/blob/master/tests/lib/qunit/js/qunit.js#L1254">https://github.com/fluid-project/infusion/blob/master/tests/lib/qunit/js/qunit.js#L1254</a></p>
+<p>In the IoC testing framework we simply hand the "name" property on the test to jqUnit.module as so:</p>
+<p><a href="https://github.com/fluid-project/infusion/blob/master/tests/test-core/utils/js/IoCTestUtils.js#L588">https://github.com/fluid-project/infusion/blob/master/tests/test-core/utils/js/IoCTestUtils.js#L588</a></p>
+<p>which will probably screw up its bookkeeping about what tests are in progress. I think there is another error of this kind in the prefs framework tests which frequently causes mis-sequencing when I run all-tests and it will be great if we find both these issues have the same cause.</p>
+<p>My best thinking for a fix at present is for the IoC testing framework to validate that the "name" property of a test cases is not falsy before it hands it on to QUnit.</p>
+
+                    </li>
+                    
+                    <li id="comment-19948">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2016-02-04T15:15:59.387-0500">2016-02-04T15:15:59.387-0500</relative-time></i></p>
+                        <p>The pull request <a href="https://github.com/fluid-project/infusion/pull/661">https://github.com/fluid-project/infusion/pull/661</a> has been merged into the project repo @ 09fac7f7ca172073cd2628e8af578e47852b4977</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5832/"><span class="aria-hidden">←</span> Previous: FLUID-5832</a>
+        <a class="mx-1" href="/browse/FLUID-5834/">Next: FLUID-5834 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

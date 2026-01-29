@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6349  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6349 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6349/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6349/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6349/">FLUID-6349</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6349: Browser test duration showing as "undefined ms" </h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6349">FLUID-6349</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-11-04T15:12:54.669-0500" prefix="">2018-11-04T15:12:54.669-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:26.473-0400" prefix="">2024-07-22T10:35:26.473-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Testing Infrastructure</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The issue seems to have been happening for a while in CI but unfortunately, we don't keep enough build history to determine when it started:</p>
+<pre><code class="hljs"><span class="hljs-attribute">17</span>:<span class="hljs-number">24</span>:<span class="hljs-number">56</span>.<span class="hljs-number">143</span>:  Successfully reached the end of promise chain. Firing testem callback.
+<span class="hljs-attribute">ok</span> <span class="hljs-number">1</span> Firefox <span class="hljs-number">62</span>.<span class="hljs-number">0</span> -<span class="hljs-meta"> [undefined ms] - Framework Tests: /tests/framework-tests/core/html/Caching-test.html
+ok 2 Firefox 62.0 - [undefined ms] - Framework Tests: /tests/framework-tests/core/html/DataBinding-test.html
+ok 3 Firefox 62.0 - [undefined ms] - Framework Tests: /tests/framework-tests/core/html/DataSource-test.html
+...
+</span></code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23050">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-11-05T07:12:30.247-0500">2018-11-05T07:12:30.247-0500</relative-time></i></p>
+                        <p>Tony Atkins [RtF] is this something you may be able to track down?</p>
+
+                    </li>
+                    
+                    <li id="comment-23051">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-11-05T10:07:26.594-0500">2018-11-05T10:07:26.594-0500</relative-time></i></p>
+                        <p>Hi, Justin Obara.  This is definitely a problem with Testem and/or my wrapper around it.  I'm tracking the work here:</p>
+<p><a href="https://issues.gpii.net/browse/GPII-3500">https://issues.gpii.net/browse/GPII-3500</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23052">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-11-05T10:50:48.789-0500">2018-11-05T10:50:48.789-0500</relative-time></i></p>
+                        <p>Turns out it's a problem with our fork of QUnit using a different variable name here:</p>
+<p><a href="https://github.com/fluid-project/infusion/blob/78e76b7a5efa4016c24dba92a77ed25787deffc4/tests/lib/qunit/js/qunit.js#L344">https://github.com/fluid-project/infusion/blob/78e76b7a5efa4016c24dba92a77ed25787deffc4/tests/lib/qunit/js/qunit.js#L344</a></p>
+<p>It should be "runtime", if that's populated the timing data shows up with no changes to gpii-testem.  I'll create a quick pull against infusion to fix it.</p>
+
+                    </li>
+                    
+                    <li id="comment-23053">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-11-05T10:58:28.969-0500">2018-11-05T10:58:28.969-0500</relative-time></i></p>
+                        <p>See: <a href="https://github.com/fluid-project/infusion/pull/943">https://github.com/fluid-project/infusion/pull/943</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23054">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-11-06T09:44:21.639-0500">2018-11-06T09:44:21.639-0500</relative-time></i></p>
+                        <p>Merged PR ( <a href="https://github.com/fluid-project/infusion/pull/943">https://github.com/fluid-project/infusion/pull/943</a>&#160;) into the project repo at&#160;d726d64d66e997f011077443047b005a9b344b19</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6348/"><span class="aria-hidden">←</span> Previous: FLUID-6348</a>
+        <a class="mx-1" href="/browse/FLUID-6350/">Next: FLUID-6350 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

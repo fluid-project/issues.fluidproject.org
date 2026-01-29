@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VULAB-23  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VULAB-23 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VULAB-23/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VULAB-23/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VULAB" data-pagefind-filter="project">VULab</a></li>
+                <li><a href="/browse/VULAB-23/">VULAB-23</a></li>
+            </ol>
+        </nav>
+        <h1>VULAB-23: Licensing bugs</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VULAB-23">VULAB-23</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VULAB/?type=Sub-task">Sub-task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VULAB/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Blake E</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VULAB/?reporter=Blake%20E">Blake E</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-09-09T15:28:50.000-0400" prefix="">2008-09-09T15:28:50.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-04T09:05:09.573-0500" prefix="">2014-03-04T09:05:09.573-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Web</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>After inspecting code and having a local env. setup to develop VULab it was discovered that some of the licensing has been pasted with a bug that fails the php file in runtime.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/VULAB/VULAB-23/index.php-patch.txt">
+                            
+                                index.php-patch.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-27424">
+                        <p class="mb-0"><b>Blake E</b> <i>commented <relative-time datetime="2008-09-09T15:53:55.000-0400">2008-09-09T15:53:55.000-0400</relative-time></i></p>
+                        <p>upon further inspection it seems like the issue WAS actually isolated to a single file (thus far)<br>
+patch is attached for review / commit.</p>
+
+                    </li>
+                    
+                    <li id="comment-27425">
+                        <p class="mb-0"><b>Blake E</b> <i>commented <relative-time datetime="2008-09-09T15:56:16.000-0400">2008-09-09T15:56:16.000-0400</relative-time></i></p>
+                        <p>fixes the foreign character in htdocs/index.php that had the component crashing.</p>
+
+                    </li>
+                    
+                    <li id="comment-27426">
+                        <p class="mb-0"><b>Blake E</b> <i>commented <relative-time datetime="2008-09-09T15:56:46.000-0400">2008-09-09T15:56:46.000-0400</relative-time></i></p>
+                        <p>patch attached for review / comit</p>
+
+                    </li>
+                    
+                    <li id="comment-27427">
+                        <p class="mb-0"><b>Former user</b> <i>commented <relative-time datetime="2008-09-25T02:22:25.000-0400">2008-09-25T02:22:25.000-0400</relative-time></i></p>
+                        <p><a href="http://www.tamilstar.info/forums/index.php?showtopic=158648">http://www.tamilstar.info/forums/index.php?showtopic=158648</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158646">http://www.tamilstar.info/forums/index.php?showtopic=158646</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158643">http://www.tamilstar.info/forums/index.php?showtopic=158643</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158640">http://www.tamilstar.info/forums/index.php?showtopic=158640</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158638">http://www.tamilstar.info/forums/index.php?showtopic=158638</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158636">http://www.tamilstar.info/forums/index.php?showtopic=158636</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158632">http://www.tamilstar.info/forums/index.php?showtopic=158632</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158631">http://www.tamilstar.info/forums/index.php?showtopic=158631</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158628">http://www.tamilstar.info/forums/index.php?showtopic=158628</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158625">http://www.tamilstar.info/forums/index.php?showtopic=158625</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158621">http://www.tamilstar.info/forums/index.php?showtopic=158621</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158619">http://www.tamilstar.info/forums/index.php?showtopic=158619</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158616">http://www.tamilstar.info/forums/index.php?showtopic=158616</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158613">http://www.tamilstar.info/forums/index.php?showtopic=158613</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158612">http://www.tamilstar.info/forums/index.php?showtopic=158612</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158608">http://www.tamilstar.info/forums/index.php?showtopic=158608</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158607">http://www.tamilstar.info/forums/index.php?showtopic=158607</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158604">http://www.tamilstar.info/forums/index.php?showtopic=158604</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158601">http://www.tamilstar.info/forums/index.php?showtopic=158601</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158598">http://www.tamilstar.info/forums/index.php?showtopic=158598</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158595">http://www.tamilstar.info/forums/index.php?showtopic=158595</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158592">http://www.tamilstar.info/forums/index.php?showtopic=158592</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158590">http://www.tamilstar.info/forums/index.php?showtopic=158590</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158588">http://www.tamilstar.info/forums/index.php?showtopic=158588</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158584">http://www.tamilstar.info/forums/index.php?showtopic=158584</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158580">http://www.tamilstar.info/forums/index.php?showtopic=158580</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158575">http://www.tamilstar.info/forums/index.php?showtopic=158575</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158573">http://www.tamilstar.info/forums/index.php?showtopic=158573</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158570">http://www.tamilstar.info/forums/index.php?showtopic=158570</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158430">http://www.tamilstar.info/forums/index.php?showtopic=158430</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158426">http://www.tamilstar.info/forums/index.php?showtopic=158426</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158422">http://www.tamilstar.info/forums/index.php?showtopic=158422</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158419">http://www.tamilstar.info/forums/index.php?showtopic=158419</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158415">http://www.tamilstar.info/forums/index.php?showtopic=158415</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158412">http://www.tamilstar.info/forums/index.php?showtopic=158412</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158407">http://www.tamilstar.info/forums/index.php?showtopic=158407</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158405">http://www.tamilstar.info/forums/index.php?showtopic=158405</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158405">http://www.tamilstar.info/forums/index.php?showtopic=158405</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158402">http://www.tamilstar.info/forums/index.php?showtopic=158402</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158399">http://www.tamilstar.info/forums/index.php?showtopic=158399</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158397">http://www.tamilstar.info/forums/index.php?showtopic=158397</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158394">http://www.tamilstar.info/forums/index.php?showtopic=158394</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158391">http://www.tamilstar.info/forums/index.php?showtopic=158391</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158390">http://www.tamilstar.info/forums/index.php?showtopic=158390</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158386">http://www.tamilstar.info/forums/index.php?showtopic=158386</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158382">http://www.tamilstar.info/forums/index.php?showtopic=158382</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158378">http://www.tamilstar.info/forums/index.php?showtopic=158378</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158367">http://www.tamilstar.info/forums/index.php?showtopic=158367</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158356">http://www.tamilstar.info/forums/index.php?showtopic=158356</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158348">http://www.tamilstar.info/forums/index.php?showtopic=158348</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158330">http://www.tamilstar.info/forums/index.php?showtopic=158330</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158303">http://www.tamilstar.info/forums/index.php?showtopic=158303</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158289">http://www.tamilstar.info/forums/index.php?showtopic=158289</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158273">http://www.tamilstar.info/forums/index.php?showtopic=158273</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=158210">http://www.tamilstar.info/forums/index.php?showtopic=158210</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157908">http://www.tamilstar.info/forums/index.php?showtopic=157908</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157905">http://www.tamilstar.info/forums/index.php?showtopic=157905</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157903">http://www.tamilstar.info/forums/index.php?showtopic=157903</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157902">http://www.tamilstar.info/forums/index.php?showtopic=157902</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157899">http://www.tamilstar.info/forums/index.php?showtopic=157899</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157896">http://www.tamilstar.info/forums/index.php?showtopic=157896</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157894">http://www.tamilstar.info/forums/index.php?showtopic=157894</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157889">http://www.tamilstar.info/forums/index.php?showtopic=157889</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157886">http://www.tamilstar.info/forums/index.php?showtopic=157886</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157883">http://www.tamilstar.info/forums/index.php?showtopic=157883</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157881">http://www.tamilstar.info/forums/index.php?showtopic=157881</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157878">http://www.tamilstar.info/forums/index.php?showtopic=157878</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157875">http://www.tamilstar.info/forums/index.php?showtopic=157875</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157872">http://www.tamilstar.info/forums/index.php?showtopic=157872</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157871">http://www.tamilstar.info/forums/index.php?showtopic=157871</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157868">http://www.tamilstar.info/forums/index.php?showtopic=157868</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157864">http://www.tamilstar.info/forums/index.php?showtopic=157864</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157863">http://www.tamilstar.info/forums/index.php?showtopic=157863</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157859">http://www.tamilstar.info/forums/index.php?showtopic=157859</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157710">http://www.tamilstar.info/forums/index.php?showtopic=157710</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157708">http://www.tamilstar.info/forums/index.php?showtopic=157708</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157683">http://www.tamilstar.info/forums/index.php?showtopic=157683</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157680">http://www.tamilstar.info/forums/index.php?showtopic=157680</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157673">http://www.tamilstar.info/forums/index.php?showtopic=157673</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157671">http://www.tamilstar.info/forums/index.php?showtopic=157671</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157668">http://www.tamilstar.info/forums/index.php?showtopic=157668</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157660">http://www.tamilstar.info/forums/index.php?showtopic=157660</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157643">http://www.tamilstar.info/forums/index.php?showtopic=157643</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157628">http://www.tamilstar.info/forums/index.php?showtopic=157628</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157616">http://www.tamilstar.info/forums/index.php?showtopic=157616</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157601">http://www.tamilstar.info/forums/index.php?showtopic=157601</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157569">http://www.tamilstar.info/forums/index.php?showtopic=157569</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157546">http://www.tamilstar.info/forums/index.php?showtopic=157546</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157540">http://www.tamilstar.info/forums/index.php?showtopic=157540</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157531">http://www.tamilstar.info/forums/index.php?showtopic=157531</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157490">http://www.tamilstar.info/forums/index.php?showtopic=157490</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157079">http://www.tamilstar.info/forums/index.php?showtopic=157079</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157076">http://www.tamilstar.info/forums/index.php?showtopic=157076</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157073">http://www.tamilstar.info/forums/index.php?showtopic=157073</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157069">http://www.tamilstar.info/forums/index.php?showtopic=157069</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157065">http://www.tamilstar.info/forums/index.php?showtopic=157065</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157063">http://www.tamilstar.info/forums/index.php?showtopic=157063</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157063">http://www.tamilstar.info/forums/index.php?showtopic=157063</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157059">http://www.tamilstar.info/forums/index.php?showtopic=157059</a><br>
+<a href="http://www.tamilstar.info/forums/index.php?showtopic=157056">http://www.tamilstar.info/forums/index.php?showtopic=157056</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VULAB-22/"><span class="aria-hidden">←</span> Previous: VULAB-22</a>
+        <a class="mx-1" href="/browse/VULAB-24/">Next: VULAB-24 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

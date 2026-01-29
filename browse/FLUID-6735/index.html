@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6735  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6735 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6735/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6735/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6735/">FLUID-6735</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6735: Distributing an implicit nested model relay cause a circular reference</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6735">FLUID-6735</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2022-05-12T14:16:17.004-0400" prefix="">2022-05-12T14:16:17.004-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:21.082-0400" prefix="">2024-07-22T10:35:21.082-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This was first discovered while trying to distribute the panelIndex to the local model path in UIO+ which uses a fullNOPreview prefs editor loader but displayed similar to the separated panel prefs editor. This occurred as the UIO was configured with a call to fluid.uiOptions and the options set on the prefsEditor option which is distributed down to the prefsEditor component.</p>
+<p>The result is a circular reference error like: "Error in component configuration - a circular reference was found during evaluation of path segment "model of path ,model,panelIndex".</p>
+<p>Some work arounds include supplying this configuration as part of a gradeName that is merged on top. Or distributing a record containing the specific configuration to the component's model.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25078">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2022-05-12T14:22:54.977-0400">2022-05-12T14:22:54.977-0400</relative-time></i></p>
+                        <p>Added a test case <a href="https://github.com/fluid-project/infusion/pull/1080">https://github.com/fluid-project/infusion/pull/1080</a></p>
+
+                    </li>
+                    
+                    <li id="comment-25079">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2022-07-05T09:00:36.726-0400">2022-07-05T09:00:36.726-0400</relative-time></i></p>
+                        <p>From comment thread on pull #1080:</p>
+<p>From amb26:</p>
+<p>Cheers&#160;<a href="https://github.com/jobara">@jobara</a>&#160;- I reworked this test case in&#160;<a href="https://github.com/fluid-project/infusion/pull/1081">#1081</a>&#160;which resolves the circular reference problem. As I remarked in the channel, the problem is caused by the "misaligned" material in the parent grade which can't avoid trying to resolve a reference into its model from its options as it constructs, which is not permitted in Infusion. If/when Infusion 6 is written, this class of problem will be removed by removing the distinction between "models" and "general options" but until then I'm not sure we can do much better about issuing a helpful diagnostic although I can try. Hopefully this reworking is good enough to let you make progress on your panelIndex issue</p>
+<p>From jobara:</p>
+<p><a href="https://github.com/amb26">@amb26</a>&#160;I was able to get past this issue in UIO+ by passing in a grade that contained the model configuration. Similar to what you described except I used the gradeNames directly.</p>
+
+                    </li>
+                    
+                    <li id="comment-25080">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2022-07-05T09:01:28.511-0400">2022-07-05T09:01:28.511-0400</relative-time></i></p>
+                        <p>Closed since we found an effective workaround and big improvements in this experience will need to wait for a framework rewrite</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6734/"><span class="aria-hidden">←</span> Previous: FLUID-6734</a>
+        <a class="mx-1" href="/browse/FLUID-6736/">Next: FLUID-6736 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-886  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-886 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-886/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-886/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-886/">FLUID-886</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-886: 'tab' character is displayed as single space</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-886">FLUID-886</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-07-10T14:21:37.000-0400" prefix="">2008-07-10T14:21:37.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-01-16T09:25:33.038-0500" prefix="">2017-01-16T09:25:33.038-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                            <li>0.3</li>
+                            
+                            <li>0.4beta1</li>
+                            
+                            <li>0.4</li>
+                            
+                            <li>0.5</li>
+                            
+                            <li>0.6beta1</li>
+                            
+                            <li>0.6</li>
+                            
+                            <li>0.7</li>
+                            
+                            <li>0.8</li>
+                            
+                            <li>1.0</li>
+                            
+                            <li>1.1</li>
+                            
+                            <li>1.1.1</li>
+                            
+                            <li>1.2</li>
+                            
+                            <li>1.3</li>
+                            
+                            <li>1.4</li>
+                            
+                            <li>1.5</li>
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When cutting and pasting a 'tab' character into an in-line edit field, the tab is displayed as a single space outside of edit mode.</p>
+<p>Steps to reproduce:</p>
+<p>1) Open the in-line edit demo from the daily build site:<br>
+<a href="http://build.fluidproject.org/infusion/demos/inlineEdit/">http://build.fluidproject.org/infusion/demos/inlineEdit/</a></p>
+<p>2) Cut and paste this text "before tab		after tab" into an in-line edit field.<br>
+(Alternatively, you can cut and paste from a text editor. Make sure "Tabs to spaces" feature is disabled).</p>
+<p>3) Press 'enter' to leave edit mode. Notice that the tab has been reduced to a single space.</p>
+<p>If you re-enter edit mode, notice that the tab spacing is still there.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF 50 (macOS 10.12)<br>
+FF2, FF3 (Mac OS X, Win XP)<br>
+Chrome 35, FF 30, Safari 7 (Mac OS 10.9)<br>
+IE 11 (Win 7)</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-886/screenshot-1.jpg">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-886/screenshot-1.jpg" alt="screenshot-1.jpg">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-886/screenshot-2.jpg">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-886/screenshot-2.jpg" alt="screenshot-2.jpg">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20309">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-07-10T14:23:02.000-0400">2008-07-10T14:23:02.000-0400</relative-time></i></p>
+                        <p>'screenshot-1' shows the tab spacing while in edit mode.</p>
+
+                    </li>
+                    
+                    <li id="comment-20312">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-07-10T14:24:40.000-0400">2008-07-10T14:24:40.000-0400</relative-time></i></p>
+                        <p>'screenshot-2' shows the 'tab' spacing reduced to a single space, when out of edit mode</p>
+
+                    </li>
+                    
+                    <li id="comment-20314">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-10-31T09:33:42.000-0400">2008-10-31T09:33:42.000-0400</relative-time></i></p>
+                        <p>design-watched</p>
+
+                    </li>
+                    
+                    <li id="comment-20316">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-11-13T21:32:24.000-0500">2008-11-13T21:32:24.000-0500</relative-time></i></p>
+                        <p>This behaviour is part of standard HTML semantics and should not be fixed. The contract of InlineEdit with a single text field is that the value stored as markup (element.text()) should be identical with that which was stored in field.value for the editable field. A standard aspect of HTML is that whitespace is normalised in this way when rendered.</p>
+
+                    </li>
+                    
+                    <li id="comment-20318">
+                        <p class="mb-0"><b>Daphne Ogle</b> <i>commented <relative-time datetime="2008-11-18T17:39:31.000-0500">2008-11-18T17:39:31.000-0500</relative-time></i></p>
+                        <p>I'd like to revisit this bug (along with 887).  The main goal here is display exactly what the user typed in.  I understand from Eli that html doesn't even recognize tabs.  How about if we convert tabs to 4 spaces?  Eli says this is what many wikis do.  4 spaces could be the default behavior but this needs to be configurable to allow for things like tab delimitation. </p>
+<p>The other thing to remember about this is that the only time there will be a tab is if it is copy and pasted in since a tab currently takes the user to the next field.</p>
+
+                    </li>
+                    
+                    <li id="comment-20320">
+                        <p class="mb-0"><b>Daphne Ogle</b> <i>commented <relative-time datetime="2009-03-13T15:17:13.000-0400">2009-03-13T15:17:13.000-0400</relative-time></i></p>
+                        <p>Unassigning so this can go into the development pool of bugs.</p>
+
+                    </li>
+                    
+                    <li id="comment-20322">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2011-01-04T13:34:41.671-0500">2011-01-04T13:34:41.671-0500</relative-time></i></p>
+                        <p>Still an issue in Infusion 1.3.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-885/"><span class="aria-hidden">←</span> Previous: FLUID-885</a>
+        <a class="mx-1" href="/browse/FLUID-887/">Next: FLUID-887 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

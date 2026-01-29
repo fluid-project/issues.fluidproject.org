@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4428  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4428 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4428/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4428/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4428/">FLUID-4428</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4428: Can't add listeners through options</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4428">FLUID-4428</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-09-06T14:22:27.911-0400" prefix="">2011-09-06T14:22:27.911-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-09-07T13:23:14.618-0400" prefix="">2011-09-07T13:23:14.618-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>I am unable to add an 'onSave' listener to uiOptions using the munged options as follows:<br>
+fluid.uiOptions.fullNoPreview("#test", {<br>
+prefix: "yada/yada",<br>
+uiOptions: {<br>
+options: {<br>
+listeners: {<br>
+onSave: function () {<br>
+console.log("onSave event fired");<br>
+}<br>
+}<br>
+}<br>
+}<br>
+});<br>
+The event fires, but it appears that the listener was never registered.</p>
+<p>This functionality worked before the <a href="/browse/FLUID-4409/">FLUID-4409</a> branch was merged. I tested the project repo immediately before the merge and it worked, and after the merge it didn't.</p>
+<p>Bug Parade Infusion</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14681">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2011-09-06T15:23:51.206-0400">2011-09-06T15:23:51.206-0400</relative-time></i></p>
+                        <p>The change in the merged branch that seems to have precipitated this bug is in UIOptions.js fluid.uiOptions.mapOptions(): The code that processes the user-passed-in options is now wrapped in a test: if (typeof(source) === "string").</p>
+<p>The 'source' in this case is the right-hand-side of a config key/value pair. I'm not 100% sure how the options munging works, but from what I can see, requiring the right-hand-side to be a string is reasonable. If this is true, then the problem lies in the fact that the two full-page version of UI Options do not do this in their config: they have full JS objects.</p>
+
+                    </li>
+                    
+                    <li id="comment-14682">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2011-09-07T12:13:33.861-0400">2011-09-07T12:13:33.861-0400</relative-time></i></p>
+                        <p>Pull request <a href="https://github.com/fluid-project/infusion/pull/155">https://github.com/fluid-project/infusion/pull/155</a> merged into project repo at c998d2b4492aaa6932ad3e0f70f7a64a86729260</p>
+
+                    </li>
+                    
+                    <li id="comment-14683">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2011-09-07T13:23:14.613-0400">2011-09-07T13:23:14.613-0400</relative-time></i></p>
+                        <p>A second pull request which allows direct options was merged into the project repo at a29adc3ebd03ea650d67e3e9981f106474713191</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4427/"><span class="aria-hidden">←</span> Previous: FLUID-4427</a>
+        <a class="mx-1" href="/browse/FLUID-4429/">Next: FLUID-4429 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

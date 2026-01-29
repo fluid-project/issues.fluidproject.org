@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5737  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5737 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5737/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5737/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5737/">FLUID-5737</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5737: Uploading size is higher than total size</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5737">FLUID-5737</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-08-07T16:31:03.456-0400" prefix="">2015-08-07T16:31:03.456-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-07-29T01:30:31.674-0400" prefix="">2021-07-29T01:30:31.674-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Uploader</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Steps to reproduce:</p>
+<p>1) Open the uploader demo<br>
+<a href="http://build.fluidproject.org/infusion/demos/uploader/">http://build.fluidproject.org/infusion/demos/uploader/</a></p>
+<p>2) Add several files to the queue and start the upload</p>
+<p>3) While pause the upload and add some more files</p>
+<p>4) Restart the upload.<br>
+Notice that while the upload is happening the uploaded size goes higher than the total size. After the queue has finished the uploaded and total size are the same again.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Chrome, Firefox, Safari</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-5737/screenshot.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-5737/screenshot.png" alt="screenshot.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25540">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-08-07T16:31:48.685-0400">2015-08-07T16:31:48.685-0400</relative-time></i></p>
+                        <p>screenshot.png shows the uploaded size being larger than the total size.</p>
+
+                    </li>
+                    
+                    <li id="comment-25541">
+                        <p class="mb-0"><b>Neel Dalsania</b> <i>commented <relative-time datetime="2016-03-06T14:39:56.233-0500">2016-03-06T14:39:56.233-0500</relative-time></i></p>
+                        <p>I think, I resolved this issue<br>
+There was problem with the uploadingSize variable present in fluid.uploader.updateTotalProgress, instead of sum of batch.totalBytesUploaded and that.queue.sizeOfUploadedFiles() if we use that.queue.sizeOfUploadedFiles() only then it works perfectly</p>
+<p>Should i sent a PR for the issue</p>
+
+                    </li>
+                    
+                    <li id="comment-25542">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-03-07T10:45:35.446-0500">2016-03-07T10:45:35.446-0500</relative-time></i></p>
+                        <p>Neel Dalsania feel free to submit a pull request. The proposed fix can be discussed further then.</p>
+
+                    </li>
+                    
+                    <li id="comment-25543">
+                        <p class="mb-0"><b>Neel Dalsania</b> <i>commented <relative-time datetime="2016-03-09T00:09:36.826-0500">2016-03-09T00:09:36.826-0500</relative-time></i></p>
+                        <p>Pull request : <a href="https://github.com/fluid-project/infusion/pull/684">https://github.com/fluid-project/infusion/pull/684</a></p>
+
+                    </li>
+                    
+                    <li id="comment-25544">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-11-08T12:32:00.074-0500">2016-11-08T12:32:00.074-0500</relative-time></i></p>
+                        <p>These seems to happen if you remove files as well.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5736/"><span class="aria-hidden">←</span> Previous: FLUID-5736</a>
+        <a class="mx-1" href="/browse/FLUID-5738/">Next: FLUID-5738 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

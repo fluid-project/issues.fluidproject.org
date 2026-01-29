@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-160  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-160 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-160/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-160/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-160/">FLOE-160</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-160: Change the namespace to gpii.metadata and directory restructure</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-160">FLOE-160</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLOE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-01-15T10:39:45.491-0500" prefix="">2014-01-15T10:39:45.491-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-08-14T14:19:47.836-0400" prefix="">2014-08-14T14:19:47.836-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Metadata</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently the metadata component uses the fluid.metadata namespace. Since this is happening in a different repo and isn't directly part of Infusion it seems to make more sense to use a different namespace. Since the work will be part of gpii, we should use that names space.</p>
+<p>fluid.metadata -&gt; gpii.metadata</p>
+<p>Moreover, the repo currently contains both metadata and feedback demos. To encapsulate the files for these demos, rec-construct directory structures to use different component sub-folders.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-11256">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-08-08T12:11:30.365-0400">2014-08-08T12:11:30.365-0400</relative-time></i></p>
+                        <p>Submitted a pull request: <a href="https://github.com/fluid-project/metadata/pull/32">https://github.com/fluid-project/metadata/pull/32</a></p>
+
+                    </li>
+                    
+                    <li id="comment-11257">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-08-14T10:15:22.080-0400">2014-08-14T10:15:22.080-0400</relative-time></i></p>
+                        <p>Submitted a pull request against build.fluidproject.org to update the link to the metadata authoring demo and add a link to the metadata feedback demo: <a href="https://github.com/fluid-project/build.fluidproject.org/pull/12">https://github.com/fluid-project/build.fluidproject.org/pull/12</a></p>
+
+                    </li>
+                    
+                    <li id="comment-11258">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-08-14T12:30:13.689-0400">2014-08-14T12:30:13.689-0400</relative-time></i></p>
+                        <p>merged pull request ( <a href="https://github.com/fluid-project/metadata/pull/32">https://github.com/fluid-project/metadata/pull/32</a> ) into the project repo at c747311198a803faa7d16a561bb7df412612b6ce</p>
+
+                    </li>
+                    
+                    <li id="comment-11259">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-08-14T13:13:00.779-0400">2014-08-14T13:13:00.779-0400</relative-time></i></p>
+                        <p>Submitted a pull request <a href="https://github.com/fluid-project/metadata/pull/34">https://github.com/fluid-project/metadata/pull/34</a> to remove pouchDBDataSource.js from the metadata component js folder.</p>
+
+                    </li>
+                    
+                    <li id="comment-11260">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-08-14T13:44:06.868-0400">2014-08-14T13:44:06.868-0400</relative-time></i></p>
+                        <p>Merged pull request ( <a href="https://github.com/fluid-project/metadata/pull/34">https://github.com/fluid-project/metadata/pull/34</a> ) into the project repo at 1fc47c6cae11b79ed7f454a1552653213158ac70</p>
+
+                    </li>
+                    
+                    <li id="comment-11261">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-08-14T14:19:39.922-0400">2014-08-14T14:19:39.922-0400</relative-time></i></p>
+                        <p>Merged pull request ( <a href="https://github.com/fluid-project/build.fluidproject.org/pull/12">https://github.com/fluid-project/build.fluidproject.org/pull/12</a> ) into the build.fluidproject.org repo at 49e132b4090b0352869e554a00b835229271e506</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-159/"><span class="aria-hidden">←</span> Previous: FLOE-159</a>
+        <a class="mx-1" href="/browse/FLOE-161/">Next: FLOE-161 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

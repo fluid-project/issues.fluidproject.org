@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3664  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3664 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3664/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3664/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3664/">FLUID-3664</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3664: Screen reader a11y and usability issues with Uploader (esp. keyboard navigation problems, lack of feedback, lack of overall orientation for screen reader users)</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3664">FLUID-3664</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jan%20Richards">Jan Richards</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-06-04T16:35:45.864-0400" prefix="">2010-06-04T16:35:45.864-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-01-05T15:24:42.194-0500" prefix="">2011-01-05T15:24:42.194-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Uploader</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>A.2 WindowsXP+Firefox+NVDA</p>
+<p>Browser: Firefox v3.5.9<br>
+Screen Reader: NVDA 2010.1<br>
+Tester: Jan Richards</p>
+<p>Overall:</p>
+<ul>
+<li>instructions would be helpful [<a href="/browse/FLUID-664/">FLUID-664</a>] <a href="/browse/FLUID-1829/">FLUID-1829</a></li>
+</ul>
+<p>FLASH VERSION:</p>
+<p>In BROWSE mode</p>
+<ul>
+<li>can use tab or arrow to move through the UI</li>
+<li>but speech feedback is hard to understand [similar to <a href="/browse/FLUID-665/">FLUID-665</a>]</li>
+<li>unable to select the "Browse" button with either ENTER or SPACEBAR [<a href="/browse/FLUID-2031/">FLUID-2031</a>]<br>
+ (I had proceed by using the mouse to press "Browse" or "Add More")</li>
+<li>using TAB unable to delete the file added, but was able to do with arrow keys</li>
+<li>"Upload" button worked</li>
+</ul>
+<p>In FOCUS mode</p>
+<ul>
+<li>can't TAB to "Add More"</li>
+<li>even less intelligible audio output</li>
+<li>"Upload" button worked</li>
+</ul>
+<p>STANDARD SINGLE FILE VERSION:</p>
+<ul>
+<li>worked fairly well</li>
+<li>but "Save" moved me to the Flash version so I wasn't sure what feedback is provided automatically by the widget [similar to <a href="/browse/FLUID-662/">FLUID-662</a>, <a href="/browse/FLUID-2849/">FLUID-2849</a>]<br>
+A.3 WindowsXP+Firefox+JAWS</li>
+</ul>
+<p>Browser: Firefox v3.5.8</p>
+<p>Screen Reader: JAWS 10<br>
+Tester: Phil Richards</p>
+<p>Flash Uploader</p>
+<p>PC Cursor Mode</p>
+<ul>
+<li>Can only use tab to move through interface</li>
+<li>When the "Choose Browse files" box, the audio only says "queue of files to upload" and gives no other indication of what is in the box or of the browse files link [<a href="/browse/FLUID-3835/">FLUID-3835</a>]</li>
+<li>Can't activate "Browse files" link with enter or space, only with mouse</li>
+<li>No audio feedback on page at all until a file is selected, but then only audio is "upload button"</li>
+<li>Can select files with keyboard, upload button works by pressing enter or space, can tab or arrow on to button</li>
+<li>After clicking upload audio just says "stop upload button", gives no indication that it has been clicked or that a file has been uploaded<br>
+Can use enter or space to activate the "switch to standard single file uploader" link but only after tabbing to select the link</li>
+<li>No audio indication that the page has changed</li>
+</ul>
+<p>Jaws Mode</p>
+<ul>
+<li>No indication that "browse files" is a link [<a href="/browse/FLUID-704/">FLUID-704</a>]</li>
+<li>Space will activate "browse files", enter will not<br>
+Can't select documents to upload with the keyboard</li>
+<li>If you highlight a document with the mouse, enter can be used to select it</li>
+</ul>
+<ul>
+<li>Can use enter or space to activate upload button</li>
+<li>Audio will say "upload button" and then "stop upload button" when it is clicked, but no indication that it has been clicked or that a document has been uploaded</li>
+<li>Focus is automatically placed on upload button after a file is selected; if you use the keyboard to move focus from this button, it cannot be activated again by the keyboard if you move the cursor back to it.  Tabbing back to the button does allow it to be activated with enter or space</li>
+<li>Can only use space to activate the "switch to standard single file uploader" link</li>
+<li>No audio indication that the page has changed, except that it will read the link that the cursor is over (ie switch to standard uploader or switch to flash uploader depending on which page it is on); however, it sometimes gets stuck in a loop, so it will say "switch to the standard single file uploader read only edit read only" followed by the url, and continues to repeat this until the link is clicked or the cursor is moved.  This does not always happen and I am not sure what triggers it.</li>
+</ul>
+<p> <br>
+Virtual Cursor</p>
+<ul>
+<li>Can't activate "browse files" link with keyboard</li>
+<li>Can tab into file list and then use keyboard to select file</li>
+<li>Can activate Upload button with enter or space</li>
+<li>Audio will say "upload button" and then "stop upload button" when it is clicked, but no indication that it has been clicked or that a document has been uploaded</li>
+<li>Can use enter or space to activate the "switch to standard single file uploader" link but only after tabbing to select the link</li>
+<li>No audio indication that the page has changed</li>
+<li>Sometimes audio will only say "flash movie start" or "flash movie end"</li>
+</ul>
+<p>Standard Uploader</p>
+<p>PC Cursor Mode</p>
+<ul>
+<li>Can only tab through interface, arrow keys don't work</li>
+<li>Can activate browse and save buttons with enter or space, but sometimes you have to press enter twice to activate buttons</li>
+<li>Usually no audio feedback on page at all except when pressing left/right arrows which causes audio to say "blank", but sometimes the audio will read the name of links and buttons when you tab to them, I don't know what causes it to read or not read</li>
+<li>Can tab into file list and move with arrows, can activate with enter or space</li>
+</ul>
+<p>Jaws Mode</p>
+<ul>
+<li>Using arrows to move the cursor below the "save" button causes audio to say "graphic 896"</li>
+<li>Can activate browse button with enter or space, though enter does not always work</li>
+<li>Can't select documents to upload with the keyboard</li>
+<li>If you highlight a document with the mouse, enter can be used to select it</li>
+<li>Once a file is listed in the box, the "browse" button is highlighted by default. Pressing enter anywhere on the screen will activate this button, even if the cursor is on the "save" button. Space will activate the "save" button even if the "upload" button is highlighted.  Tabbing to the save button allows it to be activated with enter.</li>
+<li>Audio will not read the full name of the file in the box, only what is visible on screen. It will also include audio indicating where the cursor is, but this will override text under the cursor.  This results in something like "F colon backslash graphic 971 cuments and settin browse"</li>
+<li>No audio indication that a file has been uploaded</li>
+</ul>
+<p>Virtual Cursor</p>
+<ul>
+<li>Can activate "browse" button with enter or space</li>
+<li>Sometimes arrows do not work at all, I'm not sure why<br>
+A.4 WindowsXP+IE+NVDA</li>
+</ul>
+<p>Browser: IE8</p>
+<p>Screen Reader: NVDA 2010.1<br>
+Tester: Jan Richards</p>
+<p>SAME AS FOR FIREFOX v3.5.9 (A.2) EXCEPT:</p>
+<p>FLASH VERSION:<br>
+-sometimes had trouble even tabbing into the page at all - had to click mouse in the body of the web page<br>
+In FOCUS mode</p>
+<ul>
+<li>can't TAB to "Add More"</li>
+<li>even less intelligible audio output than browse</li>
+<li>"Upload" button worked</li>
+</ul>
+<p>STANDARD SINGLE FILE VERSION:</p>
+<p>In BROWSE mode</p>
+<ul>
+<li>Flash version "Browse" button seemed to remain in the tab order <a href="/browse/FLUID-2857/">FLUID-2857</a></li>
+<li>HTML version "Browse" button didn't read a label - sometimes read as "Read Only"</li>
+</ul>
+<p>In FOCUS mode</p>
+<ul>
+<li>worked quite well (odd that NVDA wouldn't switch automatically to this mode since there is a form tag present) - maybe ARIA application role? [ <a href="/browse/FLUID-3321/">FLUID-3321</a>]<br>
+A.5 WindowsXP+IE+JAWS</li>
+</ul>
+<p>Browser: IE8</p>
+<p>Screen Reader: JAWS10<br>
+Tester: Phil Richards</p>
+<p>NOTE: IE shows only the standard uploader, no flash uploader and no link to switch to the flash uploader.  It also looks quite different from how it is represented in Firefox.</p>
+<p>PC Cursor Mode</p>
+<ul>
+<li>Arrow keys do not work, must tab to buttons</li>
+<li>Space activates "browse" button, enter does not</li>
+<li>In file select box, must use tab to move through fields, arrow keys can be used to move through documents and enter selects a document</li>
+<li>Space or enter activates "save" button, but the only thing that happens is that the file name disappears from the box.  No indication that it was uploaded, either visual or audio.</li>
+<li>When tabbing through fields, audio does read "browse to upload a file" and indicates where the text box and buttons are</li>
+</ul>
+<p>Jaws Mode</p>
+<ul>
+<li>Audio reads "browse to upload a file", "browse" and "save" when cursor is moved, but no indication that browse and save are buttons</li>
+<li>In the "choose file to upload" box, arrows move the cursor but the audio will read all the text on a line, ie "my recent my network places aria-capture.camrec"</li>
+<li>Can tab into the list of files but cannot use arrow keys to move through the list, as they just move the cursor</li>
+<li>No way that I can see to move the scroll bar on the bottom so that more files are visible</li>
+<li>When in the file list, space will highlight the first file in the list and enter will select it, but no way to use the keyboard to select any other files</li>
+<li>Once a file is listed in the box, audio will read only the visible part of the filename, ie "f colon backslash documents and setting browse"</li>
+<li>Arrows can move cursor to "save" button and enter/space will click it, but as above there is no visual or audio indication that the file has been uploaded</li>
+</ul>
+<p>Virtual Cursor</p>
+<ul>
+<li>Arrow keys navigate page and audio reads text and indicates where buttons are</li>
+<li>Once the audio got stuck in the edit box and seemed to be looping one letter over and over</li>
+<li>When a file is selected, audio behaves strangely:</li>
+<li>Moving downwards from top of page results in the audio completely skipping the line with the filename and the browse button, so you hear "browse to upload a file", "blank", then a tone, then "blank", "save button"</li>
+<li>Moving upwards from the bottom of the page results in "save button", "blank", "browse button", "file upload edit", "blank", "browse to upload a file"</li>
+<li>Enter and space activate "save" button but there is no audio or visual indication that a file has been uploaded</li>
+</ul>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>WindowsXP+IE8+NVDA2010<br>
+WindowsXP+IE8+JAWS10<br>
+WindowsXP+FF3.5+NVDA2010<br>
+WindowsXP+FF3.5+JAWS10</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20695">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-06-07T08:57:35.634-0400">2010-06-07T08:57:35.634-0400</relative-time></i></p>
+                        <p>a11y issue</p>
+
+                    </li>
+                    
+                    <li id="comment-20696">
+                        <p class="mb-0"><b>Mike Lam</b> <i>commented <relative-time datetime="2011-01-05T15:24:42.190-0500">2011-01-05T15:24:42.190-0500</relative-time></i></p>
+                        <p>Keyboard navigation has been greatly improved with the new HTML5 mutli-file uploader.   ARIA live regions have also been added to provide better feedback on uploading progress.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3663/"><span class="aria-hidden">←</span> Previous: FLUID-3663</a>
+        <a class="mx-1" href="/browse/FLUID-3665/">Next: FLUID-3665 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

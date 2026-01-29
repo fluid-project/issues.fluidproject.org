@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3594  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3594 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3594/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3594/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3594/">FLUID-3594</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3594: For tab reordering, ctrl-m has the same behavior as 'enter' (it goes into the selected tab) (Safari 4/OS X 10.5)</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3594">FLUID-3594</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Escalated">Escalated</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=James%20Yoon">James Yoon</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-04-05T11:19:35.000-0400" prefix="">2010-04-05T11:19:35.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-01-11T10:49:26.982-0500" prefix="">2011-01-11T10:49:26.982-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>To replicate:<br>
+1. Go to <a href="http://build.fluidproject.org/infusion/standalone-demos/reorderer/html/jquery-tabs.html">http://build.fluidproject.org/infusion/standalone-demos/reorderer/html/jquery-tabs.html</a><br>
+2. Select "Butternut" using the keyboard<br>
+3. Press ctrl-m</p>
+<p>Expected behavior:<br>
+Nothing should happen</p>
+<p>Actual behavior:<br>
+Goes into the "Butternut" tab</p>
+<p>(issue doesn't occur in FF3.5/10.5)</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Safari 4 (OS X 10.5)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15701">
+                        <p class="mb-0"><b>James Yoon</b> <i>commented <relative-time datetime="2010-04-06T13:19:41.000-0400">2010-04-06T13:19:41.000-0400</relative-time></i></p>
+                        <p>Issue has to do with the js key code. In Safari, ctrl-m and "Enter" are both key code 13 on key press, whereas in Firefox they are separate key codes (109 and 13, respectively).</p>
+
+                    </li>
+                    
+                    <li id="comment-15703">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-01-11T10:49:26.979-0500">2011-01-11T10:49:26.979-0500</relative-time></i></p>
+                        <p>No longer have this demo. Issue appears to be with Safari. This can be demonstrated by testing out the keystrokes on this site ( <a href="http://asquare.net/javascript/tests/KeyCode.html">http://asquare.net/javascript/tests/KeyCode.html</a> ).</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3593/"><span class="aria-hidden">←</span> Previous: FLUID-3593</a>
+        <a class="mx-1" href="/browse/FLUID-3595/">Next: FLUID-3595 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6249  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6249 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6249/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6249/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6249/">FLUID-6249</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6249: model relay system cannot distinguish between different sources of initial values</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6249">FLUID-6249</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-02-22T08:11:57.248-0500" prefix="">2018-02-22T08:11:57.248-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-07-29T01:51:57.661-0400" prefix="">2021-07-29T01:51:57.661-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>5.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>While implementing the remoteModel component into the prefs framework (<a href="/browse/FLUID-6209/">FLUID-6209</a>) I've encountered an issue where the default model value for the panelIndex (for arrow scrolling in the small screen mobile view), causes a conflict. If a default value is provided for the panelIndex, the value from the store will not be used. If the "init" source is excluded via model relay, the store value will be used, however, the default model value will never be used.</p>
+<p></p>
+<p>See conversation on the <a href="/browse/FLUID-6209/">FLUID-6209</a> PR ( <a href="https://github.com/fluid-project/infusion/pull/867#pullrequestreview-86399946">https://github.com/fluid-project/infusion/pull/867#pullrequestreview-86399946</a>&#160;)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25073">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-02-23T09:39:15.106-0500">2018-02-23T09:39:15.106-0500</relative-time></i></p>
+                        <p>Regarding the work in <a href="/browse/FLUID-6209/">FLUID-6209</a> it seems that the default panelIndex model value is being saved to the store when the model is instantiated. This is even the case if the modelListener for saving the panelIndex is set to exclude init. It seems that this is happening because the initial model values for the preferences are also being set in the model, which also triggers a save. However, those initial preference values are explicitly ignored. However, any component state such as the panel index will be saved to the store. The effect of this is to replace the previously stored value with the default value.</p>
+<p></p>
+<p>For example, at the time of save, the model will look something like the following. Note that the default preference values are stripped out by the prefs framework before saving the model to the store.</p>
+<pre><code class="hljs language-java">{
+    panelIndex: <span class="hljs-number">0</span>,
+    preferences: {
+        contrast: <span class="hljs-string">"default"</span>
+    }
+}
+</code></pre>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6248/"><span class="aria-hidden">←</span> Previous: FLUID-6248</a>
+        <a class="mx-1" href="/browse/FLUID-6250/">Next: FLUID-6250 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

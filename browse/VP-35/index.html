@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-35  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-35 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-35/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-35/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-35/">VP-35</a></li>
+            </ol>
+        </nav>
+        <h1>VP-35: Webkit: When browser used to zoom in, menus and volume slider don't show up</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-35">VP-35</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Cannot%20Reproduce">Cannot Reproduce</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-11-06T10:18:06.852-0500" prefix="">2012-11-06T10:18:06.852-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-02-27T09:46:19.082-0500" prefix="">2013-02-27T09:46:19.082-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>controls</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When a webkit browser's built-in 'zoom in' functionality is used (i.e. Cmd-+), after two zooms, the caption and transcript menus and the volume slider are not longer visible. Not sure if they're visible but off-screen, or obscured, or what.</p>
+<p>To reproduce:<br>
+1) Open Safari. Use the 'View' menu to ensure the page is showing at "Actual Size."<br>
+2) Load the video player demo page. Confirm that the menus do show up when you click the button.<br>
+3) Press Cmd-+ at least twice.<br>
+4) Note that the menus still show up (and the video itself hasn't enlarged)<br>
+5) Reload the page. The video itself will enlarge this time<br>
+6) Try to open the menus. They will not appear.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Safari on Mac<br>
+Chrome on Mac<br>
+Chrome on Win7</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26924">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2013-01-21T15:34:39.364-0500">2013-01-21T15:34:39.364-0500</relative-time></i></p>
+                        <p>Appears to be fixed in Safari, but not in Chrome.</p>
+
+                    </li>
+                    
+                    <li id="comment-26925">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2013-02-27T09:46:19.071-0500">2013-02-27T09:46:19.071-0500</relative-time></i></p>
+                        <p>I've tested this in Safari and Chrome, and I cannot reproduce it.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-64/"><span class="aria-hidden">←</span> Previous: VP-64</a>
+        <a class="mx-1" href="/browse/VP-144/">Next: VP-144 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

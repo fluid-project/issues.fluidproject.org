@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-16  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-16 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-16/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-16/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-16/">INFRA-16</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-16: Move AChecker to its own VM</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-16">INFRA-16</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Resolved</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-08-07T11:22:58.137-0400" prefix="">2015-08-07T11:22:58.137-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-08-17T13:56:34.689-0400" prefix="">2015-08-17T13:56:34.689-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>From the original GitHub issue (<a href="https://github.com/inclusive-design/ops/issues/44):">https://github.com/inclusive-design/ops/issues/44):</a></p>
+<p>avtar commented on Feb 4, 2014</p>
+<p>Greg would like AChecker to be hosted independently from atutor.ca and the courseware VM in general. Requests for this service currently are not rate-limited – we should impose a limit going forward. achecker.ca was issuing too many requests and now can't query the HTML Validator service so we will need to host an instance.</p>
+<p>avtar commented on Feb 20, 2014</p>
+<p>I'm going to focus on this task on Monday. The goal will be to set up AChecker on a CentOS 6.5 VM and make sure we won't have any issues with the version of PHP shipped with that distribution.</p>
+<p>avtar commented on Mar 7, 2014</p>
+<p>Potential security incidents were uncovered while working on this task. Here is an email that Cindy sent today:</p>
+<p>A new branch for AChecker production</p>
+<p>As to our chat yesterday, since the update server for publishing AChecker patches has been moved with Greg and out of our reach, I’ve created a “production” branch in my own AChecker repo for it to be used for the new VM:</p>
+<p><a href="https://github.com/cindyli/AChecker/tree/production">https://github.com/cindyli/AChecker/tree/production</a></p>
+<p>This branch is a mimic of what's currently in achecker.ca. It’s based off of AChecker 1.3 release tag branch, with patches that had been applied to achecker.ca before and the new patch to fix the current security issue. The new patch has also been merged into the AChecker master branch.</p>
+<p>The location of the AChecker internal directory for saving uploaded files</p>
+<p>I’ve moved this internal directory in achecker.ca out of the apache document root so it’s no longer accessible by http request. At setting up the new VM, this path will be asked at the AChecker installation.</p>
+<p>.htaccess for AChecker production</p>
+<p>A .htaccess is added at achecker.ca root directory to redirect all the possible PHP warning and errors to a log file so that these messages don’t show up on the browser to expose script paths. This .htaccess file is more useful for production sites rather than development instances. It’s named as “.htaccess-production” and “readme” is updated with how-to-use steps.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25798">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2015-08-07T11:26:04.494-0400">2015-08-07T11:26:04.494-0400</relative-time></i></p>
+                        <p>tor1-prd-app06 has been dedicated to AChecker but there were some problems running it with PHP 5.4.</p>
+<p>Cindy Li did some work to update the code and it looks much better. However, she still sees some minor differences between when AChecker is running on the old Ubuntu server and when it's running on the new CentOS VM.</p>
+<p>Work on this is on hold and AChecker is again running from the Ubuntu server (courseware). That server was stripped down of anythign and only AChecker is running there.</p>
+<p>Next step is to point AChecker back to tor1-prd-app06 and work on the remaining code issues.</p>
+
+                    </li>
+                    
+                    <li id="comment-25799">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2015-08-17T13:56:34.659-0400">2015-08-17T13:56:34.659-0400</relative-time></i></p>
+                        <p>The remaining issues that Cindy has identified were classified as low-priority and will be fixed when she has some free time (no ETA). Since the security of our environment is high-priority, I went ahead and moved AChecker permanently to tor1-prd-app06.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-15/"><span class="aria-hidden">←</span> Previous: INFRA-15</a>
+        <a class="mx-1" href="/browse/INFRA-17/">Next: INFRA-17 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

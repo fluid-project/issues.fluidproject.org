@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> ENGAGE-320  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" ENGAGE-320 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/ENGAGE-320/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/ENGAGE-320/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/ENGAGE" data-pagefind-filter="project">Fluid Engage</a></li>
+                <li><a href="/browse/ENGAGE-320/">ENGAGE-320</a></li>
+            </ol>
+        </nav>
+        <h1>ENGAGE-320: Refactor the import code for McCord data</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/ENGAGE-320">ENGAGE-320</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/ENGAGE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/ENGAGE/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/ENGAGE/?reporter=Michelle%20D'Souza">Michelle D'Souza</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-02-03T16:33:14.000-0500" prefix="">2010-02-03T16:33:14.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-12-22T09:44:29.975-0500" prefix="">2017-12-22T09:44:29.975-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3b</li>
+                            
+                            <li>0.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Import</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The import code that has been used to import the McCord data requires heavy refactoring. The overall structure of the code may need to be rearchitected. Here are some code review notes for the current code:</p>
+<p>There is too much functionality in 'main'.  At minimum it should be put into a method in the utilities file but may actually be better factored in a different class.</p>
+<p>line 25<br>
+a hardcoded config file directory</p>
+<ul>
+<li>change to using a relative path to the current directory</li>
+</ul>
+<p>line 40</p>
+<p>empty response is hardcoded - a change to what an empty response returned would cause this to break</p>
+<p>config file contains el paths to data block that are in HTML</p>
+<ul>
+<li>we should document this or change the structure of the config file to be more intuitive</li>
+</ul>
+<p>prepareImport should use a 'converter' to externalize the actual conversion so that CouchDbUtility can be used for CSV, XML etc. This means adding to the XMLConverter an API which uses an URL</p>
+<p>line 67 and 71<br>
+hardcoded URLs to the McCord data sources</p>
+<p>line 79 and 80<br>
+hardcoded URLs to the database</p>
+<p>line 84<br>
+hardcoded ids to exhibitions</p>
+<p>line 90 and 98<br>
+hardcoded config file name</p>
+<p>line 92<br>
+change the strategy of getting to the accessnumber to use an EL path</p>
+<p>line 107<br>
+change the error handling to use logging </p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-12024">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2010-02-03T16:34:07.000-0500">2010-02-03T16:34:07.000-0500</relative-time></i></p>
+                        <p>The current code is in a patch on <a href="/browse/ENGAGE-290/">ENGAGE-290</a> but we will commit it to the scratchpad now so that other people can run imports more easily. </p>
+
+                    </li>
+                    
+                    <li id="comment-12025">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-02-04T14:40:50.000-0500">2010-02-04T14:40:50.000-0500</relative-time></i></p>
+                        <p>Yura and I have done some superficial refactoring of the import code to make it easier to read and somewhat better factored. This included:</p>
+<ul>
+<li>Making hard coded values (URLs, database names, config file paths) constants so it is clear that they are hard coded</li>
+<li>Breaking the main import loop into several methods that are more clearly named</li>
+</ul>
+<p>There's still more work to be done here, in particular the ability to swap out strategies for different import formats, better exception handling, and the like.</p>
+
+                    </li>
+                    
+                    <li id="comment-12026">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-12-22T09:44:29.974-0500">2017-12-22T09:44:29.974-0500</relative-time></i></p>
+                        <p>The repository has been archived.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/ENGAGE-319/"><span class="aria-hidden">←</span> Previous: ENGAGE-319</a>
+        <a class="mx-1" href="/browse/ENGAGE-321/">Next: ENGAGE-321 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

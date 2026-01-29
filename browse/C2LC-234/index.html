@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-234  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-234 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-234/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-234/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-234/">C2LC-234</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-234: Sonify the character position and actions.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-234">C2LC-234</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Done</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-10-06T15:13:51.306-0400" prefix="">2020-10-06T15:13:51.306-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-11-05T10:56:22.422-0500" prefix="">2020-11-05T10:56:22.422-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Env 0.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Environment</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This ticket covers creating an initial set of sound-producing components and a starting "soundscape" that provides cues about position:</p>
+<ol>
+<li>Indicating the vertical position (row), perhaps using pitch and/or volume (i.e. lower on screen is closer to the player).</li>
+<li>Indicating the horizontal position (column), perhaps using pitch or panning.</li>
+<li>Indicating the scene boundaries, such as by changing the sound (low pass filter, reverb, lower volume, etc.) when the character is out of the scene.</li>
+</ol>
+<p>We may choose to split this up into two tickets, but I also feel like at least a few "actions" should be sonified, which gives us baseline sounds to "pitch" and "pan".  Possible actions to sonify include:</p>
+<ol>
+<li>Idling (not moving)</li>
+<li>Turning</li>
+<li>Movement (while not drawing)</li>
+<li>Movement (while drawing)</li>
+<li>Movement while offscreen (as an effect modifying either of the above).</li>
+<li>Colliding with the scene boundary.</li>
+<li>Lowering the Pen</li>
+<li>Raising the Pen</li>
+</ol>
+<p>In preparation for having multiple characters or allowing users to choose the sounds they prefer, we should make each of these configurable, perhaps by defining a collection of sounds as a "theme".  This should probably be handled once we have more characters or things to interact with onscreen, but we can at least discuss it a little and leave a few TODOs.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-233/"><span class="aria-hidden">←</span> Previous: C2LC-233</a>
+        <a class="mx-1" href="/browse/C2LC-235/">Next: C2LC-235 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

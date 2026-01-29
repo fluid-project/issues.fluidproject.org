@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6426  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6426 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6426/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6426/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6426/">FLUID-6426</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6426: Prefs Framework Composite Panel system modifies selectors after construction</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6426">FLUID-6426</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-11-07T11:19:38.191-0500" prefix="">2019-11-07T11:19:38.191-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:17.820-0400" prefix="">2024-07-22T10:35:17.820-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>One of the immediate next goals of the framework after implementing the new style <a href="/browse/FLUID-6148/">FLUID-6148</a> potentia II system is to make all component options immutable for <a href="/browse/FLUID-6145/">FLUID-6145</a>. One of the significant remaining sources of options mutation is in the Prefs framework's fluid.prefs.compositePanel.surfaceSubpanelRendererSelectors in Panels.js . This currently reads:</p>
+<pre><code class="hljs language-java">fluid.prefs.compositePanel.surfaceSubpanelRendererSelectors = function (that, components, selectors) {
+        fluid.each(components, function (compEntry, compName) {
+            <span class="hljs-type">var</span> <span class="hljs-variable">compOpts</span> <span class="hljs-operator">=</span> compEntry[<span class="hljs-number">0</span>];
+            <span class="hljs-keyword">if</span> (fluid.prefs.compositePanel.isPanel(compOpts.type, compOpts.options)) {
+                <span class="hljs-type">var</span> <span class="hljs-variable">opts</span> <span class="hljs-operator">=</span> fluid.prefs.compositePanel.prefetchComponentOptions(compOpts.type, compOpts.options);
+                fluid.each(opts.selectors, function (selector, selName) {
+                    <span class="hljs-keyword">if</span> (!opts.selectorsToIgnore || opts.selectorsToIgnore.indexOf(selName) &lt; <span class="hljs-number">0</span>) {
+                        fluid.set(selectors,  fluid.prefs.compositePanel.rebaseSelectorName(compName, selName), selectors[compName] + <span class="hljs-string">" "</span> + selector);
+                    }
+                });
+            }
+        });
+    };
+</code></pre>
+<p>The fluid.set call actually targets the component's own "options.selectors" entry and this function is called during the component's onCreate event. In the upcoming framework we can't expect to modify the selector collection after construction (and even in the current one it creates a race risk if one of them was evaluated during construction) so we will need to find an alternate means of implementing this workflow which doesn't modify the component's options.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25274">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-11-11T11:00:07.606-0500">2019-11-11T11:00:07.606-0500</relative-time></i></p>
+                        <p>The selectors are modified because the composite panel handles the rendering of the sub panels. I'm trying to remember the details of why it was setup like this, but I believe it has to do with the render replacing the markup on each call to re-render. </p>
+<p>Some further discussion in the fluid-work IRC channel today. <br>
+<a href="http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2019-11-11.log">http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2019-11-11.log</a></p>
+
+                    </li>
+                    
+                    <li id="comment-25275">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-11-12T10:51:37.753-0500">2019-11-12T10:51:37.753-0500</relative-time></i></p>
+                        <p>More conversation in the fluid-work channel today ( <a href="http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2019-11-12.log">http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2019-11-12.log</a> ).</p>
+<p>The gist is to use options distributions directed from the sub panel up to the composite panel to supply the necessary selectors and etc that need to be passed along. </p>
+<p>Example of upward distribution:<br>
+<a href="https://github.com/fluid-project/infusion/blob/master/src/components/reorderer/js/ModuleLayout.js#L206">https://github.com/fluid-project/infusion/blob/master/src/components/reorderer/js/ModuleLayout.js#L206</a></p>
+
+                    </li>
+                    
+                    <li id="comment-25276">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-11-13T07:45:51.547-0500">2019-11-13T07:45:51.547-0500</relative-time></i></p>
+                        <p>More discussion in the fluid-work IRC Channel today: <a href="http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2019-11-13.log">http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2019-11-13.log</a></p>
+<p>Yesterday we discovered that the upward distributions weren't working. Today we tracked that down to the fact that the sub panels are all createOnEvent. </p>
+<p>The suggestion to work around all these issues is as follows:</p>
+<p>2019-11-13T12:38:11  &lt;Bosmon&gt; Which is suggested by this devilish function itself, "subPanelLifecycleBindings"<br>
+2019-11-13T12:38:47  &lt;Justin_o&gt; Bosmon: okay, I'm curious<br>
+2019-11-13T12:39:10  &lt;Bosmon&gt; So, there is already quite enough grade synthesis magic lying around here that a little more won't hurt us that much more : P<br>
+2019-11-13T12:39:20  &lt;Bosmon&gt; This function synthesizes a whole grade definition that gets overlaid onto us<br>
+2019-11-13T12:40:00  &lt;Bosmon&gt; So there is no reason that we can't then also synthesize an selectors: { expander: { thing}} definition as well, that just contains the body of the current surfaceSubpanelRendererSelectors<br>
+2019-11-13T12:40:24  &lt;Bosmon&gt; Minus the "set" junk of course, but just turn that into a standard function that does the crazy introspection and then returns the required selector entries<br>
+2019-11-13T12:42:47  &lt;Justin_o&gt; Bosmon: ah that seems reasonable.. so we have fewer locations doing the prefetch too, and just apply it onto with standard grade merging instead manually changing the options after the fact</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6425/"><span class="aria-hidden">←</span> Previous: FLUID-6425</a>
+        <a class="mx-1" href="/browse/FLUID-6427/">Next: FLUID-6427 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

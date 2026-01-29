@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3673  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3673 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3673/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3673/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3673/">FLUID-3673</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3673: Relative path to inject.js in jqunit not guaranteed outside of infusion</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3673">FLUID-3673</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-06-17T14:38:37.984-0400" prefix="">2010-06-17T14:38:37.984-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-07-30T15:29:17.131-0400" prefix="">2014-07-30T15:29:17.131-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Testing Infrastructure</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>collectionspace has a different directory structure for their test framework than infusion uses. They are making use of infusions code, which results in the path to inject.js being incorrect in jqunit.js.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-21645">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-06-17T14:46:54.895-0400">2010-06-17T14:46:54.895-0400</relative-time></i></p>
+                        <p>Moved the entire testswarm directory from the lib directory to the jqunit directory</p>
+
+                    </li>
+                    
+                    <li id="comment-21646">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-06-21T11:28:16.555-0400">2010-06-21T11:28:16.555-0400</relative-time></i></p>
+                        <p>This actually didn't work. the path was specified relative to the js file instead of the html file it gets injected into</p>
+
+                    </li>
+                    
+                    <li id="comment-21647">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-06-22T07:51:07.434-0400">2010-06-22T07:51:07.434-0400</relative-time></i></p>
+                        <p>The testswarm server also hosts a copy of the inject.js script. Now pointing at that version of the file instead of distributing one in the source code.</p>
+
+                    </li>
+                    
+                    <li id="comment-21648">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-06-22T14:32:43.487-0400">2010-06-22T14:32:43.487-0400</relative-time></i></p>
+                        <p>using windows.location doesn't work either as it uses the window.location from the iframe instead of from the parent page. </p>
+
+                    </li>
+                    
+                    <li id="comment-21649">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-07-14T10:28:19.183-0400">2014-07-14T10:28:19.183-0400</relative-time></i></p>
+                        <p>We no longer use testswarm and this file has been removed.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3672/"><span class="aria-hidden">←</span> Previous: FLUID-3672</a>
+        <a class="mx-1" href="/browse/FLUID-3674/">Next: FLUID-3674 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

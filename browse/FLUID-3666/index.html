@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3666  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3666 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3666/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3666/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3666/">FLUID-3666</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3666: Screen reader a11y and usability issues with List Reorderer (esp. keyboard navigation conflicts, lack of feedback, lack of overall orientation for screen reader users)</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3666">FLUID-3666</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jan%20Richards">Jan Richards</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-06-04T16:48:42.228-0400" prefix="">2010-06-04T16:48:42.228-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-03-13T11:11:02.906-0400" prefix="">2017-03-13T11:11:02.906-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.2</li>
+                            
+                            <li>1.3</li>
+                            
+                            <li>1.4</li>
+                            
+                            <li>1.5</li>
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>C.2 WindowsXP+Firefox+NVDA</p>
+<p>Browser: Firefox v3.5.9<br>
+Screen Reader: NVDA 2010.1<br>
+Tester: Jan Richards</p>
+<p>OVERALL:</p>
+<ul>
+<li>big picture: read "list with 6 items"</li>
+</ul>
+<ul>
+<li>In BROWSE mode</li>
+<li>arrow down is the NVDA key for going down line by line. So it moves down line by line, moving focus between list items only at the end of each.</li>
+<li>reads items ok (ex. "Clickable 1 Select the date"...)</li>
+<li>but i,k,m are all used NVDA for other things so they don't work ("i" actually moves focus down instead of up because it is the NVDA key for next link)</li>
+<li>ctrl+i,ctrl+j,ctrl+k,ctrl+m all work but with no audio feedback</li>
+<li>ctrl+arrows do not work at all</li>
+</ul>
+<ul>
+<li>In FOCUS mode</li>
+<li>keystrokes all work.</li>
+<li>reading is ok: e.g. "list item draggable drop target 4 of 6"</li>
+<li>no audio feedback when items are moved with ctrl+<br>
+C.3 WindowsXP+Firefox+JAWS</li>
+</ul>
+<p>Browser: Firefox v3.5.8</p>
+<p>Screen Reader: JAWS 10<br>
+Tester: Phil Richards</p>
+<p>PC Cursor Mode</p>
+<ul>
+<li>Once you tab into the list, up/down arrows  and i/m move up and down through list items</li>
+<li>ctrl + arrows, ctrl + i/m work, move items up/down</li>
+<li>audio reads text of box that is in focus</li>
+</ul>
+<p>Jaws Mode</p>
+<ul>
+<li>i,m will move focus up and down, and audio will read all text in the box</li>
+<li>arrow up/down moves cursor line by line, and audio only reads the text on that line, ie just "book rooms", not "book facilities" or "select building"</li>
+<li>moving cursor to a line with a number causes audio to read the number, ie "five book caterer", while moving focus with i/m results in only "book caterer" without the number included</li>
+<li>audio will sometimes read where the cursor is and sometimes act as if both the cursor and the text below it are not there, so sometimes it says "six select graphic 235 date" and sometimes "five book cater"</li>
+<li>ctrl + i/m will move list items, audio feedback is "control i", "control m"</li>
+<li>ctrl + arrows will cause cursor to jump between numbers and first bulleted item in a list where present, ie "one, two, three, email campaign, five"; this does not move any of the list items</li>
+</ul>
+<p>Virtual Cursor</p>
+<ul>
+<li>arrows and i,m do not work</li>
+<li>ctrl + i,m work</li>
+<li>ctrl + up/down causes focus to cycle through all items or jump directly to last item, none of them change position<br>
+C.4 WindowsXP+IE+NVDA</li>
+</ul>
+<p>Browser: IE8</p>
+<p>Screen Reader: NVDA 2010.1<br>
+Tester: Jan Richards</p>
+<p>SAME AS FOR FIREFOX v3.5.9 (C.2) EXCEPT:</p>
+<ul>
+<li>NVDA uses BROWSE mode by default</li>
+</ul>
+<ul>
+<li>In BROWSE mode</li>
+<li>arrow down is the NVDA key for going down line by line. So it moves down line by line, moving focus between list items only at the end of each.</li>
+<li>reads items ok (ex. "Select the date"...)</li>
+<li>ctrl+i,ctrl+j,ctrl+k,ctrl+m all work with audio feedback "selected dragging"</li>
+</ul>
+<ul>
+<li>In FOCUS mode</li>
+<li>when using arrows (or i,m keys) reading is a mess - moving to a new draggable item causes NVDA to read everything on the page</li>
+<li>TAB doesn't go through the items in the list. It just jumps in then out.</li>
+<li>reads item ok when dragging with ctrl+arrows or i,m = "Select the date dragging" </li>
+</ul>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>WindowsXP+IE8+NVDA2010<br>
+WindowsXP+IE8+JAWS10<br>
+WindowsXP+FF3.5+NVDA2010<br>
+WindowsXP+FF3.5+JAWS10</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23597">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-06-07T08:58:55.404-0400">2010-06-07T08:58:55.404-0400</relative-time></i></p>
+                        <p>a11y issue</p>
+
+                    </li>
+                    
+                    <li id="comment-23598">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-01-11T11:12:49.375-0500">2011-01-11T11:12:49.375-0500</relative-time></i></p>
+                        <p>A bunch of these issues have been addressed through <a href="/browse/FLUID-3730/">FLUID-3730</a> and <a href="/browse/FLUID-3711/">FLUID-3711</a>. Other issues should be broken out into there own jiras and this one closed. </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3665/"><span class="aria-hidden">←</span> Previous: FLUID-3665</a>
+        <a class="mx-1" href="/browse/FLUID-3667/">Next: FLUID-3667 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

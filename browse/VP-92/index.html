@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-92  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-92 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-92/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-92/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-92/">VP-92</a></li>
+            </ol>
+        </nav>
+        <h1>VP-92: Console log commands cause problems in IE</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-92">VP-92</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-08-09T10:56:08.860-0400" prefix="">2012-08-09T10:56:08.860-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-01-28T09:25:22.740-0500" prefix="">2013-01-28T09:25:22.740-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>There are some console.log() commands in VideoPlayer_framework.js and VideoPlayer_uiOptions.js that don't work in IE unless the console is open. If the console is not open, the video player doesn't instantiate. We should convert these to fluid.log() statements.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>IE</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-27242">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2012-08-09T11:28:08.297-0400">2012-08-09T11:28:08.297-0400</relative-time></i></p>
+                        <p>Logging statements should typically be removed prior to committing production code. We might prefer to pursue the strategy where these statements are simply removed from the code base unless they're integral to an ongoing debugging effort.</p>
+
+                    </li>
+                    
+                    <li id="comment-27243">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2012-08-15T13:19:21.164-0400">2012-08-15T13:19:21.164-0400</relative-time></i></p>
+                        <p>I agree with you that production code should not have logging statements in it. I think it might be worth leaving these in but commented out for now. My reasoning is that the code in question is going to be removed as soon as we move to using the new supports available in the framework. Until that time, if we do hit a breakage in the code, I like the idea of being able to debug it quickly. I suppose it speaks to the untested and non-production qualities of the code in question. </p>
+
+                    </li>
+                    
+                    <li id="comment-27244">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2012-08-15T13:19:44.910-0400">2012-08-15T13:19:44.910-0400</relative-time></i></p>
+                        <p>Merged into project repo demo branch at c2949219b0e63a802b5e38b1f9ccd9d95eb722a2</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-235/"><span class="aria-hidden">←</span> Previous: VP-235</a>
+        <a class="mx-1" href="/browse/VP-14/">Next: VP-14 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

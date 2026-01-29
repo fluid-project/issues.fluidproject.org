@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4681  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4681 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4681/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4681/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4681/">FLUID-4681</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4681: Rich text integration for inline edit flickers or closes up on startup when used with latest TinyMCE version and latest Firefox</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4681">FLUID-4681</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-03-27T02:51:16.832-0400" prefix="">2012-03-27T02:51:16.832-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T09:39:03.571-0400" prefix="">2024-07-22T09:39:03.571-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Reported in today's IRC channel logs by NickMayne:<br>
+<a href="http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2012-03-26">http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2012-03-26</a></p>
+<p>The issue occurs on FF but not on Chrome. The issue appears to be a 3-way misunderstanding between the browser, jQuery and TinyMCE (and, naturally, us!). The user attempted to resolve "jumping on startup" issues by applying the option lazyInit = true, but this precipitated one of a number of failures on FF - most notably, that clicking on the editable region for the very first time to perform the edit causes it to immediately close up again. Tracing through the focus issues show this to be caused by the following interaction:</p>
+<p>i) The InlineEditIntegrations.js attempts to apply focus to the newly created editable region, after applying a respectful delay - InlineEditIntegrations.js has</p>
+<p>tinyMCE.execCommand('mceFocus', false, that.editField[0].id);</p>
+<p>ii) the tinyMCE implementation attempts to honour this focus by calling the focus() method of the raw DOM node corresponding to the editor body (actually the "body" HTML node of an iframe!!) - </p>
+<p>tiny_mce_src.js line 13187 has body.focus()</p>
+<p>iii) this focus request leads DIRECTLY to a dispatch into the jQuery implementation for the blur handler for the proxy editable textarea element (no intervening stack frames are shown in Firebug). This leads to jQuery dispatching a synthetic "focusout" event for that element </p>
+<p>jquery-1.7.1.js line 3684 has </p>
+<p>jQuery.event.simulate( fix, event.target, jQuery.event.fix( event ), true );</p>
+<p>where "fix" has the value "focusout"</p>
+<p>iv) this triggers our deadMansBlur to start the blur timer for the end of the editing operation. Unfortunately,</p>
+<p>v) the expected focus event dispatched by tinyMCE at step ii) never arrives. This is most likely a combination of Firefox's greater fastidiousness in refusing to trade in focus/blur events for nonfocusable DOM elements as defined by W3C, and the fact that the element receiving focus is nested within in iframe. As a result, the DMB timer elapses and the edit operation is cancelled.</p>
+<p>Providing a fix for this issue will be messy, and will involve i) upgrading DMB to be potentially responsive to receiving NO focus event whatever within the timer period and still interpreting this as a "cancel handling blur" operation, and ii) being reponsive to (thankfully, new-style) "focusin" events anywhere in the document as well as explicit response to "click" to deal with the case where the user is "morally transfering focus to a nonfocusable element". </p>
+<p>It's a shame, since some of these elements were present in the historic "globalDismissal" strategy which was used in CSpace for this task, but was considered unnecessary compared to the apparently superior power of deadMansBlur - especially considering the problems that arose with IE8 in propagating focus/blur events in the wrong order. See <a href="/browse/FLUID-3487/">FLUID-3487</a> for the long history of finally getting this functionality to work cross-platform (as it now turns out, only temporarily) - also discussion on <a href="/browse/CSPACE-3304/">CSPACE-3304</a>, the corresponding issue in CollectionSpace:</p>
+<p><a href="http://old.nabble.com/CSPACE-3304---dismissing-popup-areas-on-IE8-ts30470733.html">http://old.nabble.com/CSPACE-3304---dismissing-popup-areas-on-IE8-ts30470733.html</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14096">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2012-03-27T02:53:16.272-0400">2012-03-27T02:53:16.272-0400</relative-time></i></p>
+                        <p>Current "globalDismissal" code from CSpace Utilities.js:</p>
+<p>/** "Global Dismissal Handler" for the entire page. Attaches a click handler to the</p>
+<ul>
+<li> document root that will cause dismissal of any elements (typically dialogs) which</li>
+<li> have registered themselves. Dismissal through this route will automatically clean up</li>
+<li> the record - however, the dismisser themselves must take care to deregister in the case</li>
+<li> dismissal is triggered through the dialog interface itself. */</li>
+</ul>
+<p>    <br>
+var dismissList = {};</p>
+<p>$(document).click(function (event) {<br>
+var target = event.target;<br>
+while (target) {<br>
+if (dismissList[target.id]) {<br>
+return;<br>
+}<br>
+target = target.parentNode;<br>
+}<br>
+fluid.each(dismissList, function (dismissFunc, key) {<br>
+dismissFunc();<br>
+delete dismissList[key];<br>
+});<br>
+});</p>
+<p>cspace.util.globalDismissal = function (nodes, dismissFunc) {<br>
+nodes = $(nodes);<br>
+fluid.each(nodes, function (node) {<br>
+var id = fluid.allocateSimpleId(node);<br>
+if (dismissFunc) {<br>
+dismissList[id] = dismissFunc;<br>
+}<br>
+else {<br>
+delete dismissList[id];<br>
+}<br>
+});<br>
+};</p>
+
+                    </li>
+                    
+                    <li id="comment-14098">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2012-04-30T07:14:01.618-0400">2012-04-30T07:14:01.618-0400</relative-time></i></p>
+                        <p>Merged into project repo at 88390cc667a227ba4f21e6ba4dfa070d23b1170e</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4680/"><span class="aria-hidden">←</span> Previous: FLUID-4680</a>
+        <a class="mx-1" href="/browse/FLUID-4682/">Next: FLUID-4682 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

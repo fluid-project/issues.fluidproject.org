@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3865  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3865 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3865/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3865/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3865/">FLUID-3865</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3865: Rich text inline edit demo does not contain focus styling for TinyMCE toolbar items</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3865">FLUID-3865</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Cannot%20Reproduce">Cannot Reproduce</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-11-30T10:31:25.062-0500" prefix="">2010-11-30T10:31:25.062-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-07-18T09:36:23.346-0400" prefix="">2014-07-18T09:36:23.346-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3</li>
+                            
+                            <li>1.3.1</li>
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Demos</li>
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Using FF 3.6, when focus is placed on the TinyMCE toolbar, it is invisible. Thus attempting to use keyboard navigation by tabbing through appears to be doing nothing, but in fact focus is being placed on toolbar items. The lack of focus styling is confusing and gives the wrong impression that the demo has broken.</p>
+<p>To reproduce:<br>
+1. Start Firefox 3.6<br>
+2. Load the demo: <a href="http://build.fluidproject.org/infusion/demos/inlineEdit/rich/html/inlineEdit.html">http://build.fluidproject.org/infusion/demos/inlineEdit/rich/html/inlineEdit.html</a><br>
+3. Begin editing the first paragraph.<br>
+4. While still editing, tab repeatedly through the document and attempt to reach the editor that is still open.<br>
+5. You will discover that you will be stuck on an invisible, empty element just before the editor.</p>
+<p>Affects both FF 3.6 on Windows and Mac OS X. IE8 on Windows is not affected.</p>
+<p>The example on the TinyMCE website does not appear to have this problem.<br>
+<a href="http://tinymce.moxiecode.com/examples/full.php#">http://tinymce.moxiecode.com/examples/full.php#</a></p>
+<p>Keyboard work-around:<br>
+You can hit "enter" to select an item in the toolbar. This would put you back into the textarea, from which you could tab out. You could also hit "esc", which would close the RichText Inline edit and give you back your proper tab navigation.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Firefox 3.6, Windows, Mac OS X<br>
+IE8 Windows 7<br>
+IE6 Win XP </p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23605">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2011-10-17T13:28:54.409-0400">2011-10-17T13:28:54.409-0400</relative-time></i></p>
+                        <p>I think the issue is not so much that there isn't focus styling, it's that you can't properly tab to the toolbar: Try clickin in the toolbar area and then tabbing - you do get a focus highlight. Still a problem, but a different problem.</p>
+
+                    </li>
+                    
+                    <li id="comment-23607">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-07-18T09:36:23.296-0400">2014-07-18T09:36:23.296-0400</relative-time></i></p>
+                        <p>The focus styling appears. I've tried with Chrome 35, FF 30, Safari 7 (Mac OS 10.9) and IE 11 (Win 7).</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3864/"><span class="aria-hidden">←</span> Previous: FLUID-3864</a>
+        <a class="mx-1" href="/browse/FLUID-3866/">Next: FLUID-3866 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

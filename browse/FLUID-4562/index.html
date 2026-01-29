@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4562  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4562 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4562/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4562/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4562/">FLUID-4562</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4562: UIO settings saved in the cookie are discarded once quit the browser</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4562">FLUID-4562</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-11-29T14:54:50.653-0500" prefix="">2011-11-29T14:54:50.653-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-09-26T12:41:03.903-0400" prefix="">2017-09-26T12:41:03.903-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                            <li>1.5</li>
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The bug report from Jonny:</p>
+<p>"On my site &lt;<a href="http://abledaccess.com/">http://abledaccess.com</a>&gt; when I change the display setting via uiOptions in the latest versions of Safari, Chrome, Opera and IE, then quit each browser, my settings I set have been reset. Same goes with your demo across said browsers, as well. I saw on Colin's computer this behaviour doesn't happen in Firefox, but it happens on my machine in Firefox, as well. But the reset did happen in Safari, Chrome and Opera on his computer. "</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Safari, Chrome, Opera and sometimes firefox </p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23781">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2011-11-29T14:55:19.335-0500">2011-11-29T14:55:19.335-0500</relative-time></i></p>
+                        <p>The issue seems a result of our improper default value for the cookie "expiry" attribute, which is blank by default:</p>
+<p><a href="https://github.com/fluid-project/infusion/blob/master/src/webapp/components/uiOptions/js/Store.js#L60">https://github.com/fluid-project/infusion/blob/master/src/webapp/components/uiOptions/js/Store.js#L60</a></p>
+<p>According to <a href="http://www.tutorialspoint.com/javascript/javascript_cookies.htm">http://www.tutorialspoint.com/javascript/javascript_cookies.htm</a>, which says,</p>
+<p>Expires : The date the cookie will expire. If this is blank, the cookie will expire when the visitor quits the browser.</p>
+<p>So, a blank default apparently is not enough if what we meant is to keep the user-selected settings forever. We probably should consider to have a default expiry value of 50 years from now.</p>
+
+                    </li>
+                    
+                    <li id="comment-23782">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-10T13:53:47.018-0400">2015-06-10T13:53:47.018-0400</relative-time></i></p>
+                        <p>I'm not really sure what we want the default to be for the cookie expiration. </p>
+<ul>
+<li>browser quit</li>
+<li>some number of days</li>
+<li>forever</li>
+<li>etc.</li>
+</ul>
+<p>Dana and Jonathan Hung did you have any thoughts?</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4541/"><span class="aria-hidden">←</span> Previous: FLUID-4541</a>
+        <a class="mx-1" href="/browse/FLUID-4563/">Next: FLUID-4563 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

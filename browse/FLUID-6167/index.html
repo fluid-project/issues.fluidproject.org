@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6167  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6167 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6167/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6167/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6167/">FLUID-6167</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6167: Provide a way to override a container line-height so line-height adjuster can work on it</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6167">FLUID-6167</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-07-07T11:44:03.282-0400" prefix="">2017-07-07T11:44:03.282-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-24T12:13:32.573-0400" prefix="">2024-07-24T12:13:32.573-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>UI Options currently has a limitation where the line-height for the line-height adjuster is injected inline to the body element. The problem is that this line-height can be overriden by line-height specified by CSS on elements in the document.</p>
+<p>There should be a way to identify elements to apply line-height adjustments to.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25579">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2017-07-07T11:51:01.598-0400">2017-07-07T11:51:01.598-0400</relative-time></i></p>
+                        <p>A possible solution would be use a class to identify elements to apply line-height adjustments to. For example a tagline has a default line-height which gets adjusted via a selector.</p>
+<p>&lt;body&gt;<br>
+&lt;p class="flc-uio-line-height-adjust tagline"&gt;<br>
+&#160;&#160;&#160;&#160; Foo<br>
+&lt;/p&gt;<br>
+&lt;/body&gt;</p>
+<p>.tagline {<br>
+&#160;&#160;&#160;&#160; line-height: 1.3rem;<br>
+}</p>
+
+                    </li>
+                    
+                    <li id="comment-25580">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2018-11-29T14:25:20.219-0500">2018-11-29T14:25:20.219-0500</relative-time></i></p>
+                        <p>Another approach is to inject a line-height class to the &lt;body&gt; element for the appropriate line-height scale to apply, and the integrator can specify custom CSS rules against that injected class.</p>
+<p><strong>Example HTML</strong></p>
+<p>&lt;body class="fl-line-height-15"&gt;</p>
+<p>&lt;p class="some-text"&gt;</p>
+<p>Foo&lt;br/&gt;</p>
+<p>Bar</p>
+<p>&lt;/p&gt;</p>
+<p>&lt;/body&gt;</p>
+<p></p>
+<p><strong>Example CSS</strong></p>
+<p>.some-text</p>
+<p>{ line-height: 1.2rem; }</p>
+<p>.fl-line-height-11 .some-text</p>
+<p>{ line-height: 1.2rem; /* Override UIO and keep line spacing at 1.2 */ }</p>
+<p>.fl-line-height-15 .some-text</p>
+<p>{ line-height: 1.5rem; }</p>
+
+                    </li>
+                    
+                    <li id="comment-25581">
+                        <p class="mb-0"><b>Sean F @ opin</b> <i>commented <relative-time datetime="2020-12-15T21:26:55.898-0500">2020-12-15T21:26:55.898-0500</relative-time></i></p>
+                        <p>I posted a quick way to get this working on the other issue: <a href="https://issues.fluidproject.org/browse/FLUID-6167">https://issues.fluidproject.org/browse/FLUID-6167</a></p>
+
+                    </li>
+                    
+                    <li id="comment-27876">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2024-07-24T12:13:32.372-0400">2024-07-24T12:13:32.372-0400</relative-time></i></p>
+                        <p>A css custom property, <code>--fl-lineSpace</code> was added as part of the work for <a href="/browse/FLUID-6260/">FLUID-6260</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6166/"><span class="aria-hidden">←</span> Previous: FLUID-6166</a>
+        <a class="mx-1" href="/browse/FLUID-6168/">Next: FLUID-6168 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

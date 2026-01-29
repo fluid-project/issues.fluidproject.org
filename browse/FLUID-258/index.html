@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-258  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-258 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-258/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-258/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-258/">FLUID-258</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-258: Dissect Dojo examples to techniques to make widgets accessible in non-ARIA environments</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-258">FLUID-258</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Sub-task">Sub-task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Joseph Scheuhammer</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-02-19T12:55:25.000-0500" prefix="">2008-02-19T12:55:25.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-06-05T11:31:30.000-0400" prefix="">2008-06-05T11:31:30.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>We need to develop techniques for the Reorderer and Lightbox to function accessibly in non-ARIA environment.s</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24526">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2008-03-13T15:21:49.000-0400">2008-03-13T15:21:49.000-0400</relative-time></i></p>
+                        <p>David, Joseph and I (Michelle) met to talk about options for non-ARIA support. We came up with a few techniques that we'd like to try. These include improvements to the ARIA.</p>
+<p>1) Add an aria-describedby and a labelledby to the Reorderer container that links it with the instructional message. </p>
+<p>2) Add a title to each thumbnail div with the form "thumnail of &lt;name&gt;". This will need to be done in an internationalization friendly manner.</p>
+<p>3) Add a role to the instructional message of type "description"</p>
+<p>4) Add an aria-describedby and a labelledby to each thumbnail that links it with the image link inside the thumbnail.</p>
+
+                    </li>
+                    
+                    <li id="comment-24527">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-03-17T11:38:40.000-0400">2008-03-17T11:38:40.000-0400</relative-time></i></p>
+                        <p>A thought about point #2 in Michelle's comment:</p>
+<p>Given that the title will contain the name of the image, then the title becomes part of the template that must be filled in by the application using the Lightbox. So for example, the Image Gallery Tool will have to be updated to fill in the name of the image.</p>
+
+                    </li>
+                    
+                    <li id="comment-24528">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-03-20T11:18:27.000-0400">2008-03-20T11:18:27.000-0400</relative-time></i></p>
+                        <p>Investigating "describedby" and "labelledby."</p>
+<p>According to <a href="http://developer.mozilla.org/en/docs/Accessible_DHTML">http://developer.mozilla.org/en/docs/Accessible_DHTML</a>,"describedby" is not supported by JAWS in FF, though "labelledby" is supported by both JAWS and Window-Eyes in FF. So I have been focussing on "labelledby."</p>
+<p>So far, only FF3 will allow JAWS to read the "labelledby" label. FF2 does not, IE7 does not. I haven't yet tested Window-Eyes.</p>
+
+                    </li>
+                    
+                    <li id="comment-24529">
+                        <p class="mb-0"><b>David Bolter</b> <i>commented <relative-time datetime="2008-03-20T11:33:25.000-0400">2008-03-20T11:33:25.000-0400</relative-time></i></p>
+                        <p>Anastasia, just a reminder that you might want to try aaa:labelledby in FF2 instead of aria-labelledby... if you haven't already. Also when using describedby="foo" be sure to add the role "description" on the thingy with id "foo".</p>
+
+                    </li>
+                    
+                    <li id="comment-24530">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-03-20T11:36:05.000-0400">2008-03-20T11:36:05.000-0400</relative-time></i></p>
+                        <p>David, thanks for the pointers. I did try both of those suggestions, to no effect.</p>
+
+                    </li>
+                    
+                    <li id="comment-24531">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-03-20T12:15:07.000-0400">2008-03-20T12:15:07.000-0400</relative-time></i></p>
+                        <p>Regarding getting a screen reader to read the instructions:</p>
+<p>Labelledby (and describedby, I might assume) work when an item gets focus. We put focus on the thumb, not on the lightbox itself, so even if this technique worked in all environments, it wouldn't work as a way to get the instructions read.</p>
+<p>Putting the instructions div into the taborder before the lightbox itself can be useful:</p>
+<ul>
+<li>JAWS with IE7 will read the contents of the div.</li>
+<li>If the title attribute of the div includes the same instruction text, JAWS with FF2 and FF3 will read that (they won't read the text within the div)</li>
+</ul>
+<p>Regarding describing the thumbnails:</p>
+<p>labelledby and describedby don't seem to offer anything that the title attribute doesn't offer, and do require a separate div containing the relevant text, and so seem less attractive than the title option.</p>
+
+                    </li>
+                    
+                    <li id="comment-24532">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-03-20T13:04:25.000-0400">2008-03-20T13:04:25.000-0400</relative-time></i></p>
+                        <p>Regarding adding title attributes to thumbnails:</p>
+<p>Adding a title attribute does not seem to add anything that is not already available through the image alt text and the link text - it either replaces the image alt text or it supplements it. In the case of mouse-based actions, it seems to complicate the issue by sometimes causing uninformative text to be spoken.</p>
+<p>A better solution might be to modify the alt text to say "Banada thumbnail" (rather than just "Banana") to imply that it is an image, and to distinguish it from the link text.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-257/"><span class="aria-hidden">←</span> Previous: FLUID-257</a>
+        <a class="mx-1" href="/browse/FLUID-259/">Next: FLUID-259 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

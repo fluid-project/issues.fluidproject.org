@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-163  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-163 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-163/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-163/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-163/">C2LC-163</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-163: Turn the coding environment into PWA</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-163">C2LC-163</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Done</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-02-10T09:45:45.092-0500" prefix="">2020-02-10T09:45:45.092-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-02-19T15:09:05.354-0500" prefix="">2020-02-19T15:09:05.354-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Env 0.2.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10510">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2020-02-14T14:32:04.151-0500">2020-02-14T14:32:04.151-0500</relative-time></i></p>
+                        <p>To register a service worker, change unregister to register of <a href="https://github.com/codelearncreate/c2lc-coding-environment/blob/83fd33d9ccce123a169e5ae6cdf7bf1f17d19831/src/index.js#L12">https://github.com/codelearncreate/c2lc-coding-environment/blob/83fd33d9ccce123a169e5ae6cdf7bf1f17d19831/src/index.js#L12</a>. Register call from the serviceWorker.js file in src directory calls registerValidSW with a service worker specified by swUrl on <a href="https://github.com/codelearncreate/c2lc-coding-environment/blob/83fd33d9ccce123a169e5ae6cdf7bf1f17d19831/src/serviceWorker.js#L51">https://github.com/codelearncreate/c2lc-coding-environment/blob/83fd33d9ccce123a169e5ae6cdf7bf1f17d19831/src/serviceWorker.js#L51</a>, then the installation of a service worker fires onupdatefound <a href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/onupdatefound">https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/onupdatefound</a>. According to the comment on line 69: <a href="https://github.com/codelearncreate/c2lc-coding-environment/blob/83fd33d9ccce123a169e5ae6cdf7bf1f17d19831/src/serviceWorker.js#L69">https://github.com/codelearncreate/c2lc-coding-environment/blob/83fd33d9ccce123a169e5ae6cdf7bf1f17d19831/src/serviceWorker.js#L69</a>, updated precached content is fetched by the point. </p>
+
+                    </li>
+                    
+                    <li id="comment-10511">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-02-14T14:55:57.081-0500">2020-02-14T14:55:57.081-0500</relative-time></i></p>
+                        <p>Thanks Daniel. Would you be able to dig in a little bit more and see if you can find the code that is responsible for adding our files to the browser cache?</p>
+<p>The comment you highlight:</p>
+<pre><code class="hljs language-java"><span class="hljs-comment">// At this point, the updated precached content has been fetched,</span>
+</code></pre>
+<p>Can you find the code that is fetching the content and adding it to the cache – which code has ensured that "precached content has been fetched"?</p>
+
+                    </li>
+                    
+                    <li id="comment-10512">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2020-02-14T15:39:49.408-0500">2020-02-14T15:39:49.408-0500</relative-time></i></p>
+                        <p>"To install a service worker for your site, you need to register it, which you do in your page's JavaScript. Registering a service worker will cause the browser to start the <strong>service worker install step</strong> in the background.</p>
+<p>Typically during the install step, you'll want to cache some static assets. If all the files are cached successfully, then the service worker becomes installed." – under The service worker lifecycle section on <a href="https://developers.google.com/web/fundamentals/primers/service-workers">https://developers.google.com/web/fundamentals/primers/service-workers</a>.</p>
+<p>Also, the service worker generated from cra's script has a flag "clientsClaim" set to true, which means that service worker will get called immediately with new changes (including updated assets) – "When a service worker is initially registered, pages won't use it until they next load. The claim() method causes those pages to be controlled immediately." <a href="https://developer.mozilla.org/en-US/docs/Web/API/Clients/claim">https://developer.mozilla.org/en-US/docs/Web/API/Clients/claim</a></p>
+<p>Which implies that if service worker is installed, every assets specified are cached.</p>
+
+                    </li>
+                    
+                    <li id="comment-10513">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-02-14T15:55:28.415-0500">2020-02-14T15:55:28.415-0500</relative-time></i></p>
+                        <p>Some code somewhere needs to do the caching. Having the service worker take control of a resource does not imply any particular strategy for handling the resource, such as caching. It just means that the service worker is responsible for it. If it stores it, and where, is the responsibility of the service worker.</p>
+<p>"Typically during the install step, you'll want to cache some static assets" – in our case, who is caching the assets?</p>
+<p>Regarding your conclusion "Which implies that if service worker is installed, every assets specified are cached." We are certainly observing that the assets are being cached, but who is specifying what those assets are and who is caching them?</p>
+<p>Could you upload the generated service worker? It would be helpful to see that, I think.</p>
+
+                    </li>
+                    
+                    <li id="comment-10514">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2020-02-14T16:05:46.410-0500">2020-02-14T16:05:46.410-0500</relative-time></i></p>
+                        <p>Here's the generated service worker:</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">/**
+ * Welcome to your Workbox-powered service worker!
+ *
+ * You'll need to register this file in your web app and you should
+ * disable HTTP caching for this file too.
+ * See https://goo.gl/nhQhGp
+ *
+ * The rest of the code is auto-generated. Please don't update this file
+ * directly; instead, make changes to your Workbox build configuration
+ * and re-run your build process.
+ * See https://goo.gl/2aRDsh
+ */</span>
+
+<span class="hljs-title function_">importScripts</span>(<span class="hljs-string">"https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js"</span>);
+
+<span class="hljs-title function_">importScripts</span>(
+  <span class="hljs-string">"/precache-manifest.ed83b9b336e6722f321ef7b4ef6e1f89.js"</span>
+);
+
+self.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'message'</span>, <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (event.<span class="hljs-property">data</span> &amp;&amp; event.<span class="hljs-property">data</span>.<span class="hljs-property">type</span> === <span class="hljs-string">'SKIP_WAITING'</span>) {
+    self.<span class="hljs-title function_">skipWaiting</span>();
+  }
+});
+
+workbox.<span class="hljs-property">core</span>.<span class="hljs-title function_">clientsClaim</span>();
+
+<span class="hljs-comment">/**
+ * The workboxSW.precacheAndRoute() method efficiently caches and responds to
+ * requests for URLs in the manifest.
+ * See https://goo.gl/S9QRab
+ */</span>
+self.<span class="hljs-property">__precacheManifest</span> = [].<span class="hljs-title function_">concat</span>(self.<span class="hljs-property">__precacheManifest</span> || []);
+workbox.<span class="hljs-property">precaching</span>.<span class="hljs-title function_">precacheAndRoute</span>(self.<span class="hljs-property">__precacheManifest</span>, {});
+
+workbox.<span class="hljs-property">routing</span>.<span class="hljs-title function_">registerNavigationRoute</span>(workbox.<span class="hljs-property">precaching</span>.<span class="hljs-title function_">getCacheKeyForURL</span>(<span class="hljs-string">"/index.html"</span>), {
+  
+  <span class="hljs-attr">blacklist</span>: [<span class="hljs-regexp">/^\/_/</span>,<span class="hljs-regexp">/\/[^\/?]+\.[^\/]+$/</span>],
+});
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-10515">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-02-14T16:12:19.823-0500">2020-02-14T16:12:19.823-0500</relative-time></i></p>
+                        <p>Awesome, thanks. Could you also upload precache-manifest.ed83b9b336e6722f321ef7b4ef6e1f89.js</p>
+
+                    </li>
+                    
+                    <li id="comment-10516">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2020-02-14T16:14:12.953-0500">2020-02-14T16:14:12.953-0500</relative-time></i></p>
+                        <p>No problem! here's the precahe-manifest:</p>
+<pre><code class="hljs language-javascript">self.<span class="hljs-property">__precacheManifest</span> = (self.<span class="hljs-property">__precacheManifest</span> || []).<span class="hljs-title function_">concat</span>([
+  {
+    <span class="hljs-string">"revision"</span>: <span class="hljs-string">"71a1e02a945bdc2c5b8ca06a174b3460"</span>,
+    <span class="hljs-string">"url"</span>: <span class="hljs-string">"/index.html"</span>
+  },
+  {
+    <span class="hljs-string">"revision"</span>: <span class="hljs-string">"9ed547e862ac2ef2daf2"</span>,
+    <span class="hljs-string">"url"</span>: <span class="hljs-string">"/static/css/main.101522a8.chunk.css"</span>
+  },
+  {
+    <span class="hljs-string">"revision"</span>: <span class="hljs-string">"f8a642167ae40390e539"</span>,
+    <span class="hljs-string">"url"</span>: <span class="hljs-string">"/static/js/2.9399bedd.chunk.js"</span>
+  },
+  {
+    <span class="hljs-string">"revision"</span>: <span class="hljs-string">"d4503a70721fea146de807f4f151ad0d"</span>,
+    <span class="hljs-string">"url"</span>: <span class="hljs-string">"/static/js/2.9399bedd.chunk.js.LICENSE"</span>
+  },
+  {
+    <span class="hljs-string">"revision"</span>: <span class="hljs-string">"9ed547e862ac2ef2daf2"</span>,
+    <span class="hljs-string">"url"</span>: <span class="hljs-string">"/static/js/main.8169dda7.chunk.js"</span>
+  },
+  {
+    <span class="hljs-string">"revision"</span>: <span class="hljs-string">"c7e1aa03eb428c93f751"</span>,
+    <span class="hljs-string">"url"</span>: <span class="hljs-string">"/static/js/runtime-main.f4636c62.js"</span>
+  },
+  {
+    <span class="hljs-string">"revision"</span>: <span class="hljs-string">"ea4c538e9ec3b3ecbd16d0084e1b287a"</span>,
+    <span class="hljs-string">"url"</span>: <span class="hljs-string">"/static/media/Add.ea4c538e.svg"</span>
+  },
+  {
+    <span class="hljs-string">"revision"</span>: <span class="hljs-string">"7f7d8a9836782e4cc4dc967570947bf9"</span>,
+    <span class="hljs-string">"url"</span>: <span class="hljs-string">"/static/media/ArrowForward.7f7d8a98.svg"</span>
+  },
+  {
+    <span class="hljs-string">"revision"</span>: <span class="hljs-string">"5607c21619a30a4c2aef4cc7cac781e4"</span>,
+    <span class="hljs-string">"url"</span>: <span class="hljs-string">"/static/media/ArrowTurnLeft.5607c216.svg"</span>
+  },
+  {
+    <span class="hljs-string">"revision"</span>: <span class="hljs-string">"195bf652abf4a78215687210d37ed068"</span>,
+    <span class="hljs-string">"url"</span>: <span class="hljs-string">"/static/media/ArrowTurnRight.195bf652.svg"</span>
+  },
+  {
+    <span class="hljs-string">"revision"</span>: <span class="hljs-string">"63f71ddd57b485b64acc6ccceded2fac"</span>,
+    <span class="hljs-string">"url"</span>: <span class="hljs-string">"/static/media/Delete.63f71ddd.svg"</span>
+  },
+  {
+    <span class="hljs-string">"revision"</span>: <span class="hljs-string">"f3a1aa0e8e36d4f7160bcfc14e513295"</span>,
+    <span class="hljs-string">"url"</span>: <span class="hljs-string">"/static/media/Error.f3a1aa0e.svg"</span>
+  },
+  {
+    <span class="hljs-string">"revision"</span>: <span class="hljs-string">"2a4bd4a32735510d451ad1edf9869662"</span>,
+    <span class="hljs-string">"url"</span>: <span class="hljs-string">"/static/media/Play.2a4bd4a3.svg"</span>
+  },
+  {
+    <span class="hljs-string">"revision"</span>: <span class="hljs-string">"584cfd846467e60f1207bea92ac797c4"</span>,
+    <span class="hljs-string">"url"</span>: <span class="hljs-string">"/static/media/Status_Connected.584cfd84.svg"</span>
+  },
+  {
+    <span class="hljs-string">"revision"</span>: <span class="hljs-string">"ae0e745c964a2304c8eea1a99f483144"</span>,
+    <span class="hljs-string">"url"</span>: <span class="hljs-string">"/static/media/Status_NotConnected.ae0e745c.svg"</span>
+  }
+]);
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-10517">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2020-02-14T16:14:51.623-0500">2020-02-14T16:14:51.623-0500</relative-time></i></p>
+                        <p>That one is from the current master branch</p>
+
+                    </li>
+                    
+                    <li id="comment-10518">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-02-14T16:16:01.442-0500">2020-02-14T16:16:01.442-0500</relative-time></i></p>
+                        <p>It's a little hard to read, but it looks like <a href="https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js">https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js</a> is doing some Workbox set up.</p>
+<p>It's looking maybe like the answer to "who is caching our files" is Workbox?</p>
+
+                    </li>
+                    
+                    <li id="comment-10519">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2020-02-14T16:18:51.646-0500">2020-02-14T16:18:51.646-0500</relative-time></i></p>
+                        <p>Yeah, that makes sense, specifically this line: workbox.precaching.precacheAndRoute(self.__precacheManifest, {});</p>
+
+                    </li>
+                    
+                    <li id="comment-10520">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-02-14T16:23:14.328-0500">2020-02-14T16:23:14.328-0500</relative-time></i></p>
+                        <p>Do you know where in create-react-app the configuration for Workbox lives? It would be good to document that here also.</p>
+
+                    </li>
+                    
+                    <li id="comment-10521">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2020-02-14T16:23:57.998-0500">2020-02-14T16:23:57.998-0500</relative-time></i></p>
+                        <p><a href="https://github.com/GoogleChrome/workbox/blob/7fde87915e1e122b24e18f9e214a31d6a1986820/packages/workbox-precaching/src/precache.ts#L56-L57">https://github.com/GoogleChrome/workbox/blob/7fde87915e1e122b24e18f9e214a31d6a1986820/packages/workbox-precaching/src/precache.ts#L56-L57</a></p>
+
+                    </li>
+                    
+                    <li id="comment-10522">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2020-02-14T16:25:55.980-0500">2020-02-14T16:25:55.980-0500</relative-time></i></p>
+                        <p>Yep, the configuration for Workbox lives here:</p>
+<p><a href="https://github.com/facebook/create-react-app/blob/8b0dd54c7a7488d46a43ff6d1c67a6b41c31feb1/packages/react-scripts/config/webpack.config.js#L674">https://github.com/facebook/create-react-app/blob/8b0dd54c7a7488d46a43ff6d1c67a6b41c31feb1/packages/react-scripts/config/webpack.config.js#L674</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-162/"><span class="aria-hidden">←</span> Previous: C2LC-162</a>
+        <a class="mx-1" href="/browse/C2LC-164/">Next: C2LC-164 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> ENGAGE-286  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" ENGAGE-286 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/ENGAGE-286/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/ENGAGE-286/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/ENGAGE" data-pagefind-filter="project">Fluid Engage</a></li>
+                <li><a href="/browse/ENGAGE-286/">ENGAGE-286</a></li>
+            </ol>
+        </nav>
+        <h1>ENGAGE-286: Localization: ensure all components load strings in the correct language </h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/ENGAGE-286">ENGAGE-286</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/ENGAGE/?type=Sub-task">Sub-task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/ENGAGE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/ENGAGE/?reporter=Michelle%20D'Souza">Michelle D'Souza</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-01-25T10:43:34.000-0500" prefix="">2010-01-25T10:43:34.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2010-02-08T17:41:12.000-0500" prefix="">2010-02-08T17:41:12.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3b</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>At the moment, a number of component hard-bake English string directly in the component's markup. We should use the facilities of the Renderer, along with the ability to send data to components from the server upon instantiation. This will ensure that all components can be localized in any language.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/ENGAGE/ENGAGE-286/ENGAGE-286(exhibitionBrowse service update).patch.txt">
+                            
+                                ENGAGE-286(exhibitionBrowse service update).patch.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-12104">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-01-25T17:17:37.000-0500">2010-01-25T17:17:37.000-0500</relative-time></i></p>
+                        <p>=============================<br>
+Here is a what needs to be localized. <br>
+==============================</p>
+<p>Exhibition Browse<br>
+------------------------
+*** Problem running in standalone, see <a href="/browse/ENGAGE-324/">ENGAGE-324</a> &amp; <a href="/browse/ENGAGE-319/">ENGAGE-319</a> ***</p>
+<ul>
+<li>Title</li>
+<li>Exhibition Descriptions ?</li>
+<li>Upcoming Exhibitions Header</li>
+</ul>
+<p>Artifact View</p>
+<p>-----------------</p>
+<ul>
+<li>Media cabinet header</li>
+<li>Comments cabinet header</li>
+<li>related artifacts ?
+<ul>
+<li>for all cabinet headers there is a variant using show and hide</li>
+</ul>
+</li>
+</ul>
+<p>My Collection</p>
+<p>-------------------
+<br>
+???</p>
+<p>====================================<br>
+Here is the list of finished Pages/Components<br>
+====================================</p>
+<p>Home Page<br>
+----------------</p>
+<ul>
+<li>Title</li>
+<li>image captions</li>
+</ul>
+<p>Exhibition About / Upcoming</p>
+<p>--------------------------------------</p>
+<ul>
+<li>Exhibition Display Date ? </li>
+</ul>
+<p>Exhibition Main</p>
+<p>---------------------</p>
+<ul>
+<li>Read More link</li>
+<li>View the full catalogue link</li>
+<li>Read all comments</li>
+<li>catalogue header</li>
+<li>guessbook header</li>
+<li>exhibition display date ?</li>
+</ul>
+<p>Catalogue View</p>
+<p>---------------------</p>
+<ul>
+<li>View all Objects</li>
+<li>View all in ... </li>
+</ul>
+<p>Catalogue Browse</p>
+<p>-------------------------</p>
+<ul>
+<li>Title </li>
+<li>Viewing "...</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-12105">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2010-02-02T10:15:53.000-0500">2010-02-02T10:15:53.000-0500</relative-time></i></p>
+                        <p>mccord-pilot</p>
+
+                    </li>
+                    
+                    <li id="comment-12106">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-02-02T16:46:38.000-0500">2010-02-02T16:46:38.000-0500</relative-time></i></p>
+                        <p>The <a href="/browse/ENGAGE-286/">ENGAGE-286</a>(exhibitionBrowse service update).patch.txt are the updates needed for the exhibitionBrowse.js file to comply with the updates to the Browse component and to look for the message bundle in a different location. Just waiting on Antranig to make some changes to the exhibitionBrowse.js file before committing.</p>
+
+                    </li>
+                    
+                    <li id="comment-12107">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-02-05T15:51:32.000-0500">2010-02-05T15:51:32.000-0500</relative-time></i></p>
+                        <p>Bug Parade Engage 0.3 </p>
+
+                    </li>
+                    
+                    <li id="comment-12108">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-02-08T17:41:12.000-0500">2010-02-08T17:41:12.000-0500</relative-time></i></p>
+                        <p>For the most part this is completed. Specific jiras have been filed for the remaining tasks </p>
+<p><a href="/browse/ENGAGE-348/">ENGAGE-348</a>, <a href="/browse/ENGAGE-352/">ENGAGE-352</a>, <a href="/browse/ENGAGE-354/">ENGAGE-354</a>, <a href="/browse/ENGAGE-355/">ENGAGE-355</a>, <a href="/browse/ENGAGE-356/">ENGAGE-356</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/ENGAGE-285/"><span class="aria-hidden">←</span> Previous: ENGAGE-285</a>
+        <a class="mx-1" href="/browse/ENGAGE-287/">Next: ENGAGE-287 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5925  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5925 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5925/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5925/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5925/">FLUID-5925</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5925: Failure to trigger ginger resolution from IoC-qualified listener key</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5925">FLUID-5925</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-07-05T20:48:16.265-0400" prefix="">2016-07-05T20:48:16.265-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-10-20T14:07:42.572-0400" prefix="">2016-10-20T14:07:42.572-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p><a href="/browse/FLUID-5249/">FLUID-5249</a> has left still further unexploded ammunition, in the form of the raw use of "fluid.expandImmediate" in fluid.mergeListeners (and indeed in numerous other places). The comments on this function states "Main pathway for freestanding material that is not part of a component's options" which is a possibly helpful warning but reflects an incomplete understanding of the possible workflows this material might be in.</p>
+<p>It seems that the core logic that we have within "fluid.expander.fetch", with the opportunistic logic detecting whether there is a "fit" underway, needs to be hoisted up into all cases of expansion - even if this involves a loss of performance in our recently optimised invokers and listeners. These all assume that the component tree is static at the time of dispatch - which might be true for listeners but is not true for all cases of invokers - at least in the somewhat rare case of a dynamic grade which is dispensed from an invoker.</p>
+<p>Certainly the case of an IoC-qualified listener key is pretty blatant and we need to fix it - although the framework rewrite for <a href="/browse/FLUID-4925/">FLUID-4925</a> would be preferable.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22608">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-08-04T12:35:22.114-0400">2016-08-04T12:35:22.114-0400</relative-time></i></p>
+                        <p>This report seems to be incorrect and confused. The implementation within fluid.expandImmediate is <strong>indeed</strong> the "fluid.expander.fetch" implementation that is mentioned, and so is resistant to the problem described. It's been so far impossible to demonstrate this in a test case.</p>
+
+                    </li>
+                    
+                    <li id="comment-22610">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2016-10-20T14:07:35.356-0400">2016-10-20T14:07:35.356-0400</relative-time></i></p>
+                        <p>The pull request <a href="https://github.com/fluid-project/infusion/pull/731">https://github.com/fluid-project/infusion/pull/731</a> to demonstrate the non-existence of this issue has been merged into the master at 4596804313815bc6f6b43c8346337d219ea7e2e2</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5924/"><span class="aria-hidden">←</span> Previous: FLUID-5924</a>
+        <a class="mx-1" href="/browse/FLUID-5926/">Next: FLUID-5926 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

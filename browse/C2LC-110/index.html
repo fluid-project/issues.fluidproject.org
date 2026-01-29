@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-110  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-110 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-110/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-110/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-110/">C2LC-110</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-110: Focus is lost when modifying the program</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-110">C2LC-110</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Sub-task">Sub-task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Done</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Daniel Cho</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-12-19T13:52:51.973-0500" prefix="">2019-12-19T13:52:51.973-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-01-15T13:57:12.074-0500" prefix="">2020-01-15T13:57:12.074-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Env 0.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This happens when setting a step command block, when Adding a blank step and when Deleting a step.</p>
+<p>Steps to reproduce:</p>
+<ul>
+<li>Load the Coding Environment</li>
+<li>Activate the Forward command block in the command palette</li>
+<li>Navigate by keyboard to the first program step</li>
+<li>Press Space or Enter to set the Forward command at the first step</li>
+</ul>
+<p>Expected: Focus to remain on the first step, which now has the Forward command</p>
+<p>Actual: Focus is lost</p>
+<p>Notes:</p>
+<ul>
+<li>See: <a href="https://reactjs.org/docs/accessibility.html#programmatically-managing-focus">https://reactjs.org/docs/accessibility.html#programmatically-managing-focus</a></li>
+</ul>
+<p></p>
+<p>Steps to reproduce:</p>
+<ul>
+<li>Load the Coding Environment</li>
+<li>Activate the Forward command block in the command palette</li>
+<li>Set the Forward command at the first step</li>
+<li>Activate the Add editor action</li>
+<li>Navigate by keyboard to the first program step</li>
+<li>Press Space or Enter to insert a blank before the Forward command</li>
+</ul>
+<p>Expected: Focus to remain on the Forward step (now the second step)</p>
+<p>Actual: Focus is lost</p>
+<p></p>
+<p>Steps to reproduce:</p>
+<ul>
+<li>Load the Coding Environment</li>
+<li>Make a program with: Forward, Right</li>
+<li>Activate the Delete editor action</li>
+<li>Navigate by keyboard to the first program step (Forward)</li>
+<li>Press Space or Enter to delete the Forward command</li>
+</ul>
+<p>Expected: Focus is now on the new first step block (Right)</p>
+<p>Actual: Focus is lost</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10602">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-01-15T13:57:00.153-0500">2020-01-15T13:57:00.153-0500</relative-time></i></p>
+                        <p>The implementation for 'Add' varies a little from the description above: rather than focus being set on the block position after the newly inserted block, it is set on the newly inserted block.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-109/"><span class="aria-hidden">←</span> Previous: C2LC-109</a>
+        <a class="mx-1" href="/browse/C2LC-111/">Next: C2LC-111 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

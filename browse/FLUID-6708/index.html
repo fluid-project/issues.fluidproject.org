@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6708  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6708 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6708/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6708/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6708/">FLUID-6708</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6708: Sourceless relay rule with non-local target causes failure</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6708">FLUID-6708</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2022-01-06T09:20:48.698-0500" prefix="">2022-01-06T09:20:48.698-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2022-02-03T10:40:27.817-0500" prefix="">2022-02-03T10:40:27.817-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>5.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>A sourceless relay rule whose target is not the current component causes a failure in fluid.materialiseModelPath. Example was</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"hortis.sunburst"</span>, {
+....
+        tabs: {
+            type: <span class="hljs-string">"hortis.bagatelleTabs"</span>,
+            options: {
+                modelRelay: {
+                   sunburstVisible: {
+                        target: <span class="hljs-string">"{sunburst}.model.visible"</span>,
+                        func: tab =&gt; tab === <span class="hljs-string">"sunburst"</span>,
+                        args: <span class="hljs-string">"selectedTab"</span>
+                    }           
+                }
+            }
+        },
+</code></pre>
+<p>This is sent into fluid.registerDirectChangeRelay which seems to have a somewhat sloppy test on line 831:</p>
+<pre><code class="hljs language-java">fluid.registerDirectChangeRelay = function (target, targetSegs, source, sourceSegs, linkId, transducer, options, npOptions) {
+        <span class="hljs-type">var</span> <span class="hljs-variable">targetApplier</span> <span class="hljs-operator">=</span> options.targetApplier || target.applier; <span class="hljs-comment">// first branch implies the target is a relay document</span>
+        <span class="hljs-type">var</span> <span class="hljs-variable">sourceApplier</span> <span class="hljs-operator">=</span> options.sourceApplier || source.applier; <span class="hljs-comment">// first branch implies the source is a relay document - listener will be transactional</span>
+        <span class="hljs-keyword">if</span> (!options.targetApplier) {
+            fluid.materialiseModelPath(target, targetSegs);
+        }
+        <span class="hljs-keyword">if</span> (!options.sourceApplier) {
+            fluid.materialiseModelPath(source, sourceSegs);
+        }
+</code></pre>
+<p>This then gives </p>
+<pre><code class="hljs language-java">TypeError: Cannot read property <span class="hljs-string">'length'</span> of <span class="hljs-literal">null</span>
+</code></pre>
+<p>in fluid.matchMaterialiserSpec line 683 since there are no source segments</p>
+<pre><code class="hljs language-java">fluid.matchMaterialiserSpec = function (record, segs) {
+        <span class="hljs-type">var</span> <span class="hljs-variable">trundle</span> <span class="hljs-operator">=</span> record;
+        <span class="hljs-type">var</span> <span class="hljs-variable">routedPath</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">var</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; segs.length; ++i) {
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25177">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2022-01-06T09:41:19.425-0500">2022-01-06T09:41:19.425-0500</relative-time></i></p>
+                        <p>As it turns out the triggering condition is not the non-local source, but the local target. The failure is triggered one level higher up in fluid.parseModelRelay:</p>
+<pre><code class="hljs language-java"><span class="hljs-keyword">if</span> (transformPackage.refCount === <span class="hljs-number">0</span>) { <span class="hljs-comment">// There were no implicit relay elements found in the relay document - it can be relayed directly</span>
+                <span class="hljs-comment">// Case i): Bind changes emitted from the relay ends to each other, synchronously</span>
+                fluid.connectModelRelay(parsedSource.that || that, parsedSource.modelSegs, parsedTarget.that, parsedTarget.modelSegs,
+                <span class="hljs-comment">// Primarily, here, we want to get rid of "update" which is what signals to connectModelRelay that this is a invalidatable relay</span>
+                    fluid.filterKeys(transformPackage, [<span class="hljs-string">"forwardAdapter"</span>, <span class="hljs-string">"backwardAdapter"</span>, <span class="hljs-string">"namespace"</span>, <span class="hljs-string">"priority"</span>]));
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">if</span> (parsedSource.modelSegs &amp;&amp; !shortSingleTransform) {
+                    fluid.fail(<span class="hljs-string">"Error in model relay definition: If a relay transform has a model dependency, you can not specify a \"source\" entry - please instead enter this as \"input\" in the transform specification. Definition was "</span>, mrrec, <span class="hljs-string">" for component "</span>, that);
+                }
+                <span class="hljs-comment">// Case ii): Binds changes emitted from the relay document itself onto the relay ends (using the "half-transactional system")</span>
+                fluid.connectModelRelay(that, <span class="hljs-literal">null</span>, parsedTarget.that, parsedTarget.modelSegs, transformPackage);
+            }
+</code></pre>
+<p>Putting a non-local reference in target causes us to take branch 2 which then doesn't bomb on a sourceless transform. All seems rather dodgy - of course our model of "relay documents are relay sources" is a deep crock.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6707/"><span class="aria-hidden">←</span> Previous: FLUID-6707</a>
+        <a class="mx-1" href="/browse/FLUID-6709/">Next: FLUID-6709 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5836  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5836 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5836/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5836/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5836/">FLUID-5836</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5836: Rethink the use of "source" type options distributions</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5836">FLUID-5836</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-12-25T09:04:39.966-0500" prefix="">2015-12-25T09:04:39.966-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2022-02-17T09:07:11.012-0500" prefix="">2022-02-17T09:07:11.012-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Originally, options distributions of "source" type were the principal (and for a while, even the only) form that was used. Especially aggressive was the use of "removeSource" as an annotation to indicate that the options material distributed should not be resolved at the source site at all, but be "uprooted" in order to resolve at the target. In the light of recent improvements in distribution namespace handling and more finegrained priority resolution (ending in <a href="/browse/FLUID-5824/">FLUID-5824</a>), as well as a recent tour of the fragility of the "source" system (suffered in <a href="/browse/FLUID-5835/">FLUID-5835</a>), we should reconsider our widespread use of "source" types in favour of "record" types.</p>
+<p>The pending major update of the GPII universal architecture in <a href="https://github.com/GPII/universal/pull/425">https://github.com/GPII/universal/pull/425</a> for <a href="/browse/GPII-1318/">GPII-1318</a> features a much more aggressive use of "global options distributions". Rather than constantly reaggregating options into locally-named caches, the idea is that the ultimate target site of the distributions is targetted via a global selector. Priority amongst these distributions are then arbitrated by schemes such as <a href="/browse/FLUID-5824/">FLUID-5824</a> and <a href="/browse/FLUID-5621/">FLUID-5621</a>. This allows us to have "global oversight" of a design and easily (especially with the aid of perpetually forthcoming tools) be able to determine all the sites which influence a particular target. The alternative is to create a chaos of "locally forward caches of junk" of which the <a href="/browse/FLUID-5835/">FLUID-5835</a> failure is a prime example. Numerous sites try to advise the message bundle of a prefs editor panel, and the result is a mishmash of inconsistently named aliases for the same options (messageResolver, msgResolver, etc. in several different components). The resulting mess is almost impossible to understand and debug.</p>
+<p>In addition, the "source" scheme as toured in <a href="/browse/FLUID-5835/">FLUID-5835</a> shows that it is liable to many other causes of failure than the particular regression we encountered. The user's expectation is that, when writing</p>
+<pre><code class="hljs language-java">source: <span class="hljs-string">"{that}.options.thing"</span>
+</code></pre>
+<p>that the target will receive EXACTLY the options that would have arisen at the source's option "thing". In fact, there are numerous reasons that this may be difficult to achieve. "thing" may itself be derived from numerous options source (blocks) which must all be seen at the point of the distribution, and whose priorities must be exactly preserved at the target.</p>
+<p>The "block filtering" scheme arose because of our requirement for "removeSource", which in turn was primarily motivated by our "third epicyclic version" for fixing the Uploader's design in advance of our current now almost completely hermetic dynamic grade resolution algorithm. That previous epicycle involved a rather baroque "complete options distribution" where we broadcasted a source of "{that}.options" to a target "real impl" subcomponent with "removeSource: true" and a bunch of exclusions in order to prevent infinite self-inclusion. This requirement, as well as the current rather inflexible workflow for options merging, requires that options distributions work the way they currently do - that is, the result of a source distribution is that "filtered blocks" from the source are added to the target's blocks, rather than the target being able to directly depend on the source's finally resolved options value (which would allow completely consistency to be guaranteed).</p>
+<p>As we start planning for the upcoming framework rewrite under <a href="/browse/FLUID-4982/">FLUID-4982</a>, we should also consider rethinking this widespread (especially in the prefs framework) use of "source" distributions. If we carry on with them, we should consider at least - <br>
+i) eliminating the "removeSource" annotation, which should discourage some of the most confusing cases of "wholesale options forwarding"<br>
+ii) reimplement the scheme to allow the actually resolved option to be forward rather than the raw materials for it, which should be much easier to achieve in the new "promise-like" world<br>
+iii) generally recommend that "record" distributions plus globally resolved selectors be used instead, rather than the "facade"-type pattern we have been continuing to have in our minds under the influence of ancient-type thought received for example from GoF</p>
+<p>The "get it right first time" model of resolution has been an abstract goal of the framework for a long while. As our construction process becomes steadily more powerful, use cases which required objects to be constructed initially in only a partially viable condition, or else for options to be constantly cascaded through the system in many steps on their way to their ultimate destination can gradually be subsumed in the framework's workflow in general. The opportunity to get rid of further, specific, framework features (e.g. "removeSource") in favour of general capabilities of the instantiation workflow should be seized if we can.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14067">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-11-07T22:43:44.530-0500">2016-11-07T22:43:44.530-0500</relative-time></i></p>
+                        <p>Yes - ii) above.</p>
+<p>I ran into further bizarre behaviour when working on fluid-authoring, trying to implement a workaround hack for our lack of dynamism in "components" for <a href="/browse/FLUID-5028/">FLUID-5028</a>. This looked as follows:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.author.componentView"</span>, {
+...
+        distributeOptions: {
+            <span class="hljs-comment">// This unreasonable hack is currently our best route around <a href="/browse/FLUID-5028/">FLUID-5028</a></span>
+            source: <span class="hljs-string">"{that}.options.rowMaterials.options"</span>,
+            target: <span class="hljs-string">"{that}.options"</span>
+        },
+....
+        rowMaterials: <span class="hljs-string">"@expand:fluid.author.componentView.collectRowMaterials({that}, {that}.options.elements)"</span>,
+</code></pre>
+<p>Given <code>rowMaterials</code> just consists of an expander, the code in the dimwitted <code>fluid.filterBlocks</code> which looks as follows:</p>
+<pre><code class="hljs language-java">fluid.filterBlocks = function (contextThat, sourceBlocks, sourceSegs, targetSegs, exclusions, removeSource) {
+        <span class="hljs-type">var</span> <span class="hljs-variable">togo</span> <span class="hljs-operator">=</span> [];
+        fluid.each(sourceBlocks, function (block) {
+            <span class="hljs-type">var</span> <span class="hljs-variable">source</span> <span class="hljs-operator">=</span> fluid.get(block.source, sourceSegs);
+</code></pre>
+<p>completely elided all of the material since the target path did not match. This attempt to "process raw materials" is a ridiculous blunder.<br>
+In theory if we can just fix <a href="/browse/FLUID-5028/">FLUID-5028</a> we could do without this hack completely, but it's then not quite clear what the above code, which attempts to dynamically generate an unbounded set of standard subcomponents, will look like. If we support a proper API to "potentia II", the component generator could use it, but this would then be not clearly captured in configuration. There's an awkwardness that dynamic component material currently has to be summarised as a grade. We could use "nonce grades" here, although there would then be a cleanup problem.</p>
+
+                    </li>
+                    
+                    <li id="comment-14072">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2022-02-17T09:07:11.012-0500">2022-02-17T09:07:11.012-0500</relative-time></i></p>
+                        <p>Further unexpected behaviour - since "source" distribution occurs <strong>before</strong> options merging, it is possible to end up distributing values that have been overridden.</p>
+<p>For example:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"hortis.sunburstLoaderWithMap"</span>, {
+    mapFlavourGrade: <span class="hljs-string">"hortis.leafletMap.withGrid"</span>,
+....
+        mapFlavourGrade: {
+            target: <span class="hljs-string">"{that map}.options.gradeNames"</span>,
+            source: <span class="hljs-string">"{that}.options.mapFlavourGrade"</span>
+        }
+}
+</code></pre>
+<p>overriding "mapFlavourGrade" ends up broadcasting both the values in the defaults as well as the overridden value, with obviously undesirable effects</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5835/"><span class="aria-hidden">←</span> Previous: FLUID-5835</a>
+        <a class="mx-1" href="/browse/FLUID-5837/">Next: FLUID-5837 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

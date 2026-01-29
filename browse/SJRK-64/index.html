@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-64  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-64 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-64/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-64/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-64/">SJRK-64</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-64: Move retry logic for configuring database from server project to couch-config project</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-64">SJRK-64</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SJRK/?resolution=Done">Done</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alan Harnum</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Alan%20Harnum">Alan Harnum</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-03-27T14:15:34.231-0400" prefix="">2018-03-27T14:15:34.231-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-11-18T14:30:34.677-0500" prefix="">2019-11-18T14:30:34.677-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>As part of the initial work to create a fully containerized definition of the application + dependencies, some basic retry logic was implemented in the storytelling server project's couch configuration grade (<a href="https://github.com/waharnum/sjrk-story-telling-server/blob/SJRK-60/src/js/dbSetup.js#L102)">https://github.com/waharnum/sjrk-story-telling-server/blob/SJRK-60/src/js/dbSetup.js#L102)</a>&#160;- this allows the configuration to be resilient when dealing with the potential sequencing issues that arise when spinning up various containers, including ones responsible for operations like database configuration. (see <a href="https://docs.docker.com/compose/startup-order/)">https://docs.docker.com/compose/startup-order/)</a></p>
+<p>As this is generally useful functionality it should be moved from the server project to the couch-config project, with attendant test coverage.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26346">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2018-04-16T15:45:20.864-0400">2018-04-16T15:45:20.864-0400</relative-time></i></p>
+                        <p>An initial implementation of this is now done, at <a href="https://github.com/waharnum/fluid-couch-config/tree/SJRK-64,">https://github.com/waharnum/fluid-couch-config/tree/SJRK-64,</a>&#160;based off Gregor Moss's <a href="/browse/SJRK-41/">SJRK-41</a> branch (which is the subject of this open PR: <a href="https://github.com/fluid-project/fluid-couch-config/pull/2)">https://github.com/fluid-project/fluid-couch-config/pull/2)</a></p>
+<p>Gregor Moss, do you think it makes sense for me to PR this against your <a href="/browse/SJRK-41/">SJRK-41</a> branch?</p>
+
+                    </li>
+                    
+                    <li id="comment-26347">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2018-04-16T15:52:17.151-0400">2018-04-16T15:52:17.151-0400</relative-time></i></p>
+                        <p>Correction, the branch is <a href="/browse/SJRK-41/">SJRK-41</a>, but this is based off the current master (since that's what being PR'd and it's ahead of <a href="/browse/SJRK-41/">SJRK-41</a> development-wise)</p>
+
+                    </li>
+                    
+                    <li id="comment-26348">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2018-04-16T15:55:42.277-0400">2018-04-16T15:55:42.277-0400</relative-time></i></p>
+                        <p>Alan Harnum your <a href="/browse/SJRK-64/">SJRK-64</a> branch is based off of my master branch, in fact, so I think that it would be best to have a PR against BlueSlug:master. once merged, it will update my PR against fluid-project:master. TLDR: yes 🙂</p>
+
+                    </li>
+                    
+                    <li id="comment-26349">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2019-11-18T14:30:34.663-0500">2019-11-18T14:30:34.663-0500</relative-time></i></p>
+                        <p>Alan Harnum's work has been merged into my master branch (<a href="https://github.com/BlueSlug/fluid-couch-config">https://github.com/BlueSlug/fluid-couch-config</a>), so we can leave any substantial review of this for the review of the <a href="/browse/SJRK-41/">SJRK-41</a> pull request: <a href="https://github.com/fluid-project/fluid-couch-config/pull/2">https://github.com/fluid-project/fluid-couch-config/pull/2</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-63/"><span class="aria-hidden">←</span> Previous: SJRK-63</a>
+        <a class="mx-1" href="/browse/SJRK-65/">Next: SJRK-65 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

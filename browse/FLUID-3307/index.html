@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3307  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3307 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3307/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3307/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3307/">FLUID-3307</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3307: Component tree for &lt;select&gt; can't handle non-unique 'value' attributes</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3307">FLUID-3307</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-10-20T15:57:20.000-0400" prefix="">2009-10-20T15:57:20.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-01-20T15:09:51.084-0500" prefix="">2011-01-20T15:09:51.084-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Renderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When rendering an HTML &lt;select&gt; element, the component tree uses a string value matching the "value" of one of the options to indicated the current selection, e.g.:<br>
+{ ID: myPullDown,<br>
+optionlist: ["one", "two", "three"],<br>
+optionnames: ["1 (one)", "2 (two)", "3 (three)"],<br>
+selection: "two"<br>
+}</p>
+<p>The strings in the optionlist array are placed into the value attributes of the &lt;option&gt; elements. But HTML does not require these value attributes to be unique, so it's perfectly valid HTML (albeit of questionable usefulness) to have non-unique values. In this case, you can't uniquely identify which item should be selected. For example:</p>
+<p>{ ID: myPullDown,<br>
+optionlist: ["one", "one", "two", "two", "three", "three"],<br>
+optionnames: ["One", "Un", "Two", "Deux", "Three", "Trois"],<br>
+selection: "two"<br>
+}</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19895">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2009-11-29T00:42:53.000-0500">2009-11-29T00:42:53.000-0500</relative-time></i></p>
+                        <p>I don't believe this issue can be resolved as posted, with the current semantic the renderer operates. Options with the same value <strong>are</strong> the same option, and semantically indistinguishable. There would be no way to determine which of the identical options to select, only given an inspection of the data model - which is the acid test. We should explore other ways to achieve an effect like this, but I'm afraid the bottom line is that the data model of your application really does need to provide all the information necessary in a self-contained way to distinguish between different UI states that are used to represent it. That HTML supports non-model-based distinct UI conditions both with &lt;select&gt; and also with radio buttons has to unfortunately be declared a failure of its semantic model 😛</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3306/"><span class="aria-hidden">←</span> Previous: FLUID-3306</a>
+        <a class="mx-1" href="/browse/FLUID-3308/">Next: FLUID-3308 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

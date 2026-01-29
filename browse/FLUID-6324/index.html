@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6324  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6324 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6324/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6324/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6324/">FLUID-6324</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6324: docpad - Cannot load plugins</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6324">FLUID-6324</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alan Harnum</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-08-18T15:37:49.913-0400" prefix="">2018-08-18T15:37:49.913-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:11.346-0400" prefix="">2024-07-22T10:35:11.346-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Docs platform</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p><strong>Update: 2020-02-24</strong><br>
+This affects other docpad sites:</p>
+<ul>
+<li>ILDH</li>
+<li>Fluid Project</li>
+<li>Design Guide</li>
+</ul>
+<p><strong>Original</strong><br>
+`docpad generate` ends successfully but content is garbled.</p>
+<pre><code class="hljs">$ git clone https:<span class="hljs-comment">//github.com/fluid-project/infusion-docs</span>
+<span class="hljs-type">Cloning</span> into 'infusion<span class="hljs-operator">-</span>docs'<span class="hljs-operator">...</span>
+remote: <span class="hljs-type">Counting</span> objects: <span class="hljs-number">6451</span>, done.
+remote: <span class="hljs-type">Total</span> <span class="hljs-number">6451</span> (delta <span class="hljs-number">0</span>), reused <span class="hljs-number">0</span> (delta <span class="hljs-number">0</span>), pack<span class="hljs-operator">-</span>reused <span class="hljs-number">6451</span>
+<span class="hljs-type">Receiving</span> objects: <span class="hljs-number">100</span><span class="hljs-operator">%</span> (<span class="hljs-number">6451</span><span class="hljs-regexp">/6451), 6.37 MiB | 270.00 KiB/</span>s, done.
+<span class="hljs-type">Resolving</span> deltas: <span class="hljs-number">100</span><span class="hljs-operator">%</span> (<span class="hljs-number">4050</span><span class="hljs-operator">/</span><span class="hljs-number">4050</span>), done.
+
+$ npm install docpad
+npm <span class="hljs-type">WARN</span> deprecated coffee<span class="hljs-operator">-</span>script@<span class="hljs-number">1.12</span>.<span class="hljs-number">7</span>: <span class="hljs-type">CoffeeScript</span> on <span class="hljs-type">NPM</span> has moved to <span class="hljs-string">"coffeescript"</span> (no hyphen)
+npm <span class="hljs-type">WARN</span> deprecated connect@<span class="hljs-number">2.30</span>.<span class="hljs-number">2</span>: connect <span class="hljs-number">2</span>.x series <span class="hljs-keyword">is</span> deprecated
+npm notice created a lockfile <span class="hljs-keyword">as</span> <span class="hljs-keyword">package</span><span class="hljs-operator">-</span>lock.json. <span class="hljs-type">You</span> should commit this file.
+<span class="hljs-operator">+</span> docpad@<span class="hljs-number">6.80</span>.<span class="hljs-number">7</span>
+added <span class="hljs-number">196</span> packages from <span class="hljs-number">182</span> contributors and audited <span class="hljs-number">612</span> packages <span class="hljs-keyword">in</span> <span class="hljs-number">8</span>.049s
+found <span class="hljs-number">23</span> vulnerabilities (<span class="hljs-number">13</span> low, <span class="hljs-number">2</span> moderate, <span class="hljs-number">8</span> high)
+  run `npm audit fix` to fix them, or `npm audit` <span class="hljs-keyword">for</span> details
+
+$ npm install
+npm <span class="hljs-type">WARN</span> deprecated coffee<span class="hljs-operator">-</span>script@<span class="hljs-number">1.10</span>.<span class="hljs-number">0</span>: <span class="hljs-type">CoffeeScript</span> on <span class="hljs-type">NPM</span> has moved to <span class="hljs-string">"coffeescript"</span> (no hyphen)
+npm <span class="hljs-type">WARN</span> deprecated markdown<span class="hljs-operator">-</span>to<span class="hljs-operator">-</span>ast@<span class="hljs-number">4.0</span>.<span class="hljs-number">0</span>: <span class="hljs-type">See</span> https:<span class="hljs-comment">//github.com/textlint/textlint/issues/455</span>
+npm <span class="hljs-type">WARN</span> deprecated nomnom@<span class="hljs-number">1.8</span>.<span class="hljs-number">1</span>: <span class="hljs-type">Package</span> no longer supported. <span class="hljs-type">Contact</span> support<span class="hljs-meta">@npmjs</span>.com <span class="hljs-keyword">for</span> more info.
+
+<span class="hljs-operator">&gt;</span> typechecker@<span class="hljs-number">2.0</span>.<span class="hljs-number">8</span> preinstall <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-operator">-</span>plugin<span class="hljs-operator">-</span>highlightjs<span class="hljs-regexp">/node_modules/</span>extract<span class="hljs-operator">-</span>opts<span class="hljs-regexp">/node_modules/</span>typechecker
+<span class="hljs-operator">&gt;</span> node <span class="hljs-operator">./</span>cyclic.js
+
+
+<span class="hljs-operator">&gt;</span> ambi@<span class="hljs-number">2.2</span>.<span class="hljs-number">0</span> preinstall <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-operator">-</span>plugin<span class="hljs-operator">-</span>highlightjs<span class="hljs-regexp">/node_modules/</span>ambi
+<span class="hljs-operator">&gt;</span> node <span class="hljs-operator">./</span>cyclic.js
+
+
+<span class="hljs-operator">&gt;</span> typechecker@<span class="hljs-number">2.0</span>.<span class="hljs-number">8</span> preinstall <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-operator">-</span>plugin<span class="hljs-operator">-</span>highlightjs<span class="hljs-regexp">/node_modules/</span>extendr<span class="hljs-regexp">/node_modules/</span>typechecker
+<span class="hljs-operator">&gt;</span> node <span class="hljs-operator">./</span>cyclic.js
+
+
+<span class="hljs-operator">&gt;</span> typechecker@<span class="hljs-number">2.0</span>.<span class="hljs-number">8</span> preinstall <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-operator">-</span>plugin<span class="hljs-operator">-</span>highlightjs<span class="hljs-regexp">/node_modules/</span>ambi<span class="hljs-regexp">/node_modules/</span>typechecker
+<span class="hljs-operator">&gt;</span> node <span class="hljs-operator">./</span>cyclic.js
+
+npm <span class="hljs-type">WARN</span> ajv<span class="hljs-operator">-</span>keywords@<span class="hljs-number">3.2</span>.<span class="hljs-number">0</span> requires a peer of ajv@<span class="hljs-operator">^</span><span class="hljs-number">6.0</span>.<span class="hljs-number">0</span> but none <span class="hljs-keyword">is</span> installed. <span class="hljs-type">You</span> must install peer dependencies yourself.
+
+added <span class="hljs-number">510</span> packages from <span class="hljs-number">667</span> contributors and audited <span class="hljs-number">2301</span> packages <span class="hljs-keyword">in</span> <span class="hljs-number">13</span>.98s
+found <span class="hljs-number">45</span> vulnerabilities (<span class="hljs-number">25</span> low, <span class="hljs-number">5</span> moderate, <span class="hljs-number">15</span> high)
+  run `npm audit fix` to fix them, or `npm audit` <span class="hljs-keyword">for</span> details
+
+$(npm bin)<span class="hljs-operator">/</span>docpad generate <span class="hljs-operator">--</span>env <span class="hljs-keyword">static</span>
+<span class="hljs-type">ESC</span>[33mwarning:<span class="hljs-type">ESC</span>[39m Error: <span class="hljs-type">Failed</span> to load the plugin: docpad<span class="hljs-operator">-</span>plugin<span class="hljs-operator">-</span>ghpages at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-operator">-</span>plugin<span class="hljs-operator">-</span>ghpages
+    at <span class="hljs-type">Function</span>.create (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>errlop<span class="hljs-regexp">/source/</span>index.js:<span class="hljs-number">107</span>:<span class="hljs-number">10</span>)
+    at <span class="hljs-type">Function</span>.ensure (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>errlop<span class="hljs-regexp">/source/</span>index.js:<span class="hljs-number">118</span>:<span class="hljs-number">49</span>)
+    at <span class="hljs-type">DocPad</span>.warn (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3071</span>:<span class="hljs-number">20</span>)
+    at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3814</span>:<span class="hljs-number">24</span>
+    at next (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3697</span>:<span class="hljs-number">16</span>)
+    at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3760</span>:<span class="hljs-number">26</span>
+    at <span class="hljs-type">PluginLoader</span>.create (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>plugin<span class="hljs-operator">-</span>loader.js:<span class="hljs-number">265</span>:<span class="hljs-number">16</span>)
+    at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3758</span>:<span class="hljs-number">29</span>
+    at <span class="hljs-type">PluginLoader</span>.load (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>plugin<span class="hljs-operator">-</span>loader.js:<span class="hljs-number">242</span>:<span class="hljs-number">7</span>)
+    at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3753</span>:<span class="hljs-number">27</span>
+    at <span class="hljs-type">PluginLoader</span>.unsupported (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>plugin<span class="hljs-operator">-</span>loader.js:<span class="hljs-number">148</span>:<span class="hljs-number">7</span>)
+    at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3731</span>:<span class="hljs-number">25</span>
+    at success (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>plugin<span class="hljs-operator">-</span>loader.js:<span class="hljs-number">73</span>:<span class="hljs-number">16</span>)
+    at safefs.readFile (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>plugin<span class="hljs-operator">-</span>loader.js:<span class="hljs-number">112</span>:<span class="hljs-number">18</span>)
+    at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>graceful<span class="hljs-operator">-</span>fs<span class="hljs-operator">/</span>graceful<span class="hljs-operator">-</span>fs.js:<span class="hljs-number">78</span>:<span class="hljs-number">16</span>
+    at <span class="hljs-type">FSReqWrap</span>.readFileAfterClose [<span class="hljs-keyword">as</span> oncomplete] (<span class="hljs-keyword">internal</span><span class="hljs-regexp">/fs/</span>read_file_context.js:<span class="hljs-number">53</span>:<span class="hljs-number">3</span>)
+
+<span class="hljs-type">ESC</span>[33mwarning:<span class="hljs-type">ESC</span>[39m Error: <span class="hljs-type">Failed</span> to load the plugin: docpad<span class="hljs-operator">-</span>plugin<span class="hljs-operator">-</span>handlebars at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-operator">-</span>plugin<span class="hljs-operator">-</span>handlebars
+    at <span class="hljs-type">Function</span>.create (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>errlop<span class="hljs-regexp">/source/</span>index.js:<span class="hljs-number">107</span>:<span class="hljs-number">10</span>)
+    at <span class="hljs-type">Function</span>.ensure (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>errlop<span class="hljs-regexp">/source/</span>index.js:<span class="hljs-number">118</span>:<span class="hljs-number">49</span>)
+    at <span class="hljs-type">DocPad</span>.warn (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3071</span>:<span class="hljs-number">20</span>)
+    at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3814</span>:<span class="hljs-number">24</span>
+    at next (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3697</span>:<span class="hljs-number">16</span>)
+    at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3760</span>:<span class="hljs-number">26</span>
+    at <span class="hljs-type">PluginLoader</span>.create (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>plugin<span class="hljs-operator">-</span>loader.js:<span class="hljs-number">265</span>:<span class="hljs-number">16</span>)
+    at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3758</span>:<span class="hljs-number">29</span>
+    at <span class="hljs-type">PluginLoader</span>.load (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>plugin<span class="hljs-operator">-</span>loader.js:<span class="hljs-number">242</span>:<span class="hljs-number">7</span>)
+    at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3753</span>:<span class="hljs-number">27</span>
+    at <span class="hljs-type">PluginLoader</span>.unsupported (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>plugin<span class="hljs-operator">-</span>loader.js:<span class="hljs-number">148</span>:<span class="hljs-number">7</span>)
+    at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3731</span>:<span class="hljs-number">25</span>
+    at success (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>plugin<span class="hljs-operator">-</span>loader.js:<span class="hljs-number">73</span>:<span class="hljs-number">16</span>)
+    at safefs.readFile (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>plugin<span class="hljs-operator">-</span>loader.js:<span class="hljs-number">112</span>:<span class="hljs-number">18</span>)
+    at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>graceful<span class="hljs-operator">-</span>fs<span class="hljs-operator">/</span>graceful<span class="hljs-operator">-</span>fs.js:<span class="hljs-number">78</span>:<span class="hljs-number">16</span>
+    at <span class="hljs-type">FSReqWrap</span>.readFileAfterClose [<span class="hljs-keyword">as</span> oncomplete] (<span class="hljs-keyword">internal</span><span class="hljs-regexp">/fs/</span>read_file_context.js:<span class="hljs-number">53</span>:<span class="hljs-number">3</span>)
+
+<span class="hljs-type">ESC</span>[33mwarning:<span class="hljs-type">ESC</span>[39m Error: <span class="hljs-type">Failed</span> to load the plugin: docpad<span class="hljs-operator">-</span>plugin<span class="hljs-operator">-</span>markit at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-operator">-</span>plugin<span class="hljs-operator">-</span>markit
+    at <span class="hljs-type">Function</span>.create (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>errlop<span class="hljs-regexp">/source/</span>index.js:<span class="hljs-number">107</span>:<span class="hljs-number">10</span>)
+    at <span class="hljs-type">Function</span>.ensure (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>errlop<span class="hljs-regexp">/source/</span>index.js:<span class="hljs-number">118</span>:<span class="hljs-number">49</span>)
+    at <span class="hljs-type">DocPad</span>.warn (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3071</span>:<span class="hljs-number">20</span>)
+    at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3814</span>:<span class="hljs-number">24</span>
+    at next (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3697</span>:<span class="hljs-number">16</span>)
+    at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3760</span>:<span class="hljs-number">26</span>
+    at <span class="hljs-type">PluginLoader</span>.create (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>plugin<span class="hljs-operator">-</span>loader.js:<span class="hljs-number">265</span>:<span class="hljs-number">16</span>)
+    at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3758</span>:<span class="hljs-number">29</span>
+    at <span class="hljs-type">PluginLoader</span>.load (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>plugin<span class="hljs-operator">-</span>loader.js:<span class="hljs-number">242</span>:<span class="hljs-number">7</span>)
+    at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3753</span>:<span class="hljs-number">27</span>
+    at <span class="hljs-type">PluginLoader</span>.unsupported (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>plugin<span class="hljs-operator">-</span>loader.js:<span class="hljs-number">148</span>:<span class="hljs-number">7</span>)
+    at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3731</span>:<span class="hljs-number">25</span>
+    at success (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>plugin<span class="hljs-operator">-</span>loader.js:<span class="hljs-number">73</span>:<span class="hljs-number">16</span>)
+    at safefs.readFile (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>plugin<span class="hljs-operator">-</span>loader.js:<span class="hljs-number">112</span>:<span class="hljs-number">18</span>)
+    at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>graceful<span class="hljs-operator">-</span>fs<span class="hljs-operator">/</span>graceful<span class="hljs-operator">-</span>fs.js:<span class="hljs-number">78</span>:<span class="hljs-number">16</span>
+    at <span class="hljs-type">FSReqWrap</span>.readFileAfterClose [<span class="hljs-keyword">as</span> oncomplete] (<span class="hljs-keyword">internal</span><span class="hljs-regexp">/fs/</span>read_file_context.js:<span class="hljs-number">53</span>:<span class="hljs-number">3</span>)
+
+<span class="hljs-operator">...</span>
+
+warning: Error: <span class="hljs-type">Rendering</span> the <span class="hljs-keyword">extension</span> <span class="hljs-string">"handlebars"</span> to <span class="hljs-string">"html"</span> on <span class="hljs-string">"/home/gtirloni/tmp/infusion-docs/src/layouts/default.html.handlebars"</span> didn't <span class="hljs-keyword">do</span> anything.
+<span class="hljs-type">Explanation</span> here: https:<span class="hljs-comment">//docpad.org/extension-not-rendering</span>
+    at <span class="hljs-type">Function</span>.create (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>errlop<span class="hljs-regexp">/source/</span>index.js:<span class="hljs-number">107</span>:<span class="hljs-number">10</span>)
+    at <span class="hljs-type">Function</span>.ensure (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>errlop<span class="hljs-regexp">/source/</span>index.js:<span class="hljs-number">118</span>:<span class="hljs-number">49</span>)
+    at <span class="hljs-type">DocPad</span>.warn (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3071</span>:<span class="hljs-number">20</span>)
+    at <span class="hljs-type">DocumentModel</span><span class="hljs-operator">.&lt;</span>anonymous<span class="hljs-operator">&gt;</span> (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">3291</span>:<span class="hljs-number">22</span>)
+    at triggerEvents (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>backbone<span class="hljs-operator">/</span>backbone.js:<span class="hljs-number">370</span>:<span class="hljs-number">57</span>)
+    at triggerApi (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>backbone<span class="hljs-operator">/</span>backbone.js:<span class="hljs-number">356</span>:<span class="hljs-number">19</span>)
+    at eventsApi (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>backbone<span class="hljs-operator">/</span>backbone.js:<span class="hljs-number">155</span>:<span class="hljs-number">16</span>)
+    at <span class="hljs-type">DocumentModel</span>.<span class="hljs-type">Events</span>.trigger (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>backbone<span class="hljs-operator">/</span>backbone.js:<span class="hljs-number">346</span>:<span class="hljs-number">5</span>)
+    at <span class="hljs-type">DocumentModel</span>.emit (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>base.js:<span class="hljs-number">49</span>:<span class="hljs-number">23</span>)
+    at <span class="hljs-type">DocumentModel</span>.log (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>base.js:<span class="hljs-number">44</span>:<span class="hljs-number">13</span>)
+    at <span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-regexp">/models/</span>document.js:<span class="hljs-number">525</span>:<span class="hljs-number">20</span>
+    at <span class="hljs-type">TaskGroup</span><span class="hljs-operator">.&lt;</span>anonymous<span class="hljs-operator">&gt;</span> (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">1704</span>:<span class="hljs-number">16</span>)
+    at <span class="hljs-type">Object</span>.onceWrapper (events.js:<span class="hljs-number">273</span>:<span class="hljs-number">13</span>)
+    at <span class="hljs-type">TaskGroup</span>.emit (events.js:<span class="hljs-number">182</span>:<span class="hljs-number">13</span>)
+    at <span class="hljs-type">TaskGroup</span>.<span class="hljs-type">EventEmitter</span>.emit (domain.js:<span class="hljs-number">460</span>:<span class="hljs-number">23</span>)
+    at <span class="hljs-type">TaskGroup</span>.listener (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>taskgroup<span class="hljs-regexp">/source/</span>lib<span class="hljs-operator">/</span>interface.js:<span class="hljs-number">61</span>:<span class="hljs-number">10</span>)
+    at <span class="hljs-type">TaskGroup</span>.emit (events.js:<span class="hljs-number">182</span>:<span class="hljs-number">13</span>)
+    at <span class="hljs-type">TaskGroup</span>.<span class="hljs-type">EventEmitter</span>.emit (domain.js:<span class="hljs-number">460</span>:<span class="hljs-number">23</span>)
+    at <span class="hljs-type">TaskGroup</span>.finish (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>taskgroup<span class="hljs-regexp">/source/</span>lib<span class="hljs-operator">/</span>taskgroup.js:<span class="hljs-number">972</span>:<span class="hljs-number">8</span>)
+    at <span class="hljs-type">TaskGroup</span>.fire (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>taskgroup<span class="hljs-regexp">/source/</span>lib<span class="hljs-operator">/</span>taskgroup.js:<span class="hljs-number">1037</span>:<span class="hljs-number">10</span>)
+    at <span class="hljs-type">TaskGroup</span>.itemDoneCallbackNextState (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>taskgroup<span class="hljs-regexp">/source/</span>lib<span class="hljs-operator">/</span>taskgroup.js:<span class="hljs-number">949</span>:<span class="hljs-number">8</span>)
+    at <span class="hljs-type">Object</span>.onceWrapper (events.js:<span class="hljs-number">273</span>:<span class="hljs-number">13</span>)
+    at <span class="hljs-type">Task</span>.emit (events.js:<span class="hljs-number">187</span>:<span class="hljs-number">15</span>)
+    at <span class="hljs-type">Task</span>.<span class="hljs-type">EventEmitter</span>.emit (domain.js:<span class="hljs-number">460</span>:<span class="hljs-number">23</span>)
+    at <span class="hljs-type">Task</span>.listener (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>taskgroup<span class="hljs-regexp">/source/</span>lib<span class="hljs-operator">/</span>interface.js:<span class="hljs-number">61</span>:<span class="hljs-number">10</span>)
+    at <span class="hljs-type">Task</span>.emit (events.js:<span class="hljs-number">182</span>:<span class="hljs-number">13</span>)
+    at <span class="hljs-type">Task</span>.<span class="hljs-type">EventEmitter</span>.emit (domain.js:<span class="hljs-number">460</span>:<span class="hljs-number">23</span>)
+    at <span class="hljs-type">Task</span>.finish (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>taskgroup<span class="hljs-regexp">/source/</span>lib<span class="hljs-operator">/</span>task.js:<span class="hljs-number">418</span>:<span class="hljs-number">9</span>)
+    at <span class="hljs-type">Task</span>.itemCompletionCallback (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>taskgroup<span class="hljs-regexp">/source/</span>lib<span class="hljs-operator">/</span>task.js:<span class="hljs-number">375</span>:<span class="hljs-number">8</span>)
+    at completeMethod (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>taskgroup<span class="hljs-regexp">/source/</span>lib<span class="hljs-operator">/</span>task.js:<span class="hljs-number">507</span>:<span class="hljs-number">5</span>)
+    at <span class="hljs-type">DocPad</span><span class="hljs-operator">.&lt;</span>anonymous<span class="hljs-operator">&gt;</span> (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>docpad<span class="hljs-regexp">/esnext/</span>lib<span class="hljs-operator">/</span>docpad.js:<span class="hljs-number">1408</span>:<span class="hljs-number">20</span>)
+    at ambi (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>ambi<span class="hljs-regexp">/source/</span>index.js:<span class="hljs-number">74</span>:<span class="hljs-number">3</span>)
+    at <span class="hljs-type">Domain</span>.fireMethod (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>taskgroup<span class="hljs-regexp">/source/</span>lib<span class="hljs-operator">/</span>task.js:<span class="hljs-number">522</span>:<span class="hljs-number">5</span>)
+    at <span class="hljs-type">Domain</span>.run (domain.js:<span class="hljs-number">343</span>:<span class="hljs-number">14</span>)
+    at <span class="hljs-type">Task</span>.fire (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>taskgroup<span class="hljs-regexp">/source/</span>lib<span class="hljs-operator">/</span>task.js:<span class="hljs-number">540</span>:<span class="hljs-number">15</span>)
+    at <span class="hljs-type">Immediate</span>.queue [<span class="hljs-keyword">as</span> _onImmediate] (<span class="hljs-regexp">/home/</span>gtirloni<span class="hljs-regexp">/tmp/</span>infusion<span class="hljs-operator">-</span>docs<span class="hljs-regexp">/node_modules/</span>taskgroup<span class="hljs-regexp">/source/</span>lib<span class="hljs-operator">/</span>task.js:<span class="hljs-number">575</span>:<span class="hljs-number">20</span>)
+    at runCallback (timers.js:<span class="hljs-number">693</span>:<span class="hljs-number">18</span>)
+    at tryOnImmediate (timers.js:<span class="hljs-number">664</span>:<span class="hljs-number">5</span>)
+    at processImmediate (timers.js:<span class="hljs-number">646</span>:<span class="hljs-number">5</span>)
+    at process.topLevelDomainCallback (domain.js:<span class="hljs-number">121</span>:<span class="hljs-number">23</span>)
+
+info: <span class="hljs-type">Generated</span> <span class="hljs-number">257</span><span class="hljs-operator">/</span><span class="hljs-number">258</span> files <span class="hljs-keyword">in</span> <span class="hljs-number">7.405</span> seconds
+info: <span class="hljs-type">The</span> action completed successfully
+info: <span class="hljs-type">DocPad</span> <span class="hljs-keyword">is</span> shutting down<span class="hljs-operator">...</span>
+</code></pre>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Fedora Linux 28<br>
+Node 10.9.0<br>
+Docpad 6.80.7</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15642">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2018-09-17T14:39:30.813-0400">2018-09-17T14:39:30.813-0400</relative-time></i></p>
+                        <p>This problems appears to be because of incompatibility between a global install of the latest docpad and the site code (possibly because one or more of the plugins, as they are pinned at particular versions).</p>
+<p>Using npm install -g docpad@6.79.4 (the last version between the 6.8.x line) resolved this problem for me.</p>
+<p>Needs further investigation.</p>
+
+                    </li>
+                    
+                    <li id="comment-15643">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2019-04-17T08:09:34.324-0400">2019-04-17T08:09:34.324-0400</relative-time></i></p>
+                        <p>In my work on <a href="/browse/FLUID-5722/">FLUID-5722</a> I confirmed that no version of docpad beyond 6.79.4 works with our plugin stack.  The README currently instructs people to run <code>npm install -g docpad</code>, which hasn't worked for more than a year.</p>
+<p>Long term we have discussed migrating away from docpad, but in the short term it should still be possible to contribute to this package without forcing your local install to use an outdated docpad.  As a short term solution, I plan to add docpad as a dependency pinned to the last working version and update the README to remove the suggestion to install docpad globally.</p>
+
+                    </li>
+                    
+                    <li id="comment-15644">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2019-04-17T08:12:36.297-0400">2019-04-17T08:12:36.297-0400</relative-time></i></p>
+                        <p>In my testing (with an incompatible docpad installed globally), simply adding the dependency works perfectly for things run using npm scripts, since npm adds node_modules/.bin at the start of the PATH.</p>
+
+                    </li>
+                    
+                    <li id="comment-15645">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2019-04-18T17:09:28.384-0400">2019-04-18T17:09:28.384-0400</relative-time></i></p>
+                        <p>Tony Atkins [RtF] - I think we've converged on a similar approach per this comment:&#160;<a href="https://github.com/fluid-project/infusion-docs/pull/146#issuecomment-484688337">https://github.com/fluid-project/infusion-docs/pull/146#issuecomment-484688337</a>, but I think your suggestion would work better since it doesn't rely on an outdated global install of DocPad.</p>
+<p>If you've got existing work do you want to open a PR? Simon Bates has been reviewing some of the work I've been doing to (first) try to upgrade the DocPad version and (second, when it turned out to be a yak-shaving exercise) in finding a way to keep using the older version.</p>
+
+                    </li>
+                    
+                    <li id="comment-15647">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2019-04-19T08:01:32.581-0400">2019-04-19T08:01:32.581-0400</relative-time></i></p>
+                        <p>Alan Harnum if you can wait a few days the work to pin the version is included in my early work on <a href="/browse/FLUID-5722/">FLUID-5722</a>, which I hope to submit for review next week.</p>
+
+                    </li>
+                    
+                    <li id="comment-15648">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2019-04-23T11:23:36.523-0400">2019-04-23T11:23:36.523-0400</relative-time></i></p>
+                        <p>Tony Atkins [RtF] That sounds great, thanks.</p>
+
+                    </li>
+                    
+                    <li id="comment-15651">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-08-01T11:09:10.022-0400">2019-08-01T11:09:10.022-0400</relative-time></i></p>
+                        <p>Seems we should just pin our docpad usage to v6.79.4. Can see this PR for docs-inclusive-learning as an example <a href="https://github.com/fluid-project/docs-inclusive-learning/pull/25">https://github.com/fluid-project/docs-inclusive-learning/pull/25</a></p>
+<p>It's also looking like we'll be migrating these sites to Hugo as we find the time.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6323/"><span class="aria-hidden">←</span> Previous: FLUID-6323</a>
+        <a class="mx-1" href="/browse/FLUID-6325/">Next: FLUID-6325 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

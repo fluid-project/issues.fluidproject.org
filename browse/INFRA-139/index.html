@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-139  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-139 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-139/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-139/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-139/">INFRA-139</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-139: Investigate feasibility of running VirtualBox in a container</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-139">INFRA-139</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Done">Done</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-03-16T11:13:29.736-0400" prefix="">2018-03-16T11:13:29.736-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-06-21T15:04:53.197-0400" prefix="">2018-06-21T15:04:53.197-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Solution should:</p>
+<ul>
+<li>NOT require hacks in the VirtualBox installation on the hosts</li>
+<li>NOT require heavyweight Docker container (avoid too much logic as much as possible)</li>
+<li>permit inspection of running VM but this is not a hard requirement (if it requires logging into a container)</li>
+</ul>
+<p>The use case is someone submitting a Kubernetes job to run tests against a Vagrant/VirtualBox image and getting results back.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25969">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-03-27T11:23:06.025-0400">2018-03-27T11:23:06.025-0400</relative-time></i></p>
+                        <p>I got a working prototype (based on VirtualBox 5.2.8 and Vagrant 2.0.3, on CentOS 7.4) but I'm currently facing some issues with SELinux and VirtualBox's GUI. Still working on that.</p>
+
+                    </li>
+                    
+                    <li id="comment-25971">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-03-28T11:45:12.521-0400">2018-03-28T11:45:12.521-0400</relative-time></i></p>
+                        <p>Running VirtualBox and Vagrant inside a container is certainly doable, provided the host has VirtualBox drivers installed. The container needs to be <a href="https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities">privileged</a>.</p>
+<p>Running GUI applications inside Docker is more complicated (exemplified by the size of the <a href="https://github.com/mviereck/x11docker">x11docker</a> shell script). When a Vagrant box runs in non-headless mode, it's creating a GUI window and thus poses these challenges. More specifically, because it was created in Qt5, it needs a working D-Bus connection and the Xvfb server alone is not enough.</p>
+<p>Both the CentOS and Fedora boxes work fine in headless mode. When trying to start in GUI mode, the processes are killed though:</p>
+<pre><code class="hljs"><span class="hljs-attribute">type</span>=ANOM_ABEND <span class="hljs-attribute">msg</span>=audit(1522102229.772:2026): <span class="hljs-attribute">auid</span>=4294967295 <span class="hljs-attribute">uid</span>=0 <span class="hljs-attribute">gid</span>=0 <span class="hljs-attribute">ses</span>=4294967295 <span class="hljs-attribute">subj</span>=system_u:system_r:spc_t:s0 <span class="hljs-attribute">pid</span>=1784 <span class="hljs-attribute">comm</span>=<span class="hljs-string">"VirtualBox"</span> <span class="hljs-attribute">reason</span>=<span class="hljs-string">"memory violation"</span> <span class="hljs-attribute">sig</span>=6
+<span class="hljs-attribute">type</span>=ANOM_ABEND <span class="hljs-attribute">msg</span>=audit(1522102808.466:2058): <span class="hljs-attribute">auid</span>=4294967295 <span class="hljs-attribute">uid</span>=0 <span class="hljs-attribute">gid</span>=0 <span class="hljs-attribute">ses</span>=4294967295 <span class="hljs-attribute">subj</span>=system_u:system_r:spc_t:s0 <span class="hljs-attribute">pid</span>=3739 <span class="hljs-attribute">comm</span>=<span class="hljs-string">"QDBusConnection"</span> <span class="hljs-attribute">reason</span>=<span class="hljs-string">"memory violation"</span> <span class="hljs-attribute">sig</span>=6
+</code></pre>
+<p>Another issue faced was the default 10GiB limit on the root filesystem mounted inside the container. This cannot be customized neither by the Dockerfile nor by a command line option to `docker run`. It's configured in the docker daemon itself with the option `--storage-opt dm.basesize=100G`, so it means relying on a bigger root disk is not portable.</p>
+<p>I've identified that the CI pipeline for Infusion could be optimized to use less disk space (<a href="/browse/FLUID-6266/">FLUID-6266</a> and <a href="https://github.com/GPII/ci-service/pull/38">GPII/ci-service PR#38</a>). Currently it needs more than 10GB but by simply removing extra commands (e.g.`npm install` outside the VM, building Infusion 2x), it's possible to use 7-8GB in total.</p>
+<p>Another option is to provide the container with a scratch area through a Docker volume (or a Kubernetes local mount point) for the "$HOME/VirtualBox VMs" directory. This way the root disk remains almost unused, except for checking out the code repository (or even that could stay outside the container since it's going to be thrown away at the end of the process).</p>
+<p>It's also possible to keep a volume with the latest version of the Vagrant boxes, so containers don't need to download them every time</p>
+<p>Leaving the issues of GUI applications aside (and the requirements for a development-focus environment, which translates into developers needing to see the actual browser window to troubleshoot issues), it's possible to migrate the execution of the CI pipelines into containers. There's also the question of whether VirtualBox and Vagrant are even necessary in this case but I'm also ignoring that for now.</p>
+<p>Dockerfile:</p>
+<pre><code class="hljs"><span class="hljs-attribute">FROM</span> centos:<span class="hljs-number">7</span>
+
+<span class="hljs-attribute">RUN</span> yum -y install git openssh-clients &amp;&amp; <span class="hljs-punctuation">\
+</span>    yum -y install https://releases.hashicorp.com/vagrant/<span class="hljs-number">2</span>.<span class="hljs-number">0</span>.<span class="hljs-number">3</span>/vagrant_2.<span class="hljs-number">0</span>.<span class="hljs-number">3</span>_x86_64.rpm  &amp;&amp; <span class="hljs-punctuation">\
+</span>    yum -y install https://download.virtualbox.org/virtualbox/<span class="hljs-number">5</span>.<span class="hljs-number">2</span>.<span class="hljs-number">8</span>/VirtualBox-<span class="hljs-number">5</span>.<span class="hljs-number">2</span>-<span class="hljs-number">5</span>.<span class="hljs-number">2</span>.<span class="hljs-number">8</span>_121009_el7-<span class="hljs-number">1</span>.x86_64.rpm
+</code></pre>
+<p>Starting the container (and using an pre-existing .vagrant.d directory from the host):</p>
+<pre><code class="hljs">docker <span class="hljs-keyword">run</span><span class="language-bash"> --<span class="hljs-built_in">rm</span> -ti -v /home/jenkins-fluid/.vagrant.d/boxes:/root/.vagrant.d/boxes -v /dev/vboxdrv:/dev/vboxdrv -v /dev/vboxnetctl:/dev/vboxnetctl --privileged virtualbox-vagrant</span>
+</code></pre>
+<p>The Vagrantfile needs to be modified to run in CI (it could leave in a separate directory or the existing Vagrantfile could have logic to dynamically change this, it's Ruby after all):</p>
+<pre><code class="hljs">--- <span class="hljs-keyword">a</span>/Vagrantfile
++++ <span class="hljs-keyword">b</span>/Vagrantfile
+ -<span class="hljs-number">52</span>,<span class="hljs-number">6</span> +<span class="hljs-number">52</span>,<span class="hljs-number">7</span>  Vagrant.configure(<span class="hljs-number">2</span>) <span class="hljs-keyword">do</span> |config|
+   config.<span class="hljs-keyword">vm</span>.<span class="hljs-built_in">hostname</span> = app_name
+ 
+   config.<span class="hljs-keyword">vm</span>.provider :virtualbox <span class="hljs-keyword">do</span> |<span class="hljs-keyword">vm</span>|
++    <span class="hljs-keyword">vm</span>.<span class="hljs-keyword">gui</span> = false
+     <span class="hljs-keyword">vm</span>.customize [<span class="hljs-string">"modifyvm"</span>, :id, <span class="hljs-string">"--memory"</span>, ram]
+     <span class="hljs-keyword">vm</span>.customize [<span class="hljs-string">"modifyvm"</span>, :id, <span class="hljs-string">"--cpus"</span>, cpus]
+     <span class="hljs-keyword">vm</span>.customize [<span class="hljs-string">"modifyvm"</span>, :id, <span class="hljs-string">"--vram"</span>, <span class="hljs-string">"256"</span>]
+</code></pre>
+<p>In summary, running VirtualBox/Vagrant inside a container is doable provided the box is configured as "headless" (or "separate"). There are some challenges with storage but nothing too serious, although the issues with the GUI are hard to fix (goes against "no hacks" item above).</p>
+<p>Finally, all tests in Infusion and GPII/universal work fine.</p>
+
+                    </li>
+                    
+                    <li id="comment-25972">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-04-03T04:36:25.826-0400">2018-04-03T04:36:25.826-0400</relative-time></i></p>
+                        <p>Next steps would be to go ahead and implement this for real and/or consider if it's even necessary in all use cases. New JIRA should be opened.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-138/"><span class="aria-hidden">←</span> Previous: INFRA-138</a>
+        <a class="mx-1" href="/browse/INFRA-140/">Next: INFRA-140 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

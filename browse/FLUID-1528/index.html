@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1528  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1528 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1528/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1528/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1528/">FLUID-1528</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1528: Text that is displayed on more than one line will not be completely visible in edit mode.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1528">FLUID-1528</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-09-09T13:00:49.000-0400" prefix="">2008-09-09T13:00:49.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-01-16T09:31:45.936-0500" prefix="">2017-01-16T09:31:45.936-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5beta1</li>
+                            
+                            <li>0.5</li>
+                            
+                            <li>0.6beta1</li>
+                            
+                            <li>0.6</li>
+                            
+                            <li>0.7</li>
+                            
+                            <li>0.8</li>
+                            
+                            <li>1.0</li>
+                            
+                            <li>1.1</li>
+                            
+                            <li>1.1.1</li>
+                            
+                            <li>1.1.2</li>
+                            
+                            <li>1.2</li>
+                            
+                            <li>1.3</li>
+                            
+                            <li>1.4</li>
+                            
+                            <li>1.5</li>
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Demos</li>
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Text that is displayed on more than one line will not be completely visible in edit mode.</p>
+<p>Steps to reproduce:</p>
+<p>1) Open simple inline edit demo on the build site: <a href="http://build.fluidproject.org/infusion/demos/inlineEdit/">http://build.fluidproject.org/infusion/demos/inlineEdit/</a></p>
+<p>2) Edit one of the inline edit fields with a long string of text, such as "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae nunc ac tortor convallis consequat sed non metus. Sed magna dui, tempor et mattis vulputate, feugiat ut metus. Ut ut elementum lacus. Vivamus erat elit, volutpat et molestie consectetur, congue eget nisl. Suspendisse arcu nulla, vestibulum quis ornare quis"</p>
+<p>3) Save the change by pressing the enter key</p>
+<p>4) Reopen the string of text in edit mode. Notice that editable text is not completely visible.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF 50 (macOS 10.12)<br>
+FF2, FF3, Opera 9.6, Safari 3 (Mac OS 10.5)<br>
+Chrome 35, FF 30, Safari 7 (Mac OS 10.9)<br>
+FF2, FF3, IE6, IE7, IE8, Opera 9.6 (Win XP)<br>
+FF3, IE7, IE8 (Win Vista)<br>
+FF3, IE6 (Win 2000)<br>
+IE 11 (Win 7)</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-1528/screenshot-1.jpg">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-1528/screenshot-1.jpg" alt="screenshot-1.jpg">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-1528/screenshot-2.jpg">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-1528/screenshot-2.jpg" alt="screenshot-2.jpg">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23715">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-09T13:02:19.000-0400">2008-09-09T13:02:19.000-0400</relative-time></i></p>
+                        <p>'screenshot-1' shows the text outside of edit mode</p>
+
+                    </li>
+                    
+                    <li id="comment-23716">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-09T13:16:49.000-0400">2008-09-09T13:16:49.000-0400</relative-time></i></p>
+                        <p>'screenshot-2' shows the same string of text as 'screenshot-1' but this time in  edit mode. Notice that the text isn't completely visible.</p>
+
+                    </li>
+                    
+                    <li id="comment-23717">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-09T13:22:30.000-0400">2008-09-09T13:22:30.000-0400</relative-time></i></p>
+                        <p>This problem can become more prevalent with smaller screen resolutions and browser windows, and with larger font sizes.</p>
+
+                    </li>
+                    
+                    <li id="comment-23719">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-22T12:51:34.000-0400">2008-09-22T12:51:34.000-0400</relative-time></i></p>
+                        <p>Bug Parade: 0.5 release</p>
+
+                    </li>
+                    
+                    <li id="comment-23720">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-11-07T13:01:49.000-0500">2008-11-07T13:01:49.000-0500</relative-time></i></p>
+                        <p>This issue cannot be resolved, along with <a href="/browse/FLUID-889/">FLUID-889</a> and others. The behaviour of single-line input fields in browsers is "magic" and inconsistent when newlines and other special characters are entered. If multiline text is required, the integrator should supply a multi-line edit view, such as textarea or rich equivalent.</p>
+
+                    </li>
+                    
+                    <li id="comment-23722">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-11-07T13:39:18.000-0500">2008-11-07T13:39:18.000-0500</relative-time></i></p>
+                        <p>Re-opened as this issue has to do with long text entered in an inline edit field that is then displayed on multiple lines in view mode. It does not have to do with attempting it to display on two lines. That being said it may be out of our control anyways.</p>
+
+                    </li>
+                    
+                    <li id="comment-23723">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-11-07T17:13:49.000-0500">2008-11-07T17:13:49.000-0500</relative-time></i></p>
+                        <p>I have adjusted the behaviour to ensure "scroll to end" even if "selectOnEdit" is enabled. Please reverify and determine if this new behaviour is more acceptable.</p>
+<p>At revision 5981</p>
+
+                    </li>
+                    
+                    <li id="comment-23725">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-11-10T08:52:46.000-0500">2008-11-10T08:52:46.000-0500</relative-time></i></p>
+                        <p>design-watched</p>
+<p>I'm marking this one for the design team to look at.</p>
+
+                    </li>
+                    
+                    <li id="comment-23726">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-11-10T08:53:25.000-0500">2008-11-10T08:53:25.000-0500</relative-time></i></p>
+                        <p>leaving it open until the design team determines the appropriate behaviour</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1527/"><span class="aria-hidden">←</span> Previous: FLUID-1527</a>
+        <a class="mx-1" href="/browse/FLUID-1529/">Next: FLUID-1529 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

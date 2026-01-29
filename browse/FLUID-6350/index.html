@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6350  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6350 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6350/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6350/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6350/">FLUID-6350</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6350: Address "BadRequestError" messages in browser test runs.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6350">FLUID-6350</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Tony Atkins [RtF]</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Tony%20Atkins%20%5BRtF%5D">Tony Atkins [RtF]</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-11-09T08:18:56.015-0500" prefix="">2018-11-09T08:18:56.015-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T08:51:31.182-0400" prefix="">2024-07-22T08:51:31.182-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Testing Infrastructure</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Frequently in browser test runs, we see intermittent errors like:</p>
+<pre><code class="hljs language-java">ok <span class="hljs-number">69</span> Firefox <span class="hljs-number">63.0</span> - [undefined ms] - Component Tests: /tests/component-tests/tooltip/html/Tooltip-test.html
+BadRequestError: request aborted
+    at IncomingMessage.onAborted (/home/vagrant/sync/node_modules/raw-body/index.js:<span class="hljs-number">231</span>:<span class="hljs-number">10</span>)
+    at <span class="hljs-title function_">emitNone</span> <span class="hljs-params">(events.js:<span class="hljs-number">106</span>:<span class="hljs-number">13</span>)</span>
+    at IncomingMessage.emit (events.js:<span class="hljs-number">208</span>:<span class="hljs-number">7</span>)
+    at <span class="hljs-title function_">abortIncoming</span> <span class="hljs-params">(_http_server.js:<span class="hljs-number">439</span>:<span class="hljs-number">9</span>)</span>
+    at <span class="hljs-title function_">socketOnClose</span> <span class="hljs-params">(_http_server.js:<span class="hljs-number">433</span>:<span class="hljs-number">3</span>)</span>
+    at <span class="hljs-title function_">emitOne</span> <span class="hljs-params">(events.js:<span class="hljs-number">121</span>:<span class="hljs-number">20</span>)</span>
+    at Socket.emit (events.js:<span class="hljs-number">211</span>:<span class="hljs-number">7</span>)
+    at TCP._handle.close [as _onclose] (net.js:<span class="hljs-number">561</span>:<span class="hljs-number">12</span>)
+ok <span class="hljs-number">70</span> Firefox <span class="hljs-number">63.0</span> - [undefined ms] - Component Tests: /
+</code></pre>
+<p>Justin Obara asked me to look into this in the context of gpii-testem in <a href="https://issues.gpii.net/browse/GPII-3508">GPII-3508</a>.  I spent a day researching and reading up on each of the involved libraries (gpii-testem, Testem, jqUnit, QUnit, QUnit.composite).</p>
+<p>My conclusion is that our very old version of QUnit and QUnit.composite only expect a synchronous callback to be hooked into QUnit.done.  This causes problems when an asynchronous activity like sending coverage data is performed as part of that callback.  QUnit.composite listens for "child" iframes to trigger their own QUnit.done event before closing them.  Depending on the timing, QUnit.composite may close the "child" iframe before all results are sent, which results in the above error message and, depending on when the hangup occurs, potentially the loss of coverage data.</p>
+<p>Unfortunately, we cannot handle this from Testem/gpii-testem, as QUnit.composite is the party that is hanging up the phone, and there is no good means of letting it know that it needs to wait.</p>
+<p>There are a few potential solutions I can see:</p>
+<p>1. Upgrade QUnit and QUnit.composite to use a modern version which supports asynchronous functions.  Only the very latest version of QUnit (2.8.0) lets you pass a promise-returning function into its QUnit.done hook, and will wait for the promise to complete.<br>
+2. Further modify our fork of QUnit.composite to add some kind of check for the completion of asynchronous activity.<br>
+3. Develop a pattern to bypass the use of the QUnit.composite in combination with Testem/gpii-testem.<br>
+4. Add the coverage sending as a final test step in all test suites, ideally using sequences.  Since the test suites must be completed before QUnit.done is fired, this might bypass the lack of synchrony there without requiring unpacking all the rollups and running thousands of individual tests instead of a handful of rollups.</p>
+<p>I will experiment with the third and fourth approaches, as these seem less disruptive than updating QUnit.composite and/or QUnit.</p>
+<p>cc: Antranig Basman</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23062">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-11-12T09:08:40.004-0500">2018-11-12T09:08:40.004-0500</relative-time></i></p>
+                        <p>The third approach (running individual tests) takes a lot longer, results in bloated log output, and fills up the drive on a standard Vagrant VM before it completes.  Although it's possible to work around this, we should discuss the problem and a range of approaches in the next architecture meeting.</p>
+<p>The fourth approach is probably workable, but as we have a mixture of Fluid IoC tests and direct jqUnit tests in the package, we can't just (for example) make a common caseHolder.  Instead we'd need some kind of static function that adds an additional async test at then end of each run, which only completes once the coverage results are sent.  This would require switching off the current usage of the QUnit.done hook and manually calling the coverage callback.</p>
+<p>I did some more research about the first approach just to confirm that the most recent version of QUnit.composite is able to wait for a child page to complete an asynchronous action hooked into QUnit.done by a child page to complete before closing the child iframe.</p>
+
+                    </li>
+                    
+                    <li id="comment-23063">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-11-12T09:29:17.720-0500">2018-11-12T09:29:17.720-0500</relative-time></i></p>
+                        <p>I just did some research regarding <a href="https://github.com/fluid-project/infusion/blob/master/tests/lib/qunit/js/qunit.js#L1467">the QUnit.config.testsArriving mechanism used by the Fluid IoC test framework</a> to ensure that QUnit waits long enough for tests to arrive.  If we absolutely cannot upgrade QUnit, one option would be to add a second marker variable that is meant to be set and cleared by asynchronous activities that must be completed between the last test and the synchronous "done" call.</p>
+
+                    </li>
+                    
+                    <li id="comment-23064">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-11-14T12:49:05.320-0500">2018-11-14T12:49:05.320-0500</relative-time></i></p>
+                        <p>In tonight's architecture meeting, we discussed reusing and expanding the current pattern used by the Fluid IoC test framework, which involves setting a key variable and then checking that value and deferring shutdown as needed.</p>
+<p>Here's the bit that sets the variable.</p>
+<p><a href="https://github.com/fluid-project/infusion/blob/bfbbf740eddd18ec17b604d0e4a785ec3033383d/tests/test-core/utils/js/IoCTestUtils.js#L837">https://github.com/fluid-project/infusion/blob/bfbbf740eddd18ec17b604d0e4a785ec3033383d/tests/test-core/utils/js/IoCTestUtils.js#L837</a></p>
+<p>And here we check for that and wait:</p>
+<p><a href="https://github.com/fluid-project/infusion/blob/master/tests/lib/qunit/js/qunit.js#L1467">https://github.com/fluid-project/infusion/blob/master/tests/lib/qunit/js/qunit.js#L1467</a></p>
+<p>What we need is a more general mechanism for registering arbitrary asynchronous activities that should block the normal shutdown, and one that is reached by all calls to QUnit, including those that do not use the Fluid IoC test framework.</p>
+<p>I'm thinking of making an "asyncDone" endpoint that can be used to register arbitrary functions and promises that must complete before shutdown completes.  This would use a fluid.promise.sequence, and ideally some kind of prioritisation mechanism.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6349/"><span class="aria-hidden">←</span> Previous: FLUID-6349</a>
+        <a class="mx-1" href="/browse/FLUID-6351/">Next: FLUID-6351 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

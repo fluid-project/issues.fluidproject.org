@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6629  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6629 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6629/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6629/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6629/">FLUID-6629</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6629: Support localization of UI Options out of the box</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6629">FLUID-6629</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Ned Zimmerman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Ned%20Zimmerman">Ned Zimmerman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-06-16T10:27:39.967-0400" prefix="">2021-06-16T10:27:39.967-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:32.451-0400" prefix="">2024-07-22T10:35:32.451-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently, there are <a href="https://github.com/fluid-project/trivet/pull/148">some examples</a> of how to localize UI Options which involve creating a new component which adds distributeOptions configuration to UI Options to pass in a locale for messages. It would be ideal if UI Options could support a locale option by default, allowing it to be initialized out of the box in any supported language.</p>
+<p>Also, if someone tries to initialize UIO in an unsupported language, it should fall back to the default language rather than failing to initialize.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25140">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2021-06-16T10:48:31.424-0400">2021-06-16T10:48:31.424-0400</relative-time></i></p>
+                        <p>At least in the <a href="/browse/FLUID-6580/">FLUID-6580</a> branch this is sort of already supported. There is a defaultLocale option in the loader grade that gets passed down to the messageLoader. The locale for the messageLoader is specified by the "locale" preference. So there are two routes in, 1) set the defaultLocale 2) add a "locale" preference. The latter being a model value is better for dynamic cases, the former being an option (and the fall back language), is the better option to use when it's the base language to be used.</p>
+<p>At least that's my take on the differences, maybe Antranig Basman&#160;might have a better definition of the two uses.</p>
+<p>In the case of UIO, the defaultLocale can be set in the prefsEditorLoader option block. This gets distributed down to the actual loader grade.</p>
+<p>However, there is a problem with the "lang" and "dir" attributes not being set in the iframe. In the short term that could be rectified using events, but in the long term it will probably be solved by removing the iframe which will be done for <a href="/browse/FLUID-6606/">FLUID-6606</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6628/"><span class="aria-hidden">←</span> Previous: FLUID-6628</a>
+        <a class="mx-1" href="/browse/FLUID-6630/">Next: FLUID-6630 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

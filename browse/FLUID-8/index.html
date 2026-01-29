@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-8  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-8 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-8/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-8/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-8/">FLUID-8</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-8: Lightbox and Fluid architecture needs to be factored properly</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-8">FLUID-8</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Duplicate">Duplicate</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2007-06-27T10:00:38.000-0400" prefix="">2007-06-27T10:00:38.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-01-14T10:21:28.492-0500" prefix="">2011-01-14T10:21:28.492-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Image Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently the vast bulk of the Fluid code resides in "Lightbox.js" which needs to be factored out into areas of different responsibility and scope.</p>
+<p>The key change would be extracting "Reorderable.js" which includes just the core client-side definitions which are independent of the particular use case of a Lightbox - this would involve a global renaming and creating of a new JIRA artefact 😛</p>
+<p>With commit 10335 we have the beginning of the FluidProject "modules" system and are starting to see code which arguably should be shared across multiple artefacts, e.g. "seekNodesById", "findForm" etc.  <br>
+Some of these are tied "in spirit" to the RSF client-side naming scheme, which we should also decide what status it has within Fluid. I am so far avoiding a dependence on the RSF key client-side files rsfbasic.js and rsf.js, but many of these algorithms would ultimately be common to these, for which we need some kind of policy/organisation.</p>
+<p>The dojo.js "compilation" system is very neat, although currently suffers from a number of implementation errors which makes it unusable IMO (for example the completely opaque error on trying to load a module with a syntax error). </p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15633">
+                        <p class="mb-0"><b>Joseph Scheuhammer</b> <i>commented <relative-time datetime="2007-07-17T12:04:56.000-0400">2007-07-17T12:04:56.000-0400</relative-time></i></p>
+                        <p>This issue has been superceded by several smaller issues, including <a href="/browse/FLUID-25/">FLUID-25</a>, <a href="/browse/FLUID-26/">FLUID-26</a>, <a href="/browse/FLUID-27/">FLUID-27</a>, <a href="/browse/FLUID-28/">FLUID-28</a>.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-7/"><span class="aria-hidden">←</span> Previous: FLUID-7</a>
+        <a class="mx-1" href="/browse/FLUID-9/">Next: FLUID-9 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6620  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6620 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6620/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6620/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6620/">FLUID-6620</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6620: Text size and line height values are announced as percentages in Safari with VoiceOver</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6620">FLUID-6620</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Ned%20Zimmerman">Ned Zimmerman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-05-12T09:31:04.169-0400" prefix="">2021-05-12T09:31:04.169-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-05-13T16:37:46.248-0400" prefix="">2021-05-13T16:37:46.248-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>On Firefox and Edge/Chrome (macOS 11), values for the line height and text size adjusters are announced by VoiceOver as 1, 1.1, etc. However in Safari, a value of 1 is announced as <em>33.3%</em>. Justin Obara theorized that this is the result of Safari performing a calculation based on <code>aria-valuemin</code>, <code>aria-valuemax</code> and <code>aria-valuenow</code>. The announced value should match the displayed value.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25634">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2021-05-12T16:02:19.621-0400">2021-05-12T16:02:19.621-0400</relative-time></i></p>
+                        <p>Ned Zimmerman&#160;found a related issue filed against webkit.</p>
+<p><a href="https://bugs.webkit.org/show_bug.cgi?id=221102">https://bugs.webkit.org/show_bug.cgi?id=221102</a></p>
+
+                    </li>
+                    
+                    <li id="comment-25636">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2021-05-13T16:37:21.300-0400">2021-05-13T16:37:21.300-0400</relative-time></i></p>
+                        <p>Merged PR ( <a href="https://github.com/fluid-project/infusion/pull/1049">https://github.com/fluid-project/infusion/pull/1049</a>&#160;) into the project repo at&#160;39a1465e3b2fc2ab0346d072374c3248e5401264</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6619/"><span class="aria-hidden">←</span> Previous: FLUID-6619</a>
+        <a class="mx-1" href="/browse/FLUID-6621/">Next: FLUID-6621 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-937  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-937 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-937/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-937/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-937/">FLUID-937</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-937: Text is larger than edit field</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-937">FLUID-937</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Sub-issue">Sub-issue</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Duplicate">Duplicate</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Daphne%20Ogle">Daphne Ogle</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-07-17T18:02:16.000-0400" prefix="">2008-07-17T18:02:16.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-01-04T14:13:21.892-0500" prefix="">2011-01-04T14:13:21.892-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4</li>
+                            
+                            <li>0.5</li>
+                            
+                            <li>0.6beta1</li>
+                            
+                            <li>0.6</li>
+                            
+                            <li>0.7</li>
+                            
+                            <li>0.8</li>
+                            
+                            <li>1.0</li>
+                            
+                            <li>1.1</li>
+                            
+                            <li>1.1.1</li>
+                            
+                            <li>1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This doesn't happen in Safari.</p>
+<p>When edit mode is initiated, the text is larger than the text field so the user can't see all the text they are editing.   We should calculate the text field size based on the size of the text in edit mode and then add some cushion on the end.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Mac Firefox</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22410">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-07-21T16:41:24.000-0400">2008-07-21T16:41:24.000-0400</relative-time></i></p>
+                        <p>This has been rehoused as part of an "umbrella issue" on size changes in components.</p>
+<p>Right now, the component "attempts" to size itself based on its size when in non-editable mode, which sort of falls between the stools - the size chosen is generally "sensible", but fails to achieve either "seethe-free layout" when in a table eg. (because it adds a little extra padding to accommodate the editable view) but also fails to achieve "full visibility", since if for example the font chosen for the editable view is larger than that in the non-edit view (which is the case in the "announcements" sample, the edit view exceeds even the "extra padded" length of the non-edit view. </p>
+<p>We should probably choose which of these objectives (or possibly even both!) we want to go for. Should the edit view simply be "overlayed" on top of the non-edit view, or should we do some more CSS magic etc. to make sure that we can either allow extra space "up front" to prevent seethe, or should we just try harder to measure the size of the editable view "just before" it is slapped into the document so that we are at least sure it is big enough to display some particular piece of text?</p>
+
+                    </li>
+                    
+                    <li id="comment-22414">
+                        <p class="mb-0"><b>Daphne Ogle</b> <i>commented <relative-time datetime="2008-07-21T19:05:15.000-0400">2008-07-21T19:05:15.000-0400</relative-time></i></p>
+                        <p>Where is font size controlled for edit?  Is that something the component sets or is it done by the application?  </p>
+<p>I think it's generally good practice for the display and edit mode to be the same size so users can see how it will look on display while editing.  This gets much more complicated with the component since I'm sure it doesn't have anything to say about display size.  So by following the display size we are tied to the design choice of the integrating app (assuming we do control the edit font size).</p>
+
+                    </li>
+                    
+                    <li id="comment-22417">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-10-31T08:58:12.000-0400">2008-10-31T08:58:12.000-0400</relative-time></i></p>
+                        <p>design-watched</p>
+
+                    </li>
+                    
+                    <li id="comment-22419">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2011-01-04T14:13:21.890-0500">2011-01-04T14:13:21.890-0500</relative-time></i></p>
+                        <p>Duplicate of <a href="/browse/FLUID-1528/">FLUID-1528</a>.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-936/"><span class="aria-hidden">←</span> Previous: FLUID-936</a>
+        <a class="mx-1" href="/browse/FLUID-938/">Next: FLUID-938 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

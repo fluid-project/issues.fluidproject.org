@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-48  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-48 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-48/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-48/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-48/">FLUID-48</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-48: ARIA  drag and drop properties should be added programmatically using jARIA</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-48">FLUID-48</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Sub-task">Sub-task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2007-10-05T11:38:23.000-0400" prefix="">2007-10-05T11:38:23.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-03-11T12:24:06.000-0400" prefix="">2008-03-11T12:24:06.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently, the ARIA drag and drop properties ('grab' and 'dropeffect') are present in the HTML template. The Reorderer should programmatically add these properties, so that the template writer doesn't have to.</p>
+<p>All roles should be added using jARIA, and ARIA markup should be removed from the templates.</p>
+<p>Unit tests will be needed for this.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-17871">
+                        <p class="mb-0"><b>Joseph Scheuhammer</b> <i>commented <relative-time datetime="2008-01-22T16:13:28.000-0500">2008-01-22T16:13:28.000-0500</relative-time></i></p>
+                        <p>Actually, the Reorderer <strong>modifies</strong> the drag and drop properties, so it's part way there.</p>
+<p>Jonathan and I spent most of a day looking into the jAria plugin, and almost started to use jAreia to resolve this issue.  Actually, our intent was to use jAria to handle <strong>all</strong> of the ARIA bit s-- not just drag-and-drop, and not just modification of roles and states, but also initialization thereof.</p>
+
+                    </li>
+                    
+                    <li id="comment-17873">
+                        <p class="mb-0"><b>Joseph Scheuhammer</b> <i>commented <relative-time datetime="2008-02-12T14:08:35.000-0500">2008-02-12T14:08:35.000-0500</relative-time></i></p>
+                        <p>With respect to porltets, specifically portlets that can be selected but are immoveable, the ARIA grab state is irrelevant.  The Reorderer should be modified to <strong>not</strong> add/remove this state from fixed portlets.</p>
+
+                    </li>
+                    
+                    <li id="comment-17876">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-03-11T12:23:54.000-0400">2008-03-11T12:23:54.000-0400</relative-time></i></p>
+                        <p>ARIA states and properties are now controlled programmatically. Templates and sample markup do not contain any ARIA markup.</p>
+<p>Regarding the comment about portlets: Only movables have their grab state set to supported.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-47/"><span class="aria-hidden">←</span> Previous: FLUID-47</a>
+        <a class="mx-1" href="/browse/FLUID-49/">Next: FLUID-49 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

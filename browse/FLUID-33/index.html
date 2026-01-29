@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-33  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-33 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-33/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-33/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-33/">FLUID-33</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-33: Fix the up/down calculations in the Reorderer to handle a range of spatial positioning options.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-33">FLUID-33</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Jacob Farber</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Joseph%20Scheuhammer">Joseph Scheuhammer</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2007-07-17T12:23:39.000-0400" prefix="">2007-07-17T12:23:39.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-11-13T13:26:01.000-0500" prefix="">2008-11-13T13:26:01.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>At the moment, the algorithm for determine which element is above or below the current element relies on an exact match between their x coordinates. This would break if there is any kind of spatial offset between elements (eg. one is slightly offset to the left or right of the other). Also, we currently determine horizontal positioning based on document order, but it's quite conceivable that CSS may be used to position items next to each other that are not siblings within the DOM.</p>
+<p>So, we need to fix the code to use ranges of x and y coordinates to determine the spatial position of all elements. This should be done in a way that is independent from re-ordering, such that anyone can use our cool new spatial calculator.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19574">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-08-14T21:13:50.000-0400">2008-08-14T21:13:50.000-0400</relative-time></i></p>
+                        <p>The geometric infrastructure required by the new drop manager should allow us to deal with this task</p>
+
+                    </li>
+                    
+                    <li id="comment-19575">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-09-07T18:08:05.000-0400">2008-09-07T18:08:05.000-0400</relative-time></i></p>
+                        <p>Drop Manager, Dom Permutation work merged back into trunk at revision 5476.</p>
+<p>The new "projectFrom" method of the GeometricManager implements this functionality, which is verified by a low-level test case in GeometricManagerTests - however, we should create a high-level markup-driven test to verify that this works reasonably in a real-lfe scenario.</p>
+
+                    </li>
+                    
+                    <li id="comment-19576">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-11-13T13:26:01.000-0500">2008-11-13T13:26:01.000-0500</relative-time></i></p>
+                        <p>Verified fix using:</p>
+<p>FF2, FF3  (Mac OS 10.5)<br>
+FF2, FF3, IE6, IE7 (Win XP)<br>
+FF3, IE7 (Win Vista)<br>
+FF3, IE6 (Win 2000)</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-32/"><span class="aria-hidden">←</span> Previous: FLUID-32</a>
+        <a class="mx-1" href="/browse/FLUID-34/">Next: FLUID-34 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

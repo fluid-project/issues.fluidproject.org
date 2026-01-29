@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> KETTLE-34  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" KETTLE-34 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/KETTLE-34/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/KETTLE-34/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/KETTLE" data-pagefind-filter="project">Kettle</a></li>
+                <li><a href="/browse/KETTLE-34/">KETTLE-34</a></li>
+            </ol>
+        </nav>
+        <h1>KETTLE-34: key URL information is stripped by kettle.dataSource.URL.handle.http</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/KETTLE-34">KETTLE-34</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Resolved</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/KETTLE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?reporter=Tony%20Atkins%20%5BRtF%5D">Tony Atkins [RtF]</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-09-27T08:36:11.593-0400" prefix="">2015-09-27T08:36:11.593-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-05-25T18:56:48.352-0400" prefix="">2016-05-25T18:56:48.352-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>kettle.dataSource.URL.handle.http is used for both URL read and write operations.  It converts the configured URL into its parts, as shown below.</p>
+<pre><code class="hljs language-java">urlObj = url.parse(path, <span class="hljs-literal">true</span>),
+        requestOptions = {
+            host: urlObj.hostname,
+            port: parseInt(urlObj.port, <span class="hljs-number">10</span>),
+            path: urlObj.path,
+            method: <span class="hljs-string">"GET"</span>
+        },
+</code></pre>
+<p>The only information preserved is the host, port, and path.  Notably we do not preserve either the scheme or any authentication information.</p>
+<p>As far as I can see the scheme problems would prevent using a dataSource with an https URL, although I have not tested this.</p>
+<p>I have seen problems with the authentication information in my own work.  When working with CouchDB, it is common to use URLs like the following when accessing CouchDB rest end points that require authentication:</p>
+<p><a href="http://admin:admin@localhost:5984/ul/%25id">http://admin:admin@localhost:5984/ul/%id</a></p>
+<p>The current implementation of kettle.dataSource.URL.handle.http, and by extension kettle.dataSource.URL.writable can thus only be used with end points that do not require authentication.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26157">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2015-11-02T08:10:56.625-0500">2015-11-02T08:10:56.625-0500</relative-time></i></p>
+                        <p>Can I get a link to the pull request for this?  I would like to start working on an alternative CouchDB dataSource and would rather not have to work around the lack of inline credentials.</p>
+
+                    </li>
+                    
+                    <li id="comment-26158">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2015-11-02T08:14:48.422-0500">2015-11-02T08:14:48.422-0500</relative-time></i></p>
+                        <p>This is supposed to have been fixed by this pull request:  <a href="https://github.com/fluid-project/kettle/pull/21">https://github.com/fluid-project/kettle/pull/21</a></p>
+<p>Looks like this is the commit with the fix?  <a href="https://github.com/amb26/kettle/commit/4047ebf80be4d7df624aaf6efd2f47da10022a4a">https://github.com/amb26/kettle/commit/4047ebf80be4d7df624aaf6efd2f47da10022a4a</a></p>
+
+                    </li>
+                    
+                    <li id="comment-26159">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-11-02T08:23:51.404-0500">2015-11-02T08:23:51.404-0500</relative-time></i></p>
+                        <p>Yes, that is it - although I'll be working on this area directly a bit more this afternoon, and reverting my previous change to the format of the "termMap" which I had made last month</p>
+
+                    </li>
+                    
+                    <li id="comment-26160">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2015-11-02T09:05:44.522-0500">2015-11-02T09:05:44.522-0500</relative-time></i></p>
+                        <p>Thanks for the warning, I will hold off for a day or two and focus on cleaning up the PTD code a bit first.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/KETTLE-33/"><span class="aria-hidden">←</span> Previous: KETTLE-33</a>
+        <a class="mx-1" href="/browse/KETTLE-35/">Next: KETTLE-35 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6154  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6154 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6154/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6154/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6154/">FLUID-6154</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6154: Panel headings in small screens are misaligned on IE 11</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6154">FLUID-6154</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-04-27T12:17:32.753-0400" prefix="">2017-04-27T12:17:32.753-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-06-22T13:23:04.295-0400" prefix="">2021-06-22T13:23:04.295-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>After adding in the arrows beside the headers ( see: <a href="/browse/FLUID-5534/">FLUID-5534</a> ), the headings no longer line up for the adjuster panels in IE 11 when viewed in a small width screen. This seems to have to do something with the use of a flex box layout ( display: flex ) on the h2; which is required to laying out the header text and arrows properly.</p>
+<p></p>
+<p>Steps to reproduce:</p>
+<ol>
+<li>Open the <a href="http://build.fluidproject.org/infusion/demos/uiOptions/">UI Options demo</a> in IE 11</li>
+<li>Shrink the windows width until the "mobile" view is displayed.</li>
+<li>Scroll through the available preferences</li>
+<li>Notice that the headings for each panel are at different heights</li>
+</ol>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>IE 11 ( Win 7 )</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6154/screenshot.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6154/screenshot.png" alt="screenshot.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25076">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-04-27T12:19:55.987-0400">2017-04-27T12:19:55.987-0400</relative-time></i></p>
+                        <p>screenshot.png shows an example of the misaligned headers.</p>
+
+                    </li>
+                    
+                    <li id="comment-25077">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2021-06-22T13:22:59.785-0400">2021-06-22T13:22:59.785-0400</relative-time></i></p>
+                        <p>No longer support IE 11</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6153/"><span class="aria-hidden">←</span> Previous: FLUID-6153</a>
+        <a class="mx-1" href="/browse/FLUID-6155/">Next: FLUID-6155 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

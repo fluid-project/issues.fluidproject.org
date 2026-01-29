@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1594  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1594 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1594/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1594/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1594/">FLUID-1594</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1594: Clicking on undo while in edit mode causes undo and redo to have the same value</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1594">FLUID-1594</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-09-18T18:07:08.000-0400" prefix="">2008-09-18T18:07:08.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-09-24T12:21:21.000-0400" prefix="">2008-09-24T12:21:21.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Clicking on the undo link while in edit mode (with out changing the content) causes the undo and redo actions to have the same value.</p>
+<p>Steps to reproduce:</p>
+<p>1) Open the bSpace example from the daily build site<br>
+<a href="http://build.fluidproject.org/fluid/sample-code/inline-edit/section-info/section-info.html">http://build.fluidproject.org/fluid/sample-code/inline-edit/section-info/section-info.html</a></p>
+<p>2) Edit one of the inline edit fields</p>
+<p>3) Re-open the inline edit field that was just editted. Without changing anything click on the undo link.</p>
+<p>4) Click undo</p>
+<p>Notice that clicking undo and redo has no effect on the value of the inline edit field</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)<br>
+FF2, FF3, IE6, IE7, Opera 9.5 (Win XP)<br>
+FF3, IE7 (Win Vista)<br>
+FF3, IE6 (Win 2000)</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-1594/FLUID-1594-patch.txt">
+                            
+                                FLUID-1594-patch.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-17435">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-22T12:51:19.000-0400">2008-09-22T12:51:19.000-0400</relative-time></i></p>
+                        <p>Bug Parade: 0.5 release</p>
+
+                    </li>
+                    
+                    <li id="comment-17436">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-09-23T12:49:26.000-0400">2008-09-23T12:49:26.000-0400</relative-time></i></p>
+                        <p>Investigating the cause of this problem:</p>
+<p>The instant that you enter edit mode, the current contents of the field are 'backed up' for use with undo. So the moment you execute step 3 in Justin's steps to reproduce, the older 'initial' value is overwritten with the latest value. When you click 'undo' in step 4, the code properly and successfully restores the backed-up text - the problem is that that backed-up text was overwritten with new backed-up text.</p>
+<p>The way it's implemented, the undo functionality is a single-shot deal. The moment you decide to edit the text, the slate is wiped clean, and the 'current' text is what is backed up.</p>
+<p>Thinking about how to address this.  It wouldn't work to copy the 'old text' into a temporary buffer, and only 'back up' the text on finish, because 'finish' does happen on step 4 above.</p>
+<p>Still thinking...</p>
+
+                    </li>
+                    
+                    <li id="comment-17437">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-09-23T15:44:05.000-0400">2008-09-23T15:44:05.000-0400</relative-time></i></p>
+                        <p>Antranig, I've made a fix for this issue that changes the event handlers that Undo binds to the Inline Edit. Could you have a look at the patch, so confirm that I'm using the event model and the Undo models properly?</p>
+<p>My goal is to change the updating of the 'backup copy' to happen only if the user has actually changed the text. It functions properly (i.e. the patch produces the correct user experience) but I'm not sure the code is the 'right' way to do things.</p>
+
+                    </li>
+                    
+                    <li id="comment-17438">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-09-23T17:00:35.000-0400">2008-09-23T17:00:35.000-0400</relative-time></i></p>
+                        <p>Hi Anastasia - this patch looks good and seems the best way to implement the desired functionality.</p>
+
+                    </li>
+                    
+                    <li id="comment-17439">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-24T12:21:21.000-0400">2008-09-24T12:21:21.000-0400</relative-time></i></p>
+                        <p>Verified fix using:</p>
+<p>FF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)<br>
+FF2, FF3, IE6, IE7, Opera 9.5 (Win XP)<br>
+FF3, IE7 (Win Vista) </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1593/"><span class="aria-hidden">←</span> Previous: FLUID-1593</a>
+        <a class="mx-1" href="/browse/FLUID-1595/">Next: FLUID-1595 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

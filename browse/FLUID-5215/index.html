@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5215  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5215 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5215/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5215/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5215/">FLUID-5215</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5215: Create instructional demos for Infusion framework functionality, rendering, prefs framework and components</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5215">FLUID-5215</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Migrated">Migrated</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-11-20T10:46:50.279-0500" prefix="">2013-11-20T10:46:50.279-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-31T15:16:32.998-0400" prefix="">2024-07-31T15:16:32.998-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>5.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Demos</li>
+                            
+                            <li>Tech. Documentation</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>We would like to create instructional demos that would serve as working examples of how to accomplish various common tasks in Infusion. The intention would be for each individual instructional demo to teach a single thing, for example, how to customize one feature of a component. The goal would be for the code to be clear, simple, self-contained, well-commented and illustrative of best practices. These demos would be referenced by documentation and tutorials.</p>
+<p>Having each demo illustrate a single thing would result in a lot of small demos, which might result in code duplication. We should consider the possibility that any refactoring to reduce this duplication would likely obfuscate the code a bit, going against the goals of clear, simple and self-contained. We should attempt to carry out any such refactoring to minimize complication and obfuscation.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23877">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2013-11-20T16:24:25.116-0500">2013-11-20T16:24:25.116-0500</relative-time></i></p>
+                        <p>We discussed this in the Community Meeting on Nov. 20 and came up with the following overall hierarchy:</p>
+<p>src<br>
+framework<br>
+components<br>
+lib<br>
+module<br>
+demos<br>
+showcase<br>
+instructional<br>
+integration &lt;- to be destroyed<br>
+standalone<br>
+tests</p>
+<p>For the demos/instructional folder, the hierarchy should mirror, as much as reasonable, the hierarchy of the source folder. In general:</p>
+<p>demos/instructional<br>
+framework<br>
+core<br>
+prefs<br>
+renderer<br>
+components<br>
+componentX<br>
+shared<br>
+css<br>
+shared.css<br>
+html<br>
+shared.html<br>
+js<br>
+shared.js<br>
+demoX<br>
+css<br>
+file.css<br>
+html<br>
+file.html<br>
+js<br>
+file.js<br>
+demoY<br>
+css<br>
+file.css<br>
+html<br>
+file.html<br>
+js<br>
+file.js<br>
+componentY<br>
+etc</p>
+
+                    </li>
+                    
+                    <li id="comment-23878">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2021-06-22T15:25:27.969-0400">2021-06-22T15:25:27.969-0400</relative-time></i></p>
+                        <p>Perhaps something like this could be facilitated through <a href="https://codepen.io/">codepen</a> or similar system.</p>
+
+                    </li>
+                    
+                    <li id="comment-27931">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2024-07-31T15:16:23.827-0400">2024-07-31T15:16:23.827-0400</relative-time></i></p>
+                        <p>Migrated to <a href="https://github.com/fluid-project/infusion-docs/issues/271">https://github.com/fluid-project/infusion-docs/issues/271</a> </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5214/"><span class="aria-hidden">←</span> Previous: FLUID-5214</a>
+        <a class="mx-1" href="/browse/FLUID-5216/">Next: FLUID-5216 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

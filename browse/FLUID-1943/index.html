@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1943  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1943 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1943/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1943/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1943/">FLUID-1943</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1943: License files should be stored in a separate directory in the final build, rather than within the various subdirectories of js/ and flash/</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1943">FLUID-1943</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Michelle D'Souza</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-12-08T12:47:50.000-0500" prefix="">2008-12-08T12:47:50.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-02-28T16:45:16.096-0500" prefix="">2011-02-28T16:45:16.096-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3</li>
+                            
+                            <li>0.4beta1</li>
+                            
+                            <li>0.4</li>
+                            
+                            <li>0.5beta1</li>
+                            
+                            <li>0.5</li>
+                            
+                            <li>0.6beta1</li>
+                            
+                            <li>0.6</li>
+                            
+                            <li>0.7</li>
+                            
+                            <li>0.8</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Infrastructure</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>At the moment, we copy license files into the js/ directory alongside our minified JavaScript. It would be much kinder to implementors to store these license files in a separate directory.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-17823">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2009-03-27T09:31:18.000-0400">2009-03-27T09:31:18.000-0400</relative-time></i></p>
+                        <p>Right now, the general idea with licensing is "Fluid's license unless otherwise stated" and the otherwise-stating is accomplished by including the other license file in with the other-licensed code.</p>
+<p>If we move the licenses away from the code, how should we associated the license with the code? Were you imagining that we'd create a sub-folder called "license"?</p>
+
+                    </li>
+                    
+                    <li id="comment-17828">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2009-03-30T10:27:06.000-0400">2009-03-30T10:27:06.000-0400</relative-time></i></p>
+                        <p>We shouldn't move the licenses away from code in the repository. This separate licenses folder should be created as a product of the build scripts. I think we can punt this issue until 1.1</p>
+
+                    </li>
+                    
+                    <li id="comment-17832">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-05-12T13:39:20.000-0400">2009-05-12T13:39:20.000-0400</relative-time></i></p>
+                        <p>Changed the copySourceToBuild target. 1) Moved in the work of copying over the README.txt 2) exclude LICENSE files from being copied over with all other files 3) Copy licenses into a license directory</p>
+
+                    </li>
+                    
+                    <li id="comment-17834">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-05-12T13:39:36.000-0400">2009-05-12T13:39:36.000-0400</relative-time></i></p>
+                        <p>Please review</p>
+
+                    </li>
+                    
+                    <li id="comment-17835">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-05-13T12:40:41.000-0400">2009-05-13T12:40:41.000-0400</relative-time></i></p>
+                        <p>a  slight bit of refactoring is needed</p>
+
+                    </li>
+                    
+                    <li id="comment-17837">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-05-14T08:55:23.000-0400">2009-05-14T08:55:23.000-0400</relative-time></i></p>
+                        <p>Refactored the copying of the README.txt file, by removing it from a &lt;fileset&gt; and placing it within its own &lt;copy&gt;</p>
+
+                    </li>
+                    
+                    <li id="comment-17839">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2011-02-28T16:45:16.094-0500">2011-02-28T16:45:16.094-0500</relative-time></i></p>
+                        <p>Closing issues that were fixed in 1.1</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1942/"><span class="aria-hidden">←</span> Previous: FLUID-1942</a>
+        <a class="mx-1" href="/browse/FLUID-1944/">Next: FLUID-1944 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

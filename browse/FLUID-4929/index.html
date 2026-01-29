@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4929  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4929 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4929/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4929/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4929/">FLUID-4929</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4929: Unable to write async tests against events that are fired automatically with component creation</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4929">FLUID-4929</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-03-08T11:30:52.010-0500" prefix="">2013-03-08T11:30:52.010-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-04-29T09:22:14.830-0400" prefix="">2013-04-29T09:22:14.830-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Testing Infrastructure</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When using the new testing framework there doesn't seem to be a way to register tests to ensure that events are fired, when they are tied to the components creation. For example if you were to add an event that was fired in conjunction with the components create on event. </p>
+<p>When creating a sequence, the listener sequence is added at the top, but the actual test just hangs. I'm assuming that this is because the event that the listener is bound to is fired before the listener is attached.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-16477">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-03-08T11:44:18.960-0500">2013-03-08T11:44:18.960-0500</relative-time></i></p>
+                        <p>I've added an example test case to illustrate the issue.<br>
+<a href="https://github.com/jobara/infusion/tree/FLUID-4929">https://github.com/jobara/infusion/tree/FLUID-4929</a></p>
+
+                    </li>
+                    
+                    <li id="comment-16479">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-03-09T05:40:14.855-0500">2013-03-09T05:40:14.855-0500</relative-time></i></p>
+                        <p>Thanks for this requirement and test case, Justin. In fact, although this effect would be quite useful, it is relatively hard to achieve - before the invention of "Luke Skywalker Options" it would have been effectively impossible since it would not be possible to get the listener record to be routed to the component before its construction.</p>
+<p>Even after the invention of LSO it is still relatively hard because of limitations in the implementation of QUnit. We are already using a particular hack to detect those tests which have been filtered out in the UI by double-clicking on a test - we attempt to queue a test, and then inspect QUnit's queue to see if any tests have indeed arrived - unfortunately this is the only detectable effect of the branch:</p>
+<p>if ( !validTest( test ) ) {<br>
+return;<br>
+}<br>
+which is currently at line 415 of qunit.js which is responsible for filtering tests. One conceivable possibility is monkey-patching the prototype of QUnit to overwrite QUnit.test but this seems a bit undesirable for now. </p>
+<p>As a result of this model, for better or worse, we are stuck with the model where every IoC-driven test case corresponds to an async QUnit test. Even without this model, we would still have the challenge of ensuring that the parsing and construction of each TestCaseHolder in the tree occurs strictly BEFORE the construction of any component at which it may want to issue construct-time tests. So either way, this seems to require the creation of a new kind of sequence point represented by an event operated by each TestCaseHolder. This event is now called onTestCaseStart, and the implementation takes care to call it "at the appropriate point" which guarantees that a Luke Skywalker assertion (currently we have only implemented this for the "event" sequence record type) will be definitely actioned before a component waiting on "onTestCaseStart" is constructed - and that the component WILL be constructed in order to ensure that the start of a test case sequence which issued an LSO against it will bind onto it.</p>
+<p>For convenience, this also resulted in a framework improvement which allows event specifications in "createOnEvent" to be IoC-resolved as in boiling and other resolution cases.</p>
+<p>So, with these changes, your test case Environment now looks like this:</p>
+<p>fluid.defaults("fluid.tests.initTree", {<br>
+gradeNames: ["fluid.test.testEnvironment", "autoInit"],<br>
+components: {<br>
+initTest: {<br>
+type: "fluid.tests.initTest",<br>
+createOnEvent: "{initTester}.events.onTestCaseStart"<br>
+},<br>
+initTester: {<br>
+type: "fluid.tests.initTester",<br>
+}<br>
+}<br>
+});</p>
+<p>Note the cross-injection of "{initTester}.events.onTestCaseStart" using the new framework feature and new test case event.</p>
+<p>Now all that is required is to convert test case fixture to issue a "Luke Skywalker Name" for the target component rather than a concrete one. If it issues the component name in the standard way as "{initTest}" there is no way to prevent the ginger process from completely instantiating the target component at the point of reference[*] - which again will make the event binding too late. We must use the IoCSS form "{initTree initTest}" to ensure that we are meaning to talk about the component BEFORE IT IS CREATED and not meaning to imply that we want it to be created by the reference process. So with this change, your test case fixture now looks like :</p>
+<p>sequence: [{<br>
+listener: "fluid.tests.checkEvent",<br>
+event: "{initTree initTest}.events.onReady"<br>
+}]</p>
+<p>and now works</p>
+
+                    </li>
+                    
+                    <li id="comment-16483">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-03-09T05:44:42.560-0500">2013-03-09T05:44:42.560-0500</relative-time></i></p>
+                        <p>References: LSO/IoCSS: <a href="/browse/FLUID-4873/">FLUID-4873</a><br>
+IoC testing framework: <a href="/browse/FLUID-4850/">FLUID-4850</a></p>
+<p>Note that although "it just happens" as an implementation detail that all IoC test cases are async, this is incidental to the problem. Even if they were synchronous, the structure of the problem and the implementation solution would be the same since the whole challenge is to somehow deliver configuration to the component's constructor before it exists, without causing the component construction as a prerequisite of the delivery.</p>
+<p>The statement marked [*] is not completely true, but it is effectively true before we implement the "asynchronous ginger world". Right now there is no middle ground between a component which constructs as part of the "synchronous ginger world" of its parent component tree, and one which constructs as part of a separate asynchronous process due to "createOnEvent". Since all of our IoC tests are asynchronous for now, clearly the target component has to be of the 2nd type - and the thing which causes it to construct is the EVENT and not the ginger reference. The ginger reference could not be the thing which caused it to construct, because if it was, it would have constructed synchronously already! Since everything that is LIABLE to construct as part of the synchronous ginger process, WILL construct by the time it finishes. Which would again lead to the component being fully constructed by the time the test fixture starts to execute against it - so this solution is the only one possible before we implement the "asynchronous ginger world"/"wave of promises" (see <a href="/browse/FLUID-4925/">FLUID-4925</a>)</p>
+
+                    </li>
+                    
+                    <li id="comment-16485">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2013-03-15T14:49:31.636-0400">2013-03-15T14:49:31.636-0400</relative-time></i></p>
+                        <p>Pull request <a href="https://github.com/fluid-project/infusion/pull/267">https://github.com/fluid-project/infusion/pull/267</a> merged into project repo at 6e727b6d38fd9091e1fe914d8f0d21823c0cc7aa</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4928/"><span class="aria-hidden">←</span> Previous: FLUID-4928</a>
+        <a class="mx-1" href="/browse/FLUID-4930/">Next: FLUID-4930 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

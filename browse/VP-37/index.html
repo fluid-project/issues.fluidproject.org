@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-37  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-37 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-37/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-37/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-37/">VP-37</a></li>
+            </ol>
+        </nav>
+        <h1>VP-37: Increasing volume with keyboard may destory the sound completely</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-37">VP-37</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-08-13T15:56:35.390-0400" prefix="">2012-08-13T15:56:35.390-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-01-28T09:25:21.459-0500" prefix="">2013-01-28T09:25:21.459-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>On the video player demo, play the video, keep pressing shift + up arrow to increase volume. At one point when the maximum sound level is exceeded, the sound disappears completely. Need to refresh page to get the sound back.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>firefox 14.0.1, chrome</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26903">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2012-08-15T12:48:56.458-0400">2012-08-15T12:48:56.458-0400</relative-time></i></p>
+                        <p>There is already code in the VideoPlayer to make sure that the volume stays within the range 0.100 at line 457 of VideoPlayer.js - we should look into why this is not working rather than pollute the codebase with manual checks</p>
+<p>that.applier.guards.addListener({path: "volume", transactional: true}, fluid.linearRangeGuard(0, 100));</p>
+
+                    </li>
+                    
+                    <li id="comment-26905">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2012-08-29T13:55:25.689-0400">2012-08-29T13:55:25.689-0400</relative-time></i></p>
+                        <p>Merged into project repo demo branch at cb56354d7d921c0604cc4f7d92f1e6bab838a8f5</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-79/"><span class="aria-hidden">←</span> Previous: VP-79</a>
+        <a class="mx-1" href="/browse/VP-117/">Next: VP-117 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

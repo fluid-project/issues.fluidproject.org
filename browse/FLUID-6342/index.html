@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6342  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6342 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6342/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6342/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6342/">FLUID-6342</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6342: Sequence Transform </h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6342">FLUID-6342</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Steven Githens</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Steven%20Githens">Steven Githens</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-09-20T22:11:04.915-0400" prefix="">2018-09-20T22:11:04.915-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-09-26T19:34:59.302-0400" prefix="">2018-09-26T19:34:59.302-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In the infusion promises implementation we currently have 2 pipeline algorithms, fluid.promise.sequence and fluid.promise.fireTransformEvent.</p>
+<p>Using sequence is a very nice and easy way to arrange a set of tasks to complete one at a time, and fireTransformEvent is nice for chaining to together multi-process workflows in the application.</p>
+<p>In this ticket I proposing either adding another pipeline, `sequenceTransform`, or modifying `sequence` slightly to perform chaining payloads.&#160; The issue is that regular `sequence` doesn't have a facility (as far as I can tell), to make the payload from a previous task in the chain to the next task. `fireTransformEvent` is nice for certain workflows, but for performing a simple chain of operations, it's rather cumbersome and a little confusing to create a set of listeners and events for it on a component. Also, it requires that you have to have a series of components to create listeners and events on.</p>
+<p>Ideally, for this I want nearly the same signatures as `sequence` such as the abilitiy for the array to contain: values, promises, functions returning promises. But for members that are functions returning promises, the ability to have the payload from the previous item passed in, or to have it added to the `options` Object that may be also passed in at the creation of the sequence pipeline.</p>
+<p>I have created a small version prototype of this stand alone on some work in the GPII prefs server:</p>
+<p><a href="https://gist.github.com/sgithens/ee60f26ad4f12747c8230ed1af530941">https://gist.github.com/sgithens/ee60f26ad4f12747c8230ed1af530941</a></p>
+<p>This is missing the ability to have the array include values and raw promises, but using the tooling in FluidPromises.js I'd like to either add this new function, or modify fluid.promise.sequence to make it possible.</p>
+<p></p>
+<p></p>
+<p></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22962">
+                        <p class="mb-0"><b>Steven Githens</b> <i>commented <relative-time datetime="2018-09-20T22:12:38.993-0400">2018-09-20T22:12:38.993-0400</relative-time></i></p>
+                        <p>Antranig Basman or anyone else.&#160; Any comments on this appreciated (or maybe something I missed in the sequence impl that does allow passing payloads).&#160; I'm happy to implement this.</p>
+
+                    </li>
+                    
+                    <li id="comment-22964">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2018-09-21T04:14:55.002-0400">2018-09-21T04:14:55.002-0400</relative-time></i></p>
+                        <p>I think what you see as the weakness of fireTransformEvent, "that you need to have a series of components to create listeners and events on" is the main strength of it. Once you are working with an pipeline that is any more than trivial, you want to be programming "in the open" - in the sense explained by the paper on the "Open Authorial Principle" - <a href="https://github.com/amb26/papers/blob/master/onward-2016/onward-2016.pdf">https://github.com/amb26/papers/blob/master/onward-2016/onward-2016.pdf</a><br>
+This implies that<br>
+i) It should be easy for further authors to contribute further stages of the pipeline slotted in between existing ones created by the first author(s)<br>
+ii) It should be easy for further authors to override particular stages of the pipelines with implementations held on unrelated component(s)<br>
+Neither of those are possible with the implementation/workflow that you've implemented which is why I think we should discourage it. fireTransformEvent is certainly a bit clunky in the current incarnation, but I think the answer to that is to help people achieve the effects of it with less syntax and formality, along the lines suggested in <a href="https://wiki.fluidproject.org/display/fluid/Plan+to+Abolish+Invokers+and+Events">https://wiki.fluidproject.org/display/fluid/Plan+to+Abolish+Invokers+and+Events</a> . Do have a read of both of these resources and let me know what you think - </p>
+
+                    </li>
+                    
+                    <li id="comment-22968">
+                        <p class="mb-0"><b>Steven Githens</b> <i>commented <relative-time datetime="2018-09-24T19:22:17.878-0400">2018-09-24T19:22:17.878-0400</relative-time></i></p>
+                        <p>I'm still reviewing those papers, but I'd like to think this really isn't much different than other cases in the IoC system that use array-like or ordered things, such as unit tests.</p>
+<p>We handle the non-trivial case alright, but in my example linked above, it's really a really trivial use case. 3 single functions, called in order, that each take the payload from the previous function.&#160; I'd like to think we could express this is some sort of simple data block that would allow swapping them out, rather than create events/listeners for each one.</p>
+<p>From an authorial standpoint say if a future author wanted to change the final lookup of the record ( return dbDataStore.findById(lookupData.prefsSafeId) ), perhaps from our couchdb store, to an LDAP lookup or something, ideally they could just swap out the last portion.</p>
+<p>Is there an existing bit of infrastructure in infusion, perhaps from the work done to order sequential test cases, that I could adapt to do this?</p>
+<p></p>
+
+                    </li>
+                    
+                    <li id="comment-22971">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2018-09-26T08:49:15.655-0400">2018-09-26T08:49:15.655-0400</relative-time></i></p>
+                        <p>We only support arrays in other places such as in the IoC Testing Framework because we haven't had time to take up the improved alternatives, for example the grade sequence system implemented in <a href="https://issues.fluidproject.org/browse/FLUID-5903">https://issues.fluidproject.org/browse/FLUID-5903</a>&#160;. Please try to go ahead with the events/listeners approach as in fluid.fireTransformEvent or perhaps provide some forms of utility or wrapping function to cut down on the bureaucracy. Good luck with continuing to read the papers!</p>
+
+                    </li>
+                    
+                    <li id="comment-22973">
+                        <p class="mb-0"><b>Steven Githens</b> <i>commented <relative-time datetime="2018-09-26T19:34:59.302-0400">2018-09-26T19:34:59.302-0400</relative-time></i></p>
+                        <p>Thanks, I took at look at the completed <a href="/browse/FLUID-5903/">FLUID-5903</a> ticket, and looked again at the IoC testing docs.&#160; I think for now I will adopt a similar (if not exact, then a subset) syntax from the `sequence` entry in infusion based tests, which I guess will be implemented under the covers with `fluid.fireTransformEvent`.&#160; I don't think it should take long for the first stab at it for the initial use case which inspired this ticket.&#160; Because the calls for the use case are so simple, I feel somewhat strongly about them being grouped/authored together in the component so that it's easy to understand the workflow and there isn't overlapping confusion with the rest of the existing events/listeners on the preferences server component.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6341/"><span class="aria-hidden">←</span> Previous: FLUID-6341</a>
+        <a class="mx-1" href="/browse/FLUID-6343/">Next: FLUID-6343 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

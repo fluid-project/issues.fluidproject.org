@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1545  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1545 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1545/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1545/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1545/">FLUID-1545</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1545: Keyboard reordering doesn't show error message when trying to move a portlet above a locked portlet</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1545">FLUID-1545</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-09-11T11:33:27.000-0400" prefix="">2008-09-11T11:33:27.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-09-15T08:33:41.000-0400" prefix="">2008-09-15T08:33:41.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Layout Reorderer</li>
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Keyboard reordering doesn't show error message when trying to move a portlet above a locked portlet</p>
+<p>Steps to reproduce:</p>
+<p>1) Open the uPortal example from the daily build site:<br>
+<a href="http://build.fluidproject.org/fluid/sample-code/reorderer/portal/portal.html">http://build.fluidproject.org/fluid/sample-code/reorderer/portal/portal.html</a></p>
+<p>2) Press the tab key until the one of the portlets has focus</p>
+<p>3) Using the keyboard navigate to a movable portlet and attempt to move it above the locked portlet.</p>
+<p>Notice that no error message is presented and the portlet wraps to the bottom of the column</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF2, FF3 (Mac OS 10.5)<br>
+FF2, FF3, IE6, IE7 (Win XP)<br>
+FF3, IE7 (Win Vista)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-18825">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-09-11T13:28:49.000-0400">2008-09-11T13:28:49.000-0400</relative-time></i></p>
+                        <p>This is an issue which has puzzled me for a while, since I saw evidence of this functionality lying around in the codebase and was not quite sure how it was meant to operate. The main issue is, how is this "moving against locked" functionality meant to relate to our other "immovable items in list" situations - for example, our list demo </p>
+<p><a href="http://build.fluidproject.org/sakai-imagegallery-tool/tests/fluid-tests/manual/list/list.html">http://build.fluidproject.org/sakai-imagegallery-tool/tests/fluid-tests/manual/list/list.html</a></p>
+<p>we have "non-reorderable items" but the correct semantics there seem to be to move past them ( as for <a href="/browse/FLUID-828/">FLUID-828</a>).</p>
+<p>Similarly, in other "portlet" cases, the correct response is to "move past" - especially where this would permanently impede movability (for example, imagine a middle column consisting only of locked/inaccessible positions - I seem to remember a JIRA insisting that we be able to "get past" this using keyboard nav.</p>
+<p>So it is unclear to me whether this use case is<br>
+i) A special case relating to wrapping<br>
+ii) A special use case relating to a particular model of locked/immovable things at the heads of columns (perhaps scoped to ModuleLayout/LayoutCustomizer, or just a particular configuration of these)</p>
+<p>or both, or some further thing 😛</p>
+
+                    </li>
+                    
+                    <li id="comment-18830">
+                        <p class="mb-0"><b>Gary Thompson</b> <i>commented <relative-time datetime="2008-09-11T15:10:43.000-0400">2008-09-11T15:10:43.000-0400</relative-time></i></p>
+                        <p>The decision is to make keyboard wrapping a configuration setting.  For the layout customizer, keyboard wrapping should be off, but for list reordering it should be on.  With this behavior, a keyboard "up" action on a portlet directly underneath locked content will not move up and a warning message will display (something like "you cannot move this box above a locked box").  Which also means that when wrapping is configured off, an "up" action at the top of a column does nothing, and the same for a "down" action when at the bottom of a column. </p>
+
+                    </li>
+                    
+                    <li id="comment-18834">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-09-12T17:00:28.000-0400">2008-09-12T17:00:28.000-0400</relative-time></i></p>
+                        <p>Fixed at revision 5530.</p>
+
+                    </li>
+                    
+                    <li id="comment-18836">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-15T08:33:41.000-0400">2008-09-15T08:33:41.000-0400</relative-time></i></p>
+                        <p>Verified fix using:</p>
+<p>FF2, FF3 (Mac OS 10.5)<br>
+FF2, FF3 (Win XP)<br>
+FF3 (Win Vista)</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1544/"><span class="aria-hidden">←</span> Previous: FLUID-1544</a>
+        <a class="mx-1" href="/browse/FLUID-1546/">Next: FLUID-1546 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

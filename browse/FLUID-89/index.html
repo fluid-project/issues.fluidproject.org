@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-89  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-89 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-89/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-89/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-89/">FLUID-89</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-89: Key strokes for navigation and drag-and-drop conflict with browser/OS/AT defined keystrokes.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-89">FLUID-89</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Joseph%20Scheuhammer">Joseph Scheuhammer</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2007-11-02T17:37:25.000-0400" prefix="">2007-11-02T17:37:25.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-03-19T15:53:57.000-0400" prefix="">2008-03-19T15:53:57.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>I confess that I've found this issue only with Camino (<a href="http://caminobrowser.org/">http://caminobrowser.org</a>).  It allows for tabbed browsing.  The keystroke for moving among the tabs is cmd-opt-leftArrow and cmd-opt-rightArrow.  These are grabbed and used by the browser before the page's key press handling has a crack at them.  As such, keyboard navigation in, for example, the lightbox doesn't work.  Ditto for keyboard drag-and-drop.</p>
+<p>Safari (2.0.3) uses cmd-curlyBrace to move between adjacent tabs; thus, it does not conflict with the keystrokes defined by the Reorderer.</p>
+<p>Although confined to Camino in this case, it does suggest a general issue where fluid's keystrokes must be chosen carefully since they may be ursurped by the browser, the OS, or, even an AT.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15458">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2008-01-07T16:42:35.000-0500">2008-01-07T16:42:35.000-0500</relative-time></i></p>
+                        <p>With Spaces turned on in Mac OS X 10.5, the Ctrl-Arrow keys have been mapped to space switching, rendering the Reorderer inoperable.</p>
+
+                    </li>
+                    
+                    <li id="comment-15460">
+                        <p class="mb-0"><b>Joseph Scheuhammer</b> <i>commented <relative-time datetime="2008-01-31T11:09:35.000-0500">2008-01-31T11:09:35.000-0500</relative-time></i></p>
+                        <p>There is a preference in FireFox that overrides the navigation keystrokes defined in the Reorderer.  Open FF's preferences, and choose "Advanced".  Within "Advanced" choose the "General" tab.  The "General" preferences contain an "Accessibility" section.  That section has a checkbox labelled "Always use the cursor keys to navigate within pages".  If this is checked, navigation using arrow keys behaves strangely and only works partially in the context of a Reorderer.</p>
+<p>FireFox 2.0.0.11 (Mac OS 10.5.1).</p>
+
+                    </li>
+                    
+                    <li id="comment-15463">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2008-03-19T15:53:57.000-0400">2008-03-19T15:53:57.000-0400</relative-time></i></p>
+                        <p>Key stroke sets are now configurable. The generic-lightbox example uses a screen reader friendly key set.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-88/"><span class="aria-hidden">←</span> Previous: FLUID-88</a>
+        <a class="mx-1" href="/browse/FLUID-90/">Next: FLUID-90 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

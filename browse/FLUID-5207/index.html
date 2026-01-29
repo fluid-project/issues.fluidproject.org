@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5207  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5207 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5207/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5207/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5207/">FLUID-5207</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5207: Rename the preferences framework's "msgBundle" and "stringBundle"</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5207">FLUID-5207</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-11-06T12:45:58.632-0500" prefix="">2013-11-06T12:45:58.632-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-04-24T16:20:55.770-0400" prefix="">2014-04-24T16:20:55.770-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>A panel component in the prefs framework now has two properties: "msgBundle" and "stringBundle." These two names are awfully similar – at a glance, there's no clue as to what the difference is. We expect integrators to be working with these properties, so it would probably be helpful to them if the properties were renamed to something a bit clearer.</p>
+<p>"msgBundle" is actually a messageResolver component, so perhaps "msgResolver" ?</p>
+<p>"stringBundle" is a tool to facilitate using the msgBundle; Not sure yet what to call this, but I'll think on it.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13299">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2014-04-04T15:51:34.526-0400">2014-04-04T15:51:34.526-0400</relative-time></i></p>
+                        <p>Anastasia Cheetham, can you please start a conversation on list about naming these? </p>
+
+                    </li>
+                    
+                    <li id="comment-13300">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-04-24T14:57:45.908-0400">2014-04-24T14:57:45.908-0400</relative-time></i></p>
+                        <p>Based on the conversation in the channel today <a href="https://botbot.me/freenode/fluid-work/2014-04-24/?tz=America/Toronto">https://botbot.me/freenode/fluid-work/2014-04-24/?tz=America/Toronto</a></p>
+<p>"msgBundle" -&gt; "msgResolver"<br>
+"stringBundle" -&gt; "msgLookup"</p>
+
+                    </li>
+                    
+                    <li id="comment-13301">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-04-24T15:42:04.421-0400">2014-04-24T15:42:04.421-0400</relative-time></i></p>
+                        <p>Submitted a pull request<br>
+<a href="https://github.com/fluid-project/infusion/pull/498">https://github.com/fluid-project/infusion/pull/498</a></p>
+
+                    </li>
+                    
+                    <li id="comment-13302">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-04-24T16:20:49.321-0400">2014-04-24T16:20:49.321-0400</relative-time></i></p>
+                        <p>Merged into the project repo @ 78d3600b61697a5063f066735b3943dfbab1b1b9</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5206/"><span class="aria-hidden">←</span> Previous: FLUID-5206</a>
+        <a class="mx-1" href="/browse/FLUID-5208/">Next: FLUID-5208 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

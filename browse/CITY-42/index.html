@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> CITY-42  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" CITY-42 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/CITY-42/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/CITY-42/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/CITY" data-pagefind-filter="project">Inclusive Cities</a></li>
+                <li><a href="/browse/CITY-42/">CITY-42</a></li>
+            </ol>
+        </nav>
+        <h1>CITY-42: Update Infusion for Inclusive Cities</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/CITY-42">CITY-42</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/CITY/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>In Progress</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Simon Bates</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/CITY/?reporter=Simon%20Bates">Simon Bates</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-12-07T09:15:51.498-0500" prefix="">2018-12-07T09:15:51.498-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-01-22T11:14:52.657-0500" prefix="">2019-01-22T11:14:52.657-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>From Justin:</p>
+<p>"Alan filed a <a href="/browse/FLUID-6357/">FLUID-6357</a> the other day when it was observed that the aria-expanded was added to the wrong UIO element on the Inclusive Cities site. This has been addressed in Infusion and I’ve cut a new dev release that includes the fix (3.0.0-dev.20181204T213346Z.2ca90f6e6). </p>
+<p>In addition, Antranig mentioned to me the other day that the text was moving on page load in Chrome. This was an issue that he had also mentioned quite a while ago and we also fixed a bug in Infusion that was causing it. However, it doesn’t appear that the instance of Infusion was updated after that. This latest version should address both of those problems."</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13018">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2018-12-21T15:37:19.800-0500">2018-12-21T15:37:19.800-0500</relative-time></i></p>
+                        <p>At this point, I don't know what process was used to prepare the Infusion that is currently in website-cities.</p>
+<p>I have tried:</p>
+<pre><code class="hljs language-java">&gt; grunt custom --include=<span class="hljs-string">"uiOptions"</span>
+</code></pre>
+<p>And that produces an 'infusion-custom.js' of approximately the same size as the one in the website-cities repo. However, the 'infusion-custom.js.map' is a different size and the 'src' directory contains much more stuff than the one in website-cities.</p>
+<pre><code class="hljs language-java">&gt; dir .\build\
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----       <span class="hljs-number">2018</span>-<span class="hljs-number">12</span>-<span class="hljs-number">21</span>   <span class="hljs-number">3</span>:<span class="hljs-number">29</span> PM                src
+-a----       <span class="hljs-number">2018</span>-<span class="hljs-number">12</span>-<span class="hljs-number">21</span>   <span class="hljs-number">3</span>:<span class="hljs-number">29</span> PM         <span class="hljs-number">674107</span> infusion-custom.js
+-a----       <span class="hljs-number">2018</span>-<span class="hljs-number">12</span>-<span class="hljs-number">21</span>   <span class="hljs-number">3</span>:<span class="hljs-number">29</span> PM         <span class="hljs-number">617112</span> infusion-custom.js.map
+-a----       <span class="hljs-number">2017</span>-08-<span class="hljs-number">10</span>   <span class="hljs-number">4</span>:<span class="hljs-number">19</span> PM          <span class="hljs-number">12369</span> Infusion-LICENSE.txt
+-a----       <span class="hljs-number">2018</span>-<span class="hljs-number">12</span>-<span class="hljs-number">21</span>   <span class="hljs-number">3</span>:<span class="hljs-number">03</span> PM          <span class="hljs-number">12257</span> README.md
+-a----       <span class="hljs-number">2018</span>-<span class="hljs-number">12</span>-<span class="hljs-number">21</span>   <span class="hljs-number">3</span>:<span class="hljs-number">03</span> PM           <span class="hljs-number">8585</span> ReleaseNotes.md
+
+&gt; dir .\build\src\components\
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----       <span class="hljs-number">2018</span>-<span class="hljs-number">12</span>-<span class="hljs-number">21</span>   <span class="hljs-number">3</span>:<span class="hljs-number">29</span> PM                inlineEdit
+d-----       <span class="hljs-number">2018</span>-<span class="hljs-number">12</span>-<span class="hljs-number">21</span>   <span class="hljs-number">3</span>:<span class="hljs-number">29</span> PM                orator
+d-----       <span class="hljs-number">2018</span>-<span class="hljs-number">12</span>-<span class="hljs-number">21</span>   <span class="hljs-number">3</span>:<span class="hljs-number">29</span> PM                overviewPanel
+d-----       <span class="hljs-number">2018</span>-<span class="hljs-number">12</span>-<span class="hljs-number">21</span>   <span class="hljs-number">3</span>:<span class="hljs-number">29</span> PM                pager
+d-----       <span class="hljs-number">2018</span>-<span class="hljs-number">12</span>-<span class="hljs-number">21</span>   <span class="hljs-number">3</span>:<span class="hljs-number">29</span> PM                progress
+d-----       <span class="hljs-number">2018</span>-<span class="hljs-number">12</span>-<span class="hljs-number">21</span>   <span class="hljs-number">3</span>:<span class="hljs-number">29</span> PM                reorderer
+d-----       <span class="hljs-number">2018</span>-<span class="hljs-number">12</span>-<span class="hljs-number">21</span>   <span class="hljs-number">3</span>:<span class="hljs-number">29</span> PM                slidingPanel
+d-----       <span class="hljs-number">2018</span>-<span class="hljs-number">12</span>-<span class="hljs-number">21</span>   <span class="hljs-number">3</span>:<span class="hljs-number">29</span> PM                <span class="hljs-keyword">switch</span>
+d-----       <span class="hljs-number">2018</span>-<span class="hljs-number">12</span>-<span class="hljs-number">21</span>   <span class="hljs-number">3</span>:<span class="hljs-number">29</span> PM                tableOfContents
+d-----       <span class="hljs-number">2018</span>-<span class="hljs-number">12</span>-<span class="hljs-number">21</span>   <span class="hljs-number">3</span>:<span class="hljs-number">29</span> PM                textfieldControl
+d-----       <span class="hljs-number">2018</span>-<span class="hljs-number">12</span>-<span class="hljs-number">21</span>   <span class="hljs-number">3</span>:<span class="hljs-number">29</span> PM                textToSpeech
+d-----       <span class="hljs-number">2018</span>-<span class="hljs-number">12</span>-<span class="hljs-number">21</span>   <span class="hljs-number">3</span>:<span class="hljs-number">29</span> PM                tooltip
+d-----       <span class="hljs-number">2018</span>-<span class="hljs-number">12</span>-<span class="hljs-number">21</span>   <span class="hljs-number">3</span>:<span class="hljs-number">29</span> PM                uiOptions
+d-----       <span class="hljs-number">2018</span>-<span class="hljs-number">12</span>-<span class="hljs-number">21</span>   <span class="hljs-number">3</span>:<span class="hljs-number">29</span> PM                undo
+d-----       <span class="hljs-number">2018</span>-<span class="hljs-number">12</span>-<span class="hljs-number">21</span>   <span class="hljs-number">3</span>:<span class="hljs-number">29</span> PM                uploader
+
+&gt; dir ..\website-cities\<span class="hljs-keyword">static</span>\js\lib\infusion\
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----       <span class="hljs-number">2018</span>-08-<span class="hljs-number">30</span>   <span class="hljs-number">9</span>:<span class="hljs-number">51</span> AM                src
+-a----       <span class="hljs-number">2018</span>-08-<span class="hljs-number">30</span>   <span class="hljs-number">9</span>:<span class="hljs-number">51</span> AM         <span class="hljs-number">692801</span> infusion-custom.js
+-a----       <span class="hljs-number">2018</span>-08-<span class="hljs-number">30</span>   <span class="hljs-number">9</span>:<span class="hljs-number">51</span> AM        <span class="hljs-number">2124926</span> infusion-custom.js.map
+-a----       <span class="hljs-number">2018</span>-08-<span class="hljs-number">30</span>   <span class="hljs-number">9</span>:<span class="hljs-number">51</span> AM          <span class="hljs-number">12369</span> Infusion-LICENSE.txt
+-a----       <span class="hljs-number">2018</span>-08-<span class="hljs-number">30</span>   <span class="hljs-number">9</span>:<span class="hljs-number">51</span> AM           <span class="hljs-number">9991</span> README.md
+-a----       <span class="hljs-number">2018</span>-08-<span class="hljs-number">30</span>   <span class="hljs-number">9</span>:<span class="hljs-number">51</span> AM           <span class="hljs-number">8137</span> ReleaseNotes.md
+
+&gt; dir ..\website-cities\<span class="hljs-keyword">static</span>\js\lib\infusion\src\components\
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----       <span class="hljs-number">2018</span>-08-<span class="hljs-number">30</span>   <span class="hljs-number">9</span>:<span class="hljs-number">51</span> AM                slidingPanel
+d-----       <span class="hljs-number">2018</span>-08-<span class="hljs-number">30</span>   <span class="hljs-number">9</span>:<span class="hljs-number">51</span> AM                <span class="hljs-keyword">switch</span>
+d-----       <span class="hljs-number">2018</span>-08-<span class="hljs-number">30</span>   <span class="hljs-number">9</span>:<span class="hljs-number">51</span> AM                tableOfContents
+d-----       <span class="hljs-number">2018</span>-08-<span class="hljs-number">30</span>   <span class="hljs-number">9</span>:<span class="hljs-number">51</span> AM                textfieldControl
+d-----       <span class="hljs-number">2018</span>-08-<span class="hljs-number">30</span>   <span class="hljs-number">9</span>:<span class="hljs-number">51</span> AM                textfieldSlider
+d-----       <span class="hljs-number">2018</span>-08-<span class="hljs-number">30</span>   <span class="hljs-number">9</span>:<span class="hljs-number">51</span> AM                textToSpeech
+d-----       <span class="hljs-number">2018</span>-08-<span class="hljs-number">30</span>   <span class="hljs-number">9</span>:<span class="hljs-number">51</span> AM                uiOptions
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-13019">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2018-12-21T15:38:36.477-0500">2018-12-21T15:38:36.477-0500</relative-time></i></p>
+                        <p>I'll check with Justin in January and hopefully it'll be a fairly quick process to verify and update.</p>
+
+                    </li>
+                    
+                    <li id="comment-13020">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-01-05T09:41:34.005-0500">2019-01-05T09:41:34.005-0500</relative-time></i></p>
+                        <p>Simon Bates I'm trying to remember if the src directory always included all of the original source or not. I don't think it did, but not sure when this may have changed. We did make some changes recently to pull in third party dependencies from NPM, and had to make some adjustments to the build scripts then. So it may have occurred with those changes. However, we did always need to do some pruning of the source directory as it always included JS files that were already bundled up in the concatenated JS file. We typically include all this information in a VERSION.md file accompanying the infusion src.</p>
+<p>Lately we've just been pulling in Infusion from NPM directly. The NPM package comes with a distribution for a UIO custom build (see: <a href="https://unpkg.com/infusion@3.0.0-dev.20181204T213346Z.2ca90f6e6/dist/">https://unpkg.com/infusion@3.0.0-dev.20181204T213346Z.2ca90f6e6/dist/</a>&#160;for examples). You'll also need to setup some copying of the necessary templates, message bundles and etc. It's a bit of work to setup initially but once it's all done it makes updating and keeping track of the version much easier. Let me know if you'd like to do this and would need some help getting things set up.</p>
+
+                    </li>
+                    
+                    <li id="comment-13021">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2019-01-08T10:56:35.546-0500">2019-01-08T10:56:35.546-0500</relative-time></i></p>
+                        <p>I chatted with Justin and we decided on the following approach:</p>
+<ul>
+<li>We will automate the updating/preparing of UIO for the Cities site using NPM and Grunt
+<ul>
+<li>We'll add a <code>package.json</code> and <code>Gruntfile.js</code></li>
+</ul>
+</li>
+<li>We will store the UIO build for the Cities site (the output of the automated process) in the website-cities repo</li>
+<li>NPM and Grunt need only be run when updating UIO – for regular site builds, Hugo is used only</li>
+<li>The <code>Gruntfile.js</code> will copy files from the UIO distribution in Infusion to the Hugo static directory, replacing the files there (see <a href="https://unpkg.com/infusion@3.0.0-dev.20181204T213346Z.2ca90f6e6/dist/">https://unpkg.com/infusion@3.0.0-dev.20181204T213346Z.2ca90f6e6/dist/</a>)</li>
+</ul>
+<p>Document this process:</p>
+<ul>
+<li>In the README.md for website-cities</li>
+<li>And update <a href="https://docs.fluidproject.org/infusion/development/tutorial-userInterfaceOptions/UserInterfaceOptions.html">https://docs.fluidproject.org/infusion/development/tutorial-userInterfaceOptions/UserInterfaceOptions.html</a> with notes on this approach</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-13022">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2019-01-22T11:14:52.657-0500">2019-01-22T11:14:52.657-0500</relative-time></i></p>
+                        <p>Options for managing UIO are being documented here:</p>
+<p><a href="https://wiki.fluidproject.org/display/fluid/Managing+UIO+in+a+project">https://wiki.fluidproject.org/display/fluid/Managing+UIO+in+a+project</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/CITY-41/"><span class="aria-hidden">←</span> Previous: CITY-41</a>
+        <a class="mx-1" href="/browse/CITY-43/">Next: CITY-43 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

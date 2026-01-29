@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-588  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-588 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-588/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-588/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-588/">FLUID-588</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-588: OSDPL Architecture: Figure out how to create a parent-child relationship between patterns &amp; implement solution</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-588">FLUID-588</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Allison%20Bloodworth">Allison Bloodworth</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-05-13T12:57:19.000-0400" prefix="">2008-05-13T12:57:19.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-04-02T16:35:55.387-0400" prefix="">2014-04-02T16:35:55.387-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>OSDPL</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>is there a way to make a node a child of another node in a way other than using the menu? - looks like only books have the concept of a parent node. The drag and drop pattern should be the parent of the drag and drop - layout preview and drag and drop - list ordering patterns. Tried creating a subcategory under Information Organization called Drag and Drop, but couldn't make it work as I don't think it's possible to allow it to be both a subcategory &amp; a page at the same time. </p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14323">
+                        <p class="mb-0"><b>Allison Bloodworth</b> <i>commented <relative-time datetime="2008-05-13T12:57:42.000-0400">2008-05-13T12:57:42.000-0400</relative-time></i></p>
+                        <p>futuretask</p>
+
+                    </li>
+                    
+                    <li id="comment-14325">
+                        <p class="mb-0"><b>Allison Bloodworth</b> <i>commented <relative-time datetime="2008-06-09T21:25:01.000-0400">2008-06-09T21:25:01.000-0400</relative-time></i></p>
+                        <p>I am able to create a parent-child relationship with the menus for now--I didn't realize it was DTHML menus which was making it impossible to click on and navigate to the top level navigation item (e.g. Drag and Drop).</p>
+<p>Though it might be better to do this semantically and either actually link UI design pattern nodes in parent-child relationships (the ideal case) or create a subcategory (e.g. Drag and Drop under Information Organization), for now I think things will work just fine using the menu capabilities. If we ever decide not to have any sort of moderator, that should probably be revisited.</p>
+<p>I did also try to create a subcategory for Drag and Drop under Information Organization, but processing the URL generated (e.g. taxomony-menu/1/2/25) is more difficult (if not impossible) than processing a URL generated with just one level of hierarchy in a category (e.g. taxonomy-menu/1/2). So, again, for now I think we can leave this to us to handle in the  menu system. </p>
+<p>In the future it <strong>would</strong> be nice to show a more semantic parent-child relationship between UI design pattern nodes, as is possible using the "book" content type, so I will leave this as a future task.</p>
+
+                    </li>
+                    
+                    <li id="comment-14328">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2009-01-19T13:56:10.000-0500">2009-01-19T13:56:10.000-0500</relative-time></i></p>
+                        <p>Node Hierarchy may be what we need: <a href="http://drupal.org/project/nodehierarchy">http://drupal.org/project/nodehierarchy</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-586/"><span class="aria-hidden">←</span> Previous: FLUID-586</a>
+        <a class="mx-1" href="/browse/FLUID-589/">Next: FLUID-589 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

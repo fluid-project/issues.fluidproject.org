@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-271  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-271 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-271/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-271/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-271/">SJRK-271</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-271: Eliminate conflicting punctuation from arrayToString transform output</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-271">SJRK-271</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-09-03T14:25:49.071-0400" prefix="">2019-09-03T14:25:49.071-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-09-03T14:25:49.071-0400" prefix="">2019-09-03T14:25:49.071-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Consider handling grammatically conflicting punctuation in the arrayToString transform function, or extending the transform with another that would detect such cases.</p>
+<p>From the <a href="https://github.com/fluid-project/sjrk-story-telling/pull/37#pullrequestreview-282012328">discussion for the <a href="/browse/SJRK-263/">SJRK-263</a> pull request</a>:</p>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<ol>
+<li>Add a text block with text like "Some Text!"</li>
+<li>Add another text block with text like "more text"</li>
+<li>The output is "Some Text!. more text"; Notice the double punctuation "!.".</li>
+</ol>
+<blockquote>
+<p>I imagine that what happens with that will depend on the synthesizer used. Some might ignore it, others might read it as "dot". If you end up using the contentString for output the text visually, it will look strange and be incorrect. Also what about other languages that have different punctuation? It may be better not to try to add punctuation and just separate based on " "</p>
+</blockquote>
+<blockquote>
+<p>If we set the delimiter to " " then we won't get the pause between blocks, and the synthesizer may continue reading the next one as if it's all one sentence</p>
+</blockquote>
+<ol>
+<li>Add a text block with text like "Some text"</li>
+<li>Add another text block with text like "more text"</li>
+<li>the output is "Some text more text", which will be read without pauses and could cause confusion</li>
+</ol>
+<p>Also explore the possibility of not storing the contentString in the model at all. Perhaps even just using the Orator component to read through the content in the story instead.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-270/"><span class="aria-hidden">←</span> Previous: SJRK-270</a>
+        <a class="mx-1" href="/browse/SJRK-272/">Next: SJRK-272 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-32  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-32 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-32/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-32/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-32/">C2LC-32</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-32: Create a modal Component for confirmation to connect to available robots</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-32">C2LC-32</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Won't Fix</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter=Daniel%20Cho">Daniel Cho</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-11-19T15:09:39.214-0500" prefix="">2019-11-19T15:09:39.214-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-05-07T10:45:18.833-0400" prefix="">2024-05-07T10:45:18.833-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When there are robots available near by, inform users about robot presence and ask if they would like to connect to any of those.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10593">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2019-11-26T09:53:52.997-0500">2019-11-26T09:53:52.997-0500</relative-time></i></p>
+                        <p>Without a user gesture, i.e, without manually triggering web bluetooth API's requestDevice, bluetooth connect window will not appear. Also, builtin connect window from browsers (this API is only available in Chrome and Opera) seem not modifiable, which means there's no way for us to create customized modal with messages. </p>
+
+                    </li>
+                    
+                    <li id="comment-10594">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2019-11-26T15:09:46.845-0500">2019-11-26T15:09:46.845-0500</relative-time></i></p>
+                        <p>Hi Daniel Cho, thanks for clarifying. Just so I fully understand (I think I'm familiar with this kind of issue but I might be misunderstanding), is it the case that you can't even start scanning for a bluetooth device until a user event (click, keypress, etc.) is fired?</p>
+<p>If that's the case, we should have a "Find Robots" or something similar (Sepideh Shahi can decide) button that starts the process. But the best case situation, if it were possible, is that we'd start scanning as soon as the application is first loaded.</p>
+
+                    </li>
+                    
+                    <li id="comment-10595">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2019-11-26T15:22:07.359-0500">2019-11-26T15:22:07.359-0500</relative-time></i></p>
+                        <p>Thank you Colin, </p>
+<p>Unfortunately, user gesture is a must, this is an information from the <a href="https://developers.google.com/web/updates/2015/07/interact-with-ble-devices-on-the-web">developer documentation</a>: "User Gesture Required<br>
+As a security feature, discovering Bluetooth devices with navigator.bluetooth.requestDevice must be triggered by a user gesture such as a touch or a mouse click. We're talking about listening to pointerup, click, and touchend events."</p>
+<p>Our current model has a button for user gesture, with name Connect to Dash and we can definitely change the name to more generic one like "Find Robots" in the future.</p>
+
+                    </li>
+                    
+                    <li id="comment-10596">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2019-11-26T15:28:41.922-0500">2019-11-26T15:28:41.922-0500</relative-time></i></p>
+                        <p>Great, thanks. Yes, this is a way of preventing personal "fingerprinting" (sites tracking you without cookies by doing things like figuring out what devices are near you) on the web platform.</p>
+<p>Sepideh Shahi may have some other ideas, but I think it's reasonable to have a button that starts the process. ideally, it wouldn't be completely modal (so that it doesn't interrupt the process of making a program) but it may be easier for users if we walk them through the process of finding and connecting to one or more robots.</p>
+
+                    </li>
+                    
+                    <li id="comment-10597">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2019-11-26T15:39:29.046-0500">2019-11-26T15:39:29.046-0500</relative-time></i></p>
+                        <p>Yeah that's a good idea, we definitely need to create some kind of tutorial for users to use our coding environment. The modal idea was only for the case where we need to ask users without gestures, but since we can't use the API without user gesture, we don't need a modal for this. Thank you for your comments!</p>
+
+                    </li>
+                    
+                    <li id="comment-10598">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2019-11-27T13:44:39.069-0500">2019-11-27T13:44:39.069-0500</relative-time></i></p>
+                        <p>Potentially in the future, we could use the Web Bluetooth Scanning API:</p>
+<ul>
+<li><a href="https://webbluetoothcg.github.io/web-bluetooth/scanning.html">https://webbluetoothcg.github.io/web-bluetooth/scanning.html</a></li>
+</ul>
+<p>If this page is up-to-date, it looks like it's currently in development for Chrome:</p>
+<ul>
+<li><a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md">https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md</a></li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-10599">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2019-11-27T13:59:24.591-0500">2019-11-27T13:59:24.591-0500</relative-time></i></p>
+                        <p>The Web Bluetooth spec includes a feature <code>navigator.permissions.query</code>:</p>
+<p><a href="https://webbluetoothcg.github.io/web-bluetooth/#example-permission-api-query">https://webbluetoothcg.github.io/web-bluetooth/#example-permission-api-query</a></p>
+<p>Which I think is worth taking a look at:</p>
+<p>"Once a site has been granted access to a set of devices, it can use navigator.permissions.query({name: "bluetooth", ...}) to retrieve those devices after a reload."</p>
+<p>We'll need to try it, but this may enable us to connect to devices that have been previously authorized ('paired'). For these previously authorized devices, we could potentially provide a more direct user experience without having to prompt with the Chome connection interface.</p>
+
+                    </li>
+                    
+                    <li id="comment-10600">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2019-11-27T14:02:53.678-0500">2019-11-27T14:02:53.678-0500</relative-time></i></p>
+                        <p>Looks like navigator.permissions.query isn't available yet:</p>
+<ul>
+<li><a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md">https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md</a></li>
+<li><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=577953">https://bugs.chromium.org/p/chromium/issues/detail?id=577953</a></li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-10601">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2019-11-27T14:17:41.160-0500">2019-11-27T14:17:41.160-0500</relative-time></i></p>
+                        <p>It looks like Chrome Apps have a richer API available:</p>
+<p><a href="https://developer.chrome.com/apps/app_bluetooth">https://developer.chrome.com/apps/app_bluetooth</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-31/"><span class="aria-hidden">←</span> Previous: C2LC-31</a>
+        <a class="mx-1" href="/browse/C2LC-33/">Next: C2LC-33 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

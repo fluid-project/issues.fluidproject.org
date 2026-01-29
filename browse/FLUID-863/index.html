@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-863  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-863 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-863/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-863/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-863/">FLUID-863</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-863: no focus styling when tabbing through reorderable jQuery tabs, using FF3</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-863">FLUID-863</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-07-08T16:35:04.000-0400" prefix="">2008-07-08T16:35:04.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-07-09T17:42:03.000-0400" prefix="">2008-07-09T17:42:03.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When tabbing through the set of reorderable jQuery tabs, the focus styling does not display.</p>
+<p>Steps to reproduce:</p>
+<p>1) open the reorderable jQuery page from the daily build site:<br>
+<a href="http://build.fluidproject.org/fluid/sample-code/reorderer/jquery-tabs/jquery-tabs.html">http://build.fluidproject.org/fluid/sample-code/reorderer/jquery-tabs/jquery-tabs.html</a></p>
+<p>2) tap the 'tab' key until one of the reorderable jQuery tabs has focus.</p>
+<p>3) tap the 'tab' key again. Notice that the focus styling is not present on any tab.</p>
+<p>4) press 'enter', one of the other tabs should have been selected.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF3 (Win XP)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19849">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-07-08T18:20:51.000-0400">2008-07-08T18:20:51.000-0400</relative-time></i></p>
+                        <p>I'm not sure this one is a bug. The behaviour you describe is the way jQuery tabs just work, independent of the Reorderer. Try<br>
+<a href="http://ui.jquery.com/functional_demos/#ui.tabs">http://ui.jquery.com/functional_demos/#ui.tabs</a></p>
+<p>The issue seems to be that in step 3) of your process, 'focus' is moving to the next tab, there's just no visual indication. Hitting enter at this point activates the new tab. You can see this more clearly if you hit tab more than once (and keep track in your head of where you are).</p>
+<p>I guess the question is: Should the Reorderer be adding visual styling to this already existing behaviour? Not sure...</p>
+
+                    </li>
+                    
+                    <li id="comment-19852">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-07-09T17:35:13.000-0400">2008-07-09T17:35:13.000-0400</relative-time></i></p>
+                        <p>This is actually not a bug in our code: tabbing through the tabs is not the way you're supposed to navigate tabs. The fact that you can with jQuery tabs is a bug in jQuery, which I filed:</p>
+<p><a href="http://ui.jquery.com/bugs/ticket/3079">http://ui.jquery.com/bugs/ticket/3079</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-862/"><span class="aria-hidden">←</span> Previous: FLUID-862</a>
+        <a class="mx-1" href="/browse/FLUID-864/">Next: FLUID-864 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

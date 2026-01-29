@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-891  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-891 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-891/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-891/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-891/">FLUID-891</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-891: Wrong focus styling during keyboard navigation</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-891">FLUID-891</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Daphne Ogle</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-07-10T20:21:35.000-0400" prefix="">2008-07-10T20:21:35.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-07-21T13:19:51.000-0400" prefix="">2008-07-21T13:19:51.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The wrong focus styling is applied to the in-line edit fields when using keyboard navigation. On mouse over, the in-line edit field is highlighted in yellow. On keyboard navigation, the in-line edit field is only given a dotted border.</p>
+<p>Steps to reproduce:</p>
+<p>1) Open the in-line edit demo from the daily build site<br>
+<a href="http://build.fluidproject.org/fluid/sample-code/inline-edit/announcements/announcements.html">http://build.fluidproject.org/fluid/sample-code/inline-edit/announcements/announcements.html</a></p>
+<p>2) Tap the 'tab' key until one of the in-line edit fields has focus. Notice the dotted border and lack of yellow highlighting</p>
+<p>dev-iteration39</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF2, FF3 (Mac OS X)<br>
+FF2, FF3, IE6, IE7 (Win XP)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-16712">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-07-10T21:14:09.000-0400">2008-07-10T21:14:09.000-0400</relative-time></i></p>
+                        <p>Daphne, could you take a look at this and clarify what the styling differences (or sameness) should be between hovering over an inline edit and tabbing to it. Should both actions produce a yellow highlight?</p>
+
+                    </li>
+                    
+                    <li id="comment-16714">
+                        <p class="mb-0"><b>Daphne Ogle</b> <i>commented <relative-time datetime="2008-07-11T01:00:30.000-0400">2008-07-11T01:00:30.000-0400</relative-time></i></p>
+                        <p>Sent in email to the list:</p>
+<p>I'm going to think aloud a bit hear in the hopes of hearing others perspective.</p>
+<p>The current design describes these 2 actions as having the same visual representation.  The point of the highlight is to help users discover the functionality.  The worst case would be to have a user staring at a screen trying to find the edit link.</p>
+<p>For keyboard interaction, tabbing into the field is when we want the user to know they can edit the information in the field.  Since the field has focus I assume it will display as an editable field at that point?  Perhaps that's enough of an indicator of the ability to edit.  With keyboard interaction what we are missing is the ability to accidentally discover the inline edit option.  I don't think there is a  parallel in keyboard interaction to mouse users randomly moving the mouse around on the screen?  Or perhaps it's just beginning to "tab around"?  If editable fields are all changing their display editable then users will get that it's an option.</p>
+<p>Thoughts?</p>
+
+                    </li>
+                    
+                    <li id="comment-16716">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-07-11T14:29:55.000-0400">2008-07-11T14:29:55.000-0400</relative-time></i></p>
+                        <p>Currently, focus does <strong>not</strong> switch the component into edit mode, you have to press Enter to do that. So it is necessary to have some other indication that the text is editable, and putting on my user hat, I would think it would be more consistent if the visual indication was the same regardless of mouse vs. keyboard.</p>
+
+                    </li>
+                    
+                    <li id="comment-16718">
+                        <p class="mb-0"><b>Daphne Ogle</b> <i>commented <relative-time datetime="2008-07-14T22:19:44.000-0400">2008-07-14T22:19:44.000-0400</relative-time></i></p>
+                        <p>I agree with Anastasia &amp; Justin here.  I think the yellow highlighting should display when the user tabs into a field.  The dotted outline can also display since this is an expected visual cue to show where the user is on the screen.</p>
+<p>Our current task is to add keyboard interactions to the storyboards which I'm hoping to get to in the next day or so.</p>
+
+                    </li>
+                    
+                    <li id="comment-16720">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-07-18T17:45:29.000-0400">2008-07-18T17:45:29.000-0400</relative-time></i></p>
+                        <p>This is resolved at revision 5239 - however, note that the highlight semantics can now appear "unusual" in the case where the user tabs focus to one control using the keyboard, and then hovers over a different one with the mouse. This can lead to either 2 or zero "invitation style" edit controls in the document.</p>
+
+                    </li>
+                    
+                    <li id="comment-16722">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-07-21T13:19:22.000-0400">2008-07-21T13:19:22.000-0400</relative-time></i></p>
+                        <p>Filed Antranig's 18July08 comment as Fluid-949 (<a href="http://issues.fluidproject.org/browse/FLUID-949">http://issues.fluidproject.org/browse/FLUID-949</a>)</p>
+
+                    </li>
+                    
+                    <li id="comment-16725">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-07-21T13:19:51.000-0400">2008-07-21T13:19:51.000-0400</relative-time></i></p>
+                        <p>Verified fix in FF2 &amp; FF3 (Mac OS 10.5, Win XP)</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-890/"><span class="aria-hidden">←</span> Previous: FLUID-890</a>
+        <a class="mx-1" href="/browse/FLUID-892/">Next: FLUID-892 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

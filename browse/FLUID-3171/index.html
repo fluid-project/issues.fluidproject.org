@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3171  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3171 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3171/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3171/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3171/">FLUID-3171</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3171:  jquery sliders don't announce correct units in screen readers </h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3171">FLUID-3171</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alison Benjamin</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Alison%20Benjamin">Alison Benjamin</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-09-11T13:35:25.000-0400" prefix="">2009-09-11T13:35:25.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T12:25:19.606-0400" prefix="">2024-07-22T12:25:19.606-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.2</li>
+                            
+                            <li>1.5</li>
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Textfield Slider</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Give minimum text size jquery slider the correct units. should read "point" not "percent"</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3171/FLUID-3171.txt">
+                            
+                                FLUID-3171.txt
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3171/FLUID-3171b.txt">
+                            
+                                FLUID-3171b.txt
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3171/FLUID-3171c.txt">
+                            
+                                FLUID-3171c.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15221">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-11-24T14:05:23.000-0500">2009-11-24T14:05:23.000-0500</relative-time></i></p>
+                        <p>Code Review Comments:<br>
+===================</p>
+<p>This seems to work in NVDA in Firefox. Not working in JAWS.<br>
+Was it working in all cases for you, or is this the case where JAWS and IE are lacking support.</p>
+<p>Line 132 - 133 could probably be put into one call using the object version of the attr function. Which you used in the undo patch.</p>
+<p>For the value of "aria-valuetext" you may want to look into our string templating scheme. Although it might be overkill in this case, you probably could at least move the unitText into a strings object, for consistency with other components. </p>
+<p>strings: {<br>
+unitText: "point"<br>
+}</p>
+<p><a href="http://wiki.fluidproject.org/display/fluid/Framework+Functions#FrameworkFunctions-fluid.stringTemplate">http://wiki.fluidproject.org/display/fluid/Framework+Functions#FrameworkFunctions-fluid.stringTemplate</a></p>
+<p>I think your test may actually be wrong.<br>
+Line 49: I think slider.slider("value") should actually be "expected".  </p>
+<p>You should be able to write " " + "point" as " point". You may also want to make a function to assemble this string and then have tests for different types of unitText options.</p>
+
+                    </li>
+                    
+                    <li id="comment-15224">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-01-05T17:02:57.000-0500">2010-01-05T17:02:57.000-0500</relative-time></i></p>
+                        <p>Code Review Comments for the patch FLUID-3171c.txt<br>
+==========================================</p>
+<p>uiOptions.js<br>
+----------------
+<br>
+line 158: by convention the unitTextTemplate should be in a strings object</p>
+<p>strings: {<br>
+unitTextTemplate: "%val point"<br>
+}</p>
+<p>TextFieldSliderTests.js<br>
+------------------------------
+<br>
+the functions testValueTextSetting and testSetting look virtually identical.</p>
+<p>They seem to differ only on the format of the expected value for the valuetext test</p>
+<p>One way to handle this would be to pass in the concatenated string for the expected valuetext as a third variable. </p>
+
+                    </li>
+                    
+                    <li id="comment-15228">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-05-07T13:51:30.926-0400">2010-05-07T13:51:30.926-0400</relative-time></i></p>
+                        <p>a11y issue</p>
+
+                    </li>
+                    
+                    <li id="comment-15231">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-07-14T07:02:47.464-0400">2014-07-14T07:02:47.464-0400</relative-time></i></p>
+                        <p>Currently it seems that the textfield slider only reads the value and no units.</p>
+
+                    </li>
+                    
+                    <li id="comment-27807">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2024-07-22T12:25:19.606-0400">2024-07-22T12:25:19.606-0400</relative-time></i></p>
+                        <p>Using a standard range input instead of jQuery slider now.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3170/"><span class="aria-hidden">←</span> Previous: FLUID-3170</a>
+        <a class="mx-1" href="/browse/FLUID-3172/">Next: FLUID-3172 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

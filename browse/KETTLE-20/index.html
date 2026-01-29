@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> KETTLE-20  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" KETTLE-20 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/KETTLE-20/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/KETTLE-20/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/KETTLE" data-pagefind-filter="project">Kettle</a></li>
+                <li><a href="/browse/KETTLE-20/">KETTLE-20</a></li>
+            </ol>
+        </nav>
+        <h1>KETTLE-20: Kettle should always make a full console log on fluid.fail even if there is a current request</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/KETTLE-20">KETTLE-20</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Resolved</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/KETTLE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-01-13T15:35:01.290-0500" prefix="">2014-01-13T15:35:01.290-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-07-30T12:19:47.784-0400" prefix="">2014-07-30T12:19:47.784-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Kettle's utils.js currently has (line 52):</p>
+<p>fluid.pushSoftFailure(function errHandler(args, activity) {<br>
+var messages = args.concat(activity),<br>
+request = fluid.expand("{request}", {<br>
+fetcher: fluid.makeEnvironmentFetcher()<br>
+});<br>
+if (!request) {<br>
+messages = ["ASSERTION FAILED: "].concat(messages);<br>
+console.log.apply(null, messages);<br>
+throw new Error(args[0]);<br>
+}</p>
+<p>we should move the console log outside the request test, since the version of the error logged to the browser is seldom very readable, especially if it includes Objects as part of the logged list. This issue made several error reports we received from GPII universal very hard to read during preparation for the review meeting.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26131">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-01-14T19:51:51.037-0500">2014-01-14T19:51:51.037-0500</relative-time></i></p>
+                        <p>We should take the opportunity at the same time to fix logging in another crucial case, where there is NOT a current request and we receive an unhandled exception notification. This blocked the characterisation of <a href="http://issues.gpii.net/browse/GPII-520">http://issues.gpii.net/browse/GPII-520</a></p>
+
+                    </li>
+                    
+                    <li id="comment-26132">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-07-30T12:19:47.706-0400">2014-07-30T12:19:47.706-0400</relative-time></i></p>
+                        <p>Merged into Kettle trunk at revision 78410a0c99326a5b7b4173bf84fbb1c6d3ce9de0 on 7 Feb 2014</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/KETTLE-19/"><span class="aria-hidden">←</span> Previous: KETTLE-19</a>
+        <a class="mx-1" href="/browse/KETTLE-21/">Next: KETTLE-21 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5837  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5837 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5837/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5837/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5837/">FLUID-5837</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5837: Add the new "GPII preference syncing" panel</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5837">FLUID-5837</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Do">Won't Do</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Cindy Li</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-01-08T16:27:34.810-0500" prefix="">2016-01-08T16:27:34.810-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-23T10:47:38.060-0400" prefix="">2024-07-23T10:47:38.060-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The wireframe for UIO and GPII integration: <a href="https://www.dropbox.com/s/v4pn0e4pzy1e4x4/uioptions%20GPII%20integration.pdf?dl=0">https://www.dropbox.com/s/v4pn0e4pzy1e4x4/uioptions GPII integration.pdf?dl=0</a></p>
+<ul>
+<li>Add tooltips for import and export buttons</li>
+<li>Export button is disabled until adjustments have been made, and after new prefs have been stored</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22976">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2016-02-23T14:50:50.834-0500">2016-02-23T14:50:50.834-0500</relative-time></i></p>
+                        <p>In progress work is at <a href="https://github.com/cindyli/infusion/tree/FLUID-5837">https://github.com/cindyli/infusion/tree/FLUID-5837</a> </p>
+<p>The work so far also covers some of the import functionality (<a href="https://issues.fluidproject.org/browse/FLUID-5863">https://issues.fluidproject.org/browse/FLUID-5863</a>) and the export functionality (<a href="https://issues.fluidproject.org/browse/FLUID-5864">https://issues.fluidproject.org/browse/FLUID-5864</a>).</p>
+<p>This branch contains the implementation of the GPII syncing panel, part of the import and export functionality. The parts that haven't been included:</p>
+<p>1. Since the server side for this integration is at the planning stage, the server end points for sending ajax requests are not ready, all the ajax requests are not in place;<br>
+The notes from the server planning meeting: <a href="https://docs.google.com/document/d/1Iccka4z7utljRqIN9w6ivzCNA6I_Igx9gI9WRUvr7v8/edit">https://docs.google.com/document/d/1Iccka4z7utljRqIN9w6ivzCNA6I_Igx9gI9WRUvr7v8/edit</a></p>
+<p>And, Simon’s diagram: <a href="https://docs.google.com/presentation/d/118yfJ_1pdQVcWx_ol4TChjvzx3KZFk5F9eoudt1099s/edit#slide=id.p">https://docs.google.com/presentation/d/118yfJ_1pdQVcWx_ol4TChjvzx3KZFk5F9eoudt1099s/edit#slide=id.p</a></p>
+<p>2. The export button on the button bar besides the reset and show/hide buttons are always displayed. It doesn't disappear based on the detection of the local UIO adjustments;</p>
+<p>3. The message boxes and dialogs required during the import and export processes are being re-designed and not implemented;</p>
+<p>4. The code for the import and export processes is roughed out but there are many TODO comments in the code due to the lack of 1 &amp; 3 listed above.</p>
+
+                    </li>
+                    
+                    <li id="comment-27854">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2024-07-23T10:47:37.770-0400">2024-07-23T10:47:37.770-0400</relative-time></i></p>
+                        <p>GPII is no longer supported</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5836/"><span class="aria-hidden">←</span> Previous: FLUID-5836</a>
+        <a class="mx-1" href="/browse/FLUID-5838/">Next: FLUID-5838 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

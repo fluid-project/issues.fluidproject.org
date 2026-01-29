@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-325  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-325 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-325/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-325/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-325/">SJRK-325</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-325: Reconsider selector names</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-325">SJRK-325</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-02-14T14:20:58.463-0500" prefix="">2020-02-14T14:20:58.463-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-02-14T14:20:58.463-0500" prefix="">2020-02-14T14:20:58.463-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Many of the selector names for viewComponents within the application begin with "story". This is repetitive and makes it take longer to parse the names at a glance.</p>
+<p>Likewise, the CSS classes associated with these selectors could also potentially be simplified while still remaining unique enough to avoid collisions.</p>
+<p>e.g.</p>
+<pre><code class="hljs language-javascript"><span class="hljs-attr">selectors</span>: {
+ <span class="hljs-attr">storySubmit</span>: <span class="hljs-string">".sjrkc-st-story-submit"</span>,
+ <span class="hljs-attr">storyEditorForm</span>: <span class="hljs-string">".sjrkc-st-story-editor-form"</span>,
+ <span class="hljs-attr">storyEditorContent</span>: <span class="hljs-string">".sjrkc-st-story-editor-content"</span>,
+ <span class="hljs-attr">storyEditorNext</span>: <span class="hljs-string">".sjrkc-st-story-editor-next"</span>,
+ <span class="hljs-attr">storyEditorPrevious</span>: <span class="hljs-string">".sjrkc-st-story-editor-previous"</span>,
+ <span class="hljs-attr">storyEditStoryStep</span>: <span class="hljs-string">".sjrkc-st-story-editor-edit-story-step"</span>,
+ <span class="hljs-attr">storyMetadataStep</span>: <span class="hljs-string">".sjrkc-st-story-editor-metadata-step"</span>,
+ <span class="hljs-attr">storyAddAudioBlock</span>: <span class="hljs-string">".sjrkc-st-button-audio-block"</span>,
+ <span class="hljs-attr">storyAddImageBlock</span>: <span class="hljs-string">".sjrkc-st-button-image-block"</span>,
+ <span class="hljs-attr">storyAddTextBlock</span>: <span class="hljs-string">".sjrkc-st-button-text-block"</span>,
+ <span class="hljs-attr">storyAddVideoBlock</span>: <span class="hljs-string">".sjrkc-st-button-video-block"</span>,
+ <span class="hljs-attr">storyRemoveSelectedBlocks</span>: <span class="hljs-string">".sjrkc-st-button-remove-blocks"</span>
+}
+</code></pre>
+<p>could become</p>
+<pre><code class="hljs language-javascript"><span class="hljs-attr">selectors</span>: {
+ <span class="hljs-attr">submit</span>: <span class="hljs-string">".sjrkc-st-submit"</span>,
+ <span class="hljs-attr">editorForm</span>: <span class="hljs-string">".sjrkc-st-editor-form"</span>,
+ <span class="hljs-attr">editorContent</span>: <span class="hljs-string">".sjrkc-st-editor-content"</span>,
+ <span class="hljs-attr">editorNext</span>: <span class="hljs-string">".sjrkc-st-editor-next"</span>,
+ <span class="hljs-attr">editorPrevious</span>: <span class="hljs-string">".sjrkc-st-editor-previous"</span>,
+ <span class="hljs-attr">editStoryStep</span>: <span class="hljs-string">".sjrkc-st-editor-edit-story-step"</span>,
+ <span class="hljs-attr">metadataStep</span>: <span class="hljs-string">".sjrkc-st-editor-metadata-step"</span>,
+ <span class="hljs-attr">addAudioBlock</span>: <span class="hljs-string">".sjrkc-st-add-audio-block"</span>,
+ <span class="hljs-attr">addImageBlock</span>: <span class="hljs-string">".sjrkc-st-add-image-block"</span>,
+ <span class="hljs-attr">addTextBlock</span>: <span class="hljs-string">".sjrkc-st-add-text-block"</span>,
+ <span class="hljs-attr">addVideoBlock</span>: <span class="hljs-string">".sjrkc-st-add-video-block"</span>,
+ <span class="hljs-attr">removeBlocks</span>: <span class="hljs-string">".sjrkc-st-remove-blocks"</span>
+}
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-324/"><span class="aria-hidden">←</span> Previous: SJRK-324</a>
+        <a class="mx-1" href="/browse/SJRK-326/">Next: SJRK-326 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3742  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3742 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3742/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3742/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3742/">FLUID-3742</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3742: Fix table of contents so that we don't need to override the default URL</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3742">FLUID-3742</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Cindy Li</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=heidi%20valles">heidi valles</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-09-16T11:29:00.594-0400" prefix="">2010-09-16T11:29:00.594-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-08-09T15:40:35.225-0400" prefix="">2011-08-09T15:40:35.225-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>right now myinit needs:</p>
+<p>//initialize the UI Enhancer<br>
+var initUIEnhancer = function () {</p>
+<p>var enhancerOpts = {<br>
+tableOfContents: {<br>
+options: {<br>
+templateUrl: "path to infusion/infusion-1.2/components/tableOfContents/html/TableOfContents.html"<br>
+}</p>
+<p>}<br>
+};</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24687">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-05-17T12:42:21.120-0400">2011-05-17T12:42:21.120-0400</relative-time></i></p>
+                        <p>Bug Parade Infusion</p>
+
+                    </li>
+                    
+                    <li id="comment-24688">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2011-06-23T14:32:38.945-0400">2011-06-23T14:32:38.945-0400</relative-time></i></p>
+                        <p>This issue is solved by extending fluid.uiOptionsTemplateLoader to include the definition of tableOfContents URL @ <a href="https://github.com/cindyli/infusion/tree/FLUID-3742">https://github.com/cindyli/infusion/tree/FLUID-3742</a></p>
+<p>As the modification needs to work with the new tableOfContents component, holding on the pull request till it's tested with the final toc component.</p>
+<p>This issue is dependent on <a href="/browse/FLUID-4209/">FLUID-4209</a> &amp; <a href="/browse/FLUID-4295/">FLUID-4295</a>, so the merge sequence should be:</p>
+<p><a href="/browse/FLUID-4209/">FLUID-4209</a> -&gt; <a href="/browse/FLUID-4295/">FLUID-4295</a> -&gt; <a href="/browse/FLUID-3742/">FLUID-3742</a></p>
+
+                    </li>
+                    
+                    <li id="comment-24689">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2011-07-25T16:25:56.358-0400">2011-07-25T16:25:56.358-0400</relative-time></i></p>
+                        <p>With the re-factored UI Options template loader, the code change for this issue @ <a href="https://github.com/cindyli/infusion/tree/FLUID-3742">https://github.com/cindyli/infusion/tree/FLUID-3742</a>  is no longer useful. Need a re-work.</p>
+
+                    </li>
+                    
+                    <li id="comment-24690">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2011-08-09T15:40:23.292-0400">2011-08-09T15:40:23.292-0400</relative-time></i></p>
+                        <p>Resolved with <a href="/browse/FLUID-4353/">FLUID-4353</a> @ commit# d06946a552c869ef6078d7c28af4fbc0c734871e </p>
+
+                    </li>
+                    
+                    <li id="comment-24691">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2011-08-09T15:40:35.223-0400">2011-08-09T15:40:35.223-0400</relative-time></i></p>
+                        <p>Issue closed.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3741/"><span class="aria-hidden">←</span> Previous: FLUID-3741</a>
+        <a class="mx-1" href="/browse/FLUID-3743/">Next: FLUID-3743 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

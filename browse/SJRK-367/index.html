@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-367  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-367 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-367/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-367/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-367/">SJRK-367</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-367: Add Matomo analytics to story telling</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-367">SJRK-367</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-06-23T14:55:25.508-0400" prefix="">2020-06-23T14:55:25.508-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-06-26T14:15:34.337-0400" prefix="">2020-06-26T14:15:34.337-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Now that we have a Matomo set up, we should add the analytics/metrics tracking to the Story Telling tool. The purpose is to improve the tool and understand which browsers and devices to support.</p>
+<p>The most important site at the moment is the AIHEC one, as it is in active use. However, something to consider is if all of the story telling sites should share a analytics or if they should be registered individually.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26590">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2020-06-26T12:43:47.532-0400">2020-06-26T12:43:47.532-0400</relative-time></i></p>
+                        <p>There isn't a per-theme (or, ideally, per-deployment/domain) way to add the Matomo analytics code to the SJRK Story Telling tool.</p>
+<p>We'd have to add a single analytics code to the base theme, but that wouldn't allow us to know which instances are not being actively used anymore.</p>
+<p>The alternative is to do some refactoring of the code so that each deployment has its own &lt;head&gt; template where the analytics code could be added.</p>
+<p>Cindy Li Gregor Moss thoughts?</p>
+
+                    </li>
+                    
+                    <li id="comment-26591">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2020-06-26T13:29:22.260-0400">2020-06-26T13:29:22.260-0400</relative-time></i></p>
+                        <p>I agree each deployment/domain should have its own analytics code.</p>
+<p>Each domain has <a href="https://github.com/fluid-project/sjrk-story-telling/tree/master/themes">its own theme folder</a> in the master branch. "/template" is one subfolder holding custom templates for this theme. I think the analytics code for a domain can be placed in its theme folder for it to be pulled in by the base template in the base theme. </p>
+<p>Gregor Moss, what do you think?</p>
+
+                    </li>
+                    
+                    <li id="comment-26592">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2020-06-26T14:15:34.337-0400">2020-06-26T14:15:34.337-0400</relative-time></i></p>
+                        <p>I also agree that it would be ideal if each deployment had its own analytics (including separating the FLOE-themed staging site from the FLOE-themed production site).</p>
+<p>We can add a templated element to each HTML page (it doesn't need to be in the head tag, though that's certainly a possibility) that is filled in dynamically in much the same way the various UI components of each page grade are defined and overridden by theme. This could be achieved with a single template file in the base theme's "templates" directory, and then provide only the part that differs from site to site at creation/render time (which I guess is the part defined as {$IDSITE} in this sample code: <a href="https://developer.matomo.org/guides/tracking-javascript-guide">https://developer.matomo.org/guides/tracking-javascript-guide</a>).</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-366/"><span class="aria-hidden">←</span> Previous: SJRK-366</a>
+        <a class="mx-1" href="/browse/SJRK-368/">Next: SJRK-368 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

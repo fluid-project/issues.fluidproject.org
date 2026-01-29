@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1135  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1135 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1135/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1135/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1135/">FLUID-1135</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1135: "Begin drag" operation in the Reorderer is too slow</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1135">FLUID-1135</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-08-12T12:44:43.000-0400" prefix="">2008-08-12T12:44:43.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-01-10T14:38:27.745-0500" prefix="">2011-01-10T14:38:27.745-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>User testing has determined that the slow startup of a drag operation in the reorderer confuses some users and causes them to disbelieve in the affordance of draggability. This should be accelerated so that it can occur well within a perceptual cycle (closer to 100ms than the current near 500ms of the "portal" sample on FF1.x and FF2.x browsers)</p>
+<p><a href="http://wiki.fluidproject.org/display/fluid/Layout+Customizer+User+Testing+-+Round+2+Results">http://wiki.fluidproject.org/display/fluid/Layout+Customizer+User+Testing+-+Round+2+Results</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14034">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-08-12T12:55:49.000-0400">2008-08-12T12:55:49.000-0400</relative-time></i></p>
+                        <p>Firefox 2 profiling:</p>
+<p>mouseStart	1	0%	0ms	468.75ms	468.75ms	468.75ms	468.75ms</p>
+<p>setDropEffects	2	0%	0ms	218.75ms	109.375ms	109.375ms	109.375ms<br>
+prepareOffsets	1	0%	0ms	78.125ms	78.125ms	78.125ms	78.125ms</p>
+<p>defaultAvatarCreator	1	0%	0ms	125ms	125ms	125ms	125ms	<br>
+helper	1	0%	0ms	125ms	125ms	125ms	125ms</p>
+<p>mouseMove	3	0%	0ms	515.625ms	171.875ms	0ms	500ms</p>
+<p>setDropEffects causes a complete jQuery scan, needs to be cached (20% of startup time)<br>
+prepareOffsets ditto, offsets in general are expensive (nearly 10ms a throw)</p>
+<p>Creating the avatar itself consumes 125ms which will be pretty hard to amortise...<br>
+Interestingly the "clone" operation on the avatar only takes 15ms - probably the "avatar cleansing" can be accelerated a lot (perhaps by attacking the raw DOM in a single scan)</p>
+
+                    </li>
+                    
+                    <li id="comment-14039">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-08-17T18:13:48.000-0400">2008-08-17T18:13:48.000-0400</relative-time></i></p>
+                        <p>From rev 5353 there is now a "fast cleanse" strategy applied to creating the avatar, which has got creation time below 40ms on FF2. It has been reported that this also resolves <a href="/browse/FLUID-774/">FLUID-774</a>. However I am still not happy with the avatar situation since there is now (and has to some extent always been) a "sizing issue" - the avatar does not naturally take up the same size that the same DOM material did in the document (which is not surprising, since we seem to take no care to ensure this). I am noticing this with the Lightbox, which appears "longer and narrower" than its original material, which may be a regression - however, certainly with the "todo list" I am seeing that again the draggable rows are much narrower and this has always been the case.</p>
+
+                    </li>
+                    
+                    <li id="comment-14044">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-09-08T12:59:49.000-0400">2008-09-08T12:59:49.000-0400</relative-time></i></p>
+                        <p>Since moving away from jQuery offsets, the equivalent of "prepareOffsets" is now around twice as fast - </p>
+<p>updateGeometry	2	0%	0ms	78.125ms	39.063ms	15.625ms	62.5ms	GeometricManager.... (line 248)<br>
+computeGeometry	10	0%	0ms	78.125ms	7.813ms	0ms	62.5ms	GeometricManager.... (line 189)</p>
+<p>Pending a final burst of optimisation...</p>
+
+                    </li>
+                    
+                    <li id="comment-14046">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-01-10T14:38:27.299-0500">2011-01-10T14:38:27.299-0500</relative-time></i></p>
+                        <p>Appears to have been fixed.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1134/"><span class="aria-hidden">←</span> Previous: FLUID-1134</a>
+        <a class="mx-1" href="/browse/FLUID-1137/">Next: FLUID-1137 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

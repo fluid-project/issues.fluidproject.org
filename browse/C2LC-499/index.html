@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-499  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-499 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-499/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-499/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-499/">C2LC-499</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-499: Implement a modal component </h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-499">C2LC-499</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Done</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-10-05T13:57:37.215-0400" prefix="">2021-10-05T13:57:37.215-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-11-16T13:50:10.461-0500" prefix="">2021-11-16T13:50:10.461-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Env 1.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Move away from using React Bootstrap Modal component, as we encountered some accessibility issues. Though, we want to ensure some behaviours from React Bootstrap Modal component to be captured:</p>
+<ul>
+<li>Do not announce aria-live region for the character position update when a modal is opened</li>
+<li>Ensure tab navigation to be trapped within our application, prevent tab navigation to travel through the browser address bar and tabs</li>
+</ul>
+<p>Modal Examples from w3: <a href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/dialog-modal/dialog.html">https://www.w3.org/TR/wai-aria-practices-1.1/examples/dialog-modal/dialog.html</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10866">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2021-10-19T09:31:26.833-0400">2021-10-19T09:31:26.833-0400</relative-time></i></p>
+                        <p>This will include moving the world selector to the new dialog</p>
+
+                    </li>
+                    
+                    <li id="comment-10867">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2021-10-29T10:42:19.154-0400">2021-10-29T10:42:19.154-0400</relative-time></i></p>
+                        <p>We decided to implement a component that renders both Modal and ModalFooter together called ModalWithFooter and update WorldSelector to use ModalWithFooter.</p>
+
+                    </li>
+                    
+                    <li id="comment-10868">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2021-11-08T15:38:20.716-0500">2021-11-08T15:38:20.716-0500</relative-time></i></p>
+                        <p>This work also includes updating DeleteAll modal to use the new modal component.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-498/"><span class="aria-hidden">←</span> Previous: C2LC-498</a>
+        <a class="mx-1" href="/browse/C2LC-500/">Next: C2LC-500 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-180  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-180 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-180/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-180/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-180/">SJRK-180</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-180: Cannot publish a story with image and audio block simultaneously</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-180">SJRK-180</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SJRK/?resolution=Cannot%20Reproduce">Cannot Reproduce</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-01-15T17:32:44.403-0500" prefix="">2019-01-15T17:32:44.403-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-10-11T18:13:24.920-0400" prefix="">2019-10-11T18:13:24.920-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool Server</li>
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When attempting to publish a story containing an image block and an audio block (order not important), it will fail without giving any feedback. In the console, it lists an error 500 with the following message:<br>
+"Cannot read property 'filename' of undefined"</p>
+<p>This has also been confirmed with a story containing one video and one image block. One audio and one video seems to be okay, so it is likely related to image and media blocks being posted at the same time.</p>
+<p>Reproduction steps used (issue no longer reproducible, see comment below):<br>
+*&#160;Begin a new story</p>
+<ul>
+<li>Add an image block</li>
+<li>Upload or capture an image</li>
+<li>Add an audio block</li>
+<li>Upload or capture an audio file</li>
+<li>Click "Continue"</li>
+<li>Click "Preview My Story"</li>
+<li>Click "Publish My Story"</li>
+</ul>
+<p>Expect:</p>
+<ul>
+<li>Story to be published and to navigate to the story view page</li>
+<li>Or, for an error message to be displayed</li>
+</ul>
+<p>Actual:</p>
+<ul>
+<li>Nothing happens: user stays on Preview page and no messaging is displayed</li>
+<li>Server returns a 500 with the message "Cannot read property 'filename' of undefined"</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26303">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2019-01-17T17:52:32.535-0500">2019-01-17T17:52:32.535-0500</relative-time></i></p>
+                        <p>Unable to reproduce this issue on the iPad Mini iOS 12.1.1 or in Chrome 71 on Windows 10</p>
+
+                    </li>
+                    
+                    <li id="comment-26304">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2019-10-11T18:13:24.916-0400">2019-10-11T18:13:24.916-0400</relative-time></i></p>
+                        <p>Test Sequence 13 in the <a href="https://wiki.fluidproject.org/display/fluid/Storytelling+Tool+Manual+Testing+Grid">Storytelling Tool Manual Testing Grid</a> is meant to test this exact scenario. In my latest round of testing, and indeed many previous rounds, I have not been able to reproduce this issue. Closing until further notice.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-179/"><span class="aria-hidden">←</span> Previous: SJRK-179</a>
+        <a class="mx-1" href="/browse/SJRK-181/">Next: SJRK-181 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

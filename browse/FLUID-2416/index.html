@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2416  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2416 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2416/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2416/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2416/">FLUID-2416</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2416: flashURL option ignored in swfUploadSetupDecorator (browse button does not display)</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2416">FLUID-2416</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Aaron%20Brown">Aaron Brown</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-03-26T15:18:06.000-0400" prefix="">2009-03-26T15:18:06.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T14:43:37.869-0500" prefix="">2014-03-03T14:43:37.869-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.8</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Uploader</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In Uploader for v0.8, flash9URL and flash10URL are generally deprecated.  In practice the swfUploadSetupDecorator object, which dictates the settings for the Browse button, still references flashXXURL options and ignores the new flashURL option.</p>
+<p>Result: the Browse flash movie always uses the default flash_url of "../../flash/swfupload.swf", no matter how flashURL is set.</p>
+<p>Workaround: for the time being, the problem can be avoided by defining a flashXXURL option on the decorator:<br>
+decorators: {<br>
+type: "fluid.swfUploadSetupDecorator",<br>
+options: {<br>
+// This option points to the location of the Browse Files button used with Flash 10 clients.<br>
+flashButtonImageURL: "js/fluid/fluid-components/images/uploader/browse.png",<br>
+flash9URL: "js/fluid/fluid-components/flash/swfupload.swf",<br>
+flash10URL: "js/fluid/fluid-components/flash/swfupload.swf"<br>
+}<br>
+}</p>
+<p>Code: see SWFUploadManager.js lines 138, 106, 72.</p>
+<p>Note 1: Defining a "flashURL" option inside the decorator is not sufficient - the code only looks for flash(9|10)URL before falling back to the default value.</p>
+<p>Note 2: This problem may not be apparent in the distributed test files for the Uploader where all files are correctly located relative to one another for the default path to work.  Confirm problem by setting a new flashURL value and placing swfupload.swf in the new location or else or simply viewing the generated flash object code to see that the default value is always used for "data='...'" regardless of the current value of "flashURL".</p>
+<p>Note 3: I'm a new bug submitter, and wasn't sure what severity to assign.  I opted for "minor" given the easy workaround, but fluid admins may wish to adjust.  My apologies if this issue has already been resolved in version 1.0.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Linux (Ubuntu 8.10), Firefox 3.0.7, Flash 10.x</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23082">
+                        <p class="mb-0"><b>Aaron Brown</b> <i>commented <relative-time datetime="2009-03-26T16:44:44.000-0400">2009-03-26T16:44:44.000-0400</relative-time></i></p>
+                        <p>Correction:  This may not in fact be a real issue.  I have found that by declaring the flashURL option in a different way, the Browse button loads as it should.  It appears to me that this is actually a bug :question: in the sample code provided in the wiki tutorial, not in the javascript.  My apologies.</p>
+<p>Solution:<br>
+Wiki tutorial says:<br>
+var myUpload = new fluid.progressiveEnhanceableUploader(".fl-uploader", ".fl-progressive-enhanceable", {<br>
+uploadManager: {<br>
+// Set the uploadURL to the URL for posting files to your server.<br>
+uploadURL: "<a href="http://myserver.com/uploadFiles">http://myserver.com/uploadFiles</a>",</p>
+<p>// This option points to the location of the SWFUpload Flash object that ships with Fluid Infusion.<br>
+flashURL: "fluid-1.0/fluid-components/swfupload/swfupload.swf"<br>
+},<br>
+// ... [snip] ...</p>
+<p>As written, the uploadManager options are ignored. When uploadURL and flashURL are enclosed in an "options" hash, all works as intended.</p>
+<p>Quick fix that should probably be cleaned up:<br>
+var myUpload = new fluid.progressiveEnhanceableUploader(".fl-uploader", ".fl-progressive-enhanceable", {<br>
+uploadManager: {<br>
+options: {<br>
+// Set the uploadURL to the URL for posting files to your server.<br>
+uploadURL: "<a href="http://myserver.com/uploadFiles">http://myserver.com/uploadFiles</a>",</p>
+<p>// This option points to the location of the SWFUpload Flash object that ships with Fluid Infusion.<br>
+flashURL: "fluid-1.0/fluid-components/swfupload/swfupload.swf"<br>
+}<br>
+},<br>
+// ... [snip] ...</p>
+
+                    </li>
+                    
+                    <li id="comment-23085">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-05-05T13:30:45.000-0400">2009-05-05T13:30:45.000-0400</relative-time></i></p>
+                        <p>The tutorial appears to have been updated</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-2415/"><span class="aria-hidden">←</span> Previous: FLUID-2415</a>
+        <a class="mx-1" href="/browse/FLUID-2417/">Next: FLUID-2417 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

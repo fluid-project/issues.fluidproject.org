@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4437  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4437 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4437/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4437/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4437/">FLUID-4437</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4437: Focus styling persists after moving focus from Reorderer</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4437">FLUID-4437</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-09-12T12:14:10.049-0400" prefix="">2011-09-12T12:14:10.049-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-07-12T14:43:14.693-0400" prefix="">2021-07-12T14:43:14.693-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                            <li>1.5</li>
+                            
+                            <li>2.0</li>
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Image Reorderer</li>
+                            
+                            <li>Layout Reorderer</li>
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Steps to Reproduce:</p>
+<p>1) Open the List Reorderer demo</p>
+<p>2) Using the keyboard or the mouse reorder the items</p>
+<p>3) Move focus away from the list reorderer. Notice that the focus style remains on the last selected reorderable item.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Safari 5.1 ( Mac OS 10.6 ), Firefox 49 (Linux)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20765">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2016-10-26T17:38:09.095-0400">2016-10-26T17:38:09.095-0400</relative-time></i></p>
+                        <p>This issue is also present on the Layout Reorderer.</p>
+<p>To reproduce:</p>
+<ul>
+<li>Open <a href="http://build.fluidproject.org/infusion/demos/reorderer/layoutReorderer/">http://build.fluidproject.org/infusion/demos/reorderer/layoutReorderer/</a></li>
+<li>Move an item with the mouse</li>
+<li>Move focus with tab</li>
+</ul>
+<p>Expected:</p>
+<ul>
+<li>Focus indicator to be removed from the previously moved item</li>
+</ul>
+<p>Actual:</p>
+<ul>
+<li>The focus indicator persists even though the item is no longer focused</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-20766">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2016-10-26T17:41:36.775-0400">2016-10-26T17:41:36.775-0400</relative-time></i></p>
+                        <p>I've added "2.0" to the affected versions and generalized the title from "List Reorderer" to "Reorderer".</p>
+
+                    </li>
+                    
+                    <li id="comment-20767">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2021-07-12T14:43:14.693-0400">2021-07-12T14:43:14.693-0400</relative-time></i></p>
+                        <p>This doesn't seem to happen if selection is moved, but the items not reordered.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4436/"><span class="aria-hidden">←</span> Previous: FLUID-4436</a>
+        <a class="mx-1" href="/browse/FLUID-4438/">Next: FLUID-4438 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-473  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-473 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-473/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-473/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-473/">FLOE-473</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-473: Chart elements should be more composable</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-473">FLOE-473</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Resolved</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLOE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alan Harnum</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Alan%20Harnum">Alan Harnum</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-09-06T09:59:32.389-0400" prefix="">2016-09-06T09:59:32.389-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-05-23T10:42:32.203-0400" prefix="">2018-05-23T10:42:32.203-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Chart Authoring Tool</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently, charts are a single view component composed of multiple mix-in grades. This limits the composability, reusability and extensability of the grades.</p>
+<p>The issue is discussed here: <a href="https://github.com/fluid-project/chartAuthoring/pull/14#discussion_r67921147">https://github.com/fluid-project/chartAuthoring/pull/14#discussion_r67921147</a> - including comments for reference:</p>
+<p>cindyli:</p>
+<blockquote>
+<p>"The component tree of floe.chartAuthoring.xAxis and floe.chartAuthoring.yAxis are quite similar. I wonder if a base grade can be extracted to be shared. The users of this base grade need to implement the actual drawAxis() and getAxisTickFormat()."</p>
+</blockquote>
+<p>waharnum:</p>
+<blockquote>
+<p>At the moment, the barrier is that floe.chartAuthoring.xAxis and floe.chartAuthoring.yAxis are mix-in grades used in floe.chartAuthoring.lineChart.timeSeriesMultiDataSet rather than separate component grades (a legacy of when there was one big floe.chartAuthoring.lineChart component before separate drawn elements were split out into mix-ins). So implementing a base grade with drawAxis() and getAxisTickFormat() invokers in implementing grades would result in one overwriting another.</p>
+<p>The gradeNames block from floe.chartAuthoring.lineChart.timeSeriesMultiDataSet probably makes the issue clearer:</p>
+<p>gradeNames: ["floe.chartAuthoring.axis", "floe.chartAuthoring.xAxisTimeSeries", "floe.chartAuthoring.yAxis",  "floe.chartAuthoring.lineChart.timeSeries.line",  "floe.chartAuthoring.valueBinding", "floe.svgDrawingArea"]</p>
+<p>At the moment all of the chart elements need to be part of a single viewComponent (they all share the same SVG drawing area); they're split out into separate mix-in grades to isolate the various drawing functions, if that makes sense.</p>
+<p>That said, the component trees are indeed substantially similar; maybe longer-term we want a component-based approach where the drawing area is a view component, and drawn chart elements (axes, etc) are other (non-view) components that contain a reference to the drawing area. I can see this making the charts more composable from various grades without the namespace issues presented by the current mixin approach. If that makes sense I can make a separate JIRA for this issue?</p>
+</blockquote>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-472/"><span class="aria-hidden">←</span> Previous: FLOE-472</a>
+        <a class="mx-1" href="/browse/FLOE-474/">Next: FLOE-474 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

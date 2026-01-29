@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1880  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1880 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1880/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1880/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1880/">FLUID-1880</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1880: OSDPL: When uploading an image that is sufficiently large, an error is displayed</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1880">FLUID-1880</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Jonathan Hung</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-12-01T15:25:58.000-0500" prefix="">2008-12-01T15:25:58.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-04-02T15:10:22.571-0400" prefix="">2014-04-02T15:10:22.571-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.6beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>OSDPL</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When uploading an image that is large (i.e. 9MB), an error would be displayed:</p>
+<p>"warning: Invalid argument supplied for foreach() in /usr/webserver/content/osdpl/patterns/drupal-5.12/sites/default/modules/imagefield/imagefield.module on line 850.<br>
+Solution Image is required. Please upload an image." </p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19841">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2008-12-03T10:39:56.000-0500">2008-12-03T10:39:56.000-0500</relative-time></i></p>
+                        <p>Iteration29</p>
+
+                    </li>
+                    
+                    <li id="comment-19842">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2008-12-07T23:29:06.000-0500">2008-12-07T23:29:06.000-0500</relative-time></i></p>
+                        <p>It appears that this is a problem due to memory running out for PHP.</p>
+<p>According to this report on Drupal: <a href="http://drupal.org/node/254589">http://drupal.org/node/254589</a></p>
+<p>"Found the cause and solved the problem. The cause was that the image rescaling function in the graphics library that PHP uses (in my case gd.so) ran out of memory due to a far too small memory_limit setting in php.ini.</p>
+<p>In php.ini I changed</p>
+<p>memory_limit = 32M</p>
+<p>to</p>
+<p>memory_limit = 256M</p>
+<p>That solved the problem. Tests revealed that a setting of 128M was still insufficient for a 25 Megapixel JPG image, so I doubled it and retested successfully."</p>
+<p>Will email our admin for assistance.</p>
+
+                    </li>
+                    
+                    <li id="comment-19844">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2009-01-14T12:45:16.000-0500">2009-01-14T12:45:16.000-0500</relative-time></i></p>
+                        <p>Did some more investigating. The Image API we are using, GD2, has a memory problem when it comes to large files. Instead, we should use ImageMagick 2 which doesn't have this problem. However, it isn't available on our server.</p>
+<p>Sent a request to have it installed. Hopefully it will fix our problem.</p>
+
+                    </li>
+                    
+                    <li id="comment-19846">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2009-01-14T15:38:18.000-0500">2009-01-14T15:38:18.000-0500</relative-time></i></p>
+                        <p>Now running into this problem where no error message is given when uploading a large file: <a href="http://drupal.org/node/30520">http://drupal.org/node/30520</a></p>
+<p>"The upload.module returns without error when it fails to upload a file that exceeds the php.ini upload size limit. The upload.module should report an error on the attachment screen that upload failed."</p>
+<p>A patch is being worked on, but so far no word on a Drupal 5 version. Activity is progressing though with last post occurring on Jan 12 2009</p>
+
+                    </li>
+                    
+                    <li id="comment-19848">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2009-01-19T09:51:04.000-0500">2009-01-19T09:51:04.000-0500</relative-time></i></p>
+                        <p>For the time being, I have added extra instructions to the section. It's not a good solution, but it will help a little until a patch is released to fix this problem (see comment above).</p>
+
+                    </li>
+                    
+                    <li id="comment-19850">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2014-04-02T15:10:22.559-0400">2014-04-02T15:10:22.559-0400</relative-time></i></p>
+                        <p>We will be archiving the OSDPL</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1879/"><span class="aria-hidden">←</span> Previous: FLUID-1879</a>
+        <a class="mx-1" href="/browse/FLUID-1881/">Next: FLUID-1881 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

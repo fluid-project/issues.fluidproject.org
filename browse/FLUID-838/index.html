@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-838  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-838 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-838/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-838/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-838/">FLUID-838</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-838: Add ARIA support to Inline Edit</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-838">FLUID-838</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-06-27T17:00:49.000-0400" prefix="">2008-06-27T17:00:49.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-06-03T13:43:46.000-0400" prefix="">2009-06-03T13:43:46.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>dev-iteration37<br>
+dev-iteration39</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-838/FLUID-838_button.patch">
+                            
+                                FLUID-838_button.patch
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-838/FLUID-838.patch">
+                            
+                                FLUID-838.patch
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22070">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-06-27T22:29:22.000-0400">2008-06-27T22:29:22.000-0400</relative-time></i></p>
+                        <p>According to the ARIA spec, the correct role seems to be "textbox" but the prominent ATs (e.g. JAWS) do not seem to respond to this.</p>
+<p>I have attached a patch file that would be appriopriate if the role is to be set to "textbox" - it also sets the "readonly" state to "false", to inform users that the value can be edited.</p>
+
+                    </li>
+                    
+                    <li id="comment-22075">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2008-06-28T08:48:21.000-0400">2008-06-28T08:48:21.000-0400</relative-time></i></p>
+                        <p>Here's an alternative patch that sets the role of the text view to "button." I'll defer to Jonathan and Anastasia in terms of which one is best.</p>
+
+                    </li>
+                    
+                    <li id="comment-22079">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2008-06-28T08:50:23.000-0400">2008-06-28T08:50:23.000-0400</relative-time></i></p>
+                        <p>Anastasia sent me a really insightful email about the various ARIA issues in regards to inline editing. She'll post to the list, but in the meantime, here's a summary:</p>
+<p>On 27-Jun-08, at 6:18 PM, a.cheetham@utoronto.ca wrote:</p>
+<p>I concur with Joseph and Jonathan that based on the descriptions in  <br>
+the ARIA specs, "textbox" is most appropriate ("Inputs that allow  <br>
+free-form text as their value"). You'll note that the pattern does  <br>
+state that you don't need to put this on actual form fields, and we'd  <br>
+only add it to the display element, not the &lt;input&gt;. I disagree with  <br>
+the suggestion to set "readonly" to true when the edit box is not  <br>
+active - in fact, I think it would need to be set to false, otherwise  <br>
+there is no affordance that the text is editable!</p>
+<p>Jonathan is also right that actually using "textbox" is ineffective -  <br>
+at least as far as JAWS is concerned. In both IE and FF, a role of  <br>
+"textbox" affects no change whatsoever in JAWS' behaviour. To me,  <br>
+that's a flaw in JAWS. I believe that Joseph will be communicating  <br>
+with various relevant people about this issue.</p>
+<p>As to a role of "button," the specs describe it as "Allows for  <br>
+user-triggered actions," which is not entirely off base here, if you  <br>
+twist your head to the side a bit and squint...</p>
+<p>In FF in general (i.e. no ARIA), JAWS <strong>does</strong> speak the display text  <br>
+when the cursor is <strong>on</strong>, and <strong>doesn't</strong> speak anything when the cursor  <br>
+is <strong>off</strong>.</p>
+<p>With ARIA:<br>
+In FF, a role of "button" <strong>does</strong> cause JAWS to speak the diplay text  <br>
+when the cursor is off (whereas with "textbox" or nothing, JAWS is  <br>
+silent). But it also says the word "button" after the text, which is  <br>
+weird for the user.</p>
+<p>So basically, if you want code that looks correct, and does what the  <br>
+spec says, use the patch I attached to 838, and demo with IE. If you  <br>
+want something that says "button", use your patch, and demo with FF  <br>
+with the cursor off.</p>
+
+                    </li>
+                    
+                    <li id="comment-22089">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-07-17T20:51:38.000-0400">2008-07-17T20:51:38.000-0400</relative-time></i></p>
+                        <p>I'll implement the 'button' version. It has no effect in IE, but then, nothing does. At least in FF, it causes the word 'button' to be spoken.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-837/"><span class="aria-hidden">←</span> Previous: FLUID-837</a>
+        <a class="mx-1" href="/browse/FLUID-839/">Next: FLUID-839 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

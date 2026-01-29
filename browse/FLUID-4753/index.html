@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4753  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4753 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4753/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4753/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4753/">FLUID-4753</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4753: Upgrade qunit to jquery's trunk, as well as introducing "composite" plugin for running all framework tests at a glance</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4753">FLUID-4753</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-08-13T01:43:56.539-0400" prefix="">2012-08-13T01:43:56.539-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T09:36:52.816-0400" prefix="">2024-07-22T09:36:52.816-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Testing Infrastructure</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Hopefully with an accepted version of our fix for "cumulative expect" #226 at <a href="https://github.com/jquery/qunit/issues/226">https://github.com/jquery/qunit/issues/226</a> it should be possible to stay in step easily with jquery's trunk version of qunit. In addition there is a helpful plugin "composite" which will enable us to make sure all framework tests are running with one operation rather than our currently opportunistic behaviour on checkin.</p>
+<p>Further possible improvements:</p>
+<ul>
+<li>"grunt" task to automate running the "composite" test frame, as well as linting of all files using jshint</li>
+<li>harmonisation with GPII's version of jqunit, which has a slightly streamlined API avoiding the "new" style and the unidiomatic term "TestCase" which is more familiarly named "module" in qunit's terminology</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15608">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2012-08-17T18:25:54.888-0400">2012-08-17T18:25:54.888-0400</relative-time></i></p>
+                        <p>Reviewed, tested, and pushed. <a href="https://github.com/fluid-project/infusion/commit/095e1f1cde2c5d166e91b1ccaa18fd4c58967ebc">https://github.com/fluid-project/infusion/commit/095e1f1cde2c5d166e91b1ccaa18fd4c58967ebc</a></p>
+<p>I'd recommend that prior to closing this issue, we create a wiki page describing the new all tests feature and how to maintain it.</p>
+<p>colinclark: Bosmon: This all-tests.html file scares me quite a bit<br>
+[5:48pm] colinclark: I assume it has to be updated with the addition of each new test file?<br>
+[5:48pm] Bosmon: colinclark - because it includes an HTML comment with an embedded piece of shell scripting? : P<br>
+[5:48pm] Bosmon: Yes, right now it does<br>
+[5:49pm] Bosmon: I should have put a "TODO" on it saying "implement this in grunt once we start using it"<br>
+[5:49pm] colinclark: yes<br>
+[5:49pm] Bosmon: I was thinking about just this issue in today's SHOWER TIME<br>
+[5:49pm] colinclark: i'll do that when i get back, perhaps<br>
+[5:49pm] Bosmon: Start us on GRUNT?<br>
+[5:49pm] colinclark: yes<br>
+[5:49pm] Bosmon: THat would be awesome<br>
+[5:49pm] colinclark: What is the blob of commented shell script?<br>
+[5:49pm] colinclark: it looks like the hint of something that will find tests automatically<br>
+[5:49pm] colinclark: but clearly it is not<br>
+[5:50pm] Bosmon: It is the script which automatically generates the block of configuration containing the test files<br>
+[5:50pm] Bosmon: Why is it clearly not? <br>
+[5:50pm] Bosmon: I mean, it is not "automatic"...<br>
+[5:50pm] EricDalquist left the chat room. (Quit: Leaving.)<br>
+[5:50pm] Bosmon: Since you have to paste it into the command line yourself : P<br>
+[5:50pm] Bosmon: But it is better than a poke in the eye<br>
+[5:50pm] colinclark: ugh<br>
+[5:51pm] colinclark: I might have made a wiki page<br>
+[5:51pm] Bosmon: It seems you are not unconditionally prepared to accept that it may be better than a poke in the eye : P<br>
+[5:51pm] alexn left the chat room. (Quit: Leaving.)<br>
+[5:51pm] Bosmon: What would be on the wiki page?<br>
+[5:52pm] colinclark: A description of how to run tests all at once<br>
+[5:52pm] colinclark: how it works<br>
+[5:52pm] colinclark: and how to update the page with new tests<br>
+[5:52pm] Bosmon: Ah yes</p>
+
+                    </li>
+                    
+                    <li id="comment-15611">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-03-03T12:49:09.113-0500">2014-03-03T12:49:09.113-0500</relative-time></i></p>
+                        <p>There is a separate jira for writing the documentation: <a href="/browse/FLUID-4774/">FLUID-4774</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4740/"><span class="aria-hidden">←</span> Previous: FLUID-4740</a>
+        <a class="mx-1" href="/browse/FLUID-4754/">Next: FLUID-4754 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

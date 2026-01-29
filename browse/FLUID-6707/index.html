@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6707  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6707 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6707/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6707/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6707/">FLUID-6707</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6707: Speculative instantiation of components must begin before they are created</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6707">FLUID-6707</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-12-19T10:18:29.490-0500" prefix="">2021-12-19T10:18:29.490-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-12-19T10:18:29.490-0500" prefix="">2021-12-19T10:18:29.490-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>5.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>6.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When working on the Sliding Panel integration for the Infusion 5.x preferences framework, I found that the renderer's "lookahead" to find the containers of upcoming renderer components wasn't faithful enough. It was introspecting on what is really a private scrawl of the framework, the "lightMergeDynamicComponents" record in the parent shadow of upcoming lensed components.</p>
+<pre><code class="hljs language-java">fluid.renderer.findRendererSelectors = function (that, dom) {
+    <span class="hljs-type">var</span> <span class="hljs-variable">shadow</span> <span class="hljs-operator">=</span> fluid.shadowForComponent(that);
+    fluid.each(shadow.modelSourcedDynamicComponents, function (record, key) {
+        <span class="hljs-type">var</span> <span class="hljs-variable">lightMerge</span> <span class="hljs-operator">=</span> shadow.lightMergeDynamicComponents[key];
+        <span class="hljs-type">var</span> <span class="hljs-variable">containers</span> <span class="hljs-operator">=</span> fluid.getMembers(lightMerge.toMerge, [<span class="hljs-string">"options"</span>, <span class="hljs-string">"container"</span>]).concat(fluid.getMembers(lightMerge.toMerge, <span class="hljs-string">"container"</span>));
+        <span class="hljs-type">var</span> <span class="hljs-variable">lastContainer</span> <span class="hljs-operator">=</span> fluid.renderer.lastValue(containers);
+        <span class="hljs-keyword">if</span> (lastContainer) {
+</code></pre>
+<p>I had then written an options distribution in a further parent that was attempting to override the container - </p>
+<pre><code class="hljs language-java">distributeOptions: {
+        <span class="hljs-string">"withSlidingPanel.prefsEditor"</span>: {
+            record: {
+                gradeNames: <span class="hljs-string">"fluid.prefs.prefsEditor.withSlidingPanel"</span>,
+                container: <span class="hljs-string">"{weaver}.dom.slidingPanelPanel"</span>
+            },
+            target: <span class="hljs-string">"{that prefsEditor}.options"</span>
+        }
+    },
+</code></pre>
+<p>Since, naturally, at this point there is no component, there is nothing for a distribution to hit. But it's very clear that these kinds of "lightMerge" structures represent a kind of "speculative execution" in the framework. Since it "ceased to be classical" around 2015, we reduced the interval of time between component construction and being assigned an address in the tree to the shortest possible - but now it's clear we need to formalise these "lightMerge" structures and have them allocated in the tree <strong>before</strong> the component ever constructs, even if it never will. This is the kind of reform that will only be possible in Infusion 6.x, when components and grades have a common footing in a sea of lazily merged immutable structures.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6706/"><span class="aria-hidden">←</span> Previous: FLUID-6706</a>
+        <a class="mx-1" href="/browse/FLUID-6708/">Next: FLUID-6708 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

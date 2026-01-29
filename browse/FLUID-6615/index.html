@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6615  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6615 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6615/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6615/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6615/">FLUID-6615</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6615: Investigate problematic relay of initial model values to parent in data monitor app</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6615">FLUID-6615</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-04-22T10:07:55.905-0400" prefix="">2021-04-22T10:07:55.905-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-17T08:09:10.440-0400" prefix="">2024-07-17T08:09:10.440-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The defaults in "fluid.covidMap.visiblePanel" at <a href="https://github.com/inclusive-design/covid-data-monitor/blob/main/src/js/covidMap.js#L1165">https://github.com/inclusive-design/covid-data-monitor/blob/main/src/js/covidMap.js#L1165</a> have to use a clunky workaround of applying an initial default value of "null" since otherwise their initial value of "false" ends up getting relayed back into the parent regardless of an excludeSource directive.</p>
+<p>The problematic code currently looks like</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.covidMap.visiblePanel"</span>, {
+    gradeNames: <span class="hljs-string">"fluid.viewComponent"</span>,
+    styles: {
+        hiddenOnMobile: <span class="hljs-string">"fl-mapviz-hidden-on-mobile"</span>
+    },
+    model: {
+        <span class="hljs-comment">// Use the initial value "null" to prevent the component applies the value false at the page load</span>
+        visible: <span class="hljs-literal">null</span>
+    },
+    modelRelay: {
+        expandPanel: {
+            source: <span class="hljs-string">"visible"</span>,
+            target: <span class="hljs-string">"{expandButton}.model.expanded"</span>,
+            backward: <span class="hljs-string">"never"</span>
+        }
+    },
+    modelListeners: {
+        toggleCssClass: {
+            path: <span class="hljs-string">"visible"</span>,
+            func: <span class="hljs-string">"fluid.covidMap.visiblePanel.toggleClass"</span>,
+            args: [<span class="hljs-string">"{that}"</span>]
+        }
+    }
+});
+
+fluid.covidMap.visiblePanel.toggleClass = function (that) {
+    <span class="hljs-comment">// Use "null" as the initial visibility value in order not to programmatically apply any visibility control</span>
+    <span class="hljs-comment">// at the initial page load. The initial page template has all visibility css applied properly for the mobile</span>
+    <span class="hljs-comment">// view. This is to work around the issue that using `excludeSource: "init"` doesn't help in this case.</span>
+    <span class="hljs-keyword">if</span> (that.model.visible === <span class="hljs-literal">null</span>) {
+        <span class="hljs-keyword">return</span>;
+    }
+    that.container.toggleClass(that.options.styles.hiddenOnMobile, !that.model.visible);
+};
+</code></pre>
+<p>This looks like it is a further elaboration of init relay priority problems like those in <a href="/browse/FLUID-6517/">FLUID-6517</a>, <a href="/browse/FLUID-6429/">FLUID-6429</a></p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6614/"><span class="aria-hidden">←</span> Previous: FLUID-6614</a>
+        <a class="mx-1" href="/browse/FLUID-6616/">Next: FLUID-6616 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

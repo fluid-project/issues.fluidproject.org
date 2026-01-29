@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5878  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5878 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5878/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5878/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5878/">FLUID-5878</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5878: Create a fluid binding component to help with the localization of the prefs framework</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5878">FLUID-5878</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-03-18T15:44:14.096-0400" prefix="">2016-03-18T15:44:14.096-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-03-21T08:37:18.630-0400" prefix="">2016-03-21T08:37:18.630-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>To simplify the methods to localize messages used in the prefs framework, especially at the prefsEditorLoader level where the message needs to be applied to the DOM elements using jQuery functions such as text(), html(), attr(), Antranig Basman suggests,</p>
+<p>1, Create a fluid binding component that binds DOM elements, messages and methods to apply messages. The binding in this case looks like:</p>
+<p>bindings: {<br>
+"&lt;a-namespace&gt;": {<br>
+selector: "&lt;infusion-selector&gt;",<br>
+message: "&lt;message-key-from-bundle-file&gt;",<br>
+method: "&lt;how-to-apply-message-to-the-selector&gt;"  // need more thoughts about how to specify a jQuery method<br>
+}<br>
+}</p>
+<p>The references for this work:</p>
+<ul>
+<li>Tony Atkins' gpii-binder: <a href="https://github.com/GPII/gpii-binder/pull/1">https://github.com/GPII/gpii-binder/pull/1</a></li>
+<li>Ben from IBM extends Tony's work to add the ability to supply functions: <a href="https://github.com/pga03/first-discovery/blob/sprint3-integration/src/lib/databinder/src/js/binder.js#L79">https://github.com/pga03/first-discovery/blob/sprint3-integration/src/lib/databinder/src/js/binder.js#L79</a></li>
+</ul>
+<p>2. Create a sub-component of prefsEditorLoader that receives prefsEditor.json only to, 1. unload the localization task from prefsEditorLoader; 2. continue to make use of "fluid.prefs.msgLookup" if a rendererComponent is needed.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13154">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-03-21T08:37:18.630-0400">2016-03-21T08:37:18.630-0400</relative-time></i></p>
+                        <p>Cindy Li in regards to "// need more thoughts about how to specify a jQuery method" could you just take in an invoker? Another idea would be to use something similar to the approach that invokers and etc use for thisist functions, but you'd still need to sort out the difference between a jQuery method and some other thisist function, because they may have different signatures.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5877/"><span class="aria-hidden">←</span> Previous: FLUID-5877</a>
+        <a class="mx-1" href="/browse/FLUID-5879/">Next: FLUID-5879 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> STUDIO-25  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" STUDIO-25 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/STUDIO-25/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/STUDIO-25/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/STUDIO" data-pagefind-filter="project">Fluid Studios</a></li>
+                <li><a href="/browse/STUDIO-25/">STUDIO-25</a></li>
+            </ol>
+        </nav>
+        <h1>STUDIO-25: Improve focus styling in Wordpress' admin interface</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/STUDIO-25">STUDIO-25</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/STUDIO/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/STUDIO/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/STUDIO/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-12-09T16:11:19.924-0500" prefix="">2011-12-09T16:11:19.924-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T11:58:45.378-0500" prefix="">2014-03-03T11:58:45.378-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Website</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The Wordpress admin interface is keyboard accessible, but focus styling is poor, so as you tab around, it's hard to tell where focus is.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-12851">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2011-12-09T16:51:48.384-0500">2011-12-09T16:51:48.384-0500</relative-time></i></p>
+                        <p>I've pushed a first pass at this to my github, in the 	<a href="/browse/STUDIO-25/">STUDIO-25</a>-wp-focus-styling branch. It might be a bit brute force and inelegant, but hopefully it's a start that can be refined.</p>
+<p>Some issues I've noticed so far:</p>
+<ul>
+<li>when a menu is expanded, it is dark gray, so I've added a white border. The border only appears on the left and top.</li>
+<li>the focus border is added around links that already have a colour change to indicate focus.</li>
+<li>&lt;input&gt;s and &lt;textarea&gt;s don't get any border (though they do get the blinking cursor)</li>
+<li>the two items in the "Howdy..." menu get keyboard focus, but the menu doesn't pull down, so there's nothing to see: confusing</li>
+<li>tab order is not necessarily ideal</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-12852">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2011-12-16T16:10:19.234-0500">2011-12-16T16:10:19.234-0500</relative-time></i></p>
+                        <p>I've pushed another branch into my github (<a href="https://github.com/cindyli/studios.fluidproject.org/tree/STUDIO-25">https://github.com/cindyli/studios.fluidproject.org/tree/STUDIO-25</a>) to<br>
+1. Moved the fluid-studios-theme-specific css to customized the admin interface styles out of wordpress core css into the theme, which is named 'style-admin.css'.<br>
+2. Enhance the focus styling of input fields and textareas. This enhancement doesn't work across all admin pages as some fields are styled by using their specific ids.</p>
+
+                    </li>
+                    
+                    <li id="comment-12853">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2011-12-19T12:16:51.565-0500">2011-12-19T12:16:51.565-0500</relative-time></i></p>
+                        <p>I spoke to Joanna and she prefers the highlight colour to be the same green from the view interface. </p>
+
+                    </li>
+                    
+                    <li id="comment-12854">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2011-12-19T13:35:03.878-0500">2011-12-19T13:35:03.878-0500</relative-time></i></p>
+                        <p>Merged into project repo at 895880b5ac83bea4defcb6055c91ebc133ab32c9</p>
+<p>There are still some things in the admin interface that don't have focus highlighting. I'll open other issues for those. </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/STUDIO-24/"><span class="aria-hidden">←</span> Previous: STUDIO-24</a>
+        <a class="mx-1" href="/browse/STUDIO-26/">Next: STUDIO-26 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

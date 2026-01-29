@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-314  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-314 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-314/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-314/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-314/">VP-314</a></li>
+            </ol>
+        </nav>
+        <h1>VP-314: Path to template html folder should be configurable by integrator</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-314">VP-314</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-06-18T16:59:11.887-0400" prefix="">2013-06-18T16:59:11.887-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-12-22T10:28:41.608-0500" prefix="">2017-12-22T10:28:41.608-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>core</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently, the paths to the various templates used by the video player are hard coded in the various subcomponent options, and assume that the integration is at a certain relative path (not coincidentally, the same relativity as our demos). This causes problems if the integrator happens to be placing the videoPlayer code somewhere else, relatively.</p>
+<p>We should implement an integrator path prefix option to address this.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26960">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2013-06-18T17:01:50.866-0400">2013-06-18T17:01:50.866-0400</relative-time></i></p>
+                        <p>One of our GSOC students found this while working towards integrating the VideoPlayer into ATutor: In his test setup, the template HTML folder was at the same level as the PHP file instantiating the VP, but the built-in path the VP template is "../html/videoPlayer_template.html." Overriding that path specifically loaded the main template, but the language menu template still didn't load. Obviously, integrators could individually override each template path, but they shouldn't have to.</p>
+
+                    </li>
+                    
+                    <li id="comment-26961">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2013-06-19T10:19:25.026-0400">2013-06-19T10:19:25.026-0400</relative-time></i></p>
+                        <p>Further investigation: There are only three templates, currently: the main template,  the menuButton template and the controllers template. The first two paths can be overridden together in a single options to the main video player:<br>
+...<br>
+templates: {<br>
+videoPlayer: {<br>
+href: "path/to/videoPlayer/html/videoPlayer_template.html"<br>
+},<br>
+menuButton: {<br>
+href: "path/to/videoPlayer/html//menuButton_template.html"<br>
+}<br>
+}</p>
+<p>The controllers template must be overridden separately, through a demands block:</p>
+<p>fluid.demands("fluid.videoPlayer.controllers", "fluid.videoPlayer", {<br>
+options: {<br>
+templates: {<br>
+controllers: {<br>
+href: "path/to/videoPlayer/html/videoPlayer_controllers_template.html"<br>
+}<br>
+}<br>
+}<br>
+});</p>
+<p>The better way would be to have a single option that integrators can set to specify the relative path to the templates folder. The video player would be responsible for distributing this option to whoever needs it.</p>
+
+                    </li>
+                    
+                    <li id="comment-26962">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-12-22T10:28:41.606-0500">2017-12-22T10:28:41.606-0500</relative-time></i></p>
+                        <p>The video player repository has been archived.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-313/"><span class="aria-hidden">←</span> Previous: VP-313</a>
+        <a class="mx-1" href="/browse/VP-315/">Next: VP-315 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-143  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-143 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-143/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-143/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-143/">FLUID-143</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-143: Dragging using white space selects and highlights other thumbnails on the page in IE 6 &amp; 7</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-143">FLUID-143</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Jonathan Hung</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2007-12-13T10:41:28.000-0500" prefix="">2007-12-13T10:41:28.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-01-31T16:16:11.000-0500" prefix="">2008-01-31T16:16:11.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Image Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When dragging using white space of a thumbnail, all thumbnails from the selected thumbnail to the end of the list become highlighted in the browser's / OS's highlighting style.</p>
+<p>If dragging using a part of a thumbnail that isn't white space (i.e. the anchor or image), then the above behaviour doesn't occur.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Windows XP, IE 6 &amp; 7</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-143/18-dec-jon-Fluid143.patch">
+                            
+                                18-dec-jon-Fluid143.patch
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-143/Fluid143-eli.1.11.patch">
+                            
+                                Fluid143-eli.1.11.patch
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23695">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2007-12-17T16:45:17.000-0500">2007-12-17T16:45:17.000-0500</relative-time></i></p>
+                        <p>More insight into this problem. Due to Fluid-149 (<a href="http://issues.fluidproject.org/browse/FLUID-149">http://issues.fluidproject.org/browse/FLUID-149</a>), when drop targets do not render, the above bug does not occur. But when drop targets are rendered, the above bug appears.</p>
+<p>It would seem that this problem is related to the rendering of the drop targets. What happens if the drop target code is removed, does this problem go away?</p>
+
+                    </li>
+                    
+                    <li id="comment-23698">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2007-12-18T10:57:15.000-0500">2007-12-18T10:57:15.000-0500</relative-time></i></p>
+                        <p>Been doing some research into this issue. Apparently this is an anomaly in IE where drag selections will highlight text. A workaround was spotted on this webpage: <a href="http://www.ditchnet.org/wp/2005/06/15/ajax-freakshow-drag-n-drop-events-2/">http://www.ditchnet.org/wp/2005/06/15/ajax-freakshow-drag-n-drop-events-2/</a></p>
+<p>document.body.ondrag = function () { return false; };<br>
+document.body.onselectstart = function () { return false; };</p>
+<p>The problem with the above example is that it prevents anyone from selecting text (which is an accessibility issue).</p>
+<p>Currently investigating other methods which will accomplish the same effect, and keep accessibility concerns.</p>
+
+                    </li>
+                    
+                    <li id="comment-23701">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2007-12-18T12:11:01.000-0500">2007-12-18T12:11:01.000-0500</relative-time></i></p>
+                        <p>Fixed this bug by adding IE specific code to override ondrag and onselectstart functions. This prevents text selection by mouse, but this functionality was not possible anyway in the Reorderer because of the way DnD was implemented in the component.</p>
+
+                    </li>
+                    
+                    <li id="comment-23704">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2007-12-20T16:31:04.000-0500">2007-12-20T16:31:04.000-0500</relative-time></i></p>
+                        <p>This might be related to what we've just learned about how the avatar redirects the mousemove events (see <a href="/browse/FLUID-146/">FLUID-146</a>).</p>
+
+                    </li>
+                    
+                    <li id="comment-23707">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2008-01-11T16:41:46.000-0500">2008-01-11T16:41:46.000-0500</relative-time></i></p>
+                        <p>I've got a fix. It's slightly ugly but it works. </p>
+<p>First, let me say that Jonathan did great work on this bug. His fix was right on the money (nice bit of research) under Dojo but it broke again under jQuery because the domNode went from being an actual dom object to a jQuery object, and jQuery doesn't like IE specific events (who does?). </p>
+<p>So I had to get an actual dom node to catch drag and selectstart on. And so I give you:</p>
+<p>document.getElementById( jQuery(domNode).attr('id') ).ondrag = function () { return false; }; <br>
+document.getElementById( jQuery(domNode).attr('id') ).onselectstart = function () { return false; }; </p>
+<p>I'm going to see if I can clean it up before I check it in. Maybe make it a little less ugly. I think that there's a nicer way to cast a jQuery object node to a regular browser obj. </p>
+
+                    </li>
+                    
+                    <li id="comment-23711">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2008-01-11T17:36:44.000-0500">2008-01-11T17:36:44.000-0500</relative-time></i></p>
+                        <p>Fluid143-eli.1.11.patch is my updated patch for Fluid143. This one is compatible with jQuery. It's a little hacky but not bad. The only thing that might want to be done here is a test for IE but I don't think that there would be any real improvement especially if the setupDOMNode function is only called once. </p>
+
+                    </li>
+                    
+                    <li id="comment-23714">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2008-01-14T12:08:38.000-0500">2008-01-14T12:08:38.000-0500</relative-time></i></p>
+                        <p>Although perhaps it's obvious, I thought I should make clear why the first snippet of code that I offered up was crap and why what I eventually put in the patch was better (and not just because it's shorter).</p>
+<p>The first bit 'o code assumed that domNode has an id, most probable but still a bad assumption. The following code uses an actual object reference and therefor should always work. Oh, and it's shorter.</p>
+<p>jQuery(domNode).get(0).ondrag = function () { return false; }; <br>
+jQuery(domNode).get(0).onselectstart = function () { return false; };</p>
+<p>I suspect that I could find a little shorthand that would make the code even tighter. I tried jQuery(domNode)[0] which should have worked but didn't. And I was thinking that I might be able to find a better trap than "function () { return false;}". But this'll do.</p>
+
+                    </li>
+                    
+                    <li id="comment-23718">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2008-01-31T13:25:48.000-0500">2008-01-31T13:25:48.000-0500</relative-time></i></p>
+                        <p>Thanks Eli for the code! After pairing with Colin, we have submitted a fix for this bug which is a slight variation of what you have.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-142/"><span class="aria-hidden">←</span> Previous: FLUID-142</a>
+        <a class="mx-1" href="/browse/FLUID-144/">Next: FLUID-144 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

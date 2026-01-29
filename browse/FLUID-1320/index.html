@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1320  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1320 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1320/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1320/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1320/">FLUID-1320</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1320: Typing "Click here to edit" is equivalent to erasing all the text</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1320">FLUID-1320</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-08-27T11:29:41.000-0400" prefix="">2008-08-27T11:29:41.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-08-08T10:27:46.000-0400" prefix="">2009-08-08T10:27:46.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4</li>
+                            
+                            <li>0.5beta1</li>
+                            
+                            <li>0.5</li>
+                            
+                            <li>0.6beta1</li>
+                            
+                            <li>0.6</li>
+                            
+                            <li>0.7</li>
+                            
+                            <li>0.8</li>
+                            
+                            <li>1.0</li>
+                            
+                            <li>1.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1.1</li>
+                            
+                            <li>1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>If you edit an inline edit field with the  text "Click here to edit" it is equivalent to deleting all of the content of the field.</p>
+<p>Steps to reproduce:</p>
+<p>1) Open one of the inline edit demos from the daily build site:<br>
+<a href="http://build.fluidproject.org/fluid/sample-code/inline-edit/announcements/announcements.html">http://build.fluidproject.org/fluid/sample-code/inline-edit/announcements/announcements.html</a><br>
+<a href="http://build.fluidproject.org/fluid/sample-code/inline-edit/section-info/section-info.html">http://build.fluidproject.org/fluid/sample-code/inline-edit/section-info/section-info.html</a></p>
+<p>2) Edit the text of one of the inline edit fields to "Click here to edit"</p>
+<p>3) Click the inline edit field again and notice that there is no text displayed. </p>
+<p>dev-iteration43</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF2, FF3, Opera 9.6, Safari 3 (Mac OS 10.5)<br>
+FF2, FF3, IE6, IE7, IE8, Opera 9.6 (Win XP)<br>
+FF3, IE7, IE8 (Win Vista)<br>
+FF3, IE6 (Win 2000)</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-1320/patch.txt">
+                            
+                                patch.txt
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-1320/patch.txt">
+                            
+                                patch.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14158">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-09-04T12:04:29.000-0400">2008-09-04T12:04:29.000-0400</relative-time></i></p>
+                        <p>Interesting. This will actually be the case any time the text that is typed is the same as the 'empty field' invitation text. If the invitation text is different than the default "Click here to edit," then you would have to type the different text to see this bug. You can try this on the manual test page:<br>
+<a href="http://build.fluidproject.org/fluid/tests/fluid-tests/manual/inline-edit/InlineEdit.html">http://build.fluidproject.org/fluid/tests/fluid-tests/manual/inline-edit/InlineEdit.html</a></p>
+<p>The problem is caused by the way the inline edit decides whether or not the field contains text that the user typed, or the invitation text. It compares the text to the invitation text, and if they are the same, it assumes that the invitation text is there because the user left the field empty.</p>
+
+                    </li>
+                    
+                    <li id="comment-14160">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-03-18T11:08:20.000-0400">2009-03-18T11:08:20.000-0400</relative-time></i></p>
+                        <p>My 1st Bug</p>
+
+                    </li>
+                    
+                    <li id="comment-14162">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-07-27T16:20:13.000-0400">2009-07-27T16:20:13.000-0400</relative-time></i></p>
+                        <p>Bug Parade 1.1.1 release</p>
+
+                    </li>
+                    
+                    <li id="comment-14164">
+                        <p class="mb-0"><b>y z</b> <i>commented <relative-time datetime="2009-08-06T10:06:41.000-0400">2009-08-06T10:06:41.000-0400</relative-time></i></p>
+                        <p>Patch fixes the error with Click here to edit </p>
+
+                    </li>
+                    
+                    <li id="comment-14166">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2009-08-06T19:56:45.000-0400">2009-08-06T19:56:45.000-0400</relative-time></i></p>
+                        <p>Committed to trunk and branch - thanks for patch.</p>
+
+                    </li>
+                    
+                    <li id="comment-14168">
+                        <p class="mb-0"><b>y z</b> <i>commented <relative-time datetime="2009-08-07T16:24:39.000-0400">2009-08-07T16:24:39.000-0400</relative-time></i></p>
+                        <p>added and fixed test cases for inline edit</p>
+
+                    </li>
+                    
+                    <li id="comment-14170">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-08-08T10:27:46.000-0400">2009-08-08T10:27:46.000-0400</relative-time></i></p>
+                        <p>Verified fix using:</p>
+<p>FF2, FF3, FF3.5, Opera 9.6, Safari 3, Safari 4 (Mac OS 10.5)<br>
+FF2, FF3, IE7, Opera 9.6 (Win XP)</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1319/"><span class="aria-hidden">←</span> Previous: FLUID-1319</a>
+        <a class="mx-1" href="/browse/FLUID-1321/">Next: FLUID-1321 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5704  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5704 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5704/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5704/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5704/">FLUID-5704</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5704: doc-base repo: problem with setting up DocPad locally</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5704">FLUID-5704</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-07-08T11:05:52.411-0400" prefix="">2015-07-08T11:05:52.411-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-07-13T15:35:52.073-0400" prefix="">2015-07-13T15:35:52.073-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Infrastructure</li>
+                            
+                            <li>Website</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Following README.txt to set up DocPad locally, after running all steps in "Build with DocPad" section, accessing <a href="http://localhost:9778/">http://localhost:9778/</a> in a browser gives "Server not found" error.</p>
+<p>The output at running the second last step "docpad run --env static" shows this message:</p>
+<p>"DocPad listening to <a href="http://0.0.0.0:9778/">http://0.0.0.0:9778/</a>"</p>
+<p>The DocPad seems listening to the host 0.0.0.0 instead of localhost. Accessing <a href="http://0.0.0.0:9778/">http://0.0.0.0:9778/</a> throws "Unable to connect" error.</p>
+<p>Note: The work for doc-base repo at this moment is still in progress as a Jonathan's personal repo: <a href="https://github.com/jhung/doc-base/">https://github.com/jhung/doc-base/</a> </p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19092">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2015-07-13T11:48:09.586-0400">2015-07-13T11:48:09.586-0400</relative-time></i></p>
+                        <p>For now I have updated the README to not use localhost. Instead the readme now states to generate the content statically and load the index.html file directly in a browser from the file system.<br>
+See: <a href="https://github.com/jhung/doc-base-start/blob/FLUID-5692/README.md">https://github.com/jhung/doc-base-start/blob/FLUID-5692/README.md</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5703/"><span class="aria-hidden">←</span> Previous: FLUID-5703</a>
+        <a class="mx-1" href="/browse/FLUID-5705/">Next: FLUID-5705 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

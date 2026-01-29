@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6595  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6595 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6595/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6595/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6595/">FLUID-6595</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6595: Better support in DataSources for interpolating search parameters</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6595">FLUID-6595</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-02-04T08:06:27.477-0500" prefix="">2021-02-04T08:06:27.477-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-17T08:11:35.725-0400" prefix="">2024-07-17T08:11:35.725-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>DataSource's URL interpolation is currently rather stodgy and only properly supports interpolation at the textual level of the entire URL. Dealing with everyday web services e.g. <a href="https://api.inaturalist.org/v1/docs/#!/Observations/get_observations_id">https://api.inaturalist.org/v1/docs/#!/Observations/get_observations_id</a> requires somewhat more intelligent substitution, including removing unused parameters and optionally encoding arrays as CSV etc.</p>
+<p>Draft improvements to resolveUrl could be integrated from <a href="https://github.com/amb26/bagatelle/blob/master/src/iNaturalist/obsAPI.js#L30-L49">https://github.com/amb26/bagatelle/blob/master/src/iNaturalist/obsAPI.js#L30-L49</a> but the whole resolveUrl pathway needs to be spring-cleaned since it is crusty and applies interpolation twice to the pathname.</p>
+<p>See also CouchDB view requirements at <a href="/browse/SJRK-433/">SJRK-433</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25617">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2021-02-04T08:30:29.550-0500">2021-02-04T08:30:29.550-0500</relative-time></i></p>
+                        <p>Other precedent for work like this is in Tony Atkins [RtF]'s fluid-express: <a href="https://github.com/fluid-project/fluid-express/blob/main/src/js/lib/querystring-coding.js#L116">https://github.com/fluid-project/fluid-express/blob/main/src/js/lib/querystring-coding.js#L116</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6594/"><span class="aria-hidden">←</span> Previous: FLUID-6594</a>
+        <a class="mx-1" href="/browse/FLUID-6596/">Next: FLUID-6596 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

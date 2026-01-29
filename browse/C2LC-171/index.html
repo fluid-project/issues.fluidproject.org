@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-171  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-171 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-171/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-171/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-171/">C2LC-171</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-171: Implement a little node component between steps to insert a command between the steps</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-171">C2LC-171</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Done</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-02-24T11:11:25.818-0500" prefix="">2020-02-24T11:11:25.818-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-06-10T11:04:46.905-0400" prefix="">2020-06-10T11:04:46.905-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Env 0.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Behaviour of the component:</p>
+<ul>
+<li>When selectedAction is not a command type, the component is not interactable </li>
+<li>When selectedAction is a command type, the node changes into a circular plus button onFocus and onDragOver events (Conditional rendering)</li>
+<li>When selectedAction is a command type, the node should be navigable with keyboard interaction (Set tabIndex depends on selectedAction)</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10643">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-05-08T14:59:59.824-0400">2020-05-08T14:59:59.824-0400</relative-time></i></p>
+                        <p>Remaining work as of 2020-05-08:</p>
+<ul>
+<li>Finish the AddNodeButton drop area changes
+<ul>
+<li>Consistent boundaries for the minimized and expanded version
+<ul>
+<li>addNodeDropMargin = 1.5rem (some value we pick)
+<ul>
+<li>Distance above the top and below the bottom of the icon in which we can drop</li>
+</ul>
+</li>
+<li>For collapsed:
+<ul>
+<li>top = -addNodeDropMargin</li>
+<li>height = 2 * addNodeDropMargin + heightOfCollapsedIcon</li>
+</ul>
+</li>
+<li>For expanded:
+<ul>
+<li>top = -addNodeDropMargin</li>
+<li>height = 2 * addNodeDropMargin + heightOfExpandedIcon</li>
+</ul>
+</li>
+<li>Use SCSS variables to calculate the drop area top and height</li>
+</ul>
+</li>
+<li>Make CSS classes for drop areas</li>
+</ul>
+</li>
+<li>Rename AddNodeButton class to AddNode</li>
+<li>Rework CSS class names; sketch of potential names:
+<ul>
+<li>Expanded
+<ul>
+<li>AddNode
+<ul>
+<li>AddNode__expanded-button</li>
+<li>AddNode__expanded-drop-area</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Collapsed
+<ul>
+<li>AddNode
+<ul>
+<li>AddNode__collapsed-icon</li>
+<li>AddNode__collapsed-drop-area</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Do <a href="/browse/C2LC-172/">C2LC-172</a> work as part of <a href="/browse/C2LC-171/">C2LC-171</a>
+<ul>
+<li>Add a toggle switch to enable and disable expanded add node mode</li>
+</ul>
+</li>
+<li>Add/fix tests as needed</li>
+<li>Ask Sepi/Lisa about visual styling for drop target</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-10644">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-05-14T16:17:17.963-0400">2020-05-14T16:17:17.963-0400</relative-time></i></p>
+                        <p>Ask Sepi/Lisa about focus position following insertion of a command with keyboard:</p>
+<p>After adding a command to the end of a program using the keyboard, should focus be on the final add node, or should it be on the newly inserted command?</p>
+<p>And likewise, after adding a command within a program, should focus be on the add node, or should it be on the newly inserted command?</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-170/"><span class="aria-hidden">←</span> Previous: C2LC-170</a>
+        <a class="mx-1" href="/browse/C2LC-172/">Next: C2LC-172 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

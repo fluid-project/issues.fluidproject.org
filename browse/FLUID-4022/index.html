@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4022  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4022 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4022/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4022/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4022/">FLUID-4022</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4022: Reconsider using important! tag</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4022">FLUID-4022</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>heidi valles</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=heidi%20valles">heidi valles</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-01-07T10:19:43.269-0500" prefix="">2011-01-07T10:19:43.269-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-06-07T14:00:44.695-0400" prefix="">2011-06-07T14:00:44.695-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>FSS</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The important! tag is a problem as it's not over-ride-able, forcing the user to edit fss itself. With uportal, it is often the case that stylesheets are added in layers (site-&gt;skin-&gt;portlet), making fss on the site level especially frustrating.</p>
+<p>!important is used in:</p>
+<p>fss-layout.css<br>
+fss-text.css<br>
+fss-theme-coal.css<br>
+fss-theme-hc.css<br>
+fss-theme-hci.css<br>
+fss-theme-mist.css<br>
+fss-theme-rust.css<br>
+fss-theme-slate.css</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-16261">
+                        <p class="mb-0"><b>heidi valles</b> <i>commented <relative-time datetime="2011-03-07T16:40:35.503-0500">2011-03-07T16:40:35.503-0500</relative-time></i></p>
+                        <p>How enhancer applies styles now:<br>
+-remove clashing classes from container (&lt;body&gt;)<br>
+-add styles for font, spacing, theme, layout on container<br>
+-remove background images if chosen<br>
+-sets text size on container<br>
+-sets line spacing on container<br>
+-sets table of contents<br>
+-styles links<br>
+-styles inputs</p>
+<p>All FSS stylesheets are added by user into the &lt;head&gt;, Enhancer adds/removes fl- classnames as appropriate to reflect user's options.</p>
+
+                    </li>
+                    
+                    <li id="comment-16263">
+                        <p class="mb-0"><b>heidi valles</b> <i>commented <relative-time datetime="2011-04-15T12:12:22.564-0400">2011-04-15T12:12:22.564-0400</relative-time></i></p>
+                        <p>Pull request sent for branch in my github. !importants removed except for where they make sense in fss-layout (linear and no bg imgs).</p>
+
+                    </li>
+                    
+                    <li id="comment-16266">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-04-19T14:42:18.056-0400">2011-04-19T14:42:18.056-0400</relative-time></i></p>
+                        <p>I've pushed the changes, from heidi's branch for this issue, into the project repo at fd9978f0dbe114c186eca0d95493e5861acc17ae</p>
+
+                    </li>
+                    
+                    <li id="comment-16268">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2011-06-02T14:30:26.013-0400">2011-06-02T14:30:26.013-0400</relative-time></i></p>
+                        <p>There are still four !important tags in the HCI theme that are unrelated to background images. Removing them doesn't seem make any of the FSS styles/widgets look any different, except for actually improving the widget by making the border visible. This might want to be addressed in conjunction with <a href="/browse/FLUID-4219/">FLUID-4219</a>.</p>
+
+                    </li>
+                    
+                    <li id="comment-16270">
+                        <p class="mb-0"><b>heidi valles</b> <i>commented <relative-time datetime="2011-06-06T10:20:46.125-0400">2011-06-06T10:20:46.125-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/infusion/pull/65">https://github.com/fluid-project/infusion/pull/65</a></p>
+
+                    </li>
+                    
+                    <li id="comment-16272">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-06-07T14:00:30.646-0400">2011-06-07T14:00:30.646-0400</relative-time></i></p>
+                        <p>setting resolution</p>
+
+                    </li>
+                    
+                    <li id="comment-16274">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-06-07T14:00:44.694-0400">2011-06-07T14:00:44.694-0400</relative-time></i></p>
+                        <p>Merged into the project repo at e2281c2845b279948bb579b7e0d07591ea6c3bc8</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4021/"><span class="aria-hidden">←</span> Previous: FLUID-4021</a>
+        <a class="mx-1" href="/browse/FLUID-4023/">Next: FLUID-4023 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-85  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-85 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-85/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-85/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-85/">INFRA-85</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-85: Automate Let's Encrypt certificate renewal process</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-85">INFRA-85</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Alan%20Harnum">Alan Harnum</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-07-19T09:55:24.567-0400" prefix="">2016-07-19T09:55:24.567-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-09-03T14:11:30.894-0400" prefix="">2017-09-03T14:11:30.894-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Per Giovanni Tirloni's recent email about the issues we were having with the OwnCloud instance, we should have a playbook to capture the cert renewal process with Let's Encrypt:</p>
+<pre><code class="hljs">Let’s Encrypt was having issues renewing certificates <span class="hljs-keyword">for</span> the past few days. Errors like this:
+ 
+Detail: DNS problem: networking error looking <span class="hljs-keyword">up</span> A <span class="hljs-keyword">for</span>
+   <span class="hljs-keyword">files</span>.inclusivedesign.<span class="hljs-keyword">ca</span>
+ 
+Detail: DNS problem: networking error looking <span class="hljs-keyword">up</span> CAA <span class="hljs-keyword">for</span>
+   <span class="hljs-keyword">files</span>.inclusivedesign.<span class="hljs-keyword">ca</span>
+ 
+I kept retrying it today until it worked. This <span class="hljs-keyword">is</span> the <span class="hljs-keyword">command</span> that I used:
+ 
+letsencrypt certonly --standalone -d <span class="hljs-keyword">files</span>.inclusivedesign.<span class="hljs-keyword">ca</span> --standalone-supported-challenges http-<span class="hljs-number">01</span> --http-<span class="hljs-number">01</span>-port <span class="hljs-number">80</span> --renew-by-default --email gtirloni@ocadu.<span class="hljs-keyword">ca</span> --agree-tos
+ 
+It would <span class="hljs-keyword">be</span> great <span class="hljs-keyword">to</span> somehow have this in Ansible but I haven’t had the time <span class="hljs-keyword">to</span> focus <span class="hljs-keyword">on</span> this yet.
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25805">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2017-09-03T14:11:30.880-0400">2017-09-03T14:11:30.880-0400</relative-time></i></p>
+                        <p>IDI assets are using Let's Encrypt with DNS validation.</p>
+<p><a href="https://github.com/idi-ops/ansible-letsencrypt-route53">https://github.com/idi-ops/ansible-letsencrypt-route53</a><br>
+<a href="https://github.com/inclusive-design/ops/blob/master/ansible/host_vars/i-0040.tor1.inclusivedesign.ca">https://github.com/inclusive-design/ops/blob/master/ansible/host_vars/i-0040.tor1.inclusivedesign.ca</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-84/"><span class="aria-hidden">←</span> Previous: INFRA-84</a>
+        <a class="mx-1" href="/browse/INFRA-86/">Next: INFRA-86 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

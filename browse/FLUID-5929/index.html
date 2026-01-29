@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5929  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5929 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5929/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5929/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5929/">FLUID-5929</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5929: IoC tests exit with no results if jqUnit is not available...</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5929">FLUID-5929</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Tony%20Atkins%20%5BRtF%5D">Tony Atkins [RtF]</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-07-20T04:33:16.418-0400" prefix="">2016-07-20T04:33:16.418-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T09:23:51.760-0400" prefix="">2024-07-22T09:23:51.760-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Testing Infrastructure</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>I am experiencing some very odd test failures in new tests. Basically the tests are queued but never run.</p>
+<p>After much investigation, I discovered that most of my existing tests either require node-jqunit or call something that does that for them, like <code>kettle.loadTestingSupport</code> or <code>gpii.express.loadTestingSupport</code>.</p>
+<p>Here is a simple example that should run on its own, but which does not:</p>
+<pre><code class="hljs language-java"><span class="hljs-comment">/* eslint-env node */</span>
+<span class="hljs-string">"use strict"</span>;
+<span class="hljs-type">var</span> <span class="hljs-variable">fluid</span> <span class="hljs-operator">=</span> require(<span class="hljs-string">"infusion"</span>);
+fluid.loadTestingSupport();
+
+require(<span class="hljs-string">"node-jqunit"</span>); <span class="hljs-comment">// Comment this out and the tests will never run.</span>
+
+fluid.defaults(<span class="hljs-string">"gpii.tests.wtf.caseHolder"</span>, {
+    gradeNames: [<span class="hljs-string">"fluid.test.testCaseHolder"</span>],
+    modules: [{
+        name: <span class="hljs-string">"Confirm that things are borderline sane..."</span>,
+        tests: [
+            {
+                name: <span class="hljs-string">"We should be able to run a single test..."</span>,
+                type: <span class="hljs-string">"test"</span>,
+                sequence: [
+                    {   func: <span class="hljs-string">"jqUnit.assert"</span>, args: [<span class="hljs-string">"Here we are now."</span>] }
+                ]
+            }
+        ]
+    }]
+});
+
+fluid.defaults(<span class="hljs-string">"gpii.tests.wtf.environment"</span>, {
+    gradeNames: [<span class="hljs-string">"fluid.test.testEnvironment"</span>],
+    components: {
+        caseHolder: {
+            type: <span class="hljs-string">"gpii.tests.wtf.caseHolder"</span>
+        }
+    }
+});
+
+fluid.test.runTests(<span class="hljs-string">"gpii.tests.wtf.environment"</span>);
+</code></pre>
+<p>Although I have this problem in various projects with different versions, here are the versions of node-jqunit and infusion in one project that doesn't work:</p>
+<pre><code class="hljs language-java"><span class="hljs-string">"infusion"</span>: <span class="hljs-string">"2.0.0-dev.20160519T222603Z.754d2c6"</span>,
+    <span class="hljs-string">"node-jqunit"</span>: <span class="hljs-string">"1.1.4"</span>,
+</code></pre>
+<p>The workaround for now is to require node-jqunit manually.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22043">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-07-20T04:50:49.526-0400">2016-07-20T04:50:49.526-0400</relative-time></i></p>
+                        <p>Update, requiring jqUnit resolves this, which is why I don't usually see this.  Usually I have at least one local test function.  Lately I have been able to write more "pure" tests that only call existing functions from sequence steps.  It is these that will not work on their own.</p>
+<p>Moving this issue to infusion, as it is not a problem with Kettle.  Calling <code>kettle.loadTestingSupport</code> just solves the problem because somewhere along the way it requires jqUnit.</p>
+
+                    </li>
+                    
+                    <li id="comment-22046">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-07-20T05:03:09.344-0400">2016-07-20T05:03:09.344-0400</relative-time></i></p>
+                        <p>On further investigation, I discovered that the problem is a result of jqUnit.assert not being available as a global variable (makes sense).  I get the same failure if I change the example to use "bogus".</p>
+<p>Seems like all we need is something to throw a proper error if "func" doesn't exist.</p>
+
+                    </li>
+                    
+                    <li id="comment-22049">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-07-20T05:05:59.186-0400">2016-07-20T05:05:59.186-0400</relative-time></i></p>
+                        <p>Sorry, I keep updating my example to confirm, it looks like even if you don't call a jqUnit function, jqUnit is required.  The framework does correctly throw an error about a bogus function, but only if jqUnit has been required.</p>
+<p>Here's an updated example that clearly illustrates the problem:</p>
+<pre><code class="hljs language-java"><span class="hljs-comment">/* eslint-env node */</span>
+<span class="hljs-string">"use strict"</span>;
+<span class="hljs-type">var</span> <span class="hljs-variable">fluid</span> <span class="hljs-operator">=</span> require(<span class="hljs-string">"infusion"</span>);
+fluid.loadTestingSupport();
+
+<span class="hljs-comment">//require("node-jqunit");</span>
+
+fluid.defaults(<span class="hljs-string">"gpii.tests.wtf.caseHolder"</span>, {
+    gradeNames: [<span class="hljs-string">"fluid.test.testCaseHolder"</span>],
+    modules: [{
+        name: <span class="hljs-string">"Confirm that things are borderline sane..."</span>,
+        tests: [
+            {
+                name: <span class="hljs-string">"We should be able to run a single test..."</span>,
+                type: <span class="hljs-string">"test"</span>,
+                sequence: [
+                    {   func: <span class="hljs-string">"console.log"</span>, args: [<span class="hljs-string">"Here we are now."</span>] }
+                ]
+            }
+        ]
+    }]
+});
+
+fluid.defaults(<span class="hljs-string">"gpii.tests.wtf.environment"</span>, {
+    gradeNames: [<span class="hljs-string">"fluid.test.testEnvironment"</span>],
+    components: {
+        caseHolder: {
+            type: <span class="hljs-string">"gpii.tests.wtf.caseHolder"</span>
+        }
+    }
+});
+
+fluid.test.runTests(<span class="hljs-string">"gpii.tests.wtf.environment"</span>);
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-22055">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-07-20T07:17:56.195-0400">2016-07-20T07:17:56.195-0400</relative-time></i></p>
+                        <p>Yes, this is a long-standing annoyance. I think it can really only be resolved sensibly by eliminating the annoying node-jqunit module and folding this into Infusion. However, this itself also relies on some kind of "monorepo" pattern for Infusion itself so that all these dependencies can be properly isolated within it.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5928/"><span class="aria-hidden">←</span> Previous: FLUID-5928</a>
+        <a class="mx-1" href="/browse/FLUID-5930/">Next: FLUID-5930 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

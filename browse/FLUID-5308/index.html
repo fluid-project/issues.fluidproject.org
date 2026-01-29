@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5308  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5308 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5308/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5308/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5308/">FLUID-5308</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5308: Create bower.json file for deployment using Bower...</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5308">FLUID-5308</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Tony%20Atkins%20%5BRtF%5D">Tony Atkins [RtF]</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-04-11T09:40:03.443-0400" prefix="">2014-04-11T09:40:03.443-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-10-11T15:17:24.842-0400" prefix="">2016-10-11T15:17:24.842-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Infrastructure</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>For managing client-side code in express and other environments it would be useful to have a Bower manifest to allow people to cleanly deploy Infusion and its dependencies at once.</p>
+<p><a href="http://bower.io/#defining-a-package">http://bower.io/#defining-a-package</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13767">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2014-04-11T10:38:07.560-0400">2014-04-11T10:38:07.560-0400</relative-time></i></p>
+                        <p>I found packages for all dependencies except for:</p>
+<ul>
+<li>jQuery QUnit Composite v1.0.1 <a href="https://github.com/jquery/qunit-composite">https://github.com/jquery/qunit-composite</a></li>
+<li>jQuery Chili code highlighter v2.2 <a href="http://code.google.com/p/jquery-chili-js/">http://code.google.com/p/jquery-chili-js/</a></li>
+<li>Micro Clearfix <a href="http://nicolasgallagher.com/micro-clearfix-hack/">http://nicolasgallagher.com/micro-clearfix-hack/</a></li>
+<li>SWFUpload v2.2.0.1: <a href="http://swfupload.org/">http://swfupload.org/</a></li>
+<li>fastXmlPull is based on XML for Script's Fast Pull Parser v3.1 <br>
+<br>
+      (see: <a href="http://wiki.fluidproject.org/display/fluid/Licensing+for+fastXmlPull.js">http://wiki.fluidproject.org/display/fluid/Licensing+for+fastXmlPull.js</a>)</li>
+<li>fss-reset-global.css and fss-reset-contextual are based on YUI's CSS reset styling v2.5.2 <br>
+<br>
+      see: <a href="http://developer.yahoo.com/yui/reset/">http://developer.yahoo.com/yui/reset/</a></li>
+<li>fss-base-global.css and fss-base-contextual are based on YUI's CSS base and fonts styling v2.5.2 <br>
+<br>
+      see: <a href="http://developer.yahoo.com/yui/base/">http://developer.yahoo.com/yui/base/</a> <br>
+<br>
+      see: <a href="http://developer.yahoo.com/yui/fonts/">http://developer.yahoo.com/yui/fonts/</a></li>
+<li>fss-layout.css uses some styles, related to hiding content, based on HTML5 Boilerplate v1.0 <br>
+<br>
+      see: <a href="https://github.com/paulirish/html5-boilerplate/blob/master/README.md">https://github.com/paulirish/html5-boilerplate/blob/master/README.md</a> (Public Domain)</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-13769">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-10-11T15:17:24.813-0400">2016-10-11T15:17:24.813-0400</relative-time></i></p>
+                        <p>We've moved away from the idea of using bower to share packages of infusion. We are exploring NPM for this instead. </p>
+<p>see: <a href="/browse/FLUID-5579/">FLUID-5579</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5307/"><span class="aria-hidden">←</span> Previous: FLUID-5307</a>
+        <a class="mx-1" href="/browse/FLUID-5309/">Next: FLUID-5309 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

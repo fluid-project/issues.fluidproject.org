@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4178  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4178 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4178/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4178/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4178/">FLUID-4178</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4178: Rules for context resolution scope are unclear and dangerous</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4178">FLUID-4178</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-04-06T22:19:40.294-0400" prefix="">2011-04-06T22:19:40.294-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-07-08T16:21:30.785-0400" prefix="">2011-07-08T16:21:30.785-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>As implemented, the rules for context resolution are undesirably generous. The base algorithm searches <strong>every</strong> component which can be reached by a recursive downward traversal from the "path to root" from the component site where the context resolution originates. As well as bringing in undesirably many contexts, this actually makes indeterminism very likely during instantiation - as two siblings may "mutually inhibit" one another by instantiation of children unexpectedly producing contexts. At the very least, to give order to CollectionSpace, we need to inhibit the resolution of "far" contexts. A "far" context is one that is not a DIRECT child of any of the components along the path to root. Further work will be necessary to restore determinism as well as allowing the rules to be overriden by directed "imports" if these are found to be required in some cases. JURA doesn't think there might be any so far.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24424">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2011-05-16T15:42:38.707-0400">2011-05-16T15:42:38.707-0400</relative-time></i></p>
+                        <p>Bug Parade Infusion</p>
+
+                    </li>
+                    
+                    <li id="comment-24425">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2011-06-02T23:29:06.175-0400">2011-06-02T23:29:06.175-0400</relative-time></i></p>
+                        <p>Restricted resolution rules are now implemented as per the "YELLOW SQUARES" diagram at <a href="http://wiki.fluidproject.org/display/docs/Demand+Resolution">http://wiki.fluidproject.org/display/docs/Demand+Resolution</a></p>
+<p>It is still possible for some non-determinism in resolution but only in some perverse cases where sibling components have demands blocks issued against each other's contexts.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4177/"><span class="aria-hidden">←</span> Previous: FLUID-4177</a>
+        <a class="mx-1" href="/browse/FLUID-4179/">Next: FLUID-4179 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

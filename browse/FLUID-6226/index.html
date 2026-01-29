@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6226  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6226 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6226/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6226/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6226/">FLUID-6226</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6226: Nested usage of fluid.generate results in odd behavior...</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6226">FLUID-6226</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Tony%20Atkins%20%5BRtF%5D">Tony Atkins [RtF]</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-11-17T15:46:38.600-0500" prefix="">2017-11-17T15:46:38.600-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T09:00:48.102-0400" prefix="">2024-07-22T09:00:48.102-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>While working on a problem that required an array of arrays, I discovered an unexpected behaviour when using fluid.generate in a nested fashion:</p>
+<pre><code class="hljs language-java"><span class="hljs-type">var</span> <span class="hljs-variable">grid</span> <span class="hljs-operator">=</span> fluid.generate(<span class="hljs-number">2</span>, fluid.generate(<span class="hljs-number">2</span>, {}));
+grid[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]= { set: <span class="hljs-literal">true</span>}; <span class="hljs-comment">// grid[0][0] AND grid[0][1] are now set!</span>
+</code></pre>
+<p>It seems like each "row" is a copy.  If I pass the output the nested fluid.generate call would presumably generate, it works fine:</p>
+<pre><code class="hljs language-java"><span class="hljs-type">var</span> <span class="hljs-variable">grid</span> <span class="hljs-operator">=</span> fluid.generate(<span class="hljs-number">2</span>, [{}, {}]);
+grid[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]= { set: <span class="hljs-literal">true</span>};
+<span class="hljs-comment">// grid[0][0] = {set: true}</span>
+<span class="hljs-comment">// grid[0][1] = {}</span>
+</code></pre>
+<p>If I assign the output to a function, it also works:</p>
+<pre><code class="hljs language-java"><span class="hljs-type">var</span> <span class="hljs-variable">nested</span> <span class="hljs-operator">=</span> fluid.generate(<span class="hljs-number">2</span>, {});
+<span class="hljs-type">var</span> <span class="hljs-variable">grid</span> <span class="hljs-operator">=</span> fluid.generate(<span class="hljs-number">2</span>, nested);
+grid[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]={set:<span class="hljs-literal">true</span>}
+<span class="hljs-comment">// grid[0][0] = {set: true}</span>
+<span class="hljs-comment">// grid[0][1] = {}</span>
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22115">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2017-11-17T17:40:10.121-0500">2017-11-17T17:40:10.121-0500</relative-time></i></p>
+                        <p>Hi - thanks for this report. This is really a documentation issue - we should make clear that fluid.generate will make no attempt to clone its arguments if they are complex structures. There is a function-call form of fluid.generate which is intended for use where there is any intended subtlety in the use of non-primitive values - since, for example, the unilateral choice of fluid.copy() may not be appropriate for all users.</p>
+<p>In your first example, you have supplied distinct objects {} and {} as the successive members of the top-level array, so naturally these remain distinct.</p>
+<p>In your second example, you have misobserved the result, since you have had the array indices the wrong way round in all your tests (including the first comment) - it is in fact grid[1][0] which becomes polluted with the result {set: true}, not grid[0][1]. So there is no inconsistency of operation, just a poor explanation of the semantic of the function, which we should fix in infusion-docs.</p>
+
+                    </li>
+                    
+                    <li id="comment-22118">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2017-11-20T03:26:31.477-0500">2017-11-20T03:26:31.477-0500</relative-time></i></p>
+                        <p>Thanks for spotting the error, there is indeed no difference between assigning a variable and passing the function call as the second argument to the top fluid.generate call.</p>
+<p>I agree that documenting the behaviour is fine for now.  If we come up with more use cases for this, we can talk about adding a "copy" flag that defaults to false.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6225/"><span class="aria-hidden">←</span> Previous: FLUID-6225</a>
+        <a class="mx-1" href="/browse/FLUID-6227/">Next: FLUID-6227 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

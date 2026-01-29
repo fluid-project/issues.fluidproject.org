@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5495  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5495 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5495/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5495/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5495/">FLUID-5495</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5495: Improve ability of IoCSS expressions by allowing them match upwards in the first component</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5495">FLUID-5495</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-08-17T13:38:17.539-0400" prefix="">2014-08-17T13:38:17.539-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-02-27T15:49:15.882-0500" prefix="">2017-02-27T15:49:15.882-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>IoCSS expressions and the "distributeOptions" feature was introduced in <a href="/browse/FLUID-4873/">FLUID-4873</a> and has proved a powerful feature for allowing flexible participation and mutual advice amongst components. However, we introduced a limitation in this implementation that the first context name appearing in the selector was constrained to be "that" - e.g. we support expressions of the kind</p>
+<p>{that kettle.test.request}</p>
+<p>but not expressions of the kind</p>
+<p>{testCaseHolder kettle.test.request}</p>
+<p>which, for example, would be very helpful in reducing duplication amongst the test case material in GPII's fixtures. Also the lack of this facility annoyingly constrains the range of possible component layouts in, for example, Kettle's extension to the IoC testing framework - we must have all the implementation components as well as the test fixtures descended from the came component root ("testCaseHolder") otherwise distributeOptions blocks are unable to find components down the sibling path.</p>
+<p>Going further, this facility is crucial to the final elimination of all features of "demands blocks" from the system. The "grade linkage system" we implemented for <a href="/browse/FLUID-5212/">FLUID-5212</a> was an interesting attempt to deal with the "multiple dispatch" problem but shows poor intellectual economy - adding an "ad hoc" features for this use case only increases the burden on users of the framework to learn and remember how new framework features operate. In fact we can handle this case by allowing a special marker in the front IoCSS field to indicate "the global component tree root" and hence advise all components everywhere. Possibly, for example, we could then write:</p>
+<p>distributeOptions: {<br>
+record: "my.newGradeName",<br>
+target: "{/ oldGradeName}.options.gradeNames}"<br>
+}<br>
+in order to achieve the effect of both "grade Linkage" and "old demands blocks".</p>
+<p>We previously shied away from this feature since it seemed hazardous to allow components to "advise" others outside their subtree - but of course this kind of advice was implicit in the operation of demands blocks in any case, since they advised the action of grade names throughout the entire system.</p>
+<p>Naturally, this implementation depends on <a href="/browse/FLUID-5249/">FLUID-5249</a> being implemented first - until we have a single global component tree we can't expect to have a syntax referring to it.</p>
+<p>To be performant, this feature will have to come along with a new model for the data structures holding options distribution records - probably involving some kind of prototypal chain. Ideally we would like to be able to go through each grade accumulated into a freshly instantiating component's grade list, and, in constant time, determine whether or not there is an options distribution targetted at it.</p>
+<p>Much like the use of "unbounded grades", this feature is coming to seem not only not hazardous, but absolutely essential to implement our framework in a consistent, economical, and powerful way</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22489">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-08-20T10:02:35.655-0400">2015-08-20T10:02:35.655-0400</relative-time></i></p>
+                        <p>Merged into trunk at revision 282f1a318718eed0b0ec060fb8b4ad254417fd7e</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5494/"><span class="aria-hidden">←</span> Previous: FLUID-5494</a>
+        <a class="mx-1" href="/browse/FLUID-5496/">Next: FLUID-5496 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

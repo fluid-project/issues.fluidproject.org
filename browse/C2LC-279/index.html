@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-279  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-279 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-279/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-279/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-279/">C2LC-279</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-279: The border of a dragged command is based on the state of the command.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-279">C2LC-279</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Won't Fix</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-12-17T05:42:52.701-0500" prefix="">2020-12-17T05:42:52.701-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-05-07T09:56:54.580-0400" prefix="">2024-05-07T09:56:54.580-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Environment</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In working on <a href="/browse/C2LC-274/">C2LC-274</a>, I noticed that the border of dragged commands differs depending on whether or not the command has already been selected.  If the command  has already been selected, the dragged command will have a dashed border.  If the command was not previously selected, it will be dragged without a dashed border, and the original command will only be selected once the dragged command is released.</p>
+<p>I pointed this out in the chat, Sepideh Shahi and Lisa proposed that a dragged command icon have a solid border, the same as if it were focused.  Unfortunately, I can't find a way to change the style of the element being dragged, it's a generated image based on the  exact styles at the moment before onDragStart is called.</p>
+<p>There are libraries that offer more control , such as [react-dnd|<br>
+<a href="https://react-dnd.github.io/react-dnd/docs/overview">https://react-dnd.github.io/react-dnd/docs/overview</a>] and the more accessible <a href="https://github.com/atlassian/react-beautiful-dnd">react-beautiful-dnd</a>.</p>
+<p>I am filing this ticket as work to consider for the future, as it seems to large in scope to take on as part of <a href="/browse/C2LC-274/">C2LC-274</a>.  I am filing this with regard to the current problem, but perhaps we can consider this as part of a larger refactor of drag and drop, perhaps to allow rearranging items within the program block editor.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-278/"><span class="aria-hidden">←</span> Previous: C2LC-278</a>
+        <a class="mx-1" href="/browse/C2LC-280/">Next: C2LC-280 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

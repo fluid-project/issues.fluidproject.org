@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3670  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3670 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3670/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3670/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3670/">FLUID-3670</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3670: Screen reader usability issues with Pager (esp. lack of overall orientation for screen reader users)</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3670">FLUID-3670</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jan%20Richards">Jan Richards</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-06-04T17:01:33.629-0400" prefix="">2010-06-04T17:01:33.629-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-07-30T15:29:06.207-0400" prefix="">2014-07-30T15:29:06.207-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Pager</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>G.1 Gnome+Firefox+Orca</p>
+<p>Browser: ??<br>
+Screen Reader: ??<br>
+Tester: ??<br>
+G.2 WindowsXP+Firefox+NVDA</p>
+<p>Browser: Firefox v3.5.9<br>
+Screen Reader: NVDA 2010.1<br>
+Tester: Jan Richards</p>
+<p>BROWSE mode</p>
+<ul>
+<li>"list with 8 items link 1 link 2 link 3 link 4 last out of list clickable link previous clickable link next link show combobox collapsed submenu 10 per page"</li>
+<li>when select a link no audio feedback</li>
+<li>controls appeared to be operable</li>
+</ul>
+<p>FORMS mode</p>
+<p>-also worked fine<br>
+G.3 WindowsXP+Firefox+JAWS</p>
+<p>Browser: Firefox v3.5.8<br>
+Screen Reader: JAWS 10<br>
+Tester: Phil Richards</p>
+<p>PC Cursor Mode</p>
+<ul>
+<li>clicking on the combo box causes the audio to say "list box five", once I select something it says "combo box five"</li>
+<li>audio will read links when clicked</li>
+<li>I'm not sure how to get it to read any of the other text, it only reads links and the combo box, and when I click in an editable box it says "edit", but will not read any other text</li>
+</ul>
+<p>Jaws Mode</p>
+<ul>
+<li>arrow up/down will move cursor line by line and audio will read the line</li>
+<li>arrow left/right will move cursor letter by letter and audio will read letter</li>
+<li>audio reads letters in links and numbers in editable boxes and combo box but gives no indication that they are clickable/editable and there seems to be no way to activate links/buttons with the keyboard</li>
+</ul>
+<p>Virtual Cursor</p>
+<ul>
+<li>arrow up/down will read field by field, ie name, then another press for user id, another for points, etc</li>
+<li>when cursor is in an editable box like in the points column, up/down arrow will move it to the box above or below, but there is no way to leave the boxes.  Up/down will continue to read other lines, and left/right will read individual characters until you try to use left/right to get out of the edit box.  For example, if I'm in an edit box that says 87, whenever I press left it will say 8 over and over.  Pressing right once will cause it to say 7, but pressing right again will just say space over and over</li>
+<li>using arrow keys to read the top line will result in audio that says "show combo box collapsed ten per page"</li>
+<li>there appears to be no way to change the value in the combo box with the keyboard</li>
+<li>no way to activate links with the keyboard<br>
+G.4 WindowsXP+IE+NVDA</li>
+</ul>
+<p>Browser: IE8</p>
+<p>Screen Reader: NVDA 2010.1<br>
+Tester: Phil Richards</p>
+<p>BROWSE MODE</p>
+<ul>
+<li>controls appear to work fine</li>
+<li>no audio feedback when link is clicked</li>
+<li>"list link 1 2 link 3 out of list link previous link next show combo box collapsed 5 per page"</li>
+</ul>
+<p>FOCUS MODE</p>
+<ul>
+<li>appears to work fine<br>
+G.5 WindowsXP+IE+JAWS</li>
+</ul>
+<p>Browser: IE8</p>
+<p>Screen Reader: JAWS 10<br>
+Tester: Phil Richards</p>
+<p>PC Cursor Mode</p>
+<ul>
+<li>Tab will move between links, editable boxes and combo box</li>
+<li>Audio will read the name of the link or the value in the box, and for the combo box says to use the arrow keys to change the value</li>
+<li>No way to click on links</li>
+<li>Arrow keys do change value in combo box, and text in grade boxes is editable</li>
+<li>Only text that the audio reads is that which is selected via tab, so none of the non link/editable text is read</li>
+</ul>
+<p>Jaws Mode</p>
+<ul>
+<li>Moving cursor from line to line with arrows will cause audio to read all text on the line, but it does not indicate if something is a link or is editable</li>
+<li>No way to click links, change value of combo box, or type in editable boxes</li>
+</ul>
+<p>Virtual Cursor Mode</p>
+<ul>
+<li>Arrow keys will move through each individual field/item</li>
+<li>Audio indicates links, combo box, editable boxes</li>
+<li>Possible to change value of combo box and edit text boxes, but no way to click on links</li>
+</ul>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>WindowsXP+IE8+NVDA2010<br>
+WindowsXP+IE8+JAWS10<br>
+WindowsXP+FF3.5+NVDA2010<br>
+WindowsXP+FF3.5+JAWS10</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3670/FLUID-3670-pager-common-issues.xls">
+                            
+                                FLUID-3670-pager-common-issues.xls
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3670/FLUID-3670-ScreenReaderTest.xls">
+                            
+                                FLUID-3670-ScreenReaderTest.xls
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19703">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-06-07T09:00:41.870-0400">2010-06-07T09:00:41.870-0400</relative-time></i></p>
+                        <p>a11y issue</p>
+
+                    </li>
+                    
+                    <li id="comment-19705">
+                        <p class="mb-0"><b>Golam Chowdhury</b> <i>commented <relative-time datetime="2010-11-04T11:31:32.916-0400">2010-11-04T11:31:32.916-0400</relative-time></i></p>
+                        <p>FLUID-3670-ScreenReaderTest which contains all the tests done by different versions of the screen readers such as NVDA2010.1-2, JAWS10-12 and ORCA. Browser used Mozilla 3.5.8, 3.5.9, 3.6.3, and IE8.</p>
+
+                    </li>
+                    
+                    <li id="comment-19706">
+                        <p class="mb-0"><b>Golam Chowdhury</b> <i>commented <relative-time datetime="2010-11-09T11:03:31.904-0500">2010-11-09T11:03:31.904-0500</relative-time></i></p>
+                        <p><a href="/browse/FLUID-3670/">FLUID-3670</a>  common issues found during the pager demo test.</p>
+
+                    </li>
+                    
+                    <li id="comment-19708">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-07-30T15:29:06.207-0400">2014-07-30T15:29:06.207-0400</relative-time></i></p>
+                        <p>There are have been a number of changes since this was filed, as well as updates to the various screen readers. This will need to be retested. </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3669/"><span class="aria-hidden">←</span> Previous: FLUID-3669</a>
+        <a class="mx-1" href="/browse/FLUID-3671/">Next: FLUID-3671 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

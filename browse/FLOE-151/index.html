@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-151  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-151 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-151/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-151/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-151/">FLOE-151</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-151: Initial cursor position in text editor window is misaligned (FF only).</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-151">FLOE-151</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Jonathan Hung</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Dana">Dana</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-01-07T16:41:12.973-0500" prefix="">2014-01-07T16:41:12.973-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-01-14T07:52:35.364-0500" prefix="">2014-01-14T07:52:35.364-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Metadata</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When tabbing to or mouse-selecting the text editor window, the initial cursor position lies across the boundary of the toolbar and the editable area, rather than fully inside the editable area.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Firefox</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-11249">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2014-01-13T15:11:01.947-0500">2014-01-13T15:11:01.947-0500</relative-time></i></p>
+                        <p>Using this old Firefox bug as a clue (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=389321">https://bugzilla.mozilla.org/show_bug.cgi?id=389321</a>) I was able to bypass this issue by addubg a &lt;br&gt; into the contenteditable div using Firebug.</p>
+<p>To reproduce this "fix":<br>
+1. Load the metadata editor demo in Firefox.<br>
+2. Before doing anything open Firebug.<br>
+3. Locate the contenteditable div and add a &lt;br /&gt; to the HTML using Firebug. Save it and don't refresh the page <br>
+4. Click the contenteditable div - notice that the cursor now appears in its proper place.</p>
+
+                    </li>
+                    
+                    <li id="comment-11250">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-01-14T07:52:35.364-0500">2014-01-14T07:52:35.364-0500</relative-time></i></p>
+                        <p>Wouldn't this mean you'd get a &lt;br&gt; tag in the output though?</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-150/"><span class="aria-hidden">←</span> Previous: FLOE-150</a>
+        <a class="mx-1" href="/browse/FLOE-152/">Next: FLOE-152 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

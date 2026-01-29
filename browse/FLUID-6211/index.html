@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6211  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6211 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6211/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6211/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6211/">FLUID-6211</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6211: Implement "vertical transactions", supporting in-band notification of transaction demarcation</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6211">FLUID-6211</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-10-04T19:43:21.502-0400" prefix="">2017-10-04T19:43:21.502-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-10-04T19:44:51.723-0400" prefix="">2017-10-04T19:44:51.723-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This feature has been conceived and written up for a while (it is described fairly clearly in the 2015 <a href="https://wiki.fluidproject.org/display/fluid/New+New+Notes+on+the+ChangeApplier">New New Notes on the ChangeApplier</a> in the section "simplified and more appropriate transaction semantics) but recent work has made this feature seem more urgent than before.</p>
+<p>In work on <a href="https://issues.gpii.net/browse/GPII-2556">https://issues.gpii.net/browse/GPII-2556</a> at <a href="https://github.com/GPII/universal/pull/549">https://github.com/GPII/universal/pull/549</a> the need for more manifest transactions came to the fore. The consumers of the PCP API requested that the system produce just a single change message in response to the user's context change action - but the architecture of the core GPII and the ChangeApplier combined to make this quite difficult.</p>
+<p>The existing (2014) ChangeApplier does include a facility for transactional updates, but it is cumbersome and unmanifest - in the vocabulary of our <a href="https://github.com/amb26/papers/tree/master/ppig-2016a">2016 PPIG paper</a> it exhibits "high divergence" by being geared to in-memory object references (the "transaction object" dispensed by the <code>initiate</code> function). It is also intrusive - whilst the transaction object satisfies the same (programmatic) API as the top-level ChangeApplier it is not possible to retrofit code which is not transactional without rewriting it - violating a core goal of the framework.</p>
+<p>We got out of this problem by writing a lot of highly disagreeable, state-laden and fragile code. For example, the "blockage" of an outgoing stream of change requests was encoded by a "self-destructing promise" attached to the component - see</p>
+<p><a href="https://github.com/amb26/universal/blob/13a8f45683f88c6cf5ae6ff68f3eee8dff5cbc05/gpii/node_modules/flowManager/src/PCPChannel.js#L75">https://github.com/amb26/universal/blob/13a8f45683f88c6cf5ae6ff68f3eee8dff5cbc05/gpii/node_modules/flowManager/src/PCPChannel.js#L75</a> - with the implementation</p>
+<pre><code class="hljs language-java">gpii.pcpChannel.updateContext = function (contextManager, pcpChannel, newContext) {
+    fluid.log(<span class="hljs-string">"Received context update from PCP UI of "</span>, newContext);
+    <span class="hljs-comment">// Abominable hack to avoid confusing client with numerous update messages. The ChangeApplier should really support</span>
+    <span class="hljs-comment">// "manifest transactions" / "vertical transactions"</span>
+    pcpChannel.outputBlocked = fluid.promise();
+    <span class="hljs-type">var</span> <span class="hljs-variable">clearBlock</span> <span class="hljs-operator">=</span> function () {
+        delete pcpChannel.outputBlocked;
+    };
+    pcpChannel.outputBlocked.then(clearBlock, clearBlock);
+    pcpChannel.applier.change([], <span class="hljs-literal">null</span>, <span class="hljs-string">"DELETE"</span>);
+    <span class="hljs-type">var</span> <span class="hljs-variable">promise</span> <span class="hljs-operator">=</span> contextManager.contextChanged(newContext);
+    <span class="hljs-keyword">if</span> (promise) {
+        fluid.promise.follow(promise, pcpChannel.outputBlocked);
+    } <span class="hljs-keyword">else</span> {
+        pcpChannel.outputBlocked.resolve();
+    }
+};
+</code></pre>
+<p>and then further down at <a href="https://github.com/amb26/universal/blob/13a8f45683f88c6cf5ae6ff68f3eee8dff5cbc05/gpii/node_modules/flowManager/src/PCPChannel.js#L146">https://github.com/amb26/universal/blob/13a8f45683f88c6cf5ae6ff68f3eee8dff5cbc05/gpii/node_modules/flowManager/src/PCPChannel.js#L146</a> we have</p>
+<pre><code class="hljs language-java">gpii.pcpChannel.modelChangeListener = function (handler, pcpChannel, value, oldValue, path, transaction) {
+    console.log(<span class="hljs-string">"## on modelChangeListener, sources are "</span>, fluid.keys(transaction.sources));
+    <span class="hljs-keyword">if</span> (!transaction.sources.PCP) {
+        console.log(<span class="hljs-string">"## source is not PCP"</span>);
+        <span class="hljs-keyword">if</span> (pcpChannel.outputBlocked) {
+            <span class="hljs-comment">// Ensure that we queue just a single outgoing message for when the channel unblocks</span>
+            <span class="hljs-keyword">if</span> (!pcpChannel.outputBlocked.queued) {
+                pcpChannel.outputBlocked.queued = <span class="hljs-literal">true</span>;
+                pcpChannel.outputBlocked.then(function () {
+                    fluid.log(<span class="hljs-string">"PCPChannel sending unblocked full update message"</span>, JSON.stringify(pcpChannel.model, <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>));
+                    handler.sendMessage({path: [], type: <span class="hljs-string">"ADD"</span>, value: pcpChannel.model});
+                });
+            }
+        }
+</code></pre>
+<p>this encodes the fact that one or more attempts to write a change whilst the transaction level is not met must queue a <em>single</em> coalesced write once it unblocks. Note that this is essentially the behaviour described at the end of the paragraph "Simplified and more appropriate transaction semantics" at <a href="https://wiki.fluidproject.org/display/fluid/New+New+Notes+on+the+ChangeApplier">New New Notes</a>.</p>
+<p>We could write some moderately reusable utilities to automate this kind of work at the modelListener level (this is discussed with @jobara <a href="https://botbot.me/freenode/fluid-work/2017-10-04/?msg=91899210&page=2">in IRC on 5/10/17</a> - this has been written up as <a href="/browse/FLUID-6209/">FLUID-6209</a>) but it's clear that the framework needs to provide a facility to make such a case declarative, transparent and automatic.</p>
+<p>In the previous decade, the Spring framework opened the way towards the then cutting-edge <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/data-access.html#transaction-declarative">declarative transaction demarcation</a> - but we need to do much better on many fronts. Spring only provides for the encoding of transaction boundaries mapped as architectural boundaries within a codebase - we need to not only do this, but also to make such demarcation <em>manifest</em> - that is, for these boundaries to be encodable within a fully externalised change stream and then replayable back into another system (or the same system at another time). This is particularly important with work upcoming in the <a href="https://wiki.gpii.net/w/Nexus_API#Bind_Model">Nexus API</a>.</p>
+<p>The system described in "New New Notes" is pretty nearly what is required, with the tweaks that:</p>
+<p>i) It is very clear that we need arbitrary levels of user-level transactions - as the GPII PCPChannel example shows. Some clients want to see the details of model evolution, and others (the PCP) just want gross changes in response to user interaction bulked up.<br>
+ii) We should indeed incorporate the model relay system's own transaction levels into this system, to resolve monstrosities such as <a href="/browse/FLUID-5373/">FLUID-5373</a>.</p>
+<p>This system is named "vertical" because the model (signal) system now has an additional coordinate, in addition both to time, and its spatial extent (the extended JSON structure) which we imagine encoding as "height". At any time, the (or a participating replica of the) system has a "transactional level" which encodes the level which an observer needs to meet in order to be able to observe changes occurring at that time. This is slightly reminiscent of the traditional "log priority levels" by which logging messages of different priorities can be hidden from observers who don't meet the current logging priority level. The differences are that, given that models are an integral (rather than differential) system, failing to meet a transaction level doesn't mean that the changes themselves are elided - instead, the user catches up with the changes at a later time, after they have been aggregated together with any further intervening changes. Secondly, the "observer" in this case is a connected ChangeApplier (with its own individual transactional level), rather than the system itself.</p>
+<p>This work will also usefully break up the isolated internal world operated by ModelRelay rules and expose it much more visibly - this will help future work in dealing with stateful or streaming relay rules, and put them much more on a common footing with the facilities of modelListeners. Right now a user can never "beat" or "observe" the action of a relay rule since it is operated privately by the system in a world isolated from user-observable time.</p>
+<p>The user-visible facilities of the first iteration of this system would be very simple - an extra annotation that could be attached to a modelListener declaration which encoded a "transactionLevel" - either a user level, or more exotically, say, "relay" if the rule wanted to observe at the modelRelay level for debugging or diagnostic purposes. We would also gain the further ChangeEvent types as described in "New New Notes". The reasoning in that section is no longer fully clear - that we need to mark the transactionLevel on each ChangeEvent - it does seem like the punctuation provided by the new events should be sufficient.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6210/"><span class="aria-hidden">←</span> Previous: FLUID-6210</a>
+        <a class="mx-1" href="/browse/FLUID-6212/">Next: FLUID-6212 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

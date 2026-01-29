@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3590  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3590 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3590/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3590/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3590/">FLUID-3590</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3590: Tab behavior on reorderable elements is sometimes inconsistent</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3590">FLUID-3590</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Michelle D'Souza</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=James%20Yoon">James Yoon</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-04-01T16:20:30.000-0400" prefix="">2010-04-01T16:20:30.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T13:43:40.364-0500" prefix="">2014-03-03T13:43:40.364-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Tabbing on a page with reorderable elements sometimes has inconsistent behavior. Depending on the combination of the integration and the platform, it may do one of at least the following:</p>
+<ul>
+<li>tabs forward through everything, including the individual reorderable elements, until the end of the list where it gets stuck; additionally, shift-tab will not go through the individual reorderable elements (just one element out of the group)</li>
+<li>tabs forward through everything, including the individual reorderable elements, until the end of the list, but through subsequent tabs will only go through one element out of the group of reorderable elements</li>
+<li>tabs forward through everything, but not the individual reorderable elements (just one element out of the group of reorderable elements), but shift-tabs will go through each individual reorderable element</li>
+</ul>
+<p>To replicate, using Safari 4/OS X 10.5:</p>
+<p>1. Go to <a href="http://build.fluidproject.org/infusion/demos/reorderer/listReorderer/html/listReorderer.html">http://build.fluidproject.org/infusion/demos/reorderer/listReorderer/html/listReorderer.html</a><br>
+2. Tab forward till you reach the reorderer.<br>
+3. Try tabbing beyond the reorderer (it doesn't work). Try shift-tabbing to go into reverse (it will work).</p>
+<p>To replicate, using Safari 4/OS X 10.5:<br>
+1. Go to <a href="http://build.fluidproject.org/infusion/demos/reorderer/layoutReorderer/demo.html">http://build.fluidproject.org/infusion/demos/reorderer/layoutReorderer/demo.html</a><br>
+2. Tab forward till you reach the reorderer.<br>
+3. Keep tabbing forward (it will tab through the individual elements).<br>
+4. Keep tabbing forward more until you cycle through again (it won't go through the individual elements anymore).<br>
+5. Shift-tab to go into reverse (it will go through the individual elements).</p>
+<p>To replicate, using Safari 4/OS X 10.5:<br>
+1. Go to <a href="http://build.fluidproject.org/infusion/demos/reorderer/imageReorderer/demo.html">http://build.fluidproject.org/infusion/demos/reorderer/imageReorderer/demo.html</a><br>
+2. Tab forward till you reach the reorderer (it doesn't work).<br>
+3. Keep tabbing forward (it will tab through the individual elements).<br>
+4. Try tabbing beyond the reorderer (it won't work). Try shift-tabbing to go into reverse (it will work, but only goes through one element, not all individual elements)</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Safari 4 (OS X 10.5)<br>
+FF 3.6 (Win XP, Mac OS 10.6)</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3590/debugFocus.patch">
+                            
+                                debugFocus.patch
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3590/FLUID-3590.patch">
+                            
+                                FLUID-3590.patch
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3590/fluid-3590-keyboard-a11y.patch">
+                            
+                                fluid-3590-keyboard-a11y.patch
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3590/gridReorderer.patch">
+                            
+                                gridReorderer.patch
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19428">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-04-07T12:14:31.000-0400">2010-04-07T12:14:31.000-0400</relative-time></i></p>
+                        <p>UPDATED Results based on tests of Infusion 1.1.2 and the current trunk version.</p>
+<p>Safari 4 (Mac OS 10.6)<br>
+======================</p>
+<p>Grid Reorderer:</p>
+<p>1.1.2 - tab (and option-tab) get stuck at first element. Shift-tab (and options-shift-tab) works</p>
+<p>current - same as 1.1.2</p>
+<p>Image Reorderer:</p>
+<p>1.1.2 - same as grid reorderer except option-tab will put focus on each of the images on the first time through.</p>
+<p>current - same as 1.1.2</p>
+<p>Layout Reorderer:</p>
+<p>1.1.2 - same as Image Reorderer except using tab has the same focusing issues as option-tab and shift-tab (and option-shift-tab) always cycles through all of the elements.</p>
+<p>current - same as 1.1.2</p>
+<p>List Reorderer:</p>
+<p>1.1.2 - same as Grid Reorderer</p>
+<p>current - same as 1.1.2</p>
+<p>FF 3.5 (Win XP)<br>
+================</p>
+<p>Grid Reorderer:</p>
+<p>1.1.2 - works</p>
+<p>current - works</p>
+<p>Image Reorderer:</p>
+<p>1.1.2 - works</p>
+<p>current - works</p>
+<p>Layout Reorderer:</p>
+<p>1.1.2 - tab and shift-tab put focus on each element</p>
+<p>current - same as 1.1.2</p>
+<p>List Reorderer:</p>
+<p>1.1.2 - works</p>
+<p>current - works</p>
+<p>IE 7 (Win XP)<br>
+================</p>
+<p>Grid Reorderer:</p>
+<p>1.1.2 - works</p>
+<p>current - works</p>
+<p>Image Reorderer:</p>
+<p>1.1.2 - works</p>
+<p>current - works</p>
+<p>Layout Reorderer:</p>
+<p>1.1.2 - tab and shift-tab put focus on each element</p>
+<p>current - same as 1.1.2</p>
+<p>List Reorderer:</p>
+<p>1.1.2 - works</p>
+<p>current - works</p>
+<p>FF 3.6 (Win XP)<br>
+================</p>
+<p>Grid Reorderer:</p>
+<p>1.1.2 - stops on first element</p>
+<p>current - can tab off of first element, but pressing tab again returns you to the first element. Holding down tab, will flicker focus on and off of the first element</p>
+<p>Image Reorderer:</p>
+<p>1.1.2 - same as Grid Reorderer</p>
+<p>current - same as Grid Reorderer</p>
+<p>Layout Reorderer:</p>
+<p>1.1.2 - tab will put focus on each element the first time through and then work properly after that. shift-tab puts focus on each element all the time</p>
+<p>current - same as 1.1.2</p>
+<p>List Reorderer:</p>
+<p>1.1.2 - same as Grid Reorderer</p>
+<p>current - same as Grid Reorderer</p>
+<p>IE 8 (Win XP)<br>
+================</p>
+<p>Grid Reorderer:</p>
+<p>1.1.2 - works</p>
+<p>current - works</p>
+<p>Image Reorderer:</p>
+<p>1.1.2 - works</p>
+<p>current - works</p>
+<p>Layout Reorderer:</p>
+<p>1.1.2 - tab will put focus on each element the first time through and then work properly after that. shift-tab puts focus on each element all the time</p>
+<p>current - same as 1.1.2</p>
+<p>List Reorderer:</p>
+<p>1.1.2 - works</p>
+<p>current - works</p>
+
+                    </li>
+                    
+                    <li id="comment-19429">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2010-04-07T16:54:36.000-0400">2010-04-07T16:54:36.000-0400</relative-time></i></p>
+                        <p>Patch to correct debugFocus.js for use with jQuery 1.4.x (and perhaps some previous versions)</p>
+
+                    </li>
+                    
+                    <li id="comment-19430">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2010-04-07T16:56:20.000-0400">2010-04-07T16:56:20.000-0400</relative-time></i></p>
+                        <p>Patch for gridReorderer.html which includes debugging utilities to show progress of focus. Remove "tabindex = 1" from the markup to see a slightly different effect also.</p>
+
+                    </li>
+                    
+                    <li id="comment-19431">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2010-04-08T12:15:34.000-0400">2010-04-08T12:15:34.000-0400</relative-time></i></p>
+                        <p>This patch appears to resolve the issue on Firefox 3.6 and does not break on IE6. Uploading for testing on other browsers</p>
+
+                    </li>
+                    
+                    <li id="comment-19432">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2010-04-08T16:43:03.000-0400">2010-04-08T16:43:03.000-0400</relative-time></i></p>
+                        <p>Patch to keyboard-a11y as well as Reorderer, to demonstrate fix to issue in addition to "mouse dropping cleaning" using explicit blur</p>
+
+                    </li>
+                    
+                    <li id="comment-19433">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-04-09T16:18:29.000-0400">2010-04-09T16:18:29.000-0400</relative-time></i></p>
+                        <p>To translate Antranig, we've updated the keyboard-a11y plugin to use the Roaming Tabindex Technique for handling tab focus. Before focusing a new arrow-keyable element, we change its tabindex from -1 to 0. On blur, we change it back to -1, with an additional workaround of manually calling blur() when we programmatically shift focus to a new element.</p>
+
+                    </li>
+                    
+                    <li id="comment-19434">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-04-09T16:19:28.000-0400">2010-04-09T16:19:28.000-0400</relative-time></i></p>
+                        <p>I've committed Antranig's wicked, wicked patch at r9819. Justin and I have tested fairly extensively, but I'd like another quick code review from Michelle just in case I missed anything while linting, etc.</p>
+
+                    </li>
+                    
+                    <li id="comment-19435">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-04-09T16:19:42.000-0400">2010-04-09T16:19:42.000-0400</relative-time></i></p>
+                        <p>Antranig's patch committed at r9819</p>
+
+                    </li>
+                    
+                    <li id="comment-19436">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-04-09T16:21:20.000-0400">2010-04-09T16:21:20.000-0400</relative-time></i></p>
+                        <p>colinclark: Okay dudes, everyone celebrate!<br>
+[4:19pm] colinclark: <a href="http://issues.fluidproject.org/browse/FLUID-3590">http://issues.fluidproject.org/browse/FLUID-3590</a><br>
+[4:19pm] colinclark: The last blocker is fixed!<br>
+[4:20pm] colinclark: michelled will do a triple-check of the code, since removed a few bits of cruft from the Reorderer<br>
+[4:20pm] jessm: yay<br>
+[4:20pm] colinclark: And we're good to test the Reorderer<br>
+[4:20pm] athena: congrats! <br>
+[4:20pm] colinclark: Huge props to our favourite "volunteer," Bosmon, for fixing this one so fast<br>
+[4:20pm] jessm:<br>
+[4:20pm]</p>
+
+                    </li>
+                    
+                    <li id="comment-19437">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-04-09T16:23:13.000-0400">2010-04-09T16:23:13.000-0400</relative-time></i></p>
+                        <p>More information about the Roaming Tabindex Techinque, in case it's useful in the future:</p>
+<p><a href="http://www.yuiblog.com/blog/2009/02/23/managing-focus/">http://www.yuiblog.com/blog/2009/02/23/managing-focus/</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3589/"><span class="aria-hidden">←</span> Previous: FLUID-3589</a>
+        <a class="mx-1" href="/browse/FLUID-3591/">Next: FLUID-3591 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

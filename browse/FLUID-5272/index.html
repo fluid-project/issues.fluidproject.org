@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5272  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5272 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5272/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5272/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5272/">FLUID-5272</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5272: The model relay throws error when the source or target component is a view or renderer component</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5272">FLUID-5272</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Not%20A%20Bug">Not A Bug</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-02-11T11:26:29.233-0500" prefix="">2014-02-11T11:26:29.233-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-02-11T16:28:15.834-0500" prefix="">2014-02-11T16:28:15.834-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Case 1: The target component is an independently defined view or renderer component.</p>
+<p>1. Declare the target component independently as a view or renderer component:<br>
+fluid.defaults("fluid.tests.fluid5272sub", {<br>
+gradeNames: ["fluid.viewComponent", "fluid.standardRelayComponent", "autoInit"]<br>
+});</p>
+<p>2. Define another component "fluid.tests.fluid9999" that has the model relay and transformation to the target:<br>
+fluid.defaults("fluid.tests.fluid5272Case1", {<br>
+gradeNames: ["fluid.standardRelayComponent", "autoInit"],<br>
+modelRelay: {<br>
+source: "{that}.model.celsius",<br>
+target: "{sub}.model.fahrenheit",<br>
+singleTransform: {<br>
+....<br>
+}<br>
+},<br>
+components: {<br>
+sub: {<br>
+type: "fluid.tests.fluid5272sub",<br>
+container: "#<a href="/browse/FLUID-5272/">FLUID-5272</a>"<br>
+}<br>
+}<br>
+});</p>
+<p>3. Instantiating "fluid.tests.fluid5272Case1" throws "applier.preCommit is undefined" from DataBinding.js, line 678:</p>
+<p>However, if the component type (fluid.viewComponent or fluid.rendererComponent) of the target component is directly specified in the same tree with the source component, no error occurs and the transformation works fine:</p>
+<p>fluid.defaults("fluid.tests.fluid5272", {<br>
+gradeNames: ["fluid.standardRelayComponent", "autoInit"],<br>
+modelRelay: {<br>
+source: "{that}.model.celsius",<br>
+target: "{sub}.model.fahrenheit",<br>
+singleTransform: {<br>
+....<br>
+}<br>
+},<br>
+components: {<br>
+sub: {<br>
+type: "fluid.viewComponent",<br>
+container: "#<a href="/browse/FLUID-5272/">FLUID-5272</a>",<br>
+options: {<br>
+gradeNames: "fluid.standardRelayComponent"<br>
+}<br>
+}<br>
+}<br>
+});</p>
+<p>Case 2: The source component is a view or renderer component.</p>
+<p>1. The source component in the model relay is a view or renderer component:<br>
+fluid.defaults("fluid.tests.fluid5272Case2", {<br>
+gradeNames: ["fluid.viewComponent", "fluid.standardRelayComponent", "autoInit"],<br>
+modelRelay: {<br>
+source: "{that}.model.celsius",<br>
+target: "{sub}.model.fahrenheit",<br>
+singleTransform: {<br>
+....<br>
+}<br>
+},<br>
+components: {<br>
+sub: {<br>
+type: "fluid.standardRelayComponent"<br>
+}<br>
+}<br>
+});</p>
+<p>2. Instantiating "fluid.tests.fluid5272Case2" throws "trans.transaction.reset" is not a function", from DataBinding.js, line 360</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19731">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-02-11T16:28:15.833-0500">2014-02-11T16:28:15.833-0500</relative-time></i></p>
+                        <p>No need to fix since using new component types "fluid.viewRelayComponent" and "fluid.renderRelayComponent" fixes this issue.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5271/"><span class="aria-hidden">←</span> Previous: FLUID-5271</a>
+        <a class="mx-1" href="/browse/FLUID-5273/">Next: FLUID-5273 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2777  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2777 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2777/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2777/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2777/">FLUID-2777</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2777: Need more control over self rendering in Pager</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2777">FLUID-2777</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Steven%20Githens">Steven Githens</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-05-26T15:56:16.000-0400" prefix="">2009-05-26T15:56:16.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-12-14T07:15:05.927-0500" prefix="">2020-12-14T07:15:05.927-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Pager</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Using the pager with self rendering functionality and a data model is useful so you don't have to make your own sorting links and sorting functions.  However, in practice, I've found a sizable mismatch between the column defs and what needs to be rendered in the table body.</p>
+<p>Some scenario's are:  </p>
+<ul>
+<li>You need to sort by the long/int representation but want something very different to display.</li>
+<li>You need a lot of component layout in the table cell</li>
+<li>The table cell consists of different icons for the representation</li>
+<li>The table cells actually bleed across each other. Each cell may require rendering of information from other columns for that row.</li>
+<li>You never know what your UI designers are going to draw up.</li>
+</ul>
+<p>As an initial attempt to make things more flexible, I've added a pager option that consists of a fluid.transform function titled: filteredRowTransform</p>
+<p>This would have the following API</p>
+<pre><code class="hljs language-java"><span class="hljs-comment">/**
+  *  A function capable of use in fluid.transform. This will be given the current filteredRow of the pager, which includes the
+  *  original model as a row property. This can be used to build and return the component's for the current row of the table.
+  *  You should be able to use either values or valuebindings.
+  * 
+  * <span class="hljs-doctag">@param</span> {object|filteredRow} A filteredRow.  The original model is available via filtreredRow.row.
+  * <span class="hljs-doctag">@param</span> {int} The index of the current row.
+  * <span class="hljs-doctag">@return</span> You should return an Array of Maps containing component definitions for the table row to be rendered.
+  */</span>
+
+Example usage:
+
+<span class="hljs-type">var</span> <span class="hljs-variable">filteredRowTransform</span> <span class="hljs-operator">=</span> function(obj, idx) {
+    <span class="hljs-type">var</span> <span class="hljs-variable">row</span> <span class="hljs-operator">=</span> obj.row;
+    <span class="hljs-type">var</span> <span class="hljs-variable">togo</span> <span class="hljs-operator">=</span> [ 
+      { ID: <span class="hljs-string">"student-grade-link"</span>,
+        target: <span class="hljs-string">'/portal/tool/'</span>+sakai.curPlacement+<span class="hljs-string">'/grade/'</span>+asnn2.curAsnnId+<span class="hljs-string">'/'</span>+row.studentId,
+        linktext: row.studentName
+      },  
+      {   
+        ID: <span class="hljs-string">"submission-status"</span>,
+        value: row.submissionStatus
+      }   
+    ];  
+
+    <span class="hljs-keyword">if</span> (row.submittedDateFormat) {
+      togo.push({ ID: <span class="hljs-string">"submitted-time"</span>,
+        value: row.submittedDateFormat
+      }); 
+    }   
+
+    <span class="hljs-keyword">if</span> (row.feedbackReleased === <span class="hljs-literal">true</span>) {
+      togo.push({ ID: <span class="hljs-string">"feedback-released"</span>, value: <span class="hljs-literal">true</span>});
+    }   
+
+    <span class="hljs-keyword">if</span> (graded === <span class="hljs-literal">true</span>) {
+      togo.push({ ID: <span class="hljs-string">"grade"</span>, value: row.grade});
+    }   
+
+
+    <span class="hljs-keyword">return</span> togo;
+  };  
+
+  <span class="hljs-type">var</span> <span class="hljs-variable">pager</span> <span class="hljs-operator">=</span> fluid.pager(<span class="hljs-string">"#submissions-table-area"</span>, {
+    dataModel: data,
+    columnDefs: columnDefs,
+    pagerBar: pagerBarOptions,
+    bodyRenderer: {
+      type: <span class="hljs-string">"fluid.pager.selfRender"</span>,
+      options: {
+        filteredRowTransform : filteredRowTransform,
+        selectors: {
+          root: <span class="hljs-string">".fl-pager-data"</span>
+        },  
+        renderOptions: {debugMode: <span class="hljs-literal">false</span>, cutpoints: asnn2subview.selectorMap}
+      }   
+    }   
+
+  });
+</code></pre>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Patch based off Fluid Infusion Trunk Revision 7248</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-2777/Pager.r7248based.diff.txt">
+                            
+                                Pager.r7248based.diff.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-2776/"><span class="aria-hidden">←</span> Previous: FLUID-2776</a>
+        <a class="mx-1" href="/browse/FLUID-2779/">Next: FLUID-2779 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

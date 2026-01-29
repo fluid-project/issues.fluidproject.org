@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6202  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6202 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6202/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6202/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6202/">FLUID-6202</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6202: Aggregate event doesn't always fire</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6202">FLUID-6202</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-09-27T17:35:00.438-0400" prefix="">2017-09-27T17:35:00.438-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-10-18T11:15:24.113-0400" prefix="">2017-10-18T11:15:24.113-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The storyViewer and storyEditor grades are "extensions" of the templatedComponentWithLocalization grade, which has a templateLoader and messageLoader (each extensions of the fluid.resourceLoader grade). We had set up an aggregate event ("onAllResourcesLoaded") on the templatedComponent grade which listened for events on the loader grades via IoC references to the "onResourcesLoaded" event of each. In the storyAuthoring grade, onResourcesLoaded would fire for the storyViewer's templateLoader and messageLoader components, but the onAllResourcesLoaded did not fire. No error or failure message is shown.</p>
+<p>See this commit to view the project in its non-working state:<br>
+<a href="https://github.com/BlueSlug/sjrk-storyTelling/commit/8c867e61b647c3c3a2dfb4a5c9a1e40ff598f112">https://github.com/BlueSlug/sjrk-storyTelling/commit/8c867e61b647c3c3a2dfb4a5c9a1e40ff598f112</a></p>
+<p>We solved the issue by adding listeners to onResourcesLoaded on each loader component, which then fire an event on the parent templatedComponent to which the aggregate event is subscribed. I.e. we added two new events on the templatedComponent, the aggregate event listens for those, and they are fired from the child components.</p>
+<p>See this commit for the solution:<br>
+<a href="https://github.com/BlueSlug/sjrk-storyTelling/commit/9536b80b6bc1d0aabe5bf7d4463acc602d7ea9bc">https://github.com/BlueSlug/sjrk-storyTelling/commit/9536b80b6bc1d0aabe5bf7d4463acc602d7ea9bc</a></p>
+<p>One thing we noticed with the bug present was that when the storyViewer's messageLoader fires onResourcesLoaded, the storyViewer's lifecycleStatus is "constructing". With the bug fixed, the lifecycleStatus is "treeConstructed". Please see the screenshot for console illustrating this.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Windows 10 &amp; Mac OS, Chrome 61 &amp; Firefox 55</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6202/2017-09-27 composite event bug 01 - console.jpg">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6202/2017-09-27 composite event bug 01 - console.jpg" alt="2017-09-27 composite event bug 01 - console.jpg">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6202/FLUID-6202.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6202/FLUID-6202.png" alt="FLUID-6202.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22323">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2017-10-06T19:31:06.603-0400">2017-10-06T19:31:06.603-0400</relative-time></i></p>
+                        <p>Thanks for this report, which is very interesting. My first impression of looking at your non-working commit is that this is an options merging bug rather than a fault in the event aggregator itself. I suspect if you look at the fully merged options of your templatedComponentWithLocalization (by just dumping <code>that.options</code> once the component has loaded) you will find that the base part of the onAllResourcesLoaded boiled event has gone missing.</p>
+<p>That said, the use you've made of grade inheritance together with incremental event boiling is exactly how the system was meant to be used (this pattern sometimes referred to as "enlatening" - <a href="https://botbot.me/freenode/fluid-work/2017-04-19/?msg=84228828&page=1">https://botbot.me/freenode/fluid-work/2017-04-19/?msg=84228828&amp;page=1</a> ) - the structure of the "events" block was designed just with this use case in mind (that is, to align naturally with respect to a naive merging algorithm) and it's pretty interesting that it has taken nearly 6 years for someone to actually try doing it and find out that it doesn't work. Clearly our merging algorithm isn't naive enough 🙂 </p>
+<p>That said, your observation about the lifecycleStatus casts the suspicion that something more complex is going on, but hopefully it isn't. Note that with the current framework, a component should not attempt to fire any events before its own "onCreate" has fired.</p>
+<p>I'll take a look and try to come up with a fix "forthwith" as they say.</p>
+
+                    </li>
+                    
+                    <li id="comment-22325">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2017-10-09T20:27:49.121-0400">2017-10-09T20:27:49.121-0400</relative-time></i></p>
+                        <p>Well, looks like this idea for the cause of the issue was indeed too simplistic. Here's a test case confirming that the configuration in this case does indeed merge correctly - <a href="https://github.com/fluid-project/infusion/pull/854/files">https://github.com/fluid-project/infusion/pull/854/files</a></p>
+<p>The real cause of the issue is rather more awkward and subtle. The issue is, as you write</p>
+<pre><code class="hljs language-javascript"><span class="hljs-attr">events</span>: {
+                    <span class="hljs-string">"onTemplatesLoaded"</span>: <span class="hljs-string">"{that}.templateLoader.events.onResourcesLoaded"</span>
+                }
+}
+</code></pre>
+<p>the following sequence of things happens, as the framework tries to resolve the IoC reference on the right - <br>
+i) The "templateLoader" component, which at this point does not yet exist, is forced to construct in order to resolve the reference<br>
+ii) Its "onCreate" fires, which triggers loading of resources via the deprecated and cursed fluid.fetchResources implementation<br>
+iii) At this point something interesting happens - you will note that the failure only occurs on the SECOND test in your suite. As it turns out there is some "cleverness" inside fluid.fetchResources in that it maintains a framework-global cache of all I/O it has done on your behalf. Given you are now loading testLocalizationTemplate.html for the second time, and this is the only resource that this component has requested, it satisfies it synchronously from the cache, and "onResourcesLoaded" fires immediately and synchronously as a listener to "onCreate" of the templateLoader - see attached screenshot </p>
+<!-- media: file 79139f6f-9dd4-412a-81ee-078b2d7376c9 -->
+<p> <br>
+iv) By the time control returns to the resolution site in your code, the action has long since finished. The event whose firing you are trying to listen to has already fired before the composite event machinery can attach to it.</p>
+<p>There is a lot going on here, both conceptually and practically - obviously this kind of problem "can never happen" (<a href="http://www.lynchnet.com/ontheair/otascript.html">http://www.lynchnet.com/ontheair/otascript.html</a> - search for "can never happen") but clearly it just did. Whose problem is it to make sure it can never happen? Here are some possibilities:</p>
+<p>i) There is a "prominent religion" that every operation which <strong>could</strong> complete asynchronously, should <strong>always</strong> complete asynchronously. See <a href="https://medium.com/@bluepnume/intentionally-unleashing-zalgo-with-promises-ab3f63ead2fd">https://medium.com/@bluepnume/intentionally-unleashing-zalgo-with-promises-ab3f63ead2fd</a> - by this religion, it is the fault of fluid.fetchResources, and it should always notify asynchronously even if all the data is available synchronously. Note that there is indeed a very crufty branch in the implementation which achieves exactly this result, but, insufferably, just on Mozilla due to some debugging problems we last revisited around 2010: <a href="https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/FluidRequests.js#L361">https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/FluidRequests.js#L361</a></p>
+<p>ii) By the author of the blog post referenced above, there is nothing inherently problematic about the so-called "release of Zalgo" assuming one had a sensible promise calculus for values in the first place. This is indeed part of a long-tabled improvement to Infusion written up at <a href="https://issues.fluidproject.org/browse/FLUID-4883">https://issues.fluidproject.org/browse/FLUID-4883</a> - if "onResourcesLoaded" weren't a standard event but instead this kind of "latch", it would be impossible to "miss" its firing as you did, since you would always catch up with it later, by that same semantic that a subscriber to promise.then() does</p>
+<p>iii) Clearly all the subtlety of points i) and ii) is nonsensical and nothing that an everyday developer should have to grapple with. It should be the framework's business to "naturally do things at the proper time", including making sure to bind all event listeners before any component gets into an event firing stage. This may seem like impossible Jedi mind tricks but in fact is perfectly practical (probably) and is the main purpose of the framework rewrite which is underway at <a href="https://issues.fluidproject.org/browse/FLUID-6148">https://issues.fluidproject.org/browse/FLUID-6148</a> and <a href="https://github.com/fluid-project/infusion/pull/824">https://github.com/fluid-project/infusion/pull/824</a> . Once one considers it legitimate to adopt a global rather than a local view with respect to timing and race issues, all kinds of problems which seemed structurally intractable should just "go away".</p>
+<p>However, given that ii) has been JIRAed over 4 years ago, and work on iii) has stalled since March as I try to deal with "transitional vomit", one is left with the unpalatable religion of i) which at least unlike most religions has in its favour that it is impossibly cheap. Given we plan to axe all of FluidRequests.js anyway, it seems the shortest way out of having people run into these problems in the nearterm to regularise the crufty special-casing in the code linked above and just make sure it notifies asynchronously in all cases on all platforms.</p>
+
+                    </li>
+                    
+                    <li id="comment-22329">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2017-10-18T11:15:20.137-0400">2017-10-18T11:15:20.137-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/infusion/pull/854">The pull request</a> has been merged into the project repo master branch at 4612ab559ec9610b5fe22eb43c9af041ced82ab0</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6201/"><span class="aria-hidden">←</span> Previous: FLUID-6201</a>
+        <a class="mx-1" href="/browse/FLUID-6203/">Next: FLUID-6203 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

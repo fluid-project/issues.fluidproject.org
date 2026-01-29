@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5585  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5585 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5585/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5585/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5585/">FLUID-5585</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5585: Removals from model are never relayed using model relay system</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5585">FLUID-5585</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-01-13T10:23:24.354-0500" prefix="">2015-01-13T10:23:24.354-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-12-14T08:37:28.031-0500" prefix="">2021-12-14T08:37:28.031-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                            <li>Model Transformation System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When using "fluid.transforms.free" to relay the model change to the target, the removal from the source model doesn't get relayed. </p>
+<p>For example, if the initial model starts with: <br>
+{<br>
+a: true,<br>
+b: true<br>
+}</p>
+<p>Then, modify the model to <br>
+{<br>
+a: true<br>
+}</p>
+<p>The modification doesn't get relayed to the target.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22572">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2015-01-13T11:29:30.444-0500">2015-01-13T11:29:30.444-0500</relative-time></i></p>
+                        <p>Sent a pull request with a unit test to demonstrate this issue: <a href="https://github.com/fluid-project/infusion/pull/576">https://github.com/fluid-project/infusion/pull/576</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22575">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-01-13T17:35:08.423-0500">2015-01-13T17:35:08.423-0500</relative-time></i></p>
+                        <p>In fact the relay system is deficient in relaying removal of values of all kinds - the "DELETE" ChangeRequest type has been a 2nd-class citizen for a while and is not properly recognised by any of the relay system. This posed quite a profound-seeming problem at first - discussion in IRC at - <a href="https://botbot.me/freenode/fluid-work/2015-01-13/?msg=29435729&page=1">https://botbot.me/freenode/fluid-work/2015-01-13/?msg=29435729&amp;page=1</a></p>
+<p>Relevant messages pasted here:</p>
+<p>Bosmon: I think we are going to have abandon a previously held dear religion, and start permitting change requests with a value of "undefined" ......<br>
+We'll just have to take care to "armour" them back into DELETE requests whenever we try to transmit them to anyone or store them<br>
+cindyli: ok. but why would that require to permit change requests with a value of "undefined"<br>
+Bosmon: cindyli - well, we need a way to propagate the information about deletions through essentially arbitrary code<br>
+For example, the code fluid.identity<br>
+Now fluid.identity is hardly going to response to a change request of type "DELETE"<br>
+It has no idea what such things are<br>
+The only thing it can respond to is VALUES.... which implies we must have a VALUE WHICH REPRESENTS A DELETION<br>
+7:24 PM cindyli:ok<br>
+7:24 PM Bosmon: Now in JavaScript, our reasonable choices for such a value are extremely limited<br>
+7:24 PM In theory we could send in some special "exotic" value that we could check with a prototype or constructor check<br>
+7:24 PM But this seems rather antireligious in some other ways<br>
+7:25 PM "undefined" has the virtue of meaning almost exactly what we mean - in that after servicing a DELETE, undefined really is the value which we would observe after a read<br>
+7:26 PM It would just require special processing in the changeApplier to honour it with a language-level "delete" rather than sticking it in as a value<br>
+7:26 PM It would mean that the changeApplier then loses the ability to operate on "broken JSON" trees which hold "undefined" as property values, but it never really had this anyway<br>
+7:27 PM Actually as the recent GPII settings handler problems demonstrated, 100% of our architecture, as well as our base libraries such as jQuery, lack the ability to process trees like that anyway<br>
+7:36 PM Well, actually we are stumped<br>
+7:36 PM We have already chosen to use "undefined output value" our convention within the model transformation system to mean "do not propagate any change to output"<br>
+7:44 PM ok, LOO TIME has brought results<br>
+7:45 PM I started to think about falling back onto the "exotic value" system<br>
+7:45 PM but this is also obviously unworkable<br>
+7:45 PM Imagine something like fluid.transforms.linearScale encountering a value OF ANY KIND representing a deletion<br>
+7:46 PM It's obviously never going to have any idea what to do with it<br>
+7:46 PM Unless we special-case the code in each of our transforms, they're obviously going to mishandle it<br>
+7:47 PM So, this obviously has to be handled (to start with) outside the reach of the model transforms system entirely<br>
+7:48 PM Initially it should just be a primitive of the relay system - that any relay rule that receives a DELETE at source/target should just transfer this by default to a DELETE at the other ened<br>
+7:49 PM In the future, I guess, we will have to add in some special casing for oddities like transforms which transform undefined ones into defined ones<br>
+7:49 PM For example, the valueMapper does this in some configurations<br>
+7:51 PM cindyli: ok, i see<br>
+7:52 PM Bosmon: Well ok, thinking further, I think I realise we need to do even more<br>
+7:53 PM <strong>EVERY</strong> relay rule, accepting ANY value of any kind, should immediately begin by deleting the value at the other end - if it thinks it is going to try to relay it<br>
+7:53 PM Only if it succeeds in reestablishing it should the new value be accepted<br>
+7:53 PM Actually I think this succeeds in solving all of our problems immediately<br>
+7:53 PM Including several that we haven't run into yet<br>
+7:54 PM However, trying to implement this new aggressive behaviour may well expose several other bugs lying in the system<br>
+7:55 PM We have been relying, I think, as a kind of "safety net" that the default behaviour of the system is to do nothing, if it encounters some problem with a relay rule<br>
+7:55 PM But the default behaviour of the system will now be to utterly destroy the value at the other end of a relay rule : P<br>
+8:03 PM cindyli: ya, sounds a bit risky. would be safer to save the destroyed value for a future restore when a relay fails<br>
+8:04 PM Bosmon: Well<br>
+8:04 PM We will just have to try it<br>
+8:04 PM Either the relay result is correct or it isn't : P<br>
+8:05 PM We can't have an architecture which depends on accidental "do-nothing" behaviour...<br>
+8:13 PM oh dear<br>
+8:13 PM It appears that an ARCHITECTURAL PROBLEM prevents this simple solution from being very simple<br>
+8:14 PM I may have to just shelve this as yet another problem to be solved when we rewrite the relay system<br>
+8:14 PM Unfortunately the system "has no idea" at the level of change events when an instance of relay is beginning and ending<br>
+8:14 PM What a stupid system<br>
+8:15 PM All of the relays all funnel through fluid.registerDirectChangeRelay<br>
+8:15 PM Which all it does is connect an incoming stream of changes on a target<br>
+8:15 PM This makes it very hard to figure out when to apply the "punctuation" of sending in the DELETE ....<br>
+8:17 PM cindyli: the good thing is, this jira is not blocking anything. we have time<br>
+8:19 PM also, another change applier jira is on its way, you may wanna see that first before coming up with the solution<br>
+8:19 PM Bosmon: ok<br>
+8:19 PM Well, it may be possible to find a quicker path by special-casing the two kinds of transforms<br>
+8:19 PM I've found the place to punctuate transforms which use a full "modelRelay" record<br>
+8:20 PM Bosmon: And if this doesn't cause everything to explode, I can try to extend this to relays which just use implicit relay<br>
+8:32 PM Bosmon: Hey cindyli<br>
+8:32 PM I can now pass your test case : P<br>
+8:32 PM cindyli: what did you do<br>
+8:32 PM Bosmon: And amazingly it seems that nothing else blew up<br>
+8:33 PM I will now extend your test case and my fix to deal with the "implicit relay" case<br>
+8,33 PM cindyli: awesome. thanks, Bosmon<br>
+8:34 PM Bosmon: <a href="https://gist.github.com/amb26/5fcc3816dbd103bdb45d">https://gist.github.com/amb26/5fcc3816dbd103bdb45d</a><br>
+8:34 PM Here's my current diff ....</p>
+
+                    </li>
+                    
+                    <li id="comment-22582">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-10-17T07:54:15.283-0400">2016-10-17T07:54:15.283-0400</relative-time></i></p>
+                        <p>Hi, Antranig Basman and Cindy Li.  I have recently been bitten by this problem, as the gpii-binder uses the "DELETE" type to clear out model variables when form inputs are cleared.</p>
+<p>Check out this example for a disturbing variation on the problem:</p>
+<pre><code class="hljs language-java"><span class="hljs-comment">/* eslint-env node */</span>
+<span class="hljs-string">"use strict"</span>;
+<span class="hljs-type">var</span> <span class="hljs-variable">fluid</span> <span class="hljs-operator">=</span> require(<span class="hljs-string">"infusion"</span>);
+
+fluid.defaults(<span class="hljs-string">"fluid.tests.deleteRelay"</span>, {
+    gradeNames: [<span class="hljs-string">"fluid.modelComponent"</span>],
+    model: {
+        deep: {
+            parentValue: <span class="hljs-literal">true</span>,
+            parentDelete: <span class="hljs-literal">true</span>,
+            childValue: <span class="hljs-literal">true</span>,
+            childDelete: <span class="hljs-literal">true</span>
+        }
+    },
+    components: {
+        child: {
+            type: <span class="hljs-string">"fluid.modelComponent"</span>,
+            options: {
+                model: <span class="hljs-string">"{deleteRelay}.model"</span>
+            }
+        }
+    }
+});
+
+<span class="hljs-type">var</span> <span class="hljs-variable">component</span> <span class="hljs-operator">=</span> fluid.tests.deleteRelay();
+
+console.log(<span class="hljs-string">"parent model before change:"</span>, JSON.stringify(component.model, <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>));
+console.log(<span class="hljs-string">"child model before change:"</span>, JSON.stringify(component.child.model, <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>));
+
+component.applier.change(<span class="hljs-string">"deep.parentValue"</span>, <span class="hljs-string">"new parent value"</span>);
+component.applier.change(<span class="hljs-string">"deep.parentDelete"</span>, <span class="hljs-string">"new parent value"</span>, <span class="hljs-string">"DELETE"</span>);
+
+console.log(<span class="hljs-string">"parent model after parent delete:"</span>, JSON.stringify(component.model, <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>));
+console.log(<span class="hljs-string">"child model after parent delete:"</span>, JSON.stringify(component.child.model, <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>));
+
+
+component.child.applier.change(<span class="hljs-string">"deep.childValue"</span>, <span class="hljs-string">"new child value"</span>);
+component.child.applier.change(<span class="hljs-string">"deep.childDelete"</span>, <span class="hljs-string">"new child value"</span>, <span class="hljs-string">"DELETE"</span>);
+
+console.log(<span class="hljs-string">"parent model after child delete:"</span>, JSON.stringify(component.model, <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>));
+console.log(<span class="hljs-string">"child model after child delete:"</span>, JSON.stringify(component.child.model, <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>));
+</code></pre>
+<p>This results in output like the following:</p>
+<pre><code class="hljs language-java">parent model before change: {
+  <span class="hljs-string">"deep"</span>: {
+    <span class="hljs-string">"parentValue"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"parentDelete"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"childValue"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"childDelete"</span>: <span class="hljs-literal">true</span>
+  }
+}
+child model before change: {
+  <span class="hljs-string">"deep"</span>: {
+    <span class="hljs-string">"parentValue"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"parentDelete"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"childValue"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"childDelete"</span>: <span class="hljs-literal">true</span>
+  }
+}
+parent model after parent delete: {
+  <span class="hljs-string">"deep"</span>: {
+    <span class="hljs-string">"parentValue"</span>: <span class="hljs-string">"new parent value"</span>,
+    <span class="hljs-string">"childValue"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"childDelete"</span>: <span class="hljs-literal">true</span>
+  }
+}
+child model after parent delete: {
+  <span class="hljs-string">"deep"</span>: {
+    <span class="hljs-string">"parentValue"</span>: <span class="hljs-string">"new parent value"</span>,
+    <span class="hljs-string">"parentDelete"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"childValue"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"childDelete"</span>: <span class="hljs-literal">true</span>
+  }
+}
+parent model after child delete: {
+  <span class="hljs-string">"deep"</span>: {
+    <span class="hljs-string">"parentValue"</span>: <span class="hljs-string">"new parent value"</span>,
+    <span class="hljs-string">"childValue"</span>: <span class="hljs-string">"new child value"</span>,
+    <span class="hljs-string">"childDelete"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"parentDelete"</span>: <span class="hljs-literal">true</span>
+  }
+}
+child model after child delete: {
+  <span class="hljs-string">"deep"</span>: {
+    <span class="hljs-string">"parentValue"</span>: <span class="hljs-string">"new parent value"</span>,
+    <span class="hljs-string">"parentDelete"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"childValue"</span>: <span class="hljs-string">"new child value"</span>
+  }
+}
+</code></pre>
+<p>Please note that on the next subsequent change to the child model, the variable that was deleted in the parent is recreated in the parent with the original value.  This is the kind of thing that is likely to come up often in even moderately complex groups of components that use the binder.</p>
+<p>I could use a pairing session to discuss this, if there is no one working on it, I will likely need to address this before my work with the UL can continue.</p>
+
+                    </li>
+                    
+                    <li id="comment-22586">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-10-25T07:34:18.098-0400">2016-10-25T07:34:18.098-0400</relative-time></i></p>
+                        <p>Justin Obara, I'm not sure why you changed the affects version, perhaps to get it off of some rollup list?  IMO it would be better to set the "Affects Version" to a recent release, and to set the "Fix Version" once a release with a verified fix is available.</p>
+
+                    </li>
+                    
+                    <li id="comment-22589">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-10-25T09:13:12.004-0400">2016-10-25T09:13:12.004-0400</relative-time></i></p>
+                        <p>Tony Atkins [RtF] the current intention is that this will be fixed for the Infusion 2.0 release, although that may change based on some discussions today. If the plan is changed, it will be reverted back to affecting 2.0 and the fix for removed or set to some future version.</p>
+
+                    </li>
+                    
+                    <li id="comment-22591">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-10-26T04:13:20.077-0400">2016-10-26T04:13:20.077-0400</relative-time></i></p>
+                        <p>In later discussions it was agreed that it wouldn't be fixed in 2.0: <a href="https://github.com/fluid-project/infusion/pull/577#issuecomment-255371232">https://github.com/fluid-project/infusion/pull/577#issuecomment-255371232</a></p>
+<p>I see that Justin Obara put the right "Affected Version" back in already, so we're good to go.</p>
+
+                    </li>
+                    
+                    <li id="comment-22592">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2017-01-06T10:28:40.233-0500">2017-01-06T10:28:40.233-0500</relative-time></i></p>
+                        <p>The pull request <a href="https://github.com/fluid-project/infusion/pull/577">https://github.com/fluid-project/infusion/pull/577</a> has been merged into the infusion repo master branch at 07cc0d5ba6fe85a4b910751c9db8cec6c501e3bc</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5584/"><span class="aria-hidden">←</span> Previous: FLUID-5584</a>
+        <a class="mx-1" href="/browse/FLUID-5586/">Next: FLUID-5586 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

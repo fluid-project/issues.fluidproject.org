@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-226  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-226 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-226/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-226/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-226/">INFRA-226</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-226: Unable to upload files to the IDRC website</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-226">INFRA-226</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-01-22T15:15:56.811-0500" prefix="">2019-01-22T15:15:56.811-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-05-14T07:35:41.462-0400" prefix="">2020-05-14T07:35:41.462-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Attempting to upload a file to the IDRC website results in an error:</p>
+<p>"<strong>Warning</strong><br>
+Warning: Failed to move file: /var/www/993da6cd/tmp/phplHEZXJ to /var/www/993da6cd/images/IDRC-Child-Safeguarding-Policy.pdf"<br>
+&#160;<br>
+"<strong>Error</strong><br>
+Unable to upload file."<br>
+&#160;To reproduce: # Login</p>
+<ol>
+<li>In the Admin dashboard go to Sidebar &gt; Media &gt; select green "Upload" in the top-left corner.</li>
+<li>Error should occur.</li>
+</ol>
+<p></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26072">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2019-01-22T15:17:00.113-0500">2019-01-22T15:17:00.113-0500</relative-time></i></p>
+                        <p>For now I am working around this issue by uploading the file to the Wiki and then linking to it from the IDRC site.</p>
+
+                    </li>
+                    
+                    <li id="comment-26073">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2020-04-10T18:32:09.370-0400">2020-04-10T18:32:09.370-0400</relative-time></i></p>
+                        <p>Jonathan Hung could you try uploading images directly now? I've changed the settings on that folder to something that may work.</p>
+<pre><code class="hljs"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">chcon</span> system_u:object_r:httpd_sys_rw_content_t:s0 images
+<span class="hljs-built_in">sudo</span> /usr/sbin/semanage fcontext -a -t httpd_sys_rw_content_t /var/www/993da6cd/images
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-26074">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2020-05-14T07:35:41.428-0400">2020-05-14T07:35:41.428-0400</relative-time></i></p>
+                        <p>The IDRC website has been moved from Joomla to Wordpress/static/Netlify, so I'm closing this issue.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-225/"><span class="aria-hidden">←</span> Previous: INFRA-225</a>
+        <a class="mx-1" href="/browse/INFRA-227/">Next: INFRA-227 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

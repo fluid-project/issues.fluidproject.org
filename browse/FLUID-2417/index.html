@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2417  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2417 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2417/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2417/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2417/">FLUID-2417</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2417: InlineEdit has no styling class name for the text field</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2417">FLUID-2417</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-03-30T16:59:05.000-0400" prefix="">2009-03-30T16:59:05.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-05-21T10:30:41.000-0400" prefix="">2009-05-21T10:30:41.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.8</li>
+                            
+                            <li>1.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>InlineEdit is missing a selector for styling the default text. There is a DOM manipulation selector which defaults to "flc-inlineEdit-text" in the new naming scheme. The defaults need to add<br>
+styles: {<br>
+text: "fl-inlineEdit-text"<br>
+}</p>
+<p>The lack of this default selector results in some unpleasant, non-DOM-agnostic CSS selectors in the stylesheets, using "span input", e.g.<br>
+.fl-inlineEdit span input {<br>
+...<br>
+}<br>
+and<br>
+.fl-theme-rust span input {<br>
+...<br>
+}</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-18380">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-05-14T10:29:57.000-0400">2009-05-14T10:29:57.000-0400</relative-time></i></p>
+                        <p>Bug Parade 1.1 release </p>
+
+                    </li>
+                    
+                    <li id="comment-18384">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-05-20T12:15:17.000-0400">2009-05-20T12:15:17.000-0400</relative-time></i></p>
+                        <p>It appears that a class was added during the refactoring before 1.1 "fl-inlineEdit-edit". This has been changed in the themes as well. </p>
+<p>The only thing left is to make sure that it is included in the styles block in fluid.defaults and programatically added in to the necessary elements. </p>
+<p>At the moment it appears also that the default template has the selectors hard coded, instead of  using the options.</p>
+
+                    </li>
+                    
+                    <li id="comment-18388">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2009-05-20T13:53:10.000-0400">2009-05-20T13:53:10.000-0400</relative-time></i></p>
+                        <p>I have added the  "fl-inlineEdit-text" style to the default options. </p>
+<p>We have looked at the further changes - that is, in feeding through any changes in these styles to the template used for rendering, which currently reads, for example -</p>
+<p>var editModeTemplate = "&lt;span&gt;&lt;input type='text' class='flc-inlineEdit-edit fl-inlineEdit-edit'/&gt;&lt;/span&gt;";</p>
+<p>The other option, would be to add code to programmatically alter the styles, once rendering was complete. Either option, would, however, represent a big change in policy for this component.</p>
+<p>As it stands, the "implicit policy" is that the default markup produced, reflects the effect of the default selectors - if any changes are made to the selectors, the renderer should be changed to reflect this, and vice versa. </p>
+
+                    </li>
+                    
+                    <li id="comment-18393">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2009-05-20T15:41:33.000-0400">2009-05-20T15:41:33.000-0400</relative-time></i></p>
+                        <p>I'm re-opening this one, because I think that the style name should not be hard-coded into the default editModeTemplate. Given that it's in the options structure and could be overridden by the user to be a different class name, the class name should be extracted from the option structure and injected into the template.</p>
+<p>Come to think of it, the same should be true of the flc- class in the same template...</p>
+
+                    </li>
+                    
+                    <li id="comment-18398">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2009-05-20T20:12:39.000-0400">2009-05-20T20:12:39.000-0400</relative-time></i></p>
+                        <p>I believe that the behaviour is now correct as it stands, since to change it would result in a breakage of the component's (implicit) contract up till now - which should not occur without at least one release of announcement/deprecation<br>
+etc. if possible. This is actually the contract that all components that we have follow, that generate their markup internally - it looks more egregious here since the class is written in a string rather than being generated by the renderer. </p>
+<p>To be clear - the entire purpose behind allowing selectors to be configurable in components, is to be able to adapt their behaviour to the specific form of the markup which they are supplied. In this case where <strong>no</strong> markup is supplied, that is, the user allows the default renderer to operate, clearly the selectors as they stand are correct! We have <strong>never</strong> advertised that the point of control operates the other way round - that is, that the customisation of components by selectors, can cause an alteration in the markup which they produce. If we start to produce components which operate control in the reverse direction, the direction of control flow amongst the "community" of users using a component becomes unclear, and they could not be given a consistent set of instructions about what to expect from a Fluid component - these would change according to whether it was capable of generating markup or not.</p>
+<p>So - I argue that the behaviour as it stands now is correct - the ultimate "point of control" rests with the component user who customises the markup it operates on. Only in the case that this markup is changed, should the selectors that the component is configured with change. For this component, the markup may be changed either i) literally, by writing markup in the HTML file, or ii) by customising the "edit mode renderer" - in both of these cases, the hard-coded markup written inside the component is bypassed.</p>
+<p>The correctness of this reasoning, at least in the case of the "flc" selectors, is also reflected by a logical impossibility - these selectors are "free", in that the user may customise them to any value. However, it is not possible to write a closed-form implementation of the edit mode renderer which is capable of matching all user choices. This verifies that the "flow of control" properly passes from markup customisers to component customisers, and not the other way round.</p>
+
+                    </li>
+                    
+                    <li id="comment-18404">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2009-05-21T09:17:56.000-0400">2009-05-21T09:17:56.000-0400</relative-time></i></p>
+                        <p>Antranig's explanation of this makes complete sense to me (I'm easily convinced by good arguments). I will stress that this needs to be documented clearly, but I agree that the current behaviour is correct.</p>
+
+                    </li>
+                    
+                    <li id="comment-18407">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-05-21T10:30:41.000-0400">2009-05-21T10:30:41.000-0400</relative-time></i></p>
+                        <p>Verified fix using:</p>
+<p>FF2, FF3, Opera 9.6, Safari 3.1 (Mac OS 10.5)<br>
+IE 7, IE 8, FF3 (Win Vista)</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-2416/"><span class="aria-hidden">←</span> Previous: FLUID-2416</a>
+        <a class="mx-1" href="/browse/FLUID-2418/">Next: FLUID-2418 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

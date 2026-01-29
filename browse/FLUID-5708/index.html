@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5708  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5708 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5708/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5708/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5708/">FLUID-5708</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5708: On off toggle styling needs to be update due to overflow into adjacent panels</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5708">FLUID-5708</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Kaye%20Mao">Kaye Mao</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-07-16T14:23:36.895-0400" prefix="">2015-07-16T14:23:36.895-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-04-10T15:12:41.035-0400" prefix="">2017-04-10T15:12:41.035-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>To replicate navigate to infusion/examples/framework/preferences/conditionalAdjusters/</p>
+<p>Make sure there are no elements before the toggle as the vertical spacing providing by the elements will prevent the bug from triggering.</p>
+<p>Click on/off toggle, in the "on" state, there will be overflow onto the adjacent panels.</p>
+<p>figure 1. In css, remove overflow hidden for the toggle. Toggling "on" in the speaking panel causes overflow into the increase size panel pushing the header down</p>
+<p>figure 2. In css, remove "list-style: hidden". Assuming it's an overflow issue, the overflow onto adjacent panels is entirely fixed but the styling for the on-toggle is broken. Meanwhile the off-toggle is not affected. <br>
+Removing resetting list-style to default in css fixes the overflow issue.</p>
+<p>figure 3. There is an input checkbox hidden with css according to a foundation hack (see link below) that requires a "position: absolute" that when revealed is about the same size as the overflow space. <br>
+Unhiding the hidden checkbox also fixes the overflow issue</p>
+<p>Other notes: figure 4. display-inline will temporarily fix the issue as it will align the space for the hidden checkbox with the space for the visible toggle. However it introduces the overflow issues into the prefs framework demo. Most likely caused by some combination of the toggle styling and hidden checkbox. </p>
+<p>Suggested solution is to completely refactor the styling and semantics of the on/off toggle to make the toggle more robust and resolve this issue moving forward.</p>
+<p>—</p>
+<p>The foundation hack that is applied to the checkbox to make it visibly hidden but accessible: <br>
+Show for screen readers only<br>
+<a href="http://foundation.zurb.com/docs/components/visibility.html">http://foundation.zurb.com/docs/components/visibility.html</a></p>
+<p>.show-for-sr {<br>
+clip: rect(1px, 1px, 1px, 1px);<br>
+height: 1px;<br>
+overflow: hidden;<br>
+position: absolute !important;<br>
+width: 1px;<br>
+}</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-5708/figure1.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-5708/figure1.png" alt="figure1.png">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-5708/figure2.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-5708/figure2.png" alt="figure2.png">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-5708/figure3.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-5708/figure3.png" alt="figure3.png">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-5708/figure4.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-5708/figure4.png" alt="figure4.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22062">
+                        <p class="mb-0"><b>Kaye Mao</b> <i>commented <relative-time datetime="2015-08-12T09:58:21.112-0400">2015-08-12T09:58:21.112-0400</relative-time></i></p>
+                        <p>New user interface styling includes new toggles <a href="/browse/FLUID-5738/">FLUID-5738</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22064">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-07-11T14:48:32.365-0400">2016-07-11T14:48:32.365-0400</relative-time></i></p>
+                        <p>The figures attachments are missing; however due to the detailed descriptions, complexity of recreation, and need to completely refactor, I have not replaced them at this time. If someone has time to do that in the future before the on/off toggles are refactored, it would be appreciated.</p>
+
+                    </li>
+                    
+                    <li id="comment-22067">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-01-19T13:54:35.662-0500">2017-01-19T13:54:35.662-0500</relative-time></i></p>
+                        <p>The on/off toggles should be restyled as per new designs ( <a href="https://wiki.fluidproject.org/display/fluid/%28Floe%29+User+Interface+%28Learner%29+Options+Mobile+and+Responsive+Design">https://wiki.fluidproject.org/display/fluid/(Floe)+User+Interface+(Learner)+Options+Mobile+and+Responsive+Design</a> ) </p>
+
+                    </li>
+                    
+                    <li id="comment-22069">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-01-19T15:08:29.757-0500">2017-01-19T15:08:29.757-0500</relative-time></i></p>
+                        <p>Look into reusing code developed in this PR <a href="https://github.com/fluid-project/infusion/pull/726">https://github.com/fluid-project/infusion/pull/726</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22072">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-02-09T15:05:54.535-0500">2017-02-09T15:05:54.535-0500</relative-time></i></p>
+                        <p>The on/off toggles should respond to the "inputs larger" adjuster.</p>
+
+                    </li>
+                    
+                    <li id="comment-22074">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-02-14T09:44:10.660-0500">2017-02-14T09:44:10.660-0500</relative-time></i></p>
+                        <p>First pass at styling using :before and :after pseudo elements. I'm afraid that this will be brittle though.<br>
+<a href="https://jsfiddle.net/cu09c3st/6/">https://jsfiddle.net/cu09c3st/6/</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22077">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-02-14T15:06:09.589-0500">2017-02-14T15:06:09.589-0500</relative-time></i></p>
+                        <p>Another options with more structure. Could clean up the CSS and class usage.<br>
+<a href="https://jsfiddle.net/zxm507Lg/1/">https://jsfiddle.net/zxm507Lg/1/</a></p>
+<p>Working implementation on Safari and Chrome:<br>
+<a href="https://jsfiddle.net/zxm507Lg/8/">https://jsfiddle.net/zxm507Lg/8/</a></p>
+<p>Cross-browser working implementation:<br>
+<a href="https://jsfiddle.net/zxm507Lg/11/">https://jsfiddle.net/zxm507Lg/11/</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22080">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2017-04-03T15:18:18.781-0400">2017-04-03T15:18:18.781-0400</relative-time></i></p>
+                        <p>The pull request <a href="https://github.com/fluid-project/infusion/pull/811">https://github.com/fluid-project/infusion/pull/811</a> has been merged into the project repo master branch at bc7374793cd254f84b56750e9c10c3660398d4e1</p>
+
+                    </li>
+                    
+                    <li id="comment-22082">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2017-04-10T15:12:41.035-0400">2017-04-10T15:12:41.035-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/infusion-docs/pull/119">The respective infusion-docs pull request</a> has been merged into the project repo master branch at 47114433f7ac15feafffc594080118e1f6732eae</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5707/"><span class="aria-hidden">←</span> Previous: FLUID-5707</a>
+        <a class="mx-1" href="/browse/FLUID-5709/">Next: FLUID-5709 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

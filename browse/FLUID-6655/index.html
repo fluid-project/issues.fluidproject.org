@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6655  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6655 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6655/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6655/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6655/">FLUID-6655</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6655: redesign text style preference around types of fonts instead of specific ones</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6655">FLUID-6655</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-07-06T12:55:39.440-0400" prefix="">2021-07-06T12:55:39.440-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2022-11-17T12:56:49.728-0500" prefix="">2022-11-17T12:56:49.728-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UIEnhancer</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The current design for the text style preference is to provide a list of fonts to choose to apply to the page. I believe these were initially picked from common system fonts but they don't always work across platform.</p>
+<p>As a potential redesign, we could have something like the following:</p>
+<ul>
+<li>default ( uses the font specified by the site )</li>
+<li>system (uses the default system font e.g. <a href="https://caniuse.com/?search=system-ui">system-ui</a> )</li>
+<li>serif</li>
+<li>sans serif</li>
+<li>OpenDyslexic</li>
+</ul>
+<p>This would hopefully allow for easier implementation both for developing UIO and for those integrating. And allow for things like font pairings to emphasize portions of the content when using the serif and sans serif options.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25204">
+                        <p class="mb-0"><b>Caren Watkins</b> <i>commented <relative-time datetime="2021-07-30T12:09:54.032-0400">2021-07-30T12:09:54.032-0400</relative-time></i></p>
+                        <p>I think a positive to this idea is the potential for more personalized choice. A challenge is meaning of these more general terms. If Serif and Sans were rendered in clearly Serif and Sans fonts that could help. Default and System could be explored by a user by interacting with them but the meaning–info you have in brackets–would not be clear.</p>
+<ul>
+<li>default ( uses the font specified by the site )</li>
+<li>system (uses the default system font e.g.&#160;<a href="https://caniuse.com/?search=system-ui">system-ui</a>&#160;)
+<ul>
+<li>for those who know how to change the system font to their preferred font–would default (because they've over ridden the site specified font) and system choices be the same font for them?</li>
+</ul>
+</li>
+<li>serif
+<ul>
+<li>Would the word SERIF be visually rendered as a serif in the menu?</li>
+<li>when chosen does the UIO have a list of preferred serifs that it will ask the system to find? For example, first Georgia, second Times, if no luck any serif available.</li>
+</ul>
+</li>
+<li>sans serif
+<ul>
+<li>same questions as above</li>
+</ul>
+</li>
+<li>OpenDyslexic</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-25205">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2021-08-03T08:29:54.609-0400">2021-08-03T08:29:54.609-0400</relative-time></i></p>
+                        <p>Hi Caren Watkins, thanks for the feedback.</p>
+<p>I don't know if we'll be able to render the options in the same/similar font to what will be applied. We've tried that in the past with limited success. It worked in some browsers but not others. We'd have to see what's available with current CSS, or possibly a custom select box.</p>
+<p>Regarding <a href="https://drafts.csswg.org/css-fonts-4/#valdef-font-family-system-ui">system-ui</a>, it should pick up the OS's font. I don't know if that just means it's default option, or if it means the current. I'd assume the latter, but we'd have to do a bit of testing to determine. If the user had changed their browser's default style sheet, it may be that the site is already presented with whatever is used by the system, this might also be the case if the site itself used the same font.</p>
+<p>For the serif and sans-serif options we would probably either just use the generic font-family (serif, sans-serif, ui-serif, ui-sans-serif) but could also pre-specify some. We're also probably going to move to an option where the site integrator will have more choice over what those actually become (see: <a href="/browse/FLUID-6605/">FLUID-6605</a>). So the user would specify serif, but the site integrator might have different fonts specified to actually enact that preference. This could also be used to provide different font pairings for headers vs content, although they'd both be in the sans-serif or serif. In theory with an approach such as in <a href="/browse/FLUID-6605/">FLUID-6605</a> the integrator would have more freedom for how all of the options are actually enacted.</p>
+
+                    </li>
+                    
+                    <li id="comment-25206">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2021-08-03T09:05:52.232-0400">2021-08-03T09:05:52.232-0400</relative-time></i></p>
+                        <p>Here's a <a href="https://codepen.io/jobara/full/bGWjMWx">codepen example</a> to test out system-ui, serif, and sans-serif across platforms.</p>
+<p><a href="https://codepen.io/jobara/full/bGWjMWx">https://codepen.io/jobara/full/bGWjMWx</a></p>
+
+                    </li>
+                    
+                    <li id="comment-25207">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2022-11-17T12:56:27.059-0500">2022-11-17T12:56:27.059-0500</relative-time></i></p>
+                        <p>Added a new issue for system-ui, <a href="/browse/FLUID-6754/">FLUID-6754</a>.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6654/"><span class="aria-hidden">←</span> Previous: FLUID-6654</a>
+        <a class="mx-1" href="/browse/FLUID-6656/">Next: FLUID-6656 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

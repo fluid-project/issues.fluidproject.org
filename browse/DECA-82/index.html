@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> DECA-82  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" DECA-82 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/DECA-82/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/DECA-82/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/DECA" data-pagefind-filter="project">Decapod</a></li>
+                <li><a href="/browse/DECA-82/">DECA-82</a></li>
+            </ol>
+        </nav>
+        <h1>DECA-82: Change file name format and path</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/DECA-82">DECA-82</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/DECA/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/DECA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/DECA/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-03-23T11:00:03.000-0400" prefix="">2010-03-23T11:00:03.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2012-01-10T09:48:20.993-0500" prefix="">2012-01-10T09:48:20.993-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Server</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Change the image path and filename so that it is not dependent on /testData/capturedImages and the file name should be better named with an appropriate index. (i.e. "Decapod-0001.jpg").</p>
+<p>This may be resolved by supporting the Ocropus directory stucture.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10446">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-06-25T12:48:41.710-0400">2010-06-25T12:48:41.710-0400</relative-time></i></p>
+                        <p>As part of addressing hard-baked paths throughout the server for <a href="/browse/DECA-113/">DECA-113</a>, I moved the location of all captured images into configuration. The default is a directory called "captured-images" inside the server directory, but it can now be configured to any other path location as necessary.</p>
+
+                    </li>
+                    
+                    <li id="comment-10447">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-06-25T12:49:22.683-0400">2010-06-25T12:49:22.683-0400</relative-time></i></p>
+                        <p>Jon, can you elaborate on the second half of this issue, related to file names? Currently images are saved as "Image01.jpg". Can you be more specific about how you think files should be named, and why?</p>
+
+                    </li>
+                    
+                    <li id="comment-10448">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-06-25T14:22:13.618-0400">2010-06-25T14:22:13.618-0400</relative-time></i></p>
+                        <p>I spoke to Jonathan in the channel about this issue, and he elaborated:</p>
+<p>jhung: Two issues: 1. The path should be something more logical.<br>
+[1:48pm] jhung: 2. The Image filenames should be expanded to use padded zeroes instead of "Image1.jpg" etc.<br>
+[1:48pm] jhung: The note about the Ocropus directory structure deals with both these issues - file naming and directory structure as it relates to book structure<br>
+...<br>
+[1:48pm] colinclark: ok, so #1 is fixed<br>
+[1:48pm] colinclark: By default, captured images go into a "captured-images" directory inside the server, but this can be configured to be anywhere<br>
+[1:48pm] colinclark: #2 is basically padding<br>
+[1:48pm] colinclark: How many zeroes do we want?<br>
+[1:49pm] colinclark: 0001 seem about right?<br>
+[1:49pm] jhung: 4 should be sufficient.<br>
+[1:49pm] jhung: 0001 - 9999</p>
+
+                    </li>
+                    
+                    <li id="comment-10449">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-07-14T00:40:39.467-0400">2010-07-14T00:40:39.467-0400</relative-time></i></p>
+                        <p>This was resolved fully at revision d6b270809a by packaging up all book-related content into a single directory structure and naming all images as specified in the comments on this ticket.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/DECA-21/"><span class="aria-hidden">←</span> Previous: DECA-21</a>
+        <a class="mx-1" href="/browse/DECA-83/">Next: DECA-83 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

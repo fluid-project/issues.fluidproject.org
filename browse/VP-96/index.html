@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-96  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-96 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-96/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-96/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-96/">VP-96</a></li>
+            </ol>
+        </nav>
+        <h1>VP-96: When keyboard used to activate Play button, tooltip remains visible but doesn't switch to "Pause"</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-96">VP-96</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Cannot%20Reproduce">Cannot Reproduce</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-08-09T11:22:02.017-0400" prefix="">2012-08-09T11:22:02.017-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-01-28T09:25:22.816-0500" prefix="">2013-01-28T09:25:22.816-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>keyboard-a11y</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-27235">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-08-31T14:23:57.285-0400">2012-08-31T14:23:57.285-0400</relative-time></i></p>
+                        <p>A JQuery UI ticket was opened: <a href="http://bugs.jqueryui.com/ticket/8544">http://bugs.jqueryui.com/ticket/8544</a></p>
+<p>Also an IM conversation attached:<br>
+[10:19] &lt;michelled&gt; hi scott_gonzalez, are you around?<br>
+[10:20] &lt;scott_gonzalez&gt; hey michelled<br>
+[10:20] &lt;michelled&gt; I have a question for you about the jQuery ui tooltip - we've found a little bug in it and I'm wondering where we should report it<br>
+[10:20] &lt;michelled&gt; I guess since it hasn't been released it it's not in Trac<br>
+[10:21] &lt;scott_gonzalez&gt; Oh, I guess I should add the new plugins to Trac now that we've had beta and rc releases.<br>
+[10:21] &lt;scott_gonzalez&gt; Give me one sec and I'll add them.<br>
+[10:21] &lt;michelled&gt; thanks!<br>
+[10:22] &lt;scott_gonzalez&gt; done<br>
+[10:22] &lt;michelled&gt; great <br>
+[10:22] &lt;michelled&gt; alexn: in your example, you used the rc for the jQuery UI tooltip, right?<br>
+[10:23] &lt;alexn&gt; michelled: let me double check<br>
+[10:23] &lt;alexn&gt; michelled: well it says 1.9m1 in a version.txt file but I tried to get the last one<br>
+[10:23] &lt;alexn&gt; the latest version I mean<br>
+[10:27] &lt;michelled&gt; alexn: ok, great - can you open a ticket in the jQuery Trac then?<br>
+[10:28] &lt;scott_gonzalez&gt; 1.9m1 is pretty old.<br>
+[10:28] &lt;scott_gonzalez&gt; alexn: You can get the rc from <a href="http://code.jquery.com/ui/1.9.0-rc.1/jquery-ui.js">http://code.jquery.com/ui/1.9.0-rc.1/jquery-ui.js</a><br>
+[10:29] &lt;scott_gonzalez&gt; and the theme: <a href="http://code.jquery.com/ui/1.9.0-rc.1/themes/base/jquery-ui.css">http://code.jquery.com/ui/1.9.0-rc.1/themes/base/jquery-ui.css</a><br>
+[10:29] &lt;alexn&gt; scott_gonzalez: ok I will try rc1 to see if the issue we found still persists with the new code<br>
+[10:34] &lt;michelled&gt; alexn: if you find that the bug still exists, please follow the community standards on reporting the bug: <a href="http://wiki.jqueryui.com/w/page/35263118/How-to-Report-Bugs">http://wiki.jqueryui.com/w/page/35263118/How-to-Report-Bugs</a><br>
+[10:34] &lt;alexn&gt; sure michelled<br>
+[10:36] &lt;michelled&gt; alexn: here's the Tooltip wiki page in case it helps: <a href="http://wiki.jqueryui.com/w/page/12138112/Tooltip">http://wiki.jqueryui.com/w/page/12138112/Tooltip</a><br>
+[10:57] &lt;alexn&gt; michelled: so I recreated an issue using 1.9RC and pushed it to my gihub <a href="https://github.com/anvk/tooltip.example">https://github.com/anvk/tooltip.example</a><br>
+[11:45] &lt;alexn&gt; michelled: the ticket is here <a href="http://bugs.jqueryui.com/ticket/8544">http://bugs.jqueryui.com/ticket/8544</a> and there is one answer already<br>
+[11:53] &lt;scott_gonzalez&gt; alexn: What are you actually trying to do?<br>
+[11:54] &lt;scott_gonzalez&gt; The example looks contrived.<br>
+[11:55] &lt;michelled&gt; hey scott_gonzalez, we are building an HTML5 video player, and the specific place where we wanted to change the tooltip was for the play/pause button<br>
+[11:56] &lt;scott_gonzalez&gt; Ok, let me put together a demo showing how to do that.<br>
+[11:58] &lt;alexn&gt; scott_gonzalez: I added a comment with the usecase to the ticket<br>
+[12:01] &lt;scott_gonzalez&gt; <a href="http://jsbin.com/uxoyan/1/edit">http://jsbin.com/uxoyan/1/edit</a><br>
+[12:02] &lt;scott_gonzalez&gt; scroll down to the end of the &lt;script&gt; block<br>
+[12:04] &lt;scott_gonzalez&gt; Perhaps we should track open tooltips and reinvoke the content method if it changes?<br>
+[12:06] &lt;scott_gonzalez&gt; I don't think this would be too bad to add.<br>
+[12:07] &lt;scott_gonzalez&gt; Actually, let me work from your example.<br>
+[12:12] &lt;scott_gonzalez&gt; Hmm...yeah, there doesn't seem to be a good way to abstract this. I'll talk to the team about making this change.<br>
+[12:26] &lt;scott_gonzalez&gt; alexn: We're going to make the change.</p>
+
+                    </li>
+                    
+                    <li id="comment-27237">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-09-04T10:01:58.586-0400">2012-09-04T10:01:58.586-0400</relative-time></i></p>
+                        <p>Fix resides in the latest trunk of JQuery UI. See above ticket for this</p>
+<p>Since the fix is not even a part of JQuery UI 1.9 RC the only one way to update it so far is to backport it. <br>
+You will find that _on method is missing from the widget prototype if you copy tooltip code into the currently used Infusion. But after adding this missing _on() function the layout of the videoPlayer is broken. No idea why and what causes it.</p>
+<p>Even if the fix for the tooltip will get to the JQuery UI 1.9RC updating currently used JQuery UI in Infusion will require lots of testing and may cause changes/broken code in many many places. </p>
+
+                    </li>
+                    
+                    <li id="comment-27239">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2013-01-21T12:51:33.311-0500">2013-01-21T12:51:33.311-0500</relative-time></i></p>
+                        <p>This no longer seems to be an issue. Checked with FF, Chrome, and Safari.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-14/"><span class="aria-hidden">←</span> Previous: VP-14</a>
+        <a class="mx-1" href="/browse/VP-103/">Next: VP-103 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-76  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-76 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-76/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-76/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-76/">VP-76</a></li>
+            </ol>
+        </nav>
+        <h1>VP-76: When keyboard focus lands on video, screen readers don't say reasonable things</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-76">VP-76</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-08-09T12:03:03.699-0400" prefix="">2012-08-09T12:03:03.699-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-12-10T06:22:19.743-0500" prefix="">2014-12-10T06:22:19.743-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Jaws+FF:<br>
+When focus lands on the video, Jaws says "Use Jaws key plus alt plus R to read the script of text." Note that pressing Ins+Alt+R does nothing.</p>
+<p>NVDA+FF:<br>
+When focus lands on the video, NVDA says "application grouping section."</p>
+<p>VoiceOver+Safari:<br>
+When focus lands on the video, VoiceOver says "group."</p>
+<p>Jaws+IE9:<br>
+When focus lands on the video (and Jaws is in application mode), Jaws says "video"</p>
+<p>NVDA+IE9:<br>
+When focus lands on the video, NVDA speaks everything in it that's text: the time codes, the content of the language menus, the caption, etc (regardless of whether NVDA is in focus or browse mode)</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>NVDA, Jaws and VoiceOver with FF and Safari and IE9</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26770">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-08-21T13:24:52.825-0400">2012-08-21T13:24:52.825-0400</relative-time></i></p>
+                        <p>in my <a href="https://github.com/anvk/videoPlayer/tree/FLUID-4748">https://github.com/anvk/videoPlayer/tree/FLUID-4748</a> aria-label is been added so that at at least Safari and FF have some kinda proper response from screen readers.</p>
+
+                    </li>
+                    
+                    <li id="comment-26771">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-08-21T14:16:34.900-0400">2012-08-21T14:16:34.900-0400</relative-time></i></p>
+                        <p>Safari + VoiceOver = says "Infusion Video Player with 4 items. Application."</p>
+<p>FF + NVDA = says "Infusion Video Player grouping. Section."<br>
+IE + NVDA = reads out the whole content of the videoPlayer. If you tab backwards instead of reading the whole content of a videoPlayer a screen reader reads "video grouping"<br>
+Chrome + NVDA = says "blank". Even if you add aria-label to all div's including &lt;video&gt; tag Chrome refuses to read out the label for a videoPlayer</p>
+<p>FF + JAWS = "group box". Adding aria-label to any of the div's would not change anything.<br>
+Chrome + JAWS = "Insert F1 L. Video player button". No idea where this text even comes from <br>
+IE + JAWS = silence</p>
+
+                    </li>
+                    
+                    <li id="comment-26772">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2012-10-05T11:50:26.022-0400">2012-10-05T11:50:26.022-0400</relative-time></i></p>
+                        <p>We discussed this pull request in the channel and decided that we should try for a different solution: <br>
+<a href="http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2012-10-05">http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2012-10-05</a></p>
+<p>It would be a better user experience for the user if the title of the video is read out when the video container gets focus. <br>
+Let's attempt to put a title on the video element and use labelled by to have it read. </p>
+
+                    </li>
+                    
+                    <li id="comment-26773">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-10-10T16:34:53.642-0400">2012-10-10T16:34:53.642-0400</relative-time></i></p>
+                        <p>Notes: both a 'title' attribute and an 'aria-label' attribute on the video element will be read by Jaws and NVDA (not VoiceOver). The 'title' attribute is read twice, for some reason. Because of this, I feel the 'aria-label' is a better choice.</p>
+<p>Another note: the aria-label is read, but nothing is spoken that actually indicates that this is a video. I recommend prefacing the title with something like "Video: " so that you'd here "Video: Mammals" for example.</p>
+
+                    </li>
+                    
+                    <li id="comment-26774">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2012-10-22T10:37:59.508-0400">2012-10-22T10:37:59.508-0400</relative-time></i></p>
+                        <p>Merged into project repo at 436e45412c61e0ed25152d74970643545d64cc13</p>
+
+                    </li>
+                    
+                    <li id="comment-26775">
+                        <p class="mb-0"><b>Ravish Tiwari</b> <i>commented <relative-time datetime="2014-12-10T06:22:19.743-0500">2014-12-10T06:22:19.743-0500</relative-time></i></p>
+                        <p>it seems that this issue is still not resolved.<br>
+this can verified on Fluid Player demo site: <a href="http://build.fluidproject.org/videoPlayer/demos/Mammals.html">http://build.fluidproject.org/videoPlayer/demos/Mammals.html</a><br>
+With IE, when Keyboard focus lands on Video Player, it says:<br>
+<em>grouping, video grouping</em> and completely ignores aria-label provided. </p>
+<p>verified using:</p>
+<ul>
+<li>Firefox Developer Edition : 36.0a2 and NVDA 2014.4 : <strong>Working fine</strong></li>
+<li>IE 11 and NVDA 2014.4 : reading <em>grouping, video grouping</em> and completely ignores aria-label provided. </li>
+<li>Chrome 39 and and NVDA 2014.4 : <strong>Working fine</strong></li>
+</ul>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-162/"><span class="aria-hidden">←</span> Previous: VP-162</a>
+        <a class="mx-1" href="/browse/VP-52/">Next: VP-52 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1148  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1148 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1148/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1148/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1148/">FLUID-1148</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1148: Implement new "Drop Manager" for the Reorderer</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1148">FLUID-1148</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-08-14T21:04:01.000-0400" prefix="">2008-08-14T21:04:01.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-02-22T16:27:49.007-0500" prefix="">2011-02-22T16:27:49.007-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Image Reorderer</li>
+                            
+                            <li>Layout Reorderer</li>
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>A great many bugs and inconsistencies, as well as performance issues, are caused by our use of the standard JQuery UI "ui.droppable" drop manager. These can only be decisively resolved by implementing a complete replacement for its drop model, which is more suited to the use case of reordering.</p>
+<p>In outline, the issues arise because of the "razor edged" drop target detection in ui.droppable - a drop target is only recognised if the mouse pointer is definitely within the bounds of the DOM element nominated as a "drop target". However, for the case of reordering, a more "soft-edged" approach is appropriate - there are many cases (e.g. <a href="/browse/FLUID-1125/">FLUID-1125</a>, <a href="/browse/FLUID-1127/">FLUID-1127</a>, <a href="/browse/FLUID-148/">FLUID-148</a>) where the appropriate UI response is to map the drop target to the "geometrically nearest" position to the mouse cursor, rather than to either assume there is no target, or revert to the last target, which are the only two options available with the "razor edge" distance model.</p>
+<p>Also, several performance problems are traceable to ui.droppable - the "prepareOffsets" method is extremely expensive and is currently tied to the dragStart point of the lifecycle. It would be preferable to be able to compute the relevant DOM dimensions in user idle time after the drag proper has started. Finally, our use of the ui.droppable manager is awkward since the "left/right" logic required to spot previous/after drop targets has to be done by a raw mouse listener on a parallel lifecycle to the main drop notification. It would be preferable and more efficient to have this factored back behind a single, tractable interface, as well as to eliminate as much as we can of in-memory garbage created during a drag cycle.</p>
+<p>dev-iteration42</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20070">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-09-07T17:59:05.000-0400">2008-09-07T17:59:05.000-0400</relative-time></i></p>
+                        <p>Drop Manager, Dom Permutation work merged back into trunk at revision 5476</p>
+
+                    </li>
+                    
+                    <li id="comment-20072">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2011-02-22T16:27:49.005-0500">2011-02-22T16:27:49.005-0500</relative-time></i></p>
+                        <p>Closing issues that were resolved for 1.0 and earlier releases. </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1147/"><span class="aria-hidden">←</span> Previous: FLUID-1147</a>
+        <a class="mx-1" href="/browse/FLUID-1150/">Next: FLUID-1150 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

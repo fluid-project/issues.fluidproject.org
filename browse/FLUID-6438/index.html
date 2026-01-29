@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6438  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6438 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6438/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6438/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6438/">FLUID-6438</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6438: ContextAwareness grades can be applied too late to affect earlier dynamic grades</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6438">FLUID-6438</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-12-04T11:44:45.835-0500" prefix="">2019-12-04T11:44:45.835-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:17.105-0400" prefix="">2024-07-22T10:35:17.105-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This issue arose during the reworking of the prefs framework builder for <a href="/browse/FLUID-6420/">FLUID-6420</a>, currently in <a href="https://github.com/fluid-project/infusion/pull/967">https://github.com/fluid-project/infusion/pull/967</a>. In this case, the contextAwareness grade was contributed into&#160;fluid.uiOptions from the external driver in the index file at&#160;<a href="https://github.com/fluid-project/infusion/blob/7feff39c64a2bbb2f31245c7fbd3edb1761e250a/demos/prefsFramework/index.html">https://github.com/fluid-project/infusion/blob/7feff39c64a2bbb2f31245c7fbd3edb1761e250a/demos/prefsFramework/index.html</a></p>
+<pre><code class="hljs language-java">prefsEditor = fluid.uiOptions(<span class="hljs-string">".flc-prefsEditor-separatedPanel"</span>, {
+                    gradeNames: [<span class="hljs-string">"demo.prefsEditor.progressiveEnhancement"</span>],
+                    preferences: [
+                        <span class="hljs-string">"fluid.prefs.textSize"</span>,
+                        <span class="hljs-string">"fluid.prefs.lineSpace"</span>,
+                        <span class="hljs-string">"fluid.prefs.textFont"</span>,
+                        <span class="hljs-string">"fluid.prefs.contrast"</span>,
+                        <span class="hljs-string">"fluid.prefs.tableOfContents"</span>,
+                        <span class="hljs-string">"fluid.prefs.enhanceInputs"</span>,
+                        <span class="hljs-string">"fluid.prefs.letterSpace"</span>,
+                        <span class="hljs-string">"fluid.prefs.wordSpace"</span>,
+                        <span class="hljs-string">"fluid.prefs.syllabification"</span>,
+                        <span class="hljs-string">"demo.prefs.simplify"</span>
+                    ],
+</code></pre>
+<p>with demo.prefsEditor.progressiveEnhancement as</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"demo.prefsEditor.progressiveEnhancement"</span>, {
+        gradeNames: [<span class="hljs-string">"fluid.contextAware"</span>],
+        contextAwareness: {
+            textToSpeech: {
+                checks: {
+                    supportsTTS: {
+                        contextValue: <span class="hljs-string">"{fluid.supportsTTS}"</span>,
+                        gradeNames: <span class="hljs-string">"demo.prefsEditor.speak"</span>
+                    }
+                }
+            }
+        }
+    });
+</code></pre>
+<p>From the front, the grade fluid.prefs.auxBuilder is applied as</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.prefs.auxBuilder"</span>, {
+        gradeNames: [<span class="hljs-string">"fluid.prefs.auxSchema"</span>, <span class="hljs-string">"{that}.buildAuxiliary"</span>],
+        mergePolicy: {
+            elementCommonOptions: <span class="hljs-string">"noexpand"</span>
+        },
+        invokers: {
+            <span class="hljs-comment">// An invoker used to generate a set of grades that comprise a</span>
+            <span class="hljs-comment">// final version of the auxiliary schema to be used by the PrefsEditor</span>
+            <span class="hljs-comment">// builder.</span>
+            buildAuxiliary: {
+                funcName: <span class="hljs-string">"fluid.prefs.auxBuilder.buildAuxiliary"</span>,
+                args: [
+                    <span class="hljs-string">"{that}.options.indexes.auxSchema"</span>,
+                    <span class="hljs-comment">// "{that}.options.preferences"</span>
+                    <span class="hljs-comment">// "{that}.options.prefsPrioritized"</span>
+                    <span class="hljs-string">"{that}.options.prefsMerged"</span>
+                ]
+            }
+        },
+</code></pre>
+<p>which consumes "{that}.options.prefsMerged" whose definition in turn is in</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.prefs.builder"</span>, {
+        gradeNames: [
+            <span class="hljs-string">"fluid.prefs.primaryBuilder"</span>,
+            <span class="hljs-string">"fluid.prefs.auxBuilder"</span>,
+            <span class="hljs-string">"{that}.applyAssemblerGrades"</span>
+        ],
+        mergePolicy: {
+            preferences: <span class="hljs-string">"replace"</span>,
+            prefsPrioritized: {
+                noexpand: <span class="hljs-literal">true</span>,
+                func: fluid.deferredMergePolicy
+            }
+        },
+        invokers: {
+            applyAssemblerGrades: {
+                funcName: <span class="hljs-string">"fluid.prefs.builder.getAssemblerGrades"</span>,
+                args: [<span class="hljs-string">"{that}.options.assemblerGrades"</span>, <span class="hljs-string">"{that}.options.buildType"</span>]
+            }
+        },
+        buildType: <span class="hljs-string">"prefsEditor"</span>,
+        prefsMerged: {
+            expander: {
+                funcName: <span class="hljs-string">"fluid.prefs.builder.mergePrefs"</span>,
+                args: [<span class="hljs-string">"{that}"</span>, <span class="hljs-string">"{that}.options.prefsPrioritized"</span>]
+            }
+        },
+</code></pre>
+<p>Unfortunately since "fluid.contextAware" and its associated raw dynamic grade supplied from "{that}.check" has been sorted to the end of the list of grades, this expansion and evaluation of "{that}.options.prefsPrioritized" occurs before the grades from contextAwareness get contributed.</p>
+<p>At the least we need to contribute a stop-gap that arranges that, regardless of how the fluid.contextAware grade gets contributed, that its expansion occurs as the very first dynamic grade since this will always been the user's intention - and is consistent with the general framework motivation of maximal discovery of dynamic influence as early as possible.</p>
+<p></p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6437/"><span class="aria-hidden">←</span> Previous: FLUID-6437</a>
+        <a class="mx-1" href="/browse/FLUID-6439/">Next: FLUID-6439 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

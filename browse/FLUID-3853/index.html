@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3853  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3853 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3853/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3853/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3853/">FLUID-3853</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3853: Pager doesn't include an application role, requiring the user to switch to Browse Mode to fullly interact with it</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3853">FLUID-3853</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Golam Chowdhury</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-11-18T14:01:22.979-0500" prefix="">2010-11-18T14:01:22.979-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2010-11-19T12:18:20.450-0500" prefix="">2010-11-19T12:18:20.450-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.2</li>
+                            
+                            <li>1.2.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Pager</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Pager includes a number of application-style interactions, including the tooltip descriptions that are attached to the list of page links. Testing it with NVDA, much of the descriptive richness of Pager isn't apparent until the user manually switches into Browse Mode. We don't include any instructions to the user about the need to do this.</p>
+<p>However, since they'll also need to do this to interact with the data table, it seems reasonable to wrap the whole Pager container in an "application" role so that the mode-switching occurs automatically.</p>
+<p>We'll need to test this with real screenreader users to verify that it is the best approach, but it seems like a reasonable starting point.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3853/FLUID-3853-aegis.patch.txt">
+                            
+                                FLUID-3853-aegis.patch.txt
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3853/FLUID-3853-trunk.patch.txt">
+                            
+                                FLUID-3853-trunk.patch.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24867">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-11-18T16:31:19.339-0500">2010-11-18T16:31:19.339-0500</relative-time></i></p>
+                        <p>Attaching two patches to add the application role to the container of the pager component. <a href="/browse/FLUID-3853/">FLUID-3853</a>-aegis.patch.txt should be used for the aegis demo branch and <a href="/browse/FLUID-3853/">FLUID-3853</a>-trunk.patch.txt is good to use for trunk.</p>
+
+                    </li>
+                    
+                    <li id="comment-24868">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-11-18T16:33:53.021-0500">2010-11-18T16:33:53.021-0500</relative-time></i></p>
+                        <p>Michelle code reviewed the patches and I committed <a href="/browse/FLUID-3853/">FLUID-3853</a>-aegis.patch.txt into the aegis branch</p>
+
+                    </li>
+                    
+                    <li id="comment-24869">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-11-18T18:09:38.595-0500">2010-11-18T18:09:38.595-0500</relative-time></i></p>
+                        <p>This patch can be committed to trunk as-is.</p>
+
+                    </li>
+                    
+                    <li id="comment-24870">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-11-19T10:19:07.357-0500">2010-11-19T10:19:07.357-0500</relative-time></i></p>
+                        <p>"Bug Parade Infusion 1.3" </p>
+
+                    </li>
+                    
+                    <li id="comment-24871">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-11-19T12:16:15.647-0500">2010-11-19T12:16:15.647-0500</relative-time></i></p>
+                        <p>Committed <a href="/browse/FLUID-3853/">FLUID-3853</a>-trunk.patch.txt to trunk</p>
+
+                    </li>
+                    
+                    <li id="comment-24872">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-11-19T12:18:19.956-0500">2010-11-19T12:18:19.956-0500</relative-time></i></p>
+                        <p>All the patches have been committed and reviewed</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3852/"><span class="aria-hidden">←</span> Previous: FLUID-3852</a>
+        <a class="mx-1" href="/browse/FLUID-3854/">Next: FLUID-3854 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

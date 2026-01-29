@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-110  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-110 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-110/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-110/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-110/">FLUID-110</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-110: Tab moves focus through all Lightbox images on IE7</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-110">FLUID-110</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Michelle D'Souza</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Simon%20Bates">Simon Bates</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2007-11-12T12:35:04.000-0500" prefix="">2007-11-12T12:35:04.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2007-11-20T15:44:59.000-0500" prefix="">2007-11-20T15:44:59.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Image Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>To reproduce:</p>
+<ul>
+<li>open <a href="http://build.fluidproject.org:8080/sakai-imagegallery-tool/component-templates/html/Lightbox.html">http://build.fluidproject.org:8080/sakai-imagegallery-tool/component-templates/html/Lightbox.html</a></li>
+<li>repeatedly press tab</li>
+</ul>
+<p>Expected:</p>
+<ul>
+<li>the Lightbox to act as one tab stop in the document</li>
+</ul>
+<p>Actual:</p>
+<ul>
+<li>tab moves through all images: first the image, then the label for the image, then the next image, and so on</li>
+</ul>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>IE7<br>
+Windows XP</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-17631">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2007-11-14T18:04:05.000-0500">2007-11-14T18:04:05.000-0500</relative-time></i></p>
+                        <p>Removed the anchors in the thumbnails from the tabindex. </p>
+
+                    </li>
+                    
+                    <li id="comment-17633">
+                        <p class="mb-0"><b>Joseph Scheuhammer</b> <i>commented <relative-time datetime="2007-11-15T10:12:19.000-0500">2007-11-15T10:12:19.000-0500</relative-time></i></p>
+                        <p>Adding a tabindex attribute with a value of "-1" does fix the problem.  However, it does not gracefully degrade in the case where JavaScript is turned off.  That is, there is no keyboard access to the links when JavaScript is disabled since the tabindex will continue to disallow it.  This suggests that negative tabindex values should be added dynamically.</p>
+<p>An issue is that the elements that need the negative tabindex are not constant across orderable situations.  In the Lightbox, the required elements are a pair of anchors within the thumbnails.  In the uPortal tabbed navigation example, it is a single anchor.  In the vertical list example, no element needs a negative tabindex.  It is conceivable that within a form containing orderables that some of the form fields (inputs, buttons) should be taken out of the tab order.  What should be removed is different in each case.</p>
+<p>All this suggests that there needs to a way to inform the Reorderer which elements, if any, require a negative tabindex – another parameter to its operation.</p>
+
+                    </li>
+                    
+                    <li id="comment-17637">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2007-11-20T14:21:02.000-0500">2007-11-20T14:21:02.000-0500</relative-time></i></p>
+                        <p>Graceful degradation is now in place. The anchors are removed from the taborder in the initLightbox function. </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-109/"><span class="aria-hidden">←</span> Previous: FLUID-109</a>
+        <a class="mx-1" href="/browse/FLUID-111/">Next: FLUID-111 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

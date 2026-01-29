@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6394  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6394 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6394/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6394/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6394/">FLUID-6394</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6394: The Orator's selectionReader control does not factor in margins for placement</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6394">FLUID-6394</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-08-13T14:34:30.521-0400" prefix="">2019-08-13T14:34:30.521-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-10-31T12:01:44.566-0400" prefix="">2019-10-31T12:01:44.566-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>Self Voicing</li>
+                            
+                            <li>UIEnhancer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When determining its placement, the selection reader does not factor in the margin of its container. This can cause it to shift quite widely as seen in&#160;<a href="https://issues.gpii.net/browse/GPII-3767">https://issues.gpii.net/browse/GPII-3767</a></p>
+<p></p>
+<p>The above was fixed with PR ( <a href="https://github.com/fluid-project/infusion/pull/960">https://github.com/fluid-project/infusion/pull/960</a>&#160;); however, in doing so it broke the Orator's demo.</p>
+<p>Steps to reproduce:</p>
+<ol>
+<li>Open the <a href="https://build.fluidproject.org/infusion/demos/orator/">Orator demo</a></li>
+<li>Select some text</li>
+</ol>
+<p>Notice that the play button is displayed far from the selection.</p>
+<p></p>
+<p>It seems that just factoring in the margins was an overly simplistic understanding of the issue. The Orator demo also has a margin but accounting for it, actually causes the play button to appear far away. It may in fact be related to the container that either the content and/or the play button is located in. For example, the CSS position style directive may play a part.</p>
+<p>Modifying the fluid.orator.selectionReader.calculatePostion like below has some success, but still cannot account for all cases.</p>
+<p>In the code example below we find the parent's position either using jQuery's <code>offset</code> or <code>position</code> functions. We use these to find the position of the element relative to the document. The DOMrect's provide positioning based on the viewport. So we use the parent's DOMRect to compare against the selection's DOMRect and attempt to use this to determine where the selection in in relation to the document position as found using the jQuery methods. We then use this to pass along CSS top and left properties to absolutely position the button. However, I've had mixed results when there is absolute and relative positioning in the Orator demo vs through UIO+ on the&#160;<a href="https://morphic.world/">https://morphic.world</a>&#160;website. The position still isn't accurate across both cases.</p>
+<pre><code class="hljs language-java">fluid.orator.selectionReader.calculatePosition = function (range, fontSize, offsetScale) {
+        <span class="hljs-type">var</span> <span class="hljs-variable">edgeOffset</span> <span class="hljs-operator">=</span> fontSize * (fluid.get(offsetScale, <span class="hljs-string">"edge"</span>) || <span class="hljs-number">1</span>);
+        <span class="hljs-type">var</span> <span class="hljs-variable">pointerOffset</span> <span class="hljs-operator">=</span> parseFloat($(<span class="hljs-string">"html"</span>).css(<span class="hljs-string">"font-size"</span>)) * <span class="hljs-number">1.8</span>;
+        <span class="hljs-type">var</span> <span class="hljs-variable">rangeRect</span> <span class="hljs-operator">=</span> range.getBoundingClientRect();
+        <span class="hljs-type">var</span> <span class="hljs-variable">parent</span> <span class="hljs-operator">=</span> range.startContainer.parentElement;
+        <span class="hljs-type">var</span> <span class="hljs-variable">parentRect</span> <span class="hljs-operator">=</span> parent.getBoundingClientRect();
+        <span class="hljs-type">var</span> <span class="hljs-variable">isPositioned</span> <span class="hljs-operator">=</span> $(parent).offsetParent().css(<span class="hljs-string">"position"</span>) !== <span class="hljs-string">"static"</span>;
+        <span class="hljs-type">var</span> <span class="hljs-variable">parentPosition</span> <span class="hljs-operator">=</span> isPositioned ? $(parent).offset() : $(parent).position();        <span class="hljs-type">var</span> <span class="hljs-variable">position</span> <span class="hljs-operator">=</span> {
+            top: (parentPosition.top - parentRect.top) || - parseFloat($(parent).css(<span class="hljs-string">"font-size"</span>)),
+            left: parentPosition.left + (rangeRect.left - parentRect.left)
+        };        <span class="hljs-keyword">if</span> (rangeRect.top &lt; edgeOffset) {
+            position.top = position.top + rangeRect.bottom + pointerOffset;
+            position.location = fluid.orator.selectionReader.location.BOTTOM;
+        } <span class="hljs-keyword">else</span> {
+            position.top = position.top + rangeRect.top - pointerOffset;
+            position.location = fluid.orator.selectionReader.location.TOP;
+        }        <span class="hljs-keyword">return</span> position;
+    };
+</code></pre>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6394/orator demo issue.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6394/orator demo issue.png" alt="orator demo issue.png">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6394/screenshot.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6394/screenshot.png" alt="screenshot.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25252">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-08-13T14:38:46.860-0400">2019-08-13T14:38:46.860-0400</relative-time></i></p>
+                        <p>screenshot.png shows the play button rendered below the selected text.</p>
+
+                    </li>
+                    
+                    <li id="comment-25253">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2019-09-05T12:40:31.875-0400">2019-09-05T12:40:31.875-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/infusion/pull/960">The pull request</a> has been merged into the project repo master branch at <a href="https://github.com/fluid-project/infusion/commit/b024bff871a7d4a73a3fc8f609d8dfd08149f209">this commit</a>.</p>
+
+                    </li>
+                    
+                    <li id="comment-25254">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-10-03T12:38:39.590-0400">2019-10-03T12:38:39.590-0400</relative-time></i></p>
+                        <p>I've re-opened the issue. While the above PR addressed the issue found on <a href="https://morphic.world/">https://morphic.world/</a>&#160;with UIO+ and did not demonstrate any adverse affects on the prefs framework demo, it broken the Orator's own demo. Will update the description.</p>
+<p></p>
+
+                    </li>
+                    
+                    <li id="comment-25255">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-10-03T13:30:50.987-0400">2019-10-03T13:30:50.987-0400</relative-time></i></p>
+                        <p>Added "orator demo issue.png" which shows the play button far above the selected text in the Orator demo.</p>
+
+                    </li>
+                    
+                    <li id="comment-25256">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-10-08T10:32:36.761-0400">2019-10-08T10:32:36.761-0400</relative-time></i></p>
+                        <p>In speaking with Jonathan Hung and Gregor Moss it came up that the absolute positioning is relative to the closest positioned parent. ( see: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">https://developer.mozilla.org/en-US/docs/Web/CSS/position</a>&#160;). The above code made the assumption that it was always positioning against the document. Also, it was discussed that it might be helpful to break this positioning piece out of the Orator so that it can can be used by other widgets in the future.</p>
+
+                    </li>
+                    
+                    <li id="comment-25257">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2019-10-31T12:01:39.830-0400">2019-10-31T12:01:39.830-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/infusion/pull/963">The pull request</a> has been merged into the project repo master branch at <a href="https://github.com/fluid-project/infusion/commit/345496b1c5fce5d64ee69a5b5415530ee1426aa9">this commit</a>.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6393/"><span class="aria-hidden">←</span> Previous: FLUID-6393</a>
+        <a class="mx-1" href="/browse/FLUID-6395/">Next: FLUID-6395 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

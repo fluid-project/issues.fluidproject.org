@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-456  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-456 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-456/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-456/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-456/">C2LC-456</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-456: Various controls can become unreachable.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-456">C2LC-456</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Sub-task">Sub-task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Done</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-09-08T05:32:38.513-0400" prefix="">2021-09-08T05:32:38.513-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-05-02T10:54:07.810-0400" prefix="">2024-05-02T10:54:07.810-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Environment</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>At higher zoom levels and/or smaller browser window sizes, various controls end up offscreen.  For example, when working with a Chrome browser window that is 1440 pixels high:</p>
+<ol>
+<li>The play/share controls move offscreen starting at 200% zoom and are completely offscreen at 250% zoom.</li>
+<li>The Program block editor moves partially offscreen starting at 250%, and is unusable by 300% zoom.</li>
+<li>The scene refresh button normally on the right side of the scene becomes unreachable at 400% zoom.</li>
+<li>The actions panel is still (barely) visible at 400% zoom, but does not display even a single complete command block.</li>
+</ol>
+<p>In desktop environments, it's possible to get into a state where no page scroll bars are available, which prevents reaching these elements using a mouse wheel, arrow keys, or any other typical scroll mechanism.  You can reach them using tab navigation, or by zooming out.  This problem is common to Firefox, Chrome and Safari.</p>
+<p>As mentioned in <a href="/browse/C2LC-442/">C2LC-442</a>, the zoom problems are worse when "zoom text" only is checked in Firefox's preferences.  For example, the play/share controls go offscreen at 170% zoom.</p>
+<p>There are also unique concerns regarding the iPad.  We have discussed addressing this using a scroll container for the whole document, but this may not be enough.</p>
+<p>On the iPad, it's possible to pan around when zoomed in, but you have to "grip" a portion of the page that is not itself a scrolling container.  This becomes a problem if you manage to zoom in so that the scene occupies the whole viewport.  Once that happens, you will no longer be able to pan around unless you use a keyboard or change the zoom level.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10907">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2021-10-21T16:52:37.731-0400">2021-10-21T16:52:37.731-0400</relative-time></i></p>
+                        <p>A page level vertical scroll bar could solve this issue however this isn't ideal. Sepideh Shahi will look for alternative solutions.</p>
+
+                    </li>
+                    
+                    <li id="comment-27761">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2024-05-02T10:54:00.342-0400">2024-05-02T10:54:00.342-0400</relative-time></i></p>
+                        <p>We now have page level scrolling. Closing.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-455/"><span class="aria-hidden">←</span> Previous: C2LC-455</a>
+        <a class="mx-1" href="/browse/C2LC-457/">Next: C2LC-457 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

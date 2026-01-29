@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-244  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-244 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-244/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-244/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-244/">INFRA-244</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-244: Create load balancing layer in front of dev/test Kubernetes cluster</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-244">INFRA-244</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Done">Done</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-04-29T15:53:08.464-0400" prefix="">2020-04-29T15:53:08.464-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-04-29T17:10:43.917-0400" prefix="">2020-04-29T17:10:43.917-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Deploy 2 VM's running nginx to load balance traffic to the cluster's worker nodes.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26061">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2020-04-29T17:10:27.730-0400">2020-04-29T17:10:27.730-0400</relative-time></i></p>
+                        <p>Deployed two load balancers:</p>
+<pre><code class="hljs">i-<span class="hljs-number">0105</span><span class="hljs-selector-class">.tor1</span><span class="hljs-selector-class">.incd</span><span class="hljs-selector-class">.ca</span>
+i-<span class="hljs-number">0106</span><span class="hljs-selector-class">.tor1</span><span class="hljs-selector-class">.incd</span><span class="hljs-selector-class">.ca</span>
+</code></pre>
+<p>They are doing L4 load balancing on ports 80/443 to the k8s workers:</p>
+<pre><code class="hljs">$ curl -v http://i-0105.tor1.incd.ca
+*   Trying 205.211.169.105:80...
+* TCP_NODELAY set
+* Connected to i-0105.tor1.incd.ca (205.211.169.105) port 80 (#0)
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript"><span class="hljs-variable constant_">GET</span> / <span class="hljs-variable constant_">HTTP</span>/<span class="hljs-number">1.1</span></span>
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript"><span class="hljs-title class_">Host</span>: i-<span class="hljs-number">0105</span>.<span class="hljs-property">tor1</span>.<span class="hljs-property">incd</span>.<span class="hljs-property">ca</span></span>
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript"><span class="hljs-title class_">User</span>-<span class="hljs-title class_">Agent</span>: curl/<span class="hljs-number">7.66</span><span class="hljs-number">.0</span></span>
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript"><span class="hljs-title class_">Accept</span>: *<span class="hljs-comment">/*</span></span>
+<span class="hljs-meta prompt_">&gt;</span> 
+* Mark bundle as not supporting multiuse
+&lt; HTTP/1.1 404 Not Found
+&lt; Content-Type: text/plain; charset=utf-8
+&lt; X-Content-Type-Options: nosniff
+&lt; Date: Wed, 29 Apr 2020 21:10:03 GMT
+&lt; Content-Length: 19
+&lt; 
+404 page not found
+* Connection #0 to host i-0105.tor1.incd.ca left intact
+</code></pre>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-243/"><span class="aria-hidden">←</span> Previous: INFRA-243</a>
+        <a class="mx-1" href="/browse/INFRA-245/">Next: INFRA-245 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

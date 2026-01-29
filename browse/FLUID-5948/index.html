@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5948  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5948 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5948/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5948/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5948/">FLUID-5948</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5948: Think of scheme for "orthogonal propagation" of listener namespaces in wide component hierarchies</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5948">FLUID-5948</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-08-24T11:43:21.927-0400" prefix="">2016-08-24T11:43:21.927-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-07-29T01:46:53.944-0400" prefix="">2021-07-29T01:46:53.944-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>5.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>An interesting question about listener namespacing was raised in #fluid-work at <a href="https://botbot.me/freenode/fluid-work/2016-08-24/?msg=71866852&page=1">https://botbot.me/freenode/fluid-work/2016-08-24/?msg=71866852&amp;page=1</a></p>
+<p>In the following snippet, intended to appear in a base panel grade, we want to bind a panel's refresh generically to an event held in the core prefs editor:</p>
+<pre><code class="hljs language-java">listeners: {
+            <span class="hljs-string">"{fluid.prefs.prefsEditor}.events.onPrefsEditorRefresh"</span>: <span class="hljs-string">"{fluid.prefs.panel}.refreshView"</span>,
+            namespace: <span class="hljs-string">"someNameSpace"</span>
+        },
+</code></pre>
+<p>The namespace cannot be named statically since all the contributed listeners would collapse. Architecturally, it seems that this situation of wide-scale multicast listeners would best be treated at the model level of the architecture. However, this provides no recommendation for developers who don't have the opportunity to refactor in such a substantial way.</p>
+<p>In the past we have had stopgaps based on various kinds of "singleTypeName"s. e.g. see the implementation of "resolveRoot" which allows a particular one of a component's gradeNames to be singled out as serving as "identity for a particular purpose": <a href="http://docs.fluidproject.org/infusion/development/Contexts.html#global-components-fluid-resolveroot-and-fluid-resolverootsingle-">http://docs.fluidproject.org/infusion/development/Contexts.html#global-components-fluid-resolveroot-and-fluid-resolverootsingle-</a> - we are getting to the point where this pattern has recurred enough times that we need to think of some scheme for structuring grade hierarchies in a generalised way that allow these names to emerge naturally. Then we could imagine a scheme for automatically deriving namespaces via expansion - such that, say, a panel SelfVoicing would register a listener namespaced SelfVoicing-refreshView etc.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25690">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-08-24T13:59:04.931-0400">2016-08-24T13:59:04.931-0400</relative-time></i></p>
+                        <p>It seems there is scope for solving several problems at once here. Note that <a href="/browse/FLUID-5784/">FLUID-5784</a> is still on the table, to remove the irregularity of our "type -&gt; typeName" distinguished grade name. If we worked towards a model whereby we accepted a free hash of gradeNames rather than a list (fulfilling the overall trajectory of the framework in numerous areas - e.g. with distributeOptions, etc.) we could then refer to "names of gradeNames" as clear labels of their function. A user who just wanted to freely mix in a new gradeName would have to choose a new "namespace" for it... or perhaps we would grandfather in existing gradeNames as being "self-named".</p>
+
+                    </li>
+                    
+                    <li id="comment-25691">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-11-29T23:36:23.537-0500">2016-11-29T23:36:23.537-0500</relative-time></i></p>
+                        <p>Clearly there are even worse problems than the one described here. In fluid-authoring, we have a situation where one component has multiple children all of the same type, which requires to relay an event (onRefreshView) to all children. What namespace can be given to this event?</p>
+<p>It's no accident that the headline issue here also involves a "refreshView" event which suggests that solving this problem is fundamental to a "new renderer" architecture. See <a href="/browse/FLUID-4260/">FLUID-4260</a>, etc. Note that we currently have no facility to fire events during component construction, due to fundamental framework limitations. See also <a href="https://wiki.fluidproject.org/display/fluid/Plan+to+Abolish+Invokers+and+Events">https://wiki.fluidproject.org/display/fluid/Plan+to+Abolish+Invokers+and+Events</a> - which was suggesting even removing the facility for registering listeners with no namespace, our only saving grace here!</p>
+
+                    </li>
+                    
+                    <li id="comment-25692">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-11-29T23:37:24.632-0500">2016-11-29T23:37:24.632-0500</relative-time></i></p>
+                        <p>It is seeming like we would like the facility for namespaces themselves to behave a little like grades - for there to be derivation possible, but with constraints expressible with respect to "base grades" such that all listeners attached to it will sort together.</p>
+
+                    </li>
+                    
+                    <li id="comment-25693">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-12-01T23:48:47.548-0500">2016-12-01T23:48:47.548-0500</relative-time></i></p>
+                        <p>Note that we had made an abortive attempt in <a href="/browse/FLUID-5866/">FLUID-5866</a> to allow namespaces to be resolved hierarchically. The model of "extremal priorities" could/should be accommodated into this system, which the reverted <a href="/browse/FLUID-5866/">FLUID-5866</a> implementation failed to do. This will be relevant to our work on "elements" described at <a href="https://wiki.fluidproject.org/display/fluid/Plan+to+Abolish+Invokers+and+Events">https://wiki.fluidproject.org/display/fluid/Plan+to+Abolish+Invokers+and+Events</a> - since we will need a clean way to "multiply" priorities (that is, to easily allocate "nonce" priorities within an existing class) in a way that we can currently only do with the "unnamed namespace".</p>
+<p>Given the existence of component ids as a source of uniqueness within the system, it seems possible that we will end up using references to these as our "extra source of uniqueness" - but this doesn't explain how we could retain the semantics of the ancient existing <code>addListener</code> scheme which supports old-fashioned uniqueness of listeners. It seems that we will simply end up with divergence between the programmatic and declarative forms of this API. It seems reasonable that a future version of the framework will prohibit the declarative use of listeners without a namespace, and provide sufficiently powerful primitives to compensate for the fact we can no longer address the "unnamed namespace" via this route.</p>
+
+                    </li>
+                    
+                    <li id="comment-25694">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2018-12-13T18:03:41.413-0500">2018-12-13T18:03:41.413-0500</relative-time></i></p>
+                        <p>Much like the case outlined in Antranig Basman's second comment, I was attempting to use Options Distribution to attach some listeners to a number of sub-components throughout the component tree, but I saw that only one of them was firing when the listened-to event was fired. I then set up two separate Options Distribution entries to target two such sub-components separately, and still saw that only one of them worked as expected. I eventually realized, with Alan Harnum's help, that the cause of the issue was my use of a namespace in the listener definition. In the first case, the same namespace was assigned to all of the listeners, and I'd forgotten that namespaces are registered to a particular event more or less universally across all components, so they must be unique in order to avoid collisions. In the second case, the two separate records still had the same namespace, producing the same issue.</p>
+<p>The solution was to revert to the original setup of one Options Distribution record /without/ a namespace, so it was able to be registered by all components which matched the target IoCSS expression.</p>
+<p>Here is the code I was attempting to use initially (BROKEN):</p>
+<pre><code class="hljs language-javascript">{
+    <span class="hljs-attr">record</span>: {
+        <span class="hljs-string">"{page}.events.onContextChangeRequested"</span>: {
+            <span class="hljs-attr">namespace</span>: <span class="hljs-string">"stopAllVideos"</span>,
+            <span class="hljs-attr">funcName</span>: <span class="hljs-string">"sjrk.storyTelling.page.stopAllVideos"</span>,
+            <span class="hljs-attr">args</span>: [<span class="hljs-string">"{that}.managedViewComponentRegistry"</span>]
+        }
+    },
+    <span class="hljs-attr">target</span>: <span class="hljs-string">"{that blockManager}.options.listeners"</span>
+}
+</code></pre>
+<p>Here is the second attempt at a solution (BROKEN):</p>
+<pre><code class="hljs language-javascript">{
+    <span class="hljs-attr">record</span>: {
+        <span class="hljs-string">"{page}.events.onContextChangeRequested"</span>: {
+            <span class="hljs-attr">namespace</span>: <span class="hljs-string">"stopAllVideos"</span>,
+            <span class="hljs-attr">funcName</span>: <span class="hljs-string">"sjrk.storyTelling.page.stopAllVideos"</span>,
+            <span class="hljs-attr">args</span>: [<span class="hljs-string">"{that}.managedViewComponentRegistry"</span>]
+        }
+    },
+    <span class="hljs-attr">target</span>: <span class="hljs-string">"{that storyEditor blockManager}.options.listeners"</span>
+},
+{
+    <span class="hljs-attr">record</span>: {
+        <span class="hljs-string">"{page}.events.onContextChangeRequested"</span>: {
+            <span class="hljs-attr">namespace</span>: <span class="hljs-string">"stopAllVideos"</span>,
+            <span class="hljs-attr">funcName</span>: <span class="hljs-string">"sjrk.storyTelling.page.stopAllVideos"</span>,
+            <span class="hljs-attr">args</span>: [<span class="hljs-string">"{that}.managedViewComponentRegistry"</span>]
+        }
+    },
+    <span class="hljs-attr">target</span>: <span class="hljs-string">"{that storyViewer blockManager}.options.listeners"</span>
+}
+</code></pre>
+<p>Here is the code that works (WORKING):</p>
+<pre><code class="hljs language-javascript">{
+    <span class="hljs-attr">record</span>: {
+        <span class="hljs-string">"{page}.events.onContextChangeRequested"</span>: {
+            <span class="hljs-attr">funcName</span>: <span class="hljs-string">"sjrk.storyTelling.page.stopAllVideos"</span>,
+            <span class="hljs-attr">args</span>: [<span class="hljs-string">"{that}.managedViewComponentRegistry"</span>]
+        }
+    },
+    <span class="hljs-attr">target</span>: <span class="hljs-string">"{that blockManager}.options.listeners"</span>
+}
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-25695">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2020-09-30T07:40:52.914-0400">2020-09-30T07:40:52.914-0400</relative-time></i></p>
+                        <blockquote>
+<p>If we worked towards a model whereby we accepted a free hash of gradeNames rather than a list </p>
+</blockquote>
+<p>Note that this is written up as <a href="/browse/FLUID-6439/">FLUID-6439</a></p>
+
+                    </li>
+                    
+                    <li id="comment-25696">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2020-10-28T09:23:40.878-0400">2020-10-28T09:23:40.878-0400</relative-time></i></p>
+                        <p>Further note on limitations/extensions of the priority scheme - in developing the new renderer we ended up with the following "sorted workflow cache" - </p>
+<pre><code class="hljs language-java"><span class="hljs-number">0</span>: {namespace: <span class="hljs-string">"enlistModel"</span>, workflowType: <span class="hljs-string">"global"</span>, workflowName: <span class="hljs-string">"enlistModel"</span>, gradeName: <span class="hljs-string">"fluid.modelComponent"</span>, workflowOptions: {…}, …}
+<span class="hljs-number">1</span>: {namespace: <span class="hljs-string">"resolveResourceModel"</span>, workflowType: <span class="hljs-string">"global"</span>, workflowName: <span class="hljs-string">"resolveResourceModel"</span>, priority: {…}, gradeName: <span class="hljs-string">"fluid.modelComponent"</span>, …}
+<span class="hljs-number">2</span>: {namespace: <span class="hljs-string">"renderMarkup"</span>, workflowType: <span class="hljs-string">"global"</span>, workflowName: <span class="hljs-string">"renderMarkup"</span>, priority: {…}, gradeName: <span class="hljs-string">"fluid.newRendererComponent"</span>, …}
+<span class="hljs-number">3</span>: {namespace: <span class="hljs-string">"fetchTemplates"</span>, workflowType: <span class="hljs-string">"global"</span>, workflowName: <span class="hljs-string">"fetchTemplates"</span>, priority: {…}, gradeName: <span class="hljs-string">"fluid.templateResourceFetcher"</span>, …}
+<span class="hljs-number">4</span>: {namespace: <span class="hljs-string">"evaluateContainers"</span>, workflowType: <span class="hljs-string">"global"</span>, workflowName: <span class="hljs-string">"evaluateContainers"</span>, priority: {…}, gradeName: <span class="hljs-string">"fluid.containerRenderingView"</span>, …}
+<span class="hljs-number">5</span>: {namespace: <span class="hljs-string">"concludeComponentObservation"</span>, workflowType: <span class="hljs-string">"local"</span>, workflowName: <span class="hljs-string">"concludeComponentObservation"</span>, priority: {…}, gradeName: <span class="hljs-string">"fluid.component"</span>, …}
+<span class="hljs-number">6</span>: {namespace: <span class="hljs-string">"fetchOldRendererTemplate"</span>, workflowType: <span class="hljs-string">"local"</span>, workflowName: <span class="hljs-string">"fetchOldRendererTemplate"</span>, priority: {…}, gradeName: <span class="hljs-string">"fluid.oldRendererComponent"</span>, …}
+<span class="hljs-number">7</span>: {namespace: <span class="hljs-string">"initOldRendererComponent"</span>, workflowType: <span class="hljs-string">"local"</span>, workflowName: <span class="hljs-string">"initOldRendererComponent"</span>, priority: {…}, gradeName: <span class="hljs-string">"fluid.oldRendererComponent"</span>, …}
+<span class="hljs-number">8</span>: {namespace: <span class="hljs-string">"notifyInitModelWorkflow"</span>, workflowType: <span class="hljs-string">"local"</span>, workflowName: <span class="hljs-string">"notifyInitModelWorkflow"</span>, priority: {…}, gradeName: <span class="hljs-string">"fluid.modelComponent"</span>, …}
+<span class="hljs-number">9</span>: {namespace: <span class="hljs-string">"concludeComponentInit"</span>, workflowType: <span class="hljs-string">"local"</span>, workflowName: <span class="hljs-string">"concludeComponentInit"</span>, priority: {…}, gradeName: <span class="hljs-string">"fluid.component"</span>, …}
+length: <span class="hljs-number">10</span>
+</code></pre>
+<p>The problem here is that "renderMarkup" ended up before "fetchTemplates" - because fetchTemplates was "after:enlistModel" and renderMarkup was "after:resolveResourceModel". We really wanted to specify that renderMarkup depends both on "resolveResourceModel" <strong>and</strong> "fetchTemplates".<br>
+This increasingly suggests that workflows should be components.... priority namespaces should be components .... everything should be components!<br>
+See Gilad.</p>
+
+                    </li>
+                    
+                    <li id="comment-25697">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2020-10-28T13:57:04.468-0400">2020-10-28T13:57:04.468-0400</relative-time></i></p>
+                        <p>Yet another case, encountered in just the same day - in trying to ensure that the "rewriting handler" for an app was mounted after any static handlers in a Kettle app, we merely managed to ensure that it was mounted after its <strong>own</strong> handler - after registering the following set of priorities:</p>
+<pre><code class="hljs language-java"><span class="hljs-number">17</span>:<span class="hljs-number">11</span>:<span class="hljs-number">46.113</span>:  Registering request handler {
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"kettle.request.http.static"</span>,
+    <span class="hljs-string">"options"</span>: undefined,
+    <span class="hljs-string">"method"</span>: <span class="hljs-string">"get"</span>,
+    <span class="hljs-string">"route"</span>: <span class="hljs-string">"/*"</span>,
+    <span class="hljs-string">"prefix"</span>: <span class="hljs-string">"/fluidTocDemoStatic"</span>
+} with key fluidTocDemoStaticHandler
+<span class="hljs-number">17</span>:<span class="hljs-number">11</span>:<span class="hljs-number">46.120</span>:  Registering request handler {
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"kettle.request.http.static"</span>,
+    <span class="hljs-string">"options"</span>: undefined,
+    <span class="hljs-string">"method"</span>: <span class="hljs-string">"get"</span>,
+    <span class="hljs-string">"route"</span>: <span class="hljs-string">"/*"</span>,
+    <span class="hljs-string">"prefix"</span>: <span class="hljs-string">"/fluidTableOfContentsStatic"</span>
+} with key fluidTableOfContentsStaticHandler
+<span class="hljs-number">17</span>:<span class="hljs-number">11</span>:<span class="hljs-number">46.124</span>:  Registering request handler {
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"kettle.request.http.static"</span>,
+    <span class="hljs-string">"options"</span>: undefined,
+    <span class="hljs-string">"method"</span>: <span class="hljs-string">"get"</span>,
+    <span class="hljs-string">"route"</span>: <span class="hljs-string">"/*"</span>,
+    <span class="hljs-string">"prefix"</span>: <span class="hljs-string">"/newRendererDemoStatic"</span>
+} with key newRendererDemoStaticHandler
+<span class="hljs-number">17</span>:<span class="hljs-number">11</span>:<span class="hljs-number">46.127</span>:  Registering request handler {
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"kettle.request.http.static"</span>,
+    <span class="hljs-string">"options"</span>: undefined,
+    <span class="hljs-string">"method"</span>: <span class="hljs-string">"get"</span>,
+    <span class="hljs-string">"route"</span>: <span class="hljs-string">"/*"</span>,
+    <span class="hljs-string">"prefix"</span>: <span class="hljs-string">"/infusionStatic"</span>
+} with key infusionStaticHandler
+<span class="hljs-number">17</span>:<span class="hljs-number">11</span>:<span class="hljs-number">46.130</span>:  Registering request handler {
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"fluid.renderer.rewriting.request"</span>,
+    <span class="hljs-string">"route"</span>: <span class="hljs-string">"/*.html"</span>,
+    <span class="hljs-string">"prefix"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-string">"options"</span>: {
+        <span class="hljs-string">"mountedRoot"</span>: <span class="hljs-string">"%fluid-toc-demo/"</span>
+    },
+    <span class="hljs-string">"method"</span>: <span class="hljs-string">"get"</span>,
+    <span class="hljs-string">"priority"</span>: <span class="hljs-string">"after:fluidTocDemoStaticHandler"</span>
+} with key fluidTocDemoRewritingHandler
+</code></pre>
+<p>we ended up with the following ordering</p>
+<pre><code class="hljs language-java">sortedHandlers: Array(<span class="hljs-number">5</span>)
+<span class="hljs-number">0</span>: {namespace: <span class="hljs-string">"fluidTocDemoStaticHandler"</span>, method: <span class="hljs-string">"get"</span>, type: <span class="hljs-string">"kettle.request.http.static"</span>, route: <span class="hljs-string">"/*"</span>, prefix: <span class="hljs-string">"/fluidTocDemoStatic"</span>, …}
+<span class="hljs-number">1</span>: {namespace: <span class="hljs-string">"fluidTocDemoRewritingHandler"</span>, method: <span class="hljs-string">"get"</span>, type: <span class="hljs-string">"fluid.renderer.rewriting.request"</span>, route: <span class="hljs-string">"/*.html"</span>, prefix: <span class="hljs-string">""</span>, …}
+<span class="hljs-number">2</span>: {namespace: <span class="hljs-string">"fluidTableOfContentsStaticHandler"</span>, method: <span class="hljs-string">"get"</span>, type: <span class="hljs-string">"kettle.request.http.static"</span>, route: <span class="hljs-string">"/*"</span>, prefix: <span class="hljs-string">"/fluidTableOfContentsStatic"</span>, …}
+<span class="hljs-number">3</span>: {namespace: <span class="hljs-string">"newRendererDemoStaticHandler"</span>, method: <span class="hljs-string">"get"</span>, type: <span class="hljs-string">"kettle.request.http.static"</span>, route: <span class="hljs-string">"/*"</span>, prefix: <span class="hljs-string">"/newRendererDemoStatic"</span>, …}
+<span class="hljs-number">4</span>: {namespace: <span class="hljs-string">"infusionStaticHandler"</span>, method: <span class="hljs-string">"get"</span>, type: <span class="hljs-string">"kettle.request.http.static"</span>, route: <span class="hljs-string">"/*"</span>, prefix: <span class="hljs-string">"/infusionStatic"</span>, …}
+</code></pre>
+<p>with the rewriting handler in position 2 - a request for the fluidTableOfContentsStaticHandler then ended up hitting it.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5947/"><span class="aria-hidden">←</span> Previous: FLUID-5947</a>
+        <a class="mx-1" href="/browse/FLUID-5949/">Next: FLUID-5949 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

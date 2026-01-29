@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6/">FLUID-6</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6: Ctrl and Shift Cause Problems in Mouse Interaction</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6">FLUID-6</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Shaw-Han%20Liem">Shaw-Han Liem</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2007-06-27T05:22:04.000-0400" prefix="">2007-06-27T05:22:04.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2007-10-22T17:12:41.000-0400" prefix="">2007-10-22T17:12:41.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The default behaviour of Dojo DnD is to capture Ctrl and Shift for 'multiple selection' and 'copy'. There seems to be some conflict with our handling of these key events which is causing some unpredictable behaviour.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Windows XP SP2 Firefox 2.0.0.4</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-16869">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2007-06-27T09:49:37.000-0400">2007-06-27T09:49:37.000-0400</relative-time></i></p>
+                        <p>Serious deficit which causes the component to "fail" - i have managed to persuade it to try to drag multiple items this way, with "hilarious results"...</p>
+
+                    </li>
+                    
+                    <li id="comment-16871">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2007-07-30T14:43:20.000-0400">2007-07-30T14:43:20.000-0400</relative-time></i></p>
+                        <p>We'll take the following steps to resolve this one:</p>
+<p>1. Short term: disable or swallow use of the shift and ctrl keys for multiple selection, making the hilarious results Antranig saw impossible.<br>
+2. Change the Lightbox/Reorderer to use a modifier other than ctrl for moving images with the keyboard (because it conflicts with the familiar mode of multiple selection on most platforms).<br>
+3. Add explicit support for multiple selection of items with both the keyboard and mouse.</p>
+
+                    </li>
+                    
+                    <li id="comment-16873">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2007-10-03T17:41:40.000-0400">2007-10-03T17:41:40.000-0400</relative-time></i></p>
+                        <p>In dojo 0.9 beta, multiple selection can be disabled by setting the Source's "singular" parameter to true e.g setting "dndlb.singular=true" or passing the parameter in to the Source constructor.</p>
+
+                    </li>
+                    
+                    <li id="comment-16875">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2007-10-04T15:46:05.000-0400">2007-10-04T15:46:05.000-0400</relative-time></i></p>
+                        <p>I've disable multiple selection (rev 12545) - it shouldn't be a problem.</p>
+<p>I've been unable to produce any copy-related errors i.e. errors where dojo's use of the CTRL key for copying causes problems. Mixing the CTRL key and dragging does cause some style issues that I'm looking into addressing, but if anyone can provide instructions for reproducing any copy-related bugs, that would be very helpful.</p>
+
+                    </li>
+                    
+                    <li id="comment-16878">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2007-10-05T12:56:28.000-0400">2007-10-05T12:56:28.000-0400</relative-time></i></p>
+                        <p>I believe the CTRL-key related strangeness is not related to dojo's copy functionality. That strangeness is now captured in <a href="/browse/FLUID-44/">FLUID-44</a></p>
+
+                    </li>
+                    
+                    <li id="comment-16879">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2007-10-22T17:12:41.000-0400">2007-10-22T17:12:41.000-0400</relative-time></i></p>
+                        <p>Since we've moved to using jQuery UI's drag and drop this is no longer an issue.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5/"><span class="aria-hidden">←</span> Previous: FLUID-5</a>
+        <a class="mx-1" href="/browse/FLUID-7/">Next: FLUID-7 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

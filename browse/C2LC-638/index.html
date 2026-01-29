@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-638  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-638 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-638/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-638/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-638/">C2LC-638</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-638: Pressing tab after opening the control panel for a start loop block does not take you into the control panel but through the program sequence</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-638">C2LC-638</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Done</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter=Simon%20Bates">Simon Bates</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2022-04-07T14:39:40.516-0400" prefix="">2022-04-07T14:39:40.516-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-04-22T11:26:38.473-0400" prefix="">2024-04-22T11:26:38.473-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Environment</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Steps to reproduce:</p>
+<ul>
+<li>Focus a start loop block</li>
+<li>Press Enter to open the control panel</li>
+<li>Press Tab, focus moves to the iteration input control</li>
+<li>Press Tab again</li>
+</ul>
+<p>Expected:</p>
+<ul>
+<li>Focus to go into the control panel</li>
+</ul>
+<p>Actual:</p>
+<ul>
+<li>Focus goes to the following add node</li>
+</ul>
+<p>Cause: the iteration input control is not specified for the control panel focus trap.</p>
+<p><a href="https://github.com/codelearncreate/c2lc-coding-environment/blob/e64d694519bbd964c00c96162f197141662eda07/src/ProgramBlockEditor.js#L696-L718">https://github.com/codelearncreate/c2lc-coding-environment/blob/e64d694519bbd964c00c96162f197141662eda07/src/ProgramBlockEditor.js#L696-L718</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10878">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2022-05-31T09:30:27.535-0400">2022-05-31T09:30:27.535-0400</relative-time></i></p>
+                        <p>The behaviour is now different from that described above: when the control panel is open, focus does not go to the loop iteration text box, but instead moves directly to the control panel.</p>
+
+                    </li>
+                    
+                    <li id="comment-10879">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2022-05-31T09:37:25.643-0400">2022-05-31T09:37:25.643-0400</relative-time></i></p>
+                        <p>I am unable to reproduce this, even going back to 1.2. Investigate how to reproduce.</p>
+
+                    </li>
+                    
+                    <li id="comment-10880">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2022-05-31T09:38:19.203-0400">2022-05-31T09:38:19.203-0400</relative-time></i></p>
+                        <p>The new behaviour is good. But it would be good to figure out why this issue was created and under what circumstances it was happening.</p>
+
+                    </li>
+                    
+                    <li id="comment-10881">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2022-05-31T09:40:09.451-0400">2022-05-31T09:40:09.451-0400</relative-time></i></p>
+                        <p>It is possible to open the control panel by pressing 'space' when focus is in the loop iteration text box. This is a bug.</p>
+
+                    </li>
+                    
+                    <li id="comment-10882">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2022-05-31T14:38:08.403-0400">2022-05-31T14:38:08.403-0400</relative-time></i></p>
+                        <p>I have been unable to reproduce this issue with the documented reproduction steps. I'm wondering if maybe I wrote them up incorrectly.</p>
+<p>I can reproduce something like the described issue with the following steps:</p>
+<ul>
+<li>Focus a start loop block</li>
+<li>Press Enter to open the control panel</li>
+<li>Click in the iteration input control to move focus to that control</li>
+<li>Press Tab</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-27698">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2024-04-22T11:26:29.439-0400">2024-04-22T11:26:29.439-0400</relative-time></i></p>
+                        <p>The updated behaviour described in the comment of 2022-05-31 is captured by <a href="https://fluidproject.atlassian.net/browse/C2LC-649">https://fluidproject.atlassian.net/browse/C2LC-649</a>. Closing this issue as Done.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-637/"><span class="aria-hidden">←</span> Previous: C2LC-637</a>
+        <a class="mx-1" href="/browse/C2LC-639/">Next: C2LC-639 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

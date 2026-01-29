@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6454  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6454 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6454/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6454/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6454/">FLUID-6454</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6454: Remove title attribute usage from pager</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6454">FLUID-6454</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Ned%20Zimmerman">Ned Zimmerman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-02-06T16:00:14.638-0500" prefix="">2020-02-06T16:00:14.638-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2022-02-03T04:43:04.306-0500" prefix="">2022-02-03T04:43:04.306-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Demos</li>
+                            
+                            <li>Pager</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The pager component currently makes heavy use of the 'title' attribute on links. This should probably be removed.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25096">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2020-02-10T07:58:40.209-0500">2020-02-10T07:58:40.209-0500</relative-time></i></p>
+                        <p>Ned Zimmerman could you please provide some more information about the issue reported here. For example some context of why the title attribute shouldn't be used, and potential alternatives. Or maybe what issue the title attribute is causing.</p>
+<p>Also I did a quick look at this demo ( <a href="https://build.fluidproject.org/infusion/demos/pager/">https://build.fluidproject.org/infusion/demos/pager/</a>&#160;)&#160;and only noticed title attributes on the sortable headers. Are those the ones that you are referring to, or are there other examples?</p>
+
+                    </li>
+                    
+                    <li id="comment-25097">
+                        <p class="mb-0"><b>Ned Zimmerman</b> <i>commented <relative-time datetime="2020-02-10T10:37:59.207-0500">2020-02-10T10:37:59.207-0500</relative-time></i></p>
+                        <p>Jonathan showed me the pager last week. There's a title attribute on the "Previous" link and the "Next" link. The issue here is that the link has accessible text that will result in screen readers announcing previous twice (e.g. "link, Previous, Previous page" in VoiceOver). My understanding is that it's not recommended that the title attribute be used on links because of inconsistent browser support and the potential for duplicate content being announced by screen readers; my instinct would be that if the goal is to ensure that "Previous page" is read by screen readers, then page could be added as part of the link text but wrapped in a visually-hidden span.</p>
+<p>Reference from MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title#Accessibility_concerns">https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title#Accessibility_concerns</a></p>
+
+                    </li>
+                    
+                    <li id="comment-25098">
+                        <p class="mb-0"><b>Sachin Chopra</b> <i>commented <relative-time datetime="2020-03-19T03:19:04.171-0400">2020-03-19T03:19:04.171-0400</relative-time></i></p>
+                        <p>It's interesting to note that only the top page navbar on&#160;<a href="https://build.fluidproject.org/infusion/demos/pager/">https://build.fluidproject.org/infusion/demos/pager/</a> has the title attribute. The lower page navigation bar has no title attribute assigned.</p>
+<p>Should the title attribute be removed just like it is in the lower page navbar. ?</p>
+
+                    </li>
+                    
+                    <li id="comment-25099">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2020-05-15T11:09:30.807-0400">2020-05-15T11:09:30.807-0400</relative-time></i></p>
+                        <p>I can confirm that the issue occurs using NVDA on Windows 10 Pro (1909). Removing the "title" attribute does remove the duplication, but now the screen reader announces these links as "Less previous link" and "Next greater link".</p>
+<p>My recommendation is to use the "aria-label" attribute to customize how these are read out, rather than "title". The W3C seems to recommend this approach, as well, though it draws a distinction between using "aria-label" and "aria-labelledby". More info here:&#160;<a href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA8.html">https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA8.html</a></p>
+<p>This may be for a separate Jira (it may already be one), but I also noticed that NVDA announces the unordered list as "List with three items", though there are clearly more than three items on the "list", as one of those items is itself a list.</p>
+
+                    </li>
+                    
+                    <li id="comment-25100">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2020-05-19T13:47:12.475-0400">2020-05-19T13:47:12.475-0400</relative-time></i></p>
+                        <p>In looking into this, it doesn't appear that the component actually sets the text for the previous and next buttons. It is just expecting to bind events to them for navigating the pages. ( <a href="https://github.com/fluid-project/infusion/blob/master/src/components/pager/js/Pager.js#L274-L302">https://github.com/fluid-project/infusion/blob/master/src/components/pager/js/Pager.js#L274-L302</a>&#160;). The particular case mentioned here is actually an issue with the demo ( <a href="https://github.com/fluid-project/infusion/blob/master/demos/pager/index.html#L65">https://github.com/fluid-project/infusion/blob/master/demos/pager/index.html#L65</a>&#160;).</p>
+<p>There are a few things to consider here:</p>
+<ol>
+<li>Should the component actually handle the rendering and/or text of the markup</li>
+<li>What solution to use</li>
+</ol>
+<p>In the long term, I think we should consider moving some logic into the component, to ensure it's accessibility. However, this won't necessarily affect the markup requirements too much. I think in the short term we should address the problem in the demo, and then for the future decide if we want to add more functionality to the component.</p>
+<p>To address the issues in the demo I think there are various valid approaches. Here are a few examples:</p>
+<ol>
+<li>replace the <code>title</code> attribute with <code>aria-label</code> as Gregor Moss&#160;mentioned.</li>
+<li>use the visually hidden span approach that Ned Zimmerman&#160;mentioned. You can use the <code>.fl-hidden-accessible</code> class for this ( see: <a href="https://github.com/fluid-project/infusion/blob/d33f91961f246c638e333be6b7cddce8fc35e687/src/framework/core/css/fluid.css#L43-L53">https://github.com/fluid-project/infusion/blob/d33f91961f246c638e333be6b7cddce8fc35e687/src/framework/core/css/fluid.css#L43-L53</a>&#160;)</li>
+<li>Not worry about calling it "previous page" or "next page". I think previous and next are probably enough. In that case you'd probably want to use {{::before and }}<code>::after</code> pseudo elements to add the "&lt;" and "&gt;" respectively, so that they aren't read by the screen reader. And removing the <code>title</code> attribute as well.</li>
+</ol>
+<p>I'd say my preference, at least for the time being, is option 3. Mostly due to its simplicity, but am open to other suggestions.</p>
+
+                    </li>
+                    
+                    <li id="comment-25101">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2020-05-20T09:06:01.348-0400">2020-05-20T09:06:01.348-0400</relative-time></i></p>
+                        <p>On testing with Option 3 from above, I've found that, at least, Safari and VoiceOver are announcing the pseudo elements now, or at lest in this case where the element is contained within the link. One option is to use <code>aria-hidden="true"</code> on the span containing the pseudo element, assuming the actual text is in a different element. See: <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-hidden">https://www.w3.org/TR/wai-aria-1.1/#aria-hidden</a></p>
+<p>The spec does note that presenting different text visually and to an AT may cause some problems for Voice Controlled ATs or for spoken directions from one person to another. I think the latter is less of an issue in this case. The former, I'm not sure about and may depend on the voice control system's flexibility for interpreting similar names. That leads me to think that we should not include "page" in the name.</p>
+<p>So to revise my above suggestions:</p>
+<ol>
+<li>same, but just call it "previous" and "next"</li>
+<li>same, but just call it "previous" and "next"</li>
+<li>same but use {{aria-hidden="true"}}on a separate span for the "&lt;" and "&gt;", and it doesn't have to be a pseudo element any more, it can just be plain text in the span.</li>
+<li>use an icon for the "&lt;" and "&gt;" symbols. The exact approach may depend on the how the icon is implemented. It seems a bit complex for this particular demo, but may be the approach that one would actually want to take if implementing it on an actual site.</li>
+</ol>
+<p></p>
+<p>We should test whichever approach is chosen with multiple ATs.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6453/"><span class="aria-hidden">←</span> Previous: FLUID-6453</a>
+        <a class="mx-1" href="/browse/FLUID-6455/">Next: FLUID-6455 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6327  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6327 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6327/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6327/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6327/">FLUID-6327</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6327: Build/lint time has increased significantly post-FLUID-6315</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6327">FLUID-6327</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Tony Atkins [RtF]</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-08-21T12:30:28.242-0400" prefix="">2018-08-21T12:30:28.242-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T08:56:24.687-0400" prefix="">2024-07-22T08:56:24.687-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Build Scripts</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Build and lint check time for the Infusion repository has increased substantially.</p>
+<p><strong>Build time pre-<a href="/browse/FLUID-6315/">FLUID-6315</a>:</strong></p>
+<ul>
+<li>8m13s - <a href="https://buildkite.com/fluid-project/infusion/builds/357#b0cd7322-75e7-467b-882c-0ce81b04f60a">https://buildkite.com/fluid-project/infusion/builds/357#b0cd7322-75e7-467b-882c-0ce81b04f60a</a></li>
+<li>8m34s - <a href="https://buildkite.com/fluid-project/infusion/builds/359#c2a8d232-55fa-4995-96bb-46e716f9b9c2">https://buildkite.com/fluid-project/infusion/builds/359#c2a8d232-55fa-4995-96bb-46e716f9b9c2</a></li>
+<li>8m46s - <a href="https://buildkite.com/fluid-project/infusion/builds/361#5e259b34-c4b1-4bc0-bf41-d160133219f2">https://buildkite.com/fluid-project/infusion/builds/361#5e259b34-c4b1-4bc0-bf41-d160133219f2</a></li>
+<li>8m11s - <a href="https://buildkite.com/fluid-project/infusion/builds/367#ef946bd5-4448-4cff-b60d-242691c79bc8">https://buildkite.com/fluid-project/infusion/builds/367#ef946bd5-4448-4cff-b60d-242691c79bc8</a></li>
+</ul>
+<p><strong>Build time post-<a href="/browse/FLUID-6315/">FLUID-6315</a>:</strong></p>
+<ul>
+<li>19m51s - <a href="https://buildkite.com/fluid-project/infusion/builds/368#8663175a-b32a-4fec-9dc8-ac1a63e32ad8">https://buildkite.com/fluid-project/infusion/builds/368#8663175a-b32a-4fec-9dc8-ac1a63e32ad8</a></li>
+</ul>
+<p><strong>Lint time pre-<a href="/browse/FLUID-6315/">FLUID-6315</a>:</strong></p>
+<ul>
+<li>16s - <a href="https://buildkite.com/fluid-project/infusion/builds/357#1ff3de88-8392-4435-a136-3ec36041c5e9">https://buildkite.com/fluid-project/infusion/builds/357#1ff3de88-8392-4435-a136-3ec36041c5e9</a></li>
+<li>17s - <a href="https://buildkite.com/fluid-project/infusion/builds/359#a2d2b483-1782-4846-83f0-47b334a7ac50">https://buildkite.com/fluid-project/infusion/builds/359#a2d2b483-1782-4846-83f0-47b334a7ac50</a></li>
+<li>21s - <a href="https://buildkite.com/fluid-project/infusion/builds/361#85ddea6b-bc7d-4af2-a2bd-5c8b6c209d37">https://buildkite.com/fluid-project/infusion/builds/361#85ddea6b-bc7d-4af2-a2bd-5c8b6c209d37</a></li>
+<li>21s - <a href="https://buildkite.com/fluid-project/infusion/builds/367#3baeee40-7786-4d96-be3e-09bfca23c478">https://buildkite.com/fluid-project/infusion/builds/367#3baeee40-7786-4d96-be3e-09bfca23c478</a></li>
+</ul>
+<p><strong>Lint time post-<a href="/browse/FLUID-6315/">FLUID-6315</a>:</strong></p>
+<ul>
+<li>Timed out after 2min - <a href="https://buildkite.com/fluid-project/infusion/builds/368#ea6c01eb-1fc6-4e9e-a791-8dda9e14ff2d">https://buildkite.com/fluid-project/infusion/builds/368#ea6c01eb-1fc6-4e9e-a791-8dda9e14ff2d</a></li>
+</ul>
+<p>Here is a failed CI build for <a href="/browse/FLUID-6315/">FLUID-6315</a>: <a href="https://buildkite.com/fluid-project/infusion/builds/365">https://buildkite.com/fluid-project/infusion/builds/365</a></p>
+<p>i can reproduce these changes locally on my laptop (linting takes over 4min).</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23039">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2018-08-21T13:16:01.551-0400">2018-08-21T13:16:01.551-0400</relative-time></i></p>
+                        <p>Cheers for the report, Giovanni Tirloni. We have a new linting implementation contributed by Tony Atkins [RtF] which makes many more checks than before, which is responsible for the increased processing time. Hopefully we can increase the build timeouts in order to compensate.</p>
+
+                    </li>
+                    
+                    <li id="comment-23040">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-08-21T15:00:40.942-0400">2018-08-21T15:00:40.942-0400</relative-time></i></p>
+                        <p>Merged PR ( <a href="https://github.com/fluid-project/infusion/pull/925">https://github.com/fluid-project/infusion/pull/925</a>&#160;) into the project repo at&#160;7c9cf5cdccdec4108fd2cc042a293e552f2297ca</p>
+
+                    </li>
+                    
+                    <li id="comment-23041">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-08-21T15:59:39.367-0400">2018-08-21T15:59:39.367-0400</relative-time></i></p>
+                        <p>Thanks Antranig Basman &amp; Justin Obara.</p>
+<p>The new build average time is 35 minutes.</p>
+
+                    </li>
+                    
+                    <li id="comment-23042">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-08-22T04:48:49.083-0400">2018-08-22T04:48:49.083-0400</relative-time></i></p>
+                        <p>Giovanni Tirloni or anyone, is there an example of successful build with the new timeout?  I'd like to review and confirm that we aren't accidentally linting non-repo content.</p>
+
+                    </li>
+                    
+                    <li id="comment-23043">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-08-22T06:51:13.234-0400">2018-08-22T06:51:13.234-0400</relative-time></i></p>
+                        <p>Still running but it's successfully finished the build/lint phases: <a href="https://ci.fluidproject.org/job/infusion-pull-request/22">https://ci.fluidproject.org/job/infusion-pull-request/22</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23044">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-08-22T08:21:23.873-0400">2018-08-22T08:21:23.873-0400</relative-time></i></p>
+                        <p>Thanks, I decided to sanity check via other means and submitted <a href="/browse/FLUID-6328/">FLUID-6328</a> with the few files that were not checked that should have been.  I didn't find any evidence that files that shouldn't be checked were being checked, which was what I was worried about with the timing.</p>
+
+                    </li>
+                    
+                    <li id="comment-23045">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-09-04T06:44:47.521-0400">2018-09-04T06:44:47.521-0400</relative-time></i></p>
+                        <p>I have reopened this as the speed was a separate issue.  I'm submitting a pull shortly that brings the linting time down to 9-10 seconds.</p>
+
+                    </li>
+                    
+                    <li id="comment-23046">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-09-04T07:03:50.366-0400">2018-09-04T07:03:50.366-0400</relative-time></i></p>
+                        <p>After some research, it became clear that the globbing used by Grunt, in combination with overly broad patterns like <code>./**/*.js</code> resulted in scanning and then excluding all files in dist, node_modules, et cetera.  There is a new pull that uses the new gpii-glob library and tighter patterns, which reduces the linting speed to 9-10 seconds.</p>
+<p><a href="https://github.com/fluid-project/infusion/pull/930">https://github.com/fluid-project/infusion/pull/930</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23047">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-09-20T08:34:54.088-0400">2018-09-20T08:34:54.088-0400</relative-time></i></p>
+                        <p>Merged PR ( <a href="https://github.com/fluid-project/infusion/pull/930">https://github.com/fluid-project/infusion/pull/930</a>&#160;) into the project repo at&#160;81c4c0572b8ac0ffd650fa675cc8dab43d422d11</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6326/"><span class="aria-hidden">←</span> Previous: FLUID-6326</a>
+        <a class="mx-1" href="/browse/FLUID-6328/">Next: FLUID-6328 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

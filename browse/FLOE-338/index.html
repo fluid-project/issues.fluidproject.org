@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-338  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-338 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-338/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-338/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-338/">FLOE-338</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-338: Not all punctuation is read correctly by the self voicing keyboard input</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-338">FLOE-338</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLOE/?resolution=Duplicate">Duplicate</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Simon%20Bates">Simon Bates</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-05-14T17:07:02.586-0400" prefix="">2015-05-14T17:07:02.586-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-11-12T14:43:18.134-0500" prefix="">2015-11-12T14:43:18.134-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>First Discovery</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Not all punctuation is read correctly by the self voicing keyboard input.</p>
+<p>For example: ",", "!", ";"</p>
+<p>To reproduce:</p>
+<ul>
+<li>navigate to the First Discovery Keyboard panel</li>
+<li>focus the input box</li>
+<li>type ","</li>
+</ul>
+<p>Some possible solutions:</p>
+<ul>
+<li>Use SSML <a href="http://www.w3.org/TR/speech-synthesis/">http://www.w3.org/TR/speech-synthesis/</a> to mark up punctuation so that they are read as their character names – a problem with this solution is that it looks like Chrome does not implement SSML <a href="http://stackoverflow.com/questions/21952736/the-right-way-to-use-ssml-with-web-speech-api">http://stackoverflow.com/questions/21952736/the-right-way-to-use-ssml-with-web-speech-api</a></li>
+<li>Implement a lookup table so that when the user types "," we send "comma" to the speech API – the downside to this is the need to make and maintain tables for all supported languages</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-11424">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2015-11-12T14:43:18.132-0500">2015-11-12T14:43:18.132-0500</relative-time></i></p>
+                        <p>This report has been copied to the GPII bug tracker: <a href="https://issues.gpii.net/browse/GPII-1413">https://issues.gpii.net/browse/GPII-1413</a> and all activities should be carried on there.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-337/"><span class="aria-hidden">←</span> Previous: FLOE-337</a>
+        <a class="mx-1" href="/browse/FLOE-339/">Next: FLOE-339 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

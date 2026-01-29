@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-677  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-677 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-677/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-677/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-677/">FLUID-677</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-677: Keyboard movement incorrect when items are selectable and drop targets but not movable.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-677">FLUID-677</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Michelle%20D'Souza">Michelle D'Souza</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-05-29T19:44:59.000-0400" prefix="">2008-05-29T19:44:59.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-09-08T13:35:25.000-0400" prefix="">2008-09-08T13:35:25.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This happens when using the Reorderer API that takes a map of finder functions.  Moving an item with the keyboard past a selectable item that is a drop target, causes the item that is moving to be placed after the next movable item not after the next drop target.</p>
+<p>This can be seen in the 'list' manual test:<br>
+<a href="http://build.fluidproject.org/sakai-imagegallery-tool/tests/fluid-tests/manual/list/list.html">http://build.fluidproject.org/sakai-imagegallery-tool/tests/fluid-tests/manual/list/list.html</a></p>
+<p>If you tab to the second list and move item 1 down, it will be placed after item 3 instead of after item 2. </p>
+<p>There is an automated test in ReorderListTests that has been commented out due to this bug.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13303">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-09-07T18:37:47.000-0400">2008-09-07T18:37:47.000-0400</relative-time></i></p>
+                        <p>Corrected at revision 5477</p>
+
+                    </li>
+                    
+                    <li id="comment-13304">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2008-09-08T10:48:33.000-0400">2008-09-08T10:48:33.000-0400</relative-time></i></p>
+                        <p>This is still a problem. To see the issue, tab to the second list in the manual test and try to move item 1 below item 3. </p>
+
+                    </li>
+                    
+                    <li id="comment-13305">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-09-08T12:45:54.000-0400">2008-09-08T12:45:54.000-0400</relative-time></i></p>
+                        <p>It seems that this was really two issues, and two different ones rather than a specific issue with non-movable items. The particular sample in question has a "fault" with its CSS styles in that the item collapses when it is in the "keyboard moving" mode. Secondly, even correcting the timing of geometry updates, revealed a further issue that the geometry manager did not quite behave correctly in the case of elements which abutted completely - a "half-open correction" needed to be added to allow both wrapping and downward motion to work correctly at the same time...</p>
+<p>Revision 5483</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-676/"><span class="aria-hidden">←</span> Previous: FLUID-676</a>
+        <a class="mx-1" href="/browse/FLUID-678/">Next: FLUID-678 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

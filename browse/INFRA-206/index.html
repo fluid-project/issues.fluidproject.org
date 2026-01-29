@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-206  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-206 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-206/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-206/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-206/">INFRA-206</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-206: Buildkite Docker builds are leaving root-owned files behind</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-206">INFRA-206</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-08-15T11:15:18.260-0400" prefix="">2018-08-15T11:15:18.260-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-08-15T11:16:29.411-0400" prefix="">2018-08-15T11:16:29.411-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This causes the checkout phase to fail (since git can't remove those files while running as buildkite-agent user):</p>
+<pre><code class="hljs"><span class="hljs-symbol">$</span> cd /var/lib/buildkite-agent/builds/h<span class="hljs-number">-0005</span>-tor1-incd-ca<span class="hljs-number">-1</span>/fluid-project/kettle
+<span class="hljs-symbol">$</span> git remote <span class="hljs-keyword">set</span>-url <span class="hljs-comment">origin https:</span>//<span class="hljs-comment">github.com</span>/fluid-project/<span class="hljs-comment">kettle.git</span>
+$ git <span class="hljs-comment">clean -fdq</span>
+# Fetch <span class="hljs-comment">and checkout pull request head from GitHub</span>
+$ git <span class="hljs-comment">fetch -v origin refs</span>/pull/<span class="hljs-comment">41</span>/head
+From https:<span class="hljs-comment">//github.com/fluid-project/kettle</span>
+ * branch            refs/<span class="hljs-comment">pull</span>/<span class="hljs-number">41</span>/<span class="hljs-comment">head -&gt; FETCH_HEAD</span>
+# FETCH_HEAD <span class="hljs-comment">is now</span> `<span class="hljs-comment">7606c18928b0ccd24e04ab23d9d32b44e11b3481</span>`
+$ git <span class="hljs-comment">checkout -f 6fcb7476815d7ff2004bd2a529b598ccab083496</span>
+error: unable <span class="hljs-comment">to create file tests</span>/data/<span class="hljs-comment">writeable</span>/formenc.txt (Permission denied)
+HEAD is now at <span class="hljs-number">6</span>fcb747... KETTLE<span class="hljs-number">-66</span>: use *Resolver <span class="hljs-keyword">for</span> invokers that result in Multer-style callback functions.
+⚠️ Warning: Checkout failed! Error running `/<span class="hljs-comment">usr</span>/bin/<span class="hljs-comment">git checkout -f 6fcb7476815d7ff2004bd2a529b598ccab083496</span>`<span class="hljs-comment">: exit status 1 (Attempt 1</span>/<span class="hljs-number">3</span> Retrying in <span class="hljs-number">2</span>s)
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25743">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-08-15T11:16:29.407-0400">2018-08-15T11:16:29.407-0400</relative-time></i></p>
+                        <p>Created a pre-checkout hook script that cleans those files:</p>
+<pre><code class="hljs"><span class="hljs-meta">#!/bin/bash -ex</span>
+
+<span class="hljs-comment"># Safety check to ensure we're not being fed a bad path</span>
+<span class="hljs-keyword">if</span> [[ <span class="hljs-variable">${BUILDKITE_BUILD_CHECKOUT_PATH}</span> == /var/lib/buildkite-agent* ]]; <span class="hljs-keyword">then</span>
+
+  <span class="hljs-comment"># Delete root-owned files that might have been created by an old containerized build</span>
+  docker run --<span class="hljs-built_in">rm</span> -v <span class="hljs-variable">${BUILDKITE_BUILD_CHECKOUT_PATH}</span>:/src busybox sh -c <span class="hljs-string">"cd /src &amp;&amp; find /src/ -user root -exec rm -rf \{\} \;"</span>
+
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<p>Successful build: <a href="https://buildkite.com/fluid-project/kettle/builds/61">https://buildkite.com/fluid-project/kettle/builds/61</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-205/"><span class="aria-hidden">←</span> Previous: INFRA-205</a>
+        <a class="mx-1" href="/browse/INFRA-207/">Next: INFRA-207 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

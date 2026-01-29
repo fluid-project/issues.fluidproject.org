@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-321  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-321 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-321/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-321/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-321/">SJRK-321</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-321: Migrate code from stories-floe-dev to master branch</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-321">SJRK-321</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SJRK/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-01-16T16:31:44.213-0500" prefix="">2020-01-16T16:31:44.213-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-04-03T12:43:47.560-0400" prefix="">2020-04-03T12:43:47.560-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool Server</li>
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The branch <a href="https://github.com/fluid-project/sjrk-story-telling/tree/stories-floe-dev">stories-floe-dev</a> is currently being treated as a sort of master branch while the codebase is slowly inching towards satisfying fluid-project standards for inclusion in the master branch.</p>
+<p>At least one metric of success is fully passing the <a href="https://wiki.fluidproject.org/display/fluid/Laser+Eye+Checklist">Laser Eye Checklist</a>.</p>
+<p>Meanwhile, there are other fluid-project sites&#160;running out of their master branches, and we have been exploring the notion of a flexible code standard in <a href="/browse/FLUID-6358/">FLUID-6358</a>. With this in mind, we should aim to stop using stories-floe-dev in this manner and promote its contents to the master branch.</p>
+<p>This should also include an update to the README or a new documentation file (in the "docs" directory) which details all of the branches in <a href="https://github.com/fluid-project/sjrk-story-telling">the main fork of this repository</a> and what they are each used for.</p>
+<p>The stories-floe-dev branch is currently the basis for the CI build of the <a href="https://staging-stories.floeproject.org/">FLOE Storytelling Tool staging site</a>, so this should also be considered. Should master be the new basis for the staging site or would it be appropriate to leave it as it is?</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26581">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2020-01-28T14:46:18.356-0500">2020-01-28T14:46:18.356-0500</relative-time></i></p>
+                        <p>The code has been merged into the master branch as a result of the work on <a href="/browse/SJRK-255/">SJRK-255</a>.</p>
+<p>Still remaining:</p>
+<ul>
+<li>ensure the&#160;<a href="https://wiki.fluidproject.org/display/fluid/Laser+Eye+Checklist">Laser Eye Checklist</a> is satisfied</li>
+<li>update the documentation (recommend adding a new file) detailing the branches used for site deployment</li>
+<li>consider what to do about the staging site deployment</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-26582">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2020-02-21T17:02:40.978-0500">2020-02-21T17:02:40.978-0500</relative-time></i></p>
+                        <p>In creating my BRANCHES.md file, I've noticed that the two branches <code>learning-to-learn</code> and <code>re-review</code> are not used. As such I recommend that we delete them along with <code>stories-floe-dev</code> when the time comes.</p>
+<p>For a bit of context, <code>learning-to-learn</code> was once our main development base (much as <code>stories-floe-dev</code> was after that and <code>master</code> is now) and&#160;<code>re-review</code> is a branch that Antranig Basman set up for his holistic review efforts that culminated in the <a href="/browse/SJRK-255/">SJRK-255</a> work being merged in and the project being updated to satisfy <a href="/browse/FLUID-6145/">FLUID-6145</a> and <a href="/browse/FLUID-6148/">FLUID-6148</a>.</p>
+
+                    </li>
+                    
+                    <li id="comment-26583">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2020-02-21T17:12:03.709-0500">2020-02-21T17:12:03.709-0500</relative-time></i></p>
+                        <p>I have also noticed in my review of the CI jobs that the Karisma site (<a href="https://karisma-stories.floeproject.org/">https://karisma-stories.floeproject.org/</a>) is being deployed from a particular branch in Alan Harnum's fork of the code:&#160;<a href="https://github.com/waharnum/sjrk-story-telling-server/tree/SJRK-56-karisma">https://github.com/waharnum/sjrk-story-telling-server/tree/SJRK-56-karisma</a>. Transitioning off of that and onto a more "mainline" branch of the code may involve a bit of work bringing that particular theme up to date, since it was originally deployed nearly two years ago, so perhaps that effort deserves its own Jira.</p>
+
+                    </li>
+                    
+                    <li id="comment-26584">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2020-03-17T13:16:56.552-0400">2020-03-17T13:16:56.552-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/sjrk-story-telling/pull/58">The pull request</a> that completes the documentation has been merged into to the project repo master branch at <a href="https://github.com/fluid-project/sjrk-story-telling/commit/87aa0b3471c74b002147e93d5e0219efaabf4546">this commit</a>.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-320/"><span class="aria-hidden">←</span> Previous: SJRK-320</a>
+        <a class="mx-1" href="/browse/SJRK-322/">Next: SJRK-322 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

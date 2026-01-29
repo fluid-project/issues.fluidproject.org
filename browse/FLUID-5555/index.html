@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5555  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5555 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5555/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5555/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5555/">FLUID-5555</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5555: Consider using github and grunt to simplify design, development, and deployment of icon fonts</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5555">FLUID-5555</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Eloisa Guerrero</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-11-13T09:01:24.365-0500" prefix="">2014-11-13T09:01:24.365-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-04-27T07:36:01.256-0400" prefix="">2018-04-27T07:36:01.256-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                            <li>Infusion-Icons</li>
+                            
+                            <li>Release</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently in Fluid / Floe related projects, we are using an ad-hoc system to generate fonts: whenever a project needs a font, an existing icon font is duplicated, or another icon font is created from scratch. This creates a problem where icons are hard to maintain.</p>
+<p>A possible solution (open for discussion and refinement):</p>
+<ul>
+<li>create a font project in github to store the SVG vectors used for font icons</li>
+<li>SVG files are not binary, so they can be versioned easily by github and still editable by vector editors</li>
+<li>use a grunt plugin capable of generating fonts from an arbitrary list of SVGs</li>
+<li>have an index file / contact sheet which shows all available icons.</li>
+</ul>
+<p>There are some questions to address:</p>
+<ul>
+<li>How is it possible to maintain a font set for a particular project? i.e. Project A may use 10 of 20 fonts, whereas Project B may use 12 of 20. How is this information stored?</li>
+<li>How are Unicode PUA's specified for each glyph / SVG? Are PUA's globally unique in the font repository, or do projects define their own PUA's? </li>
+<li>If someone deletes an SVG from the repository, do the PUAs change automatically?</li>
+<li>Can Readme documentation be automatically generated for each font set? The readme would contain instructions on how to use the icon font in CSS/HTML, and list the PUA codes for each glyph.</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22434">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-02-19T08:12:50.537-0500">2016-02-19T08:12:50.537-0500</relative-time></i></p>
+                        <p>Jonathan Hung pointed me at  <a href="https://github.com/sapegin/grunt-webfont">https://github.com/sapegin/grunt-webfont</a>. It should address at least some of the above concerns as you can specify which glyph uses which PUA value.</p>
+
+                    </li>
+                    
+                    <li id="comment-22436">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-02-19T09:11:56.112-0500">2016-02-19T09:11:56.112-0500</relative-time></i></p>
+                        <p>Grunt does support pulling data from an external JSON file (<a href="http://gruntjs.com/configuring-tasks#importing-external-data">http://gruntjs.com/configuring-tasks#importing-external-data</a>), so we could have JSON files for each project that uses the icons. However it might be easier to just source all this information via the command line, similar to how the Infusion build script currently work.</p>
+
+                    </li>
+                    
+                    <li id="comment-22437">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-03-14T12:52:46.260-0400">2017-03-14T12:52:46.260-0400</relative-time></i></p>
+                        <p>A short blog post about how to use grunt-webfont including information about font height, ascent and descent. <a href="https://medium.com/sketch-app-sources/font-icons-workflow-with-sketch-and-grunt-16b161d97c5e#.tqibe05z5">https://medium.com/sketch-app-sources/font-icons-workflow-with-sketch-and-grunt-16b161d97c5e#.tqibe05z5</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22438">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-03-16T09:09:31.502-0400">2017-03-16T09:09:31.502-0400</relative-time></i></p>
+                        <p>I had trouble getting good looking fonts using <a href="https://github.com/sapegin/grunt-webfont">https://github.com/sapegin/grunt-webfont</a> without installing fontforge. Unfortunately fontforge isn't installed via NPM which would pose a problem for using in Infusion. I did have more success with <a href="https://www.npmjs.com/package/webfonts-generator">https://www.npmjs.com/package/webfonts-generator</a>; however, it is a straight NPM package ( not grunt ) and needed to set the fontHeight option. It appears that both grunt-webfont and webfont-generator use <a href="https://github.com/nfroidure/svgicons2svgfont">https://github.com/nfroidure/svgicons2svgfont</a> as the node engine, so perhaps tweaking the settings for grunt-webfont would get it to work.</p>
+<p>We may also need to rebuild our svgs for the icons. For example use consistent art board sizes for all of them. </p>
+
+                    </li>
+                    
+                    <li id="comment-22440">
+                        <p class="mb-0"><b>Eloisa Guerrero</b> <i>commented <relative-time datetime="2017-10-19T16:13:16.843-0400">2017-10-19T16:13:16.843-0400</relative-time></i></p>
+                        <p>Documentation for standardising workflow for icon fonts over here:&#160;<a href="https://wiki.fluidproject.org/display/fluid/Standard+workflow+in+maintaining+and+creating+icon+fonts">https://wiki.fluidproject.org/display/fluid/Standard+workflow+in+maintaining+and+creating+icon+fonts</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22441">
+                        <p class="mb-0"><b>Eloisa Guerrero</b> <i>commented <relative-time datetime="2017-10-19T16:17:57.329-0400">2017-10-19T16:17:57.329-0400</relative-time></i></p>
+                        <p>See wiki documentation: <a href="https://issues.fluidproject.org/browse/FLUID-5555">https://issues.fluidproject.org/browse/FLUID-5555</a></p>
+<p>And infusion-icons Github repository:&#160;<a href="https://github.com/fluid-project/infusion-icons">https://github.com/fluid-project/infusion-icons</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5554/"><span class="aria-hidden">←</span> Previous: FLUID-5554</a>
+        <a class="mx-1" href="/browse/FLUID-5556/">Next: FLUID-5556 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

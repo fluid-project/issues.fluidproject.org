@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> ENGAGE-383  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" ENGAGE-383 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/ENGAGE-383/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/ENGAGE-383/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/ENGAGE" data-pagefind-filter="project">Fluid Engage</a></li>
+                <li><a href="/browse/ENGAGE-383/">ENGAGE-383</a></li>
+            </ol>
+        </nav>
+        <h1>ENGAGE-383: CouchDB appears to require that properties are listed in a specific order when specifying a composite key for a Couch view</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/ENGAGE-383">ENGAGE-383</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/ENGAGE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/ENGAGE/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/ENGAGE/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-02-12T15:54:05.000-0500" prefix="">2010-02-12T15:54:05.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2010-02-12T17:07:46.000-0500" prefix="">2010-02-12T17:07:46.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3b</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Catalogue</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>CouchDB appears to have a very strange bug. When using a composite key to a view, for example:</p>
+<p>{<br>
+key1: "foo",<br>
+key2: "bar"<br>
+}</p>
+<p>You must ensure that the keys are listed in the same order as they were defined in the view, otherwise Couch will fail to match them. Since JavaScript objects don't specify a fixed order for keys (how could they?), this must be a bug in Couch itself.</p>
+<p>If I were to speculate, perhaps Couch is comparing the stringified version of keys.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-12341">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-02-12T17:07:46.000-0500">2010-02-12T17:07:46.000-0500</relative-time></i></p>
+                        <p>This is known behaviour in Couch DB, as outlined in this document on how view collation works:</p>
+<p><a href="http://wiki.apache.org/couchdb/View_collation">http://wiki.apache.org/couchdb/View_collation</a></p>
+<p>It does raise the distinct possibility that, when deployed on a different VM, we'll have problems with JSON serialization and Couch Views. Time to write our own Couch-specific JSON serializer.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/ENGAGE-381/"><span class="aria-hidden">←</span> Previous: ENGAGE-381</a>
+        <a class="mx-1" href="/browse/ENGAGE-384/">Next: ENGAGE-384 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6381  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6381 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6381/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6381/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6381/">FLUID-6381</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6381: Explore making use of prefers-color-scheme and prefers-reduced-motion CSS media features with UIO </h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6381">FLUID-6381</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-07-10T11:09:37.888-0400" prefix="">2019-07-10T11:09:37.888-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-11-03T14:37:47.713-0400" prefix="">2021-11-03T14:37:47.713-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UIEnhancer</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p><code>[prefers-reduced-motion|https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion] and&#160;[prefers-color-scheme|https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme]&#160;are two new CSS media features that could be used with UI Options (or the prefs framework) to react to the user's system preferences. We should explore how to best leverage this system information to enhance the user's experience.&#160;</code></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25568">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-07-10T11:57:14.455-0400">2019-07-10T11:57:14.455-0400</relative-time></i></p>
+                        <p>Suggestion from Mike Gifford:<br>
+&#160;<br>
+So this ultimately is probably adding another pane in the editor.&#160;<br>
+&#160;<br>
+When arriving to the site for the first time Fluid UI would make note of the preferences of the browser and make them available in the new pane. A user could choose to override the browser in the pane.&#160;<br>
+&#160;<br>
+Dark mode is most likely already defined if you’ve got Fluid UI installed. In which case, this should be what a new visitor first see if they have dark mode enabled. It would make sense to somehow highlight this in the list of contrast options that the browser defaults are being engaged vs the site default color scheme.&#160;<br>
+&#160;<br>
+If a browser supports dark mode and prefers motion, but a user doesn’t have it enabled, it would be useful to point users to a list about how to set the defaults for the browser or OS. If the browser doesn’t support it, there is no need to tell the user anything about it.&#160;<br>
+&#160;<br>
+The big challenge that I see with things like&#160;prefers-reduced-motion is that there is no way to set that from a standard UI pattern. &#160;Adding it to Fluid UI gives users the ability to control this but also an easy way for developers to test for it.</p>
+
+                    </li>
+                    
+                    <li id="comment-25569">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-07-17T10:19:35.181-0400">2019-07-17T10:19:35.181-0400</relative-time></i></p>
+                        <p>JSFiddle Examples for the media features:</p>
+<ul>
+<li><a href="https://jsfiddle.net/snfmaLvw/23/">prefers-color-scheme</a></li>
+<li><a href="https://jsfiddle.net/fk0pqLud/2/">prefers-reduced-motion</a></li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-25570">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-07-30T15:07:01.407-0400">2019-07-30T15:07:01.407-0400</relative-time></i></p>
+                        <p>Talked about these at today's Design Crit. Some suggestions around how to display, seemed mostly to point at providing options for users based off of these. Perhaps this makes some preferences showcased.</p>
+<p>Another possibility is to provide this as an option for browsers/OS that don't expose these features or to request as an override to not apply them to a specific site. In both cases this would require more implementation or configuration from the integrator.</p>
+
+                    </li>
+                    
+                    <li id="comment-25571">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-07-30T15:08:55.550-0400">2019-07-30T15:08:55.550-0400</relative-time></i></p>
+                        <p>We could also look at adapting UIO itself based on these media-features, although during the Design Crit there was cautions about making assumptions and broad sweeping changes based on binary values that may not fully reflect the users preferences. (e.g. what constitutes necessary animations and how is deciding what is necessary - integrator or user).</p>
+
+                    </li>
+                    
+                    <li id="comment-25572">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2021-11-03T14:37:47.713-0400">2021-11-03T14:37:47.713-0400</relative-time></i></p>
+                        <p>If we'd like to make a UIO Preference for reducing motion/animation independent of the media query it would be possible to remove CSS related animations and transitions. However, JS related animations for example would still have to be done by the integrator.</p>
+<p></p>
+<p>See <a href="https://matrix.to/#/!JcoHDrfLedPQdFhAXn:matrix.org/$LZ6wUxUgRhOUt5duOmpbQWs-TQqM2iocD7qOBerwMIM?via=matrix.org">comment</a> in Fluid-Technology matrix channel on Nov 3, 2021.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6380/"><span class="aria-hidden">←</span> Previous: FLUID-6380</a>
+        <a class="mx-1" href="/browse/FLUID-6382/">Next: FLUID-6382 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

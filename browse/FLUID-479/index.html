@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-479  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-479 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-479/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-479/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-479/">FLUID-479</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-479: Drop marker incorrect when avatar is dropped in white space at end of row.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-479">FLUID-479</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-04-09T16:18:57.000-0400" prefix="">2008-04-09T16:18:57.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-11-13T13:29:45.000-0500" prefix="">2008-11-13T13:29:45.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                            <li>0.3</li>
+                            
+                            <li>0.4beta1</li>
+                            
+                            <li>0.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Image Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>If browser window is resized so there is a lot of white space at the end of a row. Dragging and dropping an item in that white space will "snap" the dragged item back to its original position despite a drop marker being displayed at the end of the row.</p>
+<p>Unrelated to Fluid-148.<br>
+Possibly related to Fluid-478.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-479/bad drop marker.gif">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-479/bad drop marker.gif" alt="bad drop marker.gif">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-18736">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2008-04-10T10:21:14.000-0400">2008-04-10T10:21:14.000-0400</relative-time></i></p>
+                        <p>The underlying issue is that we don't hide the drop marker when we get an 'out' for the current drop target. This is because of the issue where we get 'over' and 'out' in the wrong order which causes great user confusion especially when we have nested drop targets.  </p>
+
+                    </li>
+                    
+                    <li id="comment-18738">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-05-13T13:22:03.000-0400">2008-05-13T13:22:03.000-0400</relative-time></i></p>
+                        <p>Possible solution: Modify the mouse move tracker to use the currentDroppable property if there is nod target. This will result in the item being dropped wherever the drop marker was last displayed.</p>
+
+                    </li>
+                    
+                    <li id="comment-18741">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-08-08T08:53:23.000-0400">2008-08-08T08:53:23.000-0400</relative-time></i></p>
+                        <p>This issue is very complex - the main constraints are <br>
+i) We have a requirement to compute drop targets "manually" - since the default algorithm in JQuery UI cannot account for the "top half/bottom half" requirements when dragging things to between positions in lists, <br>
+however<br>
+ii) We are constrained also by the JQuery UI algorithm in that it will <strong>not</strong> give us drop notifications if the drop occurs outside any droppable target (in its opinion).</p>
+<p>However, the algorithm is valuable, in that it does some useful work for us quickly (determining which of the set of droppable targets we are "within tolerance" for a drop), which we must make use of via tracking of its over/out events which are sent.</p>
+
+                    </li>
+                    
+                    <li id="comment-18744">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-08-08T10:27:27.000-0400">2008-08-08T10:27:27.000-0400</relative-time></i></p>
+                        <p>Resolved as part of comprehensive drag and drop reorganisation at rev 5338 ("DragManager" created)</p>
+
+                    </li>
+                    
+                    <li id="comment-18746">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-11-13T13:29:45.000-0500">2008-11-13T13:29:45.000-0500</relative-time></i></p>
+                        <p>appears to have been  fixed</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-478/"><span class="aria-hidden">←</span> Previous: FLUID-478</a>
+        <a class="mx-1" href="/browse/FLUID-480/">Next: FLUID-480 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

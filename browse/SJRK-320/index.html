@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-320  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-320 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-320/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-320/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-320/">SJRK-320</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-320: Convert storyTellingServerUI.js code into a component</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-320">SJRK-320</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-01-16T15:43:57.650-0500" prefix="">2020-01-16T15:43:57.650-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-01-22T17:14:09.600-0500" prefix="">2020-01-22T17:14:09.600-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In the review process for work on <a href="/browse/SJRK-255/">SJRK-255</a>, Antranig Basman left the following review comments:</p>
+<p><a href="https://github.com/fluid-project/sjrk-story-telling/pull/35#pullrequestreview-270700397">https://github.com/fluid-project/sjrk-story-telling/pull/35#pullrequestreview-270700397</a></p>
+<blockquote>
+<p>A big problem with the test set up is that this entire component tree leaks between tests, including the UIO instance nested in it. We need to arrange for teardown of the browse component once the fixtures finish. See below -</p>
+</blockquote>
+<p>and</p>
+<p><a href="https://github.com/fluid-project/sjrk-story-telling/pull/35#pullrequestreview-270701074">https://github.com/fluid-project/sjrk-story-telling/pull/35#pullrequestreview-270701074</a></p>
+<blockquote>
+<p>Any time there's a call to loadBrowse we need to arrange for cleanup - I suggest packaging the assertion functions into a reusable utility that as well as making the assertion calls storyBrowse.destroy() once it is done</p>
+<p>A slightly cleaner structure would just have one testEnvironment per use of a "page" and then repackage sjrk.storyTelling.loadThemedPage rather than as a standalone function, a definition for a "createOnEvent" subcomponent of a PageLoader component which fires on the completion of the I/O for /stories (and /clientConfig, with boiling, etc.). Then you could rely on the standard teardown of the testEnvironment to arrange for destruction of the PageLoader once you were finished tinkering with it in the fixtures. This might be enough in itself to stop the race on constructing the 2nd and further UIO components into the same page but I will continue to investigate</p>
+</blockquote>
+<p>Address the review comments by creating a new component that will automatically handle loading clientConfig, custom theme files and story data, as well as have its lifecycle managed by Infusion and the IoC test framework.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26395">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2020-01-16T16:01:50.474-0500">2020-01-16T16:01:50.474-0500</relative-time></i></p>
+                        <p>Work on this issue can be found in this branch:&#160;<a href="https://github.com/BlueSlug/sjrk-story-telling/tree/SJRK-320">https://github.com/BlueSlug/sjrk-story-telling/tree/SJRK-320</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-319/"><span class="aria-hidden">←</span> Previous: SJRK-319</a>
+        <a class="mx-1" href="/browse/SJRK-321/">Next: SJRK-321 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

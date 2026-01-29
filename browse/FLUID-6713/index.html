@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6713  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6713 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6713/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6713/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6713/">FLUID-6713</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6713: Minimal Preferences Editor example not initializing</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6713">FLUID-6713</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2022-02-03T07:59:51.235-0500" prefix="">2022-02-03T07:59:51.235-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2022-02-09T09:51:52.268-0500" prefix="">2022-02-09T09:51:52.268-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Steps to reproduce:</p>
+<ol>
+<li>Open the <a href="https://build-infusion.fluidproject.org/examples/framework/preferences/minimaleditor/">Minimal Preferences Editor</a> example</li>
+<li>Notice there is no checkbox to set the preference</li>
+<li>Open the console to see the following error:</li>
+</ol>
+<pre><code class="hljs language-java">Uncaught&#160;
+Object { message: <span class="hljs-string">"Assertion failure - check console for more details: Reference to resources record with name awesomeCars_prefs_panels_heatedSeats which is not registered for component component { typeName: \"fluid.resourceLoader id: 7yrmsyda-204\" gradeNames: [\"fluid.resourceLoader\",\"fluid.prefs.created_7yrmsyda-53.messageLoader\"]} at path uiOptions-7yrmsyda-38.prefsEditorLoader.messageLoader"</span>, stack: <span class="hljs-string">"fluid.FluidError@https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:184:26\nfluid.builtinFail@https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:208:15\nfire@https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:1766:40\nfluid.fail@https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:224:32\nstrategy@https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:197:31\nfluid.mountStrategy/&lt;@https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:127:20\nfluid.model.traverseWithStrategy@https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:56:41\nfluid.model.accessImpl@https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:1219:16\nfluid.model.accessWithStrategy@https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:107:32\nfluid.model.getWithStrategy@https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:82:28\nfluid.get@https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:1302:25\nfluid.getForComponent@https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:875:38\nfetcher@https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:998:26\nfetch@https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:3155:32\nfluid.resolveContextValue@https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:3163:20\nfluid.expandSource@https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:3254:45\nstrategy@https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:3306:26\nfluid.fetchExpandChildren/&lt;@https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:3226:29\nfluid.each@https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:655:21\nfluid.fetchExpandChildren@https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:3219:15\nfluid.makeExpandOptions/options.initter@https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:3331:40\nfluid.concludeComponentObservation@https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:1505:41\nfluid.enqueueWorkflowBlock/&lt;/localWorkflowTask/&lt;@https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2209:41\nlocalWorkflowTask@https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2208:41\ninvokeNext@https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:258:56\nfluid.promise.resumeSequence@https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:238:39\nfluid.promise.progressSequence@https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219:23\nfluid.promise.resumeSequence@https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247:31\nfluid.promise.progressSequence@https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219:23\nfluid.promise.resumeSequence@https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247:31\nfluid.promise.progressSequence@https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219:23\nfluid.promise.resumeSequence@https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247:31\nfluid.promise.progressSequence@https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219:23\nfluid.promise.resumeSequence@https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247:31\nfluid.promise.progressSequence@https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219:23\nfluid.promise.resumeSequence@https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247:31\ncommitPotentiae@https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2330:31\nfluid.tryCatch@https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:243:24\nfluid.commitPotentiae@https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2315:15\nfluid.concludeAnyTreeTransaction@https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:1430:19\nfire@https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:1766:40\nfluid.prefs.prefsEditor.finishInit/&lt;@https://build-infusion.fluidproject.org/src/framework/preferences/js/PrefsEditor.js:470:50\nfluid.promise.pushHandler@https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:86:28\nfluid.promise/that.then@https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:33:27\nfluid.prefs.prefsEditor.finishInit@https://build-infusion.fluidproject.org/src/framework/preferences/js/PrefsEditor.js:469:22\nfluid.prefs.prefsEditor.init/&lt;@https://build-infusion.fluidproject.org/src/framework/preferences/js/PrefsEditor.js:490:41\n"</span> }
+FluidIoC.js:<span class="hljs-number">1432</span>:<span class="hljs-number">17</span>
+&#160; &#160; concludeAnyTreeTransaction https:<span class="hljs-comment">//build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:1432</span>
+&#160; &#160; fire https:<span class="hljs-comment">//build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:1766</span>
+&#160; &#160; finishInit https:<span class="hljs-comment">//build-infusion.fluidproject.org/src/framework/preferences/js/PrefsEditor.js:470</span>
+&#160; &#160; pushHandler https:<span class="hljs-comment">//build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:86</span>
+&#160; &#160; then https:<span class="hljs-comment">//build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:33</span>
+&#160; &#160; finishInit https:<span class="hljs-comment">//build-infusion.fluidproject.org/src/framework/preferences/js/PrefsEditor.js:469</span>
+&#160; &#160; init https:<span class="hljs-comment">//build-infusion.fluidproject.org/src/framework/preferences/js/PrefsEditor.js:490</span>
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25192">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2022-02-09T09:51:52.266-0500">2022-02-09T09:51:52.266-0500</relative-time></i></p>
+                        <p>Merged PR ( <a href="https://github.com/fluid-project/infusion/pull/1070">https://github.com/fluid-project/infusion/pull/1070</a>&#160;) into the project repo at 50bdbf8d145ddfd64f3cc865397f8ef03982e443</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6712/"><span class="aria-hidden">←</span> Previous: FLUID-6712</a>
+        <a class="mx-1" href="/browse/FLUID-6714/">Next: FLUID-6714 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

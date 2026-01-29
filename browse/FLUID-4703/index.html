@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4703  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4703 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4703/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4703/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4703/">FLUID-4703</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4703: UI Enhancer shouldn't use 'em' for line-height value</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4703">FLUID-4703</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-04-20T10:16:26.417-0400" prefix="">2012-04-20T10:16:26.417-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2012-04-20T16:15:15.407-0400" prefix="">2012-04-20T16:15:15.407-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>UIEnhancer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The UI Enhancer currently uses a unit of 'em' on the line-height setting it applies o the body element. I believe it shouldn't use a unit.</p>
+<p>When an absolute value is used for line-height, the computed line-height (based on the the font-size of the element where the line-height was specified) is inherited by all elements that don't have their own line-height set. In the case of UIO, this means that everything inherits the computed - and therefore fixed - line height based on the body font size. Because UI Enhancer is setting the line height this way, elements with larger fonts end up with too little line-spacing, requiring integrators to hard-code a line-height for those elements, which means that increasing the line-height with UIO doesn't affect those elements (see <a href="/browse/FLUID-4491/">FLUID-4491</a>).</p>
+<p>In contrast, when the line-height is a unitless number, it is treated as a scaling factor, and that factor is inherited. The factor will be used by each element to calculate the line height based on the element's own font size.</p>
+<p>If we fix this bug, integrators shouldn't have to set line-heights at all, so the incidence of <a href="/browse/FLUID-4491/">FLUID-4491</a> would greatly decrease.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22877">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-04-20T10:53:29.382-0400">2012-04-20T10:53:29.382-0400</relative-time></i></p>
+                        <p>I've issued a pull request for a fix to this:<br>
+<a href="https://github.com/fluid-project/infusion/pull/220">https://github.com/fluid-project/infusion/pull/220</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22879">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2012-04-20T16:15:09.174-0400">2012-04-20T16:15:09.174-0400</relative-time></i></p>
+                        <p>Merged the pull request ( <a href="https://github.com/fluid-project/infusion/pull/220">https://github.com/fluid-project/infusion/pull/220</a> ) into the project repo at ddecffb33b1ddd45813abe23edc46bbfde9ed239</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4698/"><span class="aria-hidden">←</span> Previous: FLUID-4698</a>
+        <a class="mx-1" href="/browse/FLUID-4704/">Next: FLUID-4704 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

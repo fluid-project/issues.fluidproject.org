@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5578  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5578 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5578/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5578/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5578/">FLUID-5578</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5578: Investigate potential for improving "fail-fast" behaviour of event listeners</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5578">FLUID-5578</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-12-04T14:58:31.873-0500" prefix="">2014-12-04T14:58:31.873-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-12-04T15:01:02.269-0500" prefix="">2014-12-04T15:01:02.269-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>One contributor to confusion during the "appalling events" ( <a href="http://wiki.fluidproject.org/display/fluid/The+Appalling+Events+of+6+November+2014">http://wiki.fluidproject.org/display/fluid/The+Appalling+Events+of+6+November+2014</a> ) was mismatch between expected behaviour of listener notification when modifying the set of listeners to an event from one of its handlers. Through long-established behaviour, the notification of listeners is progressed through a "frozen copy" of the listener list and is unaffected by modifications until the notification has finished. One exception to this is the existing "fail-fast" behaviour which aborts handling if the entire event is destroyed during the notification (presumably through destruction of its holding component) - implemented under <a href="http://issues.fluidproject.org/browse/FLUID-4890">http://issues.fluidproject.org/browse/FLUID-4890</a> . </p>
+<p>There might be room for an implementation which is more aggressive in signalling errors in these situations - since many of them represent coding errors, since the user is presumably attempting to cause a behaviour which is not enacted. However it's not easy to characterise the situations we should flag as an error. Certainly a listener that removes <strong>itself</strong> from the listener list should be permitted - since this is a time-honoured pattern used in, e.g. APIs such as jQuery's once() etc. A listener which through its synchronous actions causes a different listener to be removed is probably an error - although in "appalling events" this was a less secure characterisation of the implementation error than one which could be made earlier (leakage of requests between stack frames).</p>
+<p>Whatever behaviour we decide on should result in revisiting <a href="/browse/FLUID-5333/">FLUID-5333</a> - if we implement "fail-fast" behaviour for removal, in the light of that our "instant abort" behaviour might seem cowardly. This was designed to eliminate errors propagated from destruction triggered by the IoC testing framework - typically on the last listener of a fixture, the framework begins destruction of the entire fixture tree. We've speculated in <a href="/browse/FLUID-5499/">FLUID-5499</a> that a more stable pattern might result from only scheduling this destruction asynchronously - whilst scheduling ALL effects asynchronously seems like a step too far. There used to be a number of bugs in this area (e.g. <a href="/browse/FLUID-5361/">FLUID-5361</a> ) that made avoiding these problems harder - but we should really make it possible and easy to ensure that the IoC testing framework's listener can be unconditionally last - thus increasing the clarity that destroying a component whilst there are still listener notifications left in the queue represents an implementation error. Therefore we should probably implement the constraint scheme for <a href="/browse/FLUID-5506/">FLUID-5506</a> before we repent of our cowardice on "nulling listeners" for <a href="/browse/FLUID-5333/">FLUID-5333</a>.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5577/"><span class="aria-hidden">←</span> Previous: FLUID-5577</a>
+        <a class="mx-1" href="/browse/FLUID-5579/">Next: FLUID-5579 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

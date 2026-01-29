@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6512  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6512 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6512/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6512/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6512/">FLUID-6512</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6512: Orator play button may accidentally submit form</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6512">FLUID-6512</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-06-02T18:50:59.653-0400" prefix="">2020-06-02T18:50:59.653-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-06-03T10:42:15.160-0400" prefix="">2020-06-03T10:42:15.160-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Self Voicing</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When in the Story Edit page on the Storytelling Tool staging site, if I select a piece of text, the Orator will appear and offer to play it using the selectionReader. If that piece of text happens to be within the &lt;form&gt; element of the editor (i.e. the block editing or metadata areas), then clicking "Play" submits the form and reloads the page.</p>
+<p><strong>To reproduce:</strong></p>
+<ol>
+<li>Go to the Storytelling Tool staging site's Edit page:&#160;<a href="https://staging-stories.floeproject.org/storyEdit.html">https://staging-stories.floeproject.org/storyEdit.html</a></li>
+<li>Select a piece of text within the "Story Builder" area in the middle of the page (see screenshots for examples)</li>
+<li>Click "Play" on the selectionReader</li>
+</ol>
+<p><strong>Expected:</strong></p>
+<p>The text is voiced by the Orator</p>
+<p><strong>Actual:</strong></p>
+<p>The form is submitted</p>
+<p><strong>Proposed fix:</strong></p>
+<p>The Play button should be updated to make it a "button" type button. I.e. on <a href="https://github.com/fluid-project/infusion/blob/2b0e1a69bb74340da50ee3183bbf1f4ac8b5e20e/src/components/orator/js/Orator.js#L840">this line of the component configuration</a> that defines the markup for the selectionReader, the <a href="https://www.w3schools.com/tags/att_button_type.asp">"type" attribute</a> should be specified (see "2020-06-02 orator bug fix.png" for an example). This is because if the "type" attribute is missing, the default behaviour is to submit the form.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Windows 10 Pro v1909<br>
+Chrome 83<br>
+Storytelling Tool</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6512/2020-06-02 orator bug fix.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6512/2020-06-02 orator bug fix.png" alt="2020-06-02 orator bug fix.png">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6512/2020-06-02 orator bug repro 001.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6512/2020-06-02 orator bug repro 001.png" alt="2020-06-02 orator bug repro 001.png">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6512/2020-06-02 orator bug repro 002.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6512/2020-06-02 orator bug repro 002.png" alt="2020-06-02 orator bug repro 002.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25277">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2020-06-03T10:42:15.156-0400">2020-06-03T10:42:15.156-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/infusion/pull/993">The pull request</a> for fixing this issue has been merged into the project repo master branch at <a href="https://github.com/fluid-project/infusion/commit/c8497372264388c627a25dcde43c9c8f45bb0652">this commit</a>.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6511/"><span class="aria-hidden">←</span> Previous: FLUID-6511</a>
+        <a class="mx-1" href="/browse/FLUID-6513/">Next: FLUID-6513 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

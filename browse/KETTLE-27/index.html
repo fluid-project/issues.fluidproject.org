@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> KETTLE-27  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" KETTLE-27 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/KETTLE-27/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/KETTLE-27/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/KETTLE" data-pagefind-filter="project">Kettle</a></li>
+                <li><a href="/browse/KETTLE-27/">KETTLE-27</a></li>
+            </ol>
+        </nav>
+        <h1>KETTLE-27: Expose further lifecycle points from Kettle server to allow cooperation with external express apps</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/KETTLE-27">KETTLE-27</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Resolved</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/KETTLE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-12-17T11:28:08.230-0500" prefix="">2014-12-17T11:28:08.230-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-07-02T18:08:58.716-0400" prefix="">2015-07-02T18:08:58.716-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>We are working on the OAuth2 integration for the cloud-based flow manager in GPII. This involves co-locating a traditionally-written express application (AuthServer.js) within the same express app as the surrounding Kettle app for the GPII. We ran into an obscure-seeming issue where, whenever any kind of routed handler (e.g. one registered with app.get or app.post etc.) was registered before the bodyParser middleware, ALL such handlers ended up notified before the body parsing process was complete. Here are some traces:</p>
+<p>A correct trace leading to matchPost with a valid request body:</p>
+<p>at gpii.flatMatchMaker.matchPost (E:\source\gits\gpii\node_modules\universal\gpii\node_modules\flatMatchMaker\src\FlatMatchMaker.js:70:21)<br>
+at invokeInvoker (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1649:29)<br>
+at E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1865:20<br>
+at Object.fluid.tryCatch (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:219:24)<br>
+at fluid.withEnvironment (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1860:22)<br>
+at Object.fluid.event.invokeListener (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1052:25)<br>
+at togo (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1707:36)<br>
+at fireToListeners (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1103:68)<br>
+at that.fire (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1196:24)<br>
+at Object.fluid.fireEvent (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1210:24)<br>
+at Object.fluid.initDependent (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1301:15)<br>
+at E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1322:23<br>
+at fireToListeners (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1103:68)<br>
+at Object.that.fire (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1196:24)<br>
+at kettle.requests.handleRequest (E:\source\gits\gpii\node_modules\universal\node_modules\kettle\lib\request.js:76:31)<br>
+at Object.invoke (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1608:25)<br>
+at invokeInvoker (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1635:32)<br>
+at fireToListeners (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1103:68)<br>
+at Object.that.fire (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1196:24)</p>
+<ul>
+<li>
+<ul>
+<li>   at E:\source\gits\gpii\node_modules\universal\node_modules\kettle\lib\server.js:140:46<br>
+    at callbacks (E:\source\gits\gpii\node_modules\universal\node_modules\express\lib\router\index.js:164:37)<br>
+    at param (E:\source\gits\gpii\node_modules\universal\node_modules\express\lib\router\index.js:138:11)<br>
+    at pass (E:\source\gits\gpii\node_modules\universal\node_modules\express\lib\router\index.js:145:5)<br>
+    at Router._dispatch (E:\source\gits\gpii\node_modules\universal\node_modules\express\lib\router\index.js:173:5)<br>
+    at Object.router (E:\source\gits\gpii\node_modules\universal\node_modules\express\lib\router\index.js:33:10)<br>
+    at next (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\proto.js:193:15)</li>
+<li>  at urlencoded (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\middleware\urlencoded.js:38:27)<br>
+    at E:\source\gits\gpii\node_modules\universal\node_modules\kettle\lib\middleware.js:136:17<br>
+    at E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\middleware\json.js:81:7<br>
+    at IncomingMessage.onEnd (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\node_modules\raw-body\index.js:109:7)<br>
+    at IncomingMessage.g (events.js:180:16)<br>
+    at IncomingMessage.emit (events.js:92:17)<br>
+    at _stream_readable.js:938:16<br>
+    at process._tickCallback (node.js:419:13)</li>
+</ul>
+</li>
+</ul>
+<p>An erroneous trace, resulting in an empty body:</p>
+<p>at gpii.flatMatchMaker.matchPost (E:\source\gits\gpii\node_modules\universal\gpii\node_modules\flatMatchMaker\src\FlatMatchMaker.js:70:21)<br>
+at invokeInvoker (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1649:29)<br>
+at E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1865:20<br>
+at Object.fluid.tryCatch (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:219:24)<br>
+at fluid.withEnvironment (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1860:22)<br>
+at Object.fluid.event.invokeListener (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1052:25)<br>
+at togo (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1707:36)<br>
+at fireToListeners (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1103:68)<br>
+at that.fire (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1196:24)<br>
+at Object.fluid.fireEvent (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1210:24)<br>
+at Object.fluid.initDependent (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1301:15)<br>
+at E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1322:23<br>
+at fireToListeners (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1103:68)<br>
+at Object.that.fire (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1196:24)<br>
+at kettle.requests.handleRequest (E:\source\gits\gpii\node_modules\universal\node_modules\kettle\lib\request.js:76:31)<br>
+at Object.invoke (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1608:25)<br>
+at invokeInvoker (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1635:32)<br>
+at fireToListeners (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1103:68)<br>
+at Object.that.fire (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1196:24)</p>
+<ul>
+<li>
+<ul>
+<li>   at E:\source\gits\gpii\node_modules\universal\node_modules\kettle\lib\server.js:140:46<br>
+    at callbacks (E:\source\gits\gpii\node_modules\universal\node_modules\express\lib\router\index.js:164:37)<br>
+    at param (E:\source\gits\gpii\node_modules\universal\node_modules\express\lib\router\index.js:138:11)<br>
+    at pass (E:\source\gits\gpii\node_modules\universal\node_modules\express\lib\router\index.js:145:5)<br>
+    at Router._dispatch (E:\source\gits\gpii\node_modules\universal\node_modules\express\lib\router\index.js:173:5)<br>
+    at Object.router (E:\source\gits\gpii\node_modules\universal\node_modules\express\lib\router\index.js:33:10)<br>
+    at next (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\proto.js:193:15)</li>
+<li>   at SessionStrategy.strategy.pass (E:\source\gits\gpii\node_modules\universal\node_modules\passport\lib\middleware\authenticate.js:318:9)<br>
+    at SessionStrategy.authenticate (E:\source\gits\gpii\node_modules\universal\node_modules\passport\lib\strategies\session.js:67:10)<br>
+    at attempt (E:\source\gits\gpii\node_modules\universal\node_modules\passport\lib\middleware\authenticate.js:341:16)<br>
+    at Object.authenticate [as handle] (E:\source\gits\gpii\node_modules\universal\node_modules\passport\lib\middleware\authenticate.js:342:7)<br>
+    at next (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\proto.js:193:15)<br>
+    at Object.initialize [as handle] (E:\source\gits\gpii\node_modules\universal\node_modules\passport\lib\middleware\initialize.js:62:5)<br>
+    at next (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\proto.js:193:15)<br>
+    at Object.session [as handle] (E:\source\gits\gpii\node_modules\universal\node_modules\express-session\index.js:361:7)<br>
+    at next (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\proto.js:193:15)<br>
+    at Object.urlencodedParser [as handle] (E:\source\gits\gpii\node_modules\universal\node_modules\body-parser\lib\types\urlencoded.js:72:36)<br>
+    at next (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\proto.js:193:15)<br>
+    at next (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\proto.js:168:78)</li>
+<li>   at kettle.requests.request.http.proceed (E:\source\gits\gpii\node_modules\universal\node_modules\kettle\lib\request.js:184:9)<br>
+    at invokeInvoker (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1649:29)<br>
+    at fireToListeners (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1103:68)<br>
+    at that.fire (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1196:24)<br>
+    at Object.fluid.fireEvent (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1210:24)<br>
+    at Object.fluid.initDependent (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1301:15)<br>
+    at listener (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:589:27)<br>
+    at fireToListeners (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1103:68)<br>
+    at Object.that.fire (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1196:24)<br>
+    at Object.handle (E:\source\gits\gpii\node_modules\universal\node_modules\kettle\lib\server.js:260:38)<br>
+    at next (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\proto.js:193:15)<br>
+    at Object.expressInit [as handle] (E:\source\gits\gpii\node_modules\universal\node_modules\express\lib\middleware.js:30:5)<br>
+    at next (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\proto.js:193:15)<br>
+    at Object.query [as handle] (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\middleware\query.js:45:5)<br>
+    at next (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\proto.js:193:15)<br>
+    at Function.app.handle (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\proto.js:201:3)<br>
+    at Server.app (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\connect.js:65:37)<br>
+    at Server.emit (events.js:98:17)<br>
+    at HTTPParser.parser.onIncoming (http.js:2108:12)<br>
+    at HTTPParser.parserOnHeadersComplete [as onHeadersComplete] (http.js:121:23)<br>
+    at Socket.socket.ondata (http.js:1966:22)<br>
+    at TCP.onread (net.js:527:27)</li>
+</ul>
+</li>
+</ul>
+<p>Points labelled "**" correspond to dispatches into Kettle code, and points labelled "--" represent points of divergence between the traces. Removing the "require" statement for the standalone bodyParser used by the auth server resulted in this 3rd variant trace:</p>
+<p>Error<br>
+at gpii.flatMatchMaker.matchPost (E:\source\gits\gpii\node_modules\universal\gpii\node_modules\flatMatchMaker\src\FlatMatchMaker.js:70:21)<br>
+at invokeInvoker (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1649:29)<br>
+at E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1865:20<br>
+at Object.fluid.tryCatch (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:219:24)<br>
+at fluid.withEnvironment (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1860:22)<br>
+at Object.fluid.event.invokeListener (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1052:25)<br>
+at togo (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1707:36)<br>
+at fireToListeners (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1103:68)<br>
+at that.fire (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1196:24)<br>
+at Object.fluid.fireEvent (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1210:24)<br>
+at Object.fluid.initDependent (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1301:15)<br>
+at E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1322:23<br>
+at fireToListeners (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1103:68)<br>
+at Object.that.fire (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1196:24)<br>
+at kettle.requests.handleRequest (E:\source\gits\gpii\node_modules\universal\node_modules\kettle\lib\request.js:76:31)<br>
+at Object.invoke (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1608:25)<br>
+at invokeInvoker (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1635:32)<br>
+at fireToListeners (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1103:68)<br>
+at Object.that.fire (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1196:24)</p>
+<ul>
+<li>
+<ul>
+<li>   at E:\source\gits\gpii\node_modules\universal\node_modules\kettle\lib\server.js:141:46<br>
+    at callbacks (E:\source\gits\gpii\node_modules\universal\node_modules\express\lib\router\index.js:164:37)<br>
+    at param (E:\source\gits\gpii\node_modules\universal\node_modules\express\lib\router\index.js:138:11)<br>
+    at pass (E:\source\gits\gpii\node_modules\universal\node_modules\express\lib\router\index.js:145:5)<br>
+    at Router._dispatch (E:\source\gits\gpii\node_modules\universal\node_modules\express\lib\router\index.js:173:5)<br>
+    at Object.router (E:\source\gits\gpii\node_modules\universal\node_modules\express\lib\router\index.js:33:10)<br>
+    at next (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\proto.js:193:15)
+*
+<ul>
+<li>   at kettle.requests.request.http.proceed (E:\source\gits\gpii\node_modules\universal\node_modules\kettle\lib\request.js:184:9)<br>
+    at invokeInvoker (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1649:29)<br>
+    at fireToListeners (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1103:68)<br>
+    at that.fire (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1196:24)<br>
+    at Object.fluid.fireEvent (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1210:24)<br>
+    at Object.fluid.initDependent (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:1301:15)<br>
+    at listener (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:589:27)<br>
+    at fireToListeners (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1103:68)<br>
+    at Object.that.fire (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:1196:24)<br>
+    at Object.handle (E:\source\gits\gpii\node_modules\universal\node_modules\kettle\lib\server.js:262:38)<br>
+    at next (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\proto.js:193:15)<br>
+    at Object.expressInit [as handle] (E:\source\gits\gpii\node_modules\universal\node_modules\express\lib\middleware.js:30:5)<br>
+    at next (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\proto.js:193:15)<br>
+    at Object.query [as handle] (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\middleware\query.js:45:5)<br>
+    at next (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\proto.js:193:15)<br>
+    at Function.app.handle (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\proto.js:201:3)<br>
+    at Server.app (E:\source\gits\gpii\node_modules\universal\node_modules\express\node_modules\connect\lib\connect.js:65:37)<br>
+    at Server.emit (events.js:98:17)<br>
+    at HTTPParser.parser.onIncoming (http.js:2108:12)<br>
+    at HTTPParser.parserOnHeadersComplete [as onHeadersComplete] (http.js:121:23)<br>
+    at Socket.socket.ondata (http.js:1966:22)<br>
+    at TCP.onread (net.js:527:27)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>We need to support (at least) 2 lifecycle points for a Kettle server, one where middleware may be contributed and one where routed handlers may be contributed. It appears this situation differs in Express 4.x where the router is no longer a piece of middleware in itself.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26111">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-07-02T18:08:58.684-0400">2015-07-02T18:08:58.684-0400</relative-time></i></p>
+                        <p>Merged into trunk at revision e79bb81196df68c97eaa9f96c485a4321b69af75</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/KETTLE-26/"><span class="aria-hidden">←</span> Previous: KETTLE-26</a>
+        <a class="mx-1" href="/browse/KETTLE-28/">Next: KETTLE-28 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

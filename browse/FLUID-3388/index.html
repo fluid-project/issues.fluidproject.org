@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3388  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3388 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3388/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3388/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3388/">FLUID-3388</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3388: onSelect event in Reorderer is fired multiple times on a single mouse click.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3388">FLUID-3388</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Boyan%20Sheytanov">Boyan Sheytanov</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-11-23T11:34:19.000-0500" prefix="">2009-11-23T11:34:19.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-11-27T09:10:53.000-0500" prefix="">2009-11-27T09:10:53.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Image Reorderer</li>
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When clicking with the mouse on an image in the ImageReorderer, the onSelect event is fired multiple times instead of once. Should be valid for all Reorderer types since the logic is in Reorderer.js. Does not happen when selection is made using the keyboard. The number of times the event is fired is the same as the number of images in the Reorderer. Here's a simple testing scenario that shows the bug:</p>
+<p>1. Find and edit infusion/src/webapp/demos/reorderer/imageReorderer/js/imageReorderer.js by adding:</p>
+<ul>
+<li>A counter variable right after the line demo.formBasedImageReorderer = function () {<br>
+        var i = 0;</li>
+<li>A listener for the onSelect event in the options, passed to the reorderImages component<br>
+         listeners: {<br>
+				onSelect: function(item) {<br>
+					document.title = i++;<br>
+				}<br>
+			}<br>
+2. Open infusion/src/webapp/demos/reorderer/imageReorderer/html/imageReorderer.html in your browser.</li>
+</ul>
+<p>Expected result: The document title should increment with 1 on each click on any of the images.</p>
+<p>Actual result: The document title increments with 6 on each click on any of the images (6 is the number of images in the demo).</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Debian Lenny 64-bit, Iceweasel 3.0.6 (should be identical to Firefox 3.0.6 on other platforms).</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3388/FLUID-3388.patch">
+                            
+                                FLUID-3388.patch
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20834">
+                        <p class="mb-0"><b>Boyan Sheytanov</b> <i>commented <relative-time datetime="2009-11-25T10:29:39.000-0500">2009-11-25T10:29:39.000-0500</relative-time></i></p>
+                        <p>This patch should resolve the bug. It was caused by a typo in the Reorderer.js where we iterate over all selectables in a for statement, and modify them all on each iteration (in the body of the for statement). When we modify only the current selectable, the bug is no longer present. All occurences of "selectables" (plural) in the body of the for statement have been replaced by "selectable" (singular).</p>
+
+                    </li>
+                    
+                    <li id="comment-20835">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2009-11-26T17:59:58.000-0500">2009-11-26T17:59:58.000-0500</relative-time></i></p>
+                        <p>Thanks for this fix Boyan, it correctly identifies the typo and fixes it. I have committed the fix at revision 8757. It was really helpful to have a working patch along with the issue report. Some administrative details:<br>
+i) When making patches, please select "Project" as the patch root rather than "multiProject" since otherwise it becomes hard or impossible for others to apply the patch 😛<br>
+ii) It is even more helpful if every fix includes a test case fixture or adjustment of an existing one that demonstrates the issue, to prevent regressions in the future. In the course of making a test case for this issue in ImageReorderer.js I discovered that we actually so far had no test cases at all for the "onSelect" event function !!<br>
+iii) JIRA status discipline - an issue should not be marked as "Fixed" unless the issue is actually resolved in trunk. When posting patches for review, the issue should instead just be "Assigned" generally to the component or framework lead. When an issue is "Fixed" by the committer, at this stage it should be then assigned to the testing lead (currently Justin) who can then consider to take it to the "Closed" status.</p>
+
+                    </li>
+                    
+                    <li id="comment-20836">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-11-27T09:10:53.000-0500">2009-11-27T09:10:53.000-0500</relative-time></i></p>
+                        <p>I added in a missing comma. </p>
+<p>Unit tests appear to be running.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3387/"><span class="aria-hidden">←</span> Previous: FLUID-3387</a>
+        <a class="mx-1" href="/browse/FLUID-3389/">Next: FLUID-3389 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

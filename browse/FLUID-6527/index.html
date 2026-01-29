@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6527  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6527 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6527/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6527/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6527/">FLUID-6527</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6527: Spifind: Dynamic routes do not work in production build</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6527">FLUID-6527</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Migrated">Migrated</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Gregor Moss</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-07-09T02:53:31.995-0400" prefix="">2020-07-09T02:53:31.995-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-19T07:38:46.209-0400" prefix="">2024-07-19T07:38:46.209-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The dynamic routes used in the menu only work when running through the webpack-dev-server.</p>
+<p>After running </p>
+<pre><code class="hljs">npm <span class="hljs-built_in">run</span> build
+</code></pre>
+<p>, the contents of the public folder do not have directories like /htp1, /level1, level2, etc (so they generate 404 errors when deployed to a production webserver).</p>
+<p>It's as if the react-router-dom component is not working as expected for some reason. Tested with Chrome 83.</p>
+<p>When it works:</p>
+<pre><code class="hljs">npm install
+npm run start
+open http:<span class="hljs-comment">//localhost:8888</span>
+</code></pre>
+<p>When it fails:</p>
+<pre><code class="hljs">npm install
+npm run build
+<span class="hljs-keyword">python</span> -<span class="hljs-keyword">m</span> http.server --directory public
+<span class="hljs-keyword">open</span> http://localhos<span class="hljs-variable">t:8888</span> -&gt; click <span class="hljs-keyword">menu</span> <span class="hljs-keyword">options</span>
+</code></pre>
+<p>It seems that Alan Harnum had some problems creating a deployable unit in <a href="/browse/INFRA-217/">INFRA-217</a> as well.</p>
+<p>Additionally, the UglifyJsPlugin from webpack 3.10.0 causes a build error. It's necessary to remove it from webpack.production.config.js to get a clean build (which still has the issue with the routes).</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25361">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2020-07-14T03:09:23.526-0400">2020-07-14T03:09:23.526-0400</relative-time></i></p>
+                        <p>Once I'd removed the&#160;UglifyJsPlugin step from the webpack script, I was able to get the site built and running mostly properly by running server.js via the following actions:</p>
+<pre><code class="hljs language-java">npm install
+npm run serve:build
+open http:<span class="hljs-comment">//localhost:8080</span>
+</code></pre>
+<p>OR</p>
+<pre><code class="hljs language-java">npm install
+npm run build
+node .\server.js
+open http:<span class="hljs-comment">//localhost:8080</span>
+</code></pre>
+<p></p>
+<p>I say "mostly properly" because almost none of the audio works any more, as all but one file were hosted on and imported from <a href="https://instaud.io/">instaud.io</a>. Only the "game over" sound is actually present in the repository, somewhat fittingly.</p>
+<p>For context, my environment is:</p>
+<ul>
+<li>Windows 10 Pro v1909</li>
+<li>Chrome 83</li>
+<li>Node v10.15.3</li>
+<li>npm 6.4.1</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-25362">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2020-07-14T07:56:13.059-0400">2020-07-14T07:56:13.059-0400</relative-time></i></p>
+                        <p>Should we consider this a dynamic website then with a live component (the express server)? I was hoping to just serve the contents of the public folder but it doesn't seem possible.</p>
+
+                    </li>
+                    
+                    <li id="comment-27798">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2024-07-19T07:38:46.033-0400">2024-07-19T07:38:46.033-0400</relative-time></i></p>
+                        <p>Migrated to <a href="https://github.com/fluid-lab/Spifind/issues/1">https://github.com/fluid-lab/Spifind/issues/1</a> </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6526/"><span class="aria-hidden">←</span> Previous: FLUID-6526</a>
+        <a class="mx-1" href="/browse/FLUID-6528/">Next: FLUID-6528 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

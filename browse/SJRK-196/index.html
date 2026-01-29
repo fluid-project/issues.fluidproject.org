@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-196  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-196 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-196/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-196/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-196/">SJRK-196</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-196: Disable the "Publish my story" button if the story is empty</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-196">SJRK-196</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SJRK/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-01-22T14:17:18.943-0500" prefix="">2019-01-22T14:17:18.943-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-04-01T16:09:37.475-0400" prefix="">2019-04-01T16:09:37.475-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool Server</li>
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Disable the "Publish my story" button when the story is empty and display a message to the author indicating that they must add content before attempting to publish a story.</p>
+<p>This work will effectively disallow the behaviour that was made possible in <a href="/browse/SJRK-182/">SJRK-182</a> and <a href="/browse/SJRK-183/">SJRK-183</a>.</p>
+<p>Should the tool allow a particular block to be published without having the associated media file present? E.g. an image block with no image specified, but values in the other fields? How about a text block with no content, only a heading?</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26496">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2019-04-01T13:48:11.620-0400">2019-04-01T13:48:11.620-0400</relative-time></i></p>
+                        <p>Consider:</p>
+<ul>
+<li>a story with only a title</li>
+<li>only an an author name</li>
+<li>only keywords</li>
+</ul>
+<p>what should we do?</p>
+
+                    </li>
+                    
+                    <li id="comment-26497">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2019-04-01T15:59:14.042-0400">2019-04-01T15:59:14.042-0400</relative-time></i></p>
+                        <p>In the case of:</p>
+<ul>
+<li>just keywords - it doesn't make sense to publish in this case as the keywords are meant to describe the story. there's no story to describe</li>
+<li>just an author - we're creating a collection of stories and not a list of people/authors, so this also doesn't make much sense</li>
+<li>just a title - philosophically speaking, an empty story with only a title may have value, but for our purposes and for the time being we're going to prevent this</li>
+</ul>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-195/"><span class="aria-hidden">←</span> Previous: SJRK-195</a>
+        <a class="mx-1" href="/browse/SJRK-197/">Next: SJRK-197 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

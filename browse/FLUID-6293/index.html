@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6293  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6293 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6293/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6293/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6293/">FLUID-6293</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6293: Buildkite unblocker fails to unblock non-PR build</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6293">FLUID-6293</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-07-01T16:27:49.293-0400" prefix="">2018-07-01T16:27:49.293-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-09-08T12:46:22.000-0400" prefix="">2018-09-08T12:46:22.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Unblocker fails to unblock non-PR build (build.pull_request == null, manually triggered build or merging a PR into master).</p>
+<p>Build: <a href="https://buildkite.com/fluid-project/infusion/builds/302">https://buildkite.com/fluid-project/infusion/builds/302</a></p>
+<p>Error:</p>
+<pre><code class="hljs"><span class="hljs-number">20</span>:<span class="hljs-number">14</span>:<span class="hljs-number">41.996</span>:  Validating payload...
+<span class="hljs-number">20</span>:<span class="hljs-number">14</span>:<span class="hljs-number">42.025</span>:  Validating pull request author...
+(node:<span class="hljs-number">27</span>) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: <span class="hljs-number">1</span>): TypeError: Cannot read property <span class="hljs-string">'repository'</span> of null
+(node:<span class="hljs-number">27</span>) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero <span class="hljs-keyword">exit</span> code.
+[object Object]
+</code></pre>
+<p>Request:</p>
+<pre><code class="hljs">POST https://buildkite.fluidproject.org/unblock
+Headers
+
+Accept: */*
+User-Agent: Buildkite-Request
+Content-Type: application/json
+Accept-Encoding: gzip<span class="hljs-comment">;q=1.0,deflate;q=0.6,identity;q=0.3</span>
+X-Buildkite-Event: build.finished
+X-Buildkite-Token: xxx
+X-Buildkite-Request: <span class="hljs-number">98</span><span class="hljs-keyword">c</span><span class="hljs-number">11</span>d<span class="hljs-number">1</span>e-d<span class="hljs-number">181</span><span class="hljs-number">-45</span>dc-a<span class="hljs-number">60</span>f<span class="hljs-number">-64</span>d<span class="hljs-number">0</span>fc<span class="hljs-number">89</span>f<span class="hljs-number">6</span>a<span class="hljs-number">3</span>
+Body
+
+{
+  <span class="hljs-string">"event"</span>: <span class="hljs-string">"build.finished"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-string">"build"</span>: {
+    <span class="hljs-string">"id"</span>: <span class="hljs-string">"1517afce-dbe4-4baf-89a8-42fb4f0aace6"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://api.buildkite.com/v2/organizations/fluid-project/pipelines/infusion/builds/302"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"web_url"</span>: <span class="hljs-string">"https://buildkite.com/fluid-project/infusion/builds/302"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"number"</span>: <span class="hljs-number">302</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"state"</span>: <span class="hljs-string">"passed"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"blocked"</span>: <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"message"</span>: <span class="hljs-string">"20180701"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"commit"</span>: <span class="hljs-string">"HEAD"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"branch"</span>: <span class="hljs-string">"master"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"tag"</span>: <span class="hljs-keyword">null</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"source"</span>: <span class="hljs-string">"ui"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"creator"</span>: {
+      <span class="hljs-string">"id"</span>: <span class="hljs-string">"b02fdc4c-54f3-4bfd-8173-28a7d39b24d9"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Giovanni Tirloni"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-string">"email"</span>: <span class="hljs-string">"gtirloni@ret.cx"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-string">"avatar_url"</span>: <span class="hljs-string">"https://www.gravatar.com/avatar/6eb363b38ee754bb21edcf99d8e299c2"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-string">"created_at"</span>: <span class="hljs-string">"2017-10-17 20:30:51 UTC"</span>
+    }<span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"created_at"</span>: <span class="hljs-string">"2018-07-01 20:14:38 UTC"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"scheduled_at"</span>: <span class="hljs-string">"2018-07-01 20:14:38 UTC"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"started_at"</span>: <span class="hljs-keyword">null</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"finished_at"</span>: <span class="hljs-string">"2018-07-01 20:14:39 UTC"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"meta_data"</span>: {
+    }<span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"pull_request"</span>: <span class="hljs-keyword">null</span>
+  }<span class="hljs-punctuation">,</span>
+  <span class="hljs-string">"pipeline"</span>: {
+    <span class="hljs-string">"id"</span>: <span class="hljs-string">"91ed2371-e584-4216-9708-d919073425e1"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://api.buildkite.com/v2/organizations/fluid-project/pipelines/infusion"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"web_url"</span>: <span class="hljs-string">"https://buildkite.com/fluid-project/infusion"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"name"</span>: <span class="hljs-string">"infusion"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"slug"</span>: <span class="hljs-string">"infusion"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"repository"</span>: <span class="hljs-string">"https://github.com/fluid-project/infusion.git"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"branch_configuration"</span>: <span class="hljs-string">"master"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"default_branch"</span>: <span class="hljs-string">"master"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"skip_queued_branch_builds"</span>: <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"skip_queued_branch_builds_filter"</span>: <span class="hljs-keyword">null</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"cancel_running_branch_builds"</span>: <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"cancel_running_branch_builds_filter"</span>: <span class="hljs-keyword">null</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"provider"</span>: {
+      <span class="hljs-string">"id"</span>: <span class="hljs-string">"github"</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-string">"settings"</span>: {
+        <span class="hljs-string">"trigger_mode"</span>: <span class="hljs-string">"code"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"build_pull_requests"</span>: <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"pull_request_branch_filter_enabled"</span>: <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"skip_pull_request_builds_for_existing_commits"</span>: <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"build_pull_request_forks"</span>: <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"prefix_pull_request_fork_branch_names"</span>: <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"build_tags"</span>: <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"publish_commit_status"</span>: <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"publish_commit_status_per_step"</span>: <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"repository"</span>: <span class="hljs-string">"fluid-project/infusion"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"pull_request_branch_filter_configuration"</span>: <span class="hljs-string">""</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"commit_status_404s"</span>: <span class="hljs-number">4</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"publish_blocked_as_pending"</span>: <span class="hljs-keyword">true</span>
+      }<span class="hljs-punctuation">,</span>
+      <span class="hljs-string">"webhook_url"</span>: <span class="hljs-string">"https://webhook.buildkite.com/deliver/f2f2f45dd2efd3e090b75f6a9937b1bd27bccf42fb08787137"</span>
+    }<span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"builds_url"</span>: <span class="hljs-string">"https://api.buildkite.com/v2/organizations/fluid-project/pipelines/infusion/builds"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"badge_url"</span>: <span class="hljs-string">"https://badge.buildkite.com/5c8634255695aaaeda0e48799272f9f0e758e6512829737c94.svg"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"created_at"</span>: <span class="hljs-string">"2017-12-04 23:40:20 UTC"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"env"</span>: {
+    }<span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"scheduled_builds_count"</span>: <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"running_builds_count"</span>: <span class="hljs-number">1</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"scheduled_jobs_count"</span>: <span class="hljs-number">3</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"running_jobs_count"</span>: <span class="hljs-number">1</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"waiting_jobs_count"</span>: <span class="hljs-number">1</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"steps"</span>: [
+      {
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"manual"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"label"</span>: <span class="hljs-string">"Run this CI job"</span>
+      }<span class="hljs-punctuation">,</span>
+      {
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"script"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"name"</span>: <span class="hljs-string">":pipeline:"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"command"</span>: <span class="hljs-string">"buildkite-agent pipeline upload"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"artifact_paths"</span>: <span class="hljs-string">""</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"branch_configuration"</span>: <span class="hljs-string">""</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"env"</span>: {
+        }<span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"timeout_in_minutes"</span>: <span class="hljs-keyword">null</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"agent_query_rules"</span>: [
+          <span class="hljs-string">"env=dev"</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-string">"type=physical"</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-string">"hypervisor=virtualbox"</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-string">"vagrant=true"</span>
+        ]<span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"concurrency"</span>: <span class="hljs-keyword">null</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">"parallelism"</span>: <span class="hljs-keyword">null</span>
+      }
+    ]
+  }<span class="hljs-punctuation">,</span>
+  <span class="hljs-string">"sender"</span>: {
+    <span class="hljs-string">"id"</span>: <span class="hljs-string">"b02fdc4c-54f3-4bfd-8173-28a7d39b24d9"</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-string">"name"</span>: <span class="hljs-string">"Giovanni Tirloni"</span>
+  }
+}
+</code></pre>
+<p>Error from buildkite:</p>
+<pre><code class="hljs">Timed out waiting <span class="hljs-built_in">to</span> <span class="hljs-built_in">read</span> <span class="hljs-built_in">from</span> <span class="hljs-keyword">the</span> connection (timeout was <span class="hljs-number">5</span> <span class="hljs-built_in">seconds</span>)
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-21081">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-07-01T16:30:28.951-0400">2018-07-01T16:30:28.951-0400</relative-time></i></p>
+                        <p>Avtar Gill could you take a quick look at this? I'm not sure the behavior is expected or not.</p>
+<p>This has happened to manually triggered builds that I used to test the pipeline as well as a merge by Antranig Basman on the Kettle repository.</p>
+<p>I know we talked about my PRs never getting unblock but it seems this is a different error. For that error, the unblocker returns "Invalid Buildkite webhook payload" but for this one it seems to crash.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6292/"><span class="aria-hidden">←</span> Previous: FLUID-6292</a>
+        <a class="mx-1" href="/browse/FLUID-6294/">Next: FLUID-6294 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

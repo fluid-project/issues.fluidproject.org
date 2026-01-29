@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-31  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-31 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-31/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-31/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-31/">VP-31</a></li>
+            </ol>
+        </nav>
+        <h1>VP-31: Implement proper keyboard interactions for the videoPlayer components </h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-31">VP-31</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>James Yoon</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Alexey%20Novak">Alexey Novak</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-08-23T11:52:44.751-0400" prefix="">2012-08-23T11:52:44.751-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-01-28T09:25:21.315-0500" prefix="">2013-01-28T09:25:21.315-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When videoPlayer has a focus:</p>
+<ul>
+<li>Up/Down keys should control video's sound</li>
+</ul>
+<ul>
+<li>Left/Right keys should control scrubber</li>
+</ul>
+<ul>
+<li>Enter/Space should Play/Pause the video</li>
+</ul>
+<p>When sound controls container has a focus</p>
+<ul>
+<li>Up/Down keys should control video's sound</li>
+</ul>
+<ul>
+<li>Enter/Space should Mute/Unmute sound</li>
+</ul>
+<p>When user selects and clicks on one of the language options in the Caption/Transcript menus the menu should hide and a focus should get back to the Caption/Transcript button depending on which menu was open.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-27249">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-08-27T15:23:47.633-0400">2012-08-27T15:23:47.633-0400</relative-time></i></p>
+                        <p>James has spelled out all the details on the wiki, at<br>
+<a href="http://wiki.fluidproject.org/display/fluid/Floe+video+player+interactions">http://wiki.fluidproject.org/display/fluid/Floe+video+player+interactions</a></p>
+
+                    </li>
+                    
+                    <li id="comment-27250">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-08-28T15:23:37.666-0400">2012-08-28T15:23:37.666-0400</relative-time></i></p>
+                        <p>James, the Video Player currently defines a number of "hot keys:"</p>
+<p>Shift+P = play/pause<br>
+Shift+T = show/hide transcripts<br>
+Shift+C = show/hide captions<br>
+Shift+F = toggle full-screen mode<br>
+Shift+up/down arrows = increase/decrease volume<br>
+Shift+right/left arrows = fast-forward/rewind video</p>
+<p>These keystrokes can be customized by an integrator, so that a website could choose different keys for the functionality.</p>
+<p>Should we keep any of these, or scrap them all, or use different keys for the functionality, etc?</p>
+
+                    </li>
+                    
+                    <li id="comment-27251">
+                        <p class="mb-0"><b>James Yoon</b> <i>commented <relative-time datetime="2012-08-28T16:07:05.476-0400">2012-08-28T16:07:05.476-0400</relative-time></i></p>
+                        <p>I assume these hotkeys are for when the focus is on the video player container? (vs. specific interface element, or no focus on anything video player related)</p>
+<p>If so,</p>
+<p>Spacebar = play/pause<br>
+Up/down arrows = increase/decrease volume<br>
+Left/right arrows = scrub backward/forward</p>
+<p>Will edit further with thoughts on transcripts/captions/full-screen key bindings.</p>
+
+                    </li>
+                    
+                    <li id="comment-27252">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-08-28T16:52:07.683-0400">2012-08-28T16:52:07.683-0400</relative-time></i></p>
+                        <p>So James, just to clarify: You're saying we should scrap support for "Shift+X" and user your keystrokes instead (as opposed to supporting both sets). Is that correct?</p>
+<p>Also: Should the choice of keys be overridable by implementors? E.g. should OER Commons (for example) be able to choose different keys that the arrow keys for volume, for example?</p>
+
+                    </li>
+                    
+                    <li id="comment-27253">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-08-28T16:58:36.899-0400">2012-08-28T16:58:36.899-0400</relative-time></i></p>
+                        <p>Just another point, to refresh your memory: Way back after Tona came up with the wireframes, she suggested keyboard interactions:<br>
+<a href="http://wiki.fluidproject.org/display/fluid/Video+Player+Questions">http://wiki.fluidproject.org/display/fluid/Video+Player+Questions</a><br>
+I'm not sure if these are relevant anymore.</p>
+
+                    </li>
+                    
+                    <li id="comment-27254">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-08-29T11:43:24.854-0400">2012-08-29T11:43:24.854-0400</relative-time></i></p>
+                        <p>James commented in a verbal converstation that:</p>
+<ul>
+<li>yes, the Shift+X interactions should be scrapped, and</li>
+<li>yes, the integrator should be able to override the choice of keys</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-27255">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-08-29T12:50:30.909-0400">2012-08-29T12:50:30.909-0400</relative-time></i></p>
+                        <p>One more requirement from James:<br>
+When focus firsts lands on the video element, the controls should NOT pop up. They should remain invisible until the user presses Tab again and focuses on the Play button.</p>
+<p>Because this is a bit trickier than it sounds, it will be addressed through a separate JIRA: <a href="/browse/FLUID-4785/">FLUID-4785</a></p>
+
+                    </li>
+                    
+                    <li id="comment-27256">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2012-08-31T14:10:54.818-0400">2012-08-31T14:10:54.818-0400</relative-time></i></p>
+                        <p>Merged into project repo demo branch at da3a7d421ccec70ff7f5f09bbd204fa563ab0c29</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-134/"><span class="aria-hidden">←</span> Previous: VP-134</a>
+        <a class="mx-1" href="/browse/VP-130/">Next: VP-130 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

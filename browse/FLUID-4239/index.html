@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4239  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4239 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4239/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4239/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4239/">FLUID-4239</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4239: UI Options integration demo fails due to an error with fluid.uiOptions.controls</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4239">FLUID-4239</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-05-16T12:02:31.563-0400" prefix="">2011-05-16T12:02:31.563-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-06-20T15:30:36.115-0400" prefix="">2011-06-20T15:30:36.115-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Demos</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Steps to reproduce:</p>
+<p>1) Open the UI Options integration demo<br>
+<a href="http://build.fluidproject.org/infusion/integration-demos/sakai/html/ui-options-fss-sakai.html">http://build.fluidproject.org/infusion/integration-demos/sakai/html/ui-options-fss-sakai.html</a></p>
+<p>Note that the component doesn't fully initialize because of the errors.<br>
+I'm not sure if this is a dependency issue or something, because the demo still works.</p>
+<p>Here is the Console Log:</p>
+<p>Mon May 16 2011 11:55:20 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): ASSERTION FAILED: Cannot autoInit component fluid.uiOptions.controls which does not have an initFunction and gradeName defined<br>
+Fluid.js (line 135)<br>
+message.fail is not a function<br>
+[Break On This Error] message.fail(); // Intenti...r by invoking a nonexistent function.<br>
+Fluid.js (line 62)<br>
+Mon May 16 2011 11:55:20 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): Resolving demands for function names ["fluid.transformOptions"] in context of component fluid.uiEnhancer<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:20 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): Components in scope for resolution: { typeName: "fluid.uiEnhancer" id: 5} { typeName: "fluid.dynamicEnvironment" id: 4} { typeName: "fluid.instantiator" id: 7} { typeName: "fluid.staticEnvironment" id: 2} { typeName: "fluid.browser" id: 3}<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:20 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): Beginning instantiation of component with name "settingsStore" as child of { typeName: "fluid.uiEnhancer" id: 5}<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:20 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): Resolving demands for function names ["fluid.uiEnhancer.cookieStore", "settingsStore"] in context of component fluid.uiEnhancer<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:20 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): Components in scope for resolution: { typeName: "fluid.uiEnhancer" id: 5} { typeName: "fluid.dynamicEnvironment" id: 4} { typeName: "fluid.instantiator" id: 12} { typeName: "fluid.staticEnvironment" id: 2} { typeName: "fluid.browser" id: 3}<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:20 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): No matches found for demands, using direct implementation<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:20 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): Resolving demands for function names ["fluid.transformOptions"] in context of component fluid.uiEnhancer.cookieStore<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:20 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): Components in scope for resolution: { typeName: "fluid.uiEnhancer.cookieStore" id: 15} - path: settingsStore { typeName: "fluid.uiEnhancer" id: 5} { typeName: "fluid.dynamicEnvironment" id: 4} { typeName: "fluid.instantiator" id: 12} { typeName: "fluid.staticEnvironment" id: 2} { typeName: "fluid.browser" id: 3}<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:20 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): Finished instantiation of component with name "settingsStore" as child of { typeName: "fluid.uiEnhancer" id: 5}<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:21 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): Resolving demands for function names ["fluid.transformOptions"] in context of component fluid.uiOptions<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:21 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): Components in scope for resolution: { typeName: "fluid.uiOptions" id: 17} { typeName: "fluid.dynamicEnvironment" id: 4} { typeName: "fluid.instantiator" id: 19} { typeName: "fluid.staticEnvironment" id: 2} { typeName: "fluid.browser" id: 3}<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:21 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): Resolving demands for function names ["fluid.transformOptions"] in context of component fluid.fetchResources<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:21 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): Components in scope for resolution: { typeName: "fluid.fetchResources" id: 25} { typeName: "fluid.dynamicEnvironment" id: 4} { typeName: "fluid.instantiator" id: 27} { typeName: "fluid.staticEnvironment" id: 2} { typeName: "fluid.browser" id: 3}<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:21 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): Request with key template queued for ../../../components/uiOptions/html/UIOptions.html<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:21 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): First request for cached resource with url ../../../components/uiOptions/html/UIOptions.html<br>
+Fluid.js (line 135)<br>
+GET <a href="http://build.fluidproject.org/infusion/components/uiOptions/html/UIOptions.html?_=1305561321027">http://build.fluidproject.org/infusion/components/uiOptions/html/UIOptions.html?_=1305561321027</a></p>
+<p>200 OK<br>
+108ms	<br>
+jquery.js (line 7829)<br>
+Mon May 16 2011 11:55:21 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): Handling request for ../../../components/uiOptions/html/UIOptions.html from cache<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:21 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): Request to URL ../../../components/uiOptions/html/UIOptions.html completed - total elapsed time: 211ms<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:21 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): Beginning instantiation of component with name "controls" as child of { typeName: "fluid.uiOptions" id: 17}<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:21 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): Resolving demands for function names ["fluid.uiOptions.controls", "controls"] in context of component fluid.uiOptions<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:21 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): Components in scope for resolution: { typeName: "fluid.uiOptions" id: 17} { typeName: "fluid.uiEnhancer" id: 5} { typeName: "fluid.dynamicEnvironment" id: 4} { typeName: "fluid.instantiator" id: 20} { typeName: "fluid.staticEnvironment" id: 2} { typeName: "fluid.browser" id: 3}<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:21 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): No matches found for demands, using direct implementation<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:21 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): ASSERTION FAILED: Error invoking global function: fluid.uiOptions.controls could not be located while instantiating dependent component with name "controls" with record Object { type="fluid.uiOptions.controls", priority="first", more...} as child of Object { typeName="fluid.uiOptions", id=17, more...}<br>
+Fluid.js (line 135)<br>
+Mon May 16 2011 11:55:21 <a href="/browse/GMT-0400/">GMT-0400</a> (EDT): FireEvent received exception message.fail is not a function e TypeError: message.fail is not a function firing to listener 0<br>
+Fluid.js (line 135)<br>
+message.fail is not a function<br>
+[Break On This Error] message.fail(); // Intenti...r by invoking a nonexistent function.<br>
+Fluid.js (line 62)</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>IE 8 (Win 7)<br>
+IE 7 (Win XP)<br>
+FF 4 (Mac OS 10.6, Win 7)<br>
+Safari 5 (Mac OS 10.6)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-18610">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-05-17T09:39:53.743-0400">2011-05-17T09:39:53.743-0400</relative-time></i></p>
+                        <p>Bug Parade Infusion</p>
+
+                    </li>
+                    
+                    <li id="comment-18615">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2011-05-30T16:54:53.706-0400">2011-05-30T16:54:53.706-0400</relative-time></i></p>
+                        <p>As well as:<br>
+GET <a href="http://localhost/fluid/infusion/src/webapp/integration-demos/sakai/js/sakai.js">http://localhost/fluid/infusion/src/webapp/integration-demos/sakai/js/sakai.js</a> 404 (Not Found)</p>
+
+                    </li>
+                    
+                    <li id="comment-18619">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2011-05-31T14:45:11.606-0400">2011-05-31T14:45:11.606-0400</relative-time></i></p>
+                        <p><a href="/browse/FLUID-4239/">FLUID-4239</a>: Added missing RendererUtilities.js.  Took out jquery.ui.position.js and jquery.ui.draggable.js since they are not needed in this demo.  Also took out sakai.js since the file does not exist.</p>
+<p>Pull request: <a href="https://github.com/fluid-project/infusion/pull/60">https://github.com/fluid-project/infusion/pull/60</a></p>
+
+                    </li>
+                    
+                    <li id="comment-18623">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2011-05-31T14:45:45.687-0400">2011-05-31T14:45:45.687-0400</relative-time></i></p>
+                        <p>Needs commit</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4238/"><span class="aria-hidden">←</span> Previous: FLUID-4238</a>
+        <a class="mx-1" href="/browse/FLUID-4240/">Next: FLUID-4240 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

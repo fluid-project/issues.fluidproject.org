@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-52  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-52 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-52/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-52/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-52/">VP-52</a></li>
+            </ol>
+        </nav>
+        <h1>VP-52: Volume controls silent with screen reader</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-52">VP-52</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-08-09T12:06:37.310-0400" prefix="">2012-08-09T12:06:37.310-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-01-28T09:25:21.859-0500" prefix="">2013-01-28T09:25:21.859-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Jaws+FF:<br>
+When focus lands on the volume controls, Jaws says nothing.<br>
+When arrow keys are used to adjust volume, Jaws says nothing.</p>
+<p>NVDA+FF:<br>
+When focus lands on the volume controls, NVDA says "section."<br>
+When arrow keys are used to adjust volume, NVDA says nothing.</p>
+<p>VoiceOver+Safari:<br>
+When focus lands on the volume controls, VoiceOver says nothing<br>
+When arrow keys are used to adjust volume, VoiceOver says nothing.</p>
+<p>NVDA+IE9:<br>
+When focus lands on the volume controls, NVDA says "grouping"<br>
+When arrow keys are used to adjust volume, NVDA says nothing.</p>
+<p>Jaws+IE9:<br>
+When focus lands on the volume controls, Jaws says nothing<br>
+When arrow keys are used to adjust volume, Jaws says "blank".</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>NVDA and Jaws with FF and IE9, VoiceOver with Safari</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26767">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-08-17T14:57:31.848-0400">2012-08-17T14:57:31.848-0400</relative-time></i></p>
+                        <p>Focus should be inside of the volume bar in order to hear changes. You can hear them if you will focus on the bar and using a keyboard to change a volume level.</p>
+
+                    </li>
+                    
+                    <li id="comment-26768">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2012-10-04T14:57:14.397-0400">2012-10-04T14:57:14.397-0400</relative-time></i></p>
+                        <p>Merged into demo branch at cf90e9813f135a60952dd37f7c8f476e333cc8be</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-76/"><span class="aria-hidden">←</span> Previous: VP-76</a>
+        <a class="mx-1" href="/browse/VP-150/">Next: VP-150 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-547  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-547 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-547/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-547/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-547/">C2LC-547</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-547: The content of the Delete Program dialog is read twice on NVDA</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-547">C2LC-547</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>To Do</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter=Simon%20Bates">Simon Bates</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-11-19T15:48:16.579-0500" prefix="">2021-11-19T15:48:16.579-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-04-30T10:20:10.857-0400" prefix="">2024-04-30T10:20:10.857-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Environment</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Observed on NVDA 2021.2 on Windows 10 with Firefox and Chrome.</p>
+<p>Steps to reproduce:</p>
+<ul>
+<li>Run NVDA</li>
+<li>Open Weavly in Firefox or Chrome</li>
+<li>Open the Delete Program dialog</li>
+</ul>
+<p>Expected:</p>
+<ul>
+<li>What is read will vary by screen reader and platform, but the contents should only be read once.</li>
+</ul>
+<p>Actual:</p>
+<ul>
+<li>"delete program dialog, delete button, delete program, button delete"</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>Similar repeating of content is not heard for the World Selector dialog on NVDA</li>
+<li>The content is not repeated with Chrome and VoiceOver, where the following is spoken: "delete program, dialog, with 4 items, delete, button"</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10874">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2021-11-19T22:28:13.289-0500">2021-11-19T22:28:13.289-0500</relative-time></i></p>
+                        <p>I see that it reads in this order:</p>
+<p>1. Read aria-label or an element referenced by aria-labelledby + "dialog"<br>
+2. Read focused item when the modal opens (I tested by setting focusOnOpenSelector property to something else)<br>
+3. Read the modal title<br>
+4. Read any items after what's focused when the modal opens (Similar to step 2, I tested by changing focusOnOpenSelector, and adding more buttons to render in the footer)</p>
+<p>Need some more detailed investigation about this issue, but as of now, I am not sure what NVDA experience is like this.</p>
+
+                    </li>
+                    
+                    <li id="comment-10875">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2021-11-25T09:51:43.959-0500">2021-11-25T09:51:43.959-0500</relative-time></i></p>
+                        <p>I see this double announcements in different modal components in Weavly coding environment. Also, examples on w3c modal dialogs have the same issue when using NVDA, where as VoiceOver doesn't have the same issue.</p>
+
+                    </li>
+                    
+                    <li id="comment-27741">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2024-04-30T10:20:10.857-0400">2024-04-30T10:20:10.857-0400</relative-time></i></p>
+                        <p>Moved to GitHub: <a href="https://github.com/codelearncreate/c2lc-coding-environment/issues/490">https://github.com/codelearncreate/c2lc-coding-environment/issues/490</a> </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-546/"><span class="aria-hidden">←</span> Previous: C2LC-546</a>
+        <a class="mx-1" href="/browse/C2LC-548/">Next: C2LC-548 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

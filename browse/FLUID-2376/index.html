@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2376  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2376 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2376/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2376/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2376/">FLUID-2376</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2376: Update name/values of "aria-grabbed" state as per ARIA latest spec.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2376">FLUID-2376</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Joseph Scheuhammer</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Joseph%20Scheuhammer">Joseph Scheuhammer</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-03-17T14:56:45.000-0400" prefix="">2009-03-17T14:56:45.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-03-24T18:07:09.000-0400" prefix="">2009-03-24T18:07:09.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The name and value space of the aria-grabbed state (formerly "aria-grab") changed just weeks before the last call draft of the ARIA spec.  The rationale was consistency in form with other boolean properties (e.g., aria-checked).</p>
+<p>In brief:</p>
+<ul>
+<li>the name is now "aria-grabbed".</li>
+<li>the presence of "aria-grabbed" marks the element as "draggable".
+<ul>
+<li>if aria-grabbed="false", the element is <strong>not</strong> in the set of objects marked for dragging.</li>
+<li>if aria-grabbed="true", the element is in the set of grabbed objects marked for dragging.</li>
+<li>if aria-grabbed="undefined", the element is not draggable and can't be in the set.  The same is true if the aria-grabbed attribute is missing entirely.</li>
+</ul>
+</li>
+</ul>
+<p>For the details, see: <a href="http://www.w3.org/TR/wai-aria/#aria-grabbed">http://www.w3.org/TR/wai-aria/#aria-grabbed</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-16451">
+                        <p class="mb-0"><b>Joseph Scheuhammer</b> <i>commented <relative-time datetime="2009-03-17T15:41:04.000-0400">2009-03-17T15:41:04.000-0400</relative-time></i></p>
+                        <p>Switching "Component" from the "Image Reorderer" to "Reorderer" as this applies to any use that involves drag-and-drop (not just images).</p>
+
+                    </li>
+                    
+                    <li id="comment-16453">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-03-20T15:55:07.000-0400">2009-03-20T15:55:07.000-0400</relative-time></i></p>
+                        <p>Bug Parade 1.0 release </p>
+
+                    </li>
+                    
+                    <li id="comment-16455">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2009-03-24T13:50:00.000-0400">2009-03-24T13:50:00.000-0400</relative-time></i></p>
+                        <p>The changes made for this fix are consistent with the description. But:<br>
+In the test file, the text strings describing the expected test results were not updated to reflect the new naming and values. This is relatively minor, but if tests actually fail, the incorrect text might make debugging the failing tests a bit confusing.</p>
+
+                    </li>
+                    
+                    <li id="comment-16457">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2009-03-24T14:23:05.000-0400">2009-03-24T14:23:05.000-0400</relative-time></i></p>
+                        <p>Ok, the test files have been updated. Looks great.</p>
+
+                    </li>
+                    
+                    <li id="comment-16459">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-03-24T18:07:09.000-0400">2009-03-24T18:07:09.000-0400</relative-time></i></p>
+                        <p>Verified fix using:</p>
+<p>FF3 (Mac OS 10.5)</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-2375/"><span class="aria-hidden">←</span> Previous: FLUID-2375</a>
+        <a class="mx-1" href="/browse/FLUID-2377/">Next: FLUID-2377 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

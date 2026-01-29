@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4197  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4197 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4197/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4197/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4197/">FLUID-4197</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4197: Fluid.js and FluidIoC.js both require JSON, but the framework's dependency declaration doesn't specify json2.js.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4197">FLUID-4197</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-05-02T15:31:48.237-0400" prefix="">2011-05-02T15:31:48.237-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T13:10:09.640-0500" prefix="">2014-03-03T13:10:09.640-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Both Fluid.js and FluidIoC.js use the JSON.stringify() method, which causes the JSON object to be a framework-wide dependency. This is fine for modern browsers, which all includes native implementations of JSON. However, for compatibility with IE and older browsers, this means that json2.js is now a requirement of every component and user of Infusion. Do we want this?</p>
+<p>If we do, we should update the framework's dependency declaration to include json2.js (although sending this down to modern browsers is a bit of a waste of bytes).</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15981">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-05-11T14:38:04.882-0400">2011-05-11T14:38:04.882-0400</relative-time></i></p>
+                        <p>we should also make sure to update all of the necessary html files to pull it in too.</p>
+
+                    </li>
+                    
+                    <li id="comment-15983">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2011-05-11T14:46:24.341-0400">2011-05-11T14:46:24.341-0400</relative-time></i></p>
+                        <p>We have a few options on how to deal with this. Right now, JSON is only used to provide better formatted error messages in a few log statements. We could go ahead with the dependency as it is, since converting things to JSON is a pretty fundamental activity and the dependency could possibly arise through other means. Another option would be to upgrade the signature of the fluid.log statement to conform to that of console.log</p>
+<p><a href="http://getfirebug.com/wiki/index.php/Console_API">http://getfirebug.com/wiki/index.php/Console_API</a></p>
+<p>It appears there is extra support (At least on Firefox, and possibly Chrome and others) for "rich dumping" of objects, DOM nodes etc - in this way we might be able to avoid the JSON dependence as well as getting better logging. We would need to see what do to on other platforms. Of course ironically the platforms which remove the need for the JSON file are the ones which have support for console.log anyway.</p>
+
+                    </li>
+                    
+                    <li id="comment-15986">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2011-05-30T15:54:56.217-0400">2011-05-30T15:54:56.217-0400</relative-time></i></p>
+                        <p>Related to json2 removal. <a href="https://github.com/fluid-project/infusion/commit/3e45b80f11b88b3b42982c50f23c7eafa3d1244a">https://github.com/fluid-project/infusion/commit/3e45b80f11b88b3b42982c50f23c7eafa3d1244a</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4196/"><span class="aria-hidden">←</span> Previous: FLUID-4196</a>
+        <a class="mx-1" href="/browse/FLUID-4198/">Next: FLUID-4198 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6741  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6741 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6741/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6741/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6741/">FLUID-6741</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6741: Workflow failure when constructed lensed component from asynchronous resource</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6741">FLUID-6741</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2022-06-30T09:46:25.863-0400" prefix="">2022-06-30T09:46:25.863-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:17.658-0400" prefix="">2024-07-22T10:35:17.658-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Encountered as a bare failure in <a href="https://github.com/continuing-creativity/youme/pull/2#issuecomment-1170977935">https://github.com/continuing-creativity/youme/pull/2#issuecomment-1170977935</a> where a component "connection" is lensed from an asynchronous resource. The failure is</p>
+<pre><code class="hljs language-java">TypeError: Cannot read properties of <span class="hljs-title function_">undefined</span> <span class="hljs-params">(reading <span class="hljs-string">'initModelTransactionId'</span>)</span>
+    at fluid.enlistModelComponent (http:<span class="hljs-comment">//localhost:7357/node_modules/infusion/dist/infusion-all.js:148:122208)</span>
+    at fluid.establishModelRelay (http:<span class="hljs-comment">//localhost:7357/node_modules/infusion/dist/infusion-all.js:148:146922)</span>
+    at fluid.expander.invokeFunc [as typeFunc] (http:<span class="hljs-comment">//localhost:7357/node_modules/infusion/dist/infusion-all.js:148:116302)</span>
+    at fluid.expandImmediateImpl (http:<span class="hljs-comment">//localhost:7357/node_modules/infusion/dist/infusion-all.js:148:113546)</span>
+    at fluid.expandImmediate (http:<span class="hljs-comment">//localhost:7357/node_modules/infusion/dist/infusion-all.js:148:113301)</span>
+    at fluid.memberFromRecord (http:<span class="hljs-comment">//localhost:7357/node_modules/infusion/dist/infusion-all.js:148:26913)</span>
+    at Array.strategy (http:<span class="hljs-comment">//localhost:7357/node_modules/infusion/dist/infusion-all.js:148:28140)</span>
+    at fluid.model.traverseWithStrategy (http:<span class="hljs-comment">//localhost:7357/node_modules/infusion/dist/infusion-all.js:148:117256)</span>
+    at fluid.model.accessImpl (http:<span class="hljs-comment">//localhost:7357/node_modules/infusion/dist/infusion-all.js:139:15457)</span>
+    at fluid.model.accessWithStrategy (http:<span class="hljs-comment">//localhost:7357/node_modules/infusion/dist/infusion-all.js:148:118497)</span>
+</code></pre>
+<p>What has happened is that the 3rd component in the transaction, "connection", begins at workflow level 0, "enlistModelComponent" as a result of having its model resource resolve, and since this workflow stage is not marked as "waitIO", the current tree transaction is not restored.</p>
+<p>Perhaps this is a good opportunity to eliminate the confusing and probably unperformant heavily promise-based implementation of the workflow system in favour of a priority queue, perhaps the one at <a href="https://stackoverflow.com/a/42919752">https://stackoverflow.com/a/42919752</a></p>
+<p>Something is odd, however, since this seems like exactly the case covered by the <a href="/browse/FLUID-6390/">FLUID-6390</a> test <a href="https://github.com/fluid-project/infusion/blob/main/tests/framework-tests/core/js/DataBindingTests.js#L1204-L1226">https://github.com/fluid-project/infusion/blob/main/tests/framework-tests/core/js/DataBindingTests.js#L1204-L1226</a> which lenses a tree of components from a resource-backed model, but perhaps the difference is that there is one level of "firebreak" in that the top level of tree containment "levels" is static.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25196">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2022-07-01T09:21:47.507-0400">2022-07-01T09:21:47.507-0400</relative-time></i></p>
+                        <p>It looks like this failure is due to the strategy of converting between "ports" and "connectionPort" via a programmatic modelListener which then fires a manual model change - this is something we would do more routinely in "old Infusion" (of the 2.x-3.x era) but prefer to do more declaratively via relays. I verified the issue with a test case looking as so:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.tests.fluid6741connector"</span>, {
+&#160; &#160; gradeNames: [<span class="hljs-string">"fluid.modelComponent"</span>, <span class="hljs-string">"fluid.resourceLoader"</span>],
+&#160; &#160; model: {
+&#160; &#160; &#160; &#160; &#160;connectionPort: <span class="hljs-literal">null</span>,&#160;
+&#160; &#160; &#160; &#160; &#160;ports: <span class="hljs-string">"{that}.resources.resourceSource.parsed"</span>
+&#160; &#160; },
+&#160; &#160; resources: {
+&#160; &#160; &#160; &#160; resourceSource: {
+&#160; &#160; &#160; &#160; &#160; &#160; promiseFunc: <span class="hljs-string">"fluid.tests.resolveLater"</span>,
+&#160; &#160; &#160; &#160; &#160; &#160; promiseArgs: [[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]]
+&#160; &#160; &#160; &#160; }
+&#160; &#160; },
+&#160; &#160; dynamicComponents: {
+&#160; &#160; &#160; &#160; connection: {
+&#160; &#160; &#160; &#160; &#160; &#160; type: <span class="hljs-string">"fluid.modelComponent"</span>,
+&#160; &#160; &#160; &#160; &#160; &#160; source: <span class="hljs-string">"{that}.model.connectionPort"</span>
+&#160; &#160; &#160; &#160; }
+&#160; &#160; },
+ &#160; &#160;modelListeners: {
+&#160; &#160; &#160; &#160; ports: {
+&#160; &#160; &#160; &#160; &#160; &#160; funcName: <span class="hljs-string">"fluid.tests.fluid6741findPort"</span>,
+&#160; &#160; &#160; &#160; &#160; &#160; args: <span class="hljs-string">"{that}"</span>
+&#160; &#160; &#160; &#160; }
+&#160; &#160; }
+});
+
+fluid.tests.fluid6741findPort = function (that) {
+&#160; &#160; that.applier.change(<span class="hljs-string">"connectionPort"</span>, that.model.ports[<span class="hljs-number">0</span>]);
+};
+
+jqUnit.asyncTest(<span class="hljs-string">"<a href="/browse/FLUID-6741/">FLUID-6741</a>: Lensed components via resource and model listener"</span>, function () {
+&#160; &#160; <span class="hljs-type">var</span> <span class="hljs-variable">that</span> <span class="hljs-operator">=</span> fluid.tests.fluid6741connector();
+&#160; &#160; that.events.onCreate.then(function () {
+&#160; &#160; &#160; &#160; jqUnit.assertValue(<span class="hljs-string">"Lensed component should have been constructed"</span>, that.connection);
+&#160; &#160; &#160; &#160; jqUnit.start();
+&#160; &#160; });
+});
+</code></pre>
+<p>but found that if we axe the modelListener in favour of a more idiomatic modelRelay definition like so:</p>
+<pre><code class="hljs language-java">modelRelay: {
+&#160; &#160; &#160; &#160; portsToconnectionPort: {
+&#160; &#160; &#160; &#160; &#160; &#160; target: <span class="hljs-string">"connectionPort"</span>,
+&#160; &#160; &#160; &#160; &#160; &#160; source: <span class="hljs-string">"ports"</span>,
+&#160; &#160; &#160; &#160; &#160; &#160; func: ports =&gt; ports[<span class="hljs-number">0</span>]
+&#160; &#160; &#160; &#160; }
+&#160; &#160; }
+</code></pre>
+<p>The instantiation error goes away. However, the headline issue should still be fixed.</p>
+
+                    </li>
+                    
+                    <li id="comment-25197">
+                        <p class="mb-0"><b>Tony Atkins</b> <i>commented <relative-time datetime="2022-07-01T10:57:41.611-0400">2022-07-01T10:57:41.611-0400</relative-time></i></p>
+                        <p>Is there an example somewhere that uses a modelRelay with the` func` property?  I didn't see anything in the docs.</p>
+<p>Also, idiomatic or not, the model relay pattern might not be a good fit for all cases.  I only want to pass on the information if conditions are met, i.e. if there is a match among ports for what I would like to connect to.  I haven't seen anything about conditional model relays thus far.</p>
+
+                    </li>
+                    
+                    <li id="comment-25198">
+                        <p class="mb-0"><b>Tony Atkins</b> <i>commented <relative-time datetime="2022-07-01T13:02:24.700-0400">2022-07-01T13:02:24.700-0400</relative-time></i></p>
+                        <p>I suspect that if I understand what you meant by <code>func</code> (<code>singleTransform</code>?), I can use what I have and simply return the value to be set as part of a relay instead of trying to apply the change myself.</p>
+
+                    </li>
+                    
+                    <li id="comment-25199">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2022-07-03T05:07:37.783-0400">2022-07-03T05:07:37.783-0400</relative-time></i></p>
+                        <p>Yes, that's right, your existing function is admirably suited to being packaged as a simpler and more functional relay rule. If there is no match amongst ports it can simply return undefined or an empty array. Thanks for the ping about docs, I've added a catch-all docs JIRA <a href="https://issues.fluidproject.org/browse/FLUID-6743">https://issues.fluidproject.org/browse/FLUID-6743</a> for things we need to catch up on. Short-form model relay tests are at <a href="https://github.com/fluid-project/infusion/blob/main/tests/framework-tests/core/js/DataBindingTests.js#L1444-L1542">https://github.com/fluid-project/infusion/blob/main/tests/framework-tests/core/js/DataBindingTests.js#L1444-L1542</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6740/"><span class="aria-hidden">←</span> Previous: FLUID-6740</a>
+        <a class="mx-1" href="/browse/FLUID-6742/">Next: FLUID-6742 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

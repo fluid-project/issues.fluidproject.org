@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> STUDIO-9  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" STUDIO-9 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/STUDIO-9/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/STUDIO-9/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/STUDIO" data-pagefind-filter="project">Fluid Studios</a></li>
+                <li><a href="/browse/STUDIO-9/">STUDIO-9</a></li>
+            </ol>
+        </nav>
+        <h1>STUDIO-9: Main page rows should have consistent height</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/STUDIO-9">STUDIO-9</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/STUDIO/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/STUDIO/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/STUDIO/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-12-07T14:50:10.923-0500" prefix="">2011-12-07T14:50:10.923-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-12-09T13:14:52.132-0500" prefix="">2011-12-09T13:14:52.132-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Website</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The rows of thumbnails and excerpts on the main page should have a consistent height despite differences in the amount of text. Currently, if an entry has very little text, the item underneath rises up, leaving empty space to its left.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/STUDIO/STUDIO-9/bad-columns.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/STUDIO/STUDIO-9/bad-columns.png" alt="bad-columns.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-12856">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2011-12-07T17:15:59.629-0500">2011-12-07T17:15:59.629-0500</relative-time></i></p>
+                        <p>The attached screen-shot (bad-columns.png) illustrates the problems that can arise with the straightforward fl-grid styling.</p>
+
+                    </li>
+                    
+                    <li id="comment-12857">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2011-12-08T10:24:17.235-0500">2011-12-08T10:24:17.235-0500</relative-time></i></p>
+                        <p>It is proving difficult to find an easy solution to this one. Last night I discussed various options with James and Joanna, including alternate layouts. James expressed a desire for a quick, temporary solution if possible: limit the titles to three lines, the tags to two lines, and set a fixed height for the rows. We should investigate more responsive options asap, possibly using media queries</p>
+
+                    </li>
+                    
+                    <li id="comment-12858">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2011-12-09T10:45:18.029-0500">2011-12-09T10:45:18.029-0500</relative-time></i></p>
+                        <p>Michelled merged this into the project repo at fcfdbf74863f32a608ca173d564f95095cb1500a</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/STUDIO-8/"><span class="aria-hidden">←</span> Previous: STUDIO-8</a>
+        <a class="mx-1" href="/browse/STUDIO-10/">Next: STUDIO-10 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

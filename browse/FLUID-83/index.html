@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-83  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-83 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-83/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-83/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-83/">FLUID-83</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-83: The ARIA roles and states in the Lightbox aren't read by JAWS or Windows-Eyes</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-83">FLUID-83</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2007-11-01T11:31:59.000-0400" prefix="">2007-11-01T11:31:59.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-08-09T14:30:07.000-0400" prefix="">2008-08-09T14:30:07.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Image Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The ARIA roles and states included in the Lightbox markup, such as the grid, gridcells, and drag-and-drop semantics, aren't being picked up by JAWS or Window-Eyes at the moment. They both simply read the link text for each thumbnail.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FireFox 2.0, JAWS 8.0 and Window-Eyes 6.0 on Windows XP</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24484">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2007-11-12T04:17:57.000-0500">2007-11-12T04:17:57.000-0500</relative-time></i></p>
+                        <p>Jaws currently only has partial support for ARIA. It's possible that it wouldn't be expected to handle the markup we're using. We should try to get more specifics from Freedom Scientific about exactly what is and isn't currently supported. Window-Eyes supposedly has better support, but we may want to double-check the level.</p>
+
+                    </li>
+                    
+                    <li id="comment-24485">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2007-11-12T08:02:56.000-0500">2007-11-12T08:02:56.000-0500</relative-time></i></p>
+                        <p>Good point. I checked with David and Simon; the grids, at very least, should be read by both screenreaders.</p>
+<p>We also need to be testing the output of FireFox with a tool like MSAA Inspect to ensure it correctly reflects the roles and states as defined in the markup.</p>
+
+                    </li>
+                    
+                    <li id="comment-24486">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2007-11-12T15:15:50.000-0500">2007-11-12T15:15:50.000-0500</relative-time></i></p>
+                        <p>I've done some further research with Inspect32 and discovered the following:</p>
+<p>In the Lightbox, when we catch Tab and Arrow Key events, we throw focus onto an &lt;a&gt; element within the thumbnail, rather than the thumbnail &lt;div&gt; itself. The reason we throw focus onto the link instead of the parent div is to get Enter key handling for free. So when the user hits the Enter key on a thumbnail, the browser will automatically trigger the link if it is focussed.</p>
+<p>Unfortunately, it's the thumbnail div that contains the ARIA role and state attributes.  So it needs to have focus in order for the ARIA semantics to be visible to MSAA and the assistive technologies.</p>
+<p>We'll have to refactor our focus handling to make this work. We should throw focus to the thumbnail div and then add a bit of JavaScript logic to catch the Enter key and activate the link. Architecturally, these are Lightbox concerns that are independent of the Reorderer.</p>
+
+                    </li>
+                    
+                    <li id="comment-24487">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2008-01-07T16:32:26.000-0500">2008-01-07T16:32:26.000-0500</relative-time></i></p>
+                        <p>Anastasia and I have since discovered that FireFox doesn't yet expose the drag &amp; drop states to MSAA, so the screenreaders don't inform the user of an item's drag-ability. We should provide some other indicator to non-sighted users that the items are indeed draggable, and how to do it.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-82/"><span class="aria-hidden">←</span> Previous: FLUID-82</a>
+        <a class="mx-1" href="/browse/FLUID-84/">Next: FLUID-84 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

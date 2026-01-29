@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5517  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5517 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5517/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5517/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5517/">FLUID-5517</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5517: Error in batching composite changes in model relay system</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5517">FLUID-5517</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-09-25T10:43:24.212-0400" prefix="">2014-09-25T10:43:24.212-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-10-04T18:36:31.272-0400" prefix="">2017-10-04T18:36:31.272-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                            <li>Model Transformation System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The model relay system should be batching up composite changes which arise from a model transformation, to ensure that it doesn't try to trigger a fresh relay which might read an inconsistent model state partway through an update. This system appears to be failing in some cases - </p>
+<p>This can be demonstrated by checking out the following branch of the feedback component - and applying the following steps:<br>
+<a href="https://github.com/jobara/metadata/tree/FLUID-5517">https://github.com/jobara/metadata/tree/FLUID-5517</a></p>
+<p>i) Load up the demo held in demos/feedback/index.html<br>
+ii) Click the "mismatch" button to bring up the mismatch dialog<br>
+iii) Whilst it is open, then check the "match" button</p>
+<p>The expected result is that {match: true, mismatch: false} is relayed out of the arrayToSetMembership transform. Unfortunately the system appears to try to react to the relay output before it is complete, and after a complex relay sequence involving 4 steps, eventually stabilises at {match: false, mismatch: false}.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24272">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-01-28T14:55:48.551-0500">2015-01-28T14:55:48.551-0500</relative-time></i></p>
+                        <p>Initial investigation is starting to suggest that the set of relay rules is at fault, rather than necessarily the ModelRelay implementation (which does indeed have known faults, but they may not be serious enough to require the rewrite straight away). Here is the minimal configuration which demonstrates the same behaviour as in the <a href="/browse/FLOE-230/">FLOE-230</a> fault report:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.tests.fluid5517root"</span>, {
+        gradeNames: [<span class="hljs-string">"fluid.standardRelayComponent"</span>, <span class="hljs-string">"autoInit"</span>],
+        model: {
+            userData: {
+                opinion: {
+                    mismatch: <span class="hljs-literal">true</span>
+                }
+            },
+            inTransit: {
+                opinion: [<span class="hljs-string">"dislike"</span>]   <span class="hljs-comment">// Possible values: like, dislike</span>
+            }
+        },
+        modelRelay: [{
+            source: <span class="hljs-string">"{that}.model.inTransit.opinion"</span>,
+            target: <span class="hljs-string">"{that}.model.userData.opinion"</span>,
+            forward: <span class="hljs-string">"liveOnly"</span>,
+            singleTransform: {
+                type: <span class="hljs-string">"fluid.transforms.arrayToSetMembership"</span>,
+                options: {
+                    <span class="hljs-string">"like"</span>: <span class="hljs-string">"match"</span>,
+                    <span class="hljs-string">"dislike"</span>: <span class="hljs-string">"mismatch"</span>
+                }
+            }
+        }],
+        events: {
+            onFeedbackMarkupReady: <span class="hljs-literal">null</span>
+        },
+        components: {
+            bindMatchConfirmation: {
+                type: <span class="hljs-string">"fluid.standardRelayComponent"</span>,
+                createOnEvent: <span class="hljs-string">"onFeedbackMarkupReady"</span>,
+                options: {
+                    modelRelay: {
+                        source: <span class="hljs-string">"{fluid5517root}.model.inTransit"</span>,
+                        target: <span class="hljs-string">"{that}.model.isActive"</span>,
+                        backward: <span class="hljs-string">"liveOnly"</span>,
+                        transform: {
+                            transform: {
+                                type: <span class="hljs-string">"fluid.transforms.arrayToSetMembership"</span>,
+                                inputPath: <span class="hljs-string">"opinion"</span>,
+                                options: {
+                                    <span class="hljs-string">"like"</span>: <span class="hljs-string">""</span>
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            bindMismatchDetails: {
+                type: <span class="hljs-string">"fluid.standardRelayComponent"</span>,
+                createOnEvent: <span class="hljs-string">"onFeedbackMarkupReady"</span>,
+                options: {
+                    modelRelay: {
+                        source: <span class="hljs-string">"{fluid5517root}.model.inTransit"</span>,
+                        target: <span class="hljs-string">"{that}.model.isActive"</span>,
+                        backward: <span class="hljs-string">"liveOnly"</span>,
+                        transform: {
+                            transform: {
+                                type: <span class="hljs-string">"fluid.transforms.arrayToSetMembership"</span>,
+                                inputPath: <span class="hljs-string">"opinion"</span>,
+                                options: {
+                                    <span class="hljs-string">"dislike"</span>: <span class="hljs-string">""</span>
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    });
+    
+    fluid.tests.dumpModel = function (that) {
+        console.log(<span class="hljs-string">"Root model: "</span>, JSON.stringify(that.model, <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>));
+        <span class="hljs-keyword">if</span> (that.bindMatchConfirmation) {
+            console.log(<span class="hljs-string">"Match model: "</span>, JSON.stringify(that.bindMatchConfirmation.model, <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>));
+            console.log(<span class="hljs-string">"Mismatch model: "</span>, JSON.stringify(that.bindMismatchDetails.model, <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>));
+        }
+    };
+    jqUnit.test(<span class="hljs-string">"<a href="/browse/FLUID-5517/">FLUID-5517</a>: Batching failure in model relay"</span>, function () {
+        <span class="hljs-type">var</span> <span class="hljs-variable">that</span> <span class="hljs-operator">=</span> fluid.tests.fluid5517root();
+        jqUnit.assertDeepEq(<span class="hljs-string">"Initial model synchronised"</span>, [<span class="hljs-string">"dislike"</span>], that.model.inTransit.opinion);
+        fluid.tests.dumpModel(that);
+        console.log(<span class="hljs-string">"=============================== FIRING ATTACHMENT EVENT ================"</span>);
+        that.events.onFeedbackMarkupReady.fire();
+        fluid.tests.dumpModel(that);
+ 
+        that.applier.change(<span class="hljs-string">"userData.opinion.match"</span>, <span class="hljs-literal">true</span>);
+        jqUnit.assertDeepEq(<span class="hljs-string">"Stabilised model synchronised"</span>, [<span class="hljs-string">"like"</span>], that.model.inTransit.opinion);
+        
+        fluid.tests.dumpModel(that);
+    });
+</code></pre>
+<p>This results in the following (partial) output:</p>
+<p>OUTPUT AFTER firing change from line 89: </p>
+<p>Root model:</p>
+<pre><code class="hljs language-java">{
+  <span class="hljs-string">"userData"</span>: {
+    <span class="hljs-string">"opinion"</span>: {
+      <span class="hljs-string">"mismatch"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">"match"</span>: <span class="hljs-literal">false</span>
+    }
+  },
+  <span class="hljs-string">"inTransit"</span>: {
+    <span class="hljs-string">"opinion"</span>: [
+      <span class="hljs-string">"dislike"</span>
+    ]
+  }
+}
+Match model:
+{
+  <span class="hljs-string">"isActive"</span>: <span class="hljs-literal">false</span>
+}
+Mismatch model:
+{
+  <span class="hljs-string">"isActive"</span>: <span class="hljs-literal">true</span>
+}
+ 
+setMembershipToArray making output [<span class="hljs-string">"like"</span>,<span class="hljs-string">"dislike"</span>] given options {<span class="hljs-string">"match"</span>:<span class="hljs-string">"like"</span>,<span class="hljs-string">"mismatch"</span>:<span class="hljs-string">"dislike"</span>}
+arrayToSetMembership with options {<span class="hljs-string">"like"</span>:<span class="hljs-string">"match"</span>,<span class="hljs-string">"dislike"</span>:<span class="hljs-string">"mismatch"</span>} and input value [<span class="hljs-string">"like"</span>,<span class="hljs-string">"dislike"</span>]
+arrayToSetMembership setting path match to <span class="hljs-literal">true</span>
+arrayToSetMembership setting path mismatch to <span class="hljs-literal">true</span>
+arrayToSetMembership with options {<span class="hljs-string">"like"</span>:<span class="hljs-string">""</span>} and input value [<span class="hljs-string">"like"</span>,<span class="hljs-string">"dislike"</span>]
+arrayToSetMembership setting path  to <span class="hljs-literal">true</span>
+setMembershipToArray making output [<span class="hljs-string">"like"</span>] given options {<span class="hljs-string">""</span>:<span class="hljs-string">"like"</span>}  &lt;------ PROBLEM HERE! target array has been overwritten with <span class="hljs-built_in">this</span> incomplete relay result
+</code></pre>
+<p>The relay rule with arrayToSetMembership configuration "like": "" has ended up corrupting the source array held in "inTransit.opinion" - shortly afterwards, it is destroyed completely by the other rule. This may be more readable in the following gist: <a href="https://gist.github.com/amb26/38cf42a2c57224c01a1c">https://gist.github.com/amb26/38cf42a2c57224c01a1c</a></p>
+<p>The remainder of the relay cycle appears here:</p>
+<pre><code class="hljs language-java">arrayToSetMembership with options {<span class="hljs-string">"like"</span>:<span class="hljs-string">"match"</span>,<span class="hljs-string">"dislike"</span>:<span class="hljs-string">"mismatch"</span>} and input value [<span class="hljs-string">"like"</span>]
+arrayToSetMembership setting path match to <span class="hljs-literal">true</span>
+arrayToSetMembership setting path mismatch to <span class="hljs-literal">false</span>
+setMembershipToArray making output [<span class="hljs-string">"like"</span>] given options {<span class="hljs-string">"match"</span>:<span class="hljs-string">"like"</span>,<span class="hljs-string">"mismatch"</span>:<span class="hljs-string">"dislike"</span>}
+arrayToSetMembership with options {<span class="hljs-string">"like"</span>:<span class="hljs-string">""</span>} and input value [<span class="hljs-string">"like"</span>]
+arrayToSetMembership setting path  to <span class="hljs-literal">true</span>
+arrayToSetMembership with options {<span class="hljs-string">"dislike"</span>:<span class="hljs-string">""</span>} and input value [<span class="hljs-string">"like"</span>]
+arrayToSetMembership setting path  to <span class="hljs-literal">false</span>
+setMembershipToArray making output [] given options {<span class="hljs-string">""</span>:<span class="hljs-string">"dislike"</span>}
+arrayToSetMembership with options {<span class="hljs-string">"like"</span>:<span class="hljs-string">"match"</span>,<span class="hljs-string">"dislike"</span>:<span class="hljs-string">"mismatch"</span>} and input value []
+arrayToSetMembership setting path match to <span class="hljs-literal">false</span>
+arrayToSetMembership setting path mismatch to <span class="hljs-literal">false</span>
+setMembershipToArray making output [] given options {<span class="hljs-string">"match"</span>:<span class="hljs-string">"like"</span>,<span class="hljs-string">"mismatch"</span>:<span class="hljs-string">"dislike"</span>}
+arrayToSetMembership with options {<span class="hljs-string">"like"</span>:<span class="hljs-string">""</span>} and input value []
+arrayToSetMembership setting path  to <span class="hljs-literal">false</span>
+setMembershipToArray making output [] given options {<span class="hljs-string">""</span>:<span class="hljs-string">"like"</span>}
+arrayToSetMembership with options {<span class="hljs-string">"dislike"</span>:<span class="hljs-string">""</span>} and input value []
+arrayToSetMembership setting path  to <span class="hljs-literal">false</span>
+arrayToSetMembership with options {<span class="hljs-string">"dislike"</span>:<span class="hljs-string">""</span>} and input value []
+arrayToSetMembership setting path  to <span class="hljs-literal">false</span>
+FIRING PRECOMMIT from transaction undefined: original model {<span class="hljs-string">"userData"</span>:{<span class="hljs-string">"opinion"</span>:{<span class="hljs-string">"mismatch"</span>:<span class="hljs-literal">true</span>,<span class="hljs-string">"match"</span>:<span class="hljs-literal">false</span>}},<span class="hljs-string">"inTransit"</span>:{<span class="hljs-string">"opinion"</span>:[<span class="hljs-string">"dislike"</span>]}} current model {<span class="hljs-string">"userData"</span>:{<span class="hljs-string">"opinion"</span>:{<span class="hljs-string">"mismatch"</span>:<span class="hljs-literal">false</span>,<span class="hljs-string">"match"</span>:<span class="hljs-literal">false</span>}},<span class="hljs-string">"inTransit"</span>:{<span class="hljs-string">"opinion"</span>:[]}}
+</code></pre>
+<p>The intention here is clear - we required to operate mutual exclusion as was the original requirement prompting the <a href="/browse/FLUID-5498/">FLUID-5498</a> report. We can't do it like this because the inverse path of both of the arrayToSetMembership relays to the subcomponents are destructive and will always eventually result in a transition to the empty array as the only fixed point of the mapping.</p>
+<p>We need much better diagnostics (hopefully automated) of these kinds of relay rules, but as ever these will not arise for years. It's worth noticing that relay rules of these kinds can be treated as an "FSM" (Finite State Machine) which is what gives rise to the correspondence between what we call "model-based development" and what goes by that name in the rest of the industry. In the meantime we should fix up these rules and be vigilant in future to avoid writing rules which are self-destabilising in this way.</p>
+
+                    </li>
+                    
+                    <li id="comment-24275">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-01-28T15:24:00.412-0500">2015-01-28T15:24:00.412-0500</relative-time></i></p>
+                        <p>Note - the "proper" solution to this problem (or rather, the only one we can implement without stateful relay rules) is simple-seeming but rather obscure - it was explained in IRC at <a href="https://botbot.me/freenode/fluid-work/2014-08-25/?msg=20363141&page=2">https://botbot.me/freenode/fluid-work/2014-08-25/?msg=20363141&amp;page=2</a></p>
+<p>The idea is to tackle the issue at the point of initial data binding - the UI action of selecting, say, the "match" button is not bound to the boolean end of the relay, but the array and - and the binding has the effect, say, of writing the entire array ["match"] to the so-called "inTransit.opinion" (this needs to be renamed) - rather than writing to the boolean end of the relay.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5516/"><span class="aria-hidden">←</span> Previous: FLUID-5516</a>
+        <a class="mx-1" href="/browse/FLUID-5518/">Next: FLUID-5518 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

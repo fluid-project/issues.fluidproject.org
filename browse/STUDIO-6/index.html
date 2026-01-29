@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> STUDIO-6  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" STUDIO-6 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/STUDIO-6/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/STUDIO-6/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/STUDIO" data-pagefind-filter="project">Fluid Studios</a></li>
+                <li><a href="/browse/STUDIO-6/">STUDIO-6</a></li>
+            </ol>
+        </nav>
+        <h1>STUDIO-6: UIO menu jumps at the page refresh</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/STUDIO-6">STUDIO-6</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/STUDIO/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/STUDIO/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Cindy Li</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/STUDIO/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-12-06T11:21:06.461-0500" prefix="">2011-12-06T11:21:06.461-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-04T11:53:58.957-0500" prefix="">2014-03-04T11:53:58.957-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Website</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>At the page refresh, the UIO menu first appears with a blank gap at the top that gets closed quickly. which produces an impression that the UIO menu jumps.  </p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-12815">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2011-12-06T16:56:46.373-0500">2011-12-06T16:56:46.373-0500</relative-time></i></p>
+                        <p>The "fluid studios" version that uses Antranig's refactored UIO branch (<a href="https://github.com/amb26/infusion/tree/FLUID-4525">https://github.com/amb26/infusion/tree/FLUID-4525</a>) has been pushed into Github @ </p>
+<p><a href="https://github.com/cindyli/studios.fluidproject.org/tree/STUDIO-6">https://github.com/cindyli/studios.fluidproject.org/tree/STUDIO-6</a> </p>
+<p>This version resolves the UIO menu jumping issue at the page load but introduces a blank gap above the UIO menu. This gap is gone once the UIO panel is opened an closed. </p>
+<p>The cause of the blank gap is from the removal of the initial setting of the style "display: none" from the div that contains the iframe. This style is set back once the slidingPanel function hidePanel() is called. That's why the gap disappears once the UIO is opened and closed once.</p>
+<p>The ideal solution is to get rid of the gap without the presence of the initial "display:none" since according to the discussion with Antranig who said in the channel (<a href="http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2011-12-06):">http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2011-12-06):</a></p>
+<p>"I had to remove the "display: none" from the initial markup since it caused a horrifying timing issue<br>
+On FF in particular, the iframe existed in a crazy kind of "half-allocated state"<br>
+It had JS which had initialised but had not got the data structures for its DOM allocated<br>
+So any CSS operations would fail with a hard exception"</p>
+<p>The finding so far with where the gap comes from is that: it's from &lt;iframe&gt; node since once the node is deleted from DOM, the gap disappears. But I haven't identified any css within &lt;iframe&gt; that causes this gap.</p>
+
+                    </li>
+                    
+                    <li id="comment-12816">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2011-12-14T11:11:52.276-0500">2011-12-14T11:11:52.276-0500</relative-time></i></p>
+                        <p>Antranig has fixed the both gap and jumping issue with UIO menu. He will integrate the fix into his pull request for <a href="/browse/FLUID-4525/">FLUID-4525</a> (<a href="https://github.com/fluid-project/infusion/pull/189/files">https://github.com/fluid-project/infusion/pull/189/files</a>). </p>
+<p>The decision is, once this pull request gets into the infusion master project repo, the infusion library used by Fluid Studios will be upgraded to the latest as the solution to this issue. We will live with the UIO menu jumpingness before the upgrade happens.</p>
+
+                    </li>
+                    
+                    <li id="comment-12817">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-03-04T11:53:58.956-0500">2014-03-04T11:53:58.956-0500</relative-time></i></p>
+                        <p>The fluid studios site has been taken down. There are no current plans to replace it.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/STUDIO-5/"><span class="aria-hidden">←</span> Previous: STUDIO-5</a>
+        <a class="mx-1" href="/browse/STUDIO-7/">Next: STUDIO-7 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

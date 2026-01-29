@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6493  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6493 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6493/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6493/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6493/">FLUID-6493</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6493: iltorb dependency fails to build inside containers</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6493">FLUID-6493</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-04-16T16:39:05.330-0400" prefix="">2020-04-16T16:39:05.330-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:12.571-0400" prefix="">2024-07-22T10:35:12.571-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The version used in Infusion doesn't have a binary download available so it's to be built inside Alpine an other containers. It fails to get built due to compilation errors.</p>
+<pre><code class="hljs"><span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8.h:<span class="hljs-number">2672</span>:<span class="hljs-number">44</span>: note: candidate: v8::<span class="hljs-type">MaybeLocal</span>&lt;v8::<span class="hljs-type">Object</span>&gt; v8::<span class="hljs-type">Value</span>::<span class="hljs-type">ToObject</span>(v8::<span class="hljs-type">Local</span>&lt;v8::<span class="hljs-type">Context</span>&gt;) const
+   <span class="hljs-type">V8_WARN_UNUSED_RESULT</span> <span class="hljs-type">MaybeLocal</span>&lt;<span class="hljs-type">Object</span>&gt; <span class="hljs-type">ToObject</span>(
+                                            <span class="hljs-operator">^~~~~~~~</span>
+<span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8.h:<span class="hljs-number">2672</span>:<span class="hljs-number">44</span>: note:   candidate expects <span class="hljs-number">1</span> argument, <span class="hljs-number">0</span> provided
+<span class="hljs-type">In</span> file included from <span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8<span class="hljs-operator">-</span><span class="hljs-keyword">internal</span>.h:<span class="hljs-number">14</span>:<span class="hljs-number">0</span>,
+                 from <span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8.h:<span class="hljs-number">27</span>,
+                 from <span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>node.h:<span class="hljs-number">67</span>,
+                 from <span class="hljs-operator">../../</span>nan<span class="hljs-operator">/</span>nan.h:<span class="hljs-number">54</span>,
+                 from <span class="hljs-operator">../</span>src<span class="hljs-regexp">/dec/</span>stream_decode.h:<span class="hljs-number">4</span>,
+                 from <span class="hljs-operator">../</span>src<span class="hljs-regexp">/dec/</span>stream_decode.cc:<span class="hljs-number">1</span>:
+<span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8.h:<span class="hljs-number">2686</span>:<span class="hljs-number">31</span>: note: candidate: v8::<span class="hljs-type">Local</span>&lt;v8::<span class="hljs-type">Object</span>&gt; v8::Value::<span class="hljs-type">ToObject</span>(v8::<span class="hljs-type">Isolate</span><span class="hljs-operator">*</span>) const
+                 <span class="hljs-type">Local</span>&lt;<span class="hljs-type">Object</span>&gt; <span class="hljs-type">ToObject</span>(<span class="hljs-type">Isolate</span><span class="hljs-operator">*</span> isolate) const);
+                               <span class="hljs-operator">^</span>
+<span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8config.h:<span class="hljs-number">328</span>:<span class="hljs-number">3</span>: note: <span class="hljs-keyword">in</span> definition of <span class="hljs-keyword">macro</span> '<span class="hljs-type">V8_DEPRECATED</span>'
+   declarator __attribute__((deprecated(message)))
+   <span class="hljs-operator">^~~~~~~~~~</span>
+<span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8.h:<span class="hljs-number">2686</span>:<span class="hljs-number">31</span>: note:   candidate expects <span class="hljs-number">1</span> argument, <span class="hljs-number">0</span> provided
+                 <span class="hljs-type">Local</span>&lt;<span class="hljs-type">Object</span>&gt; <span class="hljs-type">ToObject</span>(<span class="hljs-type">Isolate</span><span class="hljs-operator">*</span> isolate) const);
+                               <span class="hljs-operator">^</span>
+<span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8config.h:<span class="hljs-number">328</span>:<span class="hljs-number">3</span>: note: <span class="hljs-keyword">in</span> definition of <span class="hljs-keyword">macro</span> '<span class="hljs-type">V8_DEPRECATED</span>'
+   declarator __attribute__((deprecated(message)))
+   <span class="hljs-operator">^~~~~~~~~~</span>
+<span class="hljs-operator">../</span>src<span class="hljs-regexp">/dec/</span>stream_decode.cc:<span class="hljs-number">54</span>:<span class="hljs-number">29</span>: error: no matching function <span class="hljs-keyword">for</span> call to 'v8::<span class="hljs-type">Value</span>::<span class="hljs-type">BooleanValue</span>()'
+   <span class="hljs-keyword">if</span> (info[<span class="hljs-number">2</span>]-&gt;<span class="hljs-type">BooleanValue</span>()) {
+                             <span class="hljs-operator">^</span>
+<span class="hljs-type">In</span> file included from <span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>node.h:<span class="hljs-number">67</span>:<span class="hljs-number">0</span>,
+                 from <span class="hljs-operator">../../</span>nan<span class="hljs-operator">/</span>nan.h:<span class="hljs-number">54</span>,
+                 from <span class="hljs-operator">../</span>src<span class="hljs-regexp">/dec/</span>stream_decode.h:<span class="hljs-number">4</span>,
+                 from <span class="hljs-operator">../</span>src<span class="hljs-regexp">/dec/</span>stream_decode.cc:<span class="hljs-number">1</span>:
+<span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8.h:<span class="hljs-number">2699</span>:<span class="hljs-number">8</span>: note: candidate: bool v8::<span class="hljs-type">Value</span>::<span class="hljs-type">BooleanValue</span>(v8::<span class="hljs-type">Isolate</span><span class="hljs-operator">*</span>) const
+   bool <span class="hljs-type">BooleanValue</span>(<span class="hljs-type">Isolate</span><span class="hljs-operator">*</span> isolate) const;
+        <span class="hljs-operator">^~~~~~~~~~~~</span>
+<span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8.h:<span class="hljs-number">2699</span>:<span class="hljs-number">8</span>: note:   candidate expects <span class="hljs-number">1</span> argument, <span class="hljs-number">0</span> provided
+<span class="hljs-type">In</span> file included from <span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8<span class="hljs-operator">-</span><span class="hljs-keyword">internal</span>.h:<span class="hljs-number">14</span>:<span class="hljs-number">0</span>,
+                 from <span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8.h:<span class="hljs-number">27</span>,
+                 from <span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>node.h:<span class="hljs-number">67</span>,
+                 from <span class="hljs-operator">../../</span>nan<span class="hljs-operator">/</span>nan.h:<span class="hljs-number">54</span>,
+                 from <span class="hljs-operator">../</span>src<span class="hljs-regexp">/dec/</span>stream_decode.h:<span class="hljs-number">4</span>,
+                 from <span class="hljs-operator">../</span>src<span class="hljs-regexp">/dec/</span>stream_decode.cc:<span class="hljs-number">1</span>:
+<span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8.h:<span class="hljs-number">2702</span>:<span class="hljs-number">51</span>: note: candidate: v8::<span class="hljs-type">Maybe</span>&lt;bool&gt; v8::<span class="hljs-type">Value</span>::<span class="hljs-type">BooleanValue</span>(v8::<span class="hljs-type">Local</span>&lt;v8::<span class="hljs-type">Context</span>&gt;) const
+                 <span class="hljs-type">V8_WARN_UNUSED_RESULT</span> <span class="hljs-type">Maybe</span>&lt;bool&gt; <span class="hljs-type">BooleanValue</span>(
+                                                   <span class="hljs-operator">^</span>
+<span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8config.h:<span class="hljs-number">328</span>:<span class="hljs-number">3</span>: note: <span class="hljs-keyword">in</span> definition of <span class="hljs-keyword">macro</span> '<span class="hljs-type">V8_DEPRECATED</span>'
+   declarator __attribute__((deprecated(message)))
+   <span class="hljs-operator">^~~~~~~~~~</span>
+<span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8.h:<span class="hljs-number">2702</span>:<span class="hljs-number">51</span>: note:   candidate expects <span class="hljs-number">1</span> argument, <span class="hljs-number">0</span> provided
+                 <span class="hljs-type">V8_WARN_UNUSED_RESULT</span> <span class="hljs-type">Maybe</span>&lt;bool&gt; <span class="hljs-type">BooleanValue</span>(
+                                                   <span class="hljs-operator">^</span>
+<span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8config.h:<span class="hljs-number">328</span>:<span class="hljs-number">3</span>: note: <span class="hljs-keyword">in</span> definition of <span class="hljs-keyword">macro</span> '<span class="hljs-type">V8_DEPRECATED</span>'
+   declarator __attribute__((deprecated(message)))
+   <span class="hljs-operator">^~~~~~~~~~</span>
+<span class="hljs-operator">../</span>src<span class="hljs-regexp">/dec/</span>stream_decode.cc: <span class="hljs-type">In</span> <span class="hljs-keyword">static</span> member function '<span class="hljs-keyword">static</span> Nan::<span class="hljs-type">NAN_METHOD_RETURN_TYPE</span> StreamDecode::<span class="hljs-type">Flush</span>(Nan::<span class="hljs-type">NAN_METHOD_ARGS_TYPE</span>)':
+<span class="hljs-operator">../</span>src<span class="hljs-regexp">/dec/</span>stream_decode.cc:<span class="hljs-number">70</span>:<span class="hljs-number">29</span>: error: no matching function <span class="hljs-keyword">for</span> call to 'v8::Value::<span class="hljs-type">BooleanValue</span>()'
+   <span class="hljs-keyword">if</span> (info[<span class="hljs-number">1</span>]-&gt;<span class="hljs-type">BooleanValue</span>()) {
+                             <span class="hljs-operator">^</span>
+<span class="hljs-type">In</span> file included from <span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>node.h:<span class="hljs-number">67</span>:<span class="hljs-number">0</span>,
+                 from <span class="hljs-operator">../../</span>nan<span class="hljs-operator">/</span>nan.h:<span class="hljs-number">54</span>,
+                 from <span class="hljs-operator">../</span>src<span class="hljs-regexp">/dec/</span>stream_decode.h:<span class="hljs-number">4</span>,
+                 from <span class="hljs-operator">../</span>src<span class="hljs-regexp">/dec/</span>stream_decode.cc:<span class="hljs-number">1</span>:
+<span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8.h:<span class="hljs-number">2699</span>:<span class="hljs-number">8</span>: note: candidate: bool v8::Value::<span class="hljs-type">BooleanValue</span>(v8::<span class="hljs-type">Isolate</span><span class="hljs-operator">*</span>) const
+   bool <span class="hljs-type">BooleanValue</span>(<span class="hljs-type">Isolate</span><span class="hljs-operator">*</span> isolate) const;
+        <span class="hljs-operator">^~~~~~~~~~~~</span>
+<span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8.h:<span class="hljs-number">2699</span>:<span class="hljs-number">8</span>: note:   candidate expects <span class="hljs-number">1</span> argument, <span class="hljs-number">0</span> provided
+<span class="hljs-type">In</span> file included from <span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8<span class="hljs-operator">-</span><span class="hljs-keyword">internal</span>.h:<span class="hljs-number">14</span>:<span class="hljs-number">0</span>,
+                 from <span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8.h:<span class="hljs-number">27</span>,
+                 from <span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>node.h:<span class="hljs-number">67</span>,
+                 from <span class="hljs-operator">../../</span>nan<span class="hljs-operator">/</span>nan.h:<span class="hljs-number">54</span>,
+                 from <span class="hljs-operator">../</span>src<span class="hljs-regexp">/dec/</span>stream_decode.h:<span class="hljs-number">4</span>,
+                 from <span class="hljs-operator">../</span>src<span class="hljs-regexp">/dec/</span>stream_decode.cc:<span class="hljs-number">1</span>:
+<span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8.h:<span class="hljs-number">2702</span>:<span class="hljs-number">51</span>: note: candidate: v8::<span class="hljs-type">Maybe</span>&lt;bool&gt; v8::Value::<span class="hljs-type">BooleanValue</span>(v8::<span class="hljs-type">Local</span>&lt;v8::<span class="hljs-type">Context</span>&gt;) const
+                 <span class="hljs-type">V8_WARN_UNUSED_RESULT</span> <span class="hljs-type">Maybe</span>&lt;bool&gt; <span class="hljs-type">BooleanValue</span>(
+                                                   <span class="hljs-operator">^</span>
+<span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8config.h:<span class="hljs-number">328</span>:<span class="hljs-number">3</span>: note: <span class="hljs-keyword">in</span> definition of <span class="hljs-keyword">macro</span> '<span class="hljs-type">V8_DEPRECATED</span>'
+   declarator __attribute__((deprecated(message)))
+   <span class="hljs-operator">^~~~~~~~~~</span>
+<span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8.h:<span class="hljs-number">2702</span>:<span class="hljs-number">51</span>: note:   candidate expects <span class="hljs-number">1</span> argument, <span class="hljs-number">0</span> provided
+                 <span class="hljs-type">V8_WARN_UNUSED_RESULT</span> <span class="hljs-type">Maybe</span>&lt;bool&gt; <span class="hljs-type">BooleanValue</span>(
+                                                   <span class="hljs-operator">^</span>
+<span class="hljs-regexp">/root/</span>.cache<span class="hljs-regexp">/node-gyp/</span><span class="hljs-number">12.16</span>.<span class="hljs-number">2</span><span class="hljs-regexp">/include/</span>node<span class="hljs-operator">/</span>v8config.h:<span class="hljs-number">328</span>:<span class="hljs-number">3</span>: note: <span class="hljs-keyword">in</span> definition of <span class="hljs-keyword">macro</span> '<span class="hljs-type">V8_DEPRECATED</span>'
+   declarator __attribute__((deprecated(message)))
+   <span class="hljs-operator">^~~~~~~~~~</span>
+make: <span class="hljs-operator">***</span> [<span class="hljs-type">Release</span><span class="hljs-regexp">/obj.target/</span>iltorb<span class="hljs-regexp">/src/</span>dec<span class="hljs-operator">/</span>stream_decode.o] <span class="hljs-type">Error</span> <span class="hljs-number">1</span>
+iltorb.target.mk:<span class="hljs-number">145</span>: recipe <span class="hljs-keyword">for</span> target '<span class="hljs-type">Release</span><span class="hljs-regexp">/obj.target/</span>iltorb<span class="hljs-regexp">/src/</span>dec<span class="hljs-operator">/</span>stream_decode.o' failed
+make: <span class="hljs-type">Leaving</span> directory '<span class="hljs-regexp">/src/</span>node_modules<span class="hljs-regexp">/iltorb/</span>build'
+gyp <span class="hljs-type">ERR</span>! build error 
+gyp <span class="hljs-type">ERR</span>! stack Error: `make` failed with exit code: <span class="hljs-number">2</span>
+gyp <span class="hljs-type">ERR</span>! stack     at <span class="hljs-type">ChildProcess</span>.onExit (<span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/lib/</span>node_modules<span class="hljs-regexp">/npm/</span>node_modules<span class="hljs-regexp">/node-gyp/</span>lib<span class="hljs-operator">/</span>build.js:<span class="hljs-number">194</span>:<span class="hljs-number">23</span>)
+gyp <span class="hljs-type">ERR</span>! stack     at <span class="hljs-type">ChildProcess</span>.emit (events.js:<span class="hljs-number">310</span>:<span class="hljs-number">20</span>)
+gyp <span class="hljs-type">ERR</span>! stack     at <span class="hljs-type">Process</span>.<span class="hljs-type">ChildProcess</span>._handle.onexit (<span class="hljs-keyword">internal</span><span class="hljs-operator">/</span>child_process.js:<span class="hljs-number">275</span>:<span class="hljs-number">12</span>)
+gyp <span class="hljs-type">ERR</span>! <span class="hljs-type">System</span> <span class="hljs-type">Linux</span> <span class="hljs-number">5.5</span>.<span class="hljs-number">15</span><span class="hljs-operator">-</span><span class="hljs-number">200</span>.fc31.x86_64
+gyp <span class="hljs-type">ERR</span>! command <span class="hljs-string">"/usr/local/bin/node"</span> <span class="hljs-string">"/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js"</span> <span class="hljs-string">"rebuild"</span>
+gyp <span class="hljs-type">ERR</span>! cwd <span class="hljs-regexp">/src/</span>node_modules<span class="hljs-operator">/</span>iltorb
+gyp <span class="hljs-type">ERR</span>! node <span class="hljs-operator">-</span>v v12.<span class="hljs-number">16.2</span>
+gyp <span class="hljs-type">ERR</span>! node<span class="hljs-operator">-</span>gyp <span class="hljs-operator">-</span>v v5.<span class="hljs-number">1.0</span>
+gyp <span class="hljs-type">ERR</span>! not ok 
+npm <span class="hljs-type">WARN</span> lifecycle infusion@<span class="hljs-number">3.0</span>.<span class="hljs-number">0</span><span class="hljs-operator">~</span>prepare: cannot run <span class="hljs-keyword">in</span> wd infusion@<span class="hljs-number">3.0</span>.<span class="hljs-number">0</span> npm run loadDependencies <span class="hljs-operator">&amp;&amp;</span> npm run buildStylus (wd<span class="hljs-operator">=/</span>src)
+npm <span class="hljs-type">WARN</span> <span class="hljs-keyword">optional</span> <span class="hljs-type">SKIPPING</span> <span class="hljs-type">OPTIONAL</span> DEPENDENCY: iltorb@<span class="hljs-number">1.3</span>.<span class="hljs-number">10</span> (node_modules<span class="hljs-operator">/</span>iltorb):
+npm <span class="hljs-type">WARN</span> <span class="hljs-keyword">optional</span> <span class="hljs-type">SKIPPING</span> <span class="hljs-type">OPTIONAL</span> DEPENDENCY: iltorb@<span class="hljs-number">1.3</span>.<span class="hljs-number">10</span> install: `detect<span class="hljs-operator">-</span>libc prebuild<span class="hljs-operator">-</span>install <span class="hljs-operator">||</span> node<span class="hljs-operator">-</span>gyp rebuild`
+npm <span class="hljs-type">WARN</span> <span class="hljs-keyword">optional</span> <span class="hljs-type">SKIPPING</span> <span class="hljs-type">OPTIONAL</span> DEPENDENCY: <span class="hljs-type">Exit</span> status <span class="hljs-number">1</span>
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6492/"><span class="aria-hidden">←</span> Previous: FLUID-6492</a>
+        <a class="mx-1" href="/browse/FLUID-6494/">Next: FLUID-6494 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

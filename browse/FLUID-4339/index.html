@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4339  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4339 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4339/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4339/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4339/">FLUID-4339</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4339: UIO separated panel: the dropdown options of "text style" and "colour and contrast" are not styled</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4339">FLUID-4339</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Michelle D'Souza</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-07-13T13:28:35.992-0400" prefix="">2011-07-13T13:28:35.992-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T14:04:23.794-0400" prefix="">2024-07-22T14:04:23.794-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UIEnhancer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>To produce:</p>
+<p>1. go to <a href="http://build.fluidproject.org/infusion/demos/uiOptions/FatPanelUIOptions/html/uiOptions.html">http://build.fluidproject.org/infusion/demos/uiOptions/FatPanelUIOptions/html/uiOptions.html</a><br>
+2. click "show display preferences" to open the ui options fat panel<br>
+3. click on drop down list box for "text style" setting. The options in the drop down should be styled in the corresponding font but they are not<br>
+4. the same issue with drop down list box for "colour and contrast" setting</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20990">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2011-07-13T13:40:18.448-0400">2011-07-13T13:40:18.448-0400</relative-time></i></p>
+                        <p>The css classes that are used to style drop down list options are from fluid.uiEnhancer.options.classnameMap, which is supplied thru demands blocks @ <a href="https://github.com/fluid-project/infusion/blob/master/src/webapp/components/uiOptions/js/UIOptions.js#L228-244">https://github.com/fluid-project/infusion/blob/master/src/webapp/components/uiOptions/js/UIOptions.js#L228-244</a></p>
+<p>Fat panel has its own demands blocks to overwrite the ones above @ <a href="https://github.com/fluid-project/infusion/blob/master/src/webapp/components/uiOptions/html/FatPanelUIOptionsFrame.html#L74-90">https://github.com/fluid-project/infusion/blob/master/src/webapp/components/uiOptions/html/FatPanelUIOptionsFrame.html#L74-90</a>, which is a spot worth to look at to ensure:</p>
+<p>1. Th demands blocks are resolved successfully<br>
+2. The values in classnameMap passed in from the demands blocks are expected.</p>
+
+                    </li>
+                    
+                    <li id="comment-20991">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2011-07-21T17:05:49.992-0400">2011-07-21T17:05:49.992-0400</relative-time></i></p>
+                        <p>Seems like FatPanelUIOptions.js line 114 resets the text style. It calls UIEnhancer.js line 152~154 to update the model to the settingsStore.  Could it be that the UpdateModel is not applying settings correctly?</p>
+
+                    </li>
+                    
+                    <li id="comment-20992">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-09T14:13:04.671-0400">2015-06-09T14:13:04.671-0400</relative-time></i></p>
+                        <p>"colour and contrast" no longer uses a drop down.</p>
+
+                    </li>
+                    
+                    <li id="comment-27813">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2024-07-22T14:04:23.794-0400">2024-07-22T14:04:23.794-0400</relative-time></i></p>
+                        <p>There is little to no support for styling the options of a select element.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4338/"><span class="aria-hidden">←</span> Previous: FLUID-4338</a>
+        <a class="mx-1" href="/browse/FLUID-4340/">Next: FLUID-4340 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

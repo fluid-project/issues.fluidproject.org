@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5335  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5335 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5335/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5335/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5335/">FLUID-5335</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5335: Update our demo doctype to HTML and remove XML-isms</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5335">FLUID-5335</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-04-28T11:07:08.754-0400" prefix="">2014-04-28T11:07:08.754-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-05-20T09:37:40.040-0400" prefix="">2014-05-20T09:37:40.040-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Demos</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>At the moment, our demos still use an XHTML doctype. Our demos are intended to show best practices to our users, so we should update them to a modern HTML doctype.</p>
+<p>While we're at it, we can remove other XML-isms such as stray references to the RSF XML namespace, etc.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20969">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2014-04-28T11:08:32.191-0400">2014-04-28T11:08:32.191-0400</relative-time></i></p>
+                        <p>Here's an example of a document that exhibits both of these issues:</p>
+<p><a href="https://github.com/fluid-project/infusion/blob/master/src/demos/uiOptions/index.html">https://github.com/fluid-project/infusion/blob/master/src/demos/uiOptions/index.html</a></p>
+
+                    </li>
+                    
+                    <li id="comment-20970">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-05-01T14:15:00.809-0400">2014-05-01T14:15:00.809-0400</relative-time></i></p>
+                        <p>I started looking into this today and ran into an issue with table summary. The table summary is an obsolete attribute in HTML5. <br>
+<a href="http://www.w3.org/TR/html-markup/table.html#table-constraints">http://www.w3.org/TR/html-markup/table.html#table-constraints</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table</a></p>
+<p>Recommendations for alternatives seem to suggest using the caption or figure elements, or making it so that the summary isn't needed. Uploader, for example uses the summary to provided non-visual users with added information about the contents and state of the file queue. </p>
+<p>In terms of uploader I think we have three options.</p>
+<p>1) remove the summary information completely<br>
+2) redesign and add in a captions element that is visible to everyone<br>
+3) use aria (e.g aria-describedby, aria-label) This may require some css to hide it from the UI but allow it to be accessible to AT users.</p>
+
+                    </li>
+                    
+                    <li id="comment-20971">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-05-01T15:08:20.062-0400">2014-05-01T15:08:20.062-0400</relative-time></i></p>
+                        <p>Another issue is that we'll need to remove all the rsf:id's from the demos and etc. <br>
+see: <a href="/browse/FLUID-4036/">FLUID-4036</a></p>
+
+                    </li>
+                    
+                    <li id="comment-20972">
+                        <p class="mb-0"><b>joanna vass</b> <i>commented <relative-time datetime="2014-05-05T12:56:05.160-0400">2014-05-05T12:56:05.160-0400</relative-time></i></p>
+                        <p>From our discussion at the floe planning meeting today we decided that:</p>
+<p>Status format changed from "To upload: 3 files (328.2 KB)" to "0 out of 3 files uploaded (328.2 KB)". When there are no files, status will say "0 files".</p>
+<p>Text will be read by screen reader when there is a change in the status or when user navigates to the table. </p>
+
+                    </li>
+                    
+                    <li id="comment-20974">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-05-07T14:33:34.901-0400">2014-05-07T14:33:34.901-0400</relative-time></i></p>
+                        <p>Spoke with joanna vass  and Dana today about the status format.</p>
+<ul>
+<li>0 files -&gt; "0 files"</li>
+<li>any state when there are files in the queue whether, uploading, uploaded or to be uploaded -&gt; "X out of Y files uploaded (uploadedSize of totalSize)"</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-20976">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-05-09T12:19:47.033-0400">2014-05-09T12:19:47.033-0400</relative-time></i></p>
+                        <p>Submitted a pull request for the uploader related changes:<br>
+<a href="https://github.com/fluid-project/infusion/pull/515">https://github.com/fluid-project/infusion/pull/515</a></p>
+
+                    </li>
+                    
+                    <li id="comment-20978">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-05-12T15:28:16.337-0400">2014-05-12T15:28:16.337-0400</relative-time></i></p>
+                        <p>Submitted a second pull request that contains the balance of the changes.<br>
+<a href="https://github.com/fluid-project/infusion/pull/517">https://github.com/fluid-project/infusion/pull/517</a></p>
+
+                    </li>
+                    
+                    <li id="comment-20979">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2014-05-15T16:52:10.520-0400">2014-05-15T16:52:10.520-0400</relative-time></i></p>
+                        <p>Merged into project repo at 1c81a9fd41df3f0fe2250cbe66c0bc479c8f4b3b</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5334/"><span class="aria-hidden">←</span> Previous: FLUID-5334</a>
+        <a class="mx-1" href="/browse/FLUID-5336/">Next: FLUID-5336 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

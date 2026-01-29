@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-322  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-322 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-322/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-322/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-322/">SJRK-322</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-322: Mysterious Kettle crash when running tests</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-322">SJRK-322</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SJRK/?resolution=Duplicate">Duplicate</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-01-28T10:55:53.767-0500" prefix="">2020-01-28T10:55:53.767-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-01-28T14:32:49.769-0500" prefix="">2020-01-28T14:32:49.769-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool Server</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When running the SJRK client tests, once I received a mysterious Kettle crash whilst running the base-page-storyEdit-Tests.html from the full test rollup. Unfortunately I didn't preserve the stack trace at the time and running the tests a further 10 times have failed to reproduce it.</p>
+<p>The failure was within&#160;kettle.markActiveRequest as executed from the static middleware handler, complaining that the request to be marked had already been destroyed. This failure should have been benign, since the built-in Kettle failure handler simply aborts any current request and logs the failure - however, the server exitted, for a reason which isn't clear. One possibility might have been that the test version of the handler in&#160;kettle.test.handleUncaughtException was included, which invokes process.exit(1) to fiercely highlight problems in test cases - however, it was not included in any site from the code I could see. I also verified that the process shouldn't ordinarily exit by manually triggering a failure in the debugger in&#160;kettle.markActiveRequest and checking that the correct failure handlers were called.</p>
+<p>It's going to be hard to trace this issue down without some more reliable ways of triggering it. My best guess is that some rare race condition is responsible not only for triggering the initial failure but also for triggering some further failure during the processing of an uncaught exception resulting from it which causes node to exit.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26552">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2020-01-28T14:32:49.760-0500">2020-01-28T14:32:49.760-0500</relative-time></i></p>
+                        <p>Duplicate of <a href="/browse/SJRK-187/">SJRK-187</a> (as far as we can tell)</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-321/"><span class="aria-hidden">←</span> Previous: SJRK-321</a>
+        <a class="mx-1" href="/browse/SJRK-323/">Next: SJRK-323 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

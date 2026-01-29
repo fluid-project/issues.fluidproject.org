@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3937  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3937 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3937/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3937/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3937/">FLUID-3937</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3937: In Firefox 3.6, the HTML 5 strategy for Uploader loads files into memory instead of streaming to the server, causing the potential for browser crashes</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3937">FLUID-3937</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-12-17T11:49:19.057-0500" prefix="">2010-12-17T11:49:19.057-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2010-12-20T16:24:18.342-0500" prefix="">2010-12-20T16:24:18.342-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Uploader</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Firefox 3.6 only has partial support for HTML 5 multi file uploads. As a result, we are required to use the File API's .getAsBinary() method to load the entire file into browser memory before uploading it to the server.</p>
+<p>This approach has the potential to cause crashes in browsers with large file sizes or in low memory situations. The bug itself is in Firefox's implementation, but we need to add some kind of sensible file size cap for users of Firefox 3.6 so that we don't end up crashing their browser.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3937/FLUID-3937-b.patch">
+                            
+                                FLUID-3937-b.patch
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20334">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-12-20T15:46:22.189-0500">2010-12-20T15:46:22.189-0500</relative-time></i></p>
+                        <p>Here's a patch from Mike and I, which adds an additional "legacyBrowserFileLimit" option to the HTML 5 strategy so that users can cap file sizes selectively for Firefox 3.6.</p>
+
+                    </li>
+                    
+                    <li id="comment-20335">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2010-12-20T16:01:33.074-0500">2010-12-20T16:01:33.074-0500</relative-time></i></p>
+                        <p>The patch looks good - you can commit.</p>
+
+                    </li>
+                    
+                    <li id="comment-20336">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-12-20T16:23:37.994-0500">2010-12-20T16:23:37.994-0500</relative-time></i></p>
+                        <p>Fix committed at r10444.</p>
+
+                    </li>
+                    
+                    <li id="comment-20337">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-12-20T16:24:18.333-0500">2010-12-20T16:24:18.333-0500</relative-time></i></p>
+                        <p>Fixed, tested and committed.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3936/"><span class="aria-hidden">←</span> Previous: FLUID-3936</a>
+        <a class="mx-1" href="/browse/FLUID-3938/">Next: FLUID-3938 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

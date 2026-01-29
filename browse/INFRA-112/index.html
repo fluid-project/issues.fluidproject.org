@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-112  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-112 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-112/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-112/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-112/">INFRA-112</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-112: DVCS account are slow to sync</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-112">INFRA-112</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-02-08T09:26:50.872-0500" prefix="">2018-02-08T09:26:50.872-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-02-19T10:03:35.189-0500" prefix="">2018-02-19T10:03:35.189-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>DVCS accounts in Jira are very slow to sync (and PRs are&#160;going unnoticed).</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25909">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-02-08T09:29:02.810-0500">2018-02-08T09:29:02.810-0500</relative-time></i></p>
+                        <p>We are being rate-limited by GitHub</p>
+<pre><code class="hljs"><span class="hljs-number">2018</span>-<span class="hljs-number">02</span>-<span class="hljs-number">07</span> <span class="hljs-number">20</span>:<span class="hljs-number">04</span>:<span class="hljs-number">21</span>,<span class="hljs-number">608</span> DVCSConnector<span class="hljs-selector-class">.EventService</span>:thread-<span class="hljs-number">1</span> INFO ServiceRunner     <span class="hljs-selector-attr">[c.a.j.p.dvcs.service.RepositoryServiceImpl]</span> Could not load user <span class="hljs-selector-attr">[jhung, jhung]</span> - java<span class="hljs-selector-class">.lang</span><span class="hljs-selector-class">.RuntimeException</span>: org<span class="hljs-selector-class">.eclipse</span><span class="hljs-selector-class">.egit</span><span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.core</span><span class="hljs-selector-class">.client</span><span class="hljs-selector-class">.RequestException</span>: API rate limit exceeded <span class="hljs-keyword">for</span> gtirloni. (<span class="hljs-number">403</span>)
+...
+<span class="hljs-number">2018</span>-<span class="hljs-number">02</span>-<span class="hljs-number">07</span> <span class="hljs-number">22</span>:<span class="hljs-number">09</span>:<span class="hljs-number">18</span>,<span class="hljs-number">846</span> DVCSConnector<span class="hljs-selector-class">.MessageExecutor</span>:thread-<span class="hljs-number">1</span> ERROR ServiceRunner     <span class="hljs-selector-attr">[c.a.j.p.d.service.message.MessageConsumer]</span> Github rate limit exceeded, requests: <span class="hljs-number">5000</span>, remaining requests: <span class="hljs-number">0</span>, reset <span class="hljs-selector-tag">time</span>: <span class="hljs-number">2018</span>-<span class="hljs-number">02</span>-<span class="hljs-number">07</span>T22:<span class="hljs-number">13</span>:<span class="hljs-number">38.000</span>Z
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-25910">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-02-08T09:29:58.772-0500">2018-02-08T09:29:58.772-0500</relative-time></i></p>
+                        <p><a href="https://developer.github.com/apps/building-github-apps/rate-limits-for-github-apps/">https://developer.github.com/apps/building-github-apps/rate-limits-for-github-apps/</a></p>
+<blockquote>
+<p>GitHub Apps use the installation's minimum rate limit of 5,000 requests per hour. Organization installations with more than 20 users receive another 50 requests per hour for each user. Installations that have more than 20 repositories receive another 50 requests per hour for each repository.</p>
+</blockquote>
+
+                    </li>
+                    
+                    <li id="comment-25911">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-02-08T09:33:38.685-0500">2018-02-08T09:33:38.685-0500</relative-time></i></p>
+                        <p><a href="https://confluence.atlassian.com/jirakb/dvcs-github-sync-failed-779160781.html">https://confluence.atlassian.com/jirakb/dvcs-github-sync-failed-779160781.html</a></p>
+<p>I've added the dark feature "dvcs.connector.pr-synchronization.disabled" and will remove it tomorrow. The rate limits should be okay by then.</p>
+
+                    </li>
+                    
+                    <li id="comment-25912">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-02-09T06:01:58.295-0500">2018-02-09T06:01:58.295-0500</relative-time></i></p>
+                        <p>After stopping GitHub polling, it seems we're not rate limited anymore. <a href="/browse/FLOE-535/">FLOE-535</a> is showing the merged PR now.</p>
+<p>Justin Obara could you confirm everything is okay? It seems it might take up to 60min to get a PR reflected in JIRA (if we're not rate limited).</p>
+<p>I also updated JIRA to version 7.7.1 and it might help with that (as there are some fixes for DVCS in it).</p>
+
+                    </li>
+                    
+                    <li id="comment-25913">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-02-19T10:03:35.117-0500">2018-02-19T10:03:35.117-0500</relative-time></i></p>
+                        <p>It seems all PRs synced. I cannot see any errors related to GitHub since the JIRA instance was restarted a few days ago.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-111/"><span class="aria-hidden">←</span> Previous: INFRA-111</a>
+        <a class="mx-1" href="/browse/INFRA-114/">Next: INFRA-114 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

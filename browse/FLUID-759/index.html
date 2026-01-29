@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-759  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-759 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-759/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-759/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-759/">FLUID-759</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-759: Anonymous users cannot access OSDPL design patterns</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-759">FLUID-759</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Sub-task">Sub-task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Allison Bloodworth</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Allison%20Bloodworth">Allison Bloodworth</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-06-10T17:02:31.000-0400" prefix="">2008-06-10T17:02:31.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-01-14T12:53:10.185-0500" prefix="">2011-01-14T12:53:10.185-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>OSDPL</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Users receive a message saying "There are no patterns in this category" when you can clearly tell that there are patterns by looking at the sub-navigation, and when they click on a pattern they get an access denied error.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-18887">
+                        <p class="mb-0"><b>Allison Bloodworth</b> <i>commented <relative-time datetime="2008-06-10T17:02:46.000-0400">2008-06-10T17:02:46.000-0400</relative-time></i></p>
+                        <p>iteration11</p>
+
+                    </li>
+                    
+                    <li id="comment-18890">
+                        <p class="mb-0"><b>Allison Bloodworth</b> <i>commented <relative-time datetime="2008-06-10T17:03:44.000-0400">2008-06-10T17:03:44.000-0400</relative-time></i></p>
+                        <p>I figured out that whenever a pattern was published, its entry in the node_access table was deleted. (I added the devel module to help figure this out, so you will see a new devel block on the right and a node_access report on the bottom of all node pages. I also found this tutorial on troubleshooting, but didn't have to use too much of it: <a href="http://drupal.org/node/72108">http://drupal.org/node/72108</a>.) </p>
+<p>I ended up having to rebuild the permissions in Content Management -&gt; Post settings. I read that "it's intended to be a safety net in case your site's access is screwed up because of orphaned access control permissions that got left behind when an access control module was improperly un-installed." We must have done this at some point. Now there are no entries in the node_access table (and the "Rebuild Permissions" option doesn't show up anymore on the "Post settings" page), so I'm guessing it's only used when we some sort of access control (maybe Taxonomy Access Control?) is used. We should keep a lookout though if we have problems with anonymous users accessing content again, making especially sure they can see it as we start to add new content. </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-758/"><span class="aria-hidden">←</span> Previous: FLUID-758</a>
+        <a class="mx-1" href="/browse/FLUID-760/">Next: FLUID-760 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

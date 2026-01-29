@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> ENGAGE-107  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" ENGAGE-107 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/ENGAGE-107/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/ENGAGE-107/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/ENGAGE" data-pagefind-filter="project">Fluid Engage</a></li>
+                <li><a href="/browse/ENGAGE-107/">ENGAGE-107</a></li>
+            </ol>
+        </nav>
+        <h1>ENGAGE-107: Engage should use a single app/servlet approach to reduce duplication among handlers and resolve problems with URL routing.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/ENGAGE-107">ENGAGE-107</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/ENGAGE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/ENGAGE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/ENGAGE/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-10-05T20:58:38.000-0400" prefix="">2009-10-05T20:58:38.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-11-03T11:56:03.000-0500" prefix="">2009-11-03T11:56:03.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Artifact View</li>
+                            
+                            <li>Browse</li>
+                            
+                            <li>Kettle</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>At the moment, Engage is structured awkwardly, causing problems with URL routing and more. We register each Engage handler (artifact View, browse, and each of their couch data feeds) as separate servlets in web.xml, then creating separate Kettle apps for each.</p>
+<p>In practice, we should have a single Kettle app for the whole of Engage, and each of the handler logic should be initialized by the app or the framework.</p>
+<p>Mounting shared resources such as Infusion or Engage Client should also be done once in the App, not in each handler init.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/ENGAGE/ENGAGE-107/ENGAGE-107-engage-client.patch">
+                            
+                                ENGAGE-107-engage-client.patch
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/ENGAGE/ENGAGE-107/ENGAGE-107-kettle.patch">
+                            
+                                ENGAGE-107-kettle.patch
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-11786">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2009-10-05T21:01:50.000-0400">2009-10-05T21:01:50.000-0400</relative-time></i></p>
+                        <p>Here are two patches, one for the kettle directory and one for engage, which implement a nearly-working version of this fix.</p>
+
+                    </li>
+                    
+                    <li id="comment-11787">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-10-06T13:30:59.000-0400">2009-10-06T13:30:59.000-0400</relative-time></i></p>
+                        <p>Bug Parade Engage 0.1 </p>
+
+                    </li>
+                    
+                    <li id="comment-11788">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2009-10-06T14:24:24.000-0400">2009-10-06T14:24:24.000-0400</relative-time></i></p>
+                        <p>This issue should also address issues of duplication within Engage, including things like the fact that Browse and Artifact have very similar, yet separate code.</p>
+
+                    </li>
+                    
+                    <li id="comment-11789">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2009-10-09T18:32:31.000-0400">2009-10-09T18:32:31.000-0400</relative-time></i></p>
+                        <p>This issue was resolved by my commits to engage-server and -client at r8258 and 8259, with subsequent tweaks from Yura and Antranig.</p>
+
+                    </li>
+                    
+                    <li id="comment-11790">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-11-03T11:56:03.000-0500">2009-11-03T11:56:03.000-0500</relative-time></i></p>
+                        <p>Closed as per previous comment</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/ENGAGE-106/"><span class="aria-hidden">←</span> Previous: ENGAGE-106</a>
+        <a class="mx-1" href="/browse/ENGAGE-108/">Next: ENGAGE-108 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

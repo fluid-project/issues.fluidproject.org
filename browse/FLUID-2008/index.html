@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2008  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2008 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2008/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2008/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2008/">FLUID-2008</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2008: Focus does not remain on Upload/Stop Upload button after activating it with the keyboard</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2008">FLUID-2008</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Eli Cochran</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-12-17T12:14:53.000-0500" prefix="">2008-12-17T12:14:53.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-02-16T22:34:08.000-0500" prefix="">2009-02-16T22:34:08.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.6</li>
+                            
+                            <li>0.7</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.8</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Uploader</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Focus does not remain on Upload/Stop Upload button after activating it with the keyboard</p>
+<p>Steps to reproduce:</p>
+<p>1) Open the demo version of uploader<br>
+<a href="http://build.fluidproject.org/fluid/fluid-components/html/templates/Uploader.html">http://build.fluidproject.org/fluid/fluid-components/html/templates/Uploader.html</a></p>
+<p>2) Add some files to the file queue</p>
+<p>3) Using the keyboard, tap the 'tab' key until the "Upload" button has focus</p>
+<p>4) Using the keyboard, tap the 'enter' key to activate the button</p>
+<p>Notice that focus isn't on the "Stop Upload" button. The same thing happens after activating the "Stop Upload" button</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)<br>
+FF2, FF3, Opera 9.5 (Win XP)<br>
+FF3 (Win Vista)</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-2008/FLUID-2008.a.patch">
+                            
+                                FLUID-2008.a.patch
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-2008/FLUID-2008.b.patch">
+                            
+                                FLUID-2008.b.patch
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-17786">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-02-06T12:55:53.000-0500">2009-02-06T12:55:53.000-0500</relative-time></i></p>
+                        <p>Bug Parade 0.8 release</p>
+
+                    </li>
+                    
+                    <li id="comment-17788">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2009-02-12T18:13:48.000-0500">2009-02-12T18:13:48.000-0500</relative-time></i></p>
+                        <p>In reference to the <a href="/browse/FLUID-2008/">FLUID-2008</a>.a.patch</p>
+<ul>
+<li> Added new options for elements to be selected on certain events</li>
+<li>Added new listeners or new code to existing listeners for those events to set the focus on those events</li>
+<li>Also needed to add a fire event for the onUploadStop event to DemoUploadManager.js</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-17790">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2009-02-13T16:41:56.000-0500">2009-02-13T16:41:56.000-0500</relative-time></i></p>
+                        <p>The <a href="/browse/FLUID-2008/">FLUID-2008</a>.b.patch replaces the .a patch. I have updated the name of the option to focusWithEvent and added a comment so that it doesn't seem automagical</p>
+
+                    </li>
+                    
+                    <li id="comment-17792">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2009-02-16T21:16:26.000-0500">2009-02-16T21:16:26.000-0500</relative-time></i></p>
+                        <p>I've reviewed Eli's patch and it looks great. +1. We discussed this issue in depth in the IRC room. Here's a link to the transcript:</p>
+<p><a href="http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2009-02-13">http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2009-02-13</a></p>
+<p>I made a minor change to Eli's comment above focusWithEvent, and will commit this patch.</p>
+
+                    </li>
+                    
+                    <li id="comment-17796">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2009-02-16T21:19:07.000-0500">2009-02-16T21:19:07.000-0500</relative-time></i></p>
+                        <p>I reviewed, tested, and committed Eli's <a href="/browse/FLUID-2008/">FLUID-2008</a>.b.patch. Looking good. </p>
+
+                    </li>
+                    
+                    <li id="comment-17798">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-02-16T22:34:08.000-0500">2009-02-16T22:34:08.000-0500</relative-time></i></p>
+                        <p>Verified fix using:</p>
+<p>FF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)<br>
+FF3 (Win XP)</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-2007/"><span class="aria-hidden">←</span> Previous: FLUID-2007</a>
+        <a class="mx-1" href="/browse/FLUID-2009/">Next: FLUID-2009 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

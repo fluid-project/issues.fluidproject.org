@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> DECA-138  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" DECA-138 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/DECA-138/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/DECA-138/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/DECA" data-pagefind-filter="project">Decapod</a></li>
+                <li><a href="/browse/DECA-138/">DECA-138</a></li>
+            </ol>
+        </nav>
+        <h1>DECA-138: Determine the correct revision numbers for OCRopus, genpdf, and stitching for the Decapod 0.4 release</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/DECA-138">DECA-138</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/DECA/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/DECA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/DECA/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-07-14T09:51:41.656-0400" prefix="">2010-07-14T09:51:41.656-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2010-07-26T17:46:42.421-0400" prefix="">2010-07-26T17:46:42.421-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Export</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>As a community, we should settle on specific revisions of OCRopus, genpdf, and the stitching scrips in preparation for freezing and releasing Decapod 0.4</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10290">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-07-14T11:21:23.642-0400">2010-07-14T11:21:23.642-0400</relative-time></i></p>
+                        <p>Bug Parade Decapod 0.4</p>
+
+                    </li>
+                    
+                    <li id="comment-10291">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-07-19T10:47:24.331-0400">2010-07-19T10:47:24.331-0400</relative-time></i></p>
+                        <p>At the decapod meeting today, it was decided to use the same versions of OCRopus, genpdf, and stitching that shipped with Decapod 0.3</p>
+
+                    </li>
+                    
+                    <li id="comment-10292">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-07-26T17:46:25.188-0400">2010-07-26T17:46:25.188-0400</relative-time></i></p>
+                        <p>After the various bugs discovered during Decapod 0.4 QA testing, we finalized on the following revisions for this release:</p>
+<p>decapod-genpdf: 39:31498aa65bd5<br>
+decapod-server: 151:f7e03504e2fa<br>
+decapod-stitching: 10:c13c9ee54133<br>
+decapod-ui: 238:f5335173b462<br>
+infusion: tip<br>
+OCRopus: ocropus-0.4.4</p>
+
+                    </li>
+                    
+                    <li id="comment-10293">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-07-26T17:46:42.419-0400">2010-07-26T17:46:42.419-0400</relative-time></i></p>
+                        <p>This issue was resolved and all tags were created for the final release.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/DECA-137/"><span class="aria-hidden">←</span> Previous: DECA-137</a>
+        <a class="mx-1" href="/browse/DECA-139/">Next: DECA-139 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

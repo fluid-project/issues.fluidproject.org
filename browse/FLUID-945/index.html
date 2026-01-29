@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-945  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-945 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-945/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-945/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-945/">FLUID-945</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-945: Inline Edit assumes there will always be a container element wrapping the display text. For simple scenarios, this is an unnecessary burden for the developer.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-945">FLUID-945</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-07-18T17:35:33.000-0400" prefix="">2008-07-18T17:35:33.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-01-20T15:09:43.244-0500" prefix="">2011-01-20T15:09:43.244-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                            <li>0.3</li>
+                            
+                            <li>0.4beta1</li>
+                            
+                            <li>0.4</li>
+                            
+                            <li>0.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>At the moment, InlineEdit requires the display text to be contained in an element that is inside the component container. This is required, because the text needs to be hidden when switching into edit mode.</p>
+<p>However, for some simple cases, this might be a burden on the developer, as it would be unnatural in the basic markup. For example, making the cells in a table editable: usually, the text in a cell is just in the &lt;td&gt; element, NOT inside an element inside the &lt;td&gt; element:<br>
+...<br>
+&lt;td&gt;Bootsy Collins&lt;/td&gt;<br>
+...<br>
+In this example, the &lt;td&gt; element cannot be used as the container of an Inline Edit.</p>
+<p>We should consider detecting this kind of case, and if necessary wrapping the text in a span ourselves.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19892">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2008-08-04T20:19:30.000-0400">2008-08-04T20:19:30.000-0400</relative-time></i></p>
+                        <p>this seems to be related to, or actually superseding, <a href="/browse/FLUID-844/">FLUID-844</a></p>
+
+                    </li>
+                    
+                    <li id="comment-19893">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-11-13T21:45:51.000-0500">2008-11-13T21:45:51.000-0500</relative-time></i></p>
+                        <p>See comments on <a href="/browse/FLUID-1541/">FLUID-1541</a>. I don't believe this issue should be resolved.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-944/"><span class="aria-hidden">←</span> Previous: FLUID-944</a>
+        <a class="mx-1" href="/browse/FLUID-946/">Next: FLUID-946 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

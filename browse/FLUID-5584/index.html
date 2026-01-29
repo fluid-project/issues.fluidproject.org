@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5584  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5584 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5584/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5584/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5584/">FLUID-5584</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5584: Improve promise semantics to allow promises cooperating in a sequence to contribute diagnostics on rejection</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5584">FLUID-5584</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-01-09T09:38:01.205-0500" prefix="">2015-01-09T09:38:01.205-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T09:32:45.910-0400" prefix="">2024-07-22T09:32:45.910-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Native promise semantics do not allow for diagnostics of the same quality that were obtainable under the synchronous exception-handling model. A "best practice" for an inhabitant of an intermediate stack frame where an exception passes through is the "catch, annotate and rethrow" model where the intermediate handler can contribute extra information about the activity in progress when the exception is thrown. Discussion from mature heads dating from these earlier years can be found at <a href="http://www.mindview.net/Etc/Discussions/CheckedExceptions/">http://www.mindview.net/Etc/Discussions/CheckedExceptions/</a> and was enshrined in the "prior art" of RSF's "UniversalRuntimeException" - <a href="http://rsf.fluidproject.org/wiki/Wiki.jsp?page=UniversalRuntimeException">http://rsf.fluidproject.org/wiki/Wiki.jsp?page=UniversalRuntimeException</a></p>
+<p>The core Infusion framework uses a similar technique known as the "activity stack" in order to allow the framework's situation to be understood. However, none of these techniques generalise straightforwardly to values passed amongst promise chains - the code backing a "resolve" earlier in the chain has long vanished from the stack by the time a "reject" is received later - especially if one is following the newer promise semantic whereby every promise handler resolves asynchronously.</p>
+<p>Kids who promote promises follow the practice that the "original rejection reason" is simply propagated unchanged through a compound promise to the original caller. By the time anyone is troubled by their unintelligible diagnostic, they will have moved on to work on different projects using different libraries. We need to provide a new scheme that allows for meaningful accretion of contextual information as a "reject" starts to propagate out to the caller.</p>
+<p>Interestingly, it seems that this can't be tackled without the concept of "standard promise algorithms" - since without some prearranged geometry connecting the promises, there is no natural concept of "original cause". Such a standard geometry is established by our "fluid.promise.sequence" family of algorithms - resolution proceeds through an array of promises or promises sources ("tasks") stored in an array from left to right. If a promise to the right of a successfully resolved "cause promise" in the array rejects, the cause promise has to be considered to have participated in the cause of the failure. What should then happen is that resolution then returns back through the array from right to left, with each cause being polled to see if it is interested in contributing contextual information to the failure.</p>
+<p>The real-life use-case prompting this feature request is written up in <a href="/browse/KETTLE-31/">KETTLE-31</a> - here we have a transforming chain of promises/tasks operating an "accumulate" or "reduce" algorithm - the resolved value of each successful task is handed as the input argument to the task to its right. In this case, the left-most task reads some data from a file, and yields the value as a string to "resolve". The next task attempts to parse this string as JSON. In the case that the string doesn't parse, this task rejects. Without the ability to gain context from the file-reading task, we can't report WHICH file was being read when the failure occurs.</p>
+<p>Draft API proposal - a "task" (promise or function returning a promise) is permitted to "annotate" the resolved promise by fabricating an extra method on it - proposed name "accumulateRejectReason". This function accepts the rejection reason of a promise to its right, and returns a rejection reason with more context accumulated. We may as well standardise on these reasons holding a string field named "message" holding the accumulating diagnostic, and a field named "error" holding any exception/Error which was associated with the failure (this is optional and could be fabricated automatically by the promise.reject framework impl simply using new Error()). If this extra method is not available, the default semantics of propagating the original rejection reason object are operated.</p>
+<p>Since fluid.promise.sequence has been implemented using the "skeleton + strategy" implementation technique, we can easily extend this improved semantic to all of this family of algorithms without disturbing their code paths.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15563">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-04-30T10:45:49.815-0400">2015-04-30T10:45:49.815-0400</relative-time></i></p>
+                        <p>Merged pull request ( <a href="https://github.com/fluid-project/infusion/pull/578">https://github.com/fluid-project/infusion/pull/578</a> ) into the project repo at 6bc2d84f7667dd2298efe696c105c404f9b08dc5</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5583/"><span class="aria-hidden">←</span> Previous: FLUID-5583</a>
+        <a class="mx-1" href="/browse/FLUID-5585/">Next: FLUID-5585 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

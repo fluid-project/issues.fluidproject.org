@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-75  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-75 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-75/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-75/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-75/">VP-75</a></li>
+            </ol>
+        </nav>
+        <h1>VP-75: Selecting a cue in the transcript results in the video being placed at the previous cue</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-75">VP-75</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alexey Novak</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Michelle%20D'Souza">Michelle D'Souza</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-09-06T13:54:22.831-0400" prefix="">2012-09-06T13:54:22.831-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-01-28T09:25:22.381-0500" prefix="">2013-01-28T09:25:22.381-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When you select a cue in the transcript pane, the video gets positioned at the cue before the one you've selected. </p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26917">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-09-20T10:46:55.291-0400">2012-09-20T10:46:55.291-0400</relative-time></i></p>
+                        <p>Looks like console always gives an error for <br>
+var lastBufferedTime = that.model.buffered.end(that.model.buffered.length - 1);</p>
+<p>which is in VideoPlayer_controller.js on line 319</p>
+<p>This problem is irrelevant for the current problem. Even when there is no error on this line, the issue is still persists. A separate JIRA should be opened for the observed behaviour above.</p>
+
+                    </li>
+                    
+                    <li id="comment-26918">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-09-20T11:30:24.447-0400">2012-09-20T11:30:24.447-0400</relative-time></i></p>
+                        <p>If you click on the "catch a tiger by the toe" transcript with a breakpoint in captionator.js at line 1203<br>
+you will see that the currentTime propagated is 4.003 and then if you look at the .srt file the interval for this caption is <br>
+2<br>
+00:00:04.03 --&gt; 00:00:05.99<br>
+Catch a tiger by the toe</p>
+<p>which means that time does not fall into this interval</p>
+
+                    </li>
+                    
+                    <li id="comment-26919">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-09-20T11:45:56.921-0400">2012-09-20T11:45:56.921-0400</relative-time></i></p>
+                        <p>The issue is this line <br>
+return Math.round(secs * 1000 + parseInt(splitSec[1], 10));</p>
+<p>in VideoPlayer_transcript on line 144</p>
+<p>If the time is 04.03 which means 4030 ms<br>
+The formula would do 4 * 1000 + 3 = 4003ms </p>
+
+                    </li>
+                    
+                    <li id="comment-26920">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-09-20T12:20:52.009-0400">2012-09-20T12:20:52.009-0400</relative-time></i></p>
+                        <p>Got tests and the issue with unproper time conversion fixed but issue still persists.</p>
+
+                    </li>
+                    
+                    <li id="comment-26921">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-09-20T13:45:53.151-0400">2012-09-20T13:45:53.151-0400</relative-time></i></p>
+                        <p>With the function fix and changing line 181<br>
+that.events.onTranscriptElementChange.fire((1 + inTimeMillis) / 1000, track);<br>
+to be <br>
+that.events.onTranscriptElementChange.fire((10 + inTimeMillis) / 1000, track);</p>
+<p>The bug seems to be fixed with the change but it would be better to find the exact location to be 100% sure. Most likely it is because of the format of type HH:MM:SS.mmm which happens after adding this 1 extra millisecond while code seems to work when format used by VideoPlayer stays the same as the format used by captionator which is HH:MM:SS.mm </p>
+
+                    </li>
+                    
+                    <li id="comment-26922">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-09-21T10:09:11.281-0400">2012-09-21T10:09:11.281-0400</relative-time></i></p>
+                        <p>After more thorough research I finally found that the times which are pulled from UniSub and times which are in our en.json transcript files do not match.<br>
+In particular UniSub has a time precision up to a millisecond while we have only up to 10 milliseconds. Hence the line described in above comment would not do much.</p>
+<p>Examples:<br>
+Our time 00:00:04.03 and after adding 1 millisecond it would become 00:00:04.031<br>
+While the time range returned from UniSub is<br>
+"inTime": "00:00:04.033",<br>
+"outTime": "00:00:05.992",<br>
+which means that the match will fall into the previous caption.</p>
+<p>Furthermore some times were radically different. Example:<br>
+We have in our transcript file<br>
+"inTime": "00:01:00.00",<br>
+"outTime": "00:01:03.18",<br>
+"transcript": "we try to find commonality and connections."</p>
+<p>Captions returned from UniSub<br>
+"inTime": "00:01:00.864",<br>
+"outTime": "00:01:03.185",<br>
+"transcript": "try to find commonality and connections."</p>
+<p>The difference is 0.864 milliseconds.</p>
+
+                    </li>
+                    
+                    <li id="comment-26923">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2012-09-25T11:33:03.281-0400">2012-09-25T11:33:03.281-0400</relative-time></i></p>
+                        <p>The solution in Alex's latest pull request for this issue--simply updating our demo files to include timestamps with three digits of accuracy--is the correct one. I have reviewed, tested and pushed this fix to the project demo branch at db320a36e4386d129f46513eec94563d230e0231.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-7/"><span class="aria-hidden">←</span> Previous: VP-7</a>
+        <a class="mx-1" href="/browse/VP-98/">Next: VP-98 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

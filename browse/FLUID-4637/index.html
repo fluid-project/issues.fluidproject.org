@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4637  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4637 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4637/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4637/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4637/">FLUID-4637</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4637: Using event injection from a parent into multiple instances of the same subcomponent, internal references to the event will always trigger in the last subcomponent</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4637">FLUID-4637</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Not%20A%20Bug">Not A Bug</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-03-08T15:19:50.159-0500" prefix="">2012-03-08T15:19:50.159-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-02-12T11:56:22.589-0500" prefix="">2013-02-12T11:56:22.589-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This occurs when you have a single subcomponent that is spawned in multiple instances in a parent component. When you use event injection to map a parent event with an event in the subcomponent, if the subcomponent is internally listening to that event, it will always trigger only in the last instance of the subcomponent. This is regardless of where the event was initially triggered from.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-4637/FLUID-4637.patch">
+                            
+                                FLUID-4637.patch
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22937">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2012-03-08T15:47:52.149-0500">2012-03-08T15:47:52.149-0500</relative-time></i></p>
+                        <p><a href="/browse/FLUID-4637/">FLUID-4637</a>.patch contains unit tests to show the issue. </p>
+<p>They can also be found in a branch on my github repo:<br>
+<a href="https://github.com/jobara/infusion/tree/FLUID-4637">https://github.com/jobara/infusion/tree/FLUID-4637</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22944">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-02-06T01:36:54.017-0500">2013-02-06T01:36:54.017-0500</relative-time></i></p>
+                        <p>Hi Justin - thanks for writing this up and producing the test case. In this case the test is invalid and the framework behaviour is correct. The injection of the parent event "{twinParent}.events.parentEvent" as childEvent causes there to be only ONE EVENT in the system, and since you have namespaced the listener (as "internal"), there is also only room for one listener to it in that namespace. So the resulting sequence is that twin1 instantiates, registers its listener to the event, and then twin2 instantiates, overwriting the "internal" namespaced listener with its own. Then when the event itself is fired (from either source) the one listener which remains will fire, which is the 2nd one registered. You can verify this by removing the namespace applied to the listener - in this case, BOTH events will fire, firstly to twin1's listener and then to twin2's. </p>
+<p>By removing the demands block however we can derive a valid test which I think does test something useful - that the reference to "{twinSubcomponent}" in the listener declaration does indeed resolve by priority onto the selfsame component and not to its "twin" - although the preferred way of writing such self-references in the modern framework is to use "{that}". </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4636/"><span class="aria-hidden">←</span> Previous: FLUID-4636</a>
+        <a class="mx-1" href="/browse/FLUID-4646/">Next: FLUID-4646 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

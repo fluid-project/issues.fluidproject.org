@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5280  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5280 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5280/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5280/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5280/">FLUID-5280</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5280: Clarify semantics for conflict resolution when attaching via model relay</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5280">FLUID-5280</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-02-20T04:20:28.160-0500" prefix="">2014-02-20T04:20:28.160-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-05-15T03:27:31.722-0400" prefix="">2014-05-15T03:27:31.722-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The <a href="/browse/FLUID-3674/">FLUID-3674</a> system now allows us to attach relays (transforming or non-transforming) between models, which relays act "instantaneously" on wiring up the model graph to bring it to a consistent condition by means of the "initial transaction". We managed to dodge some of the conflict resolutions inherent in this system by adopting the "transition to undefined" convention, that a model (or set of transforms) which holds or results in an undefined value is beaten by one which holds a defined one. However, we are quickly running into cases where genuine conflicts arise between two defined models.</p>
+<p>Together with the report for <a href="/browse/FLUID-5279/">FLUID-5279</a> came a case with a supercomponent and a subcomponent with different model contents becoming relayed together. In this case, the supercomponent had explicitly modified its model since startup, and so created a clear expectation that its changes should trump those from the subcomponent which only arose through its defaults. This creates a reasonably clear path to create a "stopgap" solution without too much effort from our current implementation, based on "veterancy" - any model holding values from a component which is "completeOnInit" - that is, which is fully instantiated before the "initial transaction" begins to operate, should beat any model contents which arise from a component which is not complete in this way.</p>
+<p>It's really not clear what form a better solution to this problem might take, since this involves grappling with the problem of conflict resolution in all of its vast complexity. One possibility might be to allow an extra annotation on a relay indicating which direction will "win" in the case of an initial conflict. However, direct relays don't have a place to put such an annotation, and in general this option seems a bit crass. Another possibility might be to apply timestamps (or increasing tick numbers) to every change in the system, and allow any model with a later tick count to beat an earlier one. Models which were at their defaults (or statically distributed) states would be given infinitely old timestamps. However, this could open a huge can of worms in the case of composite models - there might be grounds for considering that different sections of a model should be assigned different ages according to the time they were modified. This would either require a lot more complexity in the change application process to track provenance, or else the revival of the "change bottling system" that we hoped we had left behind with the obsolete "video player relay" system.</p>
+<p>In truly ambiguous cases (for example conflicts between default initial values) the system should probably signal an error.</p>
+<p>We'll implement the "veterancy" system for now and keep thinking about alternatives.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23143">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2014-03-18T04:38:54.832-0400">2014-03-18T04:38:54.832-0400</relative-time></i></p>
+                        <p>I tested, reviewed, and pushed this veterancy-based fix to the project repo's master at revision 81e3e2e1543e6f3f19e68428e1a14ccceb9c9cb0.</p>
+<p>As requested by Antranig, I'll leave the ticket open so that we can continue to log other alternatives here.</p>
+
+                    </li>
+                    
+                    <li id="comment-23144">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2014-04-02T15:46:19.700-0400">2014-04-02T15:46:19.700-0400</relative-time></i></p>
+                        <p>Running the unit tests in IE9, the RendererUtilities test for this fails.</p>
+
+                    </li>
+                    
+                    <li id="comment-23145">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-05-02T08:42:46.286-0400">2014-05-02T08:42:46.286-0400</relative-time></i></p>
+                        <p>The failing tests stemmed from using a non-existing function for sorting an array in the DataBinding.js. This has been resolved in <a href="/browse/FLUID-5339/">FLUID-5339</a>. However, this illustrated the lack of a proper test for this part of the codebase. See Antranig's comment on the pull request for more information <a href="https://github.com/fluid-project/infusion/pull/506#issuecomment-41950465">https://github.com/fluid-project/infusion/pull/506#issuecomment-41950465</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23146">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-05-15T03:27:10.232-0400">2014-05-15T03:27:10.232-0400</relative-time></i></p>
+                        <p>We've added a new explicit strategy which can help with conflict resolution in <a href="/browse/FLUID-5371/">FLUID-5371</a> - this allows conditions to be placed on both the forward and backward parts of a relay rule constraining them from acting in either the initialisation or live phase of a component's lifecycle.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5279/"><span class="aria-hidden">←</span> Previous: FLUID-5279</a>
+        <a class="mx-1" href="/browse/FLUID-5281/">Next: FLUID-5281 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

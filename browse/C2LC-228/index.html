@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-228  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-228 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-228/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-228/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-228/">C2LC-228</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-228: Rationalise the localisation of command names</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-228">C2LC-228</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Won't Fix</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-09-24T06:50:33.973-0400" prefix="">2020-09-24T06:50:33.973-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-02-25T09:57:27.641-0500" prefix="">2021-02-25T09:57:27.641-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Env 0.7</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p><em>From Simon's notes in <strong><a href="https://docs.google.com/document/d/1-bhS1xdepPcDbd1-c2OrWbZUzgeHi_3if68T9IAwYpg/edit#heading=h.9g3emcluyrwb">the technical debt Google doc</a></strong>.</em></p>
+<p>In preparing a build of the coding environment to demo for the Closing The Gap 2020 presentation, we wanted to change the name used in the UI for the “forward” command to “move”. See <a href="https://issues.fluidproject.org/browse/C2LC-217">https://issues.fluidproject.org/browse/C2LC-217</a></p>
+<p>In making this change I noticed some issues with how we are localising command names:</p>
+<p>The localised name for the “forward” command had to be changed in multiple places<br>
+There were places in the code that did not use a localised name for commands, but rather used the name from the program directly</p>
+<p>The changes needed for the CTG 2020 rename of “forward” to “move” can be seen in these commits:</p>
+<p><a href="https://github.com/codelearncreate/c2lc-coding-environment/commit/2af9f10674caeb72a7448ee117a3600f67929f87">https://github.com/codelearncreate/c2lc-coding-environment/commit/2af9f10674caeb72a7448ee117a3600f67929f87</a><br>
+<a href="https://github.com/codelearncreate/c2lc-coding-environment/commit/4196aaaf064fe17d95d7272c3b7b0377ab3ecb97">https://github.com/codelearncreate/c2lc-coding-environment/commit/4196aaaf064fe17d95d7272c3b7b0377ab3ecb97</a><br>
+<a href="https://github.com/codelearncreate/c2lc-coding-environment/commit/4dd46f62d305bdd156ad65295ad951eb38e9388b">https://github.com/codelearncreate/c2lc-coding-environment/commit/4dd46f62d305bdd156ad65295ad951eb38e9388b</a></p>
+<p>We should rationalise our localisation of command names so that:</p>
+<ol>
+<li>There is a single point where localised names are specified</li>
+<li>All usage of command names in the UI is localised</li>
+</ol>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10762">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2020-09-24T07:33:36.561-0400">2020-09-24T07:33:36.561-0400</relative-time></i></p>
+                        <p>Quick note from my review of the code.  There are usages of raw strings in tests, which doubles the amount of work when making wording changes. In some tests, we simply retrieve the message and compare that, as in:</p>
+<pre><code class="hljs language-java">expect(img.prop(<span class="hljs-string">'aria-label'</span>)).toBe(intl.messages[<span class="hljs-string">'DeviceConnectControl.connecting'</span>]
+</code></pre>
+<p>We want to be able to test that all of a message's variables are wired up correctly and that there are no other integration issues (such as failing to pass on the formatted message from a parent component).</p>
+<p>For all strings that lack variables, we're mainly testing for integration issues that would prevent the message from being available to the component.  For those I think it's fine to compare the expected output to the literal message.</p>
+<p>For messages with variables, we can either keep using raw strings, or  format the expected message ourselves and compare that.  On balance I'd argue for continuing to use raw strings, as it ensures that we're not comparing badly formatted and meaningless text to the same badly formatted and meaningless text.</p>
+
+                    </li>
+                    
+                    <li id="comment-10763">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2020-09-24T08:21:11.858-0400">2020-09-24T08:21:11.858-0400</relative-time></i></p>
+                        <p>So, one thought I had was to compose messages using other messages, i.e. to reuse a common wording for "forward"/"move" in all the places it appears.  I couldn't find a clean way of doing this with react-intl or the various libraries it depends on.  The closest I could think of is to expose the locale messages as a value, so that we could use syntax like:</p>
+<pre><code class="hljs language-java"><span class="hljs-string">"CommandInfo.nextStep.forward"</span>: <span class="hljs-string">"after Step {nextStepNumber} {messages['CommandInfo.forward']}"</span>,
+</code></pre>
+<p>This approach was frustrated by the fact that <a href="https://github.com/formatjs/formatjs/issues/1270">only shallow objects are supported</a>.  We can work around this by flattening the object using dashes as a separator, but that way lies madness.</p>
+<p>Given that, I was thinking one strategy is to use some kind of multi-pass system where we resolve the formatted text for the pieces ("Forward", etc.) and pass those through a second time to come up with the final text.</p>
+<p>Even if we could get the first approach working, both approaches are blocked by <a href="https://github.com/formatjs/formatjs/issues/552">the lack of support for simple capitalisation in react-intl</a>, as we need to have both lower case "forward" and title case "Forward".</p>
+<p>I think it would make sense to briefly look at other i18n frameworks that work well with React to see if there are better options, something equivalent to partials in handlebars or some other way of reusing messages in other messages.</p>
+
+                    </li>
+                    
+                    <li id="comment-10764">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2020-09-24T08:30:45.131-0400">2020-09-24T08:30:45.131-0400</relative-time></i></p>
+                        <p>i18next does at least support deep object references:</p>
+<p><a href="https://www.i18next.com/translation-function/interpolation">https://www.i18next.com/translation-function/interpolation</a></p>
+<p>It also supports formatting as part of the template:</p>
+<p><a href="https://www.i18next.com/translation-function/formatting">https://www.i18next.com/translation-function/formatting</a></p>
+<p>Critically, it also supports nesting of messages:</p>
+<p><a href="https://www.i18next.com/translation-function/nesting">https://www.i18next.com/translation-function/nesting</a></p>
+
+                    </li>
+                    
+                    <li id="comment-10765">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2020-09-24T08:35:44.742-0400">2020-09-24T08:35:44.742-0400</relative-time></i></p>
+                        <p>LinguiJS seems <a href="https://lingui.js.org/misc/react-intl.html">lighter weight than react-intl</a>, but lacks the key features we need, i.e. rudimentary formatting and nesting of messages.</p>
+
+                    </li>
+                    
+                    <li id="comment-10766">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2021-02-25T09:56:28.566-0500">2021-02-25T09:56:28.566-0500</relative-time></i></p>
+                        <p>We agreed that this was taken care of when we merged <a href="/browse/C2LC-243/">C2LC-243</a>.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-227/"><span class="aria-hidden">←</span> Previous: C2LC-227</a>
+        <a class="mx-1" href="/browse/C2LC-229/">Next: C2LC-229 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

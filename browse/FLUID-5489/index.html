@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5489  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5489 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5489/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5489/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5489/">FLUID-5489</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5489: ChangeApplier provides notification of some null changes - full diff algorithm is required</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5489">FLUID-5489</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-08-08T18:43:18.455-0400" prefix="">2014-08-08T18:43:18.455-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-07-08T09:10:08.974-0400" prefix="">2016-07-08T09:10:08.974-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Whilst the new ChangeApplier is much more capable than the old in filtering out the effects of "null changes", there are still situations in which it may annoy the client by providing notifications where there has been no actual change to the model value of interest. The new "cautious applier" at least guarantees never to provide a notification where there has been no change to the overall model, but it can still be fooled in cases of "overbroad changes" (traditionally a bugbear of the ChangeApplier algorithm). Consider the following situation - </p>
+<p>i) initial model value: undefined<br>
+ii) listener registered at path "innerPath"<br>
+iii) model changed to value {}</p>
+<p>Since the root path of the model has been invalidated, our patch matching algorithm will create a changeMap consisting of "ADD" at the root - this will actually notify every listener at every path, even though only a listener actually registered at path "" will see a changed value.</p>
+<p>We should improve the ChangeApplier so that it can guarantee to only notify a listener in the case there is a change in the value it is observing.</p>
+<p>It's a good time to tidy up on various other ChangeApplier issues. The simplest way to deliver on the headline issue in this JIRA is to implement a full "diff" algorithm (which can be done quite simply on the back of the existing cautious applier). This will be useful in other projects amongst the GPII also. See <a href="/browse/FLUID-5490/">FLUID-5490</a> also.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22026">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-03-25T13:57:53.955-0400">2015-03-25T13:57:53.955-0400</relative-time></i></p>
+                        <p>This can be closed once we have merged in <a href="https://github.com/fluid-project/infusion/pull/577">https://github.com/fluid-project/infusion/pull/577</a> which demonstrates that the diff algorithm is fully responsive</p>
+
+                    </li>
+                    
+                    <li id="comment-22028">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2015-11-03T13:19:48.076-0500">2015-11-03T13:19:48.076-0500</relative-time></i></p>
+                        <p>The pull request mentioned above (#577) has been mothballed. Should this docs issue be closed now?</p>
+
+                    </li>
+                    
+                    <li id="comment-22032">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-11-04T09:15:55.286-0500">2015-11-04T09:15:55.286-0500</relative-time></i></p>
+                        <p>The work specifically listed here is concluded. We have a stalled pull request for <a href="/browse/FLUID-5490/">FLUID-5490</a> as #577 since we can't unilaterally apply a single policy with respect to "clearing source and target" in relay rules - this needs to become a further configuration option to a relay rule, and there will not be time to return to this work before the next ChangeApplier rewrite begins, which itself will have to come after <a href="/browse/FLUID-4982/">FLUID-4982</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5488/"><span class="aria-hidden">←</span> Previous: FLUID-5488</a>
+        <a class="mx-1" href="/browse/FLUID-5490/">Next: FLUID-5490 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

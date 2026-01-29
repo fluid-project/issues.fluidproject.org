@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6185  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6185 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6185/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6185/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6185/">FLUID-6185</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6185: Remove deprecated functions from Themes.styl</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6185">FLUID-6185</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Eloisa%20Guerrero">Eloisa Guerrero</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-08-10T13:24:48.425-0400" prefix="">2017-08-10T13:24:48.425-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-08-17T12:56:17.280-0400" prefix="">2017-08-17T12:56:17.280-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>PrefsEditor, SeparatedPanelPrefsEditor, SeparatedPanelPrefsEditorFrame stylus files used methods from&#160;Themes.styl to change contrast themes. These methods have been deprecated but the function definitions remain in Themes.styl.</p>
+<p>The following functions were deprecated:</p>
+<ul>
+<li>build-themes-separatedPanelPrefsEditorFrame(contrastThemes)</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22034">
+                        <p class="mb-0"><b>Eloisa Guerrero</b> <i>commented <relative-time datetime="2017-08-11T17:13:01.850-0400">2017-08-11T17:13:01.850-0400</relative-time></i></p>
+                        <p>Removing the function calls in PrefsEditor.styl caused the contrast options to change colours when the panel is closed and opened again. Removing it from SeparatedPanelPrefsEditor.styl retained the background-image and changed the contrast theme everywhere else. I suggest we keep them all as is because it seems to break some things one way or the other.</p>
+
+                    </li>
+                    
+                    <li id="comment-22037">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-08-14T09:14:03.591-0400">2017-08-14T09:14:03.591-0400</relative-time></i></p>
+                        <p>Eloisa Guerrero I wonder if part of the issue with the background of the page may be related to <a href="/browse/FLUID-5407/">FLUID-5407</a>. Perhaps the enactors are missing a style or could improve on one that is being used. I'm thinking that the background in the content page is being changed by one of the prefs editor styles, instead of by the enactor styles.</p>
+
+                    </li>
+                    
+                    <li id="comment-22038">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-08-17T12:56:17.276-0400">2017-08-17T12:56:17.276-0400</relative-time></i></p>
+                        <p>After further exploration, it turns out that all of those stylus methods are, in fact, needed.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6184/"><span class="aria-hidden">←</span> Previous: FLUID-6184</a>
+        <a class="mx-1" href="/browse/FLUID-6186/">Next: FLUID-6186 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

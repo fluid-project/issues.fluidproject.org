@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-454  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-454 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-454/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-454/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-454/">SJRK-454</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-454: Server error on Edit page load after logging in</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-454">SJRK-454</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SJRK/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-02-25T15:05:43.701-0500" prefix="">2021-02-25T15:05:43.701-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2022-07-29T00:09:24.648-0400" prefix="">2022-07-29T00:09:24.648-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool Server</li>
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When accessing the Edit page after logging in, an error on the server seems to end the author's session prematurely, resulting in the author being logged out and redirected to the Login page once again. This seems to occur if accessing the Edit page from a different page after logging in, as well.</p>
+<p><strong>To reproduce:</strong><br>
+1. Check out the affected code from Gregor's <a href="/browse/SJRK-404/">SJRK-404</a> branch: <a href="https://github.com/BlueSlug/sjrk-story-telling/tree/17ea3f34b6443a30d81c97c011aa160f39d01bec">https://github.com/BlueSlug/sjrk-story-telling/tree/17ea3f34b6443a30d81c97c011aa160f39d01bec</a><br>
+2. Run the database container: <code>docker run -p 5984:5984 -d apache/couchdb:2.3.1</code><br>
+3. Set up the database: <code>node .\src\server\db\dbSetup.js</code><br>
+4. Run the server: <code>npm start</code><br>
+5. Go to the Edit page: <a href="http://localhost:8081/storyEdit.html">http://localhost:8081/storyEdit.html</a><br>
+6. Click the "Log In" link at the top right of the page, you will be redirected to the Login page<br>
+7. Log in using some valid credentials. You may first need to create an account on the Signup page (<a href="http://localhost:8081/signup.html">http://localhost:8081/signup.html</a>), which will log you in automatically on successful registration</p>
+<p><strong>Expected</strong><br>
+The Edit page is loaded and you may commence authoring a story</p>
+<p><strong>Actual</strong><br>
+The Edit page loads partially, then you are logged out and redirected to the Login page</p>
+<p><strong>Server error detail:</strong></p>
+<pre><code class="hljs language-java"><span class="hljs-number">14</span>:<span class="hljs-number">50</span>:<span class="hljs-number">41.059</span>:  Kettle server allocated request object with type sjrk.storyTelling.server.themeHandler
+<span class="hljs-number">14</span>:<span class="hljs-number">50</span>:<span class="hljs-number">41.062</span>:  Invoking handler sjrk.storyTelling.server.sessionHandler <span class="hljs-keyword">for</span> route /session with expectedGrade kettle.request.http
+<span class="hljs-number">14</span>:<span class="hljs-number">50</span>:<span class="hljs-number">41.068</span>:  Kettle server allocated request object with type sjrk.storyTelling.server.sessionHandler
+<span class="hljs-number">14</span>:<span class="hljs-number">50</span>:<span class="hljs-number">41.071</span>:  Invoking handler sjrk.storyTelling.server.themeHandler <span class="hljs-keyword">for</span> route <span class="hljs-comment">/* with expectedGrade kettle.request.http
+14:50:41.076:  ASSERTION FAILED: Error marking thread to request 4qtlz9qr-259219 - this thread is already marked to request 4qtlz9qr-259197 . Make sure to invoke this request asynchronously.
+14:50:41.080:  Unhandled promise rejection: {
+    "isError": true,
+    "message": "Error marking thread to request 4qtlz9qr-259219 - this thread is already marked to request 4qtlz9qr-259197 . Make sure to invoke this request asynchronously."
+}
+14:50:41.081:  Error in forwarding result undefined to promise resolve: promise has already received reject
+14:50:41.086:  Invoking handler sjrk.storyTelling.server.themeHandler for route /* with expectedGrade kettle.request.http
+14:50:41.092:  Kettle server allocated request object with type sjrk.storyTelling.server.themeHandler
+14:50:41.096:  Invoking handler sjrk.storyTelling.server.themeHandler for route /* with expectedGrade kettle.request.http
+14:50:41.102:  Kettle server allocated request object with type sjrk.storyTelling.server.themeHandler
+Error: Assertion failure - check console for more details: Error marking thread to request 4qtlz9qr-259219 - this thread is already marked to request 4qtlz9qr-259197 . Make sure to invoke this request asynchronously.
+    at new fluid.FluidError (X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\Fluid.js:184:26)
+    at Object.fluid.builtinFail (X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\Fluid.js:208:15)
+    at kettle.failureHandler (X:\Documents\GitHub\sjrk-story-telling\node_modules\kettle\lib\KettleUtils.js:60:11)
+    at fluid.event.firer.fire (X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\Fluid.js:1769:40)
+    at Object.fluid.fail (X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\Fluid.js:224:32)
+    at Object.kettle.markActiveRequest (X:\Documents\GitHub\sjrk-story-telling\node_modules\kettle\lib\KettleRequest.js:75:15)
+    at kettle.request.activate (X:\Documents\GitHub\sjrk-story-telling\node_modules\kettle\lib\KettleRequest.js:239:12)
+    at fluid.event.firer.fire (X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\Fluid.js:1769:40)
+    at fluid.concludeComponentInit (X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\FluidIoC.js:1527:30)
+    at X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\FluidIoC.js:2198:29
+    at Array.forEach (&lt;anonymous&gt;)
+    at localWorkflowTask (X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\FluidIoC.js:2197:41)
+    at Object.invokeNext (X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\FluidPromises.js:258:56)
+    at Function.fluid.promise.resumeSequence (X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\FluidPromises.js:238:39)
+    at Function.fluid.promise.progressSequence (X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\FluidPromises.js:219:23)
+    at Function.fluid.promise.resumeSequence (X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\FluidPromises.js:247:31)
+    at Function.fluid.promise.progressSequence (X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\FluidPromises.js:219:23)
+    at Function.fluid.promise.resumeSequence (X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\FluidPromises.js:247:31)
+    at Function.fluid.promise.progressSequence (X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\FluidPromises.js:219:23)
+    at Function.fluid.promise.resumeSequence (X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\FluidPromises.js:247:31)
+    at commitPotentiae (X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\FluidIoC.js:2319:31)
+    at Object.fluid.tryCatch (X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\Fluid.js:243:24)
+    at Object.fluid.commitPotentiae (X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\FluidIoC.js:2304:15)
+    at fluid.concludeAnyTreeTransaction (X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\FluidIoC.js:1420:19)
+    at fluid.event.firer.fire (X:\Documents\GitHub\sjrk-story-telling\node_modules\infusion\src\framework\core\js\Fluid.js:1769:40)
+    at Function.kettle.server.checkCreateRequest (X:\Documents\GitHub\sjrk-story-telling\node_modules\kettle\lib\KettleServer.js:211:51)
+    at Proxy.&lt;anonymous&gt; (X:\Documents\GitHub\sjrk-story-telling\node_modules\kettle\lib\KettleServer.js:232:35)
+    at X:\Documents\GitHub\sjrk-story-telling\node_modules\kettle\lib\KettleServer.js:280:14
+    at Layer.handle [as handle_request] (X:\Documents\GitHub\sjrk-story-telling\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (X:\Documents\GitHub\sjrk-story-telling\node_modules\express\lib\router\index.js:317:13)
+    at X:\Documents\GitHub\sjrk-story-telling\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (X:\Documents\GitHub\sjrk-story-telling\node_modules\express\lib\router\index.js:335:12)
+    at next (X:\Documents\GitHub\sjrk-story-telling\node_modules\express\lib\router\index.js:275:10)
+    at expressInit (X:\Documents\GitHub\sjrk-story-telling\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (X:\Documents\GitHub\sjrk-story-telling\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (X:\Documents\GitHub\sjrk-story-telling\node_modules\express\lib\router\index.js:317:13)
+    at X:\Documents\GitHub\sjrk-story-telling\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (X:\Documents\GitHub\sjrk-story-telling\node_modules\express\lib\router\index.js:335:12)
+    at next (X:\Documents\GitHub\sjrk-story-telling\node_modules\express\lib\router\index.js:275:10)
+    at query (X:\Documents\GitHub\sjrk-story-telling\node_modules\express\lib\middleware\query.js:45:5)
+    at Layer.handle [as handle_request] (X:\Documents\GitHub\sjrk-story-telling\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (X:\Documents\GitHub\sjrk-story-telling\node_modules\express\lib\router\index.js:317:13)
+    at X:\Documents\GitHub\sjrk-story-telling\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (X:\Documents\GitHub\sjrk-story-telling\node_modules\express\lib\router\index.js:335:12)
+    at next (X:\Documents\GitHub\sjrk-story-telling\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (X:\Documents\GitHub\sjrk-story-telling\node_modules\express\lib\router\index.js:174:3)
+    at Function.handle (X:\Documents\GitHub\sjrk-story-telling\node_modules\express\lib\application.js:174:10)
+    at Server.app (X:\Documents\GitHub\sjrk-story-telling\node_modules\express\lib\express.js:39:9)
+    at Server.emit (events.js:314:20)
+    at parserOnIncoming (_http_server.js:863:12)
+    at HTTPParser.parserOnHeadersComplete (_http_common.js:126:17)
+</span></code></pre>
+<p><strong>Browser error detail:</strong></p>
+<pre><code class="hljs language-java">GET http:<span class="hljs-comment">//localhost:8081/session 500 (Internal Server Error)</span>
+fluid.dataSource.URL.handleHttp	@	infusion-all.js:<span class="hljs-number">24824</span>
+invokeInvoker	@	infusion-all.js:<span class="hljs-number">17522</span>
+fluid.dataSource.URL.handle	@	infusion-all.js:<span class="hljs-number">14137</span>
+togo	@	infusion-all.js:<span class="hljs-number">17592</span>
+invokeNext	@	infusion-all.js:<span class="hljs-number">13735</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13696</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.fireTransformEvent	@	infusion-all.js:<span class="hljs-number">13792</span>
+fluid.dataSource.get	@	infusion-all.js:<span class="hljs-number">13964</span>
+invokeInvoker	@	infusion-all.js:<span class="hljs-number">17522</span>
+sjrk.storyTelling.ui.authorControls.checkSession	@	ui-authorControls.js:<span class="hljs-number">88</span>
+invokeInvoker	@	infusion-all.js:<span class="hljs-number">17522</span>
+fluid.event.invokeListener	@	infusion-all.js:<span class="hljs-number">19742</span>
+togo	@	infusion-all.js:<span class="hljs-number">19764</span>
+fluid.model.notifyExternal	@	infusion-all.js:<span class="hljs-number">19499</span>
+fluid.concludeModelTransaction	@	infusion-all.js:<span class="hljs-number">19537</span>
+fire	@	infusion-all.js:<span class="hljs-number">12120</span>
+commit	@	infusion-all.js:<span class="hljs-number">20417</span>
+that.fireChangeRequest	@	infusion-all.js:<span class="hljs-number">20363</span>
+that.change	@	infusion-all.js:<span class="hljs-number">20216</span>
+(anonymous)	@	base-page.js:<span class="hljs-number">271</span>
+fluid.promise.pushHandler	@	infusion-all.js:<span class="hljs-number">13559</span>
+that.then	@	infusion-all.js:<span class="hljs-number">13509</span>
+sjrk.storyTelling.base.page.getStoredPreferences	@	base-page.js:<span class="hljs-number">269</span>
+togo	@	infusion-all.js:<span class="hljs-number">17592</span>
+fire	@	infusion-all.js:<span class="hljs-number">12120</span>
+fluid.concludeComponentInit	@	infusion-all.js:<span class="hljs-number">16361</span>
+(anonymous)	@	infusion-all.js:<span class="hljs-number">16982</span>
+localWorkflowTask	@	infusion-all.js:<span class="hljs-number">16981</span>
+invokeNext	@	infusion-all.js:<span class="hljs-number">13714</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13696</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+commitPotentiae	@	infusion-all.js:<span class="hljs-number">17097</span>
+fluid.tryCatch	@	infusion-all.js:<span class="hljs-number">10798</span>
+fluid.commitPotentiae	@	infusion-all.js:<span class="hljs-number">17081</span>
+fluid.initFreeComponent	@	infusion-all.js:<span class="hljs-number">13315</span>
+creator	@	infusion-all.js:<span class="hljs-number">12626</span>
+sjrk.storyTelling.loadStoryEditWithParameter	@	storyTellingServerUI.js:<span class="hljs-number">125</span>
+that.complete	@	infusion-all.js:<span class="hljs-number">13547</span>
+that.resolve	@	infusion-all.js:<span class="hljs-number">13520</span>
+that.complete	@	infusion-all.js:<span class="hljs-number">13547</span>
+that.resolve	@	infusion-all.js:<span class="hljs-number">13520</span>
+(anonymous)	@	storyTellingServerUI.js:<span class="hljs-number">217</span>
+fire	@	infusion-all.js:<span class="hljs-number">2510</span>
+fireWith	@	infusion-all.js:<span class="hljs-number">2618</span>
+done	@	infusion-all.js:<span class="hljs-number">7130</span>
+(anonymous)	@	infusion-all.js:<span class="hljs-number">7324</span>
+load (async)		
+send	@	infusion-all.js:<span class="hljs-number">7338</span>
+ajax	@	infusion-all.js:<span class="hljs-number">7048</span>
+jQuery.each.jQuery.&lt;computed&gt;	@	infusion-all.js:<span class="hljs-number">7168</span>
+getScript	@	infusion-all.js:<span class="hljs-number">7156</span>
+sjrk.storyTelling.loadCustomThemeFiles	@	storyTellingServerUI.js:<span class="hljs-number">216</span>
+(anonymous)	@	storyTellingServerUI.js:<span class="hljs-number">181</span>
+mightThrow	@	infusion-all.js:<span class="hljs-number">2716</span>
+process	@	infusion-all.js:<span class="hljs-number">2758</span>
+setTimeout (async)		
+(anonymous)	@	infusion-all.js:<span class="hljs-number">2789</span>
+fire	@	infusion-all.js:<span class="hljs-number">2510</span>
+fireWith	@	infusion-all.js:<span class="hljs-number">2618</span>
+fire	@	infusion-all.js:<span class="hljs-number">2625</span>
+fire	@	infusion-all.js:<span class="hljs-number">2510</span>
+fireWith	@	infusion-all.js:<span class="hljs-number">2618</span>
+done	@	infusion-all.js:<span class="hljs-number">7130</span>
+(anonymous)	@	infusion-all.js:<span class="hljs-number">7324</span>
+load (async)		
+send	@	infusion-all.js:<span class="hljs-number">7338</span>
+ajax	@	infusion-all.js:<span class="hljs-number">7048</span>
+jQuery.each.jQuery.&lt;computed&gt;	@	infusion-all.js:<span class="hljs-number">7168</span>
+sjrk.storyTelling.loadTheme	@	storyTellingServerUI.js:<span class="hljs-number">180</span>
+(anonymous)	@	storyEdit.html:<span class="hljs-number">152</span>
+mightThrow	@	infusion-all.js:<span class="hljs-number">2716</span>
+process	@	infusion-all.js:<span class="hljs-number">2758</span>
+setTimeout (async)		
+(anonymous)	@	infusion-all.js:<span class="hljs-number">2789</span>
+fire	@	infusion-all.js:<span class="hljs-number">2510</span>
+fireWith	@	infusion-all.js:<span class="hljs-number">2618</span>
+fire	@	infusion-all.js:<span class="hljs-number">2625</span>
+fire	@	infusion-all.js:<span class="hljs-number">2510</span>
+fireWith	@	infusion-all.js:<span class="hljs-number">2618</span>
+ready	@	infusion-all.js:<span class="hljs-number">2936</span>
+completed	@	infusion-all.js:<span class="hljs-number">2944</span>
+</code></pre>
+<pre><code class="hljs language-java">POST http:<span class="hljs-comment">//localhost:8081/logout 500 (Internal Server Error)</span>
+send	@	infusion-all.js:<span class="hljs-number">7365</span>
+ajax	@	infusion-all.js:<span class="hljs-number">7048</span>
+sjrk.storyTelling.base.page.logOut	@	base-page.js:<span class="hljs-number">335</span>
+sjrk.storyTelling.base.page.initiateLogout	@	base-page.js:<span class="hljs-number">317</span>
+invokeInvoker	@	infusion-all.js:<span class="hljs-number">17522</span>
+togo	@	infusion-all.js:<span class="hljs-number">17592</span>
+togo	@	infusion-all.js:<span class="hljs-number">17592</span>
+fire	@	infusion-all.js:<span class="hljs-number">12120</span>
+that.complete	@	infusion-all.js:<span class="hljs-number">13547</span>
+that.reject	@	infusion-all.js:<span class="hljs-number">13533</span>
+fluid.promise.processSequenceReject	@	infusion-all.js:<span class="hljs-number">13687</span>
+(anonymous)	@	infusion-all.js:<span class="hljs-number">13702</span>
+that.complete	@	infusion-all.js:<span class="hljs-number">13547</span>
+that.reject	@	infusion-all.js:<span class="hljs-number">13533</span>
+sendError	@	infusion-all.js:<span class="hljs-number">24808</span>
+(anonymous)	@	infusion-all.js:<span class="hljs-number">24813</span>
+load (async)		
+fluid.dataSource.URL.handleHttp	@	infusion-all.js:<span class="hljs-number">24811</span>
+invokeInvoker	@	infusion-all.js:<span class="hljs-number">17522</span>
+fluid.dataSource.URL.handle	@	infusion-all.js:<span class="hljs-number">14137</span>
+togo	@	infusion-all.js:<span class="hljs-number">17592</span>
+invokeNext	@	infusion-all.js:<span class="hljs-number">13735</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13696</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.fireTransformEvent	@	infusion-all.js:<span class="hljs-number">13792</span>
+fluid.dataSource.get	@	infusion-all.js:<span class="hljs-number">13964</span>
+invokeInvoker	@	infusion-all.js:<span class="hljs-number">17522</span>
+sjrk.storyTelling.ui.authorControls.checkSession	@	ui-authorControls.js:<span class="hljs-number">88</span>
+invokeInvoker	@	infusion-all.js:<span class="hljs-number">17522</span>
+fluid.event.invokeListener	@	infusion-all.js:<span class="hljs-number">19742</span>
+togo	@	infusion-all.js:<span class="hljs-number">19764</span>
+fluid.model.notifyExternal	@	infusion-all.js:<span class="hljs-number">19499</span>
+fluid.concludeModelTransaction	@	infusion-all.js:<span class="hljs-number">19537</span>
+fire	@	infusion-all.js:<span class="hljs-number">12120</span>
+commit	@	infusion-all.js:<span class="hljs-number">20417</span>
+that.fireChangeRequest	@	infusion-all.js:<span class="hljs-number">20363</span>
+that.change	@	infusion-all.js:<span class="hljs-number">20216</span>
+(anonymous)	@	base-page.js:<span class="hljs-number">271</span>
+fluid.promise.pushHandler	@	infusion-all.js:<span class="hljs-number">13559</span>
+that.then	@	infusion-all.js:<span class="hljs-number">13509</span>
+sjrk.storyTelling.base.page.getStoredPreferences	@	base-page.js:<span class="hljs-number">269</span>
+togo	@	infusion-all.js:<span class="hljs-number">17592</span>
+fire	@	infusion-all.js:<span class="hljs-number">12120</span>
+fluid.concludeComponentInit	@	infusion-all.js:<span class="hljs-number">16361</span>
+(anonymous)	@	infusion-all.js:<span class="hljs-number">16982</span>
+localWorkflowTask	@	infusion-all.js:<span class="hljs-number">16981</span>
+invokeNext	@	infusion-all.js:<span class="hljs-number">13714</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13696</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+fluid.promise.progressSequence	@	infusion-all.js:<span class="hljs-number">13678</span>
+fluid.promise.resumeSequence	@	infusion-all.js:<span class="hljs-number">13705</span>
+commitPotentiae	@	infusion-all.js:<span class="hljs-number">17097</span>
+fluid.tryCatch	@	infusion-all.js:<span class="hljs-number">10798</span>
+fluid.commitPotentiae	@	infusion-all.js:<span class="hljs-number">17081</span>
+fluid.initFreeComponent	@	infusion-all.js:<span class="hljs-number">13315</span>
+creator	@	infusion-all.js:<span class="hljs-number">12626</span>
+sjrk.storyTelling.loadStoryEditWithParameter	@	storyTellingServerUI.js:<span class="hljs-number">125</span>
+that.complete	@	infusion-all.js:<span class="hljs-number">13547</span>
+that.resolve	@	infusion-all.js:<span class="hljs-number">13520</span>
+that.complete	@	infusion-all.js:<span class="hljs-number">13547</span>
+that.resolve	@	infusion-all.js:<span class="hljs-number">13520</span>
+(anonymous)	@	storyTellingServerUI.js:<span class="hljs-number">217</span>
+fire	@	infusion-all.js:<span class="hljs-number">2510</span>
+fireWith	@	infusion-all.js:<span class="hljs-number">2618</span>
+done	@	infusion-all.js:<span class="hljs-number">7130</span>
+(anonymous)	@	infusion-all.js:<span class="hljs-number">7324</span>
+load (async)		
+send	@	infusion-all.js:<span class="hljs-number">7338</span>
+ajax	@	infusion-all.js:<span class="hljs-number">7048</span>
+jQuery.each.jQuery.&lt;computed&gt;	@	infusion-all.js:<span class="hljs-number">7168</span>
+getScript	@	infusion-all.js:<span class="hljs-number">7156</span>
+sjrk.storyTelling.loadCustomThemeFiles	@	storyTellingServerUI.js:<span class="hljs-number">216</span>
+(anonymous)	@	storyTellingServerUI.js:<span class="hljs-number">181</span>
+mightThrow	@	infusion-all.js:<span class="hljs-number">2716</span>
+process	@	infusion-all.js:<span class="hljs-number">2758</span>
+setTimeout (async)		
+(anonymous)	@	infusion-all.js:<span class="hljs-number">2789</span>
+fire	@	infusion-all.js:<span class="hljs-number">2510</span>
+fireWith	@	infusion-all.js:<span class="hljs-number">2618</span>
+fire	@	infusion-all.js:<span class="hljs-number">2625</span>
+fire	@	infusion-all.js:<span class="hljs-number">2510</span>
+fireWith	@	infusion-all.js:<span class="hljs-number">2618</span>
+done	@	infusion-all.js:<span class="hljs-number">7130</span>
+(anonymous)	@	infusion-all.js:<span class="hljs-number">7324</span>
+load (async)		
+send	@	infusion-all.js:<span class="hljs-number">7338</span>
+ajax	@	infusion-all.js:<span class="hljs-number">7048</span>
+jQuery.each.jQuery.&lt;computed&gt;	@	infusion-all.js:<span class="hljs-number">7168</span>
+sjrk.storyTelling.loadTheme	@	storyTellingServerUI.js:<span class="hljs-number">180</span>
+(anonymous)	@	storyEdit.html:<span class="hljs-number">152</span>
+mightThrow	@	infusion-all.js:<span class="hljs-number">2716</span>
+process	@	infusion-all.js:<span class="hljs-number">2758</span>
+setTimeout (async)		
+(anonymous)	@	infusion-all.js:<span class="hljs-number">2789</span>
+fire	@	infusion-all.js:<span class="hljs-number">2510</span>
+fireWith	@	infusion-all.js:<span class="hljs-number">2618</span>
+fire	@	infusion-all.js:<span class="hljs-number">2625</span>
+fire	@	infusion-all.js:<span class="hljs-number">2510</span>
+fireWith	@	infusion-all.js:<span class="hljs-number">2618</span>
+ready	@	infusion-all.js:<span class="hljs-number">2936</span>
+completed	@	infusion-all.js:<span class="hljs-number">2944</span>
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-453/"><span class="aria-hidden">←</span> Previous: SJRK-453</a>
+        <a class="mx-1" href="/browse/SJRK-455/">Next: SJRK-455 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

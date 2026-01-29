@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3861  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3861 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3861/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3861/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3861/">FLUID-3861</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3861: Focus style stays when element not in focus (FF, defaultViewText="")</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3861">FLUID-3861</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=heidi%20valles">heidi valles</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-11-22T12:34:32.198-0500" prefix="">2010-11-22T12:34:32.198-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2010-12-03T12:14:40.206-0500" prefix="">2010-12-03T12:14:40.206-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When defaultViewText="", and empty area clicked, the focus style stays even when clicking in other boxes. Firefox on mac &amp; windows</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3861/FLUID-3861.patch">
+                            
+                                FLUID-3861.patch
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3861/Picture 13.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3861/Picture 13.png" alt="Picture 13.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15962">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-11-22T14:04:21.953-0500">2010-11-22T14:04:21.953-0500</relative-time></i></p>
+                        <p>"Bug Parade Infusion 1.3"</p>
+
+                    </li>
+                    
+                    <li id="comment-15964">
+                        <p class="mb-0"><b>heidi valles</b> <i>commented <relative-time datetime="2010-11-25T16:37:34.817-0500">2010-11-25T16:37:34.817-0500</relative-time></i></p>
+                        <p>Think we can simply delete line 184, that.editField.focus();  in the components InlineEdit.js<br>
+Doesn't seem to change anything (other than fix this bug) by removing it. still testing...</p>
+
+                    </li>
+                    
+                    <li id="comment-15966">
+                        <p class="mb-0"><b>heidi valles</b> <i>commented <relative-time datetime="2010-11-26T10:49:21.684-0500">2010-11-26T10:49:21.684-0500</relative-time></i></p>
+                        <p>removes line 184, that.editField.focus(); </p>
+
+                    </li>
+                    
+                    <li id="comment-15968">
+                        <p class="mb-0"><b>Mike Lam</b> <i>commented <relative-time datetime="2010-12-02T17:07:01.593-0500">2010-12-02T17:07:01.593-0500</relative-time></i></p>
+                        <p>I have tested Heidi's patch and everything in both simple and rich text inline edit is working as expected.   </p>
+
+                    </li>
+                    
+                    <li id="comment-15969">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2010-12-03T12:14:40.170-0500">2010-12-03T12:14:40.170-0500</relative-time></i></p>
+                        <p>Code was reviewed and committed at revision 10331.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3860/"><span class="aria-hidden">←</span> Previous: FLUID-3860</a>
+        <a class="mx-1" href="/browse/FLUID-3862/">Next: FLUID-3862 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

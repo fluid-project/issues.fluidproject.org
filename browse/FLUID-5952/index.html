@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5952  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5952 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5952/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5952/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5952/">FLUID-5952</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5952: SeparatedPanelPrefsEditor tests fail on Firefox 48</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5952">FLUID-5952</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Cannot%20Reproduce">Cannot Reproduce</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-09-08T16:45:09.434-0400" prefix="">2016-09-08T16:45:09.434-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-09-28T09:06:48.923-0400" prefix="">2016-09-28T09:06:48.923-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Testing Infrastructure</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <pre><code class="hljs">Framework <span class="hljs-params">Tests:</span> <span class="hljs-symbol">./framework-tests/preferences/html/SeparatedPanelPrefsEditor-test.html</span> (<span class="hljs-number">2</span>, <span class="hljs-number">65</span>, <span class="hljs-number">67</span>)Rerun4149 ms
+
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> IFrame is invisible and keyboard inaccessible <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Expected component at path templateLoader <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Expected component at path messageLoader <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Expected component at path slidingPanel <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Expected component at path iframeRenderer <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Expected component at path iframeRenderer.iframeEnhancer <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Reset button is invisible <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Expected component at path textSize <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Expected component at path lineSpace <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Expected component at path textFont <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Expected component at path contrast <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Expected component at path layoutControls <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Expected component at path linksControls <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Hide<span class="hljs-symbol">/show</span> button has the button role <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Hide<span class="hljs-symbol">/show</span> button has correct aria-controls <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Hide<span class="hljs-symbol">/show</span> button has correct aria-pressed <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Panel has the group role <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Panel has the correct aria-label <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Panel has correct aria-expanded <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Reset button has the button role <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Reset button has correct aria-controls <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Model correctly <span class="hljs-params">updated:</span> enhancerModel from bwSkin <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">4</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Reset button is visible <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">4</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Hide<span class="hljs-symbol">/show</span> button has the button role <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">4</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Hide<span class="hljs-symbol">/show</span> button has correct aria-controls <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">4</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Hide<span class="hljs-symbol">/show</span> button has correct aria-pressed <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">4</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Panel has the group role <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">4</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Panel has the correct aria-label <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">4</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Panel has correct aria-expanded <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">4</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Reset button has the button role <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">4</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Reset button has correct aria-controls <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">4</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Reset button is invisible <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">6</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Only the changed preferences are saved <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">6</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Model correctly <span class="hljs-params">updated:</span> iframeEnhancerModel from bwSkin <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">8</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Model correctly <span class="hljs-params">updated:</span> iframeEnhancerModel from enhancerModel <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">8</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Model correctly <span class="hljs-params">updated:</span> enhancerModel from defaults <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">11</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Model correctly <span class="hljs-params">updated:</span> iframeEnhancerModel from defaults <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">11</span> of <span class="hljs-number">11</span>
+    Separated panel integration <span class="hljs-params">tests:</span> Separated panel integration <span class="hljs-params">tests:</span> Model correctly <span class="hljs-params">updated:</span> enhancerModel from iframeEnhancerModel <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">11</span> of <span class="hljs-number">11</span>
+    Separated panel munging integration <span class="hljs-params">tests:</span> Separated panel munging integration <span class="hljs-params">tests:</span> Times font is set <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">2</span>
+    Separated panel munging integration <span class="hljs-params">tests:</span> Separated panel munging integration <span class="hljs-params">tests:</span> The default test theme is set <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">2</span>
+    Separated panel munging integration <span class="hljs-params">tests:</span> Separated panel munging integration <span class="hljs-params">tests:</span> There are <span class="hljs-number">5</span> elements <span class="hljs-keyword">in</span> the text font string list <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">2</span>
+    Separated panel munging integration <span class="hljs-params">tests:</span> Separated panel munging integration <span class="hljs-params">tests:</span> The first text font string value matches <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">2</span>
+    Separated panel munging integration <span class="hljs-params">tests:</span> Separated panel munging integration <span class="hljs-params">tests:</span> The fifth text font string value matches <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">2</span>
+    Separated panel munging integration <span class="hljs-params">tests:</span> Separated panel munging integration <span class="hljs-params">tests:</span> There are <span class="hljs-number">5</span> elements <span class="hljs-keyword">in</span> the text font control value list <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">2</span>
+    Separated panel munging integration <span class="hljs-params">tests:</span> Separated panel munging integration <span class="hljs-params">tests:</span> The first text font control value matches <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">2</span>
+    Separated panel munging integration <span class="hljs-params">tests:</span> Separated panel munging integration <span class="hljs-params">tests:</span> The fifth text font control value matches <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">2</span>
+    Separated panel munging integration <span class="hljs-params">tests:</span> Separated panel munging integration <span class="hljs-params">tests:</span> classnameMap transferred to outer UIEnhancer <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">2</span> of <span class="hljs-number">2</span>
+    Separated panel munging integration <span class="hljs-params">tests:</span> Separated panel munging integration <span class="hljs-params">tests:</span> classnameMap transferred to inner UIEnhancer <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">2</span> of <span class="hljs-number">2</span>
+    Separated panel munging integration <span class="hljs-params">tests:</span> Separated panel munging integration <span class="hljs-params">tests:</span> Preferences EditorPanel is hidden <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">2</span> of <span class="hljs-number">2</span>
+    Separated panel munging integration <span class="hljs-params">tests:</span> Separated panel munging integration <span class="hljs-params">tests:</span> Preferences EditorPanel is shown <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">2</span> of <span class="hljs-number">2</span>
+    Separated panel munging integration <span class="hljs-params">tests:</span> Separated panel munging integration <span class="hljs-params">tests:</span> Iframe selector is transferred <span class="hljs-keyword">in</span> <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">2</span> of <span class="hljs-number">2</span>
+    Prefs editor <span class="hljs-keyword">with</span> composite <span class="hljs-params">panel:</span> <span class="hljs-params">Rendering:</span> The fluid_tests_composite_pref_lineSpace should not be instantiated <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">6</span>
+    Prefs editor <span class="hljs-keyword">with</span> composite <span class="hljs-params">panel:</span> <span class="hljs-params">Rendering:</span> The fluid_tests_composite_pref_magnification should not be instantiated <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">1</span> of <span class="hljs-number">6</span>
+    Prefs editor <span class="hljs-keyword">with</span> composite <span class="hljs-params">panel:</span> <span class="hljs-params">Rendering:</span> The fluid_tests_composite_pref_lineSpace should be instantiated <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">4</span> of <span class="hljs-number">6</span>
+    Prefs editor <span class="hljs-keyword">with</span> composite <span class="hljs-params">panel:</span> <span class="hljs-params">Rendering:</span> The context for fluid_tests_composite_pref_lineSpace should be retained <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">4</span> of <span class="hljs-number">6</span>
+    Prefs editor <span class="hljs-keyword">with</span> composite <span class="hljs-params">panel:</span> <span class="hljs-params">Rendering:</span> The container for fluid_tests_composite_pref_lineSpace should exist <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">4</span> of <span class="hljs-number">6</span>
+    Prefs editor <span class="hljs-keyword">with</span> composite <span class="hljs-params">panel:</span> <span class="hljs-params">Rendering:</span> The input for fluid_tests_composite_pref_lineSpace should exist <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">4</span> of <span class="hljs-number">6</span>
+    Prefs editor <span class="hljs-keyword">with</span> composite <span class="hljs-params">panel:</span> <span class="hljs-params">Rendering:</span> The fluid_tests_composite_pref_lineSpace should be rendered <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">4</span> of <span class="hljs-number">6</span>
+    Prefs editor <span class="hljs-keyword">with</span> composite <span class="hljs-params">panel:</span> <span class="hljs-params">Rendering:</span> The fluid_tests_composite_pref_magnification should be instantiated <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">4</span> of <span class="hljs-number">6</span>
+    Prefs editor <span class="hljs-keyword">with</span> composite <span class="hljs-params">panel:</span> <span class="hljs-params">Rendering:</span> The context for fluid_tests_composite_pref_magnification should be retained <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">4</span> of <span class="hljs-number">6</span>
+    Prefs editor <span class="hljs-keyword">with</span> composite <span class="hljs-params">panel:</span> <span class="hljs-params">Rendering:</span> The container for fluid_tests_composite_pref_magnification should exist <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">4</span> of <span class="hljs-number">6</span>
+    Prefs editor <span class="hljs-keyword">with</span> composite <span class="hljs-params">panel:</span> <span class="hljs-params">Rendering:</span> The input for fluid_tests_composite_pref_magnification should exist <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">4</span> of <span class="hljs-number">6</span>
+    Prefs editor <span class="hljs-keyword">with</span> composite <span class="hljs-params">panel:</span> <span class="hljs-params">Rendering:</span> The fluid_tests_composite_pref_magnification should be rendered <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">4</span> of <span class="hljs-number">6</span>
+    Prefs editor <span class="hljs-keyword">with</span> composite <span class="hljs-params">panel:</span> <span class="hljs-params">Rendering:</span> The fluid_tests_composite_pref_lineSpace should not be instantiated <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">6</span> of <span class="hljs-number">6</span>
+    Prefs editor <span class="hljs-keyword">with</span> composite <span class="hljs-params">panel:</span> <span class="hljs-params">Rendering:</span> The fluid_tests_composite_pref_magnification should not be instantiated <span class="hljs-operator">-</span> at sequence position <span class="hljs-number">6</span> of <span class="hljs-number">6</span>
+    Prefs editor <span class="hljs-keyword">with</span> composite <span class="hljs-params">panel:</span> <span class="hljs-params">Rendering:</span> <span class="hljs-params">NS_ERROR_NOT_AVAILABLE:</span> 
+    <span class="hljs-params">Expected:</span> 	
+
+    undefined
+
+    <span class="hljs-params">Source:</span> 	
+
+    runLoggingCallbacks@http:<span class="hljs-operator">//</span>localhost:<span class="hljs-number">7357</span><span class="hljs-operator">/</span><span class="hljs-number">7804</span><span class="hljs-operator">/</span>tests<span class="hljs-operator">/</span>lib<span class="hljs-operator">/</span>qunit<span class="hljs-operator">/</span>js<span class="hljs-operator">/</span>qunit.js:<span class="hljs-number">1609</span>:<span class="hljs-number">4</span>
+    .pushFailure@http:<span class="hljs-operator">//</span>localhost:<span class="hljs-number">7357</span><span class="hljs-operator">/</span><span class="hljs-number">7804</span><span class="hljs-operator">/</span>tests<span class="hljs-operator">/</span>lib<span class="hljs-operator">/</span>qunit<span class="hljs-operator">/</span>js<span class="hljs-operator">/</span>qunit.js:<span class="hljs-number">996</span>:<span class="hljs-number">3</span>
+    window.onerror@http:<span class="hljs-operator">//</span>localhost:<span class="hljs-number">7357</span><span class="hljs-operator">/</span><span class="hljs-number">7804</span><span class="hljs-operator">/</span>tests<span class="hljs-operator">/</span>lib<span class="hljs-operator">/</span>qunit<span class="hljs-operator">/</span>js<span class="hljs-operator">/</span>qunit.js:<span class="hljs-number">1242</span>:<span class="hljs-number">4</span>
+
+    Prefs editor <span class="hljs-keyword">with</span> composite <span class="hljs-params">panel:</span> <span class="hljs-params">Rendering:</span> Expected <span class="hljs-number">14</span> assertions, but <span class="hljs-number">15</span> were run
+    <span class="hljs-params">Expected:</span> 	
+
+    undefined
+
+    <span class="hljs-params">Source:</span> 	
+
+    runLoggingCallbacks@http:<span class="hljs-operator">//</span>localhost:<span class="hljs-number">7357</span><span class="hljs-operator">/</span><span class="hljs-number">7804</span><span class="hljs-operator">/</span>tests<span class="hljs-operator">/</span>lib<span class="hljs-operator">/</span>qunit<span class="hljs-operator">/</span>js<span class="hljs-operator">/</span>qunit.js:<span class="hljs-number">1609</span>:<span class="hljs-number">4</span>
+    .pushFailure@http:<span class="hljs-operator">//</span>localhost:<span class="hljs-number">7357</span><span class="hljs-operator">/</span><span class="hljs-number">7804</span><span class="hljs-operator">/</span>tests<span class="hljs-operator">/</span>lib<span class="hljs-operator">/</span>qunit<span class="hljs-operator">/</span>js<span class="hljs-operator">/</span>qunit.js:<span class="hljs-number">996</span>:<span class="hljs-number">3</span>
+    Test.prototype.finish@http:<span class="hljs-operator">//</span>localhost:<span class="hljs-number">7357</span><span class="hljs-operator">/</span><span class="hljs-number">7804</span><span class="hljs-operator">/</span>tests<span class="hljs-operator">/</span>lib<span class="hljs-operator">/</span>qunit<span class="hljs-operator">/</span>js<span class="hljs-operator">/</span>qunit.js:<span class="hljs-number">244</span>:<span class="hljs-number">4</span>
+    run<span class="hljs-operator">/</span><span class="hljs-operator">&lt;</span>@http:<span class="hljs-operator">//</span>localhost:<span class="hljs-number">7357</span><span class="hljs-operator">/</span><span class="hljs-number">7804</span><span class="hljs-operator">/</span>tests<span class="hljs-operator">/</span>lib<span class="hljs-operator">/</span>qunit<span class="hljs-operator">/</span>js<span class="hljs-operator">/</span>qunit.js:<span class="hljs-number">371</span>:<span class="hljs-number">5</span>
+    process@http:<span class="hljs-operator">//</span>localhost:<span class="hljs-number">7357</span><span class="hljs-operator">/</span><span class="hljs-number">7804</span><span class="hljs-operator">/</span>tests<span class="hljs-operator">/</span>lib<span class="hljs-operator">/</span>qunit<span class="hljs-operator">/</span>js<span class="hljs-operator">/</span>qunit.js:<span class="hljs-number">1457</span>:<span class="hljs-number">4</span>
+    QUnit.start<span class="hljs-operator">/</span><span class="hljs-operator">&lt;</span>@http:<span class="hljs-operator">//</span>localhost:<span class="hljs-number">7357</span><span class="hljs-operator">/</span><span class="hljs-number">7804</span><span class="hljs-operator">/</span>tests<span class="hljs-operator">/</span>lib<span class="hljs-operator">/</span>qunit<span class="hljs-operator">/</span>js<span class="hljs-operator">/</span>qunit.js:<span class="hljs-number">483</span>:<span class="hljs-number">5</span>
+</code></pre>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Fedora 24, Firefox 48</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22522">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-09-16T09:20:43.521-0400">2016-09-16T09:20:43.521-0400</relative-time></i></p>
+                        <p>Potentially this issue could be related to this jQuery issue ( <a href="https://bugs.jquery.com/ticket/15098">https://bugs.jquery.com/ticket/15098</a> ). The jQuery issue has been fixed, but we are on an older version of jQuery which would still be affected. After <a href="/browse/FLUID-5825/">FLUID-5825</a> is addressed we should re-evaluate this issue.</p>
+
+                    </li>
+                    
+                    <li id="comment-22524">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-09-22T08:40:12.847-0400">2016-09-22T08:40:12.847-0400</relative-time></i></p>
+                        <p>An example of how this can be tested. </p>
+<p><a href="https://www.pastery.net/hwpxts/">https://www.pastery.net/hwpxts/</a></p>
+<p>Note: the line "vagrant snapshot restore just-provisioned", can be omitted.</p>
+
+                    </li>
+                    
+                    <li id="comment-22527">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2016-09-28T09:05:09.408-0400">2016-09-28T09:05:09.408-0400</relative-time></i></p>
+                        <p>Cannot reproduce issue any more using the master branch (Fedora 24 host, Firefox 49).</p>
+
+                    </li>
+                    
+                    <li id="comment-22528">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-09-28T09:06:48.920-0400">2016-09-28T09:06:48.920-0400</relative-time></i></p>
+                        <p>After upgrading to the latest jQuery and jQuery UI ( <a href="/browse/FLUID-5825/">FLUID-5825</a> ) this issue can no longer be reproduced. It's likely that it was resolved with changes to jQuery.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5951/"><span class="aria-hidden">←</span> Previous: FLUID-5951</a>
+        <a class="mx-1" href="/browse/FLUID-5953/">Next: FLUID-5953 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-594  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-594 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-594/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-594/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-594/">FLUID-594</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-594: OSDPL Navigation: Fix bug in OSDPL where breadcrumbs aren't displayed properly in the Views</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-594">FLUID-594</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Trivial</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Jonathan Hung</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Allison%20Bloodworth">Allison Bloodworth</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-05-13T16:53:09.000-0400" prefix="">2008-05-13T16:53:09.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-02-05T10:05:54.000-0500" prefix="">2009-02-05T10:05:54.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>OSDPL</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In screens like <a href="http://osdpl.fluidproject.org/taxonomy_menu/1/10">http://osdpl.fluidproject.org/taxonomy_menu/1/10</a> &amp; <a href="http://osdpl.fluidproject.org/taxonomy_menu/1">http://osdpl.fluidproject.org/taxonomy_menu/1</a> the breadcrumbs have an extra double colon (or two) at the end. The last item in the list should not be followed by a colon. The number of extra colons seems to correspond with the number of arguments in the URL (e.g. /taxonomy_menu/$arg/$arg) used by the View.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13739">
+                        <p class="mb-0"><b>Allison Bloodworth</b> <i>commented <relative-time datetime="2008-05-13T16:53:21.000-0400">2008-05-13T16:53:21.000-0400</relative-time></i></p>
+                        <p>-</p>
+
+                    </li>
+                    
+                    <li id="comment-13741">
+                        <p class="mb-0"><b>Allison Bloodworth</b> <i>commented <relative-time datetime="2008-05-13T19:27:29.000-0400">2008-05-13T19:27:29.000-0400</relative-time></i></p>
+                        <p>I tried playing with Taxonomy Breadcrumb to see if that helped, but it only affects nodes (like uidp), not category pages. I also had to turn taxonomy_breadcrumb off because there is a bug when you go to the drag and drop patterns it loses the category (e.g. "Information Organization") in the breadcrumb trail. Interestingly, this doesn't happen to any of the other patterns. Might be able to work around this by using custom_breadcrumbs module, but not sure as it may also just apply to node types and what we are concerned with is the breadcrumbs for a view. Here's a post that may be helpful: <a href="http://groups.drupal.org/node/8422">http://groups.drupal.org/node/8422</a>.</p>
+
+                    </li>
+                    
+                    <li id="comment-13743">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2009-02-05T09:55:47.000-0500">2009-02-05T09:55:47.000-0500</relative-time></i></p>
+                        <p>Fixed. The title variable was not being set using the Argument in Views.</p>
+
+                    </li>
+                    
+                    <li id="comment-13745">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2009-02-05T10:05:54.000-0500">2009-02-05T10:05:54.000-0500</relative-time></i></p>
+                        <p>iteration26</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-593/"><span class="aria-hidden">←</span> Previous: FLUID-593</a>
+        <a class="mx-1" href="/browse/FLUID-595/">Next: FLUID-595 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3887  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3887 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3887/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3887/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3887/">FLUID-3887</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3887: Rich Inline Edit creates a misleading hover style and tooltip</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3887">FLUID-3887</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-12-09T12:39:36.496-0500" prefix="">2010-12-09T12:39:36.496-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-02-14T13:37:26.683-0500" prefix="">2011-02-14T13:37:26.683-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The Rich Text Inline Edit component produces a highlight that implies that an entire container is clickable, while only the button is clickable. </p>
+<p>However, the tooltip text is accurate for keyboard interaction since you can press enter when the highlight appears to enter Edit mode. (See Fluid-3911).</p>
+<p>Also, the tooltip appears when hovering over this larger region and states that you can click anywhere to Edit - which is incorrect.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3887/FLUID_3887-b.patch">
+                            
+                                FLUID_3887-b.patch
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3887/FLUID-3887.patch">
+                            
+                                FLUID-3887.patch
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13552">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2010-12-09T13:49:10.409-0500">2010-12-09T13:49:10.409-0500</relative-time></i></p>
+                        <p>Patch to fix misleading tooltip text.</p>
+
+                    </li>
+                    
+                    <li id="comment-13554">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2010-12-15T16:46:23.161-0500">2010-12-15T16:46:23.161-0500</relative-time></i></p>
+                        <p>Tooltip text is appropriate for keyboard users, but not mouse users. This is because the interactions are different for both.</p>
+
+                    </li>
+                    
+                    <li id="comment-13556">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2011-01-21T17:33:32.501-0500">2011-01-21T17:33:32.501-0500</relative-time></i></p>
+                        <p>Heidi and Jess, can you work together on this issue once you've finished the higher-priority Uploader issues (including the FSS demo of the scrollable table classes)?</p>
+
+                    </li>
+                    
+                    <li id="comment-13559">
+                        <p class="mb-0"><b>heidi valles</b> <i>commented <relative-time datetime="2011-01-26T17:06:16.457-0500">2011-01-26T17:06:16.457-0500</relative-time></i></p>
+                        <p>Commented out rich text invitation style and edited the hover text. Basic fix. Working now on making it look like James's mockup from <a href="/browse/FLUID-3801/">FLUID-3801</a> to see if it won't take too much more time.</p>
+
+                    </li>
+                    
+                    <li id="comment-13561">
+                        <p class="mb-0"><b>heidi valles</b> <i>commented <relative-time datetime="2011-01-31T10:17:23.272-0500">2011-01-31T10:17:23.272-0500</relative-time></i></p>
+                        <p>Hey Jon, could you check this one over and review the code before committing? Thanks! </p>
+
+                    </li>
+                    
+                    <li id="comment-13564">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2011-02-09T16:39:50.141-0500">2011-02-09T16:39:50.141-0500</relative-time></i></p>
+                        <p>Hi Heidi, Justin, Michelle and I took a look at your patch for this issue and have two suggestions:</p>
+<p>1. We should avoid commenting out code, and instead remove it entirely if it's no longer necessary. <br>
+2. Can you have James or Jess review the invitation text to make sure it's awesome for users?</p>
+<p>Justin will commit the patch once you've had a chance to make those changes.</p>
+
+                    </li>
+                    
+                    <li id="comment-13567">
+                        <p class="mb-0"><b>heidi valles</b> <i>commented <relative-time datetime="2011-02-10T13:05:48.397-0500">2011-02-10T13:05:48.397-0500</relative-time></i></p>
+                        <p>branch with fixes up at <a href="https://github.com/heidiv/infusion/tree/FLUID-3887">https://github.com/heidiv/infusion/tree/FLUID-3887</a></p>
+
+                    </li>
+                    
+                    <li id="comment-13570">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-02-11T15:41:56.711-0500">2011-02-11T15:41:56.711-0500</relative-time></i></p>
+                        <p>Pushed Heidi's changes at 0eeadd6682a72c9cd4c0</p>
+
+                    </li>
+                    
+                    <li id="comment-13573">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-02-11T15:42:00.165-0500">2011-02-11T15:42:00.165-0500</relative-time></i></p>
+                        <p>Pushed Heidi's changes at 0eeadd6682a72c9cd4c0</p>
+
+                    </li>
+                    
+                    <li id="comment-13574">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-02-14T13:36:19.875-0500">2011-02-14T13:36:19.875-0500</relative-time></i></p>
+                        <p>just reopening to change the resolution to resolved</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3886/"><span class="aria-hidden">←</span> Previous: FLUID-3886</a>
+        <a class="mx-1" href="/browse/FLUID-3888/">Next: FLUID-3888 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

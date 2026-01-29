@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6530  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6530 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6530/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6530/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6530/">FLUID-6530</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6530: Orator Selection Reader typeface changes</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6530">FLUID-6530</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-07-16T18:21:33.142-0400" prefix="">2020-07-16T18:21:33.142-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-06-23T15:48:22.335-0400" prefix="">2021-06-23T15:48:22.335-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Self Voicing</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The Orator Selection Reader's typeface changes in certain conditions</p>
+<p><strong>To reproduce:</strong></p>
+<ol>
+<li>Go to&#160;<a href="https://build.fluidproject.org/infusion/demos/orator/">https://build.fluidproject.org/infusion/demos/orator/</a></li>
+<li>In the left-side panel, select any part of the title "An Infusion component demo"</li>
+</ol>
+<p><strong>Expected:</strong></p>
+<p>The Selection Reader's typeface is the same as other parts of the page. The CSS is defined as "font-family: inherit", so in my environments that resolves to sans-serif (e.g. Arial)</p>
+<p><strong>Actual:</strong></p>
+<p>The Selection Reader's typeface changes to match the title of the pane, which is RobotoSlab (defined at <a href="https://github.com/fluid-project/infusion/blob/8d59c6ce77ed83a0c8c8c70f1195636cfcc02797/src/components/overviewPanel/css/OverviewPanel.css#L59">OverviewPanel.css:59</a>).</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Windows 10 Pro, v1909;<br>
+Chrome 84, Firefox 78, Edge 44</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6530/2020-07-16 Orator typeface bug 1.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6530/2020-07-16 Orator typeface bug 1.png" alt="2020-07-16 Orator typeface bug 1.png">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6530/2020-07-16 Orator typeface bug 2.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6530/2020-07-16 Orator typeface bug 2.png" alt="2020-07-16 Orator typeface bug 2.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25094">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2020-07-20T07:45:59.614-0400">2020-07-20T07:45:59.614-0400</relative-time></i></p>
+                        <p>I think the issue is actually related to what is described in the "Expected" section of the description above. That is, the font family is inherited. The selection reader play button is appended to the selection's offset parent or the selection's start container's parent node. This means that it is inheriting the font family from those containers. (See: <a href="https://github.com/fluid-project/infusion/blob/8d59c6ce77ed83a0c8c8c70f1195636cfcc02797/src/components/orator/js/Orator.js#L1146-L1158">https://github.com/fluid-project/infusion/blob/8d59c6ce77ed83a0c8c8c70f1195636cfcc02797/src/components/orator/js/Orator.js#L1146-L1158</a>&#160;)</p>
+<p>We should investigate appending to the body element instead. We'll need to determine if this affects the positioning of the play button. Also this change may address <a href="/browse/FLUID-6523/">FLUID-6523</a>. Another option would be to use a tooltip library like <a href="https://atomiks.github.io/tippyjs/">tippy</a> and others.</p>
+
+                    </li>
+                    
+                    <li id="comment-25095">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2020-07-20T09:50:50.828-0400">2020-07-20T09:50:50.828-0400</relative-time></i></p>
+                        <p>Appending the play button to the body results in the positioning of the button being incorrect. Likely due to&#160;<a href="/browse/FLUID-6394/">FLUID-6394</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6529/"><span class="aria-hidden">←</span> Previous: FLUID-6529</a>
+        <a class="mx-1" href="/browse/FLUID-6531/">Next: FLUID-6531 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

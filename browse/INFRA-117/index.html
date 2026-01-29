@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-117  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-117 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-117/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-117/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-117/">INFRA-117</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-117: CentOS KVM template fails to build ("packer_builder_type=qemu could not be found")</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-117">INFRA-117</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-02-19T13:44:42.413-0500" prefix="">2018-02-19T13:44:42.413-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-02-19T14:44:54.055-0500" prefix="">2018-02-19T14:44:54.055-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <pre><code class="hljs">==&gt; template-centos74-x86_64: Provisioning with Ansible...
+    template-centos74-x86_64: Uploading Playbook directory to Ansible staging directory...
+    template-centos74-x86_64: Creating directory: <span class="hljs-regexp">/tmp/</span>packer-provisioner-ansible-local/<span class="hljs-number">5</span>a8b1901-f1ef-d903-ee68-a6a7f05a832c
+    template-centos74-x86_64: Uploading main Playbook file...
+    template-centos74-x86_64: Uploading inventory file...
+    template-centos74-x86_64: Executing Ansible: cd <span class="hljs-regexp">/tmp/</span>packer-provisioner-ansible-local<span class="hljs-regexp">/5a8b1901-f1ef-d903-ee68-a6a7f05a832c &amp;&amp; ANSIBLE_FORCE_COLOR=1 PYTHONUNBUFFERED=1 ansible-playbook /</span>tmp<span class="hljs-regexp">/packer-provisioner-ansible-local/</span><span class="hljs-number">5</span>a8b1901-f1ef-d903-ee68-a6a7f05a832c<span class="hljs-regexp">/playbook.yml --extra-vars \"packer_build_name=template-centos74-x86_64 packer_builder_type=qemu packer_http_addr=10.0.2.2:8574\"  -c local -i /</span>tmp<span class="hljs-regexp">/packer-provisioner-ansible-local/</span><span class="hljs-number">5</span>a8b1901-f1ef-d903-ee68-a6a7f05a832c/packer-provisioner-ansible-local959736520
+    template-centos74-x86_64: ERROR! the playbook: packer_builder_type=qemu could not be found
+==&gt; template-centos74-x86_64: Deleting output directory...
+Build <span class="hljs-string">'template-centos74-x86_64'</span> errored: Error executing Ansible: Non-zero <span class="hljs-keyword">exit</span> status: <span class="hljs-number">1</span>
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26012">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-02-19T14:14:51.584-0500">2018-02-19T14:14:51.584-0500</relative-time></i></p>
+                        <p>This is a regression is Packer 1.2.0: <a href="https://github.com/hashicorp/packer/issues/5885">https://github.com/hashicorp/packer/issues/5885</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-116/"><span class="aria-hidden">←</span> Previous: INFRA-116</a>
+        <a class="mx-1" href="/browse/INFRA-118/">Next: INFRA-118 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

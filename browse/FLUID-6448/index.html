@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6448  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6448 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6448/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6448/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6448/">FLUID-6448</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6448: DataSource.get callback mentioned but not working</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6448">FLUID-6448</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-01-16T11:25:28.782-0500" prefix="">2020-01-16T11:25:28.782-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-01-21T07:58:48.951-0500" prefix="">2020-01-21T07:58:48.951-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The in-code documentation for fluid.dataSource mentions optional callback arguments in the get and set methods, but these don't seem to be able to work.</p>
+<p>The documentation in question: <a href="https://github.com/fluid-project/infusion/blob/46a1b887dcc4d78a78b3c3f8faaab498afc782cd/src/framework/core/js/DataSource.js#L61-L79">https://github.com/fluid-project/infusion/blob/46a1b887dcc4d78a78b3c3f8faaab498afc782cd/src/framework/core/js/DataSource.js#L61-L79</a></p>
+<p>The issue seems to be that the function fluid.dataSource.defaultiseOptions (the first thing called by both get and set) will error out (TypeError) if a function or string are passed in as the second argument. This would suggest that callback support is leftover from a previous factoring.</p>
+<p>Further complicating matters, the last thing called by both get and set is fluid.dataSource.registerStandardPromiseHandlers which <strong>does</strong> include setting up a callback called on promise resolution.</p>
+<p>Does it make sense to reinstate callback support, or would it be better to remove the comment and setup? It seems odd to return a promise <strong>and</strong> pass in a callback, but, in the absence of a task-like fixture outside of the IoC testing framework, I can imagine if it were being called in an invoker or listener that the callback arg would be useful.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25246">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2020-01-16T11:29:02.768-0500">2020-01-16T11:29:02.768-0500</relative-time></i></p>
+                        <p>Antranig Basman do you have any thoughts on how to best address this?</p>
+
+                    </li>
+                    
+                    <li id="comment-25247">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2020-01-16T11:30:10.663-0500">2020-01-16T11:30:10.663-0500</relative-time></i></p>
+                        <p>The documentation that has been prepared by Justin Obara but hasn't yet been merged into the Infusion docs does not mention callbacks at all: <a href="https://github.com/fluid-project/infusion-docs/blob/82e47765367fc51b804794ac5e504b47cdd03966/src/documents/DataSourceAPI.md">https://github.com/fluid-project/infusion-docs/blob/82e47765367fc51b804794ac5e504b47cdd03966/src/documents/DataSourceAPI.md</a></p>
+
+                    </li>
+                    
+                    <li id="comment-25248">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2020-01-21T07:58:48.951-0500">2020-01-21T07:58:48.951-0500</relative-time></i></p>
+                        <p>I think it is best to cleanly axe callback support from impl and docs, this is rather old-fashioned and and unlikely to be of help to anybody.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6447/"><span class="aria-hidden">←</span> Previous: FLUID-6447</a>
+        <a class="mx-1" href="/browse/FLUID-6449/">Next: FLUID-6449 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3707  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3707 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3707/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3707/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3707/">FLUID-3707</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3707: The reorderer should have the aria application role</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3707">FLUID-3707</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-09-07T10:00:13.640-0400" prefix="">2010-09-07T10:00:13.640-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-04-02T15:27:27.097-0400" prefix="">2014-04-02T15:27:27.097-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The reorderer component should add the role of application. In some cases of the reorderer, there is already a role attached, the application role should wrap around  this.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13773">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-09-07T10:02:04.013-0400">2010-09-07T10:02:04.013-0400</relative-time></i></p>
+                        <p>a11y issue</p>
+
+                    </li>
+                    
+                    <li id="comment-13776">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-09-09T13:58:23.824-0400">2010-09-09T13:58:23.824-0400</relative-time></i></p>
+                        <p>The grid reorderer already specifies a role of grid... should the nesting be</p>
+<p>&lt;element role="application"&gt; <br>
+&lt;element role="grid"&gt;&lt;/element&gt;<br>
+&lt;/element&gt;</p>
+<p>or </p>
+<p>&lt;element role="grid"&gt; <br>
+&lt;element role="application"&gt;&lt;/element&gt;<br>
+&lt;/element&gt;</p>
+
+                    </li>
+                    
+                    <li id="comment-13778">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-09-13T10:59:19.690-0400">2010-09-13T10:59:19.690-0400</relative-time></i></p>
+                        <p>Checked with Joseph. He was saying that technically if it has the role of grid, it shouldn't need the application role. However, he was saying to be careful we should use it, with application coming before grid. He also mentioned that we may not be using the grid role correctly, as fluid nature of the layout causes the elements to move between columns. The use of the role grid in the layout reorderer may make more sense.</p>
+
+                    </li>
+                    
+                    <li id="comment-13781">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2010-12-08T17:32:12.417-0500">2010-12-08T17:32:12.417-0500</relative-time></i></p>
+                        <p>Suggested Solution:<br>
+Similar to the fix in Pager.js, we can add "application" to the container "role" attribute by adding the following to src/webapp/components/reorderer/js/Reorderer.js line 124<br>
+thatReorderer.container.attr("role", "application");<br>
+This fix will add application to the role in the markup within the reorderer's container.  However, this change won't fix the current reorderers (including gridReorderer, layoutReorderer, ImageReorderer, listReorderer) because they already have their own roles set.  Alternatively, we can overwrite these roles by moving this line to the end of the block, which is at line 500, but this will make the reorderer to lose its original role (ie. from "grid&gt;&gt;gridcell" to "application&gt;&gt;gridcell", grid is lost).<br>
+To address this, Justin suggested to add another markup on top of the existing ones which will then allow us to include the application role (ie. "application&gt;&gt;grid&gt;&gt;gridcell") .  This might result a change in the API and might not be ideal for users because they will have a unwanted second-container on top.  Furthermore, styles and existing markup/layout might be affected.  </p>
+
+                    </li>
+                    
+                    <li id="comment-13783">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2010-12-13T14:35:50.951-0500">2010-12-13T14:35:50.951-0500</relative-time></i></p>
+                        <p>I found that this patch seemed more urgent as a result of the need on NVDA to put the AT into "focus mode" by pressing the "NVDA + Space" key without which the component is totally broken. However, on attempting to wrap the reorderer container in a div with role="application" I found that the behaviour instead became much worse, and that the AT dropped back into "browse mode" with every keypress making the component permanently unusable.</p>
+
+                    </li>
+                    
+                    <li id="comment-13786">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2010-12-23T15:41:05.200-0500">2010-12-23T15:41:05.200-0500</relative-time></i></p>
+                        <p>Please check if this is done and either close it or put it into another release.</p>
+
+                    </li>
+                    
+                    <li id="comment-13788">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-01-11T12:15:50.019-0500">2011-01-11T12:15:50.019-0500</relative-time></i></p>
+                        <p>Based on the comments here we may want to think about abandoning this change.</p>
+
+                    </li>
+                    
+                    <li id="comment-13790">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2014-04-02T15:27:27.096-0400">2014-04-02T15:27:27.096-0400</relative-time></i></p>
+                        <p>We recommend that integrators using the reorderer add the application role to their application</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3706/"><span class="aria-hidden">←</span> Previous: FLUID-3706</a>
+        <a class="mx-1" href="/browse/FLUID-3708/">Next: FLUID-3708 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

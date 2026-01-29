@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5333  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5333 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5333/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5333/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5333/">FLUID-5333</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5333: Create support for "abortable events" in the framework, to deal with cases where the holding component is destroyed</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5333">FLUID-5333</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-04-28T02:06:07.563-0400" prefix="">2014-04-28T02:06:07.563-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-10-08T14:16:17.679-0400" prefix="">2015-10-08T14:16:17.679-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.9</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This requirement was raised by <a href="/browse/FLUID-5332/">FLUID-5332</a>. A difficult form of race condition can emerge where a component holding an event or a listener is destroyed as a result of servicing one of the listeners. A clean solution to this issue would involve being able to formally abort the processing of a listener queue when the component holding its event is destroyed partway through the process. This is similar to the "preventable events" system that we still retain in outline, but is signalled by collateral action around the component tree rather than specific knowledge held within a listener as signalled by its return value.</p>
+<p>This kind of race should not really occur in practice, but is unfortunately at a much greater risk as a result of our current renderer implementation which causes large-scale destruction of segments of the component trees that it manages whenever re-rendering occurs.</p>
+<p>This implementation will interact well with our upcoming asynchronous models for communicating failure, when these are configured to do so by propagating a "ball of fire" up the component tree destroying components. In this case it is highly appropriate to abort any further listener notifications that are in progress when the error occurs - this is consistent with the standard semantics for "failed promises", not to say the analogous monadic model.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13509">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-08-21T18:47:34.953-0400">2014-08-21T18:47:34.953-0400</relative-time></i></p>
+                        <p>Merged into master at revision f5403d5027923475e0c4314005f6723d2e732759</p>
+
+                    </li>
+                    
+                    <li id="comment-13511">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-26T09:51:32.508-0400">2015-06-26T09:51:32.508-0400</relative-time></i></p>
+                        <p>Reopening to change the fix version to 1.9</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5332/"><span class="aria-hidden">←</span> Previous: FLUID-5332</a>
+        <a class="mx-1" href="/browse/FLUID-5334/">Next: FLUID-5334 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

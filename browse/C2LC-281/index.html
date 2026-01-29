@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-281  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-281 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-281/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-281/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-281/">C2LC-281</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-281: Manage upgrade of Flow and the new "Types-First" architecture</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-281">C2LC-281</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>In Progress</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Simon Bates</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-12-21T14:21:29.950-0500" prefix="">2020-12-21T14:21:29.950-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2022-09-21T11:32:25.308-0400" prefix="">2022-09-21T11:32:25.308-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Earlier this year, Flow introduced a new architecture known as "Types-First":</p>
+<ul>
+<li><a href="https://medium.com/flow-type/types-first-a-scalable-new-architecture-for-flow-3d8c7ba1d4eb">https://medium.com/flow-type/types-first-a-scalable-new-architecture-for-flow-3d8c7ba1d4eb</a></li>
+<li><a href="https://flow.org/en/docs/lang/types-first/">https://flow.org/en/docs/lang/types-first/</a></li>
+</ul>
+<p>We are currently on Flow version 0.133. Types-First is enabled by default in version 0.134.</p>
+<p>It is possible to disable Types-First with the following option in <code>.flowconfig</code>:</p>
+<pre><code class="hljs language-java">types_first=<span class="hljs-literal">false</span>
+</code></pre>
+<p>One area that is going to need particular attention is <code>react-intl</code>. We are currently on version 3. The latest is version 5. And the Flow types haven't been updated since version 2:</p>
+<p><a href="https://github.com/flow-typed/flow-typed/tree/master/definitions/npm/react-intl_v2.x.x">https://github.com/flow-typed/flow-typed/tree/master/definitions/npm/react-intl_v2.x.x</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10906">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2021-04-19T13:45:30.929-0400">2021-04-19T13:45:30.929-0400</relative-time></i></p>
+                        <p>Flow version 0.143.0, released in January 2021, removes support for "Classic mode" and only supports "Types-First mode". The <code>types_first</code> option has been removed. See: <a href="https://github.com/facebook/flow/releases/tag/v0.143.0">https://github.com/facebook/flow/releases/tag/v0.143.0</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-280/"><span class="aria-hidden">←</span> Previous: C2LC-280</a>
+        <a class="mx-1" href="/browse/C2LC-282/">Next: C2LC-282 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

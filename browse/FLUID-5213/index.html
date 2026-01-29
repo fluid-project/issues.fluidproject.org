@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5213  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5213 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5213/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5213/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5213/">FLUID-5213</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5213: Make auxBuilder pass down conditional common options</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5213">FLUID-5213</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-11-19T09:00:51.062-0500" prefix="">2013-11-19T09:00:51.062-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T11:26:09.380-0500" prefix="">2014-03-03T11:26:09.380-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>We have two use cases that require the auxiliary builder to be able to pass down common options in certain conditions.</p>
+<p>Case 1: If an enactor is not a view component, meaning an enactor doesn't need to perform DOM related manipulation, the integrator should not have to supply a container. . An actual use case is, when "speak text" preference is turned on, start the screen reader.<br>
+Solution: Implement an "optionRequired" that points to an user-defined function. This function returns true or false to determine if the given value should be used at the path. Example:<br>
+"container": {<br>
+"value": "{uiEnhancer}.container",<br>
+"optionRequired": "fluid.prefs.containerNeeded"<br>
+}</p>
+<p>If fluid.prefs.containerNeeded() returns true, the common option:<br>
+container: "{uiEnhancer}.container"<br>
+would be used. Otherwise, nothing would be applied.</p>
+<p>Case 2: The defined common option value needs to be merged with the value passed in from the auxiliary schema, such as gradeNames for panels.<br>
+Solution: Implemented a "mergeFunc" option that is interpreted to the framework built-in mergePolicy. It also means the value provided to "mergeFunc" complies with the spec of using mergePolicy. Example:<br>
+"options.gradeNames": {<br>
+"value" : "fluid.prefs.prefsEditorConnections",<br>
+"mergeFunc": fluid.arrayConcatPolicy<br>
+}</p>
+<p>This common option<br>
+"options.gradeNames": "fluid.prefs.prefsEditorConnections"<br>
+would be merged with "options.gradeNames" supplied from the aux schema using mergePolicy {"options.gradeNames": fluid.arrayConcatPolicy}</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23125">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-11-25T03:22:17.686-0500">2013-11-25T03:22:17.686-0500</relative-time></i></p>
+                        <p>Thanks for this improved explanation, Cindy - to me the issue still isn't very clear. For Case 1, in what situation might the option not be required?<br>
+And for case 2, what is required here that can't be done simply by contributing directly to the mergePolicy option directly? That is, why not just accept an entire mergePolicy rather than the specially named "mergeFunc"?</p>
+<p>Can we see examples in the prefs editor code written by our users where these two facilities are required?</p>
+
+                    </li>
+                    
+                    <li id="comment-23126">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-11-26T03:45:57.007-0500">2013-11-26T03:45:57.007-0500</relative-time></i></p>
+                        <p>Hi Cindy - thanks for updates to the implementation and continued explanation. Case 1 still strikes me as a "white elephant generalisation" - despite being generalised to handle "values in general", I'm still not convinced that this use case requires such complex machinery, or even any user-supplied configuration at all. Would it not be sufficient to just detect if the required enactor grade is a viewComponent and only supply the container in that case? Every piece of configuration we expose to this class of user (integrators) has a very high cost, especially if it requires them to write special global functions and configuration which doesn't match that seen elsewhere in the framework. If we can remove the requirement for this case to require special configuration, it would be highly desirable - the same goes for case 2. </p>
+
+                    </li>
+                    
+                    <li id="comment-23127">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2013-11-28T15:49:21.059-0500">2013-11-28T15:49:21.059-0500</relative-time></i></p>
+                        <p>Thanks for these comments. </p>
+<p>The implementation has been simplified. The "powerful" optionRequired and mergeFunc are removed. All these checking now are performed directly in fluid.prefs.addCommonOptions().</p>
+
+                    </li>
+                    
+                    <li id="comment-23128">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2014-01-16T11:30:49.855-0500">2014-01-16T11:30:49.855-0500</relative-time></i></p>
+                        <p>Pull request for this issue: <a href="https://github.com/fluid-project/infusion/pull/438">https://github.com/fluid-project/infusion/pull/438</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23129">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-02-11T05:43:11.281-0500">2014-02-11T05:43:11.281-0500</relative-time></i></p>
+                        <p>Merged into trunk at revision a6cd793605564887e948143c20718efe53e47bed</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5212/"><span class="aria-hidden">←</span> Previous: FLUID-5212</a>
+        <a class="mx-1" href="/browse/FLUID-5214/">Next: FLUID-5214 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-540  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-540 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-540/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-540/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-540/">C2LC-540</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-540: Convert refresh/stop/delete all buttons to IconButton components</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-540">C2LC-540</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Done</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter=Tony%20Atkins%20%5BRtF%5D">Tony Atkins [RtF]</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-11-01T11:42:05.321-0400" prefix="">2021-11-01T11:42:05.321-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-11-18T11:08:56.196-0500" prefix="">2021-11-18T11:08:56.196-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Env 1.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Environment</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In working on <a href="/browse/C2LC-453/">C2LC-453</a>, we discovered that the stop button styles result in a button that's too small to meet accessibility guidelines.&#160; This ticket covers converting both of those icons to use the same Icon Button component that the world picker and keyboard input toggle use.</p>
+<p></p>
+<p>As discussed on chats, part of this is reconciling how we use the "disabled" property of that component so that the stop/refresh buttons are styled correctly when they are not clickable.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10707">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2021-11-01T11:47:37.946-0400">2021-11-01T11:47:37.946-0400</relative-time></i></p>
+                        <p>IconButton component is slightly bigger than current Refresh button, so when we change Refresh button to use IconButton, we might need to make PenDownToggleSwitch a little bigger as well. </p>
+
+                    </li>
+                    
+                    <li id="comment-10708">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2021-11-01T13:28:46.639-0400">2021-11-01T13:28:46.639-0400</relative-time></i></p>
+                        <p>Tasks:</p>
+<ul>
+<li>Implement 'disabled' semantics for the IconButton</li>
+<li>Use the updated IconButton for these buttons: Refresh, Stop, Delete All</li>
+<li>Remove the IconButton.onKeyDown property: implement the keyboard triggering within the IconButton component so that the user experience is consistent across IconButtons; this will remove the need to have multiple implementations of the keyboard handling, such as currently:
+<ul>
+<li><a href="https://github.com/codelearncreate/c2lc-coding-environment/blob/391f69dd2d94e5167e6e9b533d4cb318f76b390e/src/App.js#L894-L898">https://github.com/codelearncreate/c2lc-coding-environment/blob/391f69dd2d94e5167e6e9b533d4cb318f76b390e/src/App.js#L894-L898</a></li>
+<li><a href="https://github.com/codelearncreate/c2lc-coding-environment/blob/391f69dd2d94e5167e6e9b533d4cb318f76b390e/src/App.js#L1082-L1094">https://github.com/codelearncreate/c2lc-coding-environment/blob/391f69dd2d94e5167e6e9b533d4cb318f76b390e/src/App.js#L1082-L1094</a>)</li>
+</ul>
+</li>
+</ul>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-539/"><span class="aria-hidden">←</span> Previous: C2LC-539</a>
+        <a class="mx-1" href="/browse/C2LC-541/">Next: C2LC-541 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

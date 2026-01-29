@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> ENGAGE-182  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" ENGAGE-182 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/ENGAGE-182/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/ENGAGE-182/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/ENGAGE" data-pagefind-filter="project">Fluid Engage</a></li>
+                <li><a href="/browse/ENGAGE-182/">ENGAGE-182</a></li>
+            </ol>
+        </nav>
+        <h1>ENGAGE-182: refactor path structure for mvn (maven2)</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/ENGAGE-182">ENGAGE-182</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/ENGAGE/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/ENGAGE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Michelle D'Souza</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/ENGAGE/?reporter=joan%20garcia">joan garcia</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-11-04T10:54:31.000-0500" prefix="">2009-11-04T10:54:31.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T14:21:10.688-0500" prefix="">2014-03-03T14:21:10.688-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3b</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>refactor java project directories to:</p>
+<p>/src/main/java<br>
+/src/main/resources<br>
+/src/main/webapp</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/ENGAGE/ENGAGE-182/fluid-engage-kettle-build.patch">
+                            
+                                fluid-engage-kettle-build.patch
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/ENGAGE/ENGAGE-182/fluid-engage-kettle-build-plus-encoding-handling.patch">
+                            
+                                fluid-engage-kettle-build-plus-encoding-handling.patch
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/ENGAGE/ENGAGE-182/pom.xml">
+                            
+                                pom.xml
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-12246">
+                        <p class="mb-0"><b>joan garcia</b> <i>commented <relative-time datetime="2009-11-04T10:57:47.000-0500">2009-11-04T10:57:47.000-0500</relative-time></i></p>
+                        <p>for example, &lt;fluid-all/kettle&gt; project.</p>
+<p>mvn eclipse:eclipse will recognise the project structure and will create a proper .project file.</p>
+<ul>
+<li>2change [new WebAppContext contructor argument]:</li>
+</ul>
+<p>public class JettyLauncher {</p>
+<p>public static void main(String[] args) throws Exception {<br>
+Server server = new Server();</p>
+<p>Connector connector = new SelectChannelConnector();<br>
+connector.setPort(Integer.getInteger("jetty.port", 8080).intValue());<br>
+server.setConnectors(new Connector[] { connector });</p>
+<p>WebAppContext webapp = new WebAppContext("src/main/webapp", "/");</p>
+
+                    </li>
+                    
+                    <li id="comment-12247">
+                        <p class="mb-0"><b>joan garcia</b> <i>commented <relative-time datetime="2009-11-04T11:00:46.000-0500">2009-11-04T11:00:46.000-0500</relative-time></i></p>
+                        <p>maven 2 interesting link: <br>
+<a href="http://www.javaworld.com/javaworld/jw-12-2005/jw-1205-maven.html">http://www.javaworld.com/javaworld/jw-12-2005/jw-1205-maven.html</a></p>
+
+                    </li>
+                    
+                    <li id="comment-12248">
+                        <p class="mb-0"><b>joan garcia</b> <i>commented <relative-time datetime="2009-11-05T10:54:10.000-0500">2009-11-05T10:54:10.000-0500</relative-time></i></p>
+                        <p>this is my local fluid-engage-kettle pom.xml  (it seems to work). I compile and run kettle on Jetty.<br>
+Note that there are no source references, maven 2 handle sources properly (using: "convention over configuration" pattern).<br>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<br>
+&lt;project xmlns="<a href="http://maven.apache.org/POM/4.0.0">http://maven.apache.org/POM/4.0.0</a>" xmlns:xsi="<a href="http://www.w3.org/2001/XMLSchema-instance">http://www.w3.org/2001/XMLSchema-instance</a>"<br>
+xsi:schemaLocation="<a href="http://maven.apache.org/POM/4.0.0">http://maven.apache.org/POM/4.0.0</a> <a href="http://maven.apache.org/maven-v4_0_0.xsd">http://maven.apache.org/maven-v4_0_0.xsd</a>"&gt;<br>
+&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;<br>
+&lt;artifactId&gt;fluid-engage&lt;/artifactId&gt;<br>
+&lt;groupId&gt;org.fluidproject&lt;/groupId&gt;<br>
+&lt;version&gt;0.3-SNAPSHOT&lt;/version&gt;<br>
+&lt;organization&gt;<br>
+&lt;name&gt;Fluid Project&lt;/name&gt;<br>
+&lt;url&gt;http://fluidproject.org&lt;/url&gt;<br>
+&lt;/organization&gt;<br>
+&lt;inceptionYear&gt;2009&lt;/inceptionYear&gt;<br>
+&lt;packaging&gt;war&lt;/packaging&gt;<br>
+&lt;description&gt;<br>
+A set of test components for evaluating conversion and rendering strategies<br>
+&lt;/description&gt;</p>
+<p>&lt;repositories&gt;<br>
+&lt;repository&gt;<br>
+&lt;id&gt;CARET-Maven2&lt;/id&gt;<br>
+&lt;name&gt;CARET Maven 2 Repository&lt;/name&gt;<br>
+&lt;url&gt;<a href="http://www2.caret.cam.ac.uk/maven2%3C/url">http://www2.caret.cam.ac.uk/maven2&lt;/url</a>&gt;<br>
+&lt;/repository&gt;<br>
+&lt;repository&gt;<br>
+&lt;id&gt;Fluid-Maven2&lt;/id&gt;<br>
+&lt;name&gt;Fluid Maven 2 Repository&lt;/name&gt;<br>
+&lt;url&gt;<a href="http://developer.jasig.org/repo/content/repositories/fluid-m2%3C/url">http://developer.jasig.org/repo/content/repositories/fluid-m2&lt;/url</a>&gt;<br>
+&lt;/repository&gt;<br>
+&lt;repository&gt;<br>
+&lt;id&gt;3rd-party&lt;/id&gt;<br>
+&lt;name&gt;jasig 3rd party Maven 2 Repository&lt;/name&gt;<br>
+&lt;url&gt;<a href="http://developer.jasig.org/repo/content/repositories/3rd-party%3C/url">http://developer.jasig.org/repo/content/repositories/3rd-party&lt;/url</a>&gt;<br>
+&lt;/repository&gt;<br>
+&lt;repository&gt;<br>
+&lt;id&gt;CARET-Maven2-dev&lt;/id&gt;<br>
+&lt;name&gt;CARET Maven 2 Development Repository&lt;/name&gt;<br>
+&lt;url&gt;<a href="http://www2.caret.cam.ac.uk/maven2dev%3C/url">http://www2.caret.cam.ac.uk/maven2dev&lt;/url</a>&gt;<br>
+&lt;snapshots&gt;<br>
+&lt;enabled&gt;true&lt;/enabled&gt;<br>
+&lt;/snapshots&gt;<br>
+&lt;/repository&gt;<br>
+&lt;/repositories&gt;</p>
+<p>&lt;dependencies&gt;<br>
+&lt;dependency&gt;<br>
+&lt;groupId&gt;uk.org.ponder&lt;/groupId&gt;<br>
+&lt;artifactId&gt;ponderutilcore&lt;/artifactId&gt;<br>
+&lt;version&gt;1.2.4A&lt;/version&gt;<br>
+&lt;type&gt;jar&lt;/type&gt;<br>
+&lt;/dependency&gt;<br>
+&lt;dependency&gt;<br>
+&lt;groupId&gt;rhino&lt;/groupId&gt;<br>
+&lt;artifactId&gt;js&lt;/artifactId&gt;<br>
+&lt;version&gt;1.7R3pre&lt;/version&gt;<br>
+&lt;type&gt;jar&lt;/type&gt;<br>
+&lt;/dependency&gt;<br>
+&lt;dependency&gt;<br>
+&lt;groupId&gt;javax.servlet&lt;/groupId&gt;<br>
+&lt;artifactId&gt;servlet-api&lt;/artifactId&gt;<br>
+&lt;version&gt;2.3&lt;/version&gt;<br>
+&lt;type&gt;jar&lt;/type&gt;<br>
+&lt;scope&gt;provided&lt;/scope&gt;<br>
+&lt;/dependency&gt;<br>
+&lt;dependency&gt;<br>
+&lt;groupId&gt;log4j&lt;/groupId&gt;<br>
+&lt;artifactId&gt;log4j&lt;/artifactId&gt;<br>
+&lt;version&gt;1.2.14&lt;/version&gt;<br>
+&lt;type&gt;jar&lt;/type&gt;<br>
+&lt;/dependency&gt;<br>
+&lt;dependency&gt;<br>
+&lt;groupId&gt;xpp3&lt;/groupId&gt;<br>
+&lt;artifactId&gt;xpp3_min&lt;/artifactId&gt;<br>
+&lt;version&gt;1.1.3.4.O&lt;/version&gt;<br>
+&lt;type&gt;jar&lt;/type&gt;<br>
+&lt;/dependency&gt;<br>
+&lt;dependency&gt;<br>
+&lt;groupId&gt;junit&lt;/groupId&gt;<br>
+&lt;artifactId&gt;junit&lt;/artifactId&gt;<br>
+&lt;version&gt;3.8.1&lt;/version&gt;<br>
+&lt;scope&gt;provided&lt;/scope&gt;<br>
+&lt;/dependency&gt;<br>
+&lt;dependency&gt;<br>
+&lt;artifactId&gt;jetty&lt;/artifactId&gt;<br>
+&lt;groupId&gt;org.mortbay.jetty&lt;/groupId&gt;<br>
+&lt;version&gt;6.1.18&lt;/version&gt;<br>
+&lt;/dependency&gt;<br>
+&lt;dependency&gt;<br>
+&lt;artifactId&gt;jetty-util&lt;/artifactId&gt;<br>
+&lt;groupId&gt;org.mortbay.jetty&lt;/groupId&gt;<br>
+&lt;version&gt;6.1.18&lt;/version&gt;<br>
+&lt;/dependency&gt;<br>
+&lt;dependency&gt;<br>
+&lt;artifactId&gt;xercesImpl&lt;/artifactId&gt;<br>
+&lt;groupId&gt;xerces&lt;/groupId&gt;<br>
+&lt;version&gt;2.9.1&lt;/version&gt;<br>
+&lt;/dependency&gt;<br>
+&lt;/dependencies&gt;</p>
+<p>&lt;build&gt;<br>
+&lt;finalName&gt;fluid-engage&lt;/finalName&gt;<br>
+&lt;plugins&gt;<br>
+&lt;plugin&gt;<br>
+&lt;groupId&gt;org.mortbay.jetty&lt;/groupId&gt;<br>
+&lt;artifactId&gt;maven-jetty-plugin&lt;/artifactId&gt;<br>
+&lt;/plugin&gt;<br>
+&lt;plugin&gt;<br>
+&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;<br>
+&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;<br>
+&lt;version&gt;2.0.2&lt;/version&gt;<br>
+&lt;configuration&gt;<br>
+&lt;source&gt;1.5&lt;/source&gt;<br>
+&lt;target&gt;1.5&lt;/target&gt;<br>
+&lt;/configuration&gt;<br>
+&lt;/plugin&gt;<br>
+&lt;plugin&gt;<br>
+&lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;<br>
+&lt;artifactId&gt;surefire-report-maven-plugin&lt;/artifactId&gt;<br>
+&lt;version&gt;2.0-beta-1&lt;/version&gt;<br>
+&lt;/plugin&gt;<br>
+&lt;/plugins&gt;<br>
+&lt;/build&gt;<br>
+&lt;/project&gt;</p>
+
+                    </li>
+                    
+                    <li id="comment-12249">
+                        <p class="mb-0"><b>joan garcia</b> <i>commented <relative-time datetime="2009-11-05T11:00:01.000-0500">2009-11-05T11:00:01.000-0500</relative-time></i></p>
+                        <p>local pom.xml</p>
+
+                    </li>
+                    
+                    <li id="comment-12250">
+                        <p class="mb-0"><b>joan garcia</b> <i>commented <relative-time datetime="2009-11-17T06:13:45.000-0500">2009-11-17T06:13:45.000-0500</relative-time></i></p>
+                        <p>this a build patch for engage.</p>
+<p>Simplifies the build process and stores java source classes in the public webapp space.<br>
+(Not mixed with build resources inside WEB-INF/classes).</p>
+
+                    </li>
+                    
+                    <li id="comment-12251">
+                        <p class="mb-0"><b>joan garcia</b> <i>commented <relative-time datetime="2009-11-17T06:46:10.000-0500">2009-11-17T06:46:10.000-0500</relative-time></i></p>
+                        <p>This patch includes the previous one.</p>
+<p>Added encoding support on maven build.</p>
+<p>It's a good approach make build process "system independent".<br>
+We cannot trust systems 's defaults.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/ENGAGE-181/"><span class="aria-hidden">←</span> Previous: ENGAGE-181</a>
+        <a class="mx-1" href="/browse/ENGAGE-183/">Next: ENGAGE-183 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3473  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3473 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3473/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3473/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3473/">FLUID-3473</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3473: The Infusion Builder sometimes throws an error after downloading a package and reloading the page</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3473">FLUID-3473</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-01-07T16:49:30.000-0500" prefix="">2010-01-07T16:49:30.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-09-06T14:04:18.757-0400" prefix="">2013-09-06T14:04:18.757-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Infusion Builder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>I can't get this to reproduce every time, but periodically I can. Steps to reproduce:</p>
+<p>1. Go to the Builder production server: <a href="http://infusion-builder.fluidproject.org/infusionBuilder/html/InfusionBuilder.html">http://infusion-builder.fluidproject.org/infusionBuilder/html/InfusionBuilder.html</a><br>
+2. Pick a set of modules to download<br>
+3. Download the page<br>
+4. Refresh the page</p>
+<p>Here are the error messages I was getting back from the PHP interpreter:</p>
+<p><a href="http://www.pastie.org/770719">http://www.pastie.org/770719</a><br>
+<a href="http://www.pastie.org/770723">http://www.pastie.org/770723</a><br>
+<a href="http://www.pastie.org/770736">http://www.pastie.org/770736</a></p>
+<p>Note that these messages are the same each time, but some are more complete than others.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Firefox 3.5 and Safari 4.0.4, Mac OS X 10.5</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3473/FLUID-3473.patch.txt">
+                            
+                                FLUID-3473.patch.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24574">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-01-07T16:53:16.000-0500">2010-01-07T16:53:16.000-0500</relative-time></i></p>
+                        <p>With a bit of patience, I can also reproduce this issue on the daily build instance of the Builder running at <a href="http://forge.fluidproject.org/infusionBuilder/html/InfusionBuilder.html">http://forge.fluidproject.org/infusionBuilder/html/InfusionBuilder.html</a>. Here's the error message I encountered:</p>
+<p><a href="http://www.pastie.org/770754">http://www.pastie.org/770754</a></p>
+
+                    </li>
+                    
+                    <li id="comment-24575">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-01-08T16:22:41.000-0500">2010-01-08T16:22:41.000-0500</relative-time></i></p>
+                        <p>Through a day's worth of testing, we've seen that this issue is consistently reproducible, thought still vaguely elusive.</p>
+<p>We think that ultimately this issue is caused by the fact that we're returning the file's binary data directly as the result of a POST request. Proper use of HTTP should not return a resource as the result of a POST, so we should probably do the following:</p>
+<p>1. Ensure that the built file is Web-visible (i.e. has a proper URL to GET to)<br>
+2. From the form submission POST, redirect the browser to a GET request for the file</p>
+<p>I expect that this should address the issue of POST requests getting resubmitted by the browser unexpectedly. In addition, we can further work around this problem by not hiding the Builder's main page upon submitting the form, ensuring that the user has no reason to refresh the Builder page unless they, well, want to refresh it.</p>
+
+                    </li>
+                    
+                    <li id="comment-24576">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2010-09-07T12:11:51.879-0400">2010-09-07T12:11:51.879-0400</relative-time></i></p>
+                        <p>The cause of the issue is because the server side script is not ceased when the download completes. A refresh right after the download forces the server script to push down the next page before the download request completes, in which case the refreshed page considers there is server output ahead of its http header, which is not allowed.</p>
+<p><a href="/browse/FLUID-3473/">FLUID-3473</a>.patch.txt fixes 2 issues:<br>
+1. stop the server script once the download completes;<br>
+2. use file_get_contents() instead of fpassthru() to retrieve the zip file for download. fpassthru() somehow makes the value of CONTENT-LENGTH, along with the whole http header, displayed on the page refreshed right after the download. This might because the fclose() never have a chance to be called for the file handler opened for fpassthru().</p>
+
+                    </li>
+                    
+                    <li id="comment-24577">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2010-09-09T14:48:04.885-0400">2010-09-09T14:48:04.885-0400</relative-time></i></p>
+                        <p>Committed Cindy's patch at revision 10032</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3472/"><span class="aria-hidden">←</span> Previous: FLUID-3472</a>
+        <a class="mx-1" href="/browse/FLUID-3474/">Next: FLUID-3474 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

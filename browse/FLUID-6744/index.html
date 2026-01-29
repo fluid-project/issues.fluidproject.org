@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6744  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6744 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6744/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6744/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6744/">FLUID-6744</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6744: Undefined options value causes corruption in options merging</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6744">FLUID-6744</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2022-07-07T07:29:54.686-0400" prefix="">2022-07-07T07:29:54.686-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-17T08:03:27.338-0400" prefix="">2024-07-17T08:03:27.338-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Ordinarily it is not possible for a component's options to hold the value <code>undefined</code> but this can be achieved when sourcing subcomponent options wholesale from an undefined source, e.g. </p>
+<pre><code class="hljs language-java">dynamicComponents: {
+        enactors: {
+            sources: <span class="hljs-string">"{uiEnhancer}.options.enactorRegistry"</span>,
+            type: <span class="hljs-string">"{source}.type"</span>,
+            options: <span class="hljs-string">"{source}.options"</span>
+        }
+    },
+</code></pre>
+<p>This ends up falling foul of a faulty optimisation written very early into the 2011-era options merging pipeline:</p>
+<pre><code class="hljs language-java">function <span class="hljs-title function_">regenerateSources</span><span class="hljs-params">(sources, segs, limit, sourceStrategies)</span> {
+    <span class="hljs-type">var</span> <span class="hljs-variable">togo</span> <span class="hljs-operator">=</span> [];
+    <span class="hljs-keyword">for</span> (<span class="hljs-type">var</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; sources.length; ++i) {
+        <span class="hljs-type">var</span> <span class="hljs-variable">thisSource</span> <span class="hljs-operator">=</span> regenerateCursor(sources[i], segs, limit, sourceStrategies[i]);
+        <span class="hljs-keyword">if</span> (thisSource !== undefined) {
+            togo.push(thisSource);
+        }
+    }
+    <span class="hljs-keyword">return</span> togo;
+}
+</code></pre>
+<p>This produces a "sources" array one shorter than the original strategies array and ensure that the last options distribution, whatever it is, will be lost.</p>
+<p>For example, with multiple options distributions targetting "gradeNames".</p>
+<p>What we have tried to write is</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.prefs.moduleSyllabificationPattern"</span>, {
+&#160; &#160; gradeNames: <span class="hljs-string">"fluid.component"</span>,
+&#160; &#160; <span class="hljs-comment">// This value and mechanism should become the default</span>
+&#160; &#160; modulePatternPrefix: <span class="hljs-string">"%fluid-infusion/lib/hypher/patterns"</span>,
+&#160; &#160; terms: {
+&#160; &#160; &#160; &#160; patternPrefix: <span class="hljs-string">"@expand:fluid.resourceLoader.rewritePath({that}.options.modulePatternPrefix)"</span>,
+&#160; &#160; }
+});fluid.makeGradeLinkage(<span class="hljs-string">"fluid.prefs.moduleSyllabificationPatternDistributor"</span>,&#160;
+&#160; &#160; [<span class="hljs-string">"fluid.prefs.enactor.syllabification.patterns"</span>], <span class="hljs-string">"fluid.prefs.moduleSyllabificationPattern"</span>);
+</code></pre>
+<p>targetting</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.prefs.enactor.syllabification.patterns"</span>, {
+&#160; &#160; terms: {
+&#160; &#160; &#160; &#160; patternPrefix: <span class="hljs-string">"../../../lib/hypher/patterns"</span>
+&#160; &#160; },
+&#160; &#160; patterns: {
+&#160; &#160; &#160; &#160; be: <span class="hljs-string">"%patternPrefix/bg.js"</span>,
+ ...
+</code></pre>
+<p>but note that the "patterns" is plastered onto the enactor itself with</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.prefs.enactor.syllabification"</span>, {
+&#160; &#160; gradeNames: [<span class="hljs-string">"fluid.prefs.enactor"</span>, <span class="hljs-string">"fluid.prefs.enactor.syllabification.patterns"</span>, <span class="hljs-string">"fluid.viewComponent"</span>], 
+....
+</code></pre>
+<p>and that in the Infusion 5 prefs framework we have</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.prefs.enactor"</span>, {
+&#160; &#160; gradeNames: [<span class="hljs-string">"fluid.modelComponent"</span>, <span class="hljs-string">"fluid.prefs.withPreferencesMap"</span>],
+&#160; &#160; prefsMapVariety: <span class="hljs-string">"enactor"</span>
+});
+</code></pre>
+<p>but which we at the same time distributed in via</p>
+<pre><code class="hljs language-java">weaveEnactors: {
+            target: <span class="hljs-string">"{that fluid.prefs.enactor}.options.gradeNames"</span>,
+            record: <span class="hljs-string">"fluid.prefs.withPreferencesMap"</span>
+        }
+</code></pre>
+<p>We found that due to the mutation-fest in fluid.makeMergeStrategy that the expanded "targets" were off by one after the first one targetting gradeNames. This can't really be economically resolved until we axe the whole options merging pipeline and go towards an immutable mat-based system for Infusion 6.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25159">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2022-08-04T13:48:11.087-0400">2022-08-04T13:48:11.087-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/infusion/pull/1087">The pull request</a> is merged at <a href="https://github.com/fluid-project/infusion/commit/bb7d09d84b38984f35bc90043e61093ff7bfb35b">https://github.com/fluid-project/infusion/commit/bb7d09d84b38984f35bc90043e61093ff7bfb35b</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6743/"><span class="aria-hidden">←</span> Previous: FLUID-6743</a>
+        <a class="mx-1" href="/browse/FLUID-6745/">Next: FLUID-6745 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

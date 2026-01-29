@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4320  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4320 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4320/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4320/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4320/">FLUID-4320</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4320: Refactor TextSizer and LineSpacer to remove repeated code</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4320">FLUID-4320</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Michelle D'Souza</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Michelle%20D'Souza">Michelle D'Souza</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-07-04T12:52:49.020-0400" prefix="">2011-07-04T12:52:49.020-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-06-09T14:04:56.807-0400" prefix="">2015-06-09T14:04:56.807-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UIEnhancer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Text Sizer and Line Spacer use a similar strategy for enacting the setting upon the page and can be refactored to allow better code reuse. Here is the code review comment from Antranig for <a href="/browse/FLUID-4207/">FLUID-4207</a>:</p>
+<p>Hi, these changes generally look very good. It's good to see the functions broken out into the public namespace and the new "half-ants". The only problematic area I see is the "set" functions. The responsibilities of these aren't well factored, and a lot of the implementation is in common. The "middle section" should instead be reformed as a "model normalisation function" which takes an incoming value ("times") into one which is suitable to set directly via xxxx.css(). The "ant" should then take as configuration the name of the CSS property which it modifies, and then the rest of the workflow of "set" can be in common between the "half-ants". It might be worth descending them from some common grade, or sharing implementation in some other way.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14825">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-09-06T12:57:40.665-0400">2013-09-06T12:57:40.665-0400</relative-time></i></p>
+                        <p>The refactoring should probably revolve around grades now. Both of these panels could share a common grade and have specific configuration for the differences.</p>
+
+                    </li>
+                    
+                    <li id="comment-14829">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-09T14:04:56.805-0400">2015-06-09T14:04:56.805-0400</relative-time></i></p>
+                        <p>The underlying codebase for which this jira referenced, has already been refactored, likely in work for Infusion 1.5.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4319/"><span class="aria-hidden">←</span> Previous: FLUID-4319</a>
+        <a class="mx-1" href="/browse/FLUID-4321/">Next: FLUID-4321 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

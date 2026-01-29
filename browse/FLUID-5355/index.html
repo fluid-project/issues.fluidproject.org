@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5355  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5355 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5355/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5355/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5355/">FLUID-5355</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5355: Climate Change demo should handle the case where the TTS server is unavailable.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5355">FLUID-5355</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-05-01T11:45:36.157-0400" prefix="">2014-05-01T11:45:36.157-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-06-26T09:57:42.400-0400" prefix="">2015-06-26T09:57:42.400-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.9</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Demos</li>
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The climate change demo's text-to-speech feature requires access to a server hosted at the IDRC. The demo should ensure to handle the case where the server is down or otherwise inaccessible (e.g. running locally without internet access). </p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20688">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-05-01T11:46:01.777-0400">2014-05-01T11:46:01.777-0400</relative-time></i></p>
+                        <p>A first step solution may be to just use a browser alert to notify the user that the server is unavailable.</p>
+
+                    </li>
+                    
+                    <li id="comment-20689">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-05-01T13:32:16.424-0400">2014-05-01T13:32:16.424-0400</relative-time></i></p>
+                        <p>Michelle D'Souza I attempted to implement a simple solution for this using the onError event from the SelfVoicingEnactor: <br>
+<a href="https://github.com/fluid-project/infusion/blob/master/src/demos/prefsFramework/js/SelfVoicingEnactor.js#L103-L106">https://github.com/fluid-project/infusion/blob/master/src/demos/prefsFramework/js/SelfVoicingEnactor.js#L103-L106</a></p>
+<p>This works okay in Firefox, but the event isn't triggered in Chrome. It appears that Chrome throws an error as soon as the resource is inaccessible, preventing our error event pipeline from triggering.</p>
+<p>Is it enough to have this working just in Firefox? (only firefox and chrome support the TTS enactor).</p>
+
+                    </li>
+                    
+                    <li id="comment-20690">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-05-02T10:30:28.127-0400">2014-05-02T10:30:28.127-0400</relative-time></i></p>
+                        <p>I did some more experimentation with this to see if I could use a try-catch block to get at the error, but this didn't work either. This is possibly a result of asynchrony in retrieving the resource. </p>
+<p>It appears that the library we are using to manage the audio, has an open issue for this <a href="https://github.com/jaysalvat/buzz/issues/64">https://github.com/jaysalvat/buzz/issues/64</a></p>
+
+                    </li>
+                    
+                    <li id="comment-20691">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-05-05T12:22:19.073-0400">2014-05-05T12:22:19.073-0400</relative-time></i></p>
+                        <p>Submitted a pull request to handle the error in Firefox. <br>
+<a href="https://github.com/fluid-project/infusion/pull/511">https://github.com/fluid-project/infusion/pull/511</a></p>
+
+                    </li>
+                    
+                    <li id="comment-20692">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-05-05T15:10:20.985-0400">2014-05-05T15:10:20.985-0400</relative-time></i></p>
+                        <p>The pull request has been merged into the project repo @ 2a94c0771e675fabf51f617c8d958e87d29e4f4f</p>
+<p>Note that the fix pops up the alert window in firefox but not in chrome.</p>
+
+                    </li>
+                    
+                    <li id="comment-20693">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-15T14:45:42.661-0400">2015-06-15T14:45:42.661-0400</relative-time></i></p>
+                        <p>The TTS Server is no longer being used. Instead, TTS is supplied via the web speech api. Browsers that don't support the web speech api, do not show the adjuster.</p>
+
+                    </li>
+                    
+                    <li id="comment-20694">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-26T09:50:49.805-0400">2015-06-26T09:50:49.805-0400</relative-time></i></p>
+                        <p>Reopening to change the fix version to 1.9</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5354/"><span class="aria-hidden">←</span> Previous: FLUID-5354</a>
+        <a class="mx-1" href="/browse/FLUID-5356/">Next: FLUID-5356 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

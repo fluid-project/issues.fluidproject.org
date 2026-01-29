@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-862  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-862 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-862/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-862/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-862/">FLUID-862</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-862: Cannot use the keyboard to navigate away from the reorderable jQuery tabs, using ff</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-862">FLUID-862</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Duplicate">Duplicate</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-07-08T16:01:36.000-0400" prefix="">2008-07-08T16:01:36.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-08-13T15:29:36.000-0400" prefix="">2008-08-13T15:29:36.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                            <li>0.3</li>
+                            
+                            <li>0.4beta1</li>
+                            
+                            <li>0.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>You are able to tab to the sortable jQuery tabs; however, once a tab has focus, you are unable to tab off. shift-tab also has no effect.</p>
+<p>Steps to reproduce:</p>
+<p>1) open the reorderable jQuery UI tabs page off of the daily build site:<br>
+<a href="http://build.fluidproject.org/fluid/sample-code/reorderer/jquery-tabs/jquery-tabs.html">http://build.fluidproject.org/fluid/sample-code/reorderer/jquery-tabs/jquery-tabs.html</a></p>
+<p>2) tap the 'tab' key until one of the reoderable jQuery tabs has focus. </p>
+<p>3) tap the 'tab' key again. Notice that there is no response. (note in ff3, it cycles through the jQuery tabs)</p>
+<p>4) tap 'shift-tab'. Notice that there is no response. </p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF2 (Mac OS X, Win XP)<br>
+FF3 (Win XP)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19673">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-07-08T18:25:54.000-0400">2008-07-08T18:25:54.000-0400</relative-time></i></p>
+                        <p>Subsequent tabs are actually moving focus among the tabs (with no visual ques). This is a result of the inherent jQuery tabs keyboard interaction: <a href="http://ui.jquery.com/functional_demos/#ui.tabs">http://ui.jquery.com/functional_demos/#ui.tabs</a></p>
+<p>The inherent jQuery tabs keyboard interaction seems to be different than what we've implemented (and what general guidelines recommend, i.e. tab <strong>to</strong> a group, then arrow around <strong>in</strong> the group). Not sure how we should deal with this.</p>
+
+                    </li>
+                    
+                    <li id="comment-19674">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-07-09T17:37:10.000-0400">2008-07-09T17:37:10.000-0400</relative-time></i></p>
+                        <p>Justin, could you revisit this one, and check if focus is simply moving amongs the tabs without any visual indication? (if you hit enter, it should activate a tab, confirming that you've moved focus).</p>
+<p>The fact that you can tab amongst the tabs is a bug in jQuery: <a href="http://ui.jquery.com/bugs/ticket/3079">http://ui.jquery.com/bugs/ticket/3079</a></p>
+
+                    </li>
+                    
+                    <li id="comment-19675">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-07-09T17:49:06.000-0400">2008-07-09T17:49:06.000-0400</relative-time></i></p>
+                        <p>No, the focus is not moving at all.</p>
+<p>Pressing 'tab' multiple times and then pressing 'enter', still activates the same jQuery tab.</p>
+<p>When you press 'tab' after putting focus on the first jQuery tab the message at the bottom of the FF2 browser says:<br>
+<a href="http://build.fluidproject.org/fluid/sample-code/reorderer/jquery-tabs/jquery-tabs.html#fragment-0">http://build.fluidproject.org/fluid/sample-code/reorderer/jquery-tabs/jquery-tabs.html#fragment-0</a></p>
+<p>If you use the arrow keys to move focus to the next jQuery tab and press the 'tab' key, the message says:<br>
+<a href="http://build.fluidproject.org/fluid/sample-code/reorderer/jquery-tabs/jquery-tabs.html#fragment-1">http://build.fluidproject.org/fluid/sample-code/reorderer/jquery-tabs/jquery-tabs.html#fragment-1</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-861/"><span class="aria-hidden">←</span> Previous: FLUID-861</a>
+        <a class="mx-1" href="/browse/FLUID-863/">Next: FLUID-863 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

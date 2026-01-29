@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5887  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5887 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5887/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5887/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5887/">FLUID-5887</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5887: Model component apparatus may initialise multiple times on the same component</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5887">FLUID-5887</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-04-12T17:55:53.130-0400" prefix="">2016-04-12T17:55:53.130-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T09:26:59.984-0400" prefix="">2024-07-22T09:26:59.984-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In some cases (presumably, where a component inherits from fluid.modelComponent via multiple paths), the special members "model" and "modelRelay" may accumulate multiple copies of their expander definitions, causing them to initialise multiple times. Particularly devastating is if there is a modelListeners block which will then register its listeners multiple times.</p>
+<p>This is caused by the numerous faults described in <a href="/browse/FLUID-5800/">FLUID-5800</a> - see also <a href="/browse/FLUID-5668/">FLUID-5668</a> for other faults with "members". We don't have a choice but to move to some C3-like system which ensures that material inherited in a grade hierarchy is accepted just once from the same parent grade.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23660">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-04-12T17:56:40.048-0400">2016-04-12T17:56:40.048-0400</relative-time></i></p>
+                        <p>Smoking gun test is to add the following in DataBinding.js:</p>
+<pre><code class="hljs language-javascript">fluid.<span class="hljs-property">establishModelRelay</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">that, optionsModel, optionsML, optionsMR, applier</span>) {
+        <span class="hljs-keyword">if</span> (that.<span class="hljs-property">modelRelayEstablishing</span>) {
+            fluid.<span class="hljs-title function_">fail</span>(<span class="hljs-string">"ERROR: reentry into fluid.establishModelRelay"</span>);
+        }
+        that.<span class="hljs-property">modelRelayEstablishing</span> = <span class="hljs-literal">true</span>;
+</code></pre>
+<p>Currently this causes no failure in a core fixture, but will, for example, cause Builder.js tests to bomb out in the prefs framework</p>
+
+                    </li>
+                    
+                    <li id="comment-23662">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2016-05-05T10:25:55.377-0400">2016-05-05T10:25:55.377-0400</relative-time></i></p>
+                        <p>The pull request <a href="https://github.com/fluid-project/infusion/pull/706">https://github.com/fluid-project/infusion/pull/706</a> has been merged into the project repo master branch at 63b8a53442f712d00dfbb684702ee1f7df2b5f55</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5886/"><span class="aria-hidden">←</span> Previous: FLUID-5886</a>
+        <a class="mx-1" href="/browse/FLUID-5888/">Next: FLUID-5888 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

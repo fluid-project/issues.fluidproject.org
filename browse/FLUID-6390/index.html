@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6390  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6390 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6390/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6390/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6390/">FLUID-6390</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6390: Implement enhanced form of dynamic components that will allow components to be "lensed into existence"</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6390">FLUID-6390</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-08-01T10:12:00.445-0400" prefix="">2019-08-01T10:12:00.445-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:23.571-0400" prefix="">2024-07-22T10:35:23.571-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>A long-standing and highly desirable improvement to our rather programmatic "dynamic component" support will allow a group of subcomponents to be put into correspondence with a selection of model material. Updates to the membership of a container in the model will then be automatically reflected in the population of components (and also vice versa, in the case that such a component is destroyed).<br>
+This establishes a kind of "lens" between the model world (actually a kind of potentia II) and the extended world of components (extensa) - following the terminology of the "Queen of Sheba" paper <a href="https://github.com/amb26/papers/tree/master/ppig-2016a">https://github.com/amb26/papers/tree/master/ppig-2016a</a> ).<br>
+A convenient way of expressing this would be to reuse the existing dynamicComponents syntax described at <a href="https://docs.fluidproject.org/infusion/development/SubcomponentDeclaration.html#dynamic-components">https://docs.fluidproject.org/infusion/development/SubcomponentDeclaration.html#dynamic-components</a> , but to add recognition if the "sources" element refers to a model path on this or another component. If so, the lifetime correspondence will be set up.<br>
+This will eliminate several highly annoying patterns focusing, for example, on the "DynamicComponentIndexer" which has recurred endlessly in various guises, e.g. <a href="https://github.com/amb26/fluid-authoring/blob/FLUID-4884/src/client/js/DynamicComponentIndexer.js">https://github.com/amb26/fluid-authoring/blob/FLUID-4884/src/client/js/DynamicComponentIndexer.js</a> , a now removed one tracking the GPII LifecycleManager's session components, and at least one other, and eliminate the obviously unsatisfactory asymmetry between the creation process of dynamic components (from data or an event firing) and their destruction via a call to destroy().<br>
+This pattern was appealed to in several of the Infusion-like code samples presented in the EICS 2020 paper on entanglements, readable at <a href="https://github.com/amb26/papers/tree/master/eics-2020">https://github.com/amb26/papers/tree/master/eics-2020</a> . A fairly complete Infusion treatment of the sample is available at <a href="https://pad.gpii.net/p/cursor-entanglement-sketch-tn2i4nip">https://pad.gpii.net/p/cursor-entanglement-sketch-tn2i4nip</a> with the relevant definition at line 104</p>
+<p>This pattern will form a key portion of the new <a href="/browse/FLUID-5047/">FLUID-5047</a> renderer, eliminating awkward constructs such as "joint containers".</p>
+<p>It seems there will be three main formats for the imaged model material - </p>
+<p>i) A simple boolean, lensed into construction or destruction of a single component. This might well be signalled by the use of "source" rather than "sources" in the dynamic component record.</p>
+<p>ii) An array, lensed into an orderable set of components. We need to consider whether we will retain the existing member name allocation scheme for these components, and arrive at a stable suffix somehow, or alter the layout of the component tree to permit arrays of components to appear as members. The latter seems quite desirable since we will frequently need to lay our hands on a conventional array of components matching the model array. This will also depend on implementing <a href="/browse/FLUID-3504/">FLUID-3504</a> support for the new ChangeApplier event types including "INSERT".</p>
+<p>iii) A hash, lensed into an either unordered or ordered set of components. Further dynamicComponents record entries may specify a member path providing a key and then further a sort function.</p>
+<p>These latter formats will synthesize modelListener definitions which will listen to the "path.*" form of changes in order to be notified of individual appearance and disappearance of elements. It seems that <a href="/browse/FLUID-3504/">FLUID-3504</a> support will need to be made specially aware of INSERT via this route, whereas other forms of listeners will just see the change as an ADD/CHANGE.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6389/"><span class="aria-hidden">←</span> Previous: FLUID-6389</a>
+        <a class="mx-1" href="/browse/FLUID-6391/">Next: FLUID-6391 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

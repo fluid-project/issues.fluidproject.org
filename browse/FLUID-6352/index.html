@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6352  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6352 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6352/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6352/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6352/">FLUID-6352</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6352: Switch to using hyphenation patterns from CTAN</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6352">FLUID-6352</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-11-16T09:55:23.322-0500" prefix="">2018-11-16T09:55:23.322-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-11-16T10:08:35.282-0500" prefix="">2018-11-16T10:08:35.282-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UIEnhancer</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently the Syllabification enactor makes use of the <a href="https://www.npmjs.com/package/hypher">Hypher</a> library to separate words into their syllables. Hypher makes use of language pattern files to do that splitting of the words based on language and locale. We've forked the repo with these patterns so that we can pull them in from NPM ( <a href="https://github.com/fluid-project/hyphenation-patterns">https://github.com/fluid-project/hyphenation-patterns</a>&#160;). We should explore creating our own set of pattern files in the Hypher format based on the pattern files from CTAN. ( <a href="https://ctan.org/pkg/hyph-utf8">https://ctan.org/pkg/hyph-utf8</a> <a href="https://github.com/hyphenation/tex-hyphen/tree/master/hyph-utf8/tex/generic/hyph-utf8/patterns/tex">https://github.com/hyphenation/tex-hyphen/tree/master/hyph-utf8/tex/generic/hyph-utf8/patterns/tex</a>&#160;). This would provide us with the following:</p>
+<ul>
+<li>more supported langauges</li>
+<li>updated patterns</li>
+<li>more open license</li>
+</ul>
+<p>Ideally we'll implement an automated process that can fetch the patterns from the CTAN repo and convert them into the properly formatted javascript files required by Hypher. The <a href="https://github.com/fluid-project/hyphenation-patterns/blob/master/patterns/nb-no.js">nb-no.js</a> pattern was at one point converted from CTAN and can be used to understand how to transition from one form to another. I believe that the main points of the translation are:</p>
+<ul>
+<li>"." replaced by "_"</li>
+<li>things in \patterns are transformed into a patterns object that is keyed by length with the value all of the patterns of that length concatenated into a single string</li>
+<li>things in&#160;\hyphenation being placed in a comma separated string in the exceptions property.</li>
+<li>replacing "-" with "\u2027"</li>
+<li>adding the other structures for adding the pattern to the Hypher namespace.</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6351/"><span class="aria-hidden">←</span> Previous: FLUID-6351</a>
+        <a class="mx-1" href="/browse/FLUID-6353/">Next: FLUID-6353 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

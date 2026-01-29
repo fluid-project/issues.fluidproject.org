@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> KETTLE-44  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" KETTLE-44 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/KETTLE-44/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/KETTLE-44/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/KETTLE" data-pagefind-filter="project">Kettle</a></li>
+                <li><a href="/browse/KETTLE-44/">KETTLE-44</a></li>
+            </ol>
+        </nav>
+        <h1>KETTLE-44: Update Kettle to use ESLint and Grunt 1.0.x</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/KETTLE-44">KETTLE-44</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Resolved</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/KETTLE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?reporter=Tony%20Atkins%20%5BRtF%5D">Tony Atkins [RtF]</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-06-07T07:09:22.331-0400" prefix="">2016-06-07T07:09:22.331-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-06-08T14:56:47.712-0400" prefix="">2016-06-08T14:56:47.712-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Following up on <a href="/browse/FLUID-5120/">FLUID-5120</a>, we should update Kettle to:</p>
+<p>1. Use ESLint and remove JSHint<br>
+2. Use a 1.0.x version of Grunt and all Grunt plugins.</p>
+<p>Antranig Basman, I was planning to submit a small PR for this unless you, Cindy Li, or someone else on the team was already taking it on.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26153">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-06-07T07:09:55.490-0400">2016-06-07T07:09:55.490-0400</relative-time></i></p>
+                        <p>We need some small discussion around the right "strict" setting before this can proceed:</p>
+<p><a href="https://issues.fluidproject.org/browse/FLUID-5914">https://issues.fluidproject.org/browse/FLUID-5914</a></p>
+
+                    </li>
+                    
+                    <li id="comment-26154">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-06-07T07:59:33.543-0400">2016-06-07T07:59:33.543-0400</relative-time></i></p>
+                        <p>I proceeded with everything else (including a new Gruntfile, etc.).  I would also like to add a "test" script to the package.json, but get odd errors when doing so.  Antranig Basman, we should look at this together, it should not take more than five minutes.</p>
+
+                    </li>
+                    
+                    <li id="comment-26155">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-06-07T08:09:32.963-0400">2016-06-07T08:09:32.963-0400</relative-time></i></p>
+                        <p>Here is the branch:</p>
+<p><a href="https://github.com/the-t-in-rtf/kettle/tree/KETTLE-44">https://github.com/the-t-in-rtf/kettle/tree/KETTLE-44</a></p>
+<p>If I run <code>node tests/all-tests.js</code>, I get:</p>
+<pre><code class="hljs language-java">&gt; node test/all-tests.js
+function
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-26156">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-06-07T15:34:22.292-0400">2016-06-07T15:34:22.292-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/kettle/pull/23">https://github.com/fluid-project/kettle/pull/23</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/KETTLE-43/"><span class="aria-hidden">←</span> Previous: KETTLE-43</a>
+        <a class="mx-1" href="/browse/KETTLE-45/">Next: KETTLE-45 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

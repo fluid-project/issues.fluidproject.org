@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2638  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2638 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2638/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2638/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2638/">FLUID-2638</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2638: Invitation style causes Rich Text Inline Edit to misbehave</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2638">FLUID-2638</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>y z</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-04-30T15:57:04.000-0400" prefix="">2009-04-30T15:57:04.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-07-31T10:32:36.000-0400" prefix="">2009-07-31T10:32:36.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.0</li>
+                            
+                            <li>1.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1.1</li>
+                            
+                            <li>1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently Invitation style in is being over ridden by null if using Rich Text Inline Edit. This means that Invitation styles are not being applied by default regardless of how the user has defined their styles.</p>
+<p>Apparently invitation styles was causing flickering when combined with tooltip and therefore invitation is set to null in the API to avoid this. This is an issue since a user should be able to style an invitation for the Rich Text Inline Edit.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-2638/patch.txt">
+                            
+                                patch.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-17100">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-07-27T16:28:06.000-0400">2009-07-27T16:28:06.000-0400</relative-time></i></p>
+                        <p>Bug Parade 1.1.1 release</p>
+
+                    </li>
+                    
+                    <li id="comment-17101">
+                        <p class="mb-0"><b>y z</b> <i>commented <relative-time datetime="2009-07-30T11:48:03.000-0400">2009-07-30T11:48:03.000-0400</relative-time></i></p>
+                        <p>patch fixes the flickering problem:</p>
+<ul>
+<li>added new css class for rich inline edit invitation style (that has no border)</li>
+<li>added the newly created css class as a default invitation style for richinlineeditors (both tinymce and fck)</li>
+<li>changed markup for quickstart example for inline edit that fixes changes incorrect &lt;span&gt; tags that contain &lt;p&gt; tags onto &lt;div&gt; tags.</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-17102">
+                        <p class="mb-0"><b>y z</b> <i>commented <relative-time datetime="2009-07-30T13:04:16.000-0400">2009-07-30T13:04:16.000-0400</relative-time></i></p>
+                        <p>changed the name of the css class </p>
+
+                    </li>
+                    
+                    <li id="comment-17103">
+                        <p class="mb-0"><b>Jacob Farber</b> <i>commented <relative-time datetime="2009-07-31T10:00:06.000-0400">2009-07-31T10:00:06.000-0400</relative-time></i></p>
+                        <p>I reviewed the code, and everything looks good.</p>
+
+                    </li>
+                    
+                    <li id="comment-17104">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-07-31T10:32:36.000-0400">2009-07-31T10:32:36.000-0400</relative-time></i></p>
+                        <p>Verified fix using:</p>
+<p>IE 7, FF3 (Win Vista)<br>
+Safari 3, Safari 4, Opera 9.6, FF3.5 (Mac OS 10.5)</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-2637/"><span class="aria-hidden">←</span> Previous: FLUID-2637</a>
+        <a class="mx-1" href="/browse/FLUID-2639/">Next: FLUID-2639 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

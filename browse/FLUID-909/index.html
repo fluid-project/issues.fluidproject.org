@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-909  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-909 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-909/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-909/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-909/">FLUID-909</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-909: Browser width affects the arrangement of reorderable elements while dragging the avatar</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-909">FLUID-909</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Michelle D'Souza</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-07-16T13:19:30.000-0400" prefix="">2008-07-16T13:19:30.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-10-31T09:11:11.000-0400" prefix="">2008-10-31T09:11:11.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                            <li>0.3</li>
+                            
+                            <li>0.4beta1</li>
+                            
+                            <li>0.4</li>
+                            
+                            <li>0.5beta1</li>
+                            
+                            <li>0.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.6beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Image Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The extra spaces (it looks like invisible elements)  are added at the end of the row while dragging the avatar. It only  seems to be occuring in when the browser width is *<strong>JUST</strong>* big enough to hold the elements in their arangement. </p>
+<p>Steps to reproduce:</p>
+<p>1) open the generic light box example from the daily build site:<br>
+<a href="http://build.fluidproject.org/fluid/sample-code/reorderer/generic-lightbox/generic-lightbox.html">http://build.fluidproject.org/fluid/sample-code/reorderer/generic-lightbox/generic-lightbox.html</a></p>
+<p>2) adjust the browser size so that it is *<strong>JUST</strong>* wide enough to hold two full rows and a third row with only 2 elements</p>
+<p>3) attempt to drag an element. Notice that the row it is over, has an empty space at the end, which pushes the other elements forward.</p>
+<p>4) attempt to drag an element at the end of the row. Notice that there is now a new row created, which is completely blank except for the last element.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)<br>
+FF2, FF3, IE6, IE7, Opera 9.5 (Win XP)<br>
+FF3, IE7 (Win Vista)<br>
+FF3, IE6 (Win 2000)</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-909/909-Drag_bug_after.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-909/909-Drag_bug_after.png" alt="909-Drag_bug_after.png">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-909/909-Drag_bug_before.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-909/909-Drag_bug_before.png" alt="909-Drag_bug_before.png">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-909/FLUID-909-Misplaced_Avatar.jpg">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-909/FLUID-909-Misplaced_Avatar.jpg" alt="FLUID-909-Misplaced_Avatar.jpg">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-909/screenshot-1.jpg">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-909/screenshot-1.jpg" alt="screenshot-1.jpg">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-909/screenshot-2.jpg">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-909/screenshot-2.jpg" alt="screenshot-2.jpg">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20112">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-07-16T13:21:19.000-0400">2008-07-16T13:21:19.000-0400</relative-time></i></p>
+                        <p>"screenshot-1" shows the additional space at the end of a row</p>
+
+                    </li>
+                    
+                    <li id="comment-20114">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-07-16T13:22:24.000-0400">2008-07-16T13:22:24.000-0400</relative-time></i></p>
+                        <p>"screenshot-2" shows the additional row created when trying to drag to the avatar to the end of a row</p>
+
+                    </li>
+                    
+                    <li id="comment-20117">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-22T15:14:17.000-0400">2008-09-22T15:14:17.000-0400</relative-time></i></p>
+                        <p>Bug Parade: 0.5 release</p>
+
+                    </li>
+                    
+                    <li id="comment-20119">
+                        <p class="mb-0"><b>Jacob Farber</b> <i>commented <relative-time datetime="2008-09-22T15:31:51.000-0400">2008-09-22T15:31:51.000-0400</relative-time></i></p>
+                        <p>drop marker was taking up too much space, so its now utilizing the same technique as fluid.states.css drop marker to have no impact on layout</p>
+
+                    </li>
+                    
+                    <li id="comment-20122">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-22T15:39:53.000-0400">2008-09-22T15:39:53.000-0400</relative-time></i></p>
+                        <p>Verified fix using:</p>
+<p>FF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)<br>
+FF2, FF3, IE6, Opera 9.5 (Win XP)<br>
+FF3, IE7 (Win Vista)</p>
+
+                    </li>
+                    
+                    <li id="comment-20124">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-23T08:52:02.000-0400">2008-09-23T08:52:02.000-0400</relative-time></i></p>
+                        <p>Needed to add fix version</p>
+
+                    </li>
+                    
+                    <li id="comment-20127">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-23T08:52:11.000-0400">2008-09-23T08:52:11.000-0400</relative-time></i></p>
+                        <p>Needed to add fix version</p>
+
+                    </li>
+                    
+                    <li id="comment-20129">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2008-09-25T15:38:16.000-0400">2008-09-25T15:38:16.000-0400</relative-time></i></p>
+                        <p>This bug is back but not quite the same as before. See the screen shots above.  </p>
+<p>909-Drag_bug_before.jpg and 909-Drag_bug_after.jpg</p>
+<p>I saw this on FF3 on both Mac and Windows. The window was six across in rows 1 and 2, two across in row 3 with the window width just barely wide enough to accommodate the six images. </p>
+<p>When dragging an image to the bottom of the window below row 3 then the images in rows 1 and 2 will shift down to the next row.</p>
+<p>On Windows there is an additionally oddity, perhaps a different bug but related. When grabbing the image when the window is in this "tight" state, the avatar is sometimes offset from the pointer, extremely so for the rightmost images. (I will try to get a screenshot.)</p>
+
+                    </li>
+                    
+                    <li id="comment-20133">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2008-09-25T17:25:01.000-0400">2008-09-25T17:25:01.000-0400</relative-time></i></p>
+                        <p>Added a screenshot for the misplaced avatar. Unfortunately the screenshot did not capture the pointer. However from the position of the drop target you can kinda get the idea of just how off it was. </p>
+
+                    </li>
+                    
+                    <li id="comment-20135">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-10-31T09:11:11.000-0400">2008-10-31T09:11:11.000-0400</relative-time></i></p>
+                        <p>Appears to have been fixed with one of the updates to the Image Reorderer. May have had something to do with the drop target size.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-908/"><span class="aria-hidden">←</span> Previous: FLUID-908</a>
+        <a class="mx-1" href="/browse/FLUID-910/">Next: FLUID-910 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

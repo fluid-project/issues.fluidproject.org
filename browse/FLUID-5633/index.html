@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5633  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5633 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5633/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5633/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5633/">FLUID-5633</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5633: Listeners bound using the IoCSS syntax using the IoC testing framework are never unbound</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5633">FLUID-5633</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-04-17T16:36:45.962-0400" prefix="">2015-04-17T16:36:45.962-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:01.185-0400" prefix="">2024-07-22T10:35:01.185-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC Testing Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The IoC Testing framework uses a private "ad hoc" scheme for allowing IoCSS-like syntax in event binding for test fixtures. Unfortunately this implementation is bugged - after the listener instance in a fixture sequence executes, the listener should be unbound - unfortunately, all the confused implementor has done is to unregister the distribution that would bind the listener again - rather than, in addition, removing the listener itself.</p>
+<p>This emerged in work with the "first discovery tool" that had a sequence:</p>
+<pre><code class="hljs language-javascript"><span class="hljs-attr">sequence</span>: [{
+ <span class="hljs-attr">listener</span>: <span class="hljs-string">"gpii.tests.firstDiscovery.testInitButtonTops"</span>,
+ <span class="hljs-attr">args</span>: [<span class="hljs-string">"{firstDiscovery}"</span>, <span class="hljs-string">"{that}"</span>],
+ <span class="hljs-attr">priority</span>: <span class="hljs-string">"last"</span>,
+ <span class="hljs-attr">event</span>: <span class="hljs-string">"\{gpii.tests.firstDiscovery.langTests firstDiscovery}.events.onButtonTopsReady"</span>
+ }, {
+ <span class="hljs-attr">func</span>: <span class="hljs-string">"{firstDiscovery}.prefsEditorLoader.applier.change"</span>,
+ <span class="hljs-attr">args</span>: [<span class="hljs-string">"currentPanelNum"</span>, <span class="hljs-number">3</span>]
+ }, {
+ <span class="hljs-attr">listener</span>: <span class="hljs-string">"gpii.tests.firstDiscovery.testUnchangedButtonTops"</span>,
+ <span class="hljs-attr">args</span>: [<span class="hljs-string">"{firstDiscovery}"</span>, <span class="hljs-string">"{that}.buttonTops"</span>],
+ <span class="hljs-attr">event</span>: <span class="hljs-string">"{firstDiscovery}.events.onPanelShown"</span>
+ }, {
+ <span class="hljs-attr">jQueryTrigger</span>: <span class="hljs-string">"click"</span>,
+ <span class="hljs-attr">element</span>: <span class="hljs-string">"{firstDiscovery}.prefsEditorLoader.prefsEditor.gpii_firstDiscovery_panel_textSize.dom.increase"</span>
+ }, {
+ <span class="hljs-attr">func</span>: <span class="hljs-string">"\{firstDiscovery}.prefsEditorLoader.applier.change"</span>,
+ <span class="hljs-attr">args</span>: [<span class="hljs-string">"currentPanelNum"</span>, <span class="hljs-number">1</span>]
+ }, {
+ <span class="hljs-attr">listener</span>: <span class="hljs-string">"gpii.tests.firstDiscovery.testChangedButtonTops"</span>,
+ <span class="hljs-attr">args</span>: [<span class="hljs-string">"{firstDiscovery}"</span>, <span class="hljs-string">"\{that}.buttonTops"</span>],
+ <span class="hljs-attr">event</span>: <span class="hljs-string">"\{firstDiscovery}.events.onButtonTopsReady"</span>
+ }]
+</code></pre>
+<p>The IoCSS syntax is used with the first element, as always, to avoid triggering premature construction of the tree and confusing the manually issued QUnit timeout. Unfortunately, the selfsame event fires as sequence point 6 - the initial listener is still bound and causes a failure</p>
+<p>Uncaught TypeError: Cannot read property 'execute' of undefined<br>
+fluid.test.sequenceExecutor.that.execute @ IoCTestUtils.js:482<br>
+fluid.test.composeSimple @ IoCTestUtils.js:303<br>
+fluid.test.makeBinder.that.bind.wrapped @ IoCTestUtils.js:314<br>
+fluid.event.invokeListener @ infusion-custom.js:12900</p>
+<p>In fact, the sequence has finished, but listeners to the final event are still synchronously executing - so there is time for one more trigger of "that.execute" which attempts to trigger the sequence onto the 7th position - in fact, on behalf of the first listener, which did not believe it was the test-finishing listener.</p>
+<p>The faulty code is in fluid.test.decoders.event in IoCTestUtils.js and reads:</p>
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (analysed.<span class="hljs-property">path</span>) {
+    <span class="hljs-keyword">var</span> id;
+    bind = <span class="hljs-keyword">function</span> (<span class="hljs-params">wrapped</span>) {
+        <span class="hljs-keyword">var</span> options = {};
+        fluid.<span class="hljs-title function_">set</span>(options, [<span class="hljs-string">"listeners"</span>].<span class="hljs-title function_">concat</span>(analysed.<span class="hljs-property">path</span>),{ 
+            <span class="hljs-attr">listener</span>: wrapped, 
+            <span class="hljs-attr">args</span>: fixture.<span class="hljs-property">args</span>, 
+            <span class="hljs-attr">namespace</span>: fixture.<span class="hljs-property">namespace</span>, 
+            <span class="hljs-attr">priority</span>: fixture.<span class="hljs-property">priority</span> });
+    id = fluid.<span class="hljs-title function_">pushDistributions</span>(analysed.<span class="hljs-property">head</span>, analysed.<span class="hljs-property">selector</span>, [
+        {<span class="hljs-attr">options</span>: options, <span class="hljs-attr">recordType</span>: <span class="hljs-string">"distribution"</span>, <span class="hljs-attr">priority</span>: fluid.<span class="hljs-property">mergeRecordTypes</span>.<span class="hljs-property">distribution</span>}
+        ] );
+    };
+    unbind = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+        fluid.<span class="hljs-title function_">clearDistributions</span>(analysed.<span class="hljs-property">head</span>, id); 
+    };
+</code></pre>
+<p>as is clear, the "unbind" action only revokes the distribution and does not take any action to eliminate the listener which the framework directed into the options via the fluid.set directive.</p>
+<p>This is a little awkward since the listener gets bound declaratively and so cannot be unbound by instance. It seems that we could only resolve this by taking control of the listener namespace (we would have to advertise to fixture writers that this can not be controlled) and using it to set the listener into a uniquely guid-ed namespace in which we could then identify it.</p>
+<p>In general this issue can't be solved before the <a href="/browse/FLUID-5249/">FLUID-5249</a> work gets in and we gain the ability to write fluid.queryIoCSelector - since otherwise we could not discover the component holding the listener.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22727">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2018-02-20T10:31:57.393-0500">2018-02-20T10:31:57.393-0500</relative-time></i></p>
+                        <p>This was encountered again during work by the Astea team on the GPII's PSP survey dialog tests. These read:</p>
+<p></p>
+<pre><code class="hljs language-java">sequence: [{
+        func: <span class="hljs-string">"{that}.app.keyIn"</span>,
+        args: [<span class="hljs-string">"snapset_1a"</span>]
+    }, [ <span class="hljs-comment">// Test closing the survey using the break-out link</span>
+        {
+            func: <span class="hljs-string">"{that}.app.dialogManager.show"</span>,
+            args: [<span class="hljs-string">"survey"</span>, gpii.tests.webview.getSurveyFixture()]
+        }, {
+            event: <span class="hljs-string">"{that gpii.app.surveyDialog}.events.onSurveyCreated"</span>,
+            listener: <span class="hljs-string">"fluid.identity"</span>
+        }, {
+            func: <span class="hljs-string">"{that}.app.dialogManager.survey.surveyDialog.executeCommand"</span>,
+            args: [clickBreakOutLink]
+        }, {
+            event: <span class="hljs-string">"{that}.app.dialogManager.survey.surveyDialog.events.onSurveyClose"</span>,
+            listener: <span class="hljs-string">"jqUnit.assert"</span>,
+            args: [<span class="hljs-string">"Survey was closed by clicking on the break-out link"</span>]
+        }
+    ], [ <span class="hljs-comment">// Test that the survey will not close when clicking on a non-break-out link</span>
+        {
+            func: <span class="hljs-string">"{that}.app.dialogManager.show"</span>,
+            args: [<span class="hljs-string">"survey"</span>, gpii.tests.webview.getSurveyFixture()]
+        }, {
+            event: <span class="hljs-string">"{that gpii.app.surveyDialog}.events.onSurveyCreated"</span>,
+            listener: <span class="hljs-string">"fluid.identity"</span>
+        }, {
+            func: <span class="hljs-string">"{that}.app.dialogManager.survey.surveyDialog.executeCommand"</span>,
+            args: [clickNonBreakOutLink]
+        }, {
+            func: <span class="hljs-string">"jqUnit.assertTrue"</span>,
+            args: [
+                <span class="hljs-string">"Survey was not closed by clicking on a non-break-out link"</span>,
+                <span class="hljs-string">"{that}.app.dialogManager.survey.surveyDialog.model.isShown"</span>
+            ]
+        }
+    ], [ <span class="hljs-comment">// Test closing the survey using a close button within the content of the survey</span>
+        {
+            func: <span class="hljs-string">"{that}.app.dialogManager.show"</span>,
+            args: [<span class="hljs-string">"survey"</span>, gpii.tests.webview.getSurveyFixture()]
+        }, {
+            event: <span class="hljs-string">"{that gpii.app.surveyDialog}.events.onSurveyCreated"</span>,
+            listener: <span class="hljs-string">"fluid.identity"</span>
+        }, {
+            func: <span class="hljs-string">"{that}.app.dialogManager.survey.surveyDialog.executeCommand"</span>,
+            args: [clickCloseButton]
+        }, {
+            event: <span class="hljs-string">"{that}.app.dialogManager.survey.surveyDialog.events.onSurveyClose"</span>,
+            listener: <span class="hljs-string">"jqUnit.assert"</span>,
+            args: [<span class="hljs-string">"Survey was closed by clicking on the close button within the content"</span>]
+        }
+    ], [ <span class="hljs-comment">// Test closing the survey when a DOM element with id "EndOfSurvey" element appears in the survey.</span>
+        {
+            func: <span class="hljs-string">"{that}.app.dialogManager.show"</span>,
+            args: [<span class="hljs-string">"survey"</span>, gpii.tests.webview.getSurveyFixture()]
+        }, {
+            event: <span class="hljs-string">"{that gpii.app.surveyDialog}.events.onSurveyCreated"</span>,
+            listener: <span class="hljs-string">"fluid.identity"</span>
+        }, {
+            func: <span class="hljs-string">"{that}.app.dialogManager.survey.surveyDialog.executeCommand"</span>,
+            args: [addEndOfSurveyElement]
+        }, {
+            event: <span class="hljs-string">"{that}.app.dialogManager.survey.surveyDialog.events.onSurveyClose"</span>,
+            listener: <span class="hljs-string">"jqUnit.assert"</span>,
+            args: [<span class="hljs-string">"Survey was closed automatically when its end has been reached"</span>]
+        }
+    ], [ <span class="hljs-comment">// Test that the survey will not close if it does not need to close on submit</span>
+        {
+            func: <span class="hljs-string">"{that}.app.dialogManager.show"</span>,
+            args: [<span class="hljs-string">"survey"</span>, gpii.tests.webview.getSurveyFixture({closeOnSubmit: <span class="hljs-literal">false</span>})]
+        }, {
+            event: <span class="hljs-string">"{that gpii.app.surveyDialog}.events.onSurveyCreated"</span>,
+            listener: <span class="hljs-string">"fluid.identity"</span>
+        }, {
+            func: <span class="hljs-string">"{that}.app.dialogManager.survey.surveyDialog.executeCommand"</span>,
+            args: [addEndOfSurveyElement]
+        }, {
+            func: <span class="hljs-string">"jqUnit.assertTrue"</span>,
+            args: [
+                <span class="hljs-string">"Survey was not closed when its end has been reached as it is not configured to closeOnSubmit"</span>,
+                <span class="hljs-string">"{that}.app.dialogManager.survey.surveyDialog.model.isShown"</span>
+            ]
+        }
+    ], {
+        func: <span class="hljs-string">"{that}.app.keyOut"</span>
+    }]
+</code></pre>
+<p>In this case the multiple attempts to bind {that gpii.app.surveyDialog} accumulated and caused the usual sequence overrun as seen above. Time for a fix ...</p>
+<p></p>
+
+                    </li>
+                    
+                    <li id="comment-22732">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2018-02-20T20:30:28.588-0500">2018-02-20T20:30:28.588-0500</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/infusion/pull/876">The pull request</a> has been merged into the project repo master branch at 29c3e677e6405b0e288075cdf94d8936905d85af</p>
+
+                    </li>
+                    
+                    <li id="comment-22734">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2018-09-13T16:09:11.821-0400">2018-09-13T16:09:11.821-0400</relative-time></i></p>
+                        <p>I believe I'm experiencing this issue while working on tests for my localized UIO component in <a href="https://github.com/blueslug/infusion/tree/FLUID-6300">my <a href="/browse/FLUID-6300/">FLUID-6300</a> branch</a></p>
+<p>Here is the test sequence I'm trying to get working:</p>
+<pre><code class="hljs language-javascript"><span class="hljs-attr">sequence</span>: [{
+    <span class="hljs-attr">event</span>: <span class="hljs-string">"{prefsEditorBaseTest prefsEditor messageLoader}.events.onResourcesLoaded"</span>,
+    <span class="hljs-attr">listener</span>: <span class="hljs-string">"jqUnit.assertEquals"</span>,
+    <span class="hljs-attr">args</span>: [<span class="hljs-string">"defaultLocale is properly propagated to messageLoader"</span>, <span class="hljs-string">"fr"</span>, <span class="hljs-string">"{prefsEditor}.prefsEditorLoader.messageLoader.options.defaultLocale"</span>]
+},
+{
+    <span class="hljs-attr">event</span>: <span class="hljs-string">"{prefsEditorBaseTest prefsEditor prefsEditorLoader prefsEditor}.events.onReady"</span>,
+    <span class="hljs-attr">listener</span>: <span class="hljs-string">"fluid.tests.uiOptions.prefsEditorLocalizedTester.verifyPanelMessages"</span>,
+    <span class="hljs-attr">args</span>: <span class="hljs-string">"{prefsEditor}"</span>
+},
+{
+    <span class="hljs-attr">funcName</span>: <span class="hljs-string">"fluid.tests.uiOptions.prefsEditorLocalizedTester.verifySlidingPanelMessages"</span>,
+    <span class="hljs-attr">args</span>: [<span class="hljs-string">"{prefsEditor}"</span>, <span class="hljs-string">"prefsEditor"</span>, <span class="hljs-string">"Préférences de l'utilisateur"</span>]
+},
+{
+    <span class="hljs-attr">func</span>: <span class="hljs-string">"{prefsEditor}.events.onInterfaceLocaleChangeRequested.fire"</span>,
+    <span class="hljs-attr">args</span>: [<span class="hljs-string">"es"</span>]
+},
+{
+    <span class="hljs-attr">event</span>: <span class="hljs-string">"{prefsEditor messageLoader}.events.onResourcesLoaded"</span>,
+    <span class="hljs-attr">listener</span>: <span class="hljs-string">"jqUnit.assertEquals"</span>,
+    <span class="hljs-attr">args</span>: [<span class="hljs-string">"defaultLocale is properly propagated to messageLoader"</span>, <span class="hljs-string">"es"</span>, <span class="hljs-string">"{prefsEditor}.prefsEditorLoader.messageLoader.options.defaultLocale"</span>]
+}]
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-22738">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2018-09-13T17:02:40.671-0400">2018-09-13T17:02:40.671-0400</relative-time></i></p>
+                        <p>I have captured my failing case in this branch: <a href="https://github.com/BlueSlug/infusion/tree/FLUID-5633">https://github.com/BlueSlug/infusion/tree/FLUID-5633</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22740">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2018-09-17T20:33:41.899-0400">2018-09-17T20:33:41.899-0400</relative-time></i></p>
+                        <p>Further failure cases discovered by Gregor Moss</p>
+
+                    </li>
+                    
+                    <li id="comment-22743">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-10-05T10:24:08.113-0400">2018-10-05T10:24:08.113-0400</relative-time></i></p>
+                        <p>Merged PR ( <a href="https://github.com/fluid-project/infusion/pull/935">https://github.com/fluid-project/infusion/pull/935</a>&#160;) into the project repo at&#160;bfbbf740eddd18ec17b604d0e4a785ec3033383d</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5632/"><span class="aria-hidden">←</span> Previous: FLUID-5632</a>
+        <a class="mx-1" href="/browse/FLUID-5634/">Next: FLUID-5634 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

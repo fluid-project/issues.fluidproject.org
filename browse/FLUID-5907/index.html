@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5907  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5907 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5907/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5907/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5907/">FLUID-5907</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5907: Regression in model transformation support for arrayToSetMembership, empty path and escaping</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5907">FLUID-5907</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-05-18T21:31:50.321-0400" prefix="">2016-05-18T21:31:50.321-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T09:25:43.313-0400" prefix="">2024-07-22T09:25:43.313-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Model Transformation System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p><a href="/browse/FLUID-5133/">FLUID-5133</a> and <a href="/browse/FLUID-5867/">FLUID-5867</a>, whilst they have improved the model transformation system in important respects, have some implementation flaws which caused several failures when upgrading GPII's "universal" to the newer framework. Several transformations of type fluid.arrayToSetMembership and fluid.setMembershipToArray which were encoded in the solutions registry and the "inverse capabilities" document had their meaning change or broke. There are two issues:</p>
+<p>Firstly, and seemingly inadvertently, the interpretation of such transforms for which "inputPath" or "outputPath" is not set, has changed. Interestingly there has been a long-standing comment within <code>fluid.model.transform.getValue</code> which reads:</p>
+<pre><code class="hljs language-java"><span class="hljs-keyword">if</span> (inputPath !== undefined) { <span class="hljs-comment">// NB: We may one day want to reverse the crazy jQuery-like convention that "no path means root path"</span>
+</code></pre>
+<p>without meaning to, the <a href="/browse/FLUID-5867/">FLUID-5867</a> fix has indeed reversed this convention - any transform which has neither inputPath nor input set will behave as if it has an input of undefined and hence not act.<br>
+The old implementation read:</p>
+<pre><code class="hljs language-javascript">fluid.<span class="hljs-property">model</span>.<span class="hljs-property">transform</span>.<span class="hljs-property">getValue</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">inputPath, value, transform</span>) {
+        <span class="hljs-keyword">var</span> togo;
+        <span class="hljs-keyword">if</span> (inputPath !== <span class="hljs-literal">undefined</span>) { <span class="hljs-comment">// NB: We may one day want to reverse the crazy jQuery-like convention that "no path means root path"</span>
+            togo = fluid.<span class="hljs-title function_">get</span>(transform.<span class="hljs-property">source</span>, fluid.<span class="hljs-property">model</span>.<span class="hljs-title function_">composePaths</span>(transform.<span class="hljs-property">inputPrefix</span>, inputPath), transform.<span class="hljs-property">resolverGetConfig</span>);
+        }
+        <span class="hljs-keyword">if</span> (togo === <span class="hljs-literal">undefined</span>) {
+            togo = fluid.<span class="hljs-title function_">isPrimitive</span>(value) ? value : transform.<span class="hljs-title function_">expand</span>(value);
+        }
+        <span class="hljs-keyword">return</span> togo;
+    };
+</code></pre>
+<p>The new implementation reads</p>
+<pre><code class="hljs language-javascript">fluid.<span class="hljs-property">model</span>.<span class="hljs-property">transform</span>.<span class="hljs-property">getValue</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">inputPath, value, transformer</span>) {
+        <span class="hljs-keyword">var</span> togo;
+        <span class="hljs-keyword">if</span> (inputPath !== <span class="hljs-literal">undefined</span>) { <span class="hljs-comment">// NB: We may one day want to reverse the crazy jQuery-like convention that "no path means root path"</span>
+            togo = fluid.<span class="hljs-title function_">get</span>(transformer.<span class="hljs-property">source</span>, fluid.<span class="hljs-property">model</span>.<span class="hljs-title function_">composePaths</span>(transformer.<span class="hljs-property">inputPrefix</span>, inputPath), transformer.<span class="hljs-property">resolverGetConfig</span>);
+        }
+        <span class="hljs-keyword">if</span> (togo === <span class="hljs-literal">undefined</span>) {
+            <span class="hljs-comment">// <a href="/browse/FLUID-5867/">FLUID-5867</a> - actually helpful behaviour here rather than the insane original default of expecting a short-form value document</span>
+            togo = fluid.<span class="hljs-title function_">isPrimitive</span>(value) ? value :
+                (<span class="hljs-string">"literalValue"</span> <span class="hljs-keyword">in</span> value ? value.<span class="hljs-property">literalValue</span> :
+                (value.<span class="hljs-property">transform</span> === <span class="hljs-literal">undefined</span> ? value : transformer.<span class="hljs-title function_">expand</span>(value)));
+        }
+        <span class="hljs-keyword">return</span> togo;
+    };
+</code></pre>
+<p>It's still not clear how this regression has actually happened. For example, here is a transformation from <code>inverseCapabilities.json</code> which used to be effective and has now broken:</p>
+<pre><code class="hljs language-java">{
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"fluid.transforms.setMembershipToArray"</span>,
+                <span class="hljs-string">"outputPath"</span>: <span class="hljs-string">"http://registry\\.gpii\\.net/common/trackingTTS"</span>,
+                <span class="hljs-string">"presentValue"</span>: <span class="hljs-literal">true</span>,
+                <span class="hljs-string">"missingValue"</span>: <span class="hljs-literal">false</span>,
+                <span class="hljs-string">"options"</span>: {
+                    <span class="hljs-string">"reviewCursor\\.followFocus"</span>: <span class="hljs-string">"focus"</span>,
+                    <span class="hljs-string">"reviewCursor\\.followCaret"</span>: <span class="hljs-string">"caret"</span>,
+                    <span class="hljs-string">"reviewCursor\\.followMouse"</span>: <span class="hljs-string">"mouse"</span>
+                }
+            }
+</code></pre>
+<p>Adding <code>inputPath: ""</code> into its block causes it to work again.</p>
+<p>Similarly a forward leg from <code>win32.json</code> with missing <code>outputPath</code>:</p>
+<pre><code class="hljs language-java">{
+                            <span class="hljs-string">"type"</span>: <span class="hljs-string">"fluid.transforms.arrayToSetMembership"</span>,
+                            <span class="hljs-string">"inputPath"</span>: <span class="hljs-string">"http://registry\\.gpii\\.net/common/trackingTTS"</span>,
+                            <span class="hljs-string">"presentValue"</span>: <span class="hljs-literal">true</span>,
+                            <span class="hljs-string">"missingValue"</span>: <span class="hljs-literal">false</span>,
+                            <span class="hljs-string">"options"</span>: {
+                                <span class="hljs-string">"focus"</span>: <span class="hljs-string">"reviewCursor\\.followFocus"</span>,
+                                <span class="hljs-string">"caret"</span>: <span class="hljs-string">"reviewCursor\\.followCaret"</span>,
+                                <span class="hljs-string">"mouse"</span>: <span class="hljs-string">"reviewCursor\\.followMouse"</span>
+                            }
+                        },
+</code></pre>
+<p>This is the site of the 2nd bug. In the course of improving inversion support for <a href="/browse/FLUID-5133/">FLUID-5133</a>, the arrayToSetMembership implementation was broken by swapping fluid.set without configuration for the existing fluid.transform.setValue:</p>
+<p><a href="https://github.com/fluid-project/infusion/commit/9a87a98be6f5c2f680696b50b3cc9e4d6482cfe7#diff-b850758894970110e0af05626affc2e7L373">https://github.com/fluid-project/infusion/commit/9a87a98be6f5c2f680696b50b3cc9e4d6482cfe7#diff-b850758894970110e0af05626affc2e7L373</a></p>
+<p>This change fails to apply any EL escaping rules and so the output document is corrupted. The output SHOULD consist of a document whose keys are "reviewCursor.followFocus" etc.</p>
+<p>Note that the existing pull request in review for model transformation docs doesn't properly specify this behaviour: <a href="https://github.com/fluid-project/infusion-docs/pull/86/files">https://github.com/fluid-project/infusion-docs/pull/86/files</a></p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5906/"><span class="aria-hidden">←</span> Previous: FLUID-5906</a>
+        <a class="mx-1" href="/browse/FLUID-5908/">Next: FLUID-5908 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

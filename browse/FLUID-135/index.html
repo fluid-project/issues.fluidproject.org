@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-135  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-135 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-135/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-135/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-135/">FLUID-135</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-135: Lightbox and Gallery CSS load at the top of the HEAD and in the wrong order</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-135">FLUID-135</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Former user</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Eli%20Cochran">Eli Cochran</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2007-11-30T17:23:26.000-0500" prefix="">2007-11-30T17:23:26.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-05-05T08:59:06.000-0400" prefix="">2009-05-05T08:59:06.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                            <li>0.3</li>
+                            
+                            <li>0.4beta1</li>
+                            
+                            <li>0.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Image Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The CSS files for Gallery (images.css) and Lightbox (Lightbox.css) load at the very top of the &lt;HEAD&gt; tag for the iFrame before everything else. <br>
+Issues:</p>
+<ul>
+<li>They both load before the tool.css and toolbase.css which means that they cannot override the style declarations in those files</li>
+<li>images.css loads before Lightbox.css which means that images.css cannot override the styles in Lightbox.css</li>
+</ul>
+<p>[Additionally the first thing that should load in a HEAD tag is a char-set declaration but that's not really pertinent to this bug.]</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-16930">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2007-11-30T17:24:55.000-0500">2007-11-30T17:24:55.000-0500</relative-time></i></p>
+                        <p>I'll add this bug to JIRA as well for the Image Gallery since it's not clear where it should be fixed. </p>
+<p>And there is a philosophical question here since which ever CSS that gets loaded last will have the power to make changes to the other. Should components take precedence or should the tool using the component?</p>
+
+                    </li>
+                    
+                    <li id="comment-16932">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2008-03-05T15:14:46.000-0500">2008-03-05T15:14:46.000-0500</relative-time></i></p>
+                        <p>Ray expressed some interest in working on this. Or at least filing it as bug with RSF. </p>
+
+                    </li>
+                    
+                    <li id="comment-16933">
+                        <p class="mb-0"><b>Former user</b> <i>commented <relative-time datetime="2008-05-27T12:01:18.000-0400">2008-05-27T12:01:18.000-0400</relative-time></i></p>
+                        <p>Just as a small update, I haven't done anything on this yet because I haven't yet seen the problem in our Gallery 2 deployments. Could be that it's been fixed in RSF or that we're just not triggering it – I have to make a little time to look into the question.</p>
+
+                    </li>
+                    
+                    <li id="comment-13063">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-05-05T08:59:06.000-0400">2009-05-05T08:59:06.000-0400</relative-time></i></p>
+                        <p>We no longer use the image gallery as an example. Also, from the comments it appears that the issue may have been fixed.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-134/"><span class="aria-hidden">←</span> Previous: FLUID-134</a>
+        <a class="mx-1" href="/browse/FLUID-136/">Next: FLUID-136 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

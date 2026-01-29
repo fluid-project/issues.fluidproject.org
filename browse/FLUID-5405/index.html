@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5405  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5405 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5405/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5405/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5405/">FLUID-5405</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5405: The speak option in the Explore Tool demo causes Safari to crash</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5405">FLUID-5405</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Escalated">Escalated</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-06-05T09:59:34.149-0400" prefix="">2014-06-05T09:59:34.149-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-03-03T10:32:27.478-0500" prefix="">2016-03-03T10:32:27.478-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>I received this bug report from Tom Pokinko and verified that it is indeed an issue:</p>
+<p>"I was browsing the Preference Exploration Tool (link from the FLOE website) in Safari on my Macbook Pro running OS X Mavericks.</p>
+<p><a href="http://build.fluidproject.org/prefsEditors/demos/explorationTool/">http://build.fluidproject.org/prefsEditors/demos/explorationTool/</a></p>
+<p>I chose to have the page read to me from the preferences at bottom and the website crashed badly. Error message: “Safari web content quite unexpectedly." Now even after clearing my cache the website crashes every time I go on it (I can’t change my preferences back to the defaults)."</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Safari 7.0.4, Mac OS X 10.9.x</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23947">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2014-06-05T10:18:31.363-0400">2014-06-05T10:18:31.363-0400</relative-time></i></p>
+                        <p>This appears to be related to the Festival server, rather than the client side. For example, if you try to play this URL directly in Safari, it will also cause the crash:</p>
+<p><a href="http://tts.idrc.ocadu.ca/?q=text%20to%20speech%20enabled">http://tts.idrc.ocadu.ca/?q=text to speech enabled</a></p>
+<p>It is worth exploring a few issues:</p>
+<p>1. Are we sending back correctly formed WAVE files?<br>
+2. Do we have the appropriate MIME type configured and are we sending the the right headers?</p>
+
+                    </li>
+                    
+                    <li id="comment-23948">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-15T15:14:21.598-0400">2015-06-15T15:14:21.598-0400</relative-time></i></p>
+                        <p>We should upgrade the Exploration Tool to use the web speech api.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5404/"><span class="aria-hidden">←</span> Previous: FLUID-5404</a>
+        <a class="mx-1" href="/browse/FLUID-5406/">Next: FLUID-5406 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

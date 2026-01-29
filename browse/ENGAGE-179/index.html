@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> ENGAGE-179  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" ENGAGE-179 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/ENGAGE-179/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/ENGAGE-179/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/ENGAGE" data-pagefind-filter="project">Fluid Engage</a></li>
+                <li><a href="/browse/ENGAGE-179/">ENGAGE-179</a></li>
+            </ol>
+        </nav>
+        <h1>ENGAGE-179: Duplicate attributes error when trying to use the browse component with image reorderer</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/ENGAGE-179">ENGAGE-179</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/ENGAGE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/ENGAGE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Svetoslav Nedkov</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/ENGAGE/?reporter=Svetoslav%20Nedkov">Svetoslav Nedkov</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-11-02T10:38:16.000-0500" prefix="">2009-11-02T10:38:16.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-11-03T10:49:12.000-0500" prefix="">2009-11-03T10:49:12.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Browse</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This problems occurs when first reorderImages is invoked on an element class and then renderSelf is invoked on a containing element having the flc-browse-contents class.</p>
+<p>The call to renderSelf inserts aria attributes among others that start with "aria-". Those attributes, even if they differ are treated as the same by the parser.</p>
+<p>The error message follows:</p>
+<p>17:34:05 GMT+0200 (EET): Error parsing template: Attribute: duplicate attributes not allowed at line 5Fluid.js (line 710)<br>
+17:34:05 GMT+0200 (EET): Just read: aria-labelledby="fluid-id-2" Fluid.js (line 710)<br>
+17:34:05 GMT+0200 (EET): Still to read: aria-dropeffect="none" aria-grFluid.js (line 710)<br>
+17:34:05 GMT+0200 (EET): Error parsing template: Attribute: duplicate attributes not allowed at line 5Fluid.js (line 710)</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Mandriva Linux 2009, Apache Tomcat 6.0.18, Firefox 3.0.14, Firebug 1.4.3</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/ENGAGE/ENGAGE-179/fluid-engage-mycollection-tryout.zip">
+                            
+                                fluid-engage-mycollection-tryout.zip
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-12367">
+                        <p class="mb-0"><b>Svetoslav Nedkov</b> <i>commented <relative-time datetime="2009-11-03T08:38:07.000-0500">2009-11-03T08:38:07.000-0500</relative-time></i></p>
+                        <p>My collection tryout failing with duplicate attributes</p>
+
+                    </li>
+                    
+                    <li id="comment-12368">
+                        <p class="mb-0"><b>Svetoslav Nedkov</b> <i>commented <relative-time datetime="2009-11-03T08:39:16.000-0500">2009-11-03T08:39:16.000-0500</relative-time></i></p>
+                        <p>It seems I have accidently found a solution for this problem although I'm not sure why it works now. The solution was to move the image reorderer related code after the rendering code (this was the original order but the call to the rendering code seems to be asynchronous).</p>
+<p>Anyway for completeness I'm attaching my part of the application before the changes that fix that problem.</p>
+<p>The structure of my code is:</p>
+<p>/project root<br>
+myCollection.json                 - JSON file<br>
+/services<br>
+/myCollection<br>
+/js<br>
+myCollection.js               - server side javascript<br>
+/engage-core<br>
+/components<br>
+/myCollection<br>
+/html<br>
+myCollection.html        - HTML file<br>
+/js<br>
+myCollection.js             - javascript</p>
+<p>To run this it needs to be placed in the fluid-engage directory structure.</p>
+<p>I guess that in order to reproduce the error you need to simply access:</p>
+<p>http://host:port/fluid-engage-mycollection-tryout/artifacts/myCollection.html</p>
+
+                    </li>
+                    
+                    <li id="comment-12369">
+                        <p class="mb-0"><b>Svetoslav Nedkov</b> <i>commented <relative-time datetime="2009-11-03T10:49:12.000-0500">2009-11-03T10:49:12.000-0500</relative-time></i></p>
+                        <p>The problem was worked around.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/ENGAGE-178/"><span class="aria-hidden">←</span> Previous: ENGAGE-178</a>
+        <a class="mx-1" href="/browse/ENGAGE-180/">Next: ENGAGE-180 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-683  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-683 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-683/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-683/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-683/">C2LC-683</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-683: Load world background images dynamically to reduce the initial Weavly dowload size</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-683">C2LC-683</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>In Progress</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter=Simon%20Bates">Simon Bates</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2022-12-21T11:07:39.355-0500" prefix="">2022-12-21T11:07:39.355-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-04-24T10:13:04.584-0400" prefix="">2024-04-24T10:13:04.584-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Environment</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10709">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2023-01-10T13:34:27.950-0500">2023-01-10T13:34:27.950-0500</relative-time></i></p>
+                        <p>Today we talked about the dynamic loading of backgrounds in our weekly C2LC meeting and decided to delay implementation of the dynamic loading until we hit a download size of 4MB.</p>
+<p>Not yet handled in the <a href="/browse/C2LC-683/">C2LC-683</a> implementation so far: what to do if the user selects a background and we are unable to download the background, due to loss of internet connection or inconsistent internet connection.</p>
+
+                    </li>
+                    
+                    <li id="comment-10710">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2023-01-10T13:38:46.564-0500">2023-01-10T13:38:46.564-0500</relative-time></i></p>
+                        <p>Work-in-progress implementation: <a href="https://github.com/sbates-idrc/c2lc-coding-environment/tree/C2LC-683">https://github.com/sbates-idrc/c2lc-coding-environment/tree/C2LC-683</a></p>
+
+                    </li>
+                    
+                    <li id="comment-10711">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2023-01-10T14:12:43.172-0500">2023-01-10T14:12:43.172-0500</relative-time></i></p>
+                        <p>Also still to address: the following message appears in the output of App.test.js</p>
+<pre><code class="hljs language-java">Warning: Can<span class="hljs-string">'t perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmount method.
+        in Scene (created by Context.Consumer)
+        in injectIntl(Scene) (at App.js:1479)
+        in div (at App.js:1475)
+        in div (at App.js:1388)
+        in App (created by Context.Consumer)
+        in injectIntl(App) (at IntlContainer.js:32)
+        in IntlProvider (at IntlContainer.js:29)
+        in IntlContainer (at App.test.js:50)
+
+      406 |     updateWorldBackground() {
+      407 |         getWorldBackground(this.props.theme, this.props.world).then((response) =&gt; {
+    &gt; 408 |             this.setState((state) =&gt; {
+          |                  ^
+      409 |                 if (response.requestNumber &gt; state.highestReceivedBackgroundRequestNumber) {
+      410 |                     return {
+      411 |                         background: response.background,
+</span></code></pre>
+
+                    </li>
+                    
+                    <li id="comment-27712">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2024-04-24T10:13:04.584-0400">2024-04-24T10:13:04.584-0400</relative-time></i></p>
+                        <p>Moved to GitHub: <a href="https://github.com/codelearncreate/c2lc-coding-environment/issues/461">https://github.com/codelearncreate/c2lc-coding-environment/issues/461</a> </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-682/"><span class="aria-hidden">←</span> Previous: C2LC-682</a>
+        <a class="mx-1" href="/browse/C2LC-684/">Next: C2LC-684 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5034  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5034 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5034/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5034/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5034/">FLUID-5034</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5034: Font icons don't refresh properly in IE8</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5034">FLUID-5034</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=heidi%20valles">heidi valles</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-06-05T10:35:36.619-0400" prefix="">2013-06-05T10:35:36.619-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-06-25T16:01:17.400-0400" prefix="">2014-06-25T16:01:17.400-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>There's a known issue in IE8 - font icons sometimes do not update until interacted-with. See <a href="http://andymcfee.com/2012/04/icon-fonts-pseudo-elements-and-ie8/">http://andymcfee.com/2012/04/icon-fonts-pseudo-elements-and-ie8/</a> for details. </p>
+<p>This is most noticeable when using UIOptions (fat panel) - make preference changes and font icons within the page do not update until clicked on or used. Close the panel and reopen, and font icons in UIO are not consistently updated as well.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Win XP, IE8<br>
+Win 7, IE8</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14487">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2014-04-30T16:05:36.536-0400">2014-04-30T16:05:36.536-0400</relative-time></i></p>
+                        <p>I have noticed this in IE8 with the Overview Panel: Sometimes, if you close the panel using the 'Close' button, the icons are gone when you re-open the panel. And some of those times, they will re-appear if you close the panel with the icon instead. But it's inconsistent.</p>
+
+                    </li>
+                    
+                    <li id="comment-14490">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2014-06-06T12:43:13.773-0400">2014-06-06T12:43:13.773-0400</relative-time></i></p>
+                        <p>To reproduce:<br>
+1. Load the prefs framework demo: <a href="http://build.fluidproject.org/infusion/demos/prefsFramework/">http://build.fluidproject.org/infusion/demos/prefsFramework/</a><br>
+2. Open the preferences panel and change to yellow on black.<br>
+3. Notice that the reset icon remains grey and the Fluid Star icon in the Overview Panel remains orange.</p>
+
+                    </li>
+                    
+                    <li id="comment-14493">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2014-06-25T16:01:17.339-0400">2014-06-25T16:01:17.339-0400</relative-time></i></p>
+                        <p>We no longer actively support IE6, IE7 and IE8. We will consider patches for certain issues.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5033/"><span class="aria-hidden">←</span> Previous: FLUID-5033</a>
+        <a class="mx-1" href="/browse/FLUID-5035/">Next: FLUID-5035 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-883  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-883 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-883/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-883/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-883/">FLUID-883</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-883: Last in-line edit field retains focus styling, using FF3 on Mac</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-883">FLUID-883</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-07-09T20:08:47.000-0400" prefix="">2008-07-09T20:08:47.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-07-18T17:23:46.000-0400" prefix="">2008-07-18T17:23:46.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The last in-line edit field retains focus styling after being in edit mode. This only happens in keyboard interaction and returns to proper styling after tabbing back on and off of it.</p>
+<p>Steps to reproduce:</p>
+<p>1)  navigate to either of the in-line edit demo pages<br>
+<a href="http://build.fluidproject.org/fluid/sample-code/inline-edit/announcements/announcements.html">http://build.fluidproject.org/fluid/sample-code/inline-edit/announcements/announcements.html</a><br>
+<a href="http://build.fluidproject.org/fluid/tests/fluid-tests/manual/inline-edit/InlineEdit.html">http://build.fluidproject.org/fluid/tests/fluid-tests/manual/inline-edit/InlineEdit.html</a></p>
+<p>2) using the keyboard, tap the 'tab' key until the last in-line edit field has focus.</p>
+<p>3) enter edit mode by tapping either 'enter' or 'space'</p>
+<p>4) leave edit mode by tapping either 'enter' or 'tab'</p>
+<p>5 tap the 'tab' key to move away from the in-line edit field. Notice that the focus styling remains</p>
+<p>6) tap the 'tab' key until focus is back on the last in-line edit field. tap the 'tab' key once more. Notice that the in-line edit field no longer has focus.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF3 (Mac OS X)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19569">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-07-18T17:10:37.000-0400">2008-07-18T17:10:37.000-0400</relative-time></i></p>
+                        <p>I can't reproduce this after my fix to <a href="/browse/FLUID-857/">FLUID-857</a> - could you check that it is still happening?</p>
+
+                    </li>
+                    
+                    <li id="comment-19570">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-07-18T17:23:46.000-0400">2008-07-18T17:23:46.000-0400</relative-time></i></p>
+                        <p>Fixed with fix to Fluid-857</p>
+<p>Verified on FF3 (Mac OS 10.5)</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-882/"><span class="aria-hidden">←</span> Previous: FLUID-882</a>
+        <a class="mx-1" href="/browse/FLUID-884/">Next: FLUID-884 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

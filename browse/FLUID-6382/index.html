@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6382  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6382 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6382/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6382/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6382/">FLUID-6382</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6382: All tests randomly fail at Syllabification tests</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6382">FLUID-6382</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-07-17T12:40:30.747-0400" prefix="">2019-07-17T12:40:30.747-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-08-08T09:35:32.351-0400" prefix="">2019-08-08T09:35:32.351-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>Testing Infrastructure</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This seems to be the case both on CI and when running locally through "npm run test:vagrant"</p>
+<p>Randomly the tests stall at the Syllabification Enactor Test Suite on fluid.prefs.enactor.syllabification: Add/Remove syllabification. They only seem to fail in Chrome.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Chrome 75 (Linux - Fedora 28, macOS 10.14.5)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23081">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-07-17T12:44:36.582-0400">2019-07-17T12:44:36.582-0400</relative-time></i></p>
+                        <p>I was also able to reproduce the issue running the infusion all tests directly in Fedora 28 on Chrome. I haven't been able to reproduce else where.</p>
+
+                    </li>
+                    
+                    <li id="comment-23083">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-07-17T12:47:06.700-0400">2019-07-17T12:47:06.700-0400</relative-time></i></p>
+                        <p>Antranig Basman suggested in the [fluid-work channel today|<a href="http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2019-07-17.log">http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2019-07-17.log</a>,]&#160;"If I were to make a random guess, I would say that the failure is that it is possible sometimes for the promise dispensed from fluid.prefs.enactor.syllabification.injectScript to never resolve"</p>
+<p>Additionally he suggested that it could be related to&#160;$.ajax and that we should try using raw XHR.</p>
+
+                    </li>
+                    
+                    <li id="comment-23084">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-07-17T12:48:11.452-0400">2019-07-17T12:48:11.452-0400</relative-time></i></p>
+                        <p>The random failures occurring in CI can be seen in at least the following PRs.</p>
+<ul>
+<li><a href="https://github.com/fluid-project/infusion/pull/921">https://github.com/fluid-project/infusion/pull/921</a></li>
+<li><a href="https://github.com/fluid-project/infusion/pull/824">https://github.com/fluid-project/infusion/pull/824</a></li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-23086">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-07-19T09:18:30.282-0400">2019-07-19T09:18:30.282-0400</relative-time></i></p>
+                        <p>The random test failures actually seem to be stemming from the&#160;fluid.tests.syllabificationTester.verifySyllabified test function, specifically where it is trying to test [childNode.nodeType|<a href="https://github.com/fluid-project/infusion/blob/master/tests/framework-tests/preferences/js/SyllabificationEnactorTests.js#L276">https://github.com/fluid-project/infusion/blob/master/tests/framework-tests/preferences/js/SyllabificationEnactorTests.js#L276</a>.]&#160;The issue being that in random cases childNode is undefined.</p>
+<p></p>
+<p>It seems that all of the random test failures occur from the <a href="https://github.com/fluid-project/infusion/blob/master/tests/framework-tests/preferences/js/SyllabificationEnactorTests.js#L202-L205">first invocation</a> of the function in the Add/Remove syllabification test sequence. This is test is triggered after the syllabification has ben applied, so there may be some issue with the childNodes not being available yet. However, it appears the that DOM is already modified ahead of time.</p>
+
+                    </li>
+                    
+                    <li id="comment-23089">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-07-19T09:22:41.968-0400">2019-07-19T09:22:41.968-0400</relative-time></i></p>
+                        <p>Upon further investigation it appears that when the random failure occurs it is because the syllabification of the <a href="https://github.com/fluid-project/infusion/blob/master/tests/framework-tests/preferences/html/SyllabificationEnactor-test.html#L55">"flc-syllabification-generic"</a> markup hasn't occurred. In fact adding a listener to afterSyllabification, with a priority of first, is triggered twice.&#160;I used a listener like this in&#160;fluid.prefs.enactor.syllabification directly to output the markup of the enactors container. It was triggered before and after the test with the first output having all but the&#160;flc-syllabification-generic content properly syllabified. On the second triggering,&#160;flc-syllabification-generic was also syllabified.</p>
+<p>NOTE:&#160;flc-syllabification-notAvailable content shouldn't be split into syllables in the test, and it isn't in either of the above cases.</p>
+
+                    </li>
+                    
+                    <li id="comment-23092">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-07-19T10:19:20.846-0400">2019-07-19T10:19:20.846-0400</relative-time></i></p>
+                        <p>It appears that there is some issue with the timing related to the "en" lang hyphenator's promise resolving for use with applying the hyphenation in <a href="https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/js/SyllabificationEnactor.js#L299-L304">fluid.prefs.enactor.syllabification.syllabify</a> and the one used by the sequence to fire the afterSyllabification event in&#160;<a href="https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/js/SyllabificationEnactor.js#L165-L172">fluid.prefs.enactor.syllabification.waitForHyphenators</a>. We really always want the former to trigger first, but it appears that in some cases the later goes through which causes the tests to run before we attempt to hyphenate the "en" lang case (that is the generic case mentioned in prior comments.</p>
+
+                    </li>
+                    
+                    <li id="comment-23095">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-07-19T10:20:49.154-0400">2019-07-19T10:20:49.154-0400</relative-time></i></p>
+                        <p>If this is really only the case for generic language codes when a specific language code is available, there is likely some mistaken logic with the promise creation in&#160;<a href="https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/js/SyllabificationEnactor.js#L213">fluid.prefs.enactor.syllabification.createHyphenator</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23096">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-08-08T09:35:25.198-0400">2019-08-08T09:35:25.198-0400</relative-time></i></p>
+                        <p>PR ( <a href="https://github.com/fluid-project/infusion/pull/958">https://github.com/fluid-project/infusion/pull/958</a>&#160;) merged into the project repo.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6381/"><span class="aria-hidden">←</span> Previous: FLUID-6381</a>
+        <a class="mx-1" href="/browse/FLUID-6383/">Next: FLUID-6383 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

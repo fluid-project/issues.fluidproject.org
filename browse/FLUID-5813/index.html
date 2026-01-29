@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5813  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5813 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5813/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5813/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5813/">FLUID-5813</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5813: Options distributions arriving via the "early route" are not properly sorted by priority</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5813">FLUID-5813</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-11-08T21:16:31.868-0500" prefix="">2015-11-08T21:16:31.868-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-01-15T11:59:13.935-0500" prefix="">2016-01-15T11:59:13.935-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The <a href="/browse/FLUID-5621/">FLUID-5621</a> distributeOptions priority system is incompletely implemented - only distributions arriving via the "late route" (that is, for a component which has properly started instantiation and has a "that" allocated for it) are subject to the priority ordering.</p>
+<p>The distributions collected via the "early route" (during fluid.assembleCreatorArguments) are simply collected at random - </p>
+<pre><code class="hljs language-java"><span class="hljs-type">var</span> <span class="hljs-variable">distributions</span> <span class="hljs-operator">=</span> parentThat ? fluid.receiveDistributions(parentThat, upDefaults.gradeNames, options.memberName, fakeThat) : [];
+...
+        fluid.each(findKeys, function (name) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-type">var</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; distributions.length; ++ i) { <span class="hljs-comment">// Apply non-options material from distributions (<a href="/browse/FLUID-5013/">FLUID-5013</a>)</span>
+                <span class="hljs-keyword">if</span> (distributions[i][name] !== undefined) {
+                    localRecord[name] = distributions[i][name];
+                }
+            }
+        });
+</code></pre>
+<p>This implies that it is impossible to arbitrate between multiple distributions trying to target the component's "type" - e.g. the following two:</p>
+<pre><code class="hljs language-java"><span class="hljs-string">"distributeOptions"</span>: {
+            <span class="hljs-string">"preferencesDataSource"</span>: {
+                <span class="hljs-string">"record"</span>: {
+                    <span class="hljs-string">"type"</span>: <span class="hljs-string">"kettle.dataSource.URL"</span>,
+                    <span class="hljs-string">"options"</span>: {
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://localhost/preferences/%userToken"</span>,
+                        <span class="hljs-string">"port"</span>: <span class="hljs-string">"{kettle.config}.options.mainServerPort"</span>
+                    }
+                 },
+                 <span class="hljs-string">"target"</span>: <span class="hljs-string">"{that flowManager preferencesDataSource}"</span>
+             },
+</code></pre>
+<p>and</p>
+<pre><code class="hljs language-java">distributeOptions: {
+        record: <span class="hljs-string">"gpii.tests.userSave.failingDataSource"</span>,
+        target: <span class="hljs-string">"{that preferencesDataSource}.type"</span>,
+        priority: <span class="hljs-string">"after:preferencesDataSource"</span>
+    },
+</code></pre>
+<p>Here, the directive "after:preferencesDataSource" is ignored - as is the tree distance rule - which we are increasingly considering is a very unreliable way to arbitrate distribution priority. We had originally thought that the inverse of the current rules - that is, more DISTANT distributions should take priority, is a more correct rule, but I remember thinking of important exceptions to this as well - need to try to recall.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23771">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-11-08T21:19:25.107-0500">2015-11-08T21:19:25.107-0500</relative-time></i></p>
+                        <p>Note that after <a href="/browse/FLUID-4982/">FLUID-4982</a>, the "early route" and the "late route" will become fused</p>
+
+                    </li>
+                    
+                    <li id="comment-23772">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-01-15T11:59:10.861-0500">2016-01-15T11:59:10.861-0500</relative-time></i></p>
+                        <p>Merged pull request ( <a href="https://github.com/fluid-project/infusion/pull/654">https://github.com/fluid-project/infusion/pull/654</a> ) into the project repo at 4e1b8c9a64665c67232901d2e57531926ec7247f  and 2f38c09d733925441f0ff2e6636f8886da8af5ea</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5812/"><span class="aria-hidden">←</span> Previous: FLUID-5812</a>
+        <a class="mx-1" href="/browse/FLUID-5815/">Next: FLUID-5815 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

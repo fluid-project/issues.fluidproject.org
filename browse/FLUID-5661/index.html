@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5661  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5661 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5661/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5661/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5661/">FLUID-5661</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5661: Improve documentation of PrefsEditorLoader</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5661">FLUID-5661</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Incomplete">Incomplete</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-04-30T14:40:27.641-0400" prefix="">2015-04-30T14:40:27.641-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:14.482-0400" prefix="">2024-07-22T10:35:14.482-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>5.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Tech. Documentation</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Our prefs framework documentation doesn't effectively communicate what the PrefsEditorLoader component does. It's described in the file LocalizationInThePreferencesFramework.md, but it would likely never occur to anyone to look for the information there. Now that the type of prefs editor is specified using a grade passed to the PrefsEditorLoader, we should probably surface that information more clearly.</p>
+<p>In particular:</p>
+<p>In the file AuxiliarySchemaForPreferencesFramework.md, the "loaderGrades" property is described, but there's no explanation of just what a prefsEditorLoader is (nor any link to any explanation), and there's no explanation of why you might want to apply particular grades to one (other than modifying the default prefs editor type, which is mentioned almost as an aside).</p>
+<p>The information in LocalizationInThePreferencesFramework.md that describes the PrefsEditorLoader should be double-checked for accuracy. It currently make the component sound like it's primarily responsible for loading resources, but given that it also loads the actual prefs editor itself, there might be more information that might be useful.</p>
+<p>We should consider moving the "Preferences Editor Component Hierarchy" description out of the Localization page into a more general spot – and ensuring it is up-to-date. I suspect that such an overview might be helpful to users of the prefs framework, and could be referenced by other places in the docs that talk about grades, etc. that affect the process (such as the "loaderGrades" property).</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25202">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2015-06-11T13:22:39.839-0400">2015-06-11T13:22:39.839-0400</relative-time></i></p>
+                        <p>I'm writing the PGA architecture report right now, and I am again struck by the lack of documentation for this component. The comments in the code describe it as "the only Preferences Editor component that is intended to be called by the outside world" – as such, it really should be documented!</p>
+
+                    </li>
+                    
+                    <li id="comment-25203">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2022-07-07T08:38:37.783-0400">2022-07-07T08:38:37.783-0400</relative-time></i></p>
+                        <p>The PrefsEditorLoader is abolished in 5.0, and replaced by an all in one "loader and driver" fluid.prefs.weaver which will be a base grade of an instantiated fluid.uiOptions - documentation will be unified centred on that</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5659/"><span class="aria-hidden">←</span> Previous: FLUID-5659</a>
+        <a class="mx-1" href="/browse/FLUID-5662/">Next: FLUID-5662 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

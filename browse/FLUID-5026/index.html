@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5026  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5026 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5026/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5026/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5026/">FLUID-5026</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5026: Model transformation system implicitly outputs unwanted data to the output object</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5026">FLUID-5026</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Kasper Galschiot Markus</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Kasper%20Galschiot%20Markus">Kasper Galschiot Markus</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-05-29T04:05:15.552-0400" prefix="">2013-05-29T04:05:15.552-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-09-14T18:04:31.332-0400" prefix="">2013-09-14T18:04:31.332-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Model Transformation System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently the transformation system allows you to output two places at once (non-explicity), once by the virtue of return value and once via the outputPath. This causes some confusion and buggy behavior. For example:</p>
+<p>"Magnification": {<br>
+"expander": {<br>
+"type": "fluid.model.transform.round",<br>
+"input": {<br>
+"expander": {<br>
+"type": "fluid.model.transform.scaleValue",<br>
+"valuePath": "display.screenEnhancement.magnification",<br>
+"factor": 100<br>
+}<br>
+},<br>
+"outputPath": "value"<br>
+},<br>
+"dataType": {<br>
+"expander": {<br>
+"type": "fluid.model.transform.literalValue",<br>
+"value": "REG_DWORD"<br>
+}<br>
+}<br>
+}</p>
+<p>will result in the following queuedChanges:</p>
+<p>[<br>
+{<br>
+"path": "Magnification",<br>
+"value": 229.99999999999997,<br>
+"sequence": 0<br>
+},<br>
+{<br>
+"path": "Magnification.value",<br>
+"value": 230,<br>
+"sequence": 1<br>
+},<br>
+{<br>
+"path": "Magnification.dataType",<br>
+"value": "REG_DWORD",<br>
+"sequence": 2<br>
+}<br>
+]</p>
+<p>Which in turn means that the end result will be:</p>
+<p>Magnification: 229.9999999999997</p>
+<p>Which is clearly not what is wanted.</p>
+<p>(see also <a href="http://issues.gpii.net/browse/SP-45">http://issues.gpii.net/browse/SP-45</a>)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23119">
+                        <p class="mb-0"><b>Kasper Galschiot Markus</b> <i>commented <relative-time datetime="2013-05-29T04:08:27.990-0400">2013-05-29T04:08:27.990-0400</relative-time></i></p>
+                        <p>[5/24/13 10:54:23 AM] Kasper Galschiot Markus: I found some weirdness in the transformation framework<br>
+[5/24/13 10:54:40 AM] Antranig Basman: No doubt you had just put it there yourself earlier : P<br>
+[5/24/13 10:55:01 AM] Kasper Galschiot Markus: haha - well, I cant really argue with that<br>
+[5/24/13 10:57:43 AM] Kasper Galschiot Markus: it has to do with what changes get queued<br>
+[5/24/13 10:57:45 AM] Kasper Galschiot Markus: <a href="http://piratepad.net/GnymkjM79U">http://piratepad.net/GnymkjM79U</a><br>
+[5/24/13 10:58:04 AM] Antranig Basman: Oh dear..... that<br>
+[5/24/13 10:58:08 AM] Kasper Galschiot Markus: yeah<br>
+[5/24/13 10:58:20 AM] Kasper Galschiot Markus: I mean, I think we talked about this in SD<br>
+[5/24/13 10:58:23 AM] Antranig Basman: Yes, we did<br>
+[5/24/13 10:58:37 AM] Antranig Basman: It is quite faulty<br>
+[5/24/13 10:58:39 AM] Kasper Galschiot Markus: that we want to change it to only throw stuff on queue when explicitly requested<br>
+[5/24/13 10:59:01 AM] Antranig Basman: But what's specifically the problem here?<br>
+[5/24/13 10:59:11 AM] Antranig Basman: Other than the fact that "Magnfication" seems to be a primitive<br>
+[5/24/13 10:59:26 AM] Kasper Galschiot Markus: that's the exact problem<br>
+[5/24/13 10:59:50 AM] Kasper Galschiot Markus: Magnification gets set, I believe... but that means Magnification.value and Mangification.dataType dont<br>
+[5/24/13 10:59:50 AM] Antranig Basman: ah I see<br>
+[5/24/13 11:00:06 AM] Antranig Basman: This funny figure is the unrounded input figure before it goes in<br>
+[5/24/13 11:00:15 AM] Antranig Basman: It's so long ago I'm starting to forget what we decided<br>
+[5/24/13 11:00:19 AM] Antranig Basman: And you, damn you, never wrote it up<br>
+[5/24/13 11:00:41 AM] Antranig Basman: But I remember we came to a quite clear conclusion as we walked along the bay<br>
+[5/24/13 11:00:41 AM] Kasper Galschiot Markus: I remember that we explicitly decided that YOU should write it up<br>
+[5/24/13 11:00:42 AM] Kasper Galschiot Markus: 🙂<br>
+[5/24/13 11:00:46 AM] Antranig Basman: And you were tasked with implementing it<br>
+[5/24/13 11:01:01 AM] Kasper Galschiot Markus: yes, I agree<br>
+[5/24/13 11:01:06 AM] Antranig Basman: So<br>
+[5/24/13 11:01:11 AM] Antranig Basman: Do you at least remember what the conclusion was!<br>
+[5/24/13 11:01:33 AM] Antranig Basman: It was something about the capacity of an expander to output along two routes<br>
+[5/24/13 11:01:46 AM] Antranig Basman: One to its parent, and secondly to its current nested path position<br>
+[5/24/13 11:01:57 AM] Antranig Basman: Either we decided this should never happen, or we decided that it should always happen 🙂<br>
+[5/24/13 11:02:28 AM] Kasper Galschiot Markus: yes - I think we disagreed quite a bit on what was the best option (though I forget which one was my standpoint)<br>
+[5/24/13 11:02:53 AM] Kasper Galschiot Markus: but I believe the conclusion was that it should never happen<br>
+[5/24/13 11:03:26 AM] Kasper Galschiot Markus: but not entirely sure<br>
+[5/24/13 11:03:42 AM] Antranig Basman: If that was the conclusion, it must have been that we thought that the effect of having that could easily be had by some other means if someone wanted it<br>
+[5/24/13 11:04:11 AM] Kasper Galschiot Markus: yeah - eg. our shadow vars for example should be able to achieve that<br>
+[5/24/13 11:04:18 AM] Antranig Basman: shadow vars!<br>
+[5/24/13 11:04:22 AM] Kasper Galschiot Markus: haha<br>
+[5/24/13 11:04:25 AM] Antranig Basman: Did we decide we wanted those?<br>
+[5/24/13 11:04:29 AM] Kasper Galschiot Markus: I forget the damn name of them<br>
+[5/24/13 11:04:34 AM] Kasper Galschiot Markus: yeah, I think so<br>
+[5/24/13 11:04:39 AM] Kasper Galschiot Markus: pocket variables<br>
+[5/24/13 11:04:49 AM] Kasper Galschiot Markus: or whatever the hell we referred to them as<br>
+[5/24/13 11:05:00 AM] Kasper Galschiot Markus: temporary variable to store results<br>
+[5/24/13 11:05:17 AM] Kasper Galschiot Markus: ... actually I might totally be mixing two concepts up as well<br>
+[5/24/13 11:05:38 AM] Antranig Basman: Well, there must also have been some reasoning about why the behaviour of what is really a compact expander, "Magnification", should differ from that of the others<br>
+[5/24/13 11:06:04 AM] Antranig Basman: We spent a long time working this out<br>
+[5/24/13 11:06:17 AM] Kasper Galschiot Markus: I know - this is horrible<br>
+[5/24/13 11:07:42 AM] Antranig Basman: Oh and btw, yesterday Colin and I decided to name "expander" to "transform"<br>
+[5/24/13 11:08:26 AM] Antranig Basman: I guess the only sensible option is that double output never occurs<br>
+[5/24/13 11:08:38 AM] Antranig Basman: But there will be plenty of reasoning needed to back this up<br>
+[5/24/13 11:08:45 AM] Kasper Galschiot Markus: yes, I think that was our conclusion as well<br>
+[5/24/13 11:09:01 AM] Kasper Galschiot Markus: got dragged into a meeting now<br>
+[5/24/13 11:14:22 AM] Antranig Basman: Well, you will just have to fix it : P<br>
+[5/24/13 11:14:32 AM] Antranig Basman: But not before you have got your existing transformations pull in : P<br>
+[5/24/13 11:30:50 AM] Antranig Basman: I had a vague memory that we might have decided to make an explicit "output doubling expander" for those cases where we wanted it to happen.....<br>
+[5/24/13 11:33:25 AM] Kasper Galschiot Markus: wouldn't it be simpler to use 'local variables'<br>
+[5/24/13 11:33:43 AM] Kasper Galschiot Markus: to avoid introducing too many concepts to the user/developer<br>
+[5/24/13 11:35:12 AM] Antranig Basman: How do you plan to get reversibility working in the presence of "local variables"?<br>
+[5/24/13 11:36:39 AM] Antranig Basman: The whole purpose of our system is that it is meant primarily to WORK : P<br>
+[5/24/13 11:38:14 AM] Antranig Basman: Whether the user was familiar with the concepts involved in 2013 isn't going to be relevant if by 2033 we have been presiding over 20 years of having a working system : P<br>
+[5/24/13 11:38:40 AM] Kasper Galschiot Markus: at some point, I'm gonna sit down and think really hard and have a really clever comeback<br>
+[5/24/13 11:38:50 AM] Kasper Galschiot Markus: ... for now, I got NOTHING</p>
+
+                    </li>
+                    
+                    <li id="comment-23120">
+                        <p class="mb-0"><b>Kasper Galschiot Markus</b> <i>commented <relative-time datetime="2013-08-15T08:18:28.827-0400">2013-08-15T08:18:28.827-0400</relative-time></i></p>
+                        <p>Our initial plan: <a href="http://piratepad.net/ep/pad/view/ro.HtpFYvcjsvP/latest">http://piratepad.net/ep/pad/view/ro.HtpFYvcjsvP/latest</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23121">
+                        <p class="mb-0"><b>Kasper Galschiot Markus</b> <i>commented <relative-time datetime="2013-08-16T07:22:45.863-0400">2013-08-16T07:22:45.863-0400</relative-time></i></p>
+                        <p>Our new plan is the following: <a href="http://piratepad.net/ep/pad/view/ro.dC6Waa3dNDe/latest">http://piratepad.net/ep/pad/view/ro.dC6Waa3dNDe/latest</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23122">
+                        <p class="mb-0"><b>Kasper Galschiot Markus</b> <i>commented <relative-time datetime="2013-08-19T06:14:59.128-0400">2013-08-19T06:14:59.128-0400</relative-time></i></p>
+                        <p>Some things were still unclear/broke according to the above plans, namely arrays of expanders and their expected behavior. We discussed and resolved this on an email thread: <a href="http://lists.gpii.net/pipermail/architecture/2013-August/001247.html">http://lists.gpii.net/pipermail/architecture/2013-August/001247.html</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23123">
+                        <p class="mb-0"><b>Kasper Galschiot Markus</b> <i>commented <relative-time datetime="2013-09-14T18:04:22.654-0400">2013-09-14T18:04:22.654-0400</relative-time></i></p>
+                        <p>Fixed with <a href="https://github.com/fluid-project/infusion/pull/394">https://github.com/fluid-project/infusion/pull/394</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5025/"><span class="aria-hidden">←</span> Previous: FLUID-5025</a>
+        <a class="mx-1" href="/browse/FLUID-5027/">Next: FLUID-5027 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

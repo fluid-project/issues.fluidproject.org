@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> DECA-217  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" DECA-217 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/DECA-217/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/DECA-217/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/DECA" data-pagefind-filter="project">Decapod</a></li>
+                <li><a href="/browse/DECA-217/">DECA-217</a></li>
+            </ol>
+        </nav>
+        <h1>DECA-217: Remove the camera capture and calibration workflow</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/DECA-217">DECA-217</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/DECA/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/DECA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Jonathan Hung</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/DECA/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-01-12T13:22:31.627-0500" prefix="">2012-01-12T13:22:31.627-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2012-02-10T13:59:55.529-0500" prefix="">2012-02-10T13:59:55.529-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Calibration</li>
+                            
+                            <li>Capture</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>For 0.5 there is no concept of camera capture, instead straight file import is used. Also these features will be updated in future releases. Due all of these changes we should probably just remove the code for now and resurrect if needed at a later date.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10122">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2012-01-15T20:29:45.308-0500">2012-01-15T20:29:45.308-0500</relative-time></i></p>
+                        <p>I've removed the camera capture and calibration workflow from the Decapod-server and Decapod-ui repos. The work is currently in my bitbucket repos and needs to be pulled into the master repo.</p>
+<p><a href="https://bitbucket.org/jobara/decapod-server">https://bitbucket.org/jobara/decapod-server</a><br>
+<a href="https://bitbucket.org/jobara/decapod-ui">https://bitbucket.org/jobara/decapod-ui</a></p>
+<p>*Note that the install scripts haven't yet been updated to remove any, now, unneeded dependencies. This will be done later when the list of dependencies have been established and the install script is updated. </p>
+
+                    </li>
+                    
+                    <li id="comment-10123">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2012-01-16T11:45:53.712-0500">2012-01-16T11:45:53.712-0500</relative-time></i></p>
+                        <p>pushed up to the main googlecode repo</p>
+
+                    </li>
+                    
+                    <li id="comment-10124">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2012-01-31T11:18:46.902-0500">2012-01-31T11:18:46.902-0500</relative-time></i></p>
+                        <p>Re-opened because there are images that still need to be removed.</p>
+
+                    </li>
+                    
+                    <li id="comment-10125">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2012-02-10T13:59:55.527-0500">2012-02-10T13:59:55.527-0500</relative-time></i></p>
+                        <p>Removed last offending images.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/DECA-216/"><span class="aria-hidden">←</span> Previous: DECA-216</a>
+        <a class="mx-1" href="/browse/DECA-218/">Next: DECA-218 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

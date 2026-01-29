@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-889  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-889 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-889/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-889/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-889/">FLUID-889</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-889: Newline character displayed as single space, using FF3</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-889">FLUID-889</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-07-10T16:06:50.000-0400" prefix="">2008-07-10T16:06:50.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-11-07T13:07:24.000-0500" prefix="">2008-11-07T13:07:24.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                            <li>0.3</li>
+                            
+                            <li>0.4beta1</li>
+                            
+                            <li>0.4</li>
+                            
+                            <li>0.5</li>
+                            
+                            <li>0.6beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When cut &amp; pasting text containing a newline character into an in-line edit field, the newline character is displayed as a single space without any wrapping. The text should be displayed on two seperate lines.</p>
+<p>Steps to reproduce:</p>
+<p>1) Open the in-line edit demo from the daily build site:<br>
+<a href="http://build.fluidproject.org/fluid/sample-code/inline-edit/announcements/announcements.html">http://build.fluidproject.org/fluid/sample-code/inline-edit/announcements/announcements.html</a></p>
+<p>2) Open an in-line edit field in edit mode</p>
+<p>3) cut &amp; paste the following text into the in-line edit field</p>
+<p>"before newline<br>
+after newline"</p>
+<p>4) press enter to leave edit mode. Notice that the text is displayed in a single continuous line with only a single whitespace sepererating what was two lines of text. Notice that in edit mode the new line character is also transformed into a single space.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF3 (Mac OS X, Win XP)</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-889/screenshot-1.jpg">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-889/screenshot-1.jpg" alt="screenshot-1.jpg">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19566">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-07-10T16:08:40.000-0400">2008-07-10T16:08:40.000-0400</relative-time></i></p>
+                        <p>'screenshot-1' shows how the text is displayed by in-line edit</p>
+
+                    </li>
+                    
+                    <li id="comment-19567">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-10-31T09:33:01.000-0400">2008-10-31T09:33:01.000-0400</relative-time></i></p>
+                        <p>design-watched</p>
+
+                    </li>
+                    
+                    <li id="comment-19568">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-11-07T13:07:24.000-0500">2008-11-07T13:07:24.000-0500</relative-time></i></p>
+                        <p>This issue cannot be resolved, for similar reasons to <a href="/browse/FLUID-890/">FLUID-890</a> and others. Support for multi-line operations in single-line fields in browsers is fundamentally inconsistent, and if multi-line operations are required, the integrator must supply a multi-line edit view.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-888/"><span class="aria-hidden">←</span> Previous: FLUID-888</a>
+        <a class="mx-1" href="/browse/FLUID-890/">Next: FLUID-890 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

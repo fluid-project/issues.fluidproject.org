@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4686  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4686 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4686/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4686/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4686/">FLUID-4686</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4686: UIOptions handling of default model needs to be improved to store exactly changed options</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4686">FLUID-4686</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Cindy Li</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-04-03T23:00:15.289-0400" prefix="">2012-04-03T23:00:15.289-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-20T09:56:55.191-0400" prefix="">2014-03-20T09:56:55.191-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>UIOptions handling of its default options has always been very brittle. Until the <a href="/browse/FLUID-4531/">FLUID-4531</a> work, this was held in a central static location as part of the defaults for the SettingsStore component. Even in older days, this caused some problems - when upgrading from one version of UIOptions to one which managed more options, the component would malfunction until the user cleared their cookies - since the defaults record was only used in the case the cookie was empty. Finding any cookie at all would bypass the defaults, presenting the component with some options which were "undefined" and would so not render properly. The component was effectively unusable in this use case.<br>
+Just before <a href="/browse/FLUID-4531/">FLUID-4531</a> as part of <a href="/browse/FLUID-4607/">FLUID-4607</a>, I (AB) made a change to the store algorithm to always merge in the defaults before returning them. This resolves the issue described above, but introduces a different problem. Now UIOptions stores every option back into the store, including those derived from the defaults, and so in the case the value of a default changes between releases of UIOptions, a user will continue with their originally stored value of the default, even if they didn't make any change expressing a preference.</p>
+<p>We need to rethink this architecture before too long, especially since <a href="/browse/FLUID-4531/">FLUID-4531</a> antification will lead to UIOptions being used in increasingly flexible situations. For now we should just fix up the tests which were invalidated by this change in semantic. A promising architectural scheme for meeting this issue might be to take advantage of the new "source tracking" facility in the ChangeApplier to distinguish which changes are caused by the user and which from a store fetch.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23131">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2013-06-12T10:45:27.557-0400">2013-06-12T10:45:27.557-0400</relative-time></i></p>
+                        <p>Pull request <a href="https://github.com/fluid-project/infusion/pull/323">https://github.com/fluid-project/infusion/pull/323</a> merged into project repo at ef823a4b799854aa84188579f4c7b2164a84b1b4</p>
+
+                    </li>
+                    
+                    <li id="comment-23132">
+                        <p class="mb-0"><b>y z</b> <i>commented <relative-time datetime="2013-06-12T10:47:56.211-0400">2013-06-12T10:47:56.211-0400</relative-time></i></p>
+                        <p>Branch with the fix for the issue was committed at: <a href="https://github.com/fluid-project/infusion/commit/ef823a4b799854aa84188579f4c7b2164a84b1b4">https://github.com/fluid-project/infusion/commit/ef823a4b799854aa84188579f4c7b2164a84b1b4</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23133">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-03-19T10:19:26.512-0400">2014-03-19T10:19:26.512-0400</relative-time></i></p>
+                        <p>This might have been broken by the implementation of the new prefs framework.</p>
+<p>The store currently saves the whole rootModel that contains the merged defaults and previously saved prefs. It is causing the problem that all the preferences are saved regardless they are modified or not. The solution is to keep two models: one contains all the default preference values, while the other is the working model that reflects the changes. At save, </p>
+<p>1. make a copy of the working model, <br>
+2. compare the copy with the default model, <br>
+3. remove elements whose values are same as default values, <br>
+4. save this copy into the store.</p>
+<p>These steps will happen in the preference framework rather than the store.</p>
+
+                    </li>
+                    
+                    <li id="comment-23134">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-03-20T09:05:06.080-0400">2014-03-20T09:05:06.080-0400</relative-time></i></p>
+                        <p>A pull request is sent to fix this issue: <a href="https://github.com/fluid-project/infusion/pull/482">https://github.com/fluid-project/infusion/pull/482</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23135">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-03-20T09:56:42.132-0400">2014-03-20T09:56:42.132-0400</relative-time></i></p>
+                        <p>Merged pull request ( <a href="https://github.com/fluid-project/infusion/pull/482">https://github.com/fluid-project/infusion/pull/482</a> ) into the project repo at b6db5eeb923625594d24aa2fe0fe7392b3989926</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4685/"><span class="aria-hidden">←</span> Previous: FLUID-4685</a>
+        <a class="mx-1" href="/browse/FLUID-4691/">Next: FLUID-4691 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

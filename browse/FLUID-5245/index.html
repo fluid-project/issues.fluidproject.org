@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5245  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5245 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5245/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5245/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5245/">FLUID-5245</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5245: distributeOptions is not sensitive to gradeNames which arise through dynamic grades</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5245">FLUID-5245</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-01-07T18:32:36.579-0500" prefix="">2014-01-07T18:32:36.579-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-06-26T10:00:44.031-0400" prefix="">2015-06-26T10:00:44.031-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.9</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This was discovered in the context of trying to upgrade the pager to use the new more efficient Tooltip API enabled by our jQuery upgrade for <a href="/browse/FLUID-5185/">FLUID-5185</a>. I attempted to write the following configuration in PagedTable.js</p>
+<p>distributeOptions: {<br>
+target: "{that renderedPageList}.options.listeners.afterRender",<br>
+record: {<br>
+funcName: "fluid.pagedTable.configureTooltip",<br>
+args: ["{pagedTable}", "{arguments}.0"]  <br>
+}<br>
+},</p>
+<p>this <strong>should</strong> have been sensitive to the fact that the configured pageList component was actually a renderedPageList. Unfortunately the grade information for this component is <strong>itself</strong> broadcast via a distributeOptions block in Pager.js - in the following combination:</p>
+<p>distributeOptions: {<br>
+source: "{that}.options.pageList",<br>
+removeSource: true,<br>
+target: "{that fluid.pager.pageList}"<br>
+},<br>
+pageList: {<br>
+type: "fluid.pager.renderedPageList",<br>
+options: {<br>
+pageStrategy: fluid.pager.gappedPageStrategy(3, 1)<br>
+}<br>
+},</p>
+<p>This peculiar thing was done so that we could demonstrate maintaining backwards compatibility with the very ancestral pager which before IoC expected this configuration at top level rather than in a "components" block. This is a little perverse but should be perfectly valid. It implies that we can't really get away with receiving distributeOptions in a single block up front as we currently do, but need to split resolution with an "early" and a "late" phase. The "early" phase is necessary as historically we discovered that people would like to broadcast top-level non-options such as "type" for <a href="/browse/FLUID-5013/">FLUID-5013</a> - this "late" phase is now needed since we need to be sensitive to absolutely all gradeNames which are received after the last round of collectDynamicGrades rather than just the very poor fake set which is sent along by our still remnant fluid.embodyDemands.</p>
+<p>This will most likely need to be done by making a record in the component's shadow to record which distributions have already been reacted to, to avoid double counting. This in turn requires that each distribution will be supplied with a unique id.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-16717">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-02-13T15:23:36.824-0500">2015-02-13T15:23:36.824-0500</relative-time></i></p>
+                        <p>Committed to trunk at <a href="https://github.com/fluid-project/infusion/commit/6fd1d7f4688fbe7ca5d28de7483aa502a63899d1">https://github.com/fluid-project/infusion/commit/6fd1d7f4688fbe7ca5d28de7483aa502a63899d1</a> on Jan 24th, 2014</p>
+
+                    </li>
+                    
+                    <li id="comment-16719">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-26T09:50:56.799-0400">2015-06-26T09:50:56.799-0400</relative-time></i></p>
+                        <p>Reopening to change the fix version to 1.9</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5244/"><span class="aria-hidden">←</span> Previous: FLUID-5244</a>
+        <a class="mx-1" href="/browse/FLUID-5246/">Next: FLUID-5246 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

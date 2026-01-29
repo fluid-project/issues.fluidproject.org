@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> ENGAGE-534  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" ENGAGE-534 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/ENGAGE-534/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/ENGAGE-534/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/ENGAGE" data-pagefind-filter="project">Fluid Engage</a></li>
+                <li><a href="/browse/ENGAGE-534/">ENGAGE-534</a></li>
+            </ol>
+        </nav>
+        <h1>ENGAGE-534: Refactor the public api, removing unnecessary and dangerous functions</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/ENGAGE-534">ENGAGE-534</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/ENGAGE/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/ENGAGE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/ENGAGE/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-03-25T10:47:45.000-0400" prefix="">2010-03-25T10:47:45.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T13:44:00.309-0500" prefix="">2014-03-03T13:44:00.309-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Cabinet</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Refactor the public api, removing unnecessary and dangerous functions</p>
+<p>The toggle function can lead to a confused state of the drawers.</p>
+<p>The close and open functions should be distilled into a single adjust function that takes constants refering to the open and closing of drawers.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-12118">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-03-25T13:18:54.000-0400">2010-03-25T13:18:54.000-0400</relative-time></i></p>
+                        <p>There is now only one movement function, positionDrawers. The toggle function remains in the code, but is not accessible publicly. It is still used internally. </p>
+
+                    </li>
+                    
+                    <li id="comment-12119">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-03-25T13:19:11.000-0400">2010-03-25T13:19:11.000-0400</relative-time></i></p>
+                        <p>Assigned to Antranig for review</p>
+
+                    </li>
+                    
+                    <li id="comment-12120">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2010-03-25T17:18:47.000-0400">2010-03-25T17:18:47.000-0400</relative-time></i></p>
+                        <p>The "toggle" function is just as dangerous and wasteful in private code (if not more so the latter 😛) than in public. It should be removed entirely, and replaced with two separate utilities, one to read the current state of a drawer from the DOM (embodying the elm.hasClass branch) and another to write it. In addition, the open/close utilities should simply be folded into the "position" method. Also the current implementation is broken - the "position" method called from that.positionDrawers calls through to a method which is actually named "drawerAdjust". Please supply test cases for new functionality in future 🙂</p>
+
+                    </li>
+                    
+                    <li id="comment-12121">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2010-03-25T17:19:16.000-0400">2010-03-25T17:19:16.000-0400</relative-time></i></p>
+                        <p>Apologies - looks like there are functioning test cases for the new functionality - however, I suggest it would be a clearer implementation if the positional arguments were strings, and the toggle, open and close methods were removed.</p>
+
+                    </li>
+                    
+                    <li id="comment-12122">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-03-26T12:23:15.000-0400">2010-03-26T12:23:15.000-0400</relative-time></i></p>
+                        <p>Refactored public api again. There are now functions to setDrawers and getDrawerState.</p>
+
+                    </li>
+                    
+                    <li id="comment-12123">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-03-26T12:23:28.000-0400">2010-03-26T12:23:28.000-0400</relative-time></i></p>
+                        <p>assigned to Antranig for review</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/ENGAGE-533/"><span class="aria-hidden">←</span> Previous: ENGAGE-533</a>
+        <a class="mx-1" href="/browse/ENGAGE-535/">Next: ENGAGE-535 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

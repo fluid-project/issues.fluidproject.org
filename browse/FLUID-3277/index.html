@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3277  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3277 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3277/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3277/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3277/">FLUID-3277</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3277: Attempt to add children to leaf component in tree results in "targetlump is undefined" error</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3277">FLUID-3277</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-10-09T14:02:08.000-0400" prefix="">2009-10-09T14:02:08.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-04-02T15:16:59.612-0400" prefix="">2014-04-02T15:16:59.612-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1.2</li>
+                            
+                            <li>1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Renderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Below is a section of component tree - in it, "title-plain" is a leaf node, but is presented with children, because its markup contains further nodes. This triggers the "erroneous branch", currently at line 1778 of the renderer:</p>
+<p>if (component &amp;&amp; component.children !== undefined) {<br>
+renderContainer(component);<br>
+renderindex = lump.close_tag.lumpindex + 1;<br>
+}</p>
+<p>which can never execute correctly since it does not supply a target branch point. Behaviour in this case should be clarified and a reasonable diagnostic issued.</p>
+<p>var fullTree = {<br>
+children: [<br>
+// The colon (🙂 at the end of the rsf ID identifies the component as a repeating<br>
+// component. In this full tree, there is one object for each repeated component.<br>
+{<br>
+ID: "resource-item:",<br>
+children: [ {<br>
+ID: "title-plain",<br>
+decorators: [<br>
+{<br>
+type: "addClass",<br>
+classes: "level0"<br>
+}<br>
+],<br>
+children: [	{<br>
+ID: "title-link",<br>
+linktext: "My Workspace",<br>
+target: "/user/jimeng/",<br>
+decorators: [{<br>
+attrs: {title: "Folder"}<br>
+}]</p>
+<p>}, {<br>
+ID: "title-image", <br>
+target: "../images/dir_closed.gif",<br>
+decorators: [{<br>
+attrs: {alt: "Folder"}<br>
+}]<br>
+}]</p>
+<p>} ]<br>
+},</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23592">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2014-04-02T15:16:59.611-0400">2014-04-02T15:16:59.611-0400</relative-time></i></p>
+                        <p>We will be rewriting the renderer instead of fixing this.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3276/"><span class="aria-hidden">←</span> Previous: FLUID-3276</a>
+        <a class="mx-1" href="/browse/FLUID-3278/">Next: FLUID-3278 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

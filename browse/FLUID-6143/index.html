@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6143  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6143 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6143/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6143/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6143/">FLUID-6143</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6143: Very significantly improve performance of component instantiation</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6143">FLUID-6143</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-03-10T22:02:16.249-0500" prefix="">2017-03-10T22:02:16.249-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-03-11T23:07:53.812-0500" prefix="">2017-03-11T23:07:53.812-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Our work on invokers, starting with <a href="/browse/FLUID-4922/">FLUID-4922</a> "fast invokers" which were then abolished for <a href="/browse/FLUID-5249/">FLUID-5249</a> and <a href="/browse/FLUID-5796/">FLUID-5796</a> which brought the performance of invokers and listeners up to the same high standard in all cases, showed how much "air" could be found in our original, simplistically interpreted execution of the framework's declarative directives - this succeeded in improving invoker and listener dispatch by a factor of perhaps 60 by adopting an aggressive "caching and monomorphisation" strategy.</p>
+<p>Component instantiation remains at roughly the same dismal speeds as when the "recognisably modern" framework was delivered with <a href="/browse/FLUID-4330/">FLUID-4330</a> in early 2013. Increasingly we will run into situations where this represents a really unacceptable burden for the "typical" framework user - especially when we enter a modern era of rendering for <a href="/browse/FLUID-4260/">FLUID-4260</a>. Work on the "Visible Nexus" for <a href="https://github.com/amb26/fluid-authoring/tree/FLUID-4884/src/">https://github.com/amb26/fluid-authoring/tree/FLUID-4884/src/</a> shows very sluggish rendering for component trees holding a few dozen components, and this will only become worse as we author more ambitious applications. Load testing for <a href="https://github.com/fluid-project/kettle">https://github.com/fluid-project/kettle</a> also showed that we are limited by component instantiation speed, having to create at least one Infusion component per request.</p>
+<p>On recent Chromes, instantiation of a very minimal Infusion component takes around 1ms, and on recent Firefoxes, it is around 4x slower. The attached profile traces show the results from the manual performance test page at <a href="https://github.com/fluid-project/infusion/blob/master/tests/manual-tests/framework/core/performance-fastInvokers/js/performance-test.js#L125">https://github.com/fluid-project/infusion/blob/master/tests/manual-tests/framework/core/performance-fastInvokers/js/performance-test.js#L125</a> with the line </p>
+<pre><code class="hljs language-java">root.child2.events.createIt.fire();
+</code></pre>
+<p>uncommented in order to replace the existing line which tests invoker performance.</p>
+<p>These show that options merging currently dominates the cost of component construction. The <a href="/browse/FLUID-4330/">FLUID-4330</a> algorithm for this is vastly more complex than its 2010-era predecessor, and its replacement for <a href="/browse/FLUID-4982/">FLUID-4982</a> will be more complex still. This style of algorithm can never possibly be sufficiently performant to meet the kinds of use cases we listed above - it represents a form of "interpretation" whereas we need to make the shift to the era of "compilation".</p>
+<p>This will use the same kinds of schemes that we applied for <a href="/browse/FLUID-5249/">FLUID-5249</a>/<a href="/browse/FLUID-5796/">FLUID-5796</a>, only the task is hugely more ambitious since we will be "compiling" the action of some thousands of lines of framework code rather than a few tens. The concept will be similar - once the grade content of a component (more specifically, the identity and ordering of its "mergeBlocks" in the <a href="/browse/FLUID-4330/">FLUID-4330</a> sense) has been fixed, we should be able to skip to the end of the options merging process by fishing out a previously "memo-ised" representation of the monomorphised final expander block. Because of our insistence that for many cases, expansion must PRECEDE merging this will require some elaborate form of "stencil" structure where we have "symbolically executed" the merging process, assuming that the "shape" of any material fetched by expanders has remained the same. Some aspects of this process are sketched in the wiki page <a href="https://wiki.fluidproject.org/display/fluid/The+State+of+Options+Merging+25-4-16">https://wiki.fluidproject.org/display/fluid/The+State+of+Options+Merging+25-4-16</a> .</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6143/CPU-20170309T031055-original-old-clearChildrenScope.cpuprofile">
+                            
+                                CPU-20170309T031055-original-old-clearChildrenScope.cpuprofile
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6143/firefox-old-instantiation">
+                            
+                                firefox-old-instantiation
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6142/"><span class="aria-hidden">←</span> Previous: FLUID-6142</a>
+        <a class="mx-1" href="/browse/FLUID-6144/">Next: FLUID-6144 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5185  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5185 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5185/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5185/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5185/">FLUID-5185</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5185: Upgrade to the latest version of jQuery, jQuery UI and Qunit</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5185">FLUID-5185</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-10-21T10:37:49.522-0400" prefix="">2013-10-21T10:37:49.522-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T11:27:07.520-0500" prefix="">2014-03-03T11:27:07.520-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Upgrade Infusion to use the latest version of jQuery UI, Qunit, and 1.x line of jQuery.</p>
+<p>Since we still need to support IE 8 we cannot jump to the 2.x line of jQuery yet.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14850">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-11-22T14:11:27.800-0500">2013-11-22T14:11:27.800-0500</relative-time></i></p>
+                        <p>When updating jQuery UI we should take care to look at re-implementing the tooltip and tabs wrapper components. These should be brought up to modern standards. In particular for tooltip we should avoid the current idiom of creating new tooltips for each instance, rather we should share a single tooltip and move it around. Additionally, we should make sure that it supports all the modern features, e.g. custom-content (<a href="http://jqueryui.com/tooltip/#custom-content">http://jqueryui.com/tooltip/#custom-content</a>)</p>
+
+                    </li>
+                    
+                    <li id="comment-14854">
+                        <p class="mb-0"><b>Andrew Wills</b> <i>commented <relative-time datetime="2013-12-20T16:31:52.439-0500">2013-12-20T16:31:52.439-0500</relative-time></i></p>
+                        <p>Justin – do you really mean the "latest" versions?  1.10.x (at present)?  Is there a sense of when this work will be complete, and Fluid 1.5 available?  Thanks!</p>
+
+                    </li>
+                    
+                    <li id="comment-14857">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-12-20T22:28:55.951-0500">2013-12-20T22:28:55.951-0500</relative-time></i></p>
+                        <p>Two recent postings to fluid-work describing progress and discoveries during this work:</p>
+<p><a href="http://fluid.2324889.n4.nabble.com/jQuery-upgrades-for-Infusion-<a href=" browse="" FLUID-5185="" "="">FLUID-5185</a>-td8864.html"&gt;http://fluid.2324889.n4.nabble.com/jQuery-upgrades-for-Infusion-<a href="/browse/FLUID-5185/">FLUID-5185</a>-td8864.html (Dec 18th, 2013)</p>
+<p><a href="http://fluid.2324889.n4.nabble.com/Breaking-changes-in-recent-versions-of-jQuery-focus-handling-td8867.html">http://fluid.2324889.n4.nabble.com/Breaking-changes-in-recent-versions-of-jQuery-focus-handling-td8867.html</a> (Dec 19th, 2013)</p>
+
+                    </li>
+                    
+                    <li id="comment-14860">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-12-20T22:31:51.902-0500">2013-12-20T22:31:51.902-0500</relative-time></i></p>
+                        <p>Hi Drew - yes, I am currently pushing upgrade to 1.11 beta 2, given it seems that a new jQuery release is imminent. This is now essentially working in my branch (minus the tooltip component which needs a big rewrite) and I expect this to be done in a day or two. It should be merged with trunk within a couple of weeks - the 1.5 release process should hopefully follow not long after that, although we would like to get our documentation into better shape.</p>
+
+                    </li>
+                    
+                    <li id="comment-14863">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-12-20T22:33:52.078-0500">2013-12-20T22:33:52.078-0500</relative-time></i></p>
+                        <p>Make that beta 3 🙂</p>
+
+                    </li>
+                    
+                    <li id="comment-14866">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-01-20T08:45:08.805-0500">2014-01-20T08:45:08.805-0500</relative-time></i></p>
+                        <p>Antranig Basman jQuery UI 1.10.4 was just released on Jan 17. You may want to update this in your branch too.<br>
+<a href="http://blog.jqueryui.com/2014/01/jquery-ui-1-10-4/">http://blog.jqueryui.com/2014/01/jquery-ui-1-10-4/</a></p>
+
+                    </li>
+                    
+                    <li id="comment-14869">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-01-27T05:18:38.244-0500">2014-01-27T05:18:38.244-0500</relative-time></i></p>
+                        <p>Pull request is now ready for review at <a href="https://github.com/fluid-project/infusion/pull/448">https://github.com/fluid-project/infusion/pull/448</a> including last week's final versions of jQuery 1.11.0 and jQuery UI 1.10.4</p>
+
+                    </li>
+                    
+                    <li id="comment-14872">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-01-31T18:01:08.672-0500">2014-01-31T18:01:08.672-0500</relative-time></i></p>
+                        <p>Merged into trunk at revision 6218b16, along with various other upgrades that this provoked to the core framework - including a new "delegate tooltips" feature for the tooltip component and a new core lifecycle event "afterDestroy". Various fixes to the IoC testing framework also included</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5184/"><span class="aria-hidden">←</span> Previous: FLUID-5184</a>
+        <a class="mx-1" href="/browse/FLUID-5186/">Next: FLUID-5186 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

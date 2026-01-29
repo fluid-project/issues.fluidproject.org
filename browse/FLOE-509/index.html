@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-509  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-509 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-509/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-509/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-509/">FLOE-509</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-509: Bring the Materialization Toolkit into being from the Chart Authoring library + others</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-509">FLOE-509</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=Epic">Epic</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alan Harnum</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Alan%20Harnum">Alan Harnum</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-05-17T16:00:00.651-0400" prefix="">2017-05-17T16:00:00.651-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-05-17T16:09:40.063-0400" prefix="">2017-05-17T16:09:40.063-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Chart Authoring Tool</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>High-level JIRA to note eventually anticipated work on this...</p>
+<p>As we work further on projects involving the Chart Authoring library, it becomes clear that its functionality and concepts should be broken apart into separate modules, and incorporate some functionality from other projects (such as the Nexus) into the&#160;<strong>Materialization Toolkit</strong> (so named by Colin Clark).</p>
+<p>The toolkit will support our need to materialize data and other "things" in different&#160;states to support one-to-one individualized&#160;learning, such as:</p>
+<ol>
+<li>Visualization - charts, graphs, and otherwise. In current state this is largely implemented using D3.</li>
+<li>Sonification - making data or information into sound. Our two uses&#160;of this so far as the sonified charts, and the sonified sensors of the Nexus.</li>
+</ol>
+<p>It will also provide support for common tasks needed to materialize, such as:</p>
+<ol>
+<li>Data transformation</li>
+</ol>
+<ol>
+<li>
+<ol>
+<li>Model mapping of transformed values via Infusion transforms - see the "pure configuration" sonifier at <a href="https://github.com/waharnum/nexus-demos/blob/GPII-2189/science-lab/sensor-presentations/js/sensorPlayer.js#L111">https://github.com/waharnum/nexus-demos/blob/GPII-2189/science-lab/sensor-presentations/js/sensorPlayer.js#L111</a>&#160;for a simple but concrete example of what we'd eventually like to achieve for more complex cases</li>
+</ol>
+</li>
+<li>Scheduling behaviour, including mixing event-based and timer based scheduling such as we see in&#160;<a href="https://github.com/waharnum/nexus-demos/blob/GPII-2189/science-lab/sensor-presentations/js/sensorPlayer.js#L111">https://github.com/waharnum/nexus-demos/blob/GPII-2189/science-lab/sensor-presentations/js/sensorPlayer.js#L111</a></li>
+</ol>
+<p>Eventually we'll want a monorepo structure, but per the meeting notes: "for all mono repos, we don't yet have tooling to support monorepos, so we'll use a mega repo with a hiearchical directory structure reflective of the future subrepos."</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-508/"><span class="aria-hidden">←</span> Previous: FLOE-508</a>
+        <a class="mx-1" href="/browse/FLOE-510/">Next: FLOE-510 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

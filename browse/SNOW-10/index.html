@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SNOW-10  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SNOW-10 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SNOW-10/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SNOW-10/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SNOW" data-pagefind-filter="project">Snow</a></li>
+                <li><a href="/browse/SNOW-10/">SNOW-10</a></li>
+            </ol>
+        </nav>
+        <h1>SNOW-10: Enable categories on pages and show the navigational sidebar on the About Us page</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SNOW-10">SNOW-10</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SNOW/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SNOW/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SNOW/?reporter=Eloisa%20Guerrero">Eloisa Guerrero</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-02-02T13:46:58.218-0500" prefix="">2018-02-02T13:46:58.218-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-07-12T15:38:45.232-0400" prefix="">2018-07-12T15:38:45.232-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>By default pages do not have categories, so we have to programmatically enable them via the functions.php file. Once we've enabled the categories, we have to split sidebar.php into sidebar-post.php and sidebar-page.php to use the create_sidebar() function and show corresponding sidebars, specifically to enable this for the About Us page.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26191">
+                        <p class="mb-0"><b>Eloisa Guerrero</b> <i>commented <relative-time datetime="2018-02-04T15:20:20.203-0500">2018-02-04T15:20:20.203-0500</relative-time></i></p>
+                        <p>From <a href="https://stackoverflow.com/a/35087335">https://stackoverflow.com/a/35087335</a></p>
+<p>In order for Wordpress to enable categories (and tags) support for pages, we need to register the taxonomy for those objects. Taxonomies refer to a way of grouping objects, and in our case, we want to group the object type of pages.</p>
+<p>After&#160;that they need to be included in the queries (access $query object) so that&#160;Wordpress knows to interact with this new addition to its taxonomy.</p>
+<p>Lastly, add_action&#160;is the hook that will launch the functions.&#160;The add_action hook with tag 'init' initialises the function 'tags_categories_support_all' at the time that Wordpress loads. 'pre_get_posts' gives the function access to the $query object (which is passed by reference, meaning they don't have to be declared or returned).</p>
+<pre><code class="hljs language-java"><span class="hljs-comment">// add tag and category support to pages</span>
+function <span class="hljs-title function_">tags_categories_support_all</span><span class="hljs-params">()</span> {
+  register_taxonomy_for_object_type(<span class="hljs-string">'post_tag'</span>, <span class="hljs-string">'page'</span>);
+  register_taxonomy_for_object_type(<span class="hljs-string">'category'</span>, <span class="hljs-string">'page'</span>);  
+}
+
+<span class="hljs-comment">// ensure all tags and categories are included in queries</span>
+function <span class="hljs-title function_">tags_categories_support_query</span><span class="hljs-params">($wp_query)</span> {
+  <span class="hljs-keyword">if</span> ($wp_query-&gt;get(<span class="hljs-string">'tag'</span>)) $wp_query-&gt;set(<span class="hljs-string">'post_type'</span>, <span class="hljs-string">'any'</span>);
+  <span class="hljs-keyword">if</span> ($wp_query-&gt;get(<span class="hljs-string">'category_name'</span>)) $wp_query-&gt;set(<span class="hljs-string">'post_type'</span>, <span class="hljs-string">'any'</span>);
+}
+
+<span class="hljs-comment">// tag and category hooks</span>
+add_action(<span class="hljs-string">'init'</span>, <span class="hljs-string">'tags_categories_support_all'</span>);
+add_action(<span class="hljs-string">'pre_get_posts'</span>, <span class="hljs-string">'tags_categories_support_query'</span>);
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-26192">
+                        <p class="mb-0"><b>Eloisa Guerrero</b> <i>commented <relative-time datetime="2018-02-04T15:35:37.673-0500">2018-02-04T15:35:37.673-0500</relative-time></i></p>
+                        <p>I have since recycled the above code, just renaming the functions and putting the add_action hooks after their corresponding functions for easier reading.</p>
+<pre><code class="hljs language-java"><span class="hljs-comment">// Add tag and category support to pages</span>
+function <span class="hljs-title function_">allow_pages_tags_categories</span><span class="hljs-params">()</span> {
+ register_taxonomy_for_object_type(<span class="hljs-string">'post_tag'</span>, <span class="hljs-string">'page'</span>);
+ register_taxonomy_for_object_type(<span class="hljs-string">'category'</span>, <span class="hljs-string">'page'</span>); 
+}
+add_action(<span class="hljs-string">'init'</span>, <span class="hljs-string">'allow_pages_tags_categories'</span>);
+<span class="hljs-comment">// Ensure all tags and categories are included in queries</span>
+function <span class="hljs-title function_">add_queries_tags_categories</span><span class="hljs-params">($wp_query)</span> {
+ <span class="hljs-keyword">if</span> ($wp_query-&gt;get(<span class="hljs-string">'tag'</span>)) $wp_query-&gt;set(<span class="hljs-string">'post_type'</span>, <span class="hljs-string">'any'</span>);
+ <span class="hljs-keyword">if</span> ($wp_query-&gt;get(<span class="hljs-string">'category_name'</span>)) $wp_query-&gt;set(<span class="hljs-string">'post_type'</span>, <span class="hljs-string">'any'</span>);
+}
+add_action(<span class="hljs-string">'pre_get_posts'</span>, <span class="hljs-string">'add_queries_tags_categories'</span>);
+</code></pre>
+<p></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SNOW-9/"><span class="aria-hidden">←</span> Previous: SNOW-9</a>
+        <a class="mx-1" href="/browse/SNOW-11/">Next: SNOW-11 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

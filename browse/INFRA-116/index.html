@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-116  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-116 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-116/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-116/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-116/">INFRA-116</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-116: Fluid's wiki 504 Gateway Time-out</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-116">INFRA-116</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-02-16T09:20:57.314-0500" prefix="">2018-02-16T09:20:57.314-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-02-21T09:14:15.097-0500" prefix="">2018-02-21T09:14:15.097-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Users getting "504 Gateway Time-out" message while trying to access Fluid's Wiki.</p>
+<p>Issue was reported by monitoring.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/INFRA/INFRA-116/confluence-i14-20180216.tar.xz">
+                            
+                                confluence-i14-20180216.tar.xz
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/INFRA/INFRA-116/KB437133.pdf">
+                            
+                                KB437133.pdf
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26009">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-02-16T10:01:16.053-0500">2018-02-16T10:01:16.053-0500</relative-time></i></p>
+                        <p>Observed that CPU load was very low, server was almost idling. No recent error messages in Confluence's logs (atlassian-confluence.log).</p>
+<p>Netstat showed 2055 sockets to port 8090 with 1979 sockets being in CLOSE_WAIT state. 1059 were to 127.0.0.1 and 997 were to ::1, suggesting different methods of opening the connection locally. Under normal operation, usually 100 sockets are open, most in TIME_WAIT state.</p>
+<p>CLOSE_WAIT could mean an application error. The attached PDF from Red Hat's Knowledge Base describes the problem in detail.</p>
+<p>Restarting Confluence fixes the issue temporarily. Since we don't have a support contract for Confluence, I'm engaging the community to try and identify next steps.</p>
+
+                    </li>
+                    
+                    <li id="comment-26010">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-02-20T11:43:37.306-0500">2018-02-20T11:43:37.306-0500</relative-time></i></p>
+                        <p>Atlassian suggests increase the DB pool. I've increase it from 30 to 60 and will monitor.</p>
+
+                    </li>
+                    
+                    <li id="comment-26011">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-02-21T09:14:15.086-0500">2018-02-21T09:14:15.086-0500</relative-time></i></p>
+                        <p>Increasing the DB pool has not had any negative impact so far. I'm going to close this issue and re-open if the problem happens again.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-115/"><span class="aria-hidden">←</span> Previous: INFRA-115</a>
+        <a class="mx-1" href="/browse/INFRA-117/">Next: INFRA-117 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

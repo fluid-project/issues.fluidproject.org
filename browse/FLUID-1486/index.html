@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1486  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1486 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1486/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1486/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1486/">FLUID-1486</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1486: Runtime Error in Layout Customizer A runtime error is thrown when pushing the arrow key in a direction where there is no column.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1486">FLUID-1486</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-09-08T14:06:37.000-0400" prefix="">2008-09-08T14:06:37.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-09-11T09:13:17.000-0400" prefix="">2008-09-11T09:13:17.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Layout Reorderer</li>
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>A runtime error is thrown when pushing in a direction where there is no column.</p>
+<p>Error: 'cacheelem.position' is null or not an object<br>
+Line 381: var retpos = projected.cacheelem.position;<br>
+File: GeometricManager.js</p>
+<p>Steps to reproduce:</p>
+<p>1) Open the uPortal example from the daily build site:<br>
+<a href="http://build.fluidproject.org/fluid/sample-code/reorderer/portal/portal.html">http://build.fluidproject.org/fluid/sample-code/reorderer/portal/portal.html</a></p>
+<p>2) Tap the tab key until one of the portlets has focus</p>
+<p>3) Using the arrow keys move to a portlet in the left column</p>
+<p>4) Push the left arrow key. Notice the run time error</p>
+<p>The same issue occurs if you push right from a portlet in the right hand column</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF2, FF3 (Mac OS 10.5)<br>
+FF2, FF3 (Win XP)<br>
+FF3, IE7 (Win Vista)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23547">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-09-08T17:12:49.000-0400">2008-09-08T17:12:49.000-0400</relative-time></i></p>
+                        <p>I believe this has been resolved along with the day's fixes.</p>
+
+                    </li>
+                    
+                    <li id="comment-23548">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-09T09:31:01.000-0400">2008-09-09T09:31:01.000-0400</relative-time></i></p>
+                        <p>Same symptom, but different error.</p>
+<p>Error: 'mindist' is null or not an object<br>
+Line: 514<br>
+Code: if(lockedcollect.mindist &lt; minelem.mindist) {<br>
+File: GeometricManager.js</p>
+
+                    </li>
+                    
+                    <li id="comment-23549">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-09-09T22:20:42.000-0400">2008-09-09T22:20:42.000-0400</relative-time></i></p>
+                        <p>Sorry, I missed the IE7 specification on this the first time.... that puts a whole different complexion on things 😛</p>
+<p>Frankly, that error seems impossible.... since I can see no way that non-numeric values can get into "mindist" along any code path. We may have to wheel out the heavy artillery on this one, in the form of the Studio debugger thingery. From what I can see, this seems to work correctly on every other platform...</p>
+
+                    </li>
+                    
+                    <li id="comment-23550">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-10T09:11:08.000-0400">2008-09-10T09:11:08.000-0400</relative-time></i></p>
+                        <p>If you move a portlet using the mouse, before following the steps in the description, the issue doesn't seem to occur.</p>
+
+                    </li>
+                    
+                    <li id="comment-23551">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-10T12:04:42.000-0400">2008-09-10T12:04:42.000-0400</relative-time></i></p>
+                        <p>This also occurs in Firefox but with different steps.</p>
+<p>Steps to reproduce on firefox:</p>
+<p>1) Open the uPortal example from the daily build site:<br>
+<a href="http://build.fluidproject.org/fluid/sample-code/reorderer/portal/portal.html">http://build.fluidproject.org/fluid/sample-code/reorderer/portal/portal.html</a> </p>
+<p>2) Using the keyboard move all of the portlets from the right column to the left column. On the last portlet push left again. notice that it will cause an error (visible using firebug)</p>
+
+                    </li>
+                    
+                    <li id="comment-23552">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-09-10T14:32:38.000-0400">2008-09-10T14:32:38.000-0400</relative-time></i></p>
+                        <p>Fixed at revision 5503</p>
+
+                    </li>
+                    
+                    <li id="comment-23553">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-11T09:13:17.000-0400">2008-09-11T09:13:17.000-0400</relative-time></i></p>
+                        <p>Verified fix using:</p>
+<p>FF2, FF3 (Mac OS 10.5)<br>
+FF3, IE7 (Win Vista)</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1485/"><span class="aria-hidden">←</span> Previous: FLUID-1485</a>
+        <a class="mx-1" href="/browse/FLUID-1487/">Next: FLUID-1487 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VULAB-99  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VULAB-99 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VULAB-99/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VULAB-99/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VULAB" data-pagefind-filter="project">VULab</a></li>
+                <li><a href="/browse/VULAB-99/">VULAB-99</a></li>
+            </ol>
+        </nav>
+        <h1>VULAB-99: Track down licensing issue for MultiPartFormOutputStream class</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VULAB-99">VULAB-99</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VULAB/?type=Sub-task">Sub-task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VULAB/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>David Makalsky</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VULAB/?reporter=David%20Makalsky">David Makalsky</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-12-01T11:16:45.000-0500" prefix="">2008-12-01T11:16:45.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-04T08:27:23.937-0500" prefix="">2014-03-04T08:27:23.937-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5B</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>RASCAL</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-27630">
+                        <p class="mb-0"><b>David Makalsky</b> <i>commented <relative-time datetime="2008-12-01T11:28:45.000-0500">2008-12-01T11:28:45.000-0500</relative-time></i></p>
+                        <p>There is a class called MultiPartFormOutputStream that was available online as a code sample here:<br>
+<a href="http://forums.sun.com/thread.jspa?threadID=451245&forumID=31">http://forums.sun.com/thread.jspa?threadID=451245&amp;forumID=31</a></p>
+<p>I assumed that it was public domain software since it's available to anyone online and unlicensed.  Colin asked me to clarify with the author of the code.</p>
+<p>This issue stems from the following email received from Colin:</p>
+<p>David,</p>
+<p>Thanks for getting back to me. Comments below...</p>
+<p>Quoting David Makalsky &lt;dmakalsky@gmail.com&gt;:</p>
+<p>Good catch... I was going to follow up on this earlier, but I forgot.<br>
+I found this code online at the location you mentioned, and as far as<br>
+I could tell, it's a code example, or public domain code.  I think<br>
+it's a free-for-all at this point.</p>
+<p>The notice below the code is too ambiguous to interpret it clearly as being in the public domain.</p>
+<p>I will contact the author and take this on, no problem.  Also, I can<br>
+always rewrite the code.</p>
+<p>Thanks, that's great. Let me know how it goes.</p>
+<p>Again, my understanding is that if code is posted publicly with no<br>
+license, its public domain.</p>
+<p>That's not actually true. Any work is naturally copyrighted upon its creation. Releasing it on a forum doesn't automatically put it in the public domain; this is something that the author must do explicitly. While there's the hint that this code <strong>may</strong> be intended as public domain, there's no explicit statement to this effect. As a result, we need to treat it as copyrighted and not suitably licensed for use within Fluid.</p>
+<p>Hopefully the author will be interested in sharing the code with us specific under an appropriate license, or confirming his intention to make it public domain.</p>
+<p>VULAB9</p>
+
+                    </li>
+                    
+                    <li id="comment-27631">
+                        <p class="mb-0"><b>David Makalsky</b> <i>commented <relative-time datetime="2008-12-01T11:59:29.000-0500">2008-12-01T11:59:29.000-0500</relative-time></i></p>
+                        <p>Sent following email to Colin... waiting for reply.</p>
+<p>Hi Colin,</p>
+<p>All code in the SUN forum falls under this license:<br>
+<a href="http://developers.sun.com/license/berkeley_license.html">http://developers.sun.com/license/berkeley_license.html</a></p>
+<p>Of particular note:</p>
+<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+<ul>
+<li>Redistribution of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+</ul>
+<ul>
+<li>Redistribution in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
+</ul>
+<p>Neither the name of Sun Microsystems, Inc. or the names of contributors may be used to endorse or promote products derived from this software without specific prior written permission.</p>
+<p>This software is provided "AS IS," without a warranty of any kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY EXCLUDED. SUN MICROSYSTEMS, INC. ("SUN") AND ITS LICENSORS SHALL NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES. IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR INABILITY TO USE THIS SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+<p>You acknowledge that this software is not designed, licensed or intended for use in the design, construction, operation or maintenance of any nuclear facility. </p>
+<p>I think we can use it, as long as we embed this license in the sourcefile.</p>
+<p>Regards,</p>
+<p>– <br>
+David Makalsky</p>
+
+                    </li>
+                    
+                    <li id="comment-27632">
+                        <p class="mb-0"><b>Blake E</b> <i>commented <relative-time datetime="2008-12-01T12:04:15.000-0500">2008-12-01T12:04:15.000-0500</relative-time></i></p>
+                        <p>🙂 forgot component.</p>
+
+                    </li>
+                    
+                    <li id="comment-27633">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2008-12-01T16:13:57.000-0500">2008-12-01T16:13:57.000-0500</relative-time></i></p>
+                        <p>We'll need to ensure that there is a LICENSE.txt file in this directory identifying that the MultiPartFormOutputStream.java file is licensed differently from other files in the repository The LICENSE.txt file should contain the above license.</p>
+<p>The individual file should include copyright attribution to the original author, along with a link to the forums from which is was obtained, and the license embedded as well.</p>
+<p>Here are the details on licensing within Fluid:</p>
+<p><a href="http://wiki.fluidproject.org/display/fluid/Fluid+Licensing">http://wiki.fluidproject.org/display/fluid/Fluid+Licensing</a></p>
+<p>While you're at it, you'll probably want to add copyright and the Fluid embedded license to each of your own source files.</p>
+<p>VULAB10</p>
+
+                    </li>
+                    
+                    <li id="comment-27634">
+                        <p class="mb-0"><b>David Makalsky</b> <i>commented <relative-time datetime="2008-12-15T14:13:13.000-0500">2008-12-15T14:13:13.000-0500</relative-time></i></p>
+                        <p>Added LICENSE file for MultiPartFormOutputStream.java.  Will add embedded copyright this week.</p>
+<p>VULAB11</p>
+
+                    </li>
+                    
+                    <li id="comment-27635">
+                        <p class="mb-0"><b>David Makalsky</b> <i>commented <relative-time datetime="2008-12-19T12:53:29.000-0500">2008-12-19T12:53:29.000-0500</relative-time></i></p>
+                        <p>License terms embedded in each file</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VULAB-98/"><span class="aria-hidden">←</span> Previous: VULAB-98</a>
+        <a class="mx-1" href="/browse/VULAB-100/">Next: VULAB-100 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3730  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3730 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3730/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3730/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3730/">FLUID-3730</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3730: Create a little component that will manage the items that should be announced audibly through a screen reader.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3730">FLUID-3730</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-09-10T13:19:54.722-0400" prefix="">2010-09-10T13:19:54.722-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-01-14T10:45:18.543-0500" prefix="">2011-01-14T10:45:18.543-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This will be used by the reorderer to announce the location of a given reorderable element, as well as to announce its new location on reordering. This little component will be akin to the way we are able to add tabindex to an element.</p>
+<p>Several variations of this component will be needed:</p>
+<p>1. A static label component that makes it easy to associated elements with labels using aria-labelledby<br>
+2. A dynamically changing label, which is updated based on user interactions. This may be implemented by switching the element's aria-labelledby on the fly, or may need to be implemented using a live region</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3730/FLUID-3730-ariaLabeller.patch">
+                            
+                                FLUID-3730-ariaLabeller.patch
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-21349">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-10-04T14:01:45.948-0400">2010-10-04T14:01:45.948-0400</relative-time></i></p>
+                        <p>"Bug Parade Infusion 1.3"</p>
+
+                    </li>
+                    
+                    <li id="comment-21350">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2010-10-29T09:39:21.367-0400">2010-10-29T09:39:21.367-0400</relative-time></i></p>
+                        <p>Suggested implementation:</p>
+<p>Grid reorderer: &lt;row&gt;, &lt;column&gt;. &lt;description / contents&gt;. &lt;movable / fixed&gt; element.<br>
+i.e. "Row 1, Column 1. Quick Brown fox... Movable element."</p>
+<p>Layout reorderer: &lt;item position in column&gt; in &lt;column number&gt;. &lt;description / contents&gt;. &lt;movable / fixed&gt; element.<br>
+i.e. "Element 1 in Column 2. Graphic Apple. Fixed element."</p>
+<p>List reorderer example: &lt;position&gt;. &lt;description / contents&gt;. &lt;movable / fixed&gt; element.<br>
+i.e. "Element 1. Lorem ipsum. Movable element."</p>
+<p>Instructions on how to reorder items should be provided in an alternate location.</p>
+
+                    </li>
+                    
+                    <li id="comment-21351">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-11-17T19:33:30.781-0500">2010-11-17T19:33:30.781-0500</relative-time></i></p>
+                        <p>Here's a tiny patch for the little component fixing a slight bug.</p>
+
+                    </li>
+                    
+                    <li id="comment-21352">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2010-12-10T15:42:14.390-0500">2010-12-10T15:42:14.390-0500</relative-time></i></p>
+                        <p>Implemented at revision 10364 with some test cases at revision 10382 - review required</p>
+
+                    </li>
+                    
+                    <li id="comment-21353">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-12-14T16:49:19.965-0500">2010-12-14T16:49:19.965-0500</relative-time></i></p>
+                        <p>I've written a quick test for the live region functionality of the labeller. To avoid patch conflicts, I've pasted the relevant test below:</p>
+<p>fluidViewTests.test("ARIA labeller live region test", function () {<br>
+var target = $("#component-3");<br>
+var labeller = fluid.updateAriaLabel(target, "Label 1", {<br>
+dynamicLabel: true<br>
+});</p>
+<p>var region = fluid.jById(fluid.defaults("fluid.ariaLabeller").liveRegionId);<br>
+jqUnit.assertEquals("Live region should have the correct label", "Label 1", region.text());<br>
+labeller.update({<br>
+text: "Label 2", <br>
+dynamicLabel: true<br>
+});<br>
+jqUnit.assertEquals("The live region should be updated", target.attr("aria-label"), region.text());<br>
+});</p>
+
+                    </li>
+                    
+                    <li id="comment-21354">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-12-15T10:27:51.355-0500">2010-12-15T10:27:51.355-0500</relative-time></i></p>
+                        <p>I reviewed, tested, and committed Antranig's ariaLabeller component, adding an additional unit test along the way. Other commits under this ticket involved general framework changes, which I will review separately. +1 for inclusion of the fluid.ariaLabeller() component in 1.3.</p>
+
+                    </li>
+                    
+                    <li id="comment-21355">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2011-01-14T10:44:40.544-0500">2011-01-14T10:44:40.544-0500</relative-time></i></p>
+                        <p>Reopening to add the framework component to the issue. </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3729/"><span class="aria-hidden">←</span> Previous: FLUID-3729</a>
+        <a class="mx-1" href="/browse/FLUID-3731/">Next: FLUID-3731 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

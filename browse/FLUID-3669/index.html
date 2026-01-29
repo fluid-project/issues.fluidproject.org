@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3669  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3669 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3669/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3669/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3669/">FLUID-3669</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3669: Screen reader usability issues with Inline Edit (esp. uneven feedback, lack of overall orientation for screen reader users)</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3669">FLUID-3669</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jan%20Richards">Jan Richards</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-06-04T17:00:33.365-0400" prefix="">2010-06-04T17:00:33.365-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-07-30T15:28:42.524-0400" prefix="">2014-07-30T15:28:42.524-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.2</li>
+                            
+                            <li>1.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>F.2 WindowsXP+Firefox+NVDA</p>
+<p>Browser: Firefox v3.5.9<br>
+Screen Reader: NVDA 2010.1<br>
+Tester: Jan Richards</p>
+<p>BROWSE MODE:</p>
+<ul>
+<li>"The quick brown fox jumped button clickable over the lazy dogs and then" [similar to <a href="/browse/FLUID-2652/">FLUID-2652</a>]<br>
+-"edit autocomplete over the lazy dogs" =OK</li>
+<li>Weird: when press enter on the first editable area, it is editable. But then pressing ENTER on it again causes the focus to shift to that area's "undo edit" link This is not the case with any subsequent editable areas.</li>
+</ul>
+<p>FORMS MODE:</p>
+<ul>
+<li>works the same as above except without the weird issue affecting the first editable area</li>
+<li>though it is much easier to use "BROWSE MODE" overall since the other non-editable text is also readily available.<br>
+F.3 WindowsXP+Firefox+JAWS</li>
+</ul>
+<p>Browser: Firefox v3.5.8</p>
+<p>Screen Reader: JAWS 10<br>
+Tester: Phil Richards</p>
+<p>PC Cursor Mode</p>
+<ul>
+<li>if the mouse is used to click on an editable field, the audio will say "lazy dogs button to activate press space bar edit" but I can't figure out how to make those fields editable without directly clicking on them, it won't read the text so that I can press space bar to activate the fields</li>
+</ul>
+<p>Jaws Mode</p>
+<ul>
+<li>arrow keys move the cursor, when it is placed on a line of text it will read the line but give no indication that any part of it is editable</li>
+<li>left/right arrows move the cursor letter by letter, but when it is over  letters in an editable field it says "blank" rather than reading the letter</li>
+<li>I can't figure out how to activate the editable fields with the keyboard; if I click on one with the mouse and leave the mouse in that field, the audio will say "edit over jumped the lazy type in text"</li>
+<li>If I click an editable field and then move the  mouse out of that field, audio will say "the lazy dogs and then dot dot dot read only edit read only use your reading keys to read the text"</li>
+</ul>
+<p>Virtual Cursor</p>
+<ul>
+<li>Clicking on an editable field with the mouse causes the audio to say "edit the quick brown fox jumped over the lazy dog and then dot dot dot edit" or "the quick brown fox jumped button to edit type in text", I'm not sure what causes it to say one or the other</li>
+<li>If I navigate with the mouse it will read "the quick brown fox jumped over the lazy dogs button and then"<br>
+F.4 WindowsXP+IE+NVDA</li>
+</ul>
+<p>Browser: IE8</p>
+<p>Screen Reader: NVDA 2010.1<br>
+Tester: Phil Richards</p>
+<p>BROWSE MODE</p>
+<ul>
+<li>audio gives no indication of editable fields</li>
+<li>seems to be no way to edit the fields, enter key does nothing</li>
+</ul>
+<p>FOCUS MODE</p>
+<ul>
+<li>audio only reads "Example 1. Default Inline Edit"</li>
+<li>no way to edit fields or read other text<br>
+F.5 WindowsXP+IE+JAWS</li>
+</ul>
+<p>Browser: IE8</p>
+<p>Screen Reader: JAWS 10<br>
+Tester: Jan Richards</p>
+<ul>
+<li>VIRTUAL cursor reads things in useful chunks ARROW "the quick brown fox jumps" ARROW "over the lazy dogs"</li>
+<li>TAB through works well at finding the editable ares.</li>
+<li>JAWS reads "over the lazy dog button to activate press spacebar"</li>
+<li>SPACEBAR pressed JAWS reads: "edit over the lazy dogs type in text"</li>
+<li>JAWS read edit link as "undo edit link" </li>
+</ul>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>WindowsXP+IE8+NVDA2010<br>
+WindowsXP+IE8+JAWS10<br>
+WindowsXP+FF3.5+NVDA2010<br>
+WindowsXP+FF3.5+JAWS10</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20006">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-06-07T09:00:17.941-0400">2010-06-07T09:00:17.941-0400</relative-time></i></p>
+                        <p>a11y issue</p>
+
+                    </li>
+                    
+                    <li id="comment-20007">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2011-01-11T09:52:43.784-0500">2011-01-11T09:52:43.784-0500</relative-time></i></p>
+                        <p>With all the changes to Inline Edit in Infusion 1.3, this task should be evaluated to see if it has been sufficiently addressed.</p>
+
+                    </li>
+                    
+                    <li id="comment-20012">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-07-30T15:28:42.524-0400">2014-07-30T15:28:42.524-0400</relative-time></i></p>
+                        <p>There are have been a number of changes since this was filed, as well as updates to the various screen readers. This will need to be retested.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3668/"><span class="aria-hidden">←</span> Previous: FLUID-3668</a>
+        <a class="mx-1" href="/browse/FLUID-3670/">Next: FLUID-3670 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

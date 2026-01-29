@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4318  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4318 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4318/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4318/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4318/">FLUID-4318</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4318: Tabs component needs its own css file</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4318">FLUID-4318</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>heidi valles</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=heidi%20valles">heidi valles</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-06-30T16:19:37.617-0400" prefix="">2011-06-30T16:19:37.617-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-07-08T16:16:21.436-0400" prefix="">2011-07-08T16:16:21.436-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Tabs</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Right now ../../../lib/jquery/ui/css/demo-theme/jquery.ui.theme.css is required for the Tabs to look like tabs, but instead the tabs portion of this file should be in a tabs.css file in the component dir</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24474">
+                        <p class="mb-0"><b>heidi valles</b> <i>commented <relative-time datetime="2011-06-30T16:19:47.089-0400">2011-06-30T16:19:47.089-0400</relative-time></i></p>
+                        <p>Bug Parade Infusion</p>
+
+                    </li>
+                    
+                    <li id="comment-24475">
+                        <p class="mb-0"><b>heidi valles</b> <i>commented <relative-time datetime="2011-07-06T10:14:53.471-0400">2011-07-06T10:14:53.471-0400</relative-time></i></p>
+                        <p>Because it is actually a jquery widget, and our component is only a wrapper, expecting the user to include a jquery ui theme file isn't a stretch. We'll just rename demo-theme/ to default-theme/ (it's not currently used by anything right now), and have this be a sort of place-holder for our default infusion theme that will someday exist.</p>
+
+                    </li>
+                    
+                    <li id="comment-24476">
+                        <p class="mb-0"><b>heidi valles</b> <i>commented <relative-time datetime="2011-07-06T10:17:34.711-0400">2011-07-06T10:17:34.711-0400</relative-time></i></p>
+                        <p>IRC discussion: <a href="http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2011-07-06">http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2011-07-06</a>   8.22am-9.16am</p>
+
+                    </li>
+                    
+                    <li id="comment-24477">
+                        <p class="mb-0"><b>heidi valles</b> <i>commented <relative-time datetime="2011-07-07T14:43:39.077-0400">2011-07-07T14:43:39.077-0400</relative-time></i></p>
+                        <p>Renamed demo-theme to default-theme:  /lib/jquery/ui/css/default-theme/jquery.ui.theme.css req'd for Tabs component</p>
+
+                    </li>
+                    
+                    <li id="comment-24478">
+                        <p class="mb-0"><b>heidi valles</b> <i>commented <relative-time datetime="2011-07-07T15:05:37.280-0400">2011-07-07T15:05:37.280-0400</relative-time></i></p>
+                        <p>See <a href="http://issues.fluidproject.org/browse/FLUID-4329">http://issues.fluidproject.org/browse/FLUID-4329</a> re: tabs styling in fat panel</p>
+
+                    </li>
+                    
+                    <li id="comment-24479">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2011-07-07T15:09:44.846-0400">2011-07-07T15:09:44.846-0400</relative-time></i></p>
+                        <p>Heidi's fix was merged at commit 7bd27e50645115ffe00f94870deefe7ac223edfd.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4317/"><span class="aria-hidden">←</span> Previous: FLUID-4317</a>
+        <a class="mx-1" href="/browse/FLUID-4319/">Next: FLUID-4319 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

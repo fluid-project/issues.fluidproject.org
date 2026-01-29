@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5750  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5750 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5750/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5750/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5750/">FLUID-5750</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5750: Implement "options flattening revolution", flattening all material in "options" onto "top-level material"</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5750">FLUID-5750</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-08-22T16:28:06.388-0400" prefix="">2015-08-22T16:28:06.388-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-08-08T13:57:33.383-0400" prefix="">2021-08-08T13:57:33.383-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>6.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Deeply-nested component material can become very "pointy" very quickly - 33% of this depth is accounted for by the extra layer named "options" which is necessary when a component's options are specified at the subcomponent level. Here is an example:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.prefs.prefsEditorLoader"</span>, {
+        gradeNames: [<span class="hljs-string">"fluid.prefs.settingsGetter"</span>, <span class="hljs-string">"fluid.prefs.initialModel"</span>, <span class="hljs-string">"fluid.viewComponent"</span>],
+        components: {
+            prefsEditor: {
+                priority: <span class="hljs-string">"last"</span>,
+                type: <span class="hljs-string">"fluid.prefs.prefsEditor"</span>,
+                createOnEvent: <span class="hljs-string">"onCreatePrefsEditorReady"</span>,
+                options: {
+                    members: {
+                        initialModel: <span class="hljs-string">"{prefsEditorLoader}.initialModel"</span>
+                    },
+...
+</code></pre>
+<p>The initial historical driver for this was the "container" argument which was the 0th argument in the construction signature of viewComponents. Since this was manifestly not part of "options", a new level of containment needed to be created, when using declarative configuration, to house this argument. The other natural member of this layer was the component's creator function name itself, which became encoded as "type".</p>
+<p>We may shortly be in a position to do away with this layer. Part of it has been inherently logically problematic - the "createOnEvent" annotation is used to describe the conditions under which a component should be created. This would seem to be impossible to move into the component's own options area, since evaluating this would seem to imply that the component must exist already. However, with the mind-bending possibilities resulting from the "globally asynchronous ginger world" described under <a href="/browse/FLUID-4982/">FLUID-4982</a>, this should become perfectly feasible.</p>
+<p>The complete set of "top-level options" which would then be folded directly into options would be:</p>
+<p>container<br>
+type<br>
+createOnEvent<br>
+priority (this should be renamed as "creationPriority" or abolished entirely)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25469">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-09-08T11:33:31.853-0400">2015-09-08T11:33:31.853-0400</relative-time></i></p>
+                        <p>Against this: Flattening "options" onto the top level might surprise users who find it intuitive that material named "options" in configuration ends up at path "options" on the final component. Although we have exceptions to this - for example "events" would now end up at the expected place, and "members" move up one level anyway.</p>
+
+                    </li>
+                    
+                    <li id="comment-25470">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-09-14T12:44:47.527-0400">2015-09-14T12:44:47.527-0400</relative-time></i></p>
+                        <p>Private chat with Tony Atkins [RtF] strengthens our resolve in favour of this change, which had been wavering:</p>
+<p>(20:08:06) Adtkins: Well, they will end up learning to write configuration that would only work with a dynamic component<br>
+(20:08:11) AntranigBasman: Hopefully not<br>
+(20:08:16) AntranigBasman: Why would they?<br>
+(20:08:27) AntranigBasman: They have just written "options"<br>
+(20:08:33) AntranigBasman: THEY don't reference "arguments", only you do<br>
+(20:08:37) Adtkins: They can't specify the container.<br>
+(20:08:50) AntranigBasman: Why not?<br>
+(20:08:56) Adtkins: we went through this.<br>
+(20:09:00) AntranigBasman: Yes, we did<br>
+(20:09:01) Adtkins: remember yesterday?<br>
+(20:09:03) AntranigBasman: And we implemented a solution for it<br>
+(20:09:05) AntranigBasman: Remember? : P<br>
+(20:09:15) Adtkins: Yes, which made things not look at all like normal options blocks.<br>
+(20:09:24) Adtkins: at least not one you would pass to a component's constructor<br>
+(20:09:29) AntranigBasman: THey look exactly like them, just at one level of containment further out<br>
+(20:09:36) AntranigBasman: They look exactly like what you would write as a subcomponent definition<br>
+(20:09:44) AntranigBasman: And we are planning for a world in which users do not call component constructors<br>
+(20:10:05) Adtkins: Did you get that last bit?<br>
+(20:10:21) AntranigBasman: Yes<br>
+(20:10:36) AntranigBasman: Although I don't know how I could tell 🙂<br>
+(20:10:41) AntranigBasman: I'll assume that "I got that last bit"<br>
+(20:10:41) Adtkins: I was hoping that we would end up teaching them to enter something they could also plug into a constructor.<br>
+(20:10:46) AntranigBasman: Yes<br>
+(20:10:58) AntranigBasman: Well, we can't<br>
+(20:11:01) AntranigBasman: Constructors are not declarative<br>
+(20:11:05) AntranigBasman: And eventually they will be abolished<br>
+(20:11:12) Adtkins: in favor of what?<br>
+(20:11:19) AntranigBasman: In favor of something very similar to what you have just implemented<br>
+(20:11:21) Adtkins: I mean like namespaced.bollocks({})<br>
+(20:11:29) AntranigBasman: A scheme which just accepts configuration and "puts it somewhere"<br>
+(20:11:31) Adtkins: those are really going away?<br>
+(20:11:47) AntranigBasman: Well, we won't in practice abolish them - but they are not part of "end user programming"<br>
+(20:11:57) Adtkins: That's fair.<br>
+(20:11:59) AntranigBasman: A user can only use a constructor if they have already committed to writing JavaScript<br>
+(20:12:09) AntranigBasman: In which case they are part of a different ecosystem<br>
+(20:12:22) Adtkins: or if they use the initBlock helper.<br>
+(20:12:32) AntranigBasman: I think it's reasonable enough to tell them if/when they decided to graduate, "what you used to write in the 'container' field now goes into the first argument"<br>
+(20:12:41) AntranigBasman: But actually I <strong>AM</strong> planning to abolish that particularly annoyance<br>
+(20:12:44) AntranigBasman: You can consult this JIRA:<br>
+(20:12:54) Adtkins: Yes, I was thinking we would have a similar graduation phase when starting to discuss server-side components<br>
+(20:12:56) AntranigBasman: <a href="https://issues.fluidproject.org/browse/FLUID-5750">https://issues.fluidproject.org/browse/FLUID-5750</a><br>
+(20:13:05) Adtkins: which I am not even thinking of making work in a sandbox.<br>
+(20:13:10) AntranigBasman: Once this is implemented, one level of your annoyance goes away<br>
+(20:13:19) AntranigBasman: Since we will stop having this separate wierd status of "container"<br>
+(20:13:26) AntranigBasman: It will just become a top-level option like everything else<br>
+(20:13:31) Adtkins: what about type?<br>
+(20:13:34) Adtkins: is that included in the purge?<br>
+(20:13:34) AntranigBasman: That too 🙂<br>
+(20:13:41) Adtkins: fantastic.<br>
+(20:13:59) AntranigBasman: We already do have the new utility "fluid.construct" although it is not widely used<br>
+(20:14:08) AntranigBasman: But this is the scheme that will be used when we implement THE NEXUS<br>
+(20:14:18) AntranigBasman: Since all that there will be is "a block of JSON going over the wire"<br>
+(20:14:24) AntranigBasman: So we want to make that block as self-contained as possible<br>
+(20:15:02) AntranigBasman: Our current fluid.viewThing(container, options) syntax was designed back in the dark days of 2007 when we didn't have an inkling of this future magnific world<br>
+(20:15:23) Adtkins: Yes, I find myself trying to put container in the options all the time.<br>
+(20:15:25) AntranigBasman: We didn't even have "littleComponents" then since we implicitly assumed that all that anyone would create was view widgets<br>
+(20:15:26) Adtkins: it just seems more natural.<br>
+(20:15:44) AntranigBasman: And we've had to keep hold of these scheme for backwards compatibility during the 1.x era<br>
+(20:15:55) AntranigBasman: Now we're gearing up to 2.0 we can start to revisit these ancient and fundamental mistakes</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5749/"><span class="aria-hidden">←</span> Previous: FLUID-5749</a>
+        <a class="mx-1" href="/browse/FLUID-5751/">Next: FLUID-5751 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

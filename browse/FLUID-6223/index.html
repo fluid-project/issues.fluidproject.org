@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6223  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6223 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6223/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6223/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6223/">FLUID-6223</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6223: Update fluid.stringTemplate to support deeper paths...</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6223">FLUID-6223</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Tony%20Atkins%20%5BRtF%5D">Tony Atkins [RtF]</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-11-14T05:52:19.891-0500" prefix="">2017-11-14T05:52:19.891-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:18.882-0400" prefix="">2024-07-22T10:35:18.882-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently, <code>fluid.stringTemplate</code> only supports a single top-level key within the terms object, as in:</p>
+<pre><code class="hljs language-java">fluid.stringTemplate(<span class="hljs-string">"%foo.bar"</span>, { foo: { bar: <span class="hljs-string">"baz"</span> }}); <span class="hljs-comment">// returns "[object Object].bar"</span>
+</code></pre>
+<p>In part to help with <a href="https://issues.gpii.net/browse/GPII-2444">variable handling in i18n message bundles</a>, I would like to improve upon this by:</p>
+<ol>
+<li>Looking for all valid <a href="https://docs.fluidproject.org/infusion/development/FrameworkConcepts.html#el-paths">EL path</a> characters to the right of each percent sign.</li>
+<li>Breaking those down into segments by period characters.</li>
+<li>Iterate through using the segments as input to fluid.get, lopping off the trailing segment until a match is found (or not).</li>
+</ol>
+<p>This would allow deep referencing of material, such that:</p>
+<pre><code class="hljs language-java">fluid.stringTemplate(<span class="hljs-string">"%foo.bar"</span>, { foo: { bar: <span class="hljs-string">"baz"</span> }}); <span class="hljs-comment">// returns "baz"</span>
+</code></pre>
+<p>cc: Antranig Basman</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22359">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2017-11-14T06:10:29.052-0500">2017-11-14T06:10:29.052-0500</relative-time></i></p>
+                        <p>I just realised that we would also need to support incomplete segments, so that we can substitute variables that are not separated from non-key textual content, as in:</p>
+<pre><code class="hljs language-java">fluid.stringTemplate(<span class="hljs-string">"%variable"</span>, { varia: <span class="hljs-string">"flexi"</span>}); <span class="hljs-comment">// returns "flexible"</span>
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-22361">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2017-11-14T06:29:29.009-0500">2017-11-14T06:29:29.009-0500</relative-time></i></p>
+                        <p>In chats with Antranig Basman, we are discussing keeping this function data-centric, i.e. having it search based on material that is known to exist in <code>terms</code>.  We would add support for deeper references by providing a mechanism to "flatten" a deeper structure in to an object with only top-level elements, keyed by EL Path, as in:</p>
+<pre><code class="hljs language-java">my.magic.converter({ deep:{  path: <span class="hljs-string">"some text"</span> } })  <span class="hljs-comment">// becomes { "deep.path": "some text" }</span>
+</code></pre>
+<p>With this structure, "%deep.path" would work as expected.  This should minimally impact existing users, as they in essence are already only able to refer to single-segment EL paths within their templates.</p>
+
+                    </li>
+                    
+                    <li id="comment-22363">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2017-11-14T07:21:02.064-0500">2017-11-14T07:21:02.064-0500</relative-time></i></p>
+                        <p>In looking at <a href="https://github.com/fluid-project/infusion/blob/61f29d2051d3557fdac8a68060c51f861ea24cc0/tests/framework-tests/core/js/FluidJSTests.js#L383">the tests for fluid.stringTemplate</a>, I see that we do use arrays and indices, as in:</p>
+<pre><code class="hljs language-java">fluid.stringTemplate(<span class="hljs-string">"%0"</span>, [<span class="hljs-string">"a value"</span>]); <span class="hljs-comment">// returns "a value"</span>
+</code></pre>
+<p>In flattening the terms, we discussed using <code>fluid.each</code> on any objects or arrays, such that:</p>
+<pre><code class="hljs language-java">my.magic.converter({ array: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>], object: { deep: <span class="hljs-string">"value"</span>}});
+<span class="hljs-comment">/* Returns:
+{
+  "array.0": 1,
+  "array.1": 2,
+  "array.2": 3,
+  "object.deep": "value"
+}
+*/</span>
+</code></pre>
+<p>Given that directly referring to <code>%object</code> in a string template results in <code>[Object object]</code> at the moment, we can reasonably expect people to only be directly referring to string, number, and boolean values.</p>
+
+                    </li>
+                    
+                    <li id="comment-22365">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-01-22T05:21:23.416-0500">2018-01-22T05:21:23.416-0500</relative-time></i></p>
+                        <p>Antranig Basman,&#160;now that my previous infusion pull is merged, I am preparing to spike this as we have discussed.  Unless you have new thoughts on the subject, I would follow the approach outlined in the comments above, i.e.:</p>
+<ol>
+<li>Before iterating through keys in the values supplied to fluid.stringTemplate, the structure would be "flattened" as described above.</li>
+<li>The rest of the logic would be as before, iterate through the keys in the flattened object in reverse order by length, attempting to replace the longest key possible after the percent sign. </li>
+</ol>
+
+                    </li>
+                    
+                    <li id="comment-22367">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-01-22T09:25:13.397-0500">2018-01-22T09:25:13.397-0500</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/infusion/pull/871">https://github.com/fluid-project/infusion/pull/871</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22368">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2018-01-25T15:18:15.440-0500">2018-01-25T15:18:15.440-0500</relative-time></i></p>
+                        <p>I'm greatly interested in progress on this issue, and look forward to being able to make use of it! 🙂</p>
+<p>I have a case where I would like to&#160;have a reference within an array or object that refers to a value within another array/object that is a sibling of the first. That is to say, some way to indicate that the value I'd like to get is both up a level and then down into a collection in the way you've described.</p>
+<p></p>
+<pre><code class="hljs language-java"><span class="hljs-comment">// E.g. the following object...</span>
+<span class="hljs-type">var</span> <span class="hljs-variable">exempliGratia</span> <span class="hljs-operator">=</span> {
+  collectionA: {
+    valueA: <span class="hljs-string">"foo"</span>
+  },
+  collectionB: {
+    valueB: <span class="hljs-string">"%..collectionA.valueA"</span>
+    <span class="hljs-comment">// This ".." notation is something I've just made up, there is likely a more elegant solution</span>
+  }
+};
+
+<span class="hljs-comment">// ... would resolve into:</span>
+{
+  collectionA: {
+    valueA: <span class="hljs-string">"foo"</span>
+  },
+  collectionB: {
+    valueB: <span class="hljs-string">"foo"</span>
+  }
+}
+</code></pre>
+<p>Am I correct in understanding that this functionality is not present in your PR, Tony Atkins [RtF]?</p>
+<p>Edit: after reviewing&#160;fluid.flattenObjectPaths, it seems like this may already be available, and I would only make reference to %collectionA.valueA, without any need to go "up" the chain first.</p>
+
+                    </li>
+                    
+                    <li id="comment-22370">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-01-26T04:25:30.141-0500">2018-01-26T04:25:30.141-0500</relative-time></i></p>
+                        <p>Gregor Moss, the underlying concept of an EL Path does not support this type of "go up to the parent, then down" mechanism directly.  However, depending on your context, there may be other options.  For example, in my related i18n work with Handlebars templates, there is always the option to pass a different part of the current context to the handlebars helper, so that although you can only represent "downward-facing" material from your currently location using EL Paths, you can choose to start a particular evaluation higher in the context.  Handlebars provides the ability to pass in material relative to where you are, so in that environment you can indeed tree up, then down, you just have to do part of it with Handlebars.</p>
+<p>Anyway, if you can give a concrete example, I might be able to advise you further.</p>
+<p>cc: Antranig Basman</p>
+
+                    </li>
+                    
+                    <li id="comment-22371">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-01-26T06:03:08.784-0500">2018-01-26T06:03:08.784-0500</relative-time></i></p>
+                        <p>Sorry, I guess I mean context for your example, i.e. what are you using fluid.stringTemplate with that would be expected to make sense of the paths?</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6222/"><span class="aria-hidden">←</span> Previous: FLUID-6222</a>
+        <a class="mx-1" href="/browse/FLUID-6224/">Next: FLUID-6224 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4762  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4762 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4762/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4762/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4762/">FLUID-4762</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4762: Fluid view unit test failing (Dead man's blur test - non-excluded component one, failing test #2)</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4762">FLUID-4762</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=James%20Yoon">James Yoon</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-08-15T15:24:31.475-0400" prefix="">2012-08-15T15:24:31.475-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T12:42:07.447-0500" prefix="">2014-03-03T12:42:07.447-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>IE8/Win7</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-4762/Screen Shot 2012-08-15 at 3.23.39 PM.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-4762/Screen Shot 2012-08-15 at 3.23.39 PM.png" alt="Screen Shot 2012-08-15 at 3.23.39 PM.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-16742">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2012-08-23T16:31:42.397-0400">2012-08-23T16:31:42.397-0400</relative-time></i></p>
+                        <p>With IE8, some dead man's blur unit tests, including the one specified in the title, throw js error: Object doesn't support this property or method.</p>
+<p>To produce,<br>
+1. In IE8, go to tools -&gt; Internet Options -&gt; Advanced tab -&gt; Browsing section -&gt; Turn on "Display a notification about every script error"<br>
+2. Run <a href="http://build.fluidproject.org/infusion/tests/framework-tests/core/html/FluidView-test.html">http://build.fluidproject.org/infusion/tests/framework-tests/core/html/FluidView-test.html</a></p>
+
+                    </li>
+                    
+                    <li id="comment-16744">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-10-16T13:20:00.335-0400">2012-10-16T13:20:00.335-0400</relative-time></i></p>
+                        <p>deadMansBlur() uses Date.now(), which is not supported in IE8. One suggestion is to use<br>
+new Date().value()<br>
+instead.</p>
+
+                    </li>
+                    
+                    <li id="comment-16746">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2012-12-17T13:31:47.459-0500">2012-12-17T13:31:47.459-0500</relative-time></i></p>
+                        <p>Added a pull request ( <a href="https://github.com/fluid-project/infusion/pull/250">https://github.com/fluid-project/infusion/pull/250</a> ) to fix this. The change is to implement a fall back to use Date().gettime() instead of Date.now() when the latter doesn't exist.</p>
+
+                    </li>
+                    
+                    <li id="comment-16748">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2012-12-17T13:45:02.298-0500">2012-12-17T13:45:02.298-0500</relative-time></i></p>
+                        <p>Merged pull request <a href="https://github.com/fluid-project/infusion/pull/250">https://github.com/fluid-project/infusion/pull/250</a> into project repo at 725fd98d6cc3ebbe92f378b8c05738b178dc6516</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4761/"><span class="aria-hidden">←</span> Previous: FLUID-4761</a>
+        <a class="mx-1" href="/browse/FLUID-4763/">Next: FLUID-4763 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

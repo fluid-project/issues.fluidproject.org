@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5602  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5602 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5602/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5602/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5602/">FLUID-5602</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5602: Improve diagnostics on misformatted event boiling configuration, and consider removing "events" wrapping level</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5602">FLUID-5602</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-03-03T17:36:04.816-0500" prefix="">2015-03-03T17:36:04.816-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-03-03T17:36:04.816-0500" prefix="">2015-03-03T17:36:04.816-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In a recent report on gpii-architecture list</p>
+<p>[placeholder for link to post from 3/3/15 from Tony Atkins "Can't seem to wire in" which has not yet appeared on http://lists.gpii.net/pipermail/architecture/2015-March/date.html ]</p>
+<p>there was a problem where the extra containment level "events" was missed out from a compound event boiling specification: "The events block was omitted from Antranig's otherwise excellent example, and is necessary to avoid cryptic errors about not having a base event name."</p>
+<p>This syntax is documented at <a href="https://github.com/fluid-project/infusion-docs/blob/master/src/documents/EventInjectionAndBoiling.md#boiling-multiple-events">https://github.com/fluid-project/infusion-docs/blob/master/src/documents/EventInjectionAndBoiling.md#boiling-multiple-events</a> - we should consider whether we can </p>
+<p>i) provide a better diagnostic in this case and/or<br>
+ii) remove the need for the "events" container entirely.</p>
+<p>It's unclear how many more FRP-like event conjunctions we might need to support here, and/or whether we will be able to remove almost all cases of such explicit boiling by means of a) promise-like semantics applied to configuration in general (causing "multiple waits" in the case of multiple dependencies) and/or b) "integral models" derived from streams of differential model changes</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5601/"><span class="aria-hidden">←</span> Previous: FLUID-5601</a>
+        <a class="mx-1" href="/browse/FLUID-5603/">Next: FLUID-5603 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

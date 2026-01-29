@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2320  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2320 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2320/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2320/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2320/">FLUID-2320</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2320: Content does not properly render: using Opera</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2320">FLUID-2320</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-03-09T09:15:45.000-0400" prefix="">2009-03-09T09:15:45.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-03-17T09:14:07.000-0400" prefix="">2009-03-17T09:14:07.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Pager</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Content does not properly render: using Opera</p>
+<p><a href="http://build.fluidproject.org/fluid/sample-code/pager/sakai-site-setting/site_setting_members.html">http://build.fluidproject.org/fluid/sample-code/pager/sakai-site-setting/site_setting_members.html</a></p>
+<p>Notice that there are only 3 page links and one item in the content area</p>
+<p>This is the error log from Opera 9.6 on the mac</p>
+<p>JavaScript<br>
+Timeout thread: delay 13 ms<br>
+09:14:43 <a href="/browse/GMT-0400/">GMT-0400</a>:  Error finding root template for fluid.pager.renderedPageList: selector ".ss-members .pager-top .pager-links" with name root returned no results in context [document: location http://build.fluidproject.org/fluid/sample-code/pager/sakai-site-setting/site_setting_members.html#]<br>
+JavaScript - <a href="http://build.fluidproject.org/fluid/sample-code/pager/sakai-site-setting/site_setting_members.html">http://build.fluidproject.org/fluid/sample-code/pager/sakai-site-setting/site_setting_members.html</a><br>
+Timeout thread: delay 13 ms<br>
+Error:<br>
+name: TypeError<br>
+message: Statement on line 32: Type mismatch (usually non-object value supplied where object required)<br>
+Backtrace:<br>
+Line 32 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js</a><br>
+message.fail(); // Intentionally cause a browser error by invoking a nonexistent function.<br>
+Line 295 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js</a><br>
+fluid.fail(message + ": selector \"" + result.selector + "\" with name " + result.selectorName<br>
+Line 162 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Pager.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Pager.js</a><br>
+fluid.expectFilledSelector(root, "Error finding root template for fluid.pager.renderedPageList");<br>
+...  Line 518 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js</a><br>
+else return func.apply(null, args);<br>
+Line 403 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js</a><br>
+togo[i] = entry.apply(null, args);<br>
+Line 352 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js</a><br>
+return fluid.initSubcomponents(that, className, args)[0];<br>
+Line 218 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Pager.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Pager.js</a><br>
+that.pageList = fluid.initSubcomponent(that, "pageList", <br>
+...  Line 518 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js</a><br>
+else return func.apply(null, args);<br>
+Line 403 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js</a><br>
+togo[i] = entry.apply(null, args);<br>
+Line 352 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js</a><br>
+return fluid.initSubcomponents(that, className, args)[0];<br>
+Line 669 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Pager.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Pager.js</a><br>
+that.pagerBar = fluid.initSubcomponent(that, "pagerBar", <br>
+...  Line 54 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Pager.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Pager.js</a><br>
+return fluid.pagerImpl.apply(null, arguments);<br>
+Line 82 of linked script <a href="http://build.fluidproject.org/fluid/sample-code/pager/sakai-site-setting/js/site_setting_members.js:">http://build.fluidproject.org/fluid/sample-code/pager/sakai-site-setting/js/site_setting_members.js:</a> In function initPager<br>
+var pager = fluid.pager(".ss-members", {<br>
+Line 394 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/renderer/fluidParser.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/renderer/fluidParser.js</a><br>
+callback(resourceSpecs);<br>
+Line 361 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/renderer/fluidParser.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/renderer/fluidParser.js</a><br>
+fluid.fetchResources(resourceSpecs, callback);<br>
+Line 3523 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/jquery/jquery-1.3.1.js:">http://build.fluidproject.org/fluid/fluid-components/js/jquery/jquery-1.3.1.js:</a> In function success<br>
+s.success( data, status );<br>
+Line 3480 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/jquery/jquery-1.3.1.js">http://build.fluidproject.org/fluid/fluid-components/js/jquery/jquery-1.3.1.js</a><br>
+success();<br>
+...<br>
+stacktrace: n/a; see 'opera:config#UserPrefs|Exceptions Have Stacktrace'<br>
+JavaScript - <a href="http://build.fluidproject.org/fluid/sample-code/pager/sakai-site-setting/site_setting_members.html">http://build.fluidproject.org/fluid/sample-code/pager/sakai-site-setting/site_setting_members.html</a><br>
+Timeout thread: delay 13 ms<br>
+Error:<br>
+name: TypeError<br>
+message: Statement on line 32: Type mismatch (usually non-object value supplied where object required)<br>
+Backtrace:<br>
+Line 32 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js</a><br>
+message.fail(); // Intentionally cause a browser error by invoking a nonexistent function.<br>
+Line 295 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js</a><br>
+fluid.fail(message + ": selector \"" + result.selector + "\" with name " + result.selectorName<br>
+Line 162 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Pager.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Pager.js</a><br>
+fluid.expectFilledSelector(root, "Error finding root template for fluid.pager.renderedPageList");<br>
+...  Line 518 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js</a><br>
+else return func.apply(null, args);<br>
+Line 403 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js</a><br>
+togo[i] = entry.apply(null, args);<br>
+Line 352 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js</a><br>
+return fluid.initSubcomponents(that, className, args)[0];<br>
+Line 218 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Pager.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Pager.js</a><br>
+that.pageList = fluid.initSubcomponent(that, "pageList", <br>
+...  Line 518 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js</a><br>
+else return func.apply(null, args);<br>
+Line 403 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js</a><br>
+togo[i] = entry.apply(null, args);<br>
+Line 352 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Fluid.js</a><br>
+return fluid.initSubcomponents(that, className, args)[0];<br>
+Line 669 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Pager.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Pager.js</a><br>
+that.pagerBar = fluid.initSubcomponent(that, "pagerBar", <br>
+...  Line 54 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/Pager.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/Pager.js</a><br>
+return fluid.pagerImpl.apply(null, arguments);<br>
+Line 82 of linked script <a href="http://build.fluidproject.org/fluid/sample-code/pager/sakai-site-setting/js/site_setting_members.js:">http://build.fluidproject.org/fluid/sample-code/pager/sakai-site-setting/js/site_setting_members.js:</a> In function initPager<br>
+var pager = fluid.pager(".ss-members", {<br>
+Line 394 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/renderer/fluidParser.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/renderer/fluidParser.js</a><br>
+callback(resourceSpecs);<br>
+Line 361 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/fluid/renderer/fluidParser.js">http://build.fluidproject.org/fluid/fluid-components/js/fluid/renderer/fluidParser.js</a><br>
+fluid.fetchResources(resourceSpecs, callback);<br>
+Line 3523 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/jquery/jquery-1.3.1.js:">http://build.fluidproject.org/fluid/fluid-components/js/jquery/jquery-1.3.1.js:</a> In function success<br>
+s.success( data, status );<br>
+Line 3480 of linked script <a href="http://build.fluidproject.org/fluid/fluid-components/js/jquery/jquery-1.3.1.js">http://build.fluidproject.org/fluid/fluid-components/js/jquery/jquery-1.3.1.js</a><br>
+success();<br>
+...<br>
+stacktrace: n/a; see 'opera:config#UserPrefs|Exceptions Have Stacktrace'</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Opera 9.6 (Mac OS 10.5, Win XP)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19916">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-03-17T09:14:07.000-0400">2009-03-17T09:14:07.000-0400</relative-time></i></p>
+                        <p>Appears to have been fixed</p>
+<p>Tested using:</p>
+<p>Opera 9.6 (Mac OS 10.5, Win XP) </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-2319/"><span class="aria-hidden">←</span> Previous: FLUID-2319</a>
+        <a class="mx-1" href="/browse/FLUID-2321/">Next: FLUID-2321 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-220  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-220 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-220/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-220/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-220/">C2LC-220</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-220: Report on (and potentially improve) test code coverage.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-220">C2LC-220</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Done</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-09-09T07:48:06.247-0400" prefix="">2020-09-09T07:48:06.247-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-09-22T09:03:09.761-0400" prefix="">2020-09-22T09:03:09.761-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Env 0.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Environment</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently, we do not report on code coverage in the coding environment.  This ticket covers  adding coverage both to local test runs and especially as part of CI builds.</p>
+<p>As there are likely to be a lot of gaps, we should discuss how many gaps to close as part of the initial effort.</p>
+<p>One option we have whether or not we choose to close the gaps in this issue is to establish our baseline and set any lower level of code coverage as a test failure.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10702">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2020-09-09T07:48:29.103-0400">2020-09-09T07:48:29.103-0400</relative-time></i></p>
+                        <pre><code class="hljs language-java">-------------------------------|----------|----------|----------|----------|-------------------|
+File                           |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+-------------------------------|----------|----------|----------|----------|-------------------|
+All files                      |     <span class="hljs-number">55.9</span> |    <span class="hljs-number">43.65</span> |    <span class="hljs-number">46.28</span> |    <span class="hljs-number">56.61</span> |                   |
+ src                           |    <span class="hljs-number">67.62</span> |    <span class="hljs-number">61.92</span> |    <span class="hljs-number">53.47</span> |    <span class="hljs-number">67.58</span> |                   |
+  ActionPanel.js               |       <span class="hljs-number">90</span> |    <span class="hljs-number">78.57</span> |      <span class="hljs-number">100</span> |       <span class="hljs-number">90</span> |       <span class="hljs-number">142</span>,<span class="hljs-number">143</span>,<span class="hljs-number">144</span> |
+  AddModeImage.js              |        <span class="hljs-number">0</span> |      <span class="hljs-number">100</span> |        <span class="hljs-number">0</span> |        <span class="hljs-number">0</span> |                <span class="hljs-number">14</span> |
+  AddNode.js                   |    <span class="hljs-number">77.27</span> |    <span class="hljs-number">54.55</span> |       <span class="hljs-number">60</span> |    <span class="hljs-number">77.27</span> |    <span class="hljs-number">24</span>,<span class="hljs-number">25</span>,<span class="hljs-number">26</span>,<span class="hljs-number">45</span>,<span class="hljs-number">46</span> |
+  App.js                       |    <span class="hljs-number">31.03</span> |       <span class="hljs-number">25</span> |     <span class="hljs-number">8.57</span> |    <span class="hljs-number">31.03</span> |... 08,<span class="hljs-number">410</span>,<span class="hljs-number">413</span>,<span class="hljs-number">414</span> |
+  AriaDisablingButton.js       |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |                   |
+  AudioFeedbackToggleSwitch.js |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |                   |
+  AudioManager.js              |       <span class="hljs-number">40</span> |        <span class="hljs-number">0</span> |    <span class="hljs-number">33.33</span> |       <span class="hljs-number">40</span> |          <span class="hljs-number">23</span>,<span class="hljs-number">24</span>,<span class="hljs-number">29</span> |
+  BluetoothApiWarning.js       |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |                   |
+  C2lcMath.js                  |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |                   |
+  CharacterState.js            |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |                   |
+  CommandBlock.js              |      <span class="hljs-number">100</span> |       <span class="hljs-number">50</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |                <span class="hljs-number">36</span> |
+  CommandPalette.js            |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |                   |
+  CommandPaletteCategory.js    |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |                   |
+  CommandPaletteCommand.js     |       <span class="hljs-number">80</span> |      <span class="hljs-number">100</span> |       <span class="hljs-number">50</span> |       <span class="hljs-number">80</span> |             <span class="hljs-number">27</span>,<span class="hljs-number">31</span> |
+  ConfirmDeleteAllModal.js     |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |                   |
+  DashConnectionErrorModal.js  |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |                   |
+  DashDriver.js                |    <span class="hljs-number">11.11</span> |      <span class="hljs-number">100</span> |        <span class="hljs-number">0</span> |    <span class="hljs-number">11.11</span> |... <span class="hljs-number">36</span>,<span class="hljs-number">37</span>,<span class="hljs-number">43</span>,<span class="hljs-number">50</span>,<span class="hljs-number">57</span> |
+  DeleteModeImage.js           |        <span class="hljs-number">0</span> |      <span class="hljs-number">100</span> |        <span class="hljs-number">0</span> |        <span class="hljs-number">0</span> |                <span class="hljs-number">14</span> |
+  DeviceConnectControl.js      |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |                   |
+  FakeRobotDriver.js           |        <span class="hljs-number">0</span> |      <span class="hljs-number">100</span> |        <span class="hljs-number">0</span> |        <span class="hljs-number">0</span> |... <span class="hljs-number">20</span>,<span class="hljs-number">24</span>,<span class="hljs-number">25</span>,<span class="hljs-number">29</span>,<span class="hljs-number">30</span> |
+  FeatureDetection.js          |       <span class="hljs-number">50</span> |      <span class="hljs-number">100</span> |       <span class="hljs-number">50</span> |       <span class="hljs-number">50</span> |                 <span class="hljs-number">8</span> |
+  FocusTrapManager.js          |    <span class="hljs-number">38.89</span> |       <span class="hljs-number">10</span> |       <span class="hljs-number">50</span> |    <span class="hljs-number">38.89</span> |... <span class="hljs-number">64</span>,<span class="hljs-number">65</span>,<span class="hljs-number">66</span>,<span class="hljs-number">67</span>,<span class="hljs-number">68</span> |
+  Interpreter.js               |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |                   |
+  MicMonitor.js                |        <span class="hljs-number">0</span> |        <span class="hljs-number">0</span> |        <span class="hljs-number">0</span> |        <span class="hljs-number">0</span> |... <span class="hljs-number">30</span>,<span class="hljs-number">31</span>,<span class="hljs-number">39</span>,<span class="hljs-number">40</span>,<span class="hljs-number">46</span> |
+  ProgramBlockEditor.js        |    <span class="hljs-number">90.32</span> |    <span class="hljs-number">84.85</span> |    <span class="hljs-number">76.67</span> |    <span class="hljs-number">90.32</span> |... <span class="hljs-number">37</span>,<span class="hljs-number">241</span>,<span class="hljs-number">316</span>,<span class="hljs-number">464</span> |
+  ProgramTextEditor.js         |    <span class="hljs-number">84.62</span> |       <span class="hljs-number">50</span> |      <span class="hljs-number">100</span> |    <span class="hljs-number">84.62</span> |             <span class="hljs-number">43</span>,<span class="hljs-number">44</span> |
+  ProgramUtils.js              |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |                   |
+  RobotCharacter.js            |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |                   |
+  Scene.js                     |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |                   |
+  SoundexTable.js              |    <span class="hljs-number">96.88</span> |    <span class="hljs-number">94.44</span> |      <span class="hljs-number">100</span> |    <span class="hljs-number">96.88</span> |                <span class="hljs-number">55</span> |
+  TextSyntax.js                |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |                   |
+  ToggleSwitch.js              |      <span class="hljs-number">100</span> |       <span class="hljs-number">75</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |                <span class="hljs-number">23</span> |
+  Utils.js                     |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |                   |
+  WebSpeechEventProcessor.js   |      <span class="hljs-number">100</span> |     <span class="hljs-number">87.5</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |                <span class="hljs-number">30</span> |
+  WebSpeechInput.js            |        <span class="hljs-number">0</span> |      <span class="hljs-number">100</span> |        <span class="hljs-number">0</span> |        <span class="hljs-number">0</span> |... <span class="hljs-number">49</span>,<span class="hljs-number">50</span>,<span class="hljs-number">51</span>,<span class="hljs-number">52</span>,<span class="hljs-number">53</span> |
+  index.js                     |        <span class="hljs-number">0</span> |      <span class="hljs-number">100</span> |      <span class="hljs-number">100</span> |        <span class="hljs-number">0</span> |            <span class="hljs-number">6</span>,<span class="hljs-number">8</span>,<span class="hljs-number">13</span> |
+  serviceWorker.js             |        <span class="hljs-number">0</span> |        <span class="hljs-number">0</span> |        <span class="hljs-number">0</span> |        <span class="hljs-number">0</span> |... <span class="hljs-number">23</span>,<span class="hljs-number">130</span>,<span class="hljs-number">131</span>,<span class="hljs-number">132</span> |
+  types.js                     |        <span class="hljs-number">0</span> |        <span class="hljs-number">0</span> |        <span class="hljs-number">0</span> |        <span class="hljs-number">0</span> |                   |
+ src/vendor/dragdroptouch      |    <span class="hljs-number">22.08</span> |     <span class="hljs-number">3.39</span> |       <span class="hljs-number">10</span> |    <span class="hljs-number">23.39</span> |                   |
+  DragDropTouch.js             |    <span class="hljs-number">22.08</span> |     <span class="hljs-number">3.39</span> |       <span class="hljs-number">10</span> |    <span class="hljs-number">23.39</span> |... <span class="hljs-number">21</span>,<span class="hljs-number">422</span>,<span class="hljs-number">423</span>,<span class="hljs-number">426</span> |
+-------------------------------|----------|----------|----------|----------|-------------------|
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-10703">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2020-09-09T07:50:57.385-0400">2020-09-09T07:50:57.385-0400</relative-time></i></p>
+                        <p>That's the result of running <strong>npm test -- --watchAll --coverage</strong> against develop-0.4.&#160; </p>
+<p>Someone should review on a case by case basis, but I assume there are easy fixes like excluding the vendor drag and drop code from our coverage report.</p>
+
+                    </li>
+                    
+                    <li id="comment-10704">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2020-09-16T07:59:12.381-0400">2020-09-16T07:59:12.381-0400</relative-time></i></p>
+                        <p>This is being rolled into the pull associated with <a href="/browse/C2LC-221/">C2LC-221</a>.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-219/"><span class="aria-hidden">←</span> Previous: C2LC-219</a>
+        <a class="mx-1" href="/browse/C2LC-221/">Next: C2LC-221 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

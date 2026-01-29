@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-23  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-23 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-23/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-23/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-23/">FLUID-23</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-23: jsUnit tests (now) run in IE7 and Safari/Win, but some fail.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-23">FLUID-23</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Joseph Scheuhammer</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Joseph%20Scheuhammer">Joseph Scheuhammer</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2007-06-29T12:07:52.000-0400" prefix="">2007-06-29T12:07:52.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2007-08-08T12:29:25.000-0400" prefix="">2007-08-08T12:29:25.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Infrastructure</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Previously, the Lightbox jsUnit tests did not run when using IE7, Safari on WIndows, nor Safari on Mac.  Michelle discovered a technique whereby one defines a "exposeTestFunctionNames()" function that publishes a string array containing the names of the test functions themselves. The function was added to TestConstants.js.</p>
+<p>This technique has worked – the tests now run when using IE7 and Safari.  To be clear, only the tests in GridHandlerLayoutTests.js and LightboxTests.js were published using the technique; that is, none of the tests in MochiLIghtboxTests.html were so published.  As such, all of the tests continue to run, and run successfully, in FF.</p>
+<p>None of the GridLayoutTests fail in IE7 nor Safari.  Seven of the Lightbox tests fail in IE7, and one fails in Safari.  The MochiLIghtbox tests fail, but that appears to be due to the lack of published test function names.  An attempt to add an exposeTestFunctionNames() to the top of MochiLIghtboxTests.html caused one of them to fail in FF (previously, it passed when not published).  The code committed to svn does <strong>not</strong> publish the MochiLightbox test names so that all continue to pass in FF.</p>
+<p>We need to determine:</p>
+<ul>
+<li>why certain tests fail in IE7,</li>
+<li>why certain tests fail in Safari,</li>
+<li>how to publish the MochiLightbox tests such that they are run in IE7 and Safari, but do not fail in FF.</li>
+</ul>
+<p>Notably, the ones that fail in IE7 and Safari frequently have to do with testing focus.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>IE7/WinXP and SafariBeta3/WinXP/Mac OS X</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13114">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2007-08-08T07:54:27.000-0400">2007-08-08T07:54:27.000-0400</relative-time></i></p>
+                        <p>Only one test remains that passes in Firefox, but fails in IE and Safari on Windows: testPersistFocus()</p>
+<p>We believe it fails because focus persistence in IE doesn't work as expected in terms of focus and blur events on the Lightbox node (i.e. the test <strong>should</strong> fail because there's a bug: <a href="/browse/FLUID-7/">FLUID-7</a>). This applies to Safari as well.</p>
+<p>The reason the MochiKit tests fail is because they have not been factored out yet - they shouldn't be run.</p>
+
+                    </li>
+                    
+                    <li id="comment-13115">
+                        <p class="mb-0"><b>Joseph Scheuhammer</b> <i>commented <relative-time datetime="2007-08-08T12:29:25.000-0400">2007-08-08T12:29:25.000-0400</relative-time></i></p>
+                        <p>The tests are showing bugs in the code now, not problems with the tests themselves.  There is still an issue of publishing the test function names for the Mochikit version of the lightbox, but the plan is, as part of refactoring the lightbox, to move the Mochikit code to a "sandbox" project, where issues with Mochikit testing will be dealt with.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-22/"><span class="aria-hidden">←</span> Previous: FLUID-22</a>
+        <a class="mx-1" href="/browse/FLUID-24/">Next: FLUID-24 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

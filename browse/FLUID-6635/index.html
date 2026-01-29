@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6635  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6635 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6635/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6635/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6635/">FLUID-6635</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6635: Orator's domReader does not properly selfVoice and highlight content in Chrome</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6635">FLUID-6635</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-06-28T14:30:01.688-0400" prefix="">2021-06-28T14:30:01.688-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-07-14T12:23:16.537-0400" prefix="">2021-07-14T12:23:16.537-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>Self Voicing</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>While the domReader doesn't work properly, the selection reader doesn't appear to have any issues with playback.</p>
+<p></p>
+<p>Steps to reproduce:</p>
+<ol>
+<li>Open the <a href="https://build-infusion.fluidproject.org/demos/prefsframework/">Prefs framework demo</a></li>
+<li>Open the prefs editor</li>
+<li>Enable text-to-speech</li>
+<li>In the Orator widget click the play button</li>
+<li>Notice that the play button turns into a pause button but nothing is self voiced</li>
+</ol>
+<p></p>
+<ol>
+<li>Open the <a href="https://build-infusion.fluidproject.org/demos/orator/">Orator demo</a></li>
+<li>Click the play button</li>
+<li>Notice that the content is self voiced but the word highlighting doesn't appear</li>
+</ol>
+<p></p>
+<p></p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Chrome 91</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25532">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2021-06-28T17:06:38.925-0400">2021-06-28T17:06:38.925-0400</relative-time></i></p>
+                        <p>It seems that chrome is not synthesizing long text ( about 4100+ characters ). It essentially just freezes and doesn't fire any events. Also they don't seem to be firing the boundary events either.</p>
+<p>This can be demonstrated with this codepen example: <a href="https://codepen.io/jobara/full/oNWNwRo">https://codepen.io/jobara/full/oNWNwRo</a></p>
+<p>Demo has been updated to allow for switching the voice used. This shows the Google provided voices have the issue, but the system supplied voices work as expected.</p>
+<p>However, with Chrome, it returns an empty array of voices on the first invocation. In the codepen example I used an interval and a promise to poll for them.</p>
+
+                    </li>
+                    
+                    <li id="comment-25533">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2021-06-29T09:19:15.630-0400">2021-06-29T09:19:15.630-0400</relative-time></i></p>
+                        <p>I've filed an issue against Chromium.&#160;<a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1224880">https://bugs.chromium.org/p/chromium/issues/detail?id=1224880</a></p>
+
+                    </li>
+                    
+                    <li id="comment-25534">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2021-06-29T09:31:48.850-0400">2021-06-29T09:31:48.850-0400</relative-time></i></p>
+                        <p>To me this seems like an issue with the voices (speech synthesizers) that Google supplies with Chrome. The system supplied ones seem to work fine. That leaves us with a few options:</p>
+<ul>
+<li>Wait for Google to fix the issue
+<ul>
+<li>Not sure when this will happen.</li>
+</ul>
+</li>
+<li>Chuck text to a size that will be read properly.
+<ul>
+<li>Would not fix issue with highlighting, there really isn't a work around for that while using the Google provided voices.</li>
+<li>It would be difficult to parse the text as context matters for speech synthesis. For example how do you pronounce "read" without context? And chunking rules would also need to be language dependent to try to maintain the proper grammar and context.</li>
+</ul>
+</li>
+<li>Do not use any of the default (Google provided) synthesizers
+<ul>
+<li>Unfortunately the available synthesizers vary across platforms and browsers. We'd need retrieve the list of voices and then parse through to find one that matches the given language. Synthesizers aren't provided for every possible language, so in some cases we may still need to use a Google supplied one and/or come up with our own fallback rules. Additionally, getVoices() behaves odd in Chrome, as noted in the first comment about how I had to devise my own function using a promise and interval to poll for the voices.</li>
+</ul>
+</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-25535">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2021-07-05T13:28:45.260-0400">2021-07-05T13:28:45.260-0400</relative-time></i></p>
+                        <p>For now we're waiting on Google to fix the bugs with the voices.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6634/"><span class="aria-hidden">←</span> Previous: FLUID-6634</a>
+        <a class="mx-1" href="/browse/FLUID-6636/">Next: FLUID-6636 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

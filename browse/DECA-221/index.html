@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> DECA-221  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" DECA-221 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/DECA-221/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/DECA-221/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/DECA" data-pagefind-filter="project">Decapod</a></li>
+                <li><a href="/browse/DECA-221/">DECA-221</a></li>
+            </ol>
+        </nav>
+        <h1>DECA-221: Write unit tests for the server python code</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/DECA-221">DECA-221</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/DECA/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/DECA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/DECA/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-01-18T11:57:06.217-0500" prefix="">2012-01-18T11:57:06.217-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2012-05-18T14:17:57.074-0400" prefix="">2012-05-18T14:17:57.074-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The unit tests for the cherrypy server only covered the functionality for camera capture and calibration. Since this was removed, there are no unit tests for any of the existing cherrypy server code. Also the unit tests for the various other python code used by the server should be updated as needed. </p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10461">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2012-01-20T08:25:02.520-0500">2012-01-20T08:25:02.520-0500</relative-time></i></p>
+                        <p>Requires changes from <a href="/browse/DECA-225/">DECA-225</a>.</p>
+
+                    </li>
+                    
+                    <li id="comment-10462">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2012-01-26T14:35:17.784-0500">2012-01-26T14:35:17.784-0500</relative-time></i></p>
+                        <p>I've refactored, added, and expanded on the server side unit tests. There are now tests for each of the server side scripts, with the exception of the backgroundTaskQueue.py which from a 3rd party. </p>
+<p>The changes are in my bitbucket repo.<br>
+<a href="https://bitbucket.org/jobara/decapod-server-rest">https://bitbucket.org/jobara/decapod-server-rest</a></p>
+
+                    </li>
+                    
+                    <li id="comment-10463">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2012-05-18T14:17:54.063-0400">2012-05-18T14:17:54.063-0400</relative-time></i></p>
+                        <p>Merged into the project repo</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/DECA-220/"><span class="aria-hidden">←</span> Previous: DECA-220</a>
+        <a class="mx-1" href="/browse/DECA-222/">Next: DECA-222 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

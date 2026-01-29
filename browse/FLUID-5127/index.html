@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5127  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5127 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5127/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5127/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5127/">FLUID-5127</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5127: Implement "compact syntax" for invokers, expanders and listener definitions</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5127">FLUID-5127</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-09-09T04:48:48.252-0400" prefix="">2013-09-09T04:48:48.252-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T11:28:50.021-0500" prefix="">2014-03-03T11:28:50.021-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The current "full syntax" for writing invoker, expander and listener declarations in IoC configuration is quite verbose and in particular extends over a significant amount of vertical whitespace - in general it is not possible to write one of these definitions in fewer than 4 lines. I believe it would significantly ease the burden of starting to use the framework for newcomers and other "people in a hurry" if we supported a compact, function-call-like syntax for these cases that would allow these definitions to be written in a single line. This would always just be a shorthand for the full JSON syntax and would be unpacked to its JSON-equivalent form before it was interpreted by the framework.</p>
+<p>Suggested syntax:</p>
+<p>invokers: {<br>
+myInvoker: "fluid.thing.function({that}, {arguments}.0)",<br>
+}<br>
+listeners: {<br>
+myEvent: "{that}.myInvoker({context}.thing, {arguments}.1)"<br>
+}<br>
+members: {<br>
+myValue: "!expand:{that}.myInvoker({context}.otherValue)"<br>
+}</p>
+<p>To avoid encoding ambiguity, this syntax could only be used where all of the arguments were strings or direct IoC expressions. If the user requires to supply literal arguments of other JSON types, the full syntax must be used.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15167">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2013-09-17T15:01:24.691-0400">2013-09-17T15:01:24.691-0400</relative-time></i></p>
+                        <p>Reviewed and pushed to master at rev 74ac01a0cd935ca17cc646b3c0ff8fcdf42d0c1c.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5126/"><span class="aria-hidden">←</span> Previous: FLUID-5126</a>
+        <a class="mx-1" href="/browse/FLUID-5128/">Next: FLUID-5128 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3858  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3858 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3858/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3858/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3858/">FLUID-3858</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3858: Simple layout reorderer demo fails to move portlets to the correct location with keyboard</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3858">FLUID-3858</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Harris%20Wong">Harris Wong</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-11-19T10:35:42.641-0500" prefix="">2010-11-19T10:35:42.641-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2010-11-26T11:00:58.970-0500" prefix="">2010-11-26T11:00:58.970-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The layout reorderer demo fails to move portlet with keyboard to the correction location.  Once the column is emptied, portlets can't be moved back into it.  Also, moving element to the left with ctrl+left skips over 1 column on the demo.</p>
+<p>Tried this with revision 10294, to reproduced, go to infusion/src/webapp/demos/reorderer/layoutReorderer/html/layoutReorderer.html.  Using keyboard, move the last portlet of the third column (Survey Results) to the left by using Ctrl-[left arrow].  Then, repeat the same for the "News Ticker" portlet in the third column.  You will notice this portlet skips the center column and hops onto the first column.   Now, try to move any unlocked portlets to the right most column with ctrl-right arrow, you won't be able to.</p>
+<p>I also tried turning wrap off by changing "disableWrap: true" to "disableWrap: false".  Same results, you won't be able to move portlets to the right.  Interestingly, you will be able to move it to the left until it wraps around to the third column.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF3, FF3.6, IE8, WinXP Pro 2002 SP3</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3858/FLUID-3858-patch.txt">
+                            
+                                FLUID-3858-patch.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24828">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-11-19T10:41:03.522-0500">2010-11-19T10:41:03.522-0500</relative-time></i></p>
+                        <p>"Bug Parade Infusion 1.3" </p>
+
+                    </li>
+                    
+                    <li id="comment-24829">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2010-11-23T10:42:02.666-0500">2010-11-23T10:42:02.666-0500</relative-time></i></p>
+                        <p>In the demo css, .demo-LayoutReorderer-movable-dragging uses "left: 10px", which sets the left edge of the dragging element to the right by 10px.  This property somehow introduced the problem mentioned in this jira.  I have created a patch which uses 'margin' instead of 'left' to address this problem.  </p>
+
+                    </li>
+                    
+                    <li id="comment-24830">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-11-26T11:00:58.968-0500">2010-11-26T11:00:58.968-0500</relative-time></i></p>
+                        <p>Worked with Harris to manually apply his patch ( <a href="/browse/FLUID-3858/">FLUID-3858</a>-patch.txt ), since the code base had changed after he created it. This  fixes the issue where you couldn't move a portlet into the right most column if it was empty. I've committed it to trunk.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3857/"><span class="aria-hidden">←</span> Previous: FLUID-3857</a>
+        <a class="mx-1" href="/browse/FLUID-3859/">Next: FLUID-3859 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-165  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-165 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-165/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-165/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-165/">INFRA-165</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-165: WordPress websites cannot update themselves with SELinux on</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-165">INFRA-165</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-04-23T10:25:34.414-0400" prefix="">2018-04-23T10:25:34.414-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-04-24T14:03:43.885-0400" prefix="">2018-04-24T14:03:43.885-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Automatic update fails. Update page asks for FTP credentials.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25826">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-04-24T13:55:10.135-0400">2018-04-24T13:55:10.135-0400</relative-time></i></p>
+                        <ul>
+<li>Moved all websites from /srv/www to /var/www (this is more aligned with CentOS/RHEL SELinux defaults)</li>
+<li>Reset all SELinux settings back to factory defaults</li>
+<li>Switch from permissive to enforcing mode</li>
+<li>Enabled the `httpd_can_network_connect_db` boolean so php-fpm can connect to MySQL/PostgreSQL</li>
+<li>Configured the following file contexts for Wordpress/Drupal/Joomla:</li>
+</ul>
+<pre><code class="hljs">semanage fcontext -a -<span class="hljs-built_in">t</span> httpd_sys_rw_content_t '/<span class="hljs-built_in">var</span>/www(/.*)?/tmp(/.*)?'
+semanage fcontext -a -<span class="hljs-built_in">t</span> httpd_sys_rw_content_t '/<span class="hljs-built_in">var</span>/www(/.*)?/wp-content(/.*)?'
+semanage fcontext -a -<span class="hljs-built_in">t</span> httpd_sys_rw_content_t '/<span class="hljs-built_in">var</span>/www(/.*)?/cache(/.*)?'
+</code></pre>
+<p>Due to these changes, updating website code through their UI will not work anymore because php-fpm doesn't have permission to write to anything besides the 3 directories listed above (even if traditional Unix permissions allow it).</p>
+<p>Affected servers: i-0013 and i-0018</p>
+
+                    </li>
+                    
+                    <li id="comment-25827">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-04-24T13:56:12.588-0400">2018-04-24T13:56:12.588-0400</relative-time></i></p>
+                        <p>Relevant commits:</p>
+<p><a href="https://github.com/inclusive-design/ops/commit/64e032c2bfd99d7e0dbb32f66a983e2eb0ecc106">https://github.com/inclusive-design/ops/commit/64e032c2bfd99d7e0dbb32f66a983e2eb0ecc106</a><br>
+<a href="https://github.com/inclusive-design/ops/commit/6ca94ed661f85dbfc58d4ec89fe1351ae1bd0473">https://github.com/inclusive-design/ops/commit/6ca94ed661f85dbfc58d4ec89fe1351ae1bd0473</a><br>
+<a href="https://github.com/inclusive-design/ops/commit/b5f4be118e9575104425107f8b7e0be5211b70cb">https://github.com/inclusive-design/ops/commit/b5f4be118e9575104425107f8b7e0be5211b70cb</a><br>
+<a href="https://github.com/inclusive-design/ops/commit/93f655719f57cadf354183275af5edc5ff0f28f0">https://github.com/inclusive-design/ops/commit/93f655719f57cadf354183275af5edc5ff0f28f0</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-164/"><span class="aria-hidden">←</span> Previous: INFRA-164</a>
+        <a class="mx-1" href="/browse/INFRA-167/">Next: INFRA-167 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

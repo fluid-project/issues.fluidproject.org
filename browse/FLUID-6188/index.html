@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6188  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6188 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6188/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6188/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6188/">FLUID-6188</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6188: Action of fluid.loadTestingSupport should be idempotent</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6188">FLUID-6188</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-08-28T10:41:02.975-0400" prefix="">2017-08-28T10:41:02.975-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:05.098-0400" prefix="">2024-07-22T10:35:05.098-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>node module</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The <code>fluid.loadTestingSupport()</code> function needs to be called by users of jqUnit when using it within Infusion's node.js profile. This loads qunit, jqunit and the IoC Testing framework within the special V8 context holding Infusion itself. However, the action of this function is not idempotent and can lead to horrifying and incomprehensible disasters if it manages to load a duplicate QUnit object - QUnit has an immature approach to multiple inclusion and simply writes <code>window.QUnit = QUnit</code>.</p>
+<p>The symptoms appeared when trying to debug test loading issues in <a href="https://github.com/GPII/gpii-app/pull/17/files">https://github.com/GPII/gpii-app/pull/17/files</a> .</p>
+<p>When adding a self-contained fluid.loadTestingSupport call in an individual test file, we received incomprehensible failures which (with a lot of extra debug tracing) resemble this:</p>
+<p><a href="https://botbot.me/freenode/fluid-work/2017-08-24/?msg=90240990&page=1">https://botbot.me/freenode/fluid-work/2017-08-24/?msg=90240990&amp;page=1</a></p>
+<pre><code class="hljs language-java">QUnit id pmevzzxc0gmowq3kgldi config.current [object Object]
+Now executing testFunc <span class="hljs-keyword">for</span> gpii.tests.acceptance.cloudBased.config.base tests config.current is undefined
+QUnit id 417hj4ih7rav9hir7ldi config.current undefined
+08:<span class="hljs-number">50</span>:<span class="hljs-number">15.173</span>:  jq: FAIL: Module <span class="hljs-string">"gpii.tests.acceptance.cloudBased.config.base tests"</span> Test name <span class="hljs-string">"Acceptance test for empty preferences in Chrome"</span> - Message: Died on test #<span class="hljs-number">1</span>     at Object.asyncTest (C:\gpii-app\node_modules\infusion\tests\lib\qunit\js\qunit.js:<span class="hljs-number">411</span>:<span class="hljs-number">9</span>)
+One of the QUnits believes it is in the middle of a test, and the other one doesn<span class="hljs-string">'t
+</span></code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-16129">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2017-08-30T14:26:34.553-0400">2017-08-30T14:26:34.553-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/infusion/pull/843">The pull request</a> has been merged into the project repo master branch at 392b2f8266725c41df1c8290b69c0e72100d0b8c</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6187/"><span class="aria-hidden">←</span> Previous: FLUID-6187</a>
+        <a class="mx-1" href="/browse/FLUID-6189/">Next: FLUID-6189 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

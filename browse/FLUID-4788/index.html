@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4788  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4788 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4788/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4788/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4788/">FLUID-4788</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4788: Lifecycle functions of the grade component do not fire for the component that uses that grade.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4788">FLUID-4788</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=y%20z">y z</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-09-05T00:59:17.320-0400" prefix="">2012-09-05T00:59:17.320-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T12:41:39.262-0500" prefix="">2014-03-03T12:41:39.262-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Looks like when we create a non-default grade that has its own lifecycle functions and then use this grade in other components these lifecycle functions do not get activated.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>All</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13290">
+                        <p class="mb-0"><b>y z</b> <i>commented <relative-time datetime="2012-09-05T01:04:13.747-0400">2012-09-05T01:04:13.747-0400</relative-time></i></p>
+                        <p>For example we have a component:</p>
+<pre><code class="hljs">fluid.<span class="hljs-title function_ invoke__">defaults</span>(<span class="hljs-string">"some.component"</span>, {
+    <span class="hljs-attr">gradeNames</span>: [<span class="hljs-string">"fluid.littleComponent"</span>, <span class="hljs-string">"autoInit"</span>]
+});
+some.component.preInit = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">that</span>) </span>{
+    <span class="hljs-comment">// Code here</span>
+};
+</code></pre>
+<p>And then this component is used as a grade like this:</p>
+<pre><code class="hljs">fluid.defaults(<span class="hljs-string">"other.component"</span>, <span class="hljs-punctuation">{</span>
+<span class="hljs-symbol">    gradeNames:</span> [<span class="hljs-string">"some.component"</span>, <span class="hljs-string">"autoInit"</span>]
+<span class="hljs-punctuation">}</span>)<span class="hljs-punctuation">;</span>
+</code></pre>
+<p>it's pre init function specified above will not fire.</p>
+
+                    </li>
+                    
+                    <li id="comment-13291">
+                        <p class="mb-0"><b>y z</b> <i>commented <relative-time datetime="2012-09-05T10:21:19.246-0400">2012-09-05T10:21:19.246-0400</relative-time></i></p>
+                        <p>Pull request with the test for the issue is here: <a href="https://github.com/fluid-project/infusion/pull/240">https://github.com/fluid-project/infusion/pull/240</a></p>
+
+                    </li>
+                    
+                    <li id="comment-13292">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2012-10-09T18:23:23.100-0400">2012-10-09T18:23:23.100-0400</relative-time></i></p>
+                        <p>Merged into project repo at bdc6d5a1baaeaaa68f588714b2aae83303894851</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4781/"><span class="aria-hidden">←</span> Previous: FLUID-4781</a>
+        <a class="mx-1" href="/browse/FLUID-4789/">Next: FLUID-4789 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

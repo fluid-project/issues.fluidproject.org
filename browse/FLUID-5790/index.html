@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5790  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5790 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5790/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5790/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5790/">FLUID-5790</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5790: Implement support for "nullable promises" matching facilities for that in events</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5790">FLUID-5790</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-10-08T14:15:21.232-0400" prefix="">2015-10-08T14:15:21.232-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:11.883-0400" prefix="">2024-07-22T10:35:11.883-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                            <li>Tech. Documentation</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The framework's behaviour in cases of receiving invocations directed at destroyed components is now somewhat inconsistent.</p>
+<p>In order to resolve <a href="/browse/FLUID-5333/">FLUID-5333</a> we implemented "abortable" or "nullable" events - events whose parent component is destroyed will now abort notifying any listeners still left in the chain instantly.</p>
+<p>However, our facility for invokers doesn't match this - an attempted resolution of an invoker argument from a destroyed component will trigger a hard failure. Still further, our promises lie outside this scheme completely. In reviewing <a href="https://github.com/GPII/universal/pull/393/files">https://github.com/GPII/universal/pull/393/files</a> for <a href="/browse/GPII-529/">GPII-529</a>, I ran into a further problem of this kind - test which will fail in sequence because a fixture has torn down the entire tree before some I/O that it issued could complete. Specifically, </p>
+<pre><code class="hljs language-java"><span class="hljs-number">18</span>:<span class="hljs-number">55</span>:<span class="hljs-number">24.025</span>:  Sending a GET request to: /device on port <span class="hljs-number">8081</span>
+<span class="hljs-number">18</span>:<span class="hljs-number">55</span>:<span class="hljs-number">24.034</span>:  jq: FAIL: Module <span class="hljs-string">"development.all.local tests"</span> Test name <span class="hljs-string">"Device Reporter fails on corrupt JSON file"</span> - Message: Assertion <span class="hljs-title function_">failure</span> <span class="hljs-params">(see console.l
+og <span class="hljs-keyword">for</span> expanded message)</span>: Cannot resolve reference {arguments}<span class="hljs-number">.0</span> from component { typeName: <span class="hljs-string">"kettle.requests.request.handler"</span> gradeNames: [<span class="hljs-string">"kettle.requests.requ
+est.handler.preferencesGet"</span>,<span class="hljs-string">"kettle.requests.request.handler"</span>,<span class="hljs-string">"{request}.handlerContext"</span>,<span class="hljs-string">"fluid.applyGradeLinkage"</span>] id: 5lgv2e5q-<span class="hljs-number">52760</span>} which has been destroyed
+
+<span class="hljs-number">18</span>:<span class="hljs-number">55</span>:<span class="hljs-number">24.036</span>:  jq: Source:     at jqUnit.nodeFailureHandler (E:\source\gits\gpii\node_modules\universal\node_modules\jqUnit\lib\jqUnit-node.js:<span class="hljs-number">30</span>:<span class="hljs-number">15</span>)
+    at Object.fluid.fail (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:<span class="hljs-number">184</span>:<span class="hljs-number">13</span>)
+    at Object.fetcher (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">726</span>:<span class="hljs-number">23</span>)
+    at <span class="hljs-title function_">fetch</span> <span class="hljs-params">(E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">2038</span>:<span class="hljs-number">32</span>)</span>
+    at Object.fluid.resolveContextValue (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">2046</span>:<span class="hljs-number">20</span>)
+    at Object.fluid.expandSource (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">2143</span>:<span class="hljs-number">34</span>)
+    at Object.options.expandSource (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">2219</span>:<span class="hljs-number">26</span>)
+    at Object.fluid.makeExpandOptions (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">2234</span>:<span class="hljs-number">42</span>)
+    at Object.fluid.expand (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">2244</span>:<span class="hljs-number">35</span>)
+    at Object.fluid.embodyDemands (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">1211</span>:<span class="hljs-number">37</span>)
+    at Array.invokeInvoker [as <span class="hljs-number">0</span>] (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">1640</span>:<span class="hljs-number">40</span>)
+    at Object.that.complete (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidPromises.js:<span class="hljs-number">65</span>:<span class="hljs-number">25</span>)
+    at Object.that.resolve (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidPromises.js:<span class="hljs-number">49</span>:<span class="hljs-number">22</span>)
+    at Array<span class="hljs-number">.0</span> (E:\source\gits\gpii\node_modules\universal\gpii\node_modules\preferencesServer\src\preferencesServer.js:<span class="hljs-number">107</span>:<span class="hljs-number">25</span>)
+    at Object.that.complete (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidPromises.js:<span class="hljs-number">65</span>:<span class="hljs-number">25</span>)
+    at Object.that.resolve (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidPromises.js:<span class="hljs-number">49</span>:<span class="hljs-number">22</span>)
+    at Function.fluid.promise.resumeSequence (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidPromises.js:<span class="hljs-number">133</span>:<span class="hljs-number">26</span>)
+    at Function.fluid.promise.progressSequence (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidPromises.js:<span class="hljs-number">128</span>:<span class="hljs-number">23</span>)
+    at Function.fluid.promise.resumeSequence (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidPromises.js:<span class="hljs-number">143</span>:<span class="hljs-number">31</span>)
+    at Function.fluid.promise.progressSequence (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidPromises.js:<span class="hljs-number">128</span>:<span class="hljs-number">23</span>)
+    at Array<span class="hljs-number">.0</span> (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidPromises.js:<span class="hljs-number">138</span>:<span class="hljs-number">35</span>)
+    at Object.that.complete (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidPromises.js:<span class="hljs-number">65</span>:<span class="hljs-number">25</span>)
+    at Object.that.resolve (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidPromises.js:<span class="hljs-number">49</span>:<span class="hljs-number">22</span>)
+    at <span class="hljs-title function_">onEnd</span> <span class="hljs-params">(E:\source\gits\gpii\node_modules\universal\node_modules\kettle\lib\dataSource.js:<span class="hljs-number">334</span>:<span class="hljs-number">29</span>)</span>
+    at <span class="hljs-title function_">applyCallback</span> <span class="hljs-params">(E:\source\gits\gpii\node_modules\universal\node_modules\kettle\lib\utils.js:<span class="hljs-number">55</span>:<span class="hljs-number">33</span>)</span>
+    at E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">1865</span>:<span class="hljs-number">20</span>
+    at Object.fluid.tryCatch (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:<span class="hljs-number">219</span>:<span class="hljs-number">24</span>)
+    at Object.fluid.withEnvironment (E:\source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">1860</span>:<span class="hljs-number">22</span>)
+    at IncomingMessage.wrapCallback (E:\source\gits\gpii\node_modules\universal\node_modules\kettle\lib\utils.js:<span class="hljs-number">52</span>:<span class="hljs-number">26</span>)
+    at IncomingMessage.emit (events.js:<span class="hljs-number">117</span>:<span class="hljs-number">20</span>)
+    at _stream_readable.js:<span class="hljs-number">944</span>:<span class="hljs-number">16</span>
+    at process._tickCallback (node.js:<span class="hljs-number">448</span>:<span class="hljs-number">13</span>)
+<span class="hljs-number">18</span>:<span class="hljs-number">55</span>:<span class="hljs-number">24.043</span>:  ASSERTION FAILED: Cannot resolve reference {arguments}<span class="hljs-number">.0</span> from component { typeName: <span class="hljs-string">"kettle.requests.request.handler"</span> gradeNames: [<span class="hljs-string">"kettle.requests.request.handler.preferencesGet"</span>,<span class="hljs-string">"kettle.requests.request.handler"</span>,<span class="hljs-string">"{request}.handlerContext"</span>,<span class="hljs-string">"fluid.applyGradeLinkage"</span>] id: 5lgv2e5q-<span class="hljs-number">52760</span>} which has been destroyed
+<span class="hljs-number">18</span>:<span class="hljs-number">55</span>:<span class="hljs-number">24.044</span>:  Current activity:
+    <span class="hljs-keyword">while</span> resolving context value {arguments}<span class="hljs-number">.0</span>
+    <span class="hljs-keyword">while</span> expanding context value {arguments}<span class="hljs-number">.0</span> held at path <span class="hljs-string">""</span>
+<span class="hljs-number">18</span>:<span class="hljs-number">55</span>:<span class="hljs-number">24.049</span>:  FATAL ERROR: Uncaught exception: Cannot resolve reference {arguments}<span class="hljs-number">.0</span> from component { typeName: <span class="hljs-string">"kettle.requests.request.handler"</span> gradeNames:
+[<span class="hljs-string">"kettle.requests.request.handler.preferencesGet"</span>,<span class="hljs-string">"kettle.requests.request.handler"</span>,<span class="hljs-string">"{request}.handlerContext"</span>,<span class="hljs-string">"fluid.applyGradeLinkage"</span>] id: 5lgv2e5q-<span class="hljs-number">52760</span>} which has been destroyed
+</code></pre>
+<p>The code in question is the following:</p>
+<pre><code class="hljs language-java">gpii.preferencesServer.get.getRawPreferences = function (that, preferencesServer, request) {
+        <span class="hljs-type">var</span> <span class="hljs-variable">promise</span> <span class="hljs-operator">=</span> preferencesServer.getRawPreferences(request.req.params.userToken);
+        promise.then(that.buildReturnPayload, request.events.onError.fire);
+    };
+</code></pre>
+<p>where buildReturnPayload has </p>
+<pre><code class="hljs language-java">buildReturnPayload: {
+                funcName: <span class="hljs-string">"gpii.preferencesServer.get.buildReturnPayload"</span>,
+                args: [ <span class="hljs-string">"{arguments}.0"</span>, <span class="hljs-string">"{preferencesServer}.ontologyHandler"</span>, <span class="hljs-string">"{request}"</span>]
+            }
+</code></pre>
+<p>Seemingly harmless, you say!</p>
+<p>The only current resolution is an explicit and ugly "isDestroyed" check in the first promise.then branch.</p>
+<p>We need to either</p>
+<p>i) make invoker behaviour consistent with events and simply silently abort (we really do need a warning-grade message here though - developers might very easily be puzzled about where their method invocation went)</p>
+<p>ii) implement a variety of "component-bound promises" which become nulled out when their parent is destroyed.</p>
+<p>perhaps both.</p>
+<p>ii) is interesting/problematic - it looks like the requirement is for "scoped promises in general". In this case we imagine the shortest scoped relevant component is the REQUEST. This implies that users will call something like request.promise() rather than fluid.promise(). Note that in this particular failure case the component which triggers the error on access after destruction is different to the one where the promise is constructed.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25506">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-10-08T14:31:43.619-0400">2015-10-08T14:31:43.619-0400</relative-time></i></p>
+                        <p>Some relevant lore - this is more standardly known as "cancellation:"</p>
+<p><a href="https://esdiscuss.org/topic/cancelable-promises">https://esdiscuss.org/topic/cancelable-promises</a><br>
+<a href="https://github.com/petkaantonov/bluebird/issues/415">https://github.com/petkaantonov/bluebird/issues/415</a></p>
+<p>It seems that we should implement a new "disposition" for promises of "cancelled" - and an attempt to use a cancelled promise is a noop, not a failure. We can also improve our DataSources to allow propagation of cancellation back to the infrastructure that is performing the I/O.</p>
+
+                    </li>
+                    
+                    <li id="comment-25507">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-10-08T14:39:05.971-0400">2015-10-08T14:39:05.971-0400</relative-time></i></p>
+                        <p><a href="http://webreflection.blogspot.co.uk/2015/09/on-cancelable-promises.html">http://webreflection.blogspot.co.uk/2015/09/on-cancelable-promises.html</a> uses the name "abort" rather than "cancel" and considers that it should be equivalent to a rejection, which seems suspect to me - in the light of the very particular semantics we have for "destruction" of the surrounding superstructure of components. Note that for event firers we simply called this method "destroy". It might indeed be a helpful feature to produce a standard component factory for promises - and in fact to start properly bridging the gap between events and promises. See ancient discussion on "latched events" at <a href="/browse/FLUID-4883/">FLUID-4883</a> - but these "promise factories" differ from those since in theory there can be numerous such promises in flight. However, note that the original use case for this JIRA could have been handled by a "latched event" attached to the request.</p>
+<p>To avoid confusing people we might well start speaking of, say, "component promises" or "component-bound promises" rather than "latched events".</p>
+
+                    </li>
+                    
+                    <li id="comment-25508">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2016-10-20T13:31:09.035-0400">2016-10-20T13:31:09.035-0400</relative-time></i></p>
+                        <p>The pull request <a href="https://github.com/fluid-project/infusion/pull/730">https://github.com/fluid-project/infusion/pull/730</a> has been merged into the master branch at 2ae5da176294899a2c73b333aa27bdefeaa33b80 to support nullable invokers.</p>
+
+                    </li>
+                    
+                    <li id="comment-25509">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-10-20T19:12:17.417-0400">2016-10-20T19:12:17.417-0400</relative-time></i></p>
+                        <p>Reopening since <a href="https://github.com/fluid-project/infusion/pull/730">https://github.com/fluid-project/infusion/pull/730</a> still only represents partial support for the full feature set imagined. We now have nullable events and invokers, but still not cancelable promises</p>
+
+                    </li>
+                    
+                    <li id="comment-25510">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2019-08-08T17:24:03.215-0400">2019-08-08T17:24:03.215-0400</relative-time></i></p>
+                        <p>Some further lore developed in the 4 years since then - <br>
+<a href="https://github.com/tc39/proposal-cancelable-promises/issues/70">https://github.com/tc39/proposal-cancelable-promises/issues/70</a> - the sad story of an ES proposal that got trashed through opposition from Google, but the thread shows widespread support and appreciation for such a feature, and all the objections are pretty esoteric.</p>
+<p><a href="https://medium.com/@benlesh/promise-cancellation-is-dead-long-live-promise-cancellation-c6601f1f5082">https://medium.com/@benlesh/promise-cancellation-is-dead-long-live-promise-cancellation-c6601f1f5082</a> - treatment by the author of "Observable" showing why the promises ecosystem is from his viewpoint suspect. The fact that there are so many "live/asynchronous value" idioms crowding into this space shows that all of them must be wrong.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5789/"><span class="aria-hidden">←</span> Previous: FLUID-5789</a>
+        <a class="mx-1" href="/browse/FLUID-5791/">Next: FLUID-5791 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

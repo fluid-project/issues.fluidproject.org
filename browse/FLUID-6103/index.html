@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6103  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6103 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6103/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6103/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6103/">FLUID-6103</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6103: Infusion Text to Speech tests are now hanging or failing in Chrome</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6103">FLUID-6103</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alan Harnum</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-01-06T13:42:35.698-0500" prefix="">2017-01-06T13:42:35.698-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-08-01T10:24:55.495-0400" prefix="">2017-08-01T10:24:55.495-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Text To Speech</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Unclear whether this has been caused by a recent Chrome update, but I imagine so - there are now two failure modes for TextToSpeech-test.html - the most common one is to hang during "Test Including Pause and Resume Events" with the following trace:</p>
+<pre><code class="hljs language-java">Fri Jan <span class="hljs-number">06</span> <span class="hljs-number">2017</span> <span class="hljs-number">18</span>:<span class="hljs-number">38</span>:<span class="hljs-number">57</span> GMT+<span class="hljs-number">0000</span> (GMT Standard Time):   Successfully queued test Test Including Pause and Resume Events
+Fluid.js:<span class="hljs-number">282</span> Fri Jan <span class="hljs-number">06</span> <span class="hljs-number">2017</span> <span class="hljs-number">18</span>:<span class="hljs-number">38</span>:<span class="hljs-number">57</span> GMT+<span class="hljs-number">0000</span> (GMT Standard Time):   Successfully queued test Test initialization
+Fluid.js:<span class="hljs-number">282</span> Fri Jan <span class="hljs-number">06</span> <span class="hljs-number">2017</span> <span class="hljs-number">18</span>:<span class="hljs-number">38</span>:<span class="hljs-number">57</span> GMT+<span class="hljs-number">0000</span> (GMT Standard Time):   Successfully queued test Test Start and Stop Events
+Fluid.js:<span class="hljs-number">282</span> Fri Jan <span class="hljs-number">06</span> <span class="hljs-number">2017</span> <span class="hljs-number">18</span>:<span class="hljs-number">39</span>:<span class="hljs-number">03</span> GMT+<span class="hljs-number">0000</span> (GMT Standard Time):   Test <span class="hljs-keyword">case</span> listener has not responded after 5000ms - at sequence pos <span class="hljs-number">3</span> of <span class="hljs-number">21</span> sequence element  Object {listener: <span class="hljs-string">"fluid.tests.textToSpeech.testPause"</span>, args: Array[<span class="hljs-number">1</span>], changeEvent: <span class="hljs-string">"{tts}.applier.modelChanged"</span>, path: <span class="hljs-string">"paused"</span>}  of fixture Test Including Pause and Resume Events
+</code></pre>
+<p>the other, rarer, failure mode is to fail with a conflicted promise resolution as follows:</p>
+<pre><code class="hljs language-java">Uncaught f…d.FluidError {message: <span class="hljs-string">"Assertion failure - check console for more details…on"</span>:<span class="hljs-string">"reject"</span>} which has already received <span class="hljs-string">"reject"</span><span class="hljs-string">", stack: "</span>Error: Assertion failure - check console <span class="hljs-keyword">for</span> more …components/textToSpeech/js/TextToSpeech.js:<span class="hljs-number">63</span>:<span class="hljs-number">25</span>)<span class="hljs-string">"}
+fluid.builtinFail @ Fluid.js:198
+fire @ Fluid.js:1494
+fluid.fail @ Fluid.js:213
+that.resolve @ FluidPromises.js:49
+toSpeak.onend @ TextToSpeech.js:63
+</span></code></pre>
+<p>One can cycle seemingly randomly through these two failure modes by refreshing the test page</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Windows 7 &amp; 10 64-bit, Chrome Version 55.0.2883.87 m (64-bit)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24113">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2017-01-06T14:30:51.077-0500">2017-01-06T14:30:51.077-0500</relative-time></i></p>
+                        <p>Quick observations from testing on what I've got in front of me:</p>
+<p><strong>Windows 10, Chrome 55.0.2883.87</strong></p>
+<ul>
+<li>tests fail as Antranig Basman describes in Chrome (same version)</li>
+<li>tests pass in Firefox 50.1.0</li>
+<li>tests pass in latest MS Edge 38.14393.0.0 / EdgeHTML 14.14393</li>
+</ul>
+<p><strong>Mac OS X, Chrome 55.0.2883.95</strong></p>
+<ul>
+<li>tests continue to pass on Chrome in this environment</li>
+<li>tests pass on Firefox 50.1.0</li>
+<li>tests pass on Safari 10.0.2</li>
+</ul>
+<p>Early conclusions:</p>
+<ul>
+<li>bug appears to be isolated to latest Chrome on Windows</li>
+<li><s>version difference between Chrome on Windows (55.0.2883.88) and Mac OS X (55.0.2883.95) may be an indicator of a browser bug that will be patched when the Windows release catches up to the Mac OS X release</s> Don't think this is correct in light of issue in the next comment.</li>
+</ul>
+<p>Will continue investigation.</p>
+
+                    </li>
+                    
+                    <li id="comment-24115">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2017-01-06T14:38:36.908-0500">2017-01-06T14:38:36.908-0500</relative-time></i></p>
+                        <p>Bug also appears to be present in Chrome 56.0.2924.51 beta on Windows 10.</p>
+
+                    </li>
+                    
+                    <li id="comment-24116">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2017-01-06T16:54:15.834-0500">2017-01-06T16:54:15.834-0500</relative-time></i></p>
+                        <p>I feel I've confirmed the root cause with this fiddle as originating in a browser bug: <a href="http://jsfiddle.net/e2q81qLz/14/">http://jsfiddle.net/e2q81qLz/14/</a> - Antranig Basman, when you have a chance could you try that fiddle and confirm that you see the issues I describe on it? (pause and resume happen, but their corresponding events are not fired)</p>
+<p>While the pause and resume functions continue to work in the latest Chrome, the onpause and onresume events are not being properly fired. The TTS component and its test rely upon them to manage and detect the state of the speech.</p>
+<p>I will investigate this further and see about filing an issue with the Chrome team.</p>
+
+                    </li>
+                    
+                    <li id="comment-24118">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2017-01-06T17:08:58.550-0500">2017-01-06T17:08:58.550-0500</relative-time></i></p>
+                        <p>Also just confirmed that the bug is not present is Chrome (Chromium) 54.0.2840.0 by downloading an older version.</p>
+
+                    </li>
+                    
+                    <li id="comment-24119">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2017-01-06T17:23:57.310-0500">2017-01-06T17:23:57.310-0500</relative-time></i></p>
+                        <p>Bug filed with Chromium: <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=679043">https://bugs.chromium.org/p/chromium/issues/detail?id=679043</a></p>
+
+                    </li>
+                    
+                    <li id="comment-24120">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2017-01-06T19:53:56.521-0500">2017-01-06T19:53:56.521-0500</relative-time></i></p>
+                        <p>Cheers for this brilliant investigation, fiddle and bug filing, WAHHARNNUM! I can confirm that the jsfiddle fails in my version of Chrome, and runs fine in Firefox.</p>
+
+                    </li>
+                    
+                    <li id="comment-24122">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2017-01-09T10:01:58.112-0500">2017-01-09T10:01:58.112-0500</relative-time></i></p>
+                        <p>As an additional note, I believe the "toggle" behaviour of the failure modes is because of this bug (maybe) expected behaviour (also maybe): <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=639660&q=component%3ABlink%3ESpeech&colspec=ID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified">https://bugs.chromium.org/p/chromium/issues/detail?id=639660&amp;q=component%3ABlink&gt;Speech&amp;colspec=ID Pri M Stars ReleaseBlock Component Status Owner Summary OS Modified</a></p>
+<p>The "pause" state of SpeechSynthesis acts as a browser global, not something that is reset when a page is reloaded. So if speechSynthesis.pause() is called in any context and then not "cleaned up" via called to speechSynthesis.resume() or speechSynthesis.cancel(), it will maintain that "paused" state and result in a failure of the promise that tests for TTS support (fluid.textToSpeech.checkTTSSupport) by speaking a short phrase and watching for the "onend" event (which doesn't happen, because the global pause state means that TTS doesn't happen.</p>
+<p>This would mean the following flow:<br>
+1) Pause/Resume Test Run #1 times out after going into the "pause" state, because no "onpause" event happens to signal advance into the resume state. Initialization/Start/Stop Test does not run because of the time out.<br>
+2) Page is reloaded. Global speechSynthesis state is now paused.<br>
+3) Pause/Resume Test Run #2 fails because of the "pause" state with a doubly rejected promise. Initialization/Start/Stop Test runs, and its cleanUp function (run at start) calls speechSynthesis.cancel(); this resets the global speechSynthesis state.<br>
+4) Page is reloaded. Go back to Step 1.</p>
+<p>The Chromium team has acknowledged the bug causing the issue (<a href="https://bugs.chromium.org/p/chromium/issues/detail?id=679043#c3">https://bugs.chromium.org/p/chromium/issues/detail?id=679043#c3</a>), but I'm going to think about how we might refactor the component tests to better account for how the speechSynthesis API actually behaves.</p>
+
+                    </li>
+                    
+                    <li id="comment-24124">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2017-01-16T13:50:06.205-0500">2017-01-16T13:50:06.205-0500</relative-time></i></p>
+                        <p>Because this issue blocks our test suit from running on Chrome, we need to do something about it relatively soon, even if it is something drastic such as conditionally bypassing the TTS tests on Chrome. Is it possible that we could deliver any kind of functional TTS component for Chrome in the face of this bug, or do we need to withdraw the component for now?</p>
+
+                    </li>
+                    
+                    <li id="comment-24126">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2017-01-16T14:00:12.151-0500">2017-01-16T14:00:12.151-0500</relative-time></i></p>
+                        <p>We could bypass the pause/resume tests on Chrome/Windows - we already do a bypass for Linux for similar reasons of imperfect implementation of the TTS APIs. </p>
+<p>Given this issue is a regression in Chrome for Windows, I am hoping it will be fixed soon, but until then I'd suggest we implement a bypass. I can do this following the same pattern (context awareness) that we use for skipping tests on Linux. Sound good?</p>
+
+                    </li>
+                    
+                    <li id="comment-24127">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2017-01-16T14:02:39.812-0500">2017-01-16T14:02:39.812-0500</relative-time></i></p>
+                        <p>Yep - sounds brilliant to me! But how much of the actual delivered functionality is compromised on Chrome/Windows - or is it that the pause/resume event handling is something that we rely on only in test cases?</p>
+
+                    </li>
+                    
+                    <li id="comment-24129">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2017-01-16T14:11:18.029-0500">2017-01-16T14:11:18.029-0500</relative-time></i></p>
+                        <p>State changes to model.paused path (which is toggled by the TextToSpeech.onpause / onresume events) will be broken; at the moment, this is only relied upon in the test cases.</p>
+<p>From my testing, the TTS functions themselves (pause / resume of TTS) continue to work; they simply don't fire appropriate events on the state change.</p>
+
+                    </li>
+                    
+                    <li id="comment-24130">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2017-01-16T16:26:37.429-0500">2017-01-16T16:26:37.429-0500</relative-time></i></p>
+                        <p>Some investigation shows that reliable browser detection is still a moving target - <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent">https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent</a> has the best explanation, but simply looking for "Chrome" / "Safari" / "Firefox" / "Edge" is unreliable, and will lead to false positives, resulting in the tests not running on browsers they are supported on.</p>
+<p>The standard userAgent strings of many browsers stuff in the names of other browsers specifically to circumvent naive attempts to disable features based on browser; Edge's current one on Windows, FE (documented at <a href="https://msdn.microsoft.com/en-us/library/hh869301(v=vs.85).aspx">https://msdn.microsoft.com/en-us/library/hh869301(v=vs.85).aspx</a>) includes Chrome and Safari. Chrome on Mac includes Safari as well as Chrome. The userAgent property is properly described here as an "ever-growing pack of lies": <a href="https://lists.w3.org/Archives/Public/public-html/2014Feb/0040.html">https://lists.w3.org/Archives/Public/public-html/2014Feb/0040.html</a></p>
+<p>I think pursuing the moving target of general browser detection is probably a bad idea, especially since browser vendors appear to specifically act against it, but as you point out we need to address this issue with some speed.</p>
+<p>I've opened a PR for discussion at <a href="https://github.com/fluid-project/infusion/pull/799">https://github.com/fluid-project/infusion/pull/799</a> that has a preliminary browser detection fix. I believe if we want to browser-detect it should only be for purposes of test-skipping in situations like this one, and it may require regular maintenance to keep up to date on the userAgent strings.</p>
+
+                    </li>
+                    
+                    <li id="comment-24132">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-08-01T10:24:52.561-0400">2017-08-01T10:24:52.561-0400</relative-time></i></p>
+                        <p>The PR ( <a href="https://github.com/fluid-project/infusion/pull/799">https://github.com/fluid-project/infusion/pull/799</a>&#160;) was merged into the project repo</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6102/"><span class="aria-hidden">←</span> Previous: FLUID-6102</a>
+        <a class="mx-1" href="/browse/FLUID-6104/">Next: FLUID-6104 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

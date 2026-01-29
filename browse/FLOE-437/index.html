@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-437  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-437 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-437/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-437/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-437/">FLOE-437</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-437: Chart sonification component work</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-437">FLOE-437</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLOE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alan Harnum</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Alan%20Harnum">Alan Harnum</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-11-10T15:12:14.822-0500" prefix="">2015-11-10T15:12:14.822-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-02-10T16:05:12.895-0500" prefix="">2016-02-10T16:05:12.895-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Chart Authoring Tool</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Colin Clark is working on a prototype basic data sonification component.</p>
+<p>Once that is complete, we should be able to wire it into the larger chartAuthoring component in the usual IoC style.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10996">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2015-11-11T15:28:39.704-0500">2015-11-11T15:28:39.704-0500</relative-time></i></p>
+                        <p>Dana's sound designs use a Fender Rhodes-style electric piano synth. As a first sketch, I have implemented a very rudimentary model of an electric piano based on this article:</p>
+<p><a href="http://www.keithwhor.com/music/">http://www.keithwhor.com/music/</a></p>
+<p>This approach isn't particularly realistic; a model that resonates a noise impulse (representing the hammer) with a comb filter (to create the string/tine resonance) will probably sound a lot better:</p>
+<p><a href="http://composerprogrammer.com/teaching/supercollider/sctutorial/11.1%20Physical%20Modelling.html">http://composerprogrammer.com/teaching/supercollider/sctutorial/11.1 Physical Modelling.html</a></p>
+<p>My sketch is currently in this Gist:</p>
+<p><a href="https://gist.github.com/colinbdclark/b9a50fdabd04ba0f888e">https://gist.github.com/colinbdclark/b9a50fdabd04ba0f888e</a></p>
+<p>It can be heard by pasting it into the Flocking Playground here:</p>
+<p><a href="http://flockingjs.org/staging/demos/playground/">http://flockingjs.org/staging/demos/playground/</a></p>
+
+                    </li>
+                    
+                    <li id="comment-10997">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2015-11-13T00:07:27.566-0500">2015-11-13T00:07:27.566-0500</relative-time></i></p>
+                        <p>Alan Harnum, I've fixed up the issues with the sonification synths and Flocking that caused it not to work correctly with a model relay in place. You'll need to use the latest version of the Flocking core-refactoring branch, commit 55e7778ea4944644d48690bc1969cba8078a018c or later:</p>
+<p><a href="https://github.com/colinbdclark/Flocking/tree/core-refactoring">https://github.com/colinbdclark/Flocking/tree/core-refactoring</a></p>
+<p>And here is the latest version of the synths:</p>
+<p><a href="https://gist.github.com/colinbdclark/b9a50fdabd04ba0f888e">https://gist.github.com/colinbdclark/b9a50fdabd04ba0f888e</a></p>
+<p>You'll notice that the durations of the sequences have changed, as have the MIDI note values. I made several mistakes there, so went back to Dana's sketch and was able to determine the correct timing and pitches. You'll need to, I'm sorry to say, update your model transformation accordingly.</p>
+
+                    </li>
+                    
+                    <li id="comment-10998">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2015-11-13T06:50:22.777-0500">2015-11-13T06:50:22.777-0500</relative-time></i></p>
+                        <p>Thanks Colin Clark - updating the model transformations shouldn't be any problem - I just refactored out the messy initial implementation of the model relays from chartAuthoring into a standalone data sonification component, so it's a good opportunity to further refactor the durations and values to be configurable as part of the component.</p>
+
+                    </li>
+                    
+                    <li id="comment-10999">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2015-11-13T07:41:33.914-0500">2015-11-13T07:41:33.914-0500</relative-time></i></p>
+                        <p>Not great code at the moment, but <a href="http://rawgit.com/waharnum/chartAuthoring/FLOE-437/tests/html/sonifier-Tests.html">http://rawgit.com/waharnum/chartAuthoring/FLOE-437/tests/html/sonifier-Tests.html</a> plays the sonification of the first piece of data passed to the sonifier on the back end. 🙂</p>
+<p>Not updated to Colin Clark's new synth definitions yet but will do that shortly.</p>
+
+                    </li>
+                    
+                    <li id="comment-11000">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2015-11-23T11:16:11.576-0500">2015-11-23T11:16:11.576-0500</relative-time></i></p>
+                        <p><a href="https://github.com/waharnum/chartAuthoring/tree/FLOE-437">https://github.com/waharnum/chartAuthoring/tree/FLOE-437</a> has basic sonification, as most of us have seen.</p>
+<p>Remaining work before I'd like to PR this for merge to master:</p>
+<ul>
+<li>better test coverage</li>
+<li>better voice label scheduling</li>
+<li>some refactoring</li>
+<li>stop functionality</li>
+</ul>
+<p>Further enhancements will be made as separate JIRA tasks.</p>
+
+                    </li>
+                    
+                    <li id="comment-11001">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2016-01-26T12:16:39.404-0500">2016-01-26T12:16:39.404-0500</relative-time></i></p>
+                        <p>Subject of this PR: <a href="https://github.com/fluid-project/chartAuthoring/pull/11">https://github.com/fluid-project/chartAuthoring/pull/11</a></p>
+
+                    </li>
+                    
+                    <li id="comment-11002">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2016-02-10T16:05:12.893-0500">2016-02-10T16:05:12.893-0500</relative-time></i></p>
+                        <p>PR merged.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-436/"><span class="aria-hidden">←</span> Previous: FLOE-436</a>
+        <a class="mx-1" href="/browse/FLOE-438/">Next: FLOE-438 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

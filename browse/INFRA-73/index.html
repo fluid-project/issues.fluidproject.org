@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-73  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-73 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-73/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-73/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-73/">INFRA-73</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-73: Assess removing supervisor from Docker container images in favour of Docker run restart policies</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-73">INFRA-73</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Done">Done</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Alan%20Harnum">Alan Harnum</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-11-30T10:29:17.605-0500" prefix="">2015-11-30T10:29:17.605-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-01-23T09:10:42.536-0500" prefix="">2018-01-23T09:10:42.536-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Giovanni Tirloni, Avtar Gill, Alfredo Matas please comment on the below.</p>
+<p>Background: when the Docker containers for GPII were last built, <a href="http://supervisord.org/">supervisor</a> was installed as a means of restarting applications running in Docker containers if they exited. At the time, <a href="https://docs.docker.com/engine/reference/run/#restart-policies-restart">Docker restart policies</a> did not exist.</p>
+<p>Since we are now rebuilding the containers anyway there's an opportunity to assess if supervisor stills need to be part of the container stack. We are not using supervisor in a complex way right now - it simply restarts the application (within the container) if it exits, keeping the container up and running. Removing it in favour of using runtime restart policy would simplify the container building process.</p>
+<p>The Docker-idiomatic behaviour seems to be to have containers that can be safely restarted at any time. Kubernetes makes extensive use of this idiom and extends it with more sophisticated <a href="http://kubernetes.io/v1.0/docs/user-guide/walkthrough/k8s201.html#health-checking">health checking</a>.</p>
+<p>At the moment, the GPII application container with which I'm most familiar (Preferences Server) can't always safely be restarted due to the existence of the PRIME_DB option, which loads the default test preferences to CouchDB when the container is launched. If a container using this option is restarted, it will launch again and load the test preferences again, wiping out any changes made during its previous runtime. So we need to take an approach that decouples this container behaviour (one-time data loading) from the behaviour of the running application.</p>
+<p>I propose that we take this approach:</p>
+<ul>
+<li>as a general principle, all continuously running GPII application containers (and application containers in general) should be idempotent in their interactions with data stores; that is, it should always be safe to restart a container that's intended to be a continuously running application</li>
+<li>one-time / at launch tasks that create DB tables, load test data or similar things necessary for the running application should be captured in a separate manner, perhaps in something like the <a href="http://blog.kubernetes.io/2015/06/the-distributed-system-toolkit-patterns.html">sidecar container</a> pattern.</li>
+</ul>
+<p>So continuing with the Preferences Server as the example, launching it for the first time would look like this:</p>
+<ul>
+<li>run a CouchDB server or container</li>
+<li>run a container that loads the test data to CouchDB, then exits once this task is complete</li>
+<li>run the Preferences Server application container with an appropriate restart policy</li>
+</ul>
+<p>Digging around the repo further, <a href="https://github.com/gpii-ops/docker-oatts-server">docker-oatts-server</a> works rather like this, though it couples the DB priming behaviour with running the application and decides which one to do at runtime.</p>
+<p>Thoughts? I'm trying to think through how we best separate the distinct behaviours. Separate "utility"-type containers seems like a safe pattern to me and I don't think it would be too hard to refactor towards this.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25852">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-01-23T09:10:42.533-0500">2018-01-23T09:10:42.533-0500</relative-time></i></p>
+                        <p>We're not using supervisor anymore. I'm closing this for now, feel free to re-open if I missed something.</p>
+<p>Examples:</p>
+<p>* <a href="https://github.com/GPII/universal/blob/master/Dockerfile">https://github.com/GPII/universal/blob/master/Dockerfile</a></p>
+<p>* <a href="https://github.com/gpii-ops/docker-preferences-dataloader/blob/master/Dockerfile">https://github.com/gpii-ops/docker-preferences-dataloader/blob/master/Dockerfile</a></p>
+<p>I think there are other nice ideas (sidecars, etc) but maybe we should create new JIRAs specifically for that? That seems to fall in GPII's area of responsibility at the moment (with their Kubernetes <a href="https://github.com/gpii-ops/gpii-infra">automation</a>&#160;work).</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-72/"><span class="aria-hidden">←</span> Previous: INFRA-72</a>
+        <a class="mx-1" href="/browse/INFRA-74/">Next: INFRA-74 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

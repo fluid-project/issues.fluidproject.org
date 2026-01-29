@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5085  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5085 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5085/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5085/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5085/">FLUID-5085</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5085: Correct grade merging algorithm to ensure that grade overriding is always effective</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5085">FLUID-5085</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-07-06T03:22:52.716-0400" prefix="">2013-07-06T03:22:52.716-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-12-04T11:45:33.437-0500" prefix="">2019-12-04T11:45:33.437-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In talking to Yura about work on the UIOptions Builder last night it became apparent that there are serious problems with the algorithm currently used for merging graded options. These were signposted by a comment in the implementation for fluid.resolveGradeStructure a few months ago which read:</p>
+<pre><code class="hljs language-java"><span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> this algorithm will fail if extra grades are mutually redundant and supplied out of dependency order</span>
+        <span class="hljs-comment">// expectation is that stronger grades appear to the left in defaults - dynamic grades are stronger still</span>
+</code></pre>
+<p>However, it became apparent that a fundamental aspect of the merging algorithm - that it attempts to cull out "redundant" or "duplicate" specifications of the same grade when it is met multiple times in the hierarchy is incorrect. Furthermore, the mergePolicy which attempts to canonicalise grade lists as they are received is likewise incorrect - </p>
+<pre><code class="hljs language-java">gradeNames: fluid.uniqueArrayConcatPolicy,
+</code></pre>
+<p>as </p>
+<pre><code class="hljs language-java">fluid.uniqueArrayConcatPolicy = function (target, source) {
+        target = (target || []).concat(source);
+        fluid.unique(target.sort());
+        <span class="hljs-keyword">return</span> target;
+    };
+</code></pre>
+<p>For a start, this should simply be "arrayConcatPolicy", since any reencounter of a grade in the list must be considered deliberate - as well as the "sort" operation causing confusion at the user level, it threatens if these lists should enter options merging proper to corrupt the merging process. So far we have been lucky that i) grade resolution is atomic wrt. options merging and so the mergePolicy has never been activated when resolving a single defaults block, ii) there is special handling of dynamic grades in FluidIoC.js which ensures that their ordering is honoured properly.</p>
+<p>However, Yura observed the following gradeNames list:</p>
+<pre><code class="hljs language-java">[<span class="hljs-string">"autoInit"</span>, <span class="hljs-string">"fluid.eventedComponent"</span>, <span class="hljs-string">"fluid.littleComponent"</span>, <span class="hljs-string">"fluid.tests.properSchemaGrade"</span>, <span class="hljs-string">"fluid.uiOptions.primaryBuilder"</span>, <span class="hljs-string">"fluid.uiOptions.schemas"</span>, <span class="hljs-string">"fluid.uiOptions.schemas.lineSpacing"</span>, 
+<span class="hljs-string">"fluid.uiOptions.schemas.primary"</span>, <span class="hljs-string">"fluid.uiOptions.schemas.textSize"</span>, <span class="hljs-string">"{that}.buildPrimary"</span>]
+</code></pre>
+<p>which is clearly highly confusing as well as not reflecting the actual merging order, as well as including the unresolved dynamic grade source.</p>
+<p>In fact, we must make use of the algorithm which would be O(n^2) without caching - certainly we need the canonicalised list in order to make "hasGrade" calculations, but this was always intended to be implemented by means of a hash for performance in any case. In fact the current cache key system also needs to be corrected, since it assumes that the canonicalised grade content is enough to uniquely specify the required document, whereas in general a component whose grade list is [A, B, C] does not have the same content as with [A, C, B].</p>
+<p>Some related art is in the so-called "C3 linearization algorithm" <a href="http://en.wikipedia.org/wiki/C3_linearization">http://en.wikipedia.org/wiki/C3_linearization</a> which is explained in the context of Python here: <a href="http://www.python.org/download/releases/2.3/mro/">http://www.python.org/download/releases/2.3/mro/</a> - in fact this is precisely what we do not need, since to us a duplicate grade requires fresh resolution. It is the attempt to be C3 (and by extension, OO-like) which has given rise to this implementation fault in the first place.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15987">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-09-10T00:26:07.651-0400">2013-09-10T00:26:07.651-0400</relative-time></i></p>
+                        <p>Merged into trunk at revision 40de4e2</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5084/"><span class="aria-hidden">←</span> Previous: FLUID-5084</a>
+        <a class="mx-1" href="/browse/FLUID-5086/">Next: FLUID-5086 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

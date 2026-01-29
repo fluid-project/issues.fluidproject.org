@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6204  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6204 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6204/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6204/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6204/">FLUID-6204</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6204: Implement a letter spacing enactor and adjuster</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6204">FLUID-6204</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-09-28T13:30:18.365-0400" prefix="">2017-09-28T13:30:18.365-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-03-12T14:43:36.131-0400" prefix="">2018-03-12T14:43:36.131-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>As part of the work on UIO+ we need a character/letter spacing adjuster/enactor. This should be similar to how the text size and line spacing adjusters/enactors work, but will adjust the space between the characters.</p>
+<p>This should be possible to do using the "letter-spacing" css style.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23150">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-09-28T13:32:49.449-0400">2017-09-28T13:32:49.449-0400</relative-time></i></p>
+                        <p>Based on <a href="https://files.inclusivedesign.ca/index.php/apps/files/?dir=/IDRC-Design/Typography&fileid=22233#pdfviewer">https://files.inclusivedesign.ca/index.php/apps/files/?dir=/IDRC-Design/Typography&amp;fileid=22233#pdfviewer</a>&#160;it seems that in phototypesetting letterspacing is determined by units.&#160;A unit is based on the em.</p>
+
+                    </li>
+                    
+                    <li id="comment-23151">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-10-03T16:35:03.107-0400">2017-10-03T16:35:03.107-0400</relative-time></i></p>
+                        <p>Talked with Caren, Dana, Lisa, Jon, and Sepideh about line spacing to determine the following:</p>
+<ul>
+<li>What are the increments?</li>
+<li>What is the range?</li>
+<li>What is the best interaction?</li>
+</ul>
+<p>Summary of feedback:</p>
+<ul>
+<li>Possibly use discreet&#160;increments such as "regular, small, medium, large"</li>
+<li>Have negative values to make letters closer</li>
+<li>Potentially need to modify linespace and workspace along with character space to keep it readable</li>
+<li>Should use "em" instead of "px" to set letter spacing to account for differences in font size</li>
+<li>Need more research into the need for character/letter spacing.</li>
+<li>Looked at illustrator, indesign, and word to see how they set letter spacing</li>
+<li>Regarding interaction:
+<ul>
+<li>are the values meaningful? would a simple slider or +/- buttons be enough</li>
+<li>would discreet increments paired with a class name make it easier for integrators who may have already set letter spacing for certain portions of the site?</li>
+</ul>
+</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-23152">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-10-04T09:53:07.731-0400">2017-10-04T09:53:07.731-0400</relative-time></i></p>
+                        <p>In my research so far, there is no specific mention of specific values or combinations that are recommended. The guidelines tend to be more general and recommend against crowding. There are&#160;also some recommendations against having too many gaps or uneven spaces&#160;as it can make reading harder, especially for those with dyslexia.</p>
+<p></p>
+<p>Below are some resources that Julia passed along from&#160;her Google search:</p>
+<ul>
+<li><a href="http://www.afb.org/info/reading-and-writing/making-print-more-readable/35">http://www.afb.org/info/reading-and-writing/making-print-more-readable/35</a></li>
+<li><a href="https://w3c.github.io/low-vision-a11y-tf/requirements.html">https://w3c.github.io/low-vision-a11y-tf/requirements.html</a></li>
+<li><a href="https://www.si.edu/accessibility/sgaed">https://www.si.edu/accessibility/sgaed</a></li>
+<li><a href="http://uxmovement.com/content/6-surprising-bad-practices-that-hurt-dyslexic-users/">http://uxmovement.com/content/6-surprising-bad-practices-that-hurt-dyslexic-users/</a></li>
+</ul>
+<p></p>
+
+                    </li>
+                    
+                    <li id="comment-23569">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-10-31T09:50:54.125-0400">2017-10-31T09:50:54.125-0400</relative-time></i></p>
+                        <p>Suggestions from APCP UX team</p>
+<p><a href="https://wiki.gpii.net/w/Browser_Adaptation_Design_Research#Character_Spacing">https://wiki.gpii.net/w/Browser_Adaptation_Design_Research#Character_Spacing</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23571">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-01-11T16:57:49.044-0500">2018-01-11T16:57:49.044-0500</relative-time></i></p>
+                        <p>Should look at <a href="https://www.w3.org/International/">https://www.w3.org/International/</a>&#160;for any advice on internationalization issues. For example some languages like farsi may not make sense if letter spacing is applied.</p>
+
+                    </li>
+                    
+                    <li id="comment-23573">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2018-03-12T14:43:31.938-0400">2018-03-12T14:43:31.938-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/infusion/pull/869">The pull request</a> has been merged into the project repo master branch at e4d2974d22938cc20a2157f5fd687486fec15024.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6203/"><span class="aria-hidden">←</span> Previous: FLUID-6203</a>
+        <a class="mx-1" href="/browse/FLUID-6205/">Next: FLUID-6205 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

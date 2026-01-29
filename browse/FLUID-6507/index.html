@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6507  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6507 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6507/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6507/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6507/">FLUID-6507</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6507: Pressing "Enter" breaks UIO when there's only one text input field presented in UIO</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6507">FLUID-6507</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-05-28T20:29:31.576-0400" prefix="">2020-05-28T20:29:31.576-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-06-03T09:35:47.431-0400" prefix="">2020-06-03T09:35:47.431-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>These steps use <a href="https://github.com/amb26/infusion/blob/FLUID-6145">the new refactored UIO branch</a> as the example:</p>
+<p>1. Open <a href="https://github.com/amb26/infusion/blob/FLUID-6145/demos/prefsFramework/index.html">demos/prefsFramework/index.html</a> in an editor;<br>
+2. In the code where fluid.uiOptions is instantiated, comment out line 105, 110, 111 to remove these panels: line spacing, letter spacing, word spacing. This leaves only one text input field from "text size" panel in UIO;<br>
+3. Start the demo at "demos/prefsFramework" in a browser;<br>
+4. Open UIO;<br>
+5. click into "text size" input box;<br>
+6. doesn't matter to change or not change the value;<br>
+7. hit "enter" key.</p>
+<p>All panels in UIO disappear and leave a grey blank page.</p>
+<p>Then,</p>
+<p>1. Click "hide preferences", UIO closes;<br>
+2. Click "show preferences", UIO doesn't open and is broken. In firefox or safari, this error is thrown in the dev tool console:</p>
+<pre><code class="hljs language-java">Ignoring call to invoker updateModel of component  
+Object { typeName: <span class="hljs-string">"fluid.uiEnhancer"</span>, id: <span class="hljs-string">"1xjwwss1-439"</span>, lifecycleStatus: <span class="hljs-string">"destroyed"</span>, destroy: fabricateDestroyMethod()
+, options: {…}, events: {…}, fluid_prefs_enactor_tableOfContents: {…}, fluid_prefs_enactor_enhanceInputs: {…}, fluid_prefs_enactor_contrast: {…}, fluid_prefs_enactor_textFont: {…}, … }
+  which has been destroyed
+</code></pre>
+<p>Expected behavior: The changed line space value applies to the website and UIO stays intact.</p>
+<p>After some investigation, it appears that the problem is that an <a href="https://www.w3.org/TR/html53/sec-forms.html#implicit-submission">Implicit Submission</a> is occurring. In this case, it is happening because there is only 1 text input in the form.</p>
+<p>This bug was initially found with the WeCount website development. See <a href="https://github.com/inclusive-design/wecount.inclusivedesign.ca/issues/248">WeCount issue ticket</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25356">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2020-06-03T09:35:47.431-0400">2020-06-03T09:35:47.431-0400</relative-time></i></p>
+                        <p>A couple things to keep in mind when addressing this issue:</p>
+<ul>
+<li>A form submission may be required for saving the preferences depending on how the integrator chooses to store the preferences</li>
+<li>The preference editor may not be contained inside of a form element.</li>
+</ul>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6506/"><span class="aria-hidden">←</span> Previous: FLUID-6506</a>
+        <a class="mx-1" href="/browse/FLUID-6508/">Next: FLUID-6508 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

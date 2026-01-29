@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6151  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6151 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6151/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6151/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6151/">FLUID-6151</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6151: Panel initially opens too much on mobile with lazy loading enabled.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6151">FLUID-6151</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Cannot%20Reproduce">Cannot Reproduce</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-04-13T17:08:58.374-0400" prefix="">2017-04-13T17:08:58.374-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-04-25T15:19:04.760-0400" prefix="">2017-04-25T15:19:04.760-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When lazy loading is enabled, the initial opening of the responsive separated panel will open too large. It seems that there is an issue with the height calculation of the iframe's document. If a break point is point inside of the <code>onSignificantDOMChange</code> event handler in SeparatedPanelPrefsEditor.js, it will work properly.</p>
+<p>Steps to reproduce:</p>
+<ol>
+<li>Open the UI Options demo ( lazyLoading should be enabled by default in this demo )</li>
+<li>Click "Show Preferences" to open the panel</li>
+</ol>
+<p>Notice that the panel opens beyond the height of the adjusters.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22245">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-04-16T21:05:58.005-0400">2017-04-16T21:05:58.005-0400</relative-time></i></p>
+                        <p>I spent sometime looking into this today and it seems that the issue has to do with the time it takes to apply the "OpenSans" font to the prefs editor; for which the markup has just been injected. If this font-family is not declared in the CSS or a different text style is chosen in the prefs settings, the panel loads correctly.</p>
+<p>This is likely not an issue with the non-lazy loading because it has time to apply the font-family before the panel is shown. So the issue is just not noticed.</p>
+<p>One potential solution would be to not use the OpenSans font for mobile.</p>
+
+                    </li>
+                    
+                    <li id="comment-22247">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-04-25T15:19:04.758-0400">2017-04-25T15:19:04.758-0400</relative-time></i></p>
+                        <p>This could only be reproduced on the iOS Simulator, but not on an actual iOS device.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6150/"><span class="aria-hidden">←</span> Previous: FLUID-6150</a>
+        <a class="mx-1" href="/browse/FLUID-6152/">Next: FLUID-6152 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

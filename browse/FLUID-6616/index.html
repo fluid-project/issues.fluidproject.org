@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6616  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6616 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6616/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6616/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6616/">FLUID-6616</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6616: In mobile/small screen views, some panels are too wide to fit on the screen and require scrolling</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6616">FLUID-6616</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-05-04T14:52:47.890-0400" prefix="">2021-05-04T14:52:47.890-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-05-05T10:25:54.427-0400" prefix="">2021-05-05T10:25:54.427-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Some panels such as contrast are too wide for a narrow window/screen to display all of the contents. We currently chose to keep the size and spacing of the interactive elements to maintain usability/accessibility of touch inputs. However, this may require horizontal scrolling to see all of the options.</p>
+<p>We should explore if modifying the size/spacing can allow for all of the elements to be visible and still easily tapped. Additionally, we can look at alternative designs that may not suffer from the same issue.</p>
+<p>Steps to reproduce:</p>
+<ol>
+<li>Open the <a href="https://build-infusion.fluidproject.org/demos/uioptions/">UI Options demo</a></li>
+<li>Use a phone in portrait, a narrow screen or responsive mode in a browser</li>
+<li>Open the preferences panel</li>
+<li>Navigate to the "contrast" panel</li>
+<li>Notice that the right hand side is cut off and requires horizontal scrolling to see all of the options.</li>
+</ol>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6616/screenshot_responsive.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6616/screenshot_responsive.png" alt="screenshot_responsive.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25643">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2021-05-04T14:55:50.830-0400">2021-05-04T14:55:50.830-0400</relative-time></i></p>
+                        <p>screenshot_responsive.png shows the contrast panel in the mobile view, with the right side cut off (off screen).</p>
+
+                    </li>
+                    
+                    <li id="comment-25644">
+                        <p class="mb-0"><b>Ned Zimmerman</b> <i>commented <relative-time datetime="2021-05-05T09:55:42.249-0400">2021-05-05T09:55:42.249-0400</relative-time></i></p>
+                        <p>It seems to me like perhaps a good approach to the contrast panel might be to make it a grid with the theme buttons wrapping onto two rows.</p>
+
+                    </li>
+                    
+                    <li id="comment-25645">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2021-05-05T10:25:02.212-0400">2021-05-05T10:25:02.212-0400</relative-time></i></p>
+                        <p>We have talked about using a grid in the past. If I recall correctly the main sticking point is that the options are currently marked up as radio buttons. With a keyboard, radio buttons are typically navigated with the arrow keys; forward and down move to the next option, and back and up move to the previous. If the options are grouped in a grid it may give the impression that pressing up/down should move between the rows. If the grid layout makes more sense, we may have to consider moving away from radio buttons, but still finding something that communicates the single selection for the group of options.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6615/"><span class="aria-hidden">←</span> Previous: FLUID-6615</a>
+        <a class="mx-1" href="/browse/FLUID-6617/">Next: FLUID-6617 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

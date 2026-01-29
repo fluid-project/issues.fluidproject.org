@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5054  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5054 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5054/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5054/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5054/">FLUID-5054</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5054: Base grades of dynamic grades are not registered into IoC resolution</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5054">FLUID-5054</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>y z</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=y%20z">y z</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-06-14T11:29:03.072-0400" prefix="">2013-06-14T11:29:03.072-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T11:48:52.854-0500" prefix="">2014-03-03T11:48:52.854-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>It looks like contributed hierarchical grades are not resolving with the current IoC system.</p>
+<p>Attaching a patch with a test case</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-5054/FLUID-5054.tests.patch">
+                            
+                                FLUID-5054.tests.patch
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-16645">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-06-17T05:41:01.429-0400">2013-06-17T05:41:01.429-0400</relative-time></i></p>
+                        <p>Hi Yura - thanks for this issue report - the test case code looks clear enough but this report unfortunately falls into the category of a TLJ (Two Line JIRA). Do you think you could expand the issue description so that <br>
+i) there is a chance that a 3rd party could understand what the issue is without reading the code<br>
+ii) you describe the context where the problem arose<br>
+iii) you describe any simplifications you have attempted to the test case which will cause it no longer to fail</p>
+<p>Thanks, A</p>
+
+                    </li>
+                    
+                    <li id="comment-16648">
+                        <p class="mb-0"><b>y z</b> <i>commented <relative-time datetime="2013-06-17T13:22:11.480-0400">2013-06-17T13:22:11.480-0400</relative-time></i></p>
+                        <p>Hi Antranig, gladly:</p>
+<p>i) As a user of the framework might be aware, there's an option of specifying ("contributing") additional grades to a specific component via its options. Those additional grades might be composed of other grades created outside of framework defaults. The problem here is that if such grade is, indeed, specified in options, the actual component will not be considered an instance of one of its derivative grades.</p>
+
+                    </li>
+                    
+                    <li id="comment-16650">
+                        <p class="mb-0"><b>y z</b> <i>commented <relative-time datetime="2013-06-17T13:27:55.956-0400">2013-06-17T13:27:55.956-0400</relative-time></i></p>
+                        <p>ii) The problem arose while working on refactoring of uioptions. We have a grade called fluid.uiOptions.initialModel that contains an empty initial model used by uiOptions component. In addition to that grade we also have a grade called fluid.uiOptions.initialModel.starter. This grade is a child grade of fluid.uiOptions.initialModel with a starter uiOptions model actually defined. This grade is conditionally attached to fluid.uiOptions component itself (there's an option of defining other grades that inherit from fluid.uiOptions.initialModel). The problem arises when we refer to fluid.uiOptions component as a more loose fluid.uiOptions.initialModel grade instead of its fluid.uiOptions.initialModel.starter instance. In that case the reference to a component is not resolved by the framework.<br>
+3) Note however that everything works if there grades are specified in the component defaults. In order to fix it, for the time being (until the initial model is replaced by the current schema work), uiOptions has an additional default grade of fluid.uiOptions.initialModel that contains no pre set initial uiOptions model.</p>
+
+                    </li>
+                    
+                    <li id="comment-16653">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-06-18T07:51:22.618-0400">2013-06-18T07:51:22.618-0400</relative-time></i></p>
+                        <p>Thanks for the addiitonal description, Yura! A pull request is now in the queue</p>
+
+                    </li>
+                    
+                    <li id="comment-16655">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-06-28T16:08:25.815-0400">2013-06-28T16:08:25.815-0400</relative-time></i></p>
+                        <p>Merged into trunk at dccfc47</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5053/"><span class="aria-hidden">←</span> Previous: FLUID-5053</a>
+        <a class="mx-1" href="/browse/FLUID-5055/">Next: FLUID-5055 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

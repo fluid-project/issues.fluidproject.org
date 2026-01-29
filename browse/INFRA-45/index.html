@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-45  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-45 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-45/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-45/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-45/">INFRA-45</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-45: Allow certain services between PVLANs</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-45">INFRA-45</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-09-17T16:20:32.600-0400" prefix="">2015-09-17T16:20:32.600-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-08-22T15:40:30.395-0400" prefix="">2016-08-22T15:40:30.395-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Today we have the following PVLANs:</p>
+<p>tor1-prd-sw01#show vlan private-vlan <br>
+Primary Secondary Type        Ports<br>
+------- --------- ----------- -------------------------------
+<br>
+10      12        community   Et17, Et33, Et34, Et39, Et40<br>
+Et41, Et42, Et43, Et47, Et48<br>
+Po10, Po20, Po30, Po40, Po50<br>
+Po60<br>
+10      13        community   Et17, Et33, Et34, Et47, Et48<br>
+Po10, Po20, Po30, Po40, Po50<br>
+Po60<br>
+10      11        community   Et17, Et33, Et34, Et47, Et48<br>
+Po10, Po20, Po30, Po40, Po50<br>
+Po60</p>
+<p>The hosts on these PVLANs can communicate with each other and the Internet, but not with hosts on other PVLANs.</p>
+<p>This creates a problem for hosts that want to use services like the central logging and internal MX servers. The communication is blocked as no routing is allowed (hosts get "no route to host" error).</p>
+<p>If each PVLAN had its own network (e.g. a /29 inside the /24), then routing would take care of it. Hosts A on PVLAN 1 would see that Host B is not in the local network and would reach out to the gateway (205.211.169.1), which would send the traffic to the appropriate hosts. However, all servers are configured with a /24 netmask. So the Vidyo appliances keep trying to find the central logging server on their PVLAN unsuccessfully.</p>
+<p>We need a way to allow certain service to bypass these restrictions.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25992">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2015-09-17T16:27:24.629-0400">2015-09-17T16:27:24.629-0400</relative-time></i></p>
+                        <p>One solution is to carve a /28 or /29 out of the /24, just for Vidyo. One problem is that our IP address space is scattered, but this will improve when we shutdown Nebula. The other problem is that the IPs being used by Vidyo today fall outside the nearest /28 (205.211.169.57 to .62). We would need to reconfigure the appliances and fix DNS. It would be even better to relocate them to the top of the address space within a /29 (e.g. 205.211.169.248/29).</p>
+<p>Another solution is to get rid of the PVLAN, let the Vidyo appliances into the same general VLAN as all other servers. It would still be possible to isolate them through access lists in Arista.</p>
+
+                    </li>
+                    
+                    <li id="comment-25993">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2016-08-22T09:09:22.305-0400">2016-08-22T09:09:22.305-0400</relative-time></i></p>
+                        <p>The solution adopted as to remove PVLANs and get all our servers on the same VLAN. It is assumed the Vidyo servers won't pose any greater risk than our own servers, and they are the only 3rd-party devices in our network.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-44/"><span class="aria-hidden">←</span> Previous: INFRA-44</a>
+        <a class="mx-1" href="/browse/INFRA-46/">Next: INFRA-46 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

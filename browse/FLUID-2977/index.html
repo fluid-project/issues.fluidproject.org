@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2977  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2977 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2977/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2977/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2977/">FLUID-2977</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2977: Refactor postProcessor.php to operate on new posted data</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2977">FLUID-2977</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Laurel Williams</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Laurel%20Williams">Laurel Williams</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-07-02T12:45:15.000-0400" prefix="">2009-07-02T12:45:15.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-08-24T11:19:27.000-0400" prefix="">2009-08-24T11:19:27.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Infusion Builder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14539">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-07-02T12:45:57.000-0400">2009-07-02T12:45:57.000-0400</relative-time></i></p>
+                        <p>The new data is of the format: <br>
+{"groupNames":["Infusion Framework Modules","Infusion Component Modules","Third Party Modules"],"groupDescriptions":["Framework Description","Infusion Component Modules Description","Third Party Modules Descriptoin"],"groupModules":[["framework","fss","fssReset","fssLayout","fssText","fssThemes","renderer"],["inlineEdit","pager","progress","reorderer","tableOfContents","uiOptions","undo","uploader"],["fastXmlPull","json","jQuery","jQueryUICore","jQueryUIWidgets","jQueryDelegatePlugin","jQueryTooltipPlugin","jQuerybgiframePlugin","swfupload","swfobject"]],"moduleValues":["framework","fss","fssReset","fssLayout","fssText","fssThemes","renderer","inlineEdit","pager","progress","reorderer","tableOfContents","uiOptions","undo","uploader","fastXmlPull","json","jQuery","jQueryUICore","jQueryUIWidgets","jQueryDelegatePlugin","jQueryTooltipPlugin","jQuerybgiframePlugin","swfupload","swfobject"],"moduleNames":["Fluid Infusion Framework","Fluid Skinning System","Reset","Layout","Text","Themes","Renderer","Inline Edit","Pager","Progress","Reorderer","Table of Contents","User Interface Options","Undo","Uploader","fastXmlPull","JSON","jQuery","jQuery UI Core","jQuery UI Widgets","jQuery Delegate Plugin","jQuery Tooltip Plugin","jQuery bgiframe Plugin","SWFUpload","swfobject"],"moduleDescriptions":["The core of the Fluid Infusion framework. Required for all Fluid components","A modular CSS framework, which allows you to add, remove, and mix classes to get the desired effect.","A css reset file based on the YUI reset.","Provides css classes for layout and convenience classes for widgets.","Classes for text, headers, spacing and sizes.","Colour schemes for basic markup and widgets.","Allows users to create user interface templates in pure HTML, and render the pages entirely on the client side.","Allows a user to do quick edits to simple text directly on a web page. ","Allows users to break up long lists of items into separate pages.","A linear progress display.","enables users to directly re-arrange content on the page.","Constructs and displays a formatted list of links to all headers in a document.","Transforms the presentation of the user interface and content resources so that they are personalized to an individual user's needs.","Provides undo support for any component that bears a model.","Allows users to upload files.","A fast xml pull parser.","Javascript lightweight data-interchange format.","jQuery javascript library core.","The core of jQuery UI, required for all jQuery UI interactions and widgets.","Full-featured jQuery UI Controls - each has a range of options and is fully themeable.","Used to simulate portable bubbling focus event","Allows tooltip customization.","Used to handle zindex issues in IE6.","SWFUpload is a small JavaScript/Flash library featuring the great upload capabilities of Flash and the accessibility and ease of HTML/CSS.","Embed Flash content into html."],"moduleDependencies":[["jQuery","jQueryUICore","jQueryDelegatePlugin"],["fssReset","fssLayout","fssText","fssThemes"],[],[],[],[],["jQuery","framework","fastXmlPull"],["jQuery","jQueryTooltipPlugin","framework","undo"],["jQuery","jQueryTooltipPlugin","jQuerybgiframePlugin","framework","renderer"],["jQuery","jQueryUICore","framework"],["jQuery","jQueryUICore","jQueryUIWidgets","framework"],["jQuery","framework","renderer"],["fss","jQuery","jQueryUICore","framework","renderer","jQueryUIWidgets","tableOfContents","json"],["jQuery","framework"],["jQuery","jQueryUICore","framework","swfobject","swfupload","progress"],[],[],[],["jQuery"],["jQuery","jQueryUICore"],["jQuery"],["jQuery","jQueryUICore"],["jQuery","jQueryUICore"],[],[]],"moduleSelections":["fss","fssReset","fssLayout","fssText","fssThemes"],"selectionValues":["minified","source"],"selectionNames":["Minified","Source"],"selectionChoice":["minified"]}</p>
+
+                    </li>
+                    
+                    <li id="comment-14542">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-07-02T12:48:24.000-0400">2009-07-02T12:48:24.000-0400</relative-time></i></p>
+                        <p>The relevant fields to be posted are moduleSelections and selectionChoice.</p>
+
+                    </li>
+                    
+                    <li id="comment-14544">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-07-08T11:45:38.000-0400">2009-07-08T11:45:38.000-0400</relative-time></i></p>
+                        <p>Again, a revision to the format:<br>
+$_POST["model"] = '{"typeSelections":"minified","moduleSelections":["framework","inlineEdit","pager","undo","jQuery","jQueryUICore","jQueryDelegatePlugin","jQueryTooltipPlugin","jQuerybgiframePlugin","renderer","fastXmlPull"]}';<br>
+with relevant fields typeSelections and moduleSelections.</p>
+
+                    </li>
+                    
+                    <li id="comment-14545">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-08-17T09:45:09.000-0400">2009-08-17T09:45:09.000-0400</relative-time></i></p>
+                        <p>This has been completed and reviewed</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-2975/"><span class="aria-hidden">←</span> Previous: FLUID-2975</a>
+        <a class="mx-1" href="/browse/FLUID-2979/">Next: FLUID-2979 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

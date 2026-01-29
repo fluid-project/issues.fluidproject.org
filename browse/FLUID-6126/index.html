@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6126  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6126 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6126/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6126/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6126/">FLUID-6126</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6126: Failure when using fluid.construct to construct component as direct child of root which is target of a distribution</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6126">FLUID-6126</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-02-08T21:22:48.623-0500" prefix="">2017-02-08T21:22:48.623-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-02-09T10:33:02.708-0500" prefix="">2017-02-09T10:33:02.708-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>An annoying edge case creates a bad interaction between fluid.construct and fluid.computeDistributionPriority -&gt; fluid.getMemberNames.</p>
+<p>If there is a global distribution which is capable of hitting components which are directly attached to the root, e.g. </p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.authoring.nexus.componentTracker"</span>, {
+    gradeNames: [<span class="hljs-string">"fluid.component"</span>, <span class="hljs-string">"fluid.resolveRoot"</span>],
+    distributeOptions: {
+        modelTracker: {
+            record: <span class="hljs-string">"fluid.authoring.nexus.modelTracker"</span>,
+            target: <span class="hljs-string">"{/ fluid.modelComponent}.options.gradeNames"</span>
+        }
+    }
+});
+</code></pre>
+<p>using fluid.construct, say, with a path of "sample-model-component-0" to construct a component directly attached to the root will trigger a failure </p>
+<pre><code class="hljs language-java">TypeError: Cannot read property <span class="hljs-string">'id'</span> of undefined
+    at Object.fluid.getMemberNames (E:\\source\\gits\\fluid-authoring\\node_modules\\infusion\\src\\framework\\core\\js\\FluidIoC.js:<span class="hljs-number">87</span>:<span class="hljs-number">73</span>)
+</code></pre>
+<p>since we don't handle the case where the path stack is empty. fluid.getMemberNames is pretty suspect anyway and has been ripe for fencepost errors for many years:</p>
+<pre><code class="hljs language-java">fluid.getMemberNames = function (instantiator, thatStack) {
+        <span class="hljs-type">var</span> <span class="hljs-variable">path</span> <span class="hljs-operator">=</span> instantiator.idToPath(thatStack[thatStack.length - <span class="hljs-number">1</span>].id);
+        <span class="hljs-type">var</span> <span class="hljs-variable">segs</span> <span class="hljs-operator">=</span> instantiator.parseEL(path);
+            <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> we should now have no longer shortness in the stack</span>
+        segs.unshift.apply(segs, fluid.generate(thatStack.length - segs.length, <span class="hljs-string">""</span>));
+
+        <span class="hljs-keyword">return</span> segs;
+    };
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22243">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2017-02-09T10:32:59.464-0500">2017-02-09T10:32:59.464-0500</relative-time></i></p>
+                        <p>The pull request <a href="https://github.com/fluid-project/infusion/pull/808">https://github.com/fluid-project/infusion/pull/808</a> has been merged into the project repo master branch at f830efb6c0d36e505e4372e24cd89939ab79959f</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6125/"><span class="aria-hidden">←</span> Previous: FLUID-6125</a>
+        <a class="mx-1" href="/browse/FLUID-6127/">Next: FLUID-6127 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

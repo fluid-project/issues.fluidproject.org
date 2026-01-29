@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1542  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1542 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1542/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1542/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1542/">FLUID-1542</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1542: Springboards: Draggable elements move around static elmenents during addition and removal of elements in a column</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1542">FLUID-1542</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Jacob Farber</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-09-10T14:51:44.000-0400" prefix="">2008-09-10T14:51:44.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-01-14T09:53:23.697-0500" prefix="">2011-01-14T09:53:23.697-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Demos</li>
+                            
+                            <li>Layout Reorderer</li>
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Draggable elements move around static elmenents during addition and removal of elements in a column</p>
+<p>Steps to reproduce:</p>
+<p>1) Open the Layout Customizer Springboard example from the daily build site<br>
+<a href="http://build.fluidproject.org/fluid/fluid-components/html/LayoutCustomizer.html">http://build.fluidproject.org/fluid/fluid-components/html/LayoutCustomizer.html</a></p>
+<p>2) Look at the second example</p>
+<p>3) Move some draggable elements from Column A to the bottom of Column B.</p>
+<p>4) Move a draggable element from Column C to the top of Column B. Notice that it appears to be added to the bottom of Column B.</p>
+<p>5) Move a draggable element from Column C to Column B between the first  static element and the draggable element. </p>
+<p>6) Move any of the top draggable elements from Column B to any other column. Notice that it appears to take it from the bottom.</p>
+<p>It's hard to tell from this example which elements are moving where but I would guess that the lower draggable elements are moving up to take the place of the higher draggable element that was moved.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)<br>
+FF2, FF3, IE6, IE7, Opera 9.5 (Win XP)<br>
+FF3, IE7 (Win Vista)<br>
+FF3, IE6 (Win 2000)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-16547">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2008-09-15T16:43:59.000-0400">2008-09-15T16:43:59.000-0400</relative-time></i></p>
+                        <p>This one isn't a blocker, since I'm not sure we have any concrete examples that require this behaviour. If we can't fix it, let's remove it from the Springboards.</p>
+
+                    </li>
+                    
+                    <li id="comment-16548">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-18T17:09:37.000-0400">2008-09-18T17:09:37.000-0400</relative-time></i></p>
+                        <p>Also occurs in example 1 of the Reorderer Springboard<br>
+<a href="http://build.fluidproject.org/fluid/fluid-components/html/Reorderer.html">http://build.fluidproject.org/fluid/fluid-components/html/Reorderer.html</a></p>
+
+                    </li>
+                    
+                    <li id="comment-16549">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-22T12:59:59.000-0400">2008-09-22T12:59:59.000-0400</relative-time></i></p>
+                        <p>Bug Parade: 0.5 release</p>
+
+                    </li>
+                    
+                    <li id="comment-16550">
+                        <p class="mb-0"><b>Jacob Farber</b> <i>commented <relative-time datetime="2008-09-22T15:07:19.000-0400">2008-09-22T15:07:19.000-0400</relative-time></i></p>
+                        <p>Removed example due to it being reliant on legacy approach to locked portlets. "Dead" portlets should really be locked portlets.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1541/"><span class="aria-hidden">←</span> Previous: FLUID-1541</a>
+        <a class="mx-1" href="/browse/FLUID-1543/">Next: FLUID-1543 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

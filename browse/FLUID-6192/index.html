@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6192  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6192 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6192/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6192/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6192/">FLUID-6192</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6192: modelRelay rule with source of "" fails with bare diagnostic</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6192">FLUID-6192</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-09-05T12:41:03.563-0400" prefix="">2017-09-05T12:41:03.563-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-09-20T16:10:02.085-0400" prefix="">2017-09-20T16:10:02.085-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>A model relay definition as follows:</p>
+<pre><code class="hljs language-javascript"><span class="hljs-string">"pcpChannel"</span>: {
+                <span class="hljs-string">"source"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"target"</span>: <span class="hljs-string">"{flowManager}.pcpChannel.model"</span>,
+                <span class="hljs-string">"singleTransform"</span>: {
+                    <span class="hljs-attr">type</span>: <span class="hljs-string">"fluid.transforms.identity"</span>
+                }
+            }
+</code></pre>
+<p>will trigger a bare failure in the framework as follows:</p>
+<pre><code class="hljs language-java"><span class="hljs-number">17</span>:<span class="hljs-number">23</span>:<span class="hljs-number">17.570</span>:  FATAL ERROR: Uncaught exception: Cannot read property <span class="hljs-string">'listenerId'</span> of undefined
+TypeError: Cannot read property <span class="hljs-string">'listenerId'</span> of undefined
+    at Object.fluid.registerDirectChangeRelay (E:\Source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\DataBinding.js:<span class="hljs-number">589</span>:<span class="hljs-number">83</span>)
+    at Object.fluid.connectModelRelay (E:\Source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\DataBinding.js:<span class="hljs-number">630</span>:<span class="hljs-number">19</span>)
+    at Object.fluid.parseModelRelay (E:\Source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\DataBinding.js:<span class="hljs-number">786</span>:<span class="hljs-number">19</span>)
+    at E:\Source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\DataBinding.js:<span class="hljs-number">882</span>:<span class="hljs-number">23</span>
+</code></pre>
+<p>This is because of a lazy falsy check in DataBinding.js fluid.parseModelRelay line 171:</p>
+<pre><code class="hljs language-java">fluid.parseModelRelay = function (that, mrrec, key) {
+        <span class="hljs-type">var</span> <span class="hljs-variable">parsedSource</span> <span class="hljs-operator">=</span> mrrec.source ? fluid.parseValidModelReference(that, <span class="hljs-string">"modelRelay record member \"source\""</span>, mrrec.source) :
+            {path: <span class="hljs-literal">null</span>, modelSegs: <span class="hljs-literal">null</span>};
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22042">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2017-09-20T16:09:45.646-0400">2017-09-20T16:09:45.646-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/infusion/pull/848">The pull request</a> has been merged into the project repo master branch at 3be1824401c55d455fe21b2a1e3c4b45d08d345f</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6191/"><span class="aria-hidden">←</span> Previous: FLUID-6191</a>
+        <a class="mx-1" href="/browse/FLUID-6193/">Next: FLUID-6193 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

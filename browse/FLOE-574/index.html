@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-574  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-574 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-574/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-574/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-574/">FLOE-574</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-574: disclosure widgets (details elements) do not display the arrow indicator in Firefox</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-574">FLOE-574</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLOE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-11-05T12:33:30.182-0500" prefix="">2019-11-05T12:33:30.182-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-01-28T18:35:03.627-0500" prefix="">2020-01-28T18:35:03.627-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>FLOE Website</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The disclosure widgets are made using the details element. However, in Firefox the arrow indicator is not displayed. This makes it look like there is no additional details other than the summary that is always displayed.</p>
+<p>It seems that this is caused by the normalize v4.1.1 (source through the infusion package) which is setting the display type of the summary element to <code>display: block</code>. It should be <code>display: list-item</code> which is properly set in the latest normalize (currently v8.0.1).</p>
+<p></p>
+<p>Steps to reproduce:</p>
+<ol>
+<li>Navigate to a page that uses the details element
+<ol>
+<li>e.g. <a href="https://floeproject.org/news/2018-08-30-Cities-Co-Design.html">https://floeproject.org/news/2018-08-30-Cities-Co-Design.html</a>&#160;(details element used for the image caption)</li>
+</ol>
+</li>
+<li>Notice that the arrow indicator is not rendered, but if you click on the summary the details expand.</li>
+</ol>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF 70.0.1 (macOS 10.15.1)</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLOE/FLOE-574/Chrome_details_closed.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLOE/FLOE-574/Chrome_details_closed.png" alt="Chrome_details_closed.png">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLOE/FLOE-574/Chrome_details_open.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLOE/FLOE-574/Chrome_details_open.png" alt="Chrome_details_open.png">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLOE/FLOE-574/FF_details_closed.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLOE/FLOE-574/FF_details_closed.png" alt="FF_details_closed.png">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLOE/FLOE-574/FF_details_open.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLOE/FLOE-574/FF_details_open.png" alt="FF_details_open.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-11087">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-11-05T12:37:46.841-0500">2019-11-05T12:37:46.841-0500</relative-time></i></p>
+                        <ul>
+<li>Chrome_details_closed.png shows arrow indicator pointing right.</li>
+<li>Chrome_details_open.png shows arrow indicator pointing down.</li>
+<li>FF_details_closed.png shows arrow indicator missing when closed.</li>
+<li>FF_details_open.png shows arrow indicator missing when open.</li>
+</ul>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-573/"><span class="aria-hidden">←</span> Previous: FLOE-573</a>
+        <a class="mx-1" href="/browse/FLOE-575/">Next: FLOE-575 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

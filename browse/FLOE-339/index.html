@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-339  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-339 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-339/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-339/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-339/">FLOE-339</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-339: Add speech to indicate when Sticky Keys shift is unlatched due to pressing shift a second time</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-339">FLOE-339</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLOE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Simon%20Bates">Simon Bates</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-05-14T17:15:18.238-0400" prefix="">2015-05-14T17:15:18.238-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-11-03T12:09:50.740-0500" prefix="">2015-11-03T12:09:50.740-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>First Discovery</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Update the self voicing for the Sticky Keys simulation to indicate when shift is turned off.</p>
+<p>For <a href="/browse/FLOE-312/">FLOE-312</a> we implemented a spoken message when shift is turned on. We should also add a message when shift is turned off:</p>
+<p>"shift is off"</p>
+<p>This message should only be spoken when shift is turned off due to pressing shift again without inputting a keypress. Shift is also unlatched when we generate a shifted keypress, but we don't want to speak the "shift is off" message in this case.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-11327">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-05-25T17:10:07.485-0400">2015-05-25T17:10:07.485-0400</relative-time></i></p>
+                        <p>This looks like a use case which motivates restoring the "source tracking" system as suggested in <a href="http://issues.fluidproject.org/browse/FLUID-5490">http://issues.fluidproject.org/browse/FLUID-5490</a> . With this, it would be possible to apply a source named "latch" to the shift key source, and then apply 'includeSource: "latch"' to the model listener which provides the spoken message. As it stands, it is awkward to demultiplex the different sources of change to the shift state.</p>
+<p>One approach for finessing this for now could be to add a single event source, "shiftLatchChange" which detects the user's long-pressing of shift, and then two add two listeners to this with different priorities - a high priority listener which updates the model state, and then a low priority listener which READS the updated model state and then announces it.</p>
+
+                    </li>
+                    
+                    <li id="comment-11328">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-05-26T10:41:03.986-0400">2015-05-26T10:41:03.986-0400</relative-time></i></p>
+                        <p>Submitted a pull request:<br>
+<a href="https://github.com/fluid-project/first-discovery/pull/62">https://github.com/fluid-project/first-discovery/pull/62</a></p>
+
+                    </li>
+                    
+                    <li id="comment-11329">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2015-05-26T15:03:46.711-0400">2015-05-26T15:03:46.711-0400</relative-time></i></p>
+                        <p>Merged @ 4b81887c85848fb35b327f42aa348c48bd03c2f9</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-338/"><span class="aria-hidden">←</span> Previous: FLOE-338</a>
+        <a class="mx-1" href="/browse/FLOE-340/">Next: FLOE-340 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

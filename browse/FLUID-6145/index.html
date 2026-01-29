@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6145  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6145 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6145/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6145/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6145/">FLUID-6145</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6145: Begin the "immutable revolution" by causing all finally merged component options to be immutable</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6145">FLUID-6145</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-03-10T22:15:36.536-0500" prefix="">2017-03-10T22:15:36.536-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:28.761-0400" prefix="">2024-07-22T10:35:28.761-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This change has been trailled informally for a while, but it is time to break compatibility in a significant way by causing all finally merged options to be immutable. This is essential in order to begin the work for <a href="/browse/FLUID-6143/">FLUID-6143</a> - the "memoised merged defaults stencil" object will be structured as an "immutable skeleton" on top of which the elements of the expanded, fetched material from around the tree will be "painted on" by means of the "liana-like" scheme described in <a href="https://wiki.fluidproject.org/display/fluid/The+State+of+Options+Merging+25-4-16">https://wiki.fluidproject.org/display/fluid/The+State+of+Options+Merging+25-4-16</a> . This means that users will only pay the costs for instantiating the parts of the options structure that are actually variable between component instances, which should lead to huge economies both in reduced garbage and reduced instantiation time.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25461">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2017-03-10T22:23:17.508-0500">2017-03-10T22:23:17.508-0500</relative-time></i></p>
+                        <p>Ah, of course, we now remember that this can't be done without the part of the <a href="/browse/FLUID-4982/">FLUID-4982</a> work that as we described in <a href="https://github.com/amb26/papers/tree/master/ppig-2016a">https://github.com/amb26/papers/tree/master/ppig-2016a</a> corresponds to the implementation of "potentia II", since our current "bit-bashing" idiom for implementing dynamic components universally takes the form of bashing on the value of <code>options.components.x</code> in order to encode representations of upcoming components. Solving this would also solve embarrassing issues like <a href="https://issues.fluidproject.org/browse/FLUID-5614">https://issues.fluidproject.org/browse/FLUID-5614</a>. It really seems like all of this work just needs to begin simultaneously. </p>
+
+                    </li>
+                    
+                    <li id="comment-25462">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2020-12-14T07:14:28.093-0500">2020-12-14T07:14:28.093-0500</relative-time></i></p>
+                        <p>Looks like this was closed yet again by an unrelated Kettle pull</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6144/"><span class="aria-hidden">←</span> Previous: FLUID-6144</a>
+        <a class="mx-1" href="/browse/FLUID-6146/">Next: FLUID-6146 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

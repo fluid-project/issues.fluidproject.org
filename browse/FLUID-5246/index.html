@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5246  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5246 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5246/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5246/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5246/">FLUID-5246</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5246: Grade linkage system is not activated unless there are already dynamic grades on a component</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5246">FLUID-5246</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-01-09T13:19:20.752-0500" prefix="">2014-01-09T13:19:20.752-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T11:24:07.485-0500" prefix="">2014-03-03T11:24:07.485-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The "grade linkage system" aka "new demands blocks" for <a href="/browse/FLUID-5212/">FLUID-5212</a> was found to have a flaw when working with the resolver system implemented in the GPII's LifecycleManager. This implementation was extremely old and even predated <a href="/browse/FLUID-4392/">FLUID-4392</a> demands blocks. In fact, the comment above it used to read </p>
+<p>// TODO: Use this silly system until demands blocks are fixed via <a href="/browse/FLUID-4392/">FLUID-4392</a><br>
+// The idea is that users will derive grades from this one which add in<br>
+// further resolvers, and then issue a single demands block which replaces<br>
+// this class with their own impl. Still doesn't easily allow for multi-dim.<br>
+// extension</p>
+<p>Since the pull request against the Windows repository required to enable this was never actually yet merged (c. 7 months) it seemed reasonable to modernise this system since demands blocks have been removed from the remainder of the GPII anyway. This is a case where the new "grade linkage system" indeed seems to solve the problem straightforwardly, but unfortunately our current implementation has a bug.</p>
+<p>We would like to write, in LifecycleManager.js:</p>
+<p>fluid.defaults("gpii.lifecycleManager.standardResolverConfig", {<br>
+gradeNames: ["fluid.littleComponent", "fluid.applyGradeLinkage", "autoInit"],<br>
+resolvers: {<br>
+environment: "gpii.lifecycleManager.environmentResolver"<br>
+}<br>
+});</p>
+<p>and then in Windows registeryResolver/index.js</p>
+<p>fluid.defaults("gpii.lifecycleManager.registryResolverConfig", {<br>
+gradeNames: ["fluid.littleComponent", "autoInit"],<br>
+resolvers: {<br>
+registry: "gpii.lifecycleManager.registryResolver"<br>
+}<br>
+});</p>
+<p>fluid.defaults("gpii.lifecycleManager.resolverConfigWithRegistry", {<br>
+gradeNames: ["autoInit", "fluid.gradeLinkageRecord"],<br>
+contextGrades: ["gpii.lifecycleManager.standardResolverConfig"],<br>
+resultGrades: ["gpii.lifecycleManager.registryResolverConfig"]<br>
+});</p>
+<p>Unfortunately since the relevant FluidIoC.js code looks like this (fluid.computeDynamicGrades):</p>
+<p>var resolved = fluid.expandDynamicGrades(that, dynamicGrades);<br>
+if (resolved.length !== 0) {<br>
+do { // repeatedly collect dynamic grades whilst they arrive (<a href="/browse/FLUID-5155/">FLUID-5155</a>)<br>
+var furtherResolved = fluid.collectDynamicGrades(that, shadow, defaultsBlock, gradeNames, dynamicGrades, resolved);<br>
+}<br>
+while (furtherResolved.length !== 0);<br>
+}</p>
+<p>we fail to even kick off the linkage process held within fluid.collectDynamicGrades unless we already find at least one dynamic grade to start with.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22966">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-01-09T17:45:42.138-0500">2014-01-09T17:45:42.138-0500</relative-time></i></p>
+                        <p>Merged into trunk at revision 2c9d4c1</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5245/"><span class="aria-hidden">←</span> Previous: FLUID-5245</a>
+        <a class="mx-1" href="/browse/FLUID-5247/">Next: FLUID-5247 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

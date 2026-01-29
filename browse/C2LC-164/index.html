@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-164  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-164 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-164/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-164/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-164/">C2LC-164</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-164: Use Wonder Workshop's JavaScript library to communicate with Dash</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-164">C2LC-164</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Won't Fix</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-02-13T10:11:39.770-0500" prefix="">2020-02-13T10:11:39.770-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-05-07T10:44:22.722-0400" prefix="">2024-05-07T10:44:22.722-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Wonder Workshop have created a library for using their robots from browser JavaScript:</p>
+<ul>
+<li><a href="https://www.npmjs.com/package/@wonderworkshop/wwjs">https://www.npmjs.com/package/@wonderworkshop/wwjs</a></li>
+<li><a href="https://github.com/playi/wwjs-examples">https://github.com/playi/wwjs-examples</a></li>
+</ul>
+<p>Some initial notes, questions, and things to look into:</p>
+<ul>
+<li>The page on NPM for the <code>@wonderworkshop/wwjs</code> package (<a href="https://www.npmjs.com/package/@wonderworkshop/wwjs">https://www.npmjs.com/package/@wonderworkshop/wwjs</a>) lists <a href="https://github.com/playi/wwjs-examples">https://github.com/playi/wwjs-examples</a> as the package repository. However, that repository does not contain the library, but rather it contains documentation for the library and examples for using it.</li>
+<li>It looks like the source code for the library itself is not public</li>
+<li>When we do an <code>npm install</code> to download the <code>wwjs</code> package, what does the code downloaded look like?
+<ul>
+<li>Is it pure JavaScript?</li>
+<li>Does it contain any binary blobs?</li>
+</ul>
+</li>
+<li>The NPM page for the library lists the license as CC-BY-<a href="/browse/NC-4/">NC-4</a>.0
+<ul>
+<li>Is the code that is installed at <code>npm install</code> clearly licensed by that license? What is covered by this license?</li>
+<li>What impact does using this license for the library have on our code? Is it viral?</li>
+</ul>
+</li>
+</ul>
+<p>Let's start by doing a technical exploration replacing our existing DashDriver.js with one using this Wonder Workshop library.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10645">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-02-19T13:41:11.977-0500">2020-02-19T13:41:11.977-0500</relative-time></i></p>
+                        <p>I had a look at the contents of the <code>@wonderworkshop/wwjs</code> package. It contains 4 files:</p>
+<ul>
+<li><code>.npmignore</code></li>
+<li><code>HALasm.js.mem</code>: WebAssembly blob</li>
+<li><code>package.json</code></li>
+<li><code>wonder.min.js</code>: the minified library</li>
+</ul>
+<p>So, the library is not 'open source': binary blob + minified library, with no source code.</p>
+<p>It looks like there is a good chance that <code>HALasm.js.mem</code> has been generated by <a href="https://github.com/emscripten-core/emscripten">emscripten</a>. The <code>wonder.min.js</code> file contains the following string from Emscripten <code>parseTools.js</code>:</p>
+<ul>
+<li><a href="https://github.com/emscripten-core/emscripten/blob/afeebd2b3bf09e313247ba25fc0e821cfc079243/src/parseTools.js#L1324">https://github.com/emscripten-core/emscripten/blob/afeebd2b3bf09e313247ba25fc0e821cfc079243/src/parseTools.js#L1324</a></li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-10646">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-03-27T14:37:54.420-0400">2020-03-27T14:37:54.420-0400</relative-time></i></p>
+                        <p>This work is on hold until we discuss the library with Wonder Workshop.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-163/"><span class="aria-hidden">←</span> Previous: C2LC-163</a>
+        <a class="mx-1" href="/browse/C2LC-165/">Next: C2LC-165 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

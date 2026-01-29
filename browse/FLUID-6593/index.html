@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6593  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6593 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6593/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6593/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6593/">FLUID-6593</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6593: URL datasource sends the URL as an Object instead of a String</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6593">FLUID-6593</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-02-03T09:10:38.310-0500" prefix="">2021-02-03T09:10:38.310-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:20.414-0400" prefix="">2024-07-22T10:35:20.414-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In the <a href="/browse/FLUID-6145/">FLUID-6145</a> and <a href="/browse/FLUID-6580/">FLUID-6580</a> lines of Infusion the included URL Datasource <a href="https://github.com/amb26/infusion/blob/6e4be079f5fc376f6ee614d121c7db912041ec28/src/framework/core/js/ResourceLoader-browser.js#L126">sends the XHR</a> request with a URL Object rather than as a String. It appears that browsers are able to handle this, but when trying to write tests using Sinon's <a href="https://sinonjs.org/releases/v9.2.4/fake-xhr-and-server/">fake server</a> it throws an error: request.replace is not a function (see: <a href="https://github.com/sinonjs/nise/blob/f7ab6ec9dcb968e3a0f1d61b16f8d1176e9ba7d0/lib/fake-server/index.js#L89">https://github.com/sinonjs/nise/blob/f7ab6ec9dcb968e3a0f1d61b16f8d1176e9ba7d0/lib/fake-server/index.js#L89</a>&#160;)</p>
+<p>If we look <a href="https://github.com/sinonjs/nise/blob/f7ab6ec9dcb968e3a0f1d61b16f8d1176e9ba7d0/lib/fake-server/index.js#L88">one line above</a>&#160;: {{rCurrLoc.test(requestUrl)&#160;is returning true likely from the requestURL being implicitly having its toString method called. This lets it fall through to the failing line. However, it may fail later with other operations that may require requestURL be a String.</p>
+<p>See conversation in the fluid-tech matrix room:&#160;<a href="https://matrix.to/#/!JcoHDrfLedPQdFhAXn:matrix.org/$3xzgv3RZdzar9HvBYfEsTDOFDPBwIc6Kbk9LA_oTci4?via=matrix.org">https://matrix.to/#/!JcoHDrfLedPQdFhAXn:matrix.org/$3xzgv3RZdzar9HvBYfEsTDOFDPBwIc6Kbk9LA_oTci4?via=matrix.org</a></p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6592/"><span class="aria-hidden">←</span> Previous: FLUID-6592</a>
+        <a class="mx-1" href="/browse/FLUID-6594/">Next: FLUID-6594 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

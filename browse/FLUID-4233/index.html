@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4233  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4233 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4233/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4233/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4233/">FLUID-4233</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4233: In a specialised case, demands block configuration can become corrupted through the process of expansion</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4233">FLUID-4233</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>y z</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-05-13T03:08:34.524-0400" prefix="">2011-05-13T03:08:34.524-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-04-11T17:28:04.110-0400" prefix="">2013-04-11T17:28:04.110-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In a particular case, it is possible for the IoC expansion machinery to corrupt the configuration held in a demands block, replacing it with an expanded variant. This failure was reported in the context of CSpace - the second of two neighbouring autocomplete controls, one attached to "borrower" and the other to "contact", when resolving against the same demand block, finds instead a corrupted instance replaced with the value-resolved version of the first. The following Firebug trace shows discovery of the corrupted block:</p>
+<p>14:31:26.315: Located 1 potential match, selected best match with 2 matched context names: {"funcName":"cspace.URLDataSource","args":{"url":"../../chain/loanout/source-vocab/borrower","targetTypeName":"cspace.autocomplete.authoritiesDataSource"},"registeredFrom":"<a href="http://nightly.collectionspace.org:8180/collectionspace/ui/js/Demands.js:406">http://nightly.collectionspace.org:8180/collectionspace/ui/js/Demands.js:406</a>"}</p>
+<p>The demands block in question is </p>
+<p>// Autocomplete demands<br>
+fluid.demands("cspace.autocomplete.authoritiesDataSource", "cspace.autocomplete", {<br>
+funcName: "cspace.URLDataSource",<br>
+args: {<br>
+url: "{autocomplete}.options.vocabUrl",<br>
+targetTypeName: "cspace.autocomplete.authoritiesDataSource"<br>
+}<br>
+});</p>
+<p>Looking at the "embodyDemands" pathway in FluidIoC, it appears that the problem is implicated with the use of "args" to specify an argument which is destined for "options". Even removing the "noCopy" option in the expandLight variant used for arguments doesn't resolve the issue since the expansion is deferred to the component's own use of expandComponentOptions later on, which SHOULD not copy in general, since it may be receiving model material, etc. The material should be copied up front in embodyDemands.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23069">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2011-05-13T03:28:09.755-0400">2011-05-13T03:28:09.755-0400</relative-time></i></p>
+                        <p>The test case supplied by JURA could be made to fail by use of "args" in the demands block. Aliasing is a tricky issue in general, although it seems that for now, all the remaining avenues for corruption are plugged up. The case of pseudoarguments is handled by the wholesale copying of "componentRecord" at the head of embodyDemands, all locally expanded values are safe through the removal of the "noCopy" default option in stackResolverOptions, which just leaves the case of values which reach deferred expansion through expandComponentOptions, which is the headline issue of this bug. This is resolved by explicitly adding a fluid.copy to the aliased material as the expansion record is constructed on line 429.</p>
+<p>It might be well worth though, constructing a "general invariant testcase" against the whole of FluidIoCTests, to assert that every record entered into the dependentStore has the same value it had on input. "Frozen objects" from ECMAScript 6 or so would be a great help here...</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4232/"><span class="aria-hidden">←</span> Previous: FLUID-4232</a>
+        <a class="mx-1" href="/browse/FLUID-4234/">Next: FLUID-4234 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-166  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-166 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-166/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-166/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-166/">SJRK-166</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-166: Use Hugo for managing site</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-166">SJRK-166</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SJRK/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Avtar Gill</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Avtar%20Gill">Avtar Gill</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-11-22T13:10:24.458-0500" prefix="">2018-11-22T13:10:24.458-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-01-22T09:48:33.280-0500" prefix="">2019-01-22T09:48:33.280-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>SoJustRepairIt.org</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The initial version of the site is online. The HTML and CSS documents are maintained manually. This jira covers any work required to switching over to using Hugo.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26385">
+                        <p class="mb-0"><b>Avtar Gill</b> <i>commented <relative-time datetime="2018-11-22T20:28:08.680-0500">2018-11-22T20:28:08.680-0500</relative-time></i></p>
+                        <p>hugo version<br>
+Hugo Static Site Generator v0.51/extended darwin/amd64 BuildDate: unknown</p>
+<ul>
+<li>Create a new site in your site directory
+<ul>
+<li>hugo new site .</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Use YAML config files instead of the default TOML
+<ul>
+<li>mv config.toml config.yml</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Edit the newly generated config file<pre><code class="hljs language-java">baseURL: <span class="hljs-string">"https://sojustrepairit.org/"</span>
+languageCode: <span class="hljs-string">"en-us"</span>
+title: <span class="hljs-string">"Social Justice Repair Kit"</span>
+</code></pre>
+</li>
+</ul>
+<ul>
+<li>The default directory structure is documented at the following location
+<ul>
+<li><a href="https://gohugo.io/getting-started/directory-structure/">https://gohugo.io/getting-started/directory-structure/</a></li>
+<li>When Hugo runs it creates a&#160;<code>resources</code> directory which isn't covered in the page above. It is a resource cache where generated files, such as images, are stored. For more information refer to the following forum post: <a href="https://discourse.gohugo.io/t/why-does-hugo-create-the-resources-directory/13021/3?u=balibebas">https://discourse.gohugo.io/t/why-does-hugo-create-the-resources-directory/13021/3?u=balibebas</a></li>
+<li>To make use of Hugo's asset processing features a top level&#160;<code>assets</code> directory needs to exist</li>
+<li>The remaining files for your site that won't be minified or altered in other ways by Hugo should go in the&#160;<code>static</code> directory</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>More information about asset management
+<ul>
+<li><a href="https://gohugo.io/hugo-pipes/introduction/">https://gohugo.io/hugo-pipes/introduction/</a></li>
+<li><a href="https://gohugo.io/hugo-pipes/minification/">https://gohugo.io/hugo-pipes/minification/</a></li>
+<li><a href="https://gohugo.io/hugo-pipes/fingerprint/">https://gohugo.io/hugo-pipes/fingerprint/</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Create a new <code>assets/css</code> directory and copy CSS files to that location
+<ul>
+<li>mkdir -p assets/css</li>
+<li>cp ~/path/to/your/style.css assets/css/</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>To minify and fingerprint our style.css use the following lines in your template<pre><code class="hljs language-java">{{ $style := resources.Get <span class="hljs-string">"css/style.css"</span> | minify | fingerprint }} 
+&lt;link rel=<span class="hljs-string">"stylesheet"</span> href=<span class="hljs-string">"{{ $style.Permalink }}"</span>&gt;
+</code></pre>
+</li>
+</ul>
+<ul>
+<li>Remove any unneeded directories
+<ul>
+<li>rm -rf archetypes/ data/ themes/</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Create a .gitignore file<pre><code class="hljs language-java">/<span class="hljs-keyword">public</span>/
+/resources/_gen/
+</code></pre>
+</li>
+</ul>
+<ul>
+<li>Create your index/home page and split up content in the <code>partials</code> directory
+<ul>
+<li>touch layouts/index.html</li>
+<li>mkdir -p layouts/{_default,partials}</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>This next step is not right, will troubleshoot and document
+<ul>
+<li>cp layouts/index.html layouts/_default/single.html</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Create your static pages in the <code>content</code> directory as Markdown files
+<ul>
+<li>touch content/ {_index,about,resources,partners}.md</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Start Hugo in "drafts" mode
+<ul>
+<li>hugo server --disableFastRender -D</li>
+</ul>
+</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-26386">
+                        <p class="mb-0"><b>Avtar Gill</b> <i>commented <relative-time datetime="2018-11-22T20:32:20.025-0500">2018-11-22T20:32:20.025-0500</relative-time></i></p>
+                        <p>Initial bit of work can be found in the following branch: <a href="https://github.com/avtar/sojustrepairit.org/tree/SJRK-166">https://github.com/avtar/sojustrepairit.org/tree/SJRK-166</a></p>
+<p><s>I had all the pages rendering using markdown files at one point but when it came time to push everything to a branch I realized some of the pages might have been cached and stopped being generated as I continued to poke around&#160;<s>😞</s> Right now the home page works. I'll troubleshoot this further on Monday and update my notes in the previous comment.</s></p>
+
+                    </li>
+                    
+                    <li id="comment-26387">
+                        <p class="mb-0"><b>Avtar Gill</b> <i>commented <relative-time datetime="2018-11-26T10:59:12.680-0500">2018-11-26T10:59:12.680-0500</relative-time></i></p>
+                        <p>Hugo is being used to <a href="https://github.com/avtar/sojustrepairit.org/tree/SJRK-166/content">manage content in my branch</a>. I'm currently looking into how more markup can be moved into templates and use only markdown for authoring site content.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-165/"><span class="aria-hidden">←</span> Previous: SJRK-165</a>
+        <a class="mx-1" href="/browse/SJRK-167/">Next: SJRK-167 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

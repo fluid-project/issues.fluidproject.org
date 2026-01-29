@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6467  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6467 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6467/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6467/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6467/">FLUID-6467</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6467: Specification of null as a subcomponent value produces bare diagnostic</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6467">FLUID-6467</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-03-09T17:32:56.697-0400" prefix="">2020-03-09T17:32:56.697-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-06-21T11:36:54.844-0400" prefix="">2021-06-21T11:36:54.844-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This issue only affects the in-progress <a href="/browse/FLUID-6148/">FLUID-6148</a> branch.</p>
+<p>A technique which used to peacefully succeed prior to the <a href="/browse/FLUID-5614/">FLUID-5614</a> portion of <a href="/browse/FLUID-6148/">FLUID-6148</a> was writing a placeholder value of <code>null</code> as a subcomponent value. This appeared, e.g. in the definition of the Nexus CoOccurrence Engine as so:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.nexus.coOccurrenceEngine"</span>, {
+    gradeNames: [<span class="hljs-string">"fluid.component"</span>],
+...
+    components: {
+        componentRoot: <span class="hljs-literal">null</span>, <span class="hljs-comment">// To be provided by integrators</span>
+</code></pre>
+<p>This technique is no longer blessed, but at this point produces an unintelligible bare diagnostic as so:</p>
+<pre><code class="hljs language-java"><span class="hljs-number">21</span>:<span class="hljs-number">23</span>:<span class="hljs-number">10.084</span>:  FATAL ERROR: Uncaught exception: Cannot read property <span class="hljs-string">'expander'</span> of <span class="hljs-literal">null</span>
+TypeError: Cannot read property <span class="hljs-string">'expander'</span> of <span class="hljs-literal">null</span>
+    at Object.fluid.isInjectedComponentRecord (E:\source\gits\co-occurrence-engine\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">1512</span>:<span class="hljs-number">54</span>)
+    at Object.fluid.checkComponentRecord (E:\source\gits\co-occurrence-engine\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">1676</span>:<span class="hljs-number">20</span>)
+    at E:\source\gits\co-occurrence-engine\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">1689</span>:<span class="hljs-number">19</span>
+    at fluid.mergingArray.forEach (&lt;anonymous&gt;)
+    at Object.fluid.checkSubcomponentRecords (E:\source\gits\co-occurrence-engine\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">1688</span>:<span class="hljs-number">29</span>)
+    at E:\source\gits\co-occurrence-engine\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">1833</span>:<span class="hljs-number">19</span>
+    at Object.fluid.each (E:\source\gits\co-occurrence-engine\node_modules\infusion\src\framework\core\js\Fluid.js:<span class="hljs-number">622</span>:<span class="hljs-number">1</span>
+<span class="hljs-number">7</span>)
+    at Object.fluid.processComponentShell (E:\source\gits\co-occurrence-engine\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">1832</span>:<span class="hljs-number">15</span>)
+    at Object.fluid.operateCreatePotentia (E:\source\gits\co-occurrence-engine\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">1962</span>:<span class="hljs-number">23</span>)
+    at Object.fluid.operateOneCreatePotentia (E:\source\gits\co-occurrence-engine\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">2135</span>:<span class="hljs-number">28</span>)
+    at Object.fluid.commitPotentiaePhase (E:\source\gits\co-occurrence-engine\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">2162</span>:<span class="hljs-number">27</span>)
+    at <span class="hljs-title function_">commitPotentiae</span> <span class="hljs-params">(E:\source\gits\co-occurrence-engine\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">2203</span>
+:<span class="hljs-number">23</span>)</span>
+    at Object.fluid.tryCatch (E:\source\gits\co-occurrence-engine\node_modules\infusion\src\framework\core\js\Fluid.js:<span class="hljs-number">245</span>:<span class="hljs-number">24</span>)
+    at Object.fluid.commitPotentiae (E:\source\gits\co-occurrence-engine\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">2201</span>:<span class="hljs-number">15</span>)
+    at Object.fluid.initFreeComponent (E:\source\gits\co-occurrence-engine\node_modules\infusion\src\framework\core\js\Fluid.js:<span class="hljs-number">2942</span>:<span class="hljs-number">28</span>)
+    at <span class="hljs-title function_">creator</span> <span class="hljs-params">(E:\source\gits\co-occurrence-engine\node_modules\infusion\src\framework\core\js\Fluid.js:<span class="hljs-number">2233</span>:<span class="hljs-number">26</span>)</span>
+    at Object.fluid.invokeGlobalFunction (E:\source\gits\co-occurrence-engine\node_modules\infusion\src\framework\core\js\Fluid.js:<span class="hljs-number">1304</span>:<span class="hljs-number">25</span>)
+</code></pre>
+<p>Even if we decide not to bless this technique, this situation should be diagnosed with an intelligible failure explaining what record is in error.</p>
+<p>In general the "new framework" needs to be supplied with a comparable density of fluid.pushActivityRecord tracing sites to the old one, that will enable a reasonable traceback of the framework's activity during a failure.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6466/"><span class="aria-hidden">←</span> Previous: FLUID-6466</a>
+        <a class="mx-1" href="/browse/FLUID-6468/">Next: FLUID-6468 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

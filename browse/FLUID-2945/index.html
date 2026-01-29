@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2945  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2945 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2945/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2945/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2945/">FLUID-2945</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2945: use jsonp like, syncronous approach, to get the data from the server and store it in a global variable on the template page</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2945">FLUID-2945</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Laurel Williams</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-06-12T10:53:17.000-0400" prefix="">2009-06-12T10:53:17.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-08-24T11:17:03.000-0400" prefix="">2009-08-24T11:17:03.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Infusion Builder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>use jsonp like, synchronous approach, to get the data from the server and store it in a global variable on the template page</p>
+<p>Here is an example of how this will look on the html doc:<br>
+&lt;script src="<a href="http://server.com/dependencies.php?var=%27fluid.components.dependencies">http://server.com/dependencies.php?var='fluid.components.dependencies</a>'"&gt; &lt;/script&gt;<br>
+(please note that this is not the standard jsonp approach, see link below, but a simple modification of it)</p>
+<p>This script block should go in the &lt;head&gt; and will perform synchronously, returning the data inside of the global variable fluid.components.dependencies.</p>
+<p>When the &lt;script&gt; at the end of the &lt;body&gt; is called to init the component, it will pass in the variable as the options. if the call to the server errors, the variable will not be set.</p>
+<p>The defaults for the components should render an error message saying the data couldn't be loaded.</p>
+<p>For the server side, this approach does mean that the server will have to do a little more work in packaging up the return.<br>
+Basically the side will return the variable passed in, see above, with the json data attached to it. The return would look something like this:<br>
+"var fluid.component.dependencies = {json data};"</p>
+<p>However, the advantage is that the it is simpler to implement, and we won't run into issues where the page loads the template and then renders out the actual page after waiting on the ajax call. Since the operation is synchronous the page will load after the call to the server is complete.</p>
+<p>For more information about the JSONP approach, please view this document: <a href="http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/">http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19743">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-06-16T11:35:52.000-0400">2009-06-16T11:35:52.000-0400</relative-time></i></p>
+                        <p>Note that the variable (fluid.component.dependencies) above, can be any valid variable. So I should receive the $_POST[var] and then output that value in the json "var ".$_POST[var]." = {json data};" </p>
+
+                    </li>
+                    
+                    <li id="comment-19745">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-06-16T15:16:37.000-0400">2009-06-16T15:16:37.000-0400</relative-time></i></p>
+                        <p>The above description of how to do this contained some errors and we found a different way to solve the problem.<br>
+1) var fluid.component.dependencies = {json data} is invalid syntax for setting an object property. The var needs to be removed. However when you do this, then you need to confirm that fluid.component.dependencies actually exists and can be assigned. This is a bit of a pain.</p>
+<p>2) The alternative was to return fluid.model.setBeanValue(window, "fluid.component.dependencies", {json data}); which sets the value to the json data as required.</p>
+
+                    </li>
+                    
+                    <li id="comment-19747">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-06-16T15:28:11.000-0400">2009-06-16T15:28:11.000-0400</relative-time></i></p>
+                        <p>Made this change as per description in last comment and then uploaded to <a href="/browse/FLUID-2922/">FLUID-2922</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-2940/"><span class="aria-hidden">←</span> Previous: FLUID-2940</a>
+        <a class="mx-1" href="/browse/FLUID-2946/">Next: FLUID-2946 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

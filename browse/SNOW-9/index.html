@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SNOW-9  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SNOW-9 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SNOW-9/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SNOW-9/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SNOW" data-pagefind-filter="project">Snow</a></li>
+                <li><a href="/browse/SNOW-9/">SNOW-9</a></li>
+            </ol>
+        </nav>
+        <h1>SNOW-9: Show the current menu indicator for posts that have subcategories</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SNOW-9">SNOW-9</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SNOW/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SNOW/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Eloisa Guerrero</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SNOW/?reporter=Eloisa%20Guerrero">Eloisa Guerrero</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-02-02T13:40:17.738-0500" prefix="">2018-02-02T13:40:17.738-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-07-12T15:38:32.378-0400" prefix="">2018-07-12T15:38:32.378-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Right now the menu does not show the current indicator for posts with subcategories. Will need to programmatically get the current category of the post, and set its root category with the current-menu-item class so that the black line indicator for the correct category shows up on each of these posts.</p>
+<p></p>
+<p>See mockup (currently B&amp;W with white line indicator):&#160;<a href="https://files.inclusivedesign.ca/f/33422">https://files.inclusivedesign.ca/f/33422</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26190">
+                        <p class="mb-0"><b>Eloisa Guerrero</b> <i>commented <relative-time datetime="2018-02-04T15:18:11.976-0500">2018-02-04T15:18:11.976-0500</relative-time></i></p>
+                        <p>To activate the breadcrumbs to the original/main category, we need to add&#160;'current-menu-item' CSS class based on the 'current-post-ancestor' (or 'current-page-ancestor') class of the current page or post. Thus:</p>
+<pre><code class="hljs language-java">function <span class="hljs-title function_">make_current_menu_item</span><span class="hljs-params">( $classes, $item )</span> {
+<span class="hljs-keyword">if</span> (in_array(<span class="hljs-string">'current-post-ancestor'</span>, $classes) || in_array(<span class="hljs-string">'current-page-ancestor'</span>, $classes) || in_array(<span class="hljs-string">'current-menu-item'</span>, $classes) ) {
+ $classes[] = <span class="hljs-string">'current-menu-item'</span>;
+ }
+ <span class="hljs-keyword">return</span> $classes;
+}
+add_filter( <span class="hljs-string">'nav_menu_css_class'</span>, <span class="hljs-string">'make_current_menu_item'</span>, <span class="hljs-number">10</span>, <span class="hljs-number">2</span> );
+</code></pre>
+<p></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SNOW-8/"><span class="aria-hidden">←</span> Previous: SNOW-8</a>
+        <a class="mx-1" href="/browse/SNOW-10/">Next: SNOW-10 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

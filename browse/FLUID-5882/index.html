@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5882  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5882 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5882/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5882/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5882/">FLUID-5882</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5882: FullPreviewPrefsEditor tests freezes on Firefox and OSX</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5882">FLUID-5882</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Cannot%20Reproduce">Cannot Reproduce</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Kasper%20Galschiot%20Markus">Kasper Galschiot Markus</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-03-31T11:22:55.770-0400" prefix="">2016-03-31T11:22:55.770-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T09:27:54.673-0400" prefix="">2024-07-22T09:27:54.673-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When running the infusion tests from the local disk, the test <code>tests/framework-tests/preferences/html/FullPreviewPrefsEditor-test.html</code> freezes. This happens both when running that test directly, and via the <code>tests/all-tests.html</code> script. I've set the strict URI policy to false in about:config.</p>
+<p>The same issue appears when running the tests via the standard node 'webserver'. To reproduce this, simply install the webserver via: </p>
+<p><code>npm install webserver</code></p>
+<p>and then:</p>
+<p><code>node node_modules/webserver/webserver.js</code></p>
+<p>After which you can go to the URL: <a href="http://localhost:8003/tests/all-tests.html">http://localhost:8003/tests/all-tests.html</a> - given that you ran the above command from the infusion folder. In this case, the webserver will actually crash when it reaches that test. The output from that is:</p>
+<p>Kaspers-MacBook-Air-2:infusion kasper$ node node_modules/webserver/webserver.js<br>
+WEBROOT .<br>
+Listening @ 8003<br>
+200 - /tests/all-tests.html - fe80::1<br>
+304 - /tests/lib/qunit/css/qunit.css - fe80::1<br>
+200 - /tests/lib/qunit/addons/composite/qunit-composite.css - fe80::1<br>
+404 - /testem.js - undefined<br>
+200 - /tests/lib/qunit/addons/composite/qunit-composite.js - fe80::1<br>
+304 - /tests/lib/qunit/js/qunit.js - fe80::1<br>
+404 - /testem.js - undefined<br>
+200 - /tests/framework-tests/core/html/FluidJS-test.html - fe80::1<br>
+304 - /tests/lib/qunit/css/qunit.css - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+304 - /src/framework/core/js/Fluid.js - ::1<br>
+304 - /tests/lib/qunit/js/qunit.js - ::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - ::1<br>
+200 - /src/framework/core/js/FluidDebugging.js - ::1<br>
+200 - /tests/framework-tests/core/js/FluidJSTests.js - ::1<br>
+200 - /tests/framework-tests/core/html/FluidJSStandalone-test.html - ::1<br>
+304 - /tests/lib/qunit/css/qunit.css - ::1<br>
+304 - /src/framework/core/js/Fluid.js - ::1<br>
+304 - /src/framework/core/js/FluidDebugging.js - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - ::1<br>
+304 - /tests/lib/qunit/js/qunit.js - ::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - ::1<br>
+200 - /src/framework/core/js/jquery.standalone.js - ::1<br>
+304 - /tests/framework-tests/core/js/FluidJSTests.js - ::1<br>
+200 - /tests/framework-tests/core/html/FluidDebugging-test.html - ::1<br>
+304 - /tests/lib/qunit/css/qunit.css - ::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - ::1<br>
+304 - /src/framework/core/js/FluidDocument.js - ::1<br>
+304 - /src/framework/core/js/Fluid.js - fe80::1<br>
+304 - /src/framework/core/js/FluidDebugging.js - ::1<br>
+304 - /tests/lib/qunit/js/qunit.js - ::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - ::1<br>
+200 - /tests/framework-tests/core/js/FluidDebuggingTests.js - ::1<br>
+200 - /tests/framework-tests/core/html/FluidPromises-test.html - ::1<br>
+304 - /tests/lib/qunit/css/qunit.css - ::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - ::1<br>
+304 - /src/framework/core/js/Fluid.js - ::1<br>
+304 - /src/framework/core/js/FluidDebugging.js - fe80::1<br>
+304 - /tests/lib/qunit/js/qunit.js - ::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - ::1<br>
+200 - /src/framework/core/js/FluidPromises.js - ::1<br>
+200 - /tests/framework-tests/core/js/FluidPromisesTests.js - ::1<br>
+304 - /src/framework/core/js/FluidIoC.js - ::1<br>
+304 - /src/framework/core/js/DataBinding.js - fe80::1<br>
+304 - /src/framework/core/js/ModelTransformation.js - ::1<br>
+304 - /src/framework/core/js/ModelTransformationTransforms.js - ::1<br>
+200 - /tests/framework-tests/core/html/FluidDocument-test.html - ::1<br>
+304 - /tests/lib/qunit/css/qunit.css - ::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - ::1<br>
+304 - /src/framework/core/js/Fluid.js - ::1<br>
+304 - /src/framework/core/js/FluidDocument.js - ::1<br>
+304 - /tests/lib/qunit/js/qunit.js - fe80::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - ::1<br>
+200 - /tests/framework-tests/core/js/FluidDocumentTests.js - ::1<br>
+200 - /tests/framework-tests/core/html/Keyboard-a11y-test.html - ::1<br>
+304 - /tests/lib/qunit/css/qunit.css - ::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - ::1<br>
+304 - /src/lib/jquery/ui/js/jquery.ui.core.js - ::1<br>
+304 - /src/framework/core/js/FluidDocument.js - ::1<br>
+304 - /src/framework/core/js/jquery.keyboard-a11y.js - fe80::1<br>
+304 - /tests/lib/qunit/js/qunit.js - ::1<br>
+304 - /src/framework/core/js/Fluid.js - ::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - ::1<br>
+200 - /tests/framework-tests/core/js/Keyboard-a11yTests.js - ::1<br>
+200 - /tests/framework-tests/core/html/ModelTransformation-test.html - ::1<br>
+304 - /tests/lib/qunit/css/qunit.css - ::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - ::1<br>
+304 - /src/framework/core/js/Fluid.js - ::1<br>
+304 - /src/framework/core/js/DataBinding.js - ::1<br>
+304 - /src/framework/core/js/ModelTransformation.js - fe80::1<br>
+304 - /src/framework/core/js/ModelTransformationTransforms.js - ::1<br>
+304 - /src/framework/core/js/FluidIoC.js - ::1<br>
+304 - /tests/lib/qunit/js/qunit.js - ::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - ::1<br>
+200 - /tests/framework-tests/core/js/ModelTransformationTests.js - fe80::1<br>
+200 - /tests/framework-tests/core/html/DataBinding-test.html - fe80::1<br>
+304 - /tests/lib/qunit/css/qunit.css - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+304 - /src/framework/core/js/Fluid.js - ::1<br>
+304 - /src/framework/core/js/FluidIoC.js - ::1<br>
+304 - /src/framework/core/js/DataBinding.js - ::1<br>
+304 - /src/framework/core/js/ModelTransformation.js - ::1<br>
+304 - /src/framework/core/js/ModelTransformationTransforms.js - fe80::1<br>
+304 - /tests/lib/qunit/js/qunit.js - ::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - ::1<br>
+200 - /src/framework/enhancement/js/ProgressiveEnhancement.js - ::1<br>
+200 - /tests/test-core/utils/js/IoCTestUtils.js - ::1<br>
+200 - /tests/framework-tests/core/js/DataBindingTests.js - ::1<br>
+304 - /src/framework/enhancement/js/ContextAwareness.js - fe80::1<br>
+200 - /tests/framework-tests/core/html/FluidView-test.html - fe80::1<br>
+304 - /tests/lib/qunit/css/qunit.css - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+304 - /src/framework/core/js/Fluid.js - ::1<br>
+304 - /src/framework/core/js/FluidDebugging.js - ::1<br>
+304 - /src/framework/core/js/FluidDocument.js - ::1<br>
+304 - /src/framework/core/js/FluidIoC.js - ::1<br>
+304 - /src/framework/core/js/DataBinding.js - ::1<br>
+304 - /tests/lib/qunit/js/qunit.js - ::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - ::1<br>
+200 - /tests/framework-tests/core/js/FluidViewTests.js - ::1<br>
+304 - /src/framework/core/js/FluidView.js - fe80::1<br>
+200 - /tests/framework-tests/core/html/Caching-test.html - fe80::1<br>
+304 - /tests/lib/qunit/css/qunit.css - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+304 - /src/framework/core/js/Fluid.js - fe80::1<br>
+304 - /src/framework/core/js/FluidDocument.js - fe80::1<br>
+304 - /src/framework/core/js/FluidIoC.js - ::1<br>
+304 - /src/framework/core/js/FluidRequests.js - ::1<br>
+304 - /src/framework/core/js/DataBinding.js - ::1<br>
+304 - /tests/lib/qunit/js/qunit.js - fe80::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - ::1<br>
+200 - /tests/lib/mockjax/js/jquery.mockjax.js - ::1<br>
+200 - /tests/framework-tests/core/js/CachingTests.js - ::1<br>
+200 - /tests/framework-tests/core/html/FluidRequests-test.html - fe80::1<br>
+304 - /tests/lib/qunit/css/qunit.css - fe80::1<br>
+404 - /src/lib/json/js/json2.js - undefined<br>
+304 - /src/lib/jquery/core/js/jquery.js - ::1<br>
+304 - /src/framework/core/js/Fluid.js - fe80::1<br>
+304 - /src/framework/core/js/FluidDocument.js - fe80::1<br>
+304 - /src/framework/core/js/FluidIoC.js - fe80::1<br>
+304 - /src/framework/core/js/FluidView.js - ::1<br>
+304 - /src/framework/core/js/DataBinding.js - fe80::1<br>
+304 - /src/framework/core/js/FluidRequests.js - fe80::1<br>
+304 - /tests/lib/qunit/js/qunit.js - fe80::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - fe80::1<br>
+200 - /tests/framework-tests/core/js/FluidRequestsTests.js - fe80::1<br>
+200 - /tests/framework-tests/core/data/objects.json - fe80::1<br>
+200 - /tests/framework-tests/core/data/intake.json - fe80::1<br>
+404 - /tests/framework-tests/core/data/messages1.json - undefined<br>
+404 - /tests/framework-tests/core/data/messages2.json - undefined<br>
+404 - /tests/framework-tests/core/data/messages3.json - undefined<br>
+404 - /tests/framework-tests/core/data/messages1.json - undefined<br>
+200 - /tests/framework-tests/core/data/messages4.json?_=1459435419625 - ::1<br>
+200 - /tests/framework-tests/core/data/messages1_en.json - ::1<br>
+200 - /tests/framework-tests/core/data/messages1_en.json - fe80::1<br>
+200 - /tests/framework-tests/core/data/messages1_en_ZA.json - fe80::1<br>
+404 - /tests/framework-tests/core/data/messages2_en.json - undefined<br>
+200 - /tests/framework-tests/core/data/messages2_fr.json - fe80::1<br>
+404 - /tests/framework-tests/core/data/messages2_fr_CH.json - undefined<br>
+200 - /tests/framework-tests/core/data/messages3_en.json - fe80::1<br>
+200 - /tests/framework-tests/core/data/messages3_en.json - fe80::1<br>
+200 - /tests/framework-tests/core/data/messages1_en.json - ::1<br>
+404 - /tests/framework-tests/core/data/messages1_gr.json - undefined<br>
+404 - /tests/framework-tests/core/data/messages4_en.json?_=1459435419626 - undefined<br>
+200 - /tests/framework-tests/renderer/html/Renderer-test.html - fe80::1<br>
+304 - /tests/lib/qunit/css/qunit.css - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+304 - /src/framework/core/js/Fluid.js - fe80::1<br>
+304 - /src/framework/core/js/FluidIoC.js - fe80::1<br>
+304 - /src/framework/core/js/FluidDocument.js - fe80::1<br>
+304 - /src/framework/core/js/FluidDebugging.js - fe80::1<br>
+304 - /src/framework/core/js/DataBinding.js - fe80::1<br>
+304 - /src/framework/core/js/FluidView.js - fe80::1<br>
+304 - /src/framework/core/js/FluidDOMUtilities.js - fe80::1<br>
+304 - /src/framework/core/js/FluidRequests.js - fe80::1<br>
+200 - /src/framework/core/js/JavaProperties.js - fe80::1<br>
+200 - /src/components/pager/js/Pager.js - fe80::1<br>
+304 - /tests/lib/qunit/js/qunit.js - ::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - fe80::1<br>
+200 - /tests/test-core/jqUnit/js/jqUnit-browser.js - ::1<br>
+200 - /tests/framework-tests/renderer/js/RendererTests.js - fe80::1<br>
+404 - /tests/framework-tests/renderer/html/other-thing.html - undefined<br>
+304 - /src/lib/fastXmlPull/js/fastXmlPull.js - fe80::1<br>
+304 - /src/framework/renderer/js/fluidParser.js - ::1<br>
+304 - /src/framework/renderer/js/fluidRenderer.js - ::1<br>
+404 - /tests/framework-tests/renderer/html/other-thing.html - undefined<br>
+200 - /tests/framework-tests/renderer/html/RendererUtilitiesIFrame.html - fe80::1<br>
+200 - /tests/framework-tests/renderer/data/testProperties.properties - fe80::1<br>
+200 - /tests/framework-tests/renderer/data/testProperties.json - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+404 - /tests/framework-tests/renderer/html/other-thing.html - undefined<br>
+304 - /tests/framework-tests/renderer/html/RendererUtilitiesIFrame.html - fe80::1<br>
+304 - /tests/framework-tests/renderer/html/RendererUtilitiesIFrame.html - fe80::1<br>
+404 - /tests/framework-tests/renderer/html/other-thing.html - undefined<br>
+304 - /tests/framework-tests/renderer/data/testProperties.properties - fe80::1<br>
+304 - /tests/framework-tests/renderer/html/RendererUtilitiesIFrame.html - fe80::1<br>
+304 - /tests/framework-tests/renderer/data/testProperties.json - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+404 - /tests/framework-tests/renderer/html/other-thing.html - undefined<br>
+304 - /tests/framework-tests/renderer/html/RendererUtilitiesIFrame.html - fe80::1<br>
+200 - /tests/framework-tests/renderer/data/testPerformance.json - fe80::1<br>
+200 - /tests/framework-tests/renderer/data/testPerformance.html - fe80::1<br>
+304 - /tests/framework-tests/renderer/html/RendererUtilitiesIFrame.html - fe80::1<br>
+404 - /tests/framework-tests/renderer/html/other-thing.html - undefined<br>
+304 - /tests/framework-tests/renderer/html/RendererUtilitiesIFrame.html - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+404 - /tests/framework-tests/renderer/html/other-thing.html - undefined<br>
+304 - /tests/framework-tests/renderer/html/RendererUtilitiesIFrame.html - fe80::1<br>
+304 - /tests/framework-tests/renderer/html/RendererUtilitiesIFrame.html - fe80::1<br>
+200 - /tests/framework-tests/core/html/FluidIoC-test.html - fe80::1<br>
+304 - /tests/lib/qunit/css/qunit.css - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+304 - /src/framework/core/js/Fluid.js - fe80::1<br>
+304 - /src/framework/core/js/FluidDebugging.js - fe80::1<br>
+304 - /src/framework/core/js/FluidIoC.js - fe80::1<br>
+304 - /src/framework/core/js/DataBinding.js - fe80::1<br>
+304 - /src/framework/enhancement/js/ContextAwareness.js - fe80::1<br>
+304 - /src/framework/enhancement/js/ProgressiveEnhancement.js - fe80::1<br>
+304 - /src/framework/core/js/JavaProperties.js - fe80::1<br>
+304 - /src/framework/core/js/FluidRequests.js - fe80::1<br>
+304 - /tests/lib/qunit/js/qunit.js - ::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - fe80::1<br>
+200 - /tests/framework-tests/core/js/FluidIoCTests.js - fe80::1<br>
+200 - /tests/framework-tests/core/html/FluidIoCStandalone-test.html - fe80::1<br>
+304 - /tests/lib/qunit/css/qunit.css - fe80::1<br>
+304 - /src/framework/core/js/Fluid.js - fe80::1<br>
+304 - /src/framework/core/js/FluidIoC.js - fe80::1<br>
+304 - /src/framework/core/js/DataBinding.js - fe80::1<br>
+304 - /src/framework/enhancement/js/ContextAwareness.js - fe80::1<br>
+304 - /src/framework/enhancement/js/ProgressiveEnhancement.js - fe80::1<br>
+304 - /src/framework/core/js/JavaProperties.js - fe80::1<br>
+304 - /src/framework/core/js/FluidRequests.js - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+304 - /tests/lib/qunit/js/qunit.js - fe80::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - fe80::1<br>
+304 - /tests/framework-tests/core/js/FluidIoCTests.js - fe80::1<br>
+304 - /src/framework/core/js/jquery.standalone.js - fe80::1<br>
+200 - /tests/framework-tests/core/html/FluidIoCView-test.html - fe80::1<br>
+304 - /tests/lib/qunit/css/qunit.css - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+304 - /src/framework/core/js/Fluid.js - fe80::1<br>
+304 - /src/framework/core/js/FluidDocument.js - fe80::1<br>
+304 - /src/framework/core/js/FluidIoC.js - fe80::1<br>
+304 - /src/framework/core/js/FluidView.js - fe80::1<br>
+304 - /src/framework/core/js/DataBinding.js - fe80::1<br>
+304 - /src/framework/core/js/JavaProperties.js - fe80::1<br>
+304 - /src/framework/core/js/FluidRequests.js - fe80::1<br>
+304 - /tests/lib/qunit/js/qunit.js - fe80::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - fe80::1<br>
+200 - /tests/framework-tests/core/js/FluidIoCViewTests.js - fe80::1<br>
+200 - /tests/framework-tests/core/html/WebWorker-test.html - fe80::1<br>
+304 - /tests/lib/qunit/css/qunit.css - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+304 - /src/framework/core/js/Fluid.js - fe80::1<br>
+304 - /tests/lib/qunit/js/qunit.js - fe80::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - fe80::1<br>
+200 - /tests/framework-tests/core/js/WebWorkerTests.js - fe80::1<br>
+200 - /tests/framework-tests/core/js/WebWorkerTests-Worker.js - fe80::1<br>
+304 - /src/framework/core/js/jquery.standalone.js - fe80::1<br>
+304 - /src/framework/core/js/Fluid.js - ::1<br>
+304 - /src/framework/core/js/FluidDebugging.js - fe80::1<br>
+304 - /src/framework/core/js/FluidIoC.js - ::1<br>
+304 - /src/framework/core/js/DataBinding.js - ::1<br>
+304 - /src/framework/core/js/FluidRequests.js - fe80::1<br>
+304 - /src/framework/core/js/ModelTransformation.js - ::1<br>
+304 - /src/framework/core/js/ModelTransformationTransforms.js - ::1<br>
+304 - /src/framework/core/js/FluidPromises.js - fe80::1<br>
+200 - /tests/framework-tests/enhancement/html/ContextAwareness-test.html - fe80::1<br>
+304 - /tests/lib/qunit/css/qunit.css - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - ::1<br>
+304 - /src/framework/core/js/Fluid.js - fe80::1<br>
+304 - /src/framework/core/js/FluidIoC.js - fe80::1<br>
+304 - /src/framework/core/js/DataBinding.js - fe80::1<br>
+304 - /src/framework/enhancement/js/ContextAwareness.js - fe80::1<br>
+304 - /src/framework/enhancement/js/ProgressiveEnhancement.js - fe80::1<br>
+304 - /tests/lib/qunit/js/qunit.js - fe80::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - fe80::1<br>
+200 - /tests/framework-tests/enhancement/js/ContextAwarenessTests.js - fe80::1<br>
+200 - /tests/framework-tests/renderer/html/RendererUtilities-test.html - fe80::1<br>
+304 - /tests/lib/qunit/css/qunit.css - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+304 - /src/framework/core/js/Fluid.js - fe80::1<br>
+304 - /src/framework/core/js/FluidDocument.js - fe80::1<br>
+304 - /src/framework/core/js/FluidIoC.js - fe80::1<br>
+304 - /src/framework/core/js/DataBinding.js - ::1<br>
+304 - /src/framework/core/js/FluidView.js - fe80::1<br>
+304 - /src/framework/core/js/FluidDOMUtilities.js - ::1<br>
+304 - /src/framework/core/js/FluidRequests.js - fe80::1<br>
+304 - /src/framework/core/js/JavaProperties.js - fe80::1<br>
+304 - /src/lib/fastXmlPull/js/fastXmlPull.js - fe80::1<br>
+304 - /src/framework/renderer/js/fluidParser.js - fe80::1<br>
+304 - /src/framework/renderer/js/fluidRenderer.js - fe80::1<br>
+304 - /tests/lib/qunit/js/qunit.js - fe80::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - fe80::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit-browser.js - fe80::1<br>
+200 - /tests/framework-tests/renderer/js/RendererUtilitiesTests.js - fe80::1<br>
+304 - /src/framework/renderer/js/RendererUtilities.js - fe80::1<br>
+304 - /tests/framework-tests/renderer/html/RendererUtilitiesIFrame.html - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+304 - /tests/framework-tests/renderer/html/RendererUtilitiesIFrame.html - fe80::1<br>
+304 - /tests/framework-tests/renderer/html/RendererUtilitiesIFrame.html - fe80::1<br>
+304 - /tests/framework-tests/renderer/html/RendererUtilitiesIFrame.html - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+304 - /tests/framework-tests/renderer/html/RendererUtilitiesIFrame.html - fe80::1<br>
+200 - /tests/framework-tests/renderer/data/MediaPanelTemplate.html - fe80::1<br>
+200 - /tests/framework-tests/renderer/data/MediaPanelTemplate.html - fe80::1<br>
+304 - /tests/framework-tests/renderer/html/RendererUtilitiesIFrame.html - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+304 - /tests/framework-tests/renderer/html/RendererUtilitiesIFrame.html - fe80::1<br>
+304 - /tests/framework-tests/renderer/html/RendererUtilitiesIFrame.html - fe80::1<br>
+200 - /tests/framework-tests/preferences/html/AuxBuilder-test.html - fe80::1<br>
+304 - /tests/lib/qunit/css/qunit.css - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+304 - /src/framework/core/js/Fluid.js - fe80::1<br>
+304 - /src/framework/core/js/FluidDocument.js - fe80::1<br>
+304 - /src/framework/core/js/FluidIoC.js - ::1<br>
+304 - /src/framework/core/js/DataBinding.js - fe80::1<br>
+304 - /src/framework/core/js/FluidView.js - fe80::1<br>
+304 - /src/framework/core/js/FluidRequests.js - fe80::1<br>
+304 - /src/lib/fastXmlPull/js/fastXmlPull.js - fe80::1<br>
+304 - /src/framework/renderer/js/fluidParser.js - fe80::1<br>
+304 - /src/framework/renderer/js/fluidRenderer.js - fe80::1<br>
+304 - /src/framework/renderer/js/RendererUtilities.js - fe80::1<br>
+304 - /src/framework/enhancement/js/ContextAwareness.js - ::1<br>
+200 - /src/framework/preferences/js/PrimaryBuilder.js - fe80::1<br>
+200 - /src/framework/preferences/js/AuxBuilder.js - ::1<br>
+200 - /src/framework/preferences/js/StarterSchemas.js - fe80::1<br>
+304 - /tests/lib/qunit/js/qunit.js - fe80::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - fe80::1<br>
+304 - /tests/test-core/utils/js/IoCTestUtils.js - fe80::1<br>
+200 - /tests/framework-tests/preferences/js/AuxBuilderTests.js - fe80::1<br>
+304 - /src/framework/preferences/js/PrefsEditor.js - fe80::1<br>
+304 - /src/framework/preferences/js/Enactors.js - ::1<br>
+304 - /src/components/textfieldSlider/js/TextfieldSlider.js - ::1<br>
+304 - /src/framework/preferences/js/Panels.js - ::1<br>
+200 - /tests/framework-tests/preferences/html/Builder-test.html - fe80::1<br>
+304 - /tests/lib/qunit/css/qunit.css - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+304 - /src/framework/core/js/Fluid.js - fe80::1<br>
+304 - /src/framework/core/js/FluidDocument.js - fe80::1<br>
+304 - /src/framework/core/js/FluidDOMUtilities.js - fe80::1<br>
+304 - /src/framework/core/js/FluidIoC.js - fe80::1<br>
+304 - /src/framework/core/js/DataBinding.js - fe80::1<br>
+304 - /src/framework/core/js/ModelTransformation.js - fe80::1<br>
+304 - /src/framework/core/js/ModelTransformationTransforms.js - fe80::1<br>
+304 - /src/framework/core/js/FluidView.js - fe80::1<br>
+304 - /src/framework/core/js/FluidRequests.js - fe80::1<br>
+304 - /src/lib/fastXmlPull/js/fastXmlPull.js - fe80::1<br>
+304 - /src/framework/renderer/js/fluidParser.js - fe80::1<br>
+304 - /src/framework/renderer/js/fluidRenderer.js - fe80::1<br>
+304 - /src/framework/renderer/js/RendererUtilities.js - fe80::1<br>
+304 - /src/framework/enhancement/js/ContextAwareness.js - fe80::1<br>
+304 - /src/lib/jquery/ui/js/jquery.ui.core.js - fe80::1<br>
+304 - /src/lib/jquery/ui/js/jquery.ui.widget.js - fe80::1<br>
+304 - /src/lib/jquery/ui/js/jquery.ui.mouse.js - ::1<br>
+304 - /src/lib/jquery/ui/js/jquery.ui.slider.js - fe80::1<br>
+200 - /src/framework/preferences/js/URLUtilities.js - fe80::1<br>
+304 - /src/framework/preferences/js/Enactors.js - fe80::1<br>
+304 - /src/components/textfieldSlider/js/TextfieldSlider.js - fe80::1<br>
+304 - /src/framework/preferences/js/PrefsEditor.js - fe80::1<br>
+304 - /src/framework/preferences/js/Panels.js - fe80::1<br>
+200 - /src/framework/preferences/js/FullNoPreviewPrefsEditor.js - fe80::1<br>
+304 - /src/framework/preferences/js/PrimaryBuilder.js - fe80::1<br>
+304 - /src/framework/preferences/js/AuxBuilder.js - fe80::1<br>
+304 - /src/framework/preferences/js/StarterSchemas.js - fe80::1<br>
+200 - /src/framework/preferences/js/Builder.js - fe80::1<br>
+304 - /tests/lib/qunit/js/qunit.js - fe80::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - fe80::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit-browser.js - ::1<br>
+304 - /tests/test-core/utils/js/IoCTestUtils.js - fe80::1<br>
+200 - /tests/framework-tests/preferences/js/BuilderTests.js - fe80::1<br>
+304 - /src/framework/preferences/js/Store.js - fe80::1<br>
+304 - /src/framework/preferences/js/UIEnhancer.js - fe80::1<br>
+304 - /src/components/tableOfContents/js/TableOfContents.js - fe80::1<br>
+304 - /tests/framework-tests/preferences/js/PrefsEditorTestsCommon.js - fe80::1<br>
+200 - /src/framework/preferences/html/PrefsEditorTemplate-linksControls.html?_=1459435438371 - fe80::1<br>
+200 - /src/framework/preferences/html/PrefsEditorTemplate-emphasizeLinks.html?_=1459435438372 - fe80::1<br>
+200 - /src/framework/preferences/html/PrefsEditorTemplate-inputsLarger.html?_=1459435438373 - fe80::1<br>
+200 - /src/framework/preferences/html/SeparatedPanelPrefsEditor.html?_=1459435438374 - fe80::1<br>
+200 - /src/framework/preferences/html/PrefsEditorTemplate-textSize.html?_=1459435438375 - fe80::1<br>
+200 - /src/framework/preferences/html/PrefsEditorTemplate-lineSpace.html?_=1459435438376 - fe80::1<br>
+200 - /src/framework/preferences/html/PrefsEditorTemplate-textFont.html?_=1459435438377 - fe80::1<br>
+200 - /src/framework/preferences/html/PrefsEditorTemplate-contrast.html?_=1459435438378 - fe80::1<br>
+200 - /src/framework/preferences/html/PrefsEditorTemplate-layout.html?_=1459435438379 - fe80::1<br>
+200 - /src/framework/preferences/messages/linksControls.json?_=1459435438380 - fe80::1<br>
+200 - /src/framework/preferences/messages/emphasizeLinks.json?_=1459435438381 - fe80::1<br>
+200 - /src/framework/preferences/messages/inputsLarger.json?_=1459435438382 - ::1<br>
+200 - /src/framework/preferences/messages/prefsEditor.json?_=1459435438383 - fe80::1<br>
+200 - /src/framework/preferences/messages/textSize.json?_=1459435438384 - ::1<br>
+200 - /src/framework/preferences/messages/lineSpace.json?_=1459435438385 - fe80::1<br>
+200 - /src/framework/preferences/messages/textFont.json?_=1459435438386 - ::1<br>
+200 - /src/framework/preferences/messages/contrast.json?_=1459435438387 - ::1<br>
+200 - /src/framework/preferences/messages/tableOfContents.json?_=1459435438388 - ::1<br>
+200 - /src/framework/preferences/html/FullNoPreviewPrefsEditor.html?_=1459435438389 - fe80::1<br>
+200 - /tests/framework-tests/preferences/testResources/html/increaseTemplate.html?_=1459435438390 - fe80::1<br>
+200 - /tests/framework-tests/preferences/testResources/html/checkboxTemplate.html?_=1459435438391 - fe80::1<br>
+200 - /tests/framework-tests/preferences/testResources/html/compositePrefsEditorTemplate.html?_=1459435438392 - fe80::1<br>
+200 - /tests/framework-tests/preferences/html/Enactors-test.html - fe80::1<br>
+304 - /tests/lib/qunit/css/qunit.css - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+304 - /src/framework/core/js/Fluid.js - fe80::1<br>
+304 - /src/framework/core/js/FluidDocument.js - fe80::1<br>
+304 - /src/framework/core/js/FluidDOMUtilities.js - fe80::1<br>
+304 - /src/framework/core/js/FluidIoC.js - fe80::1<br>
+304 - /src/framework/core/js/DataBinding.js - fe80::1<br>
+304 - /src/framework/core/js/FluidView.js - fe80::1<br>
+304 - /src/framework/core/js/FluidRequests.js - fe80::1<br>
+304 - /src/lib/fastXmlPull/js/fastXmlPull.js - fe80::1<br>
+304 - /src/framework/renderer/js/fluidParser.js - fe80::1<br>
+304 - /src/framework/renderer/js/fluidRenderer.js - fe80::1<br>
+304 - /src/framework/renderer/js/RendererUtilities.js - fe80::1<br>
+304 - /src/framework/enhancement/js/ContextAwareness.js - fe80::1<br>
+304 - /src/framework/enhancement/js/ProgressiveEnhancement.js - fe80::1<br>
+304 - /src/components/tableOfContents/js/TableOfContents.js - fe80::1<br>
+304 - /src/components/textfieldSlider/js/TextfieldSlider.js - ::1<br>
+304 - /src/framework/preferences/js/UIEnhancer.js - ::1<br>
+304 - /src/framework/preferences/js/PrefsEditor.js - ::1<br>
+304 - /src/framework/preferences/js/Panels.js - ::1<br>
+304 - /src/framework/preferences/js/Enactors.js - ::1<br>
+304 - /tests/lib/qunit/js/qunit.js - fe80::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - ::1<br>
+304 - /tests/test-core/utils/js/IoCTestUtils.js - ::1<br>
+200 - /tests/framework-tests/preferences/js/EnactorsTests.js - ::1<br>
+304 - /src/framework/preferences/js/StarterGrades.js - fe80::1<br>
+200 - /src/components/tableOfContents/html/TableOfContents.html?_=1459435444345 - fe80::1<br>
+200 - /tests/framework-tests/preferences/html/SelfVoicingEnactor-test.html - fe80::1<br>
+304 - /tests/lib/qunit/css/qunit.css - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+304 - /src/framework/core/js/Fluid.js - ::1<br>
+304 - /src/framework/core/js/FluidDocument.js - fe80::1<br>
+304 - /src/framework/core/js/FluidDOMUtilities.js - fe80::1<br>
+304 - /src/framework/core/js/FluidIoC.js - fe80::1<br>
+304 - /src/framework/core/js/DataBinding.js - ::1<br>
+304 - /src/framework/core/js/FluidView.js - fe80::1<br>
+304 - /src/framework/core/js/FluidRequests.js - fe80::1<br>
+304 - /src/lib/fastXmlPull/js/fastXmlPull.js - fe80::1<br>
+304 - /src/framework/renderer/js/fluidParser.js - fe80::1<br>
+304 - /src/framework/renderer/js/fluidRenderer.js - fe80::1<br>
+304 - /src/framework/renderer/js/RendererUtilities.js - fe80::1<br>
+304 - /src/framework/enhancement/js/ContextAwareness.js - fe80::1<br>
+304 - /src/framework/enhancement/js/ProgressiveEnhancement.js - ::1<br>
+200 - /src/components/textToSpeech/js/TextToSpeech.js - fe80::1<br>
+200 - /src/components/textToSpeech/js/MockTTS.js - ::1<br>
+304 - /src/framework/preferences/js/UIEnhancer.js - ::1<br>
+304 - /src/framework/preferences/js/PrefsEditor.js - fe80::1<br>
+304 - /src/framework/preferences/js/Enactors.js - ::1<br>
+304 - /tests/lib/qunit/js/qunit.js - fe80::1<br>
+200 - /src/framework/preferences/js/SelfVoicingEnactor.js - ::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - ::1<br>
+304 - /tests/test-core/utils/js/IoCTestUtils.js - fe80::1<br>
+200 - /tests/framework-tests/preferences/js/SelfVoicingEnactorTests.js - fe80::1<br>
+200 - /tests/framework-tests/preferences/html/SeparatedPanelPrefsEditor-test.html - fe80::1<br>
+304 - /tests/lib/qunit/css/qunit.css - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+304 - /src/lib/jquery/ui/js/jquery.ui.core.js - fe80::1<br>
+304 - /src/framework/core/js/jquery.keyboard-a11y.js - fe80::1<br>
+304 - /src/framework/core/js/Fluid.js - fe80::1<br>
+304 - /src/framework/core/js/FluidDocument.js - fe80::1<br>
+304 - /src/framework/core/js/FluidRequests.js - fe80::1<br>
+304 - /src/framework/core/js/FluidDOMUtilities.js - fe80::1<br>
+304 - /src/framework/core/js/FluidIoC.js - fe80::1<br>
+304 - /src/framework/core/js/DataBinding.js - fe80::1<br>
+304 - /src/framework/core/js/ModelTransformation.js - fe80::1<br>
+304 - /src/framework/core/js/ModelTransformationTransforms.js - fe80::1<br>
+304 - /src/framework/core/js/FluidView.js - fe80::1<br>
+304 - /src/lib/fastXmlPull/js/fastXmlPull.js - fe80::1<br>
+304 - /src/framework/renderer/js/fluidParser.js - fe80::1<br>
+304 - /src/framework/renderer/js/fluidRenderer.js - fe80::1<br>
+304 - /src/framework/renderer/js/RendererUtilities.js - fe80::1<br>
+304 - /src/framework/enhancement/js/ContextAwareness.js - fe80::1<br>
+304 - /src/framework/preferences/js/Store.js - fe80::1<br>
+304 - /src/framework/preferences/js/Enactors.js - fe80::1<br>
+304 - /src/framework/preferences/js/UIEnhancer.js - fe80::1<br>
+304 - /src/components/textfieldSlider/js/TextfieldSlider.js - fe80::1<br>
+304 - /src/framework/preferences/js/PrefsEditor.js - fe80::1<br>
+304 - /src/framework/preferences/js/Panels.js - fe80::1<br>
+304 - /src/framework/preferences/js/StarterGrades.js - fe80::1<br>
+200 - /src/framework/preferences/js/SeparatedPanelPrefsEditor.js - fe80::1<br>
+304 - /src/components/tableOfContents/js/TableOfContents.js - fe80::1<br>
+304 - /tests/lib/qunit/js/qunit.js - fe80::1<br>
+304 - /tests/test-core/jqUnit/js/jqUnit.js - fe80::1<br>
+304 - /tests/test-core/utils/js/IoCTestUtils.js - fe80::1<br>
+304 - /tests/framework-tests/preferences/js/PrefsEditorTestsCommon.js - fe80::1<br>
+200 - /tests/framework-tests/preferences/js/SeparatedPanelPrefsEditorTests.js - fe80::1<br>
+304 - /src/framework/preferences/js/URLUtilities.js - fe80::1<br>
+304 - /src/components/slidingPanel/js/SlidingPanel.js - fe80::1<br>
+304 - /tests/framework-tests/preferences/js/IntegrationTestsCommon.js - fe80::1<br>
+200 - /tests/framework-tests/preferences/html/SeparatedPanelPrefsEditorFrame.html - fe80::1<br>
+200 - /src/framework/preferences/html//SeparatedPanelPrefsEditor.html?_=1459435446634 - fe80::1<br>
+200 - /src/framework/preferences/html//PrefsEditorTemplate-textSize.html?_=1459435446635 - fe80::1<br>
+200 - /src/framework/preferences/html//PrefsEditorTemplate-textFont.html?_=1459435446636 - fe80::1<br>
+200 - /src/framework/preferences/html//PrefsEditorTemplate-lineSpace.html?_=1459435446637 - fe80::1<br>
+200 - /src/framework/preferences/html//PrefsEditorTemplate-contrast.html?_=1459435446638 - ::1<br>
+200 - /src/framework/preferences/html//PrefsEditorTemplate-layout.html?_=1459435446639 - fe80::1<br>
+200 - /src/framework/preferences/html//PrefsEditorTemplate-linksControls.html?_=1459435446640 - ::1<br>
+200 - /src/framework/preferences/html//PrefsEditorTemplate-emphasizeLinks.html?_=1459435446641 - fe80::1<br>
+200 - /src/framework/preferences/html//PrefsEditorTemplate-inputsLarger.html?_=1459435446642 - fe80::1<br>
+200 - /src/framework/preferences/messages//prefsEditor.json?_=1459435446643 - fe80::1<br>
+200 - /src/framework/preferences/messages//textSize.json?_=1459435446644 - fe80::1<br>
+200 - /src/framework/preferences/messages//textFont.json?_=1459435446645 - fe80::1<br>
+200 - /src/framework/preferences/messages//lineSpace.json?_=1459435446646 - fe80::1<br>
+200 - /src/framework/preferences/messages//contrast.json?_=1459435446647 - fe80::1<br>
+200 - /src/framework/preferences/messages//linksControls.json?_=1459435446649 - ::1<br>
+200 - /src/framework/preferences/messages//tableOfContents.json?_=1459435446648 - ::1<br>
+200 - /src/framework/preferences/messages//emphasizeLinks.json?_=1459435446650 - fe80::1<br>
+200 - /src/framework/preferences/messages//inputsLarger.json?_=1459435446651 - fe80::1<br>
+304 - /src/lib/jquery/core/js/jquery.js - fe80::1<br>
+304 - /src/lib/jquery/ui/js/jquery.ui.core.js - fe80::1<br>
+304 - /src/lib/jquery/ui/js/jquery.ui.widget.js - fe80::1<br>
+304 - /src/lib/jquery/ui/js/jquery.ui.mouse.js - fe80::1<br>
+304 - /src/lib/jquery/ui/js/jquery.ui.slider.js - fe80::1<br>
+304 - /tests/framework-tests/preferences/html/SeparatedPanelPrefsEditorFrame.html - fe80::1<br>
+200 - /src/framework/preferences/html/FullPreviewPrefsEditor.html?_=1459435446652 - fe80::1<br>
+200 - /src/framework/preferences/html/PrefsEditorTemplate-textSize.html?_=1459435446653 - fe80::1<br>
+200 - /src/framework/preferences/html/PrefsEditorTemplate-textFont.html?_=1459435446654 - fe80::1<br>
+200 - /src/framework/preferences/html/PrefsEditorTemplate-lineSpace.html?_=1459435446655 - fe80::1<br>
+200 - /src/framework/preferences/html/PrefsEditorTemplate-contrast.html?_=1459435446656 - fe80::1<br>
+200 - /src/framework/preferences/html/PrefsEditorTemplate-layout.html?_=1459435446657 - fe80::1<br>
+200 - /src/framework/preferences/html/PrefsEditorTemplate-linksControls.html?_=1459435446658 - ::1<br>
+200 - /src/framework/preferences/html/PrefsEditorTemplate-emphasizeLinks.html?_=1459435446659 - fe80::1<br>
+200 - /src/framework/preferences/html/PrefsEditorTemplate-inputsLarger.html?_=1459435446660 - fe80::1<br>
+200 - /src/framework/preferences/messages/prefsEditor.json?_=1459435446661 - fe80::1<br>
+200 - /src/framework/preferences/messages/textSize.json?_=1459435446662 - fe80::1<br>
+200 - /src/framework/preferences/messages/textFont.json?_=1459435446663 - fe80::1<br>
+200 - /src/framework/preferences/messages/lineSpace.json?_=1459435446664 - fe80::1<br>
+200 - /src/framework/preferences/messages/contrast.json?_=1459435446665 -</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>OSX 10.11.2, Firefox 45.0.1</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13491">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-11-04T07:52:15.812-0500">2019-11-04T07:52:15.812-0500</relative-time></i></p>
+                        <p>Could not reproduce with FF v70.0.1 on macOS 10.15.1</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5881/"><span class="aria-hidden">←</span> Previous: FLUID-5881</a>
+        <a class="mx-1" href="/browse/FLUID-5883/">Next: FLUID-5883 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

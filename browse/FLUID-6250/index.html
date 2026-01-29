@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6250  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6250 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6250/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6250/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6250/">FLUID-6250</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6250: fluid-publish should revert package-lock.json on conclusion</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6250">FLUID-6250</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Migrated">Migrated</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-02-22T09:09:51.776-0500" prefix="">2018-02-22T09:09:51.776-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-25T11:52:46.691-0400" prefix="">2024-07-25T11:52:46.691-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>fluid-publish</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>npm version 5, the current LTS version, maintains a package-lock.json file in addition to package.json . The last step of the fluid-publish dev workflow should revert this file to its content from git in addition to the package.json file</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25438">
+                        <p class="mb-0"><b>Atisaya Jain</b> <i>commented <relative-time datetime="2018-03-12T02:31:55.800-0400">2018-03-12T02:31:55.800-0400</relative-time></i></p>
+                        <p>Is this issue still open? I would like to work on this.</p>
+
+                    </li>
+                    
+                    <li id="comment-25439">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-03-12T09:38:39.150-0400">2018-03-12T09:38:39.150-0400</relative-time></i></p>
+                        <p>Atisaya Jain I believe this is still open. Please feel free to submit a PR to address it.</p>
+
+                    </li>
+                    
+                    <li id="comment-25440">
+                        <p class="mb-0"><b>Atisaya Jain</b> <i>commented <relative-time datetime="2018-03-12T17:12:58.655-0400">2018-03-12T17:12:58.655-0400</relative-time></i></p>
+                        <p>This might be silly, but I think I am a bit lost here. What does it mean to revert back to content from git? Does it mean that after publishing, fluid-publish should be removed from the package-lock.json and package.json files of the module it has been used to publish? Or does it mean something else?</p>
+<p>I would be grateful if you could help me how to approach this issue.</p>
+
+                    </li>
+                    
+                    <li id="comment-25441">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-03-13T05:53:37.366-0400">2018-03-13T05:53:37.366-0400</relative-time></i></p>
+                        <p>Hi, Atisaya Jain. For "dev" releases, this package generates a version number (based in part on the date) that is saved to the package.json file. The updated package.json file is committed as part of a new tag. Once this is done, the goal is to leave the current working branch in the same state it was in before the release. We accomplish this by checking out the previous package.json from whatever branch we are working in.</p>
+<p>This ticket covers also reverting the package-lock.json file, as though we had&#160;issued the command <code>git checkout package-lock.json</code>.</p>
+
+                    </li>
+                    
+                    <li id="comment-25442">
+                        <p class="mb-0"><b>Atisaya Jain</b> <i>commented <relative-time datetime="2018-03-13T13:20:13.636-0400">2018-03-13T13:20:13.636-0400</relative-time></i></p>
+                        <p>Thank you so much for you help, Tony. It cleared a lot of doubts, really.</p>
+<p>I have opened a PR <a href="https://github.com/fluid-project/fluid-publish/pull/9">#9</a>&#160;on Github, please review it. And please let me know if any other changes need to be made.</p>
+
+                    </li>
+                    
+                    <li id="comment-25443">
+                        <p class="mb-0"><b>Atisaya Jain</b> <i>commented <relative-time datetime="2018-03-16T06:48:03.644-0400">2018-03-16T06:48:03.644-0400</relative-time></i></p>
+                        <p>@Justin Obara&#160;@Tony Atkins I closed the previous PR while trying to rename commits. I am really sorry for this.</p>
+<p>Please review PR <a href="https://github.com/fluid-project/fluid-publish/pull/10">#10</a>&#160;Github and let me know if any changes need to be made.</p>
+
+                    </li>
+                    
+                    <li id="comment-27895">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2024-07-25T11:52:46.691-0400">2024-07-25T11:52:46.691-0400</relative-time></i></p>
+                        <p>Migrated to <a href="https://github.com/fluid-project/fluid-publish/issues/22">https://github.com/fluid-project/fluid-publish/issues/22</a> </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6249/"><span class="aria-hidden">←</span> Previous: FLUID-6249</a>
+        <a class="mx-1" href="/browse/FLUID-6252/">Next: FLUID-6252 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

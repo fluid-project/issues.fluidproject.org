@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-261  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-261 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-261/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-261/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-261/">C2LC-261</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-261: Add full browser tests.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-261">C2LC-261</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>To Do</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Tony Atkins [RtF]</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-11-19T05:34:26.030-0500" prefix="">2020-11-19T05:34:26.030-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-05-01T10:11:59.636-0400" prefix="">2024-05-01T10:11:59.636-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Environment</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>There are a number of cases in which JSDom does not mimic a browser faithfully enough for us to test our work.  For example, as we recently discovered, JSDom lacks much of the WebAudio API.  There are also things that are much easier to test faithfully in a full browser, such as focus management and running third-party accessibility checks.</p>
+<p>I was talking with a colleague about testing a different project, and started reading up on <a href="https://webdriver.io/">webdriver.io</a>, which seems like a reasonable candidate for us to explore if we find that we're ready for full browser tests.</p>
+<p>Unlike <a href="https://www.selenium.dev/selenium/docs/api/javascript/index.html">the reference Webdriver Javascript implementation</a>, Webdriver.io has <a href="https://webdriver.io/docs/api/browser/react$.html">a built-in understanding of and ability to easily interact with React components</a>.  Webdriver.io has <a href="https://webdriver.io/docs/sync-vs-async.html">the option to run synchronously</a>, which is nice for writing straightforward browser tests.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10720">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2021-01-25T05:00:23.608-0500">2021-01-25T05:00:23.608-0500</relative-time></i></p>
+                        <p>I read up a bit to see how feasible/involved this would be.  Specifically, I wanted to see how we would keep track of test code coverage, as one of the key goals here is to test uncovered branches for things like audio and TTS that are mocked in our Enzyme tests.</p>
+<p>I ran across <a href="https://medium.com/@RajVasikarla/code-coverage-with-functional-automation-react-istanbul-webdriverio-24a52ac89306">this article</a>, which outlines an approach that's very familiar from other work I've done:</p>
+<ol>
+<li>Create an instrumented build using the Babel istanbul plugin.</li>
+<li>Run one or more tests, collecting coverage data along the way.</li>
+<li>Create a combined report with the coverage data from our Enzyme tests and the Webdriver tests.</li>
+</ol>
+<p> <br>
+The one bit I'm missing from the blog is how to ensure that the app is only built with instrumentation for these tests.  I would start by going through their example for my own knowledge.  Webdriver.io has its own learning curve, but they provide some very handy deep integration with React, so I'd expect this to be pretty palatable.  The combined reporting stuff is trivial at this point, I've done it for years integrating Node and Testem tests.</p>
+<p>All told I'd say a week of learning and sketching to get this done, and it's a good one to chip away at in the background while waiting for input from others.</p>
+
+                    </li>
+                    
+                    <li id="comment-10721">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2021-01-26T04:24:32.373-0500">2021-01-26T04:24:32.373-0500</relative-time></i></p>
+                        <p>In a related conversation about the broader use of functional browser tests yesterday, I investigate a few topics which helped confirm my inclination to use webdriver.io for this work.  First, there are a few solutions that control a range of actual browsers, notably:</p>
+<ol>
+<li>The javascript reference implementation of the WebDriver API (npm package: selenium-webdriver).</li>
+<li>webdriver.io, which can use a range of technologies, including the WebDriver API.</li>
+<li>cypress.io, which uses a different approach.</li>
+</ol>
+<p>I have long experience with the first.  The previous stable release stopped working (at least in the way I used it) for FireFox years ago, and the next release has been in alpha state for years.  Although it could probably do what we need, it doesn't seem like a healthy foundation for a new suite of tests.</p>
+<p>I looked into webdriver.io and cypress.io, and there are a few key points that suggest to me that webdriver.io is the way to proceed.  First, cypress.io lacks support for Safari, which by itself is a deal-breaker in my opinion.</p>
+<p>I also considered the types of interaction we want to simulate.  Although <a href="https://github.com/cypress-io/cypress/issues/845">it's possible to test drag and drop in cypress.io</a>, we'd have to write a lot of our own code to accomplish it.  By comparison, webdriver.io provides <a href="https://webdriver.io/docs/api/element/dragAndDrop.html">the ability to easily drop on a particular target element, or on a region of the screen</a>.</p>
+<p>The keyboard support in cypress.io involves <a href="https://example.cypress.io/commands/actions">sending commands directly to an element's handlers</a>.  While we use this strategy currently, longer term it limits us in properly testing keyboard navigation.  By comparison, webdriver.io <a href="https://webdriver.io/docs/api/browser/keys.html">lets you send keys to its browser instance instead of a single element</a>.  It uses the same underlying mechanisms as the WebDriver API, and I have used this to simply test things like making use of a "skip to content" link.</p>
+<p>With cypress.io, you would have to locate the link using a selector, send its key handler an enter key, and then check focus.  By comparison, with the WebDriver API and webdriver.io, you just send the browser "tab" and "enter", which also confirms that the "skip to content" link comes into focus when a "tab" is pressed.</p>
+<p>In summary, as we want to test keyboard navigation and drag and drop in particular, webdriver.io seems like a strong candidate.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-260/"><span class="aria-hidden">←</span> Previous: C2LC-260</a>
+        <a class="mx-1" href="/browse/C2LC-262/">Next: C2LC-262 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

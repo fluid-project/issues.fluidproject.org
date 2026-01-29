@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5829  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5829 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5829/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5829/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5829/">FLUID-5829</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5829: Fixes to Renderer docs</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5829">FLUID-5829</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-12-10T11:16:41.455-0500" prefix="">2015-12-10T11:16:41.455-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:00.345-0400" prefix="">2024-07-22T10:35:00.345-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Tech. Documentation</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Some issues were found in various Renderer-related documentation:</p>
+<p>Renderer.html</p>
+<ul>
+<li>"markup agnoticism" link should link to "markup agnoticism" section of the Framework Concepts document</li>
+</ul>
+<p>HowToUseTheRenderer.html</p>
+<ul>
+<li>"parent grade" link should jump to "Specifying parent grades" section of the Component Grades document?</li>
+<li>fluid.render link goes to specific lines in code in github - these lines may change over time - should we hard-code such references in the docs? Perhaps better to generalize it by saying "See fluid.render on this page".</li>
+</ul>
+<p>Renderer Components:</p>
+<ul>
+<li>Prototree link is broken</li>
+<li>Produce tree link is broken</li>
+<li>contains bad link to ../to-do/Components.html</li>
+</ul>
+<p>Renderer Component Trees:</p>
+<ul>
+<li>broken link (404) to Infusion Components in first paragraph of Renderer Component Trees</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22131">
+                        <p class="mb-0"><b>YashJipkate</b> <i>commented <relative-time datetime="2020-04-08T15:45:24.189-0400">2020-04-08T15:45:24.189-0400</relative-time></i></p>
+                        <p>The&#160;'Renderer Components' and the 'Renderer Component Trees' sections are already fixed in the latest master branch. I have fixed the other two parts in [this PR|<a href="https://github.com/fluid-project/infusion-docs/pull/179">https://github.com/fluid-project/infusion-docs/pull/179</a>]</p>
+<p>For the 2nd point of 'HowToUseTheRenderer', I have used permalink for the concerned block of code it links to so that the links do not point to any unexpected lines. I did this because I think that saying 'See fluid.render on this page' would be too vague.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5828/"><span class="aria-hidden">←</span> Previous: FLUID-5828</a>
+        <a class="mx-1" href="/browse/FLUID-5830/">Next: FLUID-5830 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

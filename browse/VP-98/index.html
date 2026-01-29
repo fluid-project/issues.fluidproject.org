@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-98  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-98 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-98/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-98/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-98/">VP-98</a></li>
+            </ol>
+        </nav>
+        <h1>VP-98: Captions do not work in Safari</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-98">VP-98</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Alexey%20Novak">Alexey Novak</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-09-17T15:08:28.900-0400" prefix="">2012-09-17T15:08:28.900-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-01-28T11:20:27.348-0500" prefix="">2013-01-28T11:20:27.348-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>captions</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Regression. Captions do not show up in Safari</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26926">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-10-02T17:35:17.096-0400">2012-10-02T17:35:17.096-0400</relative-time></i></p>
+                        <p>I have a fix for this; It's based on Michelle's <a href="/browse/FLUID-4701/">FLUID-4701</a> branch, so I'm waiting for that to be merged.</p>
+<p><a href="https://github.com/acheetham/Captionator/tree/FLUID-4795">https://github.com/acheetham/Captionator/tree/FLUID-4795</a><br>
+and<br>
+<a href="https://github.com/acheetham/videoPlayer/tree/FLUID-4795">https://github.com/acheetham/videoPlayer/tree/FLUID-4795</a></p>
+
+                    </li>
+                    
+                    <li id="comment-26927">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-10-24T14:59:56.210-0400">2012-10-24T14:59:56.210-0400</relative-time></i></p>
+                        <p>Michelle's fix for <a href="/browse/FLUID-4701/">FLUID-4701</a> has been merged into master, but the version of Captionator is based on a branch in her github which has not yet been merged into our fork. I'm waiting on that merge before issuing pull requests for these changes.</p>
+
+                    </li>
+                    
+                    <li id="comment-26928">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2012-11-05T18:09:31.669-0500">2012-11-05T18:09:31.669-0500</relative-time></i></p>
+                        <p>Captionator pull request merged into project repo at 090bbcd56d907983528502ac0e8ada3675de166c</p>
+
+                    </li>
+                    
+                    <li id="comment-26930">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2012-12-11T10:54:40.418-0500">2012-12-11T10:54:40.418-0500</relative-time></i></p>
+                        <p>Merge in pull request ( <a href="https://github.com/fluid-project/videoPlayer/pull/96">https://github.com/fluid-project/videoPlayer/pull/96</a> ) into the project repo at 33c54acffefb66766f9ab20459a9a311ee21273e</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-75/"><span class="aria-hidden">←</span> Previous: VP-75</a>
+        <a class="mx-1" href="/browse/VP-139/">Next: VP-139 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

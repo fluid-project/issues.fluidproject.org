@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1186  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1186 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1186/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1186/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1186/">FLUID-1186</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1186: Drop target does not apper below last item in a sortable list</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1186">FLUID-1186</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-08-18T11:01:08.000-0400" prefix="">2008-08-18T11:01:08.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-08-27T13:55:28.000-0400" prefix="">2008-08-27T13:55:28.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>No drop target appears below the last item in a sortable list.</p>
+<p>You can still drop an element below the list as long as the last list item takes up more than one line.</p>
+<p>Steps to reproduce:</p>
+<p>1) Open the sortable vertical list example from the daily build site:<br>
+<a href="http://build.fluidproject.org/fluid/sample-code/reorderer/todo-list/sortable-styled-todo-list.html">http://build.fluidproject.org/fluid/sample-code/reorderer/todo-list/sortable-styled-todo-list.html</a></p>
+<p>2) Attempt to drag and drop an item to the last position. Notice that no drop target appears. </p>
+<p>dev-iteration41</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>IE 6 (Win XP)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14109">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-08-18T11:03:19.000-0400">2008-08-18T11:03:19.000-0400</relative-time></i></p>
+                        <p>You can actually still perform the drag and drop operation if the last item is only one line, it is just harder.</p>
+
+                    </li>
+                    
+                    <li id="comment-14111">
+                        <p class="mb-0"><b>Simon Simon</b> <i>commented <relative-time datetime="2008-08-22T18:29:29.000-0400">2008-08-22T18:29:29.000-0400</relative-time></i></p>
+                        <p>This should be a CSS styling issue. I changed .orderable-drop-marker's margin to 2px, and then the two associated issues disappear:<br>
+1. the drop marker appears when drag and drop an item to the last position.<br>
+2. when the last position is a one line component, the drop marker appears when drag and drop an item to the last position.</p>
+<p>I tested in both IE6, and Firefox 2. All work correctly.</p>
+<p>A few more style changes may make it look better:<br>
+(1) change .orderable-avatar's width from 300px to auto. This can prevent the content wraps in the avatar.<br>
+(2) add .orderable-avatar's list-style-type to none. This can prevent the avatar has a list sequence number assigned to it.</p>
+
+                    </li>
+                    
+                    <li id="comment-14114">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-08-25T18:59:17.000-0400">2008-08-25T18:59:17.000-0400</relative-time></i></p>
+                        <p>I believe that this is "essentially" a duplicate of <a href="/browse/FLUID-1125/">FLUID-1125</a>. The fix here is good for this specific sample, but ideally I think that whilst we always want to allow room for users to improve and "tweak" component behavaiour with styling fixes, this component should work well under a broad variety of styling choices and not be dependent on individual ingenuity to get correct basic behaviour 😛 Hopefully this will be resolved more globally as part of the overall umbrella of  <a href="/browse/FLUID-1148/">FLUID-1148</a>.</p>
+
+                    </li>
+                    
+                    <li id="comment-14116">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2008-08-27T12:39:29.000-0400">2008-08-27T12:39:29.000-0400</relative-time></i></p>
+                        <p>True, we expect components to work with a variety of styling however, the styling of this particular example was quite strange to begin with. It included a margin of "-2px".  It's possible that the negative margin was causing the weird behaviour. </p>
+
+                    </li>
+                    
+                    <li id="comment-14119">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2008-08-27T12:40:17.000-0400">2008-08-27T12:40:17.000-0400</relative-time></i></p>
+                        <p>This issue was fixed with a styling change for the 0.5 beta and is expected to go away once the overhaul of the reorderer is complete. </p>
+
+                    </li>
+                    
+                    <li id="comment-14121">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-08-27T13:55:28.000-0400">2008-08-27T13:55:28.000-0400</relative-time></i></p>
+                        <p>Verified fix using IE 6 (Win XP)</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1185/"><span class="aria-hidden">←</span> Previous: FLUID-1185</a>
+        <a class="mx-1" href="/browse/FLUID-1187/">Next: FLUID-1187 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

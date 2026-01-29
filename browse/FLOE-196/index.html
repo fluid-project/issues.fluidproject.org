@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-196  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-196 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-196/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-196/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-196/">FLOE-196</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-196: Implement the request button</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-196">FLOE-196</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-06-26T14:09:04.240-0400" prefix="">2014-06-26T14:09:04.240-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-11-04T18:20:17.198-0500" prefix="">2020-11-04T18:20:17.198-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Feedback Tool</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The functionalities include: the badge with number of requests; list requests; add request</p>
+<p>Find the wireframe @ <a href="http://wiki.fluidproject.org/display/fluid/%28Floe%29+Metadata+Author">http://wiki.fluidproject.org/display/fluid/(Floe)+Metadata+Author</a>, "Metadata Feedback Wireframes"</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-11168">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-07-28T13:56:50.598-0400">2014-07-28T13:56:50.598-0400</relative-time></i></p>
+                        <p>Once <a href="/browse/FLOE-206/">FLOE-206</a> is in, we'll need to create a view. It should look something like.</p>
+<p>map = function (doc) {</p>
+<p>// Only look at votes and requests set to true<br>
+fluid.remove_if(doc.votes, invert);<br>
+fluid.remove_if(doc.requests, invert);</p>
+<p>// Merge the objects. It's okay to override duplicates as all the values should be true.<br>
+$.extend(doc.votes, doc.requests);</p>
+<p>// Emit each item. The value is set to 1 to allow for easy counting.<br>
+fluid.each(fluid.keys(doc.votes), function (key) {<br>
+emit(key, 1);<br>
+});<br>
+};</p>
+<p>reduce = "_count";</p>
+<p>and queried with </p>
+<p>ds.get({id: viewName, query: {reduce: true, group: true}}, callback);</p>
+
+                    </li>
+                    
+                    <li id="comment-11169">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-09-16T13:53:17.130-0400">2014-09-16T13:53:17.130-0400</relative-time></i></p>
+                        <p>The implementation is basically finished and ready for review in my <a href="/browse/FLOE-196/">FLOE-196</a> branch ( <a href="https://github.com/jobara/metadata/tree/FLOE-196">https://github.com/jobara/metadata/tree/FLOE-196</a> ), except there are issues with some of the unit tests used for integration testing with the feedback tool. These are currently being worked through with Antranig Basman <a href="http://fluid.2324889.n4.nabble.com/Unit-test-issues-with-the-feedback-tool-td9179.html">http://fluid.2324889.n4.nabble.com/Unit-test-issues-with-the-feedback-tool-td9179.html</a>.</p>
+
+                    </li>
+                    
+                    <li id="comment-11170">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-09-18T12:17:44.825-0400">2014-09-18T12:17:44.825-0400</relative-time></i></p>
+                        <p>Submitted a pull request ( <a href="https://github.com/fluid-project/metadata/pull/42">https://github.com/fluid-project/metadata/pull/42</a> ) although the unit test issue is still present. The pull request has been issued to keep track of the current changes.</p>
+
+                    </li>
+                    
+                    <li id="comment-11171">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-01-22T10:59:02.917-0500">2015-01-22T10:59:02.917-0500</relative-time></i></p>
+                        <p>[15:19] &lt;Bosmon&gt; The one at <a href="https://github.com/jobara/metadata/tree/FLOE-196-with-<a href=" browse="" FLUID-5506="" "="">FLUID-5506</a>"&gt;https://github.com/jobara/metadata/tree/FLOE-196-with-<a href="/browse/FLUID-5506/">FLUID-5506</a><br>
+[15:19] &lt;Bosmon&gt; I have found the following things:<br>
+[15:20] &lt;Bosmon&gt; i) the failure to respond to the events on Firefox was caused by the somewhat wacky template loading strategy here: <a href="https://github.com/jobara/metadata/blob/FLOE-196-with-<a href=" browse="" FLUID-5506="" "="">FLUID-5506</a>/tests/components/feedback/js/feedbackTests.js#L29"&gt;https://github.com/jobara/metadata/blob/FLOE-196-with-<a href="/browse/FLUID-5506/">FLUID-5506</a>/tests/components/feedback/js/feedbackTests.js#L29<br>
+[15:20] &lt;Bosmon&gt; As it turns out, without a default content type, jQuery AJAX on Firefox will attempt to parse the templates as XML.... for some reason<br>
+[15:21] &lt;Bosmon&gt; So adding datatype: "text" to the AJAX block at this line prevents this error<br>
+[15:21] &lt;Bosmon&gt; ii) Once we have merged up with the current trunk's version of IoCTestUtils.js, the fix for <a href="http://issues.fluidproject.org/browse/FLUID-5575">http://issues.fluidproject.org/browse/FLUID-5575</a> seems to suppress the "all the tests run at the same time behaviour" that you reported - at least as far as I can see<br>
+[15:22] &lt;Bosmon&gt; iii) all the remaining problems seem to be caused by the "two listeners in a row" issue when you uncomment the lines here: <a href="https://github.com/jobara/metadata/blob/FLOE-196-with-<a href=" browse="" FLUID-5506="" "="">FLUID-5506</a>/tests/components/feedback/js/feedbackTests.js#L459"&gt;https://github.com/jobara/metadata/blob/FLOE-196-with-<a href="/browse/FLUID-5506/">FLUID-5506</a>/tests/components/feedback/js/feedbackTests.js#L459<br>
+[15:23] &lt;Bosmon&gt; We have that one JIRAed at <a href="http://issues.fluidproject.org/browse/FLUID-5502">http://issues.fluidproject.org/browse/FLUID-5502</a> and will get to it in time - but in the meantime you should work around it by combining all your assertions into a single listener fixture at this point</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-195/"><span class="aria-hidden">←</span> Previous: FLOE-195</a>
+        <a class="mx-1" href="/browse/FLOE-197/">Next: FLOE-197 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-109  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-109 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-109/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-109/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-109/">INFRA-109</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-109: Network slowness</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-109">INFRA-109</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-02-02T05:52:33.908-0500" prefix="">2018-02-02T05:52:33.908-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-02-08T09:20:28.464-0500" prefix="">2018-02-08T09:20:28.464-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>-------- Forwarded Message --------
+<br>
+Subject: Strange network slowness<br>
+Date: Wed, 31 Jan 2018 19:02:05 -0200</p>
+<p>Hi all!</p>
+<p>We're experiencing some strange network slowness that's causing our CI jobs to fail.</p>
+<p>Cloning a repository from GitHub is extremely slow (36KB/s):</p>
+<p>$ git clone <a href="https://github.com/GPII/windows">https://github.com/GPII/windows</a><br>
+Cloning into 'windows'...<br>
+remote: Counting objects: 6394, done.<br>
+remote: Total 6394 (delta 0), reused 0 (delta 0), pack-reused 6394<br>
+Receiving objects: 100% (6394/6394), 36.58 MiB | 36.00 KiB/s, done.<br>
+Resolving deltas: 100% (3103/3103), done.</p>
+<p>And a traceroute shows packet loss at Cogentco's point of presence in Toronto:</p>
+<p>$ mtr --report-wide --report-cycles=60 github.com<br>
+Start: Wed Jan 31 20:59:59 2018<br>
+HOST: h-0005.tor1.inclusivedesign.ca Loss% Snt Last Avg Best Wrst StDev<br>
+1.|-- gateway 0.0% 60 0.2 0.2 0.1 0.3 0.0<br>
+2.|-- 205.211.169.3 0.0% 60 0.6 0.6 0.4 0.8 0.0<br>
+3.|-- 205.211.168.4 0.0% 60 0.7 0.9 0.6 4.9 0.6<br>
+4.|-- gi0-0-1-17.210.nr11.b011027-0.yyz02.atlas.cogentco.com 16.7% 60 11.4 14.3 6.8 45.2 9.1<br>
+5.|-- 154.24.42.65 16.7% 60 9.9 16.2 7.9 44.0 9.7<br>
+6.|-- te0-0-0-9.ccr31.yyz02.atlas.cogentco.com 6.7% 60 6.1 13.2 6.1 47.4 8.5<br>
+7.|-- level3.yyz02.atlas.cogentco.com 15.0% 60 9.8 14.8 5.5 62.5 10.4<br>
+8.|-- ae-2-4.bear2.Washington111.Level3.net 95.0% 60 27.6 27.8 27.6 28.1 0.0<br>
+9.|-- GITHUB-INC.bear2.Washington111.Level3.net 21.7% 60 25.3 31.2 24.4 65.2 9.6<br>
+10.|-- ??? 100.0 60 0.0 0.0 0.0 0.0 0.0<br>
+11.|-- ??? 100.0 60 0.0 0.0 0.0 0.0 0.0<br>
+12.|-- lb-192-30-253-112-iad.github.com 18.3% 60 31.9 31.8 24.0 80.8 12.2</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25942">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-02-02T05:56:12.829-0500">2018-02-02T05:56:12.829-0500</relative-time></i></p>
+                        <p><a href="https://lists.gpii.net/pipermail/architecture/2018-February/004743.html">https://lists.gpii.net/pipermail/architecture/2018-February/004743.html</a></p>
+
+                    </li>
+                    
+                    <li id="comment-25944">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-02-02T05:56:44.577-0500">2018-02-02T05:56:44.577-0500</relative-time></i></p>
+                        <pre><code class="hljs"><span class="hljs-attribute">Start</span>: Fri Feb <span class="hljs-number">2</span> <span class="hljs-number">10</span>:<span class="hljs-number">54</span>:<span class="hljs-number">08</span> <span class="hljs-number">2018</span>
+<span class="hljs-attribute">HOST</span>: h-<span class="hljs-number">0005</span>.tor1.inclusivedesign.ca Loss% Snt Last Avg Best Wrst StDev
+ <span class="hljs-attribute">1</span>.|-- gateway <span class="hljs-number">0</span>.<span class="hljs-number">0</span>% <span class="hljs-number">60</span> <span class="hljs-number">0</span>.<span class="hljs-number">2</span> <span class="hljs-number">0</span>.<span class="hljs-number">2</span> <span class="hljs-number">0</span>.<span class="hljs-number">1</span> <span class="hljs-number">0</span>.<span class="hljs-number">4</span> <span class="hljs-number">0</span>.<span class="hljs-number">0</span>
+ <span class="hljs-attribute">2</span>.|-- <span class="hljs-number">205.211.169.3</span> <span class="hljs-number">0</span>.<span class="hljs-number">0</span>% <span class="hljs-number">60</span> <span class="hljs-number">0</span>.<span class="hljs-number">8</span> <span class="hljs-number">3</span>.<span class="hljs-number">9</span> <span class="hljs-number">0</span>.<span class="hljs-number">4</span> <span class="hljs-number">196</span>.<span class="hljs-number">9</span> <span class="hljs-number">25</span>.<span class="hljs-number">3</span>
+ <span class="hljs-attribute">3</span>.|-- <span class="hljs-number">205.211.168.4</span> <span class="hljs-number">0</span>.<span class="hljs-number">0</span>% <span class="hljs-number">60</span> <span class="hljs-number">0</span>.<span class="hljs-number">5</span> <span class="hljs-number">0</span>.<span class="hljs-number">8</span> <span class="hljs-number">0</span>.<span class="hljs-number">4</span> <span class="hljs-number">7</span>.<span class="hljs-number">4</span> <span class="hljs-number">1</span>.<span class="hljs-number">1</span>
+ <span class="hljs-attribute">4</span>.|-- gi0-<span class="hljs-number">0</span>-<span class="hljs-number">1</span>-<span class="hljs-number">17</span>.<span class="hljs-number">210</span>.nr11.b011027-<span class="hljs-number">0</span>.yyz02.atlas.cogentco.com <span class="hljs-number">0</span>.<span class="hljs-number">0</span>% <span class="hljs-number">60</span> <span class="hljs-number">1</span>.<span class="hljs-number">3</span> <span class="hljs-number">1</span>.<span class="hljs-number">3</span> <span class="hljs-number">1</span>.<span class="hljs-number">0</span> <span class="hljs-number">4</span>.<span class="hljs-number">0</span> <span class="hljs-number">0</span>.<span class="hljs-number">4</span>
+ <span class="hljs-attribute">5</span>.|-- <span class="hljs-number">154.24.42.69</span> <span class="hljs-number">0</span>.<span class="hljs-number">0</span>% <span class="hljs-number">60</span> <span class="hljs-number">1</span>.<span class="hljs-number">2</span> <span class="hljs-number">1</span>.<span class="hljs-number">2</span> <span class="hljs-number">0</span>.<span class="hljs-number">9</span> <span class="hljs-number">5</span>.<span class="hljs-number">0</span> <span class="hljs-number">0</span>.<span class="hljs-number">5</span>
+ <span class="hljs-attribute">6</span>.|-- te0-<span class="hljs-number">0</span>-<span class="hljs-number">1</span>-<span class="hljs-number">9</span>.ccr31.yyz02.atlas.cogentco.com <span class="hljs-number">0</span>.<span class="hljs-number">0</span>% <span class="hljs-number">60</span> <span class="hljs-number">0</span>.<span class="hljs-number">9</span> <span class="hljs-number">0</span>.<span class="hljs-number">9</span> <span class="hljs-number">0</span>.<span class="hljs-number">6</span> <span class="hljs-number">1</span>.<span class="hljs-number">3</span> <span class="hljs-number">0</span>.<span class="hljs-number">0</span>
+ <span class="hljs-attribute">7</span>.|-- level3.yyz02.atlas.cogentco.com <span class="hljs-number">0</span>.<span class="hljs-number">0</span>% <span class="hljs-number">60</span> <span class="hljs-number">1</span>.<span class="hljs-number">1</span> <span class="hljs-number">1</span>.<span class="hljs-number">3</span> <span class="hljs-number">1</span>.<span class="hljs-number">0</span> <span class="hljs-number">9</span>.<span class="hljs-number">7</span> <span class="hljs-number">1</span>.<span class="hljs-number">1</span>
+ <span class="hljs-attribute">8</span>.|-- ae-<span class="hljs-number">2</span>-<span class="hljs-number">4</span>.bear2.Washington111.Level3.net <span class="hljs-number">90</span>.<span class="hljs-number">0</span>% <span class="hljs-number">60</span> <span class="hljs-number">18</span>.<span class="hljs-number">2</span> <span class="hljs-number">18</span>.<span class="hljs-number">2</span> <span class="hljs-number">18</span>.<span class="hljs-number">1</span> <span class="hljs-number">18</span>.<span class="hljs-number">4</span> <span class="hljs-number">0</span>.<span class="hljs-number">0</span>
+ <span class="hljs-attribute">9</span>.|-- GITHUB-INC.bear2.Washington111.Level3.net <span class="hljs-number">0</span>.<span class="hljs-number">0</span>% <span class="hljs-number">60</span> <span class="hljs-number">18</span>.<span class="hljs-number">2</span> <span class="hljs-number">18</span>.<span class="hljs-number">2</span> <span class="hljs-number">17</span>.<span class="hljs-number">9</span> <span class="hljs-number">21</span>.<span class="hljs-number">5</span> <span class="hljs-number">0</span>.<span class="hljs-number">5</span>
+ <span class="hljs-attribute">10</span>.|-- ??? <span class="hljs-number">100</span>.<span class="hljs-number">0</span> <span class="hljs-number">60</span> <span class="hljs-number">0</span>.<span class="hljs-number">0</span> <span class="hljs-number">0</span>.<span class="hljs-number">0</span> <span class="hljs-number">0</span>.<span class="hljs-number">0</span> <span class="hljs-number">0</span>.<span class="hljs-number">0</span> <span class="hljs-number">0</span>.<span class="hljs-number">0</span>
+ <span class="hljs-attribute">11</span>.|-- ??? <span class="hljs-number">100</span>.<span class="hljs-number">0</span> <span class="hljs-number">60</span> <span class="hljs-number">0</span>.<span class="hljs-number">0</span> <span class="hljs-number">0</span>.<span class="hljs-number">0</span> <span class="hljs-number">0</span>.<span class="hljs-number">0</span> <span class="hljs-number">0</span>.<span class="hljs-number">0</span> <span class="hljs-number">0</span>.<span class="hljs-number">0</span>
+ <span class="hljs-attribute">12</span>.|-- lb-<span class="hljs-number">192</span>-<span class="hljs-number">30</span>-<span class="hljs-number">253</span>-<span class="hljs-number">113</span>-iad.github.com <span class="hljs-number">0</span>.<span class="hljs-number">0</span>% <span class="hljs-number">60</span> <span class="hljs-number">18</span>.<span class="hljs-number">2</span> <span class="hljs-number">18</span>.<span class="hljs-number">3</span> <span class="hljs-number">17</span>.<span class="hljs-number">9</span> <span class="hljs-number">28</span>.<span class="hljs-number">9</span> <span class="hljs-number">1</span>.<span class="hljs-number">4</span>
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-25945">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-02-08T09:20:28.447-0500">2018-02-08T09:20:28.447-0500</relative-time></i></p>
+                        <p>It seems the packet loss has decreased. It's still not perfect but good enough (seems like how Cogent operates). Closing for now.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-108/"><span class="aria-hidden">←</span> Previous: INFRA-108</a>
+        <a class="mx-1" href="/browse/INFRA-110/">Next: INFRA-110 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

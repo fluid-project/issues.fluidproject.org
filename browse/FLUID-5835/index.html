@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5835  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5835 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5835/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5835/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5835/">FLUID-5835</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5835: Deduplication of distributions by namespace destroys extra blocks sharing distribution</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5835">FLUID-5835</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-12-25T08:45:31.092-0500" prefix="">2015-12-25T08:45:31.092-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-01-15T12:00:33.696-0500" prefix="">2016-01-15T12:00:33.696-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Our fix for <a href="/browse/FLUID-5824/">FLUID-5824</a> has too aggressively deduplicated the distributions at target. The failure symptom is in resolving an overridden message bundle in BuilderTests.js - as reported on <a href="https://github.com/fluid-project/infusion/pull/654">https://github.com/fluid-project/infusion/pull/654</a> , the failure is:</p>
+<p>The composite panel should be rendered correctly - at sequence position 1 of 5<br>
+Expected: "increase"<br>
+Result: "[Message string for key increaseHeader not found]"<br>
+Diff:</p>
+<p>The setup here is rather subtle. As a direct override we have, in BuilderTests.js, </p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.tests.composite.increase"</span>, {
+        gradeNames: [<span class="hljs-string">"fluid.prefs.compositePanel"</span>],
+        messageBase: {
+            increaseHeader: <span class="hljs-string">"increase"</span>
+        },
+</code></pre>
+<p>Then, as a subcomponent override, we have, arising from within the guts of AuxBuilder.js, a definition which results in:</p>
+<pre><code class="hljs language-java">....
+    components: {
+        increasing: {
+            container: <span class="hljs-string">"{prefsEditor}.dom.increasing"</span>,
+            createOnEvent: <span class="hljs-string">"onPrefsEditorMarkupReady"</span>,
+            options: {
+                gradeNames: <span class="hljs-string">"fluid.prefs.prefsEditorConnections"</span>,
+                messageBase: <span class="hljs-string">"{messageLoader}.resources.increasing.resourceText"</span>
+</code></pre>
+<p>NOW, what then happens is that we attempt to distribute the "messageBase" property to the panel to the rather awkwardly defined "fake" message bundle named "msgBundle" - from Panels.js:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.prefs.panel"</span>, {
+        gradeNames: [<span class="hljs-string">"fluid.prefs.msgLookup"</span>, <span class="hljs-string">"fluid.rendererComponent"</span>],
+        distributeOptions: {
+            source: <span class="hljs-string">"{that}.options.messageBase"</span>,
+            target: <span class="hljs-string">"{that &gt; msgResolver}.options.messageBase"</span>
+        }
+</code></pre>
+<p>What happens here is that the BLOCKS constituting the component's protoOptions pass through FluidIoC.js "filterBlocks", which then gives rise to two blocks sharing the same distribution namespace (in this case the automatically allocated "no-namespace-distribution-mc87fiq-27"). Only one of these survives - the one of record type "subcomponentRecord" which resolves messageBase to undefined, losing the one arising from the defaults override in the test case completely.</p>
+<p>Examining this pathway suggests that the "source" scheme for distributeOptions is really rather rickety and that even after reverting this regression, we can expect many other kinds of failure of this kind to arise over time - JIRAed separately at <a href="/browse/FLUID-5836/">FLUID-5836</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24068">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-01-15T12:00:31.163-0500">2016-01-15T12:00:31.163-0500</relative-time></i></p>
+                        <p>Merged pull request ( <a href="https://github.com/fluid-project/infusion/pull/654">https://github.com/fluid-project/infusion/pull/654</a> ) into the project repo at 4e1b8c9a64665c67232901d2e57531926ec7247f  and 2f38c09d733925441f0ff2e6636f8886da8af5ea</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5834/"><span class="aria-hidden">←</span> Previous: FLUID-5834</a>
+        <a class="mx-1" href="/browse/FLUID-5836/">Next: FLUID-5836 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

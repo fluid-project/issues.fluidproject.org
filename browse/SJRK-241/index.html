@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-241  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-241 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-241/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-241/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-241/">SJRK-241</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-241: Improve tests for authoringEnabled flag</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-241">SJRK-241</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-03-29T14:45:37.350-0400" prefix="">2019-03-29T14:45:37.350-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-10-26T14:18:55.024-0400" prefix="">2020-10-26T14:18:55.024-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool Server</li>
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>For expedience, several items were deferred to this Jira from the reivew of the <a href="https://github.com/fluid-project/sjrk-story-telling/pull/19">pull request for <a href="/browse/SJRK-239/">SJRK-239</a></a>. Cindy Li provided review. This may be helpful to break into smaller Jiras when the work is being done.</p>
+<ol>
+<li>The Node tests for authoringEnabled on the server side should test both "true" and "false" values, not just whichever is currently set.</li>
+<li>Similarly, the browser tests for the UI-side flag should also check both values.</li>
+<li>Clarify the comment in storyTelling.css regarding the "sections" being shown or hidden (currently line 54).</li>
+<li>Review and discuss whether the intro/edit page should be reachable after navigating away from it once editing is disabled.</li>
+</ol>
+<p>Review comments as they were provided:</p>
+<hr>
+<p>The server test for the "authoringEnabled" flag can be refactored better.</p>
+<ol>
+<li>Right now, the "authoringEnabled" value is dependent on what's set in the actual server source code "serverSetup.js", in which "authoringEnabled" only has one value (true or false) at any moment. This means, running this test file only tests one flag value at any time rather than testing both cases. To fix it:</li>
+</ol>
+<ol>
+<li>No need to share the same set of test definition for 2 scenarios with a number of empty assertions. The current test definition is good for testing "true" scenario. Create a separate test definition for "false" scenario. In the new test, only responses from post story requests are checked to ensure an error is returned. The following checks for the saved story and the uploaded image are unnecessary.</li>
+</ol>
+<p>An example of passing "authoringEnabled" flag to the server component in test definitions:</p>
+<pre><code class="hljs language-javascript">sjrk.<span class="hljs-property">storyTelling</span>.<span class="hljs-property">server</span>.<span class="hljs-property">testServerWithStorageDefsWithAuthoringEnabled</span> = [{
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"Test server with storage - authoringEnabledis turned on"</span>,
+    <span class="hljs-attr">expect</span>: <span class="hljs-number">16</span>,
+    <span class="hljs-attr">distributeOptions</span>: {
+        <span class="hljs-attr">record</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">target</span>: <span class="hljs-string">"{that server}.options.globalConfig.authoringEnabled"</span>
+    }
+...
+}];
+</code></pre>
+<p>Please use a common variable to hold parts that can be shared by both definitions.</p>
+<hr>
+<p>Could you clarify this comment, regarding which themes are sharing this css flle and which theme will override these rules etc. Does "These sections" mean starting from here till the end of the file?</p>
+<pre><code class="hljs language-java"><span class="hljs-comment">/* These sections are shown or hidden based on the theme's styling rules */</span>
+.sjrk-st-page-header-container
+</code></pre>
+<p>Is this rule to hide these containers created because these containers are not expected to show in Karisma theme? Can you add a comment to explain? Thanks.</p>
+<hr>
+<p>I noticed when the saving/editing is disabled, once users leave the home page "storyEdit.html", they can never go back to it because the "build your story" button is now invisible.</p>
+<p>When the editing is disabled, this "story edit" page now serves as a home page rather than story editing. It's weird to not be able to access it once leaving for other pages.</p>
+<p>One possibility is to allow clicks on SJRK logo at the header to lead back to the home page.</p>
+<p>This needs to be discussed with designers. I don't expect it to be solved in this pull request. Thanks.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-240/"><span class="aria-hidden">←</span> Previous: SJRK-240</a>
+        <a class="mx-1" href="/browse/SJRK-242/">Next: SJRK-242 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

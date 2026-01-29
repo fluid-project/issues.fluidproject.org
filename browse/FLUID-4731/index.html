@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4731  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4731 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4731/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4731/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4731/">FLUID-4731</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4731: the grunt build should produce a file specifying the build settings and information</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4731">FLUID-4731</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-07-19T14:59:36.345-0400" prefix="">2012-07-19T14:59:36.345-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-16T13:57:51.217-0400" prefix="">2024-07-16T13:57:51.217-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Build Scripts</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When a custom build is produced, a file should be generated specifying the date, version, revision, and command used to create it.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-4731/Capture.PNG">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-4731/Capture.PNG" alt="Capture.PNG">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23951">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-09-06T13:51:22.076-0400">2013-09-06T13:51:22.076-0400</relative-time></i></p>
+                        <p>Instead of this being a standalone file, perhaps it should be included in the banner/header of the concatenated infusion file.</p>
+
+                    </li>
+                    
+                    <li id="comment-23953">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-05-15T11:00:06.291-0400">2014-05-15T11:00:06.291-0400</relative-time></i></p>
+                        <p>Here's an example of the information we've been manually writing out for our custom builds</p>
+<p>The version of Infusion included in this folder was created using a custom build from commit</p>
+<p>e511c9fc7eff7c57d3f8071e4be2664d89188f5c</p>
+<p>of the Infusion master branch</p>
+<p><a href="https://github.com/fluid-project/infusion/">https://github.com/fluid-project/infusion/</a></p>
+<p>using the command line</p>
+<p>grunt custom --source=true --include="tooltip, renderer, preferences, tabs, overviewPanel"</p>
+
+                    </li>
+                    
+                    <li id="comment-23955">
+                        <p class="mb-0"><b>sparsh paliwal</b> <i>commented <relative-time datetime="2016-03-03T10:55:52.397-0500">2016-03-03T10:55:52.397-0500</relative-time></i></p>
+                        <p>@Justin <br>
+Presently grunt creates the same banner for "custom" and "all" build which goes like -</p>
+<p>/<strong>! infusion - v2.0.0 Thursday, March 3rd, 2016, 8:44:09 PM</strong>/</p>
+<p>So I guess we need to just add the modules added in the custom file we can use the grunt.option("include") to get the modules passed as parameters and add them in the banner and we are good to go. Please can you tell me if this would be good or we need to add something more.</p>
+
+                    </li>
+                    
+                    <li id="comment-23956">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-03-04T08:44:38.771-0500">2016-03-04T08:44:38.771-0500</relative-time></i></p>
+                        <p>sparsh paliwal well it's a bit different we really want to include the specific grunt command needed to create the file. Perhaps you could investigate if it's possible to get access to the command that was used to trigger the grunt build? We'd also like to have access to the specific revision that the build was created from. This is particularly important for cases where the build is from some point in development. Since this JIRA was first filed we've started posting dev releases on <a href="https://www.npmjs.com/package/infusion">NPM</a>. Meaning that it isn't entirely clear what the need for this work will be going into the future; however, it's still probably useful information to supply.</p>
+
+                    </li>
+                    
+                    <li id="comment-23958">
+                        <p class="mb-0"><b>sparsh paliwal</b> <i>commented <relative-time datetime="2016-03-04T17:03:04.371-0500">2016-03-04T17:03:04.371-0500</relative-time></i></p>
+                        <p>Thanks Justin for the explanation closest we can go to our need with the grunt API is it provides all the arguments passed to command line in an array on using grunt.option.flags(), here it would return (I had straightaway put the array in the banner)-</p>
+<p><strong>/</strong>! <strong>infusion - v2.0.0 Saturday, March 5th, 2016, 2:52:18 AM --source, --include=tooltip, renderer, preferences, tabs, overviewPanel</strong> <strong>/</strong></p>
+<p>--source because for grunt,<br>
+"grunt custom --source=true"  and  "grunt custom --source" are equivalent. <br>
+we can easily manipulate this to get the exact command line argument.</p>
+<p>For the specific revision part(exact commit we are on) we can use the <a href="https://github.com/mikaelkaron/grunt-git-describe/">https://github.com/mikaelkaron/grunt-git-describe/</a> grunt Npm task and we will use its commit-ish option.</p>
+<p>I have tried and found the following solutions. Please can you give your views on these.</p>
+
+                    </li>
+                    
+                    <li id="comment-23960">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-11-24T14:19:35.365-0500">2016-11-24T14:19:35.365-0500</relative-time></i></p>
+                        <p>The banner in the concatenated JS file now contains the revision and branch that the build was generated from, assuming it was built inside of a Git repo. This was done as part of the work for <a href="/browse/FLUID-5832/">FLUID-5832</a>. However, an example grunt command for generating the build has not been provided. That part now also has to take into consideration the distribution builds which are programatically generated from the distributions configuration in the Gruntfile.</p>
+
+                    </li>
+                    
+                    <li id="comment-23962">
+                        <p class="mb-0"><b>Mohamed Shadab</b> <i>commented <relative-time datetime="2018-03-12T15:19:29.542-0400">2018-03-12T15:19:29.542-0400</relative-time></i></p>
+                        <p>Hey, i'd like to work on this, if it still needs to be done.</p>
+<p>Also i'd like to know what information would go into such a file when generated.</p>
+
+                    </li>
+                    
+                    <li id="comment-23963">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-03-12T15:44:45.076-0400">2018-03-12T15:44:45.076-0400</relative-time></i></p>
+                        <p>Mohamed Shadab we're starting to move away from creating zip packages and unpacking them into a project because we are moving more towards pulling in from NPM directly and copying over the necessary files.</p>
+<p></p>
+<p>However, the idea of this issue was to cover the case where a custom build was made and you wanted to be able to reproduce it. We tended to write VERSION.md files like&#160;<a href="https://github.com/fluid-project/floeproject.org/blob/master/lib/infusion/VERSION.md">https://github.com/fluid-project/floeproject.org/blob/master/lib/infusion/VERSION.md</a> . You can see that file includes the branch and revision that build was generated from as well as the specific grunt command used.</p>
+
+                    </li>
+                    
+                    <li id="comment-23965">
+                        <p class="mb-0"><b>Mohamed Shadab</b> <i>commented <relative-time datetime="2018-03-19T17:32:14.166-0400">2018-03-19T17:32:14.166-0400</relative-time></i></p>
+                        <p>Hey, so i have implemented this using a small grunt task which uses the file creator grunt plugin -<a href="https://www.npmjs.com/package/grunt-file-creator">https://www.npmjs.com/package/grunt-file-creator</a>&#160;; here is the branch i am currently working on (where it is implemented): <a href="https://github.com/shadxx7/infusion/tree/FLUID-4731">https://github.com/shadxx7/infusion/tree/FLUID-4731</a></p>
+<p>Here is a screenshot of the buildInfo.md file being created using the function say "grunt custom --include=jQuery" -</p>
+<!-- media: file a8e94de6-6b6d-41ff-a68a-2f416c571f61 -->
+<p>Please check it out and give your opinion. Thanks!</p>
+
+                    </li>
+                    
+                    <li id="comment-23967">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-03-20T10:22:14.631-0400">2018-03-20T10:22:14.631-0400</relative-time></i></p>
+                        <p>Mohamed Shadab&#160;I took a quick look at the Gruntfile.js in your branch. Some of the values are already available in the grunt config, such as pkg, revision, branch. Can you just access these from there instead of having to recall the methods to populate the values. Also what will happen in the case of running a "grunt buildDists" which runs several custom builds and outputs them to the dist directory? It would also be good if you could add the name of the build to the header and also probably as the file name.</p>
+
+                    </li>
+                    
+                    <li id="comment-23969">
+                        <p class="mb-0"><b>Mohamed Shadab</b> <i>commented <relative-time datetime="2018-03-20T16:46:37.852-0400">2018-03-20T16:46:37.852-0400</relative-time></i></p>
+                        <p>Hey,</p>
+<p>I made the changes; please check them out -&#160;<a href="https://github.com/shadxx7/infusion/tree/FLUID-4731">https://github.com/shadxx7/infusion/tree/FLUID-4731</a></p>
+<p>Cheers</p>
+
+                    </li>
+                    
+                    <li id="comment-23970">
+                        <p class="mb-0"><b>Mohamed Shadab</b> <i>commented <relative-time datetime="2018-04-03T09:30:03.042-0400">2018-04-03T09:30:03.042-0400</relative-time></i></p>
+                        <p>Hey, so did you check the changes i made? If yes, should I make a PR?</p>
+
+                    </li>
+                    
+                    <li id="comment-23972">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-04-05T09:40:26.650-0400">2018-04-05T09:40:26.650-0400</relative-time></i></p>
+                        <p>Mohamed Shadab I've only had time to skim over your branch so far. I think it would be easier to review as a PR though. So yes, please file one. Thanks.</p>
+
+                    </li>
+                    
+                    <li id="comment-27794">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2024-07-16T13:57:51.217-0400">2024-07-16T13:57:51.217-0400</relative-time></i></p>
+                        <p>This was resolved with <a href="https://github.com/fluid-project/infusion/pull/1046">https://github.com/fluid-project/infusion/pull/1046</a>  which not only moved away from using Grunt but also includes metadata about the build in a built file.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4730/"><span class="aria-hidden">←</span> Previous: FLUID-4730</a>
+        <a class="mx-1" href="/browse/FLUID-4732/">Next: FLUID-4732 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

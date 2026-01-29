@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-82  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-82 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-82/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-82/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-82/">C2LC-82</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-82: Turn the Run Button into a Component</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-82">C2LC-82</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Sub-task">Sub-task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Won't Fix</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Daniel Cho</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-11-29T11:38:44.387-0500" prefix="">2019-11-29T11:38:44.387-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-01-22T15:07:32.343-0500" prefix="">2020-01-22T15:07:32.343-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Env 0.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently the program block editor contains the functionality for the run button but it's likely that we will move the run button elsewhere. We should factor the code so that this is an easy task to do.</p>
+<p></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10528">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2019-12-12T10:22:21.936-0500">2019-12-12T10:22:21.936-0500</relative-time></i></p>
+                        <p>Should we take this out of the 0.1 release?</p>
+
+                    </li>
+                    
+                    <li id="comment-10529">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2019-12-12T15:16:11.747-0500">2019-12-12T15:16:11.747-0500</relative-time></i></p>
+                        <p>Ah, there's one thing I forgot – there's one more styling needs to be done, which is inverting colours when the program is running. </p>
+<p>To Simon:<br>
+I am thinking of using a property for ProgramBlockEditor from <a href="/browse/C2LC-84/">C2LC-84</a> to change class to apply colour changes like this: </p>
+<pre><code class="hljs language-javascript">className={<span class="hljs-string">`ProgramBlockEditor__run-button <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.props.activeProgramStepNum !== <span class="hljs-literal">null</span> ? ProgramBlockEditor__run-button--active : <span class="hljs-string">''</span>}</span>`</span>}
+</code></pre>
+<p>I also filed an issue with bug type, which is <a href="/browse/C2LC-100/">C2LC-100</a> and I used the same property to disable the editor action buttons when the program is running.</p>
+
+                    </li>
+                    
+                    <li id="comment-10530">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2019-12-13T13:57:53.584-0500">2019-12-13T13:57:53.584-0500</relative-time></i></p>
+                        <p>We will do this refactoring after 0.1</p>
+
+                    </li>
+                    
+                    <li id="comment-10531">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2019-12-20T14:53:05.355-0500">2019-12-20T14:53:05.355-0500</relative-time></i></p>
+                        <p>Probably it makes more sense to merge PR for <a href="/browse/C2LC-103/">C2LC-103</a> with this one and close the 103</p>
+
+                    </li>
+                    
+                    <li id="comment-10532">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2020-01-22T15:07:32.335-0500">2020-01-22T15:07:32.335-0500</relative-time></i></p>
+                        <p>Designs for 0.3 are quite different from 0.2. It's likely that the Run Button code will be refactored but this specifically might not be done. We'll open a more appropriate issue when we know</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-81/"><span class="aria-hidden">←</span> Previous: C2LC-81</a>
+        <a class="mx-1" href="/browse/C2LC-83/">Next: C2LC-83 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

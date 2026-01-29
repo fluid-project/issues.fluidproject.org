@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5401  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5401 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5401/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5401/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5401/">FLUID-5401</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5401: Text to speech audio starts another TTS audio track (Mouse and Keyboard)</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5401">FLUID-5401</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Cannot%20Reproduce">Cannot Reproduce</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=beth.mejsullivan">beth.mejsullivan</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-06-03T18:33:36.311-0400" prefix="">2014-06-03T18:33:36.311-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T15:13:11.000-0400" prefix="">2024-07-22T15:13:11.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Demos</li>
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>Text To Speech</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p><a href="http://wiki.fluidproject.org/display/fluid/Preferences+Framework+QA+Test+Plan">http://wiki.fluidproject.org/display/fluid/Preferences+Framework+QA+Test+Plan</a></p>
+<p>State Tests:<br>
+Test 14: Mouse, Close and Re-open</p>
+<p>Procedure<br>
+Complete Test 13<br>
+Using the mouse, click the "Hide" button<br>
+Using the mouse, re-open Display Preferences<br>
+Expected Results<br>
+The selected options should still be set<br>
+The main window should display the effects of the selected options<br>
+Display Preferences should display the effects of the selected options<br>
+Actual Results<br>
+Expected Results happen... and...<br>
+When the "text to speech" toggle is on before you click "hide", and then re-open display preferences - the "text to speech" starts all over and back on top of the "text to speech" that is already reading. This is very  overwhelming.</p>
+<p>Test 15: Mouse, Reset</p>
+<p>Procedure<br>
+Complete Test 14<br>
+Using the mouse, click the "Reset" button<br>
+Expected Results<br>
+The options should all be set to the initial default values<br>
+The main window should be reset to the initial default styles<br>
+Display Preferences should be reset to the initial default styles<br>
+Actual Results<br>
+Expected results occur except only one of the text to speech tracks stop automatically. Then the other one finishes reading the Overview Panel and then stops.</p>
+<hr>
+<p>Same issues with Keyboard interaction</p>
+<p>Test 29: Keyboard, Close and Re-open</p>
+<p>Procedure<br>
+Complete Test 28<br>
+Using the keyboard, tap the 'tab' key until the "Hide" button has focus<br>
+Using the keyboard, tap the 'enter' key to close Display Preferences<br>
+Using the keyboard, tap the 'tab' key until the element to open the Display Preferences button has focus<br>
+Using the keyboard, tap the 'enter' key to open Display Preferences<br>
+Expected Results<br>
+The selected options should still be set<br>
+The main window should display the effects of the selected options<br>
+Display Preferences should display the effects of the selected options<br>
+Actual Results<br>
+Expected Results happen... and...<br>
+When the "text to speech" toggle is on before you tab to "hide" and hit enter, and then tab to "display preferences" and hit enter to re-open display preferences - the "text to speech" starts all over and back on top of the "text to speech" that is already reading. This is very overwhelming.</p>
+<p>Test 30: Keyboard, Reset</p>
+<p>Procedure<br>
+Complete Test 29<br>
+Using the keyboard, tap the 'tab' key until the "Reset All" button has focus<br>
+Using the keyboard, tap the 'enter' key to reset the options<br>
+Expected Results<br>
+The options should all be set to the initial default values<br>
+The main window should be reset to the initial default styles<br>
+Display Preferences should be reset to the initial default styles<br>
+Actual Results<br>
+Expected results occur except only one of the text to speech tracks stop automatically. Then the other one finishes reading the Overview Panel and then stops.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Safari, Chrome</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23579">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-15T15:10:23.521-0400">2015-06-15T15:10:23.521-0400</relative-time></i></p>
+                        <p>Now that we are using the Web Speech API the issue is slightly different. For one FF is not currently supported, but Chrome and Safari are. Secondly, on re-openning the panel, it seems something from the panel is read instead of the content on the page continuing.</p>
+
+                    </li>
+                    
+                    <li id="comment-27828">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2024-07-22T15:13:11.000-0400">2024-07-22T15:13:11.000-0400</relative-time></i></p>
+                        <p>Could not reproduce with FF 128 and Safari 17.5 on macOS 14.5</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5400/"><span class="aria-hidden">←</span> Previous: FLUID-5400</a>
+        <a class="mx-1" href="/browse/FLUID-5402/">Next: FLUID-5402 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

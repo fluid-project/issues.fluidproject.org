@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5172  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5172 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5172/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5172/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5172/">FLUID-5172</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5172: Some framework IoC tests fail in IE8</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5172">FLUID-5172</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-10-08T12:48:01.214-0400" prefix="">2013-10-08T12:48:01.214-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T11:27:30.258-0500" prefix="">2014-03-03T11:27:30.258-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Use IE8 to open up these test files:</p>
+<p><a href="http://build.fluidproject.org/infusion/tests/framework-tests/core/html/FluidIoC-test.html">http://build.fluidproject.org/infusion/tests/framework-tests/core/html/FluidIoC-test.html</a><br>
+<a href="http://build.fluidproject.org/infusion/tests/framework-tests/core/html/FluidIoCStandalone-test.html">http://build.fluidproject.org/infusion/tests/framework-tests/core/html/FluidIoCStandalone-test.html</a><br>
+<a href="http://build.fluidproject.org/infusion/tests/framework-tests/core/html/FluidIoCView-test.html">http://build.fluidproject.org/infusion/tests/framework-tests/core/html/FluidIoCView-test.html</a></p>
+<p>Some unit tests fail with the error: Event specification for event with name [XXX] does not include a base event specification.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Only fail IE8. </p>
+<p>Work fine with IE9, IE10 and latest version of firefox, safari and chrome.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14756">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-10-24T03:12:47.345-0400">2013-10-24T03:12:47.345-0400</relative-time></i></p>
+                        <p>This failure was caused by a combination of recent framework work. In particular, the combination of <a href="/browse/FLUID-5089/">FLUID-5089</a> "fluid.isPlainObject" and <a href="/browse/FLUID-5127/">FLUID-5127</a> "compact invokers" caused a new pathway to be possible where options material supplied to fluid.rawDefaults passed through a new expansion phase operated by fluid.expandCompact. This dispatched to the new "fluid.isPlainObject" utility which it turns out is faulty on IE8. On all reasonable browsers, the diagnostic test Object.prototype.toString.call supplied to null and undefined produces special results "[object Null]" and "[object Undefined]" respectively. Unfortunately on IE8, both of these tests produce the value "[object Object]" which is indistinguishable to the return from general objects. This caused configuration of the form</p>
+<p>events: {<br>
+event1: null<br>
+}<br>
+to become corrupted to <br>
+events: {<br>
+event1: {}<br>
+}</p>
+<p>by passing through fluid.expandCompact as a result of the unguarded test             if (fluid.isPlainObject(value)) { on line 1806 of FluidIoC.js</p>
+<p>The fix is to add a cheap test for falsy values at the beginning of fluid.isPlainObject</p>
+
+                    </li>
+                    
+                    <li id="comment-14758">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2013-10-30T13:00:08.194-0400">2013-10-30T13:00:08.194-0400</relative-time></i></p>
+                        <p>I have reviewed and tested this fix. Unfortunately we still have test failures in IE8, but this fix causes substantially fewer failures, and they fail further into the testing process. So I think it's a good fix.</p>
+<p>Here are the tests that still fail for me in IE8, post fix:</p>
+<p>ModelTransformation-test.html<br>
+FluidIoCStandalone-test.html<br>
+ProgressiveEnhancement-test.html<br>
+Builder-test.html<br>
+Panels-test.html<br>
+ImageReorderer-test.html<br>
+FileQueueView-test.html<br>
+HTML5UploaderSupport-test.html</p>
+
+                    </li>
+                    
+                    <li id="comment-14760">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2013-10-30T13:00:32.452-0400">2013-10-30T13:00:32.452-0400</relative-time></i></p>
+                        <p>Reviewed and merged into master at b20510c949cd943c8fa0dd652d2ffd22735b01b4.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5171/"><span class="aria-hidden">←</span> Previous: FLUID-5171</a>
+        <a class="mx-1" href="/browse/FLUID-5173/">Next: FLUID-5173 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

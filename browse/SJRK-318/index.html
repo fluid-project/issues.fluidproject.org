@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-318  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-318 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-318/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-318/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-318/">SJRK-318</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-318: The toc header is showing "[Object Object]" when the initial language is set to Spanish</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-318">SJRK-318</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-12-13T16:01:32.544-0500" prefix="">2019-12-13T16:01:32.544-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-12-16T17:48:48.473-0500" prefix="">2019-12-16T17:48:48.473-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Steps to reproduce the problem:</p>
+<p>1. Check out Gregor Moss's <a href="/browse/SJRK-255/">SJRK-255</a> branch - <a href="https://github.com/BlueSlug/sjrk-story-telling/tree/SJRK-255">https://github.com/BlueSlug/sjrk-story-telling/tree/SJRK-255</a><br>
+2. In SJRK root directory, copy the file sjrk.storyTelling.server.config.json5.example to sjrk.storyTelling.server.config.json5<br>
+3. Modify sjrk.storyTelling.server.config.json5 to set the value of "theme" to an empty string;<br>
+4. Open a powershell window, run these commands to start SJRK site:</p>
+<pre><code class="hljs language-java">docker run -d --name sjrk-couchdb couchdb:latest
+docker run -p <span class="hljs-number">5984</span>:<span class="hljs-number">5984</span> -d couchdb
+node src/server/db/dbSetup.js
+node index.js
+</code></pre>
+<p>5. Access <a href="http://localhost:8081/">http://localhost:8081/</a> in a browser to open SJRK website<br>
+6. Open UIO to turn on the table of content. TOC shows up and the header "table of content" is showing correctly<br>
+7. Click the link "Español" at the top right corner to switch to Spanish. The TOC header switches to correct language in Spanish<br>
+8. Refresh page. The TOC header now shows the wrong "[Object Object]". See attached 1.png<br>
+9. Click "English" link to switch the language. The TOC header continues showing as "[Object Object]"</p>
+<p>My debugging so far shows:<br>
+1. TOC will be recreated every time at a locale change - <a href="https://github.com/fluid-project/sjrk-story-telling/pull/35/files#diff-8d2014003434d9502a4871590ada6c4eR35-R43">https://github.com/fluid-project/sjrk-story-telling/pull/35/files#diff-8d2014003434d9502a4871590ada6c4eR35-R43</a><br>
+2. At TOC recreation, it fetches the header from "{messageLoader}.resources.tocMessage.parsed.tocHeader" - <a href="https://github.com/amb26/infusion/blob/FLUID-6145/src/framework/preferences/js/Enactors.js#L467">https://github.com/amb26/infusion/blob/FLUID-6145/src/framework/preferences/js/Enactors.js#L467</a><br>
+3. When the initial language is "en", "{messageLoader}.resources.tocMessage" is populated correctly, see attached 2.png<br>
+4. However, when the initial language is "es", "{messageLoader}.resources.tocMessage" seems in an earlier form that the needed messages are still in "{messageLoader}.resources.tocMessage.resourceSpec" instead of one level up. 3.png shows the structure in "tocMessage" and 4.png shows with the expanded "tocMessage.resourceSpec"</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/SJRK/SJRK-318/1.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/SJRK/SJRK-318/1.png" alt="1.png">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/SJRK/SJRK-318/2.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/SJRK/SJRK-318/2.png" alt="2.png">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/SJRK/SJRK-318/3.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/SJRK/SJRK-318/3.png" alt="3.png">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/SJRK/SJRK-318/4.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/SJRK/SJRK-318/4.png" alt="4.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26334">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2019-12-16T08:23:36.090-0500">2019-12-16T08:23:36.090-0500</relative-time></i></p>
+                        <p>I had a go at reproducing this but ran into a prior problem with the fluid-couch-config module. The error performing the dbSetup was as follows:</p>
+<pre><code class="hljs language-java">e:\Source\gits\sjrk-story-telling&gt;node src\server\db\dbSetup.js
+Infusion at path e:\Source\gits\sjrk-story-telling\node_modules\infusion is at top level
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">20.890</span>:  Registering <span class="hljs-keyword">module</span> sjrk-story-telling from path e:\Source\gits\sjrk-story-telling\
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">20.891</span>:  Registering <span class="hljs-keyword">module</span> infusion from path e:\Source\gits\sjrk-story-telling\node_modules\infusion\
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">20.892</span>:  Registering <span class="hljs-keyword">module</span> infusion from path e:\Source\gits\sjrk-story-telling\node_modules\infusion
+Resolved infusion from path e:\Source\gits\sjrk-story-telling\node_modules\kettle\node_modules\infusion\src\<span class="hljs-keyword">module</span> to e:/Source/gits/sjrk-story-telling/node_mod
+ules/infusion
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">20.994</span>:  Registering <span class="hljs-keyword">module</span> kettle from path e:\Source\gits\sjrk-story-telling\node_modules\kettle
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.372</span>:  Resolved infusion from path e:\Source\gits\sjrk-story-telling\node_modules\fluid-couch-config\node_modules\infusion\src\<span class="hljs-keyword">module</span> to e:/Source/gits/
+sjrk-story-telling/node_modules/infusion
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.387</span>:  Registering <span class="hljs-keyword">module</span> fluid-couch-config from path e:\Source\gits\sjrk-story-telling\node_modules\fluid-couch-config
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.420</span>:  Making sure DB _users exists in Couch instance at http:<span class="hljs-comment">//localhost:25984</span>
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.752</span>:  Making sure DB _replicator exists in Couch instance at http:<span class="hljs-comment">//localhost:25984</span>
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.776</span>:  Making sure DB _global_changes exists in Couch instance at http:<span class="hljs-comment">//localhost:25984</span>
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.801</span>:  Making sure DB stories exists in Couch instance at http:<span class="hljs-comment">//localhost:25984</span>
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.861</span>:  DB _users exists
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.862</span>:  No documents to update
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.862</span>:  No documents to update
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.863</span>:  SUCCESS
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.865</span>:  DB stories exists
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.866</span>:  Updating document at stories/_design/stories
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.869</span>:  DB _global_changes exists
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.869</span>:  No documents to update
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.869</span>:  No documents to update
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.869</span>:  SUCCESS
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.870</span>:  DB _replicator exists
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.870</span>:  No documents to update
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.870</span>:  No documents to update
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.870</span>:  SUCCESS
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.877</span>:  Existing document _design/stories found
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.877</span>:  Document _design/stories unchanged from existing in CouchDB, not updating
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.878</span>:  Updating document at stories/storyExample
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.882</span>:  Existing document storyExample found
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.882</span>:  Document storyExample has been changed, attempting to update
+<span class="hljs-number">13</span>:<span class="hljs-number">15</span>:<span class="hljs-number">21.883</span>:  FATAL ERROR: Uncaught exception: Cannot add property _rev, object is not extensible
+TypeError: Cannot add property _rev, object is not extensible
+    at e:\Source\gits\sjrk-story-telling\node_modules\fluid-couch-config\src\couchConfig.js:<span class="hljs-number">266</span>:<span class="hljs-number">26</span>
+    at Request._callback (e:\Source\gits\sjrk-story-telling\node_modules\nano\lib\nano.js:<span class="hljs-number">217</span>:<span class="hljs-number">16</span>)
+    at Request.self.callback (e:\Source\gits\sjrk-story-telling\node_modules\request\request.js:<span class="hljs-number">185</span>:<span class="hljs-number">22</span>)
+    at Request.emit (events.js:<span class="hljs-number">182</span>:<span class="hljs-number">13</span>)
+    at Request.&lt;anonymous&gt; (e:\Source\gits\sjrk-story-telling\node_modules\request\request.js:<span class="hljs-number">1161</span>:<span class="hljs-number">10</span>)
+    at Request.emit (events.js:<span class="hljs-number">182</span>:<span class="hljs-number">13</span>)
+    at IncomingMessage.&lt;anonymous&gt; (e:\Source\gits\sjrk-story-telling\node_modules\request\request.js:<span class="hljs-number">1083</span>:<span class="hljs-number">12</span>)
+    at Object.onceWrapper (events.js:<span class="hljs-number">273</span>:<span class="hljs-number">13</span>)
+    at IncomingMessage.emit (events.js:<span class="hljs-number">187</span>:<span class="hljs-number">15</span>)
+    at <span class="hljs-title function_">endReadableNT</span> <span class="hljs-params">(_stream_readable.js:<span class="hljs-number">1094</span>:<span class="hljs-number">12</span>)</span>
+    at process._tickCallback (internal/process/next_tick.js:<span class="hljs-number">63</span>:<span class="hljs-number">19</span>)
+</code></pre>
+<p>It looks like fluid-couch-config needs to be updated for the <a href="/browse/FLUID-6145/">FLUID-6145</a> immutable options scheme since it attempts to store mutable couch documents in its own options as so:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.couchConfig"</span>, {
+    gradeNames: <span class="hljs-string">"fluid.component"</span>,
+    couchOptions: {
+        couchUrl: <span class="hljs-string">"http://localhost:5984"</span>,
+        dbName: <span class="hljs-literal">null</span>, <span class="hljs-comment">// To be provided</span>
+    },
+    dbDocuments: {
+        <span class="hljs-comment">// An object whose keys are the IDs of documents to</span>
+        <span class="hljs-comment">// be created in the database, and the values are the documents</span>
+        <span class="hljs-comment">// themselves.</span>
+    },
+</code></pre>
+<p>It's unclear why these are stored in options at all since they don't seem to be read again by anything in couchConfig.js after they are updated in&#160;fluid.couchConfig.action.updateSingleDocument . A better model might be to resolve them from the returned promise value rather than mutating them in place in the argument list.</p>
+<p></p>
+
+                    </li>
+                    
+                    <li id="comment-26335">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2019-12-16T17:48:48.473-0500">2019-12-16T17:48:48.473-0500</relative-time></i></p>
+                        <p>Framework bug filed as&#160;<a href="https://issues.fluidproject.org/browse/FLUID-6442">https://issues.fluidproject.org/browse/FLUID-6442</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-317/"><span class="aria-hidden">←</span> Previous: SJRK-317</a>
+        <a class="mx-1" href="/browse/SJRK-319/">Next: SJRK-319 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

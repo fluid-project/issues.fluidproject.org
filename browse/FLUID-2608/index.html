@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2608  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2608 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2608/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2608/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2608/">FLUID-2608</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2608: The Infusion build scripts should provide more informative errors when input parameters (such as the list of things to build) is invalid</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2608">FLUID-2608</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Laurel%20Williams">Laurel Williams</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-04-20T09:58:07.000-0400" prefix="">2009-04-20T09:58:07.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-02T14:32:29.043-0500" prefix="">2014-03-02T14:32:29.043-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Build Scripts</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>I entered 'ant customBuild -Dinclude="UIOptions"' instead of "uiOptions" and got a stack dump as shown below.<br>
+We could provide a somewhat more graceful error.</p>
+<p>C:\Documents and Settings\Laurel\My Documents\fluid-1.0\build-scripts&gt;ant custom<br>
+Build -Dinclude="UIOptions" -Djsfilename="UIOptionsCustomInfusion.js"<br>
+"C:\Program Files\apache-ant-1.7.1"<br>
+"C:\Program Files\Java\jdk1.6.0_13"<br>
+""<br>
+Buildfile: build.xml</p>
+<p>clean:<br>
+[delete] Deleting directory C:\Documents and Settings\Laurel\My Documents\flu<br>
+id-1.0\build<br>
+[delete] Deleting directory C:\Documents and Settings\Laurel\My Documents\flu<br>
+id-1.0\products</p>
+<p>init:<br>
+[mkdir] Created dir: C:\Documents and Settings\Laurel\My Documents\fluid-1.0<br>
+\products<br>
+[mkdir] Created dir: C:\Documents and Settings\Laurel\My Documents\fluid-1.0<br>
+\build<br>
+[mkdir] Created dir: C:\Documents and Settings\Laurel\My Documents\fluid-1.0<br>
+\products\dist<br>
+[mkdir] Created dir: C:\Documents and Settings\Laurel\My Documents\fluid-1.0<br>
+\products\src-dist</p>
+<p>resolveDependencies:<br>
+Excluding modules:<br>
+Including modules: UIOptions<br>
+Processing module: UIOptions</p>
+<p>BUILD FAILED<br>
+java.io.FileNotFoundException: C:\Documents and Settings\Laurel\My Documents\flu<br>
+id-1.0\src\webapp\null\UIOptionsDependencies.json (The system cannot find the pa<br>
+th specified)<br>
+at java.io.FileInputStream.open(Native Method)<br>
+at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:106)<br>
+at java.io.FileReader.&lt;init&gt;(FileReader.java:55)<br>
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)</p>
+<p>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstruct<br>
+orAccessorImpl.java:39)<br>
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingC<br>
+onstructorAccessorImpl.java:27)<br>
+at java.lang.reflect.Constructor.newInstance(Constructor.java:513)<br>
+at org.mozilla.javascript.MemberBox.newInstance(MemberBox.java:166)<br>
+at org.mozilla.javascript.NativeJavaClass.constructSpecific(NativeJavaCl<br>
+ass.java:227)<br>
+at org.mozilla.javascript.NativeJavaClass.construct(NativeJavaClass.java<br>
+:183)<br>
+at org.mozilla.javascript.ScriptRuntime.newObject(ScriptRuntime.java:206<br>
+7)<br>
+at org.mozilla.javascript.gen.c1._c27(Unknown Source)<br>
+at org.mozilla.javascript.gen.c1.call(Unknown Source)<br>
+at org.mozilla.javascript.optimizer.OptRuntime.call1(OptRuntime.java:64)</p>
+<p>at org.mozilla.javascript.gen.c1._c21(Unknown Source)<br>
+at org.mozilla.javascript.gen.c1.call(Unknown Source)<br>
+at org.mozilla.javascript.optimizer.OptRuntime.callName(OptRuntime.java:<br>
+95)<br>
+at org.mozilla.javascript.gen.c1._c24(Unknown Source)<br>
+at org.mozilla.javascript.gen.c1.call(Unknown Source)<br>
+at org.mozilla.javascript.optimizer.OptRuntime.callName0(OptRuntime.java<br>
+:106)<br>
+at org.mozilla.javascript.gen.c1._c23(Unknown Source)<br>
+at org.mozilla.javascript.gen.c1.call(Unknown Source)<br>
+at org.mozilla.javascript.optimizer.OptRuntime.call2(OptRuntime.java:74)</p>
+<p>at org.mozilla.javascript.gen.c1._c28(Unknown Source)<br>
+at org.mozilla.javascript.gen.c1.call(Unknown Source)<br>
+at org.mozilla.javascript.optimizer.OptRuntime.callName0(OptRuntime.java<br>
+:106)<br>
+at org.mozilla.javascript.gen.c1._c8(Unknown Source)<br>
+at org.mozilla.javascript.gen.c1.call(Unknown Source)<br>
+at org.mozilla.javascript.optimizer.OptRuntime.call0(OptRuntime.java:55)</p>
+<p>at org.mozilla.javascript.gen.c1._c0(Unknown Source)<br>
+at org.mozilla.javascript.gen.c1.call(Unknown Source)<br>
+at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:3<br>
+37)<br>
+at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:275<br>
+5)<br>
+at org.mozilla.javascript.gen.c1.call(Unknown Source)<br>
+at org.mozilla.javascript.gen.c1.exec(Unknown Source)<br>
+at org.mozilla.javascript.Context.evaluateString(Context.java:1144)<br>
+at org.apache.bsf.engines.javascript.JavaScriptEngine.eval(JavaScriptEng<br>
+ine.java:138)<br>
+at org.apache.bsf.util.BSFEngineImpl.exec(BSFEngineImpl.java:141)<br>
+at org.apache.bsf.BSFManager$6.run(BSFManager.java:493)<br>
+at java.security.AccessController.doPrivileged(Native Method)<br>
+at org.apache.bsf.BSFManager.exec(BSFManager.java:491)<br>
+at org.apache.tools.ant.util.optional.ScriptRunner.executeScript(ScriptR<br>
+unner.java:100)<br>
+at org.apache.tools.ant.taskdefs.optional.Script.execute(Script.java:52)</p>
+<p>at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:288)<br>
+at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)<br>
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAcces<br>
+sorImpl.java:25)<br>
+at java.lang.reflect.Method.invoke(Method.java:597)<br>
+at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.jav<br>
+a:106)<br>
+at org.apache.tools.ant.Task.perform(Task.java:348)<br>
+at org.apache.tools.ant.Target.execute(Target.java:357)<br>
+at org.apache.tools.ant.Target.performTasks(Target.java:385)<br>
+at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1337)<br>
+at org.apache.tools.ant.Project.executeTarget(Project.java:1306)<br>
+at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExe<br>
+cutor.java:41)<br>
+at org.apache.tools.ant.Project.executeTargets(Project.java:1189)<br>
+at org.apache.tools.ant.Main.runBuild(Main.java:758)<br>
+at org.apache.tools.ant.Main.startAnt(Main.java:217)<br>
+at org.apache.tools.ant.launch.Launcher.run(Launcher.java:257)<br>
+at org.apache.tools.ant.launch.Launcher.main(Launcher.java:104)</p>
+<p>Total time: 0 seconds</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14392">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2009-04-20T11:43:12.000-0400">2009-04-20T11:43:12.000-0400</relative-time></i></p>
+                        <p>There is no error handling right now for the custom build parameters. This can be done in the javascript portion of the build. </p>
+
+                    </li>
+                    
+                    <li id="comment-14395">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-03-02T14:32:29.018-0500">2014-03-02T14:32:29.018-0500</relative-time></i></p>
+                        <p>This was fixed with the <a href="/browse/FLUID-5120/">FLUID-5120</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-2607/"><span class="aria-hidden">←</span> Previous: FLUID-2607</a>
+        <a class="mx-1" href="/browse/FLUID-2609/">Next: FLUID-2609 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

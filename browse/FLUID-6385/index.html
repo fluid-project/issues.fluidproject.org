@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6385  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6385 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6385/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6385/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6385/">FLUID-6385</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6385: Self Voicing Enactor and Orator tests halt when run as part of all-tests in MS Edge</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6385">FLUID-6385</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-07-24T09:13:11.549-0400" prefix="">2019-07-24T09:13:11.549-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:28.293-0400" prefix="">2024-07-22T10:35:28.293-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Self Voicing</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The Self Voicing Enactor tests halt when run as part of all-tests.html. The tests stall at "fluid.prefs.enactor.selfVoicing.init - at sequence position 14 or 16". However, if the tests are run on their own, they pass.</p>
+<p></p>
+<p>Similar for the Orator tests which stall at "fluid.orator.selectionReader: fluid.orator.selectionReader - at sequence position 3 or 21"</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>MS Edge 44 - Win 10 </p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6385/test.zip">
+                            
+                                test.zip
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25457">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-07-26T09:52:29.439-0400">2019-07-26T09:52:29.439-0400</relative-time></i></p>
+                        <p>It seems that both the Orator and Self Voicing enactor tests are stopping after a call to <a href="https://github.com/fluid-project/infusion/blob/master/tests/component-tests/orator/js/OratorTests-Utils.js#L109-L117">fluid.tests.orator.selection.selectNode</a>, which doesn't seem to trigger the next event.</p>
+
+                    </li>
+                    
+                    <li id="comment-25458">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-07-29T13:06:37.460-0400">2019-07-29T13:06:37.460-0400</relative-time></i></p>
+                        <p>It seems that the issue is around the "selectionchange" event not firing, or at least not hitting any bound listeners, when programmatically changing the selection within an iframe. This is what happens in the fluid.tests.orator.selection.selectNode method. Users initiated selections are still triggering the "selectionchange" event, so this is really only an issue in the tests. Specifically the all-tests which are run through an iframe. Also, if we log the selection after making a programmatic change, the selection is correct. Which further points to it being an issue with the event.</p>
+<p></p>
+<p>I also tested the [dev channel version of MS Edge|<a href="https://www.microsoftedgeinsider.com/en-us/download/">https://www.microsoftedgeinsider.com/en-us/download/</a>], which is the chromium based version, it does not exhibit the issue.</p>
+
+                    </li>
+                    
+                    <li id="comment-25459">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-07-29T13:08:30.295-0400">2019-07-29T13:08:30.295-0400</relative-time></i></p>
+                        <p>test.zip contains a couple of simple examples for testing this issue. test.html will automatically trigger a programatic selection and output the results to a DOM node and to the console. frame.html runs test.html in an iframe.</p>
+
+                    </li>
+                    
+                    <li id="comment-25460">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2020-11-10T10:33:05.506-0500">2020-11-10T10:33:05.506-0500</relative-time></i></p>
+                        <p>Chromium based versions of MS Edge have been officially released for a while, and do not exhibit this issue.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6384/"><span class="aria-hidden">←</span> Previous: FLUID-6384</a>
+        <a class="mx-1" href="/browse/FLUID-6386/">Next: FLUID-6386 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

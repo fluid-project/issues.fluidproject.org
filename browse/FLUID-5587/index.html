@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5587  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5587 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5587/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5587/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5587/">FLUID-5587</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5587: Framework should support namespaced options distributions rather than an array</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5587">FLUID-5587</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-01-14T16:21:37.807-0500" prefix="">2015-01-14T16:21:37.807-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-08T06:40:54.596-0400" prefix="">2024-07-08T06:40:54.596-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Part of our faulty thinking resulting in the "demands block model" resulted in us creating a system which was not "algebraically closed", in that some authors could perform actions which others could not undo. That is, since demands blocks did not have their own names, they could not be identified and targetted for overriding or removal. Whilst we have now substantially improved on this situation with the new "distributeOptions" system, we have committed a further instance of the same mistake - since the elements in the distributeOptions block are held in an array, the only possible accumulation model is for subgrades to append their elements onto supergrades' distributions. The only possible way to eliminate the effect of an options distribution is to somehow avoid including the grade in which it appears.<br>
+We need to support (and eventually ONLY support), named elements for distributeOptions elements just as we do for events, namespaced listeners, etc. such that higher-order authors can easily target and replace distributions in subgrades. This also even opens up the use-case of distributions targetting other distributions - finally delivering on an absolutely algebraically closed "advice" system.</p>
+<p>We will support arrays alongside hashes in the meantime as we migrate existing code over to the named system.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23932">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-01-14T16:26:40.615-0500">2015-01-14T16:26:40.615-0500</relative-time></i></p>
+                        <p>This issue was "re-realised" whilst trying to repair Kettle's model for contributing error handlers to dataSources nested within a server. The "ancient" system simply coupled every dataSource handler to a request's onError method, via an entire component named "errback". This at least was targetable as a whole via IoCSS. However, moving to a more correct design supplied the linkage in a distributeOptions block held in the server. However, it became realised that <strong>THIS</strong> distribution itself couldn't be targetted for removal - the semantics for multiple sources of advice fighting over the same target are unclear, and in any case, accumulative - one could only reliably arrange to add further grades to the target. We need a reliable way for a derived server to entirely eliminate or completely replace the distribution which arrives from the base server grade.</p>
+
+                    </li>
+                    
+                    <li id="comment-23934">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-08-20T15:26:06.311-0400">2015-08-20T15:26:06.311-0400</relative-time></i></p>
+                        <p>Merged into trunk at revision 282f1a318718eed0b0ec060fb8b4ad254417fd7e</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5586/"><span class="aria-hidden">←</span> Previous: FLUID-5586</a>
+        <a class="mx-1" href="/browse/FLUID-5588/">Next: FLUID-5588 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

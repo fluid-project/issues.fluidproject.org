@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6378  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6378 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6378/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6378/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6378/">FLUID-6378</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6378: Add ability to search infusion docs using phrases.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6378">FLUID-6378</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Tony Atkins [RtF]</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Tony%20Atkins%20%5BRtF%5D">Tony Atkins [RtF]</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-04-30T07:13:27.131-0400" prefix="">2019-04-30T07:13:27.131-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:19.047-0400" prefix="">2024-07-22T10:35:19.047-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Tech. Documentation</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p><a href="/browse/FLUID-5722/">FLUID-5722</a> added basic searching of the documentation.  Antranig Basman and I have discussed improvements to this, namely:</p>
+<ol>
+<li>Support for quoted phrases or quoted words as exact matches.</li>
+<li>Support for plus and minuses.</li>
+</ol>
+<p>As Fuse.js <a href="https://github.com/krisk/Fuse/issues/206">does not support phrase matching</a>, but does support "whole query" matching, one approach would be to create two Fuse instances, one "exact", one "fuzzy".  We would then remove quoted phrases from the overall query string, and search for those individually using the "exact" search.  The non-phrase data remaining would be run through the "fuzzy" search.  The results would be interpolated such that:</p>
+<ol>
+<li>The "relevance" score for each "hit" (page and section) would be the sum of its relevance in the individual searches, such that a hit that matches multiple phrases would score higher than a hit that matches only one phrase.</li>
+<li>Any phrase with a plus would be used to filter "fuzzy" results to ensure that only pages that contain the exact phrase are allowed.</li>
+<li>Any phrase with a minus would be used to exclude matches from "fuzzy" results (and other phrase matching.</li>
+</ol>
+<p>This approach to phrase matching would multiply the search time, i.e. you'd need 50-75 ms extra per phrase, so we might need to add a loading animation depending.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6378/Screen Shot 2019-07-09 at 21.00.34.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6378/Screen Shot 2019-07-09 at 21.00.34.png" alt="Screen Shot 2019-07-09 at 21.00.34.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22942">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2019-06-30T18:03:49.769-0400">2019-06-30T18:03:49.769-0400</relative-time></i></p>
+                        <p>If Fuse does any kind of fuzzy matching, it should at least be on the basis of some kind of recognisable stemming. Right now, a search for "reference" also hits "preference" which is nonsensical. Unfortunately each time nerds reinvent the wheel they throw out the last 30 years of its turns.</p>
+
+                    </li>
+                    
+                    <li id="comment-22945">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2019-07-01T04:29:14.816-0400">2019-07-01T04:29:14.816-0400</relative-time></i></p>
+                        <p>Looking at their <a href="https://fusejs.io">demo as docs</a>, it seems like the "tokenize" option might address this.  We'd want to test both for performance and relevance to confirm, but with luck this part might simply be a change in configuration options.</p>
+
+                    </li>
+                    
+                    <li id="comment-22947">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2019-07-01T04:53:31.661-0400">2019-07-01T04:53:31.661-0400</relative-time></i></p>
+                        <p>It seems like we really need the tokenise option, further testing today highlights the problems with the threshold, distance, and location approach.   Take for example something as simple as searching for promise rejection material.</p>
+<ul>
+<li><a href="https://docs.fluidproject.org/infusion/development/search.html?qs=%22promise%20reject%22">searching for </a><code>promise.reject</code> returns the expected result.</li>
+<li><a href="https://docs.fluidproject.org/infusion/development/search.html?qs=%22promise%20reject%22">searching for </a><code>promise reject</code> returns the same result.</li>
+<li><a href="https://docs.fluidproject.org/infusion/development/search.html?qs=%22reject%20promise%22">searching for </a><code>reject promise</code> returns zero results.</li>
+</ul>
+<p>I've also noticed that the problem is a bit more severe than simply not supporting plus signs as quotes.  For example:</p>
+<ul>
+<li><a href="https://docs.fluidproject.org/infusion/development/search.html?qs=%22promise%20-resolve%22">searching for </a><code>promise -resolve</code> only returns a single tangentially related result that includes <code>resolve</code>.</li>
+<li><a href="https://docs.fluidproject.org/infusion/development/search.html?qs=%22promise%20%2Breject%22">searching for </a><code>promise +reject</code> returns zero results.</li>
+<li><a href="https://docs.fluidproject.org/infusion/development/search.html?qs=%22%5C%22promise%20rejects%5C%22%22">searching for </a><code>"promise rejects"</code> returns zero results, but if you <a href="https://docs.fluidproject.org/infusion/development/search.html?qs=%22promise%20rejects%22">remove the quotes</a>, the desired result is returned.</li>
+</ul>
+<p>So it seems like plus signs, minus signs, and quotes  at best result in confusing search hits, and are often harmful.  I am thinking through the query string parsing strategy and other issues at the moment and may spike this improvement between other things.</p>
+
+                    </li>
+                    
+                    <li id="comment-22950">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2019-07-01T05:36:22.937-0400">2019-07-01T05:36:22.937-0400</relative-time></i></p>
+                        <p>There is no stemming support at all, it seems like our options within Fuse.js are:</p>
+<ol>
+<li><strong>current behaviour</strong>: return words matching each word as a substring, i.e. spaces and other word boundaries are not meaningful.   Order by threshold, location, and distance.</li>
+<li><strong>tokenize</strong>: Only return matches containing one or more of the search terms, but only matching "whole words".</li>
+<li><strong>tokenize and matchAllTokens</strong>: Only return matches containing all of the whole words (in any order) with matches in the correct order ranked higher.</li>
+</ol>
+<p>First, let's assume that:</p>
+<ol>
+<li>All words and phrases with plusses are "must have"</li>
+<li>All words and phrases with minuses are "must not have"</li>
+<li>All words and phrases with neither are "may have" (used to boost weighting).</li>
+</ol>
+<p>We could achieve something more reasonable than we have now with multiple passes, as follows:</p>
+<ol>
+<li>Each "must have" phrase is used in a  "tokenize and match all tokens" pass, filtered to exact matches.</li>
+<li>Each "must not have" phrase is used in a "tokenize and match all tokens" pass, filtered to exact matches.</li>
+<li>All "must have" individual words are used in a "tokenize and match all tokens" pass.</li>
+<li>All "must not have" individuals words are used in a "tokenize and match all tokens" pass.</li>
+<li>Each "may have" phrase is used in a "tokenize and match all tokens" pass, filtered to exact matches.</li>
+<li>All "may have" individual words are used in a "tokenize" pass.</li>
+<li>"may have" and "must have" results are combined into a single set of results in which "must haves" that also match "may haves" are upweighted.</li>
+<li>the combined results are updated to filter out all "must not have" results.</li>
+</ol>
+<p>My assumption in the above design is that only including "may not have" words and phrases is not supported.  Filtering, upweighting, etc. are all handled using the section identifier, i.e. a page may contain excluded material in one or more sections but still have search hits from other sections returned.</p>
+
+                    </li>
+                    
+                    <li id="comment-22953">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2019-07-08T10:48:23.070-0400">2019-07-08T10:48:23.070-0400</relative-time></i></p>
+                        <p>In later work with fuse.js, I was having difficulty performing a search in which one or more search terms are required in a given search.  This is a deal breaker for any meaningful improvement, and is a reason to convert to using lunr.js as Antranig and I have been discussing.  In addition, although its indexing time is lower, fuse.js requires so much time per search that we are better off moving to lunr.js purely for performance reasons, as advanced searches might take four or five search passes and end up taking multiple seconds with fuse.js.</p>
+<p>I completed the search string parsing that is required for either approach earlier today and will move onto the fuse.js refactor shortly.  With fuse.js I think it's possible to even achieve phrase matching as a post-search filtering step without bloating the load time too much.</p>
+
+                    </li>
+                    
+                    <li id="comment-22955">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2019-07-09T14:56:52.504-0400">2019-07-09T14:56:52.504-0400</relative-time></i></p>
+                        <p>I completed the initial work with lunr.js, it definitely distinguishes "preference" (which stems down to "prefer") from "reference" (which stems down to "refer").  I need to update the highlighting and make a go at quick phrase searching, and then I'll put in the pull.</p>
+
+                    </li>
+                    
+                    <li id="comment-22957">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2019-07-09T15:01:17.639-0400">2019-07-09T15:01:17.639-0400</relative-time></i></p>
+                        <p>My work to address this will also remove the docpad metadata from the index and digest, so that we don't end up with results like this:</p>
+<!-- media: file 74084aa5-6eff-4817-8d1b-dc7a738c9a11 -->
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6377/"><span class="aria-hidden">←</span> Previous: FLUID-6377</a>
+        <a class="mx-1" href="/browse/FLUID-6380/">Next: FLUID-6380 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

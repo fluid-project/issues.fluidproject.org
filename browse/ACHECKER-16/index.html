@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> ACHECKER-16  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" ACHECKER-16 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/ACHECKER-16/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/ACHECKER-16/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/ACHECKER" data-pagefind-filter="project">AChecker</a></li>
+                <li><a href="/browse/ACHECKER-16/">ACHECKER-16</a></li>
+            </ol>
+        </nav>
+        <h1>ACHECKER-16: Cannot Add/Edit Language because of character set not updating</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/ACHECKER-16">ACHECKER-16</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/ACHECKER/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>To Do</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/ACHECKER/?reporter=Victor%20Alagwu">Victor Alagwu</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-08-13T05:00:08.215-0400" prefix="">2018-08-13T05:00:08.215-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-08-14T16:28:04.515-0400" prefix="">2018-08-14T16:28:04.515-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p></p>
+<table>
+<thead>
+<tr>
+<th><strong>Browser</strong></th>
+<th><strong>Version</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chrome</td>
+<td>Latest Stable release</td>
+</tr>
+</tbody>
+</table>
+<p>This bug exit in both AChecker 1.4 and AChecker 1.5</p>
+<p><strong>Add/Edit Language</strong></p>
+<p></p>
+<p></p>
+<p><strong>Expected Result:</strong>&#160;After the user has entered the details&#160;required with the character set inclusive, it is&#160;expected that a&#160;success&#160;message is reported*.*</p>
+<p><strong>Bug discovered:</strong>&#160;The admin cannot add or edit language successfully because of the <strong>character set</strong> is empty, even when the character set details are entered.</p>
+<p><strong>Procedure to regenerate the same bug:</strong></p>
+<ul>
+<li>Login as admin</li>
+<li>*<strong>Via any browser of your choice, enter this URL</strong> *"[*ACHECKER&#160;DIRECTORY]<a href="http://localhost/achecker_new/language/language_add_edit.php">/language/language_add_edit.php</a>&#160;"</li>
+<li>Ensure [ACHECKER DIRECTORY] is the directory when AChecker is stored</li>
+<li>Enter all the required details, then click save.</li>
+<li>You will notice the below error message, which is not supposed to be, as long as the charset input field is filled.</li>
+<li>
+<!-- media: file 643f7fbd-c200-4cc1-848d-076e5599b303 -->
+</li>
+</ul>
+<p></p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/ACHECKER/ACHECKER-16/Screenshot.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/ACHECKER/ACHECKER-16/Screenshot.png" alt="Screenshot.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/ACHECKER-15/"><span class="aria-hidden">←</span> Previous: ACHECKER-15</a>
+        
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

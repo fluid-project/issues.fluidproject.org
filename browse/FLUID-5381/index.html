@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5381  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5381 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5381/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5381/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5381/">FLUID-5381</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5381: Support the escaping of dots in object paths for mergePolicy</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5381">FLUID-5381</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-05-26T10:40:43.254-0400" prefix="">2014-05-26T10:40:43.254-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-06-07T09:56:46.897-0400" prefix="">2018-06-07T09:56:46.897-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In the case where one or more dots are presented in the original object paths, mergePolicy doesn't support the escaping of those dots. The example:</p>
+<p>The variables of source objects to be merged. Note the dots in a path:</p>
+<pre><code class="hljs language-java"><span class="hljs-type">var</span> <span class="hljs-variable">source1</span> <span class="hljs-operator">=</span> {
+            a: {
+                <span class="hljs-string">"b.c"</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]
+            }
+        };
+
+        <span class="hljs-type">var</span> <span class="hljs-variable">source2</span> <span class="hljs-operator">=</span> {
+            a: {
+                <span class="hljs-string">"b.c"</span>: [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]
+            }
+        };
+</code></pre>
+<p>To escape the dots in the path, the merge policy is defined as:</p>
+<pre><code class="hljs language-java"><span class="hljs-type">var</span> <span class="hljs-variable">mergePolicy</span> <span class="hljs-operator">=</span> {
+            <span class="hljs-string">"a.b\\.c"</span>: fluid.arrayConcatPolicy
+        };
+</code></pre>
+<p>However, since the escaping in the mergePolicy is not yet supported, rather than returning this expected result:</p>
+<pre><code class="hljs language-java"><span class="hljs-type">var</span> <span class="hljs-variable">expected</span> <span class="hljs-operator">=</span> {
+            a: {
+                <span class="hljs-string">"b.c"</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]
+            }
+        };
+</code></pre>
+<p>The path specified in the mergePolicy is ignored and the actual returned value is the variable of source2.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22484">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-05-27T12:06:55.974-0400">2014-05-27T12:06:55.974-0400</relative-time></i></p>
+                        <p>Submitted a pull request that adds a unit test to demonstrate this issue: <a href="https://github.com/fluid-project/infusion/pull/522">https://github.com/fluid-project/infusion/pull/522</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22486">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-06-07T07:05:54.066-0400">2018-06-07T07:05:54.066-0400</relative-time></i></p>
+                        <p>See the mothballed PR for comments.</p>
+
+                    </li>
+                    
+                    <li id="comment-22488">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2018-06-07T09:56:46.889-0400">2018-06-07T09:56:46.889-0400</relative-time></i></p>
+                        <p>Given we didn't close the pull, this implies that we are interested in this functionality in general even if it won't be implemented in precisely the way requested. Keeping this open so we can continue to track it</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5380/"><span class="aria-hidden">←</span> Previous: FLUID-5380</a>
+        <a class="mx-1" href="/browse/FLUID-5382/">Next: FLUID-5382 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

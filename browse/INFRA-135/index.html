@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-135  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-135 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-135/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-135/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-135/">INFRA-135</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-135: Timeout stalled buildkite jobs</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-135">INFRA-135</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Avtar Gill</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-03-07T14:38:03.300-0500" prefix="">2018-03-07T14:38:03.300-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-03-28T13:07:15.391-0400" prefix="">2018-03-28T13:07:15.391-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Recently I submitted updates to a PR that failed to complete their buildkite steps.</p>
+<p><a href="https://buildkite.com/fluid-project/fluid-infusion/builds/65">https://buildkite.com/fluid-project/fluid-infusion/builds/65</a> <br>
+<a href="https://buildkite.com/fluid-project/fluid-infusion/builds/67">https://buildkite.com/fluid-project/fluid-infusion/builds/67</a></p>
+<p>It seems that this was related to a missing dependency in one of the test files. However, showcased an issue with the current setup where a stalled buildkite job will block all other buildkite operations.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25807">
+                        <p class="mb-0"><b>Avtar Gill</b> <i>commented <relative-time datetime="2018-03-07T16:23:13.249-0500">2018-03-07T16:23:13.249-0500</relative-time></i></p>
+                        <p>I'm aiming to make a PR for this next week. For reference there's a way to create a global timeout using the Buildkite web UI but we're using pipeline configs:</p>
+<p><a href="https://github.com/buildkite/feedback/issues/170">https://github.com/buildkite/feedback/issues/170</a></p>
+<p>The workaround will be to add <code>timeout_in_minutes</code> to <a href="https://github.com/fluid-project/infusion/blob/master/.buildkite/pipeline.yml">each step</a>.</p>
+
+                    </li>
+                    
+                    <li id="comment-25808">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-03-28T13:07:15.388-0400">2018-03-28T13:07:15.388-0400</relative-time></i></p>
+                        <p>Avtar submitted <a href="https://github.com/fluid-project/infusion/pull/884">PR#884</a> which added timeouts.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-134/"><span class="aria-hidden">←</span> Previous: INFRA-134</a>
+        <a class="mx-1" href="/browse/INFRA-136/">Next: INFRA-136 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

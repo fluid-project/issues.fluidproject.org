@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6588  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6588 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6588/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6588/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6588/">FLUID-6588</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6588: onResourcesLoaded event can fire before createOnEvent component can register its listener</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6588">FLUID-6588</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-01-11T09:06:55.951-0500" prefix="">2021-01-11T09:06:55.951-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-17T08:12:34.351-0400" prefix="">2024-07-17T08:12:34.351-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This bug affects all fairly recent versions of the framework (from the latter half of 2020 or so). In some situation, possibly when I/O resolves synchronously as a result of being cached by the browser from an earlier request, the onResourcesLoaded event of a ResourceLoader component can fire before fluid.bindDeferredComponent via fluid.concludeComponentObservation can register its listener. The following trace was obtained from Tony Atkins [RtF] recent update of fluid-handlebars which is in progress at <a href="https://github.com/fluid-project/fluid-handlebars/pull/38">https://github.com/fluid-project/fluid-handlebars/pull/38</a></p>
+<pre><code class="hljs language-java">bindDeferred instantiation <span class="hljs-keyword">for</span> main of parent component { typeName: <span class="hljs-string">"fluid.tests.templateAware.testEnvironment id: 7oh44guo-77"</span> gradeNames: [<span class="hljs-string">"fluid.test.testEnvironment"</span>,<span class="hljs-string">"fluid.tests.templateAware.testEnvironment"</span>]} at path testEnvironment-7oh44guo-<span class="hljs-number">77</span> <span class="hljs-keyword">for</span> event {that}.events.createFixtures
+testem.js:<span class="hljs-number">967</span> bindDeferred instantiation <span class="hljs-keyword">for</span> contained of parent component { typeName: <span class="hljs-string">"fluid.tests.templateAware.testEnvironment id: 7oh44guo-77"</span> gradeNames: [<span class="hljs-string">"fluid.test.testEnvironment"</span>,<span class="hljs-string">"fluid.tests.templateAware.testEnvironment"</span>]} at path testEnvironment-7oh44guo-<span class="hljs-number">77</span> <span class="hljs-keyword">for</span> event {that}.events.createFixtures
+testem.js:<span class="hljs-number">967</span> 
+
+firing onResourcesLoaded <span class="hljs-keyword">for</span> component { typeName: <span class="hljs-string">"fluid.tests.templateAware.serverResourceAware id: 7oh44guo-124"</span> gradeNames: [<span class="hljs-string">"fluid.resourceLoader"</span>,<span class="hljs-string">"fluid.handlebars.serverResourceAware"</span>,<span class="hljs-string">"fluid.binder"</span>,<span class="hljs-string">"fluid.binder.bindOnDomChange"</span>,<span class="hljs-string">"fluid.baseViewComponent"</span>,<span class="hljs-string">"fluid.handlebars.templateAware"</span>,<span class="hljs-string">"fluid.handlebars.templateAware.serverResourceAware"</span>,<span class="hljs-string">"fluid.tests.handlebars.templateAware.serverResourceAware"</span>,<span class="hljs-string">"fluid.tests.templateAware.serverResourceAware"</span>]} at path testEnvironment-7oh44guo-<span class="hljs-number">77.</span>main
+testem.js:<span class="hljs-number">967</span> 
+
+Added bindDeferred listener to event {fluid.handlebars.serverResourceAware}.events.onResourcesLoaded of component { typeName: <span class="hljs-string">"fluid.tests.templateAware.contained id: 7oh44guo-125"</span> gradeNames: [<span class="hljs-string">"fluid.resourceLoader"</span>,<span class="hljs-string">"fluid.handlebars.serverResourceAware"</span>,<span class="hljs-string">"fluid.binder"</span>,<span class="hljs-string">"fluid.binder.bindOnDomChange"</span>,<span class="hljs-string">"fluid.baseViewComponent"</span>,<span class="hljs-string">"fluid.handlebars.templateAware"</span>,<span class="hljs-string">"fluid.handlebars.templateAware.serverResourceAware"</span>,<span class="hljs-string">"fluid.tests.handlebars.templateAware.serverResourceAware"</span>,<span class="hljs-string">"fluid.tests.templateAware.serverResourceAware"</span>,<span class="hljs-string">"fluid.tests.templateAware.contained"</span>]} at path testEnvironment-7oh44guo-<span class="hljs-number">77.</span>contained:  
+fluid.event.firer
+testem.js:<span class="hljs-number">967</span> 
+
+Added bindDeferred listener to event {fluid.handlebars.serverResourceAware}.events.onResourcesLoaded of component { typeName: <span class="hljs-string">"fluid.tests.templateAware.serverResourceAware id: 7oh44guo-124"</span> gradeNames: [<span class="hljs-string">"fluid.resourceLoader"</span>,<span class="hljs-string">"fluid.handlebars.serverResourceAware"</span>,<span class="hljs-string">"fluid.binder"</span>,<span class="hljs-string">"fluid.binder.bindOnDomChange"</span>,<span class="hljs-string">"fluid.baseViewComponent"</span>,<span class="hljs-string">"fluid.handlebars.templateAware"</span>,<span class="hljs-string">"fluid.handlebars.templateAware.serverResourceAware"</span>,<span class="hljs-string">"fluid.tests.handlebars.templateAware.serverResourceAware"</span>,<span class="hljs-string">"fluid.tests.templateAware.serverResourceAware"</span>]} at path testEnvironment-7oh44guo-<span class="hljs-number">77.</span>main:  
+fluid.event.firer
+testem.js:<span class="hljs-number">967</span> 
+
+firing onResourcesLoaded <span class="hljs-keyword">for</span> component { typeName: <span class="hljs-string">"fluid.tests.templateAware.contained id: 7oh44guo-125"</span> gradeNames: [<span class="hljs-string">"fluid.resourceLoader"</span>,<span class="hljs-string">"fluid.handlebars.serverResourceAware"</span>,<span class="hljs-string">"fluid.binder"</span>,<span class="hljs-string">"fluid.binder.bindOnDomChange"</span>,<span class="hljs-string">"fluid.baseViewComponent"</span>,<span class="hljs-string">"fluid.handlebars.templateAware"</span>,<span class="hljs-string">"fluid.handlebars.templateAware.serverResourceAware"</span>,<span class="hljs-string">"fluid.tests.handlebars.templateAware.serverResourceAware"</span>,<span class="hljs-string">"fluid.tests.templateAware.serverResourceAware"</span>,<span class="hljs-string">"fluid.tests.templateAware.contained"</span>]} at path testEnvironment-7oh44guo-<span class="hljs-number">77.</span>contained
+testem.js:<span class="hljs-number">967</span> 
+
+bindDeferred instantiation <span class="hljs-keyword">for</span> renderer of parent component { typeName: <span class="hljs-string">"fluid.tests.templateAware.contained id: 7oh44guo-125"</span> gradeNames: [<span class="hljs-string">"fluid.resourceLoader"</span>,<span class="hljs-string">"fluid.handlebars.serverResourceAware"</span>,<span class="hljs-string">"fluid.binder"</span>,<span class="hljs-string">"fluid.binder.bindOnDomChange"</span>,<span class="hljs-string">"fluid.baseViewComponent"</span>,<span class="hljs-string">"fluid.handlebars.templateAware"</span>,<span class="hljs-string">"fluid.handlebars.templateAware.serverResourceAware"</span>,<span class="hljs-string">"fluid.tests.handlebars.templateAware.serverResourceAware"</span>,<span class="hljs-string">"fluid.tests.templateAware.serverResourceAware"</span>,<span class="hljs-string">"fluid.tests.templateAware.contained"</span>]} at path testEnvironment-7oh44guo-<span class="hljs-number">77.</span>contained <span class="hljs-keyword">for</span> event {fluid.handlebars.serverResourceAware}.events.onResourcesLoaded
+testem.js:<span class="hljs-number">967</span> 
+
+containedRendered event triggered.
+</code></pre>
+<p>This should be impossible because of the rather conservative explicit deferral in fluid.fetchResources.checkCompletion</p>
+<pre><code class="hljs language-java">fluid.fetchResources.checkCompletion = function (resourceSpecs, resourceFetcher) {
+        <span class="hljs-type">var</span> <span class="hljs-variable">incomplete</span> <span class="hljs-operator">=</span> fluid.find_if(resourceSpecs, function (resourceSpec) {
+            <span class="hljs-keyword">return</span> !resourceSpec.promise.disposition;
+        });
+        <span class="hljs-keyword">if</span> (!incomplete) {
+            <span class="hljs-comment">// Close over this since it might get re-initialised</span>
+            <span class="hljs-type">var</span> <span class="hljs-variable">completionPromise</span> <span class="hljs-operator">=</span> resourceFetcher.completionPromise;
+            <span class="hljs-comment">// Always defer notification in an anti-Zalgo scheme to ease problems like <a href="/browse/FLUID-6202/">FLUID-6202</a></span>
+            fluid.invokeLater(function () {
+                <span class="hljs-keyword">if</span> (!completionPromise.disposition) {
+                    completionPromise.resolve(resourceSpecs);
+                }
+            });
+        }
+    };
+</code></pre>
+<p>but in any case we observe that concludeComponentObservation is probably an unhelpfully late time to bind these listeners - in the modern framework there are all kinds of events that can fire during construction.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6588/adtkins-transcript.txt">
+                            
+                                adtkins-transcript.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25672">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2021-01-14T16:10:48.888-0500">2021-01-14T16:10:48.888-0500</relative-time></i></p>
+                        <p>Diagnosis: The headline described situation is indeed the cause. The missing pieces of the puzzle are - <br>
+i) The serverTemplateAware component issued bindings directly from its model into the resources area, which unwittingly enlisted itself into the "fast path" of resource fetching (a similar kind of "future punning" as when the Astea team managed to source a collection of dynamicComponents from a model field)<br>
+ii) This had the effect of initiating the resource fetch extremely early and enlisting the entire set of co-instantiating components into a model transaction. However,<br>
+iii) The timing of the onResourcesLoaded event was left as direct - regardless of the condition of the overall transaction, the event fired the moment that all the resources for any one component were complete. As a result, this then fired the event that was listened to by createOnEvent, which was not listened to since the component had not yet reached concludeComponentObservation.</p>
+<p>This was an unfortunate interaction between "old world" and "new world" semantics that is sort of unavoidable, and we will have to imagine that such "old world" code will cease to exist. In the meantime, faced with the choice of allowing createOnEvent components before onCreate, and special-casing this firing, we choose the latter - since a user who is part of "old world" semantics is always going to be surprised by trying to react to or trigger a component construction when the surrounding component tree is partially constructed. </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6587/"><span class="aria-hidden">←</span> Previous: FLUID-6587</a>
+        <a class="mx-1" href="/browse/FLUID-6589/">Next: FLUID-6589 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

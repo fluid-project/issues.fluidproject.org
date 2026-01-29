@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6175  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6175 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6175/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6175/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6175/">FLUID-6175</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6175: Implement a self voicing widget with a play/pause button</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6175">FLUID-6175</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-08-01T09:11:07.957-0400" prefix="">2017-08-01T09:11:07.957-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-07-20T10:45:28.058-0400" prefix="">2018-07-20T10:45:28.058-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Self Voicing</li>
+                            
+                            <li>Text To Speech</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The self voicing widget should be based off of the designs (&#160;<a href="https://wiki.fluidproject.org/display/fluid/%28Floe%29+UI+Options+Design+Walkthrough%2C+C.1?preview=/32014373/34734324/uio_tts1.jpg">https://wiki.fluidproject.org/display/fluid/(Floe)+UI+Options+Design+Walkthrough%2C+C.1?preview=/32014373/34734324/uio_tts1.jpg</a>&#160;). At this point it will only include play / pause functionality, and be injected at a fixed location on the page ( similar to ToC ).</p>
+<p>The self voicing will read through the entire page, but will be able to pause and resume.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15786">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-04-05T16:16:48.278-0400">2018-04-05T16:16:48.278-0400</relative-time></i></p>
+                        <p>Unicode values for play (U+25B6) and pause (U+2016)</p>
+
+                    </li>
+                    
+                    <li id="comment-15788">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-04-19T12:54:02.809-0400">2018-04-19T12:54:02.809-0400</relative-time></i></p>
+                        <p>Discussion with Antranig Basman in the fluid-work IRC channel about how to add the UI as an enactor.</p>
+<p><a href="https://botbot.me/freenode/fluid-work/2018-04-19/?msg=99166163&page=2">https://botbot.me/freenode/fluid-work/2018-04-19/?msg=99166163&amp;page=2</a></p>
+<p>In summary we'll port over the fluid.newViewComponent ( <a href="https://github.com/fluid-project/fluid-authoring/blob/FLUID-4884/src/js/ViewComponentSupport.js#L20">https://github.com/fluid-project/fluid-authoring/blob/FLUID-4884/src/js/ViewComponentSupport.js#L20</a>&#160;). This will allow it to either use an existing container or render out its own.</p>
+
+                    </li>
+                    
+                    <li id="comment-15791">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-07-20T10:45:28.054-0400">2018-07-20T10:45:28.054-0400</relative-time></i></p>
+                        <p>Addressed with PR (&#160;<a href="https://github.com/fluid-project/infusion/pull/903">https://github.com/fluid-project/infusion/pull/903</a>&#160;) for <a href="/browse/FLUID-6177/">FLUID-6177</a>&#160;merged into the project repo at&#160;272cf702d5bf749172c0ba2015ba00dcceb526b1</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6174/"><span class="aria-hidden">←</span> Previous: FLUID-6174</a>
+        <a class="mx-1" href="/browse/FLUID-6176/">Next: FLUID-6176 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

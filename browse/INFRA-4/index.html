@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-4  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-4 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-4/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-4/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-4/">INFRA-4</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-4: Implement backup infrastructure</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-4">INFRA-4</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Resolved</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-07-29T10:13:23.262-0400" prefix="">2015-07-29T10:13:23.262-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-09-04T09:36:19.255-0400" prefix="">2015-09-04T09:36:19.255-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The current infrastructure is based around rsnapshot and file copies.</p>
+<p>A new solution based on Attic and its snapshot-enabled repository is to be implemented.</p>
+<p>Additionally, the QCOW2 format used for virtual disks in the KVM cluster also offers snapshots. Those should be investigated and possibly integrated into the backup infrastructure as a simpler form of backups at a lower-level.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/INFRA/INFRA-4/docpad.txt">
+                            
+                                docpad.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25844">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2015-08-03T17:46:40.594-0400">2015-08-03T17:46:40.594-0400</relative-time></i></p>
+                        <p>Attic has been implemented throughout all the new infrastructure (KVM-based) with an Ansible role and supporting scripts (see: <a href="http://github.com/inclusive-design/ops/ansible/roles/attic">http://github.com/inclusive-design/ops/ansible/roles/attic</a> and the scripts in the bin directory). The original Attic role was enhanced to support local and remote repositories as well as pruning, among other changes.</p>
+<p>The server tor1-prd-bkp01 was deployed with a 1TB area for backups (running on tor1-prd-srv06, away from the other VMs). Attic is configured to use remote repositories over SSH, one per server (see /backup/attic). Each server has a passwordless SSH key that is used to connect to the central backup server as the 'attic' user (in the future this could be changed to one user per server but I felt it was too much complexity for now).</p>
+<p>Next step is to request Yong/Paul for an area in their CommVault backup system to store our backups off-site.</p>
+
+                    </li>
+                    
+                    <li id="comment-25845">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2015-08-18T13:59:59.519-0400">2015-08-18T13:59:59.519-0400</relative-time></i></p>
+                        <p>The backup code has been running and seems stable. It's triggered by a backup.sh script in the ops repository (ops/ansible/bin/backup.sh) that initiates database dumps first and then initiates attic to perform the remote backup.</p>
+
+                    </li>
+                    
+                    <li id="comment-25846">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2015-09-04T09:36:19.253-0400">2015-09-04T09:36:19.253-0400</relative-time></i></p>
+                        <p>We've had a few weeks of backups using Attic and everything seems to be working as expected.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-3/"><span class="aria-hidden">←</span> Previous: INFRA-3</a>
+        <a class="mx-1" href="/browse/INFRA-5/">Next: INFRA-5 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

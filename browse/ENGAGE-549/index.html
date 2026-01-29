@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> ENGAGE-549  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" ENGAGE-549 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/ENGAGE-549/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/ENGAGE-549/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/ENGAGE" data-pagefind-filter="project">Fluid Engage</a></li>
+                <li><a href="/browse/ENGAGE-549/">ENGAGE-549</a></li>
+            </ol>
+        </nav>
+        <h1>ENGAGE-549: Architecture: Determine the viability of server-side JavaScript using Jack and JSGI</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/ENGAGE-549">ENGAGE-549</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/ENGAGE/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/ENGAGE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/ENGAGE/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-06-02T19:19:13.000-0400" prefix="">2009-06-02T19:19:13.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T14:28:51.448-0500" prefix="">2014-03-03T14:28:51.448-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>We're interested in the possibility of building Infusion's services layer using JavaScript running on the server. This would allow us to use much of our existing infrastructure from Infusion while using a widely familiar language.</p>
+<p>Biggest concerns come from the lack of infrastructure and potential speed issues. Since JSGI and Jack help to address the infrastructure issue, let's get a sense of how fast or slow this stuff will be running in Rhino on the JVM.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-12767">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2009-06-04T09:41:19.000-0400">2009-06-04T09:41:19.000-0400</relative-time></i></p>
+                        <p>Here's a zip file containing a checkout of Narwhal and Jack, along with a simple hello world-type test. There's a directory called "perftest" in here that is intended for the performance test application. Things to figure out:</p>
+<p>1. Do we need to call setTimeout() in runTests()? If so, what alternative do we have in Rhino/Narwhal? Or do we need to use Env.js?<br>
+2. Get the Renderer to work without the DOM. This should be easy:</p>
+<ul>
+<li>Call parseTemplates() and renderTemplates() instead of selfRender. renderTemplates() will need a resourceSpec object, but it should be fairly easy to create, using the implementation in selfRender() as an example. Some documentation:</li>
+</ul>
+<p><a href="http://wiki.fluidproject.org/display/fluid/Renderer+API#RendererAPI-fetchResources">http://wiki.fluidproject.org/display/fluid/Renderer+API#RendererAPI-fetchResources</a></p>
+<p>After that, it should be as simple as packaging up everything as a module and then running it, appending the results of the Renderer to the body of the response.</p>
+
+                    </li>
+                    
+                    <li id="comment-12769">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2009-06-04T16:13:16.000-0400">2009-06-04T16:13:16.000-0400</relative-time></i></p>
+                        <p>Note that despite what the readme says, for the examples to run as is, jack needs to be inside the narwhal directory. This will make the symlinks to jackup incorrect so run the example from the jack directory like this:<br>
+bin/jackup examples/example.js</p>
+
+                    </li>
+                    
+                    <li id="comment-12771">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2009-06-05T00:31:56.000-0400">2009-06-05T00:31:56.000-0400</relative-time></i></p>
+                        <p>Here's an updated zip file containing narwhal and jack, along with a SecureModules package for InfusionAll.js. Due to our heavy dependence on jQuery, I had to also include Envjs, which is automatically imported if you load Infusion via Narwhal's package loader like this:</p>
+<p>var fluid = require("infusion").fluid;</p>
+<p>I've also moved the perftests jack app to into the narwhal directory (not exactly sure why; it should be able to go anywhere) and updated the app to load our perftest.html template and return it as the text of the response.</p>
+<p>Next steps: feed the text of that template file to parseTemplates() and renderTemplates(), returning the response. Obviously the code from perftests.js will have to be moved into scope for the app.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/ENGAGE-26/"><span class="aria-hidden">←</span> Previous: ENGAGE-26</a>
+        <a class="mx-1" href="/browse/ENGAGE-537/">Next: ENGAGE-537 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4153  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4153 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4153/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4153/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4153/">FLUID-4153</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4153: Create declarative scheme for deferring IoC-driven subcomponent instantiation to time of issuing an event</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4153">FLUID-4153</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-03-18T01:55:53.336-0400" prefix="">2011-03-18T01:55:53.336-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T13:13:00.652-0500" prefix="">2014-03-03T13:13:00.652-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The new signature for "fluid.initDependent" introduced as part of the work for <a href="/browse/FLUID-4055/">FLUID-4055</a> now provides the affordance for users to create IoC driven subcomponents at arbitrary later times, but this puts them to the responsibility of a lot of "plumbing" - they need to inject an "instantiator", find a "special place" to store component configuration so it is not inadvertently instantiated by the system, and then fish it back from this place when calling initDependent. Much more ideal would be a syntax and semantic which allows deferred component instantiation to be specified purely declaratively. A successful implementation would also bridge the way to "renderer antigen" work - it is an important requirement there that subcomponents are reinstantiated not only ONCE at some future time, but repeatedly, according to the rendering event cycle for the parent component.</p>
+<p>A proposed syntax simply involves introducing an extra entry into the subcomponent record, named "createOnEvent" - for example, </p>
+<p>fluid.defaults("fluid.tests.initFunctions", {<br>
+gradeNames: ["fluid.eventedComponent", "autoInit"],<br>
+events: {<br>
+mainEvent: null<br>
+},<br>
+components: {<br>
+eventTimeComponent: {<br>
+type: "fluid.tests.recordingComponent",<br>
+createOnEvent: "mainEvent",<br>
+options: {<br>
+...<br>
+} <br>
+}<br>
+}<br>
+});</p>
+<p>defines an component of the "evented grade" with one subcomponent, a "deferred subcomponent". The entry "createOnEvent" may mention one or more names of events attached to the component, such that when the component fires them, the subcomponent will be constructed - that is, its construction is deferred until this time, rather than occuring synchronously with the fluid.initDependents() call as part of the component's main construction.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-16197">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2011-03-29T23:12:08.016-0400">2011-03-29T23:12:08.016-0400</relative-time></i></p>
+                        <p>Now implemented in trunk, using the syntax described. This might only be really useful in rendering scenarios, however, other use cases have been subsumed by "priority" annotation, and possibly in future, by TYPE FOUNTS.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4152/"><span class="aria-hidden">←</span> Previous: FLUID-4152</a>
+        <a class="mx-1" href="/browse/FLUID-4154/">Next: FLUID-4154 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

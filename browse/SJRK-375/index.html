@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-375  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-375 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-375/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-375/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-375/">SJRK-375</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-375: Migrate daily cleanup Jenkins job to GitHub Actions</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-375">SJRK-375</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SJRK/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-07-03T15:02:30.823-0400" prefix="">2020-07-03T15:02:30.823-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-07-04T09:14:54.197-0400" prefix="">2020-07-04T09:14:54.197-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p><a href="https://github.com/inclusive-design/ci-service/blob/master/jenkins_jobs/stack-staging-stories.floeproject.org-nightly-cleanup.yml">https://github.com/inclusive-design/ci-service/blob/master/jenkins_jobs/stack-staging-stories.floeproject.org-nightly-cleanup.yml</a></p>
+<pre><code class="hljs">- <span class="hljs-params">job:</span>
+    <span class="hljs-params">node:</span> i-<span class="hljs-number">0033</span>.tor1.incd.ca
+    <span class="hljs-params">name:</span> stack-staging-stories.floeproject.org-nightly-cleanup
+    <span class="hljs-params">project-type:</span> freestyle
+    <span class="hljs-params">display-name:</span> stack-staging-stories.floeproject.org-nightly-cleanup
+    <span class="hljs-params">triggers:</span>
+      <span class="hljs-operator">-</span> <span class="hljs-params">timed:</span> <span class="hljs-string">"@midnight"</span>    
+    <span class="hljs-params">properties:</span>
+      <span class="hljs-operator">-</span> <span class="hljs-params">inject:</span>
+          <span class="hljs-params">properties-content:</span> |
+            <span class="hljs-attr">PROJECT_ID</span><span class="hljs-operator">=</span><span class="hljs-number">006</span>fb6eb
+            <span class="hljs-attr">PROJECT_HOME</span><span class="hljs-operator">=</span><span class="hljs-operator">/</span>srv<span class="hljs-operator">/</span>$PROJECT_ID
+    <span class="hljs-params">builders:</span>
+        <span class="hljs-operator">-</span> <span class="hljs-params">shell:</span> |
+            <span class="hljs-comment">#!/bin/sh -ex</span>
+            sudo rm <span class="hljs-operator">-</span>rf <span class="hljs-string">"$PROJECT_HOME/couchdb"</span>
+            sudo rm <span class="hljs-operator">-</span>rf <span class="hljs-string">"$PROJECT_HOME/uploads"</span>
+            sudo rm <span class="hljs-operator">-</span>rf <span class="hljs-string">"$PROJECT_HOME/deleted_uploads"</span>
+    <span class="hljs-params">publishers:</span>
+      <span class="hljs-operator">-</span> <span class="hljs-params">email:</span>
+            <span class="hljs-params">recipients:</span> ops-notifications@lists.inclusivedesign.ca
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-374/"><span class="aria-hidden">←</span> Previous: SJRK-374</a>
+        <a class="mx-1" href="/browse/SJRK-376/">Next: SJRK-376 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5131  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5131 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5131/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5131/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5131/">FLUID-5131</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5131: Improve the schema version of UIO to support one panel with multiple templates</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5131">FLUID-5131</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Cindy Li</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-09-11T10:33:42.995-0400" prefix="">2013-09-11T10:33:42.995-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-10-28T08:52:51.388-0400" prefix="">2013-10-28T08:52:51.388-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The discussion of this improvement was logged in IRC channel @ <a href="http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-09-10">http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-09-10</a>, from [12:36:10 CDT(-0500)] onwards.</p>
+<p>There are two main parts to this issue:<br>
+1. Update the auxiliary schema to allow for the definition of multiple templates for one panel.</p>
+<p>singel template:</p>
+<p>template: "path to template"</p>
+<p>mutlple templates: </p>
+<p>template: {<br>
+foo: "path to template foo",<br>
+bar: "path to template bar"<br>
+}</p>
+<p>2. Create a panel combining panel. Each preference is associated with a panel. This grade would combine several individual panels into a single one. It will need to do the following things to achieve this.</p>
+<p>a. combine the individual preference maps<br>
+b. combine the individual templates<br>
+– the parent will need to have a template for how to combine the individual templates<br>
+c. combine the prototrees<br>
+d. combine the selectors used for rendering<br>
+– selectors should somehow be associated with their original panel (e.g. namespace, nesting, etc.)<br>
+– selectos should be scoped to their original panel's container <br>
+– selectors will need to be updated in the combined prototree to refer to these<br>
+e. subcomponents will need to have the parent's afterRender event boiled to theirs<br>
+f. subcomponents will need to have their refreshView methods reassigned to the parents<br>
+g. subcomponents cannot render on init<br>
+h. subcomponents should be created after the parent, so that the parent can set their options.<br>
+i. the parent will have to setup the model relay rules (should be configured automatically with the preference map. Similar to how it works for the uio builder)</p>
+<p>3. fluid.uiOptions.panels should be renamed to fluid.uiOptions.panel and include an empty preference map. All panels will need preference maps.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22496">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-09-13T15:39:38.148-0400">2013-09-13T15:39:38.148-0400</relative-time></i></p>
+                        <p>The e-mail thread that kicked off this whole discussion:<br>
+<a href="http://fluid.2324889.n4.nabble.com/Combining-complex-panels-in-the-preferences-framework-td8799.html">http://fluid.2324889.n4.nabble.com/Combining-complex-panels-in-the-preferences-framework-td8799.html</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22498">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-09-13T15:40:52.351-0400">2013-09-13T15:40:52.351-0400</relative-time></i></p>
+                        <p>More discussion from todays channel logs starting at [13:56:53 CDT(-0500)]<br>
+<a href="http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-09-13">http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-09-13</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22500">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-09-20T15:31:00.959-0400">2013-09-20T15:31:00.959-0400</relative-time></i></p>
+                        <p>The subpanels need to share the refreshView method and afterRender event from the parent panel. This is to ensure that the rendering always happens in the parent and to maintain any event bindings and calls to refreshView that may already be associated with the subpanel. However, since these subpanels are not known in advance, the parent panel will need to generate the necessary configuration. </p>
+<p>It would seem that distribute options would be needed to pass down this configuration from the parent panel to the sub panels.</p>
+<p>1) use an expander to generate the distributeOptions to know where to pass along the override configuration. However, distribute options doesn't seem to accept an expander.<br>
+<a href="https://github.com/fluid-project/infusion/blob/74ac01a0cd935ca17cc646b3c0ff8fcdf42d0c1c/src/framework/core/js/FluidIoC.js#L314-L364">https://github.com/fluid-project/infusion/blob/74ac01a0cd935ca17cc646b3c0ff8fcdf42d0c1c/src/framework/core/js/FluidIoC.js#L314-L364</a></p>
+<p>2) use an expander to generate the options for all of the subpanels and pass it down to the parent's components option. However, distributeOptions passes along the expander instead of the expanded value.</p>
+
+                    </li>
+                    
+                    <li id="comment-22503">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-09-23T15:22:02.194-0400">2013-09-23T15:22:02.194-0400</relative-time></i></p>
+                        <p>More discussion from today's channel logs starting at [13:37:45 CDT(-0500)]<br>
+<a href="http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-09-23">http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-09-23</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22505">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-09-30T15:45:28.322-0400">2013-09-30T15:45:28.322-0400</relative-time></i></p>
+                        <p>More discussion from today's channel logs starting at [13:37:54 CDT(-0500)]<br>
+<a href="http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-09-30">http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-09-30</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22507">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-10-02T10:36:05.997-0400">2013-10-02T10:36:05.997-0400</relative-time></i></p>
+                        <p>More discussion in the IRC channel starting at [12:45:21 CDT(-0500)]<br>
+<a href="http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-10-01">http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-10-01</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22509">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-10-02T10:37:07.802-0400">2013-10-02T10:37:07.802-0400</relative-time></i></p>
+                        <p>More discussion from today's channel logs starting at [08:21:12 CDT(-0500)]<br>
+<a href="http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-10-02">http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-10-02</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22512">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-10-02T11:00:13.171-0400">2013-10-02T11:00:13.171-0400</relative-time></i></p>
+                        <p>Documentation for fluid.uiOptions.compositePanel</p>
+<p>Overview:<br>
+=======<br>
+A compositePanel is a fluid.uiOptions.panel, but it has the additional behaviour of combining together several subPanels. To achieve this, the composite panel handles the rendering actions, creates the modelRelay rules to link it's model with the subPanels and the creation a consolidated preference map which it exposes in its options.</p>
+<p>PreferenceMap<br>
+===========</p>
+<p>The preferenceMaps from all of the subPanels are pulled are combined into the compositePanel. The preference keys remain the same, but their configurations are modified. The model paths are rescoped to the compositePanel (note: that the value used in the composite model is the preferenceKey with the "." replaced by "_".). Any other option directives in the preferenceMap are modified to reference the subPanels components block in the composite panel.</p>
+<p>Selectors<br>
+=======</p>
+<p>An integrator must supply selectors used to reference the containers for the subPanels, in the compositePanel's template. These selectors should also be added to the "selectorsToIgnore" option, so that they won't interfere with rendering. The selectors from the subPanels needed for rendering are surfaced to the compositePanel. To prevent any collisions, they are namespaced with the subPanel's member name, and scoped to the subPanel's container. (e.g. subPanel1_header: ".subPanel1 .header").</p>
+<p>Templates<br>
+========</p>
+<p>All of the templates for the panel and subPanels should be supplied to the compositePanel's resources block. The subPanel's templates should be keyed off of their member name, while the compositePanel's template should be off of the "template" key. The compositePanel's template is essentially a template template, and is used to indicate how the subPanels should be arranged. This will be combined with the subPanel templates and used for rendering.</p>
+<p>Rendering<br>
+=======</p>
+<p>Rendering in the compositePanel will occur whenever refreshView is called on the compositePanel or any of the subPanels. The afterRender event will be fired from the compositePanel as well as all of the subPanels. However, rendering will only occur in the compositePanel. See templates: for how the templates are combined. The protoTrees of the subPanels are automatically combined and rebased to the compositePanel in the compositePanel's call to produceTree. The subPanels will all be reinitialized after each rendering, to ensure that their DOM bindings are all up-to-date.</p>
+<p>Requirements<br>
+===========</p>
+<p>When creating a compositePanel the integrator must supply the following options.</p>
+<ol>
+<li>The components block to indicate which subPanels to use. 
+<ul>
+<li>All subPanels should include {createOnEvent: "initSubPanels"}</li>
+</ul>
+</li>
+<li>Selectors for the containers of each subPanel referencing a DOM element in it's template
+<ul>
+<li>these selectors should have the same name as the subPanels member name</li>
+</ul>
+</li>
+<li>Templates for the compositePanel, and for each of the subPanels
+<ul>
+<li>subPanel templates should be keyed with the same name as the subPanel's member name</li>
+<li>the compositePanel's template must be off the "template" key and be template for inserting the other templates into</li>
+</ul>
+</li>
+</ol>
+
+                    </li>
+                    
+                    <li id="comment-22517">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-10-24T14:44:57.408-0400">2013-10-24T14:44:57.408-0400</relative-time></i></p>
+                        <p>Submitted a pull request ( <a href="https://github.com/fluid-project/infusion/pull/423">https://github.com/fluid-project/infusion/pull/423</a> )</p>
+
+                    </li>
+                    
+                    <li id="comment-22519">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-10-28T08:52:39.048-0400">2013-10-28T08:52:39.048-0400</relative-time></i></p>
+                        <p>Merged Pull Request at 5b631da3519a797684a89a8fb494ca5a14ba2f22</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5130/"><span class="aria-hidden">←</span> Previous: FLUID-5130</a>
+        <a class="mx-1" href="/browse/FLUID-5132/">Next: FLUID-5132 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

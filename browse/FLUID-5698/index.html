@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5698  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5698 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5698/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5698/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5698/">FLUID-5698</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5698: Remove all JavaScript from inside the Separated Panel configuration of the prefs framework's iframe</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5698">FLUID-5698</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alan Harnum</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-06-24T12:24:38.574-0400" prefix="">2015-06-24T12:24:38.574-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-09-06T09:53:03.619-0400" prefix="">2016-09-06T09:53:03.619-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Our current build system misunderstands the header material inside the file SeparatedPanelFrame.html and based on seeing some jQuery includes there, mistakenly includes an entire instance of infusion-custom.js - see this JIRA for an outstanding issue with the build system <a href="https://issues.fluidproject.org/browse/FLUID-4394">https://issues.fluidproject.org/browse/FLUID-4394</a> - and see this mailing list item which reports that although the file is the same, the browser appears to download it twice, probably as a result of a race condition with respect to the iframe:</p>
+<p><a href="http://lists.idrc.ocad.ca/pipermail/fluid-work/2015-June/009715.html">http://lists.idrc.ocad.ca/pipermail/fluid-work/2015-June/009715.html</a></p>
+<p>In fact it's highly likely that no JS is required within this frame any more. As I recall, this was a compatibility issue that only affected IE8 or 9 with respect to attempts to manipulate content within an iframe from a jquery instance outside it. Now we support IE10 at a minimum we should be able to remove all JS from this frame and resolve both this issue and <a href="/browse/FLUID-4394/">FLUID-4394</a>.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24304">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2015-06-24T13:20:51.141-0400">2015-06-24T13:20:51.141-0400</relative-time></i></p>
+                        <p>Once jQuery includes are removed from SeparatedPanelFrame.html, the error,</p>
+<p>TypeError: that.jQuery is not a function</p>
+<p>is thrown @ <a href="https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/js/SeparatedPanelPrefsEditor.js#L214">https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/js/SeparatedPanelPrefsEditor.js#L214</a></p>
+
+                    </li>
+                    
+                    <li id="comment-24306">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-06-24T17:35:50.698-0400">2015-06-24T17:35:50.698-0400</relative-time></i></p>
+                        <p>Thanks for the investigation, Cindy Li - I think we can fix this with only a small amount of refactoring</p>
+
+                    </li>
+                    
+                    <li id="comment-24307">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-04-18T14:24:59.615-0400">2016-04-18T14:24:59.615-0400</relative-time></i></p>
+                        <p>Work on the FD tool revealed that due to the poor implementation of the jQuery UI tooltip widget, if the prefs framework UI uses this widget, loading it within the iframe will require a 2nd copy of jQuery and the widget. However, the "plain" preferences framework we have here does not use the tooltip widget so it seems that we can indeed get rid of all JavaScript within the iframe in this configuration.</p>
+
+                    </li>
+                    
+                    <li id="comment-24309">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2016-04-18T15:36:23.971-0400">2016-04-18T15:36:23.971-0400</relative-time></i></p>
+                        <p>After some initial experimentation, it looks like removing all Javascript within the iframe doesn't cause any failing tests or initial obvious bugs, but it does cause the sliders to stop working properly (they no longer "slide" in response to user input). I assume but haven't dug too deeply that this is because of a similar jQuery UI issue to the one above, but will investigate further.</p>
+
+                    </li>
+                    
+                    <li id="comment-24310">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2016-04-19T14:32:11.920-0400">2016-04-19T14:32:11.920-0400</relative-time></i></p>
+                        <p>After speaking to Cindy Li and Michelle D'Souza I've created <a href="/browse/FLUID-5892/">FLUID-5892</a></p>
+<p>I believe once this is done we'll be able to remove all Javascript from HTML expected to be delivered to the iframe in cases where the dependencies (Infusion, jQuery, etc) are already present in the parent of the iframe.</p>
+
+                    </li>
+                    
+                    <li id="comment-24312">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2016-05-17T11:20:12.599-0400">2016-05-17T11:20:12.599-0400</relative-time></i></p>
+                        <p>This has been done as part of <a href="/browse/FLUID-5892/">FLUID-5892</a> when the native HTML slider is used, as it makes having any JavaScript in the iframe unnecessary. Javascript in the iframe is still necessary when the jQuery UI-based slider is used due to its limitations. So to that end, two different iFrame templates have been created.</p>
+
+                    </li>
+                    
+                    <li id="comment-24314">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2016-09-06T09:53:03.591-0400">2016-09-06T09:53:03.591-0400</relative-time></i></p>
+                        <p>Closing since this went in as part of another PR.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5697/"><span class="aria-hidden">←</span> Previous: FLUID-5697</a>
+        <a class="mx-1" href="/browse/FLUID-5699/">Next: FLUID-5699 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

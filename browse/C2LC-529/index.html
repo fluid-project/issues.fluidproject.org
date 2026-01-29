@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-529  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-529 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-529/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-529/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-529/">C2LC-529</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-529: Deselected actions are not focussed on the ipad and the hover state is applied on click</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-529">C2LC-529</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>To Do</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter=Michelle%20D'Souza">Michelle D'Souza</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-10-14T08:48:23.131-0400" prefix="">2021-10-14T08:48:23.131-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-04-30T11:26:56.797-0400" prefix="">2024-04-30T11:26:56.797-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Environment</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Steps to reproduce:</p>
+<ul>
+<li>Select an action</li>
+<li>Deselect the same action</li>
+</ul>
+<p></p>
+<p>Expected:</p>
+<ul>
+<li>The action remains focussed</li>
+</ul>
+<p></p>
+<p>Actual:</p>
+<ul>
+<li>The action isn’t focussed</li>
+<li>The hover style is applied</li>
+</ul>
+<p></p>
+<p>See: <a href="https://stackoverflow.com/a/64553121">https://stackoverflow.com/a/64553121</a> If we want to remove the hover styling, we might be able to do so with some media queries. However, the trick is to make sure you aren’t removing the hover styling when a mouse is also being used. Modern iOS and iPadOS devices, android, and touch enabled desktop/laptops would all support both touch and mouse interactions.</p>
+<p></p>
+<p>From a quick visual inspection it looks like both the selected and :hover styling are being applied on the first tap. The second tap maintains the :hover styling and removes the selected styling.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-27745">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2024-04-30T11:26:56.506-0400">2024-04-30T11:26:56.506-0400</relative-time></i></p>
+                        <p>Moved to GitHub: <a href="https://github.com/codelearncreate/c2lc-coding-environment/issues/494">https://github.com/codelearncreate/c2lc-coding-environment/issues/494</a> </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-528/"><span class="aria-hidden">←</span> Previous: C2LC-528</a>
+        <a class="mx-1" href="/browse/C2LC-530/">Next: C2LC-530 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

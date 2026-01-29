@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2/">FLUID-2</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2: Allow Lightbox mark-up to contain non-reorderable nodes such as white space</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2">FLUID-2</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Michelle D'Souza</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2007-06-26T11:39:17.000-0400" prefix="">2007-06-26T11:39:17.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2007-09-06T15:52:28.000-0400" prefix="">2007-09-06T15:52:28.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Image Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently, the Lightbox expects that the re-orderable items are stored as a linear form of markup that is rendered in a grid by the browser.</p>
+<p>The Lightbox examines the current coordinates of the items to determine the current number of columns in the grid, in order to know which item is "under" or "above" a given item in the grid.</p>
+<p>By limiting the DOM nodes to only the re-orderable items, the calculations for this are greatly simplified. However, this approach has disadvantages, including the fact that it removes information from the DOM.</p>
+<p>As a first pass, the algorithm should be re-written to not use DOM indices, and use either actual screen coordinates or an internal model of the list of re-orderable items.</p>
+<p>Ultimately, a more generalizable solution would be desirable, one which doesn't require linear mark-up (and could handle, for example, re-orderable items in table cells).</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-16076">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2007-06-28T05:53:00.000-0400">2007-06-28T05:53:00.000-0400</relative-time></i></p>
+                        <p>A secure, simple and fast approach is to exploit the existing naming convention on the rendered nodes - the node set that the Lightbox deals in are precisely those with the ids gallery:::gallery-thumbs:::lightbox-cell::11: etc. (or more simply, namebase:lightbox-cell::11: as it should be made more simply in the template). These can be fetched quickly on demand by a batch of getElementById calls in a loop, the upper index is known since it is passed in as the "count" argument to initLightbox.</p>
+<p>Main implementation change after the "childNodes" assumption was removed would be to replace this single call to <br>
+dojo.place(this.activeItem, refSibling, placementPosition);  in 		<br>
+_changeFocusOrMove:<br>
+to a loop of changes that "shuffled" the nodes about in their existing DOM positions, rather than letting them all "slide" forwards as they currently do. But this is just a refinement - main goal is to get rid of the "destroyWhitespace" function, after which we can go back to having the &lt;script&gt; block inside the lightbox and get rid of lightbox-temp-container: </p>
+
+                    </li>
+                    
+                    <li id="comment-16079">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2007-06-28T05:56:58.000-0400">2007-06-28T05:56:58.000-0400</relative-time></i></p>
+                        <p>PS - the same thing should be done with the "focus policy" - rather than specifying by tag name and index (which is somewhat fragile and complex in the current scheme) this should be specified by a "relative id", in the way that the current code locates the "reorder-index" fields by extension from the cell's base ID.</p>
+<p>This could even be part of the official contract of the lightbox on the "client cell", or at least a sensible default, that the link to be focused is given a relative ID of something like "focus-node". (currently "thumbs-link" in our existing client). Perhaps a bit freer to let this be configurable, but we are acquiring a HECK of a lot of arguments to LightboxProducer now!</p>
+
+                    </li>
+                    
+                    <li id="comment-16081">
+                        <p class="mb-0"><b>Joseph Scheuhammer</b> <i>commented <relative-time datetime="2007-09-06T15:52:17.000-0400">2007-09-06T15:52:17.000-0400</relative-time></i></p>
+                        <p>The Reorderer is now sensitive only to objects classified as "orderable" (via CSS) .  As such, removal of non Element nodes from within the thumbnail container is unecessary.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1/"><span class="aria-hidden">←</span> Previous: FLUID-1</a>
+        <a class="mx-1" href="/browse/FLUID-3/">Next: FLUID-3 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

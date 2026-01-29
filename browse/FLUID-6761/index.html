@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6761  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6761 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6761/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6761/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6761/">FLUID-6761</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6761: The self voicing enactor throws error when using UIO+ with idrc site</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6761">FLUID-6761</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2022-12-20T14:10:17.599-0500" prefix="">2022-12-20T14:10:17.599-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2022-12-20T14:53:21.826-0500" prefix="">2022-12-20T14:53:21.826-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Self Voicing</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>To reproduce:</p>
+<p>1. In the UIO+ source code, modify "uioPlus.enactor.selfVoicing" in enactors.js to remove the `distributeOptions` block that disables the page level reading in the self voicing component;<br>
+2. In a terminal, run "npm run build". Install the built UIO+ in Chrome.<br>
+3. In Chrome, open <a href="https://idrc.ocadu.ca/">https://idrc.ocadu.ca/</a>, turn on text-to-speech, click "play" button;</p>
+<p>In the browser console, this error is thrown:</p>
+<pre><code class="hljs language-java">Uncaught DOMException: Failed to execute <span class="hljs-string">'setStart'</span> on <span class="hljs-string">'Range'</span>: The offset <span class="hljs-number">54</span> is larger than the node<span class="hljs-string">'s length (0).
+    at fluid.orator.domReader.highlight (chrome-extension://ekjpcdffphimkhjlmloccennolakcomg/lib/infusion/dist/infusion-uio.js:137:379713)
+    at invokeInvoker (chrome-extension://ekjpcdffphimkhjlmloccennolakcomg/lib/infusion/dist/infusion-uio.js:137:97450)
+    at fluid.event.invokeListener (chrome-extension://ekjpcdffphimkhjlmloccennolakcomg/lib/infusion/dist/infusion-uio.js:137:152017)
+    at togo (chrome-extension://ekjpcdffphimkhjlmloccennolakcomg/lib/infusion/dist/infusion-uio.js:137:152433)
+    at fluid.model.notifyExternal (chrome-extension://ekjpcdffphimkhjlmloccennolakcomg/lib/infusion/dist/infusion-uio.js:137:145514)
+    at fluid.concludeModelTransaction (chrome-extension://ekjpcdffphimkhjlmloccennolakcomg/lib/infusion/dist/infusion-uio.js:137:146459)
+    at fluid.event.firer.fire (chrome-extension://ekjpcdffphimkhjlmloccennolakcomg/lib/infusion/dist/infusion-uio.js:128:25883)
+    at Object.commit (chrome-extension://ekjpcdffphimkhjlmloccennolakcomg/lib/infusion/dist/infusion-uio.js:137:165277)
+    at that.fireChangeRequest (chrome-extension://ekjpcdffphimkhjlmloccennolakcomg/lib/infusion/dist/infusion-uio.js:137:164353)
+    at that.change (chrome-extension://ekjpcdffphimkhjlmloccennolakcomg/lib/infusion/dist/infusion-uio.js:137:161795)
+</span></code></pre>
+<p>This issue is also filed in UIO+ repository at <a href="https://github.com/fluid-project/uio-plus/issues/42">https://github.com/fluid-project/uio-plus/issues/42</a>.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6760/"><span class="aria-hidden">←</span> Previous: FLUID-6760</a>
+        <a class="mx-1" href="/browse/FLUID-6762/">Next: FLUID-6762 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

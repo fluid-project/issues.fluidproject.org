@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1821  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1821 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1821/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1821/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1821/">FLUID-1821</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1821: Image Reorderer has incomplete directions (Accessibility)</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1821">FLUID-1821</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Michael%20Elledge">Michael Elledge</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-11-18T14:51:14.000-0500" prefix="">2008-11-18T14:51:14.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-12-12T16:22:16.000-0500" prefix="">2008-12-12T16:22:16.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.6beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.6</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Image Reorderer</li>
+                            
+                            <li>Keyboard Accessibility</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Keyboard commands work only with virtual cursor turned off. </p>
+<p>With virtual cursor on: Tab into application, Dragonfruit highlighted. Press control + arrow, nothing happens. Press alt + arrow, focus moves to next image. Can only move focus from side to side.</p>
+<p>With virtual cursor off (Insert + z): Tab into application, Dragonfruit highlighted. Can move focus up and down and side to side using arrow keys. Control + i, k, m, j enables you to move image up and down and side to side. Control + arrow enables side to side movement only.</p>
+<p>Instructions should be revised for screen reader users: "To use the keyboard: Screen reader users turn off virtual cursor (insert + z). Select an image using the arrow keys or i, j, k or m or the arrow keys. Move an image by pressing control + arrow keys. View an image by pressing Enter."</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Firefox 3, JAWS 9</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-1821/FLUID-1821-patch.txt">
+                            
+                                FLUID-1821-patch.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-21939">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-12-03T12:07:36.000-0500">2008-12-03T12:07:36.000-0500</relative-time></i></p>
+                        <p>Bug Parade  0.6 release</p>
+
+                    </li>
+                    
+                    <li id="comment-21941">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-12-12T11:04:43.000-0500">2008-12-12T11:04:43.000-0500</relative-time></i></p>
+                        <p>I'd appreciate a review of this approach:</p>
+<p>1) Use the WebAIM-recommended approach of placing screen-reader-specific instructions in a div that is off-screen and tiny (<a href="http://www.webaim.org/techniques/css/invisiblecontent/#hidingfromsighted">http://www.webaim.org/techniques/css/invisiblecontent/#hidingfromsighted</a>).</p>
+<p>2) Remove the visible instructions from the tab order so screen-reader users don't hear both sets.</p>
+<p>The result is that JAWS users hear screen-reader specific instructions, and sighted users see different instructions.</p>
+<p>Problems: This patch doesn't yet deal with internationalization issues - there's the "message-bundle:" id, but now there are two messages, etc.</p>
+
+                    </li>
+                    
+                    <li id="comment-21945">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-12-12T15:22:14.000-0500">2008-12-12T15:22:14.000-0500</relative-time></i></p>
+                        <p>I've committed these changes, cleaned up a bit more and applied to all necessary files.<br>
+The message-bundle issue is now in <a href="/browse/FLUID-1970/">FLUID-1970</a>.</p>
+
+                    </li>
+                    
+                    <li id="comment-21946">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-12-12T15:57:11.000-0500">2008-12-12T15:57:11.000-0500</relative-time></i></p>
+                        <p>This approach seems reasonable to me, but needs review by a genuine AT user.</p>
+
+                    </li>
+                    
+                    <li id="comment-21948">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-12-12T16:21:25.000-0500">2008-12-12T16:21:25.000-0500</relative-time></i></p>
+                        <p>Closing for now, will reopen if further investigation warants</p>
+<p>Verified fix using </p>
+<p>Jaws 9 with IE6, FF3, FF2 (Win XP)</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1820/"><span class="aria-hidden">←</span> Previous: FLUID-1820</a>
+        <a class="mx-1" href="/browse/FLUID-1822/">Next: FLUID-1822 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

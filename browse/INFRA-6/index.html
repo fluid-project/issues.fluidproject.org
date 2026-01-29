@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-6  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-6 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-6/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-6/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-6/">INFRA-6</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-6: Implement VidyoDashboard</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-6">INFRA-6</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Resolved</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-07-29T10:16:27.365-0400" prefix="">2015-07-29T10:16:27.365-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-08-22T09:57:54.158-0400" prefix="">2016-08-22T09:57:54.158-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Vidyo offers a solution called VidyoDashboard that is supposed to provide insight into how our Vidyo setup is being used. Initially, it should be free.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Vidyo</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25973">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2015-07-29T10:17:59.996-0400">2015-07-29T10:17:59.996-0400</relative-time></i></p>
+                        <p>Received email from Alastair Arnison on 7/27 saying he forwarded our request for the VidyoDashboard appliance software to Vidyo and is waiting on a response. </p>
+
+                    </li>
+                    
+                    <li id="comment-25975">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2015-08-04T09:38:14.877-0400">2015-08-04T09:38:14.877-0400</relative-time></i></p>
+                        <p>Today ETGroup (Alistair) shared the .OVA (virtual machine disk) containing an installation of VidyoDashboard. I'll attempt to convert it to a format that KVM recognizes.</p>
+
+                    </li>
+                    
+                    <li id="comment-25976">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2015-08-17T14:00:59.150-0400">2015-08-17T14:00:59.150-0400</relative-time></i></p>
+                        <p>I'm able to run the VidyoDashboard VM locally on VirtualBox but it needs direct access to the MySQL database running on the Vidyo appliances. Besides that being a big security risk, the Vidyo appliances are not currently configured to accept external connections to their internal database.</p>
+<p>Another complication is that this VM is not meant to be tweaked and tuned. It runs Ubuntu (not our target platform) and does not allow administrative access. We have to fully trust it, while at the same time it's not clear if there are automatic updates in place, it's not covered by our support contract, etc. So this makes it hard to deploy this VM in our datacenter.</p>
+<p>It's seems we're in a chicken-egg situation: the VM would have to be sitting in the datacenter to access the internal MySQL database, but deploying it in the datacenter is another security risk in itself.</p>
+
+                    </li>
+                    
+                    <li id="comment-25978">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2015-09-09T13:42:18.118-0400">2015-09-09T13:42:18.118-0400</relative-time></i></p>
+                        <p>TODO: Need to get this OVA running on KVM and provide access to Mike Thornback so he can configure it to connect to our Vidyo appliances. Should be behind the firewall, only acessible at IDRC and ETGroup needs access.</p>
+
+                    </li>
+                    
+                    <li id="comment-25980">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2016-08-22T09:57:54.156-0400">2016-08-22T09:57:54.156-0400</relative-time></i></p>
+                        <p>The VidyoDashboard has proven difficult to integrate in our environment. Additionally, it is not covered by any support contract and does not get security updates. Being a closed box, we cannot modify it to suit our needs.</p>
+<p>There have not been requests for the functionality the VidyoDashboard provides since a long time ago. It seems we have not run into issues where VidyoDashboard would be useful (although it does provide nicer reports).</p>
+<p>Closing issue for now until there is more demand and/or Vidyo improves the situation regarding how VidyoDashboard is supported.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-5/"><span class="aria-hidden">←</span> Previous: INFRA-5</a>
+        <a class="mx-1" href="/browse/INFRA-7/">Next: INFRA-7 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

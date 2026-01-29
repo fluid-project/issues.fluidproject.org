@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6583  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6583 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6583/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6583/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6583/">FLUID-6583</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6583: Syllabification doesn't appear to detect content that's in the DOM but initially hidden</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6583">FLUID-6583</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Ned%20Zimmerman">Ned Zimmerman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-12-09T15:33:58.697-0500" prefix="">2020-12-09T15:33:58.697-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-12-14T11:09:45.548-0500" prefix="">2020-12-14T11:09:45.548-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>While integrating UIO for the community-led co-design kit, I noticed that the Syllabification adjuster doesn't apply to content which is present in the DOM on page load but initially hidden. This can be observed on the We Count site:</p>
+<p><a href="https://wecount.inclusivedesign.ca/views/">https://wecount.inclusivedesign.ca/views/</a></p>
+<p>When the "Search Filters" section is toggled via the downwards chevron button on the right, none of the available filters are broken up into syllables.</p>
+<p>Based on my reading of <a href="https://issues.fluidproject.org/browse/FLUID-6554">https://issues.fluidproject.org/browse/FLUID-6554</a> it sounds like the syllabifier looks for new nodes added via a mutation observer. It doesn't seem to find and syllabify existing nodes which are hidden (via CSS <code>display: none</code> or the HTML <code>hidden</code> attribute).</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25471">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2020-12-10T08:15:18.550-0500">2020-12-10T08:15:18.550-0500</relative-time></i></p>
+                        <p>The syllabification explicitly does not attempt to syllabify hidden text. However it would definitely make sense to syllabify the text once it becomes visible, and it seems like the mutation observer is not picking this up. Unfortunately there are many different ways that an element may be hidden, and not all of those could be <a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/observe">observed</a>. An inline style or aria-hidden for example could probably be observed via attribute changes. However, if it's done purely by a change of a CSS class that may be on any ancestor, that would difficult.</p>
+<p>If you want to experiment with syllabifying hidden text you should start by overriding the <a href="https://github.com/fluid-project/infusion/blob/39773eb69938b6fa0bb9e3ae8f083775d2754f2f/src/framework/preferences/js/SyllabificationEnactor.js#L84-L88">hasTextToRead invoker</a>. (See: <a href="https://github.com/fluid-project/infusion/blob/main/src/framework/core/js/TextNodeParser.js#L53-L79">fluid.textNodeParser.hasTextToRead</a> for current implementation). In that case you might be able to just change the use of <code>innerText</code>&#160;to <code>textContent</code>. If that's the case we could probably just parameterize the method for retrieving text from the node in that function.</p>
+
+                    </li>
+                    
+                    <li id="comment-25472">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2020-12-14T11:09:45.548-0500">2020-12-14T11:09:45.548-0500</relative-time></i></p>
+                        <p>Started investigating this in my <a href="https://github.com/jobara/infusion/tree/FLUID-6583">FLUID-6583 branch</a>. There are a bunch of failing tests at the moment. It's likely that some cases aren't adequately being captured.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6582/"><span class="aria-hidden">←</span> Previous: FLUID-6582</a>
+        <a class="mx-1" href="/browse/FLUID-6584/">Next: FLUID-6584 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

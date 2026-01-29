@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5059  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5059 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5059/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5059/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5059/">FLUID-5059</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5059: UI Options 'Reset' doesn't reset the 'underline links' checkbox</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5059">FLUID-5059</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-06-19T11:12:11.904-0400" prefix="">2013-06-19T11:12:11.904-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-07-22T09:32:35.931-0400" prefix="">2013-07-22T09:32:35.931-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>To reproduce:</p>
+<p>1) Visit demo: <a href="http://build.fluidproject.org/infusion/demos/uiOptions/html/uiOptions.html">http://build.fluidproject.org/infusion/demos/uiOptions/html/uiOptions.html</a>, open UIO<br>
+2) Check the 'underline/bold links' checkbox<br>
+Note that links are underlined and bolded<br>
+3) Click the 'reset' button<br>
+Note that the 'underline/bold links' check box is NOT reset<br>
+Note that links are back to normal</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15044">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2013-06-19T11:17:30.587-0400">2013-06-19T11:17:30.587-0400</relative-time></i></p>
+                        <p>This issue has been fixed in the currently ongoing <a href="/browse/FLUID-5043/">FLUID-5043</a> branch (<a href="https://github.com/cindyli/infusion/tree/FLUID-5043">https://github.com/cindyli/infusion/tree/FLUID-5043</a>) tested June 19 at commit 9b075df2786507025d272a1159fa73fcc2e5bb28</p>
+
+                    </li>
+                    
+                    <li id="comment-15046">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-06-20T08:24:43.359-0400">2013-06-20T08:24:43.359-0400</relative-time></i></p>
+                        <p>The work for <a href="/browse/FLUID-5043/">FLUID-5043</a> is changing direction and will need to be restarted. I'm reopening this jira to ensure that we do not forget to look into this issue again. Also, it may no longer be solved in work for <a href="/browse/FLUID-5043/">FLUID-5043</a>.</p>
+
+                    </li>
+                    
+                    <li id="comment-15049">
+                        <p class="mb-0"><b>y z</b> <i>commented <relative-time datetime="2013-07-22T09:30:34.598-0400">2013-07-22T09:30:34.598-0400</relative-time></i></p>
+                        <p>Resolved as part of work on the new UIOptions.</p>
+
+                    </li>
+                    
+                    <li id="comment-15053">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-07-22T09:32:25.055-0400">2013-07-22T09:32:25.055-0400</relative-time></i></p>
+                        <p>Pull request ( <a href="https://github.com/fluid-project/infusion/pull/360">https://github.com/fluid-project/infusion/pull/360</a> ) was merged into the project repo at 4fe208404cd0cdafc68dd59fdb7669991b6ab4dd</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5058/"><span class="aria-hidden">←</span> Previous: FLUID-5058</a>
+        <a class="mx-1" href="/browse/FLUID-5060/">Next: FLUID-5060 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

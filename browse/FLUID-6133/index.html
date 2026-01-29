@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6133  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6133 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6133/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6133/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6133/">FLUID-6133</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6133: Implement generalised, schematised solution for universal keyboard accessibility</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6133">FLUID-6133</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-02-22T18:15:43.444-0500" prefix="">2017-02-22T18:15:43.444-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-02-28T12:36:01.000-0500" prefix="">2017-02-28T12:36:01.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Keyboard Accessibility</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Our historical keyboard accessibility plugin, held at <a href="https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/jquery.keyboard-a11y.js">https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/jquery.keyboard-a11y.js</a> , is very long in the tooth and has also historically fallen between many stools. Its peculiar naming and coding style reflects the ambition that it might one day be contributed into jQuery core, but the weaknesses of the jQuery plugin model for componentisation implied that it could never become sufficiently powerful to generously repay the costs of using it. Also, it suffers from various infelicities of its own devising, reflecting our incomplete understanding of accessible, flexible web application design at the time (2008-2009) as well as insufficient experience of designing complex, composable applications that are keyboard navigable. We never even succeeded in migrating its docs <a href="https://wiki.fluidproject.org/display/docs/Keyboard+Accessibility+Plugin+API">https://wiki.fluidproject.org/display/docs/Keyboard+Accessibility+Plugin+API</a> over to our new docs site at <a href="http://docs.fluidproject.org/infusion/development/">http://docs.fluidproject.org/infusion/development/</a> </p>
+<p>We're in a position to make a better job of implementing this functionality now, and whilst the costs of working with the framework still don't imply we can produce a solution which is considered affordable for others, we can at least characterise the problem better to ourselves and provide a workable schema or blueprint for a more complete solution.</p>
+<p>As well as the following ancestral JIRAs we've accumulated against the historical keyboard-a11y plugin:</p>
+<p><a href="https://issues.fluidproject.org/browse/FLUID-305">https://issues.fluidproject.org/browse/FLUID-305</a> - shared means for keyboard binding for all Fluid components - essentially the ancestor issue to this one<br>
+<a href="https://issues.fluidproject.org/browse/FLUID-1854">https://issues.fluidproject.org/browse/FLUID-1854</a> - standard keyboard shortcuts for all components<br>
+<a href="https://issues.fluidproject.org/browse/FLUID-1313">https://issues.fluidproject.org/browse/FLUID-1313</a> - awkward to configure "additionalBindings"</p>
+<p>we have the following fairly profound implementational gaps:</p>
+<p>Firstly, almost as soon as the keyboard-a11y plugin was implemented, it began to need to be subverted. Our first moderately ambitious Infusion component, the Reorderer, had advanced keyboard navigation requirements, matching its somewhat generalised conception - it existed in 3 major flavours which could reorder 1-dimensional structures either as lists (in two orientations) or grids, or 2-dimensional structures as "module" or portlets. All these different structures had widely different keyboard a11y requirements, which led to the Reorderer having to take over almost all keyboard handling functions for itself. We retained a vestige behind of the keyboard-a11y plugin's implementation because we still believed in some of the special-casing we had done in order to patch around some platform issues, as well as to operate our "container throws focus onto selected element" workflow which juggled tabindices.</p>
+<p>In practice the platform issues have almost certainly gone away in the meantime, and we no longer thoroughly believe in the "container onto element" workflow, at least not in the precise form implemented in the plugin. To start with, this was hardwired with a pretty primitive "focus is leaving container" check:</p>
+<pre><code class="hljs language-java"><span class="hljs-comment">// Catch Shift-Tab and note that focus is on its way out of the container.</span>
+            <span class="hljs-keyword">if</span> (evt.shiftKey) {
+                selectionContext.focusIsLeavingContainer = <span class="hljs-literal">true</span>;
+            }
+</code></pre>
+<p>and was in various other ways also unprepared for a world in which the navigated DOM domain was composite - with the elements themselves perhaps representing nested selectable domains. In this model, the simplistic focus tracking and tabindex juggling performed by the component fails. Unfortunately the "nested reorderers demo" was the victim of a purge some years ago (surviving only in the form of an automated test case) but I seem to remember at the time that it could be used to exhibit some of these problems.</p>
+<p>Some more of the blueprint for a generalised keyboard-a11y solution could be recovered from the rather tangled functions fluid.reorderer.handleDirectionKeyDown (and more advancedly, fluid.reorderer.handleKeyUp) held at <a href="https://github.com/fluid-project/infusion/blob/master/src/components/reorderer/js/Reorderer.js#L371">https://github.com/fluid-project/infusion/blob/master/src/components/reorderer/js/Reorderer.js#L371</a> - these functions, decoding modifiers (still encoded as raw function handlers) and "keysets" into requirements for some geometric motion, should have been possible to integrate into the workflow of the keyboard-a11y plugin had it been possible to factor it well enough.</p>
+<p>The confused relationship between the Reorderer and the keyboard-a11y plugin was also exacerbated by the fact that neither of them was particularly factored to a (public) model-based idiom - the plugin because it was impossible as part of the jQuery plugin model, and the Reorderer because of accidents of its factoring which led to some configurations being (somewhat) modelised (the ModuleLayout at least stores some public state in a member named "layout") and some not (the plain list layout simply uses the DOM as its state). Our new formulation of keyboard-a11y functions needs to full externalise the selection and focus state that it is aware of as part of properly externalised, modelRelay aware model definitions, as is part of our modern implementation idiom. Until we can reduce the runtime costs of using the framework, this will discourage adoption of the resulting plugin, but at least its primitives in the meantime will be visible through externalisation schemes such as the Nexus, etc.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6132/"><span class="aria-hidden">←</span> Previous: FLUID-6132</a>
+        <a class="mx-1" href="/browse/FLUID-6134/">Next: FLUID-6134 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

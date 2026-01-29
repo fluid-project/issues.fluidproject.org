@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4213  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4213 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4213/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4213/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4213/">FLUID-4213</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4213: The pager's defaults contain configuration which requires it to be overridden or else will almost always fail.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4213">FLUID-4213</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-05-10T14:15:31.831-0400" prefix="">2011-05-10T14:15:31.831-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-05-11T16:23:14.489-0400" prefix="">2011-05-11T16:23:14.489-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Pager</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When converting the pager to use self-rendered version by default ( for <a href="/browse/FLUID-2329/">FLUID-2329</a> ), some problematic configuration was added at the same time. </p>
+<p><a href="https://github.com/fluid-project/infusion/blob/5c50980c58cb59498c187d8871c2e50c5ebf7a79/src/webapp/components/pager/js/Pager.js#L857-865">https://github.com/fluid-project/infusion/blob/5c50980c58cb59498c187d8871c2e50c5ebf7a79/src/webapp/components/pager/js/Pager.js#L857-865</a></p>
+<p>The "annotateColumnRange" option should have been left as undefined, and there shouldn't have been any default "columnDefs". In place of the "columnDefs" a comment explaining how to fill it out would have been better. Something like what was done in the progressiveEnhancer.</p>
+<p><a href="https://github.com/fluid-project/infusion/blob/master/src/webapp/framework/enhancement/js/ProgressiveEnhancement.js#L52">https://github.com/fluid-project/infusion/blob/master/src/webapp/framework/enhancement/js/ProgressiveEnhancement.js#L52</a></p>
+<p>This issue was reported in the fluid-work irc channel:<br>
+<a href="http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2011-05-09">http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2011-05-09</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-18436">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-05-10T15:44:00.608-0400">2011-05-10T15:44:00.608-0400</relative-time></i></p>
+                        <p>Sent a pull request to merge changes from my <a href="/browse/FLUID-4213/">FLUID-4213</a> branch in github. <a href="https://github.com/fluid-project/infusion/pull/41">https://github.com/fluid-project/infusion/pull/41</a><br>
+I've modified the defaults annotateColumnRange is set to undefined again, and the columnDefs are set to an empty array, with a comment showing the correct format.<br>
+A unit test has been provided</p>
+
+                    </li>
+                    
+                    <li id="comment-18445">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-05-11T16:23:14.487-0400">2011-05-11T16:23:14.487-0400</relative-time></i></p>
+                        <p>Antranig merged this into the project repo at 844e1be791b768d12a686edca7fb3d54637cd0e8</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4212/"><span class="aria-hidden">←</span> Previous: FLUID-4212</a>
+        <a class="mx-1" href="/browse/FLUID-4214/">Next: FLUID-4214 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

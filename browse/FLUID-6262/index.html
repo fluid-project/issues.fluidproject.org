@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6262  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6262 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6262/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6262/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6262/">FLUID-6262</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6262: Add namespaces to all listeners, modelListeners, and model relays</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6262">FLUID-6262</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-03-14T09:53:00.487-0400" prefix="">2018-03-14T09:53:00.487-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-03-20T12:57:38.285-0400" prefix="">2018-03-20T12:57:38.285-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Listeners, modelListeners, and modelRelays should all use namespaces so that they can be overridden or sequenced via priority. Currently in the prefs framework there is a mixture of namespaced and non-namespace values.</p>
+<p></p>
+<p>see:</p>
+<ul>
+<li><a href="https://docs.fluidproject.org/infusion/development/InfusionEventSystem.html#namespaced-listeners">https://docs.fluidproject.org/infusion/development/InfusionEventSystem.html#namespaced-listeners</a></li>
+<li><a href="https://docs.fluidproject.org/infusion/development/ChangeApplierAPI.html#model-listener-declaration">https://docs.fluidproject.org/infusion/development/ChangeApplierAPI.html#model-listener-declaration</a></li>
+<li><a href="https://docs.fluidproject.org/infusion/development/ModelRelay.html#modelrelayblock-layout">https://docs.fluidproject.org/infusion/development/ModelRelay.html#modelrelayblock-layout</a></li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22746">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-03-15T15:34:58.004-0400">2018-03-15T15:34:58.004-0400</relative-time></i></p>
+                        <p>Cindy Li mentioned that we should also namespace the distribute options.</p>
+
+                    </li>
+                    
+                    <li id="comment-22748">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2018-03-20T12:57:34.170-0400">2018-03-20T12:57:34.170-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/infusion/pull/883">The pull request</a> has been merged into the project repo master branch at 0d498cf2f3e08fe74927226ac9426e577c8d7682</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6261/"><span class="aria-hidden">←</span> Previous: FLUID-6261</a>
+        <a class="mx-1" href="/browse/FLUID-6263/">Next: FLUID-6263 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

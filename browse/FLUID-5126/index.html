@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5126  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5126 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5126/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5126/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5126/">FLUID-5126</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5126: Listeners registered via a demands block will corrupt records when expanded</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5126">FLUID-5126</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-09-06T18:28:06.746-0400" prefix="">2013-09-06T18:28:06.746-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T11:28:59.001-0500" prefix="">2014-03-03T11:28:59.001-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This issue was discovered when debugging into an issue with the GPII integration tests for <a href="http://issues.gpii.net/browse/GPII-20">http://issues.gpii.net/browse/GPII-20</a> (actually in branch named <a href="/browse/GPII-177/">GPII-177</a>). It was found impossible to get more than 2 tests to run in sequence without encountering a stereotypical kind of failure, common across both the windows and linux branches:</p>
+<p>message: 'Assertion failure (see console.log for expanded message): Failed to resolve reference {dataSource}.options.url - could not match context with name dataSource from component leaf ,[object Object]',<br>
+source: '    at jqUnit.invocationTracker.that (/home/yura/gpii/node_modules/universal/node_modules/infusion/src/tests/test-core/jqUnit/js/jqUnit.js:35:19)\n    at Object.fluid.fail (/home/yura/gpii/node_modules/universal/node_modules/infusion/src/framework/core/js/Fluid.js:171:13)\n    at Object.fetcher (/home/yura/gpii/node_modules/universal/node_modules/infusion/src/framework/core/js/FluidIoC.js:609:23)\n    at fetch (/home/yura/gpii/node_modules/universal/node_modules/infusion/src/framework/core/js/FluidIoC.js:1718:32)\n    at Object.fluid.resolveContextValue (/home/yura/gpii/node_modules/universal/node_modules/infusion/src/framework/core/js/FluidIoC.js:1725:20)\n    at Object.fluid.expandSource (/home/yura/gpii/node_modules/universal/node_modules/infusion/src/framework/core/js/FluidIoC.js:1822:34)\n    at Object.options.expandSource </p>
+<p>This was eventually traced to a problem with corruption of the framework's records, in combination with the strategy of the GPII integration testing framework which issued demands blocks to the framework multiple times (once per instantiation of a "server"). The telltale accumulation of listeners could be seen in the following message just prior to the failure:</p>
+<p>17:22:13.591:   Firing event onUserListener of component with typename kettle.requests.request.handler and id 1d24skmy-749 to list of 6 listeners</p>
+<p>The correct number of listeners to this event is 2, but in fact 2 had accumulated for each reinstantiation of a kettle server in each subsequent tests. Because of the issue described in this headline JIRA, some of these listeners contained references to components which had already been destroyed, causing the resolution failure.</p>
+<p>Although the integration testing system can be improved to head off this issue, by only issuing demands blocks once, the impossibility of guarding against this issue in general suggests that the demands block system should be disused.</p>
+<p>In this case, the duplicate listeners were being registered from the following declarative structure "base.json" as part of GPII's "FlowManager":</p>
+<p>{<br>
+"demands": [{<br>
+"demandingName": "kettle.requests.request.handler",<br>
+"contextNames": "userLogin",<br>
+"demandSpec": {<br>
+"options": {<br>
+....<br>
+"listeners": {<br>
+"onUserListener": [{<br>
+"listener": "{kettle.requests.request.handler}.getPreferences"<br>
+}, {<br>
+"listener": "{kettle.requests.request.handler}.getDevice"<br>
+}],</p>
+<p>Records in the framework are becoming corrupted through expansion to hold the resolved listener function rather than the IoC expression designating it.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22870">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2013-09-12T16:29:17.013-0400">2013-09-12T16:29:17.013-0400</relative-time></i></p>
+                        <p>Merged into project repo at be8ef9052cd3f0c29cefdc501ceac6fdcf165ffb</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5125/"><span class="aria-hidden">←</span> Previous: FLUID-5125</a>
+        <a class="mx-1" href="/browse/FLUID-5127/">Next: FLUID-5127 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

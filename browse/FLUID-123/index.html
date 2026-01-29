@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-123  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-123 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-123/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-123/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-123/">FLUID-123</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-123: Reorderer call to getAttribute("aaa:activedescendent") sometimes fails in IE6 with "Invalid argument" error.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-123">FLUID-123</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Michelle D'Souza</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2007-11-23T09:00:42.000-0500" prefix="">2007-11-23T09:00:42.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-01-28T12:12:28.803-0500" prefix="">2011-01-28T12:12:28.803-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>At least with the Scheduler markup and use of the Reorderer, there is an error in IE6 that renders it unusable. Upon instantiation of a Reorderer, IE6 complains that there is an "invalid argument:" on line 76 of the Reorderer:</p>
+<p>if (this.domNode.getAttribute("aaa:activedescendent")) {<br>
+this.domNode.removeAttribute("aaa:activedescendent");<br>
+}</p>
+<p>The problem seems to be with the call to getAttribute("aaa:activedescendent"). The SchedulerTests show the problem. It may be worth checking with Simon on the best way to be getting and setting these namespaced ARIA attributes.</p>
+<p>My concern was that this may happen with any markup that initially lacks these attributes, but I can't get the todo list markup to reproduce. Perhaps it's a bug in the scheduler.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Windows XP, IE 6 (non-hacked)</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-123/FLUID-123_Reorderer.js.patch">
+                            
+                                FLUID-123_Reorderer.js.patch
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-21504">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2007-11-23T09:04:49.000-0500">2007-11-23T09:04:49.000-0500</relative-time></i></p>
+                        <p>I've attached a patch to Reorderer.js that appears to resolve the problem, but I haven't done extensive enough tests to ensure it's safe. Can someone look at this for me?</p>
+<p>Basically, the patch removes the call to getAttribute to determine if the "aaa:activedescendent" attribute is present. Instead, it immediately calls removeAttribute("aaa:activedescent") under the assumption that it's safe and faster to just attempt to remove the element, regardless of if it is present.</p>
+
+                    </li>
+                    
+                    <li id="comment-21508">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2007-11-23T09:23:55.000-0500">2007-11-23T09:23:55.000-0500</relative-time></i></p>
+                        <p>I think you should be using getAttributeNS and removeAttributeNS here. As in:</p>
+<p>if (this.domNode.getAttributeNS("<a href="http://www.w3.org/2005/07/aaa">http://www.w3.org/2005/07/aaa</a>", "activedescendent")) {<br>
+this.domNode.removeAttributeNS("<a href="http://www.w3.org/2005/07/aaa">http://www.w3.org/2005/07/aaa</a>", "activedescendent");<br>
+}</p>
+<p>Having said that, you only need to namespace ARIA states/properties on FF2 – the spec is being changed (FF3 implements the new behaviour.) Here's what I did in Dojo:</p>
+<p>getWaiState: function(/<strong>Element</strong>/ elem, /<strong>String</strong>/ state){<br>
+// Summary: Return the value of the requested state on elem<br>
+//		or an empty string if elem has no value for state.<br>
+//		On Firefox 2 and below, we check for an attribute in namespace<br>
+//		"<a href="http://www.w3.org/2005/07/aaa">http://www.w3.org/2005/07/aaa</a>" with a name of the given state.<br>
+//		On all other browsers, we check for an attribute called<br>
+//		"aria-"+state.<br>
+if(dojo.isFF &amp;&amp; dojo.isFF &lt; 3){<br>
+return elem.getAttributeNS("<a href="http://www.w3.org/2005/07/aaa">http://www.w3.org/2005/07/aaa</a>", state);<br>
+}else{<br>
+var value =  elem.getAttribute("aria-"+state);<br>
+return value ? value : "";<br>
+}<br>
+},</p>
+<p>removeWaiState: function(/<strong>Element</strong>/ elem, /<strong>String</strong>/ state){<br>
+// Summary: Removes the given state from elem.<br>
+//		On Firefox 2 and below, we remove the attribute in namespace<br>
+//		"<a href="http://www.w3.org/2005/07/aaa">http://www.w3.org/2005/07/aaa</a>" with a name of the given state.<br>
+//		On all other browsers, we remove the attribute called<br>
+//		"aria-"+state.<br>
+if(dojo.isFF &amp;&amp; dojo.isFF &lt; 3){<br>
+elem.removeAttributeNS("<a href="http://www.w3.org/2005/07/aaa">http://www.w3.org/2005/07/aaa</a>", state);<br>
+}else{<br>
+elem.removeAttribute("aria-"+state);<br>
+}<br>
+}</p>
+<p>from <a href="http://trac.dojotoolkit.org/browser/dijit/trunk/_base/wai.js">http://trac.dojotoolkit.org/browser/dijit/trunk/_base/wai.js</a></p>
+
+                    </li>
+                    
+                    <li id="comment-21511">
+                        <p class="mb-0"><b>Joseph Scheuhammer</b> <i>commented <relative-time datetime="2007-11-26T10:55:45.000-0500">2007-11-26T10:55:45.000-0500</relative-time></i></p>
+                        <p>One difference between 'Lightbox.html', and 'scheduler.html' is that the former declares namespaces for the aria 'wairole' and 'aaa'.  These are declared in the &lt;html&gt; element.  That might explain why a plain getAttribute() works in the context of the lightbox, but not in the case of the scheduler.</p>
+
+                    </li>
+                    
+                    <li id="comment-21514">
+                        <p class="mb-0"><b>Joseph Scheuhammer</b> <i>commented <relative-time datetime="2007-11-26T16:12:24.000-0500">2007-11-26T16:12:24.000-0500</relative-time></i></p>
+                        <p>Michelle committed Colin's patch, and Anastasia checked it for her (paraphrase from and icq from MD).</p>
+
+                    </li>
+                    
+                    <li id="comment-21516">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2007-11-26T16:19:15.000-0500">2007-11-26T16:19:15.000-0500</relative-time></i></p>
+                        <p>The patch fixed the immediate problem. We still need to address the issue of proper namespacing: we're adding attributes with the aaa: namespace without ever knowing if that namespace has actually been declared in the document. I'll file a separate JIRA.</p>
+
+                    </li>
+                    
+                    <li id="comment-21518">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2011-01-28T12:09:44.277-0500">2011-01-28T12:09:44.277-0500</relative-time></i></p>
+                        <p>Reopening these issues to add the reorderercomponent to them.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-122/"><span class="aria-hidden">←</span> Previous: FLUID-122</a>
+        <a class="mx-1" href="/browse/FLUID-124/">Next: FLUID-124 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

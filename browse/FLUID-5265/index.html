@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5265  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5265 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5265/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5265/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5265/">FLUID-5265</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5265: grunt-modulefiles plugin should return the set of module related directories as well as files</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5265">FLUID-5265</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-02-03T14:44:38.359-0500" prefix="">2014-02-03T14:44:38.359-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-02-04T13:55:03.251-0500" prefix="">2014-02-04T13:55:03.251-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Build Scripts</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently the grunt-modulefiles plugin will return the set of required files. However, at times it will also be interesting to know what the set of required directories are. Perhaps instead of just returning the set of files to "output" we return an object of the structure</p>
+<p>{<br>
+files: // set of files<br>
+dirs: // set of dirs<br>
+} </p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-21058">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-02-04T10:25:24.362-0500">2014-02-04T10:25:24.362-0500</relative-time></i></p>
+                        <p>Submitted a pull request <a href="https://github.com/fluid-project/grunt-modulefiles/pull/3">https://github.com/fluid-project/grunt-modulefiles/pull/3</a> that will return an object containing files and directory arrays.</p>
+
+                    </li>
+                    
+                    <li id="comment-21059">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-02-04T11:47:26.534-0500">2014-02-04T11:47:26.534-0500</relative-time></i></p>
+                        <p>Merged into the project repo @ aef0991f7e7f406224ca9c63821bee1fecfdd06d</p>
+
+                    </li>
+                    
+                    <li id="comment-21060">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-02-04T13:55:03.251-0500">2014-02-04T13:55:03.251-0500</relative-time></i></p>
+                        <p>Merged more into the project repo @ eb782abaca89400099dcfe5ec8436c7cddbf9e14</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5264/"><span class="aria-hidden">←</span> Previous: FLUID-5264</a>
+        <a class="mx-1" href="/browse/FLUID-5266/">Next: FLUID-5266 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4725  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4725 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4725/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4725/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4725/">FLUID-4725</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4725: Change inlineEdit invitation text on keyboard focus</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4725">FLUID-4725</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-06-28T10:54:05.932-0400" prefix="">2012-06-28T10:54:05.932-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-09-18T11:25:35.116-0400" prefix="">2013-09-18T11:25:35.116-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The designers have suggested that the 'defaultViewText' for an empty inlineEdit (default is "Click here to edit") change when the field receives keyboard focus, to something that includes instructions for pressing enter to edit, such as "Click here or press enter to edit." The defaultViewText is overridable, so I imagine the focused view text should also be overridable.</p>
+<p>The component already binds functionality to the focus and blur events, so I imagine it shouldn't be too hard to include a change of the text.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13244">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2012-07-18T11:05:14.475-0400">2012-07-18T11:05:14.475-0400</relative-time></i></p>
+                        <p>Merged into project repo at b743831c5afb272d3f87aeb41e592326933402be</p>
+
+                    </li>
+                    
+                    <li id="comment-13245">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2012-07-20T17:23:27.847-0400">2012-07-20T17:23:27.847-0400</relative-time></i></p>
+                        <p>Hi - this implementation is generally good, although the lines </p>
+<p>if ((that.options.defaultViewText !== undefined) &amp;&amp;<br>
+(that.options.strings.defaultViewText === fluid.defaults("inlineEdit").strings.defaultViewText)) {<br>
+that.options.strings.defaultViewText = that.options.defaultViewText;<br>
+}</p>
+<p>are not very declarative and would be better expressed as a mergePolicy. A policy of </p>
+<p>"strings.defaultViewText": "defaultViewText"</p>
+<p>should have the desired effect although I am hesitant to very positively recommend this change since this part of the framework has a rickety and incomplete implementation which might well change soon - I left some comments on <a href="/browse/FLUID-4733/">FLUID-4733</a> on this aspect of mergePolicies.<br>
+Separately whilst reading these fixes I noted <a href="/browse/FLUID-4732/">FLUID-4732</a> which we should deal with sooner rather than later. Removing the explicit read of a component's defaults (never recommended as a general practice) would also reduce the impact of fixing <a href="/browse/FLUID-4732/">FLUID-4732</a>.</p>
+
+                    </li>
+                    
+                    <li id="comment-13246">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2012-07-20T17:32:26.468-0400">2012-07-20T17:32:26.468-0400</relative-time></i></p>
+                        <p>Please also consider using the same strategy for <br>
+// this is here for backwards API compatibility, but should be in the strings block<br>
+tooltipText: "Select or press Enter to edit",</p>
+
+                    </li>
+                    
+                    <li id="comment-13247">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2012-07-20T17:42:43.114-0400">2012-07-20T17:42:43.114-0400</relative-time></i></p>
+                        <p>Some other improvements:</p>
+<p>Avoid duplicate calls to fluid.inlineEdit.bindHighlightHandler and fluid.inlineEdit.bindMouseHandlers by amalgamating the DOM elements passed as the first argument like so:</p>
+<p>(InlineEdit.js line 738)</p>
+<p>var viewElements = that.viewEl.add(that.textEditButton);</p>
+<p>fluid.inlineEdit.bindMouseHandlers(viewElements, that.edit);<br>
+fluid.inlineEdit.bindHighlightHandler(viewElements, displayModeContainer, that.options.styles, that.options.strings, that.model);</p>
+<p>This will improve intent, as well as aid future refactoring of the component, and mitigate the fact that the signature of bindHighlightHandler has become undesirably long.</p>
+<p>NOTE: This will require improving the implementation of fluid.inlineEdit.makeEditTriggerGuard</p>
+<p>All of these functions should be improved to make it clear whether they accept a jQuery element or not (they should all unambiguously accept a jQuery as their first argument) rather than currently looking as if they accept a variety of things (jQuery with one element, jQuery with multiple elements, or a raw DOM node) but failing in some cases. </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4724/"><span class="aria-hidden">←</span> Previous: FLUID-4724</a>
+        <a class="mx-1" href="/browse/FLUID-4726/">Next: FLUID-4726 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

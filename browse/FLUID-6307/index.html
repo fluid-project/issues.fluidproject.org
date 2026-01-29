@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6307  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6307 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6307/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6307/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6307/">FLUID-6307</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6307: Uploader and TTS do not show coverage despite having tests</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6307">FLUID-6307</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Tony Atkins [RtF]</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-07-21T08:05:12.484-0400" prefix="">2018-07-21T08:05:12.484-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-07-24T04:29:15.476-0400" prefix="">2018-07-24T04:29:15.476-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Testing Infrastructure</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>As the enclosed screenshot shows, the Uploader and TextToSpeech components are showing as mostly without coverage despite having dedicated tests. I can't see a clear reason for this given the coverage configuration.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6307/coverage-uploader.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6307/coverage-uploader.png" alt="coverage-uploader.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-17046">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-07-23T06:38:18.607-0400">2018-07-23T06:38:18.607-0400</relative-time></i></p>
+                        <p>Antranig Basman, I'm afraid we have a thornier question here, which is "why isn't the missing coverage reported all the time?"  Take a look at this report, generated just now in OS X from a test run against master:</p>
+<p><a href="http://the-t-in-rtf.github.io/coverage-reports/infusion/20180723/">http://the-t-in-rtf.github.io/coverage-reports/infusion/20180723/</a></p>
+<p>The components are reported as covered, and the overall coverage is higher than your results.</p>
+<blockquote>
+<p>=============================== Coverage summary ===============================<br>
+Statements   : 93.48% ( 9732/10411 )<br>
+Branches     : 84.7% ( 4440/5242 )<br>
+Functions    : 94.23% ( 1780/1889 )<br>
+Lines        : 93.53% ( 9693/10363 )<br>
+================================================================================</p>
+</blockquote>
+<p>I also looked at a recent build on CI:</p>
+<p><a href="https://buildkite.com/fluid-project/infusion/builds/202#9edb5641-219b-4d63-b82b-a04d6111db91">https://buildkite.com/fluid-project/infusion/builds/202#9edb5641-219b-4d63-b82b-a04d6111db91</a></p>
+<p>Although the report itself is not retained, the overall totals are closer to your result than mine.</p>
+<blockquote>
+<p>=============================== Coverage summary ===============================<br>
+Statements   : 92.95% ( 9701/10437 )<br>
+Branches     : 84.08% ( 4378/5207 )<br>
+Functions    : 93.71% ( 1773/1892 )<br>
+Lines        : 92.99% ( 9664/10392 )<br>
+================================================================================</p>
+</blockquote>
+<p>I'll try rerunning in a VM to see if I can track this down further.</p>
+
+                    </li>
+                    
+                    <li id="comment-17047">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-07-23T09:39:55.407-0400">2018-07-23T09:39:55.407-0400</relative-time></i></p>
+                        <p>Antranig Basman, the results in a clean VM exactly match my results.  I will need to fire up a windows VM to see if I can reproduce the discrepancy there.</p>
+
+                    </li>
+                    
+                    <li id="comment-17048">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-07-23T10:45:14.559-0400">2018-07-23T10:45:14.559-0400</relative-time></i></p>
+                        <p>The results from running in a Windows 10 VM are comparable to what I saw in CI (I suspect there are a few windows-unique branches that are hit, the coverage was even better):</p>
+<p><a href="http://the-t-in-rtf.github.io/coverage-reports/infusion/20180723-windows/">http://the-t-in-rtf.github.io/coverage-reports/infusion/20180723-windows/</a></p>
+<p>Antranig Basman, I'll need to rely on you for input about when you see this, with which combination of browsers, whether it occurs repeatedly, et cetera.</p>
+
+                    </li>
+                    
+                    <li id="comment-17049">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-07-23T11:08:11.450-0400">2018-07-23T11:08:11.450-0400</relative-time></i></p>
+                        <p>Tony Atkins [RtF] and Antranig Basman there are some TTS related tests that do not run in certain conditions (i.e. the web speech api isn't supported, the pause/resume tests don't run in Chrome, and in some cases the tests don't run when there isn't a proper audio driver which was happening in browerstack but may also be the case for our CI).</p>
+
+                    </li>
+                    
+                    <li id="comment-17050">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-07-24T04:29:15.476-0400">2018-07-24T04:29:15.476-0400</relative-time></i></p>
+                        <p>Thanks, Justin Obara, that's an interesting point.  The tests run and report coverage in CI.  Antranig Basman, if you open the TTS fixtures in a browser on the machine where you saw the problem, do they all run?</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6306/"><span class="aria-hidden">←</span> Previous: FLUID-6306</a>
+        <a class="mx-1" href="/browse/FLUID-6308/">Next: FLUID-6308 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

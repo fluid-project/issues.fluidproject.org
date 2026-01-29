@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-150  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-150 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-150/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-150/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-150/">VP-150</a></li>
+            </ol>
+        </nav>
+        <h1>VP-150: Language controls silent with screen reader</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-150">VP-150</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Duplicate">Duplicate</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-08-09T12:09:06.138-0400" prefix="">2012-08-09T12:09:06.138-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-01-28T09:25:23.984-0500" prefix="">2013-01-28T09:25:23.984-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>NVDA+FF:<br>
+When language menu opened using button, NVDA says nothing.<br>
+When arrow keys are used to navigate language menu, NVDA says "paragraph".</p>
+<p>NVDA+IE9:<br>
+When language menu opened using button, NVDA says name of key.<br>
+When arrow keys are used to navigate language menu, NVDA says "show xx" for first up, the only names of various elements in the page.</p>
+<p>VoiceOver+Safari:<br>
+When language menu opened using button, VoiceOver says nothing.<br>
+When arrow keys are used to navigate language menu, VoiceOver actually reads the correct menu item content!</p>
+<p>Jaws+FF:<br>
+When language menu opened using button, Jaws says name of key.<br>
+When arrow keys are used to navigate language menu, Jaws says "edit".</p>
+<p>Jaws+IE9:<br>
+When language menu opened using button, Jaws says name of key.<br>
+When arrow keys are used to navigate language menu, Jaws says nothing.</p>
+<p>NB: for Jaws testing, Jaws was manually switched into application mode (virtual PC cursor 'off')</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Jaws and NVDA with FF and IE9, VoiceOver with Safari</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26906">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-08-17T14:54:07.876-0400">2012-08-17T14:54:07.876-0400</relative-time></i></p>
+                        <p>My branch <a href="https://github.com/anvk/videoPlayer/tree/FLUID-4750">https://github.com/anvk/videoPlayer/tree/FLUID-4750</a> has added role="option" for the &lt;li&gt; tags for every element in the menu.<br>
+Then there are aria-checked and aria-selected for every row.</p>
+<p>Interesting enough but FF tries to read both flags but aria-checked is the most readable. Safari, on the other hand, ignores aria-checked completely and reads out aria-selected.<br>
+IE ignores both flags and read the whole content of the videoPlayer div related to <a href="/browse/FLUID-4748/">FLUID-4748</a></p>
+
+                    </li>
+                    
+                    <li id="comment-26908">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-08-21T14:07:24.695-0400">2012-08-21T14:07:24.695-0400</relative-time></i></p>
+                        <p>For the first item:</p>
+<p>FF + NVDA - For not selected items it tells "English not selected not checked 1 of 3"). For the selected item it tells "English checked 1 of 3"<br>
+IE + NVDA - For any options NVDA will read out the whole videoPlayer content<br>
+Chrome + NVDA - Chrome refuses to Enter a focus mode by pressing Enter so arrow keys could not get to the language menu</p>
+<p>Safari + VoiceOver - For the show captions button it tells "Show Captions 3 items". For the not selected item it says "English/French text". For the selected item it says "English/French selected". Safari is the whole reason why aria-selected was added since aria-checked is being ignored by this browser.</p>
+<p>FF + JAWS - You have to enter a Focus mode by pressing Space. For the show captions button it tells "Show Captions 3 of 3". For the not selected item it says "English/French". For the selected item it says "English/French checked selected".<br>
+IE + JAWS - Does not say anything<br>
+Chrome + JAWS - Cannot enter the language menu at all. Most likely because of the conflict in JAWS of space/enter with space/enter keyboard interactions of the language menu</p>
+
+                    </li>
+                    
+                    <li id="comment-26909">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-10-03T11:21:07.340-0400">2012-10-03T11:21:07.340-0400</relative-time></i></p>
+                        <p>The fix for this has been merged into the <a href="/browse/FLUID-4786/">FLUID-4786</a> branch, and will be committed with that.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-52/"><span class="aria-hidden">←</span> Previous: VP-52</a>
+        <a class="mx-1" href="/browse/VP-113/">Next: VP-113 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

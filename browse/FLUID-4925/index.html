@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4925  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4925 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4925/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4925/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4925/">FLUID-4925</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4925: Implement "wave of explosions", eagerly instantiating all component shells before their contents</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4925">FLUID-4925</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-02-24T03:22:20.679-0500" prefix="">2013-02-24T03:22:20.679-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:30.234-0400" prefix="">2024-07-22T10:35:30.234-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Building on the <a href="/browse/FLUID-4330/">FLUID-4330</a> ginger world work, and preparatory to the "wave of promises" asynchronous ginger world, we can offer a significant improvement in regularity to the users of IoC by eagerly instantiating "component shells" and any type founts preferentially to evaluating any other contents of their options in the ginger process. This will allow reliable type-based access to components without requiring a dependence on instantiation order or reliance on hard-coded paths. For example, in this situation in the Uploader, the base component </p>
+<pre><code class="hljs language-java">fluid.uploader.multiFileUploader
+ |
+ +--- fluid.uploader.fileQueue
+ |
+ +--- fluid.uploader.html5Strategy
+       |
+       +--- queue
+</code></pre>
+<p>We would like to write the injection of the fileQueue as</p>
+<pre><code class="hljs language-java">queue: <span class="hljs-string">"fluid.uploader.fileQueue"</span>
+</code></pre>
+<p>but instead must write it as:</p>
+<pre><code class="hljs language-java">queue: <span class="hljs-string">"{uploader}.queue"</span>
+</code></pre>
+<p>This is because despite being a more deeply nested subcomponent of the base, we can't guarantee that the framework has not chosen an instantiation order which recurses more deeply on html5Strategy and has not yet seen the typename of the queue as "fluid.uploader.fileQueue" as the member at path "queue". The former form is preferable since it imposes less tight binding on the exact location of the fileQueue.</p>
+<p>In the "wave of explosions" a wave of instantiations will spread eagerly from the root, in breadth-first order, with the usual priority given to type founts, and ensure that in virtually all cases by the time the body of any component options are expanding, the "type skeleton" of the entire component tree will be available (barring any components whose types depend on some portion of their options body material)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25186">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-01-30T10:04:20.869-0500">2015-01-30T10:04:20.869-0500</relative-time></i></p>
+                        <p>A further requirement - we should try to eliminate the cumbersome piece of memory-ware "fluid.typeFount" and have the framework eagerly evaluate the shells of any components which appear to have the FORM of dynamic grades first amongst a set of siblings - since these are more likely to encode type decisions that might be consumed by other components.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4924/"><span class="aria-hidden">←</span> Previous: FLUID-4924</a>
+        <a class="mx-1" href="/browse/FLUID-4926/">Next: FLUID-4926 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

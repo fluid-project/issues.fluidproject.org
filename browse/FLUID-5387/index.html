@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5387  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5387 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5387/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5387/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5387/">FLUID-5387</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5387: Random failure of tests run in all-tests</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5387">FLUID-5387</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Cannot%20Reproduce">Cannot Reproduce</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-06-02T10:09:31.446-0400" prefix="">2014-06-02T10:09:31.446-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-06-26T10:10:30.867-0400" prefix="">2015-06-26T10:10:30.867-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.9</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UIEnhancer</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>There appears to be some tests failing randomly in the all-tests.html. However, when they are run individually they pass. Different tests are failing on different runs, so it is hard to track down what is causing it exactly. It seems that it could be the case where elements that are needed for the test are destroyed before the test completes. </p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>IE 8 (Windows 7)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-21017">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-06-02T13:23:38.377-0400">2014-06-02T13:23:38.377-0400</relative-time></i></p>
+                        <p>This issue seems to have arisen with this merge <a href="https://github.com/fluid-project/infusion/commit/f77fac2d2d8ecd7fe5ffd2f497cf404e8f13814b">https://github.com/fluid-project/infusion/commit/f77fac2d2d8ecd7fe5ffd2f497cf404e8f13814b</a></p>
+
+                    </li>
+                    
+                    <li id="comment-21018">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2014-06-09T13:40:59.230-0400">2014-06-09T13:40:59.230-0400</relative-time></i></p>
+                        <p>GIven that this is only in IE8, perhaps we shouldn't worry too much about it?</p>
+
+                    </li>
+                    
+                    <li id="comment-21019">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-06-11T10:16:01.875-0400">2014-06-11T10:16:01.875-0400</relative-time></i></p>
+                        <p>This issue results from a timing issue (race condition) in the IoC testing framework. I believe it will require an upgrade to qunit in order to resolve it but I haven't had time to investigate it in detail. I have seen these failures on several browsers and not just IE8, especially if the machine is running slowly. The workaround is to run the failing tests individually and verify that they run. We should push this out for Infusion 2.0 since it will take a lot of diagnosis to resolve.</p>
+
+                    </li>
+                    
+                    <li id="comment-21020">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-06-11T10:17:13.913-0400">2014-06-11T10:17:13.913-0400</relative-time></i></p>
+                        <p>Spoke with Antranig Basman in the channel today about this. It seems there is a timing issue, that may require a fix in qunit. This seems to be out of the scope for the 1.5 release, and should be addressed afterwards.</p>
+<p><a href="https://botbot.me/freenode/fluid-work/2014-06-11/">https://botbot.me/freenode/fluid-work/2014-06-11/</a></p>
+
+                    </li>
+                    
+                    <li id="comment-21021">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-15T14:56:31.722-0400">2015-06-15T14:56:31.722-0400</relative-time></i></p>
+                        <p>Could not reproduce with IE 11 (which is currently the latest version of IE supported)</p>
+
+                    </li>
+                    
+                    <li id="comment-21022">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-26T09:51:17.190-0400">2015-06-26T09:51:17.190-0400</relative-time></i></p>
+                        <p>Reopening to change the fix version to 1.9</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5386/"><span class="aria-hidden">←</span> Previous: FLUID-5386</a>
+        <a class="mx-1" href="/browse/FLUID-5388/">Next: FLUID-5388 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

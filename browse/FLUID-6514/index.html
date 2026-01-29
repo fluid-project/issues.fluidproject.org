@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6514  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6514 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6514/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6514/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6514/">FLUID-6514</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6514: Simplify the process to override default values from UIO primary schema</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6514">FLUID-6514</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-06-04T16:46:13.116-0400" prefix="">2020-06-04T16:46:13.116-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-06-05T10:01:51.195-0400" prefix="">2020-06-05T10:01:51.195-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When changing the default values defined in the primary schema of the preferences framework, for example, to set the minimum value of the line space to 1, the current working approaches are:</p>
+<p>1. Rewrite and override "fluid.prefs.schemas.lineSpace":</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.prefs.schemas.lineSpace"</span>, {
+  gradeNames: [<span class="hljs-string">"fluid.prefs.schemas"</span>],
+  schema: {
+    <span class="hljs-string">"fluid.prefs.lineSpace"</span>: {
+      <span class="hljs-string">"type"</span>: <span class="hljs-string">"number"</span>,
+      <span class="hljs-string">"default"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-string">"minimum"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-string">"maximum"</span>: <span class="hljs-number">2</span>,
+      <span class="hljs-string">"multipleOf"</span>: <span class="hljs-number">0.1</span>
+    }
+  }
+});
+</code></pre>
+<p>2. Override transformed options at instantiate "fluid.uiOptions":</p>
+<pre><code class="hljs language-java">fluid.uiOptions(<span class="hljs-string">".flc-prefsEditor-separatedPanel"</span>, {
+  schema: {
+    properties: {
+      <span class="hljs-string">"fluid.prefs.lineSpace"</span>: {
+        <span class="hljs-string">"minimum"</span>: <span class="hljs-number">1</span>
+      }
+    }
+  }
+});
+</code></pre>
+<p>Either of above requires knowledge of the internal implementation of the preferences framework.</p>
+<p>It would be more integrator friendly to simplify the API, such as:</p>
+<pre><code class="hljs language-java">fluid.uiOptions(<span class="hljs-string">".flc-prefsEditor-separatedPanel"</span>, {
+  <span class="hljs-string">"fluid.prefs.lineSpace"</span>: {
+    minimum: <span class="hljs-number">1</span>
+  }
+});
+</code></pre>
+<p>Reference: This issue is initially discovered with <a href="https://github.com/inclusive-design/wecount.inclusivedesign.ca/issues/253">a WeCount website requirement</a>. See discussions in <a href="https://github.com/inclusive-design/wecount.inclusivedesign.ca/pull/261">its pull request</a>.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6513/"><span class="aria-hidden">←</span> Previous: FLUID-6513</a>
+        <a class="mx-1" href="/browse/FLUID-6515/">Next: FLUID-6515 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

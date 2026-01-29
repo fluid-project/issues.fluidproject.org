@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5971  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5971 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5971/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5971/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5971/">FLUID-5971</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5971: Add binder transformation functions to model transformation API....</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5971">FLUID-5971</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Tony%20Atkins%20%5BRtF%5D">Tony Atkins [RtF]</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-09-27T05:54:37.646-0400" prefix="">2016-09-27T05:54:37.646-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T09:21:27.944-0400" prefix="">2024-07-22T09:21:27.944-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Model Transformation System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In reviewing my proposed date-handling transformation functions in <a href="https://issues.gpii.net/browse/GPII-2053">gpii-binder</a>, Antranig Basman asked me to submit this against Fluid's Model Transformation API instead.</p>
+<p>There are two functions, one for string -&gt; date, the other for date -&gt; string.   Both use RFC 3339 conventions, which builds on ISO 8601 and is used with both the HTML5 date field and JSON Schema.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22351">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-09-27T05:55:50.896-0400">2016-09-27T05:55:50.896-0400</relative-time></i></p>
+                        <p>Antranig Basman, is there a particular branch I should start with?</p>
+
+                    </li>
+                    
+                    <li id="comment-22352">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-09-27T08:00:12.858-0400">2016-09-27T08:00:12.858-0400</relative-time></i></p>
+                        <p>Also, do you want me to pull up any of the rest of the functions here?</p>
+<p><a href="https://github.com/the-t-in-rtf/gpii-binder/blob/GPII-1886/src/js/codingTransforms.js">https://github.com/the-t-in-rtf/gpii-binder/blob/GPII-1886/src/js/codingTransforms.js</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22354">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-10-05T09:07:09.346-0400">2016-10-05T09:07:09.346-0400</relative-time></i></p>
+                        <p>In discussions with Antranig on the <a href="https://github.com/GPII/gpii-binder/pull/4">previous PR</a>, we agreed that I would migrate the existing functions out of gpii-binder into infusion.</p>
+
+                    </li>
+                    
+                    <li id="comment-22356">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-10-10T07:33:45.700-0400">2016-10-10T07:33:45.700-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/infusion/pull/761">https://github.com/fluid-project/infusion/pull/761</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22357">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2017-10-12T19:28:11.049-0400">2017-10-12T19:28:11.049-0400</relative-time></i></p>
+                        <p>Was merged into trunk on 27 Jan 2017</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5970/"><span class="aria-hidden">←</span> Previous: FLUID-5970</a>
+        <a class="mx-1" href="/browse/FLUID-5972/">Next: FLUID-5972 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

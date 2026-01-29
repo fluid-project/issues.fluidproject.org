@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5921  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5921 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5921/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5921/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5921/">FLUID-5921</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5921: Add "preInspection" logic to every execution of fluid.require</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5921">FLUID-5921</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-06-17T21:01:44.596-0400" prefix="">2016-06-17T21:01:44.596-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-06-17T21:01:44.596-0400" prefix="">2016-06-17T21:01:44.596-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>A relatively recent improvement (late 2015) to Infusion's node.js support was the "preInspection" system whereby Infusion on startup will look up the directory structure from its own position, looking for a point which meets the criteria for being an npm module base - without necessarily meeting node's criteria for being a loadable module - that is, it contains a package.json file which is parseable as JSON and has a "name" member.</p>
+<p>This has allowed us to ease the numerous annoying situations where code within a module tries to resolve the overall module, but cannot load itself since it has not been checked out within a <code>node_modules</code> directory. This has been useful but has always felt peculiarly special-cased, and clearly part of some more general idiom for preInspection.</p>
+<p>After fixing the headline failure in <a href="https://issues.gpii.net/browse/GPII-1852">https://issues.gpii.net/browse/GPII-1852</a> we ran headlong into an issue directly exposing how the preInspection system needs to be generalised. Inside the testRegistryResolver.js tests, we had written a line </p>
+<pre><code class="hljs language-javascript">fluid.<span class="hljs-built_in">require</span>(<span class="hljs-string">"%gpii-windows"</span>);
+</code></pre>
+<p>which morally should have worked - unfortunately as part of <a href="https://issues.gpii.net/browse/GPII-1848">https://issues.gpii.net/browse/GPII-1848</a> we were testing a configuration where infusion had become "out of line" with gpii-windows. Our system of "loading infusion via universal" is in fact quite wacky and should be discontinued itself. However, it's likely that other varieties of this situation will arise.</p>
+<p>What should happen here is that we extend our "last-ditch" branch in fluid.require at <a href="https://github.com/fluid-project/infusion/blob/master/src/module/module.js#L135">https://github.com/fluid-project/infusion/blob/master/src/module/module.js#L135</a> to make a "preInspection" run from the caller's location - which we can now assess via the patched node-aware fluid.getCallerInfo() which this algorithm already depends on.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5920/"><span class="aria-hidden">←</span> Previous: FLUID-5920</a>
+        <a class="mx-1" href="/browse/FLUID-5922/">Next: FLUID-5922 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5865  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5865 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5865/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5865/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5865/">FLUID-5865</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5865: Model relay rules should respond to priority directives</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5865">FLUID-5865</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-02-18T23:37:46.439-0500" prefix="">2016-02-18T23:37:46.439-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-03-11T22:27:46.365-0500" prefix="">2017-03-11T22:27:46.365-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When the model relay system was designed, it was considered adequate that relay rules would flood the skeleton in a purely data-driven way, and that to arbitrate between them would just lead to confusion - and a lack of well-definedness in the final stabilised skeleton state.</p>
+<p>However, after <a href="/browse/FLUID-5361/">FLUID-5361</a> and more experience, it's clear that this is actually exactly what is required, and it is in fact essential in order to <strong>ensure</strong> that the skeleton can settle to the user-defined state. The disorderliness of dataflow systems when there are multiple valid arcs along which updates can flow is well-known (for example, in user environments such as Quartz Composer, where relative dataflow order cannot be controlled), and since our priority system is now so mature and so well-understood, it is a reasonable economy to extend it to relay rules as well as all the other artefacts to which it applies (model listeners, distributions, context awareness rules, etc.)</p>
+<p>Here is the motivating use case. A user component showing a graph has a "viewport", which for the sake of simplicity we will only consider the x-axis component of. This has various model coordinates associated with it, with various constraints:</p>
+<pre><code class="hljs language-java">model: {
+        dataRange: {
+            step: <span class="hljs-comment">// interval between data points in ms</span>
+            start: <span class="hljs-comment">// start of available data in ms</span>
+        visWindow: {
+            start: <span class="hljs-comment">// start of visible window in ms</span>
+            end: <span class="hljs-comment">// end of visible window in ms</span>
+            step: <span class="hljs-comment">// interval between drawn points in ms</span>
+         },
+         midPoint: <span class="hljs-comment">// the midpoint of visWindow in ms</span>
+         screenChaundles: <span class="hljs-comment">// count of data points that will fit into the visible window</span>
+         range: <span class="hljs-comment">// The number of data points available</span>
+         position: <span class="hljs-comment">// scrollbar position - has range from 0 to range - screenChaundles </span>
+    }
+</code></pre>
+<p>We have the following constraints:</p>
+<pre><code class="hljs language-java">midpoint = (visWindow.start + visWindow.end) / <span class="hljs-number">2</span>;
+range = (dataRange.end - dataRange.start) / dataRange.step;
+position = (visWindow.start - dataRange.start) / dataRange.step;
+visWindow.step = dataRange.step;
+visWindow.end = visWindow.start + visWindow.step * screenChaundles;
+</code></pre>
+<p>Now - as a UI action, when the user zooms in or out of the window, we need to maintain the constraint that the value of "midPoint" (or more ambitiously, any chosen real coordinate, for example, the one that the mouse x position identifies) should remain fixed during the zoom. Now, the zoom is actually "honoured" by making a change to the value of one of the "step" entries. But how is the system to determine which of the constraints which get invalidated by this is to be restored first? Choosing the final, visWindow, constraint, will not only produce the wrong result (for example, by causing the window start or end position to be maintained rather than the midpoint) but will also sufficiently pollute the pool of state that the desired configuration could never be recovered.</p>
+<p>This implies that we need to be able to signal that, for example, the system is to react to a change in "step" in the first instance with a definitely chosen rule rather than picking a constraint in which the value appears at random. In this case, the "midpoint" rule would result in a custom propagation based on inverting some of the above constraints:</p>
+<pre><code class="hljs language-java">visWindow.start = midpoint - dataRange.step * screenChaundles / <span class="hljs-number">2</span>;
+</code></pre>
+<p>After we have successfully updated one determining element in the cooperating set, flooding propagation from this site will inevitably lead to the right result. Without the power to specify that this rule must take priority over all those in which "step" appears when processing an update, we can't ensure that the user receives the correct final model state.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23657">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-02-19T07:36:09.373-0500">2016-02-19T07:36:09.373-0500</relative-time></i></p>
+                        <p>The discussion above isn't enough to resolve all the problems here. We also need some new ways of encoding changes delivered as transactions. In order to deliver the full user experience above, we need to be able to issue the following update as a transactional unit - </p>
+<p>i) change the value of "step" to its new value<br>
+ii) update all the other coordinates such that the real coordinate that the mouse's current "x" position is hovering over stays the same</p>
+<p>It seems unlikely that we'll be in a position to encode the above in any way other than writing a dedicated function to issue "change" requests to enact it - the problem currently is even worse in that we can't even express the constraints above as relay rules because of lack of priority control - and also our current idiom for demarking transactions is very cumbersome. Here's the current code managing this:</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">// a manual model transducer - reacts to changes in chaundleModel's position or dataRange</span>
+souq.<span class="hljs-property">chaundles</span>.<span class="hljs-property">chaundleToScrollbar</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">scrollbarThat, chaundleThat</span>) {
+    <span class="hljs-keyword">var</span> chaundleModel = chaundleThat.<span class="hljs-property">model</span>;
+    <span class="hljs-keyword">var</span> dataRange = chaundleModel.<span class="hljs-property">dataRange</span>;
+    <span class="hljs-keyword">var</span> newModel;
+    <span class="hljs-keyword">if</span> (!dataRange) {
+        newModel = {
+            <span class="hljs-attr">enabled</span>: <span class="hljs-literal">false</span>
+        };
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">var</span> totalRange = (dataRange.<span class="hljs-property">end</span> - dataRange.<span class="hljs-property">start</span>) / dataRange.<span class="hljs-property">step</span>;
+        newModel = {
+            <span class="hljs-attr">enabled</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">position</span>: chaundleModel.<span class="hljs-property">position</span>,
+            <span class="hljs-attr">range</span>: totalRange,
+            <span class="hljs-attr">lastPosition</span>: totalRange - chaundleModel.<span class="hljs-property">screenChaundles</span>, <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> blasted PARSER! // TODO why not MINUS ONE!</span>
+            <span class="hljs-attr">thumbSize</span>: chaundleModel.<span class="hljs-property">screenChaundles</span>
+        };
+    }
+    scrollbarThat.<span class="hljs-property">applier</span>.<span class="hljs-title function_">change</span>(<span class="hljs-string">""</span>, newModel); <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> new "MERGE" type coming?</span>
+};
+
+
+<span class="hljs-comment">// Awkward problem - this can't be a relay rule because we can't have it autoinvalidate - a</span>
+<span class="hljs-comment">// relay rule can't depend on any model state in a non-live way! Serious problem with our idiom here.</span>
+souq.<span class="hljs-property">chaundles</span>.<span class="hljs-property">positionToVis</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">that</span>) {
+    <span class="hljs-keyword">var</span> dataRange = that.<span class="hljs-property">model</span>.<span class="hljs-property">dataRange</span>,
+        position = that.<span class="hljs-property">model</span>.<span class="hljs-property">position</span>;
+    <span class="hljs-comment">// that.model.position holds scrollbar's index, which is between 0 and dataRange width / step</span>
+    <span class="hljs-keyword">if</span> (!dataRange || !dataRange.<span class="hljs-property">start</span>) {
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">var</span> visStart = dataRange.<span class="hljs-property">start</span> + position * dataRange.<span class="hljs-property">step</span>;
+    <span class="hljs-keyword">var</span> visWindow = {
+        <span class="hljs-attr">start</span>: visStart,
+        <span class="hljs-attr">end</span>: visStart + dataRange.<span class="hljs-property">step</span> * that.<span class="hljs-property">model</span>.<span class="hljs-property">screenChaundles</span>,
+        <span class="hljs-attr">step</span>: dataRange.<span class="hljs-property">step</span>
+    };
+    that.<span class="hljs-property">visWindow</span> = visWindow;
+};
+
+<span class="hljs-comment">// Called on update of grain to recentre new scrollbar position on old view</span>
+souq.<span class="hljs-property">rescalePosition</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">that</span>) {
+    <span class="hljs-keyword">if</span> (that.<span class="hljs-property">visWindow</span>) {
+        <span class="hljs-keyword">var</span> dataRange = that.<span class="hljs-property">model</span>.<span class="hljs-property">dataRange</span>;
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"rescalePosition - current step "</span> + dataRange.<span class="hljs-property">step</span> + <span class="hljs-string">" initial position "</span> + that.<span class="hljs-property">model</span>.<span class="hljs-property">position</span>);
+        <span class="hljs-keyword">var</span> midpoint = souq.<span class="hljs-title function_">getWindowMidpoint</span>(that.<span class="hljs-property">visWindow</span>);
+        <span class="hljs-keyword">var</span> newStart = midpoint - dataRange.<span class="hljs-property">step</span> * that.<span class="hljs-property">model</span>.<span class="hljs-property">screenChaundles</span> / <span class="hljs-number">2</span>;
+        <span class="hljs-keyword">var</span> newPosition = (newStart - dataRange.<span class="hljs-property">start</span>) / dataRange.<span class="hljs-property">step</span>;
+        that.<span class="hljs-property">applier</span>.<span class="hljs-title function_">change</span>(<span class="hljs-string">"position"</span>, newPosition);
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"rescalePosition got midpoint "</span> + midpoint + <span class="hljs-string">" new position "</span> + newPosition);
+    }
+};
+</code></pre>
+<p>where "rescalePosition" ends up being notified by the following sequence: </p>
+<pre><code class="hljs language-java">souq.graph.participantZoom = function (that, grainThat, zoomDelta) {
+    console.log(<span class="hljs-string">"participant Zoom delta "</span> + zoomDelta);
+    <span class="hljs-type">var</span> <span class="hljs-variable">newIndex</span> <span class="hljs-operator">=</span> grainThat.model.grainIndex + zoomDelta;
+    grainThat.applier.change(<span class="hljs-string">"grainIndex"</span>, newIndex);
+};
+</code></pre>
+<p>the "grainIndex" update eventually feeds through to an update of "dataRange.step" which invokes the above:</p>
+<pre><code class="hljs language-javascript"><span class="hljs-attr">modelListeners</span>: {
+        <span class="hljs-string">""</span>: [{ <span class="hljs-comment">// Terrible - we need to break this out in terms of the things that we really want to react to</span>
+            <span class="hljs-attr">func</span>: <span class="hljs-string">"{that}.events.onRefreshView.fire"</span>,
+            <span class="hljs-attr">args</span>: [<span class="hljs-string">"{that}"</span>],
+            <span class="hljs-attr">priority</span>: souq.<span class="hljs-property">priorities</span>.<span class="hljs-property">repaint</span>
+        }, {
+            <span class="hljs-attr">funcName</span>: <span class="hljs-string">"souq.chaundles.visToTileManager"</span>,
+            <span class="hljs-attr">args</span>: [<span class="hljs-string">"{that}"</span>],
+            <span class="hljs-attr">priority</span>: souq.<span class="hljs-property">priorities</span>.<span class="hljs-property">fetchTile</span>
+        }, { <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> This should really only react to the things that scrollbar does, but we can't be bothered to write it out - so it self-reacts for one cycle</span>
+            <span class="hljs-attr">funcName</span>: <span class="hljs-string">"souq.chaundles.positionToVis"</span>,
+            <span class="hljs-attr">args</span>: [<span class="hljs-string">"{that}"</span>],
+            <span class="hljs-attr">priority</span>: souq.<span class="hljs-property">priorities</span>.<span class="hljs-property">computeVis</span>
+        }],
+        <span class="hljs-string">"dataRange.step"</span>: {
+            <span class="hljs-attr">funcName</span>: <span class="hljs-string">"souq.rescalePosition"</span>,
+            <span class="hljs-attr">args</span>: [<span class="hljs-string">"{that}"</span>, <span class="hljs-string">"{that}.model"</span>],
+            <span class="hljs-attr">priority</span>: souq.<span class="hljs-property">priorities</span>.<span class="hljs-property">updateGrain</span>
+        }
+</code></pre>
+<p>and finally the scrollbar subcomponent definition itself:</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> Move this whole component and its relay rules out to top level</span>
+        <span class="hljs-attr">scrollbar</span>: {
+            <span class="hljs-attr">type</span>: <span class="hljs-string">"souq.scrollbar"</span>,
+            <span class="hljs-attr">options</span>: {
+                <span class="hljs-comment">// problem here! position reacts immediately on change, but chaundleToScrollbar gets to act on a "grain" change immediately. We</span>
+                <span class="hljs-comment">// REALLY want these to form a transaction.</span>
+                <span class="hljs-attr">modelListeners</span>: {
+                    <span class="hljs-string">"{chaundles}.model.dataRange"</span>: {
+                        <span class="hljs-attr">funcName</span>: <span class="hljs-string">"souq.chaundles.chaundleToScrollbar"</span>,
+                        <span class="hljs-attr">args</span>: [<span class="hljs-string">"{that}"</span>, <span class="hljs-string">"{chaundles}"</span>],
+                        <span class="hljs-attr">priority</span>: souq.<span class="hljs-property">priorities</span>.<span class="hljs-property">updateScroll</span>
+                    },
+                    <span class="hljs-string">"{chaundles}.model.position"</span>: { <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> comma syntax in paths</span>
+                        <span class="hljs-attr">funcName</span>: <span class="hljs-string">"souq.chaundles.chaundleToScrollbar"</span>,
+                        <span class="hljs-attr">args</span>: [<span class="hljs-string">"{that}"</span>, <span class="hljs-string">"{chaundles}"</span>],
+                        <span class="hljs-attr">priority</span>: souq.<span class="hljs-property">priorities</span>.<span class="hljs-property">updateScroll</span>
+                    },
+                    <span class="hljs-string">"position"</span>: {
+                        <span class="hljs-attr">changePath</span>: <span class="hljs-string">"{chaundles}.model.position"</span>,
+                        <span class="hljs-attr">value</span>: <span class="hljs-string">"{that}.model.position"</span>
+                    }
+                }
+</code></pre>
+<p>Note the use of pre-<a href="/browse/FLUID-5695/">FLUID-5695</a> style priorities to control repaint vs invalidation model listeners.</p>
+<p>We need to ensure the following:<br>
+1) The entire update triggered by zoom should trigger as a single transaction.<br>
+2) We must be able to express "positionToVis" as a relay rule</p>
+<p>We need to recover what exactly is being referred to in the comment "autoinvalidate - a relay rule can't depend on any model state in a non-live way" but it is believed that this would be solved by having a priority order between relay rules. The issue is that the function body issues a read of "dataRange" and "position" manually. If this was a relay rule, the reference to "position", "dataRange" and its "step" would be part of its relay specification, and so it could never observe a configuration which hadn't attempted to update the scrollbar-mediated relationships between these.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5864/"><span class="aria-hidden">←</span> Previous: FLUID-5864</a>
+        <a class="mx-1" href="/browse/FLUID-5866/">Next: FLUID-5866 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

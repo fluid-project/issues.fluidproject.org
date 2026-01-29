@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6197  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6197 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6197/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6197/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6197/">FLUID-6197</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6197: Correct or clarify documentation on setting Preferences Framework localization</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6197">FLUID-6197</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alan Harnum</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Alan%20Harnum">Alan Harnum</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-09-19T09:51:13.851-0400" prefix="">2017-09-19T09:51:13.851-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T09:02:34.856-0400" prefix="">2024-07-22T09:02:34.856-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Tech. Documentation</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The documentation at <a href="http://docs.fluidproject.org/infusion/development/LocalizationInThePreferencesFramework.html#specifying-a-localization">http://docs.fluidproject.org/infusion/development/LocalizationInThePreferencesFramework.html#specifying-a-localization</a>&#160;is either incorrect or unclear - when implementing <a href="https://github.com/waharnum/uio-multilingual/blob/master/demos/src/js/UIOMultilingualDemo.js#L41">https://github.com/waharnum/uio-multilingual/blob/master/demos/src/js/UIOMultilingualDemo.js#L41</a>&#160;the obvious syntax as described did not appear to work, and it was necessary to address the&#160;messageLoader subcomponent directly.</p>
+<p>At minimum, the documentation needs to be clarified, and it needs to be investigated as to whether this is in fact working as described - the 'settings' object described is constructed by an&#160;expander at <a href="https://github.com/fluid-project/infusion/blob/0ca2eac0a06731f99588399c9abd3e9d29732235/src/framework/preferences/js/PrefsEditor.js#L35,">https://github.com/fluid-project/infusion/blob/0ca2eac0a06731f99588399c9abd3e9d29732235/src/framework/preferences/js/PrefsEditor.js#L35,</a>&#160;and it is unclear where or how the locale should be configured.</p>
+<p>At a more fundamental level, it seems assymetrical to set the defaultLocale on the component options directly (<a href="https://github.com/fluid-project/infusion/blob/0ca2eac0a06731f99588399c9abd3e9d29732235/src/framework/preferences/js/PrefsEditor.js#L33)">https://github.com/fluid-project/infusion/blob/0ca2eac0a06731f99588399c9abd3e9d29732235/src/framework/preferences/js/PrefsEditor.js#L33)</a>&#160;but require a more complicated mechanism for setting the locale - however, I may lack history or context for this decision.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23028">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2018-07-19T11:22:03.741-0400">2018-07-19T11:22:03.741-0400</relative-time></i></p>
+                        <p>Further investigating this as part of <a href="/browse/FLUID-6299/">FLUID-6299</a> - notably, here is where setting the locale is actually tested: <a href="https://github.com/fluid-project/infusion/blob/master/tests/framework-tests/preferences/js/PrefsEditorTests.js#L733-L745">https://github.com/fluid-project/infusion/blob/master/tests/framework-tests/preferences/js/PrefsEditorTests.js#L733-L745</a>&#160;- via a distributeOptions block to set it on the initialModel member.</p>
+<p>Recent changes to the Preferences Framework removed the settings object being generated by the expander and changed the expected point of the locale setting from "{prefsEditorLoader}.settings.locale" to&#160;{prefsEditorLoader}.settings.preferences.locale" (in <a href="https://github.com/fluid-project/infusion/commit/1a466e1f9188b23ccf8da90c249cafab953b7865#diff-4b9c9b993efab504ef58b9664e518698L68)">https://github.com/fluid-project/infusion/commit/1a466e1f9188b23ccf8da90c249cafab953b7865#diff-4b9c9b993efab504ef58b9664e518698L68)</a></p>
+<p>The documentation is out of date with this change but I'm also not sure the documentation would ever actually work as described, given the tests use a different method to setting the locale.</p>
+
+                    </li>
+                    
+                    <li id="comment-23030">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2018-07-19T11:58:36.282-0400">2018-07-19T11:58:36.282-0400</relative-time></i></p>
+                        <p>For current purposes before <a href="/browse/FLUID-6299/">FLUID-6299</a> goes in, we should simply correct the documentation to the current state of the codebase.\</p>
+
+                    </li>
+                    
+                    <li id="comment-23032">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2018-07-31T16:38:40.130-0400">2018-07-31T16:38:40.130-0400</relative-time></i></p>
+                        <p>Closing this per discussion on PR at <a href="https://github.com/fluid-project/infusion-docs/pull/139">https://github.com/fluid-project/infusion-docs/pull/139</a></p>
+<p>We'll open a separate issue that is the INVERSION of this issue - to make the code work like the docs specifies.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6196/"><span class="aria-hidden">←</span> Previous: FLUID-6196</a>
+        <a class="mx-1" href="/browse/FLUID-6198/">Next: FLUID-6198 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

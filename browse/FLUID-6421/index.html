@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6421  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6421 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6421/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6421/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6421/">FLUID-6421</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6421: Update adjuster panels to render their own containers into the prefs editor</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6421">FLUID-6421</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-11-01T09:01:57.130-0400" prefix="">2019-11-01T09:01:57.130-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:11.721-0400" prefix="">2024-07-22T10:35:11.721-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently a prefs editor template is provided, which supplies containers for each of the preference editor panels. This is problematic for those that want to customize which panels are available, as they will need to modify this template in addition to adding/removing the preferences to show.</p>
+<p>The panels should be able to inject their own containers and render into those. Take a look at <a href="https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/NewViewSupport.js#L55-L73">https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/NewViewSupport.js#L55-L73</a>&#160;which may be reused for this case.</p>
+<p>Additionally the order of the panels will need to be specified so that the presentation order of the preferences adjusters can be controlled.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22682">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-11-06T19:43:38.656-0500">2019-11-06T19:43:38.656-0500</relative-time></i></p>
+                        <p>Under the current system the prefs editor provides a template that contains the containers for each of the panels to be rendered into.</p>
+<p>Example templates:</p>
+<ul>
+<li><a href="https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/html/SeparatedPanelPrefsEditor.html">https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/html/SeparatedPanelPrefsEditor.html</a></li>
+<li><a href="https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/html/FullPreviewPrefsEditor.html">https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/html/FullPreviewPrefsEditor.html</a></li>
+<li><a href="https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/html/FullNoPreviewPrefsEditor.html">https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/html/FullNoPreviewPrefsEditor.html</a></li>
+</ul>
+<p>There are some special cases to consider about these templates. In the case of the SeparatePanelPrefsEditor.html the markup could likely be simplified to have all of the container in a single repeating element (i.e the &lt;li&gt;), instead of having two levels of containment per panel container. The Full page prefs editors group panels by categories, but perhaps these could be encapsulated into &lt;sections&gt; and have the sections as the parent element to render into. The last bit is that for FullPreviewPrefsEditor.html each container may have a different class for styling purposes. Perhaps this could be factored out, but it is possible that an integrator would like to have the flexibility of specifying different container markup per panel.</p>
+<p>There seems to be two potential options for addressing the dynamic rendering of containers. 1) have a function run ahead of the panels that injects the containers into the prefs editor template. or 2) have each panel self render their own container into the markup, if a container isn't already supplied. </p>
+<p>1) inject containers.</p>
+<p>a. have a loop/iteration to call jQuery to inject each bit of markup<br>
+b. have another renderer component that just renders the containers<br>
+c. move the panels to be part of a renderer component tree </p>
+<p>It's unlikely that we even want to attempt b. and c. at this point in the current renderers life. a. seems the only real options here and would require some way of configuring which markup to render for each panel, and where to put it. At this level the configuration should lie with the prefs editor. We also want to be able to just use the markup from the template if it is already provided.</p>
+<p>2. self rendering</p>
+<p>As mentioned in the description, we can look at how the newViewSupports work to self render containers. However, these rely on a completely new type of view component. The panels are all currently rendererComponents which are backed by the standard viewComponent. The main issue here being that they require a container be passed as an argument. We would have to create a new type of renderer component that behaved the same as the current one but was backed by the appropriate new view component. </p>
+<p>Additionally we need to sort out the configuration for what markup to supply for each panels container. In different contexts (e.g. separated panel vs full page) the markup will vary (e.g. &lt;li&gt; vs &lt;div&gt;). So again it seems that the configuration should belong at the prefs editor level, or at least be easy enough to configure through it. The parent container would need to be passed down from the prefs editor component. We also want to be able to just use the markup from the template if it is already provided, and not worry about the self rendering.</p>
+
+                    </li>
+                    
+                    <li id="comment-22687">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-11-07T18:41:46.777-0500">2019-11-07T18:41:46.777-0500</relative-time></i></p>
+                        <p>I spoke with Antranig Basman in the fluid-work channel about this today ( <a href="http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2019-11-07.log">http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2019-11-07.log</a> ). </p>
+<p>Antranig's suggestion:</p>
+<p>My current suggestion is that we could do something even simpler than 1a) and enable, via a new top-level configuration option, an extremely rudimentary renderer which bashes the HTML together for a template exactly of the kinds we already have via some string-bashing<br>
+12:05 PM It would accept as its raw materials a "template template" of exactly the form of the outside of <a href="https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/html/SeparatedPanelPrefsEditor.html">https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/html/SeparatedPanelPrefsEditor.html</a> only with the interior represented by %panels which it then interpolates via repeated use of fluid.stringTemplate, and a further option indicating what tag it generates, which<br>
+12:05 PM defaults to "li"</p>
+
+                    </li>
+                    
+                    <li id="comment-22691">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2020-01-16T14:47:00.190-0500">2020-01-16T14:47:00.190-0500</relative-time></i></p>
+                        <p>Antranig Basman I started looking into this today. The good news is that the prefsEditor is a view component that just appends it's pre-fetched (fetched by the resourceLoader) template/markup. ( <a href="https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/js/PrefsEditor.js#L456">https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/js/PrefsEditor.js#L456</a>&#160;). This seems to be the place where we can do some processing on the template.</p>
+<p>We are missing some information here, namely what the preferences are, their order, and selector for the container. The work on <a href="/browse/FLUID-6420/">FLUID-6420</a> is already producing a prioritized set of preferences. We can pass this down from the builder to the prefsEditor. Not sure if we can support this for the grade version, but we've been talking about removing that anyways. The selectors are added to the prefs editor already, but not in the most usable form. They use the flattened ("." replaced by "_") form. Although it's a known transformation so we could probably just borrow the flattening code in the prefs editor to look up the selectors.</p>
+<p>That brings me to the problem I'm not sure of. The selectors can be any valid selector. Which would make the string bashing approach you described a bit more complicated in terms of keeping these selectors valid. In our own examples we just use a single class name, but an integrator may use something more complex.</p>
+<p>Also I'm assuming we only want to support the case where we need to insert a set of panel containers, or expect that they are already present. Do we also want to support a mixed case, where some are pre-defined and others we want to dynamically inject? To satisfy the first case I think we just generate a map for stringTemplate to use and if the token is found it injects it. The mixed case we'd need to look up each panel container selector first to determine if it was there. Again something that would be hard with the string bashing.</p>
+<p>Lastly, regarding your suggestion to run through stringTemplate repeatedly, I'm not really sure what that would look like or mean. As we'd likely only have one "%panels" token, I guess we could also have multiple tokens to support he sections in the full page, but that would require a more involved process for generating the map, and defining the configuration for that, to pass into the stringTemplate. This again, would seem to only be one pass though. Am I missing something?</p>
+
+                    </li>
+                    
+                    <li id="comment-22696">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2020-01-23T12:39:07.489-0500">2020-01-23T12:39:07.489-0500</relative-time></i></p>
+                        <p>In speaking with Antranig Basman today the answers to the above questions are:</p>
+<p></p>
+<ul>
+<li>Won't support mixed or complex cases. Rather there will be some top level setting that will indicate that we expect to generate the containers for the panels. Complex cases, like the current full page editors that have categories of preferences will need to supply a full template.</li>
+<li>In the case of autogeneration the container selectors from the auxiliary schema will be ignored and replaced by options distributions for the generated container classes.</li>
+<li>There will be two levels of string templating. 1) for each panel container that interpolates the selector class name and etc. and 2) one that interpolates all the panels into the prefs editor template at something like %panels.</li>
+</ul>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6420/"><span class="aria-hidden">←</span> Previous: FLUID-6420</a>
+        <a class="mx-1" href="/browse/FLUID-6422/">Next: FLUID-6422 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

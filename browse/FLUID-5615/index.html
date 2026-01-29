@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5615  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5615 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5615/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5615/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5615/">FLUID-5615</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5615: Grade closure algorithm for dynamic grades is faulty in the case of repeated arrival through distribution source before resolving a function source</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5615">FLUID-5615</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-04-05T15:58:20.851-0400" prefix="">2015-04-05T15:58:20.851-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-02-27T15:49:16.482-0500" prefix="">2017-02-27T15:49:16.482-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This implementation has been continually improving through reports such as <a href="/browse/FLUID-5085/">FLUID-5085</a>, <a href="/browse/FLUID-5108/">FLUID-5108</a>, <a href="/browse/FLUID-5155/">FLUID-5155</a>, <a href="/browse/FLUID-5169/">FLUID-5169</a>, <a href="/browse/FLUID-5245/">FLUID-5245</a> etc but is still faulty (although it can never expect to be perfect, given the ability for grade resolution to trigger the evaluation of options will always create possibility for implementation holes).</p>
+<p>A serious kind of fault was uncovered in the <a href="/browse/FLUID-5249/">FLUID-5249</a> work, where the new "contextAwareness" implementation is mediated through a standard dynamic grade function reference of the form {that}.check. This expects to be able to read a fully resolved version of the "contextAwareness" options area - unfortunately the then current form of the algorithm took the form of a flat loop, which would evaluate such dynamic grade sources first, before considering other routes such as distributeOptions or the now condemned "grade linkage". This algorithm is held in "fluid.expandDynamicGrades".</p>
+<p>We made an "ad hoc" correction by moving the check for distributedGrades up in the loop body, before the expansion of function sources, but this is clearly still faulty. function sources by their nature could only ever be queried once, and must be as a "last-ditch" attempt once all other sources have been recursively exhausted. Therefore this algorithm needs to be expanded into a deeper loop, that queries distributions repeatedly until they cease to arrive, then finally queries function and options sources, then redispatches back to the repeated distribution loop.</p>
+<p>This suggests, as has long been suspected, that these other sources of dynamic grades are architecturally suspicious and should be discouraged - and that perhaps we should bake the contextAwareness loop directly into the expandDynamicGrades process - although it is still worth using it as a "canary" to flush out problems with the algorithm.</p>
+<p>This recursive closure process seemed suspicious and unthinkable at first, but has eventually emerged as one of the few really decisive achievements of the 2011-2012 framework era since it does genuinely seem to correspond to "what people expect" and now seems to work under a wide variety of scenarios.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24252">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-07-27T17:46:20.026-0400">2015-07-27T17:46:20.026-0400</relative-time></i></p>
+                        <p>Encountered again when writing test case for <a href="/browse/FLUID-5717/">FLUID-5717</a> - mildly adjusting the test case so that "{that}.evaluate" appears in the direct grade list in the constructor causes it to fail - since the "raw dynamic grade" arrives as part of the same batch as the grade defining the invoker (in passes through fluid.expandDynamicGrades' fluid.each(dynamicGrades))</p>
+
+                    </li>
+                    
+                    <li id="comment-24254">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-08-20T10:11:25.953-0400">2015-08-20T10:11:25.953-0400</relative-time></i></p>
+                        <p>Marking as resolved, although a full fix is not possible until we have <a href="/browse/FLUID-4982/">FLUID-4982</a> async</p>
+<p>Merged into trunk at revision 282f1a318718eed0b0ec060fb8b4ad254417fd7e</p>
+
+                    </li>
+                    
+                    <li id="comment-24255">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-11-04T13:27:16.725-0500">2015-11-04T13:27:16.725-0500</relative-time></i></p>
+                        <p>A further recurrence of this when refactoring Kettle's DataSource hierarchy. In this setup</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"kettle.dataSource"</span>, {
+    gradeNames: [<span class="hljs-string">"fluid.component"</span>, <span class="hljs-string">"{that}.getWritableGrade"</span>],
+        getWritableGrade: {
+            funcName: <span class="hljs-string">"kettle.dataSource.getWritableGrade"</span>,
+            args: [<span class="hljs-string">"{that}"</span>, <span class="hljs-string">"{that}.options.writable"</span>, <span class="hljs-string">"{that}.options.readOnlyGrade"</span>]
+        }
+}
+
+kettle.dataSource.getWritableGrade = function (that, writable, readOnlyGrade) {
+    <span class="hljs-keyword">if</span> (writable) {
+        <span class="hljs-keyword">return</span> fluid.model.composeSegments(readOnlyGrade, <span class="hljs-string">"writable"</span>);
+    }
+};
+</code></pre>
+<p>we fail to pick up the "writable" flag if it arrives through gradeNames arguments. This further dispatch should really be done via global distributeOptions but the basic problem would remain - how to reliably hoist something out of the world of configuration into gradeNames. We are constantly playing rearguard, but we can still improve the quality of implementation a notch further before we have the full refactor.</p>
+
+                    </li>
+                    
+                    <li id="comment-24259">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-11-05T10:42:06.620-0500">2015-11-05T10:42:06.620-0500</relative-time></i></p>
+                        <p>This has been somewhat fixed up in the <a href="/browse/FLUID-5615/">FLUID-5615</a> branch. I've realised that there is an implicit contradiction in the goals of the grade closure algorithm which have made it hard to realise (we also need to keep in contact with the C3 goals of <a href="/browse/FLUID-5800/">FLUID-5800</a>, <a href="/browse/FLUID-5085/">FLUID-5085</a>). Grade closure needs to CONTINUE TO CLOSE WHILST GRADES ARE ARRIVING - but on the other hand, the algorithm must provably converge, and not become capable of indefinite, not to say arbitrary computation. <br>
+A key to realising what the proper convergence criterion should be is in terms of the SOURCES of grade contributions and not in their OUTPUTS. Especially once we have a C3-like model in which grades are deduplicated before resolution, it will be particularly hard to determine whether the trajectory of the grade complement of the instantiating component is stabilising. What we should instead do is to insist that we only consider that we are making progress whilst accumulating input from new SOURCES - which are, sources in the immediate grade hierarchy, direct arguments, raw dynamic grade sources and finally, distributions.<br>
+The first two sources ALWAYS cause AT LEAST ONE new grade to be contributed into the complement - and so progress can be assessed in that way. Options distributions already now have a unique id assigned to them in the registry of distributions - so we should incorporate this information into the closure process and ensure that we only attempt to react to each distribution source once. Finally, for raw dynamic grades, we can continue with our current approach of simply uniquifying on the IoC reference that it is sourced from. These should be rare and it should be perfectly acceptable to expect a different reference to be contributed if a fresh overriding is required.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5614/"><span class="aria-hidden">←</span> Previous: FLUID-5614</a>
+        <a class="mx-1" href="/browse/FLUID-5616/">Next: FLUID-5616 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-72  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-72 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-72/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-72/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-72/">FLUID-72</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-72: Visual Cues need to be applied to jQuery version of Lightbox</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-72">FLUID-72</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Michelle D'Souza</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Shaw-Han%20Liem">Shaw-Han Liem</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2007-10-25T16:23:02.000-0400" prefix="">2007-10-25T16:23:02.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2007-11-15T10:57:24.000-0500" prefix="">2007-11-15T10:57:24.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Image Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Some visual cues and UX behaviour needs to be added.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-17762">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2007-11-06T16:43:31.000-0500">2007-11-06T16:43:31.000-0500</relative-time></i></p>
+                        <p>The orderable-hover style needs to be applied to the image on mouse over.</p>
+
+                    </li>
+                    
+                    <li id="comment-17764">
+                        <p class="mb-0"><b>Joseph Scheuhammer</b> <i>commented <relative-time datetime="2007-11-06T16:54:20.000-0500">2007-11-06T16:54:20.000-0500</relative-time></i></p>
+                        <p>Are these css pseudo classes relevant here?  They are ":hover", ":active", and ":focus".  The w3c documentation is here:<br>
+<a href="http://www.w3.org/TR/REC-CSS2/selector.html#dynamic-pseudo-classes">http://www.w3.org/TR/REC-CSS2/selector.html#dynamic-pseudo-classes</a></p>
+<p>It appears that they can be applied to any element, but then, I would think it would apply to all elements of that type (e.g., all &lt;li&gt;), not just the ones the Lightbox is interested in.  But, I'm no css expert.</p>
+
+                    </li>
+                    
+                    <li id="comment-17766">
+                        <p class="mb-0"><b>Shaw-Han Liem</b> <i>commented <relative-time datetime="2007-11-08T15:46:38.000-0500">2007-11-08T15:46:38.000-0500</relative-time></i></p>
+                        <p>The "hover" pseudo class will work in FF and IE7 but it's only supported on &lt;a&gt; elements in IE6. I believe the same is true of "focus". I'm not sure about Safari or other browsers but it can be tested here:</p>
+<p><a href="http://www.w3.org/Style/CSS/Test/CSS3/Selectors/20021129/html/full/flat/css3-modsel-18b.html">http://www.w3.org/Style/CSS/Test/CSS3/Selectors/20021129/html/full/flat/css3-modsel-18b.html</a></p>
+
+                    </li>
+                    
+                    <li id="comment-17768">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2007-11-08T16:39:00.000-0500">2007-11-08T16:39:00.000-0500</relative-time></i></p>
+                        <p>I used the onmouseover and onmouseout to implement the hover style. </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-71/"><span class="aria-hidden">←</span> Previous: FLUID-71</a>
+        <a class="mx-1" href="/browse/FLUID-73/">Next: FLUID-73 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

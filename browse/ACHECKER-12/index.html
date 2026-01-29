@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> ACHECKER-12  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" ACHECKER-12 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/ACHECKER-12/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/ACHECKER-12/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/ACHECKER" data-pagefind-filter="project">AChecker</a></li>
+                <li><a href="/browse/ACHECKER-12/">ACHECKER-12</a></li>
+            </ol>
+        </nav>
+        <h1>ACHECKER-12: Getting Incorrect Fail Test Results For Test Examples</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/ACHECKER-12">ACHECKER-12</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/ACHECKER/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>To Do</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/ACHECKER/?reporter=Victor%20Alagwu">Victor Alagwu</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-06-29T13:19:56.585-0400" prefix="">2018-06-29T13:19:56.585-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-06-30T07:25:34.133-0400" prefix="">2018-06-30T07:25:34.133-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p></p>
+<table>
+<thead>
+<tr>
+<th><strong>Browser</strong></th>
+<th><strong>Version</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chrome</td>
+<td>Latest Stable release</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<p><strong>Check Test</strong></p>
+<p><strong>Test Example URL:&#160;&#160;****<a href="https://achecker.ca/checker/suggestion.php?id=233">https://achecker.ca/checker/suggestion.php?id=233</a></strong></p>
+<p><strong>Expected Test Result:</strong>&#160;The document is not expected to contain any&#160;<code>frameset</code>&#160;elements, and if it should contain any frameset element, It is supposed to return a <strong>fail result</strong>.</p>
+<p><strong>Expected Fail Result:</strong>&#160;It should indicate that <strong>"A frameset element exist",</strong>&#160;by displaying the <strong>"Contains a frameset element",</strong>&#160;which is the fail message for&#160;check <strong>233.</strong></p>
+<p><strong>Bug discovered:</strong>&#160;Instead of displaying the&#160;fail message for Check 233, that of Check 31, Check 48 and Check 49 are being displayed.</p>
+<p></p>
+<p><strong>Procedure to regenerate the same bug:</strong></p>
+<ul>
+<li>*<strong>Via any browser of your choice, enter this URL "&#160;</strong><a href="https://achecker.ca/checker/suggestion.php?id=233">https://achecker.ca/checker/suggestion.php?id=233</a>"*</li>
+<li>Go to the <strong>"Paste HTML Markup",</strong>&#160;section, click on it.</li>
+<li>Copy and paste the below code snippets in the text area provided</li>
+</ul>
+<p></p>
+<p></p>
+<pre><code class="hljs language-html">// Fail Result (Contains a frameset element)
+<span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">HTML</span> <span class="hljs-keyword">PUBLIC</span> <span class="hljs-string">"-//W3C//DTD HTML 4.01 Frameset//EN"</span> <span class="hljs-string">"http://www.w3.org/TR/html4/frameset.dtd"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>ATRC Testfile - 233.1 - Positive<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">frameset</span> <span class="hljs-attr">cols</span>=<span class="hljs-string">"33%,33%,33%"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">frameset</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">"*,200"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">frame</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"contents_of_frame1.html"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">frame</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"contents_of_frame2.gif"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">frameset</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">frame</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"contents_of_frame3.html"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">frame</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"contents_of_frame4.html"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">frameset</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<ul>
+<li>Click on <strong>"Check it"</strong></li>
+<li>The result in the <strong>"Known Problems",</strong>&#160;showns only <strong>fail messages of Check 31, Check 48, and Check 49</strong></li>
+<li>Like earlier indicated, the expected result should have been fail message for check 233.</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/ACHECKER-11/"><span class="aria-hidden">←</span> Previous: ACHECKER-11</a>
+        <a class="mx-1" href="/browse/ACHECKER-13/">Next: ACHECKER-13 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

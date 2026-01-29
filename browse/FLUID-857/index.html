@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-857  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-857 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-857/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-857/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-857/">FLUID-857</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-857: Blur on an Inline Edit while editing leaves a 'focus' style behind</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-857">FLUID-857</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-07-07T21:22:12.000-0400" prefix="">2008-07-07T21:22:12.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-12-03T11:47:58.000-0500" prefix="">2008-12-03T11:47:58.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In Firefox, but not in IE:</p>
+<p>If you are in the middle of editing an Inline Edit and move focus away from it by clicking on another Inline Edit, the first component successfully leaves edit mode, but leaves the 'focus' style behind.</p>
+<p>To reproduce:</p>
+<p><a href="http://build.fluidproject.org/fluid/tests/fluid-tests/manual/inline-edit/InlineEdit.html">http://build.fluidproject.org/fluid/tests/fluid-tests/manual/inline-edit/InlineEdit.html</a></p>
+<p>1) Click on any Inline Edit to enter edit mode.<br>
+2) Click on any other Inline Edit.<br>
+-&gt; The first Inline Edit will still have the focus style (grey border) where focus is clearly on the second Inline Edit.</p>
+<p>dev-iteration39</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Firefox (Windows and Mac)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19458">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-07-07T21:30:41.000-0400">2008-07-07T21:30:41.000-0400</relative-time></i></p>
+                        <p>There is a blur handler (assigned in bindKeyHighlight()) that should take care of this, but for some reason, when a click is the cause of a blur, the blur handler is not triggered - the DebugFocus tool does indicate the blur is happening, but the 'focusOff() handler isn't triggered.</p>
+
+                    </li>
+                    
+                    <li id="comment-19459">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-07-18T17:03:46.000-0400">2008-07-18T17:03:46.000-0400</relative-time></i></p>
+                        <p>The problem was due to making a call to viewEl.focus() from inside the general finish() handler. If the finish() handler were itself being invoked as a result of a focus change operation, this seemed to result in some form of race condition in the browser with generally undefined behaviour - the focus and blur handlers would be called in an essentially random order, with some handlers being aborted.</p>
+<p>For now, a very simple solution was just to move the call from outside finish() into bindEditFinish(), to ensure that we only issued the focus change if the edit were concluding due to a keyboard activity. </p>
+<p>All the tests pass and the manual test also works, however this may not be the ideal global solution, since it doesn't really cover the general requirement of where to put focus - in the case, for example, the edit operation is programmatically cancelled, the focus is probably in an undefined position. We don't currently have a test case for this, but if we did I guess it would go in Block 6, "Edit-Finish". If we wanted to address this issue more generally, we would probably need to set up a global event interception framework (as discussed post-standup today) so that it would be always possible to tell, for example, whether an event handler of a particular kind were on the stack.</p>
+
+                    </li>
+                    
+                    <li id="comment-19460">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-12-03T11:47:58.000-0500">2008-12-03T11:47:58.000-0500</relative-time></i></p>
+                        <p>appears to have been fixed</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-856/"><span class="aria-hidden">←</span> Previous: FLUID-856</a>
+        <a class="mx-1" href="/browse/FLUID-858/">Next: FLUID-858 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3711  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3711 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3711/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3711/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3711/">FLUID-3711</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3711: When moving an element, the new location should be indicated</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3711">FLUID-3711</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Sub-issue">Sub-issue</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-09-07T10:15:33.024-0400" prefix="">2010-09-07T10:15:33.024-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2010-12-15T19:15:37.562-0500" prefix="">2010-12-15T19:15:37.562-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The new location for a moved item should be indicated, specifically in the case of complex layouts like the layout reorderer.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3711/FLUID-3711.patch">
+                            
+                                FLUID-3711.patch
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3711/FLUID-3711-b.patch">
+                            
+                                FLUID-3711-b.patch
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22127">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-09-07T10:16:06.924-0400">2010-09-07T10:16:06.924-0400</relative-time></i></p>
+                        <p>a11y issue</p>
+
+                    </li>
+                    
+                    <li id="comment-22130">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-09-17T17:48:09.458-0400">2010-09-17T17:48:09.458-0400</relative-time></i></p>
+                        <p>This indication will be achieved by implementing <a href="/browse/FLUID-3730/">FLUID-3730</a>, a component that can automatically associate reorderable elements with labels using aria-labelledby. However, the strategy will have be somewhat different--we'll have to, in the midst of a move operation do one of the following things:</p>
+<p>1. Dynamically update the about-to-be-moved element's aria-labelled by to point to a temporary, dynamic label describing the move location<br>
+2. Presenting the move location in an associated aria live region</p>
+
+                    </li>
+                    
+                    <li id="comment-22134">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-10-04T15:02:45.706-0400">2010-10-04T15:02:45.706-0400</relative-time></i></p>
+                        <p>Bug Parade 1.3 tag deleted by order of THER KINGG</p>
+
+                    </li>
+                    
+                    <li id="comment-22136">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2010-12-10T15:44:34.438-0500">2010-12-10T15:44:34.438-0500</relative-time></i></p>
+                        <p>See comments on <a href="/browse/FLUID-3708/">FLUID-3708</a> - the new location is indicated if the mouse is moved or perhaps if the screen buffer is refreshed, but unfortunately it was not possible with current strategies to cause a dynamic announcement at the point of performing the move. These two issues pushed out to 1.4</p>
+
+                    </li>
+                    
+                    <li id="comment-22139">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2010-12-13T03:31:43.288-0500">2010-12-13T03:31:43.288-0500</relative-time></i></p>
+                        <p>This patch implements a solution combining the use of "aria-label" for static messages and an offscreen live region for dynamic messages that appears to work under NVDA. A caveat is that to use the reorderer successfully under NVDA, it needs to be put into "FOCUS MODE" using the "NVDA + Space" key, otherwise the use of arrow keys and tab will apparently send NVDA and the browser bananas as they attempt to fight over key bindings. The fix needs testing under JAWS.</p>
+
+                    </li>
+                    
+                    <li id="comment-22145">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2010-12-13T13:47:09.951-0500">2010-12-13T13:47:09.951-0500</relative-time></i></p>
+                        <p>Attached <a href="/browse/FLUID-3711/">FLUID-3711</a>-b which cleans up the patch slightly, accounting for recent changes in trunk and replacing implementation of aria-dragging states which had been suspected of breaking the implementation</p>
+
+                    </li>
+                    
+                    <li id="comment-22148">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-12-13T15:50:24.979-0500">2010-12-13T15:50:24.979-0500</relative-time></i></p>
+                        <p>I committed Antranig's latest patch for this issue at r10401. Still needs code review, which I will do shortly.</p>
+
+                    </li>
+                    
+                    <li id="comment-22153">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-12-15T19:15:37.554-0500">2010-12-15T19:15:37.554-0500</relative-time></i></p>
+                        <p>I've reviewed Antranig's changes to Uploader to include location labeling upon moves, and they look good.  Some general, non-blocker review comments from our conversation about it in the channel:</p>
+<p>colinclark: Minor, non-blocker code review comments...<br>
+[6:59pm] colinclark: the labeller's listener for Reorderer's onRefresh event looks an awful lot like something which should actually be a public method<br>
+[7:00pm] Bosmon: Yes<br>
+[7:00pm] Bosmon: I haven't actually considered what to do about returnedOptions<br>
+[7:00pm] Bosmon: I think it should go, yes<br>
+[7:00pm] Bosmon: But I'm not entirely sure <strong>how</strong><br>
+[7:00pm] Bosmon: Which I guess is related to your comment just now <br>
+[7:01pm] Bosmon: Where there are "standard listeners" for a component which actually embody crucial public functionality...<br>
+[7:01pm] Bosmon: For a start I guess this listener should be namespaced<br>
+[7:01pm] Bosmon: Haven't really thought carefully about how listeners should interact with IoC, over and above the options infrastructure we already have for them<br>
+[7:01pm] colinclark: it seems to me that it's a core piece of the labeller's behaviour<br>
+[7:01pm] Bosmon: "event boiling" was only a sketch so far<br>
+[7:02pm] colinclark: regardless of whether it happens to be wired up as a listener for something else<br>
+[7:02pm] colinclark: It seems to me that there is room for some awesomeness in regards to events and IoC<br>
+[7:02pm] Bosmon: I guess we actually need to expose the "listeners" structure itself to various kinds of IoC-driven EL inspection<br>
+[7:02pm] colinclark: That seems sensible to me</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3710/"><span class="aria-hidden">←</span> Previous: FLUID-3710</a>
+        <a class="mx-1" href="/browse/FLUID-3712/">Next: FLUID-3712 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

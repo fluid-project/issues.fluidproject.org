@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-864  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-864 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-864/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-864/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-864/">FLUID-864</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-864: keyboard navigation limited for reoderable jQuery tabs, using IE6 &amp; IE7</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-864">FLUID-864</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-07-08T17:21:37.000-0400" prefix="">2008-07-08T17:21:37.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-07-09T18:10:04.000-0400" prefix="">2008-07-09T18:10:04.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>You are able to tab around, but the jQuery tabs to the left of the last moved jQuery tab will not get focus. Pressing shift-tab will only cycle through the jQuery tabs to the left of and including the last moved jQuery tab.</p>
+<p>Steps to reproduce:</p>
+<p>1) open the reorderable jQuery tab page from the daily build site:<br>
+<a href="http://build.fluidproject.org/fluid/sample-code/reorderer/jquery-tabs/jquery-tabs.html">http://build.fluidproject.org/fluid/sample-code/reorderer/jquery-tabs/jquery-tabs.html</a></p>
+<p>2) tap the "tab" key until one of the reorderable jQuery tabs gets focus.</p>
+<p>3) use the keyboard (ctrl-arrow) to move the tab.</p>
+<p>4) press the tab key and notice that it never touches the jQuery tabs to the left of the one that was moved.</p>
+<p>5) press shift-tab and notice that it will only cycle through the jQuery tabs to the left of and including the one that was moved</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>IE6, IE7 (Win XP)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13528">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-07-09T17:40:32.000-0400">2008-07-09T17:40:32.000-0400</relative-time></i></p>
+                        <p>The tab key shouldn't actually be moving focus amongst the tabs, this is a bug in jQuery:<br>
+<a href="http://ui.jquery.com/bugs/ticket/3079">http://ui.jquery.com/bugs/ticket/3079</a></p>
+<p>If the arrow keys still work properly, I would consider this one to not be a bug.</p>
+
+                    </li>
+                    
+                    <li id="comment-13530">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-07-09T18:10:04.000-0400">2008-07-09T18:10:04.000-0400</relative-time></i></p>
+                        <p>the arrow keys still work</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-863/"><span class="aria-hidden">←</span> Previous: FLUID-863</a>
+        <a class="mx-1" href="/browse/FLUID-865/">Next: FLUID-865 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

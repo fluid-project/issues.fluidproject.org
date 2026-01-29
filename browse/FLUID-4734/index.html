@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4734  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4734 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4734/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4734/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4734/">FLUID-4734</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4734: Straightforward improvements to InlineEdit implementation</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4734">FLUID-4734</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-07-20T18:01:36.095-0400" prefix="">2012-07-20T18:01:36.095-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-07-29T01:43:22.302-0400" prefix="">2021-07-29T01:43:22.302-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>5.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Our InlineEdit component is one of our very oldest components, and contains a number of "implementation features" that would not appear in a new component which would be written today. Whilst we have a strong commitment to API compatibility, there are a number of low-cost improvements we could make today without compromising compatibility and also heading off possible bugs as well as improving consistency and reusability.</p>
+<p>i) A group of issues referred to under <a href="/browse/FLUID-4725/">FLUID-4725</a> - <br>
+a) use of a mergePolicy rather than manual code for options defaulting<br>
+b) migrating the tooltipText option up into strings as with defaultViewText<br>
+c) <a href="/browse/FLUID-4732/">FLUID-4732</a> - inserting component's options into the proper namespace<br>
+d) amalgamating DOM element arguments for the highlight and edit mode binders - which implies<br>
+ii) fixing up implementation of the range of event binding functions so that they are all consistent in accepting a multi-element jQuery as their first argument (where they currently accept any element-like thing) rather than their rather ad-hoc current use of fluid.wrap and fluid.unwrap<br>
+iii) breaking out all of these utility functions into properly namespaced functions under fluid.inlineEdit rather than using our old-fashioned approach which still valued private anonymous implementation details. <br>
+iv) improvement of argument names - the name "displayModeRenderer" should be replaced with something more descriptive (at least where this term doesn't appear in a public API), as well as the misuse of the term "selector" on line 718</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25084">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-05-22T00:26:41.358-0400">2013-05-22T00:26:41.358-0400</relative-time></i></p>
+                        <p>Many of these points were handled as part of the <a href="/browse/FLUID-5011/">FLUID-5011</a> work - in particular i) a) and iii) and part of ii) and iv) - also a further improvement of v) extracting all markup used by the component implementation into options</p>
+
+                    </li>
+                    
+                    <li id="comment-25085">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-08-12T13:01:56.713-0400">2016-08-12T13:01:56.713-0400</relative-time></i></p>
+                        <p>close and refile what's remaining as specific issues.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4733/"><span class="aria-hidden">←</span> Previous: FLUID-4733</a>
+        <a class="mx-1" href="/browse/FLUID-4735/">Next: FLUID-4735 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

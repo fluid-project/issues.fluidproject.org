@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-329  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-329 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-329/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-329/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-329/">FLOE-329</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-329: Keyboard usability issue with page reload at each language change</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-329">FLOE-329</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLOE/?resolution=Duplicate">Duplicate</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-05-11T12:17:08.445-0400" prefix="">2015-05-11T12:17:08.445-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-11-12T14:43:40.144-0500" prefix="">2015-11-12T14:43:40.144-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>First Discovery</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Each language change on the language panel causes the page to reload. After the page reload, the focus disappears on the panel. It should remain at wherever it was before the page reload.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-11321">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-05-11T12:26:50.198-0400">2015-05-11T12:26:50.198-0400</relative-time></i></p>
+                        <p>There's a number of possible approaches to this. One approach involves staying with our current implementation, and persisting the focus state in the component's model, together with any other navigational UI state that we will probably need to persist too. If we go with this, it might be easier to have merged in the framework updates associated with <a href="/browse/FLUID-5249/">FLUID-5249</a>, which will make it easier to identify components and DOM elements in a stable way. Another approach would involve a more "light" model of reinstantiation - we could keep the current page but destroy and then recreate the component tree - this would most likely run into the same kind of focus issues.</p>
+<p>Finally we can consider approaches based on a different model of locating message bundles. At the cost of a huge amount of failed I/O at startup, we could eagerly try to load every message bundle for every panel in every locale - and then keep this in a "mega-model" from which we could fetch just the required elements. This would require changes in both the framework and the preferences framework. It would seem best if we started to go with this approach that we should start to consider some kind of build-time step which would "compile" all the messages bundles (and perhaps various other resource files required by a prefs editor) into a single resource file.</p>
+
+                    </li>
+                    
+                    <li id="comment-11322">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2015-11-12T14:43:40.142-0500">2015-11-12T14:43:40.142-0500</relative-time></i></p>
+                        <p>This report has been copied to the GPII bug tracker: <a href="https://issues.gpii.net/browse/GPII-1405">https://issues.gpii.net/browse/GPII-1405</a> and all activities should be carried on there.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-328/"><span class="aria-hidden">←</span> Previous: FLOE-328</a>
+        <a class="mx-1" href="/browse/FLOE-330/">Next: FLOE-330 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

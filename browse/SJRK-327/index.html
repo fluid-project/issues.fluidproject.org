@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-327  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-327 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-327/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-327/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-327/">SJRK-327</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-327: Unable to reach buttons with tab navigation in Safari</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-327">SJRK-327</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SJRK/?resolution=Not%20A%20Bug">Not A Bug</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-03-19T17:38:24.659-0400" prefix="">2020-03-19T17:38:24.659-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-03-19T21:34:48.276-0400" prefix="">2020-03-19T21:34:48.276-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Tab navigation using Safari 13 on MacBook doesn't seem to work on anything other than input fields. On the Edit page, this means that nothing will be given focus unless there are inputs visible on the screen.</p>
+<p><strong>To reproduce:</strong></p>
+<ol>
+<li>Navigate to storyEdit.html</li>
+<li>Press the Tab key</li>
+</ol>
+<p><strong>Expected:</strong></p>
+<p>Focus should move to the first link or button</p>
+<p><strong>Actual:</strong></p>
+<p>**Focus moves to the address bar, and repeated presses of Tab will keep it there</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>MacBook Pro (2015)<br>
+macOS High Sierra 10.13.6<br>
+Safari 13.0.2</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26579">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2020-03-19T17:42:21.156-0400">2020-03-19T17:42:21.156-0400</relative-time></i></p>
+                        <p>This isn't an issue with the Storytelling Tool, but rather an option in Safari that needs to be enabled...</p>
+<p>See these pages for more information:</p>
+<p><a href="https://corehelpcenter.bqe.com/hc/en-us/articles/115003481673-Tab-key-is-not-working-on-Mac-Safari">https://corehelpcenter.bqe.com/hc/en-us/articles/115003481673-Tab-key-is-not-working-on-Mac-Safari</a></p>
+<p><a href="https://stackoverflow.com/questions/1848390/safari-ignoring-tabindex">https://stackoverflow.com/questions/1848390/safari-ignoring-tabindex</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-326/"><span class="aria-hidden">←</span> Previous: SJRK-326</a>
+        <a class="mx-1" href="/browse/SJRK-328/">Next: SJRK-328 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

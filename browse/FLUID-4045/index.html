@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4045  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4045 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4045/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4045/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4045/">FLUID-4045</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4045: Add built-in page strategy that shows a consistent number of links</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4045">FLUID-4045</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Harris Wong</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Eric%20Dalquist">Eric Dalquist</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-01-26T15:02:34.226-0500" prefix="">2011-01-26T15:02:34.226-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-03-23T15:53:43.381-0400" prefix="">2011-03-23T15:53:43.381-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Pager</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Here is an impl of a page strategy that will always display same number of page links (including skip place holders).</p>
+<p>consistentGappedPageStrategy = function (endLinkCount, midLinkCount) {<br>
+if (!endLinkCount) {<br>
+endLinkCount = 1;<br>
+}<br>
+if (!midLinkCount) {<br>
+midLinkCount = endLinkCount;<br>
+}<br>
+var midWidth = endLinkCount + (midLinkCount * 2);</p>
+<p>return function (count, first, mid) {<br>
+var pages = [];</p>
+<p>var anchoredLeft = mid &lt; midWidth;<br>
+var anchoredRight = mid &gt;= count - midWidth;<br>
+var paddedMidWidth = midWidth + 2;<br>
+var midStart = mid - midLinkCount;<br>
+var midEnd = mid + midLinkCount;</p>
+<p>var lastSkip = false;</p>
+<p>for (var page = 0; page &lt; count; page++) {<br>
+if (<br>
+page &lt; endLinkCount || // start pages<br>
+count - page &lt;= endLinkCount ||  // end pages<br>
+(anchoredLeft &amp;&amp; page &lt; paddedMidWidth) || // pages if no skipped pages between start and mid<br>
+(anchoredRight &amp;&amp; page &gt;= count - paddedMidWidth) || // pages if no skipped pages between mid and end<br>
+(page &gt;= midStart &amp;&amp; page &lt;= midEnd) // pages around the mid<br>
+) {<br>
+pages.push(page);<br>
+lastSkip = false;<br>
+}<br>
+else if (!lastSkip) {<br>
+pages.push(-1);<br>
+lastSkip = true;<br>
+}<br>
+}</p>
+<p>return pages;<br>
+};<br>
+}; </p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-4045/Pager.js">
+                            
+                                Pager.js
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-4045/PagerTests.js">
+                            
+                                PagerTests.js
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20227">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2011-02-11T11:22:52.738-0500">2011-02-11T11:22:52.738-0500</relative-time></i></p>
+                        <p>Thanks for the code.  I have create a unit test case for it on my local system and I found a problem.  </p>
+<p>By consistent, I am assuming the number of elements (both page numbers and ellipses) will be the same no matter which page I click on.  I tried loading consistentGappedPageStrategy(3,3) with 34 pages.  When I click on the 9th page, I got one extra element.  Demonstrated as follow:</p>
+<p>[page 1] 1 2 3 4 5 6 7 8 9 10 11 ... 32 33 34<br>
+[page 2] 1 2 3 4 5 6 7 8 9 10 11 ... 32 33 34<br>
+[page 3] 1 2 3 4 5 6 7 8 9 10 11 ... 32 33 34<br>
+[page 4] 1 2 3 4 5 6 7 8 9 10 11 ... 32 33 34<br>
+[page 5] 1 2 3 4 5 6 7 8 9 10 11 ... 32 33 34<br>
+...<br>
+[page 9] 1 2 3 4 5 6 7 8 9 10 11 12 ... 32 33 34</p>
+<p>Notice how we now have 1 extra element after 11, where as it should had been:<br>
+[page 9] 1 2 3 ... 6 7 8 9 10 11 12 ... 32 33 34</p>
+
+                    </li>
+                    
+                    <li id="comment-20229">
+                        <p class="mb-0"><b>Eric Dalquist</b> <i>commented <relative-time datetime="2011-02-11T15:11:01.905-0500">2011-02-11T15:11:01.905-0500</relative-time></i></p>
+                        <p>Is the unit test somewhere I can give it a try? Seems like it shouldn't be too hard to track that down.</p>
+
+                    </li>
+                    
+                    <li id="comment-20231">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2011-02-11T16:18:57.599-0500">2011-02-11T16:18:57.599-0500</relative-time></i></p>
+                        <p>Check out infusion, and then replace <br>
+src\webapp\components\pager\js\Pager.js with the attached Pager.js </p>
+<p>replace <br>
+src\webapp\tests\component-tests\pager\js\PagerTests.js with the attached PagerTests.js</p>
+<p>Then go to your browser and run<br>
+src/webapp/tests/component-tests/pager/html/Pager-test.html?Pager Tests%3A Pager consistentGappedPageStrategy</p>
+
+                    </li>
+                    
+                    <li id="comment-20232">
+                        <p class="mb-0"><b>Eric Dalquist</b> <i>commented <relative-time datetime="2011-02-14T15:16:02.248-0500">2011-02-14T15:16:02.248-0500</relative-time></i></p>
+                        <p>Here is the fixed version:</p>
+<p>fluid.pager.consistentGappedPageStrategy = function (endLinkCount, midLinkCount) {</p>
+<p>if (!endLinkCount) {</p>
+<p>endLinkCount = 1;</p>
+<p>}        </p>
+<p>if (!midLinkCount) {</p>
+<p>midLinkCount = endLinkCount;</p>
+<p>}</p>
+<p>var endWidth = endLinkCount + 2 + midLinkCount;</p>
+<p>return function (count, first, mid) {</p>
+<p>var pages = [];       </p>
+<p>var anchoredLeft = mid &lt; endWidth;</p>
+<p>var anchoredRight = mid &gt;= count - endWidth;</p>
+<p>var anchoredEndWidth = endWidth + midLinkCount;</p>
+<p>var midStart = mid - midLinkCount;</p>
+<p>var midEnd = mid + midLinkCount;</p>
+<p>var lastSkip = false;</p>
+<p>for (var page = 0; page &lt; count; page++) {</p>
+<p>if (</p>
+<p>page &lt; endLinkCount || // start pages</p>
+<p>count - page &lt;= endLinkCount || // end pages</p>
+<p>(anchoredLeft &amp;&amp; page &lt; anchoredEndWidth) || // pages if no skipped pages between start and mid</p>
+<p>(anchoredRight &amp;&amp; page &gt;= count - anchoredEndWidth) || // pages if no skipped pages between mid and end</p>
+<p>(page &gt;= midStart &amp;&amp; page &lt;= midEnd) // pages around the mid</p>
+<p>) {</p>
+<p>pages.push(page);</p>
+<p>lastSkip = false;</p>
+<p>}</p>
+<p>else if (!lastSkip) {</p>
+<p>pages.push(-1);</p>
+<p>lastSkip = true;</p>
+<p>}</p>
+<p>}            </p>
+<p>return pages;</p>
+<p>};</p>
+<p>}; </p>
+
+                    </li>
+                    
+                    <li id="comment-20234">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2011-02-22T14:28:28.774-0500">2011-02-22T14:28:28.774-0500</relative-time></i></p>
+                        <p>Changes pushed to <a href="https://github.com/harriswong/infusion/tree/FLUID-4045">https://github.com/harriswong/infusion/tree/FLUID-4045</a>, waiting for code review and commits.</p>
+
+                    </li>
+                    
+                    <li id="comment-20236">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-03-11T08:51:13.106-0500">2011-03-11T08:51:13.106-0500</relative-time></i></p>
+                        <p>I closed this issue as the code has been pulled into infusion at a58059329c1ddbdc65d9.</p>
+
+                    </li>
+                    
+                    <li id="comment-20237">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-03-23T15:53:32.321-0400">2011-03-23T15:53:32.321-0400</relative-time></i></p>
+                        <p>re-opening to fix the resolution status, which currently says unresolved</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4044/"><span class="aria-hidden">←</span> Previous: FLUID-4044</a>
+        <a class="mx-1" href="/browse/FLUID-4046/">Next: FLUID-4046 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

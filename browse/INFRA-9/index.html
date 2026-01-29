@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-9  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-9 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-9/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-9/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-9/">INFRA-9</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-9: Implement tighter security for SSH access</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-9">INFRA-9</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Resolved</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Won't%20Do">Won't Do</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-08-04T15:02:09.806-0400" prefix="">2015-08-04T15:02:09.806-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-09-21T10:56:03.609-0400" prefix="">2017-09-21T10:56:03.609-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Today we have inconsistent SSH access: some servers allow connections from the outside, others don't and some only from the IDRC network.</p>
+<p>The goal is to restrict SSH access so connections are only accepted from a few bastion hosts.</p>
+<p>An intermediate step is to restrict SSH access so only connections coming from the IDRC network are accepted. Later it can be restricted further to only the bastion hosts.</p>
+<p>Initial tasks:</p>
+<ul>
+<li>Modify iptables rules to allow SSH only from 205.211.169.0/24 (through Ansible group_vars)</li>
+<li>Deploy bastion hosts (ssh01 and ssh02)</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25879">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2015-09-04T10:16:27.611-0400">2015-09-04T10:16:27.611-0400</relative-time></i></p>
+                        <p>Created SSH servers tor1-prd-ssh01 and tor1-prd-ssh02. Address "ssh.inclusivedesign.ca" points at both (round-robin).</p>
+
+                    </li>
+                    
+                    <li id="comment-25880">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2017-01-13T11:35:53.544-0500">2017-01-13T11:35:53.544-0500</relative-time></i></p>
+                        <p>These boxes were terminated a while ago because of performance issues at the time that were making Ansible very unstable. We should re-implement this.</p>
+
+                    </li>
+                    
+                    <li id="comment-25881">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2017-09-21T10:56:03.607-0400">2017-09-21T10:56:03.607-0400</relative-time></i></p>
+                        <p>SSH access is restricted at the firewall (requires authentication by trusted user to update firewall rules and allowing src IP of the user).</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-8/"><span class="aria-hidden">←</span> Previous: INFRA-8</a>
+        <a class="mx-1" href="/browse/INFRA-10/">Next: INFRA-10 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

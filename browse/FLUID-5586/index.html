@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5586  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5586 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5586/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5586/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5586/">FLUID-5586</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5586: Implementation of "changePath" records is incomplete</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5586">FLUID-5586</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-01-13T16:12:21.603-0500" prefix="">2015-01-13T16:12:21.603-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-02-27T15:49:13.131-0500" prefix="">2017-02-27T15:49:13.131-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Our records, acceptable currently as invokers and listener records, which hold the fields "changePath" and "value" to declaratively encode changes, are incompletely implemented.</p>
+<p>i) They don't support the "type" field for changes which means that changes of type DELETE can't be encoded<br>
+ii) They don't support a "changePath" of "" (or other falsy values such as 0) which implies that changes at model root can't be encoded</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23810">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-08-20T14:21:40.166-0400">2015-08-20T14:21:40.166-0400</relative-time></i></p>
+                        <p>Astonishingly this is still unresolved in Infusion 2.0.0-beta.1</p>
+
+                    </li>
+                    
+                    <li id="comment-23812">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2015-09-29T19:21:54.272-0400">2015-09-29T19:21:54.272-0400</relative-time></i></p>
+                        <p>In case others are confused, here is an example of a change path record that will fail due to the fact that we are doing a falsey check on the changePath attribute <a href="https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/FluidIoC.js#L1495">deep within the guts of the IoC system</a>.</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"cat.hugo"</span>, {
+                gradeNames: <span class="hljs-string">"fluid.modelComponent"</span>,
+
+                model: {},
+
+                listeners: {
+                    onCreate: [
+                        {
+                            changePath: <span class="hljs-string">""</span>,
+                            value: {
+                                meow: <span class="hljs-string">"raow!"</span>
+                            }
+                        }
+                    ]
+                }
+            });
+</code></pre>
+<p>Is the best workaround, currently, to use a listener specification like this instead?</p>
+<pre><code class="hljs language-java">{
+        func: <span class="hljs-string">"{that}.applier.change"</span>
+        args: [...]
+     }
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-23813">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-09-30T04:00:42.791-0400">2015-09-30T04:00:42.791-0400</relative-time></i></p>
+                        <p>Now I think of it, the best workaround is actually to use a changePath of [] - array paths are better on several considerations than strings, since future versions of the framework will be able to easily support IoC references in place of segments, and this also sidesteps annoyances such as escaping issues - as well as being just a tiny bit faster.</p>
+
+                    </li>
+                    
+                    <li id="comment-23815">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2015-09-30T10:54:02.523-0400">2015-09-30T10:54:02.523-0400</relative-time></i></p>
+                        <p>I'm probably just confused, but I modified my test like this:</p>
+<p>{<br>
+changePath: [],<br>
+value: {<br>
+meow: "raow!"<br>
+}<br>
+}</p>
+<p>and I get an error inside fluid.parseValidModelReference() where it appears to assume that the changePath value will always be a string.</p>
+
+                    </li>
+                    
+                    <li id="comment-23817">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-03-01T13:59:01.381-0500">2016-03-01T13:59:01.381-0500</relative-time></i></p>
+                        <p>In the scheme implemented in pull request <a href="https://github.com/fluid-project/infusion/pull/671">https://github.com/fluid-project/infusion/pull/671</a> , this is now supported by means of expressions like:</p>
+<pre><code class="hljs language-java">changePath: {
+    segs: [],
+},
+value: { meow: <span class="hljs-string">"raow!"</span> }
+</code></pre>
+<p>(every place a model path is accepted in the framework now also accepts a structure holding {segs: &lt;array&gt;, context: &lt;optional component path&gt;} )</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5585/"><span class="aria-hidden">←</span> Previous: FLUID-5585</a>
+        <a class="mx-1" href="/browse/FLUID-5587/">Next: FLUID-5587 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

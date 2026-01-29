@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4903  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4903 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4903/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4903/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4903/">FLUID-4903</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4903: Determine the schema for preferences that already exist in UIO.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4903">FLUID-4903</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=y%20z">y z</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-01-18T11:28:45.202-0500" prefix="">2013-01-18T11:28:45.202-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-09-09T10:24:08.748-0400" prefix="">2019-09-09T10:24:08.748-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>A UIO  builder (<a href="/browse/FLUID-4907/">FLUID-4907</a>) will make use of a primary schema, in json schema format, and an "auxiliary schema" (<a href="/browse/FLUID-5061/">FLUID-5061</a>) to construct grades used by UIO to determine the settings panels, enactors, and etc. used.</p>
+<p>Goals of the schema:<br>
+1 enable entire work of constructing a UIO component with completely declarative information<br>
+2 harmonize with work in GPII - Common Terms Registry - create a stable and global identity for every pref in a UIO panel</p>
+<p>The schema will contain information describing the setting(s). The primary schema will be the version used by UIO/UIE and will not necessarily be identical to that of the one stored in the GPII - Common Terms Registry. Any discrepancies between the two is assumed to be handled by transformations through the "ontology manager". An "ontology transformation document" will be provided to facilitate the transformation. This means that the values and formats of the primary schema should not require any further transformations to be used by the UIO builder. All other information required to construct a component will be provided in the "auxiliary schema". This "auxiliary schema" is not required to be in json schema format nor will it be in a typcial IoC structure. It will be a json structure that is flate, easily transformable, and easily written.</p>
+<p>The grade(s) created by the UIO builder will likely resemble those already created for the various starter grades used by UIE and UIO.</p>
+<p>Example of the schema:</p>
+<pre><code class="hljs language-java">{
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"object"</span>,
+    <span class="hljs-string">"properties"</span>: {
+        <span class="hljs-string">"fluid.uiOptions.textSizer"</span>: {
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"number"</span>,
+            <span class="hljs-string">"default"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-string">"minimum"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-string">"maximum"</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-string">"divisibleBy"</span>: <span class="hljs-number">0.1</span>
+        }
+    }
+}
+</code></pre>
+<p>More info on the mailing list:<br>
+<a href="http://lists.idrc.ocad.ca/pipermail/fluid-work/2013-June/009115.html">http://lists.idrc.ocad.ca/pipermail/fluid-work/2013-June/009115.html</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25224">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2013-06-05T14:32:49.242-0400">2013-06-05T14:32:49.242-0400</relative-time></i></p>
+                        <p>The schema for UIO existing preferences (<a href="/browse/FLUID-4903/">FLUID-4903</a>) and new preferences (<a href="/browse/FLUID-4904/">FLUID-4904</a>) are sketched out @ <a href="http://wiki.fluidproject.org/display/fluid/Schema+for+UIO+preferences">http://wiki.fluidproject.org/display/fluid/Schema+for+UIO+preferences</a></p>
+
+                    </li>
+                    
+                    <li id="comment-25225">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-08-15T07:43:42.033-0400">2013-08-15T07:43:42.033-0400</relative-time></i></p>
+                        <p>Addressed with work for <a href="/browse/FLUID-4907/">FLUID-4907</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4890/"><span class="aria-hidden">←</span> Previous: FLUID-4890</a>
+        <a class="mx-1" href="/browse/FLUID-4904/">Next: FLUID-4904 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

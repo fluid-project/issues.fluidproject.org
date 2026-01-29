@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-309  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-309 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-309/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-309/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-309/">C2LC-309</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-309: Add minimal CSS linting.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-309">C2LC-309</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>To Do</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-03-18T05:20:06.804-0400" prefix="">2021-03-18T05:20:06.804-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-04-20T10:05:24.568-0400" prefix="">2021-04-20T10:05:24.568-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>`npx csslint src` run against develop-0.7 reveals a bunch of style issues we don't particular care about, but a few actual problems, notably trying to set the same property twice:</p>
+<pre><code class="hljs language-java">csslint: There are <span class="hljs-number">9</span> problems in /Users/duhrer/Source/rtf/c2lc-coding-environment/src/ConfirmDeleteAllModal.css.
+
+...
+
+ConfirmDeleteAllModal.css
+<span class="hljs-number">7</span>: warning at line <span class="hljs-number">31</span>, col <span class="hljs-number">5</span>
+Duplicate property <span class="hljs-string">'grid-row-start'</span> found.
+    grid-row-start: <span class="hljs-number">2</span>;
+
+ConfirmDeleteAllModal.css
+<span class="hljs-number">8</span>: warning at line <span class="hljs-number">32</span>, col <span class="hljs-number">5</span>
+Duplicate property <span class="hljs-string">'grid-row-end'</span> found.
+    grid-row-end: <span class="hljs-number">3</span>;
+</code></pre>
+<p>I can run this manually against my theming work for now and clean up the strays, but this seems like an easy thing to add.</p>
+<p>We'd have to adjust some of the settings, for example, although I find it terribly useful to alphabetise properties, I don't know that we want to use that default.  I'd be happy just to check for duplicates for now.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10777">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2021-03-18T05:23:34.436-0400">2021-03-18T05:23:34.436-0400</relative-time></i></p>
+                        <p>We may need to wait on this until this issue is resolved:</p>
+<p><a href="https://github.com/CSSLint/parser-lib/issues/228">https://github.com/CSSLint/parser-lib/issues/228</a></p>
+<p>Basically, the "fr" units used with grid templates are not supported.</p>
+
+                    </li>
+                    
+                    <li id="comment-10778">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2021-03-18T05:33:19.379-0400">2021-03-18T05:33:19.379-0400</relative-time></i></p>
+                        <p>Another alternative might be to use stylelint, which is used in the wider community.</p>
+
+                    </li>
+                    
+                    <li id="comment-10779">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2021-03-18T05:45:27.791-0400">2021-03-18T05:45:27.791-0400</relative-time></i></p>
+                        <p>One advantage of stylelint is that all rules are "opt in".</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-308/"><span class="aria-hidden">←</span> Previous: C2LC-308</a>
+        <a class="mx-1" href="/browse/C2LC-310/">Next: C2LC-310 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

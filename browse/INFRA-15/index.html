@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-15  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-15 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-15/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-15/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-15/">INFRA-15</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-15: Functional tests for websites</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-15">INFRA-15</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-08-07T11:17:05.657-0400" prefix="">2015-08-07T11:17:05.657-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-01-23T09:15:37.548-0500" prefix="">2018-01-23T09:15:37.548-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Migrated from GitHub (<a href="https://github.com/inclusive-design/ops/issues/3):">https://github.com/inclusive-design/ops/issues/3):</a></p>
+<p>avtar commented on Jun 21, 2013</p>
+<p>Currently we don't have any functional tests for sites that get deployed. If <a href="http://inclusivedesign.ca/">http://inclusivedesign.ca</a> or parts of its stack (Apache, MySQL, PHP) gets updated then Anastasia will log in and verify that she can view expected content and confirm that the upgrade was successful. This a slow, manual process and most likely error-prone. It would be useful to create functional tests for the main content management systems that are utilized by the IDRC, namely Drupal, Joomla, Mediawiki, and Wordpress.</p>
+<p>"Capybara helps you test web applications by simulating how a real user would interact with your app. [It has an intuitive] API which mimics the language an actual user would use."</p>
+<p>Using its DSL we could automate the task of logging into an updated site which would in turn tell us that its frontend server is online, MySQL and any of its client libraries are available, the app itself was successfully deployed, etc.</p>
+<p>When /I sign in/ do<br>
+within("#session") do<br>
+fill_in 'Login', :with =&gt; 'user@example.com'<br>
+fill_in 'Password', :with =&gt; 'password'<br>
+end<br>
+click_link 'Sign in'<br>
+end</p>
+<p>Related URLs:</p>
+<p><a href="https://github.com/jonleighton/poltergeist">https://github.com/jonleighton/poltergeist</a> - headless driver that detects and reports any Javascript errors that happen within the page<br>
+<a href="http://matthewdaly.co.uk/blog/2012/11/03/testing-php-web-applications-with-cucumber/">http://matthewdaly.co.uk/blog/2012/11/03/testing-php-web-applications-with-cucumber/</a><br>
+<a href="http://blogs.kent.ac.uk/webdev/2012/08/02/using-capybara-webkit-with-cucumber-without-rails-or-rack/">http://blogs.kent.ac.uk/webdev/2012/08/02/using-capybara-webkit-with-cucumber-without-rails-or-rack/</a></p>
+<p>avtar commented on Dec 17, 2013</p>
+<p>Splinter is another popular testing tool.</p>
+<p>I came across this one <a href="http://robotframework.org/">http://robotframework.org</a> today which might be worth looking into.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-14/"><span class="aria-hidden">←</span> Previous: INFRA-14</a>
+        <a class="mx-1" href="/browse/INFRA-16/">Next: INFRA-16 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

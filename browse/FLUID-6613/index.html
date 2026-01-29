@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6613  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6613 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6613/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6613/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6613/">FLUID-6613</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6613: Framework design challenge: Expand button which expands multiple targets</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6613">FLUID-6613</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Design">Design</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-04-20T07:20:07.886-0400" prefix="">2021-04-20T07:20:07.886-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-17T08:10:08.096-0400" prefix="">2024-07-17T08:10:08.096-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In pull request underway at <a href="https://github.com/inclusive-design/covid-data-monitor/pull/10/files">https://github.com/inclusive-design/covid-data-monitor/pull/10/files</a>, Cindy Li has implemented an "expand button" which necessarily has a rather unintegral design. Its mission is to implement a button with two states, "expanded", "collapsed", which then controls the visibility of a number of other DOM elements provided in configuration. The current implementation is </p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.expandButton"</span>, {
+    gradeNames: <span class="hljs-string">"fluid.button"</span>,
+    <span class="hljs-comment">// Supplied by integrators. An array of DOM element to expand or collapse.</span>
+    domElements: [],
+    styles: {
+        hiddenOnMobile: <span class="hljs-string">"fl-mapviz-hidden-on-mobile"</span>
+    },
+    model: {
+        <span class="hljs-comment">// The initial state of all panels on the mobile view is collapsed.</span>
+        expanded: <span class="hljs-literal">false</span>
+    },
+    modelRelay: {
+        toggleOnActivate: {
+            source: <span class="hljs-string">"activate"</span>,
+            target: <span class="hljs-string">"expanded"</span>,
+            singleTransform: <span class="hljs-string">"fluid.transforms.toggle"</span>
+        },
+        ariaExpanded: {
+            source: <span class="hljs-string">"expanded"</span>,
+            target: <span class="hljs-string">"dom.container.attrs.aria-expanded"</span>,
+            func: x =&gt; !!x
+        }
+    },
+    modelListeners: {
+        expandContent: {
+            path: <span class="hljs-string">"expanded"</span>,
+            funcName: <span class="hljs-string">"fluid.expandButton.toggleClass"</span>,
+            args: [<span class="hljs-string">"{that}.options.domElements"</span>, <span class="hljs-string">"{that}.options.styles.hiddenOnMobile"</span>, <span class="hljs-string">"{that}.model.expanded"</span>]
+        }
+    }
+});
+</code></pre>
+<p>with a highly non-integral impl</p>
+<pre><code class="hljs language-java">fluid.expandButton.toggleClass = function (domElements, style, toggleFlag) {
+    fluid.each(domElements, function (element) {
+        element.toggleClass(style, !toggleFlag);
+    });
+};
+</code></pre>
+<p>This is a challenge to integral design since the "target" of a model relay rule can only be a single path. Also, there is no facility in the "old framework" to operate machinery like expanders within the scope of such rules - and in any case we risk semantic confusion since the modelRelay target is <strong>already</strong> a path expression, and there is no clear way to express the idea, even if this were desirable, that an expression should be expanded in order to produce a set of paths.</p>
+<p>Right now we could use a slightly clunky-seeming dynamic component, e.g. sourced from the elements:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.expandButton.expandBinding"</span>, {
+    gradeNames: <span class="hljs-string">"fluid.modelComponent"</span>,
+    linkPath: &lt;user&gt;,
+    modelRelay: {
+        binding: {
+            source: <span class="hljs-string">"{expandButton}.model.expanded"</span>,
+            target: <span class="hljs-string">"{expandButton}.options.linkPath"</span>
+        }
+});
+</code></pre>
+<p>But we face the same issue again. What can we write in the "target"?</p>
+<p>Note that as noted in <a href="/browse/FLUID-6214/">FLUID-6214</a> we support "recursive context expressions" such as "{{that}.options.dynamicComponentIndex}.events.onIndexRemove" but this isn't sufficient since the result of this resolution is still a value. In theory we need a way to "quote" a reference - but this is just the kind of LISP-like thing we always wanted to avoid in Infusion. But note that Boxer doesn't avoid this with all of its boxing and unboxing primitives, and its "flavoured inputs".</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6612/"><span class="aria-hidden">←</span> Previous: FLUID-6612</a>
+        <a class="mx-1" href="/browse/FLUID-6614/">Next: FLUID-6614 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

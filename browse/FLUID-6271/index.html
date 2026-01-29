@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6271  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6271 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6271/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6271/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6271/">FLUID-6271</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6271: Buildkite Agent v3.0 breaks Vagrant builds</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6271">FLUID-6271</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-04-16T20:02:14.135-0400" prefix="">2018-04-16T20:02:14.135-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:21.881-0400" prefix="">2024-07-22T10:35:21.881-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Infrastructure</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Previously, buildkite-agent v2.0 cleaned the git repository on every step using "git clean -fdq". </p>
+<p>Version 3.0 switches to "git clean -fdqx", which removes all files even the ones in .gitignore. That was due to popular demand.</p>
+<p>Unfortunately, that breaks our Vagrant steps because the ".vagrant" directory is wiped out.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13594">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-04-16T20:36:32.543-0400">2018-04-16T20:36:32.543-0400</relative-time></i></p>
+                        <p>The git clean flags are a per-agent configuration so I had to change /etc/buildkite-agent/buildkite-agent.cfg and add git-clean-flags to it:</p>
+<pre><code class="hljs"><span class="hljs-attribute">token</span><span class="hljs-operator">=</span><span class="hljs-string">"xxx"</span>
+<span class="hljs-attribute">tags</span><span class="hljs-operator">=</span><span class="hljs-string">"type=physical,hypervisor=virtualbox,docker=true,vagrant=true"</span>
+<span class="hljs-attribute">git-clean-flags</span><span class="hljs-operator">=</span><span class="hljs-string">"-fqd"</span>
+</code></pre>
+<p>The first build with v3.0 that ran correctly but still failed (unrelated to CI, it seems): <a href="https://buildkite.com/fluid-project/fluid-infusion/builds/195">https://buildkite.com/fluid-project/fluid-infusion/builds/195</a> – Waiting on Joseph Scheuhammer's feedback before closing this as fixed.</p>
+
+                    </li>
+                    
+                    <li id="comment-13599">
+                        <p class="mb-0"><b>Joseph Scheuhammer</b> <i>commented <relative-time datetime="2018-04-17T15:21:30.832-0400">2018-04-17T15:21:30.832-0400</relative-time></i></p>
+                        <p>Giovanni Tirloni I can confirm the console output I get when I run this pull request locally on my vagrant VM matches, in all relevant respects, the console output from buildkite (<a href="https://buildkite.com/fluid-project/fluid-infusion/builds/195).">https://buildkite.com/fluid-project/fluid-infusion/builds/195).</a>&#160; The failure(s) observed are due to a bug in my testing code, not in what buildkite is doing.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6270/"><span class="aria-hidden">←</span> Previous: FLUID-6270</a>
+        <a class="mx-1" href="/browse/FLUID-6272/">Next: FLUID-6272 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

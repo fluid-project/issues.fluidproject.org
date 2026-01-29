@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5100  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5100 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5100/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5100/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5100/">FLUID-5100</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5100: Convert build scripts to use grunt for minification task</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5100">FLUID-5100</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Sub-task">Sub-task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-07-25T07:51:41.388-0400" prefix="">2013-07-25T07:51:41.388-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-02T14:30:24.030-0500" prefix="">2014-03-02T14:30:24.030-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Build Scripts</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>We are in the process of converting the ant based build scripts to grunt. In this step we should replace the current yui based minification task with one based on grunt and uglify. Until the entire build script is converted to use grunt, we should drive the grunt tasks with ant. </p>
+<p>In addition to modifying the ant script and setting up the grunt task we will need to setup npm to install the necessary dependencies and add this as well to part of our build process.</p>
+<p>grunt: <a href="http://gruntjs.com/">http://gruntjs.com</a><br>
+uglify plugin: <a href="https://npmjs.org/package/grunt-contrib-uglify">https://npmjs.org/package/grunt-contrib-uglify</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14352">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-07-25T07:56:08.840-0400">2013-07-25T07:56:08.840-0400</relative-time></i></p>
+                        <p>Can look at the video player (<a href="https://github.com/fluid-project/videoPlayer">https://github.com/fluid-project/videoPlayer</a>) for inspiration on setting up grunt.</p>
+
+                    </li>
+                    
+                    <li id="comment-14357">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2013-08-07T16:03:00.372-0400">2013-08-07T16:03:00.372-0400</relative-time></i></p>
+                        <p>We discussed this process at the Aug. 7, 2013 Community Workshop. We stumbled a bit at the point of removing the existing ant-based minification from the existing scripts. A bit of further discussion in the channel (un-logged) narrowed our choices down to: continue to try to migrate the build process, one task at a time, over to grunt, or b) start fresh with a grunt-only version.</p>
+<p>Concerns over the grunt-only version included time: we're working on this an hour at a time.</p>
+
+                    </li>
+                    
+                    <li id="comment-14362">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-08-14T16:16:29.482-0400">2013-08-14T16:16:29.482-0400</relative-time></i></p>
+                        <p>At todays community meeting it was decided that, at least for the time being, we would start the grunt build scripts from scratch.</p>
+
+                    </li>
+                    
+                    <li id="comment-14365">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-08-14T16:16:47.570-0400">2013-08-14T16:16:47.570-0400</relative-time></i></p>
+                        <p>My branch:<br>
+<a href="https://github.com/jobara/infusion/compare/FLUID-5100">https://github.com/jobara/infusion/compare/FLUID-5100</a></p>
+<p>The above branch has now be incorporated into the following:<br>
+<a href="https://github.com/jobara/infusion/tree/FLUID-5120">https://github.com/jobara/infusion/tree/FLUID-5120</a></p>
+
+                    </li>
+                    
+                    <li id="comment-14368">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-03-02T14:30:24.022-0500">2014-03-02T14:30:24.022-0500</relative-time></i></p>
+                        <p>Resolved with <a href="/browse/FLUID-5120/">FLUID-5120</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5099/"><span class="aria-hidden">←</span> Previous: FLUID-5099</a>
+        <a class="mx-1" href="/browse/FLUID-5101/">Next: FLUID-5101 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

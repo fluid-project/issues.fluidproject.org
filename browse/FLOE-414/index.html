@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-414  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-414 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-414/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-414/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-414/">FLOE-414</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-414: Make the pie SVG scalable</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-414">FLOE-414</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Resolved</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLOE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alan Harnum</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-08-21T15:26:06.992-0400" prefix="">2015-08-21T15:26:06.992-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-10-20T11:03:01.980-0400" prefix="">2015-10-20T11:03:01.980-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Chart Authoring Tool</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The size of the created pie is based on the width and height given to the SVG. These values only accept px instead of em or rem. This causes the issue that the created pie would not work with UIO since it's not scalable based on the font size change.</p>
+<p>A might-be-helpful reference: <a href="http://eyeseast.github.io/visible-data/2013/08/28/responsive-charts-with-d3/">http://eyeseast.github.io/visible-data/2013/08/28/responsive-charts-with-d3/</a>. It shows how to redraw the chart at the window size change, but this solution would not be helpful for the font size change.</p>
+<p>Another reference for scalable SVG: <a href="https://css-tricks.com/scale-svg/">https://css-tricks.com/scale-svg/</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10910">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2015-09-14T10:16:58.482-0400">2015-09-14T10:16:58.482-0400</relative-time></i></p>
+                        <p>A few observations from recent experimentation:</p>
+<ul>
+<li>it's pretty straightforward to have the SVG scale to the proportions of the container DIV using jQuery to figure out the container height + width when creating it. One approach to this is in the branch at <a href="https://github.com/waharnum/chartAuthoring/tree/FLOE-414">https://github.com/waharnum/chartAuthoring/tree/FLOE-414</a> </li>
+</ul>
+<ul>
+<li>per the spec, you can specify SVG width + height in em or rem, though I'm not sure there's consistent behaviour cross-browser on this. This seems to work OK in Chrome and behave strangely in Firefox.</li>
+</ul>
+<ul>
+<li>the viewBox attribute can do all kinds of magic - basically, it lets you specify a proportional-coordinate system and behaviour for any drawing within the SVG. So you can specify the SVG's size in relation to the viewBox height and width, rather than any external measurements. This helps a lot in auto-scaling to container size.</li>
+</ul>
+<ul>
+<li>If we'd like the pie charts to scale based on UIO font scaling, one approach would be to set their parent container height in em and use one of the autoscaling approaches. We might need to have them redraw based on a listener.</li>
+</ul>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-413/"><span class="aria-hidden">←</span> Previous: FLOE-413</a>
+        <a class="mx-1" href="/browse/FLOE-415/">Next: FLOE-415 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

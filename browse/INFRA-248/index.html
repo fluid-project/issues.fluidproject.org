@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-248  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-248 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-248/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-248/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-248/">INFRA-248</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-248: ops: Fix linting errors</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-248">INFRA-248</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-05-14T16:14:34.586-0400" prefix="">2020-05-14T16:14:34.586-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-05-14T16:41:46.062-0400" prefix="">2020-05-14T16:41:46.062-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <pre><code class="hljs"><span class="language-xml">$ ansible-lint playbooks/*
+[204] Lines should be no longer than 160 chars
+/home/gtirloni/code/gtirloni/idrc-ops/roles/attic/tasks/backup.yml:26
+  command: "/usr/bin/ssh -i </span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_key</span> }}</span><span class="language-xml"> -o StrictHostKeyChecking=no -p </span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_port</span> }}</span><span class="language-xml"> </span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_user</span>}}</span><span class="language-xml">@</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_server</span>}}</span><span class="language-xml"> 'rm -rf </span><span class="hljs-template-variable">{{ <span class="hljs-name">ansible_hostname</span> }}</span><span class="language-xml">'"
+
+[206] Variables should have spaces before and after: </span><span class="hljs-template-variable">{{ <span class="hljs-name">var_name</span> }}</span><span class="language-xml">
+/home/gtirloni/code/gtirloni/idrc-ops/roles/attic/tasks/backup.yml:26
+  command: "/usr/bin/ssh -i </span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_key</span> }}</span><span class="language-xml"> -o StrictHostKeyChecking=no -p </span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_port</span> }}</span><span class="language-xml"> </span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_user</span>}}</span><span class="language-xml">@</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_server</span>}}</span><span class="language-xml"> 'rm -rf </span><span class="hljs-template-variable">{{ <span class="hljs-name">ansible_hostname</span> }}</span><span class="language-xml">'"
+
+[204] Lines should be no longer than 160 chars
+/home/gtirloni/code/gtirloni/idrc-ops/roles/attic/tasks/backup.yml:36
+  command: "/usr/bin/ssh -i </span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_key</span> }}</span><span class="language-xml"> -o StrictHostKeyChecking=no -p </span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_port</span> }}</span><span class="language-xml"> </span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_user</span>}}</span><span class="language-xml">@</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_server</span>}}</span><span class="language-xml"> 'stat </span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_path</span> }}</span><span class="language-xml">/</span><span class="hljs-template-variable">{{ <span class="hljs-name">ansible_hostname</span> }}</span><span class="language-xml">.attic/README'"
+
+[206] Variables should have spaces before and after: </span><span class="hljs-template-variable">{{ <span class="hljs-name">var_name</span> }}</span><span class="language-xml">
+/home/gtirloni/code/gtirloni/idrc-ops/roles/attic/tasks/backup.yml:36
+  command: "/usr/bin/ssh -i </span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_key</span> }}</span><span class="language-xml"> -o StrictHostKeyChecking=no -p </span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_port</span> }}</span><span class="language-xml"> </span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_user</span>}}</span><span class="language-xml">@</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_server</span>}}</span><span class="language-xml"> 'stat </span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_path</span> }}</span><span class="language-xml">/</span><span class="hljs-template-variable">{{ <span class="hljs-name">ansible_hostname</span> }}</span><span class="language-xml">.attic/README'"
+
+[204] Lines should be no longer than 160 chars
+/home/gtirloni/code/gtirloni/idrc-ops/roles/attic/tasks/backup.yml:50
+  command: "</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_executable</span> }}</span><span class="language-xml"> init -e passphrase ssh://</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_user</span> }}</span><span class="language-xml">@</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_server</span> }}</span><span class="language-xml">:</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_port</span> }}</span><span class="language-xml">/</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_path</span> }}</span><span class="language-xml">/</span><span class="hljs-template-variable">{{ <span class="hljs-name">ansible_hostname</span>}}</span><span class="language-xml">.attic"
+
+[206] Variables should have spaces before and after: </span><span class="hljs-template-variable">{{ <span class="hljs-name">var_name</span> }}</span><span class="language-xml">
+/home/gtirloni/code/gtirloni/idrc-ops/roles/attic/tasks/backup.yml:50
+  command: "</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_executable</span> }}</span><span class="language-xml"> init -e passphrase ssh://</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_user</span> }}</span><span class="language-xml">@</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_server</span> }}</span><span class="language-xml">:</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_port</span> }}</span><span class="language-xml">/</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_path</span> }}</span><span class="language-xml">/</span><span class="hljs-template-variable">{{ <span class="hljs-name">ansible_hostname</span>}}</span><span class="language-xml">.attic"
+
+[204] Lines should be no longer than 160 chars
+/home/gtirloni/code/gtirloni/idrc-ops/roles/attic/tasks/backup.yml:64
+  command: "</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_executable</span> }}</span><span class="language-xml"> create ssh://</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_user</span> }}</span><span class="language-xml">@</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_server</span> }}</span><span class="language-xml">:</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_port</span> }}</span><span class="language-xml">/</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_path</span> }}</span><span class="language-xml">/</span><span class="hljs-template-variable">{{ <span class="hljs-name">ansible_hostname</span> }}</span><span class="language-xml">.attic::</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_timestamp</span> }}</span><span class="language-xml"> </span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_include_parameters</span> }}</span><span class="language-xml">"
+
+[204] Lines should be no longer than 160 chars
+/home/gtirloni/code/gtirloni/idrc-ops/roles/attic/tasks/backup.yml:76
+  command: "</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_executable</span> }}</span><span class="language-xml"> create ssh://</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_user</span> }}</span><span class="language-xml">@</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_server</span> }}</span><span class="language-xml">:</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_port</span> }}</span><span class="language-xml">/</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_path</span> }}</span><span class="language-xml">/</span><span class="hljs-template-variable">{{ <span class="hljs-name">ansible_hostname</span> }}</span><span class="language-xml">.attic::</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_timestamp</span> }}</span><span class="language-xml"> </span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_exclude_parameters</span> }}</span><span class="language-xml"> </span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_include_parameters</span> }}</span><span class="language-xml">"
+
+[204] Lines should be no longer than 160 chars
+/home/gtirloni/code/gtirloni/idrc-ops/roles/attic/tasks/backup.yml:82
+  command: "</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_executable</span> }}</span><span class="language-xml"> prune </span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_path</span> }}</span><span class="language-xml"> --keep-daily=</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_keep_daily</span> }}</span><span class="language-xml"> --keep-weekly=</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_keep_weekly</span> }}</span><span class="language-xml"> --keep-monthly=</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_keep_monthly</span> }}</span><span class="language-xml">"
+
+[204] Lines should be no longer than 160 chars
+/home/gtirloni/code/gtirloni/idrc-ops/roles/attic/tasks/backup.yml:88
+  command: "</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_executable</span> }}</span><span class="language-xml"> prune ssh://</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_user</span> }}</span><span class="language-xml">@</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_server</span> }}</span><span class="language-xml">:</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_port</span> }}</span><span class="language-xml">/</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_repository_path</span> }}</span><span class="language-xml">/</span><span class="hljs-template-variable">{{ <span class="hljs-name">ansible_hostname</span> }}</span><span class="language-xml">.attic  --keep-daily=</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_keep_daily</span> }}</span><span class="language-xml"> --keep-weekly=</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_keep_weekly</span> }}</span><span class="language-xml"> --keep-monthly=</span><span class="hljs-template-variable">{{ <span class="hljs-name">attic_keep_monthly</span> }}</span><span class="language-xml">"
+
+[201] Trailing whitespace
+/home/gtirloni/code/gtirloni/idrc-ops/roles/attic/tasks/install.yml:16
+    
+
+[201] Trailing whitespace
+/home/gtirloni/code/gtirloni/idrc-ops/roles/attic/tasks/install.yml:38
+  
+
+[201] Trailing whitespace
+/home/gtirloni/code/gtirloni/idrc-ops/roles/attic/tasks/install.yml:90
+    create: yes   
+
+[602] Don't compare to empty string
+/home/gtirloni/code/gtirloni/idrc-ops/roles/attic/tasks/main.yml:6
+  when: attic_repository_passphrase is not defined or attic_repository_passphrase == ""
+
+[403] Package installs should not use latest
+/home/gtirloni/code/gtirloni/idrc-ops/roles/letsencrypt-route53/tasks/install.yml:22
+Task/Handler: Install RPM packages
+
+[403] Package installs should not use latest
+/home/gtirloni/code/gtirloni/idrc-ops/roles/letsencrypt-route53/tasks/install.yml:28
+Task/Handler: Install pip packages
+
+[204] Lines should be no longer than 160 chars
+/home/gtirloni/code/gtirloni/idrc-ops/roles/libvirt_vm/tasks/launch.yml:25
+  command: "/usr/bin/virt-builder </span><span class="hljs-template-variable">{{ <span class="hljs-name">libvirt_vm_template</span> }}</span><span class="language-xml"> --hostname </span><span class="hljs-template-variable">{{ <span class="hljs-name">inventory_hostname</span> }}</span><span class="language-xml"> --format qcow2 --size </span><span class="hljs-template-variable">{{ <span class="hljs-name">libvirt_vm_disk</span> }}</span><span class="language-xml"> -o </span><span class="hljs-template-variable">{{ <span class="hljs-name">libvirt_vm_images_path</span> }}</span><span class="language-xml">/</span><span class="hljs-template-variable">{{ <span class="hljs-name">inventory_hostname</span> }}</span><span class="language-xml">.qcow2 --root-password </span><span class="hljs-template-variable">{{ <span class="hljs-name">libvirt_vm_root_password</span> }}</span><span class="language-xml"> --source </span><span class="hljs-template-variable">{{ <span class="hljs-name">libvirt_vm_virtbuilder_source</span> }}</span><span class="language-xml"> --fingerprint '</span><span class="hljs-template-variable">{{ <span class="hljs-name">libvirt_vm_virtbuilder_fingerprint</span> }}</span><span class="language-xml">' --upload /tmp/libvirt_vm_ifcfg-</span><span class="hljs-template-variable">{{ <span class="hljs-name">inventory_hostname</span> }}</span><span class="language-xml">:/etc/sysconfig/network-scripts/ifcfg-eth0 </span><span class="hljs-template-variable">{{ <span class="hljs-name">libvirt_vm_virtbuilder_additional_opts</span> }}</span><span class="language-xml">"
+
+[201] Trailing whitespace
+/home/gtirloni/code/gtirloni/idrc-ops/roles/libvirt_vm/tasks/launch.yml:27
+  become: yes 
+
+[204] Lines should be no longer than 160 chars
+/home/gtirloni/code/gtirloni/idrc-ops/roles/libvirt_vm/tasks/launch.yml:31
+  command: "/usr/bin/virt-install --import --name </span><span class="hljs-template-variable">{{ <span class="hljs-name">inventory_hostname</span> }}</span><span class="language-xml"> --ram </span><span class="hljs-template-variable">{{ <span class="hljs-name">libvirt_vm_mem</span> }}</span><span class="language-xml"> --vcpus </span><span class="hljs-template-variable">{{ <span class="hljs-name">libvirt_vm_cpu</span> }}</span><span class="language-xml"> --disk </span><span class="hljs-template-variable">{{ <span class="hljs-name">libvirt_vm_images_path</span> }}</span><span class="language-xml">/</span><span class="hljs-template-variable">{{ <span class="hljs-name">inventory_hostname</span> }}</span><span class="language-xml">.qcow2 --network bridge=</span><span class="hljs-template-variable">{{ <span class="hljs-name">libvirt_vm_bridge</span> }}</span><span class="language-xml">,model=virtio --mac </span><span class="hljs-template-variable">{{ <span class="hljs-name">libvirt_vm_mac_addr</span> }}</span><span class="language-xml"> --os-variant=</span><span class="hljs-template-variable">{{ <span class="hljs-name">libvirt_vm_osvariant</span> }}</span><span class="language-xml"> --nographics --noautoconsole --channel unix,path=/var/lib/libvirt/qemu/guest.agent,mode=bind,target_type=virtio,name=org.qemu.guest_agent.0 {% if libvirt_vm_autostart %}--autostart{% endif %} {% if libvirt_vm_data_disk is defined %}--disk </span><span class="hljs-template-variable">{{ <span class="hljs-name">libvirt_vm_images_path</span> }}</span><span class="language-xml">/</span><span class="hljs-template-variable">{{ <span class="hljs-name">inventory_hostname</span> }}</span><span class="language-xml">-data.qcow2,format=qcow2,size=</span><span class="hljs-template-variable">{{ <span class="hljs-name">libvirt_vm_data_disk</span> }}</span><span class="language-xml">{% endif %}"
+
+[301] Commands should not change things if nothing needs doing
+/home/gtirloni/code/gtirloni/idrc-ops/roles/libvirt_vm/tasks/start.yml:3
+Task/Handler: Start virtual machine
+
+[301] Commands should not change things if nothing needs doing
+/home/gtirloni/code/gtirloni/idrc-ops/roles/libvirt_vm/tasks/stop.yml:3
+Task/Handler: Stop virtual machine
+
+[301] Commands should not change things if nothing needs doing
+/home/gtirloni/code/gtirloni/idrc-ops/roles/mysql/tasks/backup.yml:8
+Task/Handler: Retrieve database list
+
+[301] Commands should not change things if nothing needs doing
+/home/gtirloni/code/gtirloni/idrc-ops/roles/mysql/tasks/backup.yml:12
+Task/Handler: Backup each database indenpendently
+
+[301] Commands should not change things if nothing needs doing
+/home/gtirloni/code/gtirloni/idrc-ops/roles/mysql/tasks/backup.yml:16
+Task/Handler: Prune old backups
+
+[301] Commands should not change things if nothing needs doing
+/home/gtirloni/code/gtirloni/idrc-ops/roles/mysql/tasks/backup.yml:20
+Task/Handler: Compress all backups
+
+[403] Package installs should not use latest
+/home/gtirloni/code/gtirloni/idrc-ops/roles/mysql/tasks/install.yml:3
+Task/Handler: Install packages
+
+[504] Do not use 'local_action', use 'delegate_to: localhost'
+playbooks/vm_bootstrap.yml:8
+      local_action: command /usr/bin/tcping -t 5 "</span><span class="hljs-template-variable">{{ <span class="hljs-name">inventory_hostname</span> }}</span><span class="language-xml">" 7022
+
+[504] Do not use 'local_action', use 'delegate_to: localhost'
+playbooks/vm_launch.yml:19
+      local_action:
+
+[504] Do not use 'local_action', use 'delegate_to: localhost'
+playbooks/vm_launch.yml:34
+      local_action:
+
+[504] Do not use 'local_action', use 'delegate_to: localhost'
+playbooks/vm_terminate.yml:14
+      local_action:
+</span></code></pre>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-247/"><span class="aria-hidden">←</span> Previous: INFRA-247</a>
+        <a class="mx-1" href="/browse/INFRA-249/">Next: INFRA-249 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

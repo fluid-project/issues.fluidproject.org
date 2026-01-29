@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6775  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6775 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6775/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6775/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6775/">FLUID-6775</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6775: Model relay definitions with internal namespace key do not override correctly</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6775">FLUID-6775</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2024-01-09T17:13:13.237-0500" prefix="">2024-01-09T17:13:13.237-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-01-09T17:13:13.701-0500" prefix="">2024-01-09T17:13:13.701-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.6</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>As reported by Tony Atkins in the following codepen <a href="https://codepen.io/duhrer/pen/mdoVxdo?editors=1111">https://codepen.io/duhrer/pen/mdoVxdo?editors=1111</a> and in Element at <a href="https://matrix.to/#/!JcoHDrfLedPQdFhAXn:matrix.org/$uBQoihUnLhDpOaIUixVmBYshye3PEC3AQdL6VronYJI?via=matrix.org&via=sibnsk.net">https://matrix.to/#/!JcoHDrfLedPQdFhAXn:matrix.org/$uBQoihUnLhDpOaIUixVmBYshye3PEC3AQdL6VronYJI?via=matrix.org&amp;via=sibnsk.net</a> , model relay definitions where the namespace is supplied as an internal key, rather than as a hash level, do not override correctly in derived grades. This doesn’t affect model listeners (which use the same mergePolicy) because of the programmatic way they get registered - we could do the same for model listeners as a stopgap. The workaround is to use a hash key for the relay definition instead.</p>
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">var</span> my = fluid.<span class="hljs-title function_">registerNamespace</span>(<span class="hljs-string">"my"</span>);
+
+fluid.<span class="hljs-title function_">defaults</span>(<span class="hljs-string">"my.underlying.grade"</span>, {
+  <span class="hljs-attr">gradeNames</span>: [<span class="hljs-string">"fluid.modelComponent"</span>],
+  <span class="hljs-attr">model</span>: {
+    <span class="hljs-attr">inputA</span>: <span class="hljs-string">"chocolate"</span>
+  },
+  <span class="hljs-attr">modelRelay</span>: {
+    <span class="hljs-attr">namespace</span>: <span class="hljs-string">"pipe"</span>,
+    <span class="hljs-attr">source</span>: <span class="hljs-string">"inputA"</span>,
+    <span class="hljs-attr">target</span>: <span class="hljs-string">"{child}.model.childVariable"</span>
+  },
+  <span class="hljs-attr">components</span>: {
+    <span class="hljs-attr">child</span>: {
+      <span class="hljs-attr">type</span>: <span class="hljs-string">"fluid.modelComponent"</span>
+    }
+  }
+});
+
+fluid.<span class="hljs-title function_">defaults</span>(<span class="hljs-string">"my.derived.grade"</span>, {
+  <span class="hljs-attr">gradeNames</span>: [<span class="hljs-string">"my.underlying.grade"</span>],
+  <span class="hljs-attr">model</span>: {
+    <span class="hljs-attr">inputB</span>: <span class="hljs-string">"vanilla"</span>
+  },
+<span class="hljs-attr">modelRelay</span>: {
+    <span class="hljs-attr">namespace</span>: <span class="hljs-string">"pipe"</span>,
+    <span class="hljs-attr">source</span>: <span class="hljs-string">"inputB"</span>,
+    <span class="hljs-attr">target</span>: <span class="hljs-string">"{child}.model.childVariable"</span>
+  }
+});
+
+<span class="hljs-keyword">var</span> component = my.<span class="hljs-property">derived</span>.<span class="hljs-title function_">grade</span>();
+
+component.<span class="hljs-property">child</span>.<span class="hljs-property">applier</span>.<span class="hljs-title function_">change</span>(<span class="hljs-string">"childVariable"</span>, <span class="hljs-string">"strawberry"</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"parent, input A (original grade):"</span> + component.<span class="hljs-property">model</span>.<span class="hljs-property">inputA</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"parent, input B (derived grade):"</span> + component.<span class="hljs-property">model</span>.<span class="hljs-property">inputB</span>);
+</code></pre>
+<p>Console output is</p>
+<pre><code class="hljs"><span class="hljs-string">"parent, input A (original grade):strawberry"</span>
+<span class="hljs-string">"parent, input B (derived grade):strawberry"</span>
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6774/"><span class="aria-hidden">←</span> Previous: FLUID-6774</a>
+        <a class="mx-1" href="/browse/FLUID-6776/">Next: FLUID-6776 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

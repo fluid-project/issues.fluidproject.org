@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3114  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3114 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3114/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3114/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3114/">FLUID-3114</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3114: Attempting to upload files throws an uncaught exception: using FF 3.5</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3114">FLUID-3114</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Sub-issue">Sub-issue</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-08-20T09:16:49.000-0400" prefix="">2009-08-20T09:16:49.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-10-02T16:20:02.000-0400" prefix="">2009-10-02T16:20:02.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.8</li>
+                            
+                            <li>0.8.1</li>
+                            
+                            <li>1.0</li>
+                            
+                            <li>1.1</li>
+                            
+                            <li>1.1.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Uploader</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Attempting to upload files throws an uncaught exception</p>
+<p>Steps to reproduce:</p>
+<p>1) Open the uploader demo page<br>
+<a href="http://build.fluidproject.org/infusion/components/uploader/html/Uploader.html">http://build.fluidproject.org/infusion/components/uploader/html/Uploader.html</a></p>
+<p>2) Add some files to the file queue</p>
+<p>3) Attempt to upload the files</p>
+<p>Notice that an uncaught exception occurs</p>
+<p>Error message:</p>
+<p>uncaught exception: Call to SetButtonDisabled failed<br>
+anonymous("SetButtonDisabled", [true 0=true])swfupload.js (line 449)<br>
+anonymous(true)swfupload.js (line 685)<br>
+anonymous()SWFUploa...anager.js (line 118)<br>
+anonymous()Fluid.js (line 594)<br>
+anonymous()FileQueue.js (line 152)<br>
+anonymous()DemoUplo...anager.js (line 130)<br>
+anonymous()Uploader.js (line 557)<br>
+anonymous(Object originalEvent=Event click type=click)jquery.js (line 2693)<br>
+anonymous()jquery.js (line 2468)<br>
+[Break on this error] (no source for )<br>
+Firebug's log limit has been reached. %S entries not shown.		Preferences	 </p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF 3.5 (Mac OS 10.5, Win XP, Win Vista) Flash 10</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22838">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-08-20T11:17:41.000-0400">2009-08-20T11:17:41.000-0400</relative-time></i></p>
+                        <p>Seems like something changed between FF3 and FF3.5.</p>
+<p>Not sure exactly what that was yet though. Here are some links from the swfupload forum about issues people have had with FF 3.5</p>
+<p><a href="http://swfupload.org/forum/generaldiscussion/1672">http://swfupload.org/forum/generaldiscussion/1672</a></p>
+<p><a href="http://swfupload.org/forum/generaldiscussion/1641">http://swfupload.org/forum/generaldiscussion/1641</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22841">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2009-08-21T17:25:53.000-0400">2009-08-21T17:25:53.000-0400</relative-time></i></p>
+                        <p>The error is occurring in SWFUpload's code: setButtonDisabled(). We invoke this method inside our SWFUploadSetupDecorator, which is responsible for setting up a Flash 10-specific configuration of SWFUpload. This code is responsible for disabling the Flash-based "Browse Files" button, using a public API provided by SWFUpload.</p>
+<p>This has become a pretty familiar scenario with SWFUpload: whenever a browser of Flash upgrade comes along, SWFUpload breaks. In this case, their setButtonDisabled() method is exploding. I haven't had a chance to fully triage the problem, but there is a temporary workaround:</p>
+<p>If you're okay with the fact that users will be able to open the file dialog while an upload is in progress, removing lines 118 and 121 of SWFUploadManager.js--or better yet, wrapping those lines in a try/catch will squelch the error. This is quite a hack, and we'll make sure we find a reasonable fix that doesn't involve patching code directly.</p>
+
+                    </li>
+                    
+                    <li id="comment-22844">
+                        <p class="mb-0"><b>Matt Zumwalt</b> <i>commented <relative-time datetime="2009-08-28T14:06:28.000-0400">2009-08-28T14:06:28.000-0400</relative-time></i></p>
+                        <p>FYI, when I comment out the lines that call setButtonDisabled, I just get another error "Call to StartUpload failed".  Upload still works fine in Safari with the hack in place.:</p>
+<p>uncaught exception: Call to StartUpload failed<br>
+anonymous("StartUpload", [undefined])Infusion...251482117 (line 14610)<br>
+anonymous(Object name=fileID)Infusion...251482117 (line 14651)<br>
+anonymous()Infusion...251482117 (line 16240)<br>
+anonymous()Infusion...251482117 (line 16824)<br>
+anonymous(Object originalEvent=Event click type=click)Infusion...251482117 (line 2693)<br>
+anonymous()Infusion...251482117 (line 2468</p>
+<p>PS - alternate hack - edit the function definition for SWFUpload.prototype.setButtonDisabled so that it skips calling the Flash method.</p>
+<p>SWFUpload.prototype.setButtonDisabled = function (isDisabled) {<br>
+this.settings.button_disabled = isDisabled;<br>
+// this.callFlash("SetButtonDisabled", [isDisabled]);<br>
+};</p>
+<p>... though this still gives me the "Call to StartUpload failed" error on my machine 😞</p>
+
+                    </li>
+                    
+                    <li id="comment-22848">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-09-21T09:45:35.000-0400">2009-09-21T09:45:35.000-0400</relative-time></i></p>
+                        <p>Bug Parade Infusion 1.1.2</p>
+
+                    </li>
+                    
+                    <li id="comment-22851">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2009-09-30T17:33:39.000-0400">2009-09-30T17:33:39.000-0400</relative-time></i></p>
+                        <p>I've reviewed the code for this bug and it looks good. Also tested in FF3.5 using the demo version of the uploader.  </p>
+
+                    </li>
+                    
+                    <li id="comment-22854">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2009-10-02T13:32:11.000-0400">2009-10-02T13:32:11.000-0400</relative-time></i></p>
+                        <p>Resolved per Colin's code and my review</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3112/"><span class="aria-hidden">←</span> Previous: FLUID-3112</a>
+        <a class="mx-1" href="/browse/FLUID-3115/">Next: FLUID-3115 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

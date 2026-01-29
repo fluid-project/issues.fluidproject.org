@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2792  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2792 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2792/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2792/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2792/">FLUID-2792</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2792: Saving rich text content, without making changes, will still render the undo control</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2792">FLUID-2792</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-05-27T15:04:45.000-0400" prefix="">2009-05-27T15:04:45.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-08-07T15:02:03.000-0400" prefix="">2009-08-07T15:02:03.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1.1</li>
+                            
+                            <li>1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                            <li>Undo</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Saving rich text content, without making changes, will still render the undo control</p>
+<p>Steps to reproduce:</p>
+<p>1) Open the inline edit quick start example<br>
+<a href="http://build.fluidproject.org/infusion/standalone-demos/quick-start-examples/inlineEdit/html/InlineEdit.html">http://build.fluidproject.org/infusion/standalone-demos/quick-start-examples/inlineEdit/html/InlineEdit.html</a></p>
+<p>2) Open one of the rich text inline edit fields into edit mode</p>
+<p>3) Immediately save</p>
+<p>Notice that the undo control is rendered, even though there are no changes to undo</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF2, FF3, Opera 9.6, Safari 3.2 (Mac OS 10.5)<br>
+Safari 3.2 (Mac OS 10.4)<br>
+FF2, FF3, IE6, IE7, IE8, Opera 9.6 (Win XP)<br>
+FF3, IE7, IE8 (Win Vista)<br>
+IE6 (Win 2000)</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-2792/FLUID-2792.patch">
+                            
+                                FLUID-2792.patch
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-2792/patch.txt">
+                            
+                                patch.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14749">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-07-27T16:30:16.000-0400">2009-07-27T16:30:16.000-0400</relative-time></i></p>
+                        <p>Bug Parade 1.1.1 release</p>
+
+                    </li>
+                    
+                    <li id="comment-14751">
+                        <p class="mb-0"><b>Armin Krauss</b> <i>commented <relative-time datetime="2009-07-29T11:31:13.000-0400">2009-07-29T11:31:13.000-0400</relative-time></i></p>
+                        <p>I think the problem happens in the finish() function</p>
+<p>var finish = function (that) {<br>
+var newValue = that.editView.value();<br>
+var oldValue = that.model.value;</p>
+<p>var viewNode = that.viewEl[0];<br>
+var editNode = that.editField[0];<br>
+var ret = that.events.onFinishEdit.fire(newValue, oldValue, editNode, viewNode);<br>
+if (ret === false) {<br>
+return;<br>
+}</p>
+<p>that.updateModelValue(newValue);<br>
+that.events.afterFinishEdit.fire(newValue, oldValue, editNode, viewNode);</p>
+<p>switchToViewMode(that);<br>
+};</p>
+<p>I expect that</p>
+<p>var ret = that.events.onFinishEdit.fire(newValue, oldValue, editNode, viewNode);<br>
+if (ret === false) {<br>
+return;<br>
+}</p>
+<p>Will do some compare of the Values and decide to return or go on and show undo. The new<br>
+and old are different due to "\n" in the old text.</p>
+<p>new</p>
+<p>&lt;p&gt;After a hiatus, &lt;strong&gt;Portishead&lt;/strong&gt; is back with their first studio album in 6 years. &lt;em&gt;Third&lt;/em&gt; brings back the familiar and the new, and none of this is best exemplified than in the track &lt;em&gt;Machine Gun&lt;/em&gt;. It seems that regardless of how &lt;strong&gt;Portishead&lt;/strong&gt; sounds now, the one thing that has stayed constant is their refusal to be ordinary.&lt;/p&gt;</p>
+<p>old<br>
+\n &lt;p&gt;After a hiatus, &lt;strong&gt;Portishead&lt;/strong&gt; is back with their first studio \n album in 6 years. &lt;em&gt;Third&lt;/em&gt; brings back the familiar and\n the new, and none of this is best exemplified than in the track\n &lt;em&gt;Machine Gun&lt;/em&gt;. It seems that regardless of how &lt;strong&gt;Portishead&lt;/strong&gt; \n sounds now, the one thing that has stayed constant is their refusal to be ordinary.\n &lt;/p&gt;\n</p>
+
+                    </li>
+                    
+                    <li id="comment-14753">
+                        <p class="mb-0"><b>y z</b> <i>commented <relative-time datetime="2009-07-31T15:04:06.000-0400">2009-07-31T15:04:06.000-0400</relative-time></i></p>
+                        <p>the patch properly cleans up the text content of the tag that is being loaded into the editor the first time.</p>
+
+                    </li>
+                    
+                    <li id="comment-14755">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2009-08-04T16:38:58.000-0400">2009-08-04T16:38:58.000-0400</relative-time></i></p>
+                        <p>Thanks for this patch, applied at revision 7706</p>
+
+                    </li>
+                    
+                    <li id="comment-14757">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2009-08-06T10:43:01.000-0400">2009-08-06T10:43:01.000-0400</relative-time></i></p>
+                        <p>Updated patch to account for more wrinkles of whitespace normalisation for TinyMCE</p>
+
+                    </li>
+                    
+                    <li id="comment-14759">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-08-06T13:48:12.000-0400">2009-08-06T13:48:12.000-0400</relative-time></i></p>
+                        <p>It seems to still not be working in IE and Opera</p>
+
+                    </li>
+                    
+                    <li id="comment-14761">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2009-08-07T13:11:17.000-0400">2009-08-07T13:11:17.000-0400</relative-time></i></p>
+                        <p>More thorough fix at rev 7730:</p>
+<p>Change of strategy to deal with wider category of normalizations for IE, Opera etc. HTML accessor now changed back to previous release, and new configuration of modelComparator allows pluggable change detection strategies.</p>
+
+                    </li>
+                    
+                    <li id="comment-14763">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-08-07T15:02:03.000-0400">2009-08-07T15:02:03.000-0400</relative-time></i></p>
+                        <p>Verified fix using:</p>
+<p>FF2, FF3, FF3.5, Opera 9.6, Safari 3.2, Safari 4 (Mac OS 10.5)<br>
+FF3, IE7, IE8 (Win Vista)</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-2791/"><span class="aria-hidden">←</span> Previous: FLUID-2791</a>
+        <a class="mx-1" href="/browse/FLUID-2793/">Next: FLUID-2793 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

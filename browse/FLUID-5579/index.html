@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5579  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5579 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5579/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5579/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5579/">FLUID-5579</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5579: Assess the potential for modularising Infusion into one or more modules, and appropriate distribution scheme</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5579">FLUID-5579</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-12-05T18:16:26.490-0500" prefix="">2014-12-05T18:16:26.490-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-11-10T10:16:21.308-0500" prefix="">2020-11-10T10:16:21.308-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Build Scripts</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Our infusion image, stored in github at <a href="https://github.com/fluid-project/infusion">https://github.com/fluid-project/infusion</a> , mixes together (at least) 3 different kinds of material, which are suitable for different audiences - </p>
+<p>i) cross-platform framework code (including the core framework, IoC, data binding, and parts of the preferences framework) which are suitable for all contexts, including the browser, node.js and possibly others<br>
+ii) browser-dependent framework code (FluidView.js etc.)<br>
+iii) browser-dependent components (e.g. InlineEdit, Reorderer)<br>
+iv) definitions to assist testing (jqUnit. IoC testing framework)</p>
+<p>and for each of the above 4 categories there exist corresponding tests. Currently tests, together with definitions for iv) are consolidated across the above 4 areas in a top-level area named "tests".</p>
+<p>pull requests such as <a href="https://github.com/fluid-project/infusion/pull/544">https://github.com/fluid-project/infusion/pull/544</a> have stalled since it is not really clear what we should do with our current npm image. We have made attempts to trim out browser-dependent code, but now that our node applications are starting to serve infusion to the browser, the issue has reopened - for development purposes, it would be helpful to serve broken-out versions of infusion from our own npm image.</p>
+<p>Our last concentrated thought on this issue dates from end June 2014, summarised on this wiki page:  <a href="http://wiki.fluidproject.org/display/fluid/Notes+on+Modularisation+of+Infusion">http://wiki.fluidproject.org/display/fluid/Notes+on+Modularisation+of+Infusion</a></p>
+<p>The following post on the npm blog suggests that the npm team are aware of this kind of issue and hoping to provision npm as an element of the packaging for all JavaScript projects - <a href="http://blog.npmjs.org/post/101775448305/npm-and-front-end-packaging">http://blog.npmjs.org/post/101775448305/npm-and-front-end-packaging</a> - however, the post acknowledges that npm by itself is inadequate and requires some form of additional infastructure/build process. Our experience with "bower" also shows it to be inadequate by itself.</p>
+<p>For production client purposes we require a build step in order to build UIOptions' style sheets using "stylus". We also require a built image of the framework for these purposes.</p>
+<p>It's still not clear how to integrate build steps into the process of acquiring and serving the framework. Ideally we would have a separate module just for this purpose - however, it's unclear where it would then check out the base image of the framework from in order to operate the build - would it check it out of git itself, based on its own revision?</p>
+<p>In any case, it is clear that the development and review process of working with multiple modules (whether git or npm) is extremely painful and cumbersome, requiring multiple coordinated commits for related versions. This would be eased (but only slightly) if we moved over to more industry-standard practices for issuing releases. Part of the goals of our new module loader - <a href="http://wiki.fluidproject.org/display/fluid/Notes+on+the+Infusion+Module+Loader">http://wiki.fluidproject.org/display/fluid/Notes+on+the+Infusion+Module+Loader</a> - relate to making an easy development and commit process for this workflow. JIRA at <a href="http://issues.fluidproject.org/browse/FLUID-5521">http://issues.fluidproject.org/browse/FLUID-5521</a></p>
+<p>There was discussion on this subject in IRC this week starting at <a href="https://botbot.me/freenode/fluid-work/2014-12-03/?msg=26724667&page=1">https://botbot.me/freenode/fluid-work/2014-12-03/?msg=26724667&amp;page=1</a> - the initial question was the fate of fluid.css within our npm module (currently excluded) which was required for the strategy of serving our framework image from our npm dependency.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13342">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-10-04T13:34:18.394-0400">2016-10-04T13:34:18.394-0400</relative-time></i></p>
+                        <p>Some further discussion on this.<br>
+<a href="https://pad.gpii.net/p/infusion-module-discussion-oct-4-2016-okg4ntt">https://pad.gpii.net/p/infusion-module-discussion-oct-4-2016-okg4ntt</a></p>
+
+                    </li>
+                    
+                    <li id="comment-13345">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-08-02T08:55:42.811-0400">2019-08-02T08:55:42.811-0400</relative-time></i></p>
+                        <p>Some further discussion from the <a href="http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2019-08-02.log">fluid-work irc channel today</a>.</p>
+
+                    </li>
+                    
+                    <li id="comment-13347">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-08-20T11:25:08.444-0400">2019-08-20T11:25:08.444-0400</relative-time></i></p>
+                        <p>It seems that workspace support is coming to npm v7, which may be released as early as this fall. More advanced features seem to be coming in v8.</p>
+<p><a href="https://blog.npmjs.org/post/186983646370/npm-cli-roadmap-summer-2019">https://blog.npmjs.org/post/186983646370/npm-cli-roadmap-summer-2019</a></p>
+<blockquote>
+<p>Workspaces</p>
+<p>First-class support for symbolic links means that workspaces will be trivial to implement. npm v7 will have at least the Workspace feature support of Yarn, and will set the stage for more advanced workspace features in v8.<br>
+At minimum, you’ll be able to keep multiple related packages all together in a single repository, and test changes in an integrated environment, without continually re-linking.</p>
+<p>Once Workspaces land, it’ll be possible to add more advanced workspace management features. For example, building, versioning, managing permissions, and publishing all the packages within a workspace together with a single command. That likely won’t be in 7.0, and may be pushed out until v8, depending on feedback and user demand.</p>
+</blockquote>
+<p></p>
+
+                    </li>
+                    
+                    <li id="comment-13350">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2020-11-10T10:16:21.308-0500">2020-11-10T10:16:21.308-0500</relative-time></i></p>
+                        <p><a href="https://docs.npmjs.com/cli/v7/using-npm/workspaces">Workspaces</a> have been implemented in NPM v7 which is currently a development release.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5578/"><span class="aria-hidden">←</span> Previous: FLUID-5578</a>
+        <a class="mx-1" href="/browse/FLUID-5580/">Next: FLUID-5580 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

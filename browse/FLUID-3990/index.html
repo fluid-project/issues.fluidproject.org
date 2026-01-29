@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3990  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3990 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3990/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3990/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3990/">FLUID-3990</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3990: Cannot upload files larger than ~20 MB in Flash uploader and ~100 MB in HTML5 uploader</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3990">FLUID-3990</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=James%20Yoon">James Yoon</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-12-21T11:23:39.139-0500" prefix="">2010-12-21T11:23:39.139-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-05-22T14:28:03.566-0400" prefix="">2014-05-22T14:28:03.566-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3</li>
+                            
+                            <li>1.3.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Uploader</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Using the Uploader demo (<a href="http://build.fluidproject.org/infusion/components/uploader/html/Uploader.html">http://build.fluidproject.org/infusion/components/uploader/html/Uploader.html</a>) I can upload files larger than 20MB in FF 3.6, but unable to upload (i.e. can't queue) the same files in IE8.</p>
+<p>To reproduce:</p>
+<ul>
+<li>load <a href="http://build.fluidproject.org/infusion/components/uploader/html/Uploader.html">http://build.fluidproject.org/infusion/components/uploader/html/Uploader.html</a> in IE8 and FF3.6</li>
+<li>try to add a file greater than 20MB to the queue (easy way to create such a file is to create a zip file and stuff it).</li>
+<li>In FF3.6, the file should appear in the queue.</li>
+<li>In IE8, the OS browse dialog should disappear and no file appears in the queue.</li>
+</ul>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>IE8 - Win XP, Win 7<br>
+FF3.6 - WinXP, Win 7<br>
+IE6 - WinXP</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24908">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2010-12-21T14:23:17.897-0500">2010-12-21T14:23:17.897-0500</relative-time></i></p>
+                        <p>A comment about this: If we're going to keep a file size limit, we should implement some form of feedback in cases where a file is rejected because of size. Currently, there's none so <br>
+a) if you only tried one file, nothing happens, but you don't know why<br>
+b) if you selected several files and one is rejected, you might not even notice because the others show up in the queue</p>
+
+                    </li>
+                    
+                    <li id="comment-24909">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2011-02-17T17:06:01.372-0500">2011-02-17T17:06:01.372-0500</relative-time></i></p>
+                        <p>There are two actual bugs here:</p>
+<p>1. We ship the Uploader by default with a 20 Mb file limit. Is this a good default to ship with?<br>
+2. The HTML5 strategy for the Uploader assumes the file size limit is specified in megabytes, when it's actually kilobytes. As a result, the file size limit on modern HTML5 browsers is actually 1000x higher than the specified size.</p>
+
+                    </li>
+                    
+                    <li id="comment-24910">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-05-22T14:28:03.566-0400">2014-05-22T14:28:03.566-0400</relative-time></i></p>
+                        <p>Due to a cross site scripting vulnerability we have removed flash support from the uploader. See <a href="/browse/FLUID-5354/">FLUID-5354</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3989/"><span class="aria-hidden">←</span> Previous: FLUID-3989</a>
+        <a class="mx-1" href="/browse/FLUID-3991/">Next: FLUID-3991 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> KETTLE-25  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" KETTLE-25 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/KETTLE-25/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/KETTLE-25/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/KETTLE" data-pagefind-filter="project">Kettle</a></li>
+                <li><a href="/browse/KETTLE-25/">KETTLE-25</a></li>
+            </ol>
+        </nav>
+        <h1>KETTLE-25: CORS is not supported for PUT requests</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/KETTLE-25">KETTLE-25</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Resolved</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/KETTLE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Kasper Galschiot Markus</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?reporter=Kasper%20Galschiot%20Markus">Kasper Galschiot Markus</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-12-12T10:42:36.663-0500" prefix="">2014-12-12T10:42:36.663-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-01-29T08:03:23.352-0500" prefix="">2015-01-29T08:03:23.352-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When updating the GPII PrefsEditors code to run with the latest fireball branch versions of the preferences server, it was found that CORS is not supported for PUT requests.</p>
+<p>CORS is enabled on the preferences server (using the "kettle.use.CORS" gradename), and GET and POST requests are successful, but when attempting to PUT a new preferences set to the server, the following error message is thrown in the browser:</p>
+<p>Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at <a href="http://localhost:8081/preferences/60cb88f8-1c5e-4e67-a69f-41a8a0f217b2">http://localhost:8081/preferences/60cb88f8-1c5e-4e67-a69f-41a8a0f217b2</a>. This can be fixed by moving the resource to the same domain or enabling CORS.</p>
+<p>After a bit of digging, it turns out that PUT was missing from the header in the response to the preflight OPTIONS request. Snipping from the firebug consoles display of the response header:</p>
+<p>Access-Control-Allow-Head...	X-Requested-With,Content-Type<br>
+Access-Control-Allow-Meth...	GET,OPTIONS<br>
+Access-Control-Allow-Orig...	<a href="http://localhost:8888/">http://localhost:8888</a></p>
+<p>(where <a href="http://localhost:8888/">http://localhost:8888</a> is the host of the prefsEditor doing the PUT). PUT needs to be added to the list of allowed methods for CORS to work properly with PUT</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26133">
+                        <p class="mb-0"><b>Kasper Galschiot Markus</b> <i>commented <relative-time datetime="2015-01-29T08:03:23.331-0500">2015-01-29T08:03:23.331-0500</relative-time></i></p>
+                        <p>Resolved with <a href="https://github.com/fluid-project/kettle/commit/039df65e13edd23d7f7f3fb89dec504c032b0939">https://github.com/fluid-project/kettle/commit/039df65e13edd23d7f7f3fb89dec504c032b0939</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/KETTLE-24/"><span class="aria-hidden">←</span> Previous: KETTLE-24</a>
+        <a class="mx-1" href="/browse/KETTLE-26/">Next: KETTLE-26 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

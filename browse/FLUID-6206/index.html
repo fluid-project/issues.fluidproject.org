@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6206  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6206 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6206/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6206/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6206/">FLUID-6206</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6206: Infusion docs header links do not work when viewed in GitHub... </h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6206">FLUID-6206</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Jonathan Hung</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Tony%20Atkins%20%5BRtF%5D">Tony Atkins [RtF]</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-10-02T08:34:50.351-0400" prefix="">2017-10-02T08:34:50.351-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-05-24T03:56:17.018-0400" prefix="">2018-05-24T03:56:17.018-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Docs platform</li>
+                            
+                            <li>Tech. Documentation</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In working to migrate from "marked" to "markdown-it", I found a problem with our current links, at least on the <a href="https://docs.fluidproject.org/infusion/development/ModelTransformationAPI.html">Model Transformation API page</a>.  The handling of dots in grade names is not consistent with what GitHub does.</p>
+<p>For example, the initial link in the "List of available transformations" points to:</p>
+<pre><code class="hljs language-java">https:<span class="hljs-comment">//docs.fluidproject.org/infusion/development/ModelTransformationAPI.html#output-a-value-given-as-input-fluid-transforms-value-and-fluid-transforms-identity-</span>
+</code></pre>
+<p>The generated placeholder anchor matches:</p>
+<pre><code class="hljs language-java">&lt;a class=<span class="hljs-string">"infusion-docs-anchor"</span> aria-hidden=<span class="hljs-string">"true"</span> href=<span class="hljs-string">"#output-a-value-given-as-input-fluid-transforms-value-and-fluid-transforms-identity-"</span>&gt;...&lt;/a&gt;
+</code></pre>
+<p>However, looking at <a href="https://github.com/fluid-project/infusion-docs/blob/master/src/documents/ModelTransformationAPI.md">the same page in our GitHub repo</a>, the generated link is:</p>
+<pre><code class="hljs language-java">&lt;a href=<span class="hljs-string">"#output-a-value-given-as-input-fluidtransformsvalue-and-fluidtransformsidentity"</span> aria-hidden=<span class="hljs-string">"true"</span> class=<span class="hljs-string">"anchor"</span> id=<span class="hljs-string">"user-content-output-a-value-given-as-input-fluidtransformsvalue-and-fluidtransformsidentity"</span>&gt;...&lt;/a&gt;
+</code></pre>
+<p>So, GitHub treats the dots as something to be stripped rather than as something to be replaced with a dash.  The new plugin I'm proposing using instead of docpad-marked-plugin has a plugin that generates exactly the same placeholders as GitHub, I'm proposing updating the existing links so that they work with both the new plugin and from within GitHub.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22904">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2017-10-10T04:19:18.209-0400">2017-10-10T04:19:18.209-0400</relative-time></i></p>
+                        <p>The fixes for the vast majority of the header links is included in this pull:</p>
+<p><a href="https://github.com/fluid-project/infusion-docs/pull/129">https://github.com/fluid-project/infusion-docs/pull/129</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22906">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-05-24T03:56:11.773-0400">2018-05-24T03:56:11.773-0400</relative-time></i></p>
+                        <p>The linked pull (now merged) added link checking, including header links, and all links were verified working.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6205/"><span class="aria-hidden">←</span> Previous: FLUID-6205</a>
+        <a class="mx-1" href="/browse/FLUID-6207/">Next: FLUID-6207 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

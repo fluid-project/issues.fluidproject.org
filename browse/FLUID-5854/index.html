@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5854  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5854 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5854/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5854/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5854/">FLUID-5854</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5854: type of stylesheet files, browser cannot get almost all the .js references</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5854">FLUID-5854</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Not%20A%20Bug">Not A Bug</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Alexis%20Zambrano">Alexis Zambrano</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-02-03T16:32:35.672-0500" prefix="">2016-02-03T16:32:35.672-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-03-23T13:29:55.509-0400" prefix="">2021-03-23T13:29:55.509-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Demos</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>I have some problems.</p>
+<p>1st: The type of stylesheets is not .css, is .styl and I don´t why, at the moment of to run for example de uiOptions demo, almost all the .js references doesn´t work, I´ve cloned the git repo from this: <a href="https://github.com/fluid-project/infusion/">https://github.com/fluid-project/infusion/</a>. but doen´t work like if I see a Demo from this: <a href="http://build.fluidproject.org/infusion/demos/">http://build.fluidproject.org/infusion/demos/</a>.</p>
+<p>Please helpme</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Linux 64bit</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25576">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-02-04T09:15:33.827-0500">2016-02-04T09:15:33.827-0500</relative-time></i></p>
+                        <p>Alexis Zambrano, you'll have to run a build to generate the css files from the stylus (.styl) files. Stylus is a css preprocessor. You can find information on how to run builds at <a href="https://github.com/fluid-project/infusion#how-do-i-create-an-infusion-package">https://github.com/fluid-project/infusion#how-do-i-create-an-infusion-package</a>, specifically for generating the css files you'll need to follow <a href="https://github.com/fluid-project/infusion#developing-with-the-preferences-framework">https://github.com/fluid-project/infusion#developing-with-the-preferences-framework</a>.</p>
+<p>I'm not sure what issue you are having with the js files though. One thing to keep in mind is that you'll need to run the demos from a web server and not directly off of your file system, as there are ajax calls that most browsers will block when run directly from the file system.</p>
+<p>Please let us know if this addresses the issues, so that we'll know if anything needs to be addressed for this ticket. You can also contact us through our IRC channel and mailing list. ( <a href="https://wiki.fluidproject.org/display/fluid/Collaborate">https://wiki.fluidproject.org/display/fluid/Collaborate</a> ).</p>
+
+                    </li>
+                    
+                    <li id="comment-25577">
+                        <p class="mb-0"><b>Alexis Zambrano</b> <i>commented <relative-time datetime="2016-02-29T21:49:56.394-0500">2016-02-29T21:49:56.394-0500</relative-time></i></p>
+                        <p>Justin Obara. I've solved that problem. Thank you. Now I'm working in mixing prefsEditors-master with a MVC framework to develop an accessible website and I figured out how to inject all .css and .js files for every view. Can you tell me please how customizable are the components in general?. Because I want to change the functionality of some of them but there are so many files that I got confused. For example, I want that the "more contrast" button has more options to change the contrast configuration, not only one. I mean 4 options to change contrast=4 clicks. Thank you for your attention</p>
+
+                    </li>
+                    
+                    <li id="comment-25578">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-03-01T09:45:41.167-0500">2016-03-01T09:45:41.167-0500</relative-time></i></p>
+                        <p>Alexis Zambrano Glad to hear that you problem was solved. I'm assuming that this issue can be closed now. As for your new question I suggest that you post that question to the Infusion-Users list ( <a href="http://lists.idrc.ocad.ca/mailman/listinfo/infusion-users">http://lists.idrc.ocad.ca/mailman/listinfo/infusion-users</a> ), and it would be helpful if you could provide some wireframes and/or an expanded explanation of what you are trying to accomplish.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5853/"><span class="aria-hidden">←</span> Previous: FLUID-5853</a>
+        <a class="mx-1" href="/browse/FLUID-5855/">Next: FLUID-5855 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

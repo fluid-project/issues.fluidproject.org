@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5480  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5480 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5480/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5480/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5480/">FLUID-5480</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5480: Naming of top-level options "inputPath" and "defaultOutputPath" in valueMapper are inconsistent and confusing</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5480">FLUID-5480</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Kasper Galschiot Markus</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-07-23T17:06:22.690-0400" prefix="">2014-07-23T17:06:22.690-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:27.658-0400" prefix="">2024-07-22T10:35:27.658-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Model Transformation System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>We need to standardise on a symmetric convention for this. Similar to the situation with "input" and "value" in the standard transforms, we have ended up with a system which is inconsistent since the names used cannot be directly predicted for the inverse of the same transform. We should probably rename "inputPath" to "defaultInputPath". This actually caused a bug in the inverse transform which affected the <a href="/browse/FLUID-5479/">FLUID-5479</a> work</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-21637">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-07-23T18:46:07.886-0400">2014-07-23T18:46:07.886-0400</relative-time></i></p>
+                        <p>Also, the mere requirement for "inputPath" as mandatory is confusing to users, especially in the context of model relay rules. If </p>
+<p>inputPath: "" </p>
+<p>is not specified, the transform will do nothing</p>
+
+                    </li>
+                    
+                    <li id="comment-21638">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-05-12T15:41:41.912-0400">2015-05-12T15:41:41.912-0400</relative-time></i></p>
+                        <p>In addition, the valueMapper should default to a "defaultInputPath" of "" (the empty string) since this is overwhelmingly the expected case when writing relay rules.</p>
+
+                    </li>
+                    
+                    <li id="comment-21639">
+                        <p class="mb-0"><b>Kasper Galschiot Markus</b> <i>commented <relative-time datetime="2016-04-06T11:22:52.864-0400">2016-04-06T11:22:52.864-0400</relative-time></i></p>
+                        <p>The part related to the input paths "" as mentioned in the comments above by Antranig Basman should be done via <a href="/browse/FLUID-5357/">FLUID-5357</a> which aims for this to be fixed as a general framework feature.</p>
+<p>If the valueMapper should follow the standard semantics of the Model Transformation framework input-wise, the naming should probably be 'input' and 'inputPath'. In terms of defaultOutputPath, this is something we would need to figure out</p>
+
+                    </li>
+                    
+                    <li id="comment-21640">
+                        <p class="mb-0"><b>Kasper Galschiot Markus</b> <i>commented <relative-time datetime="2016-09-13T03:41:40.505-0400">2016-09-13T03:41:40.505-0400</relative-time></i></p>
+                        <p>Given that the input path "" part of this jira is covered via <a href="/browse/FLUID-5357/">FLUID-5357</a>. Do you think this can be closed by the clarified semantics in the new valuemapper?</p>
+
+                    </li>
+                    
+                    <li id="comment-21641">
+                        <p class="mb-0"><b>Kasper Galschiot Markus</b> <i>commented <relative-time datetime="2016-10-26T09:23:59.417-0400">2016-10-26T09:23:59.417-0400</relative-time></i></p>
+                        <p>The confusion of the naming has been fixed here: <a href="https://github.com/fluid-project/infusion/pull/710">https://github.com/fluid-project/infusion/pull/710</a> ... the inputPath: "" is covered by <a href="/browse/FLUID-5357/">FLUID-5357</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5479/"><span class="aria-hidden">←</span> Previous: FLUID-5479</a>
+        <a class="mx-1" href="/browse/FLUID-5481/">Next: FLUID-5481 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

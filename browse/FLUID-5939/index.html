@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5939  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5939 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5939/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5939/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5939/">FLUID-5939</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5939: Improve handling of voice selection in TextToSpeech wrapper component</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5939">FLUID-5939</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alan Harnum</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Alan%20Harnum">Alan Harnum</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-08-04T14:25:45.419-0400" prefix="">2016-08-04T14:25:45.419-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T09:22:58.993-0400" prefix="">2024-07-22T09:22:58.993-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Text To Speech</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Due to changes in the Web Speech API, it is currently necessary to place a SpeechSynthesisVoice <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisVoice">https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisVoice</a> object directly on the component model to permanently change the voice utterances will be spoken by. There is a separate issue already about updating the documentation to reflect this state: <a href="https://issues.fluidproject.org/projects/FLUID/issues/FLUID-5935">https://issues.fluidproject.org/projects/FLUID/issues/FLUID-5935</a></p>
+<p>Storing objects on the model is an undesirable practice (even if it technically works), and we should find a better means of supporting selecting different voices through the wrapper, surfacing available voices and handling the asynchronous nature of voice loading represented by the <br>
+onVoicesChanged event of the window.speechSynthesis object (this is particularly an issue in Chrome, which does not load available voices until after the document.ready event has fired).</p>
+<p>From discussion with Justin Obara our thoughts are trending towards the following:</p>
+<ul>
+<li>support setting a "voice" object on the component model with some of the same values (lang / name / voiceURI) as available in a SpeechSynthesisVoice object</li>
+<li>monitor changes to that model path and provide functionality to try and resolve the voice that matches that voice most closely from the available browser voices</li>
+</ul>
+<p>Foreseeable complexities include:</p>
+<ul>
+<li>the voiceURI attribute of the SpeechSynthesisVoice objects returned by speechSynthess.getVoices is different between all browsers tested (Chrome / Safari / FF on Mac) for the same voices</li>
+<li>different voices are available in the different browsers / operating systems</li>
+<li>according to the spec, "there is no guarantee that all names returned are unique" in regards to the name attribute of SpeechSynthesisVoice objects</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5938/"><span class="aria-hidden">←</span> Previous: FLUID-5938</a>
+        <a class="mx-1" href="/browse/FLUID-5940/">Next: FLUID-5940 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

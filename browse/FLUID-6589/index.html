@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6589  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6589 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6589/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6589/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6589/">FLUID-6589</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6589: Implement generalised interception scheme for options evaluation</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6589">FLUID-6589</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-01-11T19:29:20.723-0500" prefix="">2021-01-11T19:29:20.723-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-17T08:12:26.470-0400" prefix="">2024-07-17T08:12:26.470-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This afternoon working on the Covid data monitor app, things somewhat came to a head. Having implemented the new renderer component workflow whereby rendering becomes equivalent to simply evaluating the <code>container</code> member of every component in the tree, a long rumbling issue has come into clearer focus. Faced with having to integrate a component with an alien rendering idiom, the <a href="https://github.com/alphagov/accessible-autocomplete">accessible autocomplete</a> widget, it was found to be impossible to express the interception process with respect to the evaluation process in an acceptable way.</p>
+<p>This highlights that abolishing and reforming the crustiest part of the framework, "mergePolicies", is an inescapable part of the <a href="/browse/FLUID-5304/">FLUID-5304</a> rewrite.</p>
+<p>Here is the task - the author of the core framework "container" member has expressed the following:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.viewComponent"</span>, {
+        gradeNames: [<span class="hljs-string">"fluid.modelComponent"</span>, <span class="hljs-string">"fluid.baseViewComponent"</span>],
+        members: {
+            container: <span class="hljs-string">"@expand:fluid.containerForViewComponent({that}, {that}.options.container)"</span>
+        }
+    })
+</code></pre>
+<p>The application author wishes to express - "preserve exactly the original author's expression, returning the same value, but in addition express that a further evaluation must occur exactly at the point of demand, which consumes the component state just after the evaluation".</p>
+<p>This is semantically problematic because it is so side-effect-laden - without being able to make use of its "react/preact" bundling, one is forced to consume the integration model of the accessible autocomplete widget where it simply injects some random markup into the container as part of its initialisation. This was previously pretty unthinkable, but since we have decided to do away with the virtual DOM as part of the current renderer rewrite, it might even be compatible with performant rendering of the initial markup as a detached document fragment, depending on what the widget actually expects to be able to do with the DOM during startup.</p>
+<p>But in the meantime, we have had to produce the following horrific locution:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"hortis.autocomplete"</span>, {
+    gradeNames: [<span class="hljs-string">"fluid.viewComponent"</span>],
+    members: {
+        <span class="hljs-comment">// widget: "@expand:hortis.autocomplete.render({that}, {that}.options.id, {that}.options.widgetOptions)",</span>
+        container: <span class="hljs-string">"@expand:hortis.autocomplete.renderContainer({that}, {that}.options.container, {that}.options.id, {that}.options.widgetOptions)"</span>
+    },
+
+hortis.autocomplete.renderContainer = function (that, containerOption, id, widgetOptions) {
+    <span class="hljs-type">var</span> <span class="hljs-variable">container</span> <span class="hljs-operator">=</span> fluid.containerForViewComponent(that, containerOption);
+    that.widget = hortis.autocomplete.render(that, container, id, widgetOptions);
+    <span class="hljs-keyword">return</span> container;
+};
+</code></pre>
+<p>i) We've had to hoist all the arguments of the downstream activities into our own signature, ii) override the original member declaration with an "omnibus function" which stashes the about to be returned argument in a local dump, and then iii) manually bash what used to be the member declaration as a top-level side-effect scrawl.</p>
+<p>What seems undesirable, although superficially compelling, is something like the Spring "depends-on" directive where you could assert that a particular value must be evaluated immediately following (or perhaps immediately previous to) the evaluation of a target.</p>
+<p>But here we have a catastrophic failure of open authoring - we can't even express the intent that the original author's definition should be deferred to, but instead have to stuff in a hard-coded duplication of its definition into a private scope.</p>
+<p>We have exactly the same issue with respect to model contents, so we had better think up some kind of Edwardian crock that generalises the entire options merging pipeline into some generally interceptable pipeline.</p>
+<p>Note that <a href="/browse/FLUID-4189/">FLUID-4189</a> calls for something similar - and also that we abandoned the naive kind of "DataSource calculus", fossilised in Justin Obara 's "queued DataSource" pull <a href="https://github.com/fluid-project/infusion/pull/566">https://github.com/fluid-project/infusion/pull/566</a> (very reminiscent of Weiher's "<a href="http://hirschfeld.org/writings/media/WeiherHirschfeld_2019_StorageCombinators_AcmDL_Preprint.pdf">storage combinators</a>") because it is not effectively interceptable.</p>
+<p>If we say that "every option becomes a component", we end up with a kind of endless design regress, but nonetheless something needs to happen to turn the entirety of a component tree into a form of more or less homogeneous material - somehow one that exists in "depth" as well as extension, and in time as well as space.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25339">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2021-01-12T11:00:31.669-0500">2021-01-12T11:00:31.669-0500</relative-time></i></p>
+                        <p>Note that, following the tidying of "local mergePolicy" JIRAs into <a href="/browse/FLUID-6590/">FLUID-6590</a> this does seem to be something that could/should be folded into this area of directives. The "depends-on" notion might not be wholly misleading, in that we note in the case above, there is no influence between the arguments and results of the related definitions.</p>
+<p>However, further thoughts - note that we are only in a mess because there is an "expander" at all, and we should be clear that an expander is really just a "cryptic invoker", and that we plan to abolish/amalgamate invokers by means of "gyres" per <a href="/browse/FLUID-6365/">FLUID-6365</a> . Therefore it seems that the best route is simply to produce a syntax for what could be called "inline gyres" - or at least, "morally inline gyres" in the way that modern modelRelay definitions with no transform are now starting to replace implicit (inline) modelRelay definitions.</p>
+<p>Departing from the notion that we write "expanders" inline gives us all the authorial advantages we get from explicit modelRelays, that is, a location to write namespaces and priorities: whilst this degrades the experience of those who are authoring configuration in text, this is yet another necessary collateral loss.</p>
+<p>Parallelism - we now often ceased to write invokers, instead, writing namespaced listeners. We could now cease to write expanders similarly.</p>
+<p>The distinction between "members" and other options is another problematic design decision required by authors that we need to get rid of. Recent notion - we could record the fact that some material had been dispatched to an orthochronous consumer (i.e. an arbitrary external "bad function") and highlight any attempt to mutate it as a design failure. Material dispatched to blessed "good functions" could simply be recomputed.</p>
+<p>If we then unify (most) options and models, this implies reversing the notion that options are immutable - but I guess the <a href="/browse/FLUID-6145/">FLUID-6145</a> revolution was primarily a moral one, designed to prevent direct mutation by users rather than via the ChangeApplier.</p>
+<p>If we proxy everything, as it seems that we might have to, in order to implement "gyres" and their "transparent upgrade" semantics (e.g. attempting to add a listener to something which the "compiler" had implemented as simply a method call), it seems that direct mutation could come back anyway, and the ChangeApplier retained as a more or less internal API for those wanting to create otherwise inexpressible changes ("application into nothing" and the like).</p>
+
+                    </li>
+                    
+                    <li id="comment-25340">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2022-06-30T09:23:09.127-0400">2022-06-30T09:23:09.127-0400</relative-time></i></p>
+                        <p>Note the connection with the "syncretic promotion" of <a href="https://docs.google.com/presentation/d/12vLg_zWS6uXaHRy8LWQLzfNPBYa1E6L-WWyLqH1iWJ4/edit">https://docs.google.com/presentation/d/12vLg_zWS6uXaHRy8LWQLzfNPBYa1E6L-WWyLqH1iWJ4/edit</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6588/"><span class="aria-hidden">←</span> Previous: FLUID-6588</a>
+        <a class="mx-1" href="/browse/FLUID-6590/">Next: FLUID-6590 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

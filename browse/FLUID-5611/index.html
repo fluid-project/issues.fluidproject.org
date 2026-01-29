@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5611  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5611 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5611/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5611/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5611/">FLUID-5611</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5611: Framework should issue a diagnostic and failure if ginger process causes firing of any events before options merging is complete</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5611">FLUID-5611</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-03-31T14:00:33.921-0400" prefix="">2015-03-31T14:00:33.921-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:25.284-0400" prefix="">2024-07-22T10:35:25.284-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This was observed in debugging a problem with the SeparatedPanelPrefsEditor - in a branch for <a href="/browse/FLUID-5597/">FLUID-5597</a>, the following reference had been added to the grade definition:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.prefs.separatedPanel"</span>, {
+        gradeNames: [<span class="hljs-string">"fluid.prefs.prefsEditorLoader"</span>, <span class="hljs-string">"autoInit"</span>],
+....
+        messageBase: <span class="hljs-string">"{messageLoader}.resources.prefsEditor"</span>, <span class="hljs-comment">// ERROR here</span>
+</code></pre>
+<p>This attempted to reference a resource which should only be available asynchronously - one of the bundles loaded by the messageLoader. The relevant configuration for prefsEditorLoader is:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.prefs.prefsEditorLoader"</span>, {
+        gradeNames: [<span class="hljs-string">"fluid.viewRelayComponent"</span>, <span class="hljs-string">"autoInit"</span>],
+
+            messageLoader: {
+                type: <span class="hljs-string">"fluid.prefs.resourceLoader"</span>,
+                options: {
+                    resourceOptions: {
+                        dataType: <span class="hljs-string">"json"</span>
+                    },
+                    events: {
+                        onResourcesLoaded: <span class="hljs-string">"{prefsEditorLoader}.events.onPrefsEditorMessagesLoaded"</span>
+                    }
+                }
+            }
+        events: {
+            onPrefsEditorTemplatesLoaded: <span class="hljs-literal">null</span>,
+            onPrefsEditorMessagesLoaded: <span class="hljs-literal">null</span>,
+            onCreatePrefsEditorReady: {
+                events: {
+                    templateLoaded: <span class="hljs-string">"onPrefsEditorTemplatesLoaded"</span>,
+                    messagesLoaded: <span class="hljs-string">"onPrefsEditorMessagesLoaded"</span>
+                }
+            }
+        },
+</code></pre>
+<p>What was observed was that the "onResourcesLoaded" event fired, but the onPrefsEditorMessagesLoaded event which in theory was identical with it did not fire. The reason was that this firing was triggered synchronously as a result of resources which loaded from the cache, before the options merging process for separatedPanel had completed and any of the listeners attached to this event could be evaluated.</p>
+<p>The original reference was impossible, but the framework should give more comprehensible behaviour in this case. In particular, any event which is triggered for a component during its own options evaluation process must certainly be considered an error, and the framework should halt at that point.</p>
+<p>If we do decide to support this behaviour, another possibility would be to schedule events/listener merging earlier in the process than general options evaluation, but this still seems very likely to leave cases of unexpected and indeterminate behaviour.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23076">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2019-08-01T09:29:00.177-0400">2019-08-01T09:29:00.177-0400</relative-time></i></p>
+                        <p>In the new, post <a href="/browse/FLUID-6148/">FLUID-6148</a> framework such a condition is not an error and indeed highly likely. Also, the various issues referred to in the report relating to asynchronously loaded resources are resolved by the new ResourceLoader architecture</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5610/"><span class="aria-hidden">←</span> Previous: FLUID-5610</a>
+        <a class="mx-1" href="/browse/FLUID-5612/">Next: FLUID-5612 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5512  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5512 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5512/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5512/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5512/">FLUID-5512</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5512: Allow valueMapper to handle the defaultOutputValue when the transformation is based upon compound input values</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5512">FLUID-5512</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-09-19T15:59:30.068-0400" prefix="">2014-09-19T15:59:30.068-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-09-26T10:49:39.553-0400" prefix="">2017-09-26T10:49:39.553-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.9</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Model Transformation System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When valueMapper is used to transform compound input values, "defaultOutputValue" is not properly handled.</p>
+<p>Example:</p>
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">var</span> rules = {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">"fluid.transforms.valueMapper"</span>,
+    <span class="hljs-attr">inputPath</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">defaultOutputValue</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">options</span>: [{
+        <span class="hljs-attr">inputValue</span>: {
+            <span class="hljs-string">"isTooltipOpen"</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-string">"isDialogOpen"</span>: <span class="hljs-literal">true</span>
+        },
+        <span class="hljs-attr">outputValue</span>: <span class="hljs-literal">true</span>,
+    }]
+};
+</code></pre>
+<p>In cases that the input value is NOT </p>
+<pre><code class="hljs language-javascript">{
+    <span class="hljs-string">"isTooltipOpen"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"isDialogOpen"</span>: <span class="hljs-literal">true</span>
+}
+</code></pre>
+<p>We expect the output value is false. </p>
+<p>However, what happens is, the output value is always true regardless of value combinations of "isTooltipOpen" + "isDialogOpen".</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-21626">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-09-19T16:12:16.510-0400">2014-09-19T16:12:16.510-0400</relative-time></i></p>
+                        <p>Issued a pull request (<a href="https://github.com/fluid-project/infusion/pull/561">https://github.com/fluid-project/infusion/pull/561</a>) with a unit test to demonstrate this issue.</p>
+
+                    </li>
+                    
+                    <li id="comment-21627">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-09-22T16:33:40.982-0400">2014-09-22T16:33:40.982-0400</relative-time></i></p>
+                        <p>The work round for handling cases that the source model values are booleans is to use a combination of "fluid.transforms.condition" and "fluid.transforms.binaryOp": </p>
+<pre><code class="hljs language-javascript"><span class="hljs-attr">type</span>: <span class="hljs-string">"fluid.transforms.condition"</span>,
+                <span class="hljs-attr">condition</span>: {
+                    <span class="hljs-attr">transform</span>: {
+                        <span class="hljs-attr">type</span>: <span class="hljs-string">"fluid.transforms.binaryOp"</span>,
+                        <span class="hljs-attr">leftPath</span>: <span class="hljs-string">"inTransit.bothOpen"</span>,
+                        <span class="hljs-attr">rightPath</span>: <span class="hljs-string">"isShareTarget"</span>,
+                        <span class="hljs-attr">operator</span>: <span class="hljs-string">"&amp;&amp;"</span>
+                    }
+                },
+                <span class="hljs-string">"true"</span>: <span class="hljs-literal">true</span>,
+                <span class="hljs-string">"false"</span>: <span class="hljs-literal">false</span>
+</code></pre>
+<p>The shortcoming of the work around is,</p>
+<p>1. Only applicable for boolean source values;<br>
+2. "fluid.transforms.condition" is not invertible and cannot be used for model relay that requires inversion;<br>
+3. When there are more conditions checking input value combinations, the transform options in the work around would be nested and complicated.</p>
+
+                    </li>
+                    
+                    <li id="comment-21628">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-11-18T15:17:36.206-0500">2014-11-18T15:17:36.206-0500</relative-time></i></p>
+                        <p>This behaviour is by the design of the valueMapper - if any branch matches even partially, this is considered a better match than "no match at all" which triggers the default case. It appears that your case could be handled by the alternative definition </p>
+<pre><code class="hljs language-java">{ 
+    type: <span class="hljs-string">"fluid.transforms.valueMapper"</span>, 
+    inputPath: <span class="hljs-string">""</span>, 
+    defaultOutputValue: <span class="hljs-literal">false</span>, 
+    options: [{ 
+        inputValue: { 
+            <span class="hljs-string">"isTooltipOpen"</span>: <span class="hljs-literal">true</span> 
+        }, 
+        outputValue: <span class="hljs-literal">true</span>, 
+    }, { 
+        inputValue: { 
+            <span class="hljs-string">"isDialogOpen"</span>: <span class="hljs-literal">true</span> 
+        }, 
+        outputValue: <span class="hljs-literal">true</span>, 
+    }] 
+};
+</code></pre>
+<p>Would this work for your case? If not, could you describe the wider problem that leads to it and what behaviour it requires?</p>
+<p>Thanks</p>
+
+                    </li>
+                    
+                    <li id="comment-21629">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-11-18T15:57:42.160-0500">2014-11-18T15:57:42.160-0500</relative-time></i></p>
+                        <p>I understand your design goal of "better than nothing". However, this use case is on the picky side with an attempt to match on the exact compound value, otherwise the default output value is expected to be returned.</p>
+<p>I tried the alternative approach, the result is, in case 2 &amp; 3 (<a href="https://github.com/cindyli/infusion/blob/FLUID-5512/tests/framework-tests/core/js/ModelTransformationTests.js#L1679-L1696">https://github.com/cindyli/infusion/blob/FLUID-5512/tests/framework-tests/core/js/ModelTransformationTests.js#L1679-L1696</a>) where either "isTooltipOpen" or "isDialogOpen" has a true value, the returned result is {value: true}. In other cases, an empty object is returned, even with the case 1 where both "isTooltipOpen" and "isDialogOpen" have true values.</p>
+
+                    </li>
+                    
+                    <li id="comment-21630">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-11-18T16:05:36.063-0500">2014-11-18T16:05:36.063-0500</relative-time></i></p>
+                        <p>Ok, in that case I suggest the following representation, and avoid the use of the "defaultValue" infrastructure entirely:</p>
+<pre><code class="hljs language-java">{ 
+    type: <span class="hljs-string">"fluid.transforms.valueMapper"</span>, 
+    inputPath: <span class="hljs-string">""</span>, 
+    options: [{ 
+        inputValue: { 
+            <span class="hljs-string">"isTooltipOpen"</span>: <span class="hljs-literal">true</span>, 
+            <span class="hljs-string">"isDialogOpen"</span>: <span class="hljs-literal">true</span> 
+        }, 
+        outputValue: <span class="hljs-literal">true</span>, 
+    }, { 
+        inputValue: { 
+            <span class="hljs-string">"isTooltipOpen"</span>: <span class="hljs-literal">false</span>
+        }, 
+        outputValue: <span class="hljs-literal">false</span>,
+    }, { 
+        inputValue: { 
+            <span class="hljs-string">"isDialogOpen"</span>: <span class="hljs-literal">false</span>
+        }, 
+        outputValue: <span class="hljs-literal">false</span>, 
+    }] 
+};
+</code></pre>
+<p>do you think this will meet the case?</p>
+
+                    </li>
+                    
+                    <li id="comment-21631">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-11-18T16:23:29.740-0500">2014-11-18T16:23:29.740-0500</relative-time></i></p>
+                        <p>This approach looks really promising, except we may have found a real bug in valueMapper. My test report:</p>
+<p>1. Using the rule in your suggestion:<br>
+Result: Case 1, 5 pass. Case 2, 3, 4 return empty objects</p>
+<p>2. I altered the rule a bit to retry your previous suggestion by removing the first option block:</p>
+<pre><code class="hljs language-java">{
+    type: <span class="hljs-string">"fluid.transforms.valueMapper"</span>,
+    inputPath: <span class="hljs-string">""</span>,
+    options: [{
+        inputValue: {
+            <span class="hljs-string">"isTooltipOpen"</span>: <span class="hljs-literal">false</span>
+        },
+        outputValue: <span class="hljs-literal">false</span>,
+    }, {
+        inputValue: {
+            <span class="hljs-string">"isDialogOpen"</span>: <span class="hljs-literal">false</span>
+        },
+        outputValue: <span class="hljs-literal">false</span>,
+    }]
+}
+</code></pre>
+<p>Result: Case 2, 3, 5, pass. Case 1, 4 return empty objects.</p>
+<p>It seems having the same key checked by multiple option blocks confuses valueMapper. </p>
+
+                    </li>
+                    
+                    <li id="comment-21632">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-11-19T09:09:59.202-0500">2014-11-19T09:09:59.202-0500</relative-time></i></p>
+                        <p>Antranig issued a pull request: <a href="https://github.com/fluid-project/infusion/pull/572">https://github.com/fluid-project/infusion/pull/572</a></p>
+
+                    </li>
+                    
+                    <li id="comment-21633">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-12-11T14:57:58.931-0500">2014-12-11T14:57:58.931-0500</relative-time></i></p>
+                        <p>Recall again that the meaning of "defaultOutputValue" is not "the output in case no case matches" but "the outputValue that should be used in a case where it has not been explicitly written". It looks like this option remains confusing (see <a href="/browse/FLUID-5473/">FLUID-5473</a> for another issue in which it wasn't helpful) and it would be nice to withdraw it in favour automatically applying the new-style "funky partial nothing block" that appears in the pull request for this issue - </p>
+<p>{ // a "match always" rule - this has the effect which is frequently imagined for "defaultOutputValue: false"<br>
+undefinedInputValue: true,<br>
+partialMatches: true,<br>
+outputValue: false<br>
+}</p>
+<p>however this would presumably mean withdrawing "defaultInputValue" (although perhaps not necessarily?) which would be quite a disruptive change. Note that there are no transforms within the GPII which make use of defaultOutputValue. Remember notes on the valueMapper at <a href="http://wiki.fluidproject.org/display/fluid/Notes+on+valueMapper+Requirements">http://wiki.fluidproject.org/display/fluid/Notes+on+valueMapper+Requirements</a></p>
+
+                    </li>
+                    
+                    <li id="comment-21634">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2015-01-19T10:01:28.980-0500">2015-01-19T10:01:28.980-0500</relative-time></i></p>
+                        <p>Merged into the master branch of the project repo @ c860fe56239a70aa057532426a36457af11279e3</p>
+
+                    </li>
+                    
+                    <li id="comment-21635">
+                        <p class="mb-0"><b>Kasper Galschiot Markus</b> <i>commented <relative-time datetime="2016-10-26T09:23:13.513-0400">2016-10-26T09:23:13.513-0400</relative-time></i></p>
+                        <p>Antranig Basman Cindy Li: I think this is covered by my valuemapper overhaul: <a href="https://github.com/fluid-project/infusion/pull/710">https://github.com/fluid-project/infusion/pull/710</a> ... if you agree, this can be closed</p>
+
+                    </li>
+                    
+                    <li id="comment-21636">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-09-26T10:49:39.553-0400">2017-09-26T10:49:39.553-0400</relative-time></i></p>
+                        <p>Antranig Basman and Cindy Li can this be closed?</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5511/"><span class="aria-hidden">←</span> Previous: FLUID-5511</a>
+        <a class="mx-1" href="/browse/FLUID-5513/">Next: FLUID-5513 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

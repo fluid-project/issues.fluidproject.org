@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5743  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5743 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5743/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5743/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5743/">FLUID-5743</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5743: Remove "Arabic Grades" from the framework</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5743">FLUID-5743</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-08-17T15:08:14.163-0400" prefix="">2015-08-17T15:08:14.163-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-02-27T15:49:09.941-0500" prefix="">2017-02-27T15:49:09.941-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In preparing the <a href="/browse/FLUID-5249/">FLUID-5249</a> branch for being the Infusion 2.0.0-beta.1 release candidate, it was noticed that the order of grade merging priority had been inverted. The previous 1.9-x branch had grades mentioned to the right of the list in gradeNames overriding those to the left, whereas we now had grades at the left overriding those at the right. This change had also been reflected in the docs accompanying the release, assuming that the previous docs had been in error and that the implemented behaviour was unchanged. We need to back out both the error in the framework and in the docs, and restore the behaviour that a straw poll has determined is intuitively more desirable - that is, grades reading from left to right becoming successively more powerful - and also reflecting the framework's internal order in "mergeBlocks".</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22485">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-08-18T13:58:47.602-0400">2015-08-18T13:58:47.602-0400</relative-time></i></p>
+                        <p>Correction to the earlier timeline - grade have IN FACT been in "Arabic order" since at least late 2013 (dating from the fix of <a href="/browse/FLUID-5085/">FLUID-5085</a>). It appeared that they were overriding in the opposite direction in <a href="https://github.com/colinbdclark/bergson/blob/infusion-2.x/tests/js/utils/scheduler-test-utilities.js#L225">https://github.com/colinbdclark/bergson/blob/infusion-2.x/tests/js/utils/scheduler-test-utilities.js#L225</a> because of the <a href="/browse/FLUID-5714/">FLUID-5714</a> "funcName" overriding bug. The docs were indeed wrong on this issue during the last few years, and are only now being corrected for the <a href="/browse/FLUID-5249/">FLUID-5249</a> fix and for this fix.</p>
+
+                    </li>
+                    
+                    <li id="comment-22487">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-08-20T19:43:55.980-0400">2015-08-20T19:43:55.980-0400</relative-time></i></p>
+                        <p>Merged into trunk at revision 6f88f9f4b925a5d3da9e7cd8862e5bd4c9a02b45</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5742/"><span class="aria-hidden">←</span> Previous: FLUID-5742</a>
+        <a class="mx-1" href="/browse/FLUID-5744/">Next: FLUID-5744 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

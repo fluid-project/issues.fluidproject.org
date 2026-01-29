@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4936  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4936 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4936/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4936/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4936/">FLUID-4936</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4936: Create refined logging system that allows filtering of logged messages by priority</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4936">FLUID-4936</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-03-15T03:19:39.693-0400" prefix="">2013-03-15T03:19:39.693-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-04-29T09:31:36.885-0400" prefix="">2013-04-29T09:31:36.885-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>During a code review of some improvements to the IoC Testing system (<a href="/browse/FLUID-4929/">FLUID-4929</a>) some of the direct console.log messages shown there were highlighted as a hazard ( <a href="https://github.com/fluid-project/infusion/pull/267/files#r3325612">https://github.com/fluid-project/infusion/pull/267/files#r3325612</a> ) - it seems that IE9 of our environments will still throw an error on receiving a console statement if the console is hidden. This highlighted the need for some refinement in our logging system which is largely unchanged from its primitive and crude incarnation from 2007 - especially since Infusion is now being used in production-critical environments like GPII servers. The need in <a href="/browse/FLUID-4927/">FLUID-4927</a> was to report at high priority to the user when one of their tests was either skipped or queued as a result of QUnit's UI-based filtering (triggered by double-clicking on a fixture) - since this is a very high priority cause of user error when one is looking into the cause of why one's tests are not running.</p>
+<p>We will implement a system of logging levels similar to those seen in the ancient days of "commons logging" etc., which are accepted as an optional first argument to fluid.log, as well as to the logging control directive fluid.setLogging - the system will be backward compatible with the old one in that the levels formerly known as "true" and "false" will be mapped to fluid.logLevel.INFO and fluid.logLevel.IMPORTANT respectively, the former being the default logging priority applied to all fluid.log statements without a logLevel as the first argument. Here is the initial set of logging levels to be supported (subject to easy expansion on demand):</p>
+<p>fluid.logLevelsSpec = {<br>
+"FATAL":      0,<br>
+"FAIL":       5,<br>
+"WARN":      10,<br>
+"IMPORTANT": 12, // The default logging "off" level - corresponds to the old "false"<br>
+"INFO":      15, // The default logging "on" level - corresponds to the old "true"<br>
+"TRACE":     20<br>
+};</p>
+<p>A new "guard" function fluid.passLogLevel is now available to users who wish to guard the expense of logging statements that will not appear.</p>
+<p>Note that this system is currently entirely independent of the stack-based "activity tracing" system developed for <a href="/browse/FLUID-4884/">FLUID-4884</a>, but needs to be integrated with it. "Activities" have the natural effect of applying to stack frame levels, whereas plain "log" messages simply occur at a point in time. It's clearly natural to be able to convert "activities" into logging messages (via, for example, the utility "logActivity" but not necessarily vice versa.)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13615">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-04-10T22:31:04.543-0400">2013-04-10T22:31:04.543-0400</relative-time></i></p>
+                        <p>Merged into master at 577a30</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4935/"><span class="aria-hidden">←</span> Previous: FLUID-4935</a>
+        <a class="mx-1" href="/browse/FLUID-4937/">Next: FLUID-4937 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

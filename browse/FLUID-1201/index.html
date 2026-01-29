@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1201  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1201 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1201/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1201/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1201/">FLUID-1201</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1201: Reorderer avatar's style should be extracted through computed style</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1201">FLUID-1201</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jacob%20Farber">Jacob Farber</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-08-19T12:51:35.000-0400" prefix="">2008-08-19T12:51:35.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-01-16T09:40:50.857-0500" prefix="">2017-01-16T09:40:50.857-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5beta1</li>
+                            
+                            <li>0.5</li>
+                            
+                            <li>0.6beta1</li>
+                            
+                            <li>0.6</li>
+                            
+                            <li>0.7</li>
+                            
+                            <li>0.8</li>
+                            
+                            <li>0.8.1</li>
+                            
+                            <li>1.0</li>
+                            
+                            <li>1.1</li>
+                            
+                            <li>1.1.1</li>
+                            
+                            <li>1.1.2</li>
+                            
+                            <li>1.1.3</li>
+                            
+                            <li>1.2beta1</li>
+                            
+                            <li>1.2</li>
+                            
+                            <li>1.2.1</li>
+                            
+                            <li>1.3</li>
+                            
+                            <li>1.4</li>
+                            
+                            <li>1.5</li>
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When using relative measurements in a reorderable situation (i.e. width : 50%), the avatar will likely look off due to those relative measurements being out of context flow. <br>
+A possible solution to this would be to use a snapshot of the node's computed style.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23692">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-09-10T22:45:50.000-0400">2008-09-10T22:45:50.000-0400</relative-time></i></p>
+                        <p>(pasted from fluid-work email)</p>
+<p>After a bit of tinkering, I think I must unfortunately conclude that the<br>
+"avatar shrinkage" issues cannot be a matter for the Reorderer but can<br>
+only be dealt with in user CSS. Basically the user has so much control<br>
+over the avatar markup that really only they can know and apply a <br>
+correct strategy for setting its size. I tried to forcibly stick CSS<br>
+width properties onto the avatar as it is created, but really it doesn't<br>
+listen (in the portal sample) - the div and CSS structure of the portal<br>
+element is just too complex for the information to trickle down correctly.</p>
+<p>Perhaps Jacob can correct me on this, but right now my feeling is that <br>
+we will have to close <a href="/browse/FLUID-1201/">FLUID-1201</a> as unworkable... we can certainly <br>
+extract the relevant height and width of the "old portlet" but I can't<br>
+see at the moment how we could ensure the avatar will listen, or create<br>
+a strategy so it will.</p>
+
+                    </li>
+                    
+                    <li id="comment-23694">
+                        <p class="mb-0"><b>Jacob Farber</b> <i>commented <relative-time datetime="2009-06-05T09:32:10.000-0400">2009-06-05T09:32:10.000-0400</relative-time></i></p>
+                        <p>I could be wrong, but if you assign the style attribute of the avatar container to be the width and height of the "old portlet" as mentioned, it should probably adhere to those dimensions regardless of what anyone else has in their CSS (at least, css specificity rules would suggest so) </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1197/"><span class="aria-hidden">←</span> Previous: FLUID-1197</a>
+        <a class="mx-1" href="/browse/FLUID-1203/">Next: FLUID-1203 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

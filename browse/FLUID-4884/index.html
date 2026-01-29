@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4884  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4884 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4884/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4884/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4884/">FLUID-4884</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4884: Implement integrated and portable system for debugging and browsing framework activities operating on IoC trees</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4884">FLUID-4884</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-01-10T23:12:40.236-0500" prefix="">2013-01-10T23:12:40.236-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-07-29T01:42:33.332-0400" prefix="">2021-07-29T01:42:33.332-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>6.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The more sophisticated and powerful the IoC framework becomes, the harder it becomes to tell what it is doing. The value proposition behind an increasingly declarative idiom for expressing code clearly points to its tendency to facilitate the creation of an ecosystem of sophisticated browsing, debugging, and authoring tools, which we expect to have their power enhanced by removing the need for them to parse and interpret raw JavaScript code. </p>
+<p>However, we actually need to build such a system, and the more work we defer to the framework, the more urgent the need becomes. Some initial description of the work was done by offering it as a 2012 GSoC project, described here - <a href="http://wiki.fluidproject.org/display/fluid/Google+Summer+of+Code+2012+with+the+Fluid+Project">http://wiki.fluidproject.org/display/fluid/Google+Summer+of+Code+2012+with+the+Fluid+Project</a> - but unfortunately this project was not taken up.</p>
+<p>With our increased focus on authoring tools over the next few years with various projects (FLOE, Prosperity4all, etc.) we need to start formalising our ideas for design in this area and start work on the various primitives (e.g. browsers for configuration and other material expressed as JSON structures, dedicated graph widgets for visualising code structure) that are required and common across all these authoring scenarios. This JIRA and probably over time some dedicated wiki areas will be used as an area for collecting our design and implementation thoughts for this problem.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-4884/Decapod-IoC.jpg">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-4884/Decapod-IoC.jpg" alt="Decapod-IoC.jpg">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25104">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-01-11T01:43:20.699-0500">2013-01-11T01:43:20.699-0500</relative-time></i></p>
+                        <p>The process of diagnosing <a href="/browse/FLUID-4879/">FLUID-4879</a> proves a useful and typical case study for debugging the framework. The user presented with a case of event injection where an instance of an event in a subcomponent appeared to be firing correctly, but what should have been the same instance injected into a supercomponent did not fire. An earlier version of the same situation with the same behaviour could be diagnosed "by eye" to be resulting from overwriting the injected event definition with a conflicting one from other configuration. However, the version held in the <a href="/browse/FLUID-4879/">FLUID-4879</a> case couldn't immediately be explained - although given the result of the debugging investigation, a suitably intelligent observer could presumably have deduced it also, since in fact no direct framework bug was uncovered. However, the purpose of the framework is to be transparent and clear, and not require magical intelligence in order to diagnose the results expected from suitable or unsuitable configuration....</p>
+<p>So what do we do in practice, when discovering that the result from some IoC configuration is not what our intuition is telling us it should be? Right now we have little alternative but to debug into the framework code itself. In the <a href="/browse/FLUID-4879/">FLUID-4879</a> case, the starting point would be the expression "{comp1}.comp2.events.onReady" held in the top component's entry for the "onReady" event. We "happen to know" that the parsing of this expression will pass through, in the first instance, the "stack fetcher" which today is held in FluidIoC.js, round about line 184. These 3 lines currently read </p>
+<p>184        var fetcher = function(parsed) {<br>
+185            var context = parsed.context;<br>
+186            var foundComponent;</p>
+<p>By line 186 we expect that the "context" has been resolved - and this so happens to be the only line of configuration in the system where the context is equal to "comp1". So we set a conditional breakpoint on line 186 to trap on "context === 'comp1'". This gets us into the right ballpark of timing and relevant logic. We expect no real problems to emerge with the component itself to be resolved, and so we step along to line 219 of this function which contains the fluid.get call</p>
+<p>219            return fluid.get(foundComponent, parsed.path, {strategies: fetchStrategies});</p>
+<p>Verifying that all is ok at ths point, we then proceed to the further thing that we "happen to know", that the crucial framework function which is being exercised is the extremely basic "ginger instantiation" which the current framework guarantees for components like "comp2". That is, seeing that comp2 references a nonexistent property, AND that there is a component definition which matches this path segment, we then proceed to instantiate it immediately. This requires us to know that the "ginger strategy" will be the one that is eventually invoked as part of this fluid.get action, held right now at line 90 of FluidIoc.js. Setting an unconditional breakpoint at line 93 verifies that we then reach this point reasonably directly:</p>
+<p>90    function makeGingerStrategy(instantiator, that, thatStack) {<br>
+91        return function(component, thisSeg) {<br>
+92            var atval = component[thisSeg];<br>
+93            if (atval === undefined) {</p>
+<p>Stepping along, we see that the correct case is triggered, the 3rd branch which reads as follows:</p>
+<p>110                if (fluid.get(component, fluid.path("options", "components", thisSeg, "type"))) {<br>
+111                    fluid.initDependent(component, thisSeg);<br>
+112                    atval = component[thisSeg];<br>
+113                }</p>
+<p>on line 111 we now expect the early creation of component "comp2" to be triggered by the failed reference of the first path segment of the original expression "{comp1}.comp2.events.onReady" </p>
+<p>Breaking on line 111 we see that the component is indeed constructed correctly, but huge labyrinths lie on both sides for the unwary - stepping IN, the very involved workflow of fluid.initDependent that involves various invocations of the "framework noise" functions such as fluid.tryCatch and fluid.describeActivity which are necessary for various stability and debuggability purposes, and stepping OUT, we find ourselves deep within the logic of fluid.get operating its lists of strategies. A careful investigator would think up a suitable conditional breakpoint to set on line 112 in order to become ensnared - something similar to "thisSeg === 'comp2'" perhaps but something stronger might be required to avoid a false triggering. </p>
+<p>Having verified that the expression is resolved correctly to the 2nd path segment, we then wonder whether it is being delivered correctly to the parent component. This requires further "magical knowledge", in particular that this is done by the function "initEvents" in the core framework, right now at Fluid.js line 975. We have:</p>
+<p>984                    event = fluid.event.resolveEvent(that, eventKey, eventSpec);<br>
+as well as<br>
+989            if (event) {<br>
+990                that.events[eventKey] = event;<br>
+991            }</p>
+<p>In practice we debugged into fluid.event.resolveEvent itself, and found that everything was correctly resolved - although there was the alarming phenomenon that a "phantom event firer" was seen to be ALREADY in place for the onReady event, before the correct one was resolved and injected in its place - the "composite event firer" resolved from comp2. This might in some situations be the cause of a further bug if it could be observed, but in practice, so far, it doesn't seem to be, although this should be tracked down in due course.</p>
+<p>It is at this point that we looked back at the the console trace and thought about it in more detail, having verified that the correct event firer was indeed being injected up to the top component. This showed us the following trace </p>
+<p>Thu Jan 10 2013 13:03:08 <a href="/browse/GMT-0700/">GMT-0700</a> (Mountain Standard Time):  Firing event [composite] onReady of component with typename fluid.tests.comp2 and id 2qoz3cj9-9 to list of 2 listeners<br>
+Thu Jan 10 2013 13:03:08 <a href="/browse/GMT-0700/">GMT-0700</a> (Mountain Standard Time):  ===== comp2's onReady listener<br>
+Thu Jan 10 2013 13:03:08 <a href="/browse/GMT-0700/">GMT-0700</a> (Mountain Standard Time):  ===== comp4's onReady listener</p>
+<p>Thinking about this more clearly, having eliminated one possible cause of the problem, the reason becomes clear - the event we were seeking to listen to has ALREADY FIRED by the point any of this resolution is occuring. Had we been suitably insightful, we could have detected this at the very first breakpoint we set, the one in the stackFetcher - but it is hard to always pick the real cause of an error as the most probable first idea. But the long chain of detection we went through shows the incredibly high costs of tracking such issues once one has taken a single false turn at the beginning.</p>
+<p>What kind of system could make these kinds of problems easy and transparent to track down? The next comment begins some speculations.</p>
+
+                    </li>
+                    
+                    <li id="comment-25105">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-01-11T01:54:43.508-0500">2013-01-11T01:54:43.508-0500</relative-time></i></p>
+                        <p>An imagined UI contains (at least) two elements, described loosely as a "timeline" widget and an associated "tree display" widget. The timeline holds, potentially, every significant event in the stream of IoC actions (for example, component creation, event firing, listener attachment, model change, component attachment, etc.) but also contains a number of filtering widgets which in practice slim down the set to a small selection of relevant ones. Users are familiar with such interfaces from, say, the email filtering panel in Thunderbird, or, say, Chrome's "history filter". As well as allowing simple selection by event type and "location" (defined, perhaps, using 'IoCSS' expressions a la <a href="/browse/FLUID-4873/">FLUID-4873</a>) it might also allow complex combinations of assertions to narrow down to an exact event.</p>
+<p>This timeline contains a "scrubber" control similar to that seen in YouTube videos, etc. that allows the user to slide backwards and forwards through the event sequence. As they do this scrubbing, the associated "tree preview" animates to show a rough approximation of the state of the IoC tree at the time the event occurred. Since we don't expect to be able to completely snapshot the state of the whole tree at every event, this preview will be necessarily approximate - it will make correct guesses about gross structure, such as which components are instantiated and attached or not, but may be wrong about details such as the state of models or event firing - these will be fished directly out of their equivalents in the CURRENT state of the tree, and highlighted in a particular way to indicate that they are current values rather than historical ones. </p>
+<p>These two controls together should be sufficient to diagnose a large variety of IoC issues, especially as the "event transcript" structure which is being scrubbed through in the timeline will also contain some "contemporary values" which should help to deal with cases where "current values" have been used in the preview. This should also help users' intuition in walking directly through the process of tree construction and being able to directly perceive what has happened, broadly, in what order.</p>
+<p>We imagine this to be a kind of "popup panel" with many of the same UI aspects as the existing UIOptions panel - as well as being invokable through a UI similar to the "DOM browser" which appears in almost all contemporary browsers - something like a "magnifying glass" icon can be clicked on which puts the cursor into a particular mode, that when it hovers over DOM elements in the browser, information is displayed about them in a separate panel. In our case, when a DOM node is reached which was touched by an IoC-driven instantiation of a "viewComponent", all the relevant UI, including access to the "timeline" and "tree preview" widgets can be accessed directly from this node. </p>
+<p>The next comment holds a transcript from a chat with Colin describing a more ambitious scheme for enhancing this UI with the possibility to declare "IoC breakpoints" and sketches of mechanisms by which this could be achieved:</p>
+
+                    </li>
+                    
+                    <li id="comment-25106">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-01-11T01:56:18.006-0500">2013-01-11T01:56:18.006-0500</relative-time></i></p>
+                        <p>(21:20:03) AntranigBasman@googlemail.com/Gaim: In the ultimate case, we would be able to set some kind of "IoC breakpoints"<br>
+(21:20:15) AntranigBasman@googlemail.com/Gaim: But this would require some kind of very detailed access to the platform's native debugger<br>
+(21:20:37) AntranigBasman@googlemail.com/Gaim: The IoC breakpoint specification would be converted into the equivalent literal breakpoint targetted at the framework code<br>
+(21:20:56) AntranigBasman@googlemail.com/Gaim: We could certainly do this, with respect to something like the Chromedev wire debugging protocol, for example<br>
+(21:21:04) AntranigBasman@googlemail.com/Gaim: Which would take care of node and also Chrome environments<br>
+(21:21:58) AntranigBasman@googlemail.com/Gaim: We would create a kind of MAP describing the purpose of the framework code in some other kind of JSON dialect<br>
+(21:22:02) AntranigBasman@googlemail.com/Gaim: THat would be quite bizarre!<br>
+(21:22:10) AntranigBasman@googlemail.com/Gaim: As well as a pretty wacky kind of "documentation"<br>
+(21:22:37) AntranigBasman@googlemail.com/Gaim: But it would encode things such as "Here <strong>IS</strong> the point at which subcomponent creation is initiated" or "Here IS the point at which the context portion of an EL expression is parsed" etc.<br>
+(21:25:43) Clark Kent: That would be really amazing<br>
+(21:26:09) AntranigBasman@googlemail.com/Gaim: The Chromedev wire protocol is pretty clear about how to encode such things<br>
+(21:26:16) Clark Kent: is it?<br>
+(21:26:26) Clark Kent: what does that look like?<br>
+(21:26:37) AntranigBasman@googlemail.com/Gaim: So the "IoC Breakpoint to literal conditional JS breakpoint" mapper would actually be relatively simple<br>
+(21:26:44) AntranigBasman@googlemail.com/Gaim: Just another kind of model transformer : P<br>
+(21:29:05) AntranigBasman@googlemail.com/Gaim: Here is a bit of it<br>
+(21:29:06) AntranigBasman@googlemail.com/Gaim: <a href="http://code.google.com/p/chromedevtools/wiki/ChromeDevToolsProtocol">http://code.google.com/p/chromedevtools/wiki/ChromeDevToolsProtocol</a><br>
+(21:29:16) AntranigBasman@googlemail.com/Gaim: A protocol of little JSON messages<br>
+(21:29:25) AntranigBasman@googlemail.com/Gaim: Need to find all the rest of the detail<br>
+(21:30:44) AntranigBasman@googlemail.com/Gaim: This is a full description, but of the wrong protocol<br>
+(21:30:45) AntranigBasman@googlemail.com/Gaim: <a href="http://wiki.eclipse.org/JSDT/Debug/Rhino/Rhino_Debug_Wire_Protocol">http://wiki.eclipse.org/JSDT/Debug/Rhino/Rhino_Debug_Wire_Protocol</a><br>
+(21:30:50) AntranigBasman@googlemail.com/Gaim: But I think the real one isn't too different<br>
+(21:31:24) Clark Kent: So the application generates these messages and sends them via the wire protocol to the debugger?<br>
+(21:31:28) Clark Kent: So the workflow is roughly:<br>
+(21:31:46) AntranigBasman@googlemail.com/Gaim: There is a "setbreakpoint" message that allows you to synthesize a breakpoint on the other side<br>
+(21:31:49) Clark Kent: 1. Infusion instruments itself, recording events within the instantiation lifecycle of a component tree<br>
+(21:32:02) Clark Kent: 2. This is transformed into WebKit debugger messages<br>
+(21:32:06) Clark Kent: Ok<br>
+(21:32:13) AntranigBasman@googlemail.com/Gaim: Yes, step 1 is right<br>
+(21:32:20) Clark Kent: "synthesize a breakpoint"<br>
+(21:32:23) Clark Kent: tell me about that<br>
+(21:32:29) AntranigBasman@googlemail.com/Gaim: Step 2 I think is 2. A UI is generated which produces a browsable view of these events<br>
+(21:32:54) AntranigBasman@googlemail.com/Gaim: 3. The UI exposes operations which allows you to set conditional breakpoints relative to this high-level sequence and then re-run the instantiation<br>
+(21:33:27) AntranigBasman@googlemail.com/Gaim: 4. These conditional breakpoints are translated into literal language-level breakpoints that will stop at the appropriate point by stopping at the corresponding point in the framework code<br>
+(21:33:52) AntranigBasman@googlemail.com/Gaim: 5. when the instantiation is rerun, the user gets to the see the exact state of the instantiating tree that he could only see an approximate view of in step 3<br>
+(21:34:47) Clark Kent: ok<br>
+(21:34:55) Clark Kent: I still struggle in one place<br>
+(21:35:04) Clark Kent: There's this wire protocol...<br>
+(21:35:14) Clark Kent: So the debugger starts up, listens on a port<br>
+(21:35:36) Clark Kent: and then, I guess, we'd have a Node app providing the infrastructure for communicating with this socket<br>
+(21:35:47) AntranigBasman@googlemail.com/Gaim: Yes.... I guess this is where something like our PCP work comes in<br>
+(21:35:59) Clark Kent: yes, that makes sense<br>
+(21:36:07) AntranigBasman@googlemail.com/Gaim: Since this could be helpful for delivering a non-crap user experience of interacting with a 3rd-party web-based tool<br>
+(21:36:40) AntranigBasman@googlemail.com/Gaim: Whatever UI we deem appropriate for the PCP "native floating panel" will no doubt be appropriate for our "IoC framework inspector panel" too<br>
+(21:37:21) AntranigBasman@googlemail.com/Gaim: And just as we can deliver an in-browser version of the panel, we might be able to do that for some selected browsers too<br>
+(21:37:43) AntranigBasman@googlemail.com/Gaim: Say, for example, that FF doesn't expose any wire protocol at all, but instead exposes some kind of "bus" in the browser that is only accessible from browser extensions or the like<br>
+(21:37:56) AntranigBasman@googlemail.com/Gaim: God knows how their native debugger is accessed, but I assume it's accessed somehow<br>
+(21:38:08) Clark Kent: I'm fairly certain they also have a wire protocol<br>
+(21:38:08) AntranigBasman@googlemail.com/Gaim: And similarly, I guess that Firebug is utterly inaccessible to anything in the outside world<br>
+(21:38:16) Clark Kent: since I've used it to debug Android apps<br>
+(21:38:48) AntranigBasman@googlemail.com/Gaim: Oh yes, I remember there is a kind of Firebug API<br>
+(21:38:56) AntranigBasman@googlemail.com/Gaim: But I think it is too poor to allow you to synthesize breakpoints<br>
+(21:38:57) Clark Kent: yes, even a plugin API<br>
+(21:38:58) Clark Kent: <a href="https://wiki.mozilla.org/Remote_Debugging_Protocol">https://wiki.mozilla.org/Remote_Debugging_Protocol</a><br>
+(21:39:07) Clark Kent: That's the protocol for their new debugger, I think<br>
+(21:39:18) AntranigBasman@googlemail.com/Gaim: cool<br>
+(21:40:02) AntranigBasman@googlemail.com/Gaim: I see you can indeed set breakpoints with this<br>
+(21:40:07) AntranigBasman@googlemail.com/Gaim: Although they don't say how to set conditional ones<br>
+(21:40:56) Clark Kent: perhaps their new debugger doesn't yet support conditional breakpoints 😛<br>
+(21:41:13) AntranigBasman@googlemail.com/Gaim: This is really much more elaborate than the other Chromelike protocols since there seems to be all this faff involving threads and actors<br>
+(21:41:26) AntranigBasman@googlemail.com/Gaim: Every packet has these blasted "to" and "from" fields....<br>
+(21:41:40) AntranigBasman@googlemail.com/Gaim: No doubt we will thank them for it in the end : P</p>
+
+                    </li>
+                    
+                    <li id="comment-25107">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-01-15T07:31:17.854-0500">2013-01-15T07:31:17.854-0500</relative-time></i></p>
+                        <p>Decapod-IoC.jpg is an example at an attempt to hand draw one of the IoC structures in Decapod. It includes the order of component creation and communication of events. </p>
+
+                    </li>
+                    
+                    <li id="comment-25108">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-04-05T16:35:09.137-0400">2015-04-05T16:35:09.137-0400</relative-time></i></p>
+                        <p>Example of new-style DEBUGGING PROBES used to hunt problems during <a href="/browse/FLUID-5249/">FLUID-5249</a> global instantiator work:</p>
+<p>fluid.registerProbes({<br>
+previewCreate: {<br>
+target: "{fluid.prefs.preview}.listeners.onCreate",<br>
+func: "fluid.log",<br>
+args: ["CREATED PREVIEW COMPONENT", "{that}"] <br>
+},<br>
+previewCreateEnd: {<br>
+target: "{fluid.prefs.preview}.listeners.onCreate",<br>
+func: "fluid.log",<br>
+priority: "last",<br>
+args: ["END OF ONCREATE for PREVIEW COMPONENT", "{that}"] <br>
+},<br>
+prefsReadyStart: {<br>
+target: "{fluid.prefs.prefsEditor}.listeners.onReady",<br>
+func: "fluid.log",<br>
+priority: "first",<br>
+args: ["START of ONREADY for PREFSEDITOR", "{that}"] <br>
+},<br>
+prefsReadyEnd: {<br>
+target: "{fluid.prefs.prefsEditor}.listeners.onReady",<br>
+func: "fluid.log",<br>
+priority: "last",<br>
+args: ["END of ONREADY for PREFSEDITOR", "{that}"] <br>
+},<br>
+previewReady: {<br>
+target: "{fluid.prefs.preview}.listeners.onReady",<br>
+func: "fluid.log",<br>
+args: ["START of ONREADY for PREVIEW", "{that}"] <br>
+},<br>
+previewReadyEnd: {<br>
+target: "{fluid.prefs.preview}.listeners.onReady",<br>
+func: "fluid.log",<br>
+priority: "last",<br>
+args: ["END OF ONREADY for PREVIEW COMPONENT", "{that}"] <br>
+},<br>
+});</p>
+<p>The next really vital feature is the ability to gain a summary of the options distributions which have affected a component</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4883/"><span class="aria-hidden">←</span> Previous: FLUID-4883</a>
+        <a class="mx-1" href="/browse/FLUID-4885/">Next: FLUID-4885 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

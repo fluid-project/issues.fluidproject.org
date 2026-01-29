@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5536  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5536 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5536/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5536/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5536/">FLUID-5536</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5536: responsive UIO: Adjust "text size" and "line spacing" panels to their mobile look</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5536">FLUID-5536</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-10-22T10:53:01.593-0400" prefix="">2014-10-22T10:53:01.593-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-04-13T17:02:20.329-0400" prefix="">2017-04-13T17:02:20.329-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Implement steppers ( +/- buttons with a textfield ) to replace the textfield sliders</p>
+<p>See designs: <br>
+<a href="https://wiki.fluidproject.org/display/fluid/%28Floe%29+User+Interface+%28Learner%29+Options+Mobile+and+Responsive+Design">https://wiki.fluidproject.org/display/fluid/(Floe)+User+Interface+(Learner)+Options+Mobile+and+Responsive+Design</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22192">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-01-19T15:08:21.179-0500">2017-01-19T15:08:21.179-0500</relative-time></i></p>
+                        <p>Look into reusing code developed in this PR <a href="https://github.com/fluid-project/infusion/pull/726">https://github.com/fluid-project/infusion/pull/726</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22194">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-01-19T16:28:07.103-0500">2017-01-19T16:28:07.103-0500</relative-time></i></p>
+                        <p>Implement steppers to replace sliders<br>
+Make use of Stans textfieldButton component<br>
+Refactor textfieldSlider and textfieldButton to generalize common parts<br>
+Remove jQuery Slider version from textfield slider component</p>
+
+                    </li>
+                    
+                    <li id="comment-22197">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-02-24T09:05:22.600-0500">2017-02-24T09:05:22.600-0500</relative-time></i></p>
+                        <p>Some further discussion about factoring of grades, as well as handling of invalid entries.<br>
+<a href="https://botbot.me/freenode/fluid-work/2017-02-24/?msg=81489637&page=1">https://botbot.me/freenode/fluid-work/2017-02-24/?msg=81489637&amp;page=1</a></p>
+<p>In summary:</p>
+<p>Make the fluid.textfieldControl a modelComponent which gets added to the textfield as a sub component. the slider and stepper would add this as a grade to their own textfield subcomponents.. and the configuration for limiting the textfield to numbers should be set in the textfieldControl config somehow</p>
+
+                    </li>
+                    
+                    <li id="comment-22200">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2017-04-12T15:45:32.398-0400">2017-04-12T15:45:32.398-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/infusion/pull/823">The pull request for the infusion repo</a> has been merged into the master branch at 365e884f4e572a26bbed9d8f6f8bd4f5ab0e0895</p>
+
+                    </li>
+                    
+                    <li id="comment-22202">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2017-04-13T17:02:20.329-0400">2017-04-13T17:02:20.329-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/infusion-docs/pull/120">The pull request for the infusion-docs repo</a>&#160;has been merged into the master branch at 6c6bb9b49877a10a1b7979c77066d9e140c1c659</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5535/"><span class="aria-hidden">←</span> Previous: FLUID-5535</a>
+        <a class="mx-1" href="/browse/FLUID-5537/">Next: FLUID-5537 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

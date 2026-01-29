@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6714  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6714 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6714/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6714/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6714/">FLUID-6714</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6714: InlineEditIntegrations attempts to modify an option programmatically</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6714">FLUID-6714</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2022-02-03T08:15:02.160-0500" prefix="">2022-02-03T08:15:02.160-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2022-02-09T09:52:03.487-0500" prefix="">2022-02-09T09:52:03.487-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p><a href="https://github.com/fluid-project/infusion/blob/0b24a595780b19f7367eb42e254964e77555e1a0/src/components/inlineEdit/js/InlineEditIntegrations.js#L199">InlineEditIntegrations.js</a> attempts to modify a component option after init.</p>
+<p>Steps to reproduce:</p>
+<ul>
+<li>Open the <a href="https://build-infusion.fluidproject.org/tests/manual-tests/components/inlineedit/rich/">Rich Text Inline Edit</a> manual test</li>
+<li>Attempt to edit either of the TinyMCE examples (first two paragraphs)</li>
+<li>Notice this don't open</li>
+<li>In the console the following error is returned:</li>
+</ul>
+<pre><code class="hljs language-java">Uncaught TypeError: can<span class="hljs-string">'t define property "elements": Object is not extensible
+&#160; &#160; editModeRenderer https://build-infusion.fluidproject.org/src/components/inlineEdit/js/InlineEditIntegrations.js:199
+&#160; &#160; renderEditContainer https://build-infusion.fluidproject.org/src/components/inlineEdit/js/InlineEdit.js:339
+&#160; &#160; initializeEditView https://build-infusion.fluidproject.org/src/components/inlineEdit/js/InlineEdit.js:114
+&#160; &#160; edit https://build-infusion.fluidproject.org/src/components/inlineEdit/js/InlineEdit.js:130
+&#160; &#160; editHandler https://build-infusion.fluidproject.org/src/components/inlineEdit/js/InlineEdit.js:221
+&#160; &#160; invokeInvoker https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2782
+&#160; &#160; makeEditTriggerGuard https://build-infusion.fluidproject.org/src/components/inlineEdit/js/InlineEdit.js:564
+&#160; &#160; bindMouseHandlers https://build-infusion.fluidproject.org/src/components/inlineEdit/js/InlineEdit.js:522
+&#160; &#160; jQuery 2
+InlineEditIntegrations.js:199:34
+&#160; &#160; editModeRenderer https://build-infusion.fluidproject.org/src/components/inlineEdit/js/InlineEditIntegrations.js:199
+&#160; &#160; renderEditContainer https://build-infusion.fluidproject.org/src/components/inlineEdit/js/InlineEdit.js:339
+&#160; &#160; initializeEditView https://build-infusion.fluidproject.org/src/components/inlineEdit/js/InlineEdit.js:114
+&#160; &#160; edit https://build-infusion.fluidproject.org/src/components/inlineEdit/js/InlineEdit.js:130
+&#160; &#160; editHandler https://build-infusion.fluidproject.org/src/components/inlineEdit/js/InlineEdit.js:221
+&#160; &#160; invokeInvoker https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2782
+&#160; &#160; makeEditTriggerGuard https://build-infusion.fluidproject.org/src/components/inlineEdit/js/InlineEdit.js:564
+&#160; &#160; bindMouseHandlers https://build-infusion.fluidproject.org/src/components/inlineEdit/js/InlineEdit.js:522
+&#160; &#160; jQuery 2
+</span></code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25158">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2022-02-09T09:52:03.486-0500">2022-02-09T09:52:03.486-0500</relative-time></i></p>
+                        <p>Merged PR ( <a href="https://github.com/fluid-project/infusion/pull/1070">https://github.com/fluid-project/infusion/pull/1070</a>&#160;) into the project repo at 50bdbf8d145ddfd64f3cc865397f8ef03982e443</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6713/"><span class="aria-hidden">←</span> Previous: FLUID-6713</a>
+        <a class="mx-1" href="/browse/FLUID-6715/">Next: FLUID-6715 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

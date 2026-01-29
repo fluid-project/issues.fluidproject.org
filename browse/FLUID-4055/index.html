@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4055  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4055 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4055/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4055/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4055/">FLUID-4055</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4055: IoC system should allow "reinstantiation"</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4055">FLUID-4055</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-02-08T16:24:19.614-0500" prefix="">2011-02-08T16:24:19.614-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-03-30T21:46:08.303-0400" prefix="">2017-03-30T21:46:08.303-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>As it stands, the IoC system requires all elements in a component tree to be constructed "synchronously", as part of the same stack frame. This implementation, making use of "thread-locals" is also morally incorrect as it will violate context resolution rules if a component is being constructed "gingerly" as a result of a reference from another part of the tree. This implementation needs to be replaced with one that is not only correct, but which allows subsections of component trees to be constructed in an IoC-driven way at a later time, but whilst retaining the contextual information which was present at initial construction time.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24059">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-05-17T10:26:34.642-0400">2011-05-17T10:26:34.642-0400</relative-time></i></p>
+                        <p>Bug Parade Infusion</p>
+
+                    </li>
+                    
+                    <li id="comment-24062">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2011-05-18T16:53:27.209-0400">2011-05-18T16:53:27.209-0400</relative-time></i></p>
+                        <p>Implemented using the utility "fluid.clearComponent" together with the directive "onCreateEvent" which allows this use case to be met without bothering the user with details of the instantiator</p>
+
+                    </li>
+                    
+                    <li id="comment-24065">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2017-03-30T21:46:08.303-0400">2017-03-30T21:46:08.303-0400</relative-time></i></p>
+                        <p>This JIRA was written in a pretty unclear way and it is no longer clear what is referred to by "the contextual information". In the post <a href="/browse/FLUID-6148/">FLUID-6148</a> framework, the techniques used in this test case (overwriting of component options, manual calls to fluid.initDependent) are no longer supported, and so the test has been reverted to a standard "createOnEvent" workflow. It's no longer clear what effect was intended by the following strange line:</p>
+<pre><code class="hljs language-java">reins.child1.options.components.child2 = fluid.copy(fluid.defaults(<span class="hljs-string">"fluid.tests.reinstantiation"</span>).components.child1.options.components.child2);
+</code></pre>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4054/"><span class="aria-hidden">←</span> Previous: FLUID-4054</a>
+        <a class="mx-1" href="/browse/FLUID-4056/">Next: FLUID-4056 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

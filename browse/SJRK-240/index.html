@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-240  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-240 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-240/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-240/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-240/">SJRK-240</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-240: Browser tests not being served on staging site</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-240">SJRK-240</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SJRK/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-03-21T19:13:52.852-0400" prefix="">2019-03-21T19:13:52.852-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-03-25T11:40:19.771-0400" prefix="">2019-03-25T11:40:19.771-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool Server</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The browser tests are not accessible on the staging site after merging the pull request for <a href="/browse/SJRK-224/">SJRK-224</a>: <a href="https://github.com/inclusive-design/ci-service/pull/34">https://github.com/inclusive-design/ci-service/pull/34</a></p>
+<p>If tested locally, they are accessible at <a href="http://localhost:8081/tests/">http://localhost:8081/tests/</a></p>
+<p>Expected:<br>
+The same tests should be accessible at <a href="http://staging-stories.floeproject.org/tests/">http://staging-stories.floeproject.org/tests/</a></p>
+<p>Actual:<br>
+The server response is</p>
+<pre><code class="hljs language-java">{<span class="hljs-string">"isError"</span>:<span class="hljs-literal">true</span>,<span class="hljs-string">"message"</span>:<span class="hljs-string">"Cannot GET /tests/"</span>}
+</code></pre>
+<p>The same issue exists for the "binaries" folder (located at \tests\binaries\ in the source)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26511">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2019-03-25T11:40:19.767-0400">2019-03-25T11:40:19.767-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/sjrk-story-telling/pull/20">The pull request</a> has been merged into the project repo at <a href="https://github.com/fluid-project/sjrk-story-telling/commit/466d400c4a5356223f0e5aecf8ca2dad02e777a3">this commit</a>.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-239/"><span class="aria-hidden">←</span> Previous: SJRK-239</a>
+        <a class="mx-1" href="/browse/SJRK-241/">Next: SJRK-241 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

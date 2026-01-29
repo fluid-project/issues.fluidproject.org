@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-243  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-243 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-243/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-243/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-243/">INFRA-243</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-243: Create test Kubernetes cluster</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-243">INFRA-243</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Done">Done</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-04-29T10:41:32.738-0400" prefix="">2020-04-29T10:41:32.738-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-04-29T15:52:11.182-0400" prefix="">2020-04-29T15:52:11.182-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Create a Kubernetes cluster running on the IDRC hypervisors with the following configuration:</p>
+<p>1 x master<br>
+3 x worker nodes</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26057">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2020-04-29T14:41:02.285-0400">2020-04-29T14:41:02.285-0400</relative-time></i></p>
+                        <pre><code class="hljs"><span class="hljs-comment"># kubectl get nodes</span>
+<span class="hljs-attribute">NAME</span>                  STATUS   ROLES    AGE     VERSION
+<span class="hljs-attribute">i</span>-<span class="hljs-number">0101</span>.tor1.incd.ca   Ready    master   <span class="hljs-number">2</span>m28s   v1.<span class="hljs-number">18</span>.<span class="hljs-number">2</span>
+<span class="hljs-attribute">i</span>-<span class="hljs-number">0102</span>.tor1.incd.ca   Ready    &lt;none&gt;   <span class="hljs-number">85</span>s     v1.<span class="hljs-number">18</span>.<span class="hljs-number">2</span>
+<span class="hljs-attribute">i</span>-<span class="hljs-number">0103</span>.tor1.incd.ca   Ready    &lt;none&gt;   <span class="hljs-number">79</span>s     v1.<span class="hljs-number">18</span>.<span class="hljs-number">2</span>
+<span class="hljs-attribute">i</span>-<span class="hljs-number">0104</span>.tor1.incd.ca   Ready    &lt;none&gt;   <span class="hljs-number">77</span>s     v1.<span class="hljs-number">18</span>.<span class="hljs-number">2</span>
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-26058">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2020-04-29T15:29:48.657-0400">2020-04-29T15:29:48.657-0400</relative-time></i></p>
+                        <p>sonobuoy quick test:</p>
+<pre><code class="hljs"><span class="hljs-comment"># ./sonobuoy results $results</span>
+<span class="hljs-attr">Plugin:</span> <span class="hljs-string">e2e</span>
+<span class="hljs-attr">Status:</span> <span class="hljs-string">passed</span>
+<span class="hljs-attr">Total:</span> <span class="hljs-number">4992</span>
+<span class="hljs-attr">Passed:</span> <span class="hljs-number">1</span>
+<span class="hljs-attr">Failed:</span> <span class="hljs-number">0</span>
+<span class="hljs-attr">Skipped:</span> <span class="hljs-number">4991</span>
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-26060">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2020-04-29T15:51:42.262-0400">2020-04-29T15:51:42.262-0400</relative-time></i></p>
+                        <p>Dev/test cluster deployed with Calico networking and Traefik ingress controller:</p>
+<pre><code class="hljs"><span class="hljs-comment"># kubectl --namespace=kube-system get pods</span>
+<span class="hljs-attribute">NAME</span>                                          READY   STATUS    RESTARTS   AGE
+<span class="hljs-attribute">calico</span>-kube-controllers-<span class="hljs-number">75</span>d56dfc47-nvjzc      <span class="hljs-number">1</span>/<span class="hljs-number">1</span>     Running   <span class="hljs-number">0</span>          <span class="hljs-number">71</span>m
+<span class="hljs-attribute">calico</span>-node-<span class="hljs-number">4</span>mz7b                             <span class="hljs-number">1</span>/<span class="hljs-number">1</span>     Running   <span class="hljs-number">0</span>          <span class="hljs-number">71</span>m
+<span class="hljs-attribute">calico</span>-node-<span class="hljs-number">7</span>rfr4                             <span class="hljs-number">1</span>/<span class="hljs-number">1</span>     Running   <span class="hljs-number">0</span>          <span class="hljs-number">71</span>m
+<span class="hljs-attribute">calico</span>-node-qb92t                             <span class="hljs-number">1</span>/<span class="hljs-number">1</span>     Running   <span class="hljs-number">0</span>          <span class="hljs-number">71</span>m
+<span class="hljs-attribute">calico</span>-node-r99rz                             <span class="hljs-number">1</span>/<span class="hljs-number">1</span>     Running   <span class="hljs-number">0</span>          <span class="hljs-number">71</span>m
+<span class="hljs-attribute">coredns</span>-<span class="hljs-number">66</span>bff467f8-jlwtw                      <span class="hljs-number">1</span>/<span class="hljs-number">1</span>     Running   <span class="hljs-number">0</span>          <span class="hljs-number">72</span>m
+<span class="hljs-attribute">coredns</span>-<span class="hljs-number">66</span>bff467f8-kd97t                      <span class="hljs-number">1</span>/<span class="hljs-number">1</span>     Running   <span class="hljs-number">0</span>          <span class="hljs-number">72</span>m
+<span class="hljs-attribute">etcd</span>-i-<span class="hljs-number">0101</span>.tor1.incd.ca                      <span class="hljs-number">1</span>/<span class="hljs-number">1</span>     Running   <span class="hljs-number">0</span>          <span class="hljs-number">72</span>m
+<span class="hljs-attribute">kube</span>-apiserver-i-<span class="hljs-number">0101</span>.tor1.incd.ca            <span class="hljs-number">1</span>/<span class="hljs-number">1</span>     Running   <span class="hljs-number">0</span>          <span class="hljs-number">72</span>m
+<span class="hljs-attribute">kube</span>-controller-manager-i-<span class="hljs-number">0101</span>.tor1.incd.ca   <span class="hljs-number">1</span>/<span class="hljs-number">1</span>     Running   <span class="hljs-number">0</span>          <span class="hljs-number">72</span>m
+<span class="hljs-attribute">kube</span>-proxy-<span class="hljs-number">5</span>tshj                              <span class="hljs-number">1</span>/<span class="hljs-number">1</span>     Running   <span class="hljs-number">0</span>          <span class="hljs-number">71</span>m
+<span class="hljs-attribute">kube</span>-proxy-<span class="hljs-number">6</span>t2h2                              <span class="hljs-number">1</span>/<span class="hljs-number">1</span>     Running   <span class="hljs-number">0</span>          <span class="hljs-number">72</span>m
+<span class="hljs-attribute">kube</span>-proxy-<span class="hljs-number">9</span>wh5l                              <span class="hljs-number">1</span>/<span class="hljs-number">1</span>     Running   <span class="hljs-number">0</span>          <span class="hljs-number">71</span>m
+<span class="hljs-attribute">kube</span>-proxy-xf4hb                              <span class="hljs-number">1</span>/<span class="hljs-number">1</span>     Running   <span class="hljs-number">0</span>          <span class="hljs-number">71</span>m
+<span class="hljs-attribute">kube</span>-scheduler-i-<span class="hljs-number">0101</span>.tor1.incd.ca            <span class="hljs-number">1</span>/<span class="hljs-number">1</span>     Running   <span class="hljs-number">0</span>          <span class="hljs-number">72</span>m
+<span class="hljs-attribute">traefik</span>-ingress-controller-<span class="hljs-number">2</span>wsdw              <span class="hljs-number">1</span>/<span class="hljs-number">1</span>     Running   <span class="hljs-number">0</span>          <span class="hljs-number">5</span>m59s
+<span class="hljs-attribute">traefik</span>-ingress-controller-fh6xt              <span class="hljs-number">1</span>/<span class="hljs-number">1</span>     Running   <span class="hljs-number">0</span>          <span class="hljs-number">5</span>m59s
+<span class="hljs-attribute">traefik</span>-ingress-controller-qrnd6              <span class="hljs-number">1</span>/<span class="hljs-number">1</span>     Running   <span class="hljs-number">0</span>          <span class="hljs-number">5</span>m59s
+</code></pre>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-242/"><span class="aria-hidden">←</span> Previous: INFRA-242</a>
+        <a class="mx-1" href="/browse/INFRA-244/">Next: INFRA-244 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

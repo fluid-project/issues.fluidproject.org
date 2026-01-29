@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6570  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6570 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6570/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6570/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6570/">FLUID-6570</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6570: Usability improvements for modelRelay system</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6570">FLUID-6570</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-10-30T07:54:12.035-0400" prefix="">2020-10-30T07:54:12.035-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-06-21T11:30:04.755-0400" prefix="">2021-06-21T11:30:04.755-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Our modelRelay system is a bit long in the tooth and now it is about to see a significant increase in usage as a result of the "integral binding system" in the new renderer, it is time for a spring cleaning, cut a few corners, and make some usability improvements.</p>
+<p>In advance of implementing the "reduced expression parser" for <a href="/browse/FLUID-5894/">FLUID-5894</a>, we can significantly ease the use of simple arithmetic transforms by allowing literal functions to appear in modelRelay records.</p>
+<p>The appearance of literal code in configuration had long appeared an unacceptable risk - but together with some of the thinking in <a href="/browse/FLUID-5894/">FLUID-5894</a>, we can mitigate this. Taking advantage of the fact that JavaScript has an enlightened design where <code>f.toString()</code> for a function f yields the literal text of the function body, we can adopt an architecture where functions are packaged as .... functions. This implies getting the benefit of "surface linting" as we do for our configuration which verifies it is at least "some kind of JSON", we can also verify that our functions are at least some kind of functions. Deeper linting can verify more detailed properties of the functions, which the <a href="/browse/FLUID-5894/">FLUID-5894</a> parser can do, once we write it - this can then be packaged as an eslint plugin, as well as, when we allow transit of arbitrary grades as "configuration", we can develop our extended profile of JSON5 that allows "suitably good functions" to appear in their serialised definitions.</p>
+<p>Context of idea - examining the code for the "switch demo" at <a href="https://github.com/fluid-project/infusion/blob/main/demos/switch/js/SwitchDemo.js#L96">https://github.com/fluid-project/infusion/blob/main/demos/switch/js/SwitchDemo.js#L96</a> we struggled with how to transform these three actions into a declarative dialect:</p>
+<pre><code class="hljs language-java">demo.faces.toggleLight = function (that, state) {
+        that.locate(<span class="hljs-string">"text"</span>).text(that.options.strings[state ? <span class="hljs-string">"on"</span> : <span class="hljs-string">"off"</span>]);
+        that.locate(<span class="hljs-string">"face"</span>).text(state ? that.getFace() : <span class="hljs-string">""</span>);
+        that.locate(<span class="hljs-string">"panel"</span>).toggleClass(that.options.styles.light, state);
+    };
+</code></pre>
+<p>As <a href="/browse/FLUID-5894/">FLUID-5894</a> notes, the verbosity of the "parser-averse" definitions of modelRelay are a huge barrier to usability by code-oriented members of the Infusion ecology, whom as we now know are still going to be the only ones for many, many years. <br>
+Taking a leaf out of the "React-heads"' book we can consider packaging this by the use of tiny, real "state-accepting" functions which at least operate a dialect which is widely recognisable. We would then express the previous as</p>
+<pre><code class="hljs language-java">modelRelay: {
+    text: {
+        source: <span class="hljs-string">"{that}.model.lightOn"</span>,
+        target: <span class="hljs-string">"{that}.model.dom.text.text"</span>,
+        func: (strings, value) =&gt; strings[state ? <span class="hljs-string">"on"</span> : <span class="hljs-string">"off"</span>],
+        args: [<span class="hljs-string">"{that}.options.strings"</span>, <span class="hljs-string">"{change}.value"</span>]
+    },
+    face: {
+        source: <span class="hljs-string">"{that}.model.lightOn"</span>,
+        target: <span class="hljs-string">"{that}.model.dom.face.text"</span>,
+        func: (value) =&gt; value ? that.getFace() : <span class="hljs-string">""</span>
+    },
+    panel: {
+        source: <span class="hljs-string">"{that}.model.lightOn"</span>,
+        target: {
+            segs: [<span class="hljs-string">"dom"</span>, <span class="hljs-string">"panel"</span>, <span class="hljs-string">"classes"</span>, <span class="hljs-string">"{that}.options.styles.light"</span>]
+        } <span class="hljs-comment">// Default is to relay using identity</span>
+    }
+</code></pre>
+<p>Still fairly verbose but now less offensively so and now conceivably authorable by some kind of visual tool.</p>
+<p>Note that a small enhancement is that when the relay definition includes no other directive, the system assumes "fluid.transforms.identity".</p>
+<p>Finally, once <a href="/browse/FLUID-5894/">FLUID-5894</a> is ready, we would signal to the system that we expected a function to be invertible (through being part of the "linear" dialect of functions) by specifying it as "lens" rather than "func", e.g.</p>
+<pre><code class="hljs language-java">modelRelay: {
+        flipper: {
+            source: <span class="hljs-string">"{that}.model.value"</span>,
+            target: <span class="hljs-string">"{that}.model.negatedValue"</span>,
+            lens: (value) =&gt; !value
+        }
+    }
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25399">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2020-10-30T07:59:27.803-0400">2020-10-30T07:59:27.803-0400</relative-time></i></p>
+                        <p>Note that there is substantial, and understandable, opposition to implementing such facilities within JSON5 itself - <br>
+<a href="https://github.com/json5/json5/issues/132">https://github.com/json5/json5/issues/132</a> - "Parse functions as object properties"<br>
+<a href="https://github.com/json5/json5/issues/106">https://github.com/json5/json5/issues/106</a> - "Discussion on supporting mathematical operations in values"</p>
+<p>Until the REP is ready and able to verify that such functions are "good" it's clear that extending the interchange format is non-viable.</p>
+
+                    </li>
+                    
+                    <li id="comment-25400">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2020-11-02T08:09:20.947-0500">2020-11-02T08:09:20.947-0500</relative-time></i></p>
+                        <p>Antranig Basman&#160;what about functions that reference external variables, that may be out of scope when the JSON is parsed and the function executed?</p>
+
+                    </li>
+                    
+                    <li id="comment-25401">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2020-11-02T08:11:49.437-0500">2020-11-02T08:11:49.437-0500</relative-time></i></p>
+                        <p>Justin Obara - References to external variables will be forbidden, since "good functions" must be pure - <a href="https://wiki.fluidproject.org/display/fluid/A+Good+Function">https://wiki.fluidproject.org/display/fluid/A+Good+Function</a></p>
+
+                    </li>
+                    
+                    <li id="comment-25402">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2020-11-02T08:24:57.778-0500">2020-11-02T08:24:57.778-0500</relative-time></i></p>
+                        <p>Antranig Basman&#160;I'm a bit worried about the effects of the call to <code>that.getFace()</code> in your example above, as it could be overridden before evaluation and thus become impure. Although I suppose we already need guards against this for free transforms, so perhaps something is already in place. Also, wondering if it would make sense to elevate free transforms or perhaps this actually replaces them.</p>
+
+                    </li>
+                    
+                    <li id="comment-25403">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2020-11-02T09:44:28.833-0500">2020-11-02T09:44:28.833-0500</relative-time></i></p>
+                        <p>Yes, calls like that.getFace() present a big problem - one possibility is to provide a separate syntax such as "impureFunc" or so for the user to signal that they have introduced a dependence on an operation with side effects, but I guess a lot hinges on how we expect the relationship between people who write code and people who don't to actually work - we're a long way from having even a sketch of how the UI might work. There are a few things in play - i) how easy is it to design a visual interface that allows a substantial part of the design to be edited by people without coding skills (made somewhat easier by the "pure function" dialect but not crushingly so), ii) how easy is it to produce a system which can "time-travel" its state into the future or the past on behalf of designers (in this case the actual appearance of side-effects is indeed crucial).</p>
+<p>Note that there was what looks like it might have been a fault in the implementation of the original "getFace" method in that it appeared like it might be trying to have a side-effect, but actually wasn't - <a href="https://github.com/fluid-project/infusion/blob/main/demos/switch/js/SwitchDemo.js#L88">https://github.com/fluid-project/infusion/blob/main/demos/switch/js/SwitchDemo.js#L88</a> - one could also argue that any invocation of Math.random() also represents some form of environmental side-effect (or possibly co-effect, who knows!)</p>
+<p>In any case the "little good function dialect" looks like it could be a good place where people who write code a lot, and people who don't write code much, could meet, and also help out in producing a system with more manageable syntax that was easier to shift state from time to time.</p>
+<p>Yes, we'll indeed need to overhaul the model transformations repertoire substantially after this and most likely throw out a good deal of them - in addition to "free", all the binops and other very little transforms (stringToNumber, count, condition, linearScale, indexOf) can all go. Many of the others are sufficiently esoteric that they might end up being hived off to some optional micromodule or so. This leaves things like the valueMapper and the range transforms as being sufficiently general-purpose and not matched by anything sufficiently idiomatic in standard arithmetic expressions, that would end up staying in the core.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6569/"><span class="aria-hidden">←</span> Previous: FLUID-6569</a>
+        <a class="mx-1" href="/browse/FLUID-6571/">Next: FLUID-6571 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

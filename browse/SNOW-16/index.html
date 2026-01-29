@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SNOW-16  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SNOW-16 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SNOW-16/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SNOW-16/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SNOW" data-pagefind-filter="project">Snow</a></li>
+                <li><a href="/browse/SNOW-16/">SNOW-16</a></li>
+            </ol>
+        </nav>
+        <h1>SNOW-16: Front panel showing more than 1 post at a time</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SNOW-16">SNOW-16</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SNOW/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SNOW/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SNOW/?reporter=Eloisa%20Guerrero">Eloisa Guerrero</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-02-09T09:26:07.072-0500" prefix="">2018-02-09T09:26:07.072-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-07-12T15:40:13.892-0400" prefix="">2018-07-12T15:40:13.892-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Front panels in the theme are showing more than 1 post at a time, e.g. in the Upcoming Workshops panel it shows both the landing page and an example post.</p>
+<pre><code class="hljs language-java"><span class="hljs-comment">/* Begin extending widget for Upcoming Workshops front panel */</span>
+function <span class="hljs-title function_">snow_front_panel_sticky</span><span class="hljs-params">( $atts = array()</span> ) {
+    <span class="hljs-comment">/* Default Parameters */</span>
+    extract(shortcode_atts(array(
+        <span class="hljs-string">'category__and'</span> =&gt; <span class="hljs-number">7</span>,
+        <span class="hljs-string">'posts_per_page'</span> =&gt; <span class="hljs-number">1</span>,
+        <span class="hljs-string">'post__in'</span> =&gt; get_option( <span class="hljs-string">'sticky_posts'</span> ),
+        <span class="hljs-string">'ignore_sticky_posts'</span> =&gt; <span class="hljs-number">1</span>
+    ), $atts));
+    
+    <span class="hljs-comment">/* Query the posts */</span>
+    $the_query = <span class="hljs-keyword">new</span> <span class="hljs-title class_">WP_Query</span>($atts);
+    <span class="hljs-keyword">if</span> ( $the_query-&gt;have_posts() ) {
+        <span class="hljs-keyword">while</span> ( $the_query-&gt;have_posts() ) {
+            $the_query-&gt;the_post();
+            $<span class="hljs-keyword">return</span> .= <span class="hljs-string">'&lt;p&gt;&lt;a href="'</span> .get_permalink(). <span class="hljs-string">'" title="'</span> . get_the_title() . <span class="hljs-string">'"&gt;'</span> . get_the_title() . <span class="hljs-string">'&lt;/a&gt;&lt;/p&gt;'</span> . <span class="hljs-string">'&lt;p&gt;'</span> . get_the_excerpt() . <span class="hljs-string">'&lt;/p&gt;'</span>;
+        }
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// No posts found</span>
+    }    <span class="hljs-comment">/* Restore original Post Data */</span>
+    wp_reset_postdata();
+    
+    <span class="hljs-keyword">return</span> $<span class="hljs-keyword">return</span>;
+}
+add_shortcode(<span class="hljs-string">'snow_front_panel_sticky'</span>, <span class="hljs-string">'snow_front_panel_sticky'</span>);
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26204">
+                        <p class="mb-0"><b>Eloisa Guerrero</b> <i>commented <relative-time datetime="2018-02-09T11:46:48.840-0500">2018-02-09T11:46:48.840-0500</relative-time></i></p>
+                        <p>Simplified the block of code in snow_front_panel_sticky() instead of removing while loop:</p>
+<pre><code class="hljs language-java">function <span class="hljs-title function_">snow_front_panel_sticky</span><span class="hljs-params">( $atts = array()</span> ) {
+    <span class="hljs-comment">/* Default Parameters */</span>
+    $myatts = array(
+        <span class="hljs-string">'post__in'</span>  =&gt; get_option( <span class="hljs-string">'sticky_posts'</span> ),
+        <span class="hljs-string">'posts_per_page'</span> =&gt; <span class="hljs-number">1</span>
+    );
+    <span class="hljs-comment">/* Merge category__and with the above parameters */</span>
+    $allatts = array_merge($atts, $myatts);
+</code></pre>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SNOW-15/"><span class="aria-hidden">←</span> Previous: SNOW-15</a>
+        <a class="mx-1" href="/browse/SNOW-17/">Next: SNOW-17 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

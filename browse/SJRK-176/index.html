@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-176  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-176 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-176/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-176/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-176/">SJRK-176</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-176: sjrk-story-telling-server npm install fails on Node 10</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-176">SJRK-176</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SJRK/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Simon Bates</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Simon%20Bates">Simon Bates</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-01-10T14:52:32.356-0500" prefix="">2019-01-10T14:52:32.356-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-01-10T16:14:15.436-0500" prefix="">2019-01-10T16:14:15.436-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool Server</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>npm install fails on Node 10 on Ubuntu Linux 16.04:</p>
+<pre><code class="hljs language-java">$ git status
+HEAD detached at BlueSlug/master
+nothing to commit, working directory clean
+$ node --version
+v10<span class="hljs-number">.15</span><span class="hljs-number">.0</span>
+$ npm --version
+<span class="hljs-number">6.4</span><span class="hljs-number">.1</span>
+$ npm install
+...
+make: Entering directory <span class="hljs-string">'/home/simon/projects/sjrk-story-telling-server/node_modules/leveldown/build'</span>
+  CXX(target) Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/db/builder.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/db/db_impl.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/db/db_iter.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/db/filename.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/db/dbformat.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/db/log_reader.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/db/log_writer.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/db/memtable.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/db/repair.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/db/table_cache.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/db/version_edit.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/db/version_set.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/db/write_batch.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/helpers/memenv/memenv.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/table/block.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/table/block_builder.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/table/filter_block.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/table/format.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/table/iterator.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/table/merger.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/table/table.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/table/table_builder.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/table/two_level_iterator.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/util/arena.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/util/bloom.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/util/cache.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/util/coding.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/util/comparator.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/util/crc32c.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/util/env.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/util/filter_policy.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/util/hash.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/util/logging.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/util/options.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/util/status.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/port/port_posix.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldb/deps/leveldb/leveldb-<span class="hljs-number">1.19</span>/util/env_posix.o
+  <span class="hljs-title function_">AR</span><span class="hljs-params">(target)</span> Release/obj.target/deps/leveldb/leveldb.a
+  COPY Release/leveldb.a
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/snappy/deps/snappy/snappy-<span class="hljs-number">1.1</span><span class="hljs-number">.1</span>/snappy-sinksource.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/snappy/deps/snappy/snappy-<span class="hljs-number">1.1</span><span class="hljs-number">.1</span>/snappy-stubs-internal.o
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/snappy/deps/snappy/snappy-<span class="hljs-number">1.1</span><span class="hljs-number">.1</span>/snappy.o
+  <span class="hljs-title function_">AR</span><span class="hljs-params">(target)</span> Release/obj.target/deps/snappy/snappy.a
+  COPY Release/snappy.a
+  <span class="hljs-title function_">CXX</span><span class="hljs-params">(target)</span> Release/obj.target/leveldown/src/batch.o
+In file included from ../node_modules/nan/nan.h:<span class="hljs-number">190</span>:<span class="hljs-number">0</span>,
+                 from ../src/batch.cc:<span class="hljs-number">3</span>:
+../node_modules/nan/nan_maybe_43_inl.h: In function ‘Nan::Maybe&lt;bool&gt; Nan::ForceSet(v8::Local&lt;v8::Object&gt;, v8::Local&lt;v8::Value&gt;, v8::Local&lt;v8::Value&gt;, v8::PropertyAttribute)’:
+../node_modules/nan/nan_maybe_43_inl.h:<span class="hljs-number">88</span>:<span class="hljs-number">15</span>: error: ‘<span class="hljs-keyword">class</span> <span class="hljs-title class_">v8</span>::Object’ has no member named ‘ForceSet’
+   <span class="hljs-keyword">return</span> obj-&gt;ForceSet(GetCurrentContext(), key, value, attribs);
+               ^
+...
+make: *** [Release/obj.target/leveldown/src/batch.o] Error <span class="hljs-number">1</span>
+make: Leaving directory <span class="hljs-string">'/home/simon/projects/sjrk-story-telling-server/node_modules/leveldown/build'</span>
+prebuild ERR! build error 
+prebuild ERR! stack Error: `make` failed with exit code: <span class="hljs-number">2</span>
+prebuild ERR! stack     at ChildProcess.onExit (/home/simon/projects/sjrk-story-telling-server/node_modules/node-gyp/lib/build.js:<span class="hljs-number">262</span>:<span class="hljs-number">23</span>)
+prebuild ERR! stack     at ChildProcess.emit (events.js:<span class="hljs-number">182</span>:<span class="hljs-number">13</span>)
+prebuild ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:<span class="hljs-number">240</span>:<span class="hljs-number">12</span>)
+prebuild ERR! not ok 
+prebuild ERR! build Error: `make` failed with exit code: <span class="hljs-number">2</span>
+prebuild ERR! build     at ChildProcess.onExit (/home/simon/projects/sjrk-story-telling-server/node_modules/node-gyp/lib/build.js:<span class="hljs-number">262</span>:<span class="hljs-number">23</span>)
+prebuild ERR! build     at ChildProcess.emit (events.js:<span class="hljs-number">182</span>:<span class="hljs-number">13</span>)
+prebuild ERR! build     at Process.ChildProcess._handle.onexit (internal/child_process.js:<span class="hljs-number">240</span>:<span class="hljs-number">12</span>)
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@<span class="hljs-number">1.2</span><span class="hljs-number">.4</span> (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform <span class="hljs-keyword">for</span> fsevents@<span class="hljs-number">1.2</span><span class="hljs-number">.4</span>: wanted {<span class="hljs-string">"os"</span>:<span class="hljs-string">"darwin"</span>,<span class="hljs-string">"arch"</span>:<span class="hljs-string">"any"</span>} (current: {<span class="hljs-string">"os"</span>:<span class="hljs-string">"linux"</span>,<span class="hljs-string">"arch"</span>:<span class="hljs-string">"x64"</span>})
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno <span class="hljs-number">2</span>
+npm ERR! leveldown@<span class="hljs-number">1.5</span><span class="hljs-number">.0</span> install: `prebuild --install`
+npm ERR! Exit status <span class="hljs-number">2</span>
+npm ERR! 
+npm ERR! Failed at the leveldown@<span class="hljs-number">1.5</span><span class="hljs-number">.0</span> install script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of <span class="hljs-built_in">this</span> run can be found in:
+npm ERR!     /home/simon/.npm/_logs/<span class="hljs-number">2019</span>-<span class="hljs-number">01</span>-10T19_38_24_201Z-debug.log
+</code></pre>
+<p>Full log: <a href="https://gist.github.com/simonbates/c4924c83f5d651134abe06e2456ea96b">https://gist.github.com/simonbates/c4924c83f5d651134abe06e2456ea96b</a></p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-175/"><span class="aria-hidden">←</span> Previous: SJRK-175</a>
+        <a class="mx-1" href="/browse/SJRK-177/">Next: SJRK-177 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

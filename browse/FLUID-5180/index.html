@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5180  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5180 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5180/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5180/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5180/">FLUID-5180</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5180: Simplify process for using messages from message bundles in the preference framework</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5180">FLUID-5180</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-10-15T15:06:56.747-0400" prefix="">2013-10-15T15:06:56.747-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-09-23T08:35:09.848-0400" prefix="">2019-09-23T08:35:09.848-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently the preference framework makes use of message bundles and the messageResolver. In cases where the renderer is used, it is simple enough to use the message rendererer component to get at the values. However, if a component needs to use the string values outside of the message renderer component, expanders are needed to perform the appropriate lookup.</p>
+<p>Example:</p>
+<pre><code class="hljs language-java"><span class="hljs-comment">// simple lookup function</span>
+fluid.slidingPanel.lookupMsg = function (messageResolver, value) {
+    <span class="hljs-type">var</span> <span class="hljs-variable">looked</span> <span class="hljs-operator">=</span> messageResolver.lookup([value]);
+    <span class="hljs-keyword">return</span> looked ? looked.template : looked;
+};
+
+<span class="hljs-comment">// complex lookup function which returns an array of strings for a given group of messagekeys</span>
+fluid.prefs.panels.lookupMsg = function (messageResolver, prefix, values) {
+    <span class="hljs-type">var</span> <span class="hljs-variable">messages</span> <span class="hljs-operator">=</span> [];
+    fluid.each(values, function (value, key) {
+        <span class="hljs-type">var</span> <span class="hljs-variable">looked</span> <span class="hljs-operator">=</span> messageResolver.lookup([prefix + <span class="hljs-string">"."</span> + value]);
+        messages.push(looked ? looked.template : looked);
+    });
+    <span class="hljs-keyword">return</span> messages;
+};
+</code></pre>
+<p>This process should be simplified through the use of resolvePathSegment, similar to how the dom binder works with calls to "{that}.dom.selector"</p>
+<p>1) Create an object to lookup the messages from the message resolver. and bound to the stringBundle member name. </p>
+<p>2) the function should be able to look up keys and namespaces. </p>
+<p>Note this will only provide access to the string value via IoC.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23098">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-10-15T15:08:12.898-0400">2013-10-15T15:08:12.898-0400</relative-time></i></p>
+                        <p>Discussion in <a href="http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-10-15">http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-10-15</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23099">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-10-16T09:43:43.257-0400">2013-10-16T09:43:43.257-0400</relative-time></i></p>
+                        <p>The above strategy has issues when dealing with prefixed message keys. For example the ones used in contrast <a href="https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/messages/contrast.json">https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/messages/contrast.json</a></p>
+<p>These are prefixed because they correspond to messages that should be used in an array of strings. </p>
+
+                    </li>
+                    
+                    <li id="comment-23101">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-10-16T15:11:03.176-0400">2013-10-16T15:11:03.176-0400</relative-time></i></p>
+                        <p>Hi Justin - I suggest you adopt a different prefixing character for your strings, for example the hyphen "-" that we use in our CSS class names. Even if we were to adopt the escaping parser for these EL expressions, it would mean an unsightly and confusing escaping of your existing prefixes as for example contrast\.bw etc.</p>
+
+                    </li>
+                    
+                    <li id="comment-23104">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-10-17T13:19:17.837-0400">2013-10-17T13:19:17.837-0400</relative-time></i></p>
+                        <p>Antranig, I took your suggestion and changed the prefix to "-" so now we would have something like "contrast-wb".</p>
+<p>However I'm having trouble with the IoC resolution. If I try to resolve the values in the strings block, I get an error that the messageResolver doesn't exist. If I try to resolve it in the protoTree, I'm getting the string literal instead of the expanded value. (for optionnames).<br>
+<a href="http://pastie.org/private/hudscqyg1vl5zp59smlw">http://pastie.org/private/hudscqyg1vl5zp59smlw</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23106">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-10-18T13:11:56.706-0400">2013-10-18T13:11:56.706-0400</relative-time></i></p>
+                        <p>Submitted pull request <a href="https://github.com/fluid-project/infusion/pull/419">https://github.com/fluid-project/infusion/pull/419</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23107">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-10-28T08:49:29.606-0400">2013-10-28T08:49:29.606-0400</relative-time></i></p>
+                        <p>pull request merged at 861d635d56c7546c764d23cf40e7f96e85516b17</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5179/"><span class="aria-hidden">←</span> Previous: FLUID-5179</a>
+        <a class="mx-1" href="/browse/FLUID-5181/">Next: FLUID-5181 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

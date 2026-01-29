@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6517  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6517 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6517/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6517/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6517/">FLUID-6517</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6517: Model relays sometimes cause model material provided in construction options to be discarded</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6517">FLUID-6517</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Philip%20Tchernavskij">Philip Tchernavskij</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-06-10T12:51:32.845-0400" prefix="">2020-06-10T12:51:32.845-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-07-27T11:55:06.618-0400" prefix="">2021-07-27T11:55:06.618-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In general, it should be possible for options provided at component construction to override any options in the defaults of the constructed component. However, in some cases, using (implicit) model relays in components causes construction options to be discarded in favor of default options.</p>
+<p></p>
+<p>In the below example, the constructed modelRelayConflictsImplicit component will end up with the model value "grade defaults value", while modelRelayConflictsExplicit will end up with the model value "construction options value":</p>
+<pre><code class="hljs">fluid.<span class="hljs-title function_ invoke__">defaults</span>(<span class="hljs-string">'fluid.tests.modelRelayConflicts'</span>, {
+    <span class="hljs-attr">gradeNames</span>: <span class="hljs-string">'fluid.modelComponent'</span>,
+    <span class="hljs-attr">model</span>: {
+        <span class="hljs-attr">value</span>: <span class="hljs-string">'grade defaults value'</span>
+    }
+});
+
+<span class="hljs-keyword">var</span> modelRelayConflictImplicit = fluid.<span class="hljs-title function_ invoke__">construct</span>(<span class="hljs-string">'implicitParentComponent'</span>, {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'fluid.tests.modelRelayConflicts'</span>,
+    <span class="hljs-attr">model</span>: {
+        <span class="hljs-attr">value</span>: <span class="hljs-string">'{that}.subComponent.model.value'</span>
+    },
+    <span class="hljs-attr">components</span>: {
+        <span class="hljs-attr">childComponent</span>: {
+            <span class="hljs-attr">type</span>: <span class="hljs-string">'fluid.modelComponent'</span>,
+            <span class="hljs-attr">options</span>: {
+                <span class="hljs-attr">model</span>: {
+                    <span class="hljs-attr">value</span>: <span class="hljs-string">'sub-component construction options value'</span>
+                }
+            }
+        }
+    }
+});
+
+<span class="hljs-keyword">var</span> modelRelayConflictsExplicit = fluid.<span class="hljs-title function_ invoke__">construct</span>(<span class="hljs-string">'explicitParentComponent'</span>, {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'fluid.tests.modelRelayConflicts'</span>,
+    <span class="hljs-attr">model</span>: {
+        <span class="hljs-attr">value</span>: <span class="hljs-string">'construction options value'</span>
+    },
+    <span class="hljs-attr">components</span>: {
+        <span class="hljs-attr">subComponent</span>: {
+            <span class="hljs-attr">type</span>: <span class="hljs-string">'fluid.modelComponent'</span>,
+            <span class="hljs-attr">options</span>: {
+                <span class="hljs-attr">model</span>: {
+                    <span class="hljs-attr">value</span>: <span class="hljs-string">'sub-component construction options value'</span>
+                }
+            }
+        }
+    },
+    <span class="hljs-attr">modelRelay</span>: {
+        <span class="hljs-attr">source</span>: <span class="hljs-string">'{that}.subComponent.model.value'</span>,
+        <span class="hljs-attr">target</span>: <span class="hljs-string">'value'</span>,
+        <span class="hljs-attr">singleTransform</span>: {
+            <span class="hljs-attr">type</span>: <span class="hljs-string">'fluid.transforms.identity'</span>
+        }
+    }
+});
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23025">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2020-06-12T07:36:40.212-0400">2020-06-12T07:36:40.212-0400</relative-time></i></p>
+                        <p>This is a rather tough issue that I have feared for a while - the issue is that options merging occurs for each component separately, meaning that by the time the merged model specification reaches the beginning of the model transaction, it is too late to determine that one component's model is derived from material which should have higher priority than another (e.g. that it arose from a subcomponent override). In general our architecture for this is very bad and old, leading to issues like&#160;<a href="https://issues.fluidproject.org/browse/FLUID-6219">https://issues.fluidproject.org/browse/FLUID-6219</a>&#160;- there won't be a comprehensive solution to this until the work involving <a href="/browse/FLUID-5304/">FLUID-5304</a>. On the other hand, we have been increasingly subverting the options merging machinery and at least for problems like this one, there is a possibility we could fish the information about the model's provenance back out again using an elaborated version of the "deferringMergePolicy" that we use for most sensitive options these days as seen at <a href="https://github.com/amb26/infusion/blob/FLUID-6145/src/framework/core/js/Fluid.js#L2799">https://github.com/amb26/infusion/blob/FLUID-6145/src/framework/core/js/Fluid.js#L2799</a> or else we could go whole hog and simply have DataBinding inspect the raw "mergeBlocks" as they sit inside the merging machinery.</p>
+<p>You've spotted that using an explicit model relay can influence the problem - this appears to give a workaround in your case although as written this is probably indeterminate and likely just due to its disturbing the application order of the initial models. To make this reliable, you could use an annotation in your explicit model relay such as</p>
+<pre><code class="hljs language-java">backward: {
+                excludeSource: <span class="hljs-string">"init"</span>
+            },
+</code></pre>
+<p>as found at&#160;<a href="https://github.com/amb26/infusion/blob/FLUID-6145/tests/framework-tests/core/js/DataBindingTests.js#L730">https://github.com/amb26/infusion/blob/FLUID-6145/tests/framework-tests/core/js/DataBindingTests.js#L730</a></p>
+<p>to prevent the model sloshing in the wrong direction, together with an appropriate comment : P</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6516/"><span class="aria-hidden">←</span> Previous: FLUID-6516</a>
+        <a class="mx-1" href="/browse/FLUID-6518/">Next: FLUID-6518 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

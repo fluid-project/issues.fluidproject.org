@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4913  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4913 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4913/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4913/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4913/">FLUID-4913</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4913: Update core framework and core test utils to work with both Browser and Node.js</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4913">FLUID-4913</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=y%20z">y z</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-02-04T15:54:15.573-0500" prefix="">2013-02-04T15:54:15.573-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T12:27:53.895-0500" prefix="">2014-03-03T12:27:53.895-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The following changes need to be made:</p>
+<ul>
+<li>FluidIoC.js has this line: fluid.staticEnvironment.environmentClass = fluid.typeTag("fluid.browser"); which makes the progression enhancement check for browser environment redundant and results in an error in IoC test utils when using sequence and running tests in Node.js. This detection check should just appear in progressiveEnhancement.</li>
+<li>Fluid.js has this line in fluid.emptySubcomponent: options = $.makeArray(options); which also fails when trying to use sequence without the "fluid.browser" context in Node.js. fluid.makeArray is more appropriate in its place.</li>
+<li>In order for the IoC sequence tests to pass in node, IoCTestUtils.js should use the same boilerplate as every other framework file.</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15725">
+                        <p class="mb-0"><b>y z</b> <i>commented <relative-time datetime="2013-02-05T08:56:12.132-0500">2013-02-05T08:56:12.132-0500</relative-time></i></p>
+                        <p>Fixed and merged into master, rev: b01b06674cbf6f3620b39292d66ac688aff2945d</p>
+
+                    </li>
+                    
+                    <li id="comment-15727">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2013-02-20T12:33:03.290-0500">2013-02-20T12:33:03.290-0500</relative-time></i></p>
+                        <p>While using Infusion in Flocking, I noticed that there are still stray calls to $.makeArray() in the framework that weren't fixed in this pull request (such as in initSubcomponents()).</p>
+
+                    </li>
+                    
+                    <li id="comment-15729">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-03-06T02:38:33.656-0500">2013-03-06T02:38:33.656-0500</relative-time></i></p>
+                        <p>Thanks for this, Colin - I appeared to merge this into master at 645b36 although as a result of some strange github topology, my subsequent merge of Yura's <a href="/browse/FLUID-4913/">FLUID-4913</a> branch this evening makes it look as if it was in fact him who merged it in. Everything seems to have worked out in general although the "black line" as usual has gone for a Burton.</p>
+<p><a href="https://github.com/fluid-project/infusion/commit/645b369d97b9b615d7957d897c3a05c493dd6b58">https://github.com/fluid-project/infusion/commit/645b369d97b9b615d7957d897c3a05c493dd6b58</a></p>
+<p>Framework users should note that the facilities under test, "initSubcomponent" and "initSubcomponents" will be removed from Infusion in version 2.0</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4912/"><span class="aria-hidden">←</span> Previous: FLUID-4912</a>
+        <a class="mx-1" href="/browse/FLUID-4914/">Next: FLUID-4914 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

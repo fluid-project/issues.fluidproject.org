@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> IDI-159  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" IDI-159 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/IDI-159/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/IDI-159/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/IDI" data-pagefind-filter="project">IDI</a></li>
+                <li><a href="/browse/IDI-159/">IDI-159</a></li>
+            </ol>
+        </nav>
+        <h1>IDI-159: User should be able to submit feedback to non-registered business</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/IDI-159">IDI-159</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/IDI/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/IDI/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Jonathan Hung</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/IDI/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-11-25T08:22:44.680-0500" prefix="">2017-11-25T08:22:44.680-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-01-22T13:25:06.284-0500" prefix="">2018-01-22T13:25:06.284-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>BIG IDeA</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This task includes:</p>
+<ul>
+<li>1/2d - Implement the text field and validate the input. </li>
+<li>1/2d - Implement Javascript to handle the enabling / disabling of the text field (see possible JS implementations below)</li>
+</ul>
+<p><strong>Possible JS Implementations:</strong></p>
+<ul>
+<li>User can select “Other” from a radio group which they can then type in their response. Like this: <a href="https://jsfiddle.net/j08691/pgyA2/">https://jsfiddle.net/j08691/pgyA2/</a>, but may not be valid. 1/2d</li>
+<li>User can select “Other” which enables a new text field which they can fill in. Requires Javascript. See JS below</li>
+<li>Both form fields are available (both the selector and the text field). It’s up to the user to use the right one. Use good labelling.</li>
+</ul>
+<p></p>
+<p><strong>Code Sample</strong></p>
+<p>HTML:</p>
+<p></p>
+<pre><code class="hljs language-java">&lt;!-- The second value will be selected initially --&gt;
+&lt;select name=<span class="hljs-string">"select"</span>&gt; &lt;!--Supplement an id here instead of using <span class="hljs-string">'name'</span>--&gt;
+&#160;&lt;option value=<span class="hljs-string">"value1"</span>&gt;Value <span class="hljs-number">1</span>&lt;/option&gt;
+&#160;&lt;option value=<span class="hljs-string">"value2"</span> selected&gt;Value <span class="hljs-number">2</span>&lt;/option&gt;
+&#160;&lt;option value=<span class="hljs-string">"value3"</span>&gt;Value <span class="hljs-number">3</span>&lt;/option&gt;
+ &lt;option value=<span class="hljs-string">"other"</span>&gt;Other&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;input type=<span class="hljs-string">"text"</span> class=<span class="hljs-string">"other"</span> disabled &gt;
+</code></pre>
+<p>JS:</p>
+<pre><code class="hljs language-java"><span class="hljs-type">var</span> <span class="hljs-variable">select</span> <span class="hljs-operator">=</span> $(<span class="hljs-string">"select"</span>);<span class="hljs-type">var</span> <span class="hljs-variable">other</span> <span class="hljs-operator">=</span> $(<span class="hljs-string">".other"</span>);
+select.on(<span class="hljs-string">"change"</span>, function (e) {
+<span class="hljs-keyword">if</span> (select.val() === <span class="hljs-string">"other"</span>) {
+&#160;&#160;&#160; other.prop(<span class="hljs-string">"disabled"</span>, <span class="hljs-literal">false</span>);
+} <span class="hljs-keyword">else</span> {
+    other.prop(<span class="hljs-string">"disabled"</span>, <span class="hljs-literal">true</span>);
+}
+});
+</code></pre>
+<p></p>
+<p></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-12964">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2018-01-22T13:24:12.178-0500">2018-01-22T13:24:12.178-0500</relative-time></i></p>
+                        <p>A non-Javascript solution was used. Instead there is an optional text box a visitor can fill out. This made implementation easier and simplified accessibility.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/IDI-158/"><span class="aria-hidden">←</span> Previous: IDI-158</a>
+        <a class="mx-1" href="/browse/IDI-160/">Next: IDI-160 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6003  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6003 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6003/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6003/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6003/">FLUID-6003</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6003: New Infusion builds do not remove old content from builds site</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6003">FLUID-6003</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-10-27T14:40:14.729-0400" prefix="">2016-10-27T14:40:14.729-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:06.760-0400" prefix="">2024-07-22T10:35:06.760-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Infrastructure</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The Infusion build on Jenkins is not deleting old content when publishing the resulting files. This is causeing stale content to remain available, which leads to confused users.</p>
+<p>The Publish Over SSH plugin does not support removing remote files (see <a href="https://issues.jenkins-ci.org/browse/JENKINS-33056">JENKINS-33056</a>), even though the Jenkins Job Builder definition lists a "<a href="http://docs.openstack.org/infra/jenkins-job-builder/publishers.html#publishers.ssh">clean-remote</a>" option. Enabling this option causes the publisher to fail with a null error, when using the latest version of the plugin.</p>
+<pre><code class="hljs"><span class="hljs-symbol">SSH:</span> Connecting <span class="hljs-keyword">from</span> host [h-<span class="hljs-number">0005</span>.tor1.inclusivedesign.ca]
+<span class="hljs-symbol">SSH:</span> Connecting <span class="hljs-keyword">with</span> configuration [build.fluidproject.org] ...
+<span class="hljs-symbol">SSH:</span> Creating session: username [<span class="hljs-number">4597</span>d990], hostname [build.fluidproject.org], port [<span class="hljs-number">7</span>,<span class="hljs-number">022</span>]
+<span class="hljs-symbol">SSH:</span> Connecting session ...
+<span class="hljs-symbol">SSH:</span> Connected
+<span class="hljs-symbol">SSH:</span> Opening SFTP channel ...
+<span class="hljs-symbol">SSH:</span> SFTP channel open
+<span class="hljs-symbol">SSH:</span> Connecting SFTP channel ...
+<span class="hljs-symbol">SSH:</span> Connected
+<span class="hljs-symbol">SSH:</span> cd [/]
+<span class="hljs-symbol">SSH:</span> OK
+<span class="hljs-symbol">SSH:</span> cd [/]
+<span class="hljs-symbol">SSH:</span> OK
+<span class="hljs-symbol">SSH:</span> cd [srv/www/<span class="hljs-number">4597</span>d990/infusion]
+<span class="hljs-symbol">SSH:</span> OK
+<span class="hljs-symbol">SSH:</span> Disconnecting configuration [build.fluidproject.org] ...
+<span class="hljs-symbol">ERROR:</span> Exception <span class="hljs-keyword">when</span> publishing, exception message [null]
+Build <span class="hljs-keyword">step</span> <span class="hljs-comment">'Send build artifacts over SSH' changed build result to FAILURE</span>
+Build <span class="hljs-keyword">step</span> <span class="hljs-comment">'Send build artifacts over SSH' marked build as failure</span>
+<span class="hljs-symbol">Finished:</span> FAILURE
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23644">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2017-09-21T10:44:44.901-0400">2017-09-21T10:44:44.901-0400</relative-time></i></p>
+                        <p>There is nothing that can be done with the current Jenkins solutions (without impacting security).</p>
+<p>The move to containers will do away with this issue because content won't be updated in place anymore.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6002/"><span class="aria-hidden">←</span> Previous: FLUID-6002</a>
+        <a class="mx-1" href="/browse/FLUID-6004/">Next: FLUID-6004 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

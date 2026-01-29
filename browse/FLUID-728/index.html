@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-728  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-728 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-728/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-728/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-728/">FLUID-728</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-728: Forum posts do not appear on the OSDPL site</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-728">FLUID-728</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Sub-task">Sub-task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Allison Bloodworth</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-06-09T15:19:33.000-0400" prefix="">2008-06-09T15:19:33.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-06-10T12:06:29.000-0400" prefix="">2008-06-10T12:06:29.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>OSDPL</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>ITERATION11</p>
+<p>After writing a new forum post on the OSPL, it does not appear in any of the sub-forums.</p>
+<p>Examine the README.TXT and diagnose what is happening.<br>
+Evaluate whether or not the Forum is worth using for the OSDPL when launched or if we should be using a 3rd party solution.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19645">
+                        <p class="mb-0"><b>Allison Bloodworth</b> <i>commented <relative-time datetime="2008-06-09T17:56:56.000-0400">2008-06-09T17:56:56.000-0400</relative-time></i></p>
+                        <p>I figured out what the problem was with this. It seems like a Drupal bug. When a forum is created, a Drupal Category is automatically created for it. If you go to Administer -&gt; Categories when you are having this problem you will see that "Forums" does not have anything in the "Type" field. Despite what  it says when you "Edit vocabulary" for the Forum about the Type -&gt; Forum topic being "affixed to the forum vocabulary," it appears it isn't at first. I fixed this by adding another content type (e.g. Story) and saving. This added the "forum topic" content type (along with the "Story" content type) to the "Forums" vocabulary, and I could see that it had been added on the Administer -&gt; Categories page. Then I just deleted the "Story" content type and "Forum topic" remained attached to the "Forums" vocabulary. I tested posts to both forums and they work fine now. </p>
+
+                    </li>
+                    
+                    <li id="comment-19646">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2008-06-10T11:05:27.000-0400">2008-06-10T11:05:27.000-0400</relative-time></i></p>
+                        <p>Confirmed fixed.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-727/"><span class="aria-hidden">←</span> Previous: FLUID-727</a>
+        <a class="mx-1" href="/browse/FLUID-729/">Next: FLUID-729 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

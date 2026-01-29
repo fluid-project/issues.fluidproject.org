@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3112  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3112 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3112/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3112/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3112/">FLUID-3112</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3112: Create an "externals-only" module in SVN that allows developers working across Infusion, Engage, and our other code bases to have a single set of externals.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3112">FLUID-3112</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Jacob Farber</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-08-18T17:18:05.000-0400" prefix="">2009-08-18T17:18:05.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-03-17T15:06:06.150-0400" prefix="">2011-03-17T15:06:06.150-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Infrastructure</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Here's Antranig's proposal for this to the mailing list:</p>
+<p>As a follow-on proposal, I would like to talk about strategies for working across our<br>
+various projects. Those working on engage need also to work on infusion - and also<br>
+working with a trunk version, in case they need to make commits to base functions.</p>
+<p>To be clearer - it would be great for the team that works across multiple projects to<br>
+be able to do this with a SINGLE checkout of each project. Our traditional solution<br>
+based on externals is asymmetric - and ends up with multiple images of infusion.</p>
+<p>My proposal is to make an "externals-only" section which is intended to be the root<br>
+checkout for developers who work across multiple trunks. This ensures that multiple<br>
+projects can be checked out with consistent directory names and in a consistent<br>
+relative structure.</p>
+<p>I suggest making an area such as "fluid-checkout" or "fluid-externals", which,<br>
+for example, has an externals structure like this:</p>
+<p>fluid-checkout\
+ fluid-infusion -&gt; <a href="https://source.fluidproject.org/svn/fluid/infusion/trunk">https://source.fluidproject.org/svn/fluid/infusion/trunk</a><br>
+fluid-engage -&gt; <a href="https://source.fluidproject.org/svn/fluid/engage/trunk">https://source.fluidproject.org/svn/fluid/engage/trunk</a></p>
+<p>and any other projects that we might work with.</p>
+<p>And my suggested implementation:</p>
+<p><a href="http://source.fluidproject.org/svn/fluid/">http://source.fluidproject.org/svn/fluid/</a><br>
+fluid-all/<br>
+.externals<br>
+engage/    -&gt; <a href="http://source.fluidproject.org/svn/incubator/engage-client/">http://source.fluidproject.org/svn/incubator/engage-client/</a><br>
+kettle/        -&gt; <a href="http://source.fluidproject.org/svn/incubator/engage-sketches/trunk/">http://source.fluidproject.org/svn/incubator/engage-sketches/trunk/</a> (this should probably be renamed soon)<br>
+infusion/    -&gt; <a href="http://source.fluidproject.org/svn/fluid/infusion/">http://source.fluidproject.org/svn/fluid/infusion/</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20184">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2009-08-18T17:23:03.000-0400">2009-08-18T17:23:03.000-0400</relative-time></i></p>
+                        <p>Jacob, I've created the correct directory structure and externals. Can you update Engage so that it doesn't directly check Infusion out as an external, and update the paths to point to the new location of Infusion? (should just be a matter of adding infusion/ to the current paths)</p>
+
+                    </li>
+                    
+                    <li id="comment-20186">
+                        <p class="mb-0"><b>Jacob Farber</b> <i>commented <relative-time datetime="2009-08-19T11:45:01.000-0400">2009-08-19T11:45:01.000-0400</relative-time></i></p>
+                        <p>Engage has been updated</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3104/"><span class="aria-hidden">←</span> Previous: FLUID-3104</a>
+        <a class="mx-1" href="/browse/FLUID-3114/">Next: FLUID-3114 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

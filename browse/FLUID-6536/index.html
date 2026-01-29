@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6536  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6536 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6536/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6536/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6536/">FLUID-6536</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6536: Unify model transaction and tree transaction systems, together with "globbing"</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6536">FLUID-6536</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-07-30T07:48:16.937-0400" prefix="">2020-07-30T07:48:16.937-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-11-26T08:03:47.669-0500" prefix="">2021-11-26T08:03:47.669-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>As part of the <a href="/browse/FLUID-5047/">FLUID-5047</a> rendering work, it seemed more urgent to unify the rather different transactional systems that we have supporting "tree transactions" (following <a href="/browse/FLUID-6148/">FLUID-6148</a>) and old-fashioned "model transactions" (following <a href="/browse/FLUID-5024/">FLUID-5024</a>).</p>
+<p>Tree transactions are somewhat forward-looking in that they are "ambient" transactions that don't require a special formality to enlist in (code needs to look up the "current transaction" using fluid.currentTreeTransaction) but is incomplete in that it is very unlikely that more than one tree transaction can be underway on the same component tree "at the same time".</p>
+<p>Model transactions are old-fashioned in that they are "manifest" in that one needs access to the particular model transaction object, dispensed from changeApplier.initiate() in order to enlist in it. They are likely to be non-interfering (except for init transactions, which are tied to tree transactions) but are cumbersome to use and anti-authorial, as <a href="/browse/FLUID-5045/">FLUID-5045</a> suggests.</p>
+<p>One of the things we need to be able to ensure for <a href="/browse/FLUID-5047/">FLUID-5047</a> is that all the reactants from a single model change can resolve within a single model transaction, and hence also a single tree transaction - to ensure that we just make a single trip to the DOM for rendering their results. This is currently impossible since every modelListener notified from around the skeleton of a transactional update is isolated and has no way to enlist in a common transaction in the way that we arranged for <a href="/browse/FLUID-6148/">FLUID-6148</a>, i.e. for all components created from createOnEvent from the same standard event to be enlisted in the same tree transaction, by "soft opening" it during the firing and then closing it with a finalising listener.</p>
+<p>This seems to imply unifying model transactions and tree transactions - which at least would resolve the annoying asymmetry that init model transactions are stored in a tree transaction whereas free ones are stored in global instantiator's "modelTransactions" record. Whilst it looks like tree transactions are bulky, as a "struct" they should be relatively easy to allocate.</p>
+<p>It looks like, in practice, we want "very long-lived transactions" as with tree transactions, for model transactions, which stay around for multiple passes through the system. This is in fact mostly what the existing "half-transactional" system which operates relay rules does. However, this system we considered is only affordable because it does not bother to take a fresh snapshot of each intermediate state of the model so it can supply "oldValue" to the relay system, that is, the last value that the model had before it was notified.</p>
+<p>This suggests that these changes should be made together with <a href="/browse/FLUID-6396/">FLUID-6396</a> "immutable revolution" so that we can keep arbitrarily many old snapshots around at little cost, and thus indeed unify the relay half-transaction system and the user model transaction system.</p>
+<p>This can then mean that the transaction which model listeners enlist in simply is the original model transaction which continues to be ongoing, together with any tree transaction it becomes enmeshed with.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6535/"><span class="aria-hidden">←</span> Previous: FLUID-6535</a>
+        <a class="mx-1" href="/browse/FLUID-6537/">Next: FLUID-6537 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

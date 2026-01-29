@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6163  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6163 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6163/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6163/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6163/">FLUID-6163</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6163: Make preferences framework's Sass files more modular, configurable and reusable by 3rd parties</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6163">FLUID-6163</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-06-08T09:48:25.576-0400" prefix="">2017-06-08T09:48:25.576-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2022-02-03T10:38:14.150-0500" prefix="">2022-02-03T10:38:14.150-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UIEnhancer</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently the preferences framework uses Sass to generate CSS files. However, much of the features are not exposed in a way that can be easily manipulated by a 3rd party.&#160;In particular Enactors.styl should be completely modular similar to how contrast themes are broken out into Themes.styl. That way a 3rd party integrator that only wanted some of the enactor styling, or wanted to use a different class name for contrast themes could do so without having to fork the Enactors.styl file.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25155">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-06-08T10:07:03.294-0400">2017-06-08T10:07:03.294-0400</relative-time></i></p>
+                        <p>We should also consider making the stylus directory a sibling to css instead of nested under it, to keep things cleaner and better separated.</p>
+
+                    </li>
+                    
+                    <li id="comment-25156">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-06-08T10:11:06.878-0400">2017-06-08T10:11:06.878-0400</relative-time></i></p>
+                        <p>Consider also making all the stylus files as specific as possible, to make it easier to reuse. These can then be compiled into a single css file at build time.</p>
+
+                    </li>
+                    
+                    <li id="comment-25157">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2022-02-03T10:38:14.148-0500">2022-02-03T10:38:14.148-0500</relative-time></i></p>
+                        <p>With the work on <a href="/browse/FLUID-6260/">FLUID-6260</a> and <a href="/browse/FLUID-6605/">FLUID-6605</a> the Sass files were split into modular parts based on the preference they are enacting. They are also recommending into an Enactors file to simplify usage and support backwards compatibility.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6162/"><span class="aria-hidden">←</span> Previous: FLUID-6162</a>
+        <a class="mx-1" href="/browse/FLUID-6164/">Next: FLUID-6164 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

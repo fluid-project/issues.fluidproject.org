@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6625  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6625 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6625/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6625/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6625/">FLUID-6625</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6625: Consider implementing "afferent polymorphism" supporting markup-dependent markup bindings</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6625">FLUID-6625</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-05-21T13:23:30.185-0400" prefix="">2021-05-21T13:23:30.185-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-05-24T11:25:12.031-0400" prefix="">2021-05-24T11:25:12.031-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>6.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Renderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>An insight last week following renewed recognition of the central importance of markup-driven strategies to the renderer was what could be called "afferent polymorphism" (aka "Kazuo Ichiguro insight") whereby we restore the behaviour of old-fashioned "leaf components" such as UIInput, UILink as implemented in the "old new renderer" (the 2020 implementation targetted at a virtual DOM). This behaviour dates back even further to RSF's components of the same name, with their rendering logic implemented at <a href="https://github.com/rsf/rsf/blob/master/rsf-core/core/src/uk/org/ponder/rsf/renderer/html/BasicHTMLComponentRenderer.java#L126-L144">https://github.com/rsf/rsf/blob/master/rsf-core/core/src/uk/org/ponder/rsf/renderer/html/BasicHTMLComponentRenderer.java#L126-L144</a></p>
+<p>A scheme for doing this in Infusion working with the new-style "DOM materialisation strategy" would involve contributing dynamic grades holding modelRelay definitions into the component by inspecting the incoming markup with a range of selector-based rules. This seemed barely possible until building out most of an implemention revealed an insurmountable circularity. Infusion 4.x breaks some model-dependent cycles by recognising an "early model" which can be used to contextualise the fetch of resources. In this way, for example, we can have resources whose localisation is dynamic. Unfortunately even if we special-cased the template fetch and made it strictly precede the "early model" -&gt; optionsReady special case in the Infusion 4.x ResourceLoader, there is still no scope for recognising entire modelRelay definitions after the point we have initialised the model as part of fluid.enlistModelWorkflow . In the sketch implementation this already required synthesizing a fresh mergeOptions block and bypassing the update of gradeNames that is baked into fluid.computeDynamicGrades .</p>
+<p>We could bash on the fluid.parseModelRelay function to connect the endpoints after the fact, but this would do nothing to deal with initial values - in short it would be quite a mess and provide an unstable scheme for some polymorphism which perhaps we don't have a great use for right now, and at the cost of the essential facility of being able to localise markup templates.</p>
+<p>This is something we could consider for the <a href="/browse/FLUID-5304/">FLUID-5304</a> Infusion compiler, although we would still likely need special cases to deal with modelRelay rules which appear after the model has started to initialise.</p>
+<p>The maximal diff showing the state where we had implemented the split-phase DOM binding, which then ran into a stall because "{that}.applier.earlyModelResolved" never fired to kick off the launch of the template URL is attached.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6625/afferent-polymorphism.txt">
+                            
+                                afferent-polymorphism.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6624/"><span class="aria-hidden">←</span> Previous: FLUID-6624</a>
+        <a class="mx-1" href="/browse/FLUID-6626/">Next: FLUID-6626 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

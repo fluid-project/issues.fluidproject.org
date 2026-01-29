@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-832  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-832 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-832/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-832/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-832/">FLUID-832</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-832: Inline Edit tests fail on Safari</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-832">FLUID-832</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Sub-task">Sub-task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Michelle%20D'Souza">Michelle D'Souza</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-06-26T18:47:05.000-0400" prefix="">2008-06-26T18:47:05.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-02-22T16:27:56.309-0500" prefix="">2011-02-22T16:27:56.309-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                            <li>0.3</li>
+                            
+                            <li>0.4beta1</li>
+                            
+                            <li>0.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Safari 3.1.1</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-832/FLUID-832.patch.txt">
+                            
+                                FLUID-832.patch.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19512">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2008-07-28T12:36:03.000-0400">2008-07-28T12:36:03.000-0400</relative-time></i></p>
+                        <p>Tests marked with asterisks fail in Safari:</p>
+<p>7. InlineEdit Tests module: Keyboard Navigation Edit (3, 8, 11)<br>
+1. Display is tabbable<br>
+2. Initially display field is not focussed<br>
+3. After focus, display is focussed</p>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>4. After enter pressed, display field is hidden *** </li>
+<li>5. After enter pressed, edit field is visible ***</li>
+<li>6. After enter pressed, edit field contains same text as display field expected: Click me to edit... actual: this is the hidden text for the first editor ***<br>
+          7. After changing text and pressing enter, display field is visible<br>
+          8. After changing text and pressing enter, display has focus style<br>
+          9. After changing text and pressing enter, edit field is hidden<br>
+        10. After changing text and pressing enter, display field contains new text: This is new text.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>10. InlineEdit Tests module: Arrow Keys while Editing (5, 0, 5)</p>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>1. After enter pressed, display field is hidden ***</li>
+<li>2. After enter pressed, edit field is visible ***</li>
+<li>3. After enter pressed, edit field contains same text as display field expected: Click me to edit... actual: this is the hidden text for the first editor ***</li>
+<li>4. After left-arrow pressed, display field is still hidden ***</li>
+<li>5. After left-arrow pressed, edit field is still visible ***</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-19515">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-08-12T13:07:15.000-0400">2008-08-12T13:07:15.000-0400</relative-time></i></p>
+                        <p>The tests that fail are the ones that use jqUnit's jquery.simulate() function.</p>
+
+                    </li>
+                    
+                    <li id="comment-19518">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-08-12T15:15:47.000-0400">2008-08-12T15:15:47.000-0400</relative-time></i></p>
+                        <p>In Safari, simulate()'s call to document.createEvent("KeyEvents") (jquery.simulate.js line 81) causes a "NOT_SUPPORTED_ERR: DOM Exception 9" exception. It falls through to the catch clause, which tries document.createEvent("Events") (line 86).</p>
+<p>The result of this is that the which field of the resulting event is not set in Safari.</p>
+<p>The keyboard a11y plugin looks at the which field to decide whether or not to fire the activation handler (jquery.keyboard-a11y.js line 175), and since it's not set, it doesn't fire it. This is why the event simulation is not working properly.</p>
+<p>One possible solution might be to modify the keyboard-a11y plugin to double-check the which field, and if it's not there, fall back to the keyCode or charCode.</p>
+
+                    </li>
+                    
+                    <li id="comment-19520">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-08-12T16:03:19.000-0400">2008-08-12T16:03:19.000-0400</relative-time></i></p>
+                        <p>I'm attaching a patch file (<a href="/browse/FLUID-832/">FLUID-832</a>.patch.txt) that does the previously-described double-check of evt.which</p>
+<p>I'm not sure about the appropriateness of this approach, so I'm going to request a review before proceeding.</p>
+
+                    </li>
+                    
+                    <li id="comment-19579">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-08-18T11:38:53.000-0400">2008-08-18T11:38:53.000-0400</relative-time></i></p>
+                        <p>I've filed this issue with jQuery UI:  <a href="http://ui.jquery.com/bugs/ticket/3229">http://ui.jquery.com/bugs/ticket/3229</a></p>
+
+                    </li>
+                    
+                    <li id="comment-19580">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-08-18T11:44:52.000-0400">2008-08-18T11:44:52.000-0400</relative-time></i></p>
+                        <p>Fixed. The code has a reference to the jQuery ticket, so that when it is resolved, we can revert back.</p>
+
+                    </li>
+                    
+                    <li id="comment-19581">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2011-02-22T16:27:56.308-0500">2011-02-22T16:27:56.308-0500</relative-time></i></p>
+                        <p>Closing issues that were resolved for 1.0 and earlier releases. </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-831/"><span class="aria-hidden">←</span> Previous: FLUID-831</a>
+        <a class="mx-1" href="/browse/FLUID-833/">Next: FLUID-833 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

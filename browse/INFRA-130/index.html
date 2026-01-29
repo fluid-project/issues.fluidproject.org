@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-130  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-130 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-130/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-130/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-130/">INFRA-130</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-130: Improve yumrepo role</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-130">INFRA-130</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Done">Done</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-03-05T08:52:45.994-0500" prefix="">2018-03-05T08:52:45.994-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-03-28T14:15:21.566-0400" prefix="">2018-03-28T14:15:21.566-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The yumrepo role was used in the past to specify a definitive list of Yum repositories. It was retired because it was cumbersome to keep track of official repositories and it didn't provide much value at the time.</p>
+<p>With the introduction of private Mirrors (see <a href="/browse/INFRA-123/">INFRA-123</a>), it makes sense to use it again. The only downside is that it's not very idempotent and some work needs to be done to improve that. Ideally, the role should remove everything that is not specified in host_vars/group_vars.</p>
+<p>It also needs to be tested with Molecule and pass basic tests.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25810">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-03-05T14:07:14.633-0500">2018-03-05T14:07:14.633-0500</relative-time></i></p>
+                        <p>So I ended up not resurrecting the yumrepo role but instead changed the common role to accept a list of yum repositories (and the ability to enforce that only those exist).</p>
+<p>The yumrepo role had a mapping of all the parameters accepted by the yum_repository module. This was fragile and hard to maintain (no way to know when changes should be made to keep in sync besides look every other while).</p>
+<p>The common role only accepts name, baseurl, gpgcheck, gpgkey and exclude parameters. Those are the only parameters in use by IDRC servers at the moment. If a new parameter needs to be accepted, the common role`s tasks/main.yml file can be changed to accommodate that and we avoid overengineering.</p>
+<p>I've elected the following repositories as being global/basic for our infrastructure: CentOS-Base, CentOS-Updates, CentOS-Extras, EPEL and our own IDI repo. If a host or group needs to modify this list, it should be completely redefined (that is, include all these repos plus the additional ones) in the appropriate host_vars/group_vars file. Unfortunately, Ansible throws a "loop detected" error if you try to re-use the common_yum_repositories variables to specialize it in a host_vars/group_vars file so we're left with duplicated code (but that should be rare). I've left out the Prometheus repo even though it could be considered one of the basic repos because there's some automation work left to do on it (actually, a lot).</p>
+<p>The repo definitions can be found here: <a href="https://github.com/inclusive-design/ops/commit/20b592962afe3bac66b46c166889f7db3c8c6601">https://github.com/inclusive-design/ops/commit/20b592962afe3bac66b46c166889f7db3c8c6601</a></p>
+<p>I'll work on applying the common role to all servers and making sure the repositories are defined correctly for each subset now.</p>
+
+                    </li>
+                    
+                    <li id="comment-25811">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-03-28T14:15:21.564-0400">2018-03-28T14:15:21.564-0400</relative-time></i></p>
+                        <p>Configuration applied to all hosts.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-129/"><span class="aria-hidden">←</span> Previous: INFRA-129</a>
+        <a class="mx-1" href="/browse/INFRA-131/">Next: INFRA-131 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

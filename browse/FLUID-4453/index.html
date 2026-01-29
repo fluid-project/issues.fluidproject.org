@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4453  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4453 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4453/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4453/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4453/">FLUID-4453</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4453: Table of Contents control fails in IE6 in demo with preview</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4453">FLUID-4453</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-09-15T18:29:37.281-0400" prefix="">2011-09-15T18:29:37.281-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-04-15T15:28:09.066-0400" prefix="">2013-04-15T15:28:09.066-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Sliding Panel</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Checking the "table of contents" checkbox in the UIOptions demo (full preview configuration) provokes a JS error (asynchronously, as the template loads/renders) and fails to show the table of contents on IE6. The component does work correctly under IE8, and the test cases also pass under IE6. The error (in typically uselessly reported IE6 form) reads Line: 64 Char: 13 Error: "Object doesn't support this property or method", file: uiOptionsFullWithPreview.html<br>
+I noticed this when running through the <a href="/browse/FLUID-4449/">FLUID-4449</a> fix but the previous version in trunk failed as well.<br>
+Almost all test cases pass in IE6 including the ToC and FullPreview ones, however the FatPanel test cases do not start in IE6.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>IE6, WinXP</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14824">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2011-09-15T18:29:47.260-0400">2011-09-15T18:29:47.260-0400</relative-time></i></p>
+                        <p>Bug Parade Infusion 1.4</p>
+
+                    </li>
+                    
+                    <li id="comment-14827">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2011-09-15T19:09:52.877-0400">2011-09-15T19:09:52.877-0400</relative-time></i></p>
+                        <p>Investigation so far: The line that fails is the call to jQuery doing the DOM manipulation to insert the anchor element:<br>
+anchor.insertBefore(element); <br>
+TableOfContents.js line 32<br>
+It appears this is related to cross-iframe manipulation. I had hoped that it was a simple domain protection issue that would work fine when done over HTTP, but the same failure occurs in the daily build site. <br>
+It may be that we are using the "wrong jQuery" to perform this manipulation since the code runs fine when the iframe is not involved. Continuing to investigate</p>
+
+                    </li>
+                    
+                    <li id="comment-14830">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2011-09-22T15:46:47.718-0400">2011-09-22T15:46:47.718-0400</relative-time></i></p>
+                        <p>Pull request <a href="https://github.com/fluid-project/infusion/pull/167">https://github.com/fluid-project/infusion/pull/167</a> merged into project repo at d78557c041276a973ba245ff43438b866d0e0fe4</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4452/"><span class="aria-hidden">←</span> Previous: FLUID-4452</a>
+        <a class="mx-1" href="/browse/FLUID-4454/">Next: FLUID-4454 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

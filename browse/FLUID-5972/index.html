@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5972  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5972 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5972/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5972/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5972/">FLUID-5972</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5972: Add a convention for transforming each member of an array...</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5972">FLUID-5972</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Tony%20Atkins%20%5BRtF%5D">Tony Atkins [RtF]</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-09-27T06:00:07.519-0400" prefix="">2016-09-27T06:00:07.519-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T09:21:13.486-0400" prefix="">2024-07-22T09:21:13.486-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Model Transformation System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In my own work, I created a transform function that allows you to perform a single transformation on every element in an array:</p>
+<p><a href="https://github.com/the-t-in-rtf/ul-api/blob/UL-65/src/js/client/transformArray.js">https://github.com/the-t-in-rtf/ul-api/blob/UL-65/src/js/client/transformArray.js</a></p>
+<p>As I will be working on submitting other transformation functions, I wanted to create this and ask Antranig Basman if he'd like to see this as well.  "hell no" and "not yet" are perfectly acceptable answers.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24191">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-10-04T10:53:17.750-0400">2016-10-04T10:53:17.750-0400</relative-time></i></p>
+                        <p>The use case is fine, but the implementation strategy is inappropriate - we can't support a fresh re-entry into the top of fluid.model.transformWithRules because there is a whole ecology of other use cases which the transformation system needs to support, including:<br>
+i) The "collectInputPaths" strategy for the entire system<br>
+ii) Support for inverting transforms<br>
+iii) Integration with the modelRelay infrastructure<br>
+etc.</p>
+<p>This should be rewritten to use the standard "expand" or "getValue" primitives that the transformer exposes internally which you can see in transforms which process multiple values such as <br>
+<a href="https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/ModelTransformationTransforms.js#L123">https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/ModelTransformationTransforms.js#L123</a><br>
+and<br>
+<a href="https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/ModelTransformationTransforms.js#L239">https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/ModelTransformationTransforms.js#L239</a><br>
+and<br>
+<a href="https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/ModelTransformationTransforms.js#L285">https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/ModelTransformationTransforms.js#L285</a></p>
+
+                    </li>
+                    
+                    <li id="comment-24193">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-10-05T08:47:27.642-0400">2016-10-05T08:47:27.642-0400</relative-time></i></p>
+                        <p>Kasper Galschiot Markus, Antranig Basman, would either of you care to comment on what <code>transformer</code> is likely to be on this line:</p>
+<p><a href="https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/ModelTransformationTransforms.js#L116">https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/ModelTransformationTransforms.js#L116</a></p>
+<p>I would like to:</p>
+<ol>
+<li>Add JSDocs throughout the file if possible.</li>
+<li>Understand the implications of this variable for my own work on the array handler.</li>
+</ol>
+
+                    </li>
+                    
+                    <li id="comment-24195">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-10-05T08:53:54.392-0400">2016-10-05T08:53:54.392-0400</relative-time></i></p>
+                        <p>Note that there is a huge amount of work documenting the transforms in this pull: <a href="https://github.com/fluid-project/infusion-docs/pull/86">https://github.com/fluid-project/infusion-docs/pull/86</a> - this is probably mostly back in my court but has been tough to review because of the absolutely giant diff.</p>
+<p><code>transformer</code> on line 116 is the "core transformer engine" which is created here: <a href="https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/ModelTransformation.js#L612">https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/ModelTransformation.js#L612</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5971/"><span class="aria-hidden">←</span> Previous: FLUID-5971</a>
+        <a class="mx-1" href="/browse/FLUID-5973/">Next: FLUID-5973 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

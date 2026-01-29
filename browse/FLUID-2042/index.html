@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2042  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2042 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2042/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2042/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2042/">FLUID-2042</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2042: Build a Fluid component, inspired by MooTool's Swiff, that is responsible for rendering Flash movies and serving as a Flash/JavaScript bridge.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2042">FLUID-2042</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-12-21T15:34:19.000-0500" prefix="">2008-12-21T15:34:19.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-05-22T14:27:26.201-0400" prefix="">2014-05-22T14:27:26.201-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.6beta1</li>
+                            
+                            <li>0.6</li>
+                            
+                            <li>0.7</li>
+                            
+                            <li>0.8</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Uploader</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>MooTool's Swiff  is a nice example of a self-contained library intended to handle the mechanics of JavaScript-Flash communication. Unfortunately, it is dependent on MooTools and as a result possesses a number of undesirable tendencies. We should build a Fluid component that is similarly responsible for Flash/JavaScript rendering and communication, but provides greater customization and portal-friendliness.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-2042/FLUID-2042-Sketch.patch">
+                            
+                                FLUID-2042-Sketch.patch
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-2042/FLUID-2042-Sketch-2.patch">
+                            
+                                FLUID-2042-Sketch-2.patch
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19751">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2008-12-21T15:37:12.000-0500">2008-12-21T15:37:12.000-0500</relative-time></i></p>
+                        <p>Here's a very sketchy implementation of a fluid.flashBridge component. It is inspired by Swiff, but contains none of its code.</p>
+<p>This hasn't been tested or even run yet. It's just a sketch that I didn't want to accidentally lose.</p>
+
+                    </li>
+                    
+                    <li id="comment-19753">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2008-12-21T17:41:35.000-0500">2008-12-21T17:41:35.000-0500</relative-time></i></p>
+                        <p>Here's a second version of the sketch with quite a number of unit tests. We're getting somewhere.</p>
+
+                    </li>
+                    
+                    <li id="comment-19755">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-05-22T14:27:26.169-0400">2014-05-22T14:27:26.169-0400</relative-time></i></p>
+                        <p>Due to a cross site scripting vulnerability we have removed flash support from the uploader. See <a href="/browse/FLUID-5354/">FLUID-5354</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-2041/"><span class="aria-hidden">←</span> Previous: FLUID-2041</a>
+        <a class="mx-1" href="/browse/FLUID-2043/">Next: FLUID-2043 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

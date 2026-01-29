@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-255  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-255 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-255/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-255/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-255/">SJRK-255</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-255: Race condition in page grade blocking tests</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-255">SJRK-255</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SJRK/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-07-15T12:36:14.055-0400" prefix="">2019-07-15T12:36:14.055-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-02-13T16:00:46.928-0500" prefix="">2020-02-13T16:00:46.928-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>NOTE: This may be a duplicate / the same root cause as <a href="/browse/SJRK-234/">SJRK-234</a></p>
+<hr>
+<p>A race condition present in sjrk.storyTelling.base.page is blocking properly-functioning tests for both&#160;sjrk.storyTelling.loadStoryFromParameter and&#160;sjrk.storyTelling.loadBrowse (both in storyTellingServerUI.js).</p>
+<p>These tests were meant to be added alongside the changes described in <a href="/browse/SJRK-237/">SJRK-237</a>, but the work required to remediate them would be substantial, hence this Jira.</p>
+<p>To reproduce:</p>
+<ol>
+<li>check out this branch:&#160;<a href="https://github.com/BlueSlug/sjrk-story-telling/tree/SJRK-255">https://github.com/BlueSlug/sjrk-story-telling/tree/SJRK-255</a>&#160;(at commit&#160;<a href="https://github.com/BlueSlug/sjrk-story-telling/commit/cf3c37c3d82857469284f39056c8bade52eac718">cf3c37c</a>, ideally)</li>
+<li>run the database server (instructions in README)</li>
+<li>run the webserver</li>
+<li>navigate to&#160;<a href="http://localhost:8081/tests/html/storyTellingServerUI-Tests.html">http://localhost:8081/tests/html/storyTellingServerUI-Tests.html</a></li>
+</ol>
+<p>Expected: all tests passing, no errors</p>
+<p>Actual: sometimes tests pass, sometimes they fail with error</p>
+<p></p>
+<p>On Windows 10 Pro v.1903:</p>
+<ul>
+<li>running Chrome 75, the error was not reported after 100 loads</li>
+<li>Firefox 68 failed 92% of the time with this message:<pre><code class="hljs language-javascript"><span class="hljs-title class_">TypeError</span>: text is undefinedfluidParser.<span class="hljs-property">js</span>:<span class="hljs-number">420</span>:<span class="hljs-number">8</span>
+<span class="hljs-title class_">XMLEncode</span> fluidParser.<span class="hljs-property">js</span>:<span class="hljs-number">420</span>
+&#160;&#160;&#160;&#160;renderComponent fluidRenderer.<span class="hljs-property">js</span>:<span class="hljs-number">980</span>
+&#160;&#160;&#160;&#160;renderComponentSystem fluidRenderer.<span class="hljs-property">js</span>:<span class="hljs-number">1139</span>
+&#160;&#160;&#160;&#160;renderRecurse fluidRenderer.<span class="hljs-property">js</span>:<span class="hljs-number">1327</span>
+&#160;&#160;&#160;&#160;renderTemplates fluidRenderer.<span class="hljs-property">js</span>:<span class="hljs-number">1405</span>
+&#160;&#160;&#160;&#160;reRender fluidRenderer.<span class="hljs-property">js</span>:<span class="hljs-number">1488</span>
+&#160;&#160;&#160;&#160;render fluidRenderer.<span class="hljs-property">js</span>:<span class="hljs-number">1555</span>
+&#160;&#160;&#160;&#160;render <span class="hljs-title class_">RendererUtilities</span>.<span class="hljs-property">js</span>:<span class="hljs-number">104</span>
+&#160;&#160;&#160;&#160;refreshView <span class="hljs-title class_">RendererUtilities</span>.<span class="hljs-property">js</span>:<span class="hljs-number">178</span>
+&#160;&#160;&#160;&#160;invokeInvoker <span class="hljs-title class_">FluidIoC</span>.<span class="hljs-property">js</span>:<span class="hljs-number">1749</span>
+&#160;&#160;&#160;&#160;togo <span class="hljs-title class_">FluidIoC</span>.<span class="hljs-property">js</span>:<span class="hljs-number">1813</span>
+&#160;&#160;&#160;&#160;fire <span class="hljs-title class_">Fluid</span>.<span class="hljs-property">js</span>:<span class="hljs-number">1596</span>
+&#160;&#160;&#160;&#160;finishInit <span class="hljs-title class_">PrefsEditor</span>.<span class="hljs-property">js</span>:<span class="hljs-number">469</span>
+&#160;&#160;&#160;&#160;then <span class="hljs-title class_">FluidPromises</span>.<span class="hljs-property">js</span>:<span class="hljs-number">33</span>
+&#160;&#160;&#160;&#160;finishInit <span class="hljs-title class_">PrefsEditor</span>.<span class="hljs-property">js</span>:<span class="hljs-number">467</span>
+&#160;&#160;&#160;&#160;init <span class="hljs-title class_">PrefsEditor</span>.<span class="hljs-property">js</span>:<span class="hljs-number">488</span>
+</code></pre>
+</li>
+</ul>
+<ul>
+<li>Edge 44 failed 59% of the time with this error message<pre><code class="hljs language-javascript"><span class="hljs-number">0</span>: <span class="hljs-title class_">Unable</span> to get property <span class="hljs-string">'replace'</span> <span class="hljs-keyword">of</span> <span class="hljs-literal">undefined</span> or <span class="hljs-literal">null</span> reference
+</code></pre>
+</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26558">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2019-07-17T16:43:44.247-0400">2019-07-17T16:43:44.247-0400</relative-time></i></p>
+                        <p>Could you describe in a little more detail what the race condition is and what components it involves? In your pull request <a href="https://github.com/fluid-project/sjrk-story-telling/pull/33">https://github.com/fluid-project/sjrk-story-telling/pull/33</a>&#160;you mention "race condition relating to a bug with UIO implementation" - is the bug actually in the UIO implementation itself, and if so, has a JIRA been filed for that?</p>
+
+                    </li>
+                    
+                    <li id="comment-26559">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2019-07-18T13:42:32.721-0400">2019-07-18T13:42:32.721-0400</relative-time></i></p>
+                        <p><a href="http://secure/ViewProfile.jspa?name=antranig">Antranig Basman</a> of course. This branch should capture the bug:&#160;<a href="https://github.com/BlueSlug/sjrk-story-telling/commits/SJRK-237-race-condition">https://github.com/BlueSlug/sjrk-story-telling/commits/SJRK-237-race-condition</a></p>
+<p></p>
+<p>Once you have the server and database running, you should be able to reproduce it by running the tests on this page:<br>
+<a href="http://localhost:8081/tests/html/storyTellingServerUI-Tests.html">http://localhost:8081/tests/html/storyTellingServerUI-Tests.html</a></p>
+<p></p>
+<p>The bug involves the last two sequence items (see the latest commit for the relevant code). I haven't been able to reproduce it today, for some reason, even after a few dozen tries, so that's mildly perplexing.</p>
+
+                    </li>
+                    
+                    <li id="comment-26560">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2019-08-01T16:29:52.489-0400">2019-08-01T16:29:52.489-0400</relative-time></i></p>
+                        <p>Antranig Basman I've added more detail on reproduction and error messages received. Sorry for the delay 🙂</p>
+<p></p>
+
+                    </li>
+                    
+                    <li id="comment-26561">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2019-08-05T06:40:02.225-0400">2019-08-05T06:40:02.225-0400</relative-time></i></p>
+                        <p>Hi Gregor Moss - thanks for the reproduction instructions, luckily it turns out I can reproduce the problem quite easily. I'm investigating the root cause which appears to be the message bundle not loading correctly for 2nd and subsequent UIO instances but in the meantime I've raised <a href="https://github.com/fluid-project/sjrk-story-telling/pull/35">https://github.com/fluid-project/sjrk-story-telling/pull/35</a> in which to accumulate suggestions for refactoring. My sense is at the moment there is a fault in the very-oldfashioned resource loading code in Infusion master, which is being exacerbated by there being a lot of component leaks in the SJRK implementation. Once I find the root cause of the race we should be able to patch it in Infusion but at the same time we should also head off the issue by removing the leaks in SJRK which should also result in better performance and a design that is easier to work with.</p>
+
+                    </li>
+                    
+                    <li id="comment-26562">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2020-01-22T16:43:55.406-0500">2020-01-22T16:43:55.406-0500</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/sjrk-story-telling/pull/53">The pull request</a> has been merged into stories-floe-dev branch at <a href="https://github.com/fluid-project/sjrk-story-telling/commit/58c559545a3788925e5236c407e7b8999aba0a50">this commit</a> so Gregor Moss can build upon them for other Jiras.</p>
+<p><a href="https://github.com/fluid-project/sjrk-story-telling/pull/35">The initial pull request against re-review branch</a> is preserved in order to accommodate further review on the source branch by Antranig Basman or others.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-254/"><span class="aria-hidden">←</span> Previous: SJRK-254</a>
+        <a class="mx-1" href="/browse/SJRK-256/">Next: SJRK-256 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-217  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-217 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-217/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-217/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-217/">VP-217</a></li>
+            </ol>
+        </nav>
+        <h1>VP-217: Clean up the Video Player HTML template and controls</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-217">VP-217</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-11-28T16:55:48.575-0500" prefix="">2011-11-28T16:55:48.575-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-01-28T09:25:25.273-0500" prefix="">2013-01-28T09:25:25.273-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>We can probably tidy up the template for the Video Player, making changes such as</p>
+<ul>
+<li>slightly shorter class names</li>
+<li>remove jQuery UI class names</li>
+<li>remove hard-coded strings (in favor of a scheme that supports localization)</li>
+<li>double-check choice of element types for consistency (e.g. &lt;button&gt; vs &lt;input&gt; vs &lt;div&gt;</li>
+</ul>
+<p>We also need to clean up the code and ensure correct interactions.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26798">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-01-03T14:42:10.019-0500">2012-01-03T14:42:10.019-0500</relative-time></i></p>
+                        <p>Joseph started a thread on the wai-xtech list asking for general advice on Video Player controls. The responses provide some useful links:</p>
+<p><a href="http://lists.w3.org/Archives/Public/wai-xtech/2011Dec/0009.html">http://lists.w3.org/Archives/Public/wai-xtech/2011Dec/0009.html</a></p>
+
+                    </li>
+                    
+                    <li id="comment-26799">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-01-03T15:07:38.206-0500">2012-01-03T15:07:38.206-0500</relative-time></i></p>
+                        <p>Regarding tooltips on the controls: I tried adding the Tooltip component as a Renderer decorator, and discovered <a href="/browse/FLUID-4571/">FLUID-4571</a>. I'm going to double-check with Tona as to how important tooltips are for the "minimally viable" Player to decide how to proceed.</p>
+
+                    </li>
+                    
+                    <li id="comment-26800">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-01-03T17:16:58.103-0500">2012-01-03T17:16:58.103-0500</relative-time></i></p>
+                        <p>Contemplating the 'captions' button in the interface: It could be implemented as a toggle button, or it could be implemented as a checkbox (styled appropriately). Which is more semantically correct?</p>
+<p>The WAI-ARIA authoring guide's design patterns section (<a href="http://www.w3.org/TR/wai-aria-practices/#aria_ex">http://www.w3.org/TR/wai-aria-practices/#aria_ex</a>) says buttons are for "user-triggered actions" whereas checkboxes are something that can have three values (true/false/mixed). To me, it seems that a toggle button is more semantically appropriate for the captions control: the user is triggering the show/hide of the captions. I will make it a toggle button.</p>
+
+                    </li>
+                    
+                    <li id="comment-26801">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-01-03T17:18:12.060-0500">2012-01-03T17:18:12.060-0500</relative-time></i></p>
+                        <p>Tona and James both feel that tooltips are important for the minimally viable Player. I've emailed the fluid-work mailing list about <a href="/browse/FLUID-4571/">FLUID-4571</a>.</p>
+
+                    </li>
+                    
+                    <li id="comment-26802">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-01-06T10:21:05.154-0500">2012-01-06T10:21:05.154-0500</relative-time></i></p>
+                        <p>Reconsidering toggle buttons for Play and Volume muting, etc.</p>
+<p>Semantically, I still think toggle buttons are correct, but I can't see how to use the Renderer to autobind the button to a value in the model: The the 'value' of a button is it's label, not it's state. I think I'll have to switch to checkboxed.</p>
+
+                    </li>
+                    
+                    <li id="comment-26803">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-01-06T11:48:53.241-0500">2012-01-06T11:48:53.241-0500</relative-time></i></p>
+                        <p>I've filed a JIRA about Renderer support for toggle buttons (<a href="/browse/FLUID-4573/">FLUID-4573</a>) and one for switching the checkboxes to toggle boxes once supported (<a href="/browse/FLUID-4574/">FLUID-4574</a>).</p>
+
+                    </li>
+                    
+                    <li id="comment-26804">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-02-02T10:49:31.284-0500">2012-02-02T10:49:31.284-0500</relative-time></i></p>
+                        <p>I've gone over the finer points of the caption menu interactions and summarized the results on the wiki, at <a href="http://wiki.fluidproject.org/display/fluid/Video+Player+interactions">http://wiki.fluidproject.org/display/fluid/Video+Player+interactions</a></p>
+
+                    </li>
+                    
+                    <li id="comment-26805">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2012-02-14T13:25:32.734-0500">2012-02-14T13:25:32.734-0500</relative-time></i></p>
+                        <p>Merged into project repo at f7aab18f274ad6d24f22ec25463a2342a926ea67</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-167/"><span class="aria-hidden">←</span> Previous: VP-167</a>
+        <a class="mx-1" href="/browse/VP-200/">Next: VP-200 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

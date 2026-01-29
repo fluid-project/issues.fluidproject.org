@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5722  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5722 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5722/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5722/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5722/">FLUID-5722</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5722: Add search functionality to the documentation platform</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5722">FLUID-5722</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-07-28T14:29:27.987-0400" prefix="">2015-07-28T14:29:27.987-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-07-08T13:29:04.620-0400" prefix="">2019-07-08T13:29:04.620-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Docs platform</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Add search functionality to the documentation platform.</p>
+<p>Searching will need to be a client-side solution since there is no database or a server.</p>
+<p>Docpad has a search plugin called lunr:<br>
+<a href="https://github.com/brockfanning/docpad-plugin-lunr">https://github.com/brockfanning/docpad-plugin-lunr</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23136">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2017-03-15T10:40:27.883-0400">2017-03-15T10:40:27.883-0400</relative-time></i></p>
+                        <p>Another possible alternative is Tipue, a jQuery based search engine that can work on static sites.</p>
+<p>website: <a href="http://www.tipue.com/">http://www.tipue.com/</a><br>
+github: <a href="https://github.com/Tipue/Tipue-Search">https://github.com/Tipue/Tipue-Search</a></p>
+<p>Open Source, MIT License.</p>
+
+                    </li>
+                    
+                    <li id="comment-23137">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2017-03-15T11:08:33.613-0400">2017-03-15T11:08:33.613-0400</relative-time></i></p>
+                        <p>Very interesting.  I'd be happier if they had indexing tools, but my reading of their docs and code suggests that it's not much work to create a static index on our own.  Here's an example:</p>
+<p><a href="https://github.com/Tipue/Tipue-Search/blob/master/demo/static/tipuesearch/tipuesearch_content.js">https://github.com/Tipue/Tipue-Search/blob/master/demo/static/tipuesearch/tipuesearch_content.js</a></p>
+<p>A single entry looks like:</p>
+<pre><code class="hljs language-java">{<span class="hljs-string">"title"</span>: <span class="hljs-string">"Tipue"</span>, <span class="hljs-string">"text"</span>: <span class="hljs-string">"Tipue is a small web development studio based in North London."</span>, <span class="hljs-string">"tags"</span>: <span class="hljs-string">"jQuery HTML5 CSS"</span>, <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://www.tipue.com"</span>},
+</code></pre>
+<p>Looking at <a href="https://raw.githubusercontent.com/fluid-project/infusion-docs/master/src/documents/Builder.md">an example from our docs</a>, it looks like we already have structured data for the title and tags (category).  We should be able to guess at the URL based on the FS structure.  This leaves the text, which is basically the markdown minus any inline markup.  I'd assume we can get something reasonable using something like <a href="http://pandoc.org/">pandoc</a>.</p>
+
+                    </li>
+                    
+                    <li id="comment-23138">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2017-03-15T11:12:11.275-0400">2017-03-15T11:12:11.275-0400</relative-time></i></p>
+                        <p>Just to comment a bit further, the other things I'd want to read up on regarding this (or really any solution) would be:</p>
+<ol>
+<li>Support for stemming.</li>
+<li>Support for improving search quality using stopwords.</li>
+<li>Support for multiple languages.</li>
+</ol>
+
+                    </li>
+                    
+                    <li id="comment-23139">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2017-03-16T04:51:43.902-0400">2017-03-16T04:51:43.902-0400</relative-time></i></p>
+                        <p>I read through <a href="http://www.tipue.com/search/docs/?d=3">the Tipue docs</a>, they have support for stopwords, stemming, and field weighting.  However, as they do not include useful data for stopwords and stemming, we'd have to roll our own or adapt someone else's body of data.</p>
+<p>As far as I can see, there is absolutely no option to switch between languages, but if you're dealing with a static site that has different subdirectories by language, it's possible to have a different search index and stopwords per language.</p>
+<p>Anyway, my overall impression of Tipue is that it seems like it would work, but it doesn't do all that much to help us bridge the gaps.</p>
+
+                    </li>
+                    
+                    <li id="comment-23140">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2019-04-17T07:46:03.669-0400">2019-04-17T07:46:03.669-0400</relative-time></i></p>
+                        <p>I recently revisited the options for search in a technology evaluation on the WIKI:</p>
+<p><a href="https://wiki.gpii.net/w/Technology_Evaluation_-_Static_Site_Search#Recommendation">https://wiki.gpii.net/w/Technology_Evaluation_-_Static_Site_Search#Recommendation</a></p>
+<p>After getting some small feedback from the group, my plan is to proceed to "spike" a proof-of-concept approach with Fuse.js.</p>
+
+                    </li>
+                    
+                    <li id="comment-23141">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2019-04-30T04:58:24.937-0400">2019-04-30T04:58:24.937-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/infusion-docs/pull/147">https://github.com/fluid-project/infusion-docs/pull/147</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23142">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2019-07-08T13:29:04.613-0400">2019-07-08T13:29:04.613-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/infusion-docs/pull/147">The pull request</a> has been merged into the project repo master branch at <a href="https://github.com/fluid-project/infusion-docs/commit/7ac573b5818d8989e20f151a2fe2800793106d53">this commit</a>.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5721/"><span class="aria-hidden">←</span> Previous: FLUID-5721</a>
+        <a class="mx-1" href="/browse/FLUID-5723/">Next: FLUID-5723 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

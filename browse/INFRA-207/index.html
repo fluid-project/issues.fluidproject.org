@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-207  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-207 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-207/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-207/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-207/">INFRA-207</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-207: BuildKite - GitHub authorization shouldn't be tied to non-robot person</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-207">INFRA-207</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-08-15T11:19:30.257-0400" prefix="">2018-08-15T11:19:30.257-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-04-15T06:43:06.878-0400" prefix="">2020-04-15T06:43:06.878-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Today the BuildKite/GitHub integration is enabled by a user and it becomes associated with that user's GitHub OAuth authorized applications.</p>
+<p>This authorization should happen using a project-owned account to avoid humans deleting it by mistake.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25820">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-08-15T11:21:24.949-0400">2018-08-15T11:21:24.949-0400</relative-time></i></p>
+                        <p>GitHub integration is configured here: <a href="https://buildkite.com/user/connected-apps">https://buildkite.com/user/connected-apps</a></p>
+
+                    </li>
+                    
+                    <li id="comment-25821">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2020-04-13T08:08:09.065-0400">2020-04-13T08:08:09.065-0400</relative-time></i></p>
+                        <p>It doesn't look like we're using Buildkite anymore. Avtar Gill Alan Harnum could you confirm?</p>
+
+                    </li>
+                    
+                    <li id="comment-25822">
+                        <p class="mb-0"><b>Avtar Gill</b> <i>commented <relative-time datetime="2020-04-14T10:29:34.670-0400">2020-04-14T10:29:34.670-0400</relative-time></i></p>
+                        <p>I don't think Buildkite is being used anymore. I <a href="https://buildkite.com/fluid-project/infusion/builds?branch=master">logged in</a> and it looks like there haven't been any builds since Aug 21, 2018. I'm assuming the Fluid GitHub webhook settings reflect that.</p>
+
+                    </li>
+                    
+                    <li id="comment-25823">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2020-04-14T11:01:39.689-0400">2020-04-14T11:01:39.689-0400</relative-time></i></p>
+                        <p>Let me know if there is anything we need to double check, but from what I recall we moved everything back to Jenkins. Now we've started using GitHub actions for some projects.</p>
+
+                    </li>
+                    
+                    <li id="comment-25824">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2020-04-15T06:42:30.029-0400">2020-04-15T06:42:30.029-0400</relative-time></i></p>
+                        <p>Thanks for double checking!</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-206/"><span class="aria-hidden">←</span> Previous: INFRA-206</a>
+        <a class="mx-1" href="/browse/INFRA-208/">Next: INFRA-208 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

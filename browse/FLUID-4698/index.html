@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4698  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4698 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4698/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4698/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4698/">FLUID-4698</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4698: UI Options won't resize text sized with rem</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4698">FLUID-4698</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Cindy Li</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-04-17T08:55:06.738-0400" prefix="">2012-04-17T08:55:06.738-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-04-25T13:28:06.848-0400" prefix="">2014-04-25T13:28:06.848-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UIEnhancer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In working on the fluid studios site, Johnny spotted that text sized with rem values could not be resized by UI Options. <br>
+He wrote a post on the fluid-work list describing the issue.</p>
+<p><a href="http://old.nabble.com/Using-rem%27s-with-uiOptions...-to33682739.html">http://old.nabble.com/Using-rem's-with-uiOptions...-to33682739.html</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15870">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2014-02-10T14:56:34.430-0500">2014-02-10T14:56:34.430-0500</relative-time></i></p>
+                        <p>If we shift the font-size adjuster to the &lt;html&gt; element, it seems to work a bit better with the rems. Still need to test in all browsers.</p>
+
+                    </li>
+                    
+                    <li id="comment-15872">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-02-11T07:45:25.679-0500">2014-02-11T07:45:25.679-0500</relative-time></i></p>
+                        <p>Anastasia Cheetham it seems that setting the size on &lt;html&gt; instead of &lt;body&gt; is the appropriate way to work with rems. The article that Johnny Taylor linked to in his post to the fluid-work list explains this.</p>
+<p><a href="http://snook.ca/archives/html_and_css/font-size-with-rem">http://snook.ca/archives/html_and_css/font-size-with-rem</a></p>
+<p>In general, it sounds like rems are the way to go, however, IE8 doesn't support them.<br>
+<a href="http://caniuse.com/#search=rem">http://caniuse.com/#search=rem</a></p>
+<p>That being said, we have been considering dropping IE support post Infusion 1.5. If that is the case, I think we are fine to use rems, and move the font size setting from the &lt;body&gt; to &lt;html&gt;</p>
+
+                    </li>
+                    
+                    <li id="comment-15874">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-04-23T10:07:52.270-0400">2014-04-23T10:07:52.270-0400</relative-time></i></p>
+                        <p>In looking into this issue, it seems that we need to change the strategy for adjusting font size a bit. Rather than setting the font size in ems, we will set it with a pixel value on the html element. All other font sizes can be set with rem or em values which will be based on this root.</p>
+
+                    </li>
+                    
+                    <li id="comment-15877">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-04-23T16:32:24.084-0400">2014-04-23T16:32:24.084-0400</relative-time></i></p>
+                        <p>Submitted a pull request <a href="https://github.com/fluid-project/infusion/pull/497">https://github.com/fluid-project/infusion/pull/497</a></p>
+
+                    </li>
+                    
+                    <li id="comment-15878">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-04-25T13:28:03.682-0400">2014-04-25T13:28:03.682-0400</relative-time></i></p>
+                        <p>Merged into the project repo @ c7c61c4e94f39c563bd6fa4227d82b2675029905</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4696/"><span class="aria-hidden">←</span> Previous: FLUID-4696</a>
+        <a class="mx-1" href="/browse/FLUID-4703/">Next: FLUID-4703 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

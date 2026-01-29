@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VULAB-72  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VULAB-72 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VULAB-72/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VULAB-72/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VULAB" data-pagefind-filter="project">VULab</a></li>
+                <li><a href="/browse/VULAB-72/">VULAB-72</a></li>
+            </ol>
+        </nav>
+        <h1>VULAB-72: Copying Survey Templates (From Active Project)</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VULAB-72">VULAB-72</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VULAB/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VULAB/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Blake E</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VULAB/?reporter=Blake%20E">Blake E</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-11-03T12:32:37.000-0500" prefix="">2008-11-03T12:32:37.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-12-01T13:19:56.000-0500" prefix="">2008-12-01T13:19:56.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5B</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5B</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Web</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Once a project has been activated the questions don't copy when copying a survey into a new project.<br>
+(from project creation step 2: copy survey from...)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-27593">
+                        <p class="mb-0"><b>Blake E</b> <i>commented <relative-time datetime="2008-11-03T12:32:47.000-0500">2008-11-03T12:32:47.000-0500</relative-time></i></p>
+                        <p>pushed to vulab8 due to all-hands meeting prioritizing. </p>
+
+                    </li>
+                    
+                    <li id="comment-27594">
+                        <p class="mb-0"><b>Blake E</b> <i>commented <relative-time datetime="2008-11-03T12:38:03.000-0500">2008-11-03T12:38:03.000-0500</relative-time></i></p>
+                        <p>Thanks for JohnC for the report!</p>
+
+                    </li>
+                    
+                    <li id="comment-27595">
+                        <p class="mb-0"><b>Blake E</b> <i>commented <relative-time datetime="2008-11-27T14:12:48.000-0500">2008-11-27T14:12:48.000-0500</relative-time></i></p>
+                        <p>So, there are 3 tables that need to have their records duplicated and the ids changed.</p>
+<p>survey, question, and question_choice.</p>
+<p>the survey row duplication currently works, (I tricked the survey tool into thinking it was saving a new survey rather then an existing one), but the questions are not duplicated. So I need to put in a trigger in the survey_update function (or after) that duplicates the question rows that pertain to the surveyid, and then the question_choices that pertain to the question id.</p>
+
+                    </li>
+                    
+                    <li id="comment-27596">
+                        <p class="mb-0"><b>Blake E</b> <i>commented <relative-time datetime="2008-11-27T17:23:22.000-0500">2008-11-27T17:23:22.000-0500</relative-time></i></p>
+                        <p>Ok, so I've coded in a session variable that is thrown when the "create from new" option is triggered. This session various tells survey_update to load the questions associated with the survey and import the data again but when NEW survey_id. It does the same for question options. I'm going to test it out and see if its working....<br>
+(its currently live)</p>
+
+                    </li>
+                    
+                    <li id="comment-27597">
+                        <p class="mb-0"><b>Blake E</b> <i>commented <relative-time datetime="2008-12-01T13:03:30.000-0500">2008-12-01T13:03:30.000-0500</relative-time></i></p>
+                        <p>So I've tried it again, and I don't think its working... and I really dont see why it isnt... I am duplicating the apropriate rows etc, but they arn't being associated properly.</p>
+<p>I'm considering just using javascript to pre-populate the information or something.... phpESP was NEVER designed to work like this and the survey creation process has been mostly untouched (and the results recording system is one in the same) and thus is poorly designed code.</p>
+<p>At this point I really don't know how to duplicate a survey AND all its questions as the information spans 4 tables, and uses functions designed to for specific purposes which are very bloated as they don't use any object oriented programming. so I think this issue has come to a standstill until we decide what we are doing with the framework..</p>
+<p>Because...<br>
+With a framework inplace this functionality would total 5 lines of code and would work with actual objects that can be instantiated, populated, and saved - all of this w/out directly touching the database tables. The time it would take me to hack this single function into the existing system would amount to 50% of the core system being written on a new framework.</p>
+
+                    </li>
+                    
+                    <li id="comment-27598">
+                        <p class="mb-0"><b>Blake E</b> <i>commented <relative-time datetime="2008-12-01T13:19:56.000-0500">2008-12-01T13:19:56.000-0500</relative-time></i></p>
+                        <p>I'm closing this issue until we figure out the framework issues. I'll re-open another issue with more specific limitations we need to overcome if/when we need to.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VULAB-71/"><span class="aria-hidden">←</span> Previous: VULAB-71</a>
+        <a class="mx-1" href="/browse/VULAB-74/">Next: VULAB-74 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

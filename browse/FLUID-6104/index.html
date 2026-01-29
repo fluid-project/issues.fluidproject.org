@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6104  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6104 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6104/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6104/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6104/">FLUID-6104</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6104: fluid-publish module should use a "+" to separate the build metadata</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6104">FLUID-6104</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-01-09T09:54:54.045-0500" prefix="">2017-01-09T09:54:54.045-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-04-06T09:52:42.185-0400" prefix="">2018-04-06T09:52:42.185-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Build Scripts</li>
+                            
+                            <li>Release</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently fluid-publish creates dev builds and appends the date and commit hash to the end. This is currently separated by a "." but should be separate by a "+" according to <a href="http://semver.org/#spec-item-10">http://semver.org/#spec-item-10</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14043">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-01-18T14:11:58.281-0500">2017-01-18T14:11:58.281-0500</relative-time></i></p>
+                        <p>Upon further review it seems that build metadata doesn't affect precedence of builds. I wonder if we'd prefer to keep things as is so that they are ordered. It's not clear if this will be the case with using buildmetada.</p>
+<p><a href="http://semver.org/#spec-item-11">http://semver.org/#spec-item-11</a></p>
+
+                    </li>
+                    
+                    <li id="comment-14045">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-04-06T09:51:10.805-0400">2018-04-06T09:51:10.805-0400</relative-time></i></p>
+                        <p>In doing some further investigation into build metadata while working on <a href="/browse/FLUID-6270/">FLUID-6270</a> I found that npm strips out this information. It seems the logic is that because it can't be used to sort versions, as build metadata give equal precedence, it is to be ignored and thus stripped out.</p>
+<p>See:</p>
+<ul>
+<li><a href="https://github.com/npm/npm/issues/12825">https://github.com/npm/npm/issues/12825</a></li>
+<li><a href="https://github.com/npm/node-semver/pull/221">https://github.com/npm/node-semver/pull/221</a>&#160;(pr to add build metadata to npm-semver, but as of yet has been ignored)</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-14047">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-04-06T09:52:42.183-0400">2018-04-06T09:52:42.183-0400</relative-time></i></p>
+                        <p>We actually want to use the data and commit has for sorting, so this seems like it would be counter productive. Also, if the build metadata is stripped it will just end up creating a mess of our npm repo.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6103/"><span class="aria-hidden">←</span> Previous: FLUID-6103</a>
+        <a class="mx-1" href="/browse/FLUID-6105/">Next: FLUID-6105 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

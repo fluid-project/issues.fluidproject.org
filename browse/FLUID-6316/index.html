@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6316  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6316 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6316/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6316/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6316/">FLUID-6316</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6316: Update eslint-config-fluid to include fluid-grunt-eslint as a full dependency</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6316">FLUID-6316</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Tony Atkins [RtF]</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Tony%20Atkins%20%5BRtF%5D">Tony Atkins [RtF]</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-08-09T10:06:21.488-0400" prefix="">2018-08-09T10:06:21.488-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:02.633-0400" prefix="">2024-07-22T10:35:02.633-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>eslint-config-fluid makes use of fluid-grunt-eslint, but only lists it as a dev dependency.  Depending in their direct and inherited dependencies, packages that use eslint-config-fluid which do not themselves depend on fluid-eslint may see errors like:</p>
+<pre><code class="hljs language-java">&gt; grunt lint
+Infusion at path /Users/duhrer/Source/rtf/gpii-testem/node_modules/infusion is at top level 
+<span class="hljs-number">12</span>:<span class="hljs-number">54</span>:<span class="hljs-number">01.350</span>:  Registering <span class="hljs-keyword">module</span> gpii-testem from path /Users/duhrer/Source/rtf/gpii-testem/
+<span class="hljs-number">12</span>:<span class="hljs-number">54</span>:<span class="hljs-number">01.351</span>:  Registering <span class="hljs-keyword">module</span> infusion from path /Users/duhrer/Source/rtf/gpii-testem/node_modules/infusion/
+<span class="hljs-number">12</span>:<span class="hljs-number">54</span>:<span class="hljs-number">01.351</span>:  Registering <span class="hljs-keyword">module</span> infusion from path /Users/duhrer/Source/rtf/gpii-testem/node_modules/infusion
+Loading <span class="hljs-string">"json-eslint.js"</span> tasks...ERROR
+&gt;&gt; Error: Cannot find <span class="hljs-keyword">module</span> <span class="hljs-string">'fluid-eslint'</span>
+<span class="hljs-number">12</span>:<span class="hljs-number">54</span>:<span class="hljs-number">01.355</span>:  Registering <span class="hljs-keyword">module</span> gpii-grunt-lint-all from path /Users/duhrer/Source/rtf/gpii-testem/node_modules/gpii-grunt-lint-all
+Warning: Task <span class="hljs-string">"json-eslint"</span> not found. Use --force to <span class="hljs-keyword">continue</span>.
+</code></pre>
+<p>The missing dependency is listed as a full dependency in fluid-grunt-eslint. I am creating a pull to move fluid-grunt-eslint to the main dependencies.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6315/"><span class="aria-hidden">←</span> Previous: FLUID-6315</a>
+        <a class="mx-1" href="/browse/FLUID-6317/">Next: FLUID-6317 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

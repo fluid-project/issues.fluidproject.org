@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5940  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5940 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5940/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5940/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5940/">FLUID-5940</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5940: require("infusion") fails in Node.js when Infusion is a dependency of a project in the filesystem root</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5940">FLUID-5940</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Michelle D'Souza</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Simon%20Bates">Simon Bates</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-08-09T14:38:59.525-0400" prefix="">2016-08-09T14:38:59.525-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-08-30T15:34:41.600-0400" prefix="">2016-08-30T15:34:41.600-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>npm module</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Doing a require("infusion") in Node.js results in an error when Infusion is a dependency of a Node.js project that is located in the root of a filesystem. This is most likely to occur when we run a project inside a Windows VM (due to the way that we mount the project from the host filesystem in VirtualBox).</p>
+<p>To make this issue easier to see, I've created a sample project to reproduce it.</p>
+<p>Steps to reproduce:</p>
+<ol>
+<li>Clone <a href="https://github.com/simonbates/fluid-module-root-issue.git">https://github.com/simonbates/fluid-module-root-issue.git</a></li>
+<li>vagrant up</li>
+<li>vagrant reload</li>
+<li>When the Windows VM comes back up, open a command prompt</li>
+<li>cd to C:\vagrant</li>
+<li>npm install</li>
+<li>node run.js</li>
+</ol>
+<p>Expected:</p>
+<pre><code class="hljs language-java">hello
+world
+</code></pre>
+<p>Actual:</p>
+<pre><code class="hljs language-java">C:\vagrant&gt;node run.js
+\\vboxsrv\c:_vagrant\node_modules\infusion\src\<span class="hljs-keyword">module</span>\fluid.js:<span class="hljs-number">41</span>
+    upInfusion.log(<span class="hljs-string">"Resolved infusion from path "</span> + __dirname + <span class="hljs-string">" to "</span> + upInfusion.<span class="hljs-keyword">module</span>.modules.infusion.baseDir);
+                                                                                          ^
+
+TypeError: Cannot read property <span class="hljs-string">'modules'</span> of undefined
+    at Object.&lt;anonymous&gt; (\\vboxsrv\c:_vagrant\node_modules\infusion\src\<span class="hljs-keyword">module</span>\fluid.js:<span class="hljs-number">41</span>:<span class="hljs-number">91</span>)
+    at Module._compile (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">409</span>:<span class="hljs-number">26</span>)
+    at Object.Module._extensions..js (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">416</span>:<span class="hljs-number">10</span>)
+    at Module.load (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">343</span>:<span class="hljs-number">32</span>)
+    at Function.Module._load (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">300</span>:<span class="hljs-number">12</span>)
+    at Module.require (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">353</span>:<span class="hljs-number">17</span>)
+    at <span class="hljs-title function_">require</span> <span class="hljs-params">(internal/<span class="hljs-keyword">module</span>.js:<span class="hljs-number">12</span>:<span class="hljs-number">17</span>)</span>
+    at Object.&lt;anonymous&gt; (\\vboxsrv\c:_vagrant\run.js:<span class="hljs-number">1</span>:<span class="hljs-number">75</span>)
+    at Module._compile (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">409</span>:<span class="hljs-number">26</span>)
+    at Object.Module._extensions..js (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">416</span>:<span class="hljs-number">10</span>)
+</code></pre>
+<p>Tracing through <a href="https://github.com/fluid-project/infusion/blob/master/src/module/fluid.js">https://github.com/fluid-project/infusion/blob/master/src/module/fluid.js</a> in a debugger, I'm seeing:</p>
+<ul>
+<li>Line 37: var upPath = path.resolve(__dirname, "../../../../..");
+<ul>
+<li>__dirname = "\\vboxsrv\c:_vagrant\node_modules\infusion\src\module"</li>
+<li>upPath = "\\vboxsrv\c:_vagrant\"</li>
+<li>It looks like: (1) C:\vagrant is being seen as "\\vboxsrv\c:_vagrant\" and (2) "\\vboxsrv\c:_vagrant\" is the root of the filesystem</li>
+</ul>
+</li>
+<li>Line 38: var upInfusionPath = resolveModuleSync("infusion", upPath);
+<ul>
+<li>upInfusionPath = "\\vboxsrv\c:_vagrant\node_modules\infusion\src\module\fluid.js"</li>
+<li>It looks like we are finding ourselves (in the case that we have gone high enough to not find any more infusions, we get 'null' here)</li>
+</ul>
+</li>
+<li>The test on line 39 passes as we have a value for 'upInfusionPath'</li>
+<li>Line 40: upInfusion = require(upInfusionPath);
+<ul>
+<li>In this recursive case, we get an empty object: { }</li>
+</ul>
+</li>
+<li>Line 41: upInfusion.log("Resolved infusion from path " + __dirname + " to " + upInfusion.module.modules.infusion.baseDir);
+<ul>
+<li>this is where we fail as upInfusion.module is undefined</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22373">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-08-17T12:32:22.787-0400">2016-08-17T12:32:22.787-0400</relative-time></i></p>
+                        <p>I could reproduce this by checking out a project (kettle) which has Infusion as a direct dependency in my filesystem root on Windows. Oddly I had to do this from a plain Windows command shell rather than a cygwin bash shell.</p>
+
+                    </li>
+                    
+                    <li id="comment-22375">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-08-17T12:58:58.367-0400">2016-08-17T12:58:58.367-0400</relative-time></i></p>
+                        <p>My experience is very similar to Simon Bates - for example, I get an "upPath" of "E:\" and an upInfusionPath of "E:\kettle\node_modules\infusion\src\module\fluid.js". As far as I can see, this is a bug within require.resolve as well as a filesystem oddity, since there is no reason for the contents of E:\kettle to be resolvable.</p>
+
+                    </li>
+                    
+                    <li id="comment-22377">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-08-17T13:34:34.085-0400">2016-08-17T13:34:34.085-0400</relative-time></i></p>
+                        <p>I've written up the upstream node-resolve issue at <a href="https://github.com/substack/node-resolve/issues/106">https://github.com/substack/node-resolve/issues/106</a> - this is actually a pretty serious issue which means that any module present within a drive's CWD on Windows will be resolvable. The fact that the project is close to the drive root is merely a collateral factor that is just raising the probability of there being a coincidence between path names by making them all short. You will notice that if you don't run the node process from within the project's directory which has infusion as a dependency, that the problem does not occur.</p>
+
+                    </li>
+                    
+                    <li id="comment-22379">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-08-22T15:50:42.181-0400">2016-08-22T15:50:42.181-0400</relative-time></i></p>
+                        <p>After understanding <a href="https://github.com/substack/node-resolve/issues/106">https://github.com/substack/node-resolve/issues/106</a> properly, I realise that we can only properly resolve this issue BOTH with the safety test in fluid.js as well as the fix to node-resolve. The problem is that the particular failure described in this headline JIRA (when checked out close to the root of the filesystem) is just one of the unbounded kinds of failures that we could observe through node-resolve #106 - depending on the shell's current cwd, in fact we could resolve to any infusion in the entire filesystem rather than just the particular one that we guard against (ourselves) in fluid.js . So I have reissued this pull as <a href="https://github.com/fluid-project/infusion/pull/738">https://github.com/fluid-project/infusion/pull/738</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22382">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-08-30T15:34:32.600-0400">2016-08-30T15:34:32.600-0400</relative-time></i></p>
+                        <p>Merged pull request ( <a href="https://github.com/fluid-project/infusion/pull/738">https://github.com/fluid-project/infusion/pull/738</a> ) into the project repo at d82e14339fe975b9c2426f4138659fa45da16884</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5939/"><span class="aria-hidden">←</span> Previous: FLUID-5939</a>
+        <a class="mx-1" href="/browse/FLUID-5941/">Next: FLUID-5941 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

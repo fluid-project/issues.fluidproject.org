@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5954  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5954 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5954/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5954/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5954/">FLUID-5954</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5954: Improve infusion module loading infrastructure to accommodate the use of browserify</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5954">FLUID-5954</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-09-12T20:30:33.230-0400" prefix="">2016-09-12T20:30:33.230-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-09-13T08:33:52.146-0400" prefix="">2016-09-13T08:33:52.146-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Infrastructure</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In the attempt of using browserify (<a href="http://browserify.org/">http://browserify.org/</a>) to bundle up dependencies for node.js require() statements in order to use kettle in browsers, two issues are encountered with the infusion module loading infrastructure:</p>
+<p>Issue 1: The infusion path calculated in fluid.js returns an absolute path instead of a relative path. To reproduce this issue:<br>
+1. In a terminal, run</p>
+<pre><code class="hljs language-java">npm install -g browserify
+</code></pre>
+<p>2. Check out this GPII universal branch: <a href="https://github.com/cindyli/universal/tree/GPII-1872-browserify">https://github.com/cindyli/universal/tree/GPII-1872-browserify</a>. Then run these commands in the "universal" directory:</p>
+<pre><code class="hljs language-java">cd gpii/node_modules/gpii-oauth2/gpii-oauth2-datastore/src
+browserify DbDataStore.js &gt; DbDataStore_browserify.js
+</code></pre>
+<p>3. In a browser, open this html file via a web server: gpii/node_modules/gpii-oauth2/gpii-oauth2-datastore/test/html/DbDataStoreTests.html</p>
+<p>4. This error is thrown on the page: <br>
+Error: Cannot find module '/node_modules/infusion/src/module/includes.json'<br>
+Note the absolute path reported in the error. </p>
+<p>To debug, <br>
+1. add a console.log debug line to output __dirname in node_modules/infusion/src/module/fluid.js before the line where includes.json is included: <a href="https://github.com/fluid-project/infusion/blob/master/src/module/fluid.js#L103">https://github.com/fluid-project/infusion/blob/master/src/module/fluid.js#L103</a>;<br>
+2. Re-run browserify command to include the change into the browserified js;<br>
+3. Open a browser debugger and refresh the html page.<br>
+4. Note that __dirname shows an absolute path of "/../../../../../node_modules/infusion/src/module" instead of a relative path.</p>
+<p>Issue 2: fluid.js has a function loadIncludes() to read a json file and dynamically require javascript files listed in there: <a href="https://github.com/fluid-project/infusion/blob/master/src/module/fluid.js#L97">https://github.com/fluid-project/infusion/blob/master/src/module/fluid.js#L97</a> Browserify is not able to perform dynamic requires, at least with a command line: <a href="https://github.com/substack/node-browserify/issues/664">https://github.com/substack/node-browserify/issues/664</a>. </p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5953/"><span class="aria-hidden">←</span> Previous: FLUID-5953</a>
+        <a class="mx-1" href="/browse/FLUID-5955/">Next: FLUID-5955 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5933  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5933 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5933/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5933/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5933/">FLUID-5933</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5933: fluid.transforms.literalValue does not allow failing over from inputPath to input...</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5933">FLUID-5933</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Tony%20Atkins%20%5BRtF%5D">Tony Atkins [RtF]</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-07-21T06:25:45.378-0400" prefix="">2016-07-21T06:25:45.378-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T09:23:38.329-0400" prefix="">2024-07-22T09:23:38.329-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Model Transformation System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In the <a href="https://wiki.gpii.net/w/Architecture_-_Available_transformation_functions#Example_3:_Like_all_transforms_-_will_fall_back_from_path_to_direct_value">wiki entry for </a><code>fluid.transforms.literalValue</code>, we give an example of using <code>input</code> as a fallback if there is no value found at <code>inputPath</code>.  This is not actually the case, at least not for <code>literalValue</code>.  For example, here is a wrapper around the actual example code:</p>
+<pre><code class="hljs language-java"><span class="hljs-comment">/* eslint-env node */</span>
+<span class="hljs-string">"use strict"</span>;
+<span class="hljs-type">var</span> <span class="hljs-variable">fluid</span> <span class="hljs-operator">=</span> fluid || require(<span class="hljs-string">"infusion"</span>);
+
+<span class="hljs-type">var</span> <span class="hljs-variable">rules</span> <span class="hljs-operator">=</span> {
+    <span class="hljs-string">""</span>: {
+        transform: {
+            type: <span class="hljs-string">"fluid.transforms.literalValue"</span>,
+            input: <span class="hljs-string">"balloon"</span>,
+            inputPath: <span class="hljs-string">"some.path"</span>
+        }
+    }
+};
+
+console.log(<span class="hljs-string">"Empty Object Produces:"</span>);
+console.log(fluid.model.transformWithRules({}, rules));
+
+console.log(<span class="hljs-string">"Non-empty Object Produces:"</span>);
+console.log(fluid.model.transformWithRules({ some: { path: <span class="hljs-string">"*POP*"</span>}}, rules));
+</code></pre>
+<p>That produces the following output:</p>
+<pre><code class="hljs language-java">Empty Object Produces:
+balloon
+Non-empty Object Produces:
+balloon
+</code></pre>
+<p>The <code>input</code> value always wins, which is not at all what the docs suggest.  However, if we use <code>fluid.transforms.value</code> instead of <code>fluid.transforms.literalValue</code>, the results are as expected:</p>
+<pre><code class="hljs language-java">Empty Object Produces:
+balloon
+Non-empty Object Produces:
+*POP*
+</code></pre>
+<p>The wording there specifically says "like all transforms", <code>fluid.transforms.literalValue</code> will fallback, so if <code>literalValue</code> is not meant to support this, the example should be moved under <code>fluid.transforms.value</code> and the wording should be changed to "like most transforms" or something more accurate.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5932/"><span class="aria-hidden">←</span> Previous: FLUID-5932</a>
+        <a class="mx-1" href="/browse/FLUID-5934/">Next: FLUID-5934 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-651  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-651 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-651/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-651/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-651/">C2LC-651</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-651: The programCounter is not properly set when moving blocks into and out of loops</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-651">C2LC-651</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>In Progress</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter=Simon%20Bates">Simon Bates</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2022-06-22T11:39:38.607-0400" prefix="">2022-06-22T11:39:38.607-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-04-24T10:48:46.310-0400" prefix="">2024-04-24T10:48:46.310-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Environment</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Steps to reproduce:</p>
+<ul>
+<li>Make a program: forward, backward</li>
+<li>Play the program, pause such that the programCounter is on backward</li>
+<li>Add a loop to the beginning of the program</li>
+<li>Move the forward and backward blocks into the new loop</li>
+</ul>
+<p>Expected:</p>
+<ul>
+<li>The programCounter stays on the backward block</li>
+</ul>
+<p>Actual:</p>
+<ul>
+<li>The programCounter moves to the endLoop block</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10902">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2022-06-28T14:11:48.372-0400">2022-06-28T14:11:48.372-0400</relative-time></i></p>
+                        <p>I met with Sepideh and we came up with the following rules:</p>
+<p>If we move the block that the programCounter is on, or a loop containing the programCounter, out of a loop at the start, then we set the programCounter to the startLoop block</p>
+<p>If we move the block that the programCounter is on, or a loop containing the programCounter, out of a loop at the end, then we advance the programCounter to what would have happened after that block or loop (decrement the number of loop iterations and move the programCounter to the startLoop, or put the programCounter after the loop)</p>
+<p>If we move the block that the programCounter is on, or a loop containing the programCounter, into a loop at the start, then we set the programCounter to the startLoop block</p>
+<p>If we move the block that the programCounter is on, or a loop containing the programCounter, into a loop at the end, we put the programCounter on the block following the loop (if there is one)</p>
+<p>If we move a loop that contains the programCounter to the right, we place the programCounter on what is now before the loop. For example: (startLoop, [forward], endLoop, left) and we move the loop to the right, we get ([left], startLoop, forward, endLoop) </p>
+<p>If we move a loop that contains the programCounter to the left, we place the programCounter on what is now after the loop. For example: (forward, startLoop, [left], endLoop) and we move the loop to the left, we get (startLoop, left, endLoop, [forward]) </p>
+<p>When we move a loop into or out of another loop, we will leave the loop counter as is and not reset</p>
+
+                    </li>
+                    
+                    <li id="comment-10903">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2022-06-28T14:24:23.119-0400">2022-06-28T14:24:23.119-0400</relative-time></i></p>
+                        <p>The rules above will implement a behaviour different from that in the original issue description. Under these rules the following would happen:</p>
+<ul>
+<li>Make a program: forward, backward</li>
+<li>Play the program, pause such that the programCounter is on backward
+<ul>
+<li>Program is now: forward, [backward]</li>
+</ul>
+</li>
+<li>Add a loop to the beginning of the program
+<ul>
+<li>Program is now: startLoop, endLoop, forward, [backward]</li>
+</ul>
+</li>
+<li>Move the forward block into the loop
+<ul>
+<li>Program is now: startLoop, forward, endloop, [backward] </li>
+</ul>
+</li>
+<li>Move the backward block into the loop
+<ul>
+<li>Program is now: startLoop, forward, backward, endLoop</li>
+<li>And the program is stopped as there is no block after the endLoop</li>
+</ul>
+</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-10904">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2022-06-30T14:22:25.551-0400">2022-06-30T14:22:25.551-0400</relative-time></i></p>
+                        <p>Sepideh and I have had more discussion about managing the programCounter when moving blocks while the program is paused. We considered a number of options, listed below, but none stood out strongly to us as being the best choice. We are deferring work to change the behaviour to the future and for now we are going to leave the behaviour as is: when moving blocks, leave the programCounter unchanged.</p>
+<p>Options identified:</p>
+<ul>
+<li>Aim to keep execution at the current program position
+<ul>
+<li>This is the current behaviour, with the addition of handling moving loops and moving blocks and loops into and out of loops</li>
+<li>This is the option that we explored above in the rules listed in the first comment</li>
+</ul>
+</li>
+<li>Move the programCounter with the block being moved, if the block being moved is where the programCounter is
+<ul>
+<li>This feels consistent with the behaviour we have for insertion and deletion</li>
+<li>But it couples the programCounter to the block being moved</li>
+<li>Moving the active block would now move the programCounter and would enable moving the programCounter forwards through the program or backwards through the program, such as into the middle of a loop, or before a loop that has already been executed and whose number of remaining iterations is 0</li>
+</ul>
+</li>
+<li>Disable movement of blocks when the program is paused and only enable when stopped</li>
+<li>Disable the Control Panel entirely when the program is paused and only enable when stopped</li>
+<li>Remove the ability to pause the program (only Play and Stop) and only support editing when the program is stopped</li>
+<li>Keep the current implementation until we come up with a better solution
+<ul>
+<li>We decided to go with this option for now</li>
+</ul>
+</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-10905">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2022-06-30T15:37:11.334-0400">2022-06-30T15:37:11.334-0400</relative-time></i></p>
+                        <p>In preparation for doing <a href="/browse/C2LC-651/">C2LC-651</a>, I made some refactoring to the move step code. I have gone ahead and merged in this refactoring. It contains no user-visible behaviour changes but improves the code structure.</p>
+<p><a href="https://github.com/codelearncreate/c2lc-coding-environment/commit/b88dc356fed6476465de46e7e48c4ba60fe0b5f1">https://github.com/codelearncreate/c2lc-coding-environment/commit/b88dc356fed6476465de46e7e48c4ba60fe0b5f1</a></p>
+<p></p>
+
+                    </li>
+                    
+                    <li id="comment-27716">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2024-04-24T10:48:46.310-0400">2024-04-24T10:48:46.310-0400</relative-time></i></p>
+                        <p>Moved to GitHub: <a href="https://github.com/codelearncreate/c2lc-coding-environment/issues/465">https://github.com/codelearncreate/c2lc-coding-environment/issues/465</a> </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-650/"><span class="aria-hidden">←</span> Previous: C2LC-650</a>
+        <a class="mx-1" href="/browse/C2LC-652/">Next: C2LC-652 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

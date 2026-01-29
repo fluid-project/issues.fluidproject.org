@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SNOW-15  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SNOW-15 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SNOW-15/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SNOW-15/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SNOW" data-pagefind-filter="project">Snow</a></li>
+                <li><a href="/browse/SNOW-15/">SNOW-15</a></li>
+            </ol>
+        </nav>
+        <h1>SNOW-15: WP spitting out an error; expecting a function, getting an array</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SNOW-15">SNOW-15</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SNOW/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SNOW/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SNOW/?reporter=Eloisa%20Guerrero">Eloisa Guerrero</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-02-06T16:18:39.679-0500" prefix="">2018-02-06T16:18:39.679-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-02-09T11:37:22.783-0500" prefix="">2018-02-09T11:37:22.783-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p></p>
+<p>Getting this error (not visible) all over the site</p>
+<pre><code class="hljs language-java">PHP message: PHP Warning:&#160; call_user_func_array() expects parameter <span class="hljs-number">1</span> to be a valid callback, function <span class="hljs-string">'snow_featured_content'</span> not found or invalid function name in /home/vagrant/sync/wordpress/wp-includes/class-wp-hook.php on line <span class="hljs-number">286</span><span class="hljs-string">" while reading response header from upstream, client: 10.0.2.2, server: _, request: "</span>GET / HTTP/<span class="hljs-number">1.1</span><span class="hljs-string">", upstream: "</span>fastcgi:<span class="hljs-comment">//unix:/var/run/php-fpm/php-fpm-wordpress.sock:", host: "localhost:10080", referrer: "http://localhost:10080/alternative-mouse-systems/"</span>
+</code></pre>
+<p>This is coming from functions.php – I believe it is this line that's spitting out the error:</p>
+<pre><code class="hljs language-java">add_action(<span class="hljs-string">'widgets_init'</span>, $panel[<span class="hljs-string">'id'</span>]);
+</code></pre>
+<p>Instead of functions I've put in the snow panels in an array like so:</p>
+<pre><code class="hljs language-java"><span class="hljs-comment">/* Centralised array for the SNOW panel information */</span>
+$snow_panels = array(
+<span class="hljs-string">'snow_upcoming_workshops'</span> =&gt; array(
+<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'snow_upcoming_workshops'</span>,
+<span class="hljs-string">'title'</span> =&gt; <span class="hljs-string">'Upcoming Workshops'</span>,
+<span class="hljs-string">'category'</span> =&gt; <span class="hljs-string">'8'</span>
+),
+<span class="hljs-string">'snow_feature_article'</span> =&gt; array(
+<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'snow_feature_article'</span>,
+<span class="hljs-string">'title'</span> =&gt; <span class="hljs-string">'Feature Article'</span>,
+<span class="hljs-string">'category'</span> =&gt; <span class="hljs-string">'22'</span>
+),
+<span class="hljs-string">'snow_featured_content'</span> =&gt; array(
+<span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'snow_featured_content'</span>,
+<span class="hljs-string">'title'</span> =&gt; <span class="hljs-string">'Featured Content'</span>,
+<span class="hljs-string">'category'</span> =&gt; <span class="hljs-string">'23'</span>
+)
+);
+</code></pre>
+<p>when it is expecting a function, i.e. snow_upcoming_workshops(), but getting an array instead.</p>
+<p>Might have to revert to putting them back into functions so that this error doesn't show up anymore.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26200">
+                        <p class="mb-0"><b>Eloisa Guerrero</b> <i>commented <relative-time datetime="2018-02-07T08:26:17.357-0500">2018-02-07T08:26:17.357-0500</relative-time></i></p>
+                        <p>This is line 282-289 in class-wp-hook.php</p>
+<pre><code class="hljs language-java"><span class="hljs-comment">// Avoid the array_slice if possible.</span>
+<span class="hljs-keyword">if</span> ( $the_[<span class="hljs-string">'accepted_args'</span>] == <span class="hljs-number">0</span> ) {
+$value = call_user_func_array( $the_[<span class="hljs-string">'function'</span>], array() );
+} elseif ( $the_[<span class="hljs-string">'accepted_args'</span>] &gt;= $num_args ) {
+$value = call_user_func_array( $the_[<span class="hljs-string">'function'</span>], $args );
+} <span class="hljs-keyword">else</span> {
+$value = call_user_func_array( $the_[<span class="hljs-string">'function'</span>], array_slice( $args, <span class="hljs-number">0</span>, (<span class="hljs-type">int</span>)$the_[<span class="hljs-string">'accepted_args'</span>] ) );
+}
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-26201">
+                        <p class="mb-0"><b>Eloisa Guerrero</b> <i>commented <relative-time datetime="2018-02-07T08:27:21.411-0500">2018-02-07T08:27:21.411-0500</relative-time></i></p>
+                        <p>Reverting to using functions worked:</p>
+<pre><code class="hljs language-java">function <span class="hljs-title function_">snow_upcoming_workshops</span><span class="hljs-params">()</span> { 
+register_widget( <span class="hljs-keyword">new</span> <span class="hljs-title class_">snow_panel_widget</span>(<span class="hljs-string">'snow_upcoming_workshops'</span>,<span class="hljs-string">'Upcoming Workshops'</span>,<span class="hljs-string">'8'</span>));
+}
+add_action(<span class="hljs-string">'widgets_init'</span>, <span class="hljs-string">'snow_upcoming_workshops'</span>);
+function <span class="hljs-title function_">snow_feature_article</span><span class="hljs-params">()</span> { 
+register_widget( <span class="hljs-keyword">new</span> <span class="hljs-title class_">snow_panel_widget</span>(<span class="hljs-string">'snow_feature_article'</span>,<span class="hljs-string">'Feature Article'</span>,<span class="hljs-string">'22'</span>));
+}
+add_action(<span class="hljs-string">'widgets_init'</span>, <span class="hljs-string">'snow_feature_article'</span>);
+function <span class="hljs-title function_">snow_featured_content</span><span class="hljs-params">()</span> { 
+register_widget( <span class="hljs-keyword">new</span> <span class="hljs-title class_">snow_panel_widget</span>(<span class="hljs-string">'snow_featured_content'</span>,<span class="hljs-string">'Featured Content'</span>,<span class="hljs-string">'23'</span>));
+}
+add_action(<span class="hljs-string">'widgets_init'</span>, <span class="hljs-string">'snow_featured_content'</span>);
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-26202">
+                        <p class="mb-0"><b>Eloisa Guerrero</b> <i>commented <relative-time datetime="2018-02-09T08:51:53.388-0500">2018-02-09T08:51:53.388-0500</relative-time></i></p>
+                        <p>Paired with Michelle D'Souza yesterday and to solve the problem instead of rolling back, in the foreach loop we used an anonymous function and assigned it to variable $register_panel and&#160;put that in add_action so that it would satisfy the condition of using a function. Important to note that in PHP, functions have a new scope so "use" is required to pass in values from outside of the function. In this case we passed in $new_widget to get its information.</p>
+<pre><code class="hljs language-java">foreach ($snow_panels as $panel) {
+    $new_widget = <span class="hljs-keyword">new</span> <span class="hljs-title class_">snow_panel_widget</span>($panel[<span class="hljs-string">'id'</span>], $panel[<span class="hljs-string">'title'</span>],   $panel[<span class="hljs-string">'category'</span>]);
+    $register_panel = function() use ($new_widget) {
+        register_widget( $new_widget );
+    };
+    add_action(<span class="hljs-string">'widgets_init'</span>, $register_panel);
+}
+</code></pre>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SNOW-14/"><span class="aria-hidden">←</span> Previous: SNOW-14</a>
+        <a class="mx-1" href="/browse/SNOW-16/">Next: SNOW-16 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

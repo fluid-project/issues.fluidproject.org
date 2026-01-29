@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3504  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3504 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3504/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3504/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3504/">FLUID-3504</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3504: ChangeApplier has no convenient way to add items to an array in a model</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3504">FLUID-3504</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-02-25T15:23:03.000-0500" prefix="">2010-02-25T15:23:03.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-04-05T04:16:30.200-0400" prefix="">2018-04-05T04:16:30.200-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1.2</li>
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In cases where a model includes an array of some smaller objects, the ChangeApplier offers no convenient way to add several more of these smaller objects to that array all in one go. For example, if the form of the model includes</p>
+<pre><code class="hljs language-java">{
+  things: [
+    { thung: <span class="hljs-string">"foo"</span> },
+    { thung: <span class="hljs-string">"bar"</span> }
+  ]
+}
+</code></pre>
+<p>If I wish to add three more 'thung's to 'things', I must fire three separate requests for a change, using the fully qualified EL path into 'things' i.e. using knowledge of how many 'thung's there already are:</p>
+<pre><code class="hljs language-java">applier.requestChange(<span class="hljs-string">"things.2"</span>, newThungA);
+  applier.requestChange(<span class="hljs-string">"things.3"</span>, newThungB);
+  applier.requestChange(<span class="hljs-string">"things.4"</span>, newThungC);
+</code></pre>
+<p>It would be nice to be able to do it all in one request, so that only one modelChanged event is fired.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13903">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2010-02-25T15:27:20.000-0500">2010-02-25T15:27:20.000-0500</relative-time></i></p>
+                        <p>Alternatively, I could create a copy of the existing 'things', add my 'thung's to it, then request a single change on the whole thing... That doesn't seem entirely optimal either.</p>
+
+                    </li>
+                    
+                    <li id="comment-13905">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-10-30T18:16:50.775-0400">2014-10-30T18:16:50.775-0400</relative-time></i></p>
+                        <p>In time, the ChangeApplier will be extended to support custom array insertion events as well as fixed to allow the DELETE operation to remove an array element. See IRC discussion in #fluid-work at <a href="https://botbot.me/freenode/fluid-work/2014-09-17/?msg=21823956&page=2">https://botbot.me/freenode/fluid-work/2014-09-17/?msg=21823956&amp;page=2</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3498/"><span class="aria-hidden">←</span> Previous: FLUID-3498</a>
+        <a class="mx-1" href="/browse/FLUID-3505/">Next: FLUID-3505 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

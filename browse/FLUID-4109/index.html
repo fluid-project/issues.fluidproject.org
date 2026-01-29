@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4109  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4109 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4109/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4109/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4109/">FLUID-4109</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4109: layoutReorderer demo has a "demo is not defined" error on load</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4109">FLUID-4109</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Harris%20Wong">Harris Wong</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-02-23T15:44:06.242-0500" prefix="">2011-02-23T15:44:06.242-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-06-06T17:52:37.416-0400" prefix="">2011-06-06T17:52:37.416-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Demos</li>
+                            
+                            <li>Layout Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>1. Download the "infusion-InfusionAll-1.3.1-src.zip" from <a href="http://wiki.fluidproject.org/display/fluid/Release+Package+QA+Test+Plan">http://wiki.fluidproject.org/display/fluid/Release+Package+QA+Test+Plan</a><br>
+2. Run infusion-InfusionAll-1.3.1-src/demos/reorderer/layoutReorderer/demo.html<br>
+3. Get the following error:</p>
+<p>Error: demo is not defined<br>
+Source File: <a href="http://localhost/fluid/infusion_diff/infusion-InfusionAll-1.3.1-src/demos/reorderer/layoutReorderer/html/layoutReorderer.html">http://localhost/fluid/infusion_diff/infusion-InfusionAll-1.3.1-src/demos/reorderer/layoutReorderer/html/layoutReorderer.html</a><br>
+Line: 138</p>
+<p>This could be an url rewriting problem in the the build process.</p>
+<p>Adding "&lt;script type="text/javascript" src="../js/layoutReorderer.js"&gt;&lt;/script&gt;" in demos/reorderer/layoutReorderer/html/layoutReorderer.html line 15 would fix the problem.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>WinXP FF, IE8</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-4109/layoutReorderer-error.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-4109/layoutReorderer-error.png" alt="layoutReorderer-error.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24413">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-05-17T09:42:59.428-0400">2011-05-17T09:42:59.428-0400</relative-time></i></p>
+                        <p>Bug Parade Infusion</p>
+
+                    </li>
+                    
+                    <li id="comment-24414">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2011-05-30T15:30:17.647-0400">2011-05-30T15:30:17.647-0400</relative-time></i></p>
+                        <p>In master, "&lt;script type="text/javascript" src="../js/layoutReorderer.js"&gt;&lt;/script&gt;" is already added in demos/reorderer/layoutReorderer/html/layoutReorderer.html.  Check the 1.4-src again before resolving.  </p>
+
+                    </li>
+                    
+                    <li id="comment-24415">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2011-06-02T14:46:34.415-0400">2011-06-02T14:46:34.415-0400</relative-time></i></p>
+                        <p>Run ant infusionAllBuilds, then you will get the error.  Screen shot layoutReorderer-error.png attached.</p>
+
+                    </li>
+                    
+                    <li id="comment-24416">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2011-06-02T17:00:24.942-0400">2011-06-02T17:00:24.942-0400</relative-time></i></p>
+                        <p>Seems like build.js's that.buildJSReplaceRegExpression() is striping &lt;script&gt;&lt;/script&gt; tags blindly. It might be a reason why listReorderer, layoutReorderer tags got stripped. </p>
+
+                    </li>
+                    
+                    <li id="comment-24417">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2011-06-03T10:38:31.811-0400">2011-06-03T10:38:31.811-0400</relative-time></i></p>
+                        <p>In build.js, buildRegExpression returns the regExpression with the following:<br>
+&lt;script{1,1}?.*Reorderer\.js{1,1}?.*script&gt;</p>
+<p>This will match the demo's reorderer's links, such as the following:<br>
+&lt;script type="text/javascript" src="../js/layoutReorderer.js"&gt;&lt;/script&gt;<br>
+&lt;script type="text/javascript" src="../js/listReorderer.js"&gt;&lt;/script&gt;<br>
+&lt;script type="text/javascript" src="../js/&lt;prefix&gt;Reorderer.js"&gt;&lt;/script&gt;</p>
+
+                    </li>
+                    
+                    <li id="comment-24418">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2011-06-03T15:19:30.128-0400">2011-06-03T15:19:30.128-0400</relative-time></i></p>
+                        <p>Problem:  Regular expression allows the script to remove any string that has "Reorderer.js" in it.  It was designed to remove components "LayoutReorderer.js", "ListReorderer.js", "ImageReorderer.js" dynamically; however it also removes "layoutReorderer.js" which is not supposed to.  This only affect demos with custom build using the build-scripts.</p>
+<p>Possible solutions:<br>
+1. Change the demo js files name; ie. change layoutReorderer.js to layoutReordererDemo.js.  This doesn't prevent future demo from breaking though.<br>
+2. Change the regular expression sightly to match "&lt;script{1,1}?.<strong>&lt;componentName&gt;\.js{1,1}?.*script&gt;" to "&lt;script{1,1}?.</strong>\/&lt;componentName&gt;\.js{1,1}?.*script&gt;" so it will only remove components related js files.  However this doesn't prevent users from using component name as the demo js, ie. LayoutReorderer.js instead of layoutReorderer.js.<br>
+3. Match the &lt;componentName&gt; to a list of component and remove it iff the component is on the list.  This list needs to be updated per new component added, making it hard to maintain.</p>
+<p>Discussed with Justin, we believe it's better to add a directory separator in front of the filename(opt #2) for now.  </p>
+
+                    </li>
+                    
+                    <li id="comment-24419">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2011-06-06T15:20:17.479-0400">2011-06-06T15:20:17.479-0400</relative-time></i></p>
+                        <p>Instead of adding the front slash to the actual build.js, we can modify the rules in the build.xml instead.  Change line 18<br>
+&lt;property name="regexStartJS" value="&amp;lt;script{1,1}?.*" /&gt; to <br>
+&lt;property name="regexStartJS" value="&amp;lt;script{1,1}?.*\/" /&gt;</p>
+
+                    </li>
+                    
+                    <li id="comment-24420">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-06-06T17:52:01.914-0400">2011-06-06T17:52:01.914-0400</relative-time></i></p>
+                        <p>Merged into the project repo at a60418a57b88923ff2dd33d61b44c5f49bbeafac</p>
+
+                    </li>
+                    
+                    <li id="comment-24421">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-06-06T17:52:26.629-0400">2011-06-06T17:52:26.629-0400</relative-time></i></p>
+                        <p>reopening to set the resolution</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4108/"><span class="aria-hidden">←</span> Previous: FLUID-4108</a>
+        <a class="mx-1" href="/browse/FLUID-4110/">Next: FLUID-4110 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

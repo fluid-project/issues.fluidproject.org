@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-59  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-59 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-59/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-59/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-59/">INFRA-59</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-59: Create a Docker image for our version of CouchDB</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-59">INFRA-59</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Resolved</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Avtar Gill</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Alan%20Harnum">Alan Harnum</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-11-02T13:05:11.827-0500" prefix="">2015-11-02T13:05:11.827-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-01-11T10:49:44.035-0500" prefix="">2016-01-11T10:49:44.035-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <ul>
+<li>a containerized CouchDB based on our CentOS container</li>
+<li>built using our CouchDB role: <a href="https://github.com/idi-ops/ansible-couchdb">https://github.com/idi-ops/ansible-couchdb</a></li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25847">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2015-11-03T16:56:07.524-0500">2015-11-03T16:56:07.524-0500</relative-time></i></p>
+                        <p>CouchDB has recently fallen out of the EPEL for CentOS7: <a href="http://pkgs.fedoraproject.org/cgit/couchdb.git/commit/?h=epel7">http://pkgs.fedoraproject.org/cgit/couchdb.git/commit/?h=epel7</a></p>
+<p><em>2015-10-28: Retired because it depends on erlang-mochiweb, which was retired, because it was orphaned for more than six weeks.</em></p>
+<p>This is hopefully resolved soon - if not we'll probably have to make a container that builds from source.</p>
+
+                    </li>
+                    
+                    <li id="comment-25848">
+                        <p class="mb-0"><b>Avtar Gill</b> <i>commented <relative-time datetime="2016-01-11T10:49:30.026-0500">2016-01-11T10:49:30.026-0500</relative-time></i></p>
+                        <p>Pull request for this issue:</p>
+<p><a href="https://github.com/idi-ops/docker-couchdb/pull/1">https://github.com/idi-ops/docker-couchdb/pull/1</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-58/"><span class="aria-hidden">←</span> Previous: INFRA-58</a>
+        <a class="mx-1" href="/browse/INFRA-60/">Next: INFRA-60 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

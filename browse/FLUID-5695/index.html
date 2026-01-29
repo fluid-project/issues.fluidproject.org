@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5695  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5695 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5695/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5695/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5695/">FLUID-5695</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5695: Design of configuration for modelListeners is faulty: Need to support namespaces as well as multiple paths and segmented paths</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5695">FLUID-5695</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-06-20T16:28:21.365-0400" prefix="">2015-06-20T16:28:21.365-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-05-02T10:44:44.337-0400" prefix="">2016-05-02T10:44:44.337-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The declarative ChangeApplier API supplies no scheme for listening to multiple paths with a single listener, nor for specifying these paths as an array of segments as is possible in many of the procedural APIs. There is also no facility for supplying namespaces for these listeners so that they can easily be overridden and removed.</p>
+<p>Proposal:</p>
+<p>Support a new entry in the RHS of a modelListener declaration named pathSpec. If this is present, we reinterpret the key as a namespace rather than as a path, if no namespace is supplied in the record. </p>
+<p>pathSpec can hold: i) an individual string matching the syntax that we used to support as modelListener keys, <br>
+OR ii) an entry {context: &lt;string&gt;, segs: Array} holding a fully parsed-out IoC reference (with "*" supported as a path segment), OR iii) an array of entries such as i) or ii)</p>
+<p>We will try to deprecate the old convention where LHS holds the path spec as soon as possible, and return modelListeners to a model like that for distributeOptions where the LHS key is expected to be a namespace only.</p>
+<p>An explicit "namespace" entry in the RHS will supplant any namespace held as the key.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23895">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-02-04T22:13:45.862-0500">2016-02-04T22:13:45.862-0500</relative-time></i></p>
+                        <p>Namespaces and priorities for model listeners were delivered in the fix for <a href="/browse/FLUID-5361/">FLUID-5361</a>. The remainder of the work will receive a dedicated fix.</p>
+
+                    </li>
+                    
+                    <li id="comment-23897">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-02-04T22:32:40.741-0500">2016-02-04T22:32:40.741-0500</relative-time></i></p>
+                        <p>Alternatives above are ambiguous - if we find that "pathSpec" (which we will just name "path", I think) is an array, how will we determine whether it is an array of path segments of an array of paths?<br>
+Perhaps it would be best to just support "paths" and "path" as separate members.</p>
+<p>The "if you use path/paths, the key is a namespace" idiom is a bit worrying. Imagine that if we have USER TOOLS, the old form will never be generated.</p>
+
+                    </li>
+                    
+                    <li id="comment-23898">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2016-05-02T10:44:44.305-0400">2016-05-02T10:44:44.305-0400</relative-time></i></p>
+                        <p>The infusion pull request <a href="https://github.com/fluid-project/infusion/pull/671">https://github.com/fluid-project/infusion/pull/671</a> was merged at 94fdce728416f1b38f0181c4fa32bcae347acdbd</p>
+<p>The infusion-docs pull request <a href="https://github.com/fluid-project/infusion-docs/pull/84">https://github.com/fluid-project/infusion-docs/pull/84</a> was merged at 9fed41658edc8bd560dce4f39a1611de75608d01 </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5694/"><span class="aria-hidden">←</span> Previous: FLUID-5694</a>
+        <a class="mx-1" href="/browse/FLUID-5696/">Next: FLUID-5696 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

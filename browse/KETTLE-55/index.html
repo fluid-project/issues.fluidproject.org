@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> KETTLE-55  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" KETTLE-55 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/KETTLE-55/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/KETTLE-55/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/KETTLE" data-pagefind-filter="project">Kettle</a></li>
+                <li><a href="/browse/KETTLE-55/">KETTLE-55</a></li>
+            </ol>
+        </nav>
+        <h1>KETTLE-55: Refactor dataSource away from clumsy getImpl/setImpl pattern towards symmetric implementation using pseudoevents</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/KETTLE-55">KETTLE-55</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Resolved</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/KETTLE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-01-09T10:20:12.812-0500" prefix="">2017-01-09T10:20:12.812-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-09-30T12:15:28.731-0400" prefix="">2020-09-30T12:15:28.731-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The core dataSource implementation structure predates the introduction of the onRead/onWrite pseudoevents representing a data transform pipeline. It assumes that the actual backing implementation (whether over the network, fs, etc.) is configured using a hardwired invoker named getImpl/setImpl. As well as being clumsy, this creates real configuration problems such as those seen in <a href="/browse/KETTLE-54/">KETTLE-54</a> - if the backing implementation were folded in to the data pipeline, say using a standard namespace named "backing", it would then be possible to configure listeners after this point in the chain, which would then be "only notified in the case of a successful read/write".</p>
+<p>We have a further opportunity with respect to <a href="/browse/KETTLE-52/">KETTLE-52</a> - the user would really like to be able to access "in-flight" information such as the actual http request but with the current backing implementation this is lost - see the pre-flood implementation in <a href="https://github.com/fluid-project/kettle/blob/master/lib/dataSource-url.js#L207">https://github.com/fluid-project/kettle/blob/master/lib/dataSource-url.js#L207</a></p>
+<p>We should take the opportunity to insert this into the "promise sequence store" which is supplied by the pseudoevent firer in the core - that is into a field in this "options" structure <a href="https://github.com/fluid-project/kettle/blob/master/lib/dataSource-core.js#L263">https://github.com/fluid-project/kettle/blob/master/lib/dataSource-core.js#L263</a> . </p>
+<p>Remember to keep in mind the distant roadmap sketched out in <a href="https://wiki.fluidproject.org/display/fluid/Plan+to+Abolish+Invokers+and+Events">https://wiki.fluidproject.org/display/fluid/Plan+to+Abolish+Invokers+and+Events</a> and the growing duality between an "element" and a "component". In Kettle server, "requests" are genuine components and the gap needs to be closed up between this setup and the "lightweight" one in dataSources.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/KETTLE-54/"><span class="aria-hidden">←</span> Previous: KETTLE-54</a>
+        <a class="mx-1" href="/browse/KETTLE-56/">Next: KETTLE-56 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

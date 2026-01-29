@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5332  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5332 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5332/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5332/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5332/">FLUID-5332</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5332: Renderer's data binding will continue with notifications after source markup is destroyed</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5332">FLUID-5332</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-04-28T02:00:31.562-0400" prefix="">2014-04-28T02:00:31.562-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-08-08T13:44:52.825-0400" prefix="">2021-08-08T13:44:52.825-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>5.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Renderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This issue was noticed during work on the metadata component - a failing version was checked in at <a href="https://github.com/jobara/metadata/tree/FLOE-116-broken-resolution">https://github.com/jobara/metadata/tree/FLOE-116-broken-resolution</a> (commit is <a href="https://github.com/jobara/metadata/commit/2f4fb58228493439f556d53c5606ca97f9081158">https://github.com/jobara/metadata/commit/2f4fb58228493439f556d53c5606ca97f9081158</a> ). </p>
+<p>This failure can be observed by entering a new video URL and then operating one of the checkboxes (not the radio buttons) at the right panel. This issue was provoked by a bug in the configuration for the metadata component - two listeners were registered against the panel's model in two different locations, each of which triggered a call to "updateModel".<br>
+The first of these triggered a call to refreshView in the parent component, which under the current renderer model must destroy and recreate the subcomponent - by the time the duplicate model listener executes, the target markup and component have already been destroyed. This triggers a particularly incomprehensible IoC resolution message complaining - Failed to resolve reference </p>
+<p>.model - could not match context with name panel from component ....</p>
+<p>Note that this is currently an "old-style" model component and so the listener loop during which the component destruction occurs is "fireAgglomerated" inside the old ChangeApplier implementation. This is a particularly inaccessible location and the best solution would be to wait for the framework to be rationalised somewhat so that we can deal with the issue in just one place, the new ChangeApplier. However, this would also require advanced support for a new event facility described in <a href="/browse/FLUID-5333/">FLUID-5333</a>, "abortable events"</p>
+<p>This issue was discussed in IRC on 24/4/14 currently logged at <a href="https://botbot.me/freenode/fluid-work/2014-04-24/">https://botbot.me/freenode/fluid-work/2014-04-24/</a> .</p>
+<p>This issue is related to <a href="/browse/FLUID-4890/">FLUID-4890</a> in that at least the fix for that issue would result in a much better diagnostic, failing in the listener early with the message that the component had been destroyed.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25701">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2021-08-08T13:44:52.805-0400">2021-08-08T13:44:52.805-0400</relative-time></i></p>
+                        <p>The old renderer will be retired in Infusion 5.x and no further improvements will be made to it.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5331/"><span class="aria-hidden">←</span> Previous: FLUID-5331</a>
+        <a class="mx-1" href="/browse/FLUID-5333/">Next: FLUID-5333 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

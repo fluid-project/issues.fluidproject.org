@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5373  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5373 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5373/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5373/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5373/">FLUID-5373</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5373: Correct implementation of "half-transaction system" used in model relay so that it is more comprehensible and correct</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5373">FLUID-5373</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-05-15T15:30:31.183-0400" prefix="">2014-05-15T15:30:31.183-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-07-29T01:33:57.272-0400" prefix="">2021-07-29T01:33:57.272-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>5.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In doing work for the group of issues <a href="/browse/FLUID-5361/">FLUID-5361</a>, <a href="/browse/FLUID-5368/">FLUID-5368</a>, <a href="/browse/FLUID-5371/">FLUID-5371</a>, the logic of the existing model relay system was found to be extremely hard to follow as well as being likely to give incorrect results in many cases. For <a href="/browse/FLUID-5361/">FLUID-5361</a> we corrected the timing of notification of listeners so that they are at least globally consistent but the previous test cases seem to have been written largely from the point of view of asserting that the final model condition is correctly computed. Now we are interested in the exact order of observation which is received by model listeners many problems are becoming apparent.</p>
+<p>The model relay system uses the peculiar "half-transactional" system in order to make sure that the maximum number of changes have been honoured throughout the model skeleton before we attempt to honour a transforming model relay. Operating a transforming relay when the material that its transform depends on has been only partially updated runs a great risk of propagating inconsistent values into the models. Partial updates can arise from two sources - i) a sequence of individual changes propagated by a user in one of their own transactions, ii) a sequence of changes emitted by another transforming relay which has a compound output value. We must wait until the system is "idle" from these causes before starting to operate transforming relays. This implies that there are kinds of "subtransactions" corresponding to these idle points, on a much shorter timescale to the overall transaction visible to the user.</p>
+<p>The error in the current system relates to trying to store only a single transaction at each applier cooperating in a wider transaction. There is not one answer that satisfies the needs of both kinds of clients, and the design of our transactions has become hugely overcomplicated as a result, with two independent sets of bookkeeping information being maintained for the fine and coarse transactional scales. </p>
+<p>We need to store TWO transactions at each proper model in the skeleton, one for the user's transaction and one for the current "relay idle point". We need to store just ONE transaction at appliers attached to relays themselves, the one representing the fine scale.</p>
+<p>Without this, the user will see numerous redundant model updates during the relay process as the internal "idle points" are reached - and without independent accounting for the original transaction state, will also see model notifications in the case where a relay "transforms away" a change leaving the overall model unchanged. Also right now should the user succeed in finding a way to observe the model state before the completion of the overall transaction, they may be able to see it in a partially updated condition as updated by a relay transaction as the two kinds of transactions are currently multiplexed. Even though we don't intend to provide schemes which would allow this kind of observation (especially since <a href="/browse/FLUID-5361/">FLUID-5361</a> schedules listeners until after the completion of the overall transaction) we should still ensure that the actual model update is genuinely atomic at the coarser scale.</p>
+<p>In order to support this we also need to adjust our algorithm for computing change maps and change content. This should act ONLY at the point a transaction commits, and compute the maps and counts in one shot only at that point - since we are only interested in whether and what change has occurred rather than the mechanism for it. Without this, we are liable to trigger changes in cases where there has been no overall change to the model.</p>
+<p>Hopefully by storing the two kinds of transactions separately, we can hugely simplify the overall workflow of the relay process as well as simplifying the implementation of the transactions themselves.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5372/"><span class="aria-hidden">←</span> Previous: FLUID-5372</a>
+        <a class="mx-1" href="/browse/FLUID-5374/">Next: FLUID-5374 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

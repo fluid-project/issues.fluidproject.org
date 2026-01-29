@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-224  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-224 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-224/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-224/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-224/">C2LC-224</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-224: Add tests for the AddNode aria-label generation</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-224">C2LC-224</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Done</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-09-21T10:39:19.114-0400" prefix="">2020-09-21T10:39:19.114-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-09-29T10:50:30.704-0400" prefix="">2020-09-29T10:50:30.704-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Env 0.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Environment</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>We don’t currently have tests for the AddNode aria-label generation.  Test cases to cover:</p>
+<ol>
+<li>Add at beginning of program</li>
+<li>Add at end of program</li>
+<li>Add between existing steps</li>
+</ol>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10686">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2020-09-22T08:24:52.335-0400">2020-09-22T08:24:52.335-0400</relative-time></i></p>
+                        <p>Simon Bates, I'm looking through the code and trying to understand what you mean.  I see <a href="https://github.com/codelearncreate/c2lc-coding-environment/blob/master/src/AddNode.test.js#L119">the tests for the aria-label property in AddNode.test.js</a>.  It sounds like you want to add tests in ProgramBlockEditor.test.js to ensure that the aria labels are correct?</p>
+<p><a href="https://github.com/codelearncreate/c2lc-coding-environment/blob/master/src/ProgramBlockEditor.js#L278">https://github.com/codelearncreate/c2lc-coding-environment/blob/master/src/ProgramBlockEditor.js#L278</a></p>
+
+                    </li>
+                    
+                    <li id="comment-10687">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2020-09-22T08:36:18.368-0400">2020-09-22T08:36:18.368-0400</relative-time></i></p>
+                        <p>Looking at the coverage report, the function in question is exercised, but that doesn't mean much unless we check the outcome.</p>
+
+                    </li>
+                    
+                    <li id="comment-10688">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-09-22T08:41:01.635-0400">2020-09-22T08:41:01.635-0400</relative-time></i></p>
+                        <p>Yes, that's right. In AddNode.test.js we verify that the provided aria-label is rendered in the component. But we don't have tests for the generation of the aria-label content, which is created in the function in ProgramBlockEditor.js that you link to.</p>
+<p>I think adding tests to ProgramBlockEditor.test.js would be the place to do it. We may want to refactor the aria-label generation out of ProgramBlockEditor, but I think leaving it where it is and testing it there is good for now. There will definitely be some refactoring of ProgramBlockEditor coming up, as that class is doing a little too much. But I've resisting making too many changes until we had a little more functionality in place and a better sense of the shape this part of the system should have.</p>
+<p></p>
+
+                    </li>
+                    
+                    <li id="comment-10689">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2020-09-22T08:43:24.416-0400">2020-09-22T08:43:24.416-0400</relative-time></i></p>
+                        <p>I assume I'd add three tests similar <a href="https://github.com/codelearncreate/c2lc-coding-environment/blob/master/src/ProgramBlockEditor.test.js#L452">to this one for scrolling when a step is added</a>.</p>
+
+                    </li>
+                    
+                    <li id="comment-10690">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-09-22T09:30:33.375-0400">2020-09-22T09:30:33.375-0400</relative-time></i></p>
+                        <p>Yes. For each test situation:</p>
+<ul>
+<li>Create an instance of ProgramBlockEditor with a suitable program</li>
+<li>Find the AddNode(s) and verify that they have the expected aria-label</li>
+</ul>
+<p>Where we probably want the following test situations:</p>
+<ul>
+<li>Empty program (expect one AddNode, which can append onto an empty program)</li>
+<li>Program with one step (expect two AddNodes, one before and one after the step)</li>
+<li>Program with two steps (expect three AddNodes, one before, one in between, and one after)</li>
+</ul>
+<p></p>
+
+                    </li>
+                    
+                    <li id="comment-10691">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2020-09-23T03:54:26.275-0400">2020-09-23T03:54:26.275-0400</relative-time></i></p>
+                        <p>I think those tests have a fundamental flaw that I'll need to fix while I'm working on this:</p>
+<p><a href="https://github.com/codelearncreate/c2lc-coding-environment/blob/master/src/ProgramBlockEditor.test.js#L156">https://github.com/codelearncreate/c2lc-coding-environment/blob/master/src/ProgramBlockEditor.test.js#L156</a></p>
+<p>Rather than actually returning the add button at a particular index, it's hard-coded to zero.  We mainly got away with it because we were adding a forward to a stack of forwards.  I discovered it because I decided to add a left.  It may take a little longer to unpack, I'll share what I have if I need help fixing it.</p>
+
+                    </li>
+                    
+                    <li id="comment-10692">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2020-09-23T04:15:46.931-0400">2020-09-23T04:15:46.931-0400</relative-time></i></p>
+                        <p>OK, I suspected this was an issue before but thought maybe I was missing something.  I just tried on someone's instance to confirm.  We can only add things at the beginning or in the middle if the toggle is clicked, and it's off by default.  For now I'll make my tests click the toggle, but IMO it's worth spending the small amount of time to make that configurable as part of the initial starting properties.</p>
+<p>This also explains why the old hard coding of the add button index to zero worked, as there was only ever one expanded add button.</p>
+
+                    </li>
+                    
+                    <li id="comment-10693">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2020-09-23T05:47:35.952-0400">2020-09-23T05:47:35.952-0400</relative-time></i></p>
+                        <p><a href="https://github.com/codelearncreate/c2lc-coding-environment/pull/79">https://github.com/codelearncreate/c2lc-coding-environment/pull/79</a></p>
+
+                    </li>
+                    
+                    <li id="comment-10694">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2020-09-23T05:49:25.173-0400">2020-09-23T05:49:25.173-0400</relative-time></i></p>
+                        <p>The pull is in, it adds aria label tests, and also tests for the expand toggle, and finally tests for adding nodes somewhere at the beginning and middle of  a program.</p>
+
+                    </li>
+                    
+                    <li id="comment-10695">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-09-23T08:48:48.109-0400">2020-09-23T08:48:48.109-0400</relative-time></i></p>
+                        <p>I agree with regards to moving the AddNode expanded state up and providing it to the ProgramBlockEditor as a property. Could you write up a note on our Technical Debt doc? Thanks very much. In the future, we will want to persist user settings and I think the AddNode expanded state would be something that we would want to include.</p>
+<p>I initially created an object within the AppState called 'settings' of type AppSettings with the intention of using that as the place to locate settings that we want to persist, but I didn't go very far with it yet. But I think that would be the place to put it.</p>
+<p>And thanks very much for finding and fixing the issue with the ignored index in getAddNodeButtonAtPosition().</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-223/"><span class="aria-hidden">←</span> Previous: C2LC-223</a>
+        <a class="mx-1" href="/browse/C2LC-225/">Next: C2LC-225 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

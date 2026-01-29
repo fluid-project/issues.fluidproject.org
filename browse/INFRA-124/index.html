@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-124  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-124 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-124/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-124/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-124/">INFRA-124</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-124: Private Fedora mirror</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-124">INFRA-124</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Done">Done</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-02-26T10:20:21.859-0500" prefix="">2018-02-26T10:20:21.859-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-03-01T08:38:51.765-0500" prefix="">2018-03-01T08:38:51.765-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Private Fedora 27 mirror for x86_64 platform.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26014">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-02-26T14:34:41.800-0500">2018-02-26T14:34:41.800-0500</relative-time></i></p>
+                        <p>Private mirror is available at <a href="http://mirror.inclusivedesign.ca/fedora">http://mirror.inclusivedesign.ca/fedora</a></p>
+<p>It was added to Fedora's MirrorManager and will be used automatically by hosts on the 205.211.168.0/24 (OCAD) and 205.211.169.0/24 (IDRC) networks. No need for reconfiguration of clients.</p>
+<p>I'm working on making the update script a bit more robust before closing this ticket.</p>
+
+                    </li>
+                    
+                    <li id="comment-26015">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-02-26T14:51:16.810-0500">2018-02-26T14:51:16.810-0500</relative-time></i></p>
+                        <p>Sent an email to rit.edu asking our mirror to be added to their ACL so we can mirror from a faster server.</p>
+
+                    </li>
+                    
+                    <li id="comment-26016">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-02-27T09:36:56.260-0500">2018-02-27T09:36:56.260-0500</relative-time></i></p>
+                        <p>Disk space used on h-0005 (`mirror` user):</p>
+<pre><code class="hljs"><span class="hljs-operator">/</span>home<span class="hljs-operator">/</span>mirror<span class="hljs-operator">/</span>public_html<span class="hljs-operator">/</span><span class="hljs-params">fedora:</span>
+
+<span class="hljs-number">79</span>G	releases<span class="hljs-symbol">/26</span>
+<span class="hljs-number">82</span>G	releases<span class="hljs-symbol">/27</span>
+<span class="hljs-number">23</span>G	updates<span class="hljs-symbol">/26</span>
+<span class="hljs-number">22</span>G	updates<span class="hljs-symbol">/27</span>
+</code></pre>
+<p>Mirror script committed to ops repo.</p>
+
+                    </li>
+                    
+                    <li id="comment-26017">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-03-01T08:38:51.765-0500">2018-03-01T08:38:51.765-0500</relative-time></i></p>
+                        <p>I should add a comment about why I chose h-0005 for this. This mirror server can grow a lot in the near future (&gt;500GB) and using a QCOW2 virtual disk (like our VMs do) didn't seem like a good option, for backup/performance reasons. That made me focus on our physical servers. Out of all the h-* servers, only h-0005 is public so that settled it.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-123/"><span class="aria-hidden">←</span> Previous: INFRA-123</a>
+        <a class="mx-1" href="/browse/INFRA-125/">Next: INFRA-125 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

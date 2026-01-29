@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-499  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-499 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-499/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-499/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-499/">FLOE-499</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-499: Add comments to code and similar about how to visually style chart elements</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-499">FLOE-499</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Alan%20Harnum">Alan Harnum</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-03-06T13:48:29.115-0500" prefix="">2017-03-06T13:48:29.115-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-03-06T13:48:29.115-0500" prefix="">2017-03-06T13:48:29.115-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Chart Authoring Tool</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Cindy Li's recent experience with the QI dashboard has shown that we need more clarity about how to visually style charts.</p>
+<p>Specifically, the issue that we saw:</p>
+<p>1) The chart components themselves accept directives in many places about colour, opacity, etc - this results in directives on the SVG elements themselves<br>
+2) In modern browsers, SVG elements also respond to CSS syntax (<a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/SVG_and_CSS">https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/SVG_and_CSS</a>), which will override anything set on the element itself. This matches the standard behaviour of CSS as applied to HTML element attributes that also set visual presentation (but no one does that these days, we hope).</p>
+<p>In practice, this is confusing because the component configuration suggests that it should be done there, but it may in practice be overridden by an external style sheet, as is the case in the QI dashboard. </p>
+<p>At minimum, we need to have some comments in the code in appropriate places so that an implementor has more clarity about this behaviour. The README should also be updated with  commentary to this effect.</p>
+<p>Other thoughts for longer term:</p>
+<ul>
+<li>we may want to remove (where possible) any code that sets colour, stroke or similar on the SVG element, make sure all elements have good CSS classes, and advise the use of CSS throughout.</li>
+</ul>
+<ul>
+<li>where it is necessary that colours or similar be programatically determined (as for automatic colour scales), these should perhaps be implemented using inline CSS on the element.</li>
+</ul>
+<ul>
+<li>a key question to answer is whether all SVG visual elements (or at least the ones we are concerned about commonly such as stroke, color and opacity) are controllable through CSS in current browsers.</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-498/"><span class="aria-hidden">←</span> Previous: FLOE-498</a>
+        <a class="mx-1" href="/browse/FLOE-501/">Next: FLOE-501 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

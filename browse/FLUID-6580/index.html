@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6580  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6580 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6580/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6580/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6580/">FLUID-6580</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6580: Thoughts on "integration constant" lenses to implement toggle interactions</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6580">FLUID-6580</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-11-13T10:48:11.103-0500" prefix="">2020-11-13T10:48:11.103-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:28.432-0400" prefix="">2024-07-22T10:35:28.432-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Following <a href="/browse/FLUID-6570/">FLUID-6570</a> and <a href="/browse/FLUID-6576/">FLUID-6576</a>, we have for a while sketched an idea for a form of "integral relay" allowing the expression of a click-to-toggle interaction. Following the sketches of materialised DOM relay rules in <a href="/browse/FLUID-6570/">FLUID-6570</a>, we would like to write a rule like</p>
+<pre><code class="hljs language-java">modelRelay: {
+            source: <span class="hljs-string">"{that}.model.dom.button.clicked"</span>,
+            target: <span class="hljs-string">"{that}.model.enabled"</span>,
+            singleTransform: <span class="hljs-string">"fluid.transforms.toggle"</span>
+        }
+</code></pre>
+<p>This immediately extends the contract for model transformations in a dramatic way. The original conception was for what could be called an "integration constant" relay - bearing in mind that the value in the materialised DOM field {that}.model.dom.button.clicked was an integration of a series of differential events (clicks), the job of the lens would be, at the point the relay is set up, to take up the slack of the <a href="https://en.wikipedia.org/wiki/Constant_of_integration">constant of integration</a> resulting from this integration process as an internal "phase".</p>
+<p>This idea may have stemmed from a creative misunderstanding of a seminar presented at University of Boulder on Pierce-ist lenses in which it seemed that these kinds of putbacks were intended to be honoured by kinds of "pockets" in which lenses held parts of previously imaged state. However, consulting the actual Pierce-ist diagram that we have been reproducing in talks for many years (on page 6 of <a href="https://www.seas.upenn.edu/~harmony/manual.pdf">https://www.seas.upenn.edu/~harmony/manual.pdf</a> ) this is clearly not the way they are actually meant to work. As anyone might expect from this tradition, lenses are intended to be functional - as expressed in this idiom, the putback action is achieved by the lens accepting an additional argument, being a pure function of the "old source", the "updated target/view", and yielding the "updated source".</p>
+<p>This Pierce-ist view is clearly what we were intending to follow when we wrote point ii) on <a href="/browse/FLUID-6576/">FLUID-6576</a>. However, looking at the machinery that we have in the model relay system, as well as our actual use case, this route appears prohibitive. In the attached diagram, we show the expected state updates for two expected initial values of the target.</p>
+<!-- media: file 68cb6dc2-608e-4fac-990c-5dd24c2a233c -->
+<p> </p>
+<p>Correlating this with the traditional lens diagram, we position the lossy direction of the lens as aiming to the right. However, our update isn't in the traditional direction because in our case it is the source which is getting updated again - therefore we need to flip the direction of all the arrows attached to the "put" lens. So what we require access to in this case in the Pierce-ist view is the old version of the target, and not the source. However, in order to be able to compute what needs to be output, we need to be able to determine what the change in source value has actually been. There is no provision for this and would require the lens to be improbably be made a function of THREE things, the old source, the updated source, and the old target.</p>
+<p>A big mismatch between our use of the lens idiom in model relay and Pierce-ism is the fact that we allow relay updates to slosh around in the graph of models in an essentially unordered way. All we track is the initial snapshot of the entire model state, and its "in-progress" value, and keep propagating until the graph stabilises. This implies that lenses may be activated numerous times along the same leg in the same transaction, if it's determined there is a change in their source.</p>
+<p>[Note - an idea for making this process much more efficient for <a href="/browse/FLUID-6396/">FLUID-6396</a> is to always pass the old source to a lens so that it can return it unchanged if it is an acceptable part of its inverse image - this was already called for in <a href="/browse/FLUID-5337/">FLUID-5337</a>]</p>
+<p>Well - perhaps it's not so onerous to supply old source and old target too - let's investigate</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6580/integration constant lens - 20201113_143046.jpg">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6580/integration constant lens - 20201113_143046.jpg" alt="integration constant lens - 20201113_143046.jpg">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25455">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2020-11-16T07:26:16.876-0500">2020-11-16T07:26:16.876-0500</relative-time></i></p>
+                        <p>Last recorded form of "pocket lenses":</p>
+<pre><code class="hljs language-java"><span class="hljs-comment">/** Toggle transformer which maps an increasing integer count into the space true/false - suitable for mapping
+     * e.g. a stream of click counts onto a toggle state.
+     */</span>
+
+    fluid.defaults(<span class="hljs-string">"fluid.transforms.toggle"</span>, {
+        gradeNames: [<span class="hljs-string">"fluid.standardTransformFunction"</span>, <span class="hljs-string">"fluid.pocketLens"</span>],
+        invertConfiguration: <span class="hljs-string">"fluid.transforms.toggle.invert"</span>,
+        relayOptions: {
+            forward: {
+                excludeSource: <span class="hljs-string">"init"</span>
+            },
+            backward: {
+                includeSource: <span class="hljs-string">"init"</span>
+            }
+        }
+    });
+
+    <span class="hljs-comment">/** <span class="hljs-doctag">@param</span> {Number} source - Numeric value to be converted
+     * <span class="hljs-doctag">@param</span> {Boolean} target - Current value in target 
+     * <span class="hljs-doctag">@param</span> {Object} pocketHolder - State allocated to hold "pocket" by previous operation of other leg of lens
+     * <span class="hljs-doctag">@return</span> {Boolean} Updated target value 
+     */</span>
+    fluid.transforms.toggle = function (source, target, pocketHolder) {
+        <span class="hljs-keyword">return</span> (source + pocketHolder.phase || <span class="hljs-number">0</span>) % <span class="hljs-number">2</span> === <span class="hljs-number">1</span>;
+    };
+
+
+    fluid.transforms.toggle.invert = function (transformSpec) {
+        transformSpec.type = <span class="hljs-string">"fluid.transforms.inverseToggle"</span>;
+        <span class="hljs-keyword">return</span> transformSpec;
+    }
+
+    fluid.defaults(<span class="hljs-string">"fluid.transforms.inverseToggle"</span>, {
+        <span class="hljs-comment">// This transform is only expected to arise as the inverse of fluid.transforms.toggle and so it does not</span>
+        <span class="hljs-comment">// produce an inverse.</span>
+        gradeNames: [<span class="hljs-string">"fluid.standardTransformFunction"</span>, <span class="hljs-string">"fluid.pocketLens"</span>]
+    });
+
+    <span class="hljs-comment">/** <span class="hljs-doctag">@param</span> {Boolean} source - Boolean toggle value to be converted 
+     * <span class="hljs-doctag">@param</span> {Number} target - Numeric count currently in target
+     * <span class="hljs-doctag">@param</span> {Object} pocketHolder - State allocated to hold "pocket" by previous operation of other leg of lens
+     * <span class="hljs-doctag">@return</span> {Number} Updated target count
+     */</span> <span class="hljs-comment">// We expect this leg to only run during startup to acquire phase, as per relayOptions of "fluid.transforms.toggle"</span>
+    fluid.transforms.inverseToggle = function (source, target, pocketHolder) {
+        target = target || <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">var</span> updatedTarget;
+        <span class="hljs-comment">// Boolean value corresponding to current target - "source" should match this</span>
+        <span class="hljs-type">var</span> <span class="hljs-variable">pullback</span> <span class="hljs-operator">=</span> fluid.transforms.toggle(target, pocketHolder);
+        <span class="hljs-comment">// Store phase which will cause match</span>
+        pocketHolder.phase = pullback === source ? <span class="hljs-number">0</span> : <span class="hljs-number">1</span>;
+        <span class="hljs-comment">// We never update the target</span>
+        <span class="hljs-keyword">return</span> target;
+    };
+</code></pre>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6579/"><span class="aria-hidden">←</span> Previous: FLUID-6579</a>
+        <a class="mx-1" href="/browse/FLUID-6581/">Next: FLUID-6581 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

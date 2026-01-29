@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-171  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-171 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-171/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-171/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-171/">INFRA-171</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-171: Confluence Collaborative Editing corrupted link to attachments</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-171">INFRA-171</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-04-27T13:13:04.101-0400" prefix="">2018-04-27T13:13:04.101-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-04-27T13:41:03.410-0400" prefix="">2018-04-27T13:41:03.410-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Issue introduced in Confluence 6.7.2 and fixed in 6.8.0 went unnoticed. Links to attachments in this page (and likely others) are broken:</p>
+<p><a href="https://wiki.fluidproject.org/display/fluid/Presentations">https://wiki.fluidproject.org/display/fluid/Presentations</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25886">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-04-27T13:14:29.608-0400">2018-04-27T13:14:29.608-0400</relative-time></i></p>
+                        <p>Support request&#160;<a href="/browse/CSP-227146/">CSP-227146</a> opened for this issue.</p>
+<pre><code class="hljs"><span class="hljs-attribute">Hi</span> Giovanni, this is a known bug from Confluence <span class="hljs-number">6</span>.<span class="hljs-number">7</span>.<span class="hljs-number">2</span> and it was fixed in Confluence <span class="hljs-number">6</span>.<span class="hljs-number">8</span>.<span class="hljs-number">0</span>:&#160;https://jira.atlassian.com/browse/CONFSERVER-<span class="hljs-number">51998</span>.
+<span class="hljs-attribute">The</span> problem is only triggered when you edit pages with the Collab. 
+<span class="hljs-attribute">Editing</span> <span class="hljs-literal">on</span>. Do you know if you can reproduce the problem in Confluence 
+<span class="hljs-attribute">6</span>.<span class="hljs-number">8</span>.<span class="hljs-number">1</span>? This test should be done in new pages instead of existing ones.
+<span class="hljs-attribute">The</span> bug would not fix the problem in case the page was edited before <span class="hljs-number">6</span>.<span class="hljs-number">8</span>.<span class="hljs-number">0</span>.
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-25887">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-04-27T13:15:04.662-0400">2018-04-27T13:15:04.662-0400</relative-time></i></p>
+                        <p>Tested that collab editing doesn't corrupt links anymore in Confluence 6.8.1</p>
+
+                    </li>
+                    
+                    <li id="comment-25888">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-04-27T13:19:50.417-0400">2018-04-27T13:19:50.417-0400</relative-time></i></p>
+                        <p>Created support request <a href="/browse/CSP-227588/">CSP-227588</a> for inability of the "Insert/Edit" to show more than 50 attachments and lack of pagination, which requires using the search feature to locate attachments (and requires extra typing).</p>
+
+                    </li>
+                    
+                    <li id="comment-25889">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-04-27T13:41:03.407-0400">2018-04-27T13:41:03.407-0400</relative-time></i></p>
+                        <p>Manually fixed 100+ broken links.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-168/"><span class="aria-hidden">←</span> Previous: INFRA-168</a>
+        <a class="mx-1" href="/browse/INFRA-172/">Next: INFRA-172 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

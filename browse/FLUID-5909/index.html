@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5909  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5909 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5909/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5909/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5909/">FLUID-5909</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5909: Move linting infrastructure over to ESHint and update grunt tasking to 1.0</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5909">FLUID-5909</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-05-25T11:39:16.781-0400" prefix="">2016-05-25T11:39:16.781-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-06-07T06:11:07.904-0400" prefix="">2016-06-07T06:11:07.904-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Tony Atkins [RtF] has brought to our attention an alternative linting tool to our JSHint (frozen at an ancient version to retain whitespace support), ESHint, that appears to have considerably superior engineering values and supports essentially all of the requirements motivating our JSHint fork at <a href="https://github.com/fluid-project/jshint">https://github.com/fluid-project/jshint</a></p>
+<p>We should move over to ESHint, draw up an equivalent .eshintrc file to our existing rules, and also take the opportunity to move over to the grunt 1.x release which appeared recently.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24217">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-05-25T12:33:42.711-0400">2016-05-25T12:33:42.711-0400</relative-time></i></p>
+                        <p>I have been refining my first pass at setings here:  <a href="https://github.com/the-t-in-rtf/gpii-express/blob/GPII-1800/.eslintrc">https://github.com/the-t-in-rtf/gpii-express/blob/GPII-1800/.eslintrc</a></p>
+<p>That project is configured to test with both.  I encountered a few last small niggles that showed up in JShint, but not ESlint, but I believe it's pretty close at this point.</p>
+
+                    </li>
+                    
+                    <li id="comment-24219">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-05-26T08:58:37.111-0400">2016-05-26T08:58:37.111-0400</relative-time></i></p>
+                        <p>Antranig Basman is this going to be a test or should all our other projects/repos make the switch to ESHint now too?</p>
+
+                    </li>
+                    
+                    <li id="comment-24220">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2016-06-02T15:55:12.342-0400">2016-06-02T15:55:12.342-0400</relative-time></i></p>
+                        <p>The infusion pull request <a href="https://github.com/fluid-project/infusion/pull/716">https://github.com/fluid-project/infusion/pull/716</a> has been merged into the master branch at 71f24487ee70abf5cf19ede582a8ae99f56ab907</p>
+<p>In order to upgrade infusion to use grunt 1.x, the grunt plugin grunt-modulefiles needs to be upgraded accordingly. This plugin upgrade is done at <a href="https://github.com/fluid-project/grunt-modulefiles/pull/6">https://github.com/fluid-project/grunt-modulefiles/pull/6</a> that also has been merged at 3a7e857bbc0a0d0b3980783d116e6b3a7a3f6405</p>
+
+                    </li>
+                    
+                    <li id="comment-24222">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-06-06T08:16:14.405-0400">2016-06-06T08:16:14.405-0400</relative-time></i></p>
+                        <p>I was hoping to reuse the new <code>.eshintrc</code> from infusion, but I immediately get linting errors not previously reported by JSHint in gpii-express.  Here's just the example output from a single file:</p>
+<pre><code class="hljs language-java">/Users/duhrer/Source/rtf/gpii-express/testIncludes.js
+  <span class="hljs-number">1</span>:<span class="hljs-number">1</span>  error  Use the function form of <span class="hljs-string">'use strict'</span>          strict
+  <span class="hljs-number">2</span>:<span class="hljs-number">1</span>  error  <span class="hljs-string">'require'</span> is not defined                       no-undef
+  <span class="hljs-number">2</span>:<span class="hljs-number">2</span>  error  Newline required at end of file but not found
+</code></pre>
+<p>The first error is a result of this configuration option:</p>
+<blockquote>
+<p>"strict": ["error", "function"],</p>
+</blockquote>
+<p>The second error is a result of this configuration option:</p>
+<blockquote>
+<p>"eol-last": "error",</p>
+</blockquote>
+<p>Both of these changes to our style were not previously enforced by JSHint.  I know because I set up both JSHint and ESLint in a single project and used them in parallel for a week or two to confirm that:</p>
+<p>1. ESLint reported all the problems that JSHint did previously.<br>
+2. ESLint did not report any code conventions that were previously allowed as errors.</p>
+<p>It seems like this change introduced two new rules and that someone just ran eslint --fix to fix the errors here.  Really, unless this ticket was also about changing our styles, this needs to be reopened and reviewed before we can expect other projects to follow suit and migrate to ESLint.</p>
+
+                    </li>
+                    
+                    <li id="comment-24224">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-06-06T08:44:06.427-0400">2016-06-06T08:44:06.427-0400</relative-time></i></p>
+                        <blockquote>
+<p>It seems like this change introduced two new rules and that someone just ran eslint --fix to fix the errors here.</p>
+</blockquote>
+<p>It would help if you had actually participated in the review thread for this fix or at least looked at it before you started slinging around unsourced accusations.</p>
+
+                    </li>
+                    
+                    <li id="comment-24226">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-06-06T08:48:17.648-0400">2016-06-06T08:48:17.648-0400</relative-time></i></p>
+                        <p>I apologize for implying that anyone ran --fix.  However, even if I agree that it's appropriate to sneak in one style change, that doesn't explain the migration of "use strict" to function form, which is not even mentioned in the PR.</p>
+
+                    </li>
+                    
+                    <li id="comment-24227">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-06-06T08:50:40.984-0400">2016-06-06T08:50:40.984-0400</relative-time></i></p>
+                        <p>It also seems very much like fair game to just use the <code>.eslintrc</code> from infusion without reading the PR, as that is exactly what we suggest that other people do:</p>
+<p><a href="https://wiki.fluidproject.org/pages/viewpage.action?pageId=3903458">https://wiki.fluidproject.org/pages/viewpage.action?pageId=3903458</a></p>
+
+                    </li>
+                    
+                    <li id="comment-24229">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-06-06T08:51:25.377-0400">2016-06-06T08:51:25.377-0400</relative-time></i></p>
+                        <p>So, let's start again.  I tried to follow the instructions on the wiki and use the standard .eslintrc.  It reports problems that were never reported by the previous settings in the old .jshintrc.</p>
+
+                    </li>
+                    
+                    <li id="comment-24230">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-06-06T08:54:09.626-0400">2016-06-06T08:54:09.626-0400</relative-time></i></p>
+                        <p>Only reopening because you can't edit comments on a closed issue...</p>
+
+                    </li>
+                    
+                    <li id="comment-24232">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-06-07T05:44:20.872-0400">2016-06-07T05:44:20.872-0400</relative-time></i></p>
+                        <p>Anyway, just to close this out, the "new" errors related to "use strict" were a function of not having the right environment.  On reflection, I do think that we have enough "non Crockford-isms" now that it would be worth adding a bit more to the wiki, including of course the fact that the default file is configured for browser code and needs to be edited to be used with node components.</p>
+
+                    </li>
+                    
+                    <li id="comment-24233">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-06-07T06:11:07.904-0400">2016-06-07T06:11:07.904-0400</relative-time></i></p>
+                        <p>Just to follow up, the migrated "strict" setting does cause problems in node projects. I am preparing a fix here:</p>
+<p><a href="https://issues.fluidproject.org/browse/FLUID-5914">https://issues.fluidproject.org/browse/FLUID-5914</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5908/"><span class="aria-hidden">←</span> Previous: FLUID-5908</a>
+        <a class="mx-1" href="/browse/FLUID-5910/">Next: FLUID-5910 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

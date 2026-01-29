@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-227  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-227 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-227/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-227/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-227/">INFRA-227</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-227: Can't upload Word doc to IDRC site</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-227">INFRA-227</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alan Harnum</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-05-29T11:37:37.147-0400" prefix="">2019-05-29T11:37:37.147-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-05-30T11:19:28.610-0400" prefix="">2019-05-30T11:19:28.610-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Attempting to upload a Word DOCX file gives a "Failed to move file: /var/www/993da6cd/tmp/phpSSUJwp to /var/www/993da6cd/images/OCADU-EAS-Referral.docx" error.</p>
+<p>To reproduce:<br>
+1. Login as administrator.<br>
+2. Choose "Media" in left sidebar from the main Dashboard.<br>
+3. Choose "Upload", and attempt to upload the DOCX file.<br>
+4. Note the error.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/INFRA/INFRA-227/Capture.PNG">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/INFRA/INFRA-227/Capture.PNG" alt="Capture.PNG">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/INFRA/INFRA-227/OCADU EAS Referral.docx">
+                            
+                                OCADU EAS Referral.docx
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25779">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2019-05-29T11:38:36.394-0400">2019-05-29T11:38:36.394-0400</relative-time></i></p>
+                        <p>Notes:</p>
+<ul>
+<li>This bug is preventing uploading of a Doctor referral form required by VTS.</li>
+<li>DOCX is an allowed file extension.</li>
+<li>This bug is possibly caused by a permission error on the directory.</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-25780">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2019-05-30T11:16:59.523-0400">2019-05-30T11:16:59.523-0400</relative-time></i></p>
+                        <p>This was because of an SELinux policy issue. I disabled it temporarily and uploaded the file.</p>
+<p>I'll look longer term into what the SELinux policy setting should be for the /images directory to allow uploads from within the CMS web interface.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-226/"><span class="aria-hidden">←</span> Previous: INFRA-226</a>
+        <a class="mx-1" href="/browse/INFRA-228/">Next: INFRA-228 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5361  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5361 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5361/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5361/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5361/">FLUID-5361</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5361: Model listeners notified by model relay applier do not respect listener priorities</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5361">FLUID-5361</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-05-05T16:32:31.172-0400" prefix="">2014-05-05T16:32:31.172-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-07-08T08:42:43.801-0400" prefix="">2016-07-08T08:42:43.801-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The initial implementation of the new ChangeApplier (for the <a href="/browse/FLUID-5115/">FLUID-5115</a> model relay system) currently ignores any "priority" field attached to a listener. It wasn't initially clear what the semantic of this field should be given the lack of one-to-one correspondence in the new system between changes and firings, but work on the metadata component revealed at least one clear use case - model listeners added as instrumentation by the IoC testing framework, for example, should definitely be notified after all listeners forming the implementation, otherwise they will see an incompletely updated condition of the model and view state.</p>
+<p>This was raised in IRC on 5/5/14  - </p>
+<p><a href="https://botbot.me/freenode/fluid-work/msg/14251634/">https://botbot.me/freenode/fluid-work/msg/14251634/</a></p>
+<p>The code at this link <a href="https://github.com/cindyli/metadata/blob/FLOE-171/tests/js/resourceInputPanelTestUtils.js#L94">https://github.com/cindyli/metadata/blob/FLOE-171/tests/js/resourceInputPanelTestUtils.js#L94</a> reads</p>
+<pre><code class="hljs language-javascript">generatedSequence.<span class="hljs-title function_">push</span>({
+                    <span class="hljs-attr">listenerMaker</span>: <span class="hljs-string">"fluid.tests.checkModelValueByIndex"</span>,
+                    <span class="hljs-attr">makerArgs</span>: [<span class="hljs-string">"{resourceInputPanel}"</span>, config.<span class="hljs-property">path</span>, testVal, index],
+                    <span class="hljs-attr">spec</span>: {<span class="hljs-attr">transactional</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">path</span>: <span class="hljs-string">"resources"</span>, <span class="hljs-attr">priority</span>: <span class="hljs-string">"last"</span>},
+                    <span class="hljs-attr">changeEvent</span>: <span class="hljs-string">"{resourceInputPanel}.applier.modelChanged"</span>
+                });
+</code></pre>
+<p>despite the attempt to push the listener to the last place, it ends up being notified before the "updateModel" listener in the implementation.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24153">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-05-06T11:18:17.496-0400">2014-05-06T11:18:17.496-0400</relative-time></i></p>
+                        <p>Another possibly related issue with model listeners is, applier.modelChanged.removeListener() stops working.</p>
+<p>The code in this unit test: <a href="https://github.com/cindyli/metadata/blob/FLOE-171/tests/js/audioPanelTests.js#L108-L115">https://github.com/cindyli/metadata/blob/FLOE-171/tests/js/audioPanelTests.js#L108-L115</a> uses model listeners to check the new model state after each click on another audio attribute.</p>
+<p>At line 58, each model listener hooked up for every specific model check was removed immediately after the check so that the same check would not be triggered again. However, the issue is that the removal is no longer successful with the new change applier. The unit test ends up running 6 assertions rather than expected 3.</p>
+
+                    </li>
+                    
+                    <li id="comment-24155">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-05-28T09:17:20.972-0400">2014-05-28T09:17:20.972-0400</relative-time></i></p>
+                        <p>The pull request that fixes this issue (<a href="https://github.com/fluid-project/infusion/pull/520">https://github.com/fluid-project/infusion/pull/520</a>) has been merged into the project repo @ f77fac2d2d8ecd7fe5ffd2f497cf404e8f13814b</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5360/"><span class="aria-hidden">←</span> Previous: FLUID-5360</a>
+        <a class="mx-1" href="/browse/FLUID-5362/">Next: FLUID-5362 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

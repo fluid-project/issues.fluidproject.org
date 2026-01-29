@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6176  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6176 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6176/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6176/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6176/">FLUID-6176</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6176: Implement a highlight to indicate which text is being self voiced</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6176">FLUID-6176</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-08-01T09:15:07.714-0400" prefix="">2017-08-01T09:15:07.714-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-07-20T10:45:41.218-0400" prefix="">2018-07-20T10:45:41.218-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Self Voicing</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Based on the designs,&#160;<a href="https://wiki.fluidproject.org/display/fluid/%28Floe%29+UI+Options+Design+Walkthrough%2C+C.1?preview=/32014373/34734325/uio_tts2.jpg">https://wiki.fluidproject.org/display/fluid/(Floe)+UI+Options+Design+Walkthrough%2C+C.1?preview=/32014373/34734325/uio_tts2.jpg</a>.</p>
+<p>As a page is being self voiced, the currently synthesized text should be highlighted. Likely this will refer to the block of text that is currently being read out of the queue. When paused, this block of text should remain highlighted.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15839">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-08-02T09:00:50.597-0400">2017-08-02T09:00:50.597-0400</relative-time></i></p>
+                        <p>The onboundary event is fired at the beginning of the boundary. For example "text to speech" would fire 3 onboundary events at charIndex 0, 5, 8, and provide the event name "word".</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/Events/boundary">https://developer.mozilla.org/en-US/docs/Web/Events/boundary</a></p>
+
+                    </li>
+                    
+                    <li id="comment-15841">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-08-02T14:27:04.395-0400">2017-08-02T14:27:04.395-0400</relative-time></i></p>
+                        <p>MS Edge and FF also output charLength in the onboundary event. However, chrome and safari do not.</p>
+
+                    </li>
+                    
+                    <li id="comment-15843">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-08-02T16:25:17.521-0400">2017-08-02T16:25:17.521-0400</relative-time></i></p>
+                        <p>Example of using a range to select a portion of text. <a href="https://jsfiddle.net/7zzg5z4e/5/">https://jsfiddle.net/7zzg5z4e/5/</a></p>
+<p></p>
+<p>See: <a href="https://stackoverflow.com/questions/27435485/dom-range-setstart-setend">https://stackoverflow.com/questions/27435485/dom-range-setstart-setend</a>&#160;for an explanation and another example.</p>
+
+                    </li>
+                    
+                    <li id="comment-15845">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-08-03T16:09:36.837-0400">2017-08-03T16:09:36.837-0400</relative-time></i></p>
+                        <p>Another example where text is parsed and we insert a mark to highlight by word.&#160;<a href="https://jsfiddle.net/7513d3dz/1/">https://jsfiddle.net/7513d3dz/1/</a></p>
+<p></p>
+<p>However, the interval throws errors because of the insertion of the {{&lt;mark&gt;}}. When we insert the mark element, it actually changes the DOM structure. When&#160;we remove the {{&lt;mark&gt;}} element wrapping the text, it actually adds it back in as a new text node, rather than it rejoining the text node it had been part of.</p>
+
+                    </li>
+                    
+                    <li id="comment-15848">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-08-03T16:17:53.878-0400">2017-08-03T16:17:53.878-0400</relative-time></i></p>
+                        <p>Can use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/normalize">normalize()</a> to correct the text nodes after the <code>&lt;mark&gt;</code> is removed. In the example above this would need to be run&#160;like&#160;<code>data.parentNode.parentNode.normalize(), after the &lt;mark&gt;</code> is removed.</p>
+
+                    </li>
+                    
+                    <li id="comment-15850">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-08-03T16:32:52.662-0400">2017-08-03T16:32:52.662-0400</relative-time></i></p>
+                        <p>Updated the jsfiddle example with a working interval highlighting words.&#160;<a href="https://jsfiddle.net/7513d3dz/2/">https://jsfiddle.net/7513d3dz/2/</a></p>
+
+                    </li>
+                    
+                    <li id="comment-15852">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-08-03T16:35:54.467-0400">2017-08-03T16:35:54.467-0400</relative-time></i></p>
+                        <p><a href="https://jsfiddle.net/7513d3dz/3/">https://jsfiddle.net/7513d3dz/3/</a>&#160;shows that it doesn't work with nested DOM nodes. It is failing on the normalize step.</p>
+<p></p>
+<pre><code class="hljs language-java">&lt;p class=<span class="hljs-string">"read-block"</span>&gt;
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry<span class="hljs-string">'s standard dummy text ever since the 1500s, when an unknown &lt;a href="#"&gt;printer&lt;/a&gt; took a &lt;strong&gt;galley of &lt;em&gt;type&lt;/em&gt; and scrambled&lt;/strong&gt; it to make a type specimen book.
+&lt;/p&gt;
+</span></code></pre>
+
+                    </li>
+                    
+                    <li id="comment-15854">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-08-04T03:43:53.787-0400">2017-08-04T03:43:53.787-0400</relative-time></i></p>
+                        <p>On further investigation, the above issue may not be specific to multi-level nested DOM elements, but rather having more than a single word in any nested DOM element.</p>
+<p>would work:</p>
+<pre><code class="hljs language-java">&lt;p&gt;
+some text that is &lt;strong&gt;bold&lt;/strong&gt;
+&lt;/p&gt;
+</code></pre>
+<p>wouldn't work:</p>
+<pre><code class="hljs language-java">&lt;p&gt;
+some &lt;strong&gt;text that is bold&lt;/strong&gt;
+&lt;/p&gt;
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-15856">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-08-04T12:10:50.920-0400">2017-08-04T12:10:50.920-0400</relative-time></i></p>
+                        <p>The nested DOM issue was discussed in the fluid-work IRC channel ( <a href="https://botbot.me/freenode/fluid-work/2017-08-04/?msg=89402736&page=2">https://botbot.me/freenode/fluid-work/2017-08-04/?msg=89402736&amp;page=2</a>&#160;). We will try to keep a stack of DOM nodes when generating the ranges and inserting/removing the <code>&lt;mark&gt;</code></p>
+
+                    </li>
+                    
+                    <li id="comment-15860">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-08-08T10:45:23.517-0400">2017-08-08T10:45:23.517-0400</relative-time></i></p>
+                        <p>An example of an implementation that can handle nested DOM nodes ( <a href="https://jsfiddle.net/7513d3dz/5/">https://jsfiddle.net/7513d3dz/5/</a>&#160;). This doesn't use a stack, but rather tracks the index of the child node, relative to its parent, and uses this to find the nodes reference.&#160;With this information, the node can be relocated after its parent has been normalized.</p>
+
+                    </li>
+                    
+                    <li id="comment-15862">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-11-01T10:21:46.127-0400">2017-11-01T10:21:46.127-0400</relative-time></i></p>
+                        <p>Spoke with&#160;Joseph Scheuhammer today and he suggested to use [Range|<a href="https://developer.mozilla.org/en-US/docs/Web/API/Range">https://developer.mozilla.org/en-US/docs/Web/API/Range</a>] to get the rendered text for self voicing and highlighting. This would hopefully avoid the text that is not rendered.</p>
+
+                    </li>
+                    
+                    <li id="comment-15865">
+                        <p class="mb-0"><b>Joseph Scheuhammer</b> <i>commented <relative-time datetime="2017-11-01T10:48:59.317-0400">2017-11-01T10:48:59.317-0400</relative-time></i></p>
+                        <p>Justin Obara, the following seems to do the job by creating a range of selected text, but I've only tried FireFox:</p>
+<pre><code class="hljs language-java">function <span class="hljs-title function_">makeAndGetSelectedText</span> <span class="hljs-params">(root)</span> {  <span class="hljs-comment">// root is an element in the DOM</span>
+    <span class="hljs-type">var</span> <span class="hljs-variable">range</span> <span class="hljs-operator">=</span> document.createRange();
+    range.selectNode(root);
+    window.getSelection().addRange(range);
+}
+window.getSelection().toString();  <span class="hljs-comment">// will produce a string of just the rendered text.</span>
+</code></pre>
+<p>Note: use the <code>toString()</code> of the <code>Selection</code> object, not the <code>Range</code> added to that selection.  See <a href="https://developer.mozilla.org/en-US/docs/Web/API/Selection">Selection</a> documentation.</p>
+
+                    </li>
+                    
+                    <li id="comment-15867">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-03-19T16:12:24.242-0400">2018-03-19T16:12:24.242-0400</relative-time></i></p>
+                        <p>May be able to use innerText to get the rendered/visible text.&#160;<a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/innerText">https://developer.mozilla.org/en-US/docs/Web/API/Node/innerText</a></p>
+
+                    </li>
+                    
+                    <li id="comment-15869">
+                        <p class="mb-0"><b>Joseph Scheuhammer</b> <i>commented <relative-time datetime="2018-05-01T17:04:32.249-0400">2018-05-01T17:04:32.249-0400</relative-time></i></p>
+                        <p>There's an issue with <code>innerText</code>, Justin Obara.&#160; It will not return any CSS content associated with the element, just the DOM text.&#160; Which belies the Mozilla documentation about retrieving the "rendered" text.</p>
+<p>For example, given the following, <code>innerText</code> will be just "A special paragraph", but it <em>renders</em> onscreen as "Special! A special paragraph, after special":</p>
+<pre><code class="hljs language-java">&lt;style&gt;
+  p.special:before {content: <span class="hljs-string">"Special! "</span> }
+  p.special:after {content: <span class="hljs-string">", after special"</span> }
+&lt;style&gt;
+...
+&lt;p class=<span class="hljs-string">"special"</span>&gt;A special paragraph&lt;/p&gt;
+</code></pre>
+<p>You can see it here: <a href="http://clown.idrc.ocad.ca/Fluid/aria/cssContent.html">http://clown.idrc.ocad.ca/Fluid/aria/cssContent.html</a></p>
+<p>Note that users can neither select/highlight such CSS content, nor search for it, giving ample reason for authors to avoid adding content via CSS. I'm not sure if <code>Selection</code> objects suffer the same fate.</p>
+
+                    </li>
+                    
+                    <li id="comment-15871">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-05-02T08:58:24.519-0400">2018-05-02T08:58:24.519-0400</relative-time></i></p>
+                        <p>Joseph Scheuhammer thanks for the update. There was another issue with inner text in that if it is just called on a hidden element it will return the text. At the moment I'm using it as one means of testing if an item has rendered text. Although I suppose if it were the case that all of the text in a element were added with :before and :after, then it would be missed.</p>
+
+                    </li>
+                    
+                    <li id="comment-15873">
+                        <p class="mb-0"><b>Joseph Scheuhammer</b> <i>commented <relative-time datetime="2018-05-02T10:08:57.374-0400">2018-05-02T10:08:57.374-0400</relative-time></i></p>
+                        <p>Justin Obara, following up on my statement: "I'm not sure if <code>Selection</code> objects suffer the same fate."&#160; They do.&#160; Running the routine outlined in <a href="#comment-37532">my earlier comment</a> yields "A special paragraph", just as <code>innerText</code> does. As before highlighting CSS content is a no-go.</p>
+<p>Thanks for pointing out the issue with <code>innerText</code> and hidden elements. That just reinforces the fact that <code>innerText</code> has nothing to do with <em>rendered</em> text. It's strictly a DOM operation.</p>
+
+                    </li>
+                    
+                    <li id="comment-15875">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-05-04T08:22:51.129-0400">2018-05-04T08:22:51.129-0400</relative-time></i></p>
+                        <p>Joseph Scheuhammer I've created a JSFiddle (&#160;<a href="https://jsfiddle.net/5ocossLq/1/">https://jsfiddle.net/5ocossLq/1/</a>&#160;) to demonstrate how the elements are checked.</p>
+<p>Yes, if the element has text set only with pseudo elements, it will consider it to not have rendered text. Although in reality what I'm checking for is less about rendered text and more about text that should be read from the interface. For example text that has aria-hidden="true" is not read, but text that is hidden offscreen is. At the moment we neither support highlighting nor reading of content added with pseudo elements. I've filed this as&#160;<a href="/browse/FLUID-6280/">FLUID-6280</a></p>
+
+                    </li>
+                    
+                    <li id="comment-15876">
+                        <p class="mb-0"><b>Joseph Scheuhammer</b> <i>commented <relative-time datetime="2018-05-04T16:53:07.189-0400">2018-05-04T16:53:07.189-0400</relative-time></i></p>
+                        <p>Justin Obara I see what you are saying, and suggest that we stop using the phrase "rendered text", although I am hard pressed to say what phrase should be used instead.&#160; That's partly because one can't rely simply on these factors in isolation.&#160; Take offscreen text for example:&#160; what is the result of a case where the text is both offscreen and has 'display:none'?&#160; My intuition here is that it's not read – 'display:none' wins.&#160; Also, consider focus and maybe focus-ability.&#160; For example, what happens if an element has 'aria-hidden="true"', but the element becomes focused, firing a focus event?&#160; Screen readers will ignore aria-hidden here; the focus state wins.</p>
+<p>Then there is the conundrum of 'aria-hidden="false"' and 'display:none'.&#160; Some have said it should not be spoken by a screenreader while others would say it should be.&#160; The type of user may be another consideration:&#160; blind users should hear such text (maybe), but a sighted user with a cognitive impairment or a screenreader+magnifier user would not.&#160; Hearing something that you can't see would be confusing.</p>
+<p>I wonder if the accessibility API would help here:&#160; instead of "rendered text", let's speak of "accessible text".&#160; According to <a href="https://www.marcozehe.de/2018/04/11/introducing-the-accessibility-inspector-in-the-firefox-developer-tools/">this article</a> the AOM is supposed to land in FireFox 61, due this July.&#160; I've tried out a beta in their nightly build with your JSFiddle.&#160; Oddly, the text for the 'aria-hidden="true"' is available in the tree, but perhaps this is a bug.&#160; On the other hand, the accessibility inspector shows the text for CSS :before and :after.&#160; Your example case that also uses these pseudo elements with a text node yields:</p>
+<ul>
+<li>cell:
+<ul>
+<li>statictext: "before"</li>
+<li>text leaf: "Test"</li>
+<li>statictext: "after"</li>
+</ul>
+</li>
+</ul>
+<p>In other words, the text specified by the pseudo elements are there in the AOM.</p>
+<p>Other points:</p>
+<ul>
+<li>The proposed <a href="https://wicg.github.io/aom/spec/#extensions-to-the-element-interface">JavaScript interface</a> to this information appears non-functional.&#160; I don't know when it will be available.</li>
+<li>The AOM is also in development for Chrome and Safari, but I couldn't find an ETA.</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-15879">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-05-07T10:46:09.550-0400">2018-05-07T10:46:09.550-0400</relative-time></i></p>
+                        <p>Joseph Scheuhammer I've renamed the method to hasTextToRead</p>
+
+                    </li>
+                    
+                    <li id="comment-15881">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-07-20T10:45:41.216-0400">2018-07-20T10:45:41.216-0400</relative-time></i></p>
+                        <p>Addressed with PR (&#160;<a href="https://github.com/fluid-project/infusion/pull/903">https://github.com/fluid-project/infusion/pull/903</a>&#160;) for <a href="/browse/FLUID-6177/">FLUID-6177</a>&#160;merged into the project repo at&#160;272cf702d5bf749172c0ba2015ba00dcceb526b1</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6175/"><span class="aria-hidden">←</span> Previous: FLUID-6175</a>
+        <a class="mx-1" href="/browse/FLUID-6177/">Next: FLUID-6177 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

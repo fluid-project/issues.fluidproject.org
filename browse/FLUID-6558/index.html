@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6558  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6558 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6558/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6558/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6558/">FLUID-6558</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6558: Error when notifying relay rule during onDestroy</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6558">FLUID-6558</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-10-21T08:43:19.918-0400" prefix="">2020-10-21T08:43:19.918-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-06-21T11:29:55.325-0400" prefix="">2021-06-21T11:29:55.325-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>A case was encountered in the SJRK project where a relayed update resulting from a change triggered during an onDestroy listener received a bare exception.</p>
+<p>The setup is as follows - a parent "sjrk.storyTelling.blockUi.editor.withFileUploader" contains a "singleFileUploader" as follows:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"sjrk.storyTelling.blockUi.editor.withFileUploader"</span>, {
+        gradeNames: [<span class="hljs-string">"sjrk.storyTelling.blockUi.editor"</span>],
+....
+        components: {
+            <span class="hljs-comment">// handles uploading a single file for storage</span>
+            singleFileUploader: {
+                type: <span class="hljs-string">"sjrk.storyTelling.block.singleFileUploader"</span>,
+</code></pre>
+<p>where the uploader attempts to reset a piece of model state during onDestroy:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"sjrk.storyTelling.block.singleFileUploader"</span>, {
+        gradeNames: [<span class="hljs-string">"fluid.viewComponent"</span>],
+....
+            <span class="hljs-string">"onDestroy.resetUploadState"</span>: {
+                changePath: <span class="hljs-string">"uploadState"</span>,
+                value: <span class="hljs-string">"ready"</span>
+            }
+</code></pre>
+<p>The total count of these states is relayed up the tree by the means of the following distribution:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"sjrk.storyTelling.base.page.storyEdit"</span>, {
+        gradeNames: [<span class="hljs-string">"sjrk.storyTelling.base.page"</span>],
+        distributeOptions: {
+            <span class="hljs-string">"editor.uploadStateToCounters"</span>: {
+                target: <span class="hljs-string">"{that editor singleFileUploader}.options.modelListeners"</span>,
+                record: {
+                    <span class="hljs-string">"uploadState"</span>: {
+                        func: <span class="hljs-string">"{storyEdit}.updateUploadCounters"</span>,
+                        args: [<span class="hljs-string">"{change}.oldValue"</span>, <span class="hljs-string">"{change}.value"</span>],
+                        namespace: <span class="hljs-string">"uploadStateToCounters"</span>
+                    }
+                }
+            }
+        },
+</code></pre>
+<p>Instead, during standard teardown of the entire component tree at the end of an IoC testing fixture, the user receives a bare exception as shown in the attached picture.</p>
+<p>This code has been checked in to <a href="https://github.com/jobara/sjrk-story-telling/tree/SJRK-289-onDestroy/src">https://github.com/jobara/sjrk-story-telling/tree/SJRK-289-onDestroy/src</a> and the state shown can be seen in a standard test run.</p>
+<p>Whilst the intention of the "middle-era" framework was for the component tree to be "nulled" at the point of destruction, so that it can no longer have side effects, this is clearly a legitimate use case that can't currently be covered by other means.</p>
+<p>Whilst we have an intention to eliminate the use of lifecycle events such as "onCreate/onDestroy", there is currently not a replacement modelRelay definition style that is capable of integrating up model state as required. Rather than the individual update listener options distribution as shown above, there should be a new modelRelay syntax that allows an entire class of model state to be directly addressed via IoCSS syntax.</p>
+<p>We should ensure that all relay definitions continue to function during teardown by reordering the operations in instantiator.clearComponent.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6558/relay-during-onDestroy.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6558/relay-during-onDestroy.png" alt="relay-during-onDestroy.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6557/"><span class="aria-hidden">←</span> Previous: FLUID-6557</a>
+        <a class="mx-1" href="/browse/FLUID-6559/">Next: FLUID-6559 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

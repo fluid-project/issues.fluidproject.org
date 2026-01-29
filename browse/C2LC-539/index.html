@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-539  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-539 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-539/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-539/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-539/">C2LC-539</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-539: Add platform detection for key set names</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-539">C2LC-539</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Pull Request</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Simon Bates</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter=Simon%20Bates">Simon Bates</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-10-28T14:09:21.588-0400" prefix="">2021-10-28T14:09:21.588-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-04-30T10:29:50.355-0400" prefix="">2024-04-30T10:29:50.355-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Environment</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10846">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2021-11-04T08:56:03.470-0400">2021-11-04T08:56:03.470-0400</relative-time></i></p>
+                        <p>I did some research on this to see what options we have, based on our most recent discussion, in which we agreed that we only need to identify "mac" vs. "not mac", and change the alt/option wording in keyboard menus when the user is on a mac.</p>
+<p>The window.navigator object offers a "platform", which is available in Chrome, Firefox, and Safari, and which is consistently "MacIntel" for me.  This suggests to me that we'd have to find a list of variations for M1 macs, older OS versions.  There are <a href="https://stackoverflow.com/questions/19877924/what-is-the-list-of-possible-values-for-navigator-platform-as-of-today">lists out there already</a>.  Some of the variations suggest that we'd need to detect a list of:</p>
+<ol>
+<li>Variations on desktop platforms, including recent versions of the OS and supported processor types.</li>
+<li>Variations on iOS devices and iOS versions.</li>
+<li>Variations used with the simulator (not hugely important, but useful for screen shots and testing).  (The most recent simulator simply returns "iPad" and "iPhone", so maybe we can just use those).</li>
+</ol>
+<p>The window.navigator.userAgent property is also well supported, but would require picking the platform out strings like "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Safari/605.1.15" using some kind of pattern.  And there are specific plugins that mask the user agent.</p>
+<p>Chromium-derivatives offer a window.navigator.userAgentData property in which the user agent is presented as individual pieces of data.  There, window.navigator.userAgentData.platform is better abstracted, simply "macOS".</p>
+
+                    </li>
+                    
+                    <li id="comment-10847">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2021-11-04T09:16:00.622-0400">2021-11-04T09:16:00.622-0400</relative-time></i></p>
+                        <p>I also looked at <a href="https://github.com/duskload/react-device-detect/blob/master/src/lib/detect.js#L6">react-device-detect</a>, which already has definitions that let you detect a range of things, including mobile vs. desktop, specific browsers, and of course operating system.  The approach seems good, but is probably overkill for what we want.</p>
+
+                    </li>
+                    
+                    <li id="comment-10848">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2021-11-04T09:29:38.564-0400">2021-11-04T09:29:38.564-0400</relative-time></i></p>
+                        <p>We agreed to use window.navigator.platform for now.</p>
+
+                    </li>
+                    
+                    <li id="comment-27742">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2024-04-30T10:29:50.355-0400">2024-04-30T10:29:50.355-0400</relative-time></i></p>
+                        <p>Moved to GitHub: <a href="https://github.com/codelearncreate/c2lc-coding-environment/issues/491">https://github.com/codelearncreate/c2lc-coding-environment/issues/491</a> </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-538/"><span class="aria-hidden">←</span> Previous: C2LC-538</a>
+        <a class="mx-1" href="/browse/C2LC-540/">Next: C2LC-540 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

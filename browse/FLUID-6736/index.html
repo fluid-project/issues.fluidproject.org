@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6736  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6736 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6736/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6736/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6736/">FLUID-6736</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6736: SelfVoicing not working in Safari </h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6736">FLUID-6736</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Cannot%20Reproduce">Cannot Reproduce</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2022-05-16T08:13:57.547-0400" prefix="">2022-05-16T08:13:57.547-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T11:00:07.822-0400" prefix="">2024-07-22T11:00:07.822-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Self Voicing</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>SelfVoicing ( Text-to-Speech ) is no longer working in Safari 15.4. It seems like it may be related to this version of Safari returning an empty array when speechSynthesis.getVoices() is called.</p>
+<p>See:</p>
+<p><a href="https://stackoverflow.com/questions/71727048/window-speechsynthesis-getvoices-returns-empty-array-on-macos-safari-15-4">https://stackoverflow.com/questions/71727048/window-speechsynthesis-getvoices-returns-empty-array-on-macos-safari-15-4</a></p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Safari 15.4 (macOS 12.3.1)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25720">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2022-05-16T08:17:22.353-0400">2022-05-16T08:17:22.353-0400</relative-time></i></p>
+                        <p>I submitted feedback to Apple, but it's unlikely I'll hear back from them.</p>
+
+                    </li>
+                    
+                    <li id="comment-25063">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2022-07-19T09:58:51.803-0400">2022-07-19T09:58:51.803-0400</relative-time></i></p>
+                        <p>Ned Zimmerman&#160;pointed out that the <a href="https://mdn.github.io/dom-examples/web-speech-api/speak-easy-synthesis/">Speech Synthesis demo from MDN</a> is still working in Safari. It's probably useful as a comparison to see if there is something actually wrong with the Orator's implementation or a work around that could be employed.</p>
+
+                    </li>
+                    
+                    <li id="comment-25064">
+                        <p class="mb-0"><b>Ned Zimmerman</b> <i>commented <relative-time datetime="2022-07-20T14:22:36.739-0400">2022-07-20T14:22:36.739-0400</relative-time></i></p>
+                        <p>Looks like the linked issue is fixed in Safari 15.5.</p>
+<p>Also, I found this which may be of interest: <a href="https://jankapunkt.github.io/easy-speech/">https://jankapunkt.github.io/easy-speech/</a></p>
+<p>It's basically a zero-dependency wrapper for the SpeechSynthesis API which ensures that it's properly initialized across various browsers.</p>
+
+                    </li>
+                    
+                    <li id="comment-25065">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2022-07-28T14:09:48.890-0400">2022-07-28T14:09:48.890-0400</relative-time></i></p>
+                        <p>cc Ned ZimmermanJustin ObaraAntranig Basman</p>
+<p>Self voicing stops working in Safari due to <a href="https://bugs.webkit.org/show_bug.cgi?id=243055">a webkit bug</a>.</p>
+<p><a href="https://github.com/fluid-project/infusion/pull/1089">A pull request</a> is issued to work around the Safari bug by always assigning a speech synthesis voice at speaking instead of leaving the voice option to `null`. This change breaks some tests because the "fluid.textToSpeech.utterance" mock was not complete since it did nothing to override the construction of <a href="https://github.com/cindyli/infusion/blob/FLUID-6736/src/components/textToSpeech/js/TextToSpeech.js#L482">the native “utterance” member</a>. We made a mock Utterance and found that the tests hang through expecting the “onStop” event to be fired at the expected time. To save the time spent on this, we made <a href="https://github.com/cindyli/infusion/blob/FLUID-6736/src/components/textToSpeech/js/MockTTS.js#L165">the mock getVoices()</a> return actual speech synthesis voice list instead of a list of objects. This fixed broken tests.</p>
+<p>Moreover, Ned will not use orator from infusion, and SelfVoicing is not configured as part of the out of the box configuration of UIO on any of our supported sites, so we can punt on this issue until we come to make the UIO 2 release - in the meantime Safari may have resolved their bug.</p>
+<p>The PR is mothballed.</p>
+
+                    </li>
+                    
+                    <li id="comment-27799">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2024-07-22T10:54:41.054-0400">2024-07-22T10:54:41.054-0400</relative-time></i></p>
+                        <p>I re-tested this with Safari 17.5 and am not able to reproduce the issue.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6735/"><span class="aria-hidden">←</span> Previous: FLUID-6735</a>
+        <a class="mx-1" href="/browse/FLUID-6737/">Next: FLUID-6737 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

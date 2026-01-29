@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-177  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-177 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-177/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-177/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-177/">VP-177</a></li>
+            </ol>
+        </nav>
+        <h1>VP-177: Restructure the VideoPlayer options to separate the video source and captions from the model</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-177">VP-177</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-02-16T17:00:32.701-0500" prefix="">2012-02-16T17:00:32.701-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-01-28T09:25:24.510-0500" prefix="">2013-01-28T09:25:24.510-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Based on a discussion in the channel<br>
+<a href="http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2012-02-16">http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2012-02-16</a> starting around [14:58:11 CST(-0600)]<br>
+we decided to separate the video source and captions specifications from the VideoPlayer model.</p>
+<p>The new form will look something like:</p>
+<p>var vp = fluid.videoPlayer(".videoPlayer", {<br>
+video: <br>
+sources: [{<br>
+src: "ReorganizeFuture.mp4",<br>
+type: "video/mp4"<br>
+},<br>
+{<br>
+src: "ReorganizeFuture.webm",<br>
+type: "video/webm"</p>
+<p>}],<br>
+captions: [{<br>
+src: "ReorganizeFuture.en.vtt",<br>
+type: "text/vtt",<br>
+srclang: "en",<br>
+label: "English Subtitles",<br>
+kind: "subtitles"<br>
+},<br>
+{<br>
+src: "ReorganizeFuture.fr.vtt",<br>
+type: "text/vtt",<br>
+srclang: "fr",<br>
+label: "French Subtitles",<br>
+kind: "subtitles"<br>
+}],<br>
+transcripts: [...],<br>
+audioDescription: [...]<br>
+},<br>
+model: {<br>
+currentTracks: { // 0-based indices into the arrays in video<br>
+captions: [0, 2],<br>
+transcripts: [1],<br>
+audioDescriptions: [0]<br>
+},<br>
+displayCaptions: true,<br>
+displayTranscripts: false,<br>
+playAudioDescriptions: false,<br>
+fullscreen: true,<br>
+volume: 60<br>
+},<br>
+controls: "custom",<br>
+etc...<br>
+});</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-27257">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2012-03-07T17:04:06.849-0500">2012-03-07T17:04:06.849-0500</relative-time></i></p>
+                        <p>Merged into demo branch at 0fc93b9cccef4bf35e817aae8ea303f7712724dd</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-169/"><span class="aria-hidden">←</span> Previous: VP-169</a>
+        <a class="mx-1" href="/browse/VP-159/">Next: VP-159 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-113  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-113 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-113/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-113/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-113/">SJRK-113</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-113: Review and/or migrate multilingual UIO implementation</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-113">SJRK-113</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SJRK/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Gregor Moss</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-05-31T16:25:05.875-0400" prefix="">2018-05-31T16:25:05.875-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-07-26T15:25:18.813-0400" prefix="">2018-07-26T15:25:18.813-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>We had to make some changes to UIO in order to get it to change language and re-render along with other ui elements without reloading the page, but these features should probably be part of UIO in general. They are also perhaps not the best smelling code.</p>
+<p>in <strong>storyTelling-page.js</strong>, the functions&#160;sjrk.storyTelling.page.reloadUioMessages,&#160;sjrk.storyTelling.page.sjrk.storyTelling.page.updateUioPanelLanguages and their associated (injected) listeners on the page's uio component, as well as the other configuration of said component.</p>
+<p>in <strong>UIOMultilingualDemo.js</strong>, the entire file. This is based on Alan's work in this repository: <a href="https://github.com/waharnum/uio-multilingual">https://github.com/waharnum/uio-multilingual</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26463">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2018-06-14T15:59:38.350-0400">2018-06-14T15:59:38.350-0400</relative-time></i></p>
+                        <p>The user requirement is that the site has multiple languages, and the site author would like to add a panel to UIO so that site users can decide which language they would like to have the site in.</p>
+<p>These are the technical details of the work:</p>
+<ul>
+<li>We need a new panel, including an adjuster and an enactor
+<ul>
+<li>Use the LetterSpacing files as an example to follow</li>
+</ul>
+</li>
+<li>We need a spot to hook into to set the language AND have it reload at that point</li>
+<li>We need to save the user's chosen language (might be automagic)</li>
+<li>We need to check the language when we're loading the page to make sure it's loaded in the preferred language initially. No FOUC</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-26464">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2018-06-14T16:12:20.679-0400">2018-06-14T16:12:20.679-0400</relative-time></i></p>
+                        <p>Consider the prior art in the First Discovery tool (<a href="https://github.com/GPII/first-discovery">https://github.com/GPII/first-discovery</a>)&#160;and the Preferences Editor (<a href="https://docs.fluidproject.org/infusion/development/LocalizationInThePreferencesFramework.html">https://docs.fluidproject.org/infusion/development/LocalizationInThePreferencesFramework.html#</a>)</p>
+<p>Perhaps Cindy Li can weigh in? 🙂</p>
+<p>cc Michelle D'Souza</p>
+
+                    </li>
+                    
+                    <li id="comment-26465">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2018-06-19T11:33:01.116-0400">2018-06-19T11:33:01.116-0400</relative-time></i></p>
+                        <p>To re-capture the conversion that Greggor and I had today: yes, it's worthwhile to have a look at the implementation of the language panel in the first discovery tool, which also uses the preferences framework to render the panel and react to the language selection. Some of the code, such as the broadcasting of the selected language, probably can even be reused.</p>
+
+                    </li>
+                    
+                    <li id="comment-26466">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2018-07-17T12:57:41.553-0400">2018-07-17T12:57:41.553-0400</relative-time></i></p>
+                        <p>Not actually closed, resolution issue</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-112/"><span class="aria-hidden">←</span> Previous: SJRK-112</a>
+        <a class="mx-1" href="/browse/SJRK-114/">Next: SJRK-114 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6701  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6701 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6701/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6701/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6701/">FLUID-6701</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6701: Idiom for model relay transactions interacts in a faulty way with materialisation</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6701">FLUID-6701</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-11-26T08:17:57.426-0500" prefix="">2021-11-26T08:17:57.426-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-17T08:08:28.423-0400" prefix="">2024-07-17T08:08:28.423-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When rewriting the textfield controls components to improve the handling of their validation, as described in <a href="https://wiki.fluidproject.org/display/fluid/Bestiary+of+Reuse+Failures#BestiaryofReuseFailures-Anireemediablynon-integralaction">https://wiki.fluidproject.org/display/fluid/Bestiary+of+Reuse+Failures#BestiaryofReuseFailures-Anireemediablynon-integralaction</a> it was found that our transaction system for resolving model relays interacts in a faulty way with state held in "materialised" fields - such as those in "model.dom.container.value" used with <a href="/browse/FLUID-6683/">FLUID-6683</a> integral bindings.</p>
+<p>In the ChangeApplier supplied with Infusion 1-5, this materialisation can only be achieved by traditional "model listeners", which execute outside the transaction system which resolves model relays. This causes, for example, a particularly characteristic failure with the "Textfield Range Controller Tests: Test Negative Scale".</p>
+<p>These set up a textfield whose range is limited to [-15, -5], which is then supplied with an initial value of 0. The first firing of the validator, expressed as a classic "model relay to self" as</p>
+<pre><code class="hljs language-java">{
+                        target: <span class="hljs-string">"value"</span>,
+                        singleTransform: {
+                            type: <span class="hljs-string">"fluid.transforms.limitRange"</span>,
+                            input: <span class="hljs-string">"{that}.model.value"</span>,
+                            min: <span class="hljs-string">"{that}.model.range.min"</span>,
+                            max: <span class="hljs-string">"{that}.model.range.max"</span>
+                        }
+</code></pre>
+<p>clamps this to the value -5. The test case then attempts to set the value of the text field to 56. With a reworked implementation which tries to avoid the non-integral "setModel" implementation, there is a failure. Firstly the materialisation listener assigns 56 to "dom.container.value" via its binding:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.textfield"</span>, {
+    gradeNames: [<span class="hljs-string">"fluid.viewComponent"</span>],
+    parentMarkup: <span class="hljs-literal">true</span>,
+    modelRelay: {
+        textfieldValue: {
+            source: <span class="hljs-string">"dom.container.value"</span>,
+            target: <span class="hljs-string">"value"</span>
+        }
+    },
+</code></pre>
+<p>Then, within the transaction, the relay rule in the "controller" rewrites this value back to -5. Unfortunately, this agrees with the value at the start of the transaction - and so as the transaction ends, no change at all is propagated out to the markup, which is left with the original value of 56.</p>
+<p>This suggests that, the discussion in <a href="/browse/FLUID-6683/">FLUID-6683</a> notwithstanding (although it does acknowledge in some sense that transactions need to become "progressive"), the transactional system as a whole is basically flawed.</p>
+<p>This had sort of been suggested by other user considerations - for example, in comparing Infusion's user characteristics with Boxer's. A system which responds to failures by simply "cancelling" the evidence of them is essentially user-hostile - which we had essentially already realised by deciding to abandon the Kulkarni model that had originally been advertised in <a href="/browse/FLUID-4982/">FLUID-4982</a>.</p>
+<p>It looks like we will attempt to rationalise this by packaging validation logic as a transforming promise chain, as an attempt to mock up the "vertical chains" system that we imagine being part of Infusion 6, but outside our current transaction system - from its point of view embodied as a plain modelListener with a priority of" last" as we already applied with the transitional "validateToNumbers" implementation which currently reads</p>
+<pre><code class="hljs language-java">modelListeners: {
+        textfieldValue: {
+            path: <span class="hljs-string">"value"</span>,
+            source: <span class="hljs-string">"DOM"</span>,
+            listener: <span class="hljs-string">"{that}.validateValue"</span>,
+            args: <span class="hljs-string">"{change}.value"</span>,
+            priority: <span class="hljs-string">"last"</span>
+        }
+    },
+...
+
+    invokers: {
+        validateValue: {
+            funcName: <span class="hljs-string">"fluid.textfield.validateToNumbers"</span>,
+            args: [<span class="hljs-string">"{that}"</span>, <span class="hljs-string">"{arguments}.0"</span>, <span class="hljs-string">"{that}.controller.model.value"</span>]
+        }
+    }
+....
+
+
+fluid.textfield.validateToNumbers = function (that, value, oldValue) {
+    <span class="hljs-type">var</span> <span class="hljs-variable">isNumber</span> <span class="hljs-operator">=</span> !isNaN(Number(value));
+    <span class="hljs-keyword">if</span> (!isNumber) {
+        that.applier.change(<span class="hljs-string">"value"</span>, oldValue);
+    }
+};
+</code></pre>
+<p>Note that this scheme is remarkably similar to the ancient system of "guards" eliminated in Infusion 1.5 - where this logic used to read</p>
+<pre><code class="hljs language-java">fluid.textfieldSlider.validateValue = function (model, range, changeRequest) {
+        <span class="hljs-type">var</span> <span class="hljs-variable">oldValue</span> <span class="hljs-operator">=</span> model.value;
+        <span class="hljs-type">var</span> <span class="hljs-variable">newValue</span> <span class="hljs-operator">=</span> changeRequest.value;
+
+        <span class="hljs-keyword">if</span> (!isNaN(parseInt(newValue, <span class="hljs-number">10</span>))) {
+            <span class="hljs-keyword">if</span> (newValue &lt; range.min) {
+                newValue = range.min;
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (newValue &gt; range.max) {
+                newValue = range.max;
+            }
+            changeRequest.value = Number(newValue);
+        } <span class="hljs-keyword">else</span> {
+            changeRequest.value = oldValue;
+        }
+    };
+</code></pre>
+<p>and look at this funky "init" method:</p>
+<pre><code class="hljs language-java">fluid.textfieldSlider.textfield.init = function (that) {
+        that.applier.guards.addListener({path: <span class="hljs-string">"value"</span>, transactional: <span class="hljs-literal">true</span>}, function (model, changeRequest) {
+            fluid.textfieldSlider.validateValue(model, that.options.range, changeRequest);
+        });
+
+        that.container.change(function (source) {
+            that.applier.requestChange(<span class="hljs-string">"value"</span>, source.target.value);
+        });
+    };
+</code></pre>
+<p>This was nuts in that it attempted to mutate changeRequest objects directly in-flight. Note that the old "New Notes on the ChangeApplier" page has notes on just this issue - <a href="https://wiki.fluidproject.org/display/fluid/New+Notes+on+the+ChangeApplier#NewNotesontheChangeApplier-Eliminationofold%22guard%22semanticandevents,infavourofuniversaluseofthemodelRelaysystem">https://wiki.fluidproject.org/display/fluid/New+Notes+on+the+ChangeApplier#NewNotesontheChangeApplier-Eliminationofold"guard"semanticandevents,infavourofuniversaluseofthemodelRelaysystem</a></p>
+<p>We can express this a little better today, as a "transforming chain" organised via priorities/namespaces with IoC-resolved arguments.</p>
+<p>This seems to be the upcoming theme of Infusion 6 should it ever be possible - that "every site of mutation can also be a site of a transforming chain/gyre". Getting rid of transactions in favour of "rolling immutable updates" seems like it will be a help.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25456">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2021-11-27T18:41:18.313-0500">2021-11-27T18:41:18.313-0500</relative-time></i></p>
+                        <blockquote>
+<p>We can express this a little better today, as a "transforming chain" organised via priorities/namespaces with IoC-resolved arguments.</p>
+</blockquote>
+<p>In practice this was not appropriate - since the validation occurred at two different sites - i) the text value peering with the markup, ii) the numeric value after conversion - so we fell back instead on a serial use of the "modelListener with priority of last" trick that now seems to be appropriate. Note that it ought to be possible to remove this priority since the ChangeApplier should always sort transactional listeners to be notified last.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6700/"><span class="aria-hidden">←</span> Previous: FLUID-6700</a>
+        <a class="mx-1" href="/browse/FLUID-6702/">Next: FLUID-6702 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

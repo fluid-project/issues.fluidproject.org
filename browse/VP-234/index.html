@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-234  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-234 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-234/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-234/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-234/">VP-234</a></li>
+            </ol>
+        </nav>
+        <h1>VP-234: Factor the Video Player to use subcomponents when doing tree creation instead of string based conditional code pathsv</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-234">VP-234</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Cindy Li</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Michelle%20D'Souza">Michelle D'Souza</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-11-30T11:30:17.810-0500" prefix="">2011-11-30T11:30:17.810-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-02-27T10:23:47.404-0500" prefix="">2013-02-27T10:23:47.404-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>core</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>As per the conversation in the IRC channel: <a href="http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2011-11-29">http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2011-11-29</a> (starting at roughly [15:34:43 CST(-0600)])</p>
+<p>We want to get rid of the conditional code paths based on the strings 'custom' and 'native' and introduce sub components instead. </p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-27221">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2012-01-12T10:13:17.219-0500">2012-01-12T10:13:17.219-0500</relative-time></i></p>
+                        <p>The work for this jira should wait on the merge-in of the pull request #10 (<a href="https://github.com/fluid-project/videoPlayer/pull/10">https://github.com/fluid-project/videoPlayer/pull/10</a>), which has re-factored the video player with sub-components.</p>
+
+                    </li>
+                    
+                    <li id="comment-27222">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-01-26T14:16:13.387-0500">2012-01-26T14:16:13.387-0500</relative-time></i></p>
+                        <p>The current plan (rationale described on-list, at <a href="http://lists.idrc.ocad.ca/pipermail/fluid-work/2012-January/008329.html">http://lists.idrc.ocad.ca/pipermail/fluid-work/2012-January/008329.html</a>) is:</p>
+<p>1) Convert the VideoPlayer parent component to a viewComponent which will load the template and insert it into the DOM "manually."<br>
+2) Pull the markup for the custom controls out of the main template into a separate template controlled by the "customControls" subcomponent (a rendererComponent)<br>
+3) Create a "nativeControls" subcomponent responsible for modifying the &lt;video&gt; element to add the "controls" attribute necessary for native controls.</p>
+<p>I've started playing with this a bit, but didn't get far at all. Stopping to respond to comments on 4546's pull request.</p>
+
+                    </li>
+                    
+                    <li id="comment-27223">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-01-26T16:00:36.880-0500">2012-01-26T16:00:36.880-0500</relative-time></i></p>
+                        <p>We've had a discussion about this in the IRC channel (<a href="http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2012-01-26">http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2012-01-26</a>), basically confirming this plan, and further clarifying the role of the parent videoPlayer component as an aggregator of three subcomponents:</p>
+<p>1) a 'player strategy'. The default for this will be the current html5 strategy, better factored into its own separate component. This will be swappable with other strategies when playing other video types or using non-html5 browsers.<br>
+2) the controls<br>
+3) the captions</p>
+<p>The subcomponents will have their own templates and be responsible for managing them appropriately.</p>
+
+                    </li>
+                    
+                    <li id="comment-27224">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-02-02T11:50:51.216-0500">2012-02-02T11:50:51.216-0500</relative-time></i></p>
+                        <p>My start on this is in a branch in my github: <a href="https://github.com/acheetham/videoPlayer/tree/FLUID-4567-subcomponents-for-trees">https://github.com/acheetham/videoPlayer/tree/FLUID-4567-subcomponents-for-trees</a></p>
+<p>I moved responsibility for the controls template out of the main template and into the controllers subcomponent. So now, the controllers subcomponent loads its own template.</p>
+<p>Note that this branch is based off of my <a href="/browse/FLUID-4546/">FLUID-4546</a>-controllers-refactoring, updated to the latest version as of this morning.</p>
+
+                    </li>
+                    
+                    <li id="comment-27225">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2012-02-17T09:43:05.550-0500">2012-02-17T09:43:05.550-0500</relative-time></i></p>
+                        <p>I've started the creation of "nativeControls" component @ <a href="https://github.com/cindyli/videoPlayer/tree/FLUID-4567">https://github.com/cindyli/videoPlayer/tree/FLUID-4567</a>. The more work is needed in this branch to resolve the issue that the controllers container gets displayed even in non-html5 browsers.</p>
+<p>Moreover, the investigation shows that loading the controls template in controllers component could result in the js error being thrown due to the async ajax calls for template loading. A proper way might be implementing a templateLoader sub-component that loads in all the templates at the start of the videoPlayer. This way would also improve the user experience to easy config the template locations.</p>
+
+                    </li>
+                    
+                    <li id="comment-27226">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-02-27T10:23:47.375-0500">2013-02-27T10:23:47.375-0500</relative-time></i></p>
+                        <p>Removed the direct support of native controls. Rather if an integrator would like them, they would need to remove the rendered controls (e.g. replace with fluid.emptySubcomponent) and add the "controls" property to the template.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-184/"><span class="aria-hidden">←</span> Previous: VP-184</a>
+        <a class="mx-1" href="/browse/VP-72/">Next: VP-72 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

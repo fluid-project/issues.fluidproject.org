@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5807  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5807 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5807/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5807/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5807/">FLUID-5807</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5807: Stack traces from framework exceptions are no longer rendered in node 4</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5807">FLUID-5807</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-11-03T13:58:01.880-0500" prefix="">2015-11-03T13:58:01.880-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-07-08T09:04:42.459-0400" prefix="">2016-07-08T09:04:42.459-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>node 4.2.x LTS will be our core supported version of node.js for the upcoming year or two. Moving up to it has revealed that it uses a new and malign scheme for finding stack traces attached to "Error" objects that means that these no longer render properly for instances of fluid.FluidError, our standard framework Error class.</p>
+<p>This is currently implemented by the following snippet:</p>
+<pre><code class="hljs language-java">fluid.FluidError = function (message) {
+        <span class="hljs-built_in">this</span>.message = message;
+        <span class="hljs-built_in">this</span>.stack = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>().stack; <span class="hljs-comment">// line 174</span>
+    };
+    fluid.FluidError.prototype = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(); <span class="hljs-comment">// line 176</span>
+</code></pre>
+<p>In new node 4.x, rather than getting the rendering of the "stack" attached as a member on line 174, we instead get the member attached to the prototype object at line 176.</p>
+<p>The approach supplied in the following stackOverflow answer </p>
+<p><a href="http://stackoverflow.com/questions/8802845/inheriting-from-the-error-object-where-is-the-message-property#answer-17936621">http://stackoverflow.com/questions/8802845/inheriting-from-the-error-object-where-is-the-message-property#answer-17936621</a></p>
+<p>appears to work fine, but it is rather bulky and presumably not all the plumbing is necessary. We should take a little time to see if we can characterise the situation a bit better.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23668">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-11-03T14:09:30.396-0500">2015-11-03T14:09:30.396-0500</relative-time></i></p>
+                        <p>Discoveries so far - the corruption appears to be part of the PROCESS OF ACCESS TO THE STACK MEMBER ITSELF - for example, the following two lines within the constructor of fluid.FluidError(descended from an Error)</p>
+<pre><code class="hljs language-java"><span class="hljs-built_in">this</span>.stack = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>().stack;
+        console.log(<span class="hljs-built_in">this</span>.stack);
+</code></pre>
+<p>show the same truncated stack - that is, the one belonging to the prototype, not ours. One wonders what is so tough about member access that the node team cannot get it right.</p>
+
+                    </li>
+                    
+                    <li id="comment-23670">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-11-04T08:39:39.302-0500">2015-11-04T08:39:39.302-0500</relative-time></i></p>
+                        <p>Simplified implementation available in new pull request</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5806/"><span class="aria-hidden">←</span> Previous: FLUID-5806</a>
+        <a class="mx-1" href="/browse/FLUID-5809/">Next: FLUID-5809 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

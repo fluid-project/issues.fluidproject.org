@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5786  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5786 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5786/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5786/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5786/">FLUID-5786</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5786: Rename Infusion's development prerelease version string from "SNAPSHOT" to "dev"</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5786">FLUID-5786</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-10-06T15:22:15.717-0400" prefix="">2015-10-06T15:22:15.717-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-07-08T09:03:05.977-0400" prefix="">2016-07-08T09:03:05.977-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Build Scripts</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Semver's convention for naming releases goes like this:</p>
+<p>Major.Minor.Patch-prerelease+buildMetadata</p>
+<p>Currently, we use the prerelease version string of "SNAPSHOT," which is a relic from our days using Maven for building Java software. Being hip, edgy, modern developers, we can probably use something a bit more succinct and descriptive instead.</p>
+<p>Let's change our development prerelease version to "dev" instead.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13111">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-10-06T15:24:27.510-0400">2015-10-06T15:24:27.510-0400</relative-time></i></p>
+                        <p>see <a href="http://semver.org/">http://semver.org</a> point 10 for build metadata in the version number.</p>
+
+                    </li>
+                    
+                    <li id="comment-13112">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-10-06T15:24:57.890-0400">2015-10-06T15:24:57.890-0400</relative-time></i></p>
+                        <p>git rev-parse --verify --short HEAD</p>
+<p>can be used to get the short form of the SHA commit hash</p>
+
+                    </li>
+                    
+                    <li id="comment-13113">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-10-06T15:31:59.511-0400">2015-10-06T15:31:59.511-0400</relative-time></i></p>
+                        <p>Submitted a pull request:<br>
+<a href="https://github.com/fluid-project/infusion/pull/641">https://github.com/fluid-project/infusion/pull/641</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5785/"><span class="aria-hidden">←</span> Previous: FLUID-5785</a>
+        <a class="mx-1" href="/browse/FLUID-5787/">Next: FLUID-5787 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

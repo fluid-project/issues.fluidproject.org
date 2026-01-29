@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-199  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-199 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-199/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-199/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-199/">SJRK-199</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-199: Files are not uploaded if UI language is changed</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-199">SJRK-199</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Simon%20Bates">Simon Bates</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-01-23T17:47:35.431-0500" prefix="">2019-01-23T17:47:35.431-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-04-23T21:12:03.474-0400" prefix="">2020-04-23T21:12:03.474-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>I was able to publish a story with media blocks without their URLs being translated. When the story was viewed, the media files were missing.</p>
+<p>I've not been able to reproduce this issue.</p>
+<p>At the time I was running:</p>
+<ul>
+<li><a href="https://github.com/fluid-project/sjrk-story-telling-server/tree/b22a0b39ae517abee8c184f73c7ad92218e60f48">https://github.com/fluid-project/sjrk-story-telling-server/tree/b22a0b39ae517abee8c184f73c7ad92218e60f48</a></li>
+<li>with <code>package.json</code> modified to use <a href="https://github.com/BlueSlug/sjrk-story-telling/tree/SJRK-190">https://github.com/BlueSlug/sjrk-story-telling/tree/SJRK-190</a></li>
+</ul>
+<p>I captured the published story from CouchDB and have attached it.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/SJRK/SJRK-199/20190123_storytelling_untranslated_urls.json">
+                            
+                                20190123_storytelling_untranslated_urls.json
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26482">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2019-01-23T17:50:34.311-0500">2019-01-23T17:50:34.311-0500</relative-time></i></p>
+                        <p>Is there a way that the publish request could be sent without the media files?</p>
+
+                    </li>
+                    
+                    <li id="comment-26483">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2019-01-24T14:13:23.214-0500">2019-01-24T14:13:23.214-0500</relative-time></i></p>
+                        <p>This happened to me again. Some details:</p>
+<ul>
+<li>I created a story with one block for each media type: text, image, audio, video</li>
+<li>I put content for every field</li>
+<li>I used the test media from sjrk-story-telling (as in the attached story also)</li>
+<li>All media was displayed correctly at preview</li>
+<li>The published story has non-translated URLs</li>
+<li>The media files are not in the server <code>uploads</code> directory</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-26484">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2019-01-24T14:50:53.420-0500">2019-01-24T14:50:53.420-0500</relative-time></i></p>
+                        <p>Ok, figured it out.</p>
+<p>To reproduce:</p>
+<ul>
+<li>Start a new story, with English UI</li>
+<li>Add an image block</li>
+<li>Upload an image</li>
+<li>Switch language to Español</li>
+<li>Click "MAS"</li>
+<li>Click "ENVIAR"</li>
+<li>Click "COMPARTE MI HISTORIA"</li>
+<li>Story is published, but image is missing</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-26485">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2019-01-24T15:02:13.177-0500">2019-01-24T15:02:13.177-0500</relative-time></i></p>
+                        <p>Potential short-term fix: remove/disable language switching.</p>
+
+                    </li>
+                    
+                    <li id="comment-26486">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2019-04-01T13:46:41.732-0400">2019-04-01T13:46:41.732-0400</relative-time></i></p>
+                        <p>This is a blocker when we turn the ability to switch languages back on, but for now we'll consider it "critical"</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-198/"><span class="aria-hidden">←</span> Previous: SJRK-198</a>
+        <a class="mx-1" href="/browse/SJRK-200/">Next: SJRK-200 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

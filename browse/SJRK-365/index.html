@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-365  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-365 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-365/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-365/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-365/">SJRK-365</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-365: Story builder tab / shift-tab block focus issues</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-365">SJRK-365</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SJRK/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Gregor Moss</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Dana">Dana</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-06-22T13:50:07.667-0400" prefix="">2020-06-22T13:50:07.667-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-07-14T01:42:32.737-0400" prefix="">2020-07-14T01:42:32.737-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>What's working now:</p>
+<ul>
+<li>Tabbing from delete button to the first block - focus lands on the block group (then moves to enabled up/down reorder buttons, then to delete checkbox, then to first block field).</li>
+</ul>
+<p>Bug 1:</p>
+<ul>
+<li>Tabbing out of any block lands focus on the first block field of the next block (i.e. Block heading)</li>
+</ul>
+<p>Behaviour we want:</p>
+<ul>
+<li>Tabbing out of any block lands focus on the next block group (then to reorder buttons, etc.)</li>
+<li>Focusing on the block as a group enables:
+<ul>
+<li>moving blocks with keyboard shortcuts (shift-Control + arrow keys on Mac, Ctrl + arrow keys on windows) as well as</li>
+<li>moving focus from block to block with keyboard arrow keys</li>
+</ul>
+</li>
+</ul>
+<p>Bug 2:</p>
+<ul>
+<li>Shift-tab does not allow focus on a block group</li>
+</ul>
+<p>Behaviour we want:</p>
+<ul>
+<li>Shift-tab order to be the reverse of tab order (such that Shift-tabbing from a block moves focus to last field of block above, then through the block fields, delete checkbox, re-order buttons, and finally to the block group, then out of the block)</li>
+</ul>
+<p>Note: this is potentially an issue with the Infusion Reorderer component and not the Story Tool itself</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26594">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2020-06-30T15:41:05.541-0400">2020-06-30T15:41:05.541-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/sjrk-story-telling/pull/84">The pull request</a> that fixes this issue has been merged into the project repo master branch at <a href="https://github.com/fluid-project/sjrk-story-telling/commit/124ca75934d39db06645c1cd017a7966efa6da49">this commit</a>.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-364/"><span class="aria-hidden">←</span> Previous: SJRK-364</a>
+        <a class="mx-1" href="/browse/SJRK-366/">Next: SJRK-366 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

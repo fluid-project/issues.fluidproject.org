@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5217  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5217 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5217/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5217/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5217/">FLUID-5217</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5217: Move 'demos' and 'tests' folders (etc?) to be sibling of 'src' instead of child</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5217">FLUID-5217</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-11-20T11:15:51.068-0500" prefix="">2013-11-20T11:15:51.068-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-06-26T10:06:14.174-0400" prefix="">2015-06-26T10:06:14.174-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.9</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Demos</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently, the 'demos' folder is contained inside the 'src' folder. I notice in the GPII prefsEditor repository (<a href="https://github.com/GPII/prefsEditors">https://github.com/GPII/prefsEditors</a>) that the 'demos' folder is a sibling of 'src,' and this seems to make a lot of sense to me. I suggest that we do the same for infusion demos.</p>
+<p>We should also consider this in light of <a href="/browse/FLUID-5215/">FLUID-5215</a> – the creation of instructional demos – and consider what the demos structure might be: demos and instructionalDemos as siblings to src, or showcaseDemos and instructionalDemos, or demos/showcase and demos/instructional, etc.</p>
+<p>Note: There's a chance that this change might reveal bugs in our components where path assumptions are being made and we're simply unaware of it because the assumptions happen to be consistent with the existing relative paths between the demos and the source.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15575">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2013-11-20T11:19:05.101-0500">2013-11-20T11:19:05.101-0500</relative-time></i></p>
+                        <p>Justin pointed out that this restructuring could be a factor for the build scripts, too.</p>
+
+                    </li>
+                    
+                    <li id="comment-15577">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2013-11-20T16:30:20.292-0500">2013-11-20T16:30:20.292-0500</relative-time></i></p>
+                        <p>See the comment on <a href="/browse/FLUID-5215/">FLUID-5215</a> for how we decided to restructure things</p>
+
+                    </li>
+                    
+                    <li id="comment-15579">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2013-11-21T13:22:07.459-0500">2013-11-21T13:22:07.459-0500</relative-time></i></p>
+                        <p>Also, this change will affect the build site(s) that link to the demos folder, i.e. the link on build.fluidproject.org currently links to <a href="http://build.fluidproject.org/infusion/demos/">http://build.fluidproject.org/infusion/demos/</a> – that will have to change to <a href="http://build.fluidproject.org/infusion/demos/showcase/">http://build.fluidproject.org/infusion/demos/showcase/</a></p>
+<p>Likewise, <a href="http://fluidproject.org/products/infusion/">http://fluidproject.org/products/infusion/</a> has a link to <a href="http://fluidproject.org/products/infusion/infusion-demos">http://fluidproject.org/products/infusion/infusion-demos</a> which redirects to <a href="http://fluidproject.org/releases/1.4/demos/">http://fluidproject.org/releases/1.4/demos/</a> – that will have to redirect to <a href="http://fluidproject.org/releases/1.5/demos/showcase">http://fluidproject.org/releases/1.5/demos/showcase</a> after the release</p>
+
+                    </li>
+                    
+                    <li id="comment-15582">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2013-11-27T17:01:31.643-0500">2013-11-27T17:01:31.643-0500</relative-time></i></p>
+                        <p>In progress, at <a href="https://github.com/acheetham/infusion/tree/FLUID-5217">https://github.com/acheetham/infusion/tree/FLUID-5217</a><br>
+So far, showcase and standalone demos moved, and tests moved.</p>
+<p>Build scripts seem broken (wrt demos and tests) even in master, so not yet addressed in this branch.</p>
+
+                    </li>
+                    
+                    <li id="comment-15583">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2013-12-03T16:26:24.775-0500">2013-12-03T16:26:24.775-0500</relative-time></i></p>
+                        <p>Pull request issued: <a href="https://github.com/fluid-project/infusion/pull/444">https://github.com/fluid-project/infusion/pull/444</a></p>
+
+                    </li>
+                    
+                    <li id="comment-15585">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2014-03-26T15:33:39.364-0400">2014-03-26T15:33:39.364-0400</relative-time></i></p>
+                        <p>This will need to be redone, and we'll want to do it as the very last thing, after all other changes have been merged in.</p>
+
+                    </li>
+                    
+                    <li id="comment-15587">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-05-28T15:47:01.794-0400">2014-05-28T15:47:01.794-0400</relative-time></i></p>
+                        <p>In talking at the community meeting today the recommendation was to move all the demos directories, lib and tests to be siblings of source. The built version should remain the same. However, we could not decide how to best reorganize the various demos.</p>
+
+                    </li>
+                    
+                    <li id="comment-15589">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-05-29T08:55:27.543-0400">2014-05-29T08:55:27.543-0400</relative-time></i></p>
+                        <p>Discussion on the fluid-work mailing list<br>
+<a href="http://fluid.2324889.n4.nabble.com/Directory-restructuring-on-hold-td9046.html">http://fluid.2324889.n4.nabble.com/Directory-restructuring-on-hold-td9046.html</a></p>
+
+                    </li>
+                    
+                    <li id="comment-15591">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-06-19T09:25:13.481-0400">2014-06-19T09:25:13.481-0400</relative-time></i></p>
+                        <p>We talked in detail about this at the community meeting yesterday. Anastasia forwarded the notes to the mailing list.<br>
+<a href="http://fluid.2324889.n4.nabble.com/Documentation-decisions-td9105.html">http://fluid.2324889.n4.nabble.com/Documentation-decisions-td9105.html</a></p>
+
+                    </li>
+                    
+                    <li id="comment-15593">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2014-06-19T10:22:17.990-0400">2014-06-19T10:22:17.990-0400</relative-time></i></p>
+                        <p>Here's my understanding of the new folder hierarchy resulting from yesterday's discussions:</p>
+<p>src/<br>
+framework/<br>
+components/<br>
+lib/<br>
+module/<br>
+demos/<br>
+examples/<br>
+tests/</p>
+<p>For the demos and tests folder, their hierarchies will remain pretty much what they are now, except for: Within the tests folder, the manual-tests content will be renamed or otherwise organized to make it more clear which components are being tested. This might involve the creation of folders.</p>
+<p>For the examples folder, the hierarchy should mirror, as much as reasonable, the hierarchy of the source folder. In general:</p>
+<p>examples/<br>
+framework/<br>
+core/<br>
+prefs/<br>
+renderer/<br>
+components/<br>
+componentX/<br>
+shared/<br>
+css/<br>
+shared.css<br>
+html/<br>
+shared.html<br>
+js/<br>
+shared.js<br>
+demoX/<br>
+css/<br>
+file.css<br>
+html/<br>
+file.html<br>
+js/<br>
+file.js<br>
+demoY/<br>
+css/<br>
+file.css<br>
+html/<br>
+file.html<br>
+js/<br>
+file.js<br>
+componentY/<br>
+etc..</p>
+
+                    </li>
+                    
+                    <li id="comment-15596">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-06-26T11:08:47.106-0400">2014-06-26T11:08:47.106-0400</relative-time></i></p>
+                        <p>Submitted a pull request:<br>
+<a href="https://github.com/fluid-project/infusion/pull/539">https://github.com/fluid-project/infusion/pull/539</a></p>
+
+                    </li>
+                    
+                    <li id="comment-15598">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-07-10T10:01:43.488-0400">2014-07-10T10:01:43.488-0400</relative-time></i></p>
+                        <p>Merged into the project repo @ 78593a2af5d62fe724404d9f5585a85c5c90ca9f</p>
+
+                    </li>
+                    
+                    <li id="comment-15600">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-07-10T15:34:56.971-0400">2014-07-10T15:34:56.971-0400</relative-time></i></p>
+                        <p>the path to the tests directory in the devIncludes.json file in the module directory needs to be updated to point at the tests dir which has moved up a level.</p>
+
+                    </li>
+                    
+                    <li id="comment-15601">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-07-10T15:36:10.968-0400">2014-07-10T15:36:10.968-0400</relative-time></i></p>
+                        <p>Filed another pull request to fix the devIncludes.json file<br>
+<a href="https://github.com/fluid-project/infusion/pull/543">https://github.com/fluid-project/infusion/pull/543</a></p>
+
+                    </li>
+                    
+                    <li id="comment-15603">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-07-11T08:48:47.997-0400">2014-07-11T08:48:47.997-0400</relative-time></i></p>
+                        <p>Pull request ( <a href="https://github.com/fluid-project/infusion/pull/543">https://github.com/fluid-project/infusion/pull/543</a> ) was merged at 63d7180d3825fe572c0c08e6d89d61f6b3e2b7e7</p>
+
+                    </li>
+                    
+                    <li id="comment-15605">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-07-11T10:51:10.492-0400">2014-07-11T10:51:10.492-0400</relative-time></i></p>
+                        <p>Pull request ( <a href="https://github.com/fluid-project/build.fluidproject.org/pull/11">https://github.com/fluid-project/build.fluidproject.org/pull/11</a> ) has been merged to update the build site links at 920ce6e90808d70ce021db761610e8610d1c56f3</p>
+
+                    </li>
+                    
+                    <li id="comment-15607">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-26T09:51:10.938-0400">2015-06-26T09:51:10.938-0400</relative-time></i></p>
+                        <p>Reopening to change the fix version to 1.9</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5216/"><span class="aria-hidden">←</span> Previous: FLUID-5216</a>
+        <a class="mx-1" href="/browse/FLUID-5218/">Next: FLUID-5218 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

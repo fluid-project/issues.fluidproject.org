@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-120  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-120 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-120/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-120/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-120/">SJRK-120</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-120: Add tests for page grade</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-120">SJRK-120</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SJRK/?resolution=Done">Done</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-05-31T19:11:42.252-0400" prefix="">2018-05-31T19:11:42.252-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-08-24T13:15:16.042-0400" prefix="">2018-08-24T13:15:16.042-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>There are some tests which should be added for sjrk.storyTelling.page:</p>
+<ul>
+<li><s>uiLanguage changing and associated events</s>
+<ul>
+<li><s>check its value when it's expected to have changed</s></li>
+</ul>
+</li>
+<li><s>onContextChangeRequested event</s></li>
+<li><s>loading from and storing to cookieStore</s></li>
+<li><s>storySpeaker listener</s></li>
+<li><s>storySpeaker creation timing</s></li>
+<li><s>test the functions directly</s></li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26336">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2018-06-11T02:01:10.754-0400">2018-06-11T02:01:10.754-0400</relative-time></i></p>
+                        <p>Testing to ensure the timing of the page's compound event onAllUiComponentsReady based on menu's onControlsBound event was leading to errors. It seemed the test framework wasn't unbinding the first listener after it was called initally, and so when the language was changed it was reasserting that the onControlsBound event had fired, seemingly even after the components had been destroyed. I have commented out the test sequence item in question:</p>
+<pre><code class="hljs language-java"><span class="hljs-string">"event"</span>: <span class="hljs-string">"{pageTest page menu}.events.onControlsBound"</span>,
+<span class="hljs-string">"listener"</span>: <span class="hljs-string">"jqUnit.assert"</span>,
+<span class="hljs-string">"args"</span>: <span class="hljs-string">"menu onControlsBound event fired."</span>
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-26337">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2018-06-26T18:11:12.515-0400">2018-06-26T18:11:12.515-0400</relative-time></i></p>
+                        <p>After adding tests for the cookieStore, including clearing the cookie after all tests, the tests for sjrk.storyTelling.page.storyEdit no longer completed because the cookie was missing. The exact cause of this is unclear at the moment, and I have worked around it by re-setting the language to English after all of the tests for sjrk.storyTelling.page have run. This is not ideal, and the cause should be determined and addressed.</p>
+
+                    </li>
+                    
+                    <li id="comment-26338">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2018-06-26T18:13:08.470-0400">2018-06-26T18:13:08.470-0400</relative-time></i></p>
+                        <p>I also experienced some difficulty in testing whether the cookieStore had loaded the expected values upon the page creation. It seems to be related to all of the other events which occur around the same time being tested against already. I was otherwise unable to figure out how to re-initialize the test page grade in order to restart this sequence, including firing its createOnEvent.</p>
+
+                    </li>
+                    
+                    <li id="comment-26339">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2018-08-24T13:15:15.968-0400">2018-08-24T13:15:15.968-0400</relative-time></i></p>
+                        <p>Test coverage was reviewed, two new tests were added and coverage is satisfactory to me at this point.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-119/"><span class="aria-hidden">←</span> Previous: SJRK-119</a>
+        <a class="mx-1" href="/browse/SJRK-121/">Next: SJRK-121 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

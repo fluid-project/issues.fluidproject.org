@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-245  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-245 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-245/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-245/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-245/">INFRA-245</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-245: Update certbot to use ACMEv2 protocol</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-245">INFRA-245</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Done">Done</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-05-02T10:00:29.760-0400" prefix="">2020-05-02T10:00:29.760-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-05-04T10:07:24.532-0400" prefix="">2020-05-04T10:07:24.532-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <pre><code class="hljs">From: &lt;noreply@letsencrypt.org&gt;
+Date: Sat, May <span class="hljs-number">2</span>, <span class="hljs-number">2020</span> at <span class="hljs-number">5</span>:<span class="hljs-number">53</span> AM
+Subject: Update your client software <span class="hljs-keyword">to</span> continue using Let<span class="hljs-symbol">'s</span> Encrypt
+
+Hi,
+
+According <span class="hljs-keyword">to</span> our records, the software client you<span class="hljs-symbol">'re</span> using <span class="hljs-keyword">to</span> get Let<span class="hljs-symbol">'s</span> 
+Encrypt TLS/SSL certificates issued <span class="hljs-keyword">or</span> renewed at least one HTTPS certificate 
+<span class="hljs-keyword">in</span> the past two weeks using the ACMEv1 protocol. Here are the details <span class="hljs-keyword">of</span> one 
+recent ACMEv1 request from each <span class="hljs-keyword">of</span> your account(s):
+
+Client IP address:&#160; <span class="hljs-number">205.211</span>.<span class="hljs-number">169.36</span> 
+
+User agent:&#160; CertbotACMEClient/<span class="hljs-number">0.17</span>.<span class="hljs-number">0</span> (certbot; CentOS Linux <span class="hljs-number">7</span> (Core)) Authenticator/dns-route53 Installer/None (certonly; flags: n) Py/<span class="hljs-number">2.7</span>.<span class="hljs-number">5</span> 
+
+Hostname(s):&#160; <span class="hljs-string">"inclusivedesign.ca"</span>,<span class="hljs-string">"airmedia.inclusivedesign.ca"</span>,<span class="hljs-string">"ci.inclusivedesign.ca"</span>,<span class="hljs-string">"files.inclusivedesign.ca"</span>,<span class="hljs-string">"guide.inclusivedesign.ca"</span>,<span class="hljs-string">"hackathon.inclusivedesign.ca"</span>,<span class="hljs-string">"lists.inclusivedesign.ca"</span>,<span class="hljs-string">"pkg.inclusivedesign.ca"</span>,<span class="hljs-string">"www.inclusivedesign.ca"</span>,<span class="hljs-string">"aihec.inclusivedesign.ca"</span>,<span class="hljs-string">"cities.inclusivedesign.ca"</span>,<span class="hljs-string">"stories.cities.inclusivedesign.ca"</span>,<span class="hljs-string">"wecount.inclusivedesign.ca"</span>,<span class="hljs-string">"wecount-cms.inclusivedesign.ca"</span>,<span class="hljs-string">"wecount-dev.inclusivedesign.ca"</span> 
+
+Request <span class="hljs-built_in">time</span>:&#160; <span class="hljs-number">2020</span>-<span class="hljs-number">04</span>-<span class="hljs-number">14</span> <span class="hljs-number">20</span>:<span class="hljs-number">00</span>:<span class="hljs-number">38</span> UTC 
+
+Beginning June <span class="hljs-number">1</span>, <span class="hljs-number">2020</span>, we will stop allowing <span class="hljs-keyword">new</span> domains <span class="hljs-keyword">to</span> validate using 
+the ACMEv1 protocol. You should upgrade <span class="hljs-keyword">to</span> an ACMEv2 compatible client before 
+<span class="hljs-keyword">then</span>, <span class="hljs-keyword">or</span> certificate issuance will fail. <span class="hljs-keyword">For</span> most people, simply upgrading <span class="hljs-keyword">to</span> 
+the latest version <span class="hljs-keyword">of</span> your existing client will suffice. You can <span class="hljs-keyword">view</span> the 
+client list at: https://letsencrypt.org/docs/client-options/
+
+<span class="hljs-keyword">If</span> you<span class="hljs-symbol">'re</span> unsure how your certificate <span class="hljs-keyword">is</span> managed, get <span class="hljs-keyword">in</span> touch <span class="hljs-keyword">with</span> the 
+person who installed the certificate <span class="hljs-keyword">for</span> you. <span class="hljs-keyword">If</span> you don<span class="hljs-symbol">'t</span> know who <span class="hljs-keyword">to</span> 
+contact, please <span class="hljs-keyword">view</span> the help section <span class="hljs-keyword">in</span> our community forum at 
+https://community.letsencrypt.org/c/help <span class="hljs-keyword">and</span> <span class="hljs-keyword">use</span> the search bar <span class="hljs-keyword">to</span> check <span class="hljs-keyword">if</span> 
+there<span class="hljs-symbol">'s</span> an existing solution <span class="hljs-keyword">for</span> your question. <span class="hljs-keyword">If</span> there isn<span class="hljs-symbol">'t</span>, please create 
+a <span class="hljs-keyword">new</span> topic <span class="hljs-keyword">and</span> fill <span class="hljs-keyword">out</span> the help template.
+
+ACMEv1 API deprecation details can be found <span class="hljs-keyword">in</span> our community forum: 
+https://community.letsencrypt.org/t/<span class="hljs-keyword">end</span>-<span class="hljs-keyword">of</span>-life-plan-<span class="hljs-keyword">for</span>-acmev1
+
+As a reminder: <span class="hljs-keyword">In</span> the future, Let<span class="hljs-symbol">'s</span> Encrypt will be performing multiple 
+domain validation requests <span class="hljs-keyword">for</span> each domain name <span class="hljs-keyword">when</span> you issue a certificate. 
+<span class="hljs-keyword">While</span> you<span class="hljs-symbol">'re</span> working <span class="hljs-keyword">on</span> migrating <span class="hljs-keyword">to</span> ACMEv2, please check that your system 
+<span class="hljs-keyword">configuration</span> will <span class="hljs-keyword">not</span> <span class="hljs-keyword">block</span> validation requests made by <span class="hljs-keyword">new</span> Let<span class="hljs-symbol">'s</span> Encrypt IP 
+addresses, <span class="hljs-keyword">or</span> <span class="hljs-keyword">block</span> multiple matching requests. Per our FAQ 
+(https://letsencrypt.org/docs/faq/), we don<span class="hljs-symbol">'t</span> publish a list <span class="hljs-keyword">of</span> IP addresses 
+we <span class="hljs-keyword">use</span> <span class="hljs-keyword">to</span> validate, <span class="hljs-keyword">and</span> this list may change at any <span class="hljs-built_in">time</span>.
+
+<span class="hljs-keyword">To</span> receive more frequent updates, subscribe <span class="hljs-keyword">to</span> our API Announcements: 
+https://community.letsencrypt.org/t/about-the-api-announcements-category 
+
+Thank you <span class="hljs-keyword">for</span> joining us <span class="hljs-keyword">on</span> our mission <span class="hljs-keyword">to</span> create a more secure <span class="hljs-keyword">and</span> privacy-
+respecting Web!
+
+<span class="hljs-keyword">All</span> the best,
+
+Let<span class="hljs-symbol">'s</span> Encrypt
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26067">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2020-05-04T10:06:47.631-0400">2020-05-04T10:06:47.631-0400</relative-time></i></p>
+                        <p>Old versions:</p>
+<pre><code class="hljs"><span class="hljs-attribute">certbot</span> (<span class="hljs-number">0</span>.<span class="hljs-number">17</span>.<span class="hljs-number">0</span>)
+<span class="hljs-attribute">certbot</span>-dns-route53 (<span class="hljs-number">0</span>.<span class="hljs-number">17</span>.<span class="hljs-number">0</span>)
+<span class="hljs-attribute">certbot</span>-route53 (<span class="hljs-number">0</span>.<span class="hljs-number">2</span>.<span class="hljs-number">0</span>)
+</code></pre>
+<p>New versions:</p>
+<pre><code class="hljs"><span class="hljs-attribute">certbot</span> (<span class="hljs-number">1</span>.<span class="hljs-number">3</span>.<span class="hljs-number">0</span>)
+<span class="hljs-attribute">certbot</span>-dns-route53 (<span class="hljs-number">1</span>.<span class="hljs-number">3</span>.<span class="hljs-number">0</span>)
+<span class="hljs-attribute">certbot</span>-route53 (<span class="hljs-number">0</span>.<span class="hljs-number">2</span>.<span class="hljs-number">0</span>)
+</code></pre>
+<p>Successful job run:</p>
+<pre><code class="hljs"><span class="hljs-bullet">+</span> ansible-playbook -i environments/production playbooks/letsencrypt<span class="hljs-emphasis">_renew.yml
+
+PLAY [Rewew existing Let's Encrypt certificates] <span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">***
+
+TASK [Gathering Facts] **</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">***
+ok: [i-0023.tor1.incd.ca]
+
+TASK [letsencrypt-route53 : Check if action is valid] **</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span>
+skipping: [i-0023.tor1.incd.ca]
+
+TASK [letsencrypt-route53 : Include tasks] <span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span>*
+included: /home/deploy/workspace/infra-letsencrypt-renew/roles/letsencrypt-route53/tasks/renew.yml for i-0023.tor1.incd.ca
+
+TASK [letsencrypt-route53 : Renew certificates] <span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span>
+ok: [i-0023.tor1.incd.ca]
+
+PLAY RECAP <span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span><span class="hljs-strong">****</span>*
+i-0023.tor1.incd.ca        : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+Triggering a new build of infra-letsencrypt-deploy
+Finished: SUCCESS
+</span></code></pre>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-244/"><span class="aria-hidden">←</span> Previous: INFRA-244</a>
+        <a class="mx-1" href="/browse/INFRA-246/">Next: INFRA-246 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

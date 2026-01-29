@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> KETTLE-75  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" KETTLE-75 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/KETTLE-75/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/KETTLE-75/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/KETTLE" data-pagefind-filter="project">Kettle</a></li>
+                <li><a href="/browse/KETTLE-75/">KETTLE-75</a></li>
+            </ol>
+        </nav>
+        <h1>KETTLE-75: Kettle's argument parsing is environmentally unsound</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/KETTLE-75">KETTLE-75</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Resolved</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/KETTLE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-01-30T06:06:57.180-0500" prefix="">2019-01-30T06:06:57.180-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-02-04T18:45:04.610-0500" prefix="">2019-02-04T18:45:04.610-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Kettle strategy for grabbing command-line arguments willy-nilly makes it impossible to start up applications in some cases if additional arguments are being passed to node.exe or electron.exe.</p>
+<p>For example, attempting to start up gpii-app via&#160;electron --inspect-brk main.js gives a failure on startup as the filename argument gets interpreted as the config directory via the following code in KettleConfigName:</p>
+<pre><code class="hljs language-java">kettle.config.getConfigPath = function (outerDefault) {
+    <span class="hljs-type">var</span> <span class="hljs-variable">arg2</span> <span class="hljs-operator">=</span> process.argv[<span class="hljs-number">2</span>];
+    <span class="hljs-keyword">if</span> (arg2 === <span class="hljs-string">"-"</span>) {
+        arg2 = <span class="hljs-literal">null</span>;
+    }
+    <span class="hljs-type">var</span> <span class="hljs-variable">configPath</span> <span class="hljs-operator">=</span> arg2 || outerDefault;
+</code></pre>
+<p>It seems there was some ancient attempt here to allow the skipping of some arguments. We should replace this with a scheme which shows some better sense of the argument structure and can skip everything until it finds the filename, and/or only recognise named arguments, or perhaps even abolish this scheme altogether.</p>
+<p>At the time of the call, the process arguments are [V:\node_modules\electron\dist\electron.exe, --inspect-brk, main.js]</p>
+<p>The failure we get is:</p>
+<pre><code class="hljs language-java">App threw an error during load
+Error: Assertion failure - check console <span class="hljs-keyword">for</span> more details: Could not find a config file at any of the paths V:\main.js\app.testing, V:\main.js\app.testing.json, V:\main.js\app.testing.json5
+</code></pre>
+<p></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26174">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2019-01-30T10:54:30.904-0500">2019-01-30T10:54:30.904-0500</relative-time></i></p>
+                        <p>As a quick "hot patch" to allow people to use, e.g. --inspect-brk by hot-editing kettle from inside node_modules, this set of changes will simply disable Kettle's command-line parsing:</p>
+<pre><code class="hljs language-java">diff --git a/lib/KettleConfigLoader.js b/lib/KettleConfigLoader.js
+index 6a36abb..6d203ba <span class="hljs-number">100644</span>
+--- a/lib/KettleConfigLoader.js
++++ b/lib/KettleConfigLoader.js
+ -<span class="hljs-number">28</span>,<span class="hljs-number">7</span> +<span class="hljs-number">28</span>,<span class="hljs-number">8</span>  fluid.defaults(<span class="hljs-string">"kettle.config"</span>, {
+  * is suitable <span class="hljs-keyword">for</span> appearing as the configName field in the options to &lt;code&gt;kettle.config.createDefaults&lt;/code&gt; etc.
+  */
+ kettle.config.getConfigName = function (outerDefault) {
+-    <span class="hljs-type">var</span> <span class="hljs-variable">nodeEnv</span> <span class="hljs-operator">=</span> process.argv[<span class="hljs-number">3</span>] || process.env.NODE_ENV || outerDefault;
++    console.log(<span class="hljs-string">"Process arguments are "</span> + process.argv);
++    <span class="hljs-type">var</span> <span class="hljs-variable">nodeEnv</span> <span class="hljs-operator">=</span> process.env.NODE_ENV || outerDefault;
+     <span class="hljs-keyword">if</span> (nodeEnv) {
+         fluid.log(<span class="hljs-string">"Loader running configuration name "</span> + nodeEnv);
+     } <span class="hljs-keyword">else</span> {
+ -<span class="hljs-number">42</span>,<span class="hljs-number">10</span> +<span class="hljs-number">43</span>,<span class="hljs-number">7</span>  kettle.config.getConfigName = function (outerDefault) {
+  * is suitable <span class="hljs-keyword">for</span> appearing as the configPath field in the options to &lt;code&gt;kettle.config.createDefaults&lt;/code&gt; etc.
+  */
+ kettle.config.getConfigPath = function (outerDefault) {
+-    <span class="hljs-type">var</span> <span class="hljs-variable">arg2</span> <span class="hljs-operator">=</span> process.argv[<span class="hljs-number">2</span>];
+-    <span class="hljs-keyword">if</span> (arg2 === <span class="hljs-string">"-"</span>) {
+-        arg2 = <span class="hljs-literal">null</span>;
+-    }
++    <span class="hljs-type">var</span> <span class="hljs-variable">arg2</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;
+     <span class="hljs-type">var</span> <span class="hljs-variable">configPath</span> <span class="hljs-operator">=</span> arg2 || outerDefault;
+     <span class="hljs-keyword">if</span> (!configPath) {
+         fluid.fail(<span class="hljs-string">"Config path must be specified as 1st command line argument"</span>);
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-26175">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2019-02-04T06:59:40.077-0500">2019-02-04T06:59:40.077-0500</relative-time></i></p>
+                        <p>Note that this is more specifically a problem with executing electron apps from the command line. There is a long-standing fault in electron argument parsing which fails to strip off the V8-specific arguments which precede the script filename which is intended to appear in process.argv[1]. <a href="https://github.com/electron/electron/issues/4690">https://github.com/electron/electron/issues/4690</a>&#160;- this stackExchange answer explains the distinction between process.argv and process.execArgv which is observed in plain node but not with electron -&#160;<a href="https://stackoverflow.com/questions/4351521/how-do-i-pass-command-line-arguments-to-a-node-js-program#comment57056011_4351548">https://stackoverflow.com/questions/4351521/how-do-i-pass-command-line-arguments-to-a-node-js-program#comment57056011_4351548</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/KETTLE-74/"><span class="aria-hidden">←</span> Previous: KETTLE-74</a>
+        <a class="mx-1" href="/browse/KETTLE-78/">Next: KETTLE-78 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

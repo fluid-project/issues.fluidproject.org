@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5589  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5589 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5589/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5589/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5589/">FLUID-5589</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5589: Create a wrapper around the SpeechSynthesis interface from the web speech api</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5589">FLUID-5589</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-01-21T07:50:07.960-0500" prefix="">2015-01-21T07:50:07.960-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-06-26T10:07:47.659-0400" prefix="">2015-06-26T10:07:47.659-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.9</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Self Voicing</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Create to wrap the features and functions of a the Web Speech API's SpeechSynthesis interface. </p>
+<p>The wrapper should provide an abstraction over the Synthesizer and Utterance objects provided by the browser, while allowing all of the necessary methods, options, properties, and events to be exposed in a means that this is easily accessible to a user/integrator and works with IoC.</p>
+<p>See: <br>
+<a href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html#tts-section">https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html#tts-section</a><br>
+<a href="http://caniuse.com/#feat=speech-synthesis">http://caniuse.com/#feat=speech-synthesis</a><br>
+<a href="http://updates.html5rocks.com/2014/01/Web-apps-that-talk---Introduction-to-the-Speech-Synthesis-API">http://updates.html5rocks.com/2014/01/Web-apps-that-talk---Introduction-to-the-Speech-Synthesis-API</a><br>
+<a href="http://blog.teamtreehouse.com/getting-started-speech-synthesis-api">http://blog.teamtreehouse.com/getting-started-speech-synthesis-api</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-16128">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-01-21T10:08:57.678-0500">2015-01-21T10:08:57.678-0500</relative-time></i></p>
+                        <p>Work currently underway at <a href="https://github.com/jobara/infusion/blob/FLUID-5589/src/components/textToSpeech/js/TextToSpeech.js">https://github.com/jobara/infusion/blob/FLUID-5589/src/components/textToSpeech/js/TextToSpeech.js</a></p>
+
+                    </li>
+                    
+                    <li id="comment-16130">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-01-23T10:22:54.053-0500">2015-01-23T10:22:54.053-0500</relative-time></i></p>
+                        <p>Chrome 40 does not fully support pause. ( this includes setting the property and firing the event)<br>
+<a href="https://code.google.com/p/chromium/issues/detail?id=425553&q=SpeechSynthesis&colspec=ID%20Pri%20M%20Week%20ReleaseBlock%20Cr%20Status%20Owner%20Summary%20OS%20Modified">https://code.google.com/p/chromium/issues/detail?id=425553&amp;q=SpeechSynthesis&amp;colspec=ID Pri M Week ReleaseBlock Cr Status Owner Summary OS Modified</a></p>
+
+                    </li>
+                    
+                    <li id="comment-16132">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-01-29T11:05:07.635-0500">2015-01-29T11:05:07.635-0500</relative-time></i></p>
+                        <p>Submitted a pull request <br>
+<a href="https://github.com/fluid-project/infusion/pull/583">https://github.com/fluid-project/infusion/pull/583</a></p>
+
+                    </li>
+                    
+                    <li id="comment-16134">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-02-03T15:14:47.253-0500">2015-02-03T15:14:47.253-0500</relative-time></i></p>
+                        <p>Submitted another pull request that addresses issues with the dependency files<br>
+<a href="https://github.com/fluid-project/infusion/pull/584">https://github.com/fluid-project/infusion/pull/584</a></p>
+
+                    </li>
+                    
+                    <li id="comment-16136">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2015-02-03T15:29:55.764-0500">2015-02-03T15:29:55.764-0500</relative-time></i></p>
+                        <p>The pull request <a href="https://github.com/fluid-project/infusion/pull/583">https://github.com/fluid-project/infusion/pull/583</a> is merged @ 2a6793891aee7ee2ad41420d52d10c50a2359593</p>
+<p>The pull request <a href="https://github.com/fluid-project/infusion/pull/584">https://github.com/fluid-project/infusion/pull/584</a> is merged @ 4413d0020a62585e30a37331edd49c4d0e61b1ad</p>
+
+                    </li>
+                    
+                    <li id="comment-16138">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-26T09:51:11.430-0400">2015-06-26T09:51:11.430-0400</relative-time></i></p>
+                        <p>Reopening to change the fix version to 1.9</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5588/"><span class="aria-hidden">←</span> Previous: FLUID-5588</a>
+        <a class="mx-1" href="/browse/FLUID-5590/">Next: FLUID-5590 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

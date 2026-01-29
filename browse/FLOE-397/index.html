@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-397  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-397 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-397/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-397/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-397/">FLOE-397</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-397: On focusing the FD language list, start at the topmost visible language</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-397">FLOE-397</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLOE/?resolution=Duplicate">Duplicate</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Simon%20Bates">Simon Bates</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-06-09T10:08:21.377-0400" prefix="">2015-06-09T10:08:21.377-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-11-12T14:36:03.668-0500" prefix="">2015-11-12T14:36:03.668-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>First Discovery</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>For <a href="/browse/FLOE-333/">FLOE-333</a>, we identified the following:</p>
+<p>"When focus is moved to the language list, the list of visible languages is not changed and the language at the top of the list is given focus"</p>
+<p>In the current implementation, we have the following:</p>
+<p>1. On first focusing the list, we start at the top language (not the top visible, but the very first one), scrolling if needed<br>
+2. If focus leaves the language list by tabbing and we then refocus the list, we go back to the top of the list (as in 1 above)<br>
+3. If focus leaves the language list by clicking the mouse button outside of the list and we then refocus the list, the last selection is remembered</p>
+<p>For the keyboard navigation of the language list we are using the Fluid "selectable" jQuery plugin:</p>
+<p><a href="https://github.com/fluid-project/first-discovery/blob/7f69951489d66107ed1cc8e9e3aac4c0d88197e3/src/js/panels.js#L793-L806">https://github.com/fluid-project/first-discovery/blob/7f69951489d66107ed1cc8e9e3aac4c0d88197e3/src/js/panels.js#L793-L806</a></p>
+<p>The reason for the inconsistency between situation 2 and 3 above is that we are setting "rememberSelectionState: false" but the selectable plugin only unsets the selected element on press of tab. See <a href="https://github.com/fluid-project/infusion/blob/df508ecc39d203bceff3f59aec6772d1a706d3c3/src/framework/core/js/jquery.keyboard-a11y.js#L357-L369">https://github.com/fluid-project/infusion/blob/df508ecc39d203bceff3f59aec6772d1a706d3c3/src/framework/core/js/jquery.keyboard-a11y.js#L357-L369</a></p>
+<p>To implement the desired behaviour, we would need to put in place a mechanism that sets the selected element to the top visible language either on focusing the list, or on scrolling the list.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-11018">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2015-11-12T14:36:03.665-0500">2015-11-12T14:36:03.665-0500</relative-time></i></p>
+                        <p>This report has been copied to the GPII bug tracker: <a href="https://issues.gpii.net/browse/GPII-1467">https://issues.gpii.net/browse/GPII-1467</a> and all activities should be carried on there.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-396/"><span class="aria-hidden">←</span> Previous: FLOE-396</a>
+        <a class="mx-1" href="/browse/FLOE-398/">Next: FLOE-398 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

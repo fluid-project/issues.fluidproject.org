@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5714  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5714 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5714/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5714/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5714/">FLUID-5714</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5714: The framework does not correctly merge invoker specifications when both "func" and "funcName" are used</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5714">FLUID-5714</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-07-21T15:45:26.415-0400" prefix="">2015-07-21T15:45:26.415-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-02-27T15:49:11.797-0500" prefix="">2017-02-27T15:49:11.797-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The framework incorrectly merges invoker records (and possibly listener records as well?) when a user attempts to override an invoker bound to a "funcName" with a "func", or vice versa. Instead, it naively merges them, producing an invoker specification that looks like this:</p>
+<p>{<br>
+funcName: "foo.bar",<br>
+func: "{thing}.baz"<br>
+}</p>
+<p>It seems like we should either elide the distinction between "func" and "funcName" in the framework, or introduce some special logic that will ensure they are correctly merged.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-5714/infusion-invoker-merging-bug.zip">
+                            
+                                infusion-invoker-merging-bug.zip
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-16803">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2015-07-21T15:46:09.564-0400">2015-07-21T15:46:09.564-0400</relative-time></i></p>
+                        <p>Attached is a QUnit test that illustrates the issue.</p>
+
+                    </li>
+                    
+                    <li id="comment-16805">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-07-22T08:37:38.983-0400">2015-07-22T08:37:38.983-0400</relative-time></i></p>
+                        <p>The same thing happens when you have a "this-ist" invoker (i.e. {this: "thisObject", method: "someMethod", args: []} ). Currently we have to null out the original properties when trying to override, but that requires the integrator to know what the underlying structure was.</p>
+
+                    </li>
+                    
+                    <li id="comment-16807">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-08-20T15:49:40.717-0400">2015-08-20T15:49:40.717-0400</relative-time></i></p>
+                        <p>Merged into trunk at revision 282f1a318718eed0b0ec060fb8b4ad254417fd7e</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5713/"><span class="aria-hidden">←</span> Previous: FLUID-5713</a>
+        <a class="mx-1" href="/browse/FLUID-5715/">Next: FLUID-5715 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

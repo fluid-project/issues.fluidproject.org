@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6597  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6597 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6597/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6597/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6597/">FLUID-6597</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6597: The URL DataSource browser implementation does not set the request header</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6597">FLUID-6597</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-02-09T11:41:50.659-0500" prefix="">2021-02-09T11:41:50.659-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:16.597-0400" prefix="">2024-07-22T10:35:16.597-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The URL DataSource included in the <a href="/browse/FLUID-6580/">FLUID-6580</a> line of development does not properly set the request headers.</p>
+<p>{{fluid.dataSource.URL.handleHttp}} sets the headers option under <code>defaultOptions.headers</code>. ( <a href="https://github.com/amb26/infusion/blob/3ed160b3629d75ee76591d3d16e826f920d465b8/src/framework/core/js/ResourceLoader-browser.js#L91-L93">https://github.com/amb26/infusion/blob/3ed160b3629d75ee76591d3d16e826f920d465b8/src/framework/core/js/ResourceLoader-browser.js#L91-L93</a>&#160;) However, the call to <code>xhr.setRequestHeader</code> looks for values in <code>options.requestHeaders</code> ( <a href="https://github.com/amb26/infusion/blob/3ed160b3629d75ee76591d3d16e826f920d465b8/src/framework/core/js/ResourceLoader-browser.js#L28-L33">https://github.com/amb26/infusion/blob/3ed160b3629d75ee76591d3d16e826f920d465b8/src/framework/core/js/ResourceLoader-browser.js#L28-L33</a>&#160;).</p>
+<p>This was discovered while working on the Storytelling tool (<a href="/browse/SJRK-403/">SJRK-403</a>) to add a login request via the URL DataSource. The request header for content-type was coming through as "plain/text" instead of "application/json" due to the above issue.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6596/"><span class="aria-hidden">←</span> Previous: FLUID-6596</a>
+        <a class="mx-1" href="/browse/FLUID-6598/">Next: FLUID-6598 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

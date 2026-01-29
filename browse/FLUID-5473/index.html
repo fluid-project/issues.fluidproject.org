@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5473  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5473 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5473/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5473/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5473/">FLUID-5473</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5473: defaultOutputValue in valueMapper isn't applied in case of no match/ambiguous match</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5473">FLUID-5473</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Kasper Galschiot Markus</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-07-15T14:06:46.849-0400" prefix="">2014-07-15T14:06:46.849-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-09-22T22:36:59.912-0400" prefix="">2016-09-22T22:36:59.912-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Model Transformation System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This use case requires the transformed result to be determined by multiple model values:</p>
+<p>Scenario 1:</p>
+<pre><code class="hljs language-java">model = {
+    flashing: <span class="hljs-literal">true</span>,
+    noflashing: <span class="hljs-literal">false</span>
+};
+
+expected = {
+    flashing: <span class="hljs-string">"flashing"</span>
+}
+</code></pre>
+<p>Scenario 2:</p>
+<pre><code class="hljs language-java">model = {
+    flashing: <span class="hljs-literal">false</span>,
+    noflashing: <span class="hljs-literal">true</span>
+};
+
+expected = {
+    flashing: <span class="hljs-string">"noflashing"</span>
+}
+</code></pre>
+<p>Scenario 3: In the case of other model value combinations,</p>
+<pre><code class="hljs language-java">expected = {
+    flashing: <span class="hljs-string">"flashing"</span>
+}
+</code></pre>
+<p>So, the transformation rule is,</p>
+<pre><code class="hljs language-java">{
+    type: <span class="hljs-string">"fluid.transforms.valueMapper"</span>,
+    defaultOutputPath: <span class="hljs-string">"flashing"</span>,
+    defaultOutputValue: <span class="hljs-string">"unknown"</span>,
+    options: [
+        {
+            inputPath: <span class="hljs-string">"flashing"</span>,
+            inputValue: <span class="hljs-literal">true</span>,
+            outputValue: <span class="hljs-string">"flashing"</span>
+        },
+        {
+            inputPath: <span class="hljs-string">"noflashing"</span>,
+            inputValue: <span class="hljs-literal">true</span>,
+            outputValue: <span class="hljs-string">"noflashing"</span>
+        }
+    ]
+}
+</code></pre>
+<p>Scenario 1 &amp; 2 are transformed successfully, but scenario 3 outputs an empty object rather than the expected.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23623">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-07-15T14:10:29.120-0400">2014-07-15T14:10:29.120-0400</relative-time></i></p>
+                        <p>Submitted a pull request with an unit test to demonstrate this issue: <a href="https://github.com/fluid-project/infusion/pull/546">https://github.com/fluid-project/infusion/pull/546</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23624">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-07-20T19:18:48.674-0400">2014-07-20T19:18:48.674-0400</relative-time></i></p>
+                        <p>Hi cindyli - this is I think a reasonable expectation for the semantic of the valueMapper, but it is not the one which was implemented. I have issued a pull request with a fix at <a href="https://github.com/fluid-project/infusion/pull/551">https://github.com/fluid-project/infusion/pull/551</a> - this did not involve breaking any existing tests for the valueMapper, but we do need to have a discussion on whether this change in semantic is viable, as well as verify whether it breaks any transformations that have so far been written in the GPII. </p>
+
+                    </li>
+                    
+                    <li id="comment-23626">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-07-23T16:57:44.841-0400">2014-07-23T16:57:44.841-0400</relative-time></i></p>
+                        <p>This is now looking like a hazardous change - see discussion at <a href="http://wiki.fluidproject.org/display/fluid/Notes+on+valueMapper+Requirements">http://wiki.fluidproject.org/display/fluid/Notes+on+valueMapper+Requirements</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23628">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-08-04T14:48:43.904-0400">2016-08-04T14:48:43.904-0400</relative-time></i></p>
+                        <p>The new "noMatch" block introduced by <a href="https://issues.fluidproject.org/browse/FLUID-5891">https://issues.fluidproject.org/browse/FLUID-5891</a> in <a href="https://github.com/fluid-project/infusion/pull/710/files">https://github.com/fluid-project/infusion/pull/710/files</a> is a much clearer scheme for dealing with this kind of problem</p>
+
+                    </li>
+                    
+                    <li id="comment-23629">
+                        <p class="mb-0"><b>Kasper Galschiot Markus</b> <i>commented <relative-time datetime="2016-09-13T03:39:49.505-0400">2016-09-13T03:39:49.505-0400</relative-time></i></p>
+                        <p>Antranig Basman Given the pull/710 merge, do you think this can be closed?</p>
+
+                    </li>
+                    
+                    <li id="comment-23630">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-09-22T22:36:59.908-0400">2016-09-22T22:36:59.908-0400</relative-time></i></p>
+                        <p>Closed through fix of <a href="/browse/FLUID-5891/">FLUID-5891</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5472/"><span class="aria-hidden">←</span> Previous: FLUID-5472</a>
+        <a class="mx-1" href="/browse/FLUID-5474/">Next: FLUID-5474 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

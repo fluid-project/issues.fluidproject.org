@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-507  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-507 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-507/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-507/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-507/">FLUID-507</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-507: OSDPL: Finalize Design Pattern submission form &amp; node display</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-507">FLUID-507</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Duplicate">Duplicate</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Jonathan Hung</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-04-15T14:28:34.000-0400" prefix="">2008-04-15T14:28:34.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-08-21T12:08:54.000-0400" prefix="">2008-08-21T12:08:54.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>OSDPL</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Finalize the contents of the Design Pattern submission form &amp; display of nodes. This includes determining data elements to include, setting up the form to allow them to be entered, entering any necessary help text and creating a node-uidp.tpl.php file (example attached) to style the display of the entered nodes. We will also want to ensure that any fields that are empty are not displayed on pattern pages (e.g. synonyms and examples and any other field should not appear when there is no content in it: <a href="http://osdpl.fluidproject.org/content/sortable-table">http://osdpl.fluidproject.org/content/sortable-table</a>), which I believe can be done with Contemplate or in the node-uidp.tpl.php file. For some reason the Examples group and the Example Image Description(s) and Synonyms fields seem to show up even when empty. This is very perplexing since Example Image Descriptions(s) is exactly the same as Example Image Sources(s), which does not show up.</p>
+<p>See also: <a href="http://wiki.fluidproject.org/download/attachments/1706231/PatternLibraryDataElementInventory_ver02.xls">http://wiki.fluidproject.org/download/attachments/1706231/PatternLibraryDataElementInventory_ver02.xls</a> for a list of data elements used in other pattern libraries. </p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-507/node-uidp.tpl.php">
+                            
+                                node-uidp.tpl.php
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-17348">
+                        <p class="mb-0"><b>Daphne Ogle</b> <i>commented <relative-time datetime="2008-04-29T16:53:17.000-0400">2008-04-29T16:53:17.000-0400</relative-time></i></p>
+                        <p>futuretask</p>
+
+                    </li>
+                    
+                    <li id="comment-17349">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2008-08-21T12:08:54.000-0400">2008-08-21T12:08:54.000-0400</relative-time></i></p>
+                        <p>Covered by other issues.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-506/"><span class="aria-hidden">←</span> Previous: FLUID-506</a>
+        <a class="mx-1" href="/browse/FLUID-508/">Next: FLUID-508 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

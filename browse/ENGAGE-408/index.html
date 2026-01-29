@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> ENGAGE-408  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" ENGAGE-408 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/ENGAGE-408/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/ENGAGE-408/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/ENGAGE" data-pagefind-filter="project">Fluid Engage</a></li>
+                <li><a href="/browse/ENGAGE-408/">ENGAGE-408</a></li>
+            </ol>
+        </nav>
+        <h1>ENGAGE-408: On an empty My Collection, grid/list toggle functionality should not exist</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/ENGAGE-408">ENGAGE-408</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/ENGAGE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/ENGAGE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/ENGAGE/?reporter=James%20Yoon">James Yoon</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-02-19T10:43:48.000-0500" prefix="">2010-02-19T10:43:48.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2010-02-19T19:22:41.000-0500" prefix="">2010-02-19T19:22:41.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>My Collection</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-12529">
+                        <p class="mb-0"><b>Jess Mitchell</b> <i>commented <relative-time datetime="2010-02-19T15:04:32.000-0500">2010-02-19T15:04:32.000-0500</relative-time></i></p>
+                        <p>this is bad – it actually pops the user out to the browser and reloads the page with all kinds of weirdness</p>
+
+                    </li>
+                    
+                    <li id="comment-12530">
+                        <p class="mb-0"><b>Jess Mitchell</b> <i>commented <relative-time datetime="2010-02-19T15:05:36.000-0500">2010-02-19T15:05:36.000-0500</relative-time></i></p>
+                        <p>Bug Parade Engage 0.3</p>
+
+                    </li>
+                    
+                    <li id="comment-12531">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-02-19T18:39:47.000-0500">2010-02-19T18:39:47.000-0500</relative-time></i></p>
+                        <p>This is caused by an error in MyCollectionView.js:</p>
+<p>that.navBar.events.onToggle.addListener(function () {<br>
+that.navigationList.toggleLayout();<br>
+});</p>
+<p>We're assuming that the Navigation List subcomponent is always instantiated. If the user's collection is empty, this is not the case. We should change the code to guard against this case, like this:</p>
+<p>that.navBar.events.onToggle.addListener(function () {<br>
+if (that.navigationList) {<br>
+that.navigationList.toggleLayout();<br>
+}<br>
+});</p>
+
+                    </li>
+                    
+                    <li id="comment-12532">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-02-19T18:40:19.000-0500">2010-02-19T18:40:19.000-0500</relative-time></i></p>
+                        <p>Justin is also working on a fix that completely removes the grid/list toggle when the collection is empty, since it is unnecessary.</p>
+
+                    </li>
+                    
+                    <li id="comment-12533">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-02-19T18:41:47.000-0500">2010-02-19T18:41:47.000-0500</relative-time></i></p>
+                        <p>I committed the first half of this fix at r9458. Justin, can you review it for me?</p>
+
+                    </li>
+                    
+                    <li id="comment-12534">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-02-19T19:03:44.000-0500">2010-02-19T19:03:44.000-0500</relative-time></i></p>
+                        <p>reviewed Colin's commit at r9458. It looks good. My changes have resulted in some refactoring that Colin should probably review.</p>
+
+                    </li>
+                    
+                    <li id="comment-12535">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-02-19T19:22:07.000-0500">2010-02-19T19:22:07.000-0500</relative-time></i></p>
+                        <p>Added the second half of this fix that removes the toggle button if no artifacts have been collected.</p>
+<p>Assigning to colin for review.</p>
+
+                    </li>
+                    
+                    <li id="comment-12536">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-02-19T19:22:41.000-0500">2010-02-19T19:22:41.000-0500</relative-time></i></p>
+                        <p>I reviewed Justin's changes and they look good. +1</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/ENGAGE-407/"><span class="aria-hidden">←</span> Previous: ENGAGE-407</a>
+        <a class="mx-1" href="/browse/ENGAGE-409/">Next: ENGAGE-409 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

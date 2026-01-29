@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6098  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6098 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6098/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6098/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6098/">FLUID-6098</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6098: Refactor InlineEdit so that it uses a model component idiom</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6098">FLUID-6098</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-12-18T00:23:22.979-0500" prefix="">2016-12-18T00:23:22.979-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-01-11T12:31:19.698-0500" prefix="">2017-01-11T12:31:19.698-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Our InlineEdit component is very crusty and has received no substantial reworking since it stabilised around 2009 as part of the Infusion 1.2 release - apart from being lightly dusted over during 2015 to ensure that it continued to function as before after the major framework upgrade.</p>
+<p>We need to substantially rewrite this component to being it in line with expectations for modern framework components. Although it has a model and stores its value in it, it makes no use of the ChangeApplier idiom for coordinating updates, but instead relies on a raft of custom events and methods such as "updateModelValue". This makes it useless when cooperating in a tree with other components using modern features such as model relay etc.</p>
+<p>We should deprecate and remove these methods, and ensure that the component is at least basically usable when addressed directly via its model, and update all of its implementation (and that of the "undo decorator") to work in terms of modelListeners.</p>
+<p>We can also take the opportunity to rework its event binding to function using modern priority and namespace-driven primitives.</p>
+<p>We should also correct a horrifying bug caused by its use of a "free constructor" for its tooltips, that will then survive after the destruction of the overall component (we didn't really go in for destroying components back in the old days).</p>
+<p>A further useful refactoring would be to establish a "very lazy" instantiation idiom - we should factor off the basic hover and invitation actions into a "component-free" package such that the actual component construction can be deferred until the point the user has started to interact with the editable value.</p>
+<p>Finally, we should take the opportunity to assess any interaction paths that were inserted to work around the oddities of ancient browsers which no longer exist, and remove them.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23574">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-12-18T00:26:29.780-0500">2016-12-18T00:26:29.780-0500</relative-time></i></p>
+                        <p>A prerequisite for this work is the basic tidyup that has been on the table as <a href="/browse/FLUID-4734/">FLUID-4734</a> for a while.</p>
+
+                    </li>
+                    
+                    <li id="comment-23576">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-12-18T00:27:34.523-0500">2016-12-18T00:27:34.523-0500</relative-time></i></p>
+                        <p>Reworking the tooltip relationship so it is sane should have the effect of fixing <a href="/browse/FLUID-5348/">FLUID-5348</a></p>
+
+                    </li>
+                    
+                    <li id="comment-23577">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-01-11T12:31:19.698-0500">2017-01-11T12:31:19.698-0500</relative-time></i></p>
+                        <p>Linking all of the recently filed Inline Edit related issues.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6097/"><span class="aria-hidden">←</span> Previous: FLUID-6097</a>
+        <a class="mx-1" href="/browse/FLUID-6099/">Next: FLUID-6099 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

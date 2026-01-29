@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6258  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6258 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6258/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6258/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6258/">FLUID-6258</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6258: Test failure in SeparatedPanelPrefsEditorResponsive test</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6258">FLUID-6258</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-03-09T10:45:36.297-0500" prefix="">2018-03-09T10:45:36.297-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-03-12T12:27:01.596-0400" prefix="">2018-03-12T12:27:01.596-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>On one run I got the following failure when checking for the panel visibility. I don't suggest we devote much effort to fixing it right now since it is pretty hard to trigger the error (it might occur one time in 10 on heavily loaded hardware) but logging this just in case it comes up again. Also if we have some spare time we could "eyeball" the code to see if we can spot an obvious race condition. What's rather odd is that the asserted value is a floating point value than a boolean.</p>
+<pre><code class="hljs language-java">not ok <span class="hljs-number">32</span> Firefox <span class="hljs-number">54.0</span> - Framework Tests: /tests/framework-tests/preferences/html/SeparatedPanelPrefsEditorResponsive-test.html
+    ---
+        actual: &gt;
+            <span class="hljs-number">0.399993896484375</span>
+        expected: &gt;
+            <span class="hljs-number">0</span>
+        stack: &gt;
+            runLoggingCallbacks<span class="hljs-meta">@http</span>:<span class="hljs-comment">//localhost:7357/tests/lib/qunit/js/qunit.js:1609:4</span>
+            push<span class="hljs-meta">@http</span>:<span class="hljs-comment">//localhost:7357/tests/lib/qunit/js/qunit.js:958:3</span>
+            strictEqual<span class="hljs-meta">@http</span>:<span class="hljs-comment">//localhost:7357/tests/lib/qunit/js/qunit.js:613:3</span>
+            assertEquals<span class="hljs-meta">@http</span>:<span class="hljs-comment">//localhost:7357/tests/test-core/jqUnit/js/jqUnit.js:137:13</span>
+            fluid.tests.prefs.responsive.assertPanelVisibility/&lt;<span class="hljs-meta">@http</span>:<span class="hljs-comment">//localhost:7357/tests/framework-tests/preferences/js/SeparatedPanelPrefsEditorResponsiveTests.js:180:17</span>
+</code></pre>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Firefox, Windows 10 with non-default desktop DPI setting</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23608">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2018-03-09T19:01:04.525-0500">2018-03-09T19:01:04.525-0500</relative-time></i></p>
+                        <p>I now saw this issue twice in a row, so I guess it needs some attention.</p>
+
+                    </li>
+                    
+                    <li id="comment-23610">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2018-03-10T18:46:32.116-0500">2018-03-10T18:46:32.116-0500</relative-time></i></p>
+                        <p>I can actually reproduce this all the time in Firefox on Windows. I guess I only ever considered it intermittent because testem isn't capable of finding Firefox on my baremetal machine and when I reported it, I had just done one complete testem run in my VM (which takes a good long time). The problem is entirely unrelated to testem.</p>
+
+                    </li>
+                    
+                    <li id="comment-23611">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2018-03-12T12:27:01.596-0400">2018-03-12T12:27:01.596-0400</relative-time></i></p>
+                        <p>Just found that reproducing this bug requires a non-default desktop DPI, e.g. 125% zoom</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6257/"><span class="aria-hidden">←</span> Previous: FLUID-6257</a>
+        <a class="mx-1" href="/browse/FLUID-6259/">Next: FLUID-6259 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

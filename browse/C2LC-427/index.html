@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-427  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-427 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-427/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-427/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-427/">C2LC-427</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-427: Keyboard shortcuts not working from Grid 3 when set to "United States-International" keyboard input</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-427">C2LC-427</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Done</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-07-19T16:43:04.202-0400" prefix="">2021-07-19T16:43:04.202-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-08-16T10:20:42.990-0400" prefix="">2021-08-16T10:20:42.990-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Env 0.9</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Steps to reproduce:</p>
+<ul>
+<li>Set Windows to "United States-International" keyboard input
+<ul>
+<li>Select "ENG INTL" on the taskbar keyboard input method selector</li>
+<li>If "ENG INTL" is not available, it can be added as follows:
+<ul>
+<li>Open Settings / Time &amp; Language / Language</li>
+<li>Click "English (United States)" under "Preferred languages"</li>
+<li>Click Options</li>
+<li>Click "Add a keyboard"</li>
+<li>Add "United States-International"</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Open Weavly in Chrome</li>
+<li>Run Grid 3 and load a Weavly grid set</li>
+<li>Activate the "Actions" cell</li>
+</ul>
+<p>Expected:</p>
+<ul>
+<li>Focus to be set to the first Actions block, and then focus to be moved through the Actions Panel</li>
+</ul>
+<p>Actual:</p>
+<ul>
+<li>The tabs to move focus and the space to click work, but focus is not set initially to the first Actions block</li>
+</ul>
+<p>Other keyboard shortcuts such as Play, Refresh, and Delete All also do not work.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10775">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2021-08-16T10:15:21.584-0400">2021-08-16T10:15:21.584-0400</relative-time></i></p>
+                        <p>Windows treats Left Ctrl + Left Alt as "Alt Gr" (Right Alt).</p>
+<p>Resources:</p>
+<ul>
+<li><a href="https://devblogs.microsoft.com/oldnewthing/20040329-00/?p=40003">Why Ctrl+Alt shouldn't be used as a shortcut modifier</a>
+<ul>
+<li>"You may have noticed that Windows doesn’t use Ctrl+Alt as a keyboard shortcut anywhere. (Or at least it shouldn’t.) If a chorded modifier is needed, it’s usually Ctrl+Shift. That’s because Ctrl+Alt has special meaning on many keyboards. The combination Ctrl+Alt is also known as AltGr, and it acts as an alternate shift key."</li>
+</ul>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/AltGr_key#Control_+_Alt_as_a_substitute">https://en.wikipedia.org/wiki/AltGr_key#Control_+_Alt_as_a_substitute</a></li>
+<li><a href="https://support.microsoft.com/en-us/topic/how-to-use-the-united-states-international-keyboard-layout-in-windows-7-in-windows-vista-and-in-windows-xp-e05ce3ed-11f0-8fc2-498e-a214fa6b898f">https://support.microsoft.com/en-us/topic/how-to-use-the-united-states-international-keyboard-layout-in-windows-7-in-windows-vista-and-in-windows-xp-e05ce3ed-11f0-8fc2-498e-a214fa6b898f</a></li>
+<li><a href="https://support.microsoft.com/en-us/topic/keyboard-shortcuts-for-international-characters-108fa0c1-fb8e-4aae-9db1-d60407d13c35">https://support.microsoft.com/en-us/topic/keyboard-shortcuts-for-international-characters-108fa0c1-fb8e-4aae-9db1-d60407d13c35</a></li>
+<li><a href="https://superuser.com/questions/592970/can-i-make-ctrlalt-not-act-like-altgr-on-windows">https://superuser.com/questions/592970/can-i-make-ctrlalt-not-act-like-altgr-on-windows</a></li>
+<li><a href="https://superuser.com/questions/217082/why-dont-the-google-docs-ctrl-alt-shortcuts-work">https://superuser.com/questions/217082/why-dont-the-google-docs-ctrl-alt-shortcuts-work</a></li>
+</ul>
+<p>Chrome, Left Ctrl + Left Alt + p when in "United States-International" keyboard input method:</p>
+<ul>
+<li>altKey: false</li>
+<li>bubbles: true</li>
+<li>cancelBubble: false</li>
+<li>cancelable: true</li>
+<li>charCode: 0</li>
+<li>code: "KeyP"</li>
+<li>composed: true</li>
+<li>ctrlKey: false</li>
+<li>currentTarget: document</li>
+<li>defaultPrevented: false</li>
+<li>detail: 0</li>
+<li>eventPhase: 3</li>
+<li>isComposing: false</li>
+<li>isTrusted: true</li>
+<li>key: "ö"</li>
+<li>keyCode: 80</li>
+<li>location: 0</li>
+<li>metaKey: false</li>
+<li>path: (4) [body.mixed-theme, html, document, Window]</li>
+<li>repeat: false</li>
+<li>returnValue: true</li>
+<li>shiftKey: false</li>
+<li>sourceCapabilities: InputDeviceCapabilities {firesTouchEvents: false}</li>
+<li>srcElement: body.mixed-theme</li>
+<li>target: body.mixed-theme</li>
+<li>timeStamp: 623606.2000000477</li>
+<li>type: "keydown"</li>
+<li>view: Window {window: Window, self: Window, document: document, name: "", location: Location, …}</li>
+<li>which: 80</li>
+</ul>
+<p>Chrome, Left Ctrl + Left Alt + p when in "US" keyboard input method:</p>
+<ul>
+<li>altKey: true</li>
+<li>bubbles: true</li>
+<li>cancelBubble: false</li>
+<li>cancelable: true</li>
+<li>charCode: 0</li>
+<li>code: "KeyP"</li>
+<li>composed: true</li>
+<li>ctrlKey: true</li>
+<li>currentTarget: document</li>
+<li>defaultPrevented: false</li>
+<li>detail: 0</li>
+<li>eventPhase: 3</li>
+<li>isComposing: false</li>
+<li>isTrusted: true</li>
+<li>key: "p"</li>
+<li>keyCode: 80</li>
+<li>location: 0</li>
+<li>metaKey: false</li>
+<li>path: (4) [body.mixed-theme, html, document, Window]</li>
+<li>repeat: false</li>
+<li>returnValue: true</li>
+<li>shiftKey: false</li>
+<li>sourceCapabilities: InputDeviceCapabilities {firesTouchEvents: false}</li>
+<li>srcElement: body.mixed-theme</li>
+<li>target: body.mixed-theme</li>
+<li>timeStamp: 855371.7000000477</li>
+<li>type: "keydown"</li>
+<li>view: Window {window: Window, self: Window, document: document, name: "", location: Location, …}</li>
+<li>which: 80</li>
+</ul>
+<p>Testing in Notepad, in "United States-International" keyboard input method:</p>
+<ul>
+<li>Left Alt + p: Plays the Windows bell sound (I'm interpreting this to mean that no menus in the menu bar match "p")</li>
+<li>Left Ctrl + p: Opens the Print dialog box</li>
+<li>Left Ctrl + Left Alt + p: Types an "ö"</li>
+</ul>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-426/"><span class="aria-hidden">←</span> Previous: C2LC-426</a>
+        <a class="mx-1" href="/browse/C2LC-428/">Next: C2LC-428 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

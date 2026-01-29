@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-307  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-307 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-307/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-307/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-307/">FLOE-307</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-307: Add a tooltip to the keyboardInput component</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-307">FLOE-307</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLOE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Simon Bates</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Simon%20Bates">Simon Bates</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-04-23T10:32:22.701-0400" prefix="">2015-04-23T10:32:22.701-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-11-03T11:57:37.551-0500" prefix="">2015-11-03T11:57:37.551-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>First Discovery</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Add a tooltip to the keyboardInput component used on the First Discovery keyboard panel.</p>
+<p>The tooltip should read "Select to begin typing" and is shown on the wireframe:</p>
+<p><a href="https://www.dropbox.com/s/4nxvybp4d6rcb03/FD%20tool%20for%20May%202015%20workshop.pdf?dl=0">https://www.dropbox.com/s/4nxvybp4d6rcb03/FD tool for May 2015 workshop.pdf?dl=0</a></p>
+<p>Use the attachTooltip grade.</p>
+<p>The tooltip should:</p>
+<ul>
+<li>open on mouseover if the input does not have focus (if the input has focus, it does not open)</li>
+<li>close on mouseleave</li>
+<li>not open on focusin</li>
+<li>close on focusin, if it is open</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10958">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2015-04-30T11:20:28.283-0400">2015-04-30T11:20:28.283-0400</relative-time></i></p>
+                        <p>Pull request: <a href="https://github.com/fluid-project/first-discovery/pull/35">https://github.com/fluid-project/first-discovery/pull/35</a></p>
+
+                    </li>
+                    
+                    <li id="comment-10959">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-05-04T15:43:06.369-0400">2015-05-04T15:43:06.369-0400</relative-time></i></p>
+                        <p>Merged pull request ( <a href="https://github.com/fluid-project/first-discovery/pull/35">https://github.com/fluid-project/first-discovery/pull/35</a> ) into the project repo at a5fa02204241f290ceedbf1140803747c8f2f9d5</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-306/"><span class="aria-hidden">←</span> Previous: FLOE-306</a>
+        <a class="mx-1" href="/browse/FLOE-308/">Next: FLOE-308 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

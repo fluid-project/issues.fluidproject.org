@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-56  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-56 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-56/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-56/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-56/">INFRA-56</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-56: Create Ansible playbooks for implementing the cluster</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-56">INFRA-56</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Technical%20task">Technical task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Won't%20Do">Won't Do</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Alan%20Harnum">Alan Harnum</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-11-02T10:47:41.853-0500" prefix="">2015-11-02T10:47:41.853-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-09-21T10:31:30.106-0400" prefix="">2017-09-21T10:31:30.106-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>As with the rest of our infrastructure, we'll want Ansible playbooks for bringing up the cluster (and eventually, managing it) on CentOS.</p>
+<p>There is a set of Ansible playbooks in the 'contrib' repo of the Kubernetes project that may be a useful starting point:<br>
+<a href="https://github.com/kubernetes/contrib/tree/master/ansible">https://github.com/kubernetes/contrib/tree/master/ansible</a></p>
+<p>Our initial staging setup will look like the following:</p>
+<ul>
+<li>2 masters</li>
+<li>5 nodes</li>
+</ul>
+<p>—</p>
+<p><em>Comments retained from discussion of Atomic Host</em></p>
+<p>There are some caveats when using these playbooks with Atomic Host, some of which are detailed at: <a href="http://www.projectatomic.io/blog/2015/09/clustering-atomic-hosts-with-kubernetes-ansible-and-vagrant/">http://www.projectatomic.io/blog/2015/09/clustering-atomic-hosts-with-kubernetes-ansible-and-vagrant/</a></p>
+<p>I've also worked on a set of my own as part of my experimentation: <a href="https://github.com/waharnum/kubernetes-atomic">https://github.com/waharnum/kubernetes-atomic</a> - this started out as an Ansible-based implementation of the instructions at <a href="http://www.projectatomic.io/docs/gettingstarted/">http://www.projectatomic.io/docs/gettingstarted/</a>, but expanded to also configuring DNS, persistent storage and a number of example services and pods</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25922">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2017-09-21T10:31:30.103-0400">2017-09-21T10:31:30.103-0400</relative-time></i></p>
+                        <p>This was created for a demo cluster back in 2015 but we ended up choosing a different solution at the time. Closing ticket to document this and will open new ones for other automation work I'll need to do.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-55/"><span class="aria-hidden">←</span> Previous: INFRA-55</a>
+        <a class="mx-1" href="/browse/INFRA-58/">Next: INFRA-58 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

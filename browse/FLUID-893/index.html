@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-893  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-893 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-893/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-893/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-893/">FLUID-893</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-893: OSDPL: Add missing sections to the OSDPL design pattern format</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-893">FLUID-893</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Sub-task">Sub-task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Allison Bloodworth</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-07-11T18:37:09.000-0400" prefix="">2008-07-11T18:37:09.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-04-11T17:31:17.975-0400" prefix="">2013-04-11T17:31:17.975-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                            <li>0.3</li>
+                            
+                            <li>0.4beta1</li>
+                            
+                            <li>0.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>OSDPL</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>OSDPL Design Pattern format - add the following sections:</p>
+<ul>
+<li>"Related Fluid Design Patterns"</li>
+<li>"Examples" section with "Example Fluid implementations" and "Similar Implementations" sub-sections</li>
+<li>"References" (sources used to create this pattern)</li>
+<li>"Related patterns" (relationships to other patterns within our DPL)</li>
+<li>"Design Advice"<br>
+          o CSS tips, Variations of the design, advice on when to implement each variation<br>
+          o e.g. Inline Edit: when to have an explicit Save button<br>
+          o Design advice on what's outside of the component e.g. Uploader: "make sure the newly uploaded files are in focus" --&gt; should be included in the "How" section, and just distinguish what's in the component and what's not. (Anastasia)</li>
+</ul>
+<p>We feel there should be a section that describes tasks the implementing designer or developer needs to do to ensure the seamless integration of the component. For example, the Uploader component deals strictly with uploading of files, however, the designer should highlight or indicate which files have been uploaded after transitioning from the Uploader back to their work context.</p>
+<p>Question: what should the title of this section be?</p>
+<ul>
+<li>"Transition", "Component Integration"</li>
+</ul>
+<p>Iteration14</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22552">
+                        <p class="mb-0"><b>Allison Bloodworth</b> <i>commented <relative-time datetime="2008-07-16T20:57:13.000-0400">2008-07-16T20:57:13.000-0400</relative-time></i></p>
+                        <p>Let's hold off on this task for now as we need to finalize the list of design pattern elements as a group, either on the mailing list or at our next OSDPL meeting on July 23rd.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-892/"><span class="aria-hidden">←</span> Previous: FLUID-892</a>
+        <a class="mx-1" href="/browse/FLUID-894/">Next: FLUID-894 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

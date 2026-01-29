@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> BI-1  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" BI-1 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/BI-1/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/BI-1/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/BI" data-pagefind-filter="project">BIG IDeA</a></li>
+                <li><a href="/browse/BI-1/">BI-1</a></li>
+            </ol>
+        </nav>
+        <h1>BI-1: Unsecured contact forms are susceptible to spam</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/BI-1">BI-1</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/BI/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>To Do</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Jonathan Hung</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/BI/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-04-05T06:48:31.424-0400" prefix="">2019-04-05T06:48:31.424-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-04-05T07:09:37.704-0400" prefix="">2019-04-05T07:09:37.704-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Unsecured contact forms on the website are allowing spam bots and other agents to abuse the forms and send unsolicited emails.</p>
+<p>In particular <a href="https://bigidea.one/submit-a-design-challenge/">this page</a> seems to be susceptible.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10000">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2019-04-05T07:01:08.886-0400">2019-04-05T07:01:08.886-0400</relative-time></i></p>
+                        <p>Adding Recaptcha to vulnerable forms should reduce the amount of unsolicited emails on these forms. In adding Recaptcha to these forms, a number of issues came up:</p>
+<ol>
+<li><strong>Privacy</strong> - Contact Form 7 5.1 and later uses Recaptcha V3 exclusively which monitors user activity across <em>all</em> served pages on the site, not just the contact forms, and send data back to Google. This will invalidate any statements of privacy on the BIG IDeA website.</li>
+<li><strong>Recaptcha V2 Plugin</strong> - In order to use the older Recaptcha V2 (the traditional "I'm not a Robot" and select the matching images), a separate <a href="https://wordpress.org/plugins/wpcf7-recaptcha/">3rd party plugin</a> needed to be downloaded and activated on the site to add this functionality.</li>
+<li><strong>Formatting issues caused by Easy Lazy Loader plugin</strong> - A plugin called "Easy Lazy Loader" was causing the form submit button to render outside of its Form element after a Recaptcha is added to the form. This also caused an invisible Recaptcha text field to be rendered visibly causing confusin. To avoid this issue, the Easy Lazy Loader plugin was disabled.</li>
+</ol>
+<p>So far only this form is secured: <a href="https://bigidea.one/submit-a-design-challenge/">https://bigidea.one/submit-a-design-challenge/</a></p>
+<p>Other forms should be secured with Recaptcha. Alan Harnum is there any reason we wouldn't want to add Recaptcha to all open, public forms?</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        
+        
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

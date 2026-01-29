@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4192  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4192 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4192/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4192/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4192/">FLUID-4192</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4192: Improve handling of cases with "broken trees"</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4192">FLUID-4192</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-04-27T01:48:22.994-0400" prefix="">2011-04-27T01:48:22.994-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T13:11:00.929-0500" prefix="">2014-03-03T13:11:00.929-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The IoC system will currently behave erratically if more than one concurrent instantiation is attempted from the same thread. This condition can also be triggered inadvertently, leading to untransparent behaviour. An example which came up this evening in UIOptions (<a href="/browse/FLUID-4171/">FLUID-4171</a>):</p>
+<p>fluid.uiOptions - contains</p>
+<p>fluid.uiOptions.controls - renderer component which invokes as a decorator (amongst many others)<br>
+XX - break here<br>
+fluid.textfieldSlider - view component, contains</p>
+<p>fluid.textfieldSlider.textfield - view component</p>
+<p>Now, in this case, fluid.uiOptions.controls was only registered as a rendererComponent, not an IoCRendererComponent, which led to the tree being broken at XX. In this case, a demands block was registered as follows:</p>
+<p>fluid.demands("fluid.textfieldSlider.textfield", "fluid.textfieldSlider", {<br>
+container: "{textfieldSlider}.dom.textfield",</p>
+<p>Now, even though the tree was broken, it OUGHT to have been possible to recognise that fluid.textfieldSlider was in scope at this point, even if the "upper tree" was lost. However, given the IoC system is right now non-reentrant (to the extent that crucial housekeeping information is stored in a single threadLocal slot), it became confused, and the call to the creator function fluid.textfieldSlider went unrecognised by the instantiator, and fluid.textfieldSlider.textfield became uncontextualised.</p>
+<p>One way to start of resolving these cases would be to do away with the stateful "expectedComponent" system in the instantiator. Since we have resigned to "options" structures being received from the IoC system as encoded, we can use a record here to communicate the current instantiator and expected path information. It would then become unambiguous whether this instantiation was part of the same tree or represented a fresh tree. To complete resolving the issue, it would require either doing away with the threadLocal system entirely (very hard, since there are still plenty of uncontextualised code locations, e.g. in invokers etc.) or else upgrading it to store a stack of instantiators rather than a single one. </p>
+<p>Really it would be much better if a "that" were somehow indissolubly connected to its "instantiator", although of course preferably without either polluting its own record, or causing lifetime/GC issues (these two goals are incompatible). This goal was partially to be addressed with the "shadow world" - but perhaps the best time to address it is with the "ginger world" - since the "root trundler" will probably need to be connected to the instantiator in any case.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14864">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2012-02-29T00:33:44.905-0500">2012-02-29T00:33:44.905-0500</relative-time></i></p>
+                        <p>Note that IoCRendererComponent was abolished (or rather, made the default) in order to reduce the likelihood of this error</p>
+
+                    </li>
+                    
+                    <li id="comment-14867">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2012-03-21T03:21:51.342-0400">2012-03-21T03:21:51.342-0400</relative-time></i></p>
+                        <p>After <a href="/browse/FLUID-4626/">FLUID-4626</a>, this remains a serious problem. For example, using the "model relay component" to defer the construction of videoPlayer components to the point where uiOptions has constructed and fetches its model, gives rise to a classic instantiator failure - despite the new "instantiator stack code" apparently being prepared to have a heterogeneous stack of instantiators, there's currently no code path for one to arrive. New instantiators are still only created when the stack is found to be empty.<br>
+It's unclear whether we can do much about this before <a href="/browse/FLUID-4392/">FLUID-4392</a> work lands... an essential part of this work was enhancing the "localRecord" (and probably doing away with it entirely in its silly role of replacing the component options) to explicitly include any instantiator which is in progress. Still hard to deal with "broken trees" without an explicit notation available at construct time whether a component is meant to be a subcomponent or not. Which as usual implies doing away with "initSubcomponent". This probably implies Fluid 2.0.<br>
+A nasty workaround is to wrap a listener dispatch like the one above with a setTimeout() to make sure that it executes with an empty stack.</p>
+
+                    </li>
+                    
+                    <li id="comment-14871">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-02-19T14:53:36.500-0500">2013-02-19T14:53:36.500-0500</relative-time></i></p>
+                        <p>Resolved by merge of <a href="/browse/FLUID-4330/">FLUID-4330</a> branch at revision 91d5d1</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4191/"><span class="aria-hidden">←</span> Previous: FLUID-4191</a>
+        <a class="mx-1" href="/browse/FLUID-4193/">Next: FLUID-4193 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

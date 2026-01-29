@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4568  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4568 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4568/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4568/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4568/">FLUID-4568</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4568: Separate dependence of core framework on jQuery</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4568">FLUID-4568</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-12-13T01:51:57.775-0500" prefix="">2011-12-13T01:51:57.775-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2012-01-20T16:50:11.235-0500" prefix="">2012-01-20T16:50:11.235-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>A number of use cases have emerged over time where it would be better to have a looser coupling between the core framework and jQuery utilities. The most immediate is the use of Infusion as part of the server-side within node.js for Cloud4All. Whilst we have historically maintained a "fake DOM" approach to allowing jQuery to boot up to support the core framework, this is becoming increasingly expensive as the relevant libraries (jsdom, etc.) are quite unstable and every upgrade seems to cause an expensive maintenance cycle.<br>
+Also, there are other use cases where the expense of loading jQuery when no DOM-dependent operations are required might be avoided, as well as perhaps cases whether other frameworks' core functions might become desirable (e.g. upcoming YUI version).</p>
+<p>The idea suggested today was to create a "standalone jQuery" implementation which just "mocks up" (or rather, "implements") the few features of jQuery (inArray, extends) which are required by the non view-dependent parts of the core framework. On the serverside, this mock can extended with features supporting node-based I/O in place of jQuery AJAX functions.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14766">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2012-01-20T16:50:11.232-0500">2012-01-20T16:50:11.232-0500</relative-time></i></p>
+                        <p>Merged into the project repo at 1e7f0d8f071a69ef5d9cd75e18fc0fe3da170622 with several framework change issues:</p>
+<p><a href="/browse/FLUID-4525/">FLUID-4525</a><br>
+<a href="/browse/FLUID-4532/">FLUID-4532</a><br>
+<a href="/browse/FLUID-4537/">FLUID-4537</a><br>
+<a href="/browse/FLUID-4539/">FLUID-4539</a><br>
+<a href="/browse/FLUID-4564/">FLUID-4564</a><br>
+<a href="/browse/FLUID-4563/">FLUID-4563</a><br>
+<a href="/browse/FLUID-4568/">FLUID-4568</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4564/"><span class="aria-hidden">←</span> Previous: FLUID-4564</a>
+        <a class="mx-1" href="/browse/FLUID-4569/">Next: FLUID-4569 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-221  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-221 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-221/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-221/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-221/">C2LC-221</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-221: Report on (and potentially improve) flow type coverage.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-221">C2LC-221</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Done</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-09-09T07:58:22.229-0400" prefix="">2020-09-09T07:58:22.229-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-09-22T09:03:19.826-0400" prefix="">2020-09-22T09:03:19.826-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Env 0.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Environment</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In learning to work with Flow, I noticed that the coding environment has some type coverage gaps.&#160; These gaps occur where we pass around or receive undocumented objects without describing their deeper structure using Flow type annotations.&#160; This ticket covers reporting on type coverage (perhaps by logging warnings when running npx flow check).</p>
+<p>We could also choose to close some of the gaps as part of this issue, for example by:</p>
+<ol>
+<li>Installing additional flow-typed definitions for the packages we use.</li>
+<li>Adding a configuration option to let us <a href="https://flow.org/en/docs/errors/#toc-making-suppressions-more-granular-with-error-codes">opt a particular line out of coverage reporting</a>.</li>
+<li>Adding type annotations as required.</li>
+</ol>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10696">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2020-09-09T08:15:46.409-0400">2020-09-09T08:15:46.409-0400</relative-time></i></p>
+                        <p>I was able to check our current coverage level using the command: <strong>npx flow batch-coverage . --quiet --show-all --strip-root</strong></p>
+<p>This returns:</p>
+<pre><code class="hljs language-java">Coverage results from <span class="hljs-number">56</span> file(s):
+
+src/types.js: <span class="hljs-number">100.00</span>% (<span class="hljs-number">4</span> of <span class="hljs-number">4</span> expressions)
+src/WebSpeechInput.js: <span class="hljs-number">65.49</span>% (<span class="hljs-number">93</span> of <span class="hljs-number">142</span> expressions)
+src/WebSpeechEventProcessor.test.js: <span class="hljs-number">93.71</span>% (<span class="hljs-number">268</span> of <span class="hljs-number">286</span> expressions)
+src/WebSpeechEventProcessor.js: <span class="hljs-number">65.79</span>% (<span class="hljs-number">50</span> of <span class="hljs-number">76</span> expressions)
+src/Utils.js: <span class="hljs-number">100.00</span>% (<span class="hljs-number">12</span> of <span class="hljs-number">12</span> expressions)
+src/ToggleSwitch.test.js: <span class="hljs-number">75.96</span>% (<span class="hljs-number">297</span> of <span class="hljs-number">391</span> expressions)
+src/ToggleSwitch.js: <span class="hljs-number">87.69</span>% (<span class="hljs-number">57</span> of <span class="hljs-number">65</span> expressions)
+src/TextSyntax.test.js: <span class="hljs-number">100.00</span>% (<span class="hljs-number">87</span> of <span class="hljs-number">87</span> expressions)
+src/TextSyntax.js: <span class="hljs-number">100.00</span>% (<span class="hljs-number">21</span> of <span class="hljs-number">21</span> expressions)
+src/SoundexTable.test.js: <span class="hljs-number">100.00</span>% (<span class="hljs-number">238</span> of <span class="hljs-number">238</span> expressions)
+src/SoundexTable.js: <span class="hljs-number">89.74</span>% (<span class="hljs-number">70</span> of <span class="hljs-number">78</span> expressions)
+src/Scene.test.js: <span class="hljs-number">67.58</span>% (<span class="hljs-number">713</span> of <span class="hljs-number">1055</span> expressions)
+src/Scene.js: <span class="hljs-number">98.80</span>% (<span class="hljs-number">248</span> of <span class="hljs-number">251</span> expressions)
+src/RobotCharacter.js: <span class="hljs-number">94.12</span>% (<span class="hljs-number">32</span> of <span class="hljs-number">34</span> expressions)
+src/ProgramUtils.test.js: <span class="hljs-number">84.71</span>% (<span class="hljs-number">421</span> of <span class="hljs-number">497</span> expressions)
+src/ProgramUtils.js: <span class="hljs-number">100.00</span>% (<span class="hljs-number">152</span> of <span class="hljs-number">152</span> expressions)
+src/ProgramTextEditor.test.js: <span class="hljs-number">61.82</span>% (<span class="hljs-number">68</span> of <span class="hljs-number">110</span> expressions)
+src/ProgramTextEditor.js: <span class="hljs-number">100.00</span>% (<span class="hljs-number">90</span> of <span class="hljs-number">90</span> expressions)
+src/ProgramBlockEditor.test.js: <span class="hljs-number">69.31</span>% (<span class="hljs-number">1084</span> of <span class="hljs-number">1564</span> expressions)
+src/ProgramBlockEditor.js: <span class="hljs-number">94.46</span>% (<span class="hljs-number">836</span> of <span class="hljs-number">885</span> expressions)
+src/MicMonitor.js: <span class="hljs-number">78.43</span>% (<span class="hljs-number">40</span> of <span class="hljs-number">51</span> expressions)
+src/Interpreter.test.js: <span class="hljs-number">96.92</span>% (<span class="hljs-number">1039</span> of <span class="hljs-number">1072</span> expressions)
+src/Interpreter.js: <span class="hljs-number">94.38</span>% (<span class="hljs-number">235</span> of <span class="hljs-number">249</span> expressions)
+src/FocusTrapManager.test.js: <span class="hljs-number">92.91</span>% (<span class="hljs-number">131</span> of <span class="hljs-number">141</span> expressions)
+src/FocusTrapManager.js: <span class="hljs-number">90.91</span>% (<span class="hljs-number">140</span> of <span class="hljs-number">154</span> expressions)
+src/FeatureDetection.js: <span class="hljs-number">25.00</span>% (<span class="hljs-number">3</span> of <span class="hljs-number">12</span> expressions)
+src/FakeRobotDriver.js: <span class="hljs-number">100.00</span>% (<span class="hljs-number">38</span> of <span class="hljs-number">38</span> expressions)
+src/DeviceConnectControl.test.js: <span class="hljs-number">61.44</span>% (<span class="hljs-number">145</span> of <span class="hljs-number">236</span> expressions)
+src/DeviceConnectControl.js: <span class="hljs-number">84.38</span>% (<span class="hljs-number">54</span> of <span class="hljs-number">64</span> expressions)
+src/DeleteModeImage.js: <span class="hljs-number">72.73</span>% (<span class="hljs-number">16</span> of <span class="hljs-number">22</span> expressions)
+src/DashDriver.js: <span class="hljs-number">70.00</span>% (<span class="hljs-number">91</span> of <span class="hljs-number">130</span> expressions)
+src/DashConnectionErrorModal.js: <span class="hljs-number">71.05</span>% (<span class="hljs-number">27</span> of <span class="hljs-number">38</span> expressions)
+src/ConfirmDeleteAllModal.test.js: <span class="hljs-number">59.14</span>% (<span class="hljs-number">55</span> of <span class="hljs-number">93</span> expressions)
+src/ConfirmDeleteAllModal.js: <span class="hljs-number">71.05</span>% (<span class="hljs-number">27</span> of <span class="hljs-number">38</span> expressions)
+src/CommandPaletteCommand.test.js: <span class="hljs-number">64.55</span>% (<span class="hljs-number">173</span> of <span class="hljs-number">268</span> expressions)
+src/CommandPaletteCommand.js: <span class="hljs-number">94.44</span>% (<span class="hljs-number">85</span> of <span class="hljs-number">90</span> expressions)
+src/CommandPaletteCategory.test.js: <span class="hljs-number">66.00</span>% (<span class="hljs-number">66</span> of <span class="hljs-number">100</span> expressions)
+src/CommandPaletteCategory.js: <span class="hljs-number">75.00</span>% (<span class="hljs-number">15</span> of <span class="hljs-number">20</span> expressions)
+src/CommandPalette.test.js: <span class="hljs-number">51.37</span>% (<span class="hljs-number">75</span> of <span class="hljs-number">146</span> expressions)
+src/CommandPalette.js: <span class="hljs-number">48.98</span>% (<span class="hljs-number">24</span> of <span class="hljs-number">49</span> expressions)
+src/CommandBlock.js: <span class="hljs-number">75.32</span>% (<span class="hljs-number">58</span> of <span class="hljs-number">77</span> expressions)
+src/CharacterState.test.js: <span class="hljs-number">88.57</span>% (<span class="hljs-number">581</span> of <span class="hljs-number">656</span> expressions)
+src/CharacterState.js: <span class="hljs-number">100.00</span>% (<span class="hljs-number">191</span> of <span class="hljs-number">191</span> expressions)
+src/C2lcMath.test.js: <span class="hljs-number">100.00</span>% (<span class="hljs-number">274</span> of <span class="hljs-number">274</span> expressions)
+src/C2lcMath.js: <span class="hljs-number">100.00</span>% (<span class="hljs-number">40</span> of <span class="hljs-number">40</span> expressions)
+src/BluetoothApiWarning.js: <span class="hljs-number">90.48</span>% (<span class="hljs-number">19</span> of <span class="hljs-number">21</span> expressions)
+src/AudioManager.js: <span class="hljs-number">90.20</span>% (<span class="hljs-number">46</span> of <span class="hljs-number">51</span> expressions)
+src/AudioFeedbackToggleSwitch.js: <span class="hljs-number">76.67</span>% (<span class="hljs-number">23</span> of <span class="hljs-number">30</span> expressions)
+src/AriaDisablingButton.test.js: <span class="hljs-number">62.84</span>% (<span class="hljs-number">230</span> of <span class="hljs-number">366</span> expressions)
+src/AriaDisablingButton.js: <span class="hljs-number">85.42</span>% (<span class="hljs-number">41</span> of <span class="hljs-number">48</span> expressions)
+src/App.js: <span class="hljs-number">96.43</span>% (<span class="hljs-number">594</span> of <span class="hljs-number">616</span> expressions)
+src/AddNode.test.js: <span class="hljs-number">73.97</span>% (<span class="hljs-number">287</span> of <span class="hljs-number">388</span> expressions)
+src/AddNode.js: <span class="hljs-number">93.04</span>% (<span class="hljs-number">107</span> of <span class="hljs-number">115</span> expressions)
+src/AddModeImage.js: <span class="hljs-number">72.73</span>% (<span class="hljs-number">16</span> of <span class="hljs-number">22</span> expressions)
+src/ActionPanel.test.js: <span class="hljs-number">75.78</span>% (<span class="hljs-number">363</span> of <span class="hljs-number">479</span> expressions)
+src/ActionPanel.js: <span class="hljs-number">85.35</span>% (<span class="hljs-number">233</span> of <span class="hljs-number">273</span> expressions)
+
+-----------------------------------
+Aggregate coverage statistics
+-----------------------------------
+Files                : <span class="hljs-number">56</span>
+Expressions          :
+  Covered            : <span class="hljs-number">10423</span>
+  Total              : <span class="hljs-number">12696</span>
+  Covered Percentage : <span class="hljs-number">82.10</span>%
+</code></pre>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-220/"><span class="aria-hidden">←</span> Previous: C2LC-220</a>
+        <a class="mx-1" href="/browse/C2LC-222/">Next: C2LC-222 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

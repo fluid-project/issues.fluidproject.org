@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-74  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-74 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-74/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-74/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-74/">VP-74</a></li>
+            </ol>
+        </nav>
+        <h1>VP-74: Amara transcripts don't highlight if not loaded at video player init.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-74">VP-74</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-11-02T12:47:33.450-0400" prefix="">2012-11-02T12:47:33.450-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-01-28T09:25:22.364-0500" prefix="">2013-01-28T09:25:22.364-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>If an amara-based transcript file is not loaded as part of the video player initialization process, then it won't be highlighted as the video plays. I suspect it's because the code to hook up the highlighting is being executed before the call to amara is returning.</p>
+<p>To reproduce:<br>
+1) Open the video player demo page and use UIO to set the default language choice to French.<br>
+2) Reload the page.<br>
+3) Select English transcripts.<br>
+4) Play the video.</p>
+<p>The transcripts will not highlight.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26726">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-11-05T17:21:34.799-0500">2012-11-05T17:21:34.799-0500</relative-time></i></p>
+                        <p>I'm noticing something similar with captions: The english captions are being successfully retrieved from Amara, but they're not displaying.</p>
+
+                    </li>
+                    
+                    <li id="comment-26727">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-11-06T14:23:19.084-0500">2012-11-06T14:23:19.084-0500</relative-time></i></p>
+                        <p>It seems the problem is a recent change in Amara's data format: They are no longer using seconds (e.g. 1.7703293874) but now using milliseconds (e.g. 1770).</p>
+
+                    </li>
+                    
+                    <li id="comment-26728">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2012-11-08T10:21:53.095-0500">2012-11-08T10:21:53.095-0500</relative-time></i></p>
+                        <p>Merged into project repo at 381e63ed3cf948833a9481ec85a5a68683b393d1</p>
+
+                    </li>
+                    
+                    <li id="comment-26729">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2012-11-08T10:24:49.099-0500">2012-11-08T10:24:49.099-0500</relative-time></i></p>
+                        <p>I just noticed that clicking on the transcript doesn't work properly - it's probably also related to the time code change. </p>
+
+                    </li>
+                    
+                    <li id="comment-26730">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2012-11-09T14:03:15.063-0500">2012-11-09T14:03:15.063-0500</relative-time></i></p>
+                        <p>Merged into project repo at 031f45cbe96583b750238934fcad79411d5b1610</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-255/"><span class="aria-hidden">←</span> Previous: VP-255</a>
+        <a class="mx-1" href="/browse/VP-260/">Next: VP-260 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

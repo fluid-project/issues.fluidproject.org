@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-23  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-23 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-23/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-23/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-23/">SJRK-23</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-23: Add search functionality</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-23">SJRK-23</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-10-31T16:02:04.846-0400" prefix="">2017-10-31T16:02:04.846-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-07-17T09:39:36.007-0400" prefix="">2018-07-17T09:39:36.007-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool Server</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Add search functionality to the Storytelling tool in general. This will need to be broken down at some point into finer JIRAs.</p>
+<ul>
+<li>Add view documents to the database to search in various ways</li>
+</ul>
+<ul>
+<li>
+<ul>
+<li>single terms</li>
+<li>multiple terms</li>
+<li>wildcards</li>
+</ul>
+</li>
+<li>Search for tags or categories (should these be considered separately?)</li>
+<li>Advanced search interface?</li>
+<li>Add search context(s) to the UI
+<ul>
+<li>Add the new template(s)</li>
+<li>Wire in the DB calls</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26405">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2017-11-09T15:44:01.688-0500">2017-11-09T15:44:01.688-0500</relative-time></i></p>
+                        <p>Questions from discussion:</p>
+<ul>
+<li>In the search results, what should be shown? Current design has Title, Author byline and story Summary. Could consider having a preview or snippet of what exactly was matching with the search result. Implementation would be easier if it were just the summary.</li>
+<li>Highlighting in the content? Once the user has selected their matching story, the search term is highlighted wherever it appears, with the option to clear or toggle the highlighting</li>
+<li>"Advanced search" for later 🙂 Can make changes and features in the back end that would make adding an advanced search in the future much easier. The UI implementation would be the most difficult aspect of this, and so should be left for later.</li>
+</ul>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-22/"><span class="aria-hidden">←</span> Previous: SJRK-22</a>
+        <a class="mx-1" href="/browse/SJRK-24/">Next: SJRK-24 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

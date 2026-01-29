@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-962  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-962 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-962/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-962/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-962/">FLUID-962</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-962: long file names in the upload queue, push the file size and remove button out of view</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-962">FLUID-962</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-07-21T17:59:30.000-0400" prefix="">2008-07-21T17:59:30.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-11-08T12:39:27.042-0500" prefix="">2016-11-08T12:39:27.042-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4beta1</li>
+                            
+                            <li>0.4</li>
+                            
+                            <li>0.5beta1</li>
+                            
+                            <li>0.5</li>
+                            
+                            <li>0.6beta1</li>
+                            
+                            <li>0.6</li>
+                            
+                            <li>0.7</li>
+                            
+                            <li>0.8</li>
+                            
+                            <li>1.0</li>
+                            
+                            <li>1.1</li>
+                            
+                            <li>1.1.1</li>
+                            
+                            <li>1.1.2</li>
+                            
+                            <li>1.2</li>
+                            
+                            <li>1.3</li>
+                            
+                            <li>1.3.1</li>
+                            
+                            <li>1.4</li>
+                            
+                            <li>1.5</li>
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Uploader</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Adding a file with a long file name to the upload queue, hides information in the upload queue. The long file name should be shortenned with (...) to show the beginning, middle, and end. Currently it stretches to the end of the upload queue and pushes the file size and remove button out of view. If there are other files in the upload queue, their size and remove button will be out of view as well.</p>
+<p>Steps to Reproduce:</p>
+<p>1) Open one of the versions of Uploader from the daily build site:<br>
+<a href="http://build.fluidproject.org/infusion/demos/uploader/html/uploader.html">http://build.fluidproject.org/infusion/demos/uploader/html/uploader.html</a></p>
+<p>2) Add some files with short file names. (notice that everything displays appropriately)</p>
+<p>3) Add another file with a long file name. (notice how it pushed the file size and remove icon out of view)</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF2, FF3, Opera 9.6, Safari 3 (Mac OS 10.5)<br>
+FF 29, Chrome 35, Safari 7 (Mac OS 10.9)<br>
+Safari 9 (Mac OS 10.11)<br>
+Safari 10 (macOS 10.12)<br>
+FF2, FF3, IE6, IE7, Opera 9.6 (Win XP)<br>
+FF3, IE7 (Win Vista)<br>
+IE 10, IE 11 (Win 7)</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-962/screenshot-1.jpg">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-962/screenshot-1.jpg" alt="screenshot-1.jpg">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22555">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-07-21T18:00:41.000-0400">2008-07-21T18:00:41.000-0400</relative-time></i></p>
+                        <p>'screenshot-1' shows how a long file name pushes the files size and remove button out of view</p>
+
+                    </li>
+                    
+                    <li id="comment-22557">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2008-08-05T20:21:57.000-0400">2008-08-05T20:21:57.000-0400</relative-time></i></p>
+                        <p>need to implement "smart" file name truncation</p>
+
+                    </li>
+                    
+                    <li id="comment-22558">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-16T14:52:28.000-0400">2008-09-16T14:52:28.000-0400</relative-time></i></p>
+                        <p>Affects Uploader 2</p>
+
+                    </li>
+                    
+                    <li id="comment-22560">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2008-09-19T15:16:14.000-0400">2008-09-19T15:16:14.000-0400</relative-time></i></p>
+                        <p>This is basically the same bug as <a href="/browse/FLUID-1595/">FLUID-1595</a> it just manifests its self differently on different browsers and both of these bugs will be to come up with a way to automatically truncate the text of long files names. I thought that there was a bug written for that, but I can't find it.</p>
+
+                    </li>
+                    
+                    <li id="comment-22562">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2010-12-22T11:11:41.797-0500">2010-12-22T11:11:41.797-0500</relative-time></i></p>
+                        <p>This is still happening in v1.3</p>
+
+                    </li>
+                    
+                    <li id="comment-22564">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2011-10-03T12:39:50.784-0400">2011-10-03T12:39:50.784-0400</relative-time></i></p>
+                        <p>Testing for the 1.4 release, this is still happening, though in FF on Mac, the delete buttons for short file names are NOT being pushed, only the ones for the long file names.</p>
+
+                    </li>
+                    
+                    <li id="comment-22565">
+                        <p class="mb-0"><b>Saksham Saxena</b> <i>commented <relative-time datetime="2016-03-06T12:32:52.942-0500">2016-03-06T12:32:52.942-0500</relative-time></i></p>
+                        <p>Not on IE 10,11; Chrome and FF on Win 10. Unlikely that it'll be reproduced, as <a href="/browse/FLUID-4075/">FLUID-4075</a> is closed.</p>
+
+                    </li>
+                    
+                    <li id="comment-22567">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-03-09T09:15:59.980-0500">2016-03-09T09:15:59.980-0500</relative-time></i></p>
+                        <p>Saksham Saxena I just did a quick test in Safari 9 and the issue is still present there. Also <a href="/browse/FLUID-4075/">FLUID-4075</a> was close because it is a duplicate of this issue.</p>
+
+                    </li>
+                    
+                    <li id="comment-22568">
+                        <p class="mb-0"><b>Akshay Agarwal</b> <i>commented <relative-time datetime="2016-03-29T14:11:13.330-0400">2016-03-29T14:11:13.330-0400</relative-time></i></p>
+                        <p>Is anyone working on this issue?</p>
+
+                    </li>
+                    
+                    <li id="comment-22570">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-11-08T12:39:27.039-0500">2016-11-08T12:39:27.039-0500</relative-time></i></p>
+                        <p>Addressed with work for <a href="/browse/FLUID-6028/">FLUID-6028</a>, which causes the long file names to wrap to a new line.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-961/"><span class="aria-hidden">←</span> Previous: FLUID-961</a>
+        <a class="mx-1" href="/browse/FLUID-965/">Next: FLUID-965 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

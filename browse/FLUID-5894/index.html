@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5894  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5894 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5894/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5894/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5894/">FLUID-5894</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5894: Implement "reduced expression parser" allowing compact expression of model relay rules and transforms</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5894">FLUID-5894</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-04-25T09:06:35.355-0400" prefix="">2016-04-25T09:06:35.355-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-02-15T13:21:34.435-0500" prefix="">2021-02-15T13:21:34.435-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                            <li>Framework</li>
+                            
+                            <li>Model Transformation System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Our "avoidance of syntax" in the framework makes it amenable to tools but hard to author and read by humans in many scenarios. Currently all of the basic mathematical operators, as they arise in transforms and relay rules, are expressed by full JSON blocks and so transform rules such as the following are very bulky:</p>
+<pre><code class="hljs language-javascript"><span class="hljs-string">"speech\\.espeak\\.rate"</span>: {
+                        <span class="hljs-string">"transform"</span>: {
+                            <span class="hljs-string">"type"</span>: <span class="hljs-string">"fluid.transforms.round"</span>,
+                            <span class="hljs-string">"input"</span>: {
+                                <span class="hljs-string">"transform"</span>: {
+                                    <span class="hljs-string">"type"</span>: <span class="hljs-string">"fluid.transforms.binaryOp"</span>,
+                                    <span class="hljs-string">"right"</span>: <span class="hljs-number">3.10</span>,
+                                    <span class="hljs-string">"operator"</span>: <span class="hljs-string">"/"</span>,
+                                    <span class="hljs-string">"left"</span>: {
+                                        <span class="hljs-string">"transform"</span>: {
+                                            <span class="hljs-string">"type"</span>: <span class="hljs-string">"fluid.transforms.binaryOp"</span>,
+                                            <span class="hljs-string">"right"</span>: <span class="hljs-number">80</span>,
+                                            <span class="hljs-string">"operator"</span>: <span class="hljs-string">"-"</span>,
+                                            <span class="hljs-string">"left"</span>: {
+                                                <span class="hljs-string">"transform"</span>: {
+                                                    <span class="hljs-string">"type"</span>: <span class="hljs-string">"fluid.transforms.condition"</span>,
+                                                    <span class="hljs-string">"truePath"</span>: <span class="hljs-string">"http://registry\\.gpii\\.net/common/speechRate"</span>,
+                                                    <span class="hljs-string">"false"</span>: {
+                                                        <span class="hljs-string">"transform"</span>: {
+                                                            <span class="hljs-string">"type"</span>: <span class="hljs-string">"fluid.transforms.binaryOp"</span>,
+                                                            <span class="hljs-string">"leftPath"</span>: <span class="hljs-string">"http://registry\\.gpii\\.net/common/speechRate"</span>,
+                                                            <span class="hljs-string">"operator"</span>: <span class="hljs-string">"/"</span>,
+                                                            <span class="hljs-string">"right"</span>: <span class="hljs-number">3</span>
+                                                        }
+                                                    },
+                                                    <span class="hljs-string">"condition"</span>: {
+                                                        <span class="hljs-string">"transform"</span>: {
+                                                            <span class="hljs-string">"type"</span>: <span class="hljs-string">"fluid.transforms.binaryOp"</span>,
+                                                            <span class="hljs-string">"leftPath"</span>: <span class="hljs-string">"http://registry\\.gpii\\.net/common/speechRate"</span>,
+                                                            <span class="hljs-string">"operator"</span>: <span class="hljs-string">"&lt;="</span>,
+                                                            <span class="hljs-string">"right"</span>: <span class="hljs-number">390</span>
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+</code></pre>
+<p>This should be expressed as </p>
+<pre><code class="hljs language-javascript"><span class="hljs-title class_">Math</span>.<span class="hljs-title function_">round</span>(<span class="hljs-number">3.1</span> / (<span class="hljs-number">80</span> - (speechRate &lt;= <span class="hljs-number">390</span> ? speechRate : speechRate / <span class="hljs-number">3</span>)))
+</code></pre>
+<p>using standard mathematical syntax as operated in JavaScript together with some ability to make a local definition for speechRate.</p>
+<p>We have avoided such syntax so far since we really have a need to <strong>control</strong> it rather than adopt some sleazy solution (of the sort commonly operated by those incapable or unwilling to write parsers) of simply slinging some perhaps partially sanitised expression into JavaScript's "eval" function.</p>
+<p>The time has come to write a little parser of our own. Some early discussion of this is available in the wiki page <a href="https://wiki.fluidproject.org/display/fluid/Notes+on+Expressionism+in+Model+Relay">https://wiki.fluidproject.org/display/fluid/Notes+on+Expressionism+in+Model+Relay</a> . This speculates that we might use the "esprima" parser but really this is an incredibly bulky thing that we cannot afford to deliver wherever we deliver the framework. Instead, we should hand-roll a simple parser based on the straightforward and widely-attested <a href="https://en.wikipedia.org/wiki/Shunting-yard_algorithm">Shunting Yard Algorithm</a>.</p>
+<p>The parser should recognise two, nested syntaxes. The first, for "full expressions" should recognise any expression using the standard mathematical unary, binary and ternary operators in JavaScript (where these do not have any side-effects) as well as any publically addressible functions such as <code>Math.round</code>, <code>Math.pow</code> etc. These will become packaged as a standard full model transform rule named "fluid.transforms.expression".</p>
+<p>The framework will for the foreseeable future make no attempt to compute inverses of these expressions - they can be contributed by explicitly writing the inverse transform (if it exists) on a reverse leg.</p>
+<p>The second syntax, for "reduced expressions" or "linear expressions" will recognise any expression which is <strong>linear</strong> - that is, can be recognised to be of the form <code>a * x + b</code> where <code>a</code> and <code>b</code> are constants. There are some extensions that we desire here with respect to the strict syntax written there. Firstly, we would like to treat the unary minus <code>-</code> and logical negation operators ! as incorporated into the possibility for the multiplier <code>a</code> - e.g. <code>!x</code> is a linear expression, as well as allowing for the multiplication by <code>a</code> to instead take the syntactic form of division. Secondly, we wish to support "compound constants" which are composed of primitive constants by means of arbitrary mathematical expressions as seen in the full parser. For example, <code>x / (60 * 60 * 24) - 7 * 4</code> should also be recognised as a linear expression (in practice "compiled" as <code>0.00001157407 * x - 28</code> - this form should make it clear why we want to recognise compound constants!).</p>
+<p>The system will support linear expressions <strong>anywhere</strong> where an IoC-mediated expression is accepted - for example in a model relay rule or a model listener rule. That is, it should be possible to write:</p>
+<pre><code class="hljs language-javascript"><span class="hljs-attr">model</span>: {
+    <span class="hljs-attr">negatedValue</span>: <span class="hljs-string">"!{otherComponent}.model.value"</span>
+}
+</code></pre>
+<p>The framework will automatically compute inverses of any linear expressions and apply them on any reverse linkage. It will reject any linear expression for which the coefficient of <code>x</code> evaluates to zero.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25485">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2021-02-15T13:21:34.435-0500">2021-02-15T13:21:34.435-0500</relative-time></i></p>
+                        <p>This needs to be embedded in an expanded profile of JSON5, e.g. JSON-R. Note that this notion was considered out of scope for JSON5 itself:</p>
+<p><a href="https://github.com/json5/json5/issues/106">https://github.com/json5/json5/issues/106</a></p>
+<p>Some related work is at <a href="https://github.com/EricSmekens/jsep/blob/master/src/jsep.js">https://github.com/EricSmekens/jsep/blob/master/src/jsep.js</a>&#160;which whilst substantially more minimal than esprima is probably <strong>still</strong> a bit too bulky for our purposes (c. 700 lines unminified although claims minified is pretty fine at ~4K)</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5893/"><span class="aria-hidden">←</span> Previous: FLUID-5893</a>
+        <a class="mx-1" href="/browse/FLUID-5895/">Next: FLUID-5895 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3728  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3728 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3728/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3728/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3728/">FLUID-3728</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3728: Improve accessibility of the demo portal infrastructure</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3728">FLUID-3728</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-09-09T13:48:33.837-0400" prefix="">2010-09-09T13:48:33.837-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-04-02T15:29:11.053-0400" prefix="">2014-04-02T15:29:11.053-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3</li>
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Demos</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The 'source' tabs in the demo portal should have the aria application role set.</p>
+<p>The contents of the tabs should have the aria document role set.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-21923">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-09-09T13:49:00.603-0400">2010-09-09T13:49:00.603-0400</relative-time></i></p>
+                        <p>a11y issue</p>
+
+                    </li>
+                    
+                    <li id="comment-21924">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-10-04T14:43:09.401-0400">2010-10-04T14:43:09.401-0400</relative-time></i></p>
+                        <p>"Bug Parade Infusion 1.3"</p>
+
+                    </li>
+                    
+                    <li id="comment-21925">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2010-10-13T12:33:35.546-0400">2010-10-13T12:33:35.546-0400</relative-time></i></p>
+                        <p>This task turns out to be more involved that simply adding an application role to the tabpanels. There are several deficiencies in the ARIA markup of the page, as well as other issues:</p>
+<ul>
+<li>The "Code View / Plain Text" buttons have no ARIA markup. Semantically, they function as radio buttons and could be marked as such. They are not currently keyboard-accessible as a single set of radio buttons, though they are keyboard accessible as regular links.</li>
+<li>The  "Code View / Plain Text" buttons are currently not actually inside the tab panels (despite the fact that they appear to be). There is a single set of buttons which must work with whichever tab currently happens to be active. This results in some messy code to figure out which tab is active. This could probably be simplified by actually having one set of radio buttons per tab panel, contained within the panel.</li>
+<li>The container of the right side of the page should have a role of application</li>
+<li>With the radio buttons inside the tab panel, the panel itself should have a role of application, and the containers of the actual text themselves should have a role of document</li>
+<li>The various demo 'assets' (i.e. js, html, css files) are loaded separately and independently, requiring some messy code to determine when all of the files are finished loading so that setup can be completed. This would be vastly simplified with fluid.fetchResources() with a single callback.</li>
+<li>There are many hard-coded selectors scattered throughout the code. A DOM binder would make the code easier to work with.</li>
+<li>Event handling code is not well centralized, leading to duplication</li>
+</ul>
+<p>Recommended changes:</p>
+<ul>
+<li>Load the assets using fluid.fetchResources() (I've implemented this in my local copy, works fine).</li>
+<li>Restructure the mark-up so that the "Code View / Plain Text" buttons are contained within the tab panels</li>
+<li>Refactor the code to take advantages of more framework features, centralize event handlers, etc.</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-21927">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-11-03T12:18:46.071-0400">2010-11-03T12:18:46.071-0400</relative-time></i></p>
+                        <p>Anastasia has created a branch for these changes in SVN, which is located at <a href="http://source.fluidproject.org/svn/fluid/infusion/branches/FLUID-3728/">http://source.fluidproject.org/svn/fluid/infusion/branches/FLUID-3728/</a></p>
+
+                    </li>
+                    
+                    <li id="comment-21929">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-11-03T12:19:32.384-0400">2010-11-03T12:19:32.384-0400</relative-time></i></p>
+                        <p>Anastasia posted an update on her work to fluid-work. Here's a transcript:</p>
+<p>"I'm not finished yet, but here are some highlights of what I've got implemented so far:</p>
+<p>1) The code is updated to make much more use of the framework, including IoC and the new renderer component initializer.<br>
+2) The code now loads the HTML for the demo pages from a template, which reduces a <strong>great</strong> deal of duplication, as well as removing lots of hard-coded markup from the JS.<br>
+3) The file-type tabs on the right side of each demo now have proper ARIA and are keyboard accessible (using our plugin).</p>
+<ul>
+<li>there are tests for the ARIA<br>
+4) I fixed a CSS bug, so that now the line numbers are actually visible.</li>
+</ul>
+<p>NOTE: The code changes are currently only applied to the following demos:</p>
+<ul>
+<li>keyboard accessibility plugin</li>
+<li>grid reorderer</li>
+<li>progress</li>
+</ul>
+<p>Also NOTE: I haven't yet fixed up the Code View/Plain View issue that I raised in another email thread, so you'll see both views in the panel, and the links will do nothing.</p>
+<p>Final NOTE: The actual keyboard accessibility plugin in this branch is completely broken, so don't expect much 🙂"</p>
+
+                    </li>
+                    
+                    <li id="comment-21932">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2010-11-03T12:43:39.584-0400">2010-11-03T12:43:39.584-0400</relative-time></i></p>
+                        <p>I've pretty much finished implementing the changes to the demo portal to add keyboard accessibility of right side of the demo pages, ARIA, etc. It's a complete rewrite of the JavaScript that creates the code tabs on the right side of the demo pages. I'd appreciate a code review before I merge this back into trunk.</p>
+
+                    </li>
+                    
+                    <li id="comment-21933">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2011-01-04T09:48:05.098-0500">2011-01-04T09:48:05.098-0500</relative-time></i></p>
+                        <p>This will be carried out as part of a larger portal redesign.</p>
+
+                    </li>
+                    
+                    <li id="comment-21935">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2014-04-02T15:29:05.239-0400">2014-04-02T15:29:05.239-0400</relative-time></i></p>
+                        <p>We will be removing the demo portal altogether.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3727/"><span class="aria-hidden">←</span> Previous: FLUID-3727</a>
+        <a class="mx-1" href="/browse/FLUID-3729/">Next: FLUID-3729 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

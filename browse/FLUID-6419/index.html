@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6419  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6419 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6419/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6419/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6419/">FLUID-6419</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6419: eslint-config-fluid preventing the use of .catch() and .finally()</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6419">FLUID-6419</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Cannot%20Reproduce">Cannot Reproduce</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-10-30T13:43:02.694-0400" prefix="">2019-10-30T13:43:02.694-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-25T12:28:36.813-0400" prefix="">2024-07-25T12:28:36.813-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>fluid-eslint-config</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>I attempted to use the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch">.catch()</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally">.finally()</a> functions associated with the Promise object, but the linter fails with the following feedback:</p>
+<p><code>"error .catch is a syntax error dot-notation"</code></p>
+<p></p>
+<p>The source of the issue to this particular setting in the eslint config file: <a href="https://github.com/fluid-project/eslint-config-fluid/blob/041cd0f476fc02d0293914962c14912750e753f5/.eslintrc.json#L26">https://github.com/fluid-project/eslint-config-fluid/blob/041cd0f476fc02d0293914962c14912750e753f5/.eslintrc.json#L26</a></p>
+<p>The particular setting of the allowKeywords flag should be considered/reconsidered with .catch and .finally in mind.</p>
+<p></p>
+<p>The code that fails the linter looks like the following</p>
+<pre><code class="hljs language-javascript">somePromise.<span class="hljs-title function_">catch</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    <span class="hljs-comment">// do some error handling</span>
+}).<span class="hljs-title function_">finally</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    <span class="hljs-comment">// do some final things</span>
+});
+</code></pre>
+<p></p>
+<p>Whereas this is somewhat kludgy but passes linting</p>
+<pre><code class="hljs language-javascript">somePromise[<span class="hljs-string">"catch"</span>](<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    <span class="hljs-comment">// do some error handling</span>
+})[<span class="hljs-string">"finally"</span>](<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    <span class="hljs-comment">// do some final things</span>
+});
+</code></pre>
+<p></p>
+<p>cc Tony Atkins [RtF] and Antranig Basman</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Windows 10 1903<br>
+Node v10.15.3<br>
+eslint-config-fluid 1.1.0</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25236">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2019-10-31T08:07:18.076-0400">2019-10-31T08:07:18.076-0400</relative-time></i></p>
+                        <p>It appears that setting <code>allowKeywords</code> to false is to follow ECMAScript version 3 style of avoiding dot notation for reserved words. (see: <a href="https://eslint.org/docs/rules/dot-notation#require-dot-notation-dot-notation">https://eslint.org/docs/rules/dot-notation#require-dot-notation-dot-notation</a>&#160;) As of ECMAScript 5.1 reserved words only apply to identifiers and not identifierNames.</p>
+<p>See:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords</a></li>
+<li><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-7.6">https://www.ecma-international.org/ecma-262/5.1/#sec-7.6</a></li>
+</ul>
+<p></p>
+
+                    </li>
+                    
+                    <li id="comment-27896">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2024-07-25T12:28:36.813-0400">2024-07-25T12:28:36.813-0400</relative-time></i></p>
+                        <p>I’m not able to reproduce this issue and I’m not noticing configuration for <code>dot-notation</code> anymore: <a href="https://github.com/fluid-project/eslint-config-fluid/blob/51e2cb087c68f1dc43e2b23fcb308e4a68ea0644/.eslintrc-fluid.json">https://github.com/fluid-project/eslint-config-fluid/blob/51e2cb087c68f1dc43e2b23fcb308e4a68ea0644/.eslintrc-fluid.json</a> </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6418/"><span class="aria-hidden">←</span> Previous: FLUID-6418</a>
+        <a class="mx-1" href="/browse/FLUID-6420/">Next: FLUID-6420 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

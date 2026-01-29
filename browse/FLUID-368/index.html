@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-368  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-368 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-368/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-368/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-368/">FLUID-368</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-368: Finalize technical implementation of OSDPL navigation</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-368">FLUID-368</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Sub-task">Sub-task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Jonathan Hung</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Allison%20Bloodworth">Allison Bloodworth</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-03-17T20:34:24.000-0400" prefix="">2008-03-17T20:34:24.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-04-11T17:45:51.416-0400" prefix="">2013-04-11T17:45:51.416-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>OSDPL</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Though the navigational elements may change, we need to select a technical implementation for the navigation. We are currently using taxonomy-menu, but we should make sure this is the best solution and creates the type of menu we want. This doesn't allow for auto-generation of subnavigation for pattern pages (e.g. you have to enter a menu item for each pattern as you enter or edit the pattern), and we need to decide if that is what we want. There may be other modules which serve our needs better. DHTML Menus was another menu system Jonathan investigated.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14175">
+                        <p class="mb-0"><b>Allison Bloodworth</b> <i>commented <relative-time datetime="2008-05-13T12:54:42.000-0400">2008-05-13T12:54:42.000-0400</relative-time></i></p>
+                        <p>iteration10</p>
+
+                    </li>
+                    
+                    <li id="comment-14176">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2008-06-09T13:16:35.000-0400">2008-06-09T13:16:35.000-0400</relative-time></i></p>
+                        <p>A problem is that free-tagged Taxonomy terms are not being displayed in the site navigation. (i.e. a user adds a new DP category, but it doesn't appear in the category menu on the left sidebar).</p>
+<p>I've tried different modules and did some research and it appears that taxonomy terms added this way are not handled by Taxonomy Menu. The admin has to manually add vocabulary to the Taxonomy and then update Taxonomy Menu.</p>
+<p>Not ideal.</p>
+<p>Is there another way?</p>
+<p>Perhaps we should examine alternative methods like tagging, categorization, and searching?</p>
+
+                    </li>
+                    
+                    <li id="comment-14179">
+                        <p class="mb-0"><b>Allison Bloodworth</b> <i>commented <relative-time datetime="2008-06-09T20:42:46.000-0400">2008-06-09T20:42:46.000-0400</relative-time></i></p>
+                        <p>I actually don't think we want free-tagged terms to display in the site navigation--we'd have too many category links that way. The left nav is intended to be a navigation scheme created by us (sort of an 'expert' taxonomy), which hopefully will be a good entry point into the library. Tags will be another entry point, and they <strong>might</strong> someday replace the left nav, but I'm not sure how likely that is.</p>
+<p>What I was really looking for was to have links to the <strong>patterns</strong> automatically added to the left nav as they were entered (under whatever category was chosen). I thought that might be possible with taxonomy menu, as it automatically creates a menu based on a taxonomy/category. However, it unfortunately it doesn't automatically add the child nodes (e.g. patterns) as menu items as I'd hoped. </p>
+<p>However, today Jonathan and I decided to, for the moment, remove this as a requirement because we don't necessarily know yet what the workflow for entering patterns will be. Perhaps it will make sense for them to be added as a menu item by an administrator (with ostensibly more experience with the system) later when the pattern is "approved." (One idea we had was to implement 'workflow' by not allowing regular users to check the "Published" checkbox when entering a pattern. Then the administrator could both "publish" the pattern and add a menu item for it at the same time.)</p>
+<p>Today I added menu items for all the patterns in the system so we have the proper links to all the patterns. Doing this is definitely is tricky, as first you have to <strong>find</strong> the place to enter a menu item at the bottom, hidden in "Menu settings." Then if you forget to enter a title and just choose a parent item, Drupal saves without doing anything--it doesn't generate an error to tell you you've made a mistake! I wondered several times why my menu items weren't being created...</p>
+<p>Additionally, I looked at DHTML Menu a bit. I believe this is for the most part an unusable module, as you must double-click on the top element in a menu (e.g. Administer) to open it; otherwise, clicking on it just opens the menu's children (and the page doesn't change--you don't get to "Administer"). No user will be able to discover this without training (when DTHML menu was on, I thought I'd lost access to the Administer menu and made some other mis-judgements as well) and will likely find the interaction confusing, so unless we don't want users to access the top-level item in a menu item for some reason (which is possible), I strongly suggest we don't use it.</p>
+<p>We are resolving this bug because we think we've found an adequate work-around (e.g. entering the menu item for each pattern manually) for now, but things may change if we want patterns to be dynamically added to the navigation as they are entered.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-366/"><span class="aria-hidden">←</span> Previous: FLUID-366</a>
+        <a class="mx-1" href="/browse/FLUID-369/">Next: FLUID-369 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

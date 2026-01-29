@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6574  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6574 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6574/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6574/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6574/">FLUID-6574</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6574: Tests should be run against distribution files</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6574">FLUID-6574</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Ned Zimmerman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Ned%20Zimmerman">Ned Zimmerman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-11-09T11:04:52.906-0500" prefix="">2020-11-09T11:04:52.906-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-17T08:14:35.374-0400" prefix="">2024-07-17T08:14:35.374-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Testing Infrastructure</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently, each test loads component and framework source files. This means that the built versions of Infusion are not tested. Test files should be updated to use the <code>infusion-all.js</code> distribution version of the library to ensure that the published package passes tests.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25381">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2020-11-09T15:50:51.426-0500">2020-11-09T15:50:51.426-0500</relative-time></i></p>
+                        <p>I am not convinced about this one. There are a couple of issues - firstly, the profile of inclusions of each test are fairly specific, and only include a particular subset of framework files under test - e.g. FluidJsTests includes pretty much only Fluid.js which is under test. Secondly there are many different bundles and testing only one of them only increases our coverage a small amount. Note that there are already "bundle tests" at <a href="https://github.com/fluid-project/infusion/tree/main/tests/bundle-tests">https://github.com/fluid-project/infusion/tree/main/tests/bundle-tests</a> which ensure that at least all the different bundles are at least syntactically correct. I would prefer that the individual test suites remain the way they currently are in main, and that instead we make some efforts to beef up the "bundle tests" - perhaps by running some moderately demanding test suite such as FluidIoCTests.js against all of them. It would probably be overkill to try to run a complete test suite against each bundle.</p>
+
+                    </li>
+                    
+                    <li id="comment-25382">
+                        <p class="mb-0"><b>Ned Zimmerman</b> <i>commented <relative-time datetime="2020-11-09T16:16:58.191-0500">2020-11-09T16:16:58.191-0500</relative-time></i></p>
+                        <p>Antranig Basman For context, this was a response to concerns Justin Obara raised about the need to run unminified builds through terser with <code>output.beautify</code> set to <code>true</code> in <a href="/browse/FLUID-6573/">FLUID-6573</a>, which would minify and then beautify the resulting distribution file instead of creating a "pure" concatenated build. He felt that this could cause build issues that we currently have no way of testing and after some discussion it seemed that running tests against the build would be a good way of verifying that the distribution of Infusion works as expected as opposed to testing against a set of source files. I don't think that the minification/beautification process is likely to cause problems, so if changing the tests in this way isn't necessary we can close this JIRA and the accompanying pull request.</p>
+
+                    </li>
+                    
+                    <li id="comment-25383">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2020-11-09T16:34:11.295-0500">2020-11-09T16:34:11.295-0500</relative-time></i></p>
+                        <p>Ned Zimmerman - I agree it might be a good idea to have some means of testing builds - so if that was a concern perhaps it might be a good idea to beef up the existing "bundle tests" in some way. So far the issues with builds that Tony Atkins [RtF] ran into were blatant ones which caused the build to simply be syntactically invalid, which is why he wrote the bundle tests in the form he did. If we aren't too worried about additional kinds of failures than that perhaps it's indeed best to close the JIRA and pull, but in the meantime I'll add a link between this issue and the original bundle tests issue <a href="/browse/FLUID-6368/">FLUID-6368</a></p>
+
+                    </li>
+                    
+                    <li id="comment-25384">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2020-12-01T12:01:45.680-0500">2020-12-01T12:01:45.680-0500</relative-time></i></p>
+                        <p>This was auto-closed when PR <a href="https://github.com/fluid-project/infusion/pull/1034">https://github.com/fluid-project/infusion/pull/1034</a>&#160;was merged.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6573/"><span class="aria-hidden">←</span> Previous: FLUID-6573</a>
+        <a class="mx-1" href="/browse/FLUID-6575/">Next: FLUID-6575 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

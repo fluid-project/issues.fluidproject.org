@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-223  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-223 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-223/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-223/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-223/">INFRA-223</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-223: Insufficient privileges broke plugin install</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-223">INFRA-223</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alan Harnum</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-10-23T12:01:24.419-0400" prefix="">2018-10-23T12:01:24.419-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-10-23T12:54:52.415-0400" prefix="">2018-10-23T12:54:52.415-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>I was looking into <a href="https://issues.fluidproject.org/projects/SNOW/issues/SNOW-39?filter=allopenissues">SNOW-39</a>&#160;and it appears to be a caching issue. I tried installing the Super Cache plugin (<a href="https://wordpress.org/plugins/wp-super-cache/)">https://wordpress.org/plugins/wp-super-cache/)</a>&#160;but it failed upon install. It appears there are insufficient privs.</p>
+<p>See:&#160;<a href="https://snow.idrc.ocadu.ca/wp-admin/options-general.php?page=wpsupercache">https://snow.idrc.ocadu.ca/wp-admin/options-general.php?page=wpsupercache</a></p>
+<p>Now the PHP error is appearing on all pages. I have put up a Maintenance message on the site for now.</p>
+<p>What would be the ideal solution in this case? Should we grant specific permissions this case only, or should we find another solution?</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>SNOW, Wordpress</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26052">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2018-10-23T12:54:08.079-0400">2018-10-23T12:54:08.079-0400</relative-time></i></p>
+                        <p>Fixed as follows:</p>
+<ul>
+<li>SSH'd into server</li>
+<li>changed to the production SNOW install directory at <strong>/var/www/afe0ab1f</strong></li>
+<li>removed these two lines from <strong>wp-config.php</strong>
+<ul>
+<li>define('WP_CACHE', true); //Added by WP-Cache Manager<br>
+define( 'WPCACHEHOME', '/var/www/snow-dev.idrc.ocadu.ca/wordpress/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager</li>
+</ul>
+</li>
+<li>At this point, the Super Cache plugin could be disabled</li>
+<li>Turned off maintenance mode</li>
+</ul>
+<p>I believe this issues relates to the WPCACHEHOME variable pointing to a nonexistent directory. Possibly this is what the plugin sets by default, but because the install failed the plugin could not be properly configured to use the correct directory.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-222/"><span class="aria-hidden">←</span> Previous: INFRA-222</a>
+        <a class="mx-1" href="/browse/INFRA-224/">Next: INFRA-224 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

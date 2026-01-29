@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> KETTLE-72  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" KETTLE-72 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/KETTLE-72/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/KETTLE-72/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/KETTLE" data-pagefind-filter="project">Kettle</a></li>
+                <li><a href="/browse/KETTLE-72/">KETTLE-72</a></li>
+            </ol>
+        </nav>
+        <h1>KETTLE-72: kettle.loadTestingSupport fails because of missing form-data dependency</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/KETTLE-72">KETTLE-72</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Resolved</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/KETTLE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alan Harnum</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?reporter=Tony%20Atkins%20%5BRtF%5D">Tony Atkins [RtF]</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-08-29T04:49:27.581-0400" prefix="">2018-08-29T04:49:27.581-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-10-04T09:58:20.702-0400" prefix="">2018-10-04T09:58:20.702-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.8.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Alan Harnum recently added new functionality to Kettle, which requires the form-data module.  That dependency is currently a dev dependency.  The net result is that calling <code>kettle.loadTestingSupport()</code> from another package now results in errors like:</p>
+<pre><code class="hljs language-java"><span class="hljs-number">10</span>:<span class="hljs-number">45</span>:<span class="hljs-number">41.189</span>:  FATAL ERROR: Uncaught exception: Cannot find <span class="hljs-keyword">module</span> <span class="hljs-string">'form-data'</span>
+Error: Cannot find <span class="hljs-keyword">module</span> <span class="hljs-string">'form-data'</span>
+    at Function.Module._resolveFilename (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">469</span>:<span class="hljs-number">15</span>)
+    at Function.Module._load (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">417</span>:<span class="hljs-number">25</span>)
+    at Module.require (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">497</span>:<span class="hljs-number">17</span>)
+    at <span class="hljs-title function_">require</span> <span class="hljs-params">(internal/<span class="hljs-keyword">module</span>.js:<span class="hljs-number">20</span>:<span class="hljs-number">19</span>)</span>
+    at Object.&lt;anonymous&gt; (/Users/duhrer/Source/rtf/gpii-testem/node_modules/kettle/lib/test/KettleTestUtils.form.js:<span class="hljs-number">19</span>:<span class="hljs-number">16</span>)
+    at Module._compile (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">570</span>:<span class="hljs-number">32</span>)
+    at Module.replacementCompile (/Users/duhrer/Source/rtf/gpii-testem/node_modules/nyc/node_modules/append-transform/index.js:<span class="hljs-number">58</span>:<span class="hljs-number">13</span>)
+    at Module._extensions..js (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">579</span>:<span class="hljs-number">10</span>)
+    at Object.&lt;anonymous&gt; (/Users/duhrer/Source/rtf/gpii-testem/node_modules/nyc/node_modules/append-transform/index.js:<span class="hljs-number">62</span>:<span class="hljs-number">4</span>)
+    at Module.load (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">487</span>:<span class="hljs-number">32</span>)
+    at <span class="hljs-title function_">tryModuleLoad</span> <span class="hljs-params">(<span class="hljs-keyword">module</span>.js:<span class="hljs-number">446</span>:<span class="hljs-number">12</span>)</span>
+    at Function.Module._load (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">438</span>:<span class="hljs-number">3</span>)
+    at Module.require (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">497</span>:<span class="hljs-number">17</span>)
+    at <span class="hljs-title function_">require</span> <span class="hljs-params">(internal/<span class="hljs-keyword">module</span>.js:<span class="hljs-number">20</span>:<span class="hljs-number">19</span>)</span>
+    at Object.kettle.loadTestingSupport (/Users/duhrer/Source/rtf/gpii-testem/node_modules/kettle/kettle.js:<span class="hljs-number">40</span>:<span class="hljs-number">5</span>)
+</code></pre>
+<p>The solution is to move the dependency into the main block.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26151">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2018-09-05T09:26:51.590-0400">2018-09-05T09:26:51.590-0400</relative-time></i></p>
+                        <p>PR opened:&#160;<a href="https://github.com/fluid-project/kettle/pull/47">https://github.com/fluid-project/kettle/pull/47</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/KETTLE-71/"><span class="aria-hidden">←</span> Previous: KETTLE-71</a>
+        <a class="mx-1" href="/browse/KETTLE-73/">Next: KETTLE-73 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

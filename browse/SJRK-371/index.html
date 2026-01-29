@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-371  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-371 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-371/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-371/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-371/">SJRK-371</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-371: Improve updateBlockOrder implementation</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-371">SJRK-371</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-06-30T15:13:39.416-0400" prefix="">2020-06-30T15:13:39.416-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-06-30T15:13:39.416-0400" prefix="">2020-06-30T15:13:39.416-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The function&#160;sjrk.storyTelling.ui.storyEditor.updateBlockOrder (introduced in <a href="/browse/SJRK-288/">SJRK-288</a>) is designed to update the order-related model values of a block component based on the order of elements in the DOM. The blocks are accessed via the blockManager's managedViewComponentRegistry using a unique CSS class assigned to each blockUi component.</p>
+<p>The method currently being used to iterate over the registry and find the unique class name is overly complex and should be rewritten or potentially refactored and replaced.</p>
+<p>From discussion on the <a href="https://github.com/fluid-project/sjrk-story-telling/pull/84#pullrequestreview-431020780">SJRK-288 pull request</a>:</p>
+<p>Justin Obara wrote:</p>
+<blockquote>
+<p>@BlueSlug if I'm following the logic of the function, what you want to do is to take the DOM position of an element, find what Infusion component corresponds to that element, and then update the model values of that component with the position index. So maybe the first question is to @amb26 about whether there is an easy way to find a component from its container.</p>
+<p>Another question is about the approach as a whole. That is you seem to only need this to update the disabled/enabled state of the up/down arrows for reordering. Here are some thoughts to get your started, none of them may be good though:</p>
+<p>You could continue with the DOM based approach and on reorder have the components inspect where they are in the parents list of children or maybe if they have a previous or next sibling. In general modelizing state is better.<br>
+Should a reorderable element care about it's position? Should a single block UI really have to know that it is reorderable and where it is in the list? Perhaps this reordering behaviour could be the responsibility of a parent component that sort of decorates its children with the ability to be reordered. And there by managing the state of the individual reorderable elements.</p>
+</blockquote>
+<p>Antranig Basman wrote:</p>
+<blockquote>
+<p>Code to maintain an index of viewComponent containers to their components can be adapted from the "viewMapper" in fluidViewDebugging.js here - <a href="https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/FluidViewDebugging.js#L576">https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/FluidViewDebugging.js#L576</a><br>
+You can simplify this code considerably since there is extra material here to account for the possibility that the view component lies in an iframe.<br>
+However, I agree with @jobara 's comment that responsibility for all list-based functionality should be centralised in a parent component.</p>
+</blockquote>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-370/"><span class="aria-hidden">←</span> Previous: SJRK-370</a>
+        <a class="mx-1" href="/browse/SJRK-372/">Next: SJRK-372 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

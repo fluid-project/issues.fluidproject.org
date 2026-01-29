@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6767  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6767 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6767/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6767/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6767/">FLUID-6767</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6767: TTS selection reader doesn't work if an svg is included in selection</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6767">FLUID-6767</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2023-04-19T09:16:33.596-0400" prefix="">2023-04-19T09:16:33.596-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2023-04-19T13:45:09.444-0400" prefix="">2023-04-19T13:45:09.444-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.6</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Self Voicing</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This appears to be a Firefox specific issue.</p>
+<p>This was initially found in The Accessibility Exchange which uses the Orator component from Infusion for its self voicing. See issue <a href="https://github.com/accessibility-exchange/platform/issues/1633">#1633</a></p>
+<p>Steps to reproduce:</p>
+<ol>
+<li>Using Firefox open the <a href="https://build-infusion.fluidproject.org/demos/prefsframework/">Prefs Framework demo</a></li>
+<li>Open UIO and enable the text-to-speech preference</li>
+<li>Using the mouse make a selection of text that includes an SVG element
+<ol>
+<li>For example the NOAA logo at the top left of the page</li>
+</ol>
+</li>
+<li>Notice the error</li>
+</ol>
+<p></p>
+<p>Error:</p>
+<pre><code class="hljs language-java">Uncaught TypeError: rangeRect is undefined&#160;&#160;&#160;&#160;calculatePosition https:<span class="hljs-comment">//build-infusion.fluidproject.org/src/components/orator/js/Orator.js:1122&#160;&#160;&#160;&#160;invokeInvoker https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2787&#160;&#160;&#160;&#160;renderControl https://build-infusion.fluidproject.org/src/components/orator/js/Orator.js:1177&#160;&#160;&#160;&#160;invokeListener https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:1583&#160;&#160;&#160;&#160;togo https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:1598&#160;&#160;&#160;&#160;notifyExternal https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:1325&#160;&#160;&#160;&#160;concludeModelTransaction https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:1365&#160;&#160;&#160;&#160;fire https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:1713&#160;&#160;&#160;&#160;commit https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:2227</span>
+</code></pre>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF 112.0.1</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25220">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2023-04-19T13:45:09.444-0400">2023-04-19T13:45:09.444-0400</relative-time></i></p>
+                        <p>Looks like this might be the same issue as <a href="/browse/FLUID-6766/">FLUID-6766</a> and be related to the Firefox issue <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1569211">#1569211</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6766/"><span class="aria-hidden">←</span> Previous: FLUID-6766</a>
+        <a class="mx-1" href="/browse/FLUID-6771/">Next: FLUID-6771 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

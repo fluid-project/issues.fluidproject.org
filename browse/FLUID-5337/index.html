@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5337  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5337 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5337/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5337/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5337/">FLUID-5337</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5337: Improve model relay and model transformation system to operate "pseudoinverse" rules</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5337">FLUID-5337</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-04-28T15:13:04.507-0400" prefix="">2014-04-28T15:13:04.507-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-07-29T01:34:35.066-0400" prefix="">2021-07-29T01:34:35.066-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>5.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                            <li>Model Transformation System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This was a requirement that was always envisaged for the Model Relay/MT system but it was unexpected that almost our very first application of the system to a real problem would end up requiring it. This requirement arose as part of the metadata panel work and is written up more fully in <a href="/browse/FLUID-5307/">FLUID-5307</a>. Not all model transformation rules are completely invertible - sometimes multiple values on one side of the transform are associated with a single value on the other. In the case of a static, one-shot "model transformation" run, there's not much we can do about this since we have no ready access to a source of additional information that could disambiguate the inverse. However, when operating a constantly running model relay associated with the transformation rule (most likely, accompanied with a live updating UI showing the changing values), there is always a "current value" associated with both ends of the relay link. This can be used to improve the quality of inversion that we offer.</p>
+<p>In order to gain access to this improved inversion quality, we need to make various upgrades throughout the pipeline. An author of a transformation rule needs to be able to specify that it participates in the "pseudoinverse" system, and commit to providing a "principal inverse" value when the link is operated in the noninvertible direction. Perhaps as a performance hint it might help if the transformation rule can somehow "out of band" report that the particular value is a "principal inverse" rather than a "perfect inverse". The MR/MT system when it finds such a value on one side of a link will leave it undisturbed if when running it back through the other leg of the link finds that it inverts to the same value. It will only make use of the "principal inverse" value in the case where the value on the other side of the link doesn't correspond to any of the possible values associated with it by the transformation rule. This would be much clearer with a diagram.</p>
+<p>The principal transformation rule that could benefit from this immediately is the "valueMapper" which would need to be upgraded considerably - this kind of discussion is beginning to suggest that this rule will increasingly be seen as the "standard discrete transformation rule" in that it is capable of having any kind of mapping specified to it purely in terms of examples. "continuous" rules operating on numbers such as the linearScale mapper will continue to be the main alternatives - but these are typically "fully invertible" except in special cases.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25113">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-07-23T17:02:23.794-0400">2014-07-23T17:02:23.794-0400</relative-time></i></p>
+                        <p>New suggested name - "principal inverse" system</p>
+
+                    </li>
+                    
+                    <li id="comment-25114">
+                        <p class="mb-0"><b>Kasper Galschiot Markus</b> <i>commented <relative-time datetime="2016-05-10T10:12:20.691-0400">2016-05-10T10:12:20.691-0400</relative-time></i></p>
+                        <p>Some random notes from <a href="https://pad.gpii.net/p/model-transformation-questions-apr-2016-7a72owa">https://pad.gpii.net/p/model-transformation-questions-apr-2016-7a72owa</a></p>
+<ul>
+<li>Fallback values for standardTransformFunction (ie. "input") are not invertable. If both input and inputPath are provided, we have no way of knowing from what the output value was calculated. On the other hand, if both (the original) input/inputPath are provided, one could argue that the following would hold:        
+<ul>
+<li>IF we can do the inverse transform with some confidence and get a sensible value out of it, write that to the original inputPath.</li>
+<li>ELSE use the value from `input` and print that out to `inputPath`. This would mean though, that we risk having a value at `inputPath` where we didn't have a value before.</li>
+<li>This looks like it is not unrelated to <a href="/browse/FLUID-5337/">FLUID-5337</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>For full inversion: So what is "x" in this case, is it <em>only</em> the values (inputPaths) relevant to the transform we're talking about, or is it anything – because if the latter, we will only be able to satisfy this condition if x <em>only</em> contains inputPaths used by A</li>
+<li>In some cases we need to screw up the original model when inverting to be able to satisfy A(B(A:cross_mark:)) = A:cross_mark:, eg:
+<ul>
+<li>linearScale:
+<ul>
+<li>If it uses paths in the source model for scale and offset, we can invert, but it will be by setting the original input value path to a the result and not set scale and offset, which would be untrue to our original model
+<ul>
+<li>Ignore this since we will abolish all use of paths before long</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>count is the same case (but significantly more screwed up) </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Partly inversibility is great - but the question remains to what extent we allow polluting our input model... And what we consider "acceptable pollution" of it. (ie. addition of potentially non-existing key vs. not adding potentially existing keys, etc)</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-25115">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2018-10-25T21:04:10.656-0400">2018-10-25T21:04:10.656-0400</relative-time></i></p>
+                        <p>No idea why the github hook randomly decided to resolve this issue based on a 5 yr old pull request</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5336/"><span class="aria-hidden">←</span> Previous: FLUID-5336</a>
+        <a class="mx-1" href="/browse/FLUID-5338/">Next: FLUID-5338 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

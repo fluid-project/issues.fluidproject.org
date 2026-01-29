@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-372  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-372 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-372/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-372/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-372/">SJRK-372</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-372: Tests for the Page grade hang in event tests</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-372">SJRK-372</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SJRK/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-07-02T17:08:47.758-0400" prefix="">2020-07-02T17:08:47.758-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-02-04T08:17:52.067-0500" prefix="">2021-02-04T08:17:52.067-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The tests for the Page grade hang on the following test:</p>
+<blockquote>
+<p>"Test page grade: Test events and timing — at sequence position 8 of 24"</p>
+</blockquote>
+<p>as well as</p>
+<blockquote>
+<p>"Test page grade: Test events and timing — at sequence position 13 of 24"</p>
+</blockquote>
+<p>The particular event being waited on in both cases is "uio.prefsEditorLoader.messageLoader.events.onResourcesLoaded" after a language change. In this part of the sequence, there are two event listeners back to back, so it could be related to that, or it could simply be that the event immediately prior to it (menu.events.onControlsBound, to wait for that UI to finish rendering) is firing sometimes before and sometimes after UIO's onResourcesLoaded.</p>
+<p>This issue doesn't always occur, and seems to be more frequent depending on the exact environment and browser. In Edge 44, it happens over 90% of the time, while in Firefox 78 it's more like 30%, and in Chrome 83 it seems to happen less than 10% of the time. This also only seems to occur when running the browser tests from the server hosting rather than hosting locally.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/SJRK/SJRK-372/2020-07-02 page tests hanging edge 44.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/SJRK/SJRK-372/2020-07-02 page tests hanging edge 44.png" alt="2020-07-02 page tests hanging edge 44.png">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/SJRK/SJRK-372/2020-07-02 page tests hanging ipad.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/SJRK/SJRK-372/2020-07-02 page tests hanging ipad.png" alt="2020-07-02 page tests hanging ipad.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26633">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2020-08-04T13:56:37.217-0400">2020-08-04T13:56:37.217-0400</relative-time></i></p>
+                        <p>With the completion of <a href="/browse/SJRK-122/">SJRK-122</a>, this will be difficult to reproduce.</p>
+
+                    </li>
+                    
+                    <li id="comment-26635">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2021-01-11T10:54:22.929-0500">2021-01-11T10:54:22.929-0500</relative-time></i></p>
+                        <p>This issue was encountered by Giovanni Tirloni while working on his PR for <a href="/browse/SJRK-446/">SJRK-446</a>, and it has been rearing its head in other PRs before that.</p>
+<p>I did some more testing today to try to reproduce it on my personal computer, but I was unable to make it happen. I tried repeated runs of the NPM script ("npm test") as well as dozens of runs each in Chrome 87, Firefox 84 and Edge 87. These in-browser tests were accomplished by serving the files via <a href="https://browsersync.io/">browsersync</a>, not the Storytelling Tool server.</p>
+
+                    </li>
+                    
+                    <li id="comment-26636">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2021-02-04T08:17:52.065-0500">2021-02-04T08:17:52.065-0500</relative-time></i></p>
+                        <p>Merged PR ( <a href="https://github.com/fluid-project/sjrk-story-telling/pull/108">https://github.com/fluid-project/sjrk-story-telling/pull/108</a>&#160;) into the project repo at&#160;6ed4d317be8539dbe8b61f80d3fb06d9cf8ce75b</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-371/"><span class="aria-hidden">←</span> Previous: SJRK-371</a>
+        <a class="mx-1" href="/browse/SJRK-373/">Next: SJRK-373 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

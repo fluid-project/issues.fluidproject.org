@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-216  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-216 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-216/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-216/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-216/">SJRK-216</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-216: Add progress indicator on story submission</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-216">SJRK-216</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SJRK/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-02-07T17:35:06.377-0500" prefix="">2019-02-07T17:35:06.377-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-02-25T13:33:39.571-0500" prefix="">2019-02-25T13:33:39.571-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool Server</li>
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>From user feedback: "The most confusing thing I’m finding is not getting feedback when I hit publish. I can’t even tell if I’ve pressed it so I found myself pressing it multiple times (even though I knew this was an issue)."</p>
+<p>Add a progress indicator of some kind when the story has been submitted for publishing (i.e. when you click "Publish my story"). Consult with Sepideh Shahi for a potential design.</p>
+<p>Options could include:</p>
+<ul>
+<li>a progress bar (would need to keep track of chunks of data, or otherwise estimate progress)</li>
+<li>a spinner animation (easier)</li>
+<li>a static message that says the submission is in progress (easiest, but least elegant)</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26495">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2019-02-19T14:33:00.226-0500">2019-02-19T14:33:00.226-0500</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/sjrk-story-telling-server/pull/14">The server side pull request</a> has been merged into the project repo at <a href="https://github.com/fluid-project/sjrk-story-telling-server/commit/c0543b572b7c1ddbc8953abd90556dcbb880f4d0">this commit</a>.</p>
+<p><a href="https://github.com/fluid-project/sjrk-story-telling/pull/16">The client side pull request</a> has been merged into the project repo at <a href="https://github.com/cindyli/sjrk-story-telling/commit/0a595a6bc6b44dd86a391858eee109bb0d277d6f">this commit</a>.</p>
+<p>However, some code review comments on the client side pull request haven't been addressed. <a href="/browse/SJRK-228/">SJRK-228</a> has been created for these comments addressed when Gregor Moss comes back from vacation.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-215/"><span class="aria-hidden">←</span> Previous: SJRK-215</a>
+        <a class="mx-1" href="/browse/SJRK-217/">Next: SJRK-217 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

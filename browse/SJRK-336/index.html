@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-336  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-336 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-336/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-336/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-336/">SJRK-336</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-336: Orator highlighting stuck on first word</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-336">SJRK-336</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-04-13T21:14:19.130-0400" prefix="">2020-04-13T21:14:19.130-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-04-14T08:50:41.450-0400" prefix="">2020-04-14T08:50:41.450-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This issue is very intermittent and difficult to reproduce. I've only witnessed it three times on two different days. It was originally discovered during the most recent run through the <a href="https://wiki.fluidproject.org/display/fluid/Storytelling+Tool+Manual+Testing+Grid">Manual Testing Grid</a> (at time of filing).</p>
+<p>The orator component will read out the text as expected, but the highlighting will be stuck on the first word. I've tried to see if it's a particular field that trips it up (i.e. title vs. no title), but haven't had any luck nailing this one down.</p>
+<p><strong>To reproduce:</strong></p>
+<ul>
+<li>load a story on the View page or create a new one in the Edit page and skip to the preview</li>
+<li>press Play on the Orator</li>
+</ul>
+<p><strong>Expected:</strong><br>
+Story will be read aloud and the highlighting will follow along</p>
+<p><strong>Actual:</strong><br>
+Story is read aloud, but highlighting is stuck on the first word</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Infusion 3.0.0-dev.20191219T155607Z.32876d29c.<a href="/browse/FLUID-6145/">FLUID-6145</a></p>
+<p>Witnessed in the following OS/browser combos:<br>
+Windows 10 Pro build 1903, Chrome 81 (gaming rig)<br>
+Windows 10 Pro build 1909, Chrome 80 (P52)<br>
+Windows 10 Pro build 1909, Firefox 74 (P52)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26278">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2020-04-14T08:50:41.450-0400">2020-04-14T08:50:41.450-0400</relative-time></i></p>
+                        <p>The highlighting does require a lot of DOM mutations as it moves the highlight mark across. I wonder if it's just an issue with repainting and or some other memory/performance issue. Also were any other DOM changes happening when the Orator was started, maybe that's playing into it? Have you seen this on any other platform than Windows? I'm wondering if I'd be able to reproduce on macOS.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-334/"><span class="aria-hidden">←</span> Previous: SJRK-334</a>
+        <a class="mx-1" href="/browse/SJRK-337/">Next: SJRK-337 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5577  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5577 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5577/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5577/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5577/">FLUID-5577</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5577: Open up configurable point in IoC framework for contributed rules for validating component targets</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5577">FLUID-5577</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-12-03T18:54:22.914-0500" prefix="">2014-12-03T18:54:22.914-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-06-16T14:03:48.110-0400" prefix="">2015-06-16T14:03:48.110-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>FLUID-4890 implemented a very helpful "fail-fast" behaviour - if IoC resolution triggered by a listener or invoker detects that the housing component for its definition has been destroyed, a fatal error is raised immediately. The writeup for <a href="http://wiki.fluidproject.org/display/fluid/The+Appalling+Events+of+6+November+2014">http://wiki.fluidproject.org/display/fluid/The+Appalling+Events+of+6+November+2014</a> suggests that the soundest way of heading off errors similar to the one it describes, would be to allow Kettle to validate the request target of a dispatched method in the same way.</p>
+<p>Our current guarding code is in fluid.makeStackFetcher - </p>
+<p>fluid.makeStackFetcher = function (parentThat, localRecord) {<br>
+var fetcher = function (parsed) {<br>
+if (parentThat &amp;&amp; parentThat.destroy === fluid.destroyedMarker) {<br>
+fluid.fail("Cannot resolve reference " + fluid.renderContextReference(parsed) + " from component " + fluid.dumpThat(parentThat) + " which has been destroyed");<br>
+}</p>
+<p>This is a highly performance-critical region of the code - but possibly we could afford the cost of a conventional event firing at this point to determine whether the current component is a request which mismatches the current "threadLocal" held within Kettle.</p>
+<p>Alternative points would be to guard the head of invokeInvoker and     fluid.event.dispatchListener using a separate means. This would be less damaging to performance but slightly more bulky. A slight worry is that dispatchListener is a little irregular in its appearance on the dispatching codepaths.</p>
+<p>Given we only have the power to guard the current component's methods directly, another possibility might be to register the guarding callback in its shadow - this would also cut down slightly on the impact of checking every component. </p>
+<p>In fact - this is the only practical scheme - since Kettle can have no idea about the identity of requests other than the one currently on the stack frame (except perhaps through an expensive "hasGrade" check). So we will need to supply two integration points - one for registering a validation function on a component on creation, and then the process of dispatching it.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5576/"><span class="aria-hidden">←</span> Previous: FLUID-5576</a>
+        <a class="mx-1" href="/browse/FLUID-5578/">Next: FLUID-5578 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

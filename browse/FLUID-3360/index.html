@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3360  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3360 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3360/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3360/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3360/">FLUID-3360</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3360: The Infusion Builder should clean up its temporary data on a periodic basis.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3360">FLUID-3360</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Laurel Williams</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-11-04T18:59:44.000-0500" prefix="">2009-11-04T18:59:44.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-04-11T17:43:18.269-0400" prefix="">2013-04-11T17:43:18.269-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Infusion Builder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>At the moment, the Infusion Builder doesn't clean up its temporary files. If the server doesn't already clean up /tmp, we should create a script and cron job to do so.</p>
+<p>Investigate cleaning up the /tmp directories - expiring the info via nightly cron job.<br>
+A good command to do this would be<br>
+find /tmp/build/* -type f -cmin +1440 -exec rm -f {} \;<br>
+find /tmp/products/* -type f -cmin +1440 -exec rm -f {} \;</p>
+<p>Will also need to make sure that the permissions work so that this cron job can delete files created by nobody. </p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15452">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2009-11-04T19:00:35.000-0500">2009-11-04T19:00:35.000-0500</relative-time></i></p>
+                        <p>This issue is a more specific articulation of one of the tasks noted in <a href="/browse/FLUID-2931/">FLUID-2931</a>.</p>
+
+                    </li>
+                    
+                    <li id="comment-15455">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-12-02T13:55:08.000-0500">2009-12-02T13:55:08.000-0500</relative-time></i></p>
+                        <p>A script was created which cleans up temporary files every 24 hours. It needs to be installed as a cron job on the server to work. The script was written to clean up the files on the deploy server, so will need to be altered and installed as a cron job to clean up files on other servers such as the daily build server.</p>
+<p>location of the script is /infusion-builder-secure/scripts/cleanup.sh</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3359/"><span class="aria-hidden">←</span> Previous: FLUID-3359</a>
+        <a class="mx-1" href="/browse/FLUID-3361/">Next: FLUID-3361 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5417  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5417 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5417/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5417/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5417/">FLUID-5417</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5417: Little contextual information provided for checkboxes and radio buttons used in adjuster panels</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5417">FLUID-5417</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-06-06T12:26:30.953-0400" prefix="">2014-06-06T12:26:30.953-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-09-26T12:30:55.931-0400" prefix="">2017-09-26T12:30:55.931-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                            <li>1.5</li>
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Steps to reproduce:</p>
+<p>1) open the prefs framework demo<br>
+<a href="http://build.fluidproject.org/infusion/demos/prefsFramework/">http://build.fluidproject.org/infusion/demos/prefsFramework/</a></p>
+<p>2) Open "show display preferences"</p>
+<p>3) Navigate to the table of contents toggle (NVDA)<br>
+Notice it just says "checkbox not checked". It doesn't not provide the contextual information about what the control is for.</p>
+<ul>
+<li>All form inputs require an associated form label that describes the purpose of the input. Ex all sliders should have corresponding labels</li>
+<li>Use of labels on the headings is inconsistent&#160;–&#160;some headings are labels for a panel’s control and some are not. Input identification/labeling should be consistent. Labels should span if not being used as labels</li>
+</ul>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>IE 8 (Win XP) (NVDA 2014.2)<br>
+Chrome 35, FF 29, IE 9, 10, 11 (Windows 7)(NVDA 2014.2)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23599">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-06-09T15:29:56.638-0400">2014-06-09T15:29:56.638-0400</relative-time></i></p>
+                        <p>A similar issue was present in Infusion 1.4's version of UIO. However, the grouping was different, it was by tab so there was some more content provided in this manner for some of the items.</p>
+
+                    </li>
+                    
+                    <li id="comment-23601">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-06-16T10:32:38.215-0400">2014-06-16T10:32:38.215-0400</relative-time></i></p>
+                        <p>Perhaps changing the markup of the panels would help. Instead of using headers, we could use a fieldset.</p>
+
+                    </li>
+                    
+                    <li id="comment-23602">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-09-26T12:30:55.931-0400">2017-09-26T12:30:55.931-0400</relative-time></i></p>
+                        <p>Contextual information is much better across the board. In the case of Table of Contents, it's adjuster has been changed to a switch. However, in IE 11 it just reads blank. In Firefox and Chrome it works fine. Tested using NVDA.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5416/"><span class="aria-hidden">←</span> Previous: FLUID-5416</a>
+        <a class="mx-1" href="/browse/FLUID-5418/">Next: FLUID-5418 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

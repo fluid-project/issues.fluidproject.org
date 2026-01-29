@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4262  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4262 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4262/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4262/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4262/">FLUID-4262</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4262: The uPortal mockup integration example is throwing errors when using the UI Enhancer</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4262">FLUID-4262</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Michelle%20D'Souza">Michelle D'Souza</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-05-24T12:29:37.024-0400" prefix="">2011-05-24T12:29:37.024-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-06-20T15:33:12.268-0400" prefix="">2011-06-20T15:33:12.268-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Demos</li>
+                            
+                            <li>UIEnhancer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>To see the error, select the links in the 'customize my portal' list. </p>
+<p>It appears that the API for UI Enhancer has changed recently and the integration example was not modified to work with it.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24365">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2011-05-24T12:30:44.302-0400">2011-05-24T12:30:44.302-0400</relative-time></i></p>
+                        <p>Bug Parade Infusion</p>
+
+                    </li>
+                    
+                    <li id="comment-24366">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2011-06-01T11:01:59.568-0400">2011-06-01T11:01:59.568-0400</relative-time></i></p>
+                        <p>uiEnhancer.updateModel no longer exists; use uiEnhancer.applier.requestChange instead.  This is a change from <a href="/browse/FLUID-4207/">FLUID-4207</a>, <a href="https://github.com/fluid-project/infusion/commit/282ff955ee98a85b63b102852352e3c68d06407b">https://github.com/fluid-project/infusion/commit/282ff955ee98a85b63b102852352e3c68d06407b</a></p>
+
+                    </li>
+                    
+                    <li id="comment-24367">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2011-06-01T11:07:31.585-0400">2011-06-01T11:07:31.585-0400</relative-time></i></p>
+                        <p>Pull request: <a href="https://github.com/fluid-project/infusion/pull/61">https://github.com/fluid-project/infusion/pull/61</a> on branch <a href="https://github.com/harriswong/infusion/tree/FLUID-4262">https://github.com/harriswong/infusion/tree/FLUID-4262</a></p>
+
+                    </li>
+                    
+                    <li id="comment-24368">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2011-06-03T14:46:14.375-0400">2011-06-03T14:46:14.375-0400</relative-time></i></p>
+                        <p>Restored uiEnhancer.updateModel, and pushed to <a href="/browse/FLUID-4267/">FLUID-4267</a> branch, <a href="https://github.com/michelled/infusion/commit/f21c2ab5432ea14a35ac9ca950f6e306aea81cb0">https://github.com/michelled/infusion/commit/f21c2ab5432ea14a35ac9ca950f6e306aea81cb0</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4261/"><span class="aria-hidden">←</span> Previous: FLUID-4261</a>
+        <a class="mx-1" href="/browse/FLUID-4263/">Next: FLUID-4263 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

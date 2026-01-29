@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6606  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6606 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6606/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6606/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6606/">FLUID-6606</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6606: Investigate a method to exempt the preferences pane from currently applied contrast theme without requiring an iframe</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6606">FLUID-6606</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Ned%20Zimmerman">Ned Zimmerman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-03-24T10:43:29.335-0400" prefix="">2021-03-24T10:43:29.335-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2022-02-03T10:38:37.447-0500" prefix="">2022-02-03T10:38:37.447-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>5.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently, when a user applies a contrast theme, the UIO preference pane retains its default theme until the user has dismissed and reopened the pane. This ensures that the pane's content remains readable in case the applied theme is not. Right now, this is implemented using an iframe. It would be good (perhaps alongside a change like that proposed in <a href="/browse/FLUID-6605/">FLUID-6605</a>) to explore a way of scoping styles to do this without requiring an iframe, which would reduce much complexity. See: <a href="https://matrix.to/#/!mDigWuPWilYGiEcOCA:matrix.org/$d8jdfqOPfVSkUQw9mfrmZvWTX_J3_6Q-LmAIoIvjGAk?via=matrix.org">https://matrix.to/#/!mDigWuPWilYGiEcOCA:matrix.org/$d8jdfqOPfVSkUQw9mfrmZvWTX_J3_6Q-LmAIoIvjGAk?via=matrix.org</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25483">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2021-10-06T09:37:03.700-0400">2021-10-06T09:37:03.700-0400</relative-time></i></p>
+                        <p>Some discussions from the fluid-work matrix channel.</p>
+<p><a href="https://matrix.to/#/!mDigWuPWilYGiEcOCA:matrix.org/$L4cwFVfRdFJAag_csZ1-CSfcr5M9D41l6UV3656z15s?via=matrix.org">https://matrix.to/#/!mDigWuPWilYGiEcOCA:matrix.org/$L4cwFVfRdFJAag_csZ1-CSfcr5M9D41l6UV3656z15s?via=matrix.org</a></p>
+<p>Codepen example: <a href="https://codepen.io/jobara/pen/BaROLEq">https://codepen.io/jobara/pen/BaROLEq</a></p>
+<p>The gist is that we'd likely need to explicitly style the prefs editor, for all the parts that are affected by preferences. When adding a new preference we'd need to ensure that the base styling is added to the prefs editor as well.</p>
+<p>Some other gotchas of CSS custom properties: <a href="https://twitter.com/5t3ph/status/1415114455831175169">https://twitter.com/5t3ph/status/1415114455831175169</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6605/"><span class="aria-hidden">←</span> Previous: FLUID-6605</a>
+        <a class="mx-1" href="/browse/FLUID-6607/">Next: FLUID-6607 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

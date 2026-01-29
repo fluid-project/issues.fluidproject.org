@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-336  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-336 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-336/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-336/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-336/">FLOE-336</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-336: Language enactor needs to add a language-specific class to the tool</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-336">FLOE-336</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLOE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-05-14T16:20:29.895-0400" prefix="">2015-05-14T16:20:29.895-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-11-03T12:08:51.477-0500" prefix="">2015-11-03T12:08:51.477-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>First Discovery</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Because the strings are of different length in the different languages, we will need language-specific styles. To support this, the tool needs to add a class (to the body or the main div?) that is specific to the language in question. I suggest a fixed prefix of something like "gpii-fd-lang-" with the language code tacked on, so French would result in "gpii-fd-lang-fr" and Spanish would result in "gpii-fd-lang-sp"</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-11503">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2015-05-15T15:37:04.921-0400">2015-05-15T15:37:04.921-0400</relative-time></i></p>
+                        <p>According to <a href="http://www.w3schools.com/cssref/sel_lang.asp">http://www.w3schools.com/cssref/sel_lang.asp</a>, css can be applied based on the language code. Anastasia experimented and it seemed working fine. So, the solution is altered: rather than applying a css class to the container, a "lang" attribute will be added to the &lt;html&gt; element. Also, this attribute change needs to be performed by the language panel instead of the language enactor which reloads the page and causes added attribute being wiped out.</p>
+<p>Issued a pull request: <a href="https://github.com/fluid-project/first-discovery/pull/48">https://github.com/fluid-project/first-discovery/pull/48</a></p>
+
+                    </li>
+                    
+                    <li id="comment-11505">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-05-19T08:58:05.702-0400">2015-05-19T08:58:05.702-0400</relative-time></i></p>
+                        <p>Merged pull request ( <a href="https://github.com/fluid-project/first-discovery/pull/48">https://github.com/fluid-project/first-discovery/pull/48</a> ) into the project repo at 06a3f7e63ed3398c92696599669bd9e79ab775b7</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-335/"><span class="aria-hidden">←</span> Previous: FLOE-335</a>
+        <a class="mx-1" href="/browse/FLOE-337/">Next: FLOE-337 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

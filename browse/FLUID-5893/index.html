@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5893  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5893 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5893/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5893/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5893/">FLUID-5893</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5893: Failure to merge dynamic grades supplied to dynamic component by single IoC reference</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5893">FLUID-5893</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-04-19T21:20:12.693-0400" prefix="">2016-04-19T21:20:12.693-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-07-08T09:09:43.535-0400" prefix="">2016-07-08T09:09:43.535-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The following definition:</p>
+<pre><code class="hljs language-javascript">fluid.<span class="hljs-title function_">defaults</span>(<span class="hljs-string">"gpii.express.handlerDispatcher"</span>, {
+    <span class="hljs-attr">gradeNames</span>: [<span class="hljs-string">"fluid.component"</span>],
+    <span class="hljs-attr">timeout</span>: <span class="hljs-number">5000</span>, <span class="hljs-comment">// The default timeout we will pass to whatever grade we instantiate.</span>
+    <span class="hljs-attr">events</span>: {
+        <span class="hljs-attr">onRequest</span>: <span class="hljs-literal">null</span>
+    },
+    <span class="hljs-attr">distributeOptions</span>: [{
+        <span class="hljs-attr">source</span>: <span class="hljs-string">"{that}.options.timeout"</span>,
+        <span class="hljs-attr">target</span>: <span class="hljs-string">"{that &gt; gpii.express.handler}.options.timeout"</span>
+    }],
+    <span class="hljs-attr">dynamicComponents</span>: {
+        <span class="hljs-attr">requestHandler</span>: {
+            <span class="hljs-attr">createOnEvent</span>: <span class="hljs-string">"onRequest"</span>,
+            <span class="hljs-attr">type</span>:          <span class="hljs-string">"gpii.express.handler"</span>,
+            <span class="hljs-comment">// options:       "{arguments}.0"</span>
+            <span class="hljs-attr">options</span>:       {
+                <span class="hljs-attr">gradeNames</span>: <span class="hljs-string">"{arguments}.0.gradeNames"</span>
+            }
+        }
+    }
+});
+</code></pre>
+<p>fails if the commented-out code is substituted for the options actually supplied. There is some strange subtlety with this fault since most other styles for supplying these options work fine, especially since assured and tested by <a href="/browse/FLUID-5022/">FLUID-5022</a>. For example, Kettle requests has</p>
+<pre><code class="hljs language-javascript">fluid.<span class="hljs-title function_">defaults</span>(<span class="hljs-string">"kettle.requests"</span>, {
+    <span class="hljs-attr">gradeNames</span>: [<span class="hljs-string">"fluid.component"</span>],
+    <span class="hljs-attr">events</span>: {
+        <span class="hljs-attr">createRequest</span>: <span class="hljs-literal">null</span> <span class="hljs-comment">// fired by our handler once express determines that route + verb is a match</span>
+    },
+    <span class="hljs-attr">dynamicComponents</span>: {
+        <span class="hljs-attr">request</span>: {
+            <span class="hljs-attr">createOnEvent</span>: <span class="hljs-string">"createRequest"</span>,
+            <span class="hljs-attr">type</span>: <span class="hljs-string">"{arguments}.0.type"</span>,
+            <span class="hljs-attr">options</span>: <span class="hljs-string">"{arguments}.0.options"</span>
+        }
+    }
+});
+</code></pre>
+<p>which works fine, as does the definition in the framework test cases which has</p>
+<pre><code class="hljs language-javascript"><span class="hljs-attr">dynamicComponents</span>: {
+            <span class="hljs-attr">dynamic</span>: {
+                <span class="hljs-attr">createOnEvent</span>: <span class="hljs-string">"createIt"</span>,
+                <span class="hljs-attr">type</span>: <span class="hljs-string">"{arguments}.1"</span>,
+                <span class="hljs-attr">options</span>: {
+                    <span class="hljs-attr">gradeNames</span>: <span class="hljs-string">"{arguments}.2"</span>,
+...
+</code></pre>
+<p>The failure appears to be due to the awkward hack currently at line 617 of FluidIoC.js, fluid.computeDynamicGrades:</p>
+<pre><code class="hljs language-javascript">fluid.<span class="hljs-title function_">each</span>(shadow.<span class="hljs-property">mergeOptions</span>.<span class="hljs-property">mergeBlocks</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params">block</span>) { <span class="hljs-comment">// acquire parents of earlier blocks before applying later ones</span>
+            gradeNames.<span class="hljs-property">push</span>.<span class="hljs-title function_">apply</span>(gradeNames, fluid.<span class="hljs-title function_">makeArray</span>(block.<span class="hljs-property">source</span> &amp;&amp; block.<span class="hljs-property">source</span>.<span class="hljs-property">gradeNames</span>));
+            fluid.<span class="hljs-title function_">applyDynamicGrades</span>(rec);
+        });
+</code></pre>
+<p>This faultily reaches into "block.source" rather than going through the front door, and apparently falls foul of the fact that some blocks (e.g. those allocated via fluid.simpleGingerBlock) have no source but only target - although simpleGingerBlock is not  the actual failure route here since the block observed in error was actually of type "subcomponent" (which itself is a little unexpected).</p>
+<p>A likely possibility is that the route to the failure cause is the source block being a primitive string, and kettle.requests appears to work because the bulk of the polymorphism is in the "type" field rather than expecting any addon gradeNames in "options" to be resolved.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22009">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-04-20T20:10:51.097-0400">2016-04-20T20:10:51.097-0400</relative-time></i></p>
+                        <p>The pernicious irregularity results from the special rule in fluid.makeExpandOptions currently line 2249, which when encountering a plain string block, expands it immediately into "target" (presumably since it could never give rise to any kind of ginger re-entrancy):</p>
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">if</span> (<span class="hljs-title function_">typeof</span>(source) === <span class="hljs-string">"string"</span>) {
+                options.<span class="hljs-property">target</span> = options.<span class="hljs-title function_">expandSource</span>(source);
+            }
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-22019">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-04-20T20:16:18.087-0400">2016-04-20T20:16:18.087-0400</relative-time></i></p>
+                        <p>It appears that the substitution of "source" for "target" in fluid.computeDynamicGrades was a simple blunder, or perhaps some kind of late-night "clicko" attempting to compensate for some other bug that has since been fixed</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5892/"><span class="aria-hidden">←</span> Previous: FLUID-5892</a>
+        <a class="mx-1" href="/browse/FLUID-5894/">Next: FLUID-5894 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-119  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-119 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-119/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-119/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-119/">C2LC-119</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-119: Contents of the connection error modal is not consistently read on VoiceOver</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-119">C2LC-119</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Done</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-01-06T13:21:44.749-0500" prefix="">2020-01-06T13:21:44.749-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-02-14T10:41:59.445-0500" prefix="">2020-02-14T10:41:59.445-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Env 0.2.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Steps to Reproduce: </p>
+<ol>
+<li>Open the coding environment with VoiceOver</li>
+<li>Tab to the Connect to Dash Button and press it </li>
+<li>Press the cancel button when the list of available devices shows up</li>
+<li>Close the error modal by pressing the Cancel Connection button on the modal</li>
+<li>Repeat the steps 2 and 3</li>
+</ol>
+<p>Expected Result:</p>
+<p>VoiceOver should read the contents of the modal</p>
+<p>Actual Result:<br>
+VoiceOver does not read the contents of the modal</p>
+<p>Notes:<br>
+React Bootstrap Modal component has a property called autoFocus, which is setting tabindex of -1 to the modal on show, which will allow contents on the modal to be focusable when it opens. On NVDA screen reader, the modal is properly focused on show and users are able to navigate through the contents with keyboard interaction; however, auto focus seems not working all the time on VoiceOver – seems like it works when page is initially loaded and not after that. When the auto focus is not working, focus remains on previous component (in our case, the button to show the modal), and the contents of the modal is not being read by VoiceOver. </p>
+<p>There is an interesting fix to make VoiceOver to read the contents, which is manually setting tabindex of -1 to each div that contains the contents.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10628">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2020-01-09T12:36:41.015-0500">2020-01-09T12:36:41.015-0500</relative-time></i></p>
+                        <p>Changes I tried those didn't work:</p>
+<ul>
+<li>Use Modal component directly on the component instead of using import</li>
+<li>Add Header, title, and footer like examples on React Bootstrap documentation</li>
+<li>Remove icon from the modal body</li>
+<li>Use just text for the contents, not FormattedMessage </li>
+<li>Put any text contents in a paragraph tag</li>
+</ul>
+<p>I found out that any texts on buttons on the modal is read by VoiceOver</p>
+
+                    </li>
+                    
+                    <li id="comment-10629">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2020-01-09T12:42:53.294-0500">2020-01-09T12:42:53.294-0500</relative-time></i></p>
+                        <p>I also found out that autoFocus doesn't work in safari in default setting, cause tabindex gets ignored – interesting stackoverflow question: <a href="https://stackoverflow.com/questions/1848390/safari-ignoring-tabindex">https://stackoverflow.com/questions/1848390/safari-ignoring-tabindex</a> </p>
+
+                    </li>
+                    
+                    <li id="comment-10630">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2020-01-09T14:11:33.403-0500">2020-01-09T14:11:33.403-0500</relative-time></i></p>
+                        <p>including tabindex='-1' on each div in the modal seems working all the time </p>
+
+                    </li>
+                    
+                    <li id="comment-10631">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-01-21T14:51:56.382-0500">2020-01-21T14:51:56.382-0500</relative-time></i></p>
+                        <p>This component looks like it's worth investigating:</p>
+<p><a href="https://github.com/davidtheclark/react-aria-modal">https://github.com/davidtheclark/react-aria-modal</a></p>
+
+                    </li>
+                    
+                    <li id="comment-10632">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-01-21T14:53:36.969-0500">2020-01-21T14:53:36.969-0500</relative-time></i></p>
+                        <p>We're on the latest react-bootstrap, but could try the current master branch, in case anything has changed.</p>
+
+                    </li>
+                    
+                    <li id="comment-10633">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-01-21T14:54:25.115-0500">2020-01-21T14:54:25.115-0500</relative-time></i></p>
+                        <p>We could also upgrade our react dependency. We're on 16.9.0 and latest release is 16.12.0.</p>
+
+                    </li>
+                    
+                    <li id="comment-10634">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2020-01-21T16:39:31.788-0500">2020-01-21T16:39:31.788-0500</relative-time></i></p>
+                        <p>VoiceOver is working fine on commits in branch <a href="/browse/C2LC-124/">C2LC-124</a>, <a href="https://github.com/chosww/c2lc-coding-environment/commit/54d64078eed2e10cd0238c3b4da4af86d760644b">https://github.com/chosww/c2lc-coding-environment/commit/54d64078eed2e10cd0238c3b4da4af86d760644b</a></p>
+
+                    </li>
+                    
+                    <li id="comment-10635">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2020-01-22T09:07:06.753-0500">2020-01-22T09:07:06.753-0500</relative-time></i></p>
+                        <p>Even when I remove tabindex = -1 that we set for divs on the modal from the current main repo's master branch, it works fine, I am not sure why it's working now, but it's a good news?</p>
+
+                    </li>
+                    
+                    <li id="comment-10636">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-01-22T14:08:56.521-0500">2020-01-22T14:08:56.521-0500</relative-time></i></p>
+                        <p>I'll remove the tabindex="-1" on the dialog contents on master and we can try against <a href="https://c2lc-dev.web.app/">https://c2lc-dev.web.app/</a></p>
+
+                    </li>
+                    
+                    <li id="comment-10637">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-01-28T16:42:01.074-0500">2020-01-28T16:42:01.074-0500</relative-time></i></p>
+                        <p>I've removed the tabindex="-1" from the dialog contents on master.</p>
+<p>Daniel, could you test against <a href="https://c2lc-dev.web.app/">https://c2lc-dev.web.app/</a> please?</p>
+
+                    </li>
+                    
+                    <li id="comment-10638">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2020-02-13T14:23:28.072-0500">2020-02-13T14:23:28.072-0500</relative-time></i></p>
+                        <p>I've tested on VoiceOver and now it's speaking out the content on the modal. </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-118/"><span class="aria-hidden">←</span> Previous: C2LC-118</a>
+        <a class="mx-1" href="/browse/C2LC-120/">Next: C2LC-120 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

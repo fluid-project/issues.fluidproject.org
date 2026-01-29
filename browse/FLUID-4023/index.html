@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4023  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4023 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4023/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4023/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4023/">FLUID-4023</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4023: Reconsider overflow:auto for containers</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4023">FLUID-4023</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Gary Thompson</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=heidi%20valles">heidi valles</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-01-07T11:15:30.554-0500" prefix="">2011-01-07T11:15:30.554-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-06-06T11:05:58.979-0400" prefix="">2011-06-06T11:05:58.979-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>FSS</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This is causing problems for containers, specifically in IE. </p>
+<p>Research more...</p>
+<p>Uportal:<br>
+-removed and replaced with script from 'box model' on positioniseverything.net<br>
+-used jquery helper styles "ui-helper-clearfix"<br>
+-applied to all containers w/ overflow</p>
+<p>TODOs and Requirements</p>
+<p>1.	Research possible solutions<br>
+⁃	work cross browser (a-grade at least)<br>
+⁃	force floats to clear, to be contained within their parent<br>
+⁃	content should remain within the borders of its parent<br>
+⁃	clearing should not force the parent to clear all the way down to the bottom of neighbouring float columns<br>
+⁃	the fix should not cause unexpected scroll bars or hidden content<br>
+2.	Implement test page that allows you to compare the various solutions<br>
+3.	Update fl-fix and/or add an additional clearfix solution to the fss</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24376">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-03-04T14:09:54.531-0500">2011-03-04T14:09:54.531-0500</relative-time></i></p>
+                        <p>See <a href="http://old.nabble.com/Updates-to-FSS-to30963054.html">http://old.nabble.com/Updates-to-FSS-to30963054.html</a> for a suggested alternative to fl-fix</p>
+
+                    </li>
+                    
+                    <li id="comment-24377">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-03-07T10:22:22.769-0500">2011-03-07T10:22:22.769-0500</relative-time></i></p>
+                        <p>from FSS:</p>
+<p>.fl-fix {overflow: auto; zoom:1;}</p>
+<p>jQuery UI's clearfix:</p>
+<p><a href="https://github.com/jquery/jquery-ui/blob/master/themes/base/jquery.ui.core.css">https://github.com/jquery/jquery-ui/blob/master/themes/base/jquery.ui.core.css</a></p>
+
+                    </li>
+                    
+                    <li id="comment-24378">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-03-08T10:12:21.506-0500">2011-03-08T10:12:21.506-0500</relative-time></i></p>
+                        <p>Here's a nice summary of the various clearing fixes <a href="http://blogs.sitepoint.com/2005/02/26/simple-clearing-of-floats/">http://blogs.sitepoint.com/2005/02/26/simple-clearing-of-floats/</a> </p>
+
+                    </li>
+                    
+                    <li id="comment-24379">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-03-08T11:23:47.121-0500">2011-03-08T11:23:47.121-0500</relative-time></i></p>
+                        <p>Added an fl-fix manual test to my github repo: <a href="https://github.com/jobara/infusion/tree/FLUID-4023/src/webapp/tests/manual-tests">https://github.com/jobara/infusion/tree/FLUID-4023/src/webapp/tests/manual-tests</a><br>
+This can be used to help us determine the best approach to take.</p>
+
+                    </li>
+                    
+                    <li id="comment-24380">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-03-14T14:22:28.080-0400">2011-03-14T14:22:28.080-0400</relative-time></i></p>
+                        <p>some info on inline-block: <a href="http://robertnyman.com/2010/02/24/css-display-inline-block-why-it-rocks-and-why-it-sucks/">http://robertnyman.com/2010/02/24/css-display-inline-block-why-it-rocks-and-why-it-sucks/</a></p>
+
+                    </li>
+                    
+                    <li id="comment-24381">
+                        <p class="mb-0"><b>heidi valles</b> <i>commented <relative-time datetime="2011-03-30T11:17:01.956-0400">2011-03-30T11:17:01.956-0400</relative-time></i></p>
+                        <p>Our recommended solution (new clearfix) has been added to fss-layout.css as fl-clearfix. Available at <a href="https://github.com/jobara/infusion/tree/FLUID-4023">https://github.com/jobara/infusion/tree/FLUID-4023</a></p>
+
+                    </li>
+                    
+                    <li id="comment-24382">
+                        <p class="mb-0"><b>heidi valles</b> <i>commented <relative-time datetime="2011-03-30T11:24:55.261-0400">2011-03-30T11:24:55.261-0400</relative-time></i></p>
+                        <p>hi Gary! Could you try out our new fss-layout.css file on Justin's github for this issue? It has a new style called fl-clearfix that hopefully fixes your issues. Let us know how it works.</p>
+
+                    </li>
+                    
+                    <li id="comment-24383">
+                        <p class="mb-0"><b>heidi valles</b> <i>commented <relative-time datetime="2011-04-13T10:35:26.994-0400">2011-04-13T10:35:26.994-0400</relative-time></i></p>
+                        <p>Checkout this clearfix from <a href="http://html5boilerplate.com/">http://html5boilerplate.com</a> 's style.css and see how it compares to our new one.</p>
+<p>/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements.<br>
+j.mp/bestclearfix */<br>
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }<br>
+.clearfix:after { clear: both; }<br>
+/* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */<br>
+.clearfix { zoom: 1; }</p>
+
+                    </li>
+                    
+                    <li id="comment-24384">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2011-05-16T15:59:39.612-0400">2011-05-16T15:59:39.612-0400</relative-time></i></p>
+                        <p>Bug Parade Infusion</p>
+
+                    </li>
+                    
+                    <li id="comment-24385">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-05-18T12:37:24.204-0400">2011-05-18T12:37:24.204-0400</relative-time></i></p>
+                        <p>sent pull request <a href="https://github.com/fluid-project/infusion/pull/48">https://github.com/fluid-project/infusion/pull/48</a></p>
+
+                    </li>
+                    
+                    <li id="comment-24386">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-06-01T14:48:46.690-0400">2011-06-01T14:48:46.690-0400</relative-time></i></p>
+                        <p>Since I haven't been able to get a reply about an open source license for the "New Clearfix", I switched to the "Micro Clearfix" which has an MIT license and less css.</p>
+
+                    </li>
+                    
+                    <li id="comment-24387">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2011-06-02T14:03:12.595-0400">2011-06-02T14:03:12.595-0400</relative-time></i></p>
+                        <p>Merged into project repo at f430de85a8465aa09eeaa54bbe71f44ce06fe9b4</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4022/"><span class="aria-hidden">←</span> Previous: FLUID-4022</a>
+        <a class="mx-1" href="/browse/FLUID-4024/">Next: FLUID-4024 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

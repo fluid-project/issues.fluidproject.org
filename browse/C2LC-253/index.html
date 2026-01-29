@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-253  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-253 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-253/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-253/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-253/">C2LC-253</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-253: Audio Context warning about using it without a user gesture</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-253">C2LC-253</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>In Progress</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Tony Atkins [RtF]</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-11-05T10:53:39.051-0500" prefix="">2020-11-05T10:53:39.051-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-05-13T15:59:17.172-0400" prefix="">2024-05-13T15:59:17.172-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>"The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. <a href="https://goo.gl/7K7WLu">https://goo.gl/7K7WLu</a>"</p>
+<p>Currently appearing in 4 places:</p>
+<ol>
+<li>audio-context-constructor.ts:40</li>
+<li>test-audio-node-disconnect-method-support.ts:45</li>
+<li>test-audio-scheduled-source-node-start-method-negative-parameters-support.ts:7</li>
+<li>constant-source-node-constructor.ts:85</li>
+</ol>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/C2LC/C2LC-253/Screen Shot 2020-11-05 at 10.35.02 AM.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/C2LC/C2LC-253/Screen Shot 2020-11-05 at 10.35.02 AM.png" alt="Screen Shot 2020-11-05 at 10.35.02 AM.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10682">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2020-11-06T03:43:56.556-0500">2020-11-06T03:43:56.556-0500</relative-time></i></p>
+                        <p><a href="https://github.com/codelearncreate/c2lc-coding-environment/pull/96">https://github.com/codelearncreate/c2lc-coding-environment/pull/96</a></p>
+
+                    </li>
+                    
+                    <li id="comment-10683">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-11-30T16:03:43.029-0500">2020-11-30T16:03:43.029-0500</relative-time></i></p>
+                        <p>We have tried a number of strategies for delaying the initialization and playing of sounds in Tone.js, but we haven't been able to get rid of the warnings.</p>
+<p>There is a Tone.js issue with some discussion regarding "The AudioContext was not allowed to start" warnings: <a href="https://github.com/Tonejs/Tone.js/issues/776">https://github.com/Tonejs/Tone.js/issues/776</a>. And at this point, it looks most likely that the warnings are from Tone.js code that is out of our control.</p>
+<p>I'm going to leave this issue open, but we won't do any more work on it for now. If Tone.js is changed to remove these warnings, at that time we can see if we need to make any code changes.</p>
+
+                    </li>
+                    
+                    <li id="comment-27789">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2024-05-13T15:59:17.172-0400">2024-05-13T15:59:17.172-0400</relative-time></i></p>
+                        <p>Moved to GitHub: <a href="https://github.com/codelearncreate/c2lc-coding-environment/issues/528">https://github.com/codelearncreate/c2lc-coding-environment/issues/528</a> </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-252/"><span class="aria-hidden">←</span> Previous: C2LC-252</a>
+        <a class="mx-1" href="/browse/C2LC-254/">Next: C2LC-254 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

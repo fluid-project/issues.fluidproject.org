@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-299  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-299 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-299/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-299/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-299/">C2LC-299</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-299: Research End-to-End Browser Testing</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-299">C2LC-299</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>To Do</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Tony Atkins [RtF]</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-01-25T15:03:28.061-0500" prefix="">2021-01-25T15:03:28.061-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-05-01T10:11:59.657-0400" prefix="">2024-05-01T10:11:59.657-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Environment</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently we only simulate user interaction using Enzyme and don't actually test things like the WebAudio or WebSpeech APIs directly. There are solutions (like <a href="http://webdriver.io/">webdriver.io</a>) that can help us test more things in actual browsers.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10798">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2021-01-25T15:04:01.829-0500">2021-01-25T15:04:01.829-0500</relative-time></i></p>
+                        <p>Tony Atkins [RtF] has read up a lot on webdriver.io</p>
+
+                    </li>
+                    
+                    <li id="comment-10799">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2021-04-15T05:21:54.360-0400">2021-04-15T05:21:54.360-0400</relative-time></i></p>
+                        <p>Just to add a bit more detail, when I first looked into this, I reviewed the (Selenium) Webdriver API reference implementation, Cypress, and webdriver.io.&#160; I gravitated towards webdriver.io because it <a href="https://webdriver.io/docs/api/element/react$$">has react-specific functionality that seems useful</a>.</p>
+<p>My first question at this point is, does it work with GitHub Actions?&#160; Can we test on the platforms we care about (notably Safari)?&#160; Do we need a separate service for that, such as browserstack?</p>
+<p>I also want to understand whether/how this&#160;handles coverage data.&#160; Ideally, we could remove most of our istanbul ignore comments and use the browser tests to cover things that only come up in one or more real browsers.</p>
+
+                    </li>
+                    
+                    <li id="comment-10800">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2021-04-15T05:33:21.904-0400">2021-04-15T05:33:21.904-0400</relative-time></i></p>
+                        <p>Their <a href="https://webdriver.io/docs/githubactions/">GitHub Actions docs</a>&#160;give an example of using a (presumably linux) image with Headless Chrome.</p>
+<p>It's presumably possible to run this in a container with xvfb, as I've done before for Firefox with webdriver.</p>
+<p>Here's <a href="https://dev.to/mizchi/run-crossbrowser-e2e-testing-on-github-actions-671">an example of using webdriver with GitHub Actions</a>&#160;that includes jobs that run on all browsers and on both Windows and OS X.</p>
+<p></p>
+
+                    </li>
+                    
+                    <li id="comment-10801">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2021-04-15T05:39:47.199-0400">2021-04-15T05:39:47.199-0400</relative-time></i></p>
+                        <p>Just found a good reference for using webdriverio across all platforms, including running mobile Safari tests using the iOS simulator:</p>
+<p><a href="https://github.com/blueimp/wdio">https://github.com/blueimp/wdio</a></p>
+<p></p>
+<p>However <a href="https://github.com/blueimp/wdio/blob/master/.github/workflows/test.yml">the CI workflow for the package</a>&#160;only demonstrates using FireFox and Chrome on Ubuntu.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-298/"><span class="aria-hidden">←</span> Previous: C2LC-298</a>
+        <a class="mx-1" href="/browse/C2LC-300/">Next: C2LC-300 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

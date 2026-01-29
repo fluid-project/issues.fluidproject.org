@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5133  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5133 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5133/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5133/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5133/">FLUID-5133</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5133: Implement the inverters/inverse for all existing model transforms and ensure the framework supports invertibility</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5133">FLUID-5133</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Kasper Galschiot Markus</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Kasper%20Galschiot%20Markus">Kasper Galschiot Markus</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-09-14T17:51:57.027-0400" prefix="">2013-09-14T17:51:57.027-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:09.011-0400" prefix="">2024-07-22T10:35:09.011-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Model Transformation System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently not all transformations have inverse functions, and it is not certain how well invertibility is supported in the model transformation framework. This needs to be fixed as it's a requirement by the GPII project</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19363">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-15T10:43:36.279-0400">2015-06-15T10:43:36.279-0400</relative-time></i></p>
+                        <p>Kasper Galschiot Markus has this been completed?</p>
+
+                    </li>
+                    
+                    <li id="comment-19364">
+                        <p class="mb-0"><b>Kasper Galschiot Markus</b> <i>commented <relative-time datetime="2015-06-15T12:31:11.521-0400">2015-06-15T12:31:11.521-0400</relative-time></i></p>
+                        <p>Nope - this is not done yet, and it will not be finalized in the context of C4A at least... We might be able to make some improvements, but it is a long term thing (requiring 'pockets' and other complex additions to properly support invertibility.</p>
+
+                    </li>
+                    
+                    <li id="comment-19365">
+                        <p class="mb-0"><b>Kasper Galschiot Markus</b> <i>commented <relative-time datetime="2016-04-13T08:59:30.619-0400">2016-04-13T08:59:30.619-0400</relative-time></i></p>
+                        <h2>Done but needs documentation:</h2>
+<ul>
+<li>fluid.transforms.literalValue: FULLY INVERTIBLE. (the literal value is always independent of the input model, so that will always be left alone).</li>
+<li>fluid.transforms.value: PARTLY invertable - the 'input' default values are ignored.</li>
+<li>fluid.transforms.arrayValue: NO INVERSION. Since there is no way of telling whether the value was an array or primitive value before.</li>
+<li>fluid.transforms.numberToString and fluid.transforms.stringToNumber: PARTLY invertable - suffers from standardTransformFunction issues. Also, if the input is not a valid number (or numberstring), the inversion will be lacky.</li>
+<li>fluid.transforms.count: NO INVERSION - no way to reproduce the thing we're counting based on knowing the number of entries</li>
+<li>fluid.transforms.round: LACKY inversion - inverts to identity, since we cannot reproduce the decimal portion of the number based on a decimal. In other words, the decimal precision can not be restored on inversion. Also, suffers from standardTransformFunction issues.</li>
+<li>fluid.transforms.delete: NO INVERSION - no way to reproduce a deleted element from scratch</li>
+<li>fluid.transforms.firstValue: NO INVERSION - no way to reproduce an array based on the first element</li>
+<li>fluid.transforms.linearScale: PARTLY invertible. If `factor` or `offset` are given as paths into the source model (and no default value is provided), we have no way of knowing what they were. Also, if no inputPath is given, we have nowhere to write the inverted result</li>
+<li>fluid.transforms.binaryOp: NO Inversion: Since we have no way to reproduce the operands based on a result and an operator</li>
+<li>fluid.transforms.condition: NO Inversion. There is really no half-easy way to know what the original input value was</li>
+<li>fluid.transforms.arrayToSetMembership and fluid.transforms.setMembershipToArray: Invertable (though with the regular standardTransformFunctions issues). These two will invert to one another.</li>
+<li>fluid.transforms.arrayToObject and fluid.transforms.objectToArray: Partly Invertable - the two will invert to each other - but there is no guarantee the ordering of the array will be the same on the objectToArray side of things. Also, if the innerValues has lossy transforms, this will obviously affect the overall invertibility.</li>
+<li>fluid.transforms.indexOf &amp;&amp; fluid.transforms.dereference: Inverses of each other. Unable to do proper inversion when "notFound" is provided (and used)</li>
+<li>fluid.transforms.stringTemplate: NOT invertible</li>
+<li>fluid.transforms.free: NOT invertible</li>
+<li>fluid.transforms.valueMapper - partly invertible</li>
+<li>fluid.transforms.quantize - NOT implemented yet:  <a href="/browse/FLUID-5905/">FLUID-5905</a></li>
+<li>fluid.transforms.inRange - NOT impleented yet:  <a href="/browse/FLUID-5905/">FLUID-5905</a></li>
+</ul>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5132/"><span class="aria-hidden">←</span> Previous: FLUID-5132</a>
+        <a class="mx-1" href="/browse/FLUID-5134/">Next: FLUID-5134 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

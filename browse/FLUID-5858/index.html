@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5858  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5858 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5858/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5858/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5858/">FLUID-5858</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5858: FluidIoC tests fail sporadically</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5858">FLUID-5858</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-02-11T07:06:40.707-0500" prefix="">2016-02-11T07:06:40.707-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-02-11T11:37:10.875-0500" prefix="">2016-02-11T11:37:10.875-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>FluidIoC tests fail sporadically when part of <a href="http://build.fluidproject.org/infusion/tests/all-tests.html">all-tests.html</a>. When run individually (<a href="http://build.fluidproject.org/infusion/tests/framework-tests/core/html/FluidIoC-test.html">here</a> and <a href="http://build.fluidproject.org/infusion/tests/framework-tests/core/html/FluidIoCStandalone-test.html">here</a>), they always work.</p>
+<pre><code class="hljs"><span class="hljs-attribute">Framework</span> Tests: ./framework-tests/core/html/FluidIoC-test.html (<span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>)Rerun68 ms
+
+    <span class="hljs-attribute">Parser</span> Tests: global failure: SyntaxError: JSON.parse: unexpected character at line <span class="hljs-number">1</span> column <span class="hljs-number">1</span> of the JSON data
+    <span class="hljs-attribute">Expected</span>: 	
+
+    <span class="hljs-attribute">undefined</span>
+
+    <span class="hljs-attribute">Source</span>: 	
+
+    <span class="hljs-attribute">runLoggingCallbacks</span>@http://build.fluidproject.org/infusion/tests/lib/qunit/js/qunit.js:<span class="hljs-number">1599</span>:<span class="hljs-number">4</span>
+
+    <span class="hljs-attribute">Expected</span> <span class="hljs-number">462</span> assertions, but <span class="hljs-number">1</span> were run
+    <span class="hljs-attribute">Source</span>: 	
+
+    <span class="hljs-attribute">QUnit</span>.asyncTest@http://build.fluidproject.org/infusion/tests/lib/qunit/js/qunit.js:<span class="hljs-number">401</span>:<span class="hljs-number">3</span>
+</code></pre>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Fedora Linux 23 / Firefox 44.0<br>
+Windows 10 / Firefox 44.0.1</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22563">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-02-11T11:19:44.184-0500">2016-02-11T11:19:44.184-0500</relative-time></i></p>
+                        <p>I attempted to reproduce this on a Surface Pro 3 running Windows 10. </p>
+<p>I ran the tests 3 times using Firefox 44.0.1,  one time had an error with the enactors tests.<br>
+I ran the tests 3 times using Firefox 44.0.1 in private browsing mode, all cases the tests all passed.</p>
+<p>NOTE: I had cleared the browser history and cache before starting the above.</p>
+<p>It might be an issue with browser caching between test runs?</p>
+
+                    </li>
+                    
+                    <li id="comment-22566">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2016-02-11T11:36:48.918-0500">2016-02-11T11:36:48.918-0500</relative-time></i></p>
+                        <p>I cleared the cache between runs. </p>
+<p>Yesterday I was running the tests on one laptop and this morning I reproduced the issue on a different laptop. Although "reproduced" probably means I "lucked out" because it's inconsistent.</p>
+<p>I was running firefox with "--safe-mode" to disable extensions/plugins.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5857/"><span class="aria-hidden">←</span> Previous: FLUID-5857</a>
+        <a class="mx-1" href="/browse/FLUID-5859/">Next: FLUID-5859 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

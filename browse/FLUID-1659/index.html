@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1659  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1659 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1659/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1659/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1659/">FLUID-1659</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1659: OSDPL: Implement a multi-step design pattern entry form</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1659">FLUID-1659</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Jonathan Hung</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-10-02T21:57:36.000-0400" prefix="">2008-10-02T21:57:36.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-12-15T11:44:25.000-0500" prefix="">2008-12-15T11:44:25.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.6</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>OSDPL</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently the CCK form used for creating Design Pattern content types is very long. It presents a usability concern and may discourage users from contributing their patterns.</p>
+<p>We should investigate ways to create a multi-step form (in CCK or not) so we can break apart the form.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-1659/CCK-tabs-1.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-1659/CCK-tabs-1.png" alt="CCK-tabs-1.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20101">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2008-10-02T22:04:14.000-0400">2008-10-02T22:04:14.000-0400</relative-time></i></p>
+                        <p>Initial research does not look promising.</p>
+<p>This article outlines how multisteps can be done by hacking the core, but there are many limitations.<br>
+<a href="http://drupal.org/node/162373">http://drupal.org/node/162373</a></p>
+<p>Fieldgroup Tabs holds the most promise. It looks attractive and allows user to step between sections using tabs. <br>
+<a href="http://drupalmodules.com/module/cck-fieldgroup-tabs">http://drupalmodules.com/module/cck-fieldgroup-tabs</a></p>
+<p>However, if submitting a form with invalid required fields, focus moves back to first tab even if the required field with error is on another tab. This forces the user to tab through to hunt for the invalid field.</p>
+<p>Another person managed to do this by hacking some code. Sounds promising as each step does validation before proceeding. However, it is unclear how this will work with CCK and our organic workflow (i.e. may not allow the user to jump randomly through the process).<br>
+<a href="http://sachachua.com/wp/2008/06/30/hooray-figured-out-drupal-5-multi-step-registration-form-with-validation-and-invites/">http://sachachua.com/wp/2008/06/30/hooray-figured-out-drupal-5-multi-step-registration-form-with-validation-and-invites/</a></p>
+
+                    </li>
+                    
+                    <li id="comment-20103">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2008-10-07T16:12:32.000-0400">2008-10-07T16:12:32.000-0400</relative-time></i></p>
+                        <p>Iteration22</p>
+
+                    </li>
+                    
+                    <li id="comment-20106">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2008-10-07T16:25:46.000-0400">2008-10-07T16:25:46.000-0400</relative-time></i></p>
+                        <p>Right now multi stepping works with a combination of:</p>
+<ul>
+<li>CCK</li>
+<li>CCK Fieldgroup Tabs for splitting the entry form into digestible tabs</li>
+<li>CCK Validation for customized error reporting directing the user to the appropriate tab with the error</li>
+</ul>
+<p>Error validation is a bit fragile. If the names of the fields change or if the taxonomy IDs change, then the validator will need to be updated. Otherwise the user will not receive an error when there is one.</p>
+
+                    </li>
+                    
+                    <li id="comment-20108">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2008-10-09T09:00:24.000-0400">2008-10-09T09:00:24.000-0400</relative-time></i></p>
+                        <p>An image of the CCK field using Fieldgroup Tabs in the OSDPL.<br>
+See comments for the issues regarding this solution.</p>
+
+                    </li>
+                    
+                    <li id="comment-20110">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2008-11-18T09:09:42.000-0500">2008-11-18T09:09:42.000-0500</relative-time></i></p>
+                        <p>Done for now until user testing is done at Summit.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1658/"><span class="aria-hidden">←</span> Previous: FLUID-1658</a>
+        <a class="mx-1" href="/browse/FLUID-1660/">Next: FLUID-1660 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

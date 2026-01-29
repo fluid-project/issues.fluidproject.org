@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-247  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-247 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-247/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-247/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-247/">C2LC-247</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-247: Persist the contents of the scene in the URL</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-247">C2LC-247</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Done</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-11-03T15:13:03.882-0500" prefix="">2020-11-03T15:13:03.882-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-11-12T12:01:59.990-0500" prefix="">2020-11-12T12:01:59.990-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Env 0.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Environment</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <ul>
+<li>Serialize the contents of the scene: character position, character direction, path segments drawn</li>
+<li>Create a CharacterStateSerializer
+<ul>
+<li>serialize(characterState: CharacterState): string</li>
+<li>deserialize(text: string): CharacterState</li>
+</ul>
+</li>
+<li>Representation:
+<ul>
+<li>&lt;xPos&gt;&lt;yPos&gt;&lt;direction&gt;&lt;path segments&gt;</li>
+<li>Where each path segment is a series of 4 characters:
+<ul>
+<li>&lt;x1&gt;&lt;y1&gt;&lt;x2&gt;&lt;y2&gt;</li>
+</ul>
+</li>
+<li>Encoding for positions:
+<ul>
+<li>0: 0</li>
+<li>Positive offset from the origin: lower case letters</li>
+<li>Negative offset from the origin: upper case letters</li>
+<li>This enables us to support a grid up to 53x53</li>
+</ul>
+</li>
+<li>Encoding for direction:
+<ul>
+<li>Single character representing eighths of a turn (the internal representation of direction in CharacterState)</li>
+<li>N: 0</li>
+<li>NE: a</li>
+<li>E: b</li>
+<li>SE: c</li>
+<li>S: d</li>
+<li>SW: e</li>
+<li>W: f</li>
+<li>NW: g</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example:
+<ul>
+<li>After running the following: <a href="https://develop-0-5--c2lc-build.netlify.app/?v=0.5&p=l45f1r90f2">https://develop-0-5--c2lc-build.netlify.app/?v=0.5&amp;p=l45f1r90f2</a></li>
+<li>cac00aAaAca</li>
+<li>Character is at: (3, 1) = ca</li>
+<li>Character is facing SE: c</li>
+<li>First path segment: (0, 0) -&gt; (1, -1) = 00aA</li>
+<li>Second path segment (1, -1) -&gt; (3, 1) = aAca</li>
+</ul>
+</li>
+<li>Add a new URL parameter “c” for CharacterState</li>
+<li>Make the program representation more concise (to reduce the length of the URL)
+<ul>
+<li>forward1: 1</li>
+<li>forward2: 2</li>
+<li>forward3: 3</li>
+<li>left45: A</li>
+<li>left90: B</li>
+<li>left180: D</li>
+<li>right45: a</li>
+<li>right90: b</li>
+<li>right180: d</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10685">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-11-09T15:35:06.253-0500">2020-11-09T15:35:06.253-0500</relative-time></i></p>
+                        <p>I created a sed script for rewriting programs in the current representation to the new one:</p>
+<p><a href="https://gist.github.com/simonbates/cadbc3d10efb9fcc17970dca6891c5be">https://gist.github.com/simonbates/cadbc3d10efb9fcc17970dca6891c5be</a></p>
+<p>Usage example:</p>
+<p><code>&gt; echo 'f1l45f2r90r45f3f2r45f1r45f3r45f1r45f3f2r90r45f2' | sed -f update_program.sed</code></p>
+<p><code>1A2ba32a1a3a1a32ba2</code></p>
+<p></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-246/"><span class="aria-hidden">←</span> Previous: C2LC-246</a>
+        <a class="mx-1" href="/browse/C2LC-248/">Next: C2LC-248 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-77  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-77 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-77/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-77/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-77/">INFRA-77</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-77: iptables roles should be friendly to docker/kubernetes rules</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-77">INFRA-77</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Not%20A%20Bug">Not A Bug</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Alan%20Harnum">Alan Harnum</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-12-17T11:27:57.353-0500" prefix="">2015-12-17T11:27:57.353-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-01-13T11:18:20.967-0500" prefix="">2017-01-13T11:18:20.967-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The iptables roles currently builds a ruleset from scratch and erases everything that was previously defined. This creates a problem for Docker/Kubernetes rules that are added dynamically, thus not defined in the iptables_rules list.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25923">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2017-01-13T11:14:44.757-0500">2017-01-13T11:14:44.757-0500</relative-time></i></p>
+                        <p>A common pattern when working with cloud providers seem to be to block by default at the firewall/network level and leave the VMs free to talk to each other within the internal network. We achieve this today by having a pfSense firewall in front of all our traffic (much like someone would go into AWS' dashboard and add a few rules to allow some traffic in).</p>
+<p>I'm thinking the downside of managing IPTables on each VM outweights the perceived benefits to which my suggestion is to drop IPTables on the VMs altogether. Some facts that make me think this is doable are: we don't allow SSH access to our servers, exec access is disable for PHP application, SELinux is enabled and all VMs are behind the firewall.</p>
+<p>All of this is to say I think making the iptables role smarter is going to be a lot of work. If we are moving to a environment where all apps/websites run in a container inside a Kubernetes cluster (or some PaaS solution), then the orchestration layer already has filtering capabilities in place (K8S doesn't expose containers/pods, it requires a service definition so the port is explicitly specified).</p>
+<p>In a more traditional environment (like ours, currently) it seems the iptables role has good capabilities (since we only identified the drawback when we started to use Docker, which is exposed to be the default mode of operation in the near future).</p>
+<p>Would it be okay to close this ticket for the reasons mentioned above?</p>
+
+                    </li>
+                    
+                    <li id="comment-25924">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2017-01-13T11:18:12.337-0500">2017-01-13T11:18:12.337-0500</relative-time></i></p>
+                        <p>Yes, this sounds fine - let's close this issue for now.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-76/"><span class="aria-hidden">←</span> Previous: INFRA-76</a>
+        <a class="mx-1" href="/browse/INFRA-78/">Next: INFRA-78 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

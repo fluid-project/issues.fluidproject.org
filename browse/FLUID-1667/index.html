@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1667  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1667 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1667/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1667/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1667/">FLUID-1667</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1667: possibly a jquery bug.  Uploader does nothing at all on  my platform (firefox 3.0.1, flash 9.0.124</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1667">FLUID-1667</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Cannot%20Reproduce">Cannot Reproduce</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=James%20Marca">James Marca</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-10-08T00:22:05.000-0400" prefix="">2008-10-08T00:22:05.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-12-03T11:51:44.000-0500" prefix="">2008-12-03T11:51:44.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4</li>
+                            
+                            <li>0.5</li>
+                            
+                            <li>0.6beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Uploader</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>My guess is that this is a jquery issue.  I will try to run that down.  However...</p>
+<p>From the uploader demo (nightly or released, inline or popup) clicking the add files button does nothing, except throwing an error in firebug:</p>
+<p>[Exception... "'Invalid function name' when calling method: [nsIDOMEventListener::handleEvent]"  nsresult: "0x8057001e (NS_ERROR_XPC_JS_THREW_STRING)"  location: "&lt;unknown&gt;"  data: no]<br>
+<a href="http://build.fluidproject.org/fluid/fluid-components/js/jquery/jquery-1.2.6.js">http://build.fluidproject.org/fluid/fluid-components/js/jquery/jquery-1.2.6.js</a><br>
+Line 2101</p>
+<p>Hope that helps, but as it stands uploader is a dud for my machine.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Gentoo LInux 64 bit, Firefox 3.0.1 (Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.0.1) Gecko/2008082113 Gentoo Firefox/3.0.1), Flash 9,0,124,0 installed</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20630">
+                        <p class="mb-0"><b>James Marca</b> <i>commented <relative-time datetime="2008-10-08T14:20:03.000-0400">2008-10-08T14:20:03.000-0400</relative-time></i></p>
+                        <p>More information.  </p>
+<p>This morning I got an identical fault with Firefox 3 on an i686 box (so not 64 bit flash issues).  Platform: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008070206 Firefox/3.0.1</p>
+<p>I did an svn checkout for trunk, and built/deployed the image-gallery testing app, tweaking the pom.xml to pull in Fluid components version 0.5 (instead of 0.4-SNAPSHOT...).  Again, identical problems.  The single file upload works fine, but the multi-file widget breaks.</p>
+<p>The Firebug console caught the following error:</p>
+<p>[Exception... "'Invalid function name' when calling method: [nsIDOMEventListener::handleEvent]"  nsresult: "0x8057001e (NS_ERROR_XPC_JS_THREW_STRING)"  location: "&lt;unknown&gt;"  data: no]</p>
+<p>Line 0</p>
+<p>The multifile uploader page had the following debugging output listed:  </p>
+<p>Version: 2.1.0<br>
+Movie Name: SWFUpload_0<br>
+Settings:<br>
+upload_url:             ../../site/multiFileUpload<br>
+use_query_string:       false<br>
+file_post_name:         Filedata<br>
+post_params:            [object Object]<br>
+file_types:             <strong>.gif;</strong>.jpeg;<strong>.jpg;</strong>.png;*.tiff<br>
+file_types_description: All Files<br>
+file_size_limit:        20480<br>
+file_upload_limit:      0<br>
+file_queue_limit:       0<br>
+flash_url:              ../../fluid-components/swfupload/swfupload_f9.swf<br>
+flash_color:            #FFFFFF<br>
+debug:                  true<br>
+custom_settings:        [object Object]<br>
+Event Handlers:<br>
+swfupload_loaded_handler assigned:  true<br>
+file_dialog_start_handler assigned: true<br>
+file_queued_handler assigned:       true<br>
+file_queue_error_handler assigned:  true<br>
+upload_start_handler assigned:      true<br>
+upload_progress_handler assigned:   true<br>
+upload_error_handler assigned:      true<br>
+upload_success_handler assigned:    true<br>
+upload_complete_handler assigned:   true<br>
+debug_handler assigned:             true</p>
+<p>I read in the ReadMe.txt under the uploader component directory that the error statement indicates that the " The flashUrl setting is probably wrong."  But I haven't touched the code, and according to the output above, the flash url setting seems to be set properly.</p>
+<p>I've little clue.  I am going to try to shoehorn in flashembed, instead of using the swfuploader code.</p>
+
+                    </li>
+                    
+                    <li id="comment-20631">
+                        <p class="mb-0"><b>James Marca</b> <i>commented <relative-time datetime="2008-10-08T18:13:10.000-0400">2008-10-08T18:13:10.000-0400</relative-time></i></p>
+                        <p>Resolved (but I don't know how to  close this bug report, or even if I can)</p>
+<p>Problem is upgrading from Firefox 2.0 to Firefox 3.0, apparently.  </p>
+<p>see <a href="http://swfupload.org/forum/generaldiscussion/556#comment-1492">http://swfupload.org/forum/generaldiscussion/556#comment-1492</a></p>
+<p>I moved my old settings out of the way, and for good measure re-installed the flash plug-in, started Firefox 3 with a clean slate, and the uploader works fine.</p>
+<p>Possible resolution might be to note the above link somewhere in the website for resolving issues?</p>
+<p>Sorry about the noise.</p>
+
+                    </li>
+                    
+                    <li id="comment-20632">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-10-28T14:59:41.000-0400">2008-10-28T14:59:41.000-0400</relative-time></i></p>
+                        <p>Thanks for letting us know about this issue, we will try to find a way to make our users aware of this issue</p>
+
+                    </li>
+                    
+                    <li id="comment-20633">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-10-30T15:34:33.000-0400">2008-10-30T15:34:33.000-0400</relative-time></i></p>
+                        <p>Appears to be an issue when upgrading firefox, not sure if it is issolated to Linux.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1666/"><span class="aria-hidden">←</span> Previous: FLUID-1666</a>
+        <a class="mx-1" href="/browse/FLUID-1668/">Next: FLUID-1668 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

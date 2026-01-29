@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2937  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2937 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2937/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2937/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2937/">FLUID-2937</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2937: modify build.xml to accomodate maven settings file in command line call to maven</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2937">FLUID-2937</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Laurel Williams</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Laurel%20Williams">Laurel Williams</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-06-10T11:36:47.000-0400" prefix="">2009-06-10T11:36:47.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-10-22T16:24:56.000-0400" prefix="">2009-10-22T16:24:56.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Infusion Builder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In order to run the customBuild component we needed to point the mvn command in the build.xml file to the maven settings file. I am not sure if we should make this change for all users or if we should just customize the build.xml file as needed for our purposes.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-2937/customBuild.sh">
+                            
+                                customBuild.sh
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-2937/FLUID-2937.txt">
+                            
+                                FLUID-2937.txt
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-2937/FLUID-2937.txt">
+                            
+                                FLUID-2937.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20845">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-06-18T11:45:46.000-0400">2009-06-18T11:45:46.000-0400</relative-time></i></p>
+                        <p>This modification to build.xml adds the ability to use a mvn settings file in the ant script command line arguments. This was required for the customBuild on the website.</p>
+
+                    </li>
+                    
+                    <li id="comment-20846">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-06-18T11:49:47.000-0400">2009-06-18T11:49:47.000-0400</relative-time></i></p>
+                        <p>Resolved with the attached patch.</p>
+
+                    </li>
+                    
+                    <li id="comment-20847">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-07-13T12:14:04.000-0400">2009-07-13T12:14:04.000-0400</relative-time></i></p>
+                        <p>re-write this code, or better yet, solve the problem on the server so the code is not required.</p>
+
+                    </li>
+                    
+                    <li id="comment-20848">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-07-15T13:10:03.000-0400">2009-07-15T13:10:03.000-0400</relative-time></i></p>
+                        <p>Discussions in the channel on the wiki:<br>
+<a href="http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2009-05-19">http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2009-05-19</a></p>
+<p>[14:09:32 EDT(-0400)] &lt;colinclark&gt; Is this the first artifact Maven is trying to download?<br>
+[14:10:53 EDT(-0400)] &lt;laurelw&gt; it seems to be...the .m2/repository directory did not exist for the nobody user (the apache is running in nobody)<br>
+[14:11:57 EDT(-0400)] &lt;colinclark&gt; You explicitly have to specify where the local repo should be located. Does nobody even have a home directory? Does it have permissions to write into it? I suspect this isn't a maven problem at all.<br>
+[14:13:55 EDT(-0400)] &lt;jamon&gt; permissions on /home/fluidpro/.m2/repository/ are 755, apache has permission<br>
+[14:14:11 EDT(-0400)] &lt;anastasiac&gt; colinclark, laurelw, I was also wondering if it was some kind of environment variable problem, too<br>
+[14:14:14 EDT(-0400)] &lt;jamon&gt; there is no settings.xml in there though laurelw<br>
+[14:14:39 EDT(-0400)] &lt;anastasiac&gt; with the continuum tasks, we had to create a script that set all of the necessary variable and then run the commands<br>
+[14:14:42 EDT(-0400)] &lt;jamon&gt; i think maven needs that, otherwise it looks to it's default /usr/maven/foo location, where apache definitely has no permissions<br>
+[14:14:45 EDT(-0400)] &lt;anastasiac&gt; and continuum had to run that script<br>
+[14:14:54 EDT(-0400)] &lt;laurelw&gt; nobody has a home directory and seems to have permissions to write to it<br>
+[14:14:54 EDT(-0400)] &lt;laurelw&gt; does creating directories imply write permissions?<br>
+[14:15:07 EDT(-0400)] &lt;jamon&gt; yep<br>
+[14:15:26 EDT(-0400)] &lt;laurelw&gt; i actually created .m2/repository myself , in case that was the problem<br>
+[14:16:00 EDT(-0400)] &lt;jamon&gt; what's the command laurelw?<br>
+[14:16:28 EDT(-0400)] &lt;laurelw&gt; ok...so I'll try creating a simple settings.xml<br>
+[14:16:28 EDT(-0400)] &lt;jamon&gt; the ant customBuild thing?<br>
+[14:16:45 EDT(-0400)] &lt;jamon&gt; copy the one i emailed you about and then alter it, will be easier i'd imagine<br>
+[14:17:36 EDT(-0400)] &lt;laurelw&gt; yes, the ant customBuild thing command. let me be more specific though:<br>
+[14:17:52 EDT(-0400)] &lt;jamon&gt; i can see it in .bash_history, no worries<br>
+[14:18:22 EDT(-0400)] &lt;laurelw&gt; ok...thx<br>
+[14:18:28 EDT(-0400)] &lt;laurelw&gt; I've tried a bunch as you can see<br>
+[14:18:43 EDT(-0400)] &lt;laurelw&gt; the one I'm working with now is simplified somewhat<br>
+[14:19:00 EDT(-0400)] &lt;jamon&gt; try the settings.xml and adding o+w permissions where they're needed first, then let me know what happens<br>
+[14:19:17 EDT(-0400)] &lt;laurelw&gt; but I've also tried creating a simple php page with just a mvn clean command and that fails with a very similar error message<br>
+[14:19:32 EDT(-0400)] &lt;laurelw&gt; I will do that and get back to you.<br>
+[14:19:52 EDT(-0400)] &lt;laurelw&gt; espresso brownie for you if this does it!<br>
+[14:20:09 EDT(-0400)] &lt;jamon&gt; looking forward to it already<br>
+[14:24:05 EDT(-0400)] &lt;laurelw&gt; jamon: do I need to alter it, or just change the permissions<br>
+[14:24:53 EDT(-0400)] &lt;jamon&gt; read the file first, see what paths it is looking at<br>
+[14:24:59 EDT(-0400)] &lt;jamon&gt; s/what/which<br>
+[14:27:09 EDT(-0400)] &lt;laurelw&gt; ok, but everything seems to be commented out...ie all default settings<br>
+[14:27:37 EDT(-0400)] &lt;laurelw&gt; jamon: yes, I am a little confused.<br>
+[14:28:11 EDT(-0400)] &lt;jamon&gt; laurelw: i don't know anything about maven, but i'm assuming anything you uncomment will override the default maven settings (whatever they are)<br>
+[14:29:23 EDT(-0400)] &lt;laurelw&gt; jamon: I guess I'm only a little more knowledgeable than you...so no worries. I'll try some stuff and escalate until something works.<br>
+[14:29:46 EDT(-0400)] &lt;laurelw&gt; kinda hard to chmod stuff without command line...this is a pain!<br>
+[14:50:45 EDT(-0400)] &lt;laurelw&gt; jamon: I tried just moving the settings.xml to the nobody/.m2/ directory - that didn't work<br>
+[14:51:03 EDT(-0400)] &lt;laurelw&gt; so then I tried editting the settings.xml to set the local repository path<br>
+[14:51:19 EDT(-0400)] &lt;laurelw&gt; I tried ~/.m2/repository - that didn't work<br>
+[14:51:35 EDT(-0400)] &lt;laurelw&gt; I also tried /home/nobody/.m2/repository - still no luck<br>
+[14:52:41 EDT(-0400)] &lt;laurelw&gt; i can't find anythine else in the settings.xml that I think requires a specific path related to the nobody user<br>
+[14:55:02 EDT(-0400)] &lt;laurelw&gt; I think I have the right permissions on the file, but wondering if you agree</p>
+<p><a href="http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2009-06-19">http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2009-06-19</a></p>
+<p>[15:11:25 EDT(-0400)] &lt;colinclark&gt; laurel: quick question for you<br>
+[15:11:39 EDT(-0400)] &lt;colinclark&gt; what value do you use for mvn-settings-file in the ant build, typically?<br>
+[15:11:52 EDT(-0400)] &lt;colinclark&gt; and is it something that you only set on the server?<br>
+[15:12:05 EDT(-0400)] &lt;laurel&gt; Hi colin<br>
+[15:12:36 EDT(-0400)] &lt;laurel&gt; on the server I put a mvn settings file where it would be expected - in ~.m2<br>
+[15:12:55 EDT(-0400)] &lt;laurel&gt; we had to put it there (it doesn't get put there with a default installation or anything)<br>
+[15:13:07 EDT(-0400)] &lt;laurel&gt; then jamon changed the permissions on it<br>
+[15:13:18 EDT(-0400)] &lt;laurel&gt; just trying to recall - will check<br>
+[15:14:51 EDT(-0400)] &lt;laurel&gt; hmm...maybe he didn't change the permissions - at least not to the one on the server in the fluid user<br>
+[15:15:32 EDT(-0400)] &lt;laurel&gt; so on the server I set it to --settings "~/.m2/settings.xml"<br>
+[15:16:08 EDT(-0400)] &lt;laurel&gt; then Justin and I talked about whether it made sense to have this setting in a Windows environment<br>
+[15:16:13 EDT(-0400)] &lt;colinclark&gt; ok<br>
+[15:16:30 EDT(-0400)] &lt;colinclark&gt; I'm slightly confused why we have to set it... The maven documentation says it looks in that place for it.<br>
+[15:16:31 EDT(-0400)] &lt;colinclark&gt; <a href="http://maven.apache.org/settings.html">http://maven.apache.org/settings.html</a><br>
+[15:16:34 EDT(-0400)] &lt;laurel&gt; I haven't thought of a use case really, but I didn't want to neglect it just in case<br>
+[15:16:43 EDT(-0400)] &lt;colinclark&gt; "There are two locations where a settings.xml file may live:<br>
+[15:16:43 EDT(-0400)] &lt;colinclark&gt; * The Maven install: $M2_HOME/conf/settings.xml<br>
+[15:16:44 EDT(-0400)] &lt;colinclark&gt; * A user's install: ${user.home}/.m2/settings.xml"<br>
+[15:16:55 EDT(-0400)] &lt;laurel&gt; I'm confused too, but it worked when I put it in and doesn't work when I dont<br>
+[15:17:09 EDT(-0400)] &lt;laurel&gt; which was a pretty good test for why it was needed<br>
+[15:17:29 EDT(-0400)] &lt;laurel&gt; I assumed it had something to do with the fact that the web server runs as nobody<br>
+[15:18:04 EDT(-0400)] &lt;laurel&gt; which may or may not be a good assumption<br>
+[15:20:12 EDT(-0400)] &lt;colinclark&gt; but you only ever need to do this on the server, right?<br>
+[15:20:29 EDT(-0400)] &lt;laurel&gt; now, I only tried ...hey...stop anticipating my typing<br>
+[15:20:36 EDT(-0400)] &lt;laurel&gt; i only tried on the server every<br>
+[15:20:38 EDT(-0400)] &lt;laurel&gt; ever<br>
+[15:20:40 EDT(-0400)] &lt;laurel&gt; grin<br>
+[15:20:55 EDT(-0400)] &lt;laurel&gt; so this isn't really a good test<br>
+[15:21:02 EDT(-0400)] &lt;laurel&gt; where else can we try?<br>
+[15:21:23 EDT(-0400)] &lt;colinclark&gt; In part, I wonder if we really need to try elsewhere.<br>
+[15:22:14 EDT(-0400)] &lt;laurel&gt; and I would really like your thoughts on whether I should even bother with putting it on the windows option<br>
+[15:23:26 EDT(-0400)] &lt;laurel&gt; can you clarify - that last sentence looks like it could be interpreted both ways<br>
+[15:23:42 EDT(-0400)] &lt;colinclark&gt; honestly, i don't see any point in looking at adding generality for something that we need only in one context<br>
+[15:23:51 EDT(-0400)] &lt;colinclark&gt; and worse yet, that we don't really understand<br>
+[15:24:11 EDT(-0400)] &lt;laurel&gt; i agree, except for the fact that we are publishing the code for download<br>
+[15:24:23 EDT(-0400)] &lt;colinclark&gt; well, we're not publishing this as a product<br>
+[15:25:05 EDT(-0400)] &lt;colinclark&gt; the Builder is not generally something people want as a code base to use and extend...<br>
+[15:25:07 EDT(-0400)] &lt;laurel&gt; ok...but the build.xml - is that a file that is distributed?<br>
+[15:25:10 EDT(-0400)] &lt;colinclark&gt; it's just something they want to work<br>
+[15:25:24 EDT(-0400)] &lt;colinclark&gt; sure, but my point is this particular feature<br>
+[15:25:26 EDT(-0400)] &lt;laurel&gt; i wouldn't want to "hard code" this in<br>
+[15:25:31 EDT(-0400)] &lt;colinclark&gt; it's very specific to a context<br>
+[15:25:36 EDT(-0400)] &lt;laurel&gt; yep<br>
+[15:25:44 EDT(-0400)] &lt;colinclark&gt; honestly, i'd feel better if we understood what was up with our server and maven<br>
+[15:25:47 EDT(-0400)] &lt;laurel&gt; so what do you suggest as an alternative<br>
+[15:25:53 EDT(-0400)] &lt;laurel&gt; i agree.<br>
+[15:25:58 EDT(-0400)] &lt;colinclark&gt; since the documentation seems pretty clear that this should work<br>
+[15:26:12 EDT(-0400)] &lt;laurel&gt; and it does work at the command line<br>
+[15:26:37 EDT(-0400)] &lt;laurel&gt; just not from within the web browser - so I'm pretty sure it is due to "user" issues<br>
+[15:27:09 EDT(-0400)] &lt;colinclark&gt; sounds like an environment issue... you're saying that the nobody account does indeed have a home directory, with an .m2 repo in it<br>
+[15:27:12 EDT(-0400)] &lt;colinclark&gt; but that it can't find it<br>
+[15:27:15 EDT(-0400)] &lt;colinclark&gt; is that right?<br>
+[15:27:25 EDT(-0400)] &lt;laurel&gt; seems like it<br>
+[15:27:41 EDT(-0400)] &lt;colinclark&gt; So I think we just want to get to the bottom of why that is.<br>
+[15:27:58 EDT(-0400)] &lt;laurel&gt; but jamon may be able to phrase it better because he tried to explain it to me and I've lost the terminology since his last attempt<br>
+[15:28:26 EDT(-0400)] &lt;laurel&gt; we actually discussed it in the irc a bit, so let me look for the history<br>
+[15:31:20 EDT(-0400)] &lt;laurel&gt; ok - look here <a href="http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2009-05-19">http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2009-05-19</a><br>
+[15:31:28 EDT(-0400)] &lt;laurel&gt; at 14:13<br>
+[15:31:42 EDT(-0400)] &lt;laurel&gt; that's part of the discussion<br>
+[15:33:10 EDT(-0400)] &lt;laurel&gt; and then I played with the permissions as suggested, but that didn't help<br>
+[15:34:44 EDT(-0400)] &lt;laurel&gt; in the end I believe that jamon said it was using the settings in the fluid user, not the settings in the nobody user<br>
+[15:35:07 EDT(-0400)] &lt;jessm&gt; laurel: sorry, i have to borrow Colin's brain for a bit<br>
+[15:35:25 EDT(-0400)] &lt;laurel&gt; ok...i guess without the brain, I'll have to get back to colin later<br>
+[15:36:12 EDT(-0400)] &lt;laurel&gt; btw though colin, this is helpful. nice to bash this out with someone again...sometimes you get too focused on the wrong thing.</p>
+
+                    </li>
+                    
+                    <li id="comment-20849">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-08-12T15:39:24.000-0400">2009-08-12T15:39:24.000-0400</relative-time></i></p>
+                        <p>Further examination yielded the following suggested solution from Colin:</p>
+<p>1. Write a script for the server that will invoke Maven correctly, with an explicit path<br>
+to the settings.xml file.<br>
+2. Parameterize the command that gets executed in our Ant build script to run Maven<br>
+3. Set a default for this value that works for most people's machines<br>
+4. In the PHP script that runs Ant (which runs Maven; whew!), specify the alternative,<br>
+server-specific script instead of mvn directly</p>
+<p>The benefit here is that we make only a tiny impact on our build script--no duplicate<br>
+code and users of the script will never need to know.</p>
+
+                    </li>
+                    
+                    <li id="comment-20850">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-08-17T15:37:05.000-0400">2009-08-17T15:37:05.000-0400</relative-time></i></p>
+                        <p>This is one of the three tasks listed in <a href="/browse/FLUID-2931/">FLUID-2931</a></p>
+
+                    </li>
+                    
+                    <li id="comment-20851">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-08-19T14:38:40.000-0400">2009-08-19T14:38:40.000-0400</relative-time></i></p>
+                        <p>Concerns<br>
+1) created script customBuild.sh and placed in top directory of infusion for builder<br>
+2) needed to make executable by everyone.<br>
+3) needed to make infusion directory writable by everyone<br>
+4) needed to make .m2 directory writable by everyone<br>
+5) is the "parallel" feature needed for the ant  execution call, and if so I should switch to apply instead of exec command for ant</p>
+
+                    </li>
+                    
+                    <li id="comment-20852">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-08-19T14:48:33.000-0400">2009-08-19T14:48:33.000-0400</relative-time></i></p>
+                        <p>Attached is the script, which must be placed in the same directory as the pom, and a patch for the build.xml which calls this script.</p>
+<p>The command to run this script is </p>
+<p>ant -DcustomBuildMavenScript="true"</p>
+<p>Further testing required to ensure that this command works in tandem with the customBuild ant target.</p>
+
+                    </li>
+                    
+                    <li id="comment-20853">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-08-25T14:59:25.000-0400">2009-08-25T14:59:25.000-0400</relative-time></i></p>
+                        <p>The script recommended by Colin is now working. I have not committed the script since it consists of a single line of code and includes directories specific to our particular server. An example of the code is:</p>
+<p>#!/bin/sh</p>
+<ol>
+<li>A script which calls maven pointing to the correct maven configuration file - used by web user only.</li>
+<li>execute mvn --settings filename install<br>
+mvn --settings /home/myhome/.m2/settings.xml install</li>
+</ol>
+<p>Created a file called customBuild.sh and put this text in it. Saved the file in the same directory as the pom.xml (main infusion directory). Made the script executable by all (since the web user needs to access it).</p>
+<p>The ant script patches I submitted earlier run this script to access maven from the browser interface.</p>
+
+                    </li>
+                    
+                    <li id="comment-20854">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-09-01T15:24:42.000-0400">2009-09-01T15:24:42.000-0400</relative-time></i></p>
+                        <p>Modifications on the server have changed the permissions such that we no longer have this problem. All patches, scripts and changes are no longer needed.</p>
+
+                    </li>
+                    
+                    <li id="comment-20855">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-09-03T14:20:54.000-0400">2009-09-03T14:20:54.000-0400</relative-time></i></p>
+                        <p>Completely resolved with the new virtual machine.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-2936/"><span class="aria-hidden">←</span> Previous: FLUID-2936</a>
+        <a class="mx-1" href="/browse/FLUID-2938/">Next: FLUID-2938 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

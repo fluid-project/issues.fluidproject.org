@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1947  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1947 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1947/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1947/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1947/">FLUID-1947</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1947: Uploader indicate that 1 too many files where uploaded if the Upload is cancelled in the middle of an upload</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1947">FLUID-1947</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Sub-task">Sub-task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Eli Cochran</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Eli%20Cochran">Eli Cochran</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-12-08T20:20:22.000-0500" prefix="">2008-12-08T20:20:22.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-01-20T13:38:53.000-0500" prefix="">2009-01-20T13:38:53.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.6beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.6</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Uploader</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Uploader indicate that 1 too many files where uploaded if the Upload is cancelled in the middle of an upload</p>
+<p>Because we increment the batch.numFilesCompleted in SWFUploadManager.js (line 74) even if the Upload was stopped or the file errored, we could present the user with the wrong number of uploaded files in the UI. </p>
+<p>Need to create a batch.numUploadErrors where we keep track of errors and then calculate the number in the UI using (batch.numFilesCompleted - batch.numUploadErrors). This new param will allow us to display a new "X files were not correctly uploaded message..." </p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-1947/FLUID-1947.b.patch">
+                            
+                                FLUID-1947.b.patch
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-1947/FLUID-1947.d.patch">
+                            
+                                FLUID-1947.d.patch
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20718">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-12-09T15:28:44.000-0500">2008-12-09T15:28:44.000-0500</relative-time></i></p>
+                        <p>Bug Parade: 0.6 release</p>
+
+                    </li>
+                    
+                    <li id="comment-20719">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-12-11T15:21:41.000-0500">2008-12-11T15:21:41.000-0500</relative-time></i></p>
+                        <p>The patch attached to <a href="/browse/FLUID-1948/">FLUID-1948</a>, which purports to address both issues, doesn't seem to deal with this one properly. I can still recreate the situation that the display of the number of uploaded files is incorrect.</p>
+
+                    </li>
+                    
+                    <li id="comment-20720">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2008-12-12T20:36:24.000-0500">2008-12-12T20:36:24.000-0500</relative-time></i></p>
+                        <p>It took me a long time to get my head around <a href="/browse/FLUID-1947/">FLUID-1947</a> but finally I figured out that what was happening was because we insert a delay between each file progress event. We do this to simulate what would happen during and actual upload, and give the user a chance to respond to the behavior of the component in a simulated upload.</p>
+<p>What was happening was that between the moment that we queued up the next progress and the time that the progress actually happened, the user could click the Stop Upload button thus firing a bunch of other events. Depending on the timing of the click, different odd things would happen.</p>
+<p>So instead of doing:</p>
+<p>check if we can progress<br>
+set next progress on the timer<br>
+timer fires next progress<br>
+next progress</p>
+<p>We need to</p>
+<p>check if we can progress<br>
+set next progress on the timer<br>
+timer fires next progress<br>
+check if we can progress<br>
+next progress</p>
+<p>I also removed the delay on finishUploading because this was another place where the user could slip an event in, and it wasn't really necessary for the simulation.  At the point that the finishUpload fires, we should not wait but start in immediately into the next file.</p>
+<p>And I switched the code to use that.queue.isUploading instead of that.demoState.shouldPause which meant that pauseDemo could be simplified a little bit and we're using a consistent variable to checking the state of the upload.</p>
+<p>Obviously this needs a very detailed review.</p>
+
+                    </li>
+                    
+                    <li id="comment-20721">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2008-12-13T12:24:13.000-0500">2008-12-13T12:24:13.000-0500</relative-time></i></p>
+                        <p>This patch is a slight modification of Eli's <a href="/browse/FLUID-1947/">FLUID-1947</a>.b.patch file. Here are the noteworthy changes:</p>
+<p>1. I renamed pauseDemo to stopDemo to be consistent with the our naming conventions throughout the component.<br>
+2. I put back the call to afterFileComplete (aka. "that.swfUploadSettings.upload_complete_handler") in stopDemo. I think the omission of this call will leave the queue without cleaning up, and is inconsistent with the behaviour of the server-backed version. Double-check me on this one.<br>
+3. I removed a needless layer of nested if statements in simulateUpload() by first checking if we're not uploading and bailing immediately.<br>
+4. I similarly removed a layer of indenting in finishUploading() using the same strategy.</p>
+<p>This patch could use a good review, preferably from Eli since he knows the issue best. </p>
+
+                    </li>
+                    
+                    <li id="comment-20722">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2008-12-15T12:36:46.000-0500">2008-12-15T12:36:46.000-0500</relative-time></i></p>
+                        <p>Colin Clark's patch has been committed. </p>
+<p>I believe that this successfully finishes off this ugly little timing bug. </p>
+<p>A couple notes:</p>
+<ul>
+<li>I suspect that repeatedly clicking on the Stop Upload/Upload buttons with out a reasonable pause will still mess up the UI and possibly throw an error. <br>
+  This is a fix for the more reasonable case of someone clicking with good intention. </li>
+</ul>
+<ul>
+<li>There is a minor little problem that can wait until after 0.6. At the moment when the file errors, there is a call which hides the total progressor and updates the Total status text. Unfortunately it does a quick animation to 100% before it hides it even if the upload was cancelled. This will be written up as another bug. </li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-20723">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-01-20T13:38:53.000-0500">2009-01-20T13:38:53.000-0500</relative-time></i></p>
+                        <p>Verified fix using:</p>
+<p>FF2, FF3, Opera 9.5, Safari 3 (Mac OS 10.5)<br>
+FF2, FF3, IE7, Opera 9.5 (Win XP)</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1946/"><span class="aria-hidden">←</span> Previous: FLUID-1946</a>
+        <a class="mx-1" href="/browse/FLUID-1948/">Next: FLUID-1948 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

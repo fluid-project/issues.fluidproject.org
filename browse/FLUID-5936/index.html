@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5936  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5936 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5936/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5936/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5936/">FLUID-5936</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5936: fluid.textToSpeech.checkTTSSupport uses the wrong event handler name the end of a SpeechSynthesisUtterance</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5936">FLUID-5936</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alan Harnum</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Alan%20Harnum">Alan Harnum</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-07-27T17:34:54.856-0400" prefix="">2016-07-27T17:34:54.856-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-07-12T09:15:30.357-0400" prefix="">2019-07-12T09:15:30.357-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Self Voicing</li>
+                            
+                            <li>Text To Speech</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In digging into an issue with the Chart Authoring code, I noticed that all the unit tests for the Text to Speech component were passing with a TEST SKIPPED message, even in TTS-supporting browsers. This is visible in <a href="http://build.fluidproject.org/infusion/tests/component-tests/textToSpeech/html/TextToSpeech-test.html">http://build.fluidproject.org/infusion/tests/component-tests/textToSpeech/html/TextToSpeech-test.html</a> if you use a browser (such as the latest Chrome) that has TTS support.</p>
+<p>The issue appears to be with the "fluid.textToSpeech.checkTTSSupport" function using an event handler called "onstop" instead of "onend" when configuring the callback handler on the SpeechSynthesisUtterance it uses to test. The correct handler under the current API is "onend", per <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance">https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance</a>.</p>
+<p>Changing the handler to the correct one causes the tests to run (with the third set failing in FF, whose TTS is experimental and must be turned on via about:config). </p>
+<p>I'm going to investigate a bit further before I make a PR to make sure nothing aside from the tests uses "fluid.textToSpeech.checkTTSSupport".</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24040">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2016-07-28T16:43:19.173-0400">2016-07-28T16:43:19.173-0400</relative-time></i></p>
+                        <p>In my branch (in addition to fixing the issue with fluid.textToSpeech.checkTTSSupport)  I've refactored the tests to use the IoC testing framework, which makes it easier to see failures caused by event listeners never firing: <a href="https://github.com/waharnum/infusion/tree/FLUID-5936">https://github.com/waharnum/infusion/tree/FLUID-5936</a> / <a href="http://rawgit.com/waharnum/infusion/FLUID-5936/tests/component-tests/textToSpeech/html/TextToSpeech-test.html">http://rawgit.com/waharnum/infusion/FLUID-5936/tests/component-tests/textToSpeech/html/TextToSpeech-test.html</a></p>
+<p>Currently on Mac OS the situation looks like this:</p>
+<ul>
+<li>all tests pass on Chrome</li>
+<li>the Pause/Resume tests time out listening for the onPause event on Safari and Firefox (with media.webspeech.synth.enabled set to true)</li>
+</ul>
+<p>I'm investigating further to try and determine the underlying cause.</p>
+
+                    </li>
+                    
+                    <li id="comment-24042">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2016-08-04T13:58:00.404-0400">2016-08-04T13:58:00.404-0400</relative-time></i></p>
+                        <p>It appears the issue may have been related to variations in async behaviour between the different browsers. Some further refactoring of the tests have allowed them all to pass in Chrome/Safari (and FF with media.webspeech.synth.enabled set true).</p>
+
+                    </li>
+                    
+                    <li id="comment-24044">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2016-08-15T13:28:36.371-0400">2016-08-15T13:28:36.371-0400</relative-time></i></p>
+                        <p>PR at <a href="https://github.com/fluid-project/infusion/pull/732">https://github.com/fluid-project/infusion/pull/732</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5935/"><span class="aria-hidden">←</span> Previous: FLUID-5935</a>
+        <a class="mx-1" href="/browse/FLUID-5937/">Next: FLUID-5937 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

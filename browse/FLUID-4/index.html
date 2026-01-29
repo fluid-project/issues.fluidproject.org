@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4/">FLUID-4</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4: Lightbox javascript does not run in Internet Explorer 7</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4">FLUID-4</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Joseph Scheuhammer</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2007-06-26T12:38:07.000-0400" prefix="">2007-06-26T12:38:07.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2007-06-27T09:43:21.000-0400" prefix="">2007-06-27T09:43:21.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Image Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Can not run the JSUnit tests, the stand-alone HTML, nor the Gallery Tool in Internet Explorer 7. This is because the Lightbox Javascript referenced in the Script tag does not load properly.</p>
+<p>This appears to involve the script tags at the top of the Lightbox.HTML.</p>
+<p>Last known working version: Rev. #10219 (June 22, '07).</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Windows XP Pro SP2 with Internet Explorer 7</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-17186">
+                        <p class="mb-0"><b>Joseph Scheuhammer</b> <i>commented <relative-time datetime="2007-06-26T13:28:56.000-0400">2007-06-26T13:28:56.000-0400</relative-time></i></p>
+                        <p>The problem is caused by the definition of the ".orderChangedCallback()" function defined within "FluidProject.initLightbox()".  Specifically the call to "dojo.xhrPost()" caused IE to hiccough when loading Lightbox.js.  Commenting out the lines, thus:</p>
+<p>//	      dojo.xhrPost({<br>
+//          url: reorderform.action,<br>
+//          form: reorderform,<br>
+//          load: function(type, data, evt){ /* No-op response */ },<br>
+//          });</p>
+<p>made IE happier.  That is, the jsUnit tests run, the standalone version ot the lightlbox works, and the lightbox js loads and works within the gallery tool.</p>
+<p>Why this call is a problem in IE but not FF is unresolved.</p>
+
+                    </li>
+                    
+                    <li id="comment-17189">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2007-06-27T09:11:36.000-0400">2007-06-27T09:11:36.000-0400</relative-time></i></p>
+                        <p>The current trunk does not work in IE6 either, which I assume is the same issue. Looks like dojo.xhrPost is not supported for IE, or perhaps it is just the use of "form". Looking into this a bit...</p>
+
+                    </li>
+                    
+                    <li id="comment-17191">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2007-06-27T09:43:21.000-0400">2007-06-27T09:43:21.000-0400</relative-time></i></p>
+                        <p>Fixed in rev 10341 - It was the trailing comma in the function member list!!!</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3/"><span class="aria-hidden">←</span> Previous: FLUID-3</a>
+        <a class="mx-1" href="/browse/FLUID-5/">Next: FLUID-5 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

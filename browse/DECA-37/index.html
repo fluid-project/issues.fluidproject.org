@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> DECA-37  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" DECA-37 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/DECA-37/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/DECA-37/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/DECA" data-pagefind-filter="project">Decapod</a></li>
+                <li><a href="/browse/DECA-37/">DECA-37</a></li>
+            </ol>
+        </nav>
+        <h1>DECA-37: Decapod Image Reorderer: Item focus could be causing odd scrollbar behaviour</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/DECA-37">DECA-37</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/DECA/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/DECA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/DECA/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-03-05T09:36:44.000-0500" prefix="">2010-03-05T09:36:44.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2012-01-10T09:52:43.847-0500" prefix="">2012-01-10T09:52:43.847-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Capture</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Unable to use the vertical scrollbar in an expected manner in Windows 7 IE8 and FF3.6. Clicking the negative scrollbar space snaps back to original position, arrow keys do not work, etc.</p>
+<p>May be fine in Linux and WinXP. See comments for additional information.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Windows 7, WinXP, seems fine in Linux?</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10106">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2010-03-05T09:37:10.000-0500">2010-03-05T09:37:10.000-0500</relative-time></i></p>
+                        <p>I am using rev 9569 from the repository and I'm experiencing some odd behaviour with the vertical scroll bar on the reorderer grid.</p>
+<p>In Firefox 3.6 - Windows 7:</p>
+<ul>
+<li>can't scroll up or down using the up and down arrows on scroll bar. Clicking the buttons appears to have no effect.</li>
+<li>clicking on negative space on scroll bar does not "jump" to a position. The view stays in place.</li>
+<li>can drag the scrollbar up and down as expected</li>
+</ul>
+<p>In IE8 - Windows 7: (I know we're not supporting IE8, but it provides some clues).</p>
+<ul>
+<li>clicking on negative space on scroll bar jumps the scrollbar but then snaps it back to the item in focus.</li>
+<li>clicking scroll up and down arrow buttons on scrollbar scrolls up/down a few lines, but then snaps back to item in focus.</li>
+<li>can drag the scrollbar up and down as expected (no snapping to focused item).</li>
+</ul>
+<p>I think somehow having the item in focus is forcing the scrollbar to keep its position regardless of what the user tries to do. I think the correct behaviour would be to allow the user to reposition the view using the scrollbar regardless of what is in focus.</p>
+
+                    </li>
+                    
+                    <li id="comment-10107">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2010-03-05T09:37:26.000-0500">2010-03-05T09:37:26.000-0500</relative-time></i></p>
+                        <p>In Linux the scrollbar works as expected in both Firefox 3.6 and Chrome 5. In Windows XP, FF 3.6 arrows and dragging work as expected. However, clicking on negative space does not jump to a position. I also guess it has something to do with the item in focus. We should probably address this in the bug parade.</p>
+
+                    </li>
+                    
+                    <li id="comment-10108">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2010-04-20T10:24:47.000-0400">2010-04-20T10:24:47.000-0400</relative-time></i></p>
+                        <p>Does not appear to affect ubuntu versions of browsers.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/DECA-62/"><span class="aria-hidden">←</span> Previous: DECA-62</a>
+        <a class="mx-1" href="/browse/DECA-42/">Next: DECA-42 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

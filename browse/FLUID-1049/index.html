@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1049  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1049 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1049/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1049/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1049/">FLUID-1049</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1049: Duplicate file error message (error code: 500) appears too late</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1049">FLUID-1049</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-07-28T15:22:33.000-0400" prefix="">2008-07-28T15:22:33.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-09-30T11:15:51.000-0400" prefix="">2008-09-30T11:15:51.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                            <li>0.3</li>
+                            
+                            <li>0.4beta1</li>
+                            
+                            <li>0.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Uploader</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>If a file has already been uploaded to the server, an error message is displayed. However, this error message doesn't occur until after the duplicate file has been uploaded. If it is a large file and/or the connection is slow, the user could be stuck waiting a long time before the error is displayed.</p>
+<p>Steps to reproduce:</p>
+<p>1) Open a live version of the Uploader</p>
+<p>2) Upload a large file (e.g. 20 mb)</p>
+<p>3) Upload the same file a second time. Notice that you have to wait for the upload to complete before the error is thrown.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF2, FF3, Safari 3, Opera 9.5 (Mac OS 10.5)<br>
+FF2, FF3, IE6, IE7, Opera 9.5 (Win XP)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-17274">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2008-08-05T20:08:12.000-0400">2008-08-05T20:08:12.000-0400</relative-time></i></p>
+                        <p>There is <strong>no way</strong> to know that a file is a duplicate until the file is sent to the server. The server actually compares the binaries of the files, it doesn't care about file names since the files may have come from different directories or been changed on the local machine between uploads.</p>
+
+                    </li>
+                    
+                    <li id="comment-17276">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2008-08-05T20:08:28.000-0400">2008-08-05T20:08:28.000-0400</relative-time></i></p>
+                        <p>See previous note</p>
+
+                    </li>
+                    
+                    <li id="comment-17278">
+                        <p class="mb-0"><b>Erin Yu</b> <i>commented <relative-time datetime="2008-08-06T12:20:18.000-0400">2008-08-06T12:20:18.000-0400</relative-time></i></p>
+                        <p>I think the experience of waiting for the file to upload completely to find out if that the same file already exists is less than desirable. </p>
+<p>Is it possible to check for the file names in the queue when user clicks Upload, against the file names in the destination folder on the server, and display a warning message if there is a duplicate. The message would read, for example, "There is already a file named "filename.doc". Replace it? [Replace]  [Remove from queue]" and the user can make the decision to overwrite the file or cancel that file.</p>
+
+                    </li>
+                    
+                    <li id="comment-17281">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-30T11:15:51.000-0400">2008-09-30T11:15:51.000-0400</relative-time></i></p>
+                        <p>closed for now, may reopen later if a proper strategy can be devised</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1048/"><span class="aria-hidden">←</span> Previous: FLUID-1048</a>
+        <a class="mx-1" href="/browse/FLUID-1050/">Next: FLUID-1050 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

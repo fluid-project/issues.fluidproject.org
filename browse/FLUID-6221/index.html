@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6221  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6221 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6221/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6221/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6221/">FLUID-6221</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6221: Archive builds of infusion to allow for stable links to demos</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6221">FLUID-6221</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-11-07T12:51:21.351-0500" prefix="">2017-11-07T12:51:21.351-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-11-08T09:21:08.020-0500" prefix="">2017-11-08T09:21:08.020-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Infrastructure</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>We should keep archives of all of the builds of infusion, probably named after the commit hash.&#160;This will allow us to provide stable links to demos that will not break, allow for users to view and compare different instances of infusion ( particularly useful for seeing what's in a dev release of infusion ).</p>
+<p></p>
+<p>It would also be good to build and archive tagged versions of infusion.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22398">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-11-07T12:53:22.906-0500">2017-11-07T12:53:22.906-0500</relative-time></i></p>
+                        <p>Giovanni Tirloni do you have any thoughts on the feasibility and implementation of this. I was talking to Avtar Gill about it today and&#160;we were thinking that the build site would point at the latest deployed instance. We'd also have a separate link to point at a directory listing of all of the archived versions.</p>
+
+                    </li>
+                    
+                    <li id="comment-22399">
+                        <p class="mb-0"><b>Avtar Gill</b> <i>commented <relative-time datetime="2017-11-07T17:53:54.872-0500">2017-11-07T17:53:54.872-0500</relative-time></i></p>
+                        <p>One possible way of tackling it could be to contain each build in a directory named using the commit hash, with a symlink named&#160;<code>latest</code> pointing to the most recent commit hash. nginx is configured to serve the most recent directory by default using the <code>latest</code> symlink. Does that seem reasonable?</p>
+
+                    </li>
+                    
+                    <li id="comment-22401">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2017-11-08T06:00:07.217-0500">2017-11-08T06:00:07.217-0500</relative-time></i></p>
+                        <p>I think that's reasonable. If the build scripts can output to a directory (say, "output/$commithash"), that should make things easier, I guess.</p>
+<p>Updating the "latest" symlink might be tricky but, since SFTP supports symlinks, I'm guessing we can find a way around that.</p>
+
+                    </li>
+                    
+                    <li id="comment-22402">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-11-08T09:03:59.949-0500">2017-11-08T09:03:59.949-0500</relative-time></i></p>
+                        <p>Giovanni Tirloni, currently the build scripts create a "build" directory containing the build files and a "product" director containing the a zip of the build files. Would you be able to use those?</p>
+
+                    </li>
+                    
+                    <li id="comment-22403">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2017-11-08T09:21:08.020-0500">2017-11-08T09:21:08.020-0500</relative-time></i></p>
+                        <p>It's doable. We have to extract the zip and push it to a directory with the commit hash. It shouldn't be hard. Is there any benefit in create a directory with the commit hash locally for developers?</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6220/"><span class="aria-hidden">←</span> Previous: FLUID-6220</a>
+        <a class="mx-1" href="/browse/FLUID-6222/">Next: FLUID-6222 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

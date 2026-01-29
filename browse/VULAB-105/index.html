@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VULAB-105  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VULAB-105 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VULAB-105/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VULAB-105/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VULAB" data-pagefind-filter="project">VULab</a></li>
+                <li><a href="/browse/VULAB-105/">VULAB-105</a></li>
+            </ol>
+        </nav>
+        <h1>VULAB-105: RASCAL JavaScript should not use embedded handlers in the HTML markup, and should use "vulab" namespace instead of globals.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VULAB-105">VULAB-105</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VULAB/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VULAB/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>David Makalsky</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VULAB/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-12-01T16:22:17.000-0500" prefix="">2008-12-01T16:22:17.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-12-01T18:00:26.000-0500" prefix="">2008-12-01T18:00:26.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>RASCAL</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>I'd suggest you move your JavaScript code out of onclick handlers in the HTML and into your rascal.js file, binding event handlers unobtrusively. A toolkit like jQuery<br>
+will simplify this for you a lot. I'd also suggest you keep the functions in rascal.js out of the global namespace to avoid collisions. All easy fixes, and there's tons of documentation in the Fluid wiki to help you with it:</p>
+<p><a href="http://wiki.fluidproject.org/display/fluid/DHTML+Developer+Checklist">http://wiki.fluidproject.org/display/fluid/DHTML+Developer+Checklist</a><br>
+<a href="http://wiki.fluidproject.org/display/fluid/Fearless+JavaScript+Workshop">http://wiki.fluidproject.org/display/fluid/Fearless+JavaScript+Workshop</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-27362">
+                        <p class="mb-0"><b>Jess Mitchell</b> <i>commented <relative-time datetime="2008-12-01T16:23:49.000-0500">2008-12-01T16:23:49.000-0500</relative-time></i></p>
+                        <p>vulab9</p>
+
+                    </li>
+                    
+                    <li id="comment-27363">
+                        <p class="mb-0"><b>David Makalsky</b> <i>commented <relative-time datetime="2008-12-01T18:00:26.000-0500">2008-12-01T18:00:26.000-0500</relative-time></i></p>
+                        <p>Fixing in <a href="/browse/VULAB-108/">VULAB-108</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VULAB-104/"><span class="aria-hidden">←</span> Previous: VULAB-104</a>
+        <a class="mx-1" href="/browse/VULAB-106/">Next: VULAB-106 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

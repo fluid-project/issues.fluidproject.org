@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5307  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5307 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5307/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5307/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5307/">FLUID-5307</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5307: Requirement for more power in mapping cases than can be provided by condition or valueMapper transformers</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5307">FLUID-5307</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Duplicate">Duplicate</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-04-09T15:56:35.366-0400" prefix="">2014-04-09T15:56:35.366-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-06-17T10:30:26.096-0400" prefix="">2015-06-17T10:30:26.096-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Model Transformation System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The use case that makes me feel being able to define the default output value on "fluid.transforms.condition" would be useful:</p>
+<p>The input model: <br>
+{<br>
+audio: boolean,<br>
+sound: boolean;<br>
+noSoundHazard: boolean<br>
+}</p>
+<p>The desired transformations:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Case  </strong></th>
+<th><strong>Input                                              </strong></th>
+<th><strong>Expected transformed output </strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>{audio: true, sound: true}</td>
+<td>{"audio": "available"}</td>
+</tr>
+<tr>
+<td>2</td>
+<td>{audio: false, noSoundHazard: true}</td>
+<td>{"audio": "unavailable"}</td>
+</tr>
+<tr>
+<td>3</td>
+<td>{audio: true, sound: false}</td>
+<td>{"audio": "unknown"}</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Other combinations</td>
+<td>{"audio": "unknown"}</td>
+</tr>
+</tbody>
+</table>
+<p>Note that case 3 and 4 are creating the same output value. The question is, at inversion, what this output value should be inverted to?</p>
+<p>The expected behavior to invert when this transformation is used in the model relay:<br>
+1. If the output value comes from Case 3, always invert back to Case 3 input value;<br>
+2. If the output value comes from Case 4,<br>
+(1) no change request on the output model: invert back to whatever the original input value of Case 4;<br>
+(2) ever have a change request to this special value of {"audio": "unknow"}: invert back to the input value of Case 3.</p>
+<p>Thoughts?</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23614">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-04-10T14:25:18.282-0400">2014-04-10T14:25:18.282-0400</relative-time></i></p>
+                        <p>Bosmon<br>
+cindyli - can you explain what function the inversion is meant to perform? That is, what sequence of UI actions should lead to the inversion being required</p>
+<p>cindyli<br>
+Bosmon: the three states of audio appear to be three radio buttons on the page. the selection on any of these radio buttons needs to be inverted so it's reflected on the source model. in the case 4 described in the jira, the "unknown" radio button is selected initially. If users don't make any change to radio buttons, this "unknown" should be inverted to whatever it was sourced from. If users make change to another state and re-select "unknown" again, this selection needs to be inverted back to the source of Case 3.</p>
+
+                    </li>
+                    
+                    <li id="comment-23616">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-04-10T14:47:54.656-0400">2014-04-10T14:47:54.656-0400</relative-time></i></p>
+                        <p>Thanks for this very interesting use case, cindy - this is something that the current model transformation system can't accommodate - that is, it is incapable of operating a "pseudoinverse" where a particular value (source) is associated with multiple values on the opposing side (target) but has one "preferred inverse" - and the desired behaviour of the system is to accept ANY of the associated target values if they occur, but if none of them do, to invert to the preferred value.</p>
+<p>In the current system, you should use a standard transform for the forward direction, but for now implement a custom "inverse operation" using a raw ChangeListener that "reads ahead" into the target model to make a decision as to whether the value there should be changed. We will implement new machinery in both model transformations and model relay to make this automatic in future.</p>
+<p>My current idea for a "future framework sketch" for automating this involves a new grade applied to a "lens transform" named "fluid.pseudoInverse" or so, which licences the model transformation framework to apply the workflow automatically that you will currently write by hand - that is, in finding a value in the target disagreeing with the "principal inverse", to first run it through the opposite leg of the transform to see if it results in a different source value before modifying it. This, in particular, will note the transform as being "asymmetric" since clearly this behaviour can only be operated in one direction.</p>
+
+                    </li>
+                    
+                    <li id="comment-23618">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-04-10T15:28:21.898-0400">2014-04-10T15:28:21.898-0400</relative-time></i></p>
+                        <p>Also, this is far too complex a case for the condition transform to handle. It can only make a 2-way choice based on a single boolean value. This needs to be dealt with by upgrades to the valueMapper transform.</p>
+
+                    </li>
+                    
+                    <li id="comment-23620">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-07-23T17:02:05.867-0400">2014-07-23T17:02:05.867-0400</relative-time></i></p>
+                        <p>This is now being handled by the work for <a href="/browse/FLUID-5479/">FLUID-5479</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5306/"><span class="aria-hidden">←</span> Previous: FLUID-5306</a>
+        <a class="mx-1" href="/browse/FLUID-5308/">Next: FLUID-5308 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

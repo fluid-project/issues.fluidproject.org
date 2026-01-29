@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6468  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6468 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6468/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6468/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6468/">FLUID-6468</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6468: Failure in gingerness when fetching nested injected component reference</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6468">FLUID-6468</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-03-09T18:21:29.458-0400" prefix="">2020-03-09T18:21:29.458-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-19T07:40:03.907-0400" prefix="">2024-07-19T07:40:03.907-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This issue only affects the in-progress <a href="/browse/FLUID-6148/">FLUID-6148</a> branch.</p>
+<p>The new framework believes it can be&#160;blasé about ordering of component fetches, given we now construct component shells aggressively first, and thinks it can do without the ancient "per-component" ginger strategy - but it can't.</p>
+<p>The following setup in the Nexus Co-Occurrence engine attempts to fetch a nested component of a sibling:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.nexus.coOccurrenceEngine"</span>, {
+    gradeNames: [<span class="hljs-string">"fluid.component"</span>],
+    components: {
+        recipesContainer: <span class="hljs-string">"{fluid.nexus.coOccurrenceEngine}.componentRoot.recipes"</span>,
+    },
+</code></pre>
+<p>in the testing environment for CoOccurrenceEngineTests.js, componentRoot is itself defined as an injection:</p>
+<pre><code class="hljs language-java">type: <span class="hljs-string">"fluid.nexus.coOccurrenceEngine"</span>,
+            options: {
+                components: {
+                    componentRoot: <span class="hljs-string">"{coOccurrenceEngineTestEnvironment}.componentRoot"</span>
+                },
+</code></pre>
+<p>Now, shell construction not withstanding, we clearly can't evaluate these injections in any order. If we evaluate the one in the coOccurrenceEngine itself first, we end up with undefined, rather than the test engine's root as required.</p>
+<p>The relevant code is currently in&#160;fluid.operateCreatePotentia -</p>
+<pre><code class="hljs language-java">fluid.operateCreatePotentia = function (transRec, potentiaList, potentia) {
+....
+        <span class="hljs-keyword">if</span> (lightMerge.isInjected) {
+            parentThat[memberName] = fluid.inEvaluationMarker; <span class="hljs-comment">// support <a href="/browse/FLUID-5694/">FLUID-5694</a></span>
+            <span class="hljs-type">var</span> <span class="hljs-variable">instance</span> <span class="hljs-operator">=</span> fluid.fetchInjectedComponentReference(transRec, potentiaList, lightMerge.toMerge[<span class="hljs-number">0</span>].injected, parentThat);
+</code></pre>
+<p>A pretty awkward scheduling problem since we are now already committed to "constructing" the component. We might have to move this back up to&#160;fluid.processComponentShell at the point the lightMerge is first evaluated - or else exploit the&#160;pathToPotentia structure that we thankfully have in order to execute the traditional lazily implemented toposort.</p>
+<p>Look at the comment on fluid.operateOneCreatePotentia - it looks like this has already been partially anticipated!</p>
+<pre><code class="hljs language-java"><span class="hljs-comment">// Tightly bound to commitPotentiaePhase - broken out as a function so that we can call it from</span>
+    <span class="hljs-comment">// fluid.fetchInjectedComponentReference for out-of-order construction.</span>
+    fluid.operateOneCreatePotentia = function (transRec, potentia) {
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6467/"><span class="aria-hidden">←</span> Previous: FLUID-6467</a>
+        <a class="mx-1" href="/browse/FLUID-6469/">Next: FLUID-6469 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

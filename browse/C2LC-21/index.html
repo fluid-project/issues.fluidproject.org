@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-21  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-21 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-21/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-21/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-21/">C2LC-21</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-21: Add Custom Commands to the Interpreter</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-21">C2LC-21</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Won't Fix</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter=Simon%20Bates">Simon Bates</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-11-05T09:38:43.848-0500" prefix="">2019-11-05T09:38:43.848-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-05-07T10:45:39.524-0400" prefix="">2024-05-07T10:45:39.524-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Modify the Interpreter to be able to run programs with Custom Commands.</p>
+<p>Rename the existing <code>Program</code> type to <code>CommandSequence</code> and add a new <code>Project</code> type that includes Custom Commands:</p>
+<pre><code class="hljs language-java">export <span class="hljs-type">type</span> <span class="hljs-variable">CommandSequence</span> <span class="hljs-operator">=</span> Array&lt;string&gt;;
+export <span class="hljs-type">type</span> <span class="hljs-variable">Project</span> <span class="hljs-operator">=</span> {
+    customCommands: {
+        [command: string]: CommandSequence
+    },
+    program: CommandSequence
+};
+</code></pre>
+<p>Example project:</p>
+<pre><code class="hljs language-java">{
+    customCommands: {
+        square: [<span class="hljs-string">"forward"</span>, <span class="hljs-string">"left"</span>, <span class="hljs-string">"forward"</span>, <span class="hljs-string">"left"</span>, <span class="hljs-string">"forward"</span>, <span class="hljs-string">"left"</span>, <span class="hljs-string">"forward"</span>]
+    },
+    program: [<span class="hljs-string">"square"</span>, <span class="hljs-string">"square"</span>]
+}
+</code></pre>
+<p>Test cases:</p>
+<ul>
+<li>Project with empty <code>program</code> and empty <code>customCommands</code></li>
+<li>Project with <code>program</code> command sequence but no <code>customCommands</code></li>
+<li>Project with <code>program</code> and <code>customCommands</code></li>
+<li>Program with undefined commands (no registered command handlers or custom commands)</li>
+<li>Redefinition of built-in commands (command handlers)</li>
+<li>Recursion</li>
+</ul>
+<p>See the discussion of command redefinition and recursion at <a href="https://wiki.fluidproject.org/display/C2LC/Custom+Blocks">https://wiki.fluidproject.org/display/C2LC/Custom+Blocks</a></p>
+<p>We should also rename our existing editors to <code>CommandSequence...Editor</code> rather than <code>Program...Editor</code> as they operate on command sequences in our new model.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10585">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2019-11-05T10:08:11.486-0500">2019-11-05T10:08:11.486-0500</relative-time></i></p>
+                        <p>We need to think about how we are going to store custom commands&#160;– maybe web storage API if we are planning to store them locally, and I think it is valuable approach to make them sharable to other people too.</p>
+
+                    </li>
+                    
+                    <li id="comment-10586">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2019-11-05T10:32:16.085-0500">2019-11-05T10:32:16.085-0500</relative-time></i></p>
+                        <p>Yeah, we'll definitely want to support persistence of custom commands and programs. I think we can tackle that a little later, when our program/project model is more evolved. In the overall project plan, we've got persistence scheduled for the next milestone: milestone 3 January-June 2020.</p>
+
+                    </li>
+                    
+                    <li id="comment-10587">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2019-11-05T10:37:28.461-0500">2019-11-05T10:37:28.461-0500</relative-time></i></p>
+                        <p>Yeah, I realized that I was thinking way ahead as well. That sounds great&#160;👍</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-20/"><span class="aria-hidden">←</span> Previous: C2LC-20</a>
+        <a class="mx-1" href="/browse/C2LC-22/">Next: C2LC-22 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

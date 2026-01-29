@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-42  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-42 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-42/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-42/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-42/">VP-42</a></li>
+            </ol>
+        </nav>
+        <h1>VP-42: Can not tab focus scrub bar in Safari</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-42">VP-42</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Not%20A%20Bug">Not A Bug</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Jonathan%20Hung">Jonathan Hung</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-01-17T16:35:24.113-0500" prefix="">2013-01-17T16:35:24.113-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-02-26T15:36:50.309-0500" prefix="">2013-02-26T15:36:50.309-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>controls</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The scrub bar can not be focused using tab in Safari.</p>
+<p>To reproduce:</p>
+<ul>
+<li>Load: <a href="http://build.fluidproject.org/videoPlayer/videoPlayer/demos/VideoPlayer.html">http://build.fluidproject.org/videoPlayer/videoPlayer/demos/VideoPlayer.html</a></li>
+<li>Press tab until Volume button has focus</li>
+<li>Press tab again</li>
+<li>Notice that Captions has focus, skipping over the scrub bar.</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26751">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-01-21T06:56:49.855-0500">2013-01-21T06:56:49.855-0500</relative-time></i></p>
+                        <p>For some elements in safari you have to use option-tab to navigate to them. I tried this method out and was able to use the keyboard to interact with it.</p>
+
+                    </li>
+                    
+                    <li id="comment-26752">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-02-26T15:36:30.345-0500">2013-02-26T15:36:30.345-0500</relative-time></i></p>
+                        <p>There was a discussion about this on the fluid-work list<br>
+see: <a href="http://lists.idrc.ocad.ca/pipermail/fluid-work/2013-January/008721.html">http://lists.idrc.ocad.ca/pipermail/fluid-work/2013-January/008721.html</a></p>
+
+                    </li>
+                    
+                    <li id="comment-26753">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-02-26T15:36:50.308-0500">2013-02-26T15:36:50.308-0500</relative-time></i></p>
+                        <p>This is part of the natural behaviour of safari</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-93/"><span class="aria-hidden">←</span> Previous: VP-93</a>
+        <a class="mx-1" href="/browse/VP-118/">Next: VP-118 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

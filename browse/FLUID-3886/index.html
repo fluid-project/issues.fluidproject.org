@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3886  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3886 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3886/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3886/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3886/">FLUID-3886</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3886: The HTML5 version of the Uploader can't exclude certain files based on file type</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3886">FLUID-3886</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Mike Lam</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Mike%20Lam">Mike Lam</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-12-09T10:58:27.383-0500" prefix="">2010-12-09T10:58:27.383-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-05-17T13:51:05.678-0400" prefix="">2011-05-17T13:51:05.678-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Uploader</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The Uploader uses the incorrect format when filtering file types using the "accepts" attribute of the HTML5 multiple file input element. HTML5 specifies that the accepts attribute should be formatted as a comma-delimited list of MIME types. Currently, the HTML5UploadStrategy specifies this list using SWFUpload's non-standard format.</p>
+<p>This is a bug in Infusion and should be fixed in the next release.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3886/FLUID-3886.patch">
+                            
+                                FLUID-3886.patch
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24313">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2011-01-20T12:11:47.740-0500">2011-01-20T12:11:47.740-0500</relative-time></i></p>
+                        <p>At the moment, I suspect the attribute is ignored because we're specifying it in an invalid format. The "accept" attribute should contain a list of MIME types, not file extensions.</p>
+
+                    </li>
+                    
+                    <li id="comment-24316">
+                        <p class="mb-0"><b>Mike Lam</b> <i>commented <relative-time datetime="2011-01-25T13:08:34.364-0500">2011-01-25T13:08:34.364-0500</relative-time></i></p>
+                        <p>Convert all file types from the queue settings into valid HTML5 mime types.</p>
+
+                    </li>
+                    
+                    <li id="comment-24319">
+                        <p class="mb-0"><b>Mike Lam</b> <i>commented <relative-time datetime="2011-01-25T13:13:02.939-0500">2011-01-25T13:13:02.939-0500</relative-time></i></p>
+                        <p>Renamed patch to the appropriate JIRA</p>
+
+                    </li>
+                    
+                    <li id="comment-24320">
+                        <p class="mb-0"><b>Mike Lam</b> <i>commented <relative-time datetime="2011-01-25T13:17:28.343-0500">2011-01-25T13:17:28.343-0500</relative-time></i></p>
+                        <p>Awaiting review.</p>
+
+                    </li>
+                    
+                    <li id="comment-24323">
+                        <p class="mb-0"><b>Mike Lam</b> <i>commented <relative-time datetime="2011-02-07T13:28:05.444-0500">2011-02-07T13:28:05.444-0500</relative-time></i></p>
+                        <p>I have refactored the patch originally attached to the JIRA.   The file type to mime type conversion only needs to happen once.   A pull request has been made on gitHub.</p>
+
+                    </li>
+                    
+                    <li id="comment-24325">
+                        <p class="mb-0"><b>Mike Lam</b> <i>commented <relative-time datetime="2011-02-08T14:20:14.665-0500">2011-02-08T14:20:14.665-0500</relative-time></i></p>
+                        <p>After much discussion, we have decided that parsing formatted strings is not the proper approach to solving this problem.  MIME types are preferred over standard file types and is more desirable to be the default format for file inclusion.  An array of MIME types would work better.</p>
+
+                    </li>
+                    
+                    <li id="comment-24327">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-05-17T09:50:10.257-0400">2011-05-17T09:50:10.257-0400</relative-time></i></p>
+                        <p>Bug Parade Infusion</p>
+
+                    </li>
+                    
+                    <li id="comment-24329">
+                        <p class="mb-0"><b>Mike Lam</b> <i>commented <relative-time datetime="2011-05-17T13:51:05.676-0400">2011-05-17T13:51:05.676-0400</relative-time></i></p>
+                        <p>The solution has been reviewed and pushed into the repository.  </p>
+<p>The effects of this fix are not evident yet.  However, when modern HTML5 browsers properly interpret and support MIME types, this solution will automatically take effect.  </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3885/"><span class="aria-hidden">←</span> Previous: FLUID-3885</a>
+        <a class="mx-1" href="/browse/FLUID-3887/">Next: FLUID-3887 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

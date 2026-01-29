@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4973  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4973 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4973/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4973/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4973/">FLUID-4973</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4973: Function.prototype.bind is not available in IE8</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4973">FLUID-4973</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-04-08T13:02:51.017-0400" prefix="">2013-04-08T13:02:51.017-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-04-29T09:29:17.618-0400" prefix="">2013-04-29T09:29:17.618-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>IE8 does not support Function.prototype.bind. It is used in the framework as part of fluid.applyHostFunction. It appears to have been added or modified at this commit:<br>
+<a href="https://github.com/fluid-project/infusion/commit/b53ae2769bd042de4a92ef40bcbebabdba79311c">https://github.com/fluid-project/infusion/commit/b53ae2769bd042de4a92ef40bcbebabdba79311c</a></p>
+<p>This stackoverflow post talks about a work around, linking in a MDN article:<br>
+<a href="http://stackoverflow.com/questions/11054511/how-to-handle-javascript-bind-method-missing-in-ie-8">http://stackoverflow.com/questions/11054511/how-to-handle-javascript-bind-method-missing-in-ie-8</a><br>
+<a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Function/bind">https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Function/bind</a></p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>IE8</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-16494">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-04-08T13:37:30.336-0400">2013-04-08T13:37:30.336-0400</relative-time></i></p>
+                        <p>Added a pull-request ( <a href="https://github.com/fluid-project/infusion/pull/310">https://github.com/fluid-project/infusion/pull/310</a> ) with a fix for this issue. It makes use of the Public Domain code from the MDN site. </p>
+
+                    </li>
+                    
+                    <li id="comment-16496">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-04-08T15:35:51.361-0400">2013-04-08T15:35:51.361-0400</relative-time></i></p>
+                        <p>The call to fluid.applyHostFunction has always been guarded by a check for typeof (console.log) === "function" which always returns false on IE8. In fact we shipped this way for the Infusion 1.4 release so if we are now considering this code problematic we need a better characterisation of what the problem is. Can you produce a failing test or other demonstration to show why this fails?<br>
+Thanks</p>
+
+                    </li>
+                    
+                    <li id="comment-16497">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-04-08T17:43:33.689-0400">2013-04-08T17:43:33.689-0400</relative-time></i></p>
+                        <p>This issue was observed when testing the upcoming UIOptions branch (<a href="/browse/FLUID-4927/">FLUID-4927</a>) on UIO. It turns out that the issue was intermittent, and triggered by a race condition in the IoC Testing framework, which then tried to invoke fluid.fail. fluid.fail then invoked the new framework utility "fluid.logActivity" which then issues a bare call to fluid.applyHostFunction without the implicit checking applied by the guard mentioned in the previous comment. We should just take the opportunity to rationalise this entire area, since there is actually no useful benefit gained by the use of multi-argument console.log on IE8 and IE9 anyway - exactly the same effect could be had by args.join("").</p>
+<p>We should attempt to consider the previous reports of a console.log with type "function" but without a working "apply" method as apocryphal and see how far we can get before encountering the problems again. I don't see any reference to such a possibility in any of the support discussions (docs, stackoverflow,e tc.) that have been cited</p>
+
+                    </li>
+                    
+                    <li id="comment-16498">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-04-09T08:41:10.206-0400">2013-04-09T08:41:10.206-0400</relative-time></i></p>
+                        <p>pull-request 310 replaced by <a href="https://github.com/fluid-project/infusion/pull/311">https://github.com/fluid-project/infusion/pull/311</a></p>
+
+                    </li>
+                    
+                    <li id="comment-16499">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2013-04-09T17:36:21.253-0400">2013-04-09T17:36:21.253-0400</relative-time></i></p>
+                        <p>Pull request merged into project repo at 80108b7e5d3c066e64a0dbfc04defe04c93d4b37</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4972/"><span class="aria-hidden">←</span> Previous: FLUID-4972</a>
+        <a class="mx-1" href="/browse/FLUID-4974/">Next: FLUID-4974 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

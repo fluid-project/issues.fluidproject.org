@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1578  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1578 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1578/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1578/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1578/">FLUID-1578</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1578: Can't browse files on Windows 2000 with a locally running instance of the Uploader, using FF3</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1578">FLUID-1578</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Cannot%20Reproduce">Cannot Reproduce</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-09-16T16:44:03.000-0400" prefix="">2008-09-16T16:44:03.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-02-04T14:07:18.000-0500" prefix="">2009-02-04T14:07:18.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.8</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Uploader</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The browse files button has does not open the file open dialog. I have updated the location of the swf upload file and updated flash. It is working in IE.</p>
+<p>Steps to reproduce:</p>
+<p>1) Open the uploader</p>
+<p>2) Click the "Browse Files" button. Notice that nothing happens</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF3 (Win 2000)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14669">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-16T16:46:20.000-0400">2008-09-16T16:46:20.000-0400</relative-time></i></p>
+                        <p>Error from Firebug</p>
+<p>[Exception... "'Invalid function name' when calling method: [nsIDOMEventListener::handleEvent]" nsresult: "0x8057001e (NS_ERROR_XPC_JS_THREW_STRING)" location: "&lt;unknown&gt;" data: no]</p>
+
+                    </li>
+                    
+                    <li id="comment-14671">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2008-09-16T19:17:57.000-0400">2008-09-16T19:17:57.000-0400</relative-time></i></p>
+                        <p>I suspect that this is the same old permissions problem for running the local version of the Uploader. Cna you say what version you were using and whether you were using it in a server environment. </p>
+
+                    </li>
+                    
+                    <li id="comment-14672">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-17T08:48:50.000-0400">2008-09-17T08:48:50.000-0400</relative-time></i></p>
+                        <p>Using Uploader 2 locally.</p>
+<p>I set the permissions via the macromedia web site which allowed me to run it using IE 6. </p>
+
+                    </li>
+                    
+                    <li id="comment-14674">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-17T11:13:40.000-0400">2008-09-17T11:13:40.000-0400</relative-time></i></p>
+                        <p>I tested this again today and the same issue occurred. </p>
+<p>Uploader 1 works from the build site but not running locally, so it seems that it may be a local issue where firefox is having a problem picking up the swf file. </p>
+
+                    </li>
+                    
+                    <li id="comment-20563">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2008-09-19T15:02:59.000-0400">2008-09-19T15:02:59.000-0400</relative-time></i></p>
+                        <p>Since this seems to be a Windows 2000 problem only and restricted to the local case which is really only for testing anyway, I'm suggesting that we mark this "will not fix". </p>
+<p>Justin has asked me to leave it open for now. </p>
+<p>I'm going to update the Title of the bug to indicate the exact situation of the bug and downgrade the criticality</p>
+
+                    </li>
+                    
+                    <li id="comment-20564">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-02-04T14:07:18.000-0500">2009-02-04T14:07:18.000-0500</relative-time></i></p>
+                        <p>It may have been fixed with an update to jQuery or SWFUpload. Or it may have been an issue with the virtual machine. At any rate, it appears to be working now</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1577/"><span class="aria-hidden">←</span> Previous: FLUID-1577</a>
+        <a class="mx-1" href="/browse/FLUID-1579/">Next: FLUID-1579 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

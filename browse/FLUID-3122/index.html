@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3122  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3122 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3122/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3122/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3122/">FLUID-3122</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3122: Image Reorderer default API, sample code, and documentation still use the old-style id-based scheme for identifying and communicating orderables.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3122">FLUID-3122</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-08-21T10:50:09.000-0400" prefix="">2009-08-21T10:50:09.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-10-05T16:24:45.000-0400" prefix="">2009-10-05T16:24:45.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.6beta1</li>
+                            
+                            <li>0.6</li>
+                            
+                            <li>0.7</li>
+                            
+                            <li>0.8</li>
+                            
+                            <li>0.8.1</li>
+                            
+                            <li>1.0</li>
+                            
+                            <li>1.1</li>
+                            
+                            <li>1.1.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Image Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>At the moment, our standalone Image Reorderer example, our documentation, and the default API all suggest that there's a required contract for using prefix:name:suffix-type IDs in the old RSF/Image Gallery style.</p>
+<p>This is a complex solution for newcomers, and is entirely unnecessary with the modern Reorderer API. We should do the following:</p>
+<p>1. Create a new standalone demo that takes a lighter approach to markup, without imposing an id-based contract<br>
+2. Improve the documentation to reflect this<br>
+3. Delete the obsolete afterMove Callback page located here: <a href="http://wiki.fluidproject.org/display/fluid/afterMove+Callback">http://wiki.fluidproject.org/display/fluid/afterMove+Callback</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15058">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2009-08-25T23:02:03.000-0400">2009-08-25T23:02:03.000-0400</relative-time></i></p>
+                        <p>I've got a working draft of the new afterMove page here:</p>
+<p><a href="http://wiki.fluidproject.org/display/fluid/Talking+to+the+Server+Using+The+afterMove+Event">http://wiki.fluidproject.org/display/fluid/Talking+to+the+Server+Using+The+afterMove+Event</a></p>
+
+                    </li>
+                    
+                    <li id="comment-15062">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-09-21T10:03:03.000-0400">2009-09-21T10:03:03.000-0400</relative-time></i></p>
+                        <p>Bug Parade Infusion 1.1.2</p>
+
+                    </li>
+                    
+                    <li id="comment-15065">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2009-10-05T13:52:44.000-0400">2009-10-05T13:52:44.000-0400</relative-time></i></p>
+                        <p>These are related in that changes to the default CSS and demo have affected the unit tests. I've fixed this issue in r8229.</p>
+
+                    </li>
+                    
+                    <li id="comment-15068">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2009-10-05T15:03:16.000-0400">2009-10-05T15:03:16.000-0400</relative-time></i></p>
+                        <p>The last  fixes went in for this issue as of r8235. I'd appreciate review for these.</p>
+
+                    </li>
+                    
+                    <li id="comment-15070">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2009-10-05T15:09:04.000-0400">2009-10-05T15:09:04.000-0400</relative-time></i></p>
+                        <p>The documentation side of this JIRA has been moved to <a href="/browse/FLUID-3226/">FLUID-3226</a> so that we can wind this one down for bug parade.</p>
+
+                    </li>
+                    
+                    <li id="comment-15073">
+                        <p class="mb-0"><b>Jacob Farber</b> <i>commented <relative-time datetime="2009-10-05T15:12:14.000-0400">2009-10-05T15:12:14.000-0400</relative-time></i></p>
+                        <p>Reviewed and it looks good.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3121/"><span class="aria-hidden">←</span> Previous: FLUID-3121</a>
+        <a class="mx-1" href="/browse/FLUID-3123/">Next: FLUID-3123 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

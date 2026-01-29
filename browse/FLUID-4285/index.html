@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4285  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4285 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4285/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4285/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4285/">FLUID-4285</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4285: Provide diagnostics in common cases of error in defining component and subcomponent options</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4285">FLUID-4285</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-06-07T17:49:22.763-0400" prefix="">2011-06-07T17:49:22.763-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-07-04T15:00:49.000-0400" prefix="">2011-07-04T15:00:49.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Reported on IRC by athena7 - the following code snippet will fail</p>
+<pre><code class="hljs language-java"><span class="hljs-type">var</span> <span class="hljs-variable">news</span> <span class="hljs-operator">=</span> news || {};
+			fluid.defaults(<span class="hljs-string">"news.parent"</span>, {
+				gradeNames: [<span class="hljs-string">"fluid.littleComponent"</span>, <span class="hljs-string">"autoInit"</span>],
+				options: {
+					test: <span class="hljs-string">"test"</span>
+				},
+				components: {
+					child: {
+						type: <span class="hljs-string">"news.child"</span>,
+						options: {
+							test: <span class="hljs-string">"{parent}.options.test"</span>
+						}
+					}
+				}
+			});
+
+			fluid.defaults(<span class="hljs-string">"news.child"</span>, {
+				gradeNames: [<span class="hljs-string">"fluid.littleComponent"</span>, <span class="hljs-string">"autoInit"</span>],
+			});
+			
+			<span class="hljs-type">var</span> <span class="hljs-variable">parent</span> <span class="hljs-operator">=</span> news.parent({});
+			console.log(parent.child.options.test);
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24397">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2011-06-07T18:10:59.394-0400">2011-06-07T18:10:59.394-0400</relative-time></i></p>
+                        <p>This is caused by an extra layer of wrapping in the defaults structure  - the term "options" is unnecessary since ALL of the rh argument of fluid.defaults consists of options... this causes the value in question to appear at the path "options.options.test" rather than "options.test" as expected by the context expression (and, presumably, the component user)</p>
+
+                    </li>
+                    
+                    <li id="comment-24398">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2011-06-08T04:38:27.689-0400">2011-06-08T04:38:27.689-0400</relative-time></i></p>
+                        <p>A further mishap in the same vein was caused by the following:</p>
+<pre><code class="hljs language-java"><span class="hljs-type">var</span> <span class="hljs-variable">news</span> <span class="hljs-operator">=</span> news || {};
+			fluid.defaults(<span class="hljs-string">"news.parent"</span>, {
+				gradeNames: [<span class="hljs-string">"fluid.modelComponent"</span>, <span class="hljs-string">"autoInit"</span>],
+				model: { test: <span class="hljs-string">"test"</span> },
+				components: {
+					child: {
+						type: <span class="hljs-string">"news.child"</span>,
+						model: <span class="hljs-string">"{parent}.model"</span>
+					}
+				}
+			});
+
+			fluid.defaults(<span class="hljs-string">"news.child"</span>, {
+				gradeNames: [<span class="hljs-string">"fluid.modelComponent"</span>, <span class="hljs-string">"autoInit"</span>],
+			});
+			
+			<span class="hljs-type">var</span> <span class="hljs-variable">parent</span> <span class="hljs-operator">=</span> news.parent({});
+			console.log(parent.child.model);
+</code></pre>
+<p>In this case, the necessarily "options" wrapping for options was omitted from the subcomponent record. Both of these situations should be detected by diagnostics and prevented.</p>
+
+                    </li>
+                    
+                    <li id="comment-24399">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2011-06-08T05:16:02.860-0400">2011-06-08T05:16:02.860-0400</relative-time></i></p>
+                        <p>Bug Parade Infusion</p>
+
+                    </li>
+                    
+                    <li id="comment-24400">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2011-06-20T16:15:48.224-0400">2011-06-20T16:15:48.224-0400</relative-time></i></p>
+                        <p>Pull request: <a href="https://github.com/fluid-project/infusion/pull/68">https://github.com/fluid-project/infusion/pull/68</a></p>
+
+                    </li>
+                    
+                    <li id="comment-24401">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2011-07-04T15:00:38.322-0400">2011-07-04T15:00:38.322-0400</relative-time></i></p>
+                        <p>I pushed Antranig's changes to improve diagnostics into the project repo at <a href="https://github.com/fluid-project/infusion/commit/4df58836453b4a79a92237fc84e412ce5b260db5">https://github.com/fluid-project/infusion/commit/4df58836453b4a79a92237fc84e412ce5b260db5</a></p>
+
+                    </li>
+                    
+                    <li id="comment-24402">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2011-07-04T15:00:48.998-0400">2011-07-04T15:00:48.998-0400</relative-time></i></p>
+                        <p>Reviewed and pushed.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4284/"><span class="aria-hidden">←</span> Previous: FLUID-4284</a>
+        <a class="mx-1" href="/browse/FLUID-4286/">Next: FLUID-4286 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

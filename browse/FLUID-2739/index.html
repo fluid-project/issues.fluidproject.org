@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2739  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2739 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2739/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2739/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2739/">FLUID-2739</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2739: Default reorder avatar in IE invisible in some cases.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2739">FLUID-2739</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Steven%20Githens">Steven Githens</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-05-15T13:48:14.000-0400" prefix="">2009-05-15T13:48:14.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T12:04:14.047-0400" prefix="">2024-07-22T12:04:14.047-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.0</li>
+                            
+                            <li>1.1</li>
+                            
+                            <li>1.1.1</li>
+                            
+                            <li>1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>I am creating a branch for this issue at the moment to show the issue, and will update the ticket when it's ready.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22797">
+                        <p class="mb-0"><b>Steven Githens</b> <i>commented <relative-time datetime="2009-05-15T14:48:31.000-0400">2009-05-15T14:48:31.000-0400</relative-time></i></p>
+                        <p>TEST CASE SETUP<br>
+---------------------------
+<br>
+There is a test case in progress here:  <a href="https://source.sakaiproject.org/contrib/assignment2/branches/FLUID-2739">https://source.sakaiproject.org/contrib/assignment2/branches/FLUID-2739</a></p>
+<p>To test, copy <a href="/browse/FLUID-2439/">FLUID-2439</a> as a webapp to a tomcat and use the following page:<br>
+<a href="http://149.166.143.211:8080/FLUID-2739/content/templates/inst-asnn-list.jsp">http://149.166.143.211:8080/FLUID-2739/content/templates/inst-asnn-list.jsp</a></p>
+<p>However, the static portion of it is working in FF but not even rendering yet in IE.  I will comment again if/when I get it working.</p>
+<p>r60493 | swgithen@mtu.edu | 2009-05-15 14:41:50 -0400 (Fri, 15 May 2009) | 1 line</p>
+<p>ONC-1324 <a href="/browse/FLUID-2739/">FLUID-2739</a> Static test case.. which works in Firefox, but in IE is silently failing upon calling the renderer... &amp;<sup>%&amp;</sup>%* so it's not quite yet a test case for the real issue at hand.</p>
+<p>TO REPRODUCE<br>
+------------------------
+<br>
+In order to reorder a row, you must hover over teh row, and grab the 4 Arrows icon.  You can't just grab anywhere on the row.  Have to grab the 4 arrows icon.  In Firefox, you can see by default that this sort of shows the row being dragged. In IE, the dragging still works, but the drag avatar is invisible so it's not immediately visible that you are actually dragging.  I have experimented with overloading the avatarCreator, and I can get random Div's to show up in IE as draggers.</p>
+
+                    </li>
+                    
+                    <li id="comment-22802">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-01-13T10:42:57.481-0500">2011-01-13T10:42:57.481-0500</relative-time></i></p>
+                        <p>I'm not entirely sure how to test this, I think I'm misunderstanding the instructions when it says copy <a href="/browse/FLUID-2439/">FLUID-2439</a>. If there is a new test case or if the issue has been solved already, could you please update the jira.</p>
+
+                    </li>
+                    
+                    <li id="comment-22804">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-07-11T14:30:28.216-0400">2014-07-11T14:30:28.216-0400</relative-time></i></p>
+                        <p>Steven Githens any new info on this issue?</p>
+
+                    </li>
+                    
+                    <li id="comment-27805">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2024-07-22T12:04:14.047-0400">2024-07-22T12:04:14.047-0400</relative-time></i></p>
+                        <p>Internet Explorer is not longer supported</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-2738/"><span class="aria-hidden">←</span> Previous: FLUID-2738</a>
+        <a class="mx-1" href="/browse/FLUID-2740/">Next: FLUID-2740 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-418  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-418 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-418/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-418/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-418/">SJRK-418</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-418: Media blocks break on text field changes</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-418">SJRK-418</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SJRK/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-11-04T15:01:43.052-0500" prefix="">2020-11-04T15:01:43.052-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-11-12T15:16:07.669-0500" prefix="">2020-11-12T15:16:07.669-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In the <a href="/browse/SJRK-289/">SJRK-289</a> development branch, a bug has been introduced that causes media blocks (i.e. all but text blocks) to break when a text value is altered (e.g. heading, alt text, description). This seems to go away when the <a href="https://github.com/BlueSlug/sjrk-story-telling/blob/dc3674af113dffeb2df5c4001e58bb4027cf97f4/src/ui/blockUi-editor.js#L208-L242">uploadState-to-visibility model relay</a> is commented out, but that relay is needed to hide and show elements related to file uploading.</p>
+<p><strong>To reproduce</strong></p>
+<ol>
+<li>Check out the <a href="/browse/SJRK-289/">SJRK-289</a> branch at commit&#160;<a href="https://github.com/BlueSlug/sjrk-story-telling/tree/dc3674af113dffeb2df5c4001e58bb4027cf97f4">dc3674af113dffeb2df5c4001e58bb4027cf97f4</a></li>
+<li>Start the server via docker-compose or run the Node server directly in your environment, making sure the database server is running</li>
+<li>Go to <a href="http://localhost:8081/storyEdit.html">http://localhost:8081/storyEdit.html</a></li>
+<li>Click "Add an image block"</li>
+<li>Click on the "Block heading" input field of the new image block</li>
+<li>Type in any value</li>
+<li>Click away or defocus from the input field</li>
+</ol>
+<p><strong>Expected</strong></p>
+<p>The value remains in the field and nothing untoward happens, especially nothing to do with the file upload</p>
+<p><strong>Actual</strong></p>
+<p>The block's file upload progress indicator and error message text (without an accompanying error message) are shown, and the image placeholder is hidden. Please see the attached screenshot for an example of the result. This also breaks the blockUi by setting its storyId field to "null" (its initial state) and sets the uploadState to a value other than "ready", which prevents navigating to the story preview.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/SJRK/SJRK-418/2020-11-04 media block broken field.PNG">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/SJRK/SJRK-418/2020-11-04 media block broken field.PNG" alt="2020-11-04 media block broken field.PNG">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26620">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2020-11-04T18:27:37.908-0500">2020-11-04T18:27:37.908-0500</relative-time></i></p>
+                        <p>The solution to the bug was in the definition of the uploadState model relay, as mentioned in the description.&#160;Two changes are necessary to get it to work as intended:</p>
+<ol>
+<li>The input for the relay transform should have used "defaultInput" instead of "defaultInputPath", as the "*Path" options of transforms are not meant to be used in model relays. This is outlined in this note in the Model Relay docs: <a href="https://docs.fluidproject.org/infusion/development/modelrelay#general-notes-on-model-relay-rules">https://docs.fluidproject.org/infusion/development/modelrelay#general-notes-on-model-relay-rules</a></li>
+<li>The input value must be "{that}.model.uploadState" rather than the EL Path, as that key expects a value and not a path, as detailed in the docs for the valueMapper transform: <a href="https://docs.fluidproject.org/infusion/development/modeltransformationapi#mapping-based-on-input-value-fluidtransformsvaluemapper">https://docs.fluidproject.org/infusion/development/modeltransformationapi#mapping-based-on-input-value-fluidtransformsvaluemapper</a></li>
+</ol>
+<p>Credit to Justin Obara&#160;for finding this solution, and thanks to Antranig Basman&#160;for clarifying the circumstances around the first part.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-417/"><span class="aria-hidden">←</span> Previous: SJRK-417</a>
+        <a class="mx-1" href="/browse/SJRK-419/">Next: SJRK-419 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

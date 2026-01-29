@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-156  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-156 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-156/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-156/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-156/">INFRA-156</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-156: Missing Yum repositories in config</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-156">INFRA-156</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Resolved</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-04-03T05:36:12.432-0400" prefix="">2018-04-03T05:36:12.432-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-04-23T11:01:28.981-0400" prefix="">2018-04-23T11:01:28.981-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Hosts that need special repositories should be identified and the configuration added to Ansible:</p>
+<ul>
+<li>NodeSource Node.js</li>
+<li>Nginx</li>
+<li>Jenkins</li>
+<li>others?</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25732">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-04-23T11:01:20.857-0400">2018-04-23T11:01:20.857-0400</relative-time></i></p>
+                        <p>Added them to a _global variable to avoid circular reference errors from Ansible:</p>
+<p><a href="https://github.com/inclusive-design/ops/blob/master/environments/00_cross_env_vars#L35">https://github.com/inclusive-design/ops/blob/master/environments/00_cross_env_vars#L35</a></p>
+<pre><code class="hljs">common_yum_repositories_global:
+  - name: centos-base
+    baseurl: http:<span class="hljs-regexp">//mi</span>rror.inclusivedesign.ca<span class="hljs-regexp">/centos/</span><span class="hljs-variable">$releasever</span><span class="hljs-regexp">/os/</span><span class="hljs-variable">$basearch</span>
+    gpgcheck: yes
+    gpgkey: file:<span class="hljs-regexp">//</span><span class="hljs-regexp">/etc/</span>pki<span class="hljs-regexp">/rpm-gpg/</span>RPM-GPG-KEY-CentOS-<span class="hljs-number">7</span>
+
+  - name: centos-updates
+    baseurl: http:<span class="hljs-regexp">//mi</span>rror.inclusivedesign.ca<span class="hljs-regexp">/centos/</span><span class="hljs-variable">$releasever</span><span class="hljs-regexp">/updates/</span><span class="hljs-variable">$basearch</span>
+    gpgcheck: yes
+    gpgkey: file:<span class="hljs-regexp">//</span><span class="hljs-regexp">/etc/</span>pki<span class="hljs-regexp">/rpm-gpg/</span>RPM-GPG-KEY-CentOS-<span class="hljs-number">7</span>
+
+  - name: centos-extras
+    baseurl: http:<span class="hljs-regexp">//mi</span>rror.inclusivedesign.ca<span class="hljs-regexp">/centos/</span><span class="hljs-variable">$releasever</span><span class="hljs-regexp">/extras/</span><span class="hljs-variable">$basearch</span>
+    gpgcheck: yes
+    gpgkey: file:<span class="hljs-regexp">//</span><span class="hljs-regexp">/etc/</span>pki<span class="hljs-regexp">/rpm-gpg/</span>RPM-GPG-KEY-CentOS-<span class="hljs-number">7</span>
+    exclude: <span class="hljs-string">'docker*'</span>
+
+  - name: docker
+    baseurl: https:<span class="hljs-regexp">//</span>download.docker.com<span class="hljs-regexp">/linux/</span>centos<span class="hljs-regexp">/7/</span><span class="hljs-variable">$basearch</span>/stable
+    gpgcheck: yes
+    gpgkey: https:<span class="hljs-regexp">//</span>download.docker.com<span class="hljs-regexp">/linux/</span>centos/gpg
+
+  - name: epel
+    baseurl: http:<span class="hljs-regexp">//mi</span>rror.inclusivedesign.ca<span class="hljs-regexp">/epel/</span><span class="hljs-number">7</span>/<span class="hljs-variable">$basearch</span>
+    gpgcheck: yes
+    gpgkey: file:<span class="hljs-regexp">//</span><span class="hljs-regexp">/etc/</span>pki<span class="hljs-regexp">/rpm-gpg/</span>RPM-GPG-KEY-EPEL-<span class="hljs-number">7</span>
+    exclude: <span class="hljs-string">'nginx*'</span>
+
+  - name: idi
+    baseurl: https:<span class="hljs-regexp">//</span>pkg.inclusivedesign.ca<span class="hljs-regexp">/centos/</span><span class="hljs-number">7</span>/<span class="hljs-variable">$basearch</span>
+    gpgcheck: yes
+    gpgkey: https:<span class="hljs-regexp">//</span>pkg.inclusivedesign.ca<span class="hljs-regexp">/centos/</span><span class="hljs-number">7</span><span class="hljs-regexp">/x86_64/</span>RPM-GPG-KEY-IDI
+
+  - name: jenkins
+    baseurl: http:<span class="hljs-regexp">//</span>pkg.jenkins.io/redhat-stable
+    gpgcheck: yes
+    gpgkey: https:<span class="hljs-regexp">//</span>pkg.jenkins.io<span class="hljs-regexp">/redhat-stable/</span>jenkins.io.key
+
+  - name: kubernetes
+    baseurl: https:<span class="hljs-regexp">//</span>packages.cloud.google.com<span class="hljs-regexp">/yum/</span>repos/kubernetes-el7-<span class="hljs-variable">$basearch</span>
+    gpgcheck: yes
+    gpgkey:
+      - https:<span class="hljs-regexp">//</span>packages.cloud.google.com<span class="hljs-regexp">/yum/</span>doc/yum-key.gpg
+      - https:<span class="hljs-regexp">//</span>packages.cloud.google.com<span class="hljs-regexp">/yum/</span>doc/rpm-package-key.gpg
+
+  - name: nginx
+    baseurl: http:<span class="hljs-regexp">//</span>nginx.org<span class="hljs-regexp">/packages/</span>centos<span class="hljs-regexp">/7/</span><span class="hljs-variable">$basearch</span>
+    gpgcheck: yes
+    gpgkey: http:<span class="hljs-regexp">//</span>nginx.org<span class="hljs-regexp">/keys/</span>nginx_signing.key
+</code></pre>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-154/"><span class="aria-hidden">←</span> Previous: INFRA-154</a>
+        <a class="mx-1" href="/browse/INFRA-157/">Next: INFRA-157 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

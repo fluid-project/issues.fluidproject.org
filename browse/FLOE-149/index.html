@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-149  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-149 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-149/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-149/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-149/">FLOE-149</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-149: Radio button groups are not properly structured - they should appear in a fieldset with a legend, and labels for each radio.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-149">FLOE-149</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLOE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Dana">Dana</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-01-07T16:02:09.188-0500" prefix="">2014-01-07T16:02:09.188-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-01-20T11:46:37.353-0500" prefix="">2014-01-20T11:46:37.353-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Metadata</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The radio buttons in the metadata panels are not properly structured and labelled - thus the radio button group label is not being read by VO (FF, Safari).</p>
+<p>To fix this, the radio button group should appear in a fieldset with a legend, and labels for each radio.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-11251">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-01-14T09:41:49.008-0500">2014-01-14T09:41:49.008-0500</relative-time></i></p>
+                        <p>Here's a good description of how this should be marked up.<br>
+<a href="http://webaim.org/techniques/forms/controls#radio">http://webaim.org/techniques/forms/controls#radio</a></p>
+
+                    </li>
+                    
+                    <li id="comment-11252">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-01-14T11:04:40.796-0500">2014-01-14T11:04:40.796-0500</relative-time></i></p>
+                        <p>Submitted a pull request <a href="https://github.com/fluid-project/metadata/pull/18">https://github.com/fluid-project/metadata/pull/18</a><br>
+Note that this doesn't change the behaviour found in <a href="/browse/FLOE-142/">FLOE-142</a></p>
+
+                    </li>
+                    
+                    <li id="comment-11253">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-01-20T11:46:32.718-0500">2014-01-20T11:46:32.718-0500</relative-time></i></p>
+                        <p>Merged into the project repo @ a4c3121c46905a616d1905fc2a2a2fb604eb58c8</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-148/"><span class="aria-hidden">←</span> Previous: FLOE-148</a>
+        <a class="mx-1" href="/browse/FLOE-150/">Next: FLOE-150 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

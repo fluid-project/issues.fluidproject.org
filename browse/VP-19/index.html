@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-19  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-19 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-19/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-19/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-19/">VP-19</a></li>
+            </ol>
+        </nav>
+        <h1>VP-19: Hide native webkit videoPlayer controls and use our own</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-19">VP-19</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Alexey%20Novak">Alexey Novak</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-09-04T16:34:00.979-0400" prefix="">2012-09-04T16:34:00.979-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-03-01T09:13:41.515-0500" prefix="">2013-03-01T09:13:41.515-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>controls</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In Safari the native controls are shown on top of our controls when we load the video player. We should be hiding built-in controls. This also happen in Chrome when the 'track element' flag is turned on. </p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-27158">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-09-06T11:01:21.936-0400">2012-09-06T11:01:21.936-0400</relative-time></i></p>
+                        <p>It looks like Safari should not show any videoPlayer controls when attribute "controls" is not present in the &lt;video&gt; tag. It should work just as Chrome does which does not show any controls.<br>
+Although if you inspect &lt;video&gt; and then flip controls attribute of the video element from false to true and then back from true to false you will see that controls will disappear.</p>
+<p>The source for the proper interactions <a href="http://developer.apple.com/library/safari/#documentation/AudioVideo/Conceptual/Using_HTML5_Audio_Video/Introduction/Introduction.html">http://developer.apple.com/library/safari/#documentation/AudioVideo/Conceptual/Using_HTML5_Audio_Video/Introduction/Introduction.html</a></p>
+
+                    </li>
+                    
+                    <li id="comment-27159">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-09-17T10:47:01.384-0400">2012-09-17T10:47:01.384-0400</relative-time></i></p>
+                        <p>At first I though it might be a Safari issue but creating a simple example from scratch showed me that it works as intended.</p>
+<p>I went through the history of commits and found that demo branch worked as intended on this commit<br>
+2012-03-01 6:12 (db05e6d)</p>
+<p>and then default controls showed after the next following merge commit<br>
+2012-03-02 10:21 (05deea2)</p>
+
+                    </li>
+                    
+                    <li id="comment-27160">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-09-17T11:03:13.951-0400">2012-09-17T11:03:13.951-0400</relative-time></i></p>
+                        <p>Right between working and non-working versions there were 2 commits:</p>
+<p>cc955fe<br>
+89b8020</p>
+
+                    </li>
+                    
+                    <li id="comment-27161">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-09-17T11:30:21.090-0400">2012-09-17T11:30:21.090-0400</relative-time></i></p>
+                        <p>Commit is very big and consist of many changes which is unfortunate because it is much harder to find what was an exact issue.</p>
+<p>But moving file by file from 1 commit to another I narrowed down that modifications to the videoPlayer_html5Captionator introduced a regression.</p>
+
+                    </li>
+                    
+                    <li id="comment-27162">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-09-17T12:58:16.521-0400">2012-09-17T12:58:16.521-0400</relative-time></i></p>
+                        <p>It seems that this exact change would be the cause of the regression. Not sure why exactly</p>
+<ul>
+<li>           if ($.inArray(key, fluid.get(that.model, elPaths.currentCaptions)) !== -1 &amp;&amp; displayCaptions) {<br>
++            if ($.inArray(key, that.readIndirect("elPaths.currentCaptions")) !== -1 &amp;&amp; that.readIndirect("elPaths.displayCaption")) {</li>
+</ul>
+<p>In particular that.readIndirect("elPaths.displayCaption")</p>
+<p>as I noticed there is another regression in the videoPlayer that captions are shown in the video at start even though they should be off</p>
+
+                    </li>
+                    
+                    <li id="comment-27163">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-09-17T13:06:24.879-0400">2012-09-17T13:06:24.879-0400</relative-time></i></p>
+                        <p>a typo in the code <br>
+"elPaths.currentCaption" should be "elPaths.currentCaptions"</p>
+
+                    </li>
+                    
+                    <li id="comment-27164">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2012-10-26T13:33:44.131-0400">2012-10-26T13:33:44.131-0400</relative-time></i></p>
+                        <p>Merged into project repo at e7bb2a12a474b5d4e7b86b9d61fcd74f1be70373</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-178/"><span class="aria-hidden">←</span> Previous: VP-178</a>
+        <a class="mx-1" href="/browse/VP-7/">Next: VP-7 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

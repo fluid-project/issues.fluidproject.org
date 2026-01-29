@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5497  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5497 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5497/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5497/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5497/">FLUID-5497</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5497: Priorities of model listeners added via the IoC testing framework have become inverted</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5497">FLUID-5497</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-08-21T08:21:34.755-0400" prefix="">2014-08-21T08:21:34.755-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-06-26T10:14:11.351-0400" prefix="">2015-06-26T10:14:11.351-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.9</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The bug fixes for applying precise model invalidation and the new "source tracking system" merged in <a href="https://github.com/fluid-project/infusion/pull/553">https://github.com/fluid-project/infusion/pull/553</a> for <a href="/browse/FLUID-5489/">FLUID-5489</a>, <a href="/browse/FLUID-5490/">FLUID-5490</a> introduced a serious bug into the system whereby the "mapPriority" function is applied twice to model listener records added via the IoC testing framework. For example, in the following record,<br>
+listenerMaker: "gpii.tests.makeAssertModelChanges",<br>
+makerArgs: ["{resourceInputPanel}", "resources.0.src", "{that}.options.testOpts.0.src"],<br>
+spec: {path: "", priority: "last"},<br>
+changeEvent: "{resourceInputPanel}.applier.modelChanged"<br>
+the value priority: "last" became mapped to a numeric value, and was then inverted, causing this listener to be notified FIRST rather than last. This causes the test cases to fail in a brutal and perplexing way - firstly the entire test sequence resolves before the second change in the stack (triggered by a manual relay) is applied, and so no changes are picked up in the UI  - then when the changes do begin to apply, the user receives an "error expanding material for destroyed component" failure since the entire test fixture has now been cleared away.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19021">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-08-22T16:08:18.249-0400">2014-08-22T16:08:18.249-0400</relative-time></i></p>
+                        <p>Merged into trunk at revision b3926266d844dd15ffb1cd0146d1cec33c12a0d2</p>
+
+                    </li>
+                    
+                    <li id="comment-19027">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-26T09:51:24.576-0400">2015-06-26T09:51:24.576-0400</relative-time></i></p>
+                        <p>Reopening to change the fix version to 1.9</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5496/"><span class="aria-hidden">←</span> Previous: FLUID-5496</a>
+        <a class="mx-1" href="/browse/FLUID-5498/">Next: FLUID-5498 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5243  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5243 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5243/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5243/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5243/">FLUID-5243</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5243: Corruption during re-entrant options expansion due to aliasing in "segs" argument</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5243">FLUID-5243</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-12-30T16:08:04.682-0500" prefix="">2013-12-30T16:08:04.682-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-05-21T09:15:47.511-0400" prefix="">2015-05-21T09:15:47.511-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The merging/expanion pathway for the <a href="/browse/FLUID-4982/">FLUID-4982</a> "ginger world" involves a complex network of mutually recursive functions forming the "flooding/driving" API pattern in which the arguments "segs" holding an array of path segments appears repeatedly. In a kind of "false economy" it appears we have tried to economise on the creation of this array more than is correct. When debugging a complex piece of the expansion workflow for instantiating the ModuleLayout configuration of the Reorderer, it seems that reentering the expansion workflow for the same component at a different path has corrupted the array of path segments.</p>
+<p>In particular, an array which previously held ["selectors", "grabHandle"] was seen to be corrupted to ["selectables", "grabHandle"] before the previous path became completely merged.</p>
+<p>This Reorderer configuration operates an extremely complex workflow which injects upwards three overrides for "selectables" members, from the "moduleLayout" up to the parent "reorderer" whilst it is still in the process of instantiating.. We should try to be less aggressive about sharing the "segs" array as well as trying to trace in detail the workflow responsible. This appears yet another case in which <a href="/browse/FLUID-4925/">FLUID-4925</a> wave of explosions will be helpful - since it seems that the creation of the moduleLayout subcomponent is not necessarily triggered by a reliable process.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15403">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-12-30T16:56:16.636-0500">2013-12-30T16:56:16.636-0500</relative-time></i></p>
+                        <p>Note - creation of layoutHandler is actually triggered by the "blind reference" from root configuration onto {that}.layoutHandler.options.containerRole. This would clearly be much better timed through explosions.</p>
+
+                    </li>
+                    
+                    <li id="comment-15406">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-12-31T15:31:32.878-0500">2013-12-31T15:31:32.878-0500</relative-time></i></p>
+                        <p>Here is the "instantiation story" which was used to guide the construction of a reduced test case to diagnose and resolve this issue:</p>
+<p>Initial fetch of {that}.layoutHandler.options.containerRole -&gt; ModuleLayoutHandler</p>
+<p>selectors.modules -&gt; {reorderer}.options.selectors.modules</p>
+<p>POSSIBLE CORRUPTION HERE - mountStrategy creates a fresh copy of segs via slice (FluidIoC.js line 93) - and this has<br>
+seemingly been corrupted from selectors.modules to selectors.labelSource when we get to makeExpandStrategy/strategy</p>
+<p>Probably really, attempt to fetch selectors.modules causes flooding to start for selectors, which then firstly causes fetch of </p>
+<p>mergePolicy: selectors.labelSource -&gt; selectors.grabHandle - implemented as {that}.options.selectors.grabHandle starts a fetch via "resolveContextValue" which dispatches back via very long route to this same resolution:</p>
+<p>Then we go through regenerateSources -&gt; regenerateCursor for "selectors" to resolve this reference (after a very long rigmarole of 20 stack frames to just get here from resolveContextValue.</p>
+<p>This is the one with 4 sources, 4th of which is the user options - layoutHandler is resolved, and "selectors" should be coming - but it never arrives since we managed to trigger an expansion for i=2 of "selectors/movables" which holds the expander {that}.makeComputeModules</p>
+<p>At this point we see ["movables", "grabHandle"] in the segs entries going up, which seems probably fatal, given we never finished resolving grabHandle before - that is, we are still in the middle of i=2 regenerateSources/regenerateCursor, which dispatches with the same segs all the way to makeExpandChildren which is probably the culprit.</p>
+<p>Next fetch is for {reorderer}.dropManager (needed for makeComputeModules) which kicks off yet a fresh cycle of regenerateCursor..... </p>
+
+                    </li>
+                    
+                    <li id="comment-15410">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-05-21T09:15:47.486-0400">2015-05-21T09:15:47.486-0400</relative-time></i></p>
+                        <p>Merged into trunk at revision 89fb5e1a208c20ce4d7a2706012631364e57d6bc (Jan 31, 2014)</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5242/"><span class="aria-hidden">←</span> Previous: FLUID-5242</a>
+        <a class="mx-1" href="/browse/FLUID-5244/">Next: FLUID-5244 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-928  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-928 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-928/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-928/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-928/">FLUID-928</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-928: Reorderer should provide callbacks for a variety of interesting moments</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-928">FLUID-928</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Sub-task">Sub-task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-07-16T21:47:08.000-0400" prefix="">2008-07-16T21:47:08.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-02-22T16:27:51.951-0500" prefix="">2011-02-22T16:27:51.951-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                            <li>0.3</li>
+                            
+                            <li>0.4beta1</li>
+                            
+                            <li>0.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>At the moment, the Reorderer provides a single callback: the orderChangedCallback. It is fired whenever the user has finished dropping an item.</p>
+<p>However, there are a variety of interesting moments that should have callbacks:</p>
+<ul>
+<li>afterGrab(grabbedElement)</li>
+<li>afterMove(droppedElement)</li>
+<li>onSelect(selectedElement)</li>
+</ul>
+<p>Other delegate-style predicate functions would be helpful to allow users to override the Reorderer's default behaviour?</p>
+<ul>
+<li> shouldSelect()</li>
+<li> shouldMove()</li>
+</ul>
+<p>It would also be helpful if the orderChangedCallback was given a list of the new order of elements, saving users the effort of walking the DOM for simple cases.</p>
+<p>dev-iteration43</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20099">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-09-12T17:01:19.000-0400">2008-09-12T17:01:19.000-0400</relative-time></i></p>
+                        <p>As of revision 5530 event architecture is now generalised (see Fluid.js "mergeListeners" and "instantiateFirers" ) and it will be easy to freely add new "moments".</p>
+
+                    </li>
+                    
+                    <li id="comment-20100">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-09-17T23:58:52.000-0400">2008-09-17T23:58:52.000-0400</relative-time></i></p>
+                        <p>Fixed at revision 5572. As of this revision the current set of supported events reads as follows:<br>
+onShowKeyboardDropWarning: null,<br>
+onSelect: null,<br>
+onBeginMove: "preventable",<br>
+onMove: null,<br>
+afterMove: null,<br>
+onHover: null</p>
+<p>This can be duly expanded but should be sufficient to be going on with. afterMove reports as well as the moving item, its target position and the complete list of movables.</p>
+
+                    </li>
+                    
+                    <li id="comment-20102">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2011-02-22T16:27:51.949-0500">2011-02-22T16:27:51.949-0500</relative-time></i></p>
+                        <p>Closing issues that were resolved for 1.0 and earlier releases. </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-926/"><span class="aria-hidden">←</span> Previous: FLUID-926</a>
+        <a class="mx-1" href="/browse/FLUID-932/">Next: FLUID-932 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

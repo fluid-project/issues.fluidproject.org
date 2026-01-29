@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-93  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-93 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-93/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-93/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-93/">FLUID-93</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-93: Viewing moved images after reordering, shows the incorrect image</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-93">FLUID-93</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Michelle D'Souza</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2007-11-05T13:32:25.000-0500" prefix="">2007-11-05T13:32:25.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2007-11-29T19:19:00.000-0500" prefix="">2007-11-29T19:19:00.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Image Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>After initially moving an image. Clicking on a moved image will show the image now residing in its original location. </p>
+<p>i.e.  There are four images a, b, c, d in location 1, 2, 3, 4 respectively.</p>
+<p>move image 'a' to position 3. new order is now b, c, a, d<br>
+clicking on image 'a' will show image 'b'<br>
+if you had clicked on image 'b' it will show image 'c' (as this was the original location for image 'b')</p>
+<p>Note: once the page has been reloaded the images will display correctly.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>firefox</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-17965">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2007-11-15T10:53:00.000-0500">2007-11-15T10:53:00.000-0500</relative-time></i></p>
+                        <p>This only happens in the gallery not in the stand alone lightbox.</p>
+<p>When a thumbnail is moved in the browser, the server reindexes the thumbnails but the client does not.</p>
+<p>In the above example a, b, c, d have indexes 0, 1, 2, 3.<br>
+After moving 'a' to posiiton '3' the thumbnail order is b, c, a, d. The indexes on the client are 1, 2, 0, 3 but on the server are 0, 1, 2, 3.<br>
+Clicking on 'a' requests the server for the thumbnail at index '0' which the client expects to be 'a'. However, the server has 'b' at index 0 and returns it instead.</p>
+
+                    </li>
+                    
+                    <li id="comment-17968">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2007-11-26T13:30:39.000-0500">2007-11-26T13:30:39.000-0500</relative-time></i></p>
+                        <p>This bug has been added to the Image Gallery JIRA <a href="http://jira.sakaiproject.org/jira/browse/GAL-68">http://jira.sakaiproject.org/jira/browse/GAL-68</a>, assigned to Louis Majanja. This bug (here) should stay open since it's a Fluid release blocker.</p>
+
+                    </li>
+                    
+                    <li id="comment-17971">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2007-11-28T16:40:09.000-0500">2007-11-28T16:40:09.000-0500</relative-time></i></p>
+                        <p>This is not really a bug in the Fluid component, but reflects a use of URL space by the original app that can retrospectively seen to be invalid in this context.</p>
+<p>The issue is that the server and client are independently taking responsibility for reflecting the "reordering" operation - after the AJAX call, <strong>both</strong> client and server have reordered their respective collections. However, if the URL space applied for references within the client cells refers to collection elements by index, these indexes have now become "overpermuted" by the composition of the client and server operations. There are a few possible strategies for avoiding this problem, none of them very satisfactory:</p>
+<p>i) requiring a complete refresh of the managed area of the reorderer markup after each operation. This is fairly unacceptable since one of the main goals of the reorderer was to perform as many operations locally as possible.</p>
+<p>ii) nominate "invariant nodes" by specifying from the server parts of the client cell which should be "protected" from the permuting operation. This is also pretty awful since as Michelle pointed out the link <strong>text</strong> of the link to the image would need to be treated separately from the link <strong>target</strong> which really is a pretty unacceptably fine-grained markup division to expect to communicate to the client.</p>
+<p>There is no really satisfactory resolution except to forbid the use of index-based URLs within client cells which refer to elements within the managed collection by index, and to require globally stable ids instead. This would have caused a good deal of logic complication in the Gallery app if it was adopted as a global policy, but instead the problem was sidelined by adopting a "fat ViewParams" strategy which allows one style of URL to be used within the lightbox using ids, and another style to be used elsewhere using indexes - these URLs are considered equivalent designations of the same resource.</p>
+<p>This is resolved in the <a href="/browse/GAL-68/">GAL-68</a> branch mentioned in the linked issue - no change is required to Fluid code.</p>
+
+                    </li>
+                    
+                    <li id="comment-17976">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2007-11-29T19:19:00.000-0500">2007-11-29T19:19:00.000-0500</relative-time></i></p>
+                        <p>Verified the fix in firefox on winxp</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-92/"><span class="aria-hidden">←</span> Previous: FLUID-92</a>
+        <a class="mx-1" href="/browse/FLUID-94/">Next: FLUID-94 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

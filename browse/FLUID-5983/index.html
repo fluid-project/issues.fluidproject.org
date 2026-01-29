@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5983  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5983 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5983/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5983/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5983/">FLUID-5983</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5983: expanders can execute more than once if their value is specifically demanded during ginger process</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5983">FLUID-5983</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-10-17T00:38:18.645-0400" prefix="">2016-10-17T00:38:18.645-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-10-26T12:40:22.749-0400" prefix="">2016-10-26T12:40:22.749-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This issue will take a while to characterise, but there are situations where an expander can execute more than once if the value it delivers is specifically demanded during options evaluation. For example, using the "new viewComponents" with this definition:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.newViewComponent"</span>, {
+        gradeNames: [<span class="hljs-string">"fluid.modelComponent"</span>],
+        members: {
+            dom: <span class="hljs-string">"@expand:fluid.initDomBinder({that}, {that}.options.selectors, {that}.container)"</span>,
+            container: <span class="hljs-string">"@expand:fluid.container({that}.options.container)"</span>
+        }
+    });
+</code></pre>
+<p>and </p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.author.containerRenderingView"</span>, {
+        gradeNames: <span class="hljs-string">"fluid.newViewComponent"</span>,
+        invokers: {
+            renderMarkup: <span class="hljs-string">"fluid.identity({that}.options.markup.container)"</span>
+        },
+        container: <span class="hljs-string">"@expand:fluid.author.renderContainer({that}, {that}.renderMarkup, {that}.options.parentContainer)"</span>,
+        <span class="hljs-comment">// The DOM element which to which this component should append its markup on startup</span>
+        parentContainer: <span class="hljs-string">"fluid.notImplemented"</span> <span class="hljs-comment">// must be overridden</span>
+    });
+
+    fluid.author.renderContainer = function (that, renderMarkup, parentContainer) {
+        <span class="hljs-type">var</span> <span class="hljs-variable">containerMarkup</span> <span class="hljs-operator">=</span> renderMarkup();
+        <span class="hljs-type">var</span> <span class="hljs-variable">container</span> <span class="hljs-operator">=</span> $(containerMarkup);
+        parentContainer.append(container);
+        <span class="hljs-keyword">return</span> container;
+    };
+</code></pre>
+<p>A demand via the dom binder of a nested component caused the rendering expander to execute twice - which, since it is stateful, caused two copies of the markup to be generated:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.author.componentView"</span>, {
+        gradeNames: [<span class="hljs-string">"fluid.newViewComponent"</span>, <span class="hljs-string">"fluid.author.containerRenderingView"</span>, <span class="hljs-string">"fluid.indexedDynamicComponent"</span>, <span class="hljs-string">"fluid.author.domPositioning"</span>],
+        selectors: {
+            modelView: <span class="hljs-string">".fld-author-modelView"</span>
+        },
+        components: {
+            modelView: {
+                type: <span class="hljs-string">"fluid.author.JSONView"</span>,
+                options: {
+                    parentContainer: <span class="hljs-string">"{componentView}.dom.modelView"</span>
+                }
+            }
+        },
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22603">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-10-26T12:40:22.749-0400">2016-10-26T12:40:22.749-0400</relative-time></i></p>
+                        <p>This was found not to be the bug it was thought. The problem is that the line var containerMarkup = renderMarkup() is reentrant into the system, causing a re-evaluation of the same container whose evaluation was responsible for the current stack. Whilst in normal conditions we will not evaluate expanders more than once, we need to improve diagnostics (and the use of our "currently in evaluation" marker) to report this condition earlier with a hard failure.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5982/"><span class="aria-hidden">←</span> Previous: FLUID-5982</a>
+        <a class="mx-1" href="/browse/FLUID-5984/">Next: FLUID-5984 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

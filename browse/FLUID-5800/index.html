@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5800  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5800 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5800/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5800/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5800/">FLUID-5800</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5800: Grade merging algorithm is still incorrect - accumulative linearisation must be abandoned</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5800">FLUID-5800</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-10-31T11:57:01.302-0400" prefix="">2015-10-31T11:57:01.302-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-07-19T12:05:00.910-0400" prefix="">2021-07-19T12:05:00.910-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>6.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Despite the work in <a href="/browse/FLUID-5085/">FLUID-5085</a>, our grade merging algorithm still has serious flaws. The following set of grades:</p>
+<pre><code class="hljs language-javascript">fluid.<span class="hljs-title function_">defaults</span>(<span class="hljs-string">"gpii.flowManager.matchMakingRequest"</span>, {
+        <span class="hljs-attr">listeners</span>: {
+            <span class="hljs-attr">onUserToken</span>: [{
+                <span class="hljs-attr">priority</span>: <span class="hljs-string">"first"</span>,
+                <span class="hljs-attr">listener</span>: <span class="hljs-string">"gpii.flowManager.setUserToken"</span>,
+                <span class="hljs-attr">args</span>: [<span class="hljs-string">"{that}"</span>, <span class="hljs-string">"{arguments}.0"</span>]
+            }, <span class="hljs-string">"{that}.getPreferences"</span>]
+        }
+    }
+    fluid.<span class="hljs-title function_">defaults</span>(<span class="hljs-string">"gpii.flowManager.userLogonStateChange.matchMakingStateChangeHandler"</span>, {
+        <span class="hljs-attr">gradeNames</span>: <span class="hljs-string">"gpii.flowManager.matchMakingRequest"</span>,
+        <span class="hljs-attr">listeners</span>: {
+            <span class="hljs-attr">onUserToken</span>: <span class="hljs-string">"{that}.getDeviceContext"</span>
+        }
+    });
+
+    fluid.<span class="hljs-title function_">defaults</span>(<span class="hljs-string">"gpii.flowManager.userLogonStateChange.handler"</span>, {
+        <span class="hljs-attr">gradeNames</span>: [<span class="hljs-string">"kettle.request.http"</span>, <span class="hljs-string">"gpii.flowManager.userLogonStateChange.matchMakingStateChangeHandler"</span>],
+    });
+</code></pre>
+<p>(abridged and simplified from recent work on the GPII's "untrusted local FlowManager) triggers an exception in the merging pipeline - </p>
+<pre><code class="hljs"><span class="hljs-number">03</span>:<span class="hljs-number">31</span>:<span class="hljs-number">32.923</span>:  FATAL ERROR: Uncaught exception: Cannot assign to read only property <span class="hljs-symbol">'valu</span>e<span class="hljs-string">' of [object Object]
+TypeError: Cannot assign to read only property '</span>value<span class="hljs-string">' of [object Object]
+    at Object.fluid.jQueryStandalone.extend (E:<span class="hljs-char escape_">\s</span>ource<span class="hljs-char escape_">\g</span>its<span class="hljs-char escape_">\g</span>pii<span class="hljs-char escape_">\n</span>ode_modules<span class="hljs-char escape_">\u</span>niversal<span class="hljs-char escape_">\n</span>ode_modules<span class="hljs-char escape_">\i</span>nfusion<span class="hljs-char escape_">\s</span>rc<span class="hljs-char escape_">\f</span>ramework<span class="hljs-char escape_">\c</span>ore<span class="hljs-char escape_">\j</span>s<span class="hljs-char escape_">\j</span>query.standalone.js:142:42
+
+    at Object.fluid.model.mergeModel (E:<span class="hljs-char escape_">\s</span>ource<span class="hljs-char escape_">\g</span>its<span class="hljs-char escape_">\g</span>pii<span class="hljs-char escape_">\n</span>ode_modules<span class="hljs-char escape_">\u</span>niversal<span class="hljs-char escape_">\n</span>ode_modules<span class="hljs-char escape_">\i</span>nfusion<span class="hljs-char escape_">\s</span>rc<span class="hljs-char escape_">\f</span>ramework<span class="hljs-char escape_">\c</span>ore<span class="hljs-char escape_">\j</span>s<span class="hljs-char escape_">\F</span>luid.js:1826:15)
+    at Object.fluid.mergeOneImpl (E:<span class="hljs-char escape_">\s</span>ource<span class="hljs-char escape_">\g</span>its<span class="hljs-char escape_">\g</span>pii<span class="hljs-char escape_">\n</span>ode_modules<span class="hljs-char escape_">\u</span>niversal<span class="hljs-char escape_">\n</span>ode_modules<span class="hljs-char escape_">\i</span>nfusion<span class="hljs-char escape_">\s</span>rc<span class="hljs-char escape_">\f</span>ramework<span class="hljs-char escape_">\c</span>ore<span class="hljs-char escape_">\j</span>s<span class="hljs-char escape_">\F</span>luid.js:1899:68)
+    at Object.strategy (E:<span class="hljs-char escape_">\s</span>ource<span class="hljs-char escape_">\g</span>its<span class="hljs-char escape_">\g</span>pii<span class="hljs-char escape_">\n</span>ode_modules<span class="hljs-char escape_">\u</span>niversal<span class="hljs-char escape_">\n</span>ode_modules<span class="hljs-char escape_">\i</span>nfusion<span class="hljs-char escape_">\s</span>rc<span class="hljs-char escape_">\f</span>ramework<span class="hljs-char escape_">\c</span>ore<span class="hljs-char escape_">\j</span>s<span class="hljs-char escape_">\F</span>luid.js:2025:48)
+</span></code></pre>
+<p>This code reads:</p>
+<pre><code class="hljs language-javascript">} <span class="hljs-keyword">else</span> {
+                sources[j] = <span class="hljs-literal">undefined</span>;
+                <span class="hljs-keyword">if</span> (newPolicy.<span class="hljs-property">func</span>) {
+                    togo = newPolicy.<span class="hljs-property">func</span>.<span class="hljs-title function_">call</span>(<span class="hljs-literal">null</span>, thisTarget, thisSource, segs[i - <span class="hljs-number">1</span>], segs, i); <span class="hljs-comment">// NB - change in this mostly unused argument</span>
+                } <span class="hljs-keyword">else</span> {
+<span class="hljs-number">1899</span>--&gt;                    togo = fluid.<span class="hljs-title function_">isValue</span>(thisTarget) ? fluid.<span class="hljs-property">model</span>.<span class="hljs-title function_">mergeModel</span>(thisTarget, thisSource) : thisSource;
+                }
+</code></pre>
+<p>Note that the use of "mergeModel" already has a hazard warning here - we've lost grasp of why this in our workflow, but it is clearly some attempt at base object reference preservation. </p>
+<p>We have two serious problems here:</p>
+<p>i) The merging algorithm should never throw - it's unclear even where this property named "value" has appeared from but the result of merging should be well-defined in every case - even in light of ii) the system should proceed to a "sensible" merged result even if it will be the wrong one<br>
+ii) The result of our new "best practice" on mixin grades has exposed a serious flaw in the basic strategy of merging. We have always assumed that merging can be "accumulative" - that is, that the result of merging a derived grade onto a base grade can be expressed in terms of some cached, fully accumulated material associated with the base grade plus the derived grade material. It's clear that in this case this is impossible - since we have not yet seen the grade "fluid.component" which contains the mergePolicy for the listeners, which occurs only in the 2nd derived grade, we can only ever attach a structure to gpii.flowManager.userLogonStateChange.matchMakingStateChangeHandler which has faultily destroyed information about listeners.</p>
+<p>This problem generalises more widely, at least in terms of mergePolicies which have not so far led to more widespread problems since their awkward usability has led them to be used pretty conservatively. But it's obvious that we need to return to a more "linear" algorithm that performs defaults merging in a manner more similar to live options merging (and, doubtless, in the end, unify these processes) since we need to wait for the complete information about mergePolicies throughout the hierarchy to be completely available before we begin any kind of merging.</p>
+<p>This suggests that we have dismissed the C3 family unfairly and need to spend more time understanding what regularities they try to respect. The idea that "overriding must always be effective" could perhaps be related to the algorithm's concept of "local precedence order".</p>
+<p>The original C3 paper is at <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.19.3910&rep=rep1&type=pdf">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.19.3910&amp;rep=rep1&amp;type=pdf</a></p>
+<p>It would seem that we would like an algorithm which is both monotonic and "observes local precedence order". Certainly we need a system which produces stable results on both the "confused-grid" and "pedalo" examples. But going further, it seems that even C3 will sometimes reject a hierarchy as inconsistent, which must never happen. As part of our general requirements, although reworking our algorithm from its "accumulative" form is going to make it more inefficient, we certainly want a system which (morally, assuming suitable data structures) does no more work than O(n log n) on a hierarchy with n elements. </p>
+<p>Some prior JavaScript art is in "ring.js" whose algorithm is here: <a href="https://github.com/nicolas-van/ring.js/blob/master/ring.js">https://github.com/nicolas-van/ring.js/blob/master/ring.js</a> - as we can see, this algorithm is capable of rejecting, which must not happen. Unfortunately the paper discussion does not include an example which it will reject, nor any discussion on this. The Wikipedia article on the algorithm does have a brief characterisation of the rejection scenario.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22208">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-10-31T12:04:29.130-0400">2015-10-31T12:04:29.130-0400</relative-time></i></p>
+                        <p>The Python treatment contains a minimal rejection example: <a href="https://www.python.org/download/releases/2.3/mro/">https://www.python.org/download/releases/2.3/mro/</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22211">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-10-31T12:07:31.179-0400">2015-10-31T12:07:31.179-0400</relative-time></i></p>
+                        <p>Note that ANY situation in which the reordering of grade parents creates a change in the merged output reflects a potential design error. The ideal solution would be to refactor all of the involved grades so that the result becomes order-independent - by removing overridden material from base grades and pushing it down to derived ones. Therefore, the behaviour of our "ultimately evolved IDE" would be to flag the MRO failure case as "just another" case in which a grade hierarchy can be improved by eliminating overriden material from bases. In the meantime the system should continue to work - after all, if there is NO conflicting material in the MRO rejection case, it is not a failure after all - a rejection is only meaningful with respect to a particular set of grade contents.</p>
+
+                    </li>
+                    
+                    <li id="comment-22216">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-10-31T20:43:06.991-0400">2015-10-31T20:43:06.991-0400</relative-time></i></p>
+                        <p>Investigation of original exception - this was hard to characterise for a while, since the code failed in node.js but not in the browser. This was eventually tracked down to the fact that, since the violating code was actually within jQuery.extend, which was not in STRICT MODE, the assignment to the frozen member of fluid.NO_VALUE named "member" (by the bizarrely broken-looking "mergeModel" implementation) went into the behaviour of "silently failing" rather than raising a TypeError. Running with our jQuery.standalone instead, which is in strict mode, allowed the same behaviour to be seen in the browser and node.js.</p>
+<p>This excursion reveals still a further flaw - that our "fluid.annotateListeners" function is operating even for non-component grades. It is the insertion of its information (fluid.NO_VALUE) together with the operation of the non-component-aware mergePolicy PLUS the faulty action of fluid.mergeModel that enables this problem.</p>
+
+                    </li>
+                    
+                    <li id="comment-22220">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-11-03T11:09:02.562-0500">2015-11-03T11:09:02.562-0500</relative-time></i></p>
+                        <p>Interestingly, after putting in a "quick fix" which eliminates the use of the uncomprehended use of "fluid.model.mergeModel", the failure leading to this report is no longer observable in a live component. As soon as we put in the grade "fluid.component", the hierarchy traversal reacquires each individual grade's raw defaults and remerges them into the concrete grade's options correctly. It appears that we only use the accumulated cache when compositing multiple dynamic grades. We still need to rewrite this algorithm completely, but it seems that there aren't any easily characterisable cases of faulty behaviour which we can patch up before then. </p>
+<p>We still have the offputting phenomenon that the corruptly merged version of the options are visible in the defaults cache for the abstract grades - e.g. fluid.tests.FLUID5800mid in the test case. We need to rewrite the default computation algorithm so that it is more similar to the live component option merging algorithm (as well as being more C3-like) - in particular, that it makes the very earliest attempt to compute the component's gradeName list. Without this, we can't interpret properly any of the other options, even to the extent of determining whether the grade is a function or a component grade. Right now we blindly apply the pre-processing in rawDefaults (compact notation expansion, listener annotation) to every grade. This is "mostly hamless" since function grades are unlikely to use the top-level paths "listeners" and "invokers" for any purpose, but obviously unsatisfactory and a long-term risk.</p>
+<p>Moving all of this pathway (unifying the static and dynamic parts of merging) to a unified, ginger, async system based on immutable data structures will make all of these requirements far more easy to meet in a performant and easy to understand way.</p>
+
+                    </li>
+                    
+                    <li id="comment-22229">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-04-24T13:17:33.384-0400">2016-04-24T13:17:33.384-0400</relative-time></i></p>
+                        <p>This has become topical again with the discovery of <a href="/browse/FLUID-5887/">FLUID-5887</a> - we should really do something about this now. Studying the C3 paper and the "pedalo" sample in the C3 paper at <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.19.3910&rep=rep1&type=pdf">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.19.3910&amp;rep=rep1&amp;type=pdf</a> suggests that we may still not want this after all - or at least not yet. It looks like rewriting our existing algorithm to no longer be accumulative (that is, based on caches of fully merged defaults of parent grades) will fix the most blatant problems that we observe (this was only ever an optimisation in the ancient CSpace days anyway), as well as recasting it in a form which will allow for an easy move to C3 later if we think it is justified. C3 is "nice" but the problem with it is that it is, not to misuse an already overloaded term, "non-accumulative". That is, compositing a fresh grade onto an existing structure will have an effect that is hard to predict - as well as raising the possibility that the grade resolution process will throw in the case it produces an "inconsistent hierarchy". Although our current algorithm, which simply represents an in-order traversal of ancestors plus culling any already visited grades, is rather dumb and can lead to peculiar results (for example, the possibility for material in very deeply derived grades such as fluid.viewComponent to end up overriding top-level user grades if they appear earlier in the list of parents), at least its action is utterly simple and comprehensible, and it's very obvious what an author has to do if they want to re-override some hidden material by adding more grades.</p>
+<p>It's possible that an argument could be made against C3-like and similar "clever" hierarchy resolution algorithms based on our "open graph of authors" model, although this is far from clear. The C3 paper is based on a huge amount of experience with complex hierarchies in large codebases and it would be hard to gainsay this evidence without a similar breadth of experience under our own authorial model. However, for the medium term it looks like preserving our existing algorithm with a more civilised implementation is a reasonable thing to do, especially since we are coming close to a 2.0 release - our previous tinkering with the grade hiearchy semantics in "arabic grades" in <a href="/browse/FLUID-5743/">FLUID-5743</a> was quite expensive in its fallout and was the only really substantive failure of backwards compatibility we've had for some years.</p>
+
+                    </li>
+                    
+                    <li id="comment-22236">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2020-09-23T11:26:30.085-0400">2020-09-23T11:26:30.085-0400</relative-time></i></p>
+                        <p>We must indeed do something about this since it is still extremely easy to get into situations where weak defaults from parent grades end up overriding apparent direct dependencies. Example from <a href="/browse/KETTLE-55/">KETTLE-55</a>:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.dataSource"</span>, {
+        gradeNames: [<span class="hljs-string">"fluid.component"</span>],
+...
+        components: {
+            encoding: {
+                type: <span class="hljs-string">"fluid.dataSource.encoding.JSON"</span>
+            }
+        },
+}
+</code></pre>
+<p>and then we use the nutty grade linkage system to produce writability:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"kettle.dataSource.file"</span>, {
+    gradeNames: [<span class="hljs-string">"fluid.dataSource"</span>],
+    charEncoding: <span class="hljs-string">"utf-8"</span>,
+    listeners: {
+        <span class="hljs-string">"onRead.impl"</span>: {
+            funcName: <span class="hljs-string">"kettle.dataSource.file.handle"</span>,
+            args: [<span class="hljs-string">"{that}"</span>, <span class="hljs-string">"{arguments}.0"</span>, <span class="hljs-string">"{arguments}.1"</span>] <span class="hljs-comment">// [model], options</span>
+        }
+    }
+});
+
+fluid.defaults(<span class="hljs-string">"kettle.dataSource.file.writable"</span>, {
+    gradeNames: [<span class="hljs-string">"kettle.dataSource.file"</span>, <span class="hljs-string">"fluid.dataSource.writable"</span>],
+    listeners: {
+        <span class="hljs-string">"onWrite.impl"</span>: {
+            funcName: <span class="hljs-string">"kettle.dataSource.file.handle"</span>,
+            args: [<span class="hljs-string">"{that}"</span>, <span class="hljs-string">"{arguments}.0"</span>, <span class="hljs-string">"{arguments}.1"</span>] <span class="hljs-comment">// model, options</span>
+        }
+    }
+});
+
+fluid.makeGradeLinkage(<span class="hljs-string">"kettle.dataSource.file.linkage"</span>, [<span class="hljs-string">"fluid.dataSource.writable"</span>, <span class="hljs-string">"kettle.dataSource.file"</span>], <span class="hljs-string">"kettle.dataSource.file.writable"</span>);
+</code></pre>
+<p>The user then writes:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"kettle.tests.formencSourceWrite"</span>, {
+    gradeNames: [<span class="hljs-string">"kettle.dataSource.file.writable"</span>, <span class="hljs-string">"kettle.dataSource.moduleTerms"</span>],
+    path: <span class="hljs-string">"%kettle/tests/data/writeable/formenc.txt"</span>,
+    components: {
+        encoding: {
+            type: <span class="hljs-string">"kettle.dataSource.encoding.formenc"</span>
+        }
+    }
+});
+</code></pre>
+<p>The poor sap then ends up with a grade list as follows: </p>
+<pre><code class="hljs language-java">[<span class="hljs-string">"kettle.dataSource.moduleTerms"</span>, <span class="hljs-string">"kettle.tests.formencSourceWrite"</span>, <span class="hljs-string">"fluid.dataSource"</span>, <span class="hljs-string">"kettle.dataSource.file"</span>, <span class="hljs-string">"fluid.component"</span>, <span class="hljs-string">"fluid.dataSource.writable"</span>, <span class="hljs-string">"kettle.dataSource.file.writable"</span>]
+</code></pre>
+<p>In which "fluid.dataSource" has obliterated their subcomponent definition with the JSON encoding. There's no decent way out of this without a C3-like system that guarantees never to move grades to the right. Even if we write empty mixin grades for all the writable grades (which is already a bit of an annoyance) we lose the ability for there to be a one-stop-shop "kettle.dataSource.file.writable" grade which is actually usable. We will need to go back to the old funky `writable:true` system which at least is overridable back and forth.</p>
+<p>The time to address this is with <a href="/browse/FLUID-5304/">FLUID-5304</a> when we abolish the old annoyance caused by the "grade cache" - note that the worry in the original "accumulative" JIRA <a href="/browse/FLUID-5085/">FLUID-5085</a> won't be valid because the grade resolver will be constantly retargetting itself as fresh grades are discovered. </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5799/"><span class="aria-hidden">←</span> Previous: FLUID-5799</a>
+        <a class="mx-1" href="/browse/FLUID-5801/">Next: FLUID-5801 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

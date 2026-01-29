@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4410  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4410 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4410/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4410/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4410/">FLUID-4410</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4410: Allow dynamic styling of fat panel "show/hide" button</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4410">FLUID-4410</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=heidi%20valles">heidi valles</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-08-30T10:13:48.292-0400" prefix="">2011-08-30T10:13:48.292-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-26T16:19:01.841-0400" prefix="">2014-03-26T16:19:01.841-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Sliding Panel</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Need a way of styling the sliding panel button when open or closed (I'm trying to add up and down icons). Best way would be to wrap the strings showText and hideText with &lt;div class="fl-toggleButton-show"&gt;text&lt;/div&gt; and -hide</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-16008">
+                        <p class="mb-0"><b>heidi valles</b> <i>commented <relative-time datetime="2011-08-30T10:14:05.935-0400">2011-08-30T10:14:05.935-0400</relative-time></i></p>
+                        <p>Bug Parade Infusion</p>
+
+                    </li>
+                    
+                    <li id="comment-16012">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2011-10-24T10:00:25.435-0400">2011-10-24T10:00:25.435-0400</relative-time></i></p>
+                        <p>An alternative way to do this (as a hack until it becomes built in to the component) would be to provide listeners to "onPanel"hide" and "onPanelShow"</p>
+
+                    </li>
+                    
+                    <li id="comment-16014">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-10-18T13:18:56.942-0400">2013-10-18T13:18:56.942-0400</relative-time></i></p>
+                        <p>Submitted pull request <a href="https://github.com/fluid-project/infusion/pull/419">https://github.com/fluid-project/infusion/pull/419</a></p>
+<p>Provided a new selector for the label. This allows the toggleButton and it's label to be separate elements. Allowing for more complex markup in the toggle button.</p>
+
+                    </li>
+                    
+                    <li id="comment-16016">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2014-03-26T15:54:45.935-0400">2014-03-26T15:54:45.935-0400</relative-time></i></p>
+                        <p>merged with the fix for <a href="/browse/FLUID-5180/">FLUID-5180</a></p>
+
+                    </li>
+                    
+                    <li id="comment-16018">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-03-26T16:18:59.084-0400">2014-03-26T16:18:59.084-0400</relative-time></i></p>
+                        <p>pull request merged at 861d635d56c7546c764d23cf40e7f96e85516b17</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4409/"><span class="aria-hidden">←</span> Previous: FLUID-4409</a>
+        <a class="mx-1" href="/browse/FLUID-4411/">Next: FLUID-4411 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

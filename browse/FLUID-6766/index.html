@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6766  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6766 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6766/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6766/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6766/">FLUID-6766</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6766: TTS selection reader doesn't work if button included in selection</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6766">FLUID-6766</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2023-04-19T09:12:27.636-0400" prefix="">2023-04-19T09:12:27.636-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2023-04-24T14:24:42.623-0400" prefix="">2023-04-24T14:24:42.623-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.6</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Self Voicing</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This appears to be a Firefox specific issue.</p>
+<p>This was initially found in The Accessibility Exchange which uses the Orator component from Infusion for its self voicing. See issue <a href="https://github.com/accessibility-exchange/platform/issues/1633">#1633</a></p>
+<p>Steps to reproduce:</p>
+<ol>
+<li>Using Firefox open the <a href="https://build-infusion.fluidproject.org/demos/prefsframework/">Prefs Framework demo</a></li>
+<li>Open UIO and enable the text-to-speech preference</li>
+<li>Using the mouse make a selection of text that includes a button
+<ol>
+<li>This could be the Page reader's play button or UIO's hide/show button</li>
+</ol>
+</li>
+<li>Press the play button</li>
+<li>Notice the error</li>
+</ol>
+<p></p>
+<p>Error:</p>
+<pre><code class="hljs language-java">Uncaught TypeError: elm.tagName is undefined&#160;&#160;&#160;&#160;hasTextToRead https:<span class="hljs-comment">//build-infusion.fluidproject.org/src/framework/core/js/TextNodeParser.js:81&#160;&#160;&#160;&#160;invokeInvoker https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2787&#160;&#160;&#160;&#160;parse https://build-infusion.fluidproject.org/src/framework/core/js/TextNodeParser.js:130&#160;&#160;&#160;&#160;invokeInvoker https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2787&#160;&#160;&#160;&#160;parseElement https://build-infusion.fluidproject.org/src/components/orator/js/Orator.js:1047&#160;&#160;&#160;&#160;parseRange https://build-infusion.fluidproject.org/src/components/orator/js/Orator.js:1018&#160;&#160;&#160;&#160;queueSpeech https://build-infusion.fluidproject.org/src/components/orator/js/Orator.js:957&#160;&#160;&#160;&#160;invokeListener https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:1583&#160;&#160;&#160;&#160;togo https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:1598&#160;&#160;&#160;&#160;notifyExternal https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:1325&#160;&#160;&#160;&#160;concludeModelTransaction https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:1365&#160;&#160;&#160;&#160;fire https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:1713&#160;&#160;&#160;&#160;commit https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:2227&#160;&#160;&#160;&#160;fireChangeRequest https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:2180&#160;&#160;&#160;&#160;change https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:2046&#160;&#160;&#160;&#160;apply https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2730&#160;&#160;&#160;&#160;invokeInvoker https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2787&#160;&#160;&#160;&#160;togglePlay https://build-infusion.fluidproject.org/src/components/orator/js/Orator.js:1212&#160;&#160;&#160;&#160;invokeInvoker https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2787&#160;&#160;&#160;&#160;togo https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2855&#160;&#160;&#160;&#160;fire https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:1713&#160;&#160;&#160;&#160;createControl https://build-infusion.fluidproject.org/src/components/orator/js/Orator.js:1168&#160;&#160;&#160;&#160;jQuery 8&#160;&#160;&#160;&#160;createControl https://build-infusion.fluidproject.org/src/components/orator/js/Orator.js:1166&#160;&#160;&#160;&#160;invokeInvoker https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2787&#160;&#160;&#160;&#160;renderControl https://build-infusion.fluidproject.org/src/components/orator/js/Orator.js:1179&#160;&#160;&#160;&#160;invokeListener https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:1583&#160;&#160;&#160;&#160;togo https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:1598&#160;&#160;&#160;&#160;notifyExternal https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:1325&#160;&#160;&#160;&#160;concludeModelTransaction https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:1365&#160;&#160;&#160;&#160;fire https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:1713&#160;&#160;&#160;&#160;commit https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:2227&#160;&#160;&#160;&#160;fireChangeRequest https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:2180&#160;&#160;&#160;&#160;change https://build-infusion.fluidproject.org/src/framework/core/js/DataBinding.js:2046&#160;&#160;&#160;&#160;setTextFromSelection https://build-infusion.fluidproject.org/src/components/orator/js/Orator.js:993&#160;&#160;&#160;&#160;invokeInvoker https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2787&#160;&#160;&#160;&#160;togo https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2855&#160;&#160;&#160;&#160;fire https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:1713&#160;&#160;&#160;&#160;bindSelectionEvents https://build-infusion.fluidproject.org/src/components/orator/js/Orator.js:967&#160;&#160;&#160;&#160;jQuery 8&#160;&#160;&#160;&#160;bindSelectionEvents https://build-infusion.fluidproject.org/src/components/orator/js/Orator.js:965&#160;&#160;&#160;&#160;togo https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2855&#160;&#160;&#160;&#160;fire https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:1713&#160;&#160;&#160;&#160;concludeComponentInit https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:1538&#160;&#160;&#160;&#160;localWorkflowTask https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2212&#160;&#160;&#160;&#160;localWorkflowTask https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2211&#160;&#160;&#160;&#160;invokeNext https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:257&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:237&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:218&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:246&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:218&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:246&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:218&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:246&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:218&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:246&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:218&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:246&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:218&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:246&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:218&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:246&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:218</span>
+</code></pre>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF 112.0.1</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25211">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2023-04-19T12:48:27.303-0400">2023-04-19T12:48:27.303-0400</relative-time></i></p>
+                        <p>I filed a related ticket against Firefox at <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1828956">https://bugzilla.mozilla.org/show_bug.cgi?id=1828956</a></p>
+<p>I also created a <a href="https://codepen.io/jobara/pen/oNazJqZ">Pen</a> to illustrate the problem.</p>
+
+                    </li>
+                    
+                    <li id="comment-25212">
+                        <p class="mb-0"><b>Daniel Cho</b> <i>commented <relative-time datetime="2023-04-24T14:24:42.623-0400">2023-04-24T14:24:42.623-0400</relative-time></i></p>
+                        <p>I confirmed that this is not happening on Windows 10 Pro using Edge (version 112.0.1722.58).</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6765/"><span class="aria-hidden">←</span> Previous: FLUID-6765</a>
+        <a class="mx-1" href="/browse/FLUID-6767/">Next: FLUID-6767 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3679  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3679 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3679/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3679/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3679/">FLUID-3679</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3679: JavaScript error "'script.parentNode' is null or not an object" on IE when running multiple instances of fluid (swfobject.js)</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3679">FLUID-3679</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Andrew%20Wills">Andrew Wills</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-07-30T17:55:53.326-0400" prefix="">2010-07-30T17:55:53.326-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2010-09-08T13:42:56.310-0400" prefix="">2010-09-08T13:42:56.310-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1</li>
+                            
+                            <li>1.1.1</li>
+                            
+                            <li>1.1.2</li>
+                            
+                            <li>1.2beta1</li>
+                            
+                            <li>1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1.3</li>
+                            
+                            <li>1.2.1</li>
+                            
+                            <li>1.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The swfobject.js dependency, included with Fluid Infusion, causes A JavaScript error on IE browsers when you run more than 1 copy of fluid on a page.  (Note:  this is something we do commonly in uPortal – each portlet loads &amp; uses its own copy.)</p>
+<p>The error is caused when JS attempts to call 'script.parentNode.removeChild(script)' on the same element more than once.</p>
+<p>Eyeballing the code, it looks as though this issue is fixed in swfobject 2.2:  <a href="http://code.google.com/p/swfobject/downloads/detail?name=swfobject_2_2.zip">http://code.google.com/p/swfobject/downloads/detail?name=swfobject_2_2.zip</a></p>
+<p>Would it be possible to bump the embedded version of swfobject to 2.2?</p>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>OFFENDING CODE *****<br>
+/* Cross-browser onDomLoad</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Based on Dean Edwards' solution: <a href="http://dean.edwards.name/weblog/2006/06/again/">http://dean.edwards.name/weblog/2006/06/again/</a></li>
+<li>Will fire an event as soon as the DOM of a page is loaded (supported by Gecko based browsers - like Firefox -, IE, Opera9+, Safari)<br>
+*/<br>
+var onDomLoad = function() {<br>
+if (!ua.w3cdom) {<br>
+return;<br>
+}<br>
+addDomLoadEvent(main);<br>
+if (ua.ie &amp;&amp; ua.win) {<br>
+try { // Avoid a possible Operation Aborted error<br>
+doc.write("&lt;scr" + "ipt id=__ie_ondomload defer=true src=//:&gt;&lt;/scr" + "ipt&gt;"); // String is split into pieces to avoid Norton AV to add code that can cause errors<br>
+script = getElementById("__ie_ondomload");<br>
+if (script) {<br>
+addListener(script, "onreadystatechange", checkReadyState);<br>
+}<br>
+}<br>
+catch(e) {}<br>
+}<br>
+if (ua.webkit &amp;&amp; typeof doc.readyState != UNDEF) {<br>
+timer = setInterval(function() { if (/loaded|complete/.test(doc.readyState)) { callDomLoadFunctions(); }}, 10);<br>
+}<br>
+if (typeof doc.addEventListener != UNDEF) {<br>
+doc.addEventListener("DOMContentLoaded", callDomLoadFunctions, null);<br>
+}<br>
+addLoadEvent(callDomLoadFunctions);<br>
+}();</li>
+</ul>
+<p>function checkReadyState() {</p>
+<p>if (script.readyState == "complete") {<br>
+script.parentNode.removeChild(script);<br>
+callDomLoadFunctions();<br>
+}<br>
+} <br>
+*****</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>IE browser, all versions (afaik)</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3679/FLUID-3679-trunk.patch.txt">
+                            
+                                FLUID-3679-trunk.patch.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-18954">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2010-08-24T14:25:46.433-0400">2010-08-24T14:25:46.433-0400</relative-time></i></p>
+                        <p>Replaced SWFObject v2.1 to SWFObject v2.2.  Changed the version number on the readme file and the swfobject-LICENSE file.</p>
+
+                    </li>
+                    
+                    <li id="comment-18966">
+                        <p class="mb-0"><b>Mike Lam</b> <i>commented <relative-time datetime="2010-09-08T13:42:56.266-0400">2010-09-08T13:42:56.266-0400</relative-time></i></p>
+                        <p>Committed and available to trunk, 1.1.3, 1.2.1, and 1.3.  </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3678/"><span class="aria-hidden">←</span> Previous: FLUID-3678</a>
+        <a class="mx-1" href="/browse/FLUID-3680/">Next: FLUID-3680 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

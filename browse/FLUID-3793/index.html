@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3793  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3793 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3793/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3793/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3793/">FLUID-3793</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3793: columnDefs = "explode" causes error</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3793">FLUID-3793</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-10-12T13:22:51.056-0400" prefix="">2010-10-12T13:22:51.056-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2010-10-28T16:56:08.878-0400" prefix="">2010-10-28T16:56:08.878-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Pager</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>If the Pager's default columnDefs value of "explode" is used, an error is thrown on line 535. The call to getRoots() on  line 533 assumes a return value, but getRoots() doesn't return anything - it modifies the first argument. The fix is simple, but we need a test that catches it.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3793/FLUID-3793.patch.proper-paths.txt">
+                            
+                                FLUID-3793.patch.proper-paths.txt
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3793/FLUID-3793.patch.txt">
+                            
+                                FLUID-3793.patch.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20289">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2010-10-12T13:24:08.861-0400">2010-10-12T13:24:08.861-0400</relative-time></i></p>
+                        <p>Justin, since this is a bug caused by the default configuration (and since the fix is reasonably simple), I filed this as a blocker for 1.3. If you concur, feel free to assign it back to me and I'll commit a test and a fix asap.</p>
+
+                    </li>
+                    
+                    <li id="comment-20290">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-10-12T14:08:34.260-0400">2010-10-12T14:08:34.260-0400</relative-time></i></p>
+                        <p>"Bug Parade Infusion 1.3" </p>
+
+                    </li>
+                    
+                    <li id="comment-20291">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2010-10-12T14:41:15.773-0400">2010-10-12T14:41:15.773-0400</relative-time></i></p>
+                        <p>This patch (<a href="/browse/FLUID-3793/">FLUID-3793</a>.patch.txt) adds a test that configures the pager to use the fluid.pager.selfRender body renderer with the default columnDefs of "explode", which causes an error without the fix to the Pager. The fix to the pager (also included in this patch) is to use getRoots() properly, i.e. to use the modified first argument instead of a return value (there is no return value).</p>
+
+                    </li>
+                    
+                    <li id="comment-20292">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2010-10-19T09:11:15.032-0400">2010-10-19T09:11:15.032-0400</relative-time></i></p>
+                        <p>Antranig, could you review this patch? It adjusts the code to the existing apparent usage of the function, but the api of the function might actually be wrong given the name? A "get" function that doesn't actually get anything? I wonder if either the name should be changed or the function should return something?</p>
+
+                    </li>
+                    
+                    <li id="comment-20293">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2010-10-28T16:43:26.472-0400">2010-10-28T16:43:26.472-0400</relative-time></i></p>
+                        <p>Hi Anastasia - this patch looks ok in content, but seems to have been generated in a strange way that does not include file paths. Would it be possible for you to regenerate it?</p>
+
+                    </li>
+                    
+                    <li id="comment-20294">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2010-10-28T16:48:56.370-0400">2010-10-28T16:48:56.370-0400</relative-time></i></p>
+                        <p>Adding another attempt at the same patch, but with proper file paths.</p>
+
+                    </li>
+                    
+                    <li id="comment-20295">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2010-10-28T16:56:08.875-0400">2010-10-28T16:56:08.875-0400</relative-time></i></p>
+                        <p>Reviewed and applied at rev 10165</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3792/"><span class="aria-hidden">←</span> Previous: FLUID-3792</a>
+        <a class="mx-1" href="/browse/FLUID-3794/">Next: FLUID-3794 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

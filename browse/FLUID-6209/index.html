@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6209  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6209 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6209/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6209/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6209/">FLUID-6209</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6209: Model changes from multiple sources that affect each other can result in race conditions to set the model value.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6209">FLUID-6209</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-10-04T12:53:00.561-0400" prefix="">2017-10-04T12:53:00.561-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-03-01T15:24:56.960-0500" prefix="">2018-03-01T15:24:56.960-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>3.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In the prefs framework we have a datastore where all of the model values are saved. If the settings are auto saved and the panel values are automatically updated from the store, you can have a case where changing the values quickly causes a race condition. This has been exhibited through the work on UIO+ on chrome in Windows 10. See <a href="https://issues.gpii.net/browse/GPII-2559">https://issues.gpii.net/browse/GPII-2559</a></p>
+<p>For examples of a stop gap solution, until the framework as a whole has better support for these types of cases, can be seen from work on pcpchannel.js</p>
+<ul>
+<li><a href="https://github.com/amb26/universal/blob/13a8f45683f88c6cf5ae6ff68f3eee8dff5cbc05/gpii/node_modules/flowManager/src/PCPChannel.js#L75">https://github.com/amb26/universal/blob/13a8f45683f88c6cf5ae6ff68f3eee8dff5cbc05/gpii/node_modules/flowManager/src/PCPChannel.js#L75</a></li>
+<li><a href="https://github.com/amb26/universal/blob/13a8f45683f88c6cf5ae6ff68f3eee8dff5cbc05/gpii/node_modules/flowManager/src/PCPChannel.js#L144">https://github.com/amb26/universal/blob/13a8f45683f88c6cf5ae6ff68f3eee8dff5cbc05/gpii/node_modules/flowManager/src/PCPChannel.js#L144</a></li>
+</ul>
+<p>See Channel conversation:&#160;<a href="https://botbot.me/freenode/fluid-work/2017-10-04/?msg=91895959&page=1">https://botbot.me/freenode/fluid-work/2017-10-04/?msg=91895959&amp;page=1</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22839">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-10-06T07:21:55.380-0400">2017-10-06T07:21:55.380-0400</relative-time></i></p>
+                        <p>See Antranig Basman's suggestion from the fluid-work channel:</p>
+<p><a href="https://botbot.me/freenode/fluid-work/2017-10-05/?msg=91953620&page=4">https://botbot.me/freenode/fluid-work/2017-10-05/?msg=91953620&amp;page=4</a></p>
+<p></p>
+<p>Log:</p>
+<p></p>
+<ul>
+<li><a href="https://botbot.me/freenode/fluid-work/msg/91953658/">3:04 pm</a><br>
+Justin_o - so my suggestion for now is that we adopt a protocol somewhat similar to the one in <a href="https://wiki.gpii.net/w/Nexus_API#Bind_Model">https://wiki.gpii.net/w/Nexus_API#Bind_Model</a></li>
+<li><a href="https://botbot.me/freenode/fluid-work/msg/91953679/">3:04 pm</a><br>
+Although we will want a few differences, some to be forward-looking to expected changes in the protocol, and some to adapt to our particular problem</li>
+<li><a href="https://botbot.me/freenode/fluid-work/msg/91953695/">3:05 pm</a><br>
+To start with, I suggest that you escape these message with an outer level of packaging, for a start holding a type field</li>
+<li><a href="https://botbot.me/freenode/fluid-work/msg/91953749/">3:06 pm</a><br>
+In this case, "type": "modelChanged"</li>
+<li><a href="https://botbot.me/freenode/fluid-work/msg/91953796/">3:07 pm</a><br>
+I suggest actually that you use this message sent by the "visible Nexus" as a prototype for your payload: <a href="https://github.com/amb26/fluid-authoring/blob/FLUID-4884/src/server/js/VisibleNexus.js#L230">https://github.com/amb26/fluid-authoring/blob/F...</a></li>
+<li><a href="https://botbot.me/freenode/fluid-work/msg/91953837/">3:08 pm</a><br>
+Only instead of "messageGeneration" you should put in a constantly increasing unique id "messageId"</li>
+<li><a href="https://botbot.me/freenode/fluid-work/msg/91953854/">3:08 pm</a><br>
+Then, in the other direction, you will send messages of type "modelChangedAck"</li>
+<li><a href="https://botbot.me/freenode/fluid-work/msg/91953860/">3:08 pm</a><br>
+Whose payload just consists of the id</li>
+<li><a href="https://botbot.me/freenode/fluid-work/msg/91953861/">3:09 pm</a><br>
+I think you can see where this is going 🙂</li>
+<li><a href="https://botbot.me/freenode/fluid-work/msg/91953990/">3:12 pm</a><br>
+One end of the bus will then maintain a hash of messaged, index by id, holding the unresolved promise corresponding to the model change</li>
+<li><a href="https://botbot.me/freenode/fluid-work/msg/91954004/">3:12 pm</a><br>
+The other end of the bus, once it has honoured the change, will send back a "modelChangedAck" back along the bus, and the corresponding promise will then get resolved and removed from the hash</li>
+<li><a href="https://botbot.me/freenode/fluid-work/msg/91954040/">3:13 pm</a><br>
+I expect this machinery won't in itself be sufficient to get rid of all of our races, but I think it is an essential part of it</li>
+<li><a href="https://botbot.me/freenode/fluid-work/msg/91954117/">3:15 pm</a><br>
+Well, perhaps this doesn't need to be as complex as this - it looks like a "port" probably guarantees that there can be at most one outstanding message at any time</li>
+<li><a href="https://botbot.me/freenode/fluid-work/msg/91954130/">3:15 pm</a><br>
+Although I don't so far see any written form of this guarantee : P</li>
+<li><a href="https://botbot.me/freenode/fluid-work/msg/91954177/">3:17 pm</a><br>
+These are the kinds of details which nerds never feel really necessary to write in their APIs</li>
+<li><a href="https://botbot.me/freenode/fluid-work/msg/91954181/">3:17 pm</a><br>
+Mainly because they have no idea how to express the types of them</li>
+<li><a href="https://botbot.me/freenode/fluid-work/msg/91954198/">3:17 pm</a><br>
+And if you can't express the type of something, it doesn't exist, right? : P</li>
+<li><a href="https://botbot.me/freenode/fluid-work/msg/91954235/">3:19 pm</a><br>
+I guess there's no reason to assume that at most one message can be outstanding</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-22846">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-10-06T10:48:24.230-0400">2017-10-06T10:48:24.230-0400</relative-time></i></p>
+                        <p>Further discussion in the fluid-work channel:</p>
+<p><a href="https://botbot.me/freenode/fluid-work/2017-10-06/?msg=91989326&page=1">https://botbot.me/freenode/fluid-work/2017-10-06/?msg=91989326&amp;page=1</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22849">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-10-10T10:54:12.768-0400">2017-10-10T10:54:12.768-0400</relative-time></i></p>
+                        <p>Further channel discussion:</p>
+<p><a href="https://botbot.me/freenode/fluid-work/2017-10-10/?msg=92129943&page=1">https://botbot.me/freenode/fluid-work/2017-10-10/?msg=92129943&amp;page=1</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22852">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-10-16T10:36:32.563-0400">2017-10-16T10:36:32.563-0400</relative-time></i></p>
+                        <p>More discussion related to get/set&#160;<a href="https://botbot.me/freenode/fluid-work/2017-10-16/?msg=92362062&page=1">https://botbot.me/freenode/fluid-work/2017-10-16/?msg=92362062&amp;page=1</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22855">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-10-19T12:05:21.973-0400">2017-10-19T12:05:21.973-0400</relative-time></i></p>
+                        <p>Concern about debouncing using the onRead/onWrite chains.</p>
+<p><a href="https://botbot.me/freenode/fluid-work/2017-10-19/?msg=92494854&page=1">https://botbot.me/freenode/fluid-work/2017-10-19/?msg=92494854&amp;page=1</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22858">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-10-20T09:17:37.060-0400">2017-10-20T09:17:37.060-0400</relative-time></i></p>
+                        <p>Antranig Basman based on our conversations there are three places I can think of to debounce the get/set requests for the datasource.</p>
+<ol>
+<li>The get/set invoker
+<ol>
+<li>Could have hooks or some built-in mechanism that can handle debouncing but the flag is disabled by default or something like that</li>
+<li>Could require some extra invokers to wrap the get/set call, although this would seem to cause problems when moving between debounce and non-debounced versions</li>
+</ol>
+</li>
+<li>The onRead.impl/onWrite.impl listener
+<ol>
+<li>Would possibly require the implementer of the listener to handle debounce</li>
+<li>Could take the handler as an argument and use fluid.debounce as the handler, although this would add asymmetry with regards to the non-debounced version</li>
+<li>Perhaps we have a new type of listener that debounces calls to it's handlers</li>
+</ol>
+</li>
+<li>Within the promise itself
+<ol>
+<li>Antranig Basman mentioned possibly have cancellable promises, although it's not clear what the effect on the request chain would be</li>
+</ol>
+</li>
+</ol>
+
+                    </li>
+                    
+                    <li id="comment-22861">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-10-27T07:33:39.066-0400">2017-10-27T07:33:39.066-0400</relative-time></i></p>
+                        <p>Further discussion on debouncing ( <a href="https://botbot.me/freenode/fluid-work/2017-10-27/?msg=92806229&page=1">https://botbot.me/freenode/fluid-work/2017-10-27/?msg=92806229&amp;page=1</a>&#160;)</p>
+<p></p>
+<p>Summary:</p>
+<p>Create a "bufferingModelComponent", it will know about two models, local and remote. If there&#160;is a discrepancy between them, it will attempt to synchronize.</p>
+<p>The remote model is updated via a model listener on&#160;the local model. The changes will be debounced and update the remote model after a write to the external source is confirmed (if the two models are the same, it will not actually attempt to perform a write). There will be a specific method for reading from the remote source (e.g. read(), pull(), fetch()). This will also be debounced and update the local model and remote model values at the same time.</p>
+<p></p>
+<p>Note that read and write operations will block each other, only 1 request can be in flight at a time. This is to prevent issues where a read returns while a write operation is being performed.</p>
+
+                    </li>
+                    
+                    <li id="comment-22865">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-10-30T14:18:28.669-0400">2017-10-30T14:18:28.669-0400</relative-time></i></p>
+                        <p>Further discussion about "bufferingModelComponent"</p>
+<p><a href="https://botbot.me/freenode/fluid-work/2017-10-30/?msg=92913088&page=1">https://botbot.me/freenode/fluid-work/2017-10-30/?msg=92913088&amp;page=1</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22867">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-10-31T08:59:10.589-0400">2017-10-31T08:59:10.589-0400</relative-time></i></p>
+                        <p>Yes we still want only one in flight request at a time. Perhaps we'll need a queue for the request.</p>
+<p><a href="https://botbot.me/freenode/fluid-work/2017-10-31/?msg=92945976&page=1">https://botbot.me/freenode/fluid-work/2017-10-31/?msg=92945976&amp;page=1</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22869">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-10-31T14:47:09.164-0400">2017-10-31T14:47:09.164-0400</relative-time></i></p>
+                        <p>Some discussion about a potential implementation.</p>
+<p><a href="https://botbot.me/freenode/fluid-work/2017-10-31/?msg=92959036&page=2">https://botbot.me/freenode/fluid-work/2017-10-31/?msg=92959036&amp;page=2</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22871">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-11-06T12:37:48.382-0500">2017-11-06T12:37:48.382-0500</relative-time></i></p>
+                        <p>Antranig Basman and I had a discussion over Skype to further clarify and detail how to implement the model buffering component. This was captured in a gpii pad ( <a href="https://pad.gpii.net/p/deracing-model-updates-vi24nlk">https://pad.gpii.net/p/deracing-model-updates-vi24nlk</a>&#160;).</p>
+
+                    </li>
+                    
+                    <li id="comment-22872">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-11-24T11:45:13.137-0500">2017-11-24T11:45:13.137-0500</relative-time></i></p>
+                        <p>Comments from Antranig Basman in the fluid-work channel.&#160;<a href="https://botbot.me/freenode/fluid-work/2017-11-24/?msg=93879974&page=1">https://botbot.me/freenode/fluid-work/2017-11-24/?msg=93879974&amp;page=1</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22874">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-02-27T08:57:21.114-0500">2018-02-27T08:57:21.114-0500</relative-time></i></p>
+                        <p>I did some exploration into moving the afterFetch and afterWrite workflows into onFetch and onWrite respectively. The main issue preventing this is that the fireEventSequences used in the remote model, passes along the same payload to each listener ( <a href="https://github.com/jobara/infusion/blob/6c4381917a85641beb6195a50006976f7ebad733/src/framework/core/js/RemoteModel.js#L108-L126">https://github.com/jobara/infusion/blob/6c4381917a85641beb6195a50006976f7ebad733/src/framework/core/js/RemoteModel.js#L108-L126</a> ). This was done so that the listeners could be treated more like real listeners and not have to return back the payload at each step to the next listener in the chain. However, the onWrite and onFetch events don't have a payload. The payload was passed along in the afterWrite and afterFetch events.</p>
+
+                    </li>
+                    
+                    <li id="comment-22875">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2018-03-01T15:24:52.126-0500">2018-03-01T15:24:52.126-0500</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/infusion/pull/867">The pull request</a> has been merged into the project repo master branch at 420dd5d9853f1121ad500e1acf02a185eaaa6b81</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6208/"><span class="aria-hidden">←</span> Previous: FLUID-6208</a>
+        <a class="mx-1" href="/browse/FLUID-6210/">Next: FLUID-6210 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

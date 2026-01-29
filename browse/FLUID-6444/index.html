@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6444  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6444 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6444/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6444/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6444/">FLUID-6444</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6444: Scope leakage issues with "fast path" cached scopes</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6444">FLUID-6444</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-12-18T19:22:50.266-0500" prefix="">2019-12-18T19:22:50.266-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-06-21T12:37:13.954-0400" prefix="">2021-06-21T12:37:13.954-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>A peculiar test failure was found in GPII univeral's tests that was annoyingly dependent on the order of execution of tests. It turns out a number of errors contributed to the problem.</p>
+<p>Firstly, there is a component in the metrics tests named a "metricsWrapper" which is in fact an entire lifecycleManager:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"gpii.tests.metricsWrapper"</span>, {
+    gradeNames: [<span class="hljs-string">"fluid.component"</span>, <span class="hljs-string">"gpii.metrics"</span>, <span class="hljs-string">"gpii.eventLog"</span>, <span class="hljs-string">"gpii.lifecycleManager"</span>],
+</code></pre>
+<p>A free component of this type is constructed by the tests which they never bother to clean up. This component was not visible by our old "slow path" scope resolution rules which manually skipped the root via the ancestral fluid.getThatStack:</p>
+<pre><code class="hljs language-java"><span class="hljs-comment">// Note - the returned stack is assumed writeable and does not include the root</span>
+        that.getThatStack = function (component) {
+</code></pre>
+<p>However, in implementing the fast scope chain via "ownScope" and "childrenScope" in shadow records we neglected to mirror these rules, resulting in <strong>bug 1: Free components are visible in the global scope via fast path resolution</strong>. Typically they are visible so weakly that this leakage did not so far cause a problem except in combination with the next problem.</p>
+<p></p>
+<p>In order that frequently referenced components in gpii-universal test cases, such as the lifecycleManager, can be easily referred to, we operated a "hoisting trick" in order to make them directly visible on the TestCaseHolder object via definitions like so:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"gpii.test.common.untrusted.lifecycleManagerReceiver"</span>, {
+    distributeOptions: {
+        record: {
+            funcName: <span class="hljs-string">"gpii.test.common.receiveComponent"</span>,
+            args: [<span class="hljs-string">"{testCaseHolder}"</span>, <span class="hljs-string">"{arguments}.0"</span>, <span class="hljs-string">"lifecycleManager"</span>]
+        },
+        target: <span class="hljs-string">"{that localConfig lifecycleManager}.options.listeners.onCreate"</span>
+    }
+});
+</code></pre>
+<p>which executes the definition</p>
+<pre><code class="hljs language-java">gpii.test.common.receiveComponent = function (testCaseHolder, component, name) {
+    <span class="hljs-keyword">if</span> (!testCaseHolder[name]) {
+        fluid.globalInstantiator.recordKnownComponent(testCaseHolder, component, name, <span class="hljs-literal">false</span>);
+    }
+};
+</code></pre>
+<p>This is an annoyance awaiting a satisfactory resolution of <a href="https://issues.fluidproject.org/browse/FLUID-5556">https://issues.fluidproject.org/browse/FLUID-5556</a> on which there is a lot of interesting commentary.<br>
+Unfortunately this punches through into a very long latent bug with respect to our implementation of fast scoping for injected component references. The implementation in recordComponent is</p>
+<pre><code class="hljs language-java">function <span class="hljs-title function_">recordComponent</span><span class="hljs-params">(parent, component, path, name, created)</span> {
+            <span class="hljs-keyword">if</span> (created) {
+....
+            } <span class="hljs-keyword">else</span> {
+....
+                fluid.each(keys, function (context) {
+                    <span class="hljs-keyword">if</span> (!parentShadow.childrenScope[context]) { <span class="hljs-comment">// BUG HERE</span>
+                        parentShadow.childrenScope[context] = component;
+                    }
+                });
+            }
+</code></pre>
+<p>The bug on the marked line is annoying and subtle. Rather than making an "own property check" to see if the context appears directly on the scope object itself, it makes a standard check for membership which evaluates the full scope chain - therefore it skips adding the property if it is in scope ANYWHERE. This means that injected component references don't take their proper place in the scope chain - rather than appearing at their own level, they are instead weaker than references appearing at any scope. This means that in combination with bug 1, the {lifecycleManager} hoisting ended up being a no-op and leaving the space junk free component as the only referent in scope. <strong>Bug 2: Injected component references resolved via the fast scope chain are weaker than any other scope.</strong></p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6443/"><span class="aria-hidden">←</span> Previous: FLUID-6443</a>
+        <a class="mx-1" href="/browse/FLUID-6445/">Next: FLUID-6445 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

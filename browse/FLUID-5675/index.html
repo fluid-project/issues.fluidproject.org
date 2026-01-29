@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5675  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5675 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5675/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5675/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5675/">FLUID-5675</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5675: Text To Speech enactor should be supplied with a mock implementation to facilitate integration testing</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5675">FLUID-5675</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-06-03T11:01:45.919-0400" prefix="">2015-06-03T11:01:45.919-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-01-16T14:30:11.908-0500" prefix="">2017-01-16T14:30:11.908-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.9</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>Text To Speech</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>We need to implement a mock version of the fluid.textToSpeech component for integration testing purposes. This will enable us to create a linear log of all the items that were queued for speech, for which we could then issue a jqUnit.assertDeepEq assertion for verification. Issues such as <a href="/browse/FLOE-363/">FLOE-363</a> ( <a href="https://github.com/fluid-project/first-discovery/pull/77">https://github.com/fluid-project/first-discovery/pull/77</a> ) could then straightforwardly be extended with integration tests which target this API.</p>
+<p>See channel discussion: <a href="https://botbot.me/freenode/fluid-work/2015-06-02/?msg=40811279&page=2">https://botbot.me/freenode/fluid-work/2015-06-02/?msg=40811279&amp;page=2</a></p>
+<p>This will also allow us to run some TTS tests on browsers where the API is currently not supported, e.g. Firefox. </p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19050">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-19T14:36:57.871-0400">2015-06-19T14:36:57.871-0400</relative-time></i></p>
+                        <p>Submitted a pull request:<br>
+<a href="https://github.com/fluid-project/infusion/pull/612">https://github.com/fluid-project/infusion/pull/612</a></p>
+
+                    </li>
+                    
+                    <li id="comment-19054">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-07-03T10:27:55.280-0400">2015-07-03T10:27:55.280-0400</relative-time></i></p>
+                        <p>Submitted a pull request to update the build site with a link to the TTS tests.<br>
+<a href="https://github.com/fluid-project/build.fluidproject.org/pull/16">https://github.com/fluid-project/build.fluidproject.org/pull/16</a></p>
+
+                    </li>
+                    
+                    <li id="comment-19058">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-07-29T08:42:42.198-0400">2015-07-29T08:42:42.198-0400</relative-time></i></p>
+                        <p>Pull request ( <a href="https://github.com/fluid-project/infusion/pull/612">https://github.com/fluid-project/infusion/pull/612</a> ) was merged into the project repo at 70ea372fd461554567ae453c5523a4b30d8cc438</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5674/"><span class="aria-hidden">←</span> Previous: FLUID-5674</a>
+        <a class="mx-1" href="/browse/FLUID-5676/">Next: FLUID-5676 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

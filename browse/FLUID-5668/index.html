@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5668  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5668 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5668/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5668/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5668/">FLUID-5668</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5668: Corruption when material written for "members" requires merging</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5668">FLUID-5668</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-05-21T10:59:41.984-0400" prefix="">2015-05-21T10:59:41.984-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-08-08T13:56:51.698-0400" prefix="">2021-08-08T13:56:51.698-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>6.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This was discovered when updating the prefs framework test cases written for <a href="/browse/FLUID-5599/">FLUID-5599</a> to function with the  modern <a href="/browse/FLUID-5249/">FLUID-5249</a> framework branch. These had originally been written in a "demands block" style - but the test definition had been updated to use a distributeOptions directive:</p>
+<pre><code class="hljs language-javascript">fluid.<span class="hljs-title function_">defaults</span>(<span class="hljs-string">"fluid.tests.prefs.diffInit"</span>, {
+        <span class="hljs-attr">distributeOptions</span>: {
+            <span class="hljs-attr">record</span>: {
+                <span class="hljs-attr">theme</span>: <span class="hljs-string">"wb"</span>,
+                <span class="hljs-attr">textFont</span>: <span class="hljs-string">"times"</span>
+            },
+            <span class="hljs-attr">target</span>: <span class="hljs-string">"{fluid.prefs.prefsEditor}.options.members.initialModel"</span>
+        }
+    });
+</code></pre>
+<p>and the prefs editorLoader definition uses the following subcomponent definition to inject the initialModel down:</p>
+<pre><code class="hljs language-javascript"><span class="hljs-attr">components</span>: {
+            <span class="hljs-attr">prefsEditor</span>: {
+                <span class="hljs-attr">type</span>: <span class="hljs-string">"fluid.prefs.prefsEditor"</span>,
+                <span class="hljs-attr">options</span>: {
+                    <span class="hljs-attr">members</span>: {
+                        <span class="hljs-attr">initialModel</span>: <span class="hljs-string">"{prefsEditorLoader}.initialModel"</span>
+                    },
+</code></pre>
+<p>The test cases adds a mixin grade to the loader to adjust its initial model:</p>
+<pre><code class="hljs language-javascript">fluid.<span class="hljs-title function_">defaults</span>(<span class="hljs-string">"fluid.prefs.initialModel.localeStarter"</span>, {
+        <span class="hljs-attr">members</span>: {
+            <span class="hljs-attr">initialModel</span>: {
+                <span class="hljs-attr">locale</span>: <span class="hljs-string">"fr"</span>
+            }
+        }
+    });
+</code></pre>
+<p>These two definitions targetted at the "initialModel" member end up creating "mouse droppings" in the final member value, where the reference </p>
+<pre><code class="hljs language-java"><span class="hljs-string">"{prefsEditorLoader}.initialModel"</span>
+</code></pre>
+<p>rather than being resolved, is "exploded" into an array of characters before being merged in.</p>
+<p>Interestingly, the test cases for this issue were too weak to detect the problem, and it was only noticed while stepping through the implementation in the debugger. Given that the algorithm for evaluating "members" is the same as in the old framework, it is very likely that this bug has always been present.</p>
+<p>The evaluation of "members" is unfortunately awkwardly linked with many sensitive parts of the framework's workflow, given that all three of the crucial definitions for a "modelComponent" (model, applier, and modelRelay) are cast as "members". The aim was to enable all of the implementation for this grade to be done using standard facilities of core IoC and not to pollute it with special cases. The current implementation of "members" indeed does not supply the standard framework workflow for the underlying component options - instead, they are marked as "noexpand" along with all of the other framework builtins. The resulting record is then slung directly into fluid.expandOptions via the "fluid.memberFromRecord" strategy point:</p>
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">var</span> value = fluid.<span class="hljs-title function_">expandOptions</span>(memberrec, that, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, {<span class="hljs-attr">freeRoot</span>: <span class="hljs-literal">true</span>});
+</code></pre>
+<p>This touches on several other sensitive framework issues. For example, there is the relation to <a href="/browse/FLUID-5208/">FLUID-5208</a>, "Root reference to events and listeners blocks should be specifiable using IoC reference" - this is a directly analogous issue, since the main loss through the simpleminded approach of performing manual merging and expansion is the loss of the ability to customise the mergePolicy for nested material. However, the current framework implementation has never clearly supported the ability to specify nested mergePolicies in any case (see <a href="/browse/FLUID-5381/">FLUID-5381</a>, <a href="/browse/FLUID-4932/">FLUID-4932</a>) so this doesn't represent a current loss.</p>
+<p>Secondly there is the relation to <a href="/browse/FLUID-5226/">FLUID-5226</a> and our ability to detect "material exotic by virtue of a custom constructor". As part of this work, we've succeeded in understanding the strategy of the standard jQuery code and can fold this into the framework - this is related to the strange "special branch" of fluid.expandOptions used by fluid.memberFromRecord using the field "freeRoot. The first effect seen once we started to move the options backing "members" to a standard workflow was the corruption of the "thisist thing" defined in an IoC test case:</p>
+<pre><code class="hljs language-javascript"><span class="hljs-attr">members</span>: {
+            <span class="hljs-string">"thisistThing"</span>: {
+                <span class="hljs-attr">expander</span>: { <span class="hljs-attr">funcName</span>: <span class="hljs-string">"fluid.tests.makeThisistThing"</span> }
+            }
+        },
+</code></pre>
+<p>Finally, it appears that the relations of those three core members of "modelComponent",</p>
+<pre><code class="hljs language-javascript"><span class="hljs-attr">members</span>: {
+            <span class="hljs-attr">model</span>: <span class="hljs-string">"@expand:fluid.initRelayModel({that}, {that}.modelRelay)"</span>,
+            <span class="hljs-attr">applier</span>: <span class="hljs-string">"@expand:fluid.makeHolderChangeApplier({that}, {that}.options.changeApplierOptions)"</span>,
+            <span class="hljs-attr">modelRelay</span>: <span class="hljs-string">"@expand:fluid.establishModelRelay({that}, {that}.options.model, {that}.options.modelListeners, {that}.options.modelRelay, {that}.applier)"</span>
+        },
+</code></pre>
+<p>can no longer be disentangled if "members" was moved to the standard workflow. The result is that the attempted evaluation of "members.modelRelay" then attempts to trigger the valuation of "applier" which then triggers evaluation of "members.applier" - which then corrupts the "in creation marker" (!!) assigned to top-level "members" by the merging workflow. This relates to <a href="/browse/FLUID-4930/">FLUID-4930</a> and implies that this issue is alive and well despite not being observed in practice for over 2 years. The fact that we can re-trigger this issue by change in status of "members" implies that it is still only a matter of time before some suitably complex series of user definitions ends up triggering it too. There is no way to resolve this set of linked issues without the wholesale reform of the framework planned in <a href="/browse/FLUID-4925/">FLUID-4925</a> and <a href="/browse/FLUID-4982/">FLUID-4982</a>. </p>
+<p>In the meantime, this has shed some clearer light on the way in which the current order of evaluation of options in the framework is problematic. We will write up observations on the wiki at <a href="http://wiki.fluidproject.org/display/fluid/Framework+Evaluation+Order%2C+old+and+new">http://wiki.fluidproject.org/display/fluid/Framework+Evaluation+Order%2C+old+and+new</a> - in particular, it seems that the current overall workflow of evaluating all overall options FIRST (and also triggering an eager, aggressive expansion of all options VERY FIRST), and then only operating mounted material (via "records) NEXT is entirely wrong - we need a data-driven approach whereby we first trigger a SHALLOW evaluation of options to the top-level required in order to instantiate, say, "members and invokers", and THEN trigger a data-driven evaluation and expansion of their underlying options, and only THEN FINALLY evaluate all currently unevaluated options. This implies moving the framework over to an explicit "worklist discovery model" whereby the "fringe" of unexplored options has an explicit, flat representation. We should combine this at the same time with the "monomorphising" scheme that was found to significantly improve performance in the <a href="/browse/FLUID-5249/">FLUID-5249</a> work on expanders.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25595">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-08-20T10:05:00.603-0400">2015-08-20T10:05:00.603-0400</relative-time></i></p>
+                        <p>Merged into trunk at revision 282f1a318718eed0b0ec060fb8b4ad254417fd7e</p>
+
+                    </li>
+                    
+                    <li id="comment-25596">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-04-12T17:54:24.244-0400">2016-04-12T17:54:24.244-0400</relative-time></i></p>
+                        <p>See <a href="/browse/FLUID-5887/">FLUID-5887</a>, <a href="/browse/FLUID-5800/">FLUID-5800</a> - our approach to "members" is still woefully wrong, especially when expanders can arise through multiple points in the grade hierarchy.</p>
+
+                    </li>
+                    
+                    <li id="comment-25597">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-05-08T13:51:45.169-0400">2016-05-08T13:51:45.169-0400</relative-time></i></p>
+                        <p>See discussion on "local MergePolicy" aired in IRC at <a href="https://botbot.me/freenode/fluid-work/2015-09-11/?msg=49513398&page=1">https://botbot.me/freenode/fluid-work/2015-09-11/?msg=49513398&amp;page=1</a> - it's hard to imagine resolving this issue without such a scheme</p>
+
+                    </li>
+                    
+                    <li id="comment-25598">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-08-12T11:48:01.430-0400">2016-08-12T11:48:01.430-0400</relative-time></i></p>
+                        <p>A partial fix for this is in trunk (at the 2.0 level) but we will keep this issue open since fixing this fully requires the <a href="/browse/FLUID-4925/">FLUID-4925</a> rewrite</p>
+
+                    </li>
+                    
+                    <li id="comment-25599">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-01-12T09:15:06.154-0500">2018-01-12T09:15:06.154-0500</relative-time></i></p>
+                        <p>Antranig Basman, would this shortcoming also explain why I can't use {arguments}.1 when setting up a member variable in a dynamic component?</p>
+
+                    </li>
+                    
+                    <li id="comment-25600">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2018-01-12T10:08:04.328-0500">2018-01-12T10:08:04.328-0500</relative-time></i></p>
+                        <p>Just to clarify, this demonstrates what I mean:</p>
+<p><a href="https://gist.github.com/the-t-in-rtf/6a85c3cf9676d227748a20180a09b929">https://gist.github.com/the-t-in-rtf/6a85c3cf9676d227748a20180a09b929</a></p>
+<p>The dynamic component that expects to initialise a member variable causes a failure, as {arguments}.0 is not expanded in the process of creating the component's options, but is rather left to the new component itself to make sense of.</p>
+
+                    </li>
+                    
+                    <li id="comment-25601">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2021-08-08T13:56:51.698-0400">2021-08-08T13:56:51.698-0400</relative-time></i></p>
+                        <p>Dealing with expansion semantics in such a fundamental way has been pushed off until the 6.x rewrite where the entire options pipeline will be rewritten using mats.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5667/"><span class="aria-hidden">←</span> Previous: FLUID-5667</a>
+        <a class="mx-1" href="/browse/FLUID-5669/">Next: FLUID-5669 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

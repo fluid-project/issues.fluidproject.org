@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6464  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6464 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6464/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6464/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6464/">FLUID-6464</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6464: Bare failure when referring to "slow path" resource before it has been fetched</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6464">FLUID-6464</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-03-05T14:39:05.840-0500" prefix="">2020-03-05T14:39:05.840-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-03-05T14:39:05.840-0500" prefix="">2020-03-05T14:39:05.840-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>ResourceLoader</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In work updating the Nexus to the <a href="/browse/FLUID-6145/">FLUID-6145</a> framework, we found at the very least a serious usability failure in the new ResourceLoader interface, and probably a problem which requires that we rethink the approach to signalling expectations on resource readiness in some declarative fashion.</p>
+<p>Having written this minimal resource loader,</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.tests.nexus.writeDefaults.badlyFormedJson"</span>, {
+    gradeNames: <span class="hljs-string">"fluid.resourceLoader"</span>,
+    resources: {
+        corruptJSON: {
+            path: <span class="hljs-string">"%infusion-nexus/tests/data/corruptJSONFile.jsonx"</span>,
+            dataType: <span class="hljs-string">"text"</span>
+        }
+    }
+});
+</code></pre>
+<p>which, as a result of making no early demands on the resource, by default allocated it as "slow". It then became consumed in an IoC Testing Case fixture which attempted to access the value of the resource, at a time after onCreate, but before the resource had loaded:</p>
+<pre><code class="hljs language-java">sequence: [
+            {
+                func: <span class="hljs-string">"{writeDefaultsRequest}.send"</span>,
+                args: [
+                    <span class="hljs-string">"{badlyFormedJson}.resources.corruptJSON.resourceText"</span>,
+                    {
+                        headers: {
+                            <span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"application/json"</span>
+                        }
+                    }
+                ]
+            },
+</code></pre>
+<p>The access to the resourceText of the incomplete resource triggered an extremely offputting message:</p>
+<pre><code class="hljs language-java"><span class="hljs-number">11</span>:<span class="hljs-number">43</span>:<span class="hljs-number">21.520</span>:  FATAL ERROR: Uncaught exception: Cannot read property <span class="hljs-string">'pendingIO'</span> of undefined
+TypeError: Cannot read property <span class="hljs-string">'pendingIO'</span> of undefined
+    at fluid.resourceFromRecord (E:\source\gits\infusionnexus\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">1</span>
+<span class="hljs-number">62</span>:<span class="hljs-number">22</span>)
+    at <span class="hljs-title function_">strategy</span> <span class="hljs-params">(E:\source\gits\infusion-nexus\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">196</span>:<span class="hljs-number">30</span>)</span>
+    at Array.&lt;anonymous&gt; (E:\source\gits\infusion-nexus\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">129</span>:<span class="hljs-number">20</span>)
+    at fluid.model.traverseWithStrategy (E:\source\gits\infusion-nexus\node_modules\infusion\src\framework\core\js\DataB
+inding.js:<span class="hljs-number">58</span>:<span class="hljs-number">41</span>)
+    at Object.fluid.model.accessImpl (E:\source\gits\infusion-nexus\node_modules\infusion\src\framework\core\js\Fluid.js
+:<span class="hljs-number">1181</span>:<span class="hljs-number">16</span>)
+    at Object.fluid.model.accessWithStrategy (E:\source\gits\infusion-nexus\node_modules\infusion\src\framework\core\js\
+DataBinding.js:<span class="hljs-number">109</span>:<span class="hljs-number">32</span>)
+    at Object.fluid.model.getWithStrategy (E:\source\gits\infusion-nexus\node_modules\infusion\src\framework\core\js\Dat
+aBinding.js:<span class="hljs-number">84</span>:<span class="hljs-number">28</span>)
+    at Object.fluid.get (E:\source\gits\infusion-nexus\node_modules\infusion\src\framework\core\js\Fluid.js:<span class="hljs-number">1264</span>:<span class="hljs-number">25</span>)
+    at Object.fluid.getForComponent (E:\source\gits\infusion-nexus\node_modules\infusion\src\framework\core\js\FluidIoC.
+js:<span class="hljs-number">844</span>:<span class="hljs-number">26</span>)
+    at Object.fluid.expander.fetch [as typeFunc] (E:\source\gits\infusion-nexus\node_modules\infusion\src\framework\core
+\js\FluidIoC.js:<span class="hljs-number">3297</span>:<span class="hljs-number">30</span>)
+    at Object.fluid.expandImmediateImpl (E:\source\gits\infusion-nexus\node_modules\infusion\src\framework\core\js\Fluid
+IoC.js:<span class="hljs-number">3259</span>:<span class="hljs-number">66</span>)
+    at Object.fluid.expandImmediate (E:\source\gits\infusion-nexus\node_modules\infusion\src\framework\core\js\FluidIoC.
+js:<span class="hljs-number">3251</span>:<span class="hljs-number">15</span>)
+    at E:\source\gits\infusion-nexus\node_modules\infusion\tests\test-core\utils\js\IoCTestUtils.js:<span class="hljs-number">182</span>:<span class="hljs-number">26</span>
+    at Object.expandFunction (E:\source\gits\infusion-nexus\node_modules\infusion\tests\test-core\utils\js\IoCTestUtils.
+js:<span class="hljs-number">195</span>:<span class="hljs-number">28</span>)
+    at Object.execute (E:\source\gits\infusion-nexus\node_modules\infusion\tests\test-core\utils\js\IoCTestUtils.js:<span class="hljs-number">254</span>:
+<span class="hljs-number">44</span>)
+    at Object.fluid.test.execExecutor (E:\source\gits\infusion-nexus\node_modules\infusion\tests\test-core\utils\js\IoCT
+estUtils.js:<span class="hljs-number">536</span>:<span class="hljs-number">18</span>)
+    at that.execute (E:\source\gits\infusion-nexus\node_modules\infusion\tests\test-core\utils\js\IoCTestUtils.js:<span class="hljs-number">674</span>:<span class="hljs-number">32</span>
+)
+    at E:\source\gits\infusion-nexus\node_modules\infusion\tests\test-core\utils\js\IoCTestUtils.js:<span class="hljs-number">340</span>:<span class="hljs-number">13</span>
+    at <span class="hljs-title function_">wrapped</span> <span class="hljs-params">(E:\source\gits\infusion-nexus\node_modules\infusion\tests\test-core\utils\js\IoCTestUtils.js:<span class="hljs-number">351</span>:<span class="hljs-number">17</span>)</span>
+    at <span class="hljs-title function_">fire</span> <span class="hljs-params">(E:\source\gits\infusion-nexus\node_modules\infusion\src\framework\core\js\Fluid.js:<span class="hljs-number">1712</span>:<span class="hljs-number">40</span>)</span>
+    at <span class="hljs-title function_">togo</span> <span class="hljs-params">(E:\source\gits\infusion-nexus\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">2703</span>:<span class="hljs-number">33</span>)</span>
+    at fluid.event.firer.fire (E:\source\gits\infusion-nexus\node_modules\infusion\src\framework\core\js\Fluid.js:<span class="hljs-number">1712</span>:<span class="hljs-number">4</span>
+<span class="hljs-number">0</span>)
+    at Server.&lt;anonymous&gt; (E:\source\gits\infusion-nexus\node_modules\kettle\lib\KettleServer.js:<span class="hljs-number">356</span>:<span class="hljs-number">30</span>)
+    at Object.onceWrapper (events.js:<span class="hljs-number">299</span>:<span class="hljs-number">28</span>)
+    at Server.emit (events.js:<span class="hljs-number">215</span>:<span class="hljs-number">7</span>)
+    at <span class="hljs-title function_">emitListeningNT</span> <span class="hljs-params">(net.js:<span class="hljs-number">1335</span>:<span class="hljs-number">10</span>)</span>
+    at <span class="hljs-title function_">processTicksAndRejections</span> <span class="hljs-params">(internal/process/task_queues.js:<span class="hljs-number">79</span>:<span class="hljs-number">21</span>)</span>
+<span class="hljs-number">11</span>:<span class="hljs-number">43</span>:<span class="hljs-number">21.554</span>:  Current activity:
+<span class="hljs-number">11</span>:<span class="hljs-number">43</span>:<span class="hljs-number">21.555</span>:      <span class="hljs-keyword">while</span> firing to listener to event named onListen of component component { typeName: <span class="hljs-string">"kettle.server id
+: 8sbw61ac-521"</span> gradeNames: [<span class="hljs-string">"kettle.server"</span>,<span class="hljs-string">"kettle.test.server"</span>,<span class="hljs-string">"kettle.server.ws"</span>]} at path serverEnvironment-8sbw61a
+c-<span class="hljs-number">373.</span>tests.configuration.server
+<span class="hljs-number">11</span>:<span class="hljs-number">43</span>:<span class="hljs-number">21.559</span>:  jq: FAIL: Module <span class="hljs-string">"fluid.tests.nexus.config tests"</span> Test name <span class="hljs-string">"Write Defaults with badly formed JSON"</span> - Mes
+sage: Unexpected failure in test <span class="hljs-title function_">case</span> <span class="hljs-params">(see following log <span class="hljs-keyword">for</span> more details)</span>: Cannot read property <span class="hljs-string">'pendingIO'</span> of undefined
+</code></pre>
+<p>At the very least we should replace this with a readable framework diagnostic advising the user to wait for the "onResourcesLoaded" event, but perhaps more so we should revisit our default assumption that a resource should be "slow" which is largely based on backwards compatibility with the Infusion 2.x ResourceLoader behaviour.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6463/"><span class="aria-hidden">←</span> Previous: FLUID-6463</a>
+        <a class="mx-1" href="/browse/FLUID-6465/">Next: FLUID-6465 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

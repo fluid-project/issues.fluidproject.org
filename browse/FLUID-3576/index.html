@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3576  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3576 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3576/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3576/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3576/">FLUID-3576</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3576: The Inline Edit demo is confusing and could use better instructions</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3576">FLUID-3576</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Jonathan Hung</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-03-30T19:48:29.000-0400" prefix="">2010-03-30T19:48:29.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2010-10-12T14:02:23.010-0400" prefix="">2010-10-12T14:02:23.010-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1</li>
+                            
+                            <li>1.1.1</li>
+                            
+                            <li>1.1.2</li>
+                            
+                            <li>1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Demos</li>
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Bruce Smith reported this issue to the infusion-users mailing list:</p>
+<p>"There are no instructions visible for this demo:</p>
+<p><a href="http://build.fluidproject.org/infusion/demos/inlineEdit/simple/demo.html">http://build.fluidproject.org/infusion/demos/inlineEdit/simple/demo.html</a></p>
+<p>See attached screenshot for what it looks like.</p>
+<p>I'm using Firefox 3.6.2, Mac OS 10.5.8, and the NoScript plugin, but NoScript reports it is not disabling anything on this site (and I believe it, since the demo does work once I learn how to use it).</p>
+<p>Maybe the lack of instructions is intentional, but I could not get it to work until I read some archived mailing list posts, which led me to try the tab key. Before reading that I was not able to edit anything (clicking on bold words and typing did nothing, and nothing else I thought of trying worked), and there were no error messages. </p>
+<p>After trying some more, I realized that for most bold words, hovering over them highlighted them, and clicking there made them editable – but not for the only ones I tried at first, namely the word "bold" itself in the lines that say "The words in bold are editable"! I guess I only tried those specific bold words, but that was enough to make me think it was "not working". (And indeed the claim that all the bold words are editable is wrong.) So this error is amusing in hindsight, but IMHO it needs fixing on the page, either by making those words not bold or (preferably) by making them editable. (And adding some instructions would be a good idea as well.)</p>
+<ul>
+<li>Bruce Smith"</li>
+</ul>
+<p>We should definitely implement better instructions for how Inline Edit works, and perhaps consider improving the demo so that the various affordances provided by the component are clearer and in-context.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20299">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-05-07T14:10:28.130-0400">2010-05-07T14:10:28.130-0400</relative-time></i></p>
+                        <p>a11y issue</p>
+
+                    </li>
+                    
+                    <li id="comment-20300">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2010-10-12T13:01:12.834-0400">2010-10-12T13:01:12.834-0400</relative-time></i></p>
+                        <p>Sufficiently addressed with the new demo.</p>
+
+                    </li>
+                    
+                    <li id="comment-20301">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-10-12T14:02:23.007-0400">2010-10-12T14:02:23.007-0400</relative-time></i></p>
+                        <p>Jonathan's new demo should address the issues this user reported with the older demo, so we're good to go. A separate ticket will be filed to do some user testing on our new demos.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3568/"><span class="aria-hidden">←</span> Previous: FLUID-3568</a>
+        <a class="mx-1" href="/browse/FLUID-3577/">Next: FLUID-3577 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4879  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4879 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4879/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4879/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4879/">FLUID-4879</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4879: Aggregate events aren't properly injected into another component</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4879">FLUID-4879</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Not%20A%20Bug">Not A Bug</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-01-09T12:40:26.283-0500" prefix="">2013-01-09T12:40:26.283-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-10-06T19:19:43.423-0400" prefix="">2017-10-06T19:19:43.423-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>It seems that if an aggregate event is injected into another component, the parent event doesn't fire. I've created a test case, at the bottom of:</p>
+<p><a href="https://github.com/acheetham/infusion/blob/FLUID-4879/src/webapp/tests/framework-tests/core/js/FluidIoCTests.js">https://github.com/acheetham/infusion/blob/FLUID-4879/src/webapp/tests/framework-tests/core/js/FluidIoCTests.js</a></p>
+<p>In this test case, comp2's onReady event fires once its subcomponents fire their onReady events, but the root comp1 onReady, which should be injected from comp2, never fires. It seems as though the event is not actually being injected?</p>
+<p>I encountered this problem working on the VideoPlayer: The player's controllers component has several subcomponents. I want the controllers' component's onReady event to be an aggregate of all of the subcomponent onReady events (the way comp2's onReady is an aggregate). I also want the VideoPlayer to share the controllers' onReady event, the way comp1 shares comp2's onReady event.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24245">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-01-10T15:17:04.354-0500">2013-01-10T15:17:04.354-0500</relative-time></i></p>
+                        <p>Hi, anastasia - I looked into this test case and found that the event is indeed being injected correctly up into component 1 and the listener is registered correctly. The issue now is that since the construction of comp2 and all of its children is synchronous, the complete system of finalInit functions and onReady events for the subtree concludes before comp1 finishes instantiating. Thus the registration of comp1's root listener to the onReady event happens AFTER the event has already fired. If you modify your onReady registration function to read as follows:</p>
+<pre><code class="hljs language-java">fluid.tests.onReadyFirer = function (that) {
+        window.setTimeout(function() {
+            that.events.onReady.fire(that);
+            }
+            , <span class="hljs-number">1</span>);
+    };
+</code></pre>
+<p>you will find that the test case then runs correctly given there will then be true asynchrony in the subtree leading from comp2 (you will need to adjust your test count up to 4).</p>
+<p>This sounds like it is realistic in your case since you mentioned (offline, in IRC) that one of your subcomponents depends on a template loading. In the case the subcomponents are indeed all synchronous in readiness, you should fall back to the system we discussed last month, using comp2's onCreate event as the overall timer. </p>
+<p>I do say that this current situation is unsatisfactory - it's not really appropriate to have to use these two very different methods (boiled event or supercomponent event) depending on whether or not a particular situation is asynchronous or not, but I can't think of a scheme right now using the current framework of treating this differently - right now you will need to be sure at design time whether an event is synchronous or not and choose the appropriate strategy - and, if necessary, ENSURE that the event is asynchronous if there is some possibility that it might not be (for example, loading a template unexpectedly from a cache that resolves immediately). Treating this case properly seems like it requires some extra semantic on framework events that we will need to think about - e.g. "latched events" - or some kind of event which represents a (e.g. jQuery) "deferred" which is expected to only ever fire ONCE.</p>
+
+                    </li>
+                    
+                    <li id="comment-24247">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2013-01-11T16:19:02.790-0500">2013-01-11T16:19:02.790-0500</relative-time></i></p>
+                        <p>I'm having trouble even instantiating the controllers subcomponent in the VideoPlayer once I correct the injection of the event. Perhaps you could look at the actual VideoPlayer code (and not my test case) and offer some advice?</p>
+<p>The controllers subcomponent onReady is aggregated here:<br>
+<a href="https://github.com/acheetham/videoPlayer/blob/c826863203908b49963b366d83bd31d26705e00e/js/VideoPlayer_controllers.js#L155-171">https://github.com/acheetham/videoPlayer/blob/c826863203908b49963b366d83bd31d26705e00e/js/VideoPlayer_controllers.js#L155-171</a></p>
+<p>The controllers onReady event is injected into the video player here:<br>
+<a href="https://github.com/acheetham/videoPlayer/blob/c826863203908b49963b366d83bd31d26705e00e/js/VideoPlayer.js#L235">https://github.com/acheetham/videoPlayer/blob/c826863203908b49963b366d83bd31d26705e00e/js/VideoPlayer.js#L235</a></p>
+<p>The error I'm getting is in trying to instantiate the controllers subcomponent: its container is not defined.</p>
+
+                    </li>
+                    
+                    <li id="comment-24249">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2013-01-15T13:48:59.717-0500">2013-01-15T13:48:59.717-0500</relative-time></i></p>
+                        <p>Antranig, if you get a chance to have a look at this, please make sure to look at this specific commit:<br>
+<a href="https://github.com/acheetham/videoPlayer/tree/c826863203908b49963b366d83bd31d26705e00e">https://github.com/acheetham/videoPlayer/tree/c826863203908b49963b366d83bd31d26705e00e</a><br>
+and not later ones. I'm going to clean up the branch to at least get something working, since another fix is waiting for it.</p>
+
+                    </li>
+                    
+                    <li id="comment-24250">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2014-04-02T16:03:59.924-0400">2014-04-02T16:03:59.924-0400</relative-time></i></p>
+                        <p>Caused by another reason.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4878/"><span class="aria-hidden">←</span> Previous: FLUID-4878</a>
+        <a class="mx-1" href="/browse/FLUID-4883/">Next: FLUID-4883 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

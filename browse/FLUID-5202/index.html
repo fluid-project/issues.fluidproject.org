@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5202  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5202 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5202/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5202/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5202/">FLUID-5202</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5202: In composite panels, subpanel's dropdown's model binding not working</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5202">FLUID-5202</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-10-30T14:45:07.423-0400" prefix="">2013-10-30T14:45:07.423-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-11-07T15:06:08.073-0500" prefix="">2013-11-07T15:06:08.073-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In composite panels, a subpanel's dropdown's model binding is not working: It's not mapping to composite panel's model properly. I discovered this issue while implementing some composite panels in order to document the process. The code that illustrates the issue can be seen in my branch:<br>
+<a href="https://github.com/acheetham/infusion/tree/PFID">https://github.com/acheetham/infusion/tree/PFID</a></p>
+<p>To reproduce the issue:<br>
+1) Check out the branch<br>
+2) Open src/instructionalDemos/framework/preferences/compositeSchemas/index.html in your browser, watching the console<br>
+3) Open the sliding panel.</p>
+<p>There are two drop-downs in Composite Panel #2. The primary schema for these two dropdowns defines a default that is NOT the first item in the list, but the two dropdowns default to the first item.</p>
+<p>The enactors for the preferences merely log the new model whenever the model changes. If you watch the console when the page loads, you'll see the enactor logs indicating that the enactors are initialized with the defaults specified in the primary schema.</p>
+<p>The preferences editor instantiated in the demo is stored in a global variable called "prefsEd" so in the console, you can examine the content of the various models to see where the default has been properly set, and where it has not.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14278">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2013-10-31T14:13:23.728-0400">2013-10-31T14:13:23.728-0400</relative-time></i></p>
+                        <p>I've tested Justin's branch for <a href="/browse/FLUID-5201/">FLUID-5201</a>, which fixes the slider rendering, and now this problem (i.e. the controls not reflecting the defaults) is showing up for the slider, as well. Also, the range information in the primary schema is not being applied to the rendered component, either.</p>
+
+                    </li>
+                    
+                    <li id="comment-14280">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-10-31T14:36:34.976-0400">2013-10-31T14:36:34.976-0400</relative-time></i></p>
+                        <p>There are two issues at play here. 1) the initial model value is not set for the sub panels 2) the selection renderer tree components do not have their valuebinding rebased.</p>
+
+                    </li>
+                    
+                    <li id="comment-14282">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-10-31T15:16:13.416-0400">2013-10-31T15:16:13.416-0400</relative-time></i></p>
+                        <p>I have fixes to both of the underlying issues mentioned in the previous comment in my <a href="/browse/FLUID-5202/">FLUID-5202</a> branch.<br>
+<a href="https://github.com/jobara/infusion/tree/FLUID-5202">https://github.com/jobara/infusion/tree/FLUID-5202</a></p>
+
+                    </li>
+                    
+                    <li id="comment-14284">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-10-31T15:54:22.604-0400">2013-10-31T15:54:22.604-0400</relative-time></i></p>
+                        <p>Sent a pull request <a href="https://github.com/fluid-project/infusion/pull/432">https://github.com/fluid-project/infusion/pull/432</a></p>
+
+                    </li>
+                    
+                    <li id="comment-14287">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2013-11-01T08:53:10.346-0400">2013-11-01T08:53:10.346-0400</relative-time></i></p>
+                        <p>I've tested Justin's <a href="/browse/FLUID-5200/">FLUID-5200</a> branch in my branch, where I initially noticed the problems:<br>
+<a href="https://github.com/acheetham/infusion/tree/PFID">https://github.com/acheetham/infusion/tree/PFID</a><br>
+The drop-downs are now correctly being initialized to the default values, but the sliders are still not getting the default or the range values. It's possible this may be related to <a href="/browse/FLUID-5203/">FLUID-5203</a>, but the problem occurs even when there is only one slider in the panel.</p>
+
+                    </li>
+                    
+                    <li id="comment-14289">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-11-04T10:02:53.290-0500">2013-11-04T10:02:53.290-0500</relative-time></i></p>
+                        <p>Yes that will be addressed with the wok for <a href="/browse/FLUID-5203/">FLUID-5203</a></p>
+
+                    </li>
+                    
+                    <li id="comment-14291">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-11-07T15:06:08.071-0500">2013-11-07T15:06:08.071-0500</relative-time></i></p>
+                        <p>Merged pull request ( <a href="https://github.com/fluid-project/infusion/pull/432">https://github.com/fluid-project/infusion/pull/432</a> ) into the project repo at e4475f1d0ca14eb6d6cc506bb273a04088b0cd18</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5201/"><span class="aria-hidden">←</span> Previous: FLUID-5201</a>
+        <a class="mx-1" href="/browse/FLUID-5203/">Next: FLUID-5203 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6303  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6303 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6303/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6303/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6303/">FLUID-6303</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6303: Implement a panel, adjuster and enactor for locale</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6303">FLUID-6303</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Gregor Moss</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-07-17T16:51:33.501-0400" prefix="">2018-07-17T16:51:33.501-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-01-23T16:19:21.825-0500" prefix="">2019-01-23T16:19:21.825-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Implement a panel, adjuster and enactor for locale selection</p>
+<p>The enactor need not be fully implemented. It could simply offer a point of integration that is left to the developer's discretion.</p>
+<p>Some prior art in&#160;<a href="https://github.com/GPII/first-discovery">https://github.com/GPII/first-discovery</a>&#160;(note that the page reloads every time the locale is changed in this project)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22884">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-12-17T07:50:44.673-0500">2018-12-17T07:50:44.673-0500</relative-time></i></p>
+                        <p>I spoke with Antranig Basman in the fluid-work channel today ( <a href="http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2018-12-17.log">http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2018-12-17.log</a>&#160;) about the issue of configuring the language panel with the schema version of the prefs framework. Typically when using the schemas, a primary schema is created that contains the potential values of a preference. For language this is problematic because each integration would have their own set of supported languages. It seems the best we can do now is to have the integrator configure the panel settings against the built prefs editor, that is after the schemas have been compiled and a &#160;prefs editor grade is generated. Antranig, suggested that we could add a helpful utility for it.</p>
+
+                    </li>
+                    
+                    <li id="comment-22889">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-12-18T08:44:38.515-0500">2018-12-18T08:44:38.515-0500</relative-time></i></p>
+                        <p>Also from my discussion with Antranig Basman in the fluid-work channel yesterday (&#160;<a href="http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2018-12-17.log">http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2018-12-17.log</a>&#160;), we will setup the enactor to use contextAwareness to switch between the various methods for applying the language change.</p>
+
+                    </li>
+                    
+                    <li id="comment-22894">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-12-20T12:28:19.963-0500">2018-12-20T12:28:19.963-0500</relative-time></i></p>
+                        <p>Was going to add code to modify the query parameters to change the locale. However, it seems that the "fluid.prefs.enactor.localization.queryParamLocale.search" method held much of the logic and would need to be mocked out in a test. Because we don't actually have a use case for this type of locale change, and the difficulty in testing, I've decided to leave it out, but the code is provided below if we'd like to implement it later.</p>
+<pre><code class="hljs language-java"><span class="hljs-comment">/*******************************************************************************
+     * Query Parameter
+     *
+     * Changes a query parameter to specify which language should be displayed.
+     * E.g. www.example.com?lang=en
+     *******************************************************************************/</span>
+    fluid.defaults(<span class="hljs-string">"fluid.prefs.enactor.localization.queryParamLocale"</span>, {
+        langMap: {}, <span class="hljs-comment">// must be supplied by integrator</span>
+        langParam: <span class="hljs-string">"lang"</span>,
+        model: {
+            langParam: {
+                expander: {
+                    func: <span class="hljs-string">"{that}.search"</span>
+                }
+            }
+        },
+        modelRelay: {
+            <span class="hljs-string">"setLangParam"</span>: {
+                source: <span class="hljs-string">"lang"</span>,
+                target: <span class="hljs-string">"langParam"</span>,
+                singleTransform: {
+                    type: <span class="hljs-string">"fluid.transforms.valueMapper"</span>,
+                    match: <span class="hljs-string">"{that}.options.langMap"</span>
+                }
+            }
+        },
+        modelListeners: {
+            langParam: {
+                funcName: <span class="hljs-string">"{that}.search"</span>,
+                args: [<span class="hljs-string">"{change}.value"</span>],
+                namespace: <span class="hljs-string">"setLangParam"</span>
+            }
+        },
+        listeners: {
+            <span class="hljs-string">"onCreate.setURLPath"</span>: {
+                changePath: <span class="hljs-string">"urlPathname"</span>,
+                value: {
+                    expander: {
+                        func: <span class="hljs-string">"{that}.pathname"</span>
+                    }
+                },
+                source: <span class="hljs-string">"initialURLPathname"</span>
+            }
+        },
+        invokers: {
+            search: {
+                funcName: <span class="hljs-string">"fluid.prefs.enactor.localization.queryParamLocale.search"</span>,
+                args: [<span class="hljs-string">"{that}.options.langParam"</span>, <span class="hljs-string">"{arguments}.0"</span>]
+            }
+        }
+    });    <span class="hljs-comment">/**
+     * A simple wrapper around the location.search setter/getter property. However, it does not simply set and return
+     * the entire search/query string, but rather takes in a specific property to act upon.
+     *
+     * <span class="hljs-doctag">@param</span> {String} searchString - (Optional) searchString to set. If not supplied the current searchString will be returned
+     * <span class="hljs-doctag">@return</span> {String} - If the `searchString` argument is not provided, the current searchString is returned
+     */</span>
+    fluid.prefs.enactor.localization.queryParamLocale.search = function (property, value) {
+        <span class="hljs-type">var</span> <span class="hljs-variable">params</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">URLSearchParams</span>(location.search);
+        <span class="hljs-type">var</span> <span class="hljs-variable">currentValue</span> <span class="hljs-operator">=</span> params.get(property);        <span class="hljs-keyword">if</span> (!value) {
+            <span class="hljs-keyword">return</span> params.get(property);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (currentValue !== value) {
+            params.set(property, value);
+            location.search = params.toString();
+        }
+    };
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-22901">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2019-01-23T16:18:20.259-0500">2019-01-23T16:18:20.259-0500</relative-time></i></p>
+                        <p>Justin Obara issued <a href="https://github.com/fluid-project/infusion/pull/949">the initial pull request</a> that was based off for <a href="https://github.com/fluid-project/infusion/pull/951">the 2nd pull request</a>, which was to address the last minor code review comment on the initial pull request when Justin Obara is on vacation.&#160;<a href="https://github.com/fluid-project/infusion/pull/951">The 2nd pull request</a> has been merged into the project repo master branch at <a href="https://github.com/fluid-project/infusion/commit/35e8a5a9c958cca65ca403108f784668ff42148d">this commit</a>.</p>
+<p><a href="https://issues.fluidproject.org/browse/FLUID-6363">FLUID-6363</a> is recreated for Justin Obara to re-visit the change made in <a href="https://github.com/fluid-project/infusion/pull/951">the 2nd pull request.</a></p>
+<p><a href="/browse/FLUID-6364/">FLUID-6364</a> is created for the re-examination of the user experience of setting languages thru the localization panel.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6302/"><span class="aria-hidden">←</span> Previous: FLUID-6302</a>
+        <a class="mx-1" href="/browse/FLUID-6304/">Next: FLUID-6304 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

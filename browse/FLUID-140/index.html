@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-140  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-140 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-140/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-140/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-140/">FLUID-140</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-140: Unit tests, examples, server-side templates should not be included within the deployment bundle.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-140">FLUID-140</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Jonathan Hung</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2007-12-01T17:49:06.000-0500" prefix="">2007-12-01T17:49:06.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-04-08T14:32:32.000-0400" prefix="">2008-04-08T14:32:32.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Infrastructure</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently, the bundles we ship for deployment of Fluid 0.1 (the component-templates directory and the fluid-components-0.1.war)  also contain all our unit tests as well. We should split these out from the deployment artifact so we're not shipping non-production code in the actual package.</p>
+<p>So, in other words, the deployment package for Fluid should only contain material that needs to be deployed to the web server directly:</p>
+<p>1. Fluid JavaScript and its dependencies (jQuery, etc)<br>
+2. CSS<br>
+3. Static (ie. non templates) HTML documents<br>
+4. Images used by the components themselves, but not as sample data</p>
+<p>So we'll want to move unit tests, Lightbox.html, the fruit images, and the entire tests directory to a separate spot.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-140/build.xml">
+                            
+                                build.xml
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13123">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2007-12-01T18:01:25.000-0500">2007-12-01T18:01:25.000-0500</relative-time></i></p>
+                        <p>To be even more concrete, we probably want our release bundle to look like this:</p>
+<p>fluid-components/<br>
+css/<br>
+js/</p>
+<p>sample-code/<br>
+markupExamples/</p>
+<p>server-side-templates/<br>
+Lightbox.html<br>
+LightboxRSF.jar</p>
+<p>tests/<br>
+jsunit/<br>
+fluid-tests/</p>
+<p>build-scripts/<br>
+lib/</p>
+<p>patches/</p>
+<p>documentation/</p>
+<p>That way, deployers can simply drop just the fluid-components directory into their webserver and start building UIs with Fluid.</p>
+
+                    </li>
+                    
+                    <li id="comment-13124">
+                        <p class="mb-0"><b>Joseph Scheuhammer</b> <i>commented <relative-time datetime="2008-02-08T11:34:55.000-0500">2008-02-08T11:34:55.000-0500</relative-time></i></p>
+                        <p>An example of an ant build script that builds and creates a distribution.  Use this as a guide.</p>
+
+                    </li>
+                    
+                    <li id="comment-13125">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2008-02-12T14:17:16.000-0500">2008-02-12T14:17:16.000-0500</relative-time></i></p>
+                        <p>A wrinkle in the above structure...  markupExamples are used by the tests. By separating the markup from the tests, we could be creating some confusion by not depicting the dependency with the structure.</p>
+<p>Bigger question:</p>
+<ul>
+<li>Will we ever distribute markup examples without tests?</li>
+<li>Do we want markup examples tightly bound to tests?</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-13126">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2008-02-14T14:23:03.000-0500">2008-02-14T14:23:03.000-0500</relative-time></i></p>
+                        <p>I think we should be fine to use relative paths between the tests and the markup examples, since they will always be co-located. It's only dependencies inside the server-side templates that are a concern.</p>
+
+                    </li>
+                    
+                    <li id="comment-13127">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2008-02-14T14:27:27.000-0500">2008-02-14T14:27:27.000-0500</relative-time></i></p>
+                        <p>Here's the final directory structure that Jonathan and I decided on:</p>
+<p>components/trunk</p>
+<p>toolkit/<br>
+css<br>
+Lightbox.css<br>
+js<br>
+Fluid.js<br>
+Lightbox.js<br>
+html<br>
+Lightbox.html</p>
+<p>sample-code/<br>
+markup-examples/<br>
+reorderer/<br>
+abstract<br>
+concrete</p>
+<p>tests/</p>
+<p>build-scripts/<br>
+build.xml<br>
+pom.xml</p>
+<p>patches/</p>
+<p>WEB-INF/<br>
+web.xml</p>
+<p>The Ant build script will have to build the necessary structure for Maven to build a war file. This will be done as a by-product of the "build-war" target.</p>
+
+                    </li>
+                    
+                    <li id="comment-13128">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-02-15T08:43:06.000-0500">2008-02-15T08:43:06.000-0500</relative-time></i></p>
+                        <p>I appreciate the adjustment to bring html/js/css under a common root, but I'm still not very fond of the name "toolkit" which doesn't feel very "inviting" as a thing to find at top level? I'm not sure I would expect to know what to find in there, and to realise that it contained the "main value" of the package. What did we dislike about "fluid-components"?</p>
+
+                    </li>
+                    
+                    <li id="comment-13129">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2008-02-15T11:37:37.000-0500">2008-02-15T11:37:37.000-0500</relative-time></i></p>
+                        <p>Antranig,</p>
+<p>My initial hesitation to continue using fluid-components as the name was that it felt redundant, at least from the svn perspective since the code will already be in a directory structure of fluid/components/. But on second thought, this doesn't apply to the final package.</p>
+<p>We did some more brainstorming on names and ultimately concluded that fluid-components is probably just fine as the name. 🙂</p>
+
+                    </li>
+                    
+                    <li id="comment-13130">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2008-02-16T16:45:21.000-0500">2008-02-16T16:45:21.000-0500</relative-time></i></p>
+                        <p>With further thinking, I'm wondering if un-nesting our code from the war file structure expected by Maven is an inconvenient idea. It will require at least an extra step when building any war file that depends on Fluid, since you'll need to run the ant target and then build your dependencies. I'm going to look more into Ant/Maven integration, but we may be able to achieve most of the desired effect with the following structure:</p>
+<p>src<br>
+webapp<br>
+fluid-components<br>
+css<br>
+html<br>
+images<br>
+js<br>
+WEB-INF/<br>
+tests<br>
+sample-code<br>
+build-scripts</p>
+<p>And then the Ant build can produce the final structure as above for distribution.</p>
+
+                    </li>
+                    
+                    <li id="comment-13131">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2008-02-27T13:00:00.000-0500">2008-02-27T13:00:00.000-0500</relative-time></i></p>
+                        <p>There may be a problem with this proposed structure. With respect to tests and sample-code, our "work" and "distro" source trees are different. This would mean that if our tests and sample code work in one structure, it will not work in the other.</p>
+<p>An idea was to use Ant's Filter &amp; Token task to change the paths in the test and sample code files during execution of the ant build script. However, this will not work because Ant only replaces a token embedded in the file with a specified value in the Ant script. Hence we will not be able to replace the paths we want unless we place tokens (like @replaceMe@) into the path itself, which makes such paths unusable for most purposes.</p>
+<p>Anastasia suggested something like sed to do string replacement, but this will not work on Windows. There could be other alternatives like finding a suitable Ant task to plug in.</p>
+<p>Perhaps it will be easier to decide on a structure that will be the same for both work and build versions.</p>
+
+                    </li>
+                    
+                    <li id="comment-13132">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2008-04-08T14:32:32.000-0400">2008-04-08T14:32:32.000-0400</relative-time></i></p>
+                        <p>The new Ant build script works great!</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-139/"><span class="aria-hidden">←</span> Previous: FLUID-139</a>
+        <a class="mx-1" href="/browse/FLUID-141/">Next: FLUID-141 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

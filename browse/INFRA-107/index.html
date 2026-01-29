@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-107  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-107 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-107/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-107/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-107/">INFRA-107</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-107: nginx-reverse - Default target should be health check</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-107">INFRA-107</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Done">Done</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-02-01T17:02:15.249-0500" prefix="">2018-02-01T17:02:15.249-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-06-21T15:04:53.629-0400" prefix="">2018-06-21T15:04:53.629-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When the load balancer is accessed directly without it being through a configured vhost, it defaults to the first server{}. When this server entry has some problem, the load balancer is reported as failed (which is a false positive, because the failed server is actually what's behind it).</p>
+<p>Need to implement a default server{} that's a health check endpoint.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25874">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-02-23T08:21:58.762-0500">2018-02-23T08:21:58.762-0500</relative-time></i></p>
+                        <p>Here's an example of AChecker (the first backend) going down and both load balancers being reported as down too:</p>
+<p>The monitor IDRC - achecker.ca (<a href="https://achecker.ca/">https://achecker.ca</a>) is currently DOWN (HTTP 502 - Bad Gateway). <br>
+The monitor INFRA - load balancer i-0035 (<a href="https://i-0035.tor1.inclusivedesign.ca/">https://i-0035.tor1.inclusivedesign.ca/</a>) is currently DOWN (HTTP 502 - Bad Gateway). <br>
+The monitor INFRA - load balancer i-0036 (<a href="https://i-0036.tor1.inclusivedesign.ca/">https://i-0036.tor1.inclusivedesign.ca</a>) is currently DOWN (HTTP 502 - Bad Gateway).</p>
+<p>All happened at 04:44pm and did not impact any other websites.</p>
+
+                    </li>
+                    
+                    <li id="comment-25875">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-03-22T18:41:31.715-0400">2018-03-22T18:41:31.715-0400</relative-time></i></p>
+                        <p>Implemented two new features in nginx-common:</p>
+<ul>
+<li>Ability to define a default URL (anyone hitting the LBs without a Host header gets redirected there)</li>
+<li>Returning OK 200 on a defined path (again, without Host header defined)</li>
+</ul>
+<p>UptimeRobot has been updated with the new endpoints for the load balancers.</p>
+<p>Sample output for default URL:</p>
+<pre><code class="hljs">$ curl -v http://i-0035.tor1.inclusivedesign.ca
+<span class="hljs-symbol">*</span> Rebuilt URL to: http://i-0035.tor1.inclusivedesign.ca/
+<span class="hljs-symbol">*</span>   Trying 205.211.169.48...
+<span class="hljs-symbol">*</span> TCP_NODELAY set
+<span class="hljs-symbol">*</span> Connected to i-0035.tor1.inclusivedesign.ca (205.211.169.48) port 80 (<span class="hljs-comment">#0)</span>
+&gt; GET / HTTP/1.1
+&gt; Host: i-0035.tor1.inclusivedesign.ca
+&gt; User-Agent: curl/7.55.1
+&gt; Accept: <span class="hljs-symbol">*</span>/<span class="hljs-symbol">*</span>
+&gt; 
+<span class="hljs-variable">&lt; HTTP/1.1 302 Moved Temporarily
+&lt; Server: nginx
+&lt; Date: Thu, 22 Mar 2018 22:24:58 GMT
+&lt; Content-Type: text/html
+&lt; Content-Length: 154
+&lt; Connection: keep-alive
+&lt; Location: https://idrc.ocadu.ca
+&lt; Strict-Transport-Security: max-age=0;
+&lt; 
+&lt;html&gt;</span>
+<span class="hljs-variable">&lt;head&gt;</span><span class="hljs-variable">&lt;title&gt;</span>302 Found<span class="hljs-variable">&lt;/title&gt;</span><span class="hljs-variable">&lt;/head&gt;</span>
+<span class="hljs-variable">&lt;body bgcolor="white"&gt;</span>
+<span class="hljs-variable">&lt;center&gt;</span><span class="hljs-variable">&lt;h1&gt;</span>302 Found<span class="hljs-variable">&lt;/h1&gt;</span><span class="hljs-variable">&lt;/center&gt;</span>
+<span class="hljs-variable">&lt;hr&gt;</span><span class="hljs-variable">&lt;center&gt;</span>nginx<span class="hljs-variable">&lt;/center&gt;</span>
+<span class="hljs-variable">&lt;/body&gt;</span>
+<span class="hljs-variable">&lt;/html&gt;</span>
+<span class="hljs-symbol">*</span> Connection <span class="hljs-comment">#0 to host i-0035.tor1.inclusivedesign.ca left intact</span>
+</code></pre>
+<p>Sample output for health check:</p>
+<pre><code class="hljs"><span class="hljs-string">$</span> <span class="hljs-string">curl</span> <span class="hljs-string">-v</span> <span class="hljs-string">http://i-0035.tor1.inclusivedesign.ca/health</span>
+<span class="hljs-string">*</span>   <span class="hljs-string">Trying</span> <span class="hljs-number">205.211</span><span class="hljs-number">.169</span><span class="hljs-number">.48</span><span class="hljs-string">...</span>
+<span class="hljs-string">*</span> <span class="hljs-string">TCP_NODELAY</span> <span class="hljs-string">set</span>
+<span class="hljs-string">*</span> <span class="hljs-string">Connected</span> <span class="hljs-string">to</span> <span class="hljs-string">i-0035.tor1.inclusivedesign.ca</span> <span class="hljs-string">(205.211.169.48)</span> <span class="hljs-string">port</span> <span class="hljs-number">80</span> <span class="hljs-string">(#0)</span>
+<span class="hljs-string">&gt;</span> <span class="hljs-string">GET</span> <span class="hljs-string">/health</span> <span class="hljs-string">HTTP/1.1</span>
+<span class="hljs-string">&gt;</span> <span class="hljs-attr">Host:</span> <span class="hljs-string">i-0035.tor1.inclusivedesign.ca</span>
+<span class="hljs-string">&gt;</span> <span class="hljs-attr">User-Agent:</span> <span class="hljs-string">curl/7.55.1</span>
+<span class="hljs-string">&gt;</span> <span class="hljs-attr">Accept:</span> <span class="hljs-string">*/*</span>
+<span class="hljs-string">&gt;</span> 
+<span class="hljs-string">&lt;</span> <span class="hljs-string">HTTP/1.1</span> <span class="hljs-number">200</span> <span class="hljs-string">OK</span>
+<span class="hljs-string">&lt;</span> <span class="hljs-attr">Server:</span> <span class="hljs-string">nginx</span>
+<span class="hljs-string">&lt;</span> <span class="hljs-attr">Date:</span> <span class="hljs-string">Thu,</span> <span class="hljs-number">22</span> <span class="hljs-string">Mar</span> <span class="hljs-number">2018 22:43:16 </span><span class="hljs-string">GMT</span>
+<span class="hljs-string">&lt;</span> <span class="hljs-attr">Content-Type:</span> <span class="hljs-string">application/octet-stream</span>
+<span class="hljs-string">&lt;</span> <span class="hljs-attr">Content-Length:</span> <span class="hljs-number">0</span>
+<span class="hljs-string">&lt;</span> <span class="hljs-attr">Connection:</span> <span class="hljs-string">keep-alive</span>
+<span class="hljs-string">&lt;</span> <span class="hljs-attr">Strict-Transport-Security:</span> <span class="hljs-string">max-age=0;</span>
+<span class="hljs-string">&lt;</span> 
+<span class="hljs-string">*</span> <span class="hljs-string">Connection</span> <span class="hljs-comment">#0 to host i-0035.tor1.inclusivedesign.ca left intact</span>
+</code></pre>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-106/"><span class="aria-hidden">←</span> Previous: INFRA-106</a>
+        <a class="mx-1" href="/browse/INFRA-108/">Next: INFRA-108 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

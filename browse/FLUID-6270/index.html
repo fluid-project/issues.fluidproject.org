@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6270  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6270 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6270/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6270/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6270/">FLUID-6270</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6270: fluid-publish should add branch information to build names</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6270">FLUID-6270</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-04-05T20:23:48.425-0400" prefix="">2018-04-05T20:23:48.425-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:05.273-0400" prefix="">2024-07-22T10:35:05.273-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>fluid-publish</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>It would be very helpful if, if fluid-publish were run on a branch other than one named "master", it would add some information to the build artefact name that could be used to trace where this branch was. Right now I am working on <a href="https://issues.fluidproject.org/browse/FLUID-6148">https://issues.fluidproject.org/browse/FLUID-6148</a> and it would be great to be able to roll some dev release for people to test, but I'm nervous that they would appear indistinguishable to our recent sequence of "generally pretty good" builds that have been cut from master over the last year or so and someone might use it by accident and blow themselves up.</p>
+<p>Right now our builds look like 3.0.0-dev.20180326T173646Z.8c6a109b1 and so it would be great if, for example when run from a branch named <a href="/browse/FLUID-6148/">FLUID-6148</a> it would by default appear as 3.0.0-dev.<a href="/browse/FLUID-6148/">FLUID-6148</a>.20180326T173646Z.8c6a109b1 or so, and with the ability to manually choose the extra identifying string via a command line option if the branch didn't happen to be suitably named in the user's local repository.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20650">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-04-06T09:53:58.398-0400">2018-04-06T09:53:58.398-0400</relative-time></i></p>
+                        <p>I was going to use "+" to add the branch/id name as build metadata, but it turns out it gets stripped out by npm ( see: <a href="https://github.com/npm/npm/issues/12825">https://github.com/npm/npm/issues/12825</a>&#160;)</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6269/"><span class="aria-hidden">←</span> Previous: FLUID-6269</a>
+        <a class="mx-1" href="/browse/FLUID-6271/">Next: FLUID-6271 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6605  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6605 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6605/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6605/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6605/">FLUID-6605</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6605: Allow contrast themes to be applied using custom properties only</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6605">FLUID-6605</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Ned%20Zimmerman">Ned Zimmerman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-03-24T10:22:29.765-0400" prefix="">2021-03-24T10:22:29.765-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:21.251-0400" prefix="">2024-07-22T10:35:21.251-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Currently, contrast themes are applied by adding a class to the body which applies the appropriate theme from <a href="https://unpkg.com/browse/infusion@3.0.0-dev.20210312T233557Z.0b016a6dc.<a href=" browse="" FLUID-6580="" "="">FLUID-6580</a>/dist/assets/src/framework/preferences/css/Enactors.css"&gt;Enactors.css. For example, applying the black and white contrast theme assigns the <code>.fl-theme-bw</code> class to the body, which sets the following CSS custom properties:</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.fl-theme-bw</span> {
+  <span class="hljs-attr">--fl-fgColor</span>: <span class="hljs-number">#000</span>;
+  <span class="hljs-attr">--fl-bgColor</span>: <span class="hljs-number">#fff</span>;
+}
+</code></pre>
+<p>These two variables are used within UIO's <a href="https://github.com/fluid-project/infusion/blob/main/src/framework/preferences/css/sass/utils/_themes.scss#L63-L480">contrast theme stylesheet</a>, which is applied to the adjusted website.</p>
+<p>This works but has a significant drawback.&#160;Because the contrast theme stylesheet uses <code>!important</code> quite liberally, some of the website's styles will be forcibly overridden and will require further use of <code>!important</code> and lots of duplicated styling in order to properly integrate UIO into a given website's design language. Here's an example: <a href="https://codepen.io/greatislander/pen/ExZjpBW">https://codepen.io/greatislander/pen/ExZjpBW</a></p>
+<p>In this case, a custom focus style has been applied to links which inverts the background and text color when the link receives focus. But UIO applies a background and text colour with <code>!important</code> to <a href="https://github.com/fluid-project/infusion/blob/4e804fee39403575f893565548124f6e61b00490/src/framework/preferences/css/sass/utils/_themes.scss#L63-L83">any element</a> within the adjusted body:</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-attr">[class*=<span class="hljs-string">"fl-theme"</span>]</span><span class="hljs-selector-pseudo">:not</span>(<span class="hljs-selector-class">.fl-theme-prefsEditor-default</span>) * {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--fl-bgColor) <span class="hljs-meta">!important</span>;
+  <span class="hljs-attribute">border-bottom-color</span>: <span class="hljs-built_in">var</span>(--fl-fgColor) <span class="hljs-meta">!important</span>;
+  <span class="hljs-attribute">border-left-color</span>: <span class="hljs-built_in">var</span>(--fl-fgColor) <span class="hljs-meta">!important</span>;
+  <span class="hljs-attribute">border-right-color</span>: <span class="hljs-built_in">var</span>(--fl-fgColor) <span class="hljs-meta">!important</span>;
+  <span class="hljs-attribute">border-top-color</span>: <span class="hljs-built_in">var</span>(--fl-fgColor) <span class="hljs-meta">!important</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--fl-fgColor) <span class="hljs-meta">!important</span>;
+}
+</code></pre>
+<p>In terms of specificity, this overrules the theme's <code>a:focus</code>&#160;rule, even when the <code>background-color</code> property is given the <code>!important</code>&#160;flag. The following CSS must be added just to ensure that the custom <code>color</code> and <code>background-color</code> of the link focus style will be honoured when a contrast theme is applied:</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-attr">[class*=fl-theme]</span><span class="hljs-selector-pseudo">:not</span>(<span class="hljs-selector-class">.fl-theme-prefsEditor-default</span>) <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span> {
+  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">var</span>(--fl-fgColor, black) <span class="hljs-meta">!important</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--fl-bgColor, white) <span class="hljs-meta">!important</span>;
+}
+</code></pre>
+<p>In my experience, many such overrides of overrides are necessary when integrating UIO.<br>
+&#160;<br>
+A different approach that would also have the impact of reducing the CSS needed to apply a contrast theme would be for UIO to provide only the relevant custom properties. In other words, applying the yellow on black theme would only add the <code>.fl-theme-yb</code> class to the body and apply the following styles:</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.fl-theme-yb</span> {
+  <span class="hljs-attr">--fl-fgColor</span>: <span class="hljs-number">#ff0</span>;
+  <span class="hljs-attr">--fl-bgColor</span>: <span class="hljs-number">#000</span>;
+}
+</code></pre>
+<p>Then, the integrator could use these two CSS custom properties throughout their stylesheets with a fallback to their theme's default colour. For example:</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">body</span> {
+  <span class="hljs-comment">/* This will use --fl-bgColor if available, else use #fff. */</span>
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--fl-bgColor, <span class="hljs-number">#fff</span>);
+  <span class="hljs-comment">/* This will use --fl-fgColor if available, else use #333. */</span>
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--fl-fgColor, <span class="hljs-number">#333</span>);
+}
+</code></pre>
+<p>In this way the contrast theme provides colour variables which are consumed by the integrator's stylesheet, rather than attempting to override large portions of the integrator's stylesheet which the integrator may have to struggle to restyle appropriately while respecting the contrast theme.</p>
+<p>There would also be significant benefits in terms of file size. The most complex contrast theme is this one:</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.fl-theme-bbr</span> {
+    <span class="hljs-attr">--fl-fgColor</span>: <span class="hljs-number">#000</span>;
+    <span class="hljs-attr">--fl-bgColor</span>: <span class="hljs-number">#b96</span>;
+    <span class="hljs-attr">--fl-linkColor</span>: <span class="hljs-number">#009</span>;
+    <span class="hljs-attr">--fl-disabledColor</span>: <span class="hljs-number">#600000</span>;
+    <span class="hljs-attr">--fl-selectedFgColor</span>: <span class="hljs-number">#fff</span>;
+    <span class="hljs-attr">--fl-selectedBgColor</span>: <span class="hljs-number">#000070</span>;
+    <span class="hljs-attr">--fl-buttonFgColor</span>: <span class="hljs-number">#000</span>;
+    <span class="hljs-attr">--fl-buttonBgColor</span>: <span class="hljs-number">#ffd18a</span>;
+}
+</code></pre>
+<p>Minified, this is 204b compared to the current contrast theme stylesheet's 20.2kB.</p>
+<p>An important caveat is that this approach would necessitate some more comprehensive documentation on how to integrate contrast themes, and would require more deep integration into a site's stylesheets. This would have the benefit of encouraging integrators to write more flexible, adaptable CSS.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25582">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2021-03-24T10:30:30.158-0400">2021-03-24T10:30:30.158-0400</relative-time></i></p>
+                        <p>We had talked in the <a href="https://matrix.to/#/!mDigWuPWilYGiEcOCA:matrix.org/$zFoFxVZKZfZh49N6r37bexLVj_KNaovM59aOWTf4mMU?via=matrix.org">matrix channel</a> about this a while back. What we could do for those that want a drop in solution, is to provide the existing behaviour as a separate set of style sheets that can be optionally used. These would still make use of the custom properties as outlined in this issue, but provide the same behaviour as the enactors do today.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6604/"><span class="aria-hidden">←</span> Previous: FLUID-6604</a>
+        <a class="mx-1" href="/browse/FLUID-6606/">Next: FLUID-6606 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

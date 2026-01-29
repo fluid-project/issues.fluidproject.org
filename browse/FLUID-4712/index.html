@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4712  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4712 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4712/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4712/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4712/">FLUID-4712</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4712: Calls dispatched through a component invoker are not properly contextualised with local instantiator</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4712">FLUID-4712</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-05-23T01:21:41.072-0400" prefix="">2012-05-23T01:21:41.072-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T09:37:52.511-0400" prefix="">2024-07-22T09:37:52.511-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This was discovered in GPII, when making use of an invoker attached to a "request component" which referenced material which was cleared away incorrectly through the action of <a href="/browse/FLUID-4711/">FLUID-4711</a> - the "ginger reference" made through the invoker configuration would attempt to reinstantiate these components, but given the invoker dispatch is simply written with "pushActivity" (FluidIoC.js, fluid.makeInvoker, line 646) rather than "withInstantiator", the original instantiator was not used, a fresh one was created, and the "instantiation through ginger reference" was not properly contextualised with the information from the site of reference. </p>
+<p>In this case, the reference was to {urlExpander}.expand, registered as follows (GPII dataSource.js line 102):</p>
+<p>fluid.demands("gpii.dataSource.resolveUrl", null, {<br>
+args: [<br>
+"{urlExpander}.expand",<br>
+"{dataSource}.options.url",<br>
+"{dataSource}.options.termMap",<br>
+"{arguments}.0"<br>
+]<br>
+});</p>
+<p>urlExpander should never have been missing in the first place, but in any case, it should have been possible to successfully reinstantiate it. In this case, the definition used should have been one like the following (FlowManager.js, line 177)</p>
+<p>fluid.demands("gpii.urlExpander", ["gpii.demo", "gpii.flowManager"], {<br>
+options: {<br>
+vars: {<br>
+db: "user",<br>
+root: path.join(__dirname, "..")<br>
+}<br>
+}<br>
+});</p>
+<p>However, context info such as gpii.flowManager was lost through the cause explained above. The fix is quite straightforward and was implemented as a "hot patch" in GPII's framework, but producing a test case demonstrating the issue in isolation will be more challenging.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15782">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2012-08-17T17:25:55.814-0400">2012-08-17T17:25:55.814-0400</relative-time></i></p>
+                        <p>Reviewed, tested and pushed to master: <a href="https://github.com/fluid-project/infusion/commit/6b610291339e63f582f3fb3f776bdf3d69f800f9">https://github.com/fluid-project/infusion/commit/6b610291339e63f582f3fb3f776bdf3d69f800f9</a></p>
+
+                    </li>
+                    
+                    <li id="comment-15784">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2012-08-17T18:04:59.096-0400">2012-08-17T18:04:59.096-0400</relative-time></i></p>
+                        <p>Filling in a missing piece of the reasoning above - the fresh instantiator was created by an odd "fall-through" branch in "withInstantiator" that simply adopts the current "that" as the root component of a fresh instantiator if one cannot be found - this also contributed to difficulty in writing an adequate test case since if the current "that" was INDEED the root of the current component tree, it was hard to observe any problems during the instantiation which followed. This is also exacerbated by the fact that all invokers in the tree have already closed over the true instantiator, so if dispatch ever passes through them again, the correct instantiator will be restored. The case involving dispatch through "ginger instantation" described above seems to be the only path (that I can think of or have evidence for) that the instantiator corruption caused by the bug can lead to an observable effect. It may be necessary in time to have some "white box testing" in which various invariants of the state of the IoC system are checked, independently from being able to exploit corruption to lead to observable effects...</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4711/"><span class="aria-hidden">←</span> Previous: FLUID-4711</a>
+        <a class="mx-1" href="/browse/FLUID-4713/">Next: FLUID-4713 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

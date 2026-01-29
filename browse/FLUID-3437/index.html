@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3437  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3437 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3437/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3437/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3437/">FLUID-3437</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3437: Infusion Builder should only build the version requested by the user--either minified or source--not both</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3437">FLUID-3437</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Laurel Williams</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Laurel%20Williams">Laurel Williams</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-12-16T15:17:45.000-0500" prefix="">2009-12-16T15:17:45.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2010-01-06T13:49:59.000-0500" prefix="">2010-01-06T13:49:59.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Infusion Builder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The Infusion Builder currently builds two different versions of Infusion for each request, building both the minified and source zip files. We can reduce the time for a build by only building a single zip file for the requested download.</p>
+<p>This will require changes to the cache table in the database to record if the minified or source zip files are cached. However it will also reduce the amount of code in postProcessor.php</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3437/FLUID-3437-1.patch.txt">
+                            
+                                FLUID-3437-1.patch.txt
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3437/FLUID-3437-2.patch.txt">
+                            
+                                FLUID-3437-2.patch.txt
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-3437/FLUID-3437-script-1.patch.txt">
+                            
+                                FLUID-3437-script-1.patch.txt
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15407">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-12-16T15:19:02.000-0500">2009-12-16T15:19:02.000-0500</relative-time></i></p>
+                        <p>Bug Parade Builder 1.1.2 </p>
+
+                    </li>
+                    
+                    <li id="comment-15409">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-12-18T14:21:25.000-0500">2009-12-18T14:21:25.000-0500</relative-time></i></p>
+                        <p>This patch alters the database cache table - adding another column to indicate if the minified or source build is cached. There is a unique constraint applied to the combination of the id and minified columns.</p>
+<p>The code changes include the adjustment of the mysql statements to accommodate the new minified column and removal of code to perform two builds. Only a single build is performed, and the results of that build are copied to the cached directory with the appropriate file name. I re-arranged the code a little to make some of the variables available earlier in the execution. I also added one variable which is an integer representation of the boolean $min (required for the mysql statements).</p>
+
+                    </li>
+                    
+                    <li id="comment-15412">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-12-18T15:18:28.000-0500">2009-12-18T15:18:28.000-0500</relative-time></i></p>
+                        <p>Added a small fix to the initial patch. All mysql statements need to use the $intMin value and not the $min value. I missed one statement (the counter increment query).</p>
+
+                    </li>
+                    
+                    <li id="comment-15415">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-12-18T15:51:33.000-0500">2009-12-18T15:51:33.000-0500</relative-time></i></p>
+                        <p>Committed Laurel's second patch.</p>
+
+                    </li>
+                    
+                    <li id="comment-15418">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-01-05T12:14:40.000-0500">2010-01-05T12:14:40.000-0500</relative-time></i></p>
+                        <p>I did a second review of Laurel's second patch and it looks good.</p>
+
+                    </li>
+                    
+                    <li id="comment-15421">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-01-05T12:14:41.000-0500">2010-01-05T12:14:41.000-0500</relative-time></i></p>
+                        <p>I did a second review of Laurel's second patch and it looks good.</p>
+
+                    </li>
+                    
+                    <li id="comment-15423">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2010-01-05T13:58:43.000-0500">2010-01-05T13:58:43.000-0500</relative-time></i></p>
+                        <p>Need to fix the sql script that creates the database cache table. It should always create the table.</p>
+
+                    </li>
+                    
+                    <li id="comment-15426">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2010-01-05T14:01:42.000-0500">2010-01-05T14:01:42.000-0500</relative-time></i></p>
+                        <p>This change to the sql script drops the table and re-creates it every time. This is not really needed except when the table schema changes - however the table schema did change for this issue and then the code stopped working because the cache table schema was wrong.</p>
+
+                    </li>
+                    
+                    <li id="comment-15429">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-01-05T14:08:20.000-0500">2010-01-05T14:08:20.000-0500</relative-time></i></p>
+                        <p>I've reviewed Laurel's latest patch, which modifies the create-and-clear-builder-cache.sql script. It looks good.</p>
+
+                    </li>
+                    
+                    <li id="comment-15431">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-01-05T14:18:19.000-0500">2010-01-05T14:18:19.000-0500</relative-time></i></p>
+                        <p>Committed Laurel's patch (<a href="/browse/FLUID-3437/">FLUID-3437</a>-script-1.patch.txt) which has solved the issue of an old cache table being around and preventing the deployment of the builder.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3436/"><span class="aria-hidden">←</span> Previous: FLUID-3436</a>
+        <a class="mx-1" href="/browse/FLUID-3438/">Next: FLUID-3438 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

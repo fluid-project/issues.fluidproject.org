@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5659  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5659 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5659/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5659/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5659/">FLUID-5659</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5659: Failure to notify multiple relay rules </h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5659">FLUID-5659</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-04-28T12:28:29.212-0400" prefix="">2015-04-28T12:28:29.212-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-08-20T15:59:10.315-0400" prefix="">2015-08-20T15:59:10.315-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.9</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>A placeholder for a currently uncharacterised failure in model relay. The test failure results in the language panel in first-discovery - relay rules are so:</p>
+<p>modelRelay: [{<br>
+target: "langIndex",<br>
+singleTransform: {<br>
+type: "fluid.transforms.indexOf",<br>
+array: "{that}.options.controlValues.lang",<br>
+value: "{that}.model.lang",<br>
+offset: 1<br>
+}<br>
+}, {<br>
+target: "firstLangSelected",<br>
+singleTransform: {<br>
+type: "fluid.transforms.binaryOp",<br>
+left: "{that}.model.langIndex",<br>
+operator: "===",<br>
+right: 1<br>
+}<br>
+}, {<br>
+target: "lastLangSelected",<br>
+singleTransform: {<br>
+type: "fluid.transforms.binaryOp",<br>
+left: "{that}.model.langIndex",<br>
+operator: "===",<br>
+right: "{that}.options.controlValues.lang.length"<br>
+}<br>
+}],</p>
+<p>attached to "gpii.firstDiscovery.panel.lang"</p>
+<p>the binaryOp relays do not trigger at all in the case we reset the language index back to 1 after setting it to 6.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15556">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-04-28T12:41:14.666-0400">2015-04-28T12:41:14.666-0400</relative-time></i></p>
+                        <p>Failing config is being tracked at <a href="https://github.com/amb26/first-discovery/tree/FLUID-5659">https://github.com/amb26/first-discovery/tree/FLUID-5659</a></p>
+
+                    </li>
+                    
+                    <li id="comment-15558">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-04-29T11:35:24.786-0400">2015-04-29T11:35:24.786-0400</relative-time></i></p>
+                        <p>This issue has now been characterised - it consists of yet more rubbish caused by the faulty "relayCount" system which was responsible for <a href="/browse/FLUID-5303/">FLUID-5303</a> and <a href="/browse/FLUID-5293/">FLUID-5293</a> amongst others. Firstly, the issue is caused by these being shared across transactions -  bizarrely, by policy, for no good reason. Secondly, the failure was caused by having a model rich in relay rules which was being tested by several back-to-back transactions resulting from a long fixture in the IoC testing framework:</p>
+<p>sequence: [{<br>
+func: "{lang}.refreshView"<br>
+}, {<br>
+listener: "gpii.tests.langTester.verifyRendering",<br>
+priority: "last",<br>
+event: "{lang}.events.afterRender"<br>
+}, {<br>
+listener: "gpii.tests.langTester.verifyButtonTopsReady",<br>
+args: ["{lang}"],<br>
+priority: "last",<br>
+event: "{lang}.events.onButtonTopsReady"<br>
+}, {<br>
+jQueryTrigger: "click",<br>
+element: "{lang}.dom.next"<br>
+}, {<br>
+listener: "gpii.tests.langTester.verifyLangModel",<br>
+args: ["{lang}", "sv"],<br>
+spec: {path: "lang", priority: "last"},<br>
+changeEvent: "{lang}.applier.modelChanged"<br>
+}, {<br>
+func: "{lang}.refreshView"<br>
+}, {<br>
+listener: "gpii.tests.langTester.verifyButtonStates",<br>
+args: ["{lang}", "sv", false, true],<br>
+priority: "last",<br>
+event: "{lang}.events.afterRender"<br>
+}, {<br>
+jQueryTrigger: "click",<br>
+element: "{lang}.dom.prev"<br>
+}, {<br>
+listener: "gpii.tests.langTester.verifyLangModel",<br>
+args: ["{lang}", "ne"],<br>
+spec: {path: "lang", priority: "last"},<br>
+changeEvent: "{lang}.applier.modelChanged"<br>
+}, {<br>
+func: "{lang}.refreshView"<br>
+}, {<br>
+listener: "gpii.tests.langTester.verifyButtonStates",<br>
+args: ["{lang}", "ne", false, false],<br>
+priority: "last",<br>
+event: "{lang}.events.afterRender"<br>
+}, {<br>
+func: "gpii.tests.debugLang",<br>
+args: "{lang}"<br>
+}, {<br>
+func: "{lang}.applier.change",<br>
+args: ["lang", "en"]<br>
+}, {<br>
+listener: "gpii.tests.langTester.verifyLangModel",<br>
+args: ["{lang}", "en"],<br>
+spec: {path: "lang", priority: "last"},<br>
+changeEvent: "{lang}.applier.modelChanged"<br>
+}, {<br>
+func: "gpii.tests.debugLang",<br>
+args: "{lang}"<br>
+}, {<br>
+func: "{lang}.refreshView"<br>
+}, {<br>
+listener: "gpii.tests.langTester.verifyButtonStates",<br>
+args: ["{lang}", "en", true, false],<br>
+priority: "last",<br>
+event: "{lang}.events.afterRender"<br>
+}]<br>
+}]</p>
+<p>Each listener to applier.modelChanged ends up triggering the following fixture during the endgame of the previous transaction - and given this entire sequence actually resolves synchronously, they are accumulated 3 deep by the end of the sequence. Unfortunately, the logic introduced for <a href="/browse/FLUID-5293/">FLUID-5293</a> for clearing the relay counts only executes after all listeners have been notified, by which time the relay counts have been completely saturated.</p>
+
+                    </li>
+                    
+                    <li id="comment-15561">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-04-30T09:37:28.983-0400">2015-04-30T09:37:28.983-0400</relative-time></i></p>
+                        <p>Merged pull request ( <a href="https://github.com/fluid-project/infusion/pull/597">https://github.com/fluid-project/infusion/pull/597</a> ) into the project repo at c0c17164e10e46ac498af9d758c0cfcb93dac7d5</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5658/"><span class="aria-hidden">←</span> Previous: FLUID-5658</a>
+        <a class="mx-1" href="/browse/FLUID-5661/">Next: FLUID-5661 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

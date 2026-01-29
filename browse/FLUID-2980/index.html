@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2980  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2980 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2980/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2980/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2980/">FLUID-2980</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2980: Renderer decorators can only be attached to one node at a time</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2980">FLUID-2980</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-07-03T10:12:02.000-0400" prefix="">2009-07-03T10:12:02.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-10-04T23:38:26.000-0400" prefix="">2009-10-04T23:38:26.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1</li>
+                            
+                            <li>1.1.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Renderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Right now, the process of adding a decorator to a node will only add the decorator to one node at a time.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-17003">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-09-22T08:33:22.000-0400">2009-09-22T08:33:22.000-0400</relative-time></i></p>
+                        <p>I'm noticing that only the first use of the fluid decorator, in a component tree, will render a fluid component</p>
+<p>Attempting to have multiple sibling nodes in a component tree call the fluid decorator, will result in only the first one actually rendering out the component.</p>
+
+                    </li>
+                    
+                    <li id="comment-17004">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-09-22T08:33:43.000-0400">2009-09-22T08:33:43.000-0400</relative-time></i></p>
+                        <p>Bug Parade Infusion 1.1.2</p>
+
+                    </li>
+                    
+                    <li id="comment-17005">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2009-10-01T01:03:41.000-0400">2009-10-01T01:03:41.000-0400</relative-time></i></p>
+                        <p>I made a test case for this issue, but cannot so far make it fail - could you supply more details of a failing case? <br>
+Cheers,<br>
+antranig.</p>
+
+                    </li>
+                    
+                    <li id="comment-17006">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2009-10-01T14:14:39.000-0400">2009-10-01T14:14:39.000-0400</relative-time></i></p>
+                        <p>Fixed at revision 8193 with the following comment:</p>
+<p><a href="/browse/FLUID-2980/">FLUID-2980</a>, <a href="/browse/FLUID-2962/">FLUID-2962</a>: Fixes and test case for multiple decorator issue. This was actually caused by failure of re-entrancy in the renderer, which was being invoked recursively in the case where the fluid decorator designated a component which itself invoked the renderer. Establishing reentrancy for the renderer actually puts this work also under the heading of <a href="/browse/FLUID-2962/">FLUID-2962</a> which required to enable the renderer for multi-threaded access for use on the server-side, which work had been incomplete but seen as lower priority for this release until now. This reorganisation creates a new top-level API fluid.renderer which follows the "that-ist" convention that is now standard for the framework, but which had not been in place when the renderer was initially designed. The original low-level API fluid.renderTemplates is preserved for backwards compatibility, but should be deprecated in a future release - in this implementation, it forwards to an invocation of the that-ist API which can be "stealthed" for this release but which should be advertised in future ones. The fluid.renderTemplates API does not provide any mechanism for decorators to be honoured - but it never did in any case, so this behaviour remains consistent. More thought and design is needed over future releases to create a family of strategies for honouring decorators, which will become very important as they begin to be used more cooperatively between client and server with the implementation of Kettle.</p>
+
+                    </li>
+                    
+                    <li id="comment-17007">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2009-10-02T15:39:35.000-0400">2009-10-02T15:39:35.000-0400</relative-time></i></p>
+                        <p>I've reviewed this fix as well as I can. It was a bit difficult given the amount of change in the file. I have tested the renderer demos and ran the tests and all of that is fine. </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-2979/"><span class="aria-hidden">←</span> Previous: FLUID-2979</a>
+        <a class="mx-1" href="/browse/FLUID-2981/">Next: FLUID-2981 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

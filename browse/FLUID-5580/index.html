@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5580  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5580 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5580/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5580/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5580/">FLUID-5580</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5580: The renderer strips off the id from a form element that has an action attribute</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5580">FLUID-5580</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-12-09T17:04:19.906-0500" prefix="">2014-12-09T17:04:19.906-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-08-08T13:47:04.745-0400" prefix="">2021-08-08T13:47:04.745-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>5.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Renderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>If a form element is passed through the renderer, it's id attribute will be stripped off if the form has an action attribute. This is particularly troublesome for HTLM5 where form elements such as an input with type submit, can live outside of the form but reference it by pointing it's form attribute at the forms id.</p>
+<p>see: <a href="http://www.w3.org/TR/html-markup/button.submit.html">http://www.w3.org/TR/html-markup/button.submit.html</a></p>
+<p>An example of the id being stripped can be seen in this fiddle<br>
+<a href="http://jsfiddle.net/0e136tzL/1/">http://jsfiddle.net/0e136tzL/1/</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25504">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-12-09T17:09:03.349-0500">2014-12-09T17:09:03.349-0500</relative-time></i></p>
+                        <p>There are really two issues in one here - firstly, the fact that the parser forces scr=rewrite-url onto the rsf:id attribute of the template on parsing (via <a href="https://github.com/fluid-project/infusion/blob/master/src/framework/renderer/js/fluidParser.js#L239">https://github.com/fluid-project/infusion/blob/master/src/framework/renderer/js/fluidParser.js#L239</a> ) ends up confusing the renderer when it comes to find that the pairing UILink component is a fake, and it strips the id off. However, the renderer does expect to have full control over ids and URLs in the resulting document - so the real bug is that the renderer is not aware of the new HTML5 relations, for example "form" which is documented here - <a href="http://www.w3.org/TR/html5/forms.html#the-input-element">http://www.w3.org/TR/html5/forms.html#the-input-element</a> </p>
+<p>What should have happened is that dummy components were generated by the user (or still better, generated automatically by the template parser) and their ID relation was properly rewritten by the renderer.</p>
+<p>This will still be an issue in the "new renderer" since it will use largely the same template parsing and rendering code - only the driver will be different (eliminating the JSON "renderer component dialects")</p>
+<p>We should take the opportunity to remove the silly "scr=" system whereby template metadata was shoe-horned into a synthesized rsf:id attribute - since noone uses rsf:ids any more and we can afford to maintain some more sensible metadata structures. The renderer will need to synthesize more genuine forms of component in this case - where the component tree author has provided none and expects none, and just wants their id relation to be maintained</p>
+
+                    </li>
+                    
+                    <li id="comment-25505">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2021-08-08T13:47:04.745-0400">2021-08-08T13:47:04.745-0400</relative-time></i></p>
+                        <p>Probably not an issue for the new renderer but I'm keeping this open since the use case or something similar may reemerge. In practice this kind of "Web 1.0" form is pretty uncommon these days.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5579/"><span class="aria-hidden">←</span> Previous: FLUID-5579</a>
+        <a class="mx-1" href="/browse/FLUID-5581/">Next: FLUID-5581 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

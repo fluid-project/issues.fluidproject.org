@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-291  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-291 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-291/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-291/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-291/">VP-291</a></li>
+            </ol>
+        </nav>
+        <h1>VP-291: Demands blocks for components should be refactored in order to be configurable</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-291">VP-291</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alexey Novak</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Alexey%20Novak">Alexey Novak</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-03-15T13:33:08.796-0400" prefix="">2013-03-15T13:33:08.796-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-03-18T12:56:08.382-0400" prefix="">2013-03-18T12:56:08.382-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>core</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>There are couple of demands blocks in the VideoPlayer code which make options non-configurable for some of the components. In particular options block for the "captionControls" component. Any extra options written in the test for this component would be overwritten by captionControlsOptions specified in the demands block.</p>
+<pre><code class="hljs language-javascript">fluid.<span class="hljs-title function_">demands</span>(<span class="hljs-string">"captionControls"</span>, [<span class="hljs-string">"fluid.browser.nativeVideoSupport"</span>], {
+        <span class="hljs-attr">funcName</span>: <span class="hljs-string">"fluid.videoPlayer.languageControls"</span>,
+        <span class="hljs-attr">args</span>: [<span class="hljs-string">"{controllers}.dom.captionControlsContainer"</span>, captionControlsOptions]
+    });
+</code></pre>
+<p>Moreover, initial captionControls options and captionControlsOptions should be modified to eliminate an infinite loop with a new way of declaring demands block. This infinite loop is caused by merging captionControls listener onReady attached to onCaptionControlsReady.</p>
+<pre><code class="hljs language-javascript"><span class="hljs-attr">captionControls</span>: {
+                <span class="hljs-attr">type</span>: <span class="hljs-string">"fluid.emptyEventedSubcomponent"</span>,
+...
+                <span class="hljs-attr">options</span>: {
+                    <span class="hljs-attr">listeners</span>: {
+                        <span class="hljs-attr">onReady</span>: <span class="hljs-string">"{controllers}.events.onCaptionControlsReady"</span>
+                    }
+                }
+            },
+</code></pre>
+<p>and captionControlsOptions event onReady which is attached to onCaptionControlsReady</p>
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">var</span> captionControlsOptions = {
+...
+        <span class="hljs-attr">events</span>: {
+...
+            <span class="hljs-attr">onReady</span>: <span class="hljs-string">"{controllers}.events.onCaptionControlsReady"</span>
+        },
+...
+    };
+</code></pre>
+<p>Yura sent an e-mail to the fluid-work list today about this behaviour of demands blocks.<br>
+<a href="http://old.nabble.com/Demands-block-observation-to35179556.html">http://old.nabble.com/Demands-block-observation-to35179556.html</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26677">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-03-18T12:56:08.363-0400">2013-03-18T12:56:08.363-0400</relative-time></i></p>
+                        <p>Merged pull request ( <a href="https://github.com/fluid-project/videoPlayer/pull/124">https://github.com/fluid-project/videoPlayer/pull/124</a> ) into the project repo at 37d99dac4ad694dfb103236eb25d293630108328</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-290/"><span class="aria-hidden">←</span> Previous: VP-290</a>
+        <a class="mx-1" href="/browse/VP-292/">Next: VP-292 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

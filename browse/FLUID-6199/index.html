@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6199  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6199 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6199/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6199/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6199/">FLUID-6199</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6199: Build site requires extra server-side configuration</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6199">FLUID-6199</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-09-26T09:45:51.564-0400" prefix="">2017-09-26T09:45:51.564-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-25T06:40:02.102-0400" prefix="">2024-07-25T06:40:02.102-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Demos</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Although the static website makes it easier to do deployment, it currently requires extensive custom configuration on the server side.       </p>
+<p>It would be interesting to have the files where they should be and not depend on the server rewriting URLs. Also, the URLs in the HTML code should be fixed to poin to the correct places too.</p>
+<pre><code class="hljs">- |
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Introduction )</span> {
+                rewrite ^ /? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Methods )</span> {
+                rewrite ^ <span class="hljs-string">/InclusiveLearning.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Semantic_markup_-_HTML_5_semantics_and_epub_type )</span> {
+                rewrite ^ <span class="hljs-string">/SemanticMarkupInEPUB3.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = WAI-ARIA_-_Beyond_semantic_tags )</span> {
+                rewrite ^ <span class="hljs-string">/WAI-ARIA.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Media_overlays_(narrations)</span>_and_text-to-speech ) {
+                rewrite ^ <span class="hljs-string">/NarrationsAndTextToSpeech.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Scripts )</span> {
+                rewrite ^ <span class="hljs-string">/ScriptingInEPUB3.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Why_is_this_important? )</span> {
+                rewrite ^ <span class="hljs-string">/WhyIsThisImportant.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = What_is_the_approach? )</span> {
+                rewrite ^ <span class="hljs-string">/WhatIsTheApproach.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Inclusive_learning )</span> {
+                rewrite ^ <span class="hljs-string">/InclusiveLearning.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Accessibility_principles )</span> {
+                rewrite ^ <span class="hljs-string">/AccessibilityPrinciples.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Techniques )</span> {
+                rewrite ^ <span class="hljs-string">/Techniques.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Metadata )</span> {
+                rewrite ^ <span class="hljs-string">/Metadata.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Learner_needs_and_preferences )</span> {
+                rewrite ^ <span class="hljs-string">/LearnerNeedsAndPreferences.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Video_content_and_learning )</span> {
+                rewrite ^ <span class="hljs-string">/VideoContentAndLearning.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Audio_content_and_learning )</span> {
+                rewrite ^ <span class="hljs-string">/AudioContentAndLearning.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Authoring_of_content )</span> {
+                rewrite ^ <span class="hljs-string">/AuthoringOfContent.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Cognitive_considerations )</span> {
+                rewrite ^ <span class="hljs-string">/CognitiveConsiderations.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Accessible_standardized_testing )</span> {
+                rewrite ^ <span class="hljs-string">/AccessibleStandardizedTesting.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = General_guidelines )</span> {
+                rewrite ^ <span class="hljs-string">/GeneralGuidelines.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Functional_considerations )</span> {
+                rewrite ^ <span class="hljs-string">/FunctionalConsiderations.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Standardized_test_types )</span> {
+                rewrite ^ <span class="hljs-string">/StandardizedTestTypes.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Standardized_test_tools )</span> {
+                rewrite ^ <span class="hljs-string">/StandardizedTestTools.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Inclusive_EPUB_3 )</span> {
+                rewrite ^ <span class="hljs-string">/InclusiveEPUB3.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Visual_styles )</span> {
+                rewrite ^ <span class="hljs-string">/VisualStyles.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Graphics,_video,_and_audio_media )</span> {
+                rewrite ^ <span class="hljs-string">/GraphicsAndMultimedia.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Mathematics )</span> {
+                rewrite ^ <span class="hljs-string">/Mathematics.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Accessibility_metadata )</span> {
+                rewrite ^ <span class="hljs-string">/AccessibilityMetadata.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Testing_and_validation )</span> {
+                rewrite ^ <span class="hljs-string">/TestingAndValidation.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = Case_study:_Exemplar )</span> {
+                rewrite ^ <span class="hljs-string">/CaseStudyExemplar.html</span>? permanent;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-params">( $<span class="hljs-attr">arg_title</span> = EPUB_3_resources )</span> {
+                rewrite ^ <span class="hljs-string">/EPUB3Resources.html</span>? permanent;
+            }
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-27893">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2024-07-25T06:39:50.786-0400">2024-07-25T06:39:50.786-0400</relative-time></i></p>
+                        <p>Builds are now being served via Cloudflare </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6198/"><span class="aria-hidden">←</span> Previous: FLUID-6198</a>
+        <a class="mx-1" href="/browse/FLUID-6200/">Next: FLUID-6200 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

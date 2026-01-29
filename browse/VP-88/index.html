@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-88  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-88 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-88/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-88/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-88/">VP-88</a></li>
+            </ol>
+        </nav>
+        <h1>VP-88: UIO inputs preferences not being correctly applied on load</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-88">VP-88</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-12-13T14:08:44.415-0500" prefix="">2012-12-13T14:08:44.415-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-12-22T10:28:52.469-0500" prefix="">2017-12-22T10:28:52.469-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>UIO integration</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When UIO is used to enlarge inputs, the persisted preferences (i.e. after the page is reloaded) are not being correctly applied to the video player controls.</p>
+<p>The enlarged-links change is accomplished by adding an extra class (fl-text-larger) to any inputs. I suspect the UI Enhancer is doing its work before the VideoPlayer template is fully loaded, and hence the changes are not being applied to the button elements.</p>
+<p>To reproduce:</p>
+<p>1) Load the demo: <a href="http://build.fluidproject.org/videoPlayer/videoPlayer/demos/VideoPlayer.html">http://build.fluidproject.org/videoPlayer/videoPlayer/demos/VideoPlayer.html</a><br>
+2) Use UIO to make inputs larger (in the Links and Buttons tab)<br>
+3) Verify that the change has been applied<br>
+a) Until <a href="/browse/FLUID-4649/">FLUID-4649</a> is resolve, you won't visually see a change, but you can use DOM inspector tools to confirm that the 'fl-text-larger' class has been added to the button elements<br>
+4) Reload the page.</p>
+<p>The saved preferences should be applied (other body-wide changes are applied, such as contrast or font-size) but the 'fl-text-larger' class is NOT present on the button elements.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-27189">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-12-13T14:10:33.938-0500">2012-12-13T14:10:33.938-0500</relative-time></i></p>
+                        <p>Note that I'm almost finished with a fix to <a href="/browse/FLUID-4649/">FLUID-4649</a> (the controls are enlarging, but the control bar is not getting taller).</p>
+
+                    </li>
+                    
+                    <li id="comment-27190">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-12-22T10:28:52.468-0500">2017-12-22T10:28:52.468-0500</relative-time></i></p>
+                        <p>The video player repository has been archived.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-46/"><span class="aria-hidden">←</span> Previous: VP-46</a>
+        <a class="mx-1" href="/browse/VP-97/">Next: VP-97 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6395  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6395 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6395/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6395/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6395/">FLUID-6395</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6395: Relay system unnecessarily thrashes updates when large numbers of models are connected</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6395">FLUID-6395</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Pull Request</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-08-23T08:30:42.959-0400" prefix="">2019-08-23T08:30:42.959-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-19T08:04:17.051-0400" prefix="">2024-07-19T08:04:17.051-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In the GPII Chrome extension, there is a layout where a "domSettingsApplier" is connected to a large number of "portBinding" components which mirror its model. One portConnection component is created for every frame or iframe which is visible to the applier. The layout, implemented at <a href="https://github.com/GPII/gpii-chrome-extension/blob/master/extension/src/lib/domSettingsApplier.js#L24">https://github.com/GPII/gpii-chrome-extension/blob/master/extension/src/lib/domSettingsApplier.js#L24</a> , is as follows:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"gpii.chrome.domSettingsApplier"</span>, {
+....
+    dynamicComponents: {
+        port: {
+            type: <span class="hljs-string">"gpii.chrome.portConnection"</span>,
+            createOnEvent: <span class="hljs-string">"onConnect"</span>,
+            options: {
+                model: <span class="hljs-string">"{domSettingsApplier}.model"</span>,
+                port: <span class="hljs-string">"{arguments}.0"</span>
+            }
+        }
+    },
+</code></pre>
+<p>In a trial of connecting UIO+ to cnn.com a collection of 44 portConnection components were observed, and any model update resulted in the following error:</p>
+<pre><code class="hljs language-java">Error in model relay specification at component [object Object] - operated more than <span class="hljs-number">100</span> relays without model value settling - current model contents are
+{<span class="hljs-string">"panelIndex"</span>:<span class="hljs-number">1</span>,<span class="hljs-string">"settings"</span>:{<span class="hljs-string">"fontSize"</span>:<span class="hljs-number">0.25</span>,<span class="hljs-string">"lineSpace"</span>:<span class="hljs-number">1</span>,<span class="hljs-string">"wordSpace"</span>:<span class="hljs-number">1</span>,<span class="hljs-string">"contrastTheme"</span>:<span class="hljs-string">"default"</span>,<span class="hljs-string">"characterSpace"</span>:<span class="hljs-number">1</span>,<span class="hljs-string">"selectionTheme"</span>:<span class="hljs-string">"default"</span>,<span class="hljs-string">"captionsEnabled"</span>:<span class="hljs-literal">false</span>,<span class="hljs-string">"selfVoicingEnabled"</span>:<span class="hljs-literal">false</span>,<span class="hljs-string">"inputsLargerEnabled"</span>:<span class="hljs-literal">false</span>,<span class="hljs-string">"simplifiedUiEnabled"</span>:<span class="hljs-literal">false</span>,<span class="hljs-string">"clickToSelectEnabled"</span>:<span class="hljs-literal">false</span>,<span class="hljs-string">"syllabificationEnabled"</span>:<span class="hljs-literal">false</span>,<span class="hljs-string">"tableOfContentsEnabled"</span>:<span class="hljs-literal">false</span>}}
+</code></pre>
+<p>This issue has been discussed in IRC <a href="http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2019-08-21.log">http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2019-08-21.log</a> and <a href="http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2019-08-22.log">http://irc-logs.fluidproject.org/%23fluid-work/%23fluid-work.2019-08-22.log</a></p>
+<p>The ChangeApplier's idiom for propagating updates is quite inefficient, and copies the material involved several times. In particular, the problem is exacerbated by the update site looking as follows:</p>
+<pre><code class="hljs language-java">gpii.chrome.portConnection.updateModel = function (that, model) {
+    console.log(<span class="hljs-string">"handling model write - requested model:"</span>, model);
+    <span class="hljs-type">var</span> <span class="hljs-variable">transaction</span> <span class="hljs-operator">=</span> that.applier.initiate();
+    transaction.fireChangeRequest({path: <span class="hljs-string">""</span>, type: <span class="hljs-string">"DELETE"</span>});
+    transaction.change(<span class="hljs-string">""</span>, model);
+    transaction.commit();
+    console.log(<span class="hljs-string">"handling model write - written model:"</span>, that.model);
+    <span class="hljs-keyword">return</span> that.model;
+};
+</code></pre>
+<p>This is a standard idiom which has emerged for applying updates which may "shrink" the model, but makes this problem worse since each relay rule needs to react to both the delete and the update.</p>
+<p>One scheme for easing the problem was to make the relay rule unidirectional via a definition like the following <a href="https://gist.github.com/amb26/3b23709e90de48a6b7675a05b615fb56">https://gist.github.com/amb26/3b23709e90de48a6b7675a05b615fb56</a><br>
+but this is not useful for the long term since it seems that in time that updates may be directed at the portBinding models. In fact this scheme did not work since it seems that for some reason the current design already relies on the portBinding models being writeable (to be investigated).<br>
+The soundest long-term route for resolving this issue is to move the ChangeApplier system over to immutable application as described in <a href="/browse/FLUID-6396/">FLUID-6396</a>.<br>
+Note that it would also be helpful to introduce new primary ChangeEvents ADD, MERGE which would allow updates such as updateModel to be expressed without needing to explicitly open a transaction. </p>
+<p>Note also that the current model where all changes in a transaction get propagated through all relays might well not be right - the user's expectation is that changes should only start to propagate once the transaction is committed - this suggested we have improperly crosslinked the implementation of user transactions to the "half-transactions" operated by the relay system.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25688">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2022-05-25T10:46:05.027-0400">2022-05-25T10:46:05.027-0400</relative-time></i></p>
+                        <p>Tony Atkins has commited an example where relaying a model between 100 components causes significant lag to <a href="https://github.com/duhrer/launchpad-sonamatic-universe/tree/infusion-4-laggy">https://github.com/duhrer/launchpad-sonamatic-universe/tree/infusion-4-laggy</a> . Relaying a single focus change takes about 150ms and reveals that 400 relay listeners are activated in this process.</p>
+<p>It seemed that this resulted from a similar cause to the headline JIRA. It had been hoped that there might be some crude "work amplification" blunder in the relay system which was causing work to grow quadratically with the number of relayed components as was seen in the covid data monitor app, but this didn't seem to be responsible here. The problem is that the entire component model is relayed to each of 100 subcomponents and so needs to be cloned and copied each time. There isn't a straightforward means of improving the current design, although we could possibly get a factor of 2 improvement by only passing material through information-preserving relays once. A good workaround could be to not relay the model at all and instead bind to it "in place" from the 100 pad subcomponents.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6394/"><span class="aria-hidden">←</span> Previous: FLUID-6394</a>
+        <a class="mx-1" href="/browse/FLUID-6396/">Next: FLUID-6396 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

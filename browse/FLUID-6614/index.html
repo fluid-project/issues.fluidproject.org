@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6614  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6614 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6614/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6614/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6614/">FLUID-6614</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6614: fastXmlPull.js strips the opening comment sign from templates</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6614">FLUID-6614</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-04-20T13:46:47.944-0400" prefix="">2021-04-20T13:46:47.944-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-04-22T10:11:15.388-0400" prefix="">2021-04-22T10:11:15.388-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p><a href="https://github.com/inclusive-design/covid-data-monitor/blob/main/package.json#L20">Covid-data-monitor repo</a> uses `fastXmlPull.js` from amb26/new-renderer-demo#<a href="/browse/FLUID-5047/">FLUID-5047</a>. This script appears stripping the opening comment sign when a template is loaded. This causes the issue that the table of content is shown with a string "Table of contents template --&gt;" above "Table of Contents" header. See attached toc1.png. </p>
+<p>Inspecting the DOM element shows the opening comment sign from <a href="https://github.com/amb26/infusion/blob/FLUID-6580/src/components/tableOfContents/html/TableOfContents.html#L1">the template of `tableOfContents.html`</a> was removed. See attached toc2.png.</p>
+<p>The demonstration of the issue can be produced at <a href="https://deploy-preview-415--wecount.netlify.app/map/">the deploy preview</a> of <a href="https://github.com/inclusive-design/wecount.inclusivedesign.ca/pull/415">this WeCount website PR</a>.</p>
+<p>This issue will not occur by using either one of workarounds below:</p>
+<p>1. replace this version of `fastXmlPull.js` with the one from amb26/infusion#<a href="/browse/FLUID-6580/">FLUID-6580</a>;<br>
+2. remove the line of the comment from the table of contents template.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6614/toc1.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6614/toc1.png" alt="toc1.png">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6614/toc2.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-6614/toc2.png" alt="toc2.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25623">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2021-04-22T10:11:15.388-0400">2021-04-22T10:11:15.388-0400</relative-time></i></p>
+                        <p>I believe since the impl was simplified a few months ago to avoid the massive model relay CPU usage caused by the cities list, none of "new-renderer-demo" is actually being validly used in this project any more so I'll draw up a pull which simplifies the impl by removing them - I think every facility we are now using is part of the plain function of the <a href="/browse/FLUID-6580/">FLUID-6580</a> "new renderer framework" which just consists of straightforward improvements to core Infusion</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6613/"><span class="aria-hidden">←</span> Previous: FLUID-6613</a>
+        <a class="mx-1" href="/browse/FLUID-6615/">Next: FLUID-6615 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

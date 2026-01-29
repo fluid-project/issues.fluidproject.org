@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4739  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4739 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4739/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4739/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4739/">FLUID-4739</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4739: Change applier guards do not respect paths that contain array positioning if the entire array is replaced.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4739">FLUID-4739</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-08-07T12:33:51.933-0400" prefix="">2012-08-07T12:33:51.933-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-02-27T15:49:19.380-0500" prefix="">2017-02-27T15:49:19.380-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>if you have a model like {a: [{b: "b", c: "c"}, {b: "B", c: "C"]} and try to add a guard to the change applier like "a.0.b", the path won't be respected if the entire array is replaced. It will trigger the guard to test not only the portion of the array that the path is for, but for the entire array itself.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-4739/FLUID-4739.patch">
+                            
+                                FLUID-4739.patch
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22463">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2012-08-07T12:35:38.034-0400">2012-08-07T12:35:38.034-0400</relative-time></i></p>
+                        <p>I had been using an old build of infusion from rev: f2a883efe711374f5340083314a6207a6ff7d4d2, and this issue did not occur there. There seams to have been some regression since then.</p>
+
+                    </li>
+                    
+                    <li id="comment-22465">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2012-08-07T13:41:55.623-0400">2012-08-07T13:41:55.623-0400</relative-time></i></p>
+                        <p><a href="/browse/FLUID-4739/">FLUID-4739</a>.patch contains a unit test to show the issue. The code can also be found in my github repo<br>
+<a href="https://github.com/jobara/infusion/tree/FLUID-4739">https://github.com/jobara/infusion/tree/FLUID-4739</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22466">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2012-08-08T04:39:46.215-0400">2012-08-08T04:39:46.215-0400</relative-time></i></p>
+                        <p>This behaviour is possibly unhelpful, but is "working as designed" - the ChangeApplier has never performed "DAR rebasing" for values sent to guards, and it has been the responsibility of the implementing code to deal with dereferencing appropriately. If this was ever "apparently working" it would have been due to the separate action of <a href="/browse/FLUID-4625/">FLUID-4625</a> preventing the guard from ever being called at all in this case... please check up if you can. I have pushed a branch including a new utility which makes it easier to perform this dereference in guard code. NB the test case contained an error on this line:</p>
+<p>jqUnit.assertDeepEq("The model should have updated", newArray, model.arrayInnerProperty[0]);</p>
+<p>which checked the wrong part of the model for update. It should read model.arrayInnerProperty as the tested value.</p>
+<p><a href="https://github.com/amb26/infusion/tree/FLUID-4739">https://github.com/amb26/infusion/tree/FLUID-4739</a></p>
+
+                    </li>
+                    
+                    <li id="comment-22469">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-03-11T16:49:21.011-0400">2014-03-11T16:49:21.011-0400</relative-time></i></p>
+                        <p>This should be implemented correctly in the new ChangeApplier. We should remember to review and tidy up when the old implementation is removed.</p>
+
+                    </li>
+                    
+                    <li id="comment-22471">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-08-20T21:56:30.793-0400">2015-08-20T21:56:30.793-0400</relative-time></i></p>
+                        <p>DAR rebasing is now standard in the new ChangeApplier, and "guards" have been eliminated entirely. We do now support invalidation of arrays en bloc - one day we will support array element insertion/deletion events: Merged into trunk at revision 282f1a318718eed0b0ec060fb8b4ad254417fd7e</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4738/"><span class="aria-hidden">←</span> Previous: FLUID-4738</a>
+        <a class="mx-1" href="/browse/FLUID-4740/">Next: FLUID-4740 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

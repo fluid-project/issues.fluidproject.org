@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6193  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6193 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6193/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6193/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6193/">FLUID-6193</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6193: Options distribution with shorter-lived sibling as head causes bare failure on destruction of source</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6193">FLUID-6193</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-09-05T18:52:47.172-0400" prefix="">2017-09-05T18:52:47.172-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-09-20T16:10:10.735-0400" prefix="">2017-09-20T16:10:10.735-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>There's a fault in our bookkeeping of options distributions. The destruction of a target should clear out its entry in "shadow.outDistributions" but this doesn't account for the case where the head of the distribution source selector is shorter-lived than the actual distribution source component. The following configuration:</p>
+<pre><code class="hljs language-javascript">fluid.<span class="hljs-title function_">defaults</span>(<span class="hljs-string">"gpii.flowManager.pcpChannel"</span>, {
+    <span class="hljs-attr">gradeNames</span>: [<span class="hljs-string">"fluid.modelComponent"</span>],
+    <span class="hljs-attr">distributeOptions</span>: {
+        <span class="hljs-attr">target</span>: <span class="hljs-string">"{lifecycleManager session}.options.modelRelay"</span>,
+        <span class="hljs-attr">record</span>: {
+            <span class="hljs-string">"pcpChannel"</span>: {
+                <span class="hljs-string">"source"</span>: {
+                    <span class="hljs-attr">segs</span>: []
+                },
+                <span class="hljs-string">"target"</span>: <span class="hljs-string">"{flowManager}.pcpChannel.model"</span>,
+                <span class="hljs-string">"singleTransform"</span>: {
+                    <span class="hljs-attr">type</span>: <span class="hljs-string">"fluid.transforms.identity"</span>
+                }
+            }
+        }
+    }
+</code></pre>
+<p>will fail, in the sequence where first the lifecycleManager is destroyed, and then the pcpChannel. We get a failure in FluidIoC.js fluid.clearDistribution line 411:</p>
+<pre><code class="hljs language-java"><span class="hljs-number">23</span>:<span class="hljs-number">44</span>:<span class="hljs-number">51.844</span>:  FATAL ERROR: Uncaught exception: Cannot read property <span class="hljs-string">'distributions'</span> of <span class="hljs-literal">null</span>
+TypeError: Cannot read property <span class="hljs-string">'distributions'</span> of <span class="hljs-literal">null</span>
+    at Object.fluid.clearDistribution (E:\Source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">411</span>:<span class="hljs-number">37</span>)
+    at E:\Source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">421</span>:<span class="hljs-number">19</span>
+    at Object.fluid.each (E:\Source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:<span class="hljs-number">513</span>:<span class="hljs-number">17</span>)
+    at Object.fluid.clearDistributions (E:\Source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">420</span>:<span class="hljs-number">15</span>)
+    at that.clearConcreteComponent (E:\Source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">1041</span>:<span class="hljs-number">19</span>)
+    at Object.fluid.each (E:\Source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\Fluid.js:<span class="hljs-number">513</span>:<span class="hljs-number">17</span>)
+    at that.clearComponent (E:\Source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">1087</span>:<span class="hljs-number">23</span>)
+    at .destroy (E:\Source\gits\gpii\node_modules\universal\node_modules\infusion\src\framework\core\js\FluidIoC.js:<span class="hljs-number">1234</span>:<span class="hljs-number">26</span>)
+    at Object.fluid.test.noteTest (E:\Source\gits\gpii\node_modules\universal\node_modules\infusion\tests\test-core\utils\js\IoCTestUtils.js:<span class="hljs-number">613</span>:<span class="hljs-number">18</span>)
+</code></pre>
+<p>In this case, "targetHead" holds the lifecycleManager, which has been destroyed - and we are just in the process of destroying the pcpChannel, which has an "outDistributions" record which holds a reference to it.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22447">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2017-09-20T09:57:41.665-0400">2017-09-20T09:57:41.665-0400</relative-time></i></p>
+                        <p><a href="https://github.com/fluid-project/infusion/pull/849">The pull request</a> has been merged into the project repo master branch at 1fe914097336a552abeaf298e6175082e2d094dd</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6192/"><span class="aria-hidden">←</span> Previous: FLUID-6192</a>
+        <a class="mx-1" href="/browse/FLUID-6194/">Next: FLUID-6194 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

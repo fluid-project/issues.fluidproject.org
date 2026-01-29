@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-117  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-117 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-117/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-117/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-117/">C2LC-117</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-117: Scroll to reveal the end of the program for adding blocks</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-117">C2LC-117</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Done</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-12-20T09:37:31.787-0500" prefix="">2019-12-20T09:37:31.787-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-02-14T10:41:24.650-0500" prefix="">2020-02-14T10:41:24.650-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Env 0.2.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>From Leanne:</p>
+<p>"The scroll bar doesn't move automatically when the window fills with code...some students will have difficulty with moving the scroll bar to reach the next spot in the sequence (small in size, click and drag movement etc..).  Is there any way that this can automatically move to reveal the next empty code block, as  the window fills?  Or perhaps it's as simple as making scroll buttons on the screen?"</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10543">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2020-01-06T14:14:33.996-0500">2020-01-06T14:14:33.996-0500</relative-time></i></p>
+                        <p>This also relates to the issue of how much screen real estate we use. Currently, we have quite wide margins, so you can only see five our so squares of the program at one time. We'll definitely need to support easy (and automatic) scrolling, but we may also want to consider using up as much of the horizontal screen space as we have available to us, too.</p>
+
+                    </li>
+                    
+                    <li id="comment-10544">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-01-07T16:03:51.364-0500">2020-01-07T16:03:51.364-0500</relative-time></i></p>
+                        <p>For a new scrollbar design, I'd like to initially focus on styling with CSS, rather than implementing a custom JavaScript scrollbar, and see how far we can get with that.</p>
+<p>Some notes on scrollbar styling:</p>
+<ul>
+<li><a href="https://css-tricks.com/the-current-state-of-styling-scrollbars/">https://css-tricks.com/the-current-state-of-styling-scrollbars/</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar">https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar</a></li>
+<li><a href="https://webkit.org/blog/363/styling-scrollbars/">https://webkit.org/blog/363/styling-scrollbars/</a></li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-10545">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2020-01-07T16:06:34.978-0500">2020-01-07T16:06:34.978-0500</relative-time></i></p>
+                        <p>Let's also try some automatic scrolling as Leanne suggests above.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-116/"><span class="aria-hidden">←</span> Previous: C2LC-116</a>
+        <a class="mx-1" href="/browse/C2LC-118/">Next: C2LC-118 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

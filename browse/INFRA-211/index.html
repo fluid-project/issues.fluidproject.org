@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-211  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-211 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-211/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-211/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-211/">INFRA-211</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-211: CI infusion-docs is failing</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-211">INFRA-211</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Resolved</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alan Harnum</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-08-27T13:47:59.263-0400" prefix="">2018-08-27T13:47:59.263-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-09-17T14:43:29.330-0400" prefix="">2018-09-17T14:43:29.330-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>deploy branch seems to be missing</p>
+<pre><code class="hljs">[<span class="hljs-title class_">EnvInject</span>] - <span class="hljs-title class_">Loading</span> node environment variables.
+<span class="hljs-title class_">Building</span> on master <span class="hljs-keyword">in</span> workspace /var/lib/jenkins/workspace/website-docs.fluidproject.org
+<span class="hljs-title class_">Wiping</span> out workspace first.
+<span class="hljs-title class_">Cloning</span> the remote <span class="hljs-title class_">Git</span> repository
+<span class="hljs-title class_">Cloning</span> repository <span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/github.com/fluid</span>-project/infusion-docs.git
+ &gt; git init /var/lib/jenkins/workspace/website-docs.fluidproject.org <span class="hljs-comment"># timeout=10</span>
+<span class="hljs-title class_">Fetching</span> upstream changes from <span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/github.com/fluid</span>-project/infusion-docs.git
+ &gt; git --version <span class="hljs-comment"># timeout=10</span>
+ &gt; git fetch --tags --progress <span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/github.com/fluid</span>-project/infusion-docs.git +refs/heads/*<span class="hljs-symbol">:refs/remotes/origin/*</span>
+ &gt; git config remote.origin.url <span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/github.com/fluid</span>-project/infusion-docs.git <span class="hljs-comment"># timeout=10</span>
+ &gt; git config --add remote.origin.fetch +refs/heads/*<span class="hljs-symbol">:refs/remotes/origin/*</span> <span class="hljs-comment"># timeout=10</span>
+ &gt; git config remote.origin.url <span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/github.com/fluid</span>-project/infusion-docs.git <span class="hljs-comment"># timeout=10</span>
+<span class="hljs-title class_">Fetching</span> upstream changes from <span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/github.com/fluid</span>-project/infusion-docs.git
+ &gt; git fetch --tags --progress <span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/github.com/fluid</span>-project/infusion-docs.git +refs/heads/*<span class="hljs-symbol">:refs/remotes/origin/*</span>
+ &gt; git rev-parse origin/deploy^{commit} <span class="hljs-comment"># timeout=10</span>
+ &gt; git rev-parse deploy^{commit} <span class="hljs-comment"># timeout=10</span>
+<span class="hljs-variable constant_">ERROR</span>: <span class="hljs-title class_">Couldn</span><span class="hljs-string">'t find any revision to build. Verify the repository and branch configuration for this job.
+</span></code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26050">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-08-27T13:49:30.141-0400">2018-08-27T13:49:30.141-0400</relative-time></i></p>
+                        <p>Automating this so the workflow doesn't depend on a human deploying to the 'deploy' branch depends on fixing <a href="/browse/FLUID-6324/">FLUID-6324</a>.</p>
+
+                    </li>
+                    
+                    <li id="comment-26051">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2018-09-17T14:43:22.610-0400">2018-09-17T14:43:22.610-0400</relative-time></i></p>
+                        <p>Rolled this back to using the gh-pages branch. I'm not sure if the deploy branch was deleted or never actually created.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-210/"><span class="aria-hidden">←</span> Previous: INFRA-210</a>
+        <a class="mx-1" href="/browse/INFRA-212/">Next: INFRA-212 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

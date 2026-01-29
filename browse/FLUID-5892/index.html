@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5892  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5892 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5892/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5892/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5892/">FLUID-5892</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5892: Refactor fluid.slider to be able to use native &lt;input type="range"&gt; instead of jQuery UI slider widget</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5892">FLUID-5892</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alan Harnum</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Alan%20Harnum">Alan Harnum</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-04-19T14:30:28.588-0400" prefix="">2016-04-19T14:30:28.588-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-07-11T14:19:46.754-0400" prefix="">2016-07-11T14:19:46.754-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>At the time of the implementation of the original preferences framework components, the new <a href="https://www.w3.org/wiki/HTML5_form_additions">HTML5 Form Additions</a> were not at a standard level of support in current browsers, so the jQuery UI slider was used to implement the fluid.slider component.</p>
+<p>In reviewing <a href="/browse/FLUID-5698/">FLUID-5698</a> it seems the use of the jQUI slider is one barrier to being able to remove some or all of the redundant Javascript from the HTML for the SeparatedPanelPrefsEditorFrame that's included in an &lt;iframe&gt;. So I propose trying to replace the jQUI-based slider with one based on the native (and now apparently fully supported in all current browsers) "range"-type input.</p>
+<p>Using a native form control obviously has a number of other potential advantages besides the improved performance and behaviour we'll get.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24140">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-04-19T14:37:00.470-0400">2016-04-19T14:37:00.470-0400</relative-time></i></p>
+                        <p>Thanks Alan - this is very interesting. Are there any accessibility implications to switching to the use of the native range control? Is it typically read adequately by screenreaders and operable via the keyboard? Also, were you able to narrow down which part of the jQuery UI slider implementation is responsible for the failure within an iframe? Perhaps there is a workaround for it, which might be quicker to implement than the investigation above.</p>
+
+                    </li>
+                    
+                    <li id="comment-24142">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2016-04-19T14:57:58.266-0400">2016-04-19T14:57:58.266-0400</relative-time></i></p>
+                        <p>Antranig Basman - from what I could tell, the issue is with mouse tracking when the jQuery is not the one referenced from within the iframe. </p>
+<p>If you look at my branch at <a href="https://github.com/waharnum/infusion/tree/FLUID-5698">https://github.com/waharnum/infusion/tree/FLUID-5698</a> you can see the following if you look at either the UIO or Preferences demo:</p>
+<ul>
+<li>no errors are thrown</li>
+<li>attempting to interact with the slider results in the mouse tracking not happening in the iframe, but in the context of the parent document (you can click on the slider button to "capture" it, then move the mouse down into the parent document and move left and right to move the slider)</li>
+</ul>
+<p>I examined the code (both for fluid.slider and the jQuery UI slider) and looked around a little online, but didn't see an obvious way to work around the issue. I suspect it's the same one as the tooltip UI. That said, I didn't spend a huge amount of time looking - did the issue with the tooltip UI show any possible workarounds?</p>
+<p>As for the accessibility - it sounds like it should be as good or better as the jQuery UI slider assuming the use of ARIA. There's a test page at <a href="https://thepaciellogroup.github.io/AT-browser-tests/test-files/input-range.html">https://thepaciellogroup.github.io/AT-browser-tests/test-files/input-range.html</a> that shows it being operable with the keyboard. I also know Justin Obara and Jonathan Hung have been using &lt;input type='range'&gt; in their recent PHET work, so perhaps they can comment?</p>
+<p>I'm hoping replacing the jQuery UI widget with the native HTML one will be fairly straightforward but am prepared to abandon it in favour of other approaches if it proves not to be or has accessibility issues.</p>
+
+                    </li>
+                    
+                    <li id="comment-24144">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-04-19T17:47:04.701-0400">2016-04-19T17:47:04.701-0400</relative-time></i></p>
+                        <p>Sounds good, Alan Harnum - at a guess from your description, the problem may lie in the following block of code - <a href="https://github.com/fluid-project/infusion/blob/master/src/lib/jquery/ui/js/jquery.ui.slider.js#L166">https://github.com/fluid-project/infusion/blob/master/src/lib/jquery/ui/js/jquery.ui.slider.js#L166</a> - since it seems that the slider follows a "roll your own" approach for binding to mouse events rather than depending on the (presumably) much more well-tested jQuery UI draggable library. It would probably take us longer to research the problem and fix it (or, alternatively, go through a cycle of jQuery + jQuery UI upgrades) than it would to revert to the native HTML5 range control, so I'm in favour of the latter if the accessibility story is good as it seems to be.</p>
+
+                    </li>
+                    
+                    <li id="comment-24145">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2016-04-21T08:39:49.720-0400">2016-04-21T08:39:49.720-0400</relative-time></i></p>
+                        <p>Alan Harnum Antranig Basman the accessibility of the range slider is very good. I've also tested it with JAWS, NVDA, VoiceOver on Safari, IE 11/Edge, Firefox, Chrome and it works really well.</p>
+<p>The only exception being in IE11 - I ran into a quirk where the slider appeared as text input fields if the content was loaded directly from the filesystem and not served via a server. This was true for me in VirtualBox, it may not be an issue on a native machine.</p>
+<p>You can play with slider implementation we have for PhET here: <a href="https://jhung.github.io/john-travoltage-html/">https://jhung.github.io/john-travoltage-html/</a></p>
+
+                    </li>
+                    
+                    <li id="comment-24147">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2016-04-21T09:37:26.294-0400">2016-04-21T09:37:26.294-0400</relative-time></i></p>
+                        <p>Thanks Jonathan Hung that's really good information.</p>
+
+                    </li>
+                    
+                    <li id="comment-24149">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2016-07-05T10:12:26.564-0400">2016-07-05T10:12:26.564-0400</relative-time></i></p>
+                        <p>The pull request <a href="https://github.com/fluid-project/infusion/pull/724">https://github.com/fluid-project/infusion/pull/724</a> has been merged into the infusion master branch at f48d47f9144a91bd47c326da03dd4e3b92dd4396</p>
+
+                    </li>
+                    
+                    <li id="comment-24150">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-07-11T14:19:46.754-0400">2016-07-11T14:19:46.754-0400</relative-time></i></p>
+                        <p>Merged infusion-docs PR ( <a href="https://github.com/fluid-project/infusion-docs/pull/93">https://github.com/fluid-project/infusion-docs/pull/93</a> ) at f5af742ba3f4f4099d8027c391de14ab4e33074c</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5891/"><span class="aria-hidden">←</span> Previous: FLUID-5891</a>
+        <a class="mx-1" href="/browse/FLUID-5893/">Next: FLUID-5893 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

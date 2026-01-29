@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3301  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3301 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3301/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3301/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3301/">FLUID-3301</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3301: Selecting 'serif' from menu doesn't set font to serif</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3301">FLUID-3301</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-10-15T17:29:08.000-0400" prefix="">2009-10-15T17:29:08.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-05-24T11:19:29.585-0400" prefix="">2011-05-24T11:19:29.585-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1</li>
+                            
+                            <li>1.1.1</li>
+                            
+                            <li>1.1.2</li>
+                            
+                            <li>1.2</li>
+                            
+                            <li>1.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When bringing up the UI Options dialog for the first time, the Serif font, being the first font in the list, is "selected" (even though the user hasn't set a preference for serif).</p>
+<p>If you pull the menu down and click on Serif, this still doesn't "set" the preference to Serif (presumably because the value of the control hasn't changed) and so the preview doesn't change, and if you save the settings, the site doesn't change.</p>
+<p>If you select a different font, and then select serif, it works fine.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF2, FF3, Opera 9.6, Safari 3.2 (Mac OS 10.5) <br>
+Safari 3.2 (Mac OS 10.4) <br>
+FF2, FF3, IE6, IE7, IE8, Opera 9.6 (Win XP) <br>
+FF3, IE7, IE8 (Win Vista) <br>
+IE6 (Win 2000)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23593">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2011-04-21T09:34:21.835-0400">2011-04-21T09:34:21.835-0400</relative-time></i></p>
+                        <p>Fixed at git commit: 2c758f61c1a2355ba8a5</p>
+<p>Set "arial" as initial default value of font style, instead of "serif".</p>
+
+                    </li>
+                    
+                    <li id="comment-23596">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2011-05-06T14:00:32.452-0400">2011-05-06T14:00:32.452-0400</relative-time></i></p>
+                        <p>This issue needs more considerations. Setting default to "Arial" fixes the issue because our demo pages happen to use "Arial" font. This fix seems likely introducing another bug that the user's pages are forced to be initialized with "Arial" font. The previous default, a empty string, makes more sense in this case. However, with an empty default font, the users have to supply whatever font they use into UIEnhancer defaults block, which may not be a ideal as well.</p>
+
+                    </li>
+                    
+                    <li id="comment-23600">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2011-05-06T15:03:40.063-0400">2011-05-06T15:03:40.063-0400</relative-time></i></p>
+                        <p>I believe the new designs for UI Options include a "keep the page's original settings" option in the various pull-downs: Something that can be selected  to indicated that the Enhancer shouldn't do anything that affects the font family. This should be the default setting when UI Options is first opened. The implementer wouldn't have to inform the Enhancer of what the default font is, since the default is "whatever the page originally specifies."</p>
+
+                    </li>
+                    
+                    <li id="comment-23603">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-05-17T12:42:44.910-0400">2011-05-17T12:42:44.910-0400</relative-time></i></p>
+                        <p>Bug Parade Infusion</p>
+
+                    </li>
+                    
+                    <li id="comment-23606">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2011-05-24T11:19:29.584-0400">2011-05-24T11:19:29.584-0400</relative-time></i></p>
+                        <p>This issue is resolved with the new UI Options wireframe design. As Anastania mentioned, a "default" font value is introduced and it is the default selection on the font drop down list box. This value means leaving whatever on the user's page, which fits the current behaviour.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3300/"><span class="aria-hidden">←</span> Previous: FLUID-3300</a>
+        <a class="mx-1" href="/browse/FLUID-3302/">Next: FLUID-3302 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

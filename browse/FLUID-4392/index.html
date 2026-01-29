@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4392  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4392 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4392/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4392/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4392/">FLUID-4392</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4392: Possibility for additivity in demands blocks is required so that they can be expressed in a modular way</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4392">FLUID-4392</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-08-08T16:23:23.518-0400" prefix="">2011-08-08T16:23:23.518-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T13:04:43.408-0500" prefix="">2014-03-03T13:04:43.408-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>lahabana describes the following situation:</p>
+<pre><code class="hljs language-java">fluid.demands(<span class="hljs-string">"fluid.videoPlayer.eventBinder"</span>, 
+        [<span class="hljs-string">"fluid.videoPlayer.controllers"</span>,
+            <span class="hljs-string">"fluid.videoPlayer.captionner"</span>,
+            <span class="hljs-string">"fluid.videoPlayer.captionLoader"</span>,
+            <span class="hljs-string">"fluid.videoPlayer"</span>,
+            <span class="hljs-string">"fluid.videoPlayer.media"</span>],
+        {
+            options: {
+                listeners: {
+                    <span class="hljs-string">"{controllers}.events.afterTimeChange"</span>: <span class="hljs-string">"{captionner}.resyncCaptions"</span>,
+                    <span class="hljs-string">"{captionLoader}.events.onCaptionsLoaded"</span>: <span class="hljs-string">"{captionner}.resyncCaptions"</span>,
+                    <span class="hljs-string">"{controllers}.events.onTimeChange"</span>: <span class="hljs-string">"{media}.setTime"</span>,
+                    <span class="hljs-string">"{videoPlayer}.events.onTimeChange"</span>: <span class="hljs-string">"{media}.setTime"</span>,
+                    <span class="hljs-string">"{controllers}.events.onVolumeChange"</span>: <span class="hljs-string">"{media}.setVolume"</span>,
+                    <span class="hljs-string">"{videoPlayer}.events.onVolumeChange"</span>: <span class="hljs-string">"{media}.setVolume"</span>
+                }
+            }
+             
+        });
+</code></pre>
+<p>where the component "controllers" is actually constructed by a renderer decorator as follows:</p>
+<pre><code class="hljs language-java">tree.controllers = {
+                decorators: [
+                    {
+                        type: <span class="hljs-string">"fluid"</span>,
+                        func: <span class="hljs-string">"fluid.videoPlayer.controllers"</span>
+                    },
+</code></pre>
+<p>The demands block although mismatching is allowed to match as a result of the successfully matched contexts (a further framework bug) but the reference to {controllers} is not resolvable. It should be possible for this demands block to be written in two parts, one of which mismatches completely in the case controllers is not rendered and so contributes no binding information, but both of which match and are merged together in the case controllers is present.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-16011">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-02-19T14:54:55.521-0500">2013-02-19T14:54:55.521-0500</relative-time></i></p>
+                        <p>Resolved by merge of <a href="/browse/FLUID-4330/">FLUID-4330</a> branch at revision 91d5d1</p>
+
+                    </li>
+                    
+                    <li id="comment-16013">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-02-21T02:02:42.868-0500">2013-02-21T02:02:42.868-0500</relative-time></i></p>
+                        <p>I can't believe this is finally implemented....</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4391/"><span class="aria-hidden">←</span> Previous: FLUID-4391</a>
+        <a class="mx-1" href="/browse/FLUID-4393/">Next: FLUID-4393 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

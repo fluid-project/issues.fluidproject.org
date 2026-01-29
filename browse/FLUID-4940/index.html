@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4940  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4940 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4940/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4940/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4940/">FLUID-4940</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4940: uiOptions demo fails without jQuery included into Infusion build. jQuery is included using an external include</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4940">FLUID-4940</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Not%20A%20Bug">Not A Bug</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Alexey%20Novak">Alexey Novak</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-03-21T13:26:51.608-0400" prefix="">2013-03-21T13:26:51.608-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-10-04T09:18:13.143-0400" prefix="">2013-10-04T09:18:13.143-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Demos</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>uiOptions demo fails trying to resolve jQuery</p>
+<p>uiOptions demo fails if Infusion is built without jQuery included<br>
+ant -lib lib/rhino infusionAllBuilds -Dexclude="jQuery" -DnoMinify="true"<br>
+but included through a script tag.</p>
+<p>There is an error in the demo /build/assembled/demos/uiOptions/html/uiOptions.html<br>
+at line 18002: that.renderUIOContainer = that.jQuery("body", that.iframeDocument);<br>
+because there is no jQuery attached to iframeWindow<br>
+var iframeWindow = that.iframe[0].contentWindow;</p>
+<p>This issue is most likely the reason for OERC to fail in IE<br>
+<a href="https://www.assembla.com/spaces/iskme/tickets/988">https://www.assembla.com/spaces/iskme/tickets/988</a></p>
+<p>HOW TO REPLICATE / TEST:</p>
+<p>The example of this bug located in the following branch:<br>
+<a href="https://github.com/anvk/infusion/tree/FLUID-4940-bug">https://github.com/anvk/infusion/tree/FLUID-4940-bug</a><br>
+You will be able to observe errors by opening /build/assembled/demos/uiOptions/html/uiOptions.html in FireFox with a FireBug ON</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13601">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2013-03-21T16:40:27.748-0400">2013-03-21T16:40:27.748-0400</relative-time></i></p>
+                        <p>The FatPanel iframe had a wrong include for jquery which was pointing to a jquery.js which does not exist. This would cause an iframe to have a jQuery object to be undefined and eventually lead to the issue described in the JIRA.<br>
+Closing the issue since it is not the bug.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4939/"><span class="aria-hidden">←</span> Previous: FLUID-4939</a>
+        <a class="mx-1" href="/browse/FLUID-4941/">Next: FLUID-4941 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

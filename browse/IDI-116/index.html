@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> IDI-116  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" IDI-116 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/IDI-116/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/IDI-116/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/IDI" data-pagefind-filter="project">IDI</a></li>
+                <li><a href="/browse/IDI-116/">IDI-116</a></li>
+            </ol>
+        </nav>
+        <h1>IDI-116: IDI Twitter Feeds Broken</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/IDI-116">IDI-116</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/IDI/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/IDI/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/IDI/?reporter=Greg%20Gay">Greg Gay</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-07-11T16:29:31.540-0400" prefix="">2013-07-11T16:29:31.540-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T11:43:51.460-0500" prefix="">2014-03-03T11:43:51.460-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>With the Twitter API 1.1, which requires OAuth, the old twitter plugin need replacing.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>inclusivedesign.ca</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-12941">
+                        <p class="mb-0"><b>Greg Gay</b> <i>commented <relative-time datetime="2013-07-11T16:33:45.468-0400">2013-07-11T16:33:45.468-0400</relative-time></i></p>
+                        <p>There are no WP modules that support multiple twitter feeds. I have created a standalone plugin based on the twitteroath library, that will allow multiple feeds, though it requires entering the OAuth delails into the appropriate WP template.</p>
+<p>wp-content/plugins/twitteroauth/twitteroauth/twitteroauth.php</p>
+<p>Will need a template like the following for each of the feeds we want to display</p>
+<p>&lt;?php // eg themes/idi-theme/tweets-SNOWocad.php<br>
+require_once("wp-content/plugins/twitteroauth/twitteroauth/twitteroauth.php");<br>
+$twitter_un = "SNOWocad";<br>
+$num_tweets = 3;<br>
+$consumerkey = "fHDGIckUSPpd4koYiBVOw";<br>
+$consumersecret = "I3KKfzDT34eR9TXekZsXod750SdC2JydGVKj0ZFlU";<br>
+$accesstoken = "199785294-UB4hnT6tsbbRD2bKSUGNgryPnS4hDJjtQpPtFGx7";<br>
+$accesstokensecret = "kcXrb0WzyUYijk97u1RdFrG7hSS5vpyUbWxpfls";<br>
+$connection = new TwitterOAuth($consumerkey, $consumersecret, $accesstoken, $accesstokensecret);<br>
+$tweets = $connection-&gt;get("<a href="https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=">https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=</a>".$twitter_un."&amp;count=".$num_tweets);<br>
+//print_r($tweets);<br>
+?&gt;			&lt;div class="idi-box idi-highlight-box twitter-feed-group"&gt;<br>
+&lt;div class="idi-box-text"&gt;<br>
+&lt;a class="twitter-follow-button" rel="external nofollow" href="<a href="http://twitter.com/SNOWocad">http://twitter.com/SNOWocad</a>" title="Follow @SNOWocad"&gt;@SNOWocad&lt;/a&gt;<br>
+&lt;ul&gt;     &lt;?php   <br>
+foreach($tweets as $tweet) {<br>
+echo '&lt;li class="even"&gt;'.$tweet-&gt;text.'&lt;br&gt;&lt;a href="<a href="https://twitter.com/intent/retweet?tweet_id=%27.$tweet-">https://twitter.com/intent/retweet?tweet_id='.$tweet-</a>&gt;id.'"&gt;retweet&lt;/a&gt;&lt;hr&gt;&lt;/li&gt;';</p>
+<p>} <br>
+?&gt;<br>
+&lt;/ul&gt;<br>
+&lt;/div&gt;<br>
+&lt;/div&gt;</p>
+
+                    </li>
+                    
+                    <li id="comment-12942">
+                        <p class="mb-0"><b>Greg Gay</b> <i>commented <relative-time datetime="2013-07-12T10:43:36.388-0400">2013-07-12T10:43:36.388-0400</relative-time></i></p>
+                        <p>Pushed into idi-theme Development branch  a224bbb..e67c927</p>
+
+                    </li>
+                    
+                    <li id="comment-12943">
+                        <p class="mb-0"><b>Greg Gay</b> <i>commented <relative-time datetime="2013-07-12T10:45:54.137-0400">2013-07-12T10:45:54.137-0400</relative-time></i></p>
+                        <p>pushed  twitteroauth lib into inclusivedesign.ca development branch d31d7f6..bb13efa</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/IDI-115/"><span class="aria-hidden">←</span> Previous: IDI-115</a>
+        <a class="mx-1" href="/browse/IDI-117/">Next: IDI-117 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

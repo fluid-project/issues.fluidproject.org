@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5016  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5016 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5016/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5016/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5016/">FLUID-5016</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5016: 3rd party developers need a way to access the stored UIEnhancer settings</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5016">FLUID-5016</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>y z</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-05-10T11:16:28.589-0400" prefix="">2013-05-10T11:16:28.589-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-06-15T10:24:33.057-0400" prefix="">2015-06-15T10:24:33.057-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UIEnhancer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When third party developers create something that wants respond to UIO settings changes, they need a way to access those model changes from the page enhancer.</p>
+<p>This would require a grade, defined in the Framework, that would be added to the third party components. The grade would access the page enhancer in the static environment and expose model changes to the third party through an event. Ideally, the event would only notify of paths specified by the third party.</p>
+<p>Use Case: VideoPlayer WordPress plugin<br>
+The VideoPlayer WordPress plugin wants to add media panels to UIO and respond to changes in caption and transcript settings. UIO itself is provided by a completely separate theme, so the plugin should be able to work with UIO without having to instantiate UIO itself.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23889">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2013-06-06T14:52:03.645-0400">2013-06-06T14:52:03.645-0400</relative-time></i></p>
+                        <p>There was a discussion in the channel today about issues around the timing of the creation of the UIEnhancer:<br>
+<a href="http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-06-06">http://wiki.fluidproject.org/display/fluid/fluid-work+IRC+Logs-2013-06-06</a></p>
+<p>The question is: What happens if the 3rd party app happens to be created before the UIEnhancer is created and added to the static environment? There's no way for the 3rd party to request notification, or anything like that.</p>
+
+                    </li>
+                    
+                    <li id="comment-23892">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-06-12T14:18:51.258-0400">2013-06-12T14:18:51.258-0400</relative-time></i></p>
+                        <p>Hi Yura - this sounds like a great function. Could you perhaps provide a code sketch that illustrates what the user of the system might write in this case?</p>
+
+                    </li>
+                    
+                    <li id="comment-23893">
+                        <p class="mb-0"><b>y z</b> <i>commented <relative-time datetime="2013-06-12T14:56:49.058-0400">2013-06-12T14:56:49.058-0400</relative-time></i></p>
+                        <p>Anastasia, would you be able to point us to some of the code fragments used in the wordpress plugin?</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5015/"><span class="aria-hidden">←</span> Previous: FLUID-5015</a>
+        <a class="mx-1" href="/browse/FLUID-5017/">Next: FLUID-5017 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

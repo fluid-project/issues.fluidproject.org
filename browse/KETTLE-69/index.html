@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> KETTLE-69  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" KETTLE-69 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/KETTLE-69/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/KETTLE-69/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/KETTLE" data-pagefind-filter="project">Kettle</a></li>
+                <li><a href="/browse/KETTLE-69/">KETTLE-69</a></li>
+            </ol>
+        </nav>
+        <h1>KETTLE-69: Failing test in DataSourceSimpleTests</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/KETTLE-69">KETTLE-69</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/KETTLE/?resolution=Won't%20Do">Won't Do</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alan Harnum</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?reporter=Alan%20Harnum">Alan Harnum</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-06-20T09:32:58.503-0400" prefix="">2018-06-20T09:32:58.503-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-06-21T08:48:08.647-0400" prefix="">2018-06-21T08:48:08.647-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Found while working on refactoring for <a href="/browse/KETTLE-66/">KETTLE-66</a>, confirmed present (in my environment at least) on fluid-project/master as well.</p>
+<p>Log:</p>
+<pre><code class="hljs language-java">09:<span class="hljs-number">30</span>:<span class="hljs-number">25.410</span>:  jq: FAIL: Test name <span class="hljs-string">"<a href="/browse/KETTLE-34/">KETTLE-34</a> request option resolution test"</span> - Message: Resolved expected requestOptions
+09:<span class="hljs-number">30</span>:<span class="hljs-number">25.410</span>:  jq: Expected: {
+    <span class="hljs-string">"protocol"</span>: <span class="hljs-string">"https:"</span>,
+    <span class="hljs-string">"port"</span>: <span class="hljs-number">999</span>,
+    <span class="hljs-string">"auth"</span>: <span class="hljs-string">"user:password"</span>,
+    <span class="hljs-string">"path"</span>: <span class="hljs-string">"/path"</span>,
+    <span class="hljs-string">"method"</span>: <span class="hljs-string">"GET"</span>,
+    <span class="hljs-string">"host"</span>: <span class="hljs-string">"thing.available:997"</span>,
+    <span class="hljs-string">"family"</span>: <span class="hljs-number">4</span>,
+    <span class="hljs-string">"headers"</span>: {
+        <span class="hljs-string">"x-custom-header"</span>: <span class="hljs-string">"x-custom-value"</span>,
+        <span class="hljs-string">"x-custom-header2"</span>: <span class="hljs-string">"x-custom-value2"</span>
+    }
+}
+09:<span class="hljs-number">30</span>:<span class="hljs-number">25.410</span>:  jq: Actual: {}
+09:<span class="hljs-number">30</span>:<span class="hljs-number">25.410</span>:  jq: Source:     at Object.assertDeepEq (/Users/aharnum/work/kettle/node_modules/infusion/tests/test-core/jqUnit/js/jqUnit.js:<span class="hljs-number">180</span>:<span class="hljs-number">23</span>)
+    at Object.jqUnit.assertLeftHand (/Users/aharnum/work/kettle/node_modules/infusion/tests/test-core/jqUnit/js/jqUnit.js:<span class="hljs-number">256</span>:<span class="hljs-number">16</span>)
+    at Object.&lt;anonymous&gt; (/Users/aharnum/work/kettle/tests/DataSourceSimpleTests.js:<span class="hljs-number">91</span>:<span class="hljs-number">20</span>)
+09:<span class="hljs-number">30</span>:<span class="hljs-number">25.411</span>:  jq: Test concluded - Test name <span class="hljs-string">"<a href="/browse/KETTLE-34/">KETTLE-34</a> request option resolution test"</span>: <span class="hljs-number">0</span>/<span class="hljs-number">1</span> passed - FAIL
+</code></pre>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Mac OS X, node v9.4.0, npm v6.1.0</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26138">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2018-06-20T11:26:45.793-0400">2018-06-20T11:26:45.793-0400</relative-time></i></p>
+                        <p>Update: the test passes on my work desktop environment, so I think this may be an issue specific to my home laptop environment. I'll investigate further.</p>
+
+                    </li>
+                    
+                    <li id="comment-26139">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2018-06-21T07:51:31.508-0400">2018-06-21T07:51:31.508-0400</relative-time></i></p>
+                        <p>Works fine for me on Windows 7, node 8.9.4 npm 5.6.0. Perhaps some kind of bug with node 9.x https protocol parsing? I tend to avoid the odd-numbered releases ...</p>
+
+                    </li>
+                    
+                    <li id="comment-26140">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2018-06-21T08:47:49.747-0400">2018-06-21T08:47:49.747-0400</relative-time></i></p>
+                        <p>Downgrading my home laptop to the Node LTS release (node 8.11.3, npm 5.6.0) resolved this issue.</p>
+<p>I also tried upgrading to Node 10.5.0 and the tests failed completely due to a failure with leveldown (I didn't log it, unfortunately) - this may be related to an issue with the OSX dev tools / make on my laptop environment, though.</p>
+<p>Closing for now.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/KETTLE-68/"><span class="aria-hidden">←</span> Previous: KETTLE-68</a>
+        <a class="mx-1" href="/browse/KETTLE-70/">Next: KETTLE-70 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

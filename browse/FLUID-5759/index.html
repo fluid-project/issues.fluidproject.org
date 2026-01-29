@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5759  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5759 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5759/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5759/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5759/">FLUID-5759</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5759: Composite panels: Processing of 'panels' list is wrong</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5759">FLUID-5759</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Cindy Li</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-09-10T16:19:24.025-0400" prefix="">2015-09-10T16:19:24.025-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-11-26T13:29:52.004-0500" prefix="">2015-11-26T13:29:52.004-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.9</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The way the AuxBuilder processes the "panels" property of a composite panel definition is wrong, somehow. If the strings in the array happen to be only one character long, it fails. The code is somehow parsing the panel names on a per-character basis, and converting them to 0s and 1s, and getting completely confused.</p>
+<p>The x, y and xy panels in the minimalEditor example in this branch illustrate the problem:</p>
+<p><a href="https://github.com/acheetham/infusion/blob/FLUID-5754%2B/examples/framework/preferences/minimalEditor/js/minEditor.js">https://github.com/acheetham/infusion/blob/FLUID-5754%2B/examples/framework/preferences/minimalEditor/js/minEditor.js</a></p>
+<p>I'm getting a console error "TypeError: prefKey.replace is not a function" in Panels.js, line 159</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-21676">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2015-09-10T16:28:12.265-0400">2015-09-10T16:28:12.265-0400</relative-time></i></p>
+                        <p>The code that incorrectly loops thru panel names: <a href="https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/js/AuxBuilder.js#L248-L255">https://github.com/fluid-project/infusion/blob/master/src/framework/preferences/js/AuxBuilder.js#L248-L255</a>. It sets the "subPanelRenderOn" variable and causes line 271-274 below sets the panel option "renderOnPreference" to 1, which makes "fluid.prefs.compositePanel" fail to render the composite panel.</p>
+
+                    </li>
+                    
+                    <li id="comment-21677">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2015-11-19T15:31:36.422-0500">2015-11-19T15:31:36.422-0500</relative-time></i></p>
+                        <p>Issued a pull request: <a href="https://github.com/fluid-project/infusion/pull/655">https://github.com/fluid-project/infusion/pull/655</a></p>
+
+                    </li>
+                    
+                    <li id="comment-21678">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-11-26T13:29:38.476-0500">2015-11-26T13:29:38.476-0500</relative-time></i></p>
+                        <p>Merged pull request ( <a href="https://github.com/fluid-project/infusion/pull/655">https://github.com/fluid-project/infusion/pull/655</a> ) into the project repository at 133da8e1de28b46cd7964a946c459f212ec6ab3d</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5758/"><span class="aria-hidden">←</span> Previous: FLUID-5758</a>
+        <a class="mx-1" href="/browse/FLUID-5760/">Next: FLUID-5760 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

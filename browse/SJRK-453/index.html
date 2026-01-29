@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-453  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-453 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-453/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-453/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-453/">SJRK-453</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-453: Convert sjrk.storyTelling.block.singleFileUploader.uploadFileToServer into a DataSource</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-453">SJRK-453</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-02-24T11:26:39.634-0500" prefix="">2021-02-24T11:26:39.634-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-02-24T11:42:28.227-0500" prefix="">2021-02-24T11:42:28.227-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>As part of the work on <a href="/browse/SJRK-452/">SJRK-452</a> the storyId was moved into the model to provide access to the storyId at upload time instead of block creation time. However, this points to a bit of an issue with the ability to direct the path to where the data/files should be sent. It is worth exploring converting the&#160;sjrk.storyTelling.block.singleFileUploader.uploadFileToServer&#160;into a DataSource and use the idioms provided for supplying a directModel to indicate the exact path for the upload.</p>
+<p>It is also worth noting that past discussions have suggested using the infusion uploader instead. If that's the case, the suggestion of converting to a DataSource, as mentioned here, may not be necessary.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26630">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2021-02-24T11:42:28.227-0500">2021-02-24T11:42:28.227-0500</relative-time></i></p>
+                        <p>Note that whilst our XHR.send architecture isn't the most brilliantly factored thing in the world, it <strong>should</strong> be possible to exploit the new "transforming promise chain" DataSource architecture to implement this simply as a further listener slotted into the pipeline.</p>
+<p><a href="https://github.com/fluid-project/infusion/pull/1038/files#diff-2de84a8f3987d9964f56c0294a1633b0825bf2d4bc0b49b27721c760b7d5cdb5R127">https://github.com/fluid-project/infusion/pull/1038/files#diff-2de84a8f3987d9964f56c0294a1633b0825bf2d4bc0b49b27721c760b7d5cdb5R127</a></p>
+<p>Note that whilst the `data` argument to this function is documented as a String, there's no reason it couldn't be a FormData instead. Side benefit of a fluidly typed language : P</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-452/"><span class="aria-hidden">←</span> Previous: SJRK-452</a>
+        <a class="mx-1" href="/browse/SJRK-454/">Next: SJRK-454 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

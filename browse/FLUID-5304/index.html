@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5304  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5304 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5304/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5304/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5304/">FLUID-5304</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5304: Implement "Infusion Compiler" recognising "shapes" of repeatedly appearing components and storing them as "link-ready" templates</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5304">FLUID-5304</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-04-09T00:03:43.690-0400" prefix="">2014-04-09T00:03:43.690-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-01-08T11:14:09.729-0500" prefix="">2021-01-08T11:14:09.729-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Right now the IoC system offers particularly poor instantiation performance. This will become a strongly limiting factor in both server and client-side applications in the relatively near future (c. 1 year). Informally, the system spends most of its time in the "strategy" loops introduced as part of the refactoring for <a href="/browse/FLUID-4330/">FLUID-4330</a>. These liberated the workflow of the framework to become completely data-driven, but unfortunately ended up "dilating" most of the tightest inner loops in the options merging and expansion pathway. This had a doubly negative effect - firstly since the code locality in these loops is lower, we probably end up spilling many more processor caches during the algorithm - and secondly, this code is probably much less inlineable than the old implementation.</p>
+<p>Especially when the "new renderer" begins implementing for <a href="/browse/FLUID-5047/">FLUID-5047</a>, this will become extremely crucial. Under this new model we will need to instantiate trees of possibly hundreds of simple components very quickly - this is entirely impossible with the current implementation.</p>
+<p>We will need to implement a form of "compiler" for the IoC machinery. Since this machinery doesn't perform a task that closely resembles that of a conventional interpreter, this compiler will also differ in many important respects from traditional ones, but the outline of its responsibilities and some of its workflow will be similar - and its output will in some ways be similar to the link-ready "object code" or even DLLs that form the output of late stages of the pipelines of conventional compilers.</p>
+<p>As an implementation sketch, the compiler will have to recognise "frequently co-occuring configuration and contexts" - that is, on discovering that a number of similar components are being instantiated in similar contexts, it should be able to short-circuit hopefully large parts of its workflow, in particular avoiding the highly expensive "strategy points" such as "fluid.makeMergeStrategy" and "fluid.makeExpandStrategy". A possibly promising "key" for this identification could be assembled from the "mergeBlocks" which are assembled by the midpoint of fluid.initLittleComponent. Some of these blocks, the ones arising from distributeOptions directives and defaults blocks, already have unique keys, and we could supply some to others - perhaps even through "hashing by force" in the case their source couldn't be labelled. This "list of keys" could then be used as a key into a table of "mostly digested options" - that is, a structure in which "most" of the work of merging and expansion had already been concluded, possibly with a small set of EL paths in which material needs to be injected in the style of a "fixup" similarly to the way that DLLs injected into a fresh address space have a number of locations which need to be filled in with final concrete addresses in order to make the library "ready to go". In lucky cases we may discover that 100% of the work is done already, although in this case it is unlikely that the resulting component has much useful function - one would expect that there needs to be <strong>some</strong> unique contextualisation applied to every useful component.</p>
+<p>So, this "list of keys" -&gt; "key to freeze-dried options structure" could be seen as also analogous to the "shape analysis" ( <a href="http://en.wikipedia.org/wiki/Shape_analysis_(program_analysis">http://en.wikipedia.org/wiki/Shape_analysis_(program_analysis</a>) ) done by some modern optimising compilers. Its work will be similarly opportunistic since we couldn't expect to produce efficient lookup universally, but it should be possible to cater for a sufficiently large category of "regular cases" to restore the view that the framework is usually fast.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14202">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2020-08-24T16:10:26.964-0400">2020-08-24T16:10:26.964-0400</relative-time></i></p>
+                        <p>Note that it was recognised during work on the Nexus model binding endpoint at <a href="https://github.com/fluid-project/infusion-nexus/pull/25#discussion_r475864274">https://github.com/fluid-project/infusion-nexus/pull/25#discussion_r475864274</a> that in addition to the compiler spilling its "shape cache" when discovering a value of a JSONically different shape that disrupts later merge compositing, it would also do so on discovering an expansion site which varied in asynchrony.</p>
+
+                    </li>
+                    
+                    <li id="comment-14204">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2020-09-23T12:07:36.251-0400">2020-09-23T12:07:36.251-0400</relative-time></i></p>
+                        <p>Note that this work will also have to incorporate moving to a C3-like algorithm as per <a href="https://issues.fluidproject.org/browse/FLUID-5800">https://issues.fluidproject.org/browse/FLUID-5800</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5303/"><span class="aria-hidden">←</span> Previous: FLUID-5303</a>
+        <a class="mx-1" href="/browse/FLUID-5305/">Next: FLUID-5305 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

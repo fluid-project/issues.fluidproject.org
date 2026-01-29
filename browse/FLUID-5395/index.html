@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5395  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5395 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5395/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5395/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5395/">FLUID-5395</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5395: Expected keyboard and mouse error messages wrong when moving layout portlets to locked portlet</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5395">FLUID-5395</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=beth.mejsullivan">beth.mejsullivan</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-06-03T12:11:31.281-0400" prefix="">2014-06-03T12:11:31.281-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:17.985-0400" prefix="">2024-07-22T10:35:17.985-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Demos</li>
+                            
+                            <li>Layout Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Keyboard and mouse error messages should be as follows according to the Test-to-fail criteria :</p>
+<p>Test 1: Mouse, Move Portlet Above Locked Portlet</p>
+<p>Procedure<br>
+Open the browser and navigate to the specified URL<br>
+Using the mouse, hover over the title bar of one of the unlocked portlets<br>
+Using the mouse, press and hold the 'left-mouse-button' down<br>
+Using the mouse, drag the avatar above the locked portlet<br>
+Using the mouse, release the 'left-mouse-button' over a drop target<br>
+Expected Results<br>
+As the avatar is hovering over the locked portlet, an error message saying "This box cannot be placed above a locked box" should appear<br>
+The avatar should drop to the location of the drop target<br>
+Actual Results<br>
+As the avatar is hovering over the locked portlet, no error message appears<br>
+The avatar drops to the location of the drop target<br>
+Stop Test<br>
+Refresh the browser to return the page to its initial state</p>
+<p>Test 2: Keyboard, Move Portlet Above Locked Portlet</p>
+<p>Procedure<br>
+Open the browser and navigate to the specified URL<br>
+Using the keyboard, tap the 'tab' key until one of the portlets has focus<br>
+Using the keyboard, tap the 'i', 'j', 'k', 'm', or an 'arrow' until the portlet, directly below the locked portlet, has focus<br>
+Using the keyboard, hold the 'ctrl' key (on a Mac use the 'Apple' key)<br>
+Using the keyboard, while still holding down the 'ctrl' key use the navigation keys (see step 3) move the portlet underneath a locked portlet, then attempt to move the portlet upward and above the locked portlet<br>
+Expected Results<br>
+On attempting to move the portlet above the locked portlet, an error message saying "This box cannot be placed above a locked box" should appear<br>
+Actual Results<br>
+On attempting to move the portlet above the locked portlet, an error message saying "This element can not be placed here. The element underneath is locked." appears.<br>
+("can not" should be "cannot" and the directional "underneath is locked" instruction is confusing.)<br>
+Stop Test<br>
+Refresh the browser to return the page to its initial state </p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Mac OS 10.8.5 Firefox 29.0.1, Chrome 35.0.1916.114, Safari Version 6.1 (8537.71)</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5394/"><span class="aria-hidden">←</span> Previous: FLUID-5394</a>
+        <a class="mx-1" href="/browse/FLUID-5396/">Next: FLUID-5396 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

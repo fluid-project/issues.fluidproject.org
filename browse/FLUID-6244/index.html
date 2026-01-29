@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6244  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6244 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6244/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6244/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6244/">FLUID-6244</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6244: Implement a build process for construction icon fonts in the Infusion-Icons repo</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6244">FLUID-6244</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-02-01T15:53:25.531-0500" prefix="">2018-02-01T15:53:25.531-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-04-27T07:33:47.332-0400" prefix="">2018-04-27T07:33:47.332-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Infusion-Icons</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The <a href="https://github.com/fluid-project/infusion-icons">Infusion-Icons</a> repo contains all of the SVGs that having been prepared for use as icons based off of the <a href="https://wiki.fluidproject.org/display/fluid/Infusion+Icons+Visual+Style+Guide">Infusion Icons Visual Style Guide</a>.</p>
+<p></p>
+<p>We've been having <a href="http://fluid.2324889.n4.nabble.com/Icon-font-building-tt10242.html">discussions</a> about how to best convert these into font icons. The "<a href="https://wiki.fluidproject.org/display/fluid/Standard+workflow+in+maintaining+and+creating+icon+fonts">Standard workflow in maintaining and creating icon fonts</a>" wiki page describes a process for using <a href="https://github.com/sapegin/grunt-webfont">grunt-webfont</a> to generate the icon font. This process seems to work with the caveat that the node engine is not robust enough. We've done some investigation and the fontforge engine seems to produce good icons, however, fontforge is a separate install.</p>
+<p></p>
+<p>The initial plan was for a project to pull in Infusion-Icons via npm and run grunt-webfont locally to generate the projects specific icon font. However, the need to install fontforge separately makes this problematic.</p>
+<p></p>
+<p>Here's the suggestion for a new process:</p>
+<ul>
+<li>In Infusion-Icons add a grunt task to generate an icon font that includes all of the icons</li>
+<li>In Infusion-Icons add a grunt task for building a custom icon font based on a config file
+<ul>
+<li>The config file will be versioned in the project's repo (e.g. Infusion), and include the paths to the SVGs to use, and their codepoints</li>
+<li>The config file would be able to contain any configuration that is valid for grunt-webfont task</li>
+</ul>
+</li>
+<li>After an icon font is generated, the implementor will need to manually place it&#160;in the specific project</li>
+</ul>
+<p>Example config:</p>
+<pre><code class="hljs language-java">{
+    src: [
+        <span class="hljs-string">"svg/contrast.svg"</span>,
+        <span class="hljs-string">"svg/reset-undo-arrow.svg"</span>,
+        <span class="hljs-string">"svg/line-space-expanded.svg"</span>,
+        <span class="hljs-string">"svg/line-space-condensed.svg"</span>,
+        <span class="hljs-string">"svg/line-space.svg"</span>
+    ],
+    options: {
+        font: <span class="hljs-string">"custom-icons"</span>,
+        codepoints: {
+            <span class="hljs-string">"contrast"</span>: <span class="hljs-number">0xE005</span>,
+            <span class="hljs-string">"reset-undo-arrow"</span>: <span class="hljs-number">0xE008</span>,
+            <span class="hljs-string">"line-space-expanded"</span>: <span class="hljs-number">0xE009</span>,
+            <span class="hljs-string">"line-space-condensed"</span>: <span class="hljs-number">0xE00a</span>,
+            <span class="hljs-string">"line-space"</span>: <span class="hljs-number">0xE00b</span>
+        }
+    }
+}
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24265">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2018-02-23T07:59:44.869-0500">2018-02-23T07:59:44.869-0500</relative-time></i></p>
+                        <p>PR ( <a href="https://github.com/fluid-project/infusion-icons/pull/4">https://github.com/fluid-project/infusion-icons/pull/4</a>&#160;) merged at&#160;034545fffcaf10903beeb1981426cffcf032740e</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6243/"><span class="aria-hidden">←</span> Previous: FLUID-6243</a>
+        <a class="mx-1" href="/browse/FLUID-6245/">Next: FLUID-6245 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

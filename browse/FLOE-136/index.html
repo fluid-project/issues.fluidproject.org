@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-136  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-136 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-136/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-136/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-136/">FLOE-136</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-136: Cursor appears in the middle of the video placeholder</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-136">FLOE-136</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>In Progress</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Jonathan Hung</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Dana">Dana</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-01-06T12:32:31.379-0500" prefix="">2014-01-06T12:32:31.379-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-01-14T07:51:20.200-0500" prefix="">2014-01-14T07:51:20.200-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Metadata</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Sometimes when placing the editing cursor in the editable area, the cursor appears in the center of the video place holder.  Nothing happens when typing.  </p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Firefox</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10932">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2014-01-07T10:55:30.941-0500">2014-01-07T10:55:30.941-0500</relative-time></i></p>
+                        <p>To reproduce:<br>
+1. Open <a href="http://metadata.floeproject.org/demos/html/metadata.html">http://metadata.floeproject.org/demos/html/metadata.html</a><br>
+2. Click edit pane to put cursor into the text editor<br>
+3. Type something into a single row of text<br>
+4. Go to the "Enter web address for video" field and enter a value and press "OK"<br>
+5. Click anywhere in the editable pane except the first row of text<br>
+6. Notice cursor appears to float somewhere inside the editable pane<br>
+7. Now try typing something - nothing happens. This is the bug.</p>
+
+                    </li>
+                    
+                    <li id="comment-10933">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2014-01-07T11:07:10.404-0500">2014-01-07T11:07:10.404-0500</relative-time></i></p>
+                        <p>Part of the problem I suspect has to do with the way the containers used to create the placeholder. Because the inner-most div does not have any padding, the cursor appears in the middle of the placeholder. This placeholder should be modified so that the cursor should properly appear after the container.</p>
+
+                    </li>
+                    
+                    <li id="comment-10934">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2014-01-13T14:14:54.072-0500">2014-01-13T14:14:54.072-0500</relative-time></i></p>
+                        <p>I'm thinking that the current implementation of using styled div containers to resemble a placeholder is perhaps the wrong approach since the divs themselves lack any content or semantics.</p>
+<p>I think a better approach to this would be to use an image since it has more semantics and can be described as a representation / placeholder for a video using alt text.</p>
+
+                    </li>
+                    
+                    <li id="comment-10935">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-01-14T07:51:20.200-0500">2014-01-14T07:51:20.200-0500</relative-time></i></p>
+                        <p>It may also make sense to replace them to make it easier to remove them. Right now we have made the placeholders non-editable, which is why you get the issue of a cursor that can't do anything. This is because you wouldn't want to remove portions of the placeholder (i.e. just the play icon). If we do support removing, we need a way to notify that it has been removed.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-135/"><span class="aria-hidden">←</span> Previous: FLOE-135</a>
+        <a class="mx-1" href="/browse/FLOE-137/">Next: FLOE-137 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

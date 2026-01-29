@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6533  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6533 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6533/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6533/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6533/">FLUID-6533</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6533: Orator component throws unhandled promise rejection when synthesis fails</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6533">FLUID-6533</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-07-23T09:31:40.068-0400" prefix="">2020-07-23T09:31:40.068-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:12.398-0400" prefix="">2024-07-22T10:35:12.398-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Self Voicing</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In the <a href="/browse/FLUID-6145/">FLUID-6145</a> line promise rejections need to be handled. The orator component fails to handle rejections of promises stemming from the speech synthesis throwing an error.</p>
+<p>The <a href="https://github.com/fluid-project/infusion/blob/de7d4862533c4be46f576b8438849364aeee853d/src/components/textToSpeech/js/TextToSpeech.js#L389">root promise</a> is in the&#160;<a href="https://github.com/fluid-project/infusion/blob/de7d4862533c4be46f576b8438849364aeee853d/src/components/textToSpeech/js/TextToSpeech.js#L378">fluid.textToSpeech.utterance</a> grade which <a href="https://github.com/fluid-project/infusion/blob/de7d4862533c4be46f576b8438849364aeee853d/src/components/textToSpeech/js/TextToSpeech.js#L427-L428">resolves/rejects</a> the promise based on the speech utterance's onend and onerror events.</p>
+<p></p>
+<p>The above promise is followed by the one generated in <a href="https://github.com/fluid-project/infusion/blob/de7d4862533c4be46f576b8438849364aeee853d/src/components/textToSpeech/js/TextToSpeech.js#L318">fluid.textToSpeech.queueSpeech</a> promise.</p>
+<p></p>
+<p>Eventually these all follow up to the being handled in the <a href="https://github.com/fluid-project/infusion/blob/de7d4862533c4be46f576b8438849364aeee853d/src/components/orator/js/Orator.js#L679">fluid.orator.domReader.readFromDOM</a> and <a href="https://github.com/fluid-project/infusion/blob/de7d4862533c4be46f576b8438849364aeee853d/src/components/orator/js/Orator.js#L930">fluid.orator.selectionReader.queueSpeech</a> functions. However, they both only handle promise resolutions and not rejections. These should both provide an appropriate handler for when the promise rejects.</p>
+<p></p>
+<p>NOTE: This was first discovered when testing MS Edge 44 with the Story Telling tool. It seems that Edge 44 throws an error if the speech synthesis utterance has the lang attribute set to a language code for which there is no matching synthesizer available.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6532/"><span class="aria-hidden">←</span> Previous: FLUID-6532</a>
+        <a class="mx-1" href="/browse/FLUID-6534/">Next: FLUID-6534 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-97  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-97 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-97/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-97/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-97/">SJRK-97</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-97: Text-to-speech cuts off early</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-97">SJRK-97</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-05-28T15:07:35.356-0400" prefix="">2018-05-28T15:07:35.356-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-04-14T08:47:30.644-0400" prefix="">2020-04-14T08:47:30.644-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In Chrome 66 on Windows 10, the text-to-speech used by the "Listen to my story" button will only read part of the content when reading in Spanish.</p>
+<p>English seems to work fine, but Spanish does not.</p>
+<p>Possibly related to <a href="/browse/FLUID-6119/">FLUID-6119</a></p>
+<p>Tested in Edge 41, but the button does not work at all. Using the browser's built-in Read Aloud feature, it does not read in a Spanish voice (may depend on system language settings rather than DOM lang attribute).<br>
+Tested also in Firefox 60; while the button works, it only reads in an English voice. Again this may be due to system settings.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Windows Pro, version 10.0.16299 Build 16299<br>
+Chrome, version 66.0.3359.181 (Official Build) (64-bit)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26436">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2018-06-25T11:20:16.639-0400">2018-06-25T11:20:16.639-0400</relative-time></i></p>
+                        <p>Confirmed issue persists in Chrome 67 on Windows 10.</p>
+<p>Possibly related: clicking the button in English will interrupt and stop the speaker, and clicking it once more will start it over. In Spanish, by contrast, clicking the button will immediately restart it without stopping it, every time.</p>
+
+                    </li>
+                    
+                    <li id="comment-26437">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2019-10-10T12:51:11.163-0400">2019-10-10T12:51:11.163-0400</relative-time></i></p>
+                        <p>This needs to be re-tested once the Orator can speak in Spanish 🙂</p>
+
+                    </li>
+                    
+                    <li id="comment-26438">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2020-04-13T20:37:06.059-0400">2020-04-13T20:37:06.059-0400</relative-time></i></p>
+                        <p>Issue persists in Chrome 81 on Windows 10</p>
+
+                    </li>
+                    
+                    <li id="comment-26439">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2020-04-14T08:47:30.644-0400">2020-04-14T08:47:30.644-0400</relative-time></i></p>
+                        <p>Are there Spanish voices, speech synthesizers, installed on your machine? Also it might depend on which particular locale you are using. e.g. es-es, es-mx</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-96/"><span class="aria-hidden">←</span> Previous: SJRK-96</a>
+        <a class="mx-1" href="/browse/SJRK-98/">Next: SJRK-98 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

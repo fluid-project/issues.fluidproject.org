@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-338  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-338 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-338/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-338/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-338/">SJRK-338</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-338: Load Normalize.css from local files instead of Cloudflare</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-338">SJRK-338</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-04-14T16:59:31.596-0400" prefix="">2020-04-14T16:59:31.596-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-04-14T17:00:24.512-0400" prefix="">2020-04-14T17:00:24.512-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In Chrome, loading the site will generate the following warning in the console:</p>
+<pre><code class="hljs">A cookie associated <span class="hljs-keyword">with</span> <span class="hljs-keyword">a</span> cross-site resource <span class="hljs-keyword">at</span> <span class="hljs-keyword">http</span>://cloudflare.com/ was <span class="hljs-built_in">set</span> <span class="hljs-keyword">without</span> <span class="hljs-keyword">the</span> `SameSite` attribute. A future release <span class="hljs-keyword">of</span> Chrome will only deliver cookies <span class="hljs-keyword">with</span> cross-site requests <span class="hljs-keyword">if</span> they are <span class="hljs-built_in">set</span> <span class="hljs-keyword">with</span> `SameSite=None` <span class="hljs-keyword">and</span> `Secure`. You can review cookies <span class="hljs-keyword">in</span> developer tools under Application&gt;Storage&gt;Cookies <span class="hljs-keyword">and</span> see more details <span class="hljs-keyword">at</span> <span class="hljs-keyword">https</span>://www.chromestatus.com/feature/<span class="hljs-number">5088147346030592</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">https</span>://www.chromestatus.com/feature/<span class="hljs-number">5633521622188032.</span>
+</code></pre>
+<p>This is because we're linking externally to load in Normalize.css:</p>
+<pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css"</span>&gt;</span>
+</code></pre>
+<p>Since this is linking a pinned version anyway, consider storing this file with the code (assuming Normalize's licence allows this) instead of loading it in remotely. This may also dovetail nicely with the work described in <a href="/browse/SJRK-152/">SJRK-152</a>.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-337/"><span class="aria-hidden">←</span> Previous: SJRK-337</a>
+        <a class="mx-1" href="/browse/SJRK-339/">Next: SJRK-339 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

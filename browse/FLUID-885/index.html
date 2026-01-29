@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-885  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-885 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-885/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-885/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-885/">FLUID-885</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-885: Font styling displayed differently in edit vs non-edit mode</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-885">FLUID-885</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-07-10T13:34:11.000-0400" prefix="">2008-07-10T13:34:11.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-01-04T13:34:21.536-0500" prefix="">2011-01-04T13:34:21.536-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                            <li>0.3</li>
+                            
+                            <li>0.4beta1</li>
+                            
+                            <li>0.4</li>
+                            
+                            <li>0.5beta1</li>
+                            
+                            <li>0.5</li>
+                            
+                            <li>0.6beta1</li>
+                            
+                            <li>0.6</li>
+                            
+                            <li>0.7</li>
+                            
+                            <li>0.8</li>
+                            
+                            <li>1.0</li>
+                            
+                            <li>1.1</li>
+                            
+                            <li>1.1.1</li>
+                            
+                            <li>1.1.2</li>
+                            
+                            <li>1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When editing the text in an in-line edit field, the text appears correctly in Lucida Grande font (e.g. &amp;); however, it is displayed with a different font style. Copying and pasting the incorrect style into another program (e.g. ms word) shows the correct font.</p>
+<p>Steps to reproduce:</p>
+<p>1) open the inline edit demo page from the daily build site<br>
+<a href="http://build.fluidproject.org/fluid/sample-code/inline-edit/announcements/announcements.html">http://build.fluidproject.org/fluid/sample-code/inline-edit/announcements/announcements.html</a></p>
+<p>2) Edit one of the in-line edit fields by replacing the text with an '&amp;'. Notice the font.</p>
+<p>3) Press 'enter' on the keyboard to close the edit mode. Notice the font styling has changed.</p>
+<p>This also effects the display of non-standard characters. You can find some here:<br>
+<a href="http://www.alanwood.net/unicode/miscellaneous_symbols.html">http://www.alanwood.net/unicode/miscellaneous_symbols.html</a></p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF2, FF3, Opera 9.6, Safari 3.2 (Mac OS 10.5)<br>
+Safari 3.2 (Mac OS 10.4)<br>
+FF2, FF3, IE6, IE7, IE8, Opera 9.6 (Win XP)<br>
+FF3, IE7, IE8 (Win Vista)<br>
+IE6 (Win 2000)</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-885/Picture 2.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-885/Picture 2.png" alt="Picture 2.png">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-885/screenshot-1.jpg">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-885/screenshot-1.jpg" alt="screenshot-1.jpg">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-885/screenshot-2.jpg">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-885/screenshot-2.jpg" alt="screenshot-2.jpg">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-885/screenshot-3.jpg">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-885/screenshot-3.jpg" alt="screenshot-3.jpg">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-885/screenshot-4.jpg">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-885/screenshot-4.jpg" alt="screenshot-4.jpg">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20391">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-07-10T13:40:27.000-0400">2008-07-10T13:40:27.000-0400</relative-time></i></p>
+                        <p>'screenshot-1' shows how the '&amp;' symbol looks in edit mode</p>
+
+                    </li>
+                    
+                    <li id="comment-20392">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-07-10T13:41:11.000-0400">2008-07-10T13:41:11.000-0400</relative-time></i></p>
+                        <p>'screenshot-2' shows how the '&amp;' looks outside of edit mode</p>
+
+                    </li>
+                    
+                    <li id="comment-20393">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-07-10T13:43:57.000-0400">2008-07-10T13:43:57.000-0400</relative-time></i></p>
+                        <p>'screenshot-3' shows an example of a non-standard character/symbol in edit mode. It's supposed to be a smiley face.</p>
+
+                    </li>
+                    
+                    <li id="comment-20394">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-07-10T13:45:37.000-0400">2008-07-10T13:45:37.000-0400</relative-time></i></p>
+                        <p>'screenshot-4' shows the same non-standard character/symbol as 'screenshot-3', but this time out of edit mode. Notice how it's now represented by a small square.</p>
+
+                    </li>
+                    
+                    <li id="comment-20395">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-07-11T19:57:38.000-0400">2008-07-11T19:57:38.000-0400</relative-time></i></p>
+                        <p>Daphne, could you try this out, and see what you think? Is this an issue? It's probably a side effect of the font that this sample page uses, but let me know what you think.</p>
+
+                    </li>
+                    
+                    <li id="comment-20396">
+                        <p class="mb-0"><b>Daphne Ogle</b> <i>commented <relative-time datetime="2008-07-14T19:52:38.000-0400">2008-07-14T19:52:38.000-0400</relative-time></i></p>
+                        <p>This is weird.  The "&amp;" is particularly handled bad here.  I can't figure out what font it is being displayed in.  The real problem is that, at least to me, it doesn't even look like an ampersand in the font it's displayed in.</p>
+<p>While checking this out I found that the edits are happening in a different font generally than display.  So on the daily build site Justin points to, the text is displayed in Times but when edit mode kicks in it displays in Arial.   In this particular case it isn't a big deal but will be when users are editing formatted text.  We know users want a wysiwyg interaction.</p>
+<p>I'm attaching a screen shot that show the 2 different fonts.  </p>
+<p>Can the component know what font the application is using for display of that field and use the same?</p>
+
+                    </li>
+                    
+                    <li id="comment-20397">
+                        <p class="mb-0"><b>Daphne Ogle</b> <i>commented <relative-time datetime="2008-07-14T19:54:12.000-0400">2008-07-14T19:54:12.000-0400</relative-time></i></p>
+                        <p>screen shot showing different fonts used in display versus edit mode.</p>
+
+                    </li>
+                    
+                    <li id="comment-20398">
+                        <p class="mb-0"><b>Daphne Ogle</b> <i>commented <relative-time datetime="2008-07-17T17:50:42.000-0400">2008-07-17T17:50:42.000-0400</relative-time></i></p>
+                        <p>Another complication with the different display versus edit font is that the text is larger than the edit field so the user can't see all the text they want to edit once they are in edit mode.  I'm assuming we are calculating text field size based on the text pre-edit.  This doesn't seem to happen in Safari only in Firefox (both on macs, not sure about PCs)</p>
+
+                    </li>
+                    
+                    <li id="comment-20399">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-08-26T09:36:39.000-0400">2008-08-26T09:36:39.000-0400</relative-time></i></p>
+                        <p>The font styling issue does not seem to occur in the bspace example (<a href="http://build.fluidproject.org/fluid/sample-code/inline-edit/section-info/section-info.html">http://build.fluidproject.org/fluid/sample-code/inline-edit/section-info/section-info.html</a>), or it could be that the font styling is similar.</p>
+
+                    </li>
+                    
+                    <li id="comment-20400">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-10-31T09:34:11.000-0400">2008-10-31T09:34:11.000-0400</relative-time></i></p>
+                        <p>design-watched</p>
+
+                    </li>
+                    
+                    <li id="comment-20401">
+                        <p class="mb-0"><b>Daphne Ogle</b> <i>commented <relative-time datetime="2009-03-13T15:16:38.000-0400">2009-03-13T15:16:38.000-0400</relative-time></i></p>
+                        <p>Unassigning so this can go into the development pool of bugs.</p>
+
+                    </li>
+                    
+                    <li id="comment-20402">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2011-01-04T13:26:40.687-0500">2011-01-04T13:26:40.687-0500</relative-time></i></p>
+                        <p>This issue is covered by the Simple Inline Edit Test plan.<br>
+Infusion 1.3 release testing did not reveal any issues related to mis-coding of characters.</p>
+
+                    </li>
+                    
+                    <li id="comment-20403">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2011-01-04T13:34:21.530-0500">2011-01-04T13:34:21.530-0500</relative-time></i></p>
+                        <p>Fixed in Infusion 1.3.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-884/"><span class="aria-hidden">←</span> Previous: FLUID-884</a>
+        <a class="mx-1" href="/browse/FLUID-886/">Next: FLUID-886 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

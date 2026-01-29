@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5896  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5896 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5896/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5896/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5896/">FLUID-5896</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5896: Cannot deploy infusion-docs to the live site</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5896">FLUID-5896</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-05-02T14:50:03.745-0400" prefix="">2016-05-02T14:50:03.745-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-07-08T09:09:05.447-0400" prefix="">2016-07-08T09:09:05.447-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Tech. Documentation</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Run command "npm run deploy" fails at deploying infusion-docs to the live site, which is resulted from the renaming of docpad.js to docpad-config.js. Renaming docpad-config.js to docpad.js then running "docpad deploy-ghpages --env static" solves the issue.</p>
+<p>The renaming from docpad.js to docpad-config.js was to work around an issue at Windows platform - <a href="https://github.com/docpad/docpad/issues/561">https://github.com/docpad/docpad/issues/561</a></p>
+<p>Needs to find a solution to work around both issues.</p>
+<p>PS: The error thrown at running "npm run deploy":</p>
+<p>$ docpad deploy-ghpages -c docpad-config.js --env static<br>
+info: Welcome to DocPad v6.78.4 (local installation: /Users/cindyli/Development/infusion-docs-production/node_modules/docpad)<br>
+notice: Please donate to DocPad or have your company sponsor it: <a href="http://docpad.org/donate">http://docpad.org/donate</a><br>
+info: Contribute: <a href="http://docpad.org/docs/contribute">http://docpad.org/docs/contribute</a><br>
+info: Plugins: ghpages, handlebars, highlightjs, marked<br>
+info: Environment: static<br>
+info: Deployment to GitHub Pages starting...<br>
+info: Generating...<br>
+error: The action completed successfully<br>
+error: Something went wrong while rendering: /Users/cindyli/Development/infusion-docs-production/src/documents/APIChangesFrom1_4To1_5.md<br>
+The error follows:</p>
+<p>Error<br>
+at Object.&lt;anonymous&gt; (/Users/cindyli/Development/infusion-docs-production/node_modules/docpad-plugin-handlebars/node_modules/handlebars/dist/cjs/handlebars/exception.js:26:23)<br>
+at Module._compile (module.js:435:26)<br>
+at Object.Module._extensions..js (module.js:442:10)<br>
+at Module.load (module.js:356:32)<br>
+at Function.Module._load (module.js:311:12)<br>
+at Module.require (module.js:366:17)<br>
+at require (module.js:385:17)<br>
+at Object.&lt;anonymous&gt; (/Users/cindyli/Development/infusion-docs-production/node_modules/docpad-plugin-handlebars/node_modules/handlebars/dist/cjs/handlebars/base.js:3:17)<br>
+at Module._compile (module.js:435:26)<br>
+at Object.Module._extensions..js (module.js:442:10)<br>
+at Module.load (module.js:356:32)<br>
+at Function.Module._load (module.js:311:12)<br>
+at Module.require (module.js:366:17)<br>
+at require (module.js:385:17)<br>
+at Object.&lt;anonymous&gt; (/Users/cindyli/Development/infusion-docs-production/node_modules/docpad-plugin-handlebars/node_modules/handlebars/dist/cjs/handlebars.runtime.js:3:12)<br>
+at Module._compile (module.js:435:26)<br>
+at Object.Module._extensions..js (module.js:442:10)<br>
+at Module.load (module.js:356:32)<br>
+at Function.Module._load (module.js:311:12)<br>
+at Module.require (module.js:366:17)<br>
+at require (module.js:385:17)<br>
+at Object.&lt;anonymous&gt; (/Users/cindyli/Development/infusion-docs-production/node_modules/docpad-plugin-handlebars/node_modules/handlebars/dist/cjs/handlebars.js:3:18)<br>
+at Module._compile (module.js:435:26)<br>
+at Object.Module._extensions..js (module.js:442:10)<br>
+at Module.load (module.js:356:32)<br>
+at Function.Module._load (module.js:311:12)<br>
+at Module.require (module.js:366:17)<br>
+at require (module.js:385:17)<br>
+at Object.&lt;anonymous&gt; (/Users/cindyli/Development/infusion-docs-production/node_modules/docpad-plugin-handlebars/node_modules/handlebars/lib/index.js:6:18)<br>
+at Module._compile (module.js:435:26)<br>
+at Object.Module._extensions..js (module.js:442:10)<br>
+at Module.load (module.js:356:32)<br>
+at Function.Module._load (module.js:311:12)<br>
+at Module.require (module.js:366:17)<br>
+at require (module.js:385:17)<br>
+at new HandlebarsPlugin (/Users/cindyli/Development/infusion-docs-production/node_modules/docpad-plugin-handlebars/out/handlebars.plugin.js:20:40)<br>
+at PluginLoader.create (/Users/cindyli/Development/infusion-docs-production/node_modules/docpad/out/lib/plugin-loader.js:306:26)<br>
+at /Users/cindyli/Development/infusion-docs-production/node_modules/docpad/out/lib/docpad.js:4129:29<br>
+at PluginLoader.load (/Users/cindyli/Development/infusion-docs-production/node_modules/docpad/out/lib/plugin-loader.js:286:7)<br>
+at /Users/cindyli/Development/infusion-docs-production/node_modules/docpad/out/lib/docpad.js:4125:27<br>
+at PluginLoader.unsupported (/Users/cindyli/Development/infusion-docs-production/node_modules/docpad/out/lib/plugin-loader.js:208:7)<br>
+at /Users/cindyli/Development/infusion-docs-production/node_modules/docpad/out/lib/docpad.js:4109:25<br>
+at success (/Users/cindyli/Development/infusion-docs-production/node_modules/docpad/out/lib/plugin-loader.js:149:16)<br>
+at /Users/cindyli/Development/infusion-docs-production/node_modules/docpad/out/lib/plugin-loader.js:182:20<br>
+at /Users/cindyli/Development/infusion-docs-production/node_modules/docpad/node_modules/safefs/node_modules/graceful-fs/graceful-fs.js:78:16<br>
+at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:380:3)</p>
+<p>To report the above, follow the guide at: <a href="http://docpad.org/bug-report">http://docpad.org/bug-report</a><br>
+Error<br>
+at Object.&lt;anonymous&gt; (/Users/cindyli/Development/infusion-docs-production/node_modules/docpad-plugin-handlebars/node_modules/handlebars/dist/cjs/handlebars/exception.js:26:23)<br>
+at Module._compile (module.js:435:26)<br>
+at Object.Module._extensions..js (module.js:442:10)<br>
+at Module.load (module.js:356:32)<br>
+at Function.Module._load (module.js:311:12)<br>
+at Module.require (module.js:366:17)<br>
+at require (module.js:385:17)<br>
+at Object.&lt;anonymous&gt; (/Users/cindyli/Development/infusion-docs-production/node_modules/docpad-plugin-handlebars/node_modules/handlebars/dist/cjs/handlebars/base.js:3:17)<br>
+at Module._compile (module.js:435:26)<br>
+at Object.Module._extensions..js (module.js:442:10)<br>
+at Module.load (module.js:356:32)<br>
+at Function.Module._load (module.js:311:12)<br>
+at Module.require (module.js:366:17)<br>
+at require (module.js:385:17)<br>
+at Object.&lt;anonymous&gt; (/Users/cindyli/Development/infusion-docs-production/node_modules/docpad-plugin-handlebars/node_modules/handlebars/dist/cjs/handlebars.runtime.js:3:12)<br>
+at Module._compile (module.js:435:26)<br>
+at Object.Module._extensions..js (module.js:442:10)<br>
+at Module.load (module.js:356:32)<br>
+at Function.Module._load (module.js:311:12)<br>
+at Module.require (module.js:366:17)<br>
+at require (module.js:385:17)<br>
+at Object.&lt;anonymous&gt; (/Users/cindyli/Development/infusion-docs-production/node_modules/docpad-plugin-handlebars/node_modules/handlebars/dist/cjs/handlebars.js:3:18)<br>
+at Module._compile (module.js:435:26)<br>
+at Object.Module._extensions..js (module.js:442:10)<br>
+at Module.load (module.js:356:32)<br>
+at Function.Module._load (module.js:311:12)<br>
+at Module.require (module.js:366:17)<br>
+at require (module.js:385:17)<br>
+at Object.&lt;anonymous&gt; (/Users/cindyli/Development/infusion-docs-production/node_modules/docpad-plugin-handlebars/node_modules/handlebars/lib/index.js:6:18)<br>
+at Module._compile (module.js:435:26)<br>
+at Object.Module._extensions..js (module.js:442:10)<br>
+at Module.load (module.js:356:32)<br>
+at Function.Module._load (module.js:311:12)<br>
+at Module.require (module.js:366:17)<br>
+at require (module.js:385:17)<br>
+at new HandlebarsPlugin (/Users/cindyli/Development/infusion-docs-production/node_modules/docpad-plugin-handlebars/out/handlebars.plugin.js:20:40)<br>
+at PluginLoader.create (/Users/cindyli/Development/infusion-docs-production/node_modules/docpad/out/lib/plugin-loader.js:306:26)<br>
+at /Users/cindyli/Development/infusion-docs-production/node_modules/docpad/out/lib/docpad.js:4129:29<br>
+at PluginLoader.load (/Users/cindyli/Development/infusion-docs-production/node_modules/docpad/out/lib/plugin-loader.js:286:7)<br>
+at /Users/cindyli/Development/infusion-docs-production/node_modules/docpad/out/lib/docpad.js:4125:27<br>
+at PluginLoader.unsupported (/Users/cindyli/Development/infusion-docs-production/node_modules/docpad/out/lib/plugin-loader.js:208:7)<br>
+at /Users/cindyli/Development/infusion-docs-production/node_modules/docpad/out/lib/docpad.js:4109:25<br>
+at success (/Users/cindyli/Development/infusion-docs-production/node_modules/docpad/out/lib/plugin-loader.js:149:16)<br>
+at /Users/cindyli/Development/infusion-docs-production/node_modules/docpad/out/lib/plugin-loader.js:182:20<br>
+at /Users/cindyli/Development/infusion-docs-production/node_modules/docpad/node_modules/safefs/node_modules/graceful-fs/graceful-fs.js:78:16<br>
+at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:380:3)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-21985">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2016-05-02T16:31:48.818-0400">2016-05-02T16:31:48.818-0400</relative-time></i></p>
+                        <p>A helpful article on how to manual push a sub-directory to gh-pages branch: <a href="https://gist.github.com/cobyism/4730490">https://gist.github.com/cobyism/4730490</a></p>
+
+                    </li>
+                    
+                    <li id="comment-21995">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2016-05-03T09:32:16.046-0400">2016-05-03T09:32:16.046-0400</relative-time></i></p>
+                        <p>Issued a pull request to rename the docpad-config.js to docpad.js: <a href="https://github.com/fluid-project/infusion-docs/pull/87">https://github.com/fluid-project/infusion-docs/pull/87</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5895/"><span class="aria-hidden">←</span> Previous: FLUID-5895</a>
+        <a class="mx-1" href="/browse/FLUID-5897/">Next: FLUID-5897 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

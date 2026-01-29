@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5204  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5204 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5204/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5204/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5204/">FLUID-5204</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5204: A number of Infusion's unit tests fail on IE 10.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5204">FLUID-5204</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-10-31T15:50:16.533-0400" prefix="">2013-10-31T15:50:16.533-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T11:26:35.391-0500" prefix="">2014-03-03T11:26:35.391-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Renderer</li>
+                            
+                            <li>Reorderer</li>
+                            
+                            <li>Uploader</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The following tests are failing on IE10 on the build server:</p>
+<p>Renderer-test.html<br>
+RendererUtilities-test.html</p>
+<p>The Renderer-related tests seem to failing due to IE recognizing "id" and "rsf:id" as the same attribute. I get messages about the DOCTYPE being invalid as well, perhaps these are related?</p>
+<p>ImageReorderer-test.html<br>
+LayoutReorderer-test.html<br>
+FileQueueView-test.html</p>
+<p>These seem to be legitimate test failures, and I think are similar to failures on IE8 as well. It looks to me like these failures relate to focus management, but I'm not certain.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Internet Explorer 10 on Windows 7</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15113">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2013-10-31T15:53:13.017-0400">2013-10-31T15:53:13.017-0400</relative-time></i></p>
+                        <p>Here's an example of some the error messages I receive in IE10 for the Renderer test:</p>
+<p>HTML1524: Invalid DOCTYPE. The shortest valid doctype is "&lt;!DOCTYPE html&gt;". <br>
+Renderer-test.html, line 1 character 1<br>
+HTML1512: Unmatched end tag. <br>
+Renderer-test.html, line 85 character 45<br>
+HTML1500: Tag cannot be self-closing. Use an explicit closing tag. <br>
+Renderer-test.html, line 320 character 11<br>
+HTML1500: Tag cannot be self-closing. Use an explicit closing tag. <br>
+Renderer-test.html, line 324 character 11<br>
+HTML1521: Unexpected "&lt;/body&gt;" or end of file. All open elements should be closed before the end of the document. <br>
+Renderer-test.html, line 334 character 1<br>
+15:51:58.887:  Error parsing template: Attribute: duplicate attributes not allowed at line 5 <br>
+15:51:58.888:  Just read: bel&gt; <br>
+&lt;span id="target"  <br>
+15:51:58.889:  Still to read: id="target" rsf:id="target"&gt;La <br>
+15:51:58.891:  ASSERTION FAILED: Error parsing template: Attribute: duplicate attributes not allowed at line 5 <br>
+15:51:58.891:  Current activity:  <br>
+15:51:58.901:  Error parsing template: Attribute: duplicate attributes not allowed at line 3 <br>
+15:51:58.902:  Just read: /label&gt;<br>
+&lt;span id="branch"  <br>
+15:51:58.903:  Still to read: id="branch" rsf:id="target:"&gt;M <br>
+15:51:58.904:  ASSERTION FAILED: Error parsing template: Attribute: duplicate attributes not allowed at line 3 </p>
+
+                    </li>
+                    
+                    <li id="comment-15117">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-11-20T23:37:34.828-0500">2013-11-20T23:37:34.828-0500</relative-time></i></p>
+                        <p>I've issued a pull request covering the focus issues as well as the failure of ModelTransformations tests under IE8. The doctype/rsf:id issues remain to be investigated.</p>
+
+                    </li>
+                    
+                    <li id="comment-15120">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-12-17T03:09:01.368-0500">2013-12-17T03:09:01.368-0500</relative-time></i></p>
+                        <p>Looking into the duplicate id issue, it appears to be a simple bug in IE10 and above. After roundtripping, the markup is corrupted so that it reads</p>
+<p>&lt;span id="target" id="target" rsf:id="target"&gt; - that is, the attribute is genuinely duplicated.</p>
+<p>The message about the invalid DOCTYPE is unrelated, and choosing any other doctype has no effect on the issue. I also tried the "emulate IE9" http-equiv mentioned in this answer <a href="http://msdn.microsoft.com/en-us/library/ie/hh801216(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/ie/hh801216(v=vs.85).aspx</a> (for reference, since in general Microsoft don't care about stable URLs, the tag is &lt;meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9"&gt; ) but with no effect. Also I could find no reports of such an issue - the simplest thing seems to be to hack the "XML Pull Parser" yet further to take account of this bug (it already has quite enough hacks to deal with roundtrip corruption caused by previous broken versions of IE - it's good to know that Microsoft means to continue this tradition until the bitter end). The most economical hack appears to be to only signal the "duplicate attribute" error in the case the markup tries to set a different value for the attribute on the second occasion.</p>
+<p>In general we discourage users from sourcing markup templates from the live document for just this kind of reason (I recall we succeeded in banishing "selfRendering" entirely from CSpace, for example), but in some situations it appears unavoidable and would be a nice facility to retain on a "best efforts" basis.</p>
+
+                    </li>
+                    
+                    <li id="comment-15124">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-02-11T02:38:26.929-0500">2014-02-11T02:38:26.929-0500</relative-time></i></p>
+                        <p>Merged into trunk at revision c0e08caca6330298b55c78fe896b6a444e05f55a</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5203/"><span class="aria-hidden">←</span> Previous: FLUID-5203</a>
+        <a class="mx-1" href="/browse/FLUID-5205/">Next: FLUID-5205 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

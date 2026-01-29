@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3661  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3661 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3661/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3661/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3661/">FLUID-3661</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3661: in the event system, fire should return true if event is not prevented</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3661">FLUID-3661</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Laurel%20Williams">Laurel Williams</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-05-27T15:48:03.777-0400" prefix="">2010-05-27T15:48:03.777-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-06-09T12:53:05.584-0400" prefix="">2015-06-09T12:53:05.584-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.2</li>
+                            
+                            <li>1.3</li>
+                            
+                            <li>1.3.1</li>
+                            
+                            <li>1.4</li>
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>There are three types of events, 'multicast', 'unicast' and 'preventable'. When a preventable event is fired, one of its event listeners may return false, which prevents further listeners from being checked and cancels the event operation. The firer returns false when an event is prevented, however it does not return true when it is not prevented - instead it returns 'undefined'.</p>
+<p>Note when testing the returned value, both false and undefined are 'falsey'. For convenience, it may be useful to return true when the event is not prevented. </p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>all</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-13679">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-09T08:44:41.209-0400">2015-06-09T08:44:41.209-0400</relative-time></i></p>
+                        <p>Antranig Basman do you have any thoughts on this issue?</p>
+
+                    </li>
+                    
+                    <li id="comment-13681">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-06-09T09:43:34.911-0400">2015-06-09T09:43:34.911-0400</relative-time></i></p>
+                        <p>"preventable" events are a real rarity and the real danger with them is that people might try to use them - it's hard to think of any genuine use cases, and on the other hand, I've found new users to Infusion trying to use them everywhere since they are attracted to them by the documentation. Making any change to the current behaviour would also be difficult - since we make the contract that "the return value of received by the event firer is the first return value from a handler which is not undefined". Returning true in the case of non-prevention would then break the contract that any explicit return from a handler is received by the firer. If you're ok with it, I'd vote for closing this issue as a "Won't Fix".</p>
+
+                    </li>
+                    
+                    <li id="comment-13683">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-09T12:52:51.079-0400">2015-06-09T12:52:51.079-0400</relative-time></i></p>
+                        <p>I'm okay with won't fix. It's likely that most, if not all, cases that did or would use preventable events would be better handled via the change applier (model relay, model listeners, transformations).</p>
+
+                    </li>
+                    
+                    <li id="comment-13685">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-09T12:53:05.574-0400">2015-06-09T12:53:05.574-0400</relative-time></i></p>
+                        <p>See Antranig's comments</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3660/"><span class="aria-hidden">←</span> Previous: FLUID-3660</a>
+        <a class="mx-1" href="/browse/FLUID-3662/">Next: FLUID-3662 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

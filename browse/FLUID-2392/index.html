@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2392  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2392 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2392/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2392/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2392/">FLUID-2392</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2392: In IE6 &amp; IE7: Auto-binding not working properly - gets "behind"</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2392">FLUID-2392</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-03-20T15:52:52.000-0400" prefix="">2009-03-20T15:52:52.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-03-26T11:18:35.000-0400" prefix="">2009-03-26T11:18:35.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.8</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                            <li>Renderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>For some reason, in IE the auto-binding is not updating the model right away. When a UI control that is auto-bound to the model is changed, the model doesn't seem to be updated until focus moves away from the UI control, either by tabbing away or by clicking on another control.</p>
+<p>This can be observed in the UI Options template:<br>
+<a href="http://build.fluidproject.org/fluid/fluid-components/html/templates/UIOptions.html">http://build.fluidproject.org/fluid/fluid-components/html/templates/UIOptions.html</a><br>
+as described in <a href="/browse/FLUID-2253/">FLUID-2253</a>, which I think is just a manifestation of this issue.</p>
+<p>It can also be seen in the auto-bound parts these renderer examples:<br>
+<a href="http://build.fluidproject.org/fluid/sample-code/renderer/data-binding/menu.html">http://build.fluidproject.org/fluid/sample-code/renderer/data-binding/menu.html</a><br>
+<a href="http://build.fluidproject.org/fluid/sample-code/renderer/programmatic-tree/menu.html">http://build.fluidproject.org/fluid/sample-code/renderer/programmatic-tree/menu.html</a><br>
+In these examples, the checkboxes on the right side of the pages are auto-bound to the model (click the Render button at the top to actually render the data first). As soon as a checkbox is set or unset, the model (displayed below the menus) should update immediately, but in IE, a change only shows up in the model after another checkbox is changed.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>IE6 &amp; IE7</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-17509">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-03-20T15:54:45.000-0400">2009-03-20T15:54:45.000-0400</relative-time></i></p>
+                        <p>Bug Parade 1.0 release </p>
+
+                    </li>
+                    
+                    <li id="comment-17510">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2009-03-23T21:48:37.000-0400">2009-03-23T21:48:37.000-0400</relative-time></i></p>
+                        <p>IE is bloody stupid and suffers from this bug <a href="http://webbugtrack.blogspot.com/2007/11/bug-193-onchange-does-not-fire-properly.html">http://webbugtrack.blogspot.com/2007/11/bug-193-onchange-does-not-fire-properly.html</a> which causes a "change" event to only actually fire when a checkbox or radio button receives a blur, rather than when it is actually changed. Code has been added to the autobind functionality of the renderer to compensate for this - this actually represents added value now to the renderer infrastructure since it is possible to abstract over this issue - previous code used "change" just attached to the document. THE CATT is here.</p>
+<p>Resolved at revision 6814</p>
+
+                    </li>
+                    
+                    <li id="comment-17511">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2009-03-26T11:14:38.000-0400">2009-03-26T11:14:38.000-0400</relative-time></i></p>
+                        <p>This now works and the code looks fine.</p>
+
+                    </li>
+                    
+                    <li id="comment-17512">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-03-26T11:18:35.000-0400">2009-03-26T11:18:35.000-0400</relative-time></i></p>
+                        <p>Verified fix using:</p>
+<p>IE6 (Win XP)<br>
+IE7 (Win Vista)</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-2391/"><span class="aria-hidden">←</span> Previous: FLUID-2391</a>
+        <a class="mx-1" href="/browse/FLUID-2393/">Next: FLUID-2393 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

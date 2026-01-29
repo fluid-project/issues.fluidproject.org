@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> SJRK-170  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" SJRK-170 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/SJRK-170/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/SJRK-170/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/SJRK" data-pagefind-filter="project">Social Justice Repair Kit</a></li>
+                <li><a href="/browse/SJRK-170/">SJRK-170</a></li>
+            </ol>
+        </nav>
+        <h1>SJRK-170: Improve editing and display of audio/video element transcripts</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/SJRK-170">SJRK-170</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/SJRK/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/SJRK/?reporter=Gregor%20Moss">Gregor Moss</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-01-02T18:04:31.324-0500" prefix="">2019-01-02T18:04:31.324-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2022-07-29T00:09:32.648-0400" prefix="">2022-07-29T00:09:32.648-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Storytelling Tool UI</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Review transcript editing and display for audio and video elements. Try to use the track element to accomplish this.</p>
+<p>See this post on MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/Apps/Fundamentals/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video">https://developer.mozilla.org/en-US/docs/Web/Apps/Fundamentals/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26461">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2019-09-09T13:12:58.363-0400">2019-09-09T13:12:58.363-0400</relative-time></i></p>
+                        <p>I have linked the issue to the&#160;Inclusive Cities a11y Epic. Here are a few more notes from that discussion:</p>
+<p>Video content blocks don’t support captions, would it be possible to enable captions or host the videos through something like YouTube?</p>
+<p>Thoughts on the issue:</p>
+<ul>
+<li>Add a new kind of block which is a YouTube link? Or a new field</li>
+<li>Would it be either/or?
+<ul>
+<li>"Upload video" button or "Link video" button</li>
+</ul>
+</li>
+<li>Find markup to wrap video addresses based on what site they come from
+<ul>
+<li>YouTube</li>
+<li>Vimeo</li>
+<li>Twitter?</li>
+</ul>
+</li>
+<li>Else check the URL for a video file extension and just render it as a video</li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-26462">
+                        <p class="mb-0"><b>Gregor Moss</b> <i>commented <relative-time datetime="2019-09-11T15:55:57.295-0400">2019-09-11T15:55:57.295-0400</relative-time></i></p>
+                        <p>We have, for the time being, removed the transcript field from audio and video blocks until such time as we have a solid design for it</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/SJRK-169/"><span class="aria-hidden">←</span> Previous: SJRK-169</a>
+        <a class="mx-1" href="/browse/SJRK-171/">Next: SJRK-171 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

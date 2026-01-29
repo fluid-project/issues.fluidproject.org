@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-146  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-146 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-146/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-146/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-146/">FLUID-146</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-146: No drop target visual feedback when clicking on image or link at beginning of drag during drag-and-drop.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-146">FLUID-146</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Michelle D'Souza</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Joseph%20Scheuhammer">Joseph Scheuhammer</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2007-12-17T11:05:56.000-0500" prefix="">2007-12-17T11:05:56.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-11-13T13:27:29.000-0500" prefix="">2008-11-13T13:27:29.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Image Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When initiating a drag-and-drop operation, if one clicks on the image in the thumbnail or the link, the mouse movement listener on the drop targets do not appear to receive the mouse movement events.  Hence, no drop marker is displayed, since its display is based on the position of the mouse over the drop target.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-21966">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2007-12-20T11:00:33.000-0500">2007-12-20T11:00:33.000-0500</relative-time></i></p>
+                        <p>This behaviour also occurs with other non-lightbox test cases, even when the user clicks on the actual element that is orderable.</p>
+<p>For example: markupExamples/reorderer/concrete/todo-list/sortable-styled-todo-list.html<br>
+Even clicking on the list items that have no lists nested within them, and dragging over top of list items with no nested lists within them, the drop targets to not receive mouse movement events.</p>
+<p>Oddly, the abstract list test (markupExamples/reorderer/abstract/unordered-list.html) seems to work just fine.</p>
+<p>It is not clear why the mousemove events are disappearing, or who is swallowing them.</p>
+
+                    </li>
+                    
+                    <li id="comment-21970">
+                        <p class="mb-0"><b>Joseph Scheuhammer</b> <i>commented <relative-time datetime="2007-12-20T14:29:20.000-0500">2007-12-20T14:29:20.000-0500</relative-time></i></p>
+                        <p>A follow up to the notion that the events are being "swallowed".  It's not clear that they are.</p>
+<p>First, it <strong>may</strong> be a function of the event model capture and/or bubble phases.  The mouse is over the avatar, which is in a part of the dom that isn't on the capture nor bubble path.  It's possible that the mouse movement events are not being directed at the drop target at all.  That is, it's not that they are being swallowed before the drop target gets a chance to handle them; it's that they will never get to the drop target.</p>
+<p>Secondly, we are using jQuery().bind().  It's not clear (to me, at least) what jQuery does with that vis-a-vis the capturing/bubbling of events, nor how it handles different browser event models.</p>
+<p>A possibility is to try using standard dom1 or dom2 calls to add a mouse movement listener directly to the drop target and see what happens.  If the first point above is right, then adding a mouse movement listener shouldn't work either.  If it does work, then there is something about how jQuery handles events that we need to understand better.</p>
+
+                    </li>
+                    
+                    <li id="comment-21974">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2007-12-20T15:14:40.000-0500">2007-12-20T15:14:40.000-0500</relative-time></i></p>
+                        <p>Jonathan and I have confirmed that the avatar is what is the target of the mousemove event, when the cursor is indeed over the avatar. The next question is how to address this.</p>
+
+                    </li>
+                    
+                    <li id="comment-21976">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2007-12-20T16:32:19.000-0500">2007-12-20T16:32:19.000-0500</relative-time></i></p>
+                        <p>By attaching the mousemove event handler to the avatar itself as well as to the droppable, the handler fires when we want it to.</p>
+
+                    </li>
+                    
+                    <li id="comment-21978">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-11-13T13:27:29.000-0500">2008-11-13T13:27:29.000-0500</relative-time></i></p>
+                        <p>Appears to have been fixed</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-145/"><span class="aria-hidden">←</span> Previous: FLUID-145</a>
+        <a class="mx-1" href="/browse/FLUID-147/">Next: FLUID-147 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

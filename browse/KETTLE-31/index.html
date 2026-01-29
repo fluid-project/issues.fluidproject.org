@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> KETTLE-31  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" KETTLE-31 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/KETTLE-31/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/KETTLE-31/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/KETTLE" data-pagefind-filter="project">Kettle</a></li>
+                <li><a href="/browse/KETTLE-31/">KETTLE-31</a></li>
+            </ol>
+        </nav>
+        <h1>KETTLE-31: Errors fired from dataSource's JSON parser are unintelligible</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/KETTLE-31">KETTLE-31</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Resolved</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/KETTLE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-01-08T20:05:44.555-0500" prefix="">2015-01-08T20:05:44.555-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-05-25T18:56:49.533-0400" prefix="">2016-05-25T18:56:49.533-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The current JSON parse rejection block in the dataSource's filter chain is faulty. In fact it is already highlighted as untested - reading as follows:</p>
+<p>} catch (err) { // TODO: no test for this branch<br>
+togo = fluid.promise();<br>
+togo.reject({<br>
+isError: true,<br>
+error: err<br>
+});<br>
+}</p>
+<p>This strategy has several faults - <br>
+i) the "err" object as a whole appears to fail to serialise as JSON, being some native piece of rubbish. In fact when sent to JSON.stringify, it simply becomes {}. If we instead send err.message we at least get its minimal diagnostics rather than nothing at all - <br>
+ii) the minimal diagnostics supplied by JSON.stringify are really no help to users, of the form "Unexpected token \n" etc. We should just declare a dependency on the same version of jsonlint that grunt-jsonlint uses and get some sensible diagnostics out of it by asking it to reparse the data in the event of an error.<br>
+iii) the better diagnostics themselves will be of little help without being told WHICH file has failed to parse.</p>
+<p>This is where the standard promise semantics for reporting failure reveal themselves as completely faulty. In the old-fashioned exception handling world, one would have the ability to "catch and rewrap" an exception in order to add detail to it on the way out. In a promise chain, the code which might perform this wrapping has vanished off the stack long ago. In the core framework, we use an "activity stack" for this purpose but of course this also only can handle synchronous root causes of failure. We need to construct a new kind of structure when we are operating fluid.promise.sequence - in that the "task API" really needs to return a composite structure - firstly the promise accepting a value from the previous task, and secondly a "rejection wrapper" which can be used to contextualise any rejection which is emitted by a following task.</p>
+<p>There appears to be no native standard for such rejection wrapping semantics, since the promoters of promises are kids who don't care about readable diagnostics - the standard appears to be for a composite promise rejection to simply reject with exactly the same rejection argument as the first rejector. </p>
+<p>It appears that all of this logic really needs to be baked into fluid.promise.sequence which provides another really good motivation for its current "core + strategy" architecture.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/KETTLE-30/"><span class="aria-hidden">←</span> Previous: KETTLE-30</a>
+        <a class="mx-1" href="/browse/KETTLE-32/">Next: KETTLE-32 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

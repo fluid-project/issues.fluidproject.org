@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5932  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5932 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5932/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5932/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5932/">FLUID-5932</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5932: When running grunt from a downloaded ( zip file ) infusion, a git error thrown</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5932">FLUID-5932</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-07-20T14:44:48.460-0400" prefix="">2016-07-20T14:44:48.460-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-07-12T09:15:21.112-0400" prefix="">2019-07-12T09:15:21.112-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Build Scripts</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Steps to reproduce:</p>
+<p>1) Download a zip file of the infusion repo<br>
+<a href="https://github.com/fluid-project/infusion">https://github.com/fluid-project/infusion</a></p>
+<p>2) Extract the zip and open the directory</p>
+<p>3) run "npm install" from a command line from within the infusion directory</p>
+<p>4) run "grunt" from a command line from within the infusion directory<br>
+Notice a git error is thrown.</p>
+<p>Error:</p>
+<p>fatal: Not a git repository (or any of the parent directories): .git<br>
+Loading "Gruntfile.js" tasks...ERROR<br>
+Error: Command failed: git rev-parse --verify --short HEAD<br>
+fatal: Not a git repository (or any of the parent directories): .git</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-21990">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-07-20T14:47:09.296-0400">2016-07-20T14:47:09.296-0400</relative-time></i></p>
+                        <p>The issue is likely that the grunt build now adds the git hash that the build was created from, however the zip download is not a git repo and does not have the ability to run git commands.</p>
+<p>see: <a href="https://github.com/fluid-project/infusion/commit/c02f46714a773e88ca1bd59cb22acbe05675f43a">https://github.com/fluid-project/infusion/commit/c02f46714a773e88ca1bd59cb22acbe05675f43a</a></p>
+
+                    </li>
+                    
+                    <li id="comment-21999">
+                        <p class="mb-0"><b>Avtar Gill</b> <i>commented <relative-time datetime="2016-07-21T13:40:52.849-0400">2016-07-21T13:40:52.849-0400</relative-time></i></p>
+                        <p>Justin Obara, I was unable to provision a test environment using Infusion master due to the issue you mentioned above:</p>
+<pre><code class="hljs language-java">fatal: Not a git <span class="hljs-title function_">repository</span> <span class="hljs-params">(or any parent up to mount point /tmp)</span>
+Stopping at filesystem <span class="hljs-title function_">boundary</span> <span class="hljs-params">(GIT_DISCOVERY_ACROSS_FILESYSTEM not set)</span>.
+Loading <span class="hljs-string">"Gruntfile.js"</span> tasks...ERROR
+&gt;&gt; Error: Command failed: git rev-parse --verify --<span class="hljs-type">short</span> HEAD
+&gt;&gt; fatal: Not a git <span class="hljs-title function_">repository</span> <span class="hljs-params">(or any parent up to mount point /tmp)</span>
+</code></pre>
+<p>The <code>vagrant up</code> process is affected because we run provisioning commands in a temporary directory as part of a <a href="https://github.com/idi-ops/ansible-nodejs/blob/master/tasks/configure.yml#L31-L39">VirtualBox Windows shared folder workaround</a>. <code>.git</code> directories are not copied in an effort to speed up the overall provisioning process. <a href="https://github.com/fluid-project/infusion/pull/729">Your changes</a> allow for successful <code>vagrant up</code> runs.</p>
+<p>I did however see the following test fail when I ran <code>grunt tests</code>:</p>
+<pre><code class="hljs language-java">not ok <span class="hljs-number">24</span> Firefox <span class="hljs-number">47.0</span> - Framework Tests: ./framework-tests/preferences/html/SeparatedPanelPrefsEditor-test.html
+    ---
+        stack: &gt;
+            runLoggingCallbacks<span class="hljs-meta">@http</span>:<span class="hljs-comment">//localhost:7357/105/tests/lib/qunit/js/qunit.js:1609:4</span>
+            .pushFailure<span class="hljs-meta">@http</span>:<span class="hljs-comment">//localhost:7357/105/tests/lib/qunit/js/qunit.js:996:3</span>
+            window.onerror<span class="hljs-meta">@http</span>:<span class="hljs-comment">//localhost:7357/105/tests/lib/qunit/js/qunit.js:1242:4</span>
+
+        message: &gt;
+            Prefs editor with composite panel: Rendering: NS_ERROR_NOT_AVAILABLE:
+        Log: |
+    ...
+</code></pre>
+<p>Are you able to reproduce this?</p>
+
+                    </li>
+                    
+                    <li id="comment-22006">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-07-22T09:46:59.501-0400">2016-07-22T09:46:59.501-0400</relative-time></i></p>
+                        <p>Avtar Gill I tried this out using the "grunt tests" facility and also running the test directly in Firefox on Mac OS. I was unable to reproduce the test failure you mentioned. I even destroyed and rebuilt the vagrant VM used by "grunt tests".</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5931/"><span class="aria-hidden">←</span> Previous: FLUID-5931</a>
+        <a class="mx-1" href="/browse/FLUID-5933/">Next: FLUID-5933 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

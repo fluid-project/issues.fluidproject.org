@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1069  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1069 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1069/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1069/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1069/">FLUID-1069</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1069: OSDPL Infrastructure: Evaluate upgrade to Drupal 5.9 or 6.3</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1069">FLUID-1069</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Jonathan Hung</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Allison%20Bloodworth">Allison Bloodworth</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-07-29T23:37:06.000-0400" prefix="">2008-07-29T23:37:06.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-10-29T16:23:51.000-0400" prefix="">2008-10-29T16:23:51.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>OSDPL</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Drupal 5.9 and 6.3 are available with potential security fixes.</p>
+<p>Evaluate the merits of upgrading to either version and decide an upgrade path.</p>
+<p>Information on upgrading your Drupal installation can be found at: <a href="http://drupal.org/upgrade/">http://drupal.org/upgrade/</a>.</p>
+<p>Note: </p>
+<ul>
+<li>Upgrading to Drupal 6.3 may depend if CCK is available or not. We depend on that heavily.</li>
+<li>also see if one of these versions allow multiple instances of grouped fields (i.e. Image + Attribution pairs) in CCK</li>
+<li>also see if one of these versions adds multiple image upload to CCK</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15519">
+                        <p class="mb-0"><b>Allison Bloodworth</b> <i>commented <relative-time datetime="2008-07-29T23:37:17.000-0400">2008-07-29T23:37:17.000-0400</relative-time></i></p>
+                        <p>iteration21</p>
+
+                    </li>
+                    
+                    <li id="comment-15522">
+                        <p class="mb-0"><b>Allison Bloodworth</b> <i>commented <relative-time datetime="2008-08-05T19:21:07.000-0400">2008-08-05T19:21:07.000-0400</relative-time></i></p>
+                        <p>I am getting messages on certain pages in Drupal saying, "There is a security update available for your version of Drupal. To ensure the security of your server, you should update immediately! See the available updates page for more information." so I believe this is something we should at least investigate the severity of this iteration.</p>
+<p>Additionally, I spoke with Jon Hayes at UC Berkeley today about Drupal 6.3 which he is happily using now with many of the same important modules we are, such as CCK &amp; Views. He says many of the 6.x modules have just become ready in the last month, and that version 6 is a BIG improvement.</p>
+<p>You can see all the modules that have been released for 6.x by going to this page: <a href="http://drupal.org/project/Modules/name">http://drupal.org/project/Modules/name</a> and choosing "6.x" in the "Filter by Drupal Core compatibility:" filter. This is the best method to use because some module pages don't seem to list all the versions (Jon had this experience with one he needed for 6.0).</p>
+
+                    </li>
+                    
+                    <li id="comment-15646">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2008-10-29T14:11:46.000-0400">2008-10-29T14:11:46.000-0400</relative-time></i></p>
+                        <p>Migration for Drupal 6 is very tempting for the increased integration with Drupal features and Views (i.e. you can create Views based on user informaiton, which is something you can't do in Drupal 5.x).</p>
+<p>However, I think we should stick with 5.x until we hit a critical wall or ready for a major step forward.</p>
+
+                    </li>
+                    
+                    <li id="comment-15649">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2008-10-29T16:23:51.000-0400">2008-10-29T16:23:51.000-0400</relative-time></i></p>
+                        <p>Closing for now. Investigate Drupal 6 upgrade path at a later time.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1068/"><span class="aria-hidden">←</span> Previous: FLUID-1068</a>
+        <a class="mx-1" href="/browse/FLUID-1070/">Next: FLUID-1070 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

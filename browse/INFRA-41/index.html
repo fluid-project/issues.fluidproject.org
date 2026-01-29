@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-41  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-41 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-41/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-41/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-41/">INFRA-41</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-41: Reverse DNS </h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-41">INFRA-41</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-08-31T10:53:44.860-0400" prefix="">2015-08-31T10:53:44.860-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-11-03T09:33:11.498-0500" prefix="">2015-11-03T09:33:11.498-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Besides being a good practice to have reserve DNS configured, we also need it to avoid mail errors like this:</p>
+<p>to=&lt;keineantwortadresse@web.de&gt;, relay=mx-ha03.web.de[212.227.15.17]:25, delay=256735, delays=256734/0.02/1.1/0, dsn=4.0.0, status=deferred (host mx-ha03.web.de[212.227.15.17] refused to talk to me: 554-web.de (mxweb005) Nemesis ESMTP Service not available 554-No SMTP service 554 invalid DNS PTR resource record, IP=205.211.169.31)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25930">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2015-08-31T10:54:42.102-0400">2015-08-31T10:54:42.102-0400</relative-time></i></p>
+                        <p>Provided Yong with our DNS servers on 6/11/2015. Requested an update on 8/28/2015.</p>
+
+                    </li>
+                    
+                    <li id="comment-25931">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2015-09-04T10:12:56.340-0400">2015-09-04T10:12:56.340-0400</relative-time></i></p>
+                        <p>No answer from Yong.</p>
+
+                    </li>
+                    
+                    <li id="comment-25932">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2015-10-21T10:45:51.135-0400">2015-10-21T10:45:51.135-0400</relative-time></i></p>
+                        <p>Latest iteration of this request.</p>
+<pre><code class="hljs">-------- Forwarded Message --------
+Subject: Re: Reverse DNS for 205.211.169.0/24
+Date: Wed, 21 Oct 2015 12:41:15 -0200
+From: Giovanni Tirloni &lt;gtirloni@ocadu.ca&gt;
+To: Zhang, Yong &lt;yzhang@ocadu.ca&gt;, Harnum, Alan &lt;aharnum@ocadu.ca&gt;
+CC: Clark, Colin &lt;cclark@ocadu.ca&gt;, Gill, Avtar &lt;agill@ocadu.ca&gt;
+
+Hi Yong,
+
+I can't seem to resolve any IPs from the 205.211.169.0/24 network, but
+if I query the IDRC's DNS servers directly, they respond with the
+correct answer:
+
+$ dig +short @ns-794.awsdns-35.net. 10.169.211.205.in-addr.arpa. ptr
+tor1-prd-fw01.inclusivedesign.ca.
+
+I believe Cogent will have to do the delegation at the ARIN level,
+instead of just adding NS records to their DNS servers. What they have
+done is considered a "horizontal referral" (referral at the same level)
+and doesn't seem to work because the DNS resolver considers it a "bad
+referral" and stops looking.
+
+Here is the document from ARIN mentioning that delegations can only
+happen at /8, /16 and /24 boundaries. Cogent probably owns/manages
+separate delegation for 205.211.168.0/24 and 205.211.169.0/24 that they
+could change independently:
+
+https://www.arin.net/resources/request/reversedns.html
+
+I've attached a log file with a DNS trace showing the bad referral. The
+dig utility is used for troubleshooting and continues the lookup even in
+the face of the error (that's why it's able to show the correct answer)
+but Windows/OSX/Linux DNS resolvers don't do that.
+
+Thanks for helping us with this.
+
+Thank you,
+Giovanni
+
+On 10/20/2015 02:44 PM, Zhang, Yong wrote:
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript"><span class="hljs-title class_">Hi</span> <span class="hljs-title class_">Alan</span> and <span class="hljs-title class_">Giovanni</span>,</span>
+<span class="hljs-meta prompt_">&gt;</span> 
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript"><span class="hljs-title class_">The</span> change has been made <span class="hljs-keyword">for</span> <span class="hljs-number">205.211</span><span class="hljs-number">.169</span><span class="hljs-number">.0</span>/<span class="hljs-number">24</span> reverse zone.  <span class="hljs-title class_">Keep</span> <span class="hljs-keyword">in</span> mind some <span class="hljs-title class_">IPs</span> <span class="hljs-keyword">in</span> <span class="hljs-number">205.211</span><span class="hljs-number">.169</span><span class="hljs-number">.0</span>/<span class="hljs-number">24</span> are <span class="hljs-keyword">in</span> managed by <span class="hljs-variable constant_">IDRC</span>.</span>
+<span class="hljs-meta prompt_">&gt;</span> 
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript"><span class="hljs-title class_">Thanks</span>,</span>
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript"><span class="hljs-title class_">Yong</span></span>
+<span class="hljs-meta prompt_">&gt;</span> 
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript">-----<span class="hljs-title class_">Original</span> <span class="hljs-title class_">Message</span>-----</span>
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript"><span class="hljs-title class_">From</span>: <span class="hljs-title class_">Harnum</span>, <span class="hljs-title class_">Alan</span> </span>
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript"><span class="hljs-title class_">Sent</span>: <span class="hljs-title class_">Monday</span>, <span class="hljs-title class_">September</span> <span class="hljs-number">21</span>, <span class="hljs-number">2015</span> <span class="hljs-number">12</span>:<span class="hljs-number">53</span> <span class="hljs-variable constant_">PM</span></span>
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript"><span class="hljs-title class_">To</span>: <span class="hljs-title class_">Zhang</span>, <span class="hljs-title class_">Yong</span></span>
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript"><span class="hljs-title class_">Cc</span>: <span class="hljs-title class_">Clark</span>, <span class="hljs-title class_">Colin</span>; <span class="hljs-title class_">Gill</span>, <span class="hljs-title class_">Avtar</span>; <span class="hljs-title class_">Giovanni</span> <span class="hljs-title class_">Tirloni</span></span>
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript"><span class="hljs-title class_">Subject</span>: <span class="hljs-attr">FW</span>: <span class="hljs-title class_">Reverse</span> <span class="hljs-variable constant_">DNS</span> <span class="hljs-keyword">for</span> <span class="hljs-number">205.211</span><span class="hljs-number">.169</span><span class="hljs-number">.0</span>/<span class="hljs-number">24</span></span>
+<span class="hljs-meta prompt_">&gt;</span> 
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript"><span class="hljs-title class_">Hi</span> <span class="hljs-title class_">Yong</span>,</span>
+<span class="hljs-meta prompt_">&gt;</span> 
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript"><span class="hljs-title class_">Could</span> you help facilitate the request below <span class="hljs-keyword">from</span> <span class="hljs-title class_">Giovanni</span> to help us get reverse <span class="hljs-variable constant_">DNS</span> configured <span class="hljs-keyword">for</span> our <span class="hljs-variable constant_">SMTP</span> servers?</span>
+<span class="hljs-meta prompt_">&gt;</span> 
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript">I <span class="hljs-title function_">believe</span> (<span class="hljs-title class_">Giovanni</span>, please correct <span class="hljs-keyword">if</span> <span class="hljs-variable language_">this</span> is wrong) <span class="hljs-variable language_">this</span> is related to emails to our mailing list recipients being rejected.</span>
+<span class="hljs-meta prompt_">&gt;</span> 
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript"><span class="hljs-title class_">Thanks</span>,</span>
+<span class="hljs-meta prompt_">&gt;</span> 
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript"><span class="hljs-variable constant_">ALAN</span> <span class="hljs-variable constant_">HARNUM</span></span>
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript"><span class="hljs-variable constant_">SENIOR</span> <span class="hljs-variable constant_">INCLUSIVE</span> <span class="hljs-variable constant_">DEVELOPER</span></span>
+<span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript"><span class="hljs-variable constant_">INCLUSIVE</span> <span class="hljs-variable constant_">DESIGN</span> <span class="hljs-variable constant_">RESEARCH</span> <span class="hljs-variable constant_">CENTRE</span>, <span class="hljs-variable constant_">OCAD</span> <span class="hljs-variable constant_">UNIVERSITY</span></span>
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-25933">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2015-11-03T09:05:29.454-0500">2015-11-03T09:05:29.454-0500</relative-time></i></p>
+                        <p>Giovanni Tirloni, is this issue satisfactorily resolved now? Can we close this one?</p>
+
+                    </li>
+                    
+                    <li id="comment-25934">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2015-11-03T09:16:11.255-0500">2015-11-03T09:16:11.255-0500</relative-time></i></p>
+                        <p>Yes, issue is resolved. Thanks for helping wit this.</p>
+
+                    </li>
+                    
+                    <li id="comment-25935">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2015-11-03T09:16:55.420-0500">2015-11-03T09:16:55.420-0500</relative-time></i></p>
+                        <p>Reverse DNS for IPs 11,12,29,30,31 created individually.</p>
+<p>If we ever need DNS delegation in the future, Cogent will have to delegate the 205.211.169.0/24 network at the ARIN level to us.</p>
+<p>$ for i in 11 12 29 30 31; do host 205.211.169.$i | sed 's/domain name<br>
+pointer/=&gt;/g'; done</p>
+<p>11.169.211.205.in-addr.arpa =&gt; tor1-prd-ns01.inclusivedesign.ca.<br>
+12.169.211.205.in-addr.arpa =&gt; tor1-prd-ns02.inclusivedesign.ca.<br>
+29.169.211.205.in-addr.arpa =&gt; tor1-prd-mx01.inclusivedesign.ca.<br>
+30.169.211.205.in-addr.arpa =&gt; tor1-prd-mx02.inclusivedesign.ca.<br>
+31.169.211.205.in-addr.arpa =&gt; tor1-prd-mx03.inclusivedesign.ca.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-40/"><span class="aria-hidden">←</span> Previous: INFRA-40</a>
+        <a class="mx-1" href="/browse/INFRA-42/">Next: INFRA-42 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

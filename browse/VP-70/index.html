@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-70  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-70 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-70/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-70/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-70/">VP-70</a></li>
+            </ol>
+        </nav>
+        <h1>VP-70: FatPanel UIOptions in VideoPlayer captures keyboard focus even when closed</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-70">VP-70</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Alexey%20Novak">Alexey Novak</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-03-09T10:49:36.208-0500" prefix="">2012-03-09T10:49:36.208-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-12-22T10:28:44.600-0500" prefix="">2017-12-22T10:28:44.600-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>UIO integration</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>It seems that the first tab in UIOptions get a keyboard focus even when UIOptions panel is hidden.</p>
+<p>When the videoPlayer is loaded the first tab has a tab focus in UIOptions even though the panel is hidden. When the page is loaded UIOptions should not get any focus at all.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26994">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-08-09T11:16:43.667-0400">2012-08-09T11:16:43.667-0400</relative-time></i></p>
+                        <p>This has been fixed in Infusion. We should consider upgrading.</p>
+
+                    </li>
+                    
+                    <li id="comment-26995">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2012-08-13T10:34:21.581-0400">2012-08-13T10:34:21.581-0400</relative-time></i></p>
+                        <p>Pull request issued: <a href="https://github.com/fluid-project/videoPlayer/pull/37">https://github.com/fluid-project/videoPlayer/pull/37</a></p>
+
+                    </li>
+                    
+                    <li id="comment-26996">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2012-08-20T14:44:00.036-0400">2012-08-20T14:44:00.036-0400</relative-time></i></p>
+                        <p>The pull request #37 only fixes the issue with firefox and IE9, not safari and chrome.</p>
+
+                    </li>
+                    
+                    <li id="comment-26997">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-08-20T16:19:24.483-0400">2012-08-20T16:19:24.483-0400</relative-time></i></p>
+                        <p>An interesting observation (Safari):</p>
+<p>Once you tab through the hidden elements of the FatPanel you cannot tab through them again. This tabbing available only once.<br>
+Also you cannot tab through the hidden elements if you click Inspect Element anywhere on the page.</p>
+
+                    </li>
+                    
+                    <li id="comment-26998">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-08-20T16:41:56.060-0400">2012-08-20T16:41:56.060-0400</relative-time></i></p>
+                        <p>(Chrome)<br>
+It seems that tabindex=-1 with visibility:hidden and display:none still would not help and user still can tab through the hidden elements.</p>
+<p>It might be an issue with an embedded iframe and webkit browsers.</p>
+
+                    </li>
+                    
+                    <li id="comment-26999">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-08-21T16:14:09.915-0400">2012-08-21T16:14:09.915-0400</relative-time></i></p>
+                        <p>So far the only one possible reason why it does not work leads to the fact that we are using an iframe for UIOptions. There is a chance that iframe does not work well with Safari and Chrome.</p>
+<p>(Chrome)<br>
+There are exactly 6 tabs from the URI input to the preference button. There are exactly 6 tabbable elements in the first tab. Tried to set tabIndex = -1 and display:none to them did not work.</p>
+
+                    </li>
+                    
+                    <li id="comment-27000">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-08-22T10:26:43.776-0400">2012-08-22T10:26:43.776-0400</relative-time></i></p>
+                        <p>Actually Chrome does not have a problem. If you click on VoiceOver (Cmd+F5) and then Tab through the Chrome videoPlayer demo branch you will see that this hidden tab is everything but not the hidden UIOptions panel.<br>
+The problem exists only in Safari.</p>
+
+                    </li>
+                    
+                    <li id="comment-27001">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-10-03T12:59:37.533-0400">2012-10-03T12:59:37.533-0400</relative-time></i></p>
+                        <p>This should have been fixed by the fix to <a href="/browse/FLUID-4708/">FLUID-4708</a>, but still remains in Safari.</p>
+
+                    </li>
+                    
+                    <li id="comment-27002">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-10-03T15:46:54.001-0400">2012-10-03T15:46:54.001-0400</relative-time></i></p>
+                        <p>I'm actually able to reproduce this in Chrome: you have to tab several times before getting to the show/hide button.</p>
+
+                    </li>
+                    
+                    <li id="comment-27003">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2017-12-22T10:28:44.598-0500">2017-12-22T10:28:44.598-0500</relative-time></i></p>
+                        <p>The video player repository has been archived.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-221/"><span class="aria-hidden">←</span> Previous: VP-221</a>
+        <a class="mx-1" href="/browse/VP-206/">Next: VP-206 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

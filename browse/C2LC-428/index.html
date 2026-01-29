@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-428  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-428 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-428/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-428/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-428/">C2LC-428</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-428: Add a keyboard shortcut to replace a step</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-428">C2LC-428</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Done</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-07-20T09:52:43.399-0400" prefix="">2021-07-20T09:52:43.399-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2022-05-19T15:30:57.351-0400" prefix="">2022-05-19T15:30:57.351-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Env 1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Suggested by Ari that we should have keyboard shortcuts for all the items in the control panel.</p>
+<p>We will make the following changes:</p>
+<ul>
+<li>Make changes to the Replace button in the control panel
+<ul>
+<li>Remove the replacement focus cycle: the Replace button always does replacement (if there is a selection)</li>
+<li>The Replace button is enabled when there is a selected action and disabled if there is no selected action</li>
+<li>We make the replacement and announce it even when the selected action is the same as the current block</li>
+<li>We keep the current behaviour of not showing the Replace button in the control panel for loop blocks</li>
+</ul>
+</li>
+<li>Add a Replace keyboard shortcut
+<ul>
+<li>Ctrl + Alt + c </li>
+<li>If there is no selected action: announce "no action selected"</li>
+<li>If the current program step is a loop block: announce "replace is not available for loops"</li>
+<li>Otherwise: make the replacement and announce the replacement, even if it is the same action</li>
+</ul>
+</li>
+</ul>
+<p>Additionally, we will add the following announcements for the movement shortcut:</p>
+<ul>
+<li>Add an announcement whenever movement isn't possible
+<ul>
+<li>"At the end of the program, unable to move right"</li>
+<li>"At the beginning of the program, unable to move left"</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-427/"><span class="aria-hidden">←</span> Previous: C2LC-427</a>
+        <a class="mx-1" href="/browse/C2LC-429/">Next: C2LC-429 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

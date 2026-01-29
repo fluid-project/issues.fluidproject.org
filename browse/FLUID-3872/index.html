@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3872  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3872 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3872/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3872/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3872/">FLUID-3872</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3872: Implement a new system for the progressive enhancement of Uploader using IoC</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3872">FLUID-3872</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-12-02T16:21:33.944-0500" prefix="">2010-12-02T16:21:33.944-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T13:40:05.307-0500" prefix="">2014-03-03T13:40:05.307-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Uploader</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When we introduced the HTML 5 version of the Uploader and IoC-ified its architecture, we temporarily disabled Uploader's progressive enhancement features. We would also like to deprecate the specialized progressivelyEnhanceableUploader() creator function, instead providing seamless progressive enhancement for all users via the IoC system.</p>
+<p>In light of these changes, we should re-implement progressive enhancement so that we can degrade from HTML 5 to Flash to single file upload based on the capabilities of the user's browser and (optionally) specific overrides by the implementer.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-16246">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-12-03T08:45:28.273-0500">2010-12-03T08:45:28.273-0500</relative-time></i></p>
+                        <p>"Bug Parade Infusion 1.3" </p>
+
+                    </li>
+                    
+                    <li id="comment-16248">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-12-11T16:57:35.688-0500">2010-12-11T16:57:35.688-0500</relative-time></i></p>
+                        <p>This issue was resolved at r10391 with the addition of unit tests for the fluid.progressiveChecker framework utility. The unit tests have been reviewed by Michelle, but the overall implementation could do with a last check-over. </p>
+
+                    </li>
+                    
+                    <li id="comment-16250">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-12-13T18:10:42.162-0500">2010-12-13T18:10:42.162-0500</relative-time></i></p>
+                        <p>Unit tests weren't committed at r10391 as stated. They need to be committed before freezing 1.3</p>
+
+                    </li>
+                    
+                    <li id="comment-16252">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2010-12-13T18:12:39.006-0500">2010-12-13T18:12:39.006-0500</relative-time></i></p>
+                        <p>Unit tests actually committed at r10407.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3871/"><span class="aria-hidden">←</span> Previous: FLUID-3871</a>
+        <a class="mx-1" href="/browse/FLUID-3873/">Next: FLUID-3873 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

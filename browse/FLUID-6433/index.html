@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6433  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6433 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6433/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6433/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6433/">FLUID-6433</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6433: Supply diagnostic when context name resolution is ambiguous</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6433">FLUID-6433</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-11-22T08:08:24.994-0500" prefix="">2019-11-22T08:08:24.994-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-06-21T12:37:12.199-0400" prefix="">2021-06-21T12:37:12.199-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>An annoyance exposed recently during work on <a href="/browse/FLUID-6426/">FLUID-6426</a> was that the framework will quietly resolve short context names into a containment level where they are ambiguous - and particularly, where there are member names and short grade-derived names which match. In the pull at <a href="https://github.com/fluid-project/infusion/pull/970/commits/e45140a6dd6d064ed24b2cf1670d2b2a519b7d3a#diff-0322b3f60fc2ecfad187809947f88218R370">https://github.com/fluid-project/infusion/pull/970/commits/e45140a6dd6d064ed24b2cf1670d2b2a519b7d3a#diff-0322b3f60fc2ecfad187809947f88218R370</a> there was one site where the lineSpace enactor was referred to as {lineSpace} which matched the short context name derived from "fluid.tests.prefs.enactor.lineSpace". Further, in a related fix, a component named "utterance" needed to be named "utteranceSuccess" in order for resolution not to be ambiguous with the short context name from fluid.tests.textToSpeech.utterance: <a href="https://github.com/fluid-project/infusion/pull/968/files#diff-db48edb1bc07eabb83304f3d98f2759cR337">https://github.com/fluid-project/infusion/pull/968/files#diff-db48edb1bc07eabb83304f3d98f2759cR337</a> </p>
+<p>We should be able to revert the rules applied by "fast scoping" from fluid.expandImmediate and the like so that they give member names priority as before, but we should also highlight such matches to the user, especially once we have visual authoring tools.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6432/"><span class="aria-hidden">←</span> Previous: FLUID-6432</a>
+        <a class="mx-1" href="/browse/FLUID-6434/">Next: FLUID-6434 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

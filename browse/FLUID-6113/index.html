@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6113  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6113 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6113/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6113/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6113/">FLUID-6113</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6113: Reorganise strategy for triggering Speech Synthesis in Text To Speech component</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6113">FLUID-6113</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-01-16T14:07:40.397-0500" prefix="">2017-01-16T14:07:40.397-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-01-16T14:20:47.618-0500" prefix="">2017-01-16T14:20:47.618-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Text To Speech</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The strategy for triggering SpeechSynthesisUtterances and listening to their transitions can be improved a bit. It seems that there is a dual (historical) strategy for avoiding races within the implementation - firstly a blanket deferral of 1ms as implemented in fluid.textToSpeech.deferredSpeechSynthesisControl , and secondly a throttling implementation copied from underscore.js. In the face of the 2nd, it could be that the 1st could be removed - we should experiment with this - if it can't removed, we should improve the whole implementation to explicitly manage a queue of activities, since otherwise it is possible that control actions may be delivered to the underlying API out of order. <a href="http://stackoverflow.com/questions/11771558/execution-order-of-multiple-settimeout-functions-with-same-interval">http://stackoverflow.com/questions/11771558/execution-order-of-multiple-settimeout-functions-with-same-interval</a> - relying on in-order delivery exposes us to too much risk of bugs in the underlying implementation - which as we've seen with <a href="/browse/FLUID-6103/">FLUID-6103</a> is not to be relied on in such a new and raw area.</p>
+<p>Further, if the underlying Chrome bug for <a href="/browse/FLUID-6103/">FLUID-6103</a> is not resolved reasonably soon, we should switch our reliance on the underlying onpause/onresume events to the triggering activities of this new queue, and assume that i) the implementation honours requested actions in a reasonably timely way, and ii) that there are no other sources of control on the SpeechSynthesisUtterance objects (these both seem like reasonable assumptions to me).</p>
+<p>While we are at it, we should reduce the checkTTSSupport timeout on line 58 from 5000 ms to something more like 1000ms. There's no necessary connection this timeout length and the IoC Testing framework's timeout - either the implementation speaks or it doesn't, and it's currently responsible for an overall 10s delay in running the test cases.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6112/"><span class="aria-hidden">←</span> Previous: FLUID-6112</a>
+        <a class="mx-1" href="/browse/FLUID-6114/">Next: FLUID-6114 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6585  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6585 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6585/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6585/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6585/">FLUID-6585</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6585: Workflow skips onCreate entirely for some createOnEvent components timed from resources</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6585">FLUID-6585</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-12-14T07:27:41.789-0500" prefix="">2020-12-14T07:27:41.789-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-17T08:12:55.246-0400" prefix="">2024-07-17T08:12:55.246-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In a complex case which isn't yet fully characterised, the workflow concludeComponentInit firing onCreate and finalising component instantiation can be skipped entirely for some components which are marked as createOnEvent for the onCreate event of a parent, which are timed from some resource construction.</p>
+<p>We have some existing test cases for this situation at <a href="https://github.com/amb26/infusion/blob/FLUID-6145/tests/framework-tests/core/js/ResourceLoaderTests.js#L663-L674">https://github.com/amb26/infusion/blob/FLUID-6145/tests/framework-tests/core/js/ResourceLoaderTests.js#L663-L674</a> but evidently we have a further hole.</p>
+<p>This was encountered debugging an issue updating the SJRK storytelling tool to the latest release - the version under test is at <a href="https://github.com/jobara/sjrk-story-telling/blob/SJRK-405-messagesNotLoading/src/ui/ui-storyViewer.js">https://github.com/jobara/sjrk-story-telling/blob/SJRK-405-messagesNotLoading/src/ui/ui-storyViewer.js</a> - there is an existing issue that the persistedValues.uiLanguage listener in base.page triggers two renderings on startup at <a href="https://github.com/jobara/sjrk-story-telling/blob/SJRK-405-messagesNotLoading/src/ui/base-page.js#L115-L118">https://github.com/jobara/sjrk-story-telling/blob/SJRK-405-messagesNotLoading/src/ui/base-page.js#L115-L118</a> - since renderAllUiTemplates also fires again after templates have been loaded. It is this second firing, the real one, which is problematic, since all the templateLoader subcomponents of the theme file, "learningReflections" fail to receive onCreate and as a result don't renderer these parts of the UI: <a href="https://github.com/jobara/sjrk-story-telling/blob/SJRK-405-messagesNotLoading/themes/learningReflections/js/learningReflections.js#L59">https://github.com/jobara/sjrk-story-telling/blob/SJRK-405-messagesNotLoading/themes/learningReflections/js/learningReflections.js#L59</a></p>
+<p>The framework instead skips directly from the "constructing" state to "treeConstructed" for the 9 components affected by this workflow bug.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6584/"><span class="aria-hidden">←</span> Previous: FLUID-6584</a>
+        <a class="mx-1" href="/browse/FLUID-6586/">Next: FLUID-6586 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

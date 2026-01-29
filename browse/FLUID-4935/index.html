@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4935  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4935 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4935/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4935/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4935/">FLUID-4935</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4935: resolverSetConfig option is not propagated from the renderer component grade to its applier.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4935">FLUID-4935</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=y%20z">y z</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-03-15T00:23:30.434-0400" prefix="">2013-03-15T00:23:30.434-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T12:25:33.942-0500" prefix="">2014-03-03T12:25:33.942-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Data Binder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The renderer component grade currently supports resolverGetConfig and resolverSetConfig options that would allow its user to customize parsing, accessing and setting strategies for it's data model.</p>
+<p>However in case a user wants to customize a settings strategy, the actual set configuration is not propagated from the renderer component to its applier that handles the actual change requests.</p>
+<p>The particular use case arose when we attempted to customize such configs for a model that contains escaped "." characters. Instead of the default parser attempting to parse the escaped "."'s as segments in the elPath, we wanted (to no success) to ignore them and use the whole key as a whole.</p>
+<p>Example of the model:<br>
+{<br>
+"<a href="http://registry.gpii.org/applications/org.gnome.orca">http://registry.gpii.org/applications/org.gnome.orca</a>": [{<br>
+value: {<br>
+rate: null<br>
+}<br>
+}]<br>
+}</p>
+<p>Example of the valuebinding:<br>
+"${<a href="http://registry/.gpii/.org/applications/org/.gnome/.orca.0.value.rate">http://registry\\.gpii\\.org/applications/org\\.gnome\\.orca.0.value.rate</a>}"</p>
+<p>Custom config would need to look like this:<br>
+{<br>
+parser: {<br>
+parse: fluid.pathUtil.parseEL,<br>
+compose: fluid.pathUtil.composePath<br>
+},<br>
+strategies: [fluid.model.defaultFetchStrategy, fluid.model.defaultCreatorStrategy]<br>
+}</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15368">
+                        <p class="mb-0"><b>y z</b> <i>commented <relative-time datetime="2013-03-15T00:27:54.698-0400">2013-03-15T00:27:54.698-0400</relative-time></i></p>
+                        <p>A fix strategy involves the following:<br>
+Update renderer component grade's default mergePolicy and add a reference from changeApplierOptions.resolverSetConfig option to the top level resolverSetConfig option.</p>
+
+                    </li>
+                    
+                    <li id="comment-15371">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-03-15T00:59:26.256-0400">2013-03-15T00:59:26.256-0400</relative-time></i></p>
+                        <p>Note that this test case itself has now created a THIRD place where this configuration is copied in the framework. When <a href="/browse/FLUID-4933/">FLUID-4933</a> is resolved, we must remember to catch this location too</p>
+
+                    </li>
+                    
+                    <li id="comment-15375">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-03-15T01:01:15.186-0400">2013-03-15T01:01:15.186-0400</relative-time></i></p>
+                        <p>Thanks for the report, test case and fix, Yura - pushed to master at 46eff4c</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4934/"><span class="aria-hidden">←</span> Previous: FLUID-4934</a>
+        <a class="mx-1" href="/browse/FLUID-4936/">Next: FLUID-4936 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

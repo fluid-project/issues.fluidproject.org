@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6564  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6564 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6564/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6564/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6564/">FLUID-6564</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6564: Failure when nested modelComponents are created during onCreate</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6564">FLUID-6564</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Reopened</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2020-10-27T08:46:47.251-0400" prefix="">2020-10-27T08:46:47.251-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-06-21T11:30:03.976-0400" prefix="">2021-06-21T11:30:03.976-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This bug only affects the in-progress <a href="/browse/FLUID-6148/">FLUID-6148</a>/FLUID-6145 branch of the framework.</p>
+<p>In fixing a test case for the rewritten Table of Contents component using the new renderer, the following construct caused an error:</p>
+<pre><code class="hljs language-java"><span class="hljs-comment">/**
+     * #<a href="/browse/FLUID-5110/">FLUID-5110</a>: refreshView updates headings
+     */</span>
+    jqUnit.asyncTest(<span class="hljs-string">"Component test refreshView"</span>, function () {
+        fluid.tableOfContents(<span class="hljs-string">"#flc-toc-refreshHeadings"</span>, {
+            listeners: {
+                <span class="hljs-string">"onCreate.initialState"</span>: {
+                    listener: function (that) {
+....
+                        that.container.append(<span class="hljs-string">"&lt;h2&gt;test&lt;/h2&gt;"</span>);
+                        that.resourceFetcher.refetchOneResource(<span class="hljs-string">"documentHeadingsSource"</span>);
+                    }
+                }
+            }
+        });
+    });
+</code></pre>
+<p>The call to "refetchOneResource" triggers the construction of further lensed components corresponding to the markup freshly added to the page, i.e. from</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.tableOfContents.withLevels"</span>, {
+        gradeNames: [<span class="hljs-string">"fluid.newRendererComponent"</span>, <span class="hljs-string">"fluid.resourceLoader"</span>],
+        dynamicComponents: {
+            levels: {
+                sources: <span class="hljs-string">"{that}.model.headings"</span>,
+                type: <span class="hljs-string">"fluid.tableOfContents.level"</span>,
+                container: <span class="hljs-string">"{that}.dom.level"</span>,
+                options: {
+                    model: <span class="hljs-string">"{source}"</span>
+                }
+            }
+        },
+</code></pre>
+<p>and</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.tableOfContents.level"</span>, {
+        gradeNames: <span class="hljs-string">"fluid.tableOfContents.withLevels"</span>,
+....
+        dynamicComponents: {
+            link: {
+                type: <span class="hljs-string">"fluid.uiLink"</span>,
+....
+            }
+        }
+    });
+</code></pre>
+<p>This exposes an error in the "ModelComponentQix" in a similar way to that reported in <a href="/browse/FLUID-6406/">FLUID-6406</a>. The failure received is in fluid.enlistModelComponent for the nested link subcomponent - </p>
+<pre><code class="hljs language-java">fluid.enlistModelComponent = function (that) {
+        <span class="hljs-type">var</span> <span class="hljs-variable">initModelTransaction</span> <span class="hljs-operator">=</span> fluid.currentTreeTransaction().initModelTransaction;
+        <span class="hljs-type">var</span> <span class="hljs-variable">enlist</span> <span class="hljs-operator">=</span> initModelTransaction[that.id];
+</code></pre>
+<p>On the first line, we find that no model transaction is in progress. This is because of a fault in the implementation of fluid.applyWorkflowPhase which currently reads:</p>
+<pre><code class="hljs language-java">fluid.applyWorkflowPhase = function (transRec, sequencer) {
+        <span class="hljs-type">var</span> <span class="hljs-variable">shadows</span> <span class="hljs-operator">=</span> transRec.outputShadows;
+        <span class="hljs-comment">// Bring any freshly created shadows to the same level as the most currently advanced</span>
+        <span class="hljs-keyword">if</span> (shadows.length &gt; transRec.lastWorkflowShadow &amp;&amp; transRec.maximumWorkflowStage &gt; <span class="hljs-number">0</span>) {
+            fluid.enqueueWorkflowBlock(transRec, shadows, <span class="hljs-number">0</span>, transRec.maximumWorkflowStage,
+                transRec.lastWorkflowShadow, shadows.length, sequencer);
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (transRec.maximumWorkflowStage &lt; transRec.workflowStageBreak) {
+            <span class="hljs-comment">// They must all be level - bring the level of all shadows to final level</span>
+            <span class="hljs-keyword">for</span> (<span class="hljs-type">var</span> <span class="hljs-variable">workflowStage</span> <span class="hljs-operator">=</span> transRec.maximumWorkflowStage; workflowStage &lt; transRec.workflowStageBreak; ++workflowStage) {
+                <span class="hljs-type">var</span> <span class="hljs-variable">workQueued</span> <span class="hljs-operator">=</span> fluid.enqueueWorkflowBlock(transRec, shadows, workflowStage, workflowStage + <span class="hljs-number">1</span>,
+                    <span class="hljs-number">0</span>, shadows.length, sequencer);
+                <span class="hljs-keyword">if</span> (workQueued) {
+                    <span class="hljs-keyword">return</span> workQueued;
+                }
+            }
+        }
+    };
+</code></pre>
+<p>The error is in the assumption of the first block - that any freshly created shadows can be brought to the level of the most advanced. In this case, since we are still within "onCreate", the existing transaction has not yet concluded, and we have a whole collection of components which have reached the final workflow stage (in this configuration, numbered 8). </p>
+<p>We receive the construction of the "level" component as a fresh potentia, but it is not appropriate to bring it to the same level 7 as the rest of the transaction in one step because of its own potential to lens further components into existence at workflow stages 0 and 3. For reference, the current workflow cache looks as follows:</p>
+<pre><code class="hljs language-java">fluid.workflowCacheSorted: Array(<span class="hljs-number">8</span>)
+<span class="hljs-number">0</span>: {namespace: <span class="hljs-string">"enlistModel"</span>, workflowType: <span class="hljs-string">"global"</span>, workflowName: <span class="hljs-string">"enlistModel"</span>, gradeName: <span class="hljs-string">"fluid.modelComponent"</span>, workflowOptions: {...}, ...}
+<span class="hljs-number">1</span>: {namespace: <span class="hljs-string">"fetchTemplates"</span>, workflowType: <span class="hljs-string">"global"</span>, workflowName: <span class="hljs-string">"fetchTemplates"</span>, priority: {...}, gradeName: <span class="hljs-string">"fluid.templateResourceFetcher"</span>, ...}
+<span class="hljs-number">2</span>: {namespace: <span class="hljs-string">"renderMarkup"</span>, workflowType: <span class="hljs-string">"global"</span>, workflowName: <span class="hljs-string">"renderMarkup"</span>, priority: {...}, gradeName: <span class="hljs-string">"fluid.newRendererComponent"</span>, ...}
+<span class="hljs-number">3</span>: {namespace: <span class="hljs-string">"resolveResourceModel"</span>, workflowType: <span class="hljs-string">"global"</span>, workflowName: <span class="hljs-string">"resolveResourceModel"</span>, priority: {...}, gradeName: <span class="hljs-string">"fluid.modelComponent"</span>, ...}
+<span class="hljs-number">4</span>: {namespace: <span class="hljs-string">"evaluateContainers"</span>, workflowType: <span class="hljs-string">"global"</span>, workflowName: <span class="hljs-string">"evaluateContainers"</span>, priority: {...}, gradeName: <span class="hljs-string">"fluid.containerRenderingView"</span>, ...}
+<span class="hljs-number">5</span>: {namespace: <span class="hljs-string">"concludeComponentObservation"</span>, workflowType: <span class="hljs-string">"local"</span>, workflowName: <span class="hljs-string">"concludeComponentObservation"</span>, priority: {...}, gradeName: <span class="hljs-string">"fluid.component"</span>, ...}
+<span class="hljs-number">6</span>: {namespace: <span class="hljs-string">"notifyInitModelWorkflow"</span>, workflowType: <span class="hljs-string">"local"</span>, workflowName: <span class="hljs-string">"notifyInitModelWorkflow"</span>, priority: {...}, gradeName: <span class="hljs-string">"fluid.modelComponent"</span>, ...}
+<span class="hljs-number">7</span>: {namespace: <span class="hljs-string">"concludeComponentInit"</span>, workflowType: <span class="hljs-string">"local"</span>, workflowName: <span class="hljs-string">"concludeComponentInit"</span>, priority: {...}, gradeName: <span class="hljs-string">"fluid.component"</span>, ...}
+length: <span class="hljs-number">8</span>
+</code></pre>
+<p>Why did we implement fluid.applyWorkflowPhase in this way? It is to simplify its record-keeping in order to consider that the workflow progress at any point can be described by two numbers, the width of an initial single "step" and its height. In this way we avoid complex dynamic allocations to track the workflow progress or expensive scans of progress to find the next work item.</p>
+<p>However, the fact that components may be created at stage 7 and then cascade down to further creations and lower stages shows that this simple "Qix" geometry is inadequate. We have a couple of ways out - </p>
+<p>i) Discard the entire transaction at the end of a block of onCreate and start a fresh one - pretty distasteful and will create a lot of upheaval in what is now moderately settled code.<br>
+ii) Go towards a more complex "chain of blocks" representation of Qix progress<br>
+iii) Special-case this situation and add a further integer to Qix tracking which creates a "horizon" ignoring components which have reached concludeComponentInit, and reset lastWorkflowShadow to 0. This is a kind of "lite" version of option i). </p>
+<p>Note that we are already special-casing components reaching concludeComponentInit by means of this signalling from fluid.enqueueWorkflowBlock:</p>
+<pre><code class="hljs language-java"><span class="hljs-keyword">if</span> (workflowRecord.namespace === <span class="hljs-string">"concludeComponentInit"</span>) {
+                            sequencer.hasStartedConcludeInit = <span class="hljs-literal">true</span>;
+                        }
+</code></pre>
+<p>This signalling reaches fluid.commitPotentiae and becomes a further case in which a fresh "sequencer" should be constructed:</p>
+<pre><code class="hljs language-java"><span class="hljs-keyword">if</span> (!topSequencer || topSequencer.hasStartedConcludeInit || topSequencer.promise.disposition) {
+            sequencer = fluid.promise.makeSequencer([], {}, fluid.promise.makeSequenceStrategy());
+            sequencer.promise.sequencer = sequencer; <span class="hljs-comment">// So we can reference it from the stack of sources</span>
+            rootSequencer.sources.push(sequencer.promise);
+        }
+</code></pre>
+<p>Presumably the thinking here is that if we have once "started" to issue concludeComponentInit, the top sequencer is going to receive resolution by the time the stack frame returns. It seems that we should, as usual, somewhat abandon the pretence that this is a general-purpose algorithm, although its structure seems to peculiarly recur throughout the design of the system.</p>
+<p>In a side note, the huge garbage and stack noise we see amongst these sequencers suggest that we should abandon the use of promises in favour of a "heap o' records" approach. It's unclear that async/await will help with this because these constructs intrinsically appeal to the creation and destruction of promises.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25410">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2020-10-27T09:32:33.916-0400">2020-10-27T09:32:33.916-0400</relative-time></i></p>
+                        <p>Note that the odd compound condition in fluid.commitPotentiae is exercised by a test highly similar to the one we need to write, with a comment referring to <a href="/browse/FLUID-6410/">FLUID-6410</a> which shows a different pathological behaviour resulting from the pernicious creation of components during an "onCreate"</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6563/"><span class="aria-hidden">←</span> Previous: FLUID-6563</a>
+        <a class="mx-1" href="/browse/FLUID-6565/">Next: FLUID-6565 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1404  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1404 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1404/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1404/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1404/">FLUID-1404</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1404: fluid.fail() is confusing.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1404">FLUID-1404</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Colin Clark</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-09-02T13:35:45.000-0400" prefix="">2008-09-02T13:35:45.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-04T09:05:55.385-0500" prefix="">2014-03-04T09:05:55.385-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5beta1</li>
+                            
+                            <li>0.5</li>
+                            
+                            <li>0.6beta1</li>
+                            
+                            <li>0.6</li>
+                            
+                            <li>0.7</li>
+                            
+                            <li>0.8</li>
+                            
+                            <li>1.0</li>
+                            
+                            <li>1.1</li>
+                            
+                            <li>1.1.1</li>
+                            
+                            <li>1.2</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>At the moment, fluid.fail() logs out an error message and then causes the browser to log a real error by calling a "fake" method on an object that doesn't implement it. Here's how it works:</p>
+<p>fluid.fail = function (message) {<br>
+fluid.utils.setLogging(true);<br>
+fluid.utils.debug(message.message? message.message : message);<br>
+message.fail(); // Intentionally cause a browser error by invoking a nonexistent function.<br>
+};</p>
+<p>The problem is a user experience issue. Firebug reports a big, fat, red error message saying "message.fail is not a function." Which is correct, but causes one to often over look the message logged above, which provides more informative details about the error.</p>
+<p>I remember that fluid.fail() was implemented to work around a problem with throwing exceptions in JavaScript. What are the specifics of this problem?</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-16658">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-12-18T15:51:09.000-0500">2008-12-18T15:51:09.000-0500</relative-time></i></p>
+                        <p>The issue is that Firebug won't break on a throw() even with "break on all errors" turned on, so the error is hard to debug.</p>
+
+                    </li>
+                    
+                    <li id="comment-16660">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-12-18T15:52:45.000-0500">2008-12-18T15:52:45.000-0500</relative-time></i></p>
+                        <p>We decided, for now, to change it to a throw() for the release only, then change it back so we can debug easily. There was discussion (in the IRC logs Dec. 9, 2008, <a href="http://wiki.fluidproject.org/x/RYtI">http://wiki.fluidproject.org/x/RYtI</a> ) of trying to automate this process, and other options.</p>
+
+                    </li>
+                    
+                    <li id="comment-16662">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-11-10T10:21:44.000-0500">2009-11-10T10:21:44.000-0500</relative-time></i></p>
+                        <p>perhaps we could use a global debug flag, for example fluid.debug = true/false, then we would only have to change it in one location. Potentially this could also be used by the renderer to force debug mode off in case we miss it in any of the code. Jacob also had the idea of having a config object that would be part of the framework. I think that might look something like </p>
+<p>fluid.config = {<br>
+debug: true,<br>
+...<br>
+}</p>
+
+                    </li>
+                    
+                    <li id="comment-16665">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-01-10T22:57:16.356-0500">2013-01-10T22:57:16.356-0500</relative-time></i></p>
+                        <p>The current behaviour for fluid.fail was introduced because of unhelpful behaviour in several browsers (mostly IE, but not just IE - FF will also do this in some cases) when throwing exceptions. Given that these "soft exceptions" (caused by a literal "throw new Error()" or similar statement) are catchable by catch blocks, they are sometimes swallowed by the browser and do not cause a transition into the debugger. Generating this kind of "hard failure" is the only way we discovered to consistently allow the debugger to be invoked at the point of the error in all browsers, even if the message resulting in the console is not entirely relevant.</p>
+<p>That said, this argument only demonstrates that this behaviour is appropriate for debug or development builds of Infusion, and production builds should have this behaviour turned off. This is what we have done for all the recent releases, and the comment below by Justin was acted on a while back by means of introducing the "pushSoftFailure" directive which allows this behaviour to be under user control - this behaviour was improved further with the <a href="/browse/FLUID-4842/">FLUID-4842</a> work allowing the strategy to be fully configurable, especially for special environments such as node.js. I therefore think we've done all we can about this issue, and even at this late stage in 2012 the "hard failure" behaviour is still helpful in several current browsers. That said, this issue interacts interestingly with our recent discussions about changing our release policy. Should we move away from making formal releases, it will be harder to find a workflow point at which we adjust the fluid.fail() behaviour for release. This might be another task that we end up pushing onto the new Infusion Builder. </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1397/"><span class="aria-hidden">←</span> Previous: FLUID-1397</a>
+        <a class="mx-1" href="/browse/FLUID-1405/">Next: FLUID-1405 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-826  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-826 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-826/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-826/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-826/">FLUID-826</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-826: Pausing upload hangs the browser, or causes endless loop</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-826">FLUID-826</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Eli Cochran</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-06-26T15:48:01.000-0400" prefix="">2008-06-26T15:48:01.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-06-26T17:14:57.000-0400" prefix="">2008-06-26T17:14:57.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4beta1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Uploader</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Pausing a upload either hangs the browser, or causes some kind of endless loop.</p>
+<p>To reproduce:<br>
+<a href="http://build.fluidproject.org/fluid/sample-code/uploader/inline/index.html">http://build.fluidproject.org/fluid/sample-code/uploader/inline/index.html</a></p>
+<p>1) In Firefox, use Firebug to enable and show the console.<br>
+2) Select several files to upload. It seems more reproducable with larger files (eg. &gt;500k)<br>
+3) Start the upload, then press Pause before it is complete.</p>
+<p>One of two things may happen:</p>
+<p>A) It may take some time for the 'pause' process to complete (with no console output indicating what's going on). It may, in fact, not come back, and you may have to kill the browser.</p>
+<p>B) If you're very patient, and it does come back, the console will begin to display a continuous stream of repeating debug information.</p>
+<p>This may actually be two separate issues, one related to the occasional hanging of the browser, and another related to the endless loop. I haven't been able to investigate enough to determine that.</p>
+<p>Note that this <strong>might</strong> be related to <a href="/browse/FLUID-822/">FLUID-822</a>, but I don't think so: 822 seems to happen when upload is <strong>resumed</strong> after pausing, and this bug doesn't let you get that far.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23454">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2008-06-26T16:54:32.000-0400">2008-06-26T16:54:32.000-0400</relative-time></i></p>
+                        <p>I left an extra param around in attempting to fix (work around) <a href="/browse/FLUID-822/">FLUID-822</a>. Removed the param. All is happy. </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-825/"><span class="aria-hidden">←</span> Previous: FLUID-825</a>
+        <a class="mx-1" href="/browse/FLUID-827/">Next: FLUID-827 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

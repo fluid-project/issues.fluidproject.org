@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6712  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6712 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6712/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6712/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6712/">FLUID-6712</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6712: Pager markup driven example is missing the fluid.contextAware dependency</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6712">FLUID-6712</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2022-02-03T07:51:27.089-0500" prefix="">2022-02-03T07:51:27.089-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2022-02-09T09:51:35.348-0500" prefix="">2022-02-09T09:51:35.348-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>4.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Pager</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Pager requires the ContextAwareness.js</p>
+<p>Steps to reproduce:</p>
+<ol>
+<li>Open the <a href="https://build-infusion.fluidproject.org/examples/components/pager/markupdriven/">Markup Driven Pager example</a></li>
+<li>Notice that page links do not work</li>
+<li>If you look in the console you'll see the following error:</li>
+</ol>
+<p></p>
+<pre><code class="hljs language-java">Uncaught TypeError: fluid.contextAware is undefined&#160;&#160;&#160;&#160;accumulateContextAwareGrades https:<span class="hljs-comment">//build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:687&#160;&#160;&#160;&#160;computeDynamicGrades https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:731&#160;&#160;&#160;&#160;computeComponentAccessor https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:784&#160;&#160;&#160;&#160;mergeComponentOptions https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:2776&#160;&#160;&#160;&#160;initComponentShell https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:1688&#160;&#160;&#160;&#160;operateCreatePotentia https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2077&#160;&#160;&#160;&#160;commitPotentiaePhase https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2273&#160;&#160;&#160;&#160;commitPotentiae https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2317&#160;&#160;&#160;&#160;tryCatch https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:243&#160;&#160;&#160;&#160;commitPotentiae https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2315&#160;&#160;&#160;&#160;commitPotentiae https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2325&#160;&#160;&#160;&#160;invokeNext https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:258&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:238&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;commitPotentiae https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2330&#160;&#160;&#160;&#160;tryCatch https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:243&#160;&#160;&#160;&#160;commitPotentiae https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2315&#160;&#160;&#160;&#160;initFreeComponent https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:3011&#160;&#160;&#160;&#160;creator https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:2293&#160;&#160;&#160;&#160;initPager https://build-infusion.fluidproject.org/examples/components/pager/markupdriven/js/pager-example.js:36&#160;&#160;&#160;&#160;&lt;anonymous&gt; https://build-infusion.fluidproject.org/examples/components/pager/markupdriven/:336FluidIoC.js:687:13&#160;&#160;&#160;&#160;accumulateContextAwareGrades https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:687&#160;&#160;&#160;&#160;computeDynamicGrades https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:731&#160;&#160;&#160;&#160;computeComponentAccessor https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:784&#160;&#160;&#160;&#160;mergeComponentOptions https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:2776&#160;&#160;&#160;&#160;initComponentShell https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:1688&#160;&#160;&#160;&#160;operateCreatePotentia https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2077&#160;&#160;&#160;&#160;commitPotentiaePhase https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2273&#160;&#160;&#160;&#160;commitPotentiae https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2317&#160;&#160;&#160;&#160;tryCatch https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:243&#160;&#160;&#160;&#160;commitPotentiae https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2315&#160;&#160;&#160;&#160;commitPotentiae https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2325&#160;&#160;&#160;&#160;invokeNext https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:258&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:238&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;progressSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:219&#160;&#160;&#160;&#160;resumeSequence https://build-infusion.fluidproject.org/src/framework/core/js/FluidPromises.js:247&#160;&#160;&#160;&#160;commitPotentiae https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2330&#160;&#160;&#160;&#160;tryCatch https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:243&#160;&#160;&#160;&#160;commitPotentiae https://build-infusion.fluidproject.org/src/framework/core/js/FluidIoC.js:2315&#160;&#160;&#160;&#160;initFreeComponent https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:3011&#160;&#160;&#160;&#160;creator https://build-infusion.fluidproject.org/src/framework/core/js/Fluid.js:2293&#160;&#160;&#160;&#160;initPager https://build-infusion.fluidproject.org/examples/components/pager/markupdriven/js/pager-example.js:36&#160;&#160;&#160;&#160;&lt;anonymous&gt; https://build-infusion.fluidproject.org/examples/components/pager/markupdriven/:336​</span>
+</code></pre>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25191">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2022-02-09T09:51:35.346-0500">2022-02-09T09:51:35.346-0500</relative-time></i></p>
+                        <p>Merged PR ( <a href="https://github.com/fluid-project/infusion/pull/1070">https://github.com/fluid-project/infusion/pull/1070</a>&#160;) into the project repo at 50bdbf8d145ddfd64f3cc865397f8ef03982e443</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6711/"><span class="aria-hidden">←</span> Previous: FLUID-6711</a>
+        <a class="mx-1" href="/browse/FLUID-6713/">Next: FLUID-6713 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-1541  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-1541 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-1541/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-1541/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-1541/">FLUID-1541</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-1541: Inline Edit: Make the inner containers around the view and edit fields optional.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-1541">FLUID-1541</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Duplicate">Duplicate</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jacob%20Farber">Jacob Farber</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-09-10T14:39:20.000-0400" prefix="">2008-09-10T14:39:20.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-04T09:05:06.008-0500" prefix="">2014-03-04T09:05:06.008-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>As per the discussion with Colin and Michelle, it should no longer be required to assign the editables option, rather it should be optional for inlineEdits.</p>
+<p>Eg:<br>
+I should be able to say<br>
+var multiEdit2 = fluid.inlineEdits("#container", {<br>
+selectors : {<br>
+text : "td:first-child"<br>
+}<br>
+});</p>
+<p>which means my markup can look like this:<br>
+&lt;tr&gt;<br>
+&lt;td&gt;EDIT ME!&lt;/td&gt;<br>
+&lt;td&gt;George O'Malley &lt;/td&gt;<br>
+&lt;td&gt; Jun 10, 2008 1:12 pm &lt;/td&gt;<br>
+&lt;/tr&gt;<br>
+&lt;tr&gt;<br>
+&lt;td&gt;EDIT ME!&lt;/td&gt;<br>
+&lt;td&gt;Meredith Grey &lt;/td&gt;<br>
+&lt;td&gt;Jun 6, 2008 1:12 pm &lt;/td&gt;<br>
+&lt;/tr&gt;        </p>
+<p>rather than whats required right now (and contrary to the api documentation):</p>
+<p>var multiEdit2 = fluid.inlineEdits("#container", {<br>
+selectors : {<br>
+text : "span",<br>
+editables : "td:first-child"<br>
+}<br>
+});</p>
+<p>and my markup would have to look like this:<br>
+&lt;tr&gt;<br>
+&lt;td&gt;&lt;span&gt;EDIT ME!&lt;/span&gt;&lt;/td&gt;<br>
+&lt;td&gt;George O'Malley &lt;/td&gt;<br>
+&lt;td&gt; Jun 10, 2008 1:12 pm &lt;/td&gt;<br>
+&lt;/tr&gt;<br>
+&lt;tr&gt;<br>
+&lt;td&gt;&lt;span&gt;EDIT ME!&lt;/span&gt;&lt;/td&gt;<br>
+&lt;td&gt;Meredith Grey &lt;/td&gt;<br>
+&lt;td&gt;Jun 6, 2008 1:12 pm &lt;/td&gt;<br>
+&lt;/tr&gt;        </p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23003">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2008-09-10T14:44:31.000-0400">2008-09-10T14:44:31.000-0400</relative-time></i></p>
+                        <p>So this would require us to do two things:</p>
+<p>1. Automatically wrap the view text in a new element within the JavaScript code for the component.<br>
+2. If an edit field is located in the DOM, we'd have to make an implicit association between the view text and the edit field for each inline editor.</p>
+
+                    </li>
+                    
+                    <li id="comment-23005">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-11-13T21:38:18.000-0500">2008-11-13T21:38:18.000-0500</relative-time></i></p>
+                        <p>The container around the editable view is now no longer required as part of the fix for <a href="/browse/FLUID-844/">FLUID-844</a>. I don't believe it is possible to implement any further simplification as requested in this issue. Where do you propose the editable view be placed, in your &lt;td&gt; sample? I don't believe it would be correct to structurally modify the target markup for the InlineEdit control by means of "rehousing", say, the text "EDIT ME". How would the user expect to find this text again? The remaining part of this issue is a duplicate of <a href="/browse/FLUID-945/">FLUID-945</a>.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-1540/"><span class="aria-hidden">←</span> Previous: FLUID-1540</a>
+        <a class="mx-1" href="/browse/FLUID-1542/">Next: FLUID-1542 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-135  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-135 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-135/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-135/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-135/">FLOE-135</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-135: The bold/italic/underline buttons in the metatdata demo toolbar are not in the tab order.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-135">FLOE-135</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLOE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Dana">Dana</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-01-06T12:12:26.592-0500" prefix="">2014-01-06T12:12:26.592-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T11:24:14.391-0500" prefix="">2014-03-03T11:24:14.391-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Metadata</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Tabbing through the metadata demo skips over the bold/italic/underline buttons in the toolbar.  There is no way to access these buttons with the keyboard.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10927">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-01-06T14:59:24.577-0500">2014-01-06T14:59:24.577-0500</relative-time></i></p>
+                        <p>I have explored making the B/I/U buttons part of the tab order. However, when you tab away from the editable content, the selections are dropped. This means that when you activate any of the buttons, they do not have any effect as no content is selected to change. </p>
+<p>As an alternative for keyboard users, we can implement the traditional keyboard short-cuts for these actions.</p>
+
+                    </li>
+                    
+                    <li id="comment-10928">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-01-06T15:18:28.270-0500">2014-01-06T15:18:28.270-0500</relative-time></i></p>
+                        <p>My above assertion was slightly mistaken. Actually you can tab away from the editable area and not lose the selection. However, if you tab into another editable field (e.g. a textfield), the selection will be dropped.</p>
+
+                    </li>
+                    
+                    <li id="comment-10929">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-01-08T10:14:00.994-0500">2014-01-08T10:14:00.994-0500</relative-time></i></p>
+                        <p>Bootstrap appears to not support focus highlighting for buttons that are in an active state. I've filed an issue on their bug tracker for this.<br>
+<a href="https://github.com/twbs/bootstrap/issues/12154">https://github.com/twbs/bootstrap/issues/12154</a></p>
+
+                    </li>
+                    
+                    <li id="comment-10930">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-01-08T10:15:35.367-0500">2014-01-08T10:15:35.367-0500</relative-time></i></p>
+                        <p>Submitted a pull request that adds the controls into the tab order and adds keyboard shortcuts as well.<br>
+<a href="https://github.com/fluid-project/metadata/pull/17">https://github.com/fluid-project/metadata/pull/17</a></p>
+
+                    </li>
+                    
+                    <li id="comment-10931">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2014-01-21T14:11:27.164-0500">2014-01-21T14:11:27.164-0500</relative-time></i></p>
+                        <p>Merged into the project repo @ 1f7a5d207a5a6ab5993c71db2b4754d36ddfb1a6</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-134/"><span class="aria-hidden">←</span> Previous: FLOE-134</a>
+        <a class="mx-1" href="/browse/FLOE-136/">Next: FLOE-136 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-3665  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-3665 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-3665/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-3665/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-3665/">FLUID-3665</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-3665: Screen reader a11y and usability issues with Layout Reorderer (esp. keyboard navigation conflicts, lack of feedback, lack of overall orientation for screen reader users)</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-3665">FLUID-3665</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Jan%20Richards">Jan Richards</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2010-06-04T16:46:18.870-0400" prefix="">2010-06-04T16:46:18.870-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-03-13T11:09:05.490-0400" prefix="">2017-03-13T11:09:05.490-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.2</li>
+                            
+                            <li>1.3</li>
+                            
+                            <li>1.4</li>
+                            
+                            <li>1.5</li>
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Layout Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>B.2 WindowsXP+Firefox+NVDA</p>
+<p>Browser: Firefox v3.5.9<br>
+Screen Reader: NVDA 2010.1<br>
+Tester: Jan Richards</p>
+<p>OVERALL:</p>
+<ul>
+<li>our hidden instruction text for screen reader users says "Screen reader users turn off virtual cursor (insert + z)." I'm guessing this is speaking to Jaws users but this is not correct for NVDA.</li>
+<li>there is "no big picture" available. How many columns, how many items in each column etc. Maybe this could be indicated with live regions somehow? <a href="/browse/FLUID-2964/">FLUID-2964</a></li>
+</ul>
+<p>BROWSE mode</p>
+<ul>
+<li>reads ex. "Clickable Content Portal A2"</li>
+<li>does not read "Can't place above locked portlet"</li>
+<li>up down arrows OK, but left+right used by NVDA  for other things so they don't work</li>
+<li>but i,k,m are all used NVDA for other things so they don't work</li>
+<li>ctrl+i,ctrl+j,ctrl+k,ctrl+m all work but with no audio feedback</li>
+<li>ctrl+arrows do not work at all</li>
+<li>when content is moved between columns, the next arrow key down pulls focus back over to the original column instead of moving to the next item down in the new column (as happens with NVDA off)</li>
+</ul>
+<p>FOCUS mode</p>
+<ul>
+<li>keystrokes all work.</li>
+<li>but the reading is wrong...each draggable div is read as "Document draggable"</li>
+<li>no audio feedback when things are moved with ctrl+arrows<br>
+B.3 WindowsXP+Firefox+JAWS</li>
+</ul>
+<p>Browser: Firefox v3.5.8</p>
+<p>Screen Reader: JAWS 10<br>
+Tester: Jan Richards</p>
+<p>OVERALL:</p>
+<p>Virtual Cursor ON:</p>
+<ul>
+<li>can TAB in</li>
+<li>doesn't read draggable modules</li>
+<li>arrows do not work</li>
+<li>i,j,k,m do not work</li>
+<li>reading does not work</li>
+</ul>
+<p>Virtual Cursor OFF:</p>
+<ul>
+<li>can TAB in</li>
+<li>doesn't read draggable modules</li>
+<li>arrows work</li>
+<li>i,j,k,m work</li>
+<li>ctrl-arrows do not work</li>
+<li>ctrl i,j,k,m work</li>
+<li>reading does not work</li>
+</ul>
+<p>I COULD NOT GET THIS TO WORK AT ALL</p>
+<p>B.4 WindowsXP+IE+NVDA</p>
+<p>Browser: IE8<br>
+Screen Reader: NVDA 2010.1<br>
+Tester: Jan Richards</p>
+<p>SAME AS FOR FIREFOX v3.5.9 (B.2) EXCEPT:</p>
+<ul>
+<li>In BROWSE mode</li>
+<li>reads ex. "Content Portal A2"</li>
+<li>ctrl+i,ctrl+j,ctrl+k, ctrl+m all work with audio feedback "dragging"</li>
+</ul>
+<ul>
+<li>In FOCUS mode</li>
+<li>when using arrows (or ijkm keys) reading is a mess - moving to a new draggable item causes NVDA to read everything including hidden "can't place above locked item" messages</li>
+<li>when using TAB things are a bit better (reads "Content Portal B2 Grouping Dragging")</li>
+<li>no audio feedback when things are moved with ctrl+arrows (NVDA just restates the name of the item moved)<br>
+B.5 WindowsXP+IE+JAWS</li>
+</ul>
+<p>Browser: IE8</p>
+<p>Screen Reader: JAWS 10<br>
+Tester: Jan Richards</p>
+<p>OVERVIEW:</p>
+<ul>
+<li>once again the "big picture" is missing. What have I arrived at? What am I supposed to do? etc.</li>
+</ul>
+<p>Virtual Cursor OFF:</p>
+<ul>
+<li>i,j,k,m work</li>
+<li>ctrl-up, ctrl-down do not work</li>
+<li>reads the label but nothing about "draggable" etc.</li>
+<li>no audio feedback when moved</li>
+<li>locked-warnings not read</li>
+</ul>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>WindowsXP+IE8+NVDA2010<br>
+WindowsXP+IE8+JAWS10<br>
+WindowsXP+FF3.5+NVDA2010<br>
+WindowsXP+FF3.5+JAWS10</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23834">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2010-06-07T08:58:39.530-0400">2010-06-07T08:58:39.530-0400</relative-time></i></p>
+                        <p>a11y issue</p>
+
+                    </li>
+                    
+                    <li id="comment-23835">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2011-01-11T11:01:59.956-0500">2011-01-11T11:01:59.956-0500</relative-time></i></p>
+                        <p>A bunch of these issues have been addressed through <a href="/browse/FLUID-3730/">FLUID-3730</a> and <a href="/browse/FLUID-3711/">FLUID-3711</a>. Other issues should be broken out into there own jiras and this one closed.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-3664/"><span class="aria-hidden">←</span> Previous: FLUID-3664</a>
+        <a class="mx-1" href="/browse/FLUID-3666/">Next: FLUID-3666 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

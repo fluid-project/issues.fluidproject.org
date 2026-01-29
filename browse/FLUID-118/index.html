@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-118  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-118 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-118/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-118/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-118/">FLUID-118</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-118: Dragging an image offscreen or out of the frame has some unexpected results.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-118">FLUID-118</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Cannot%20Reproduce">Cannot Reproduce</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2007-11-19T13:27:13.000-0500" prefix="">2007-11-19T13:27:13.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-05-26T15:39:36.989-0400" prefix="">2014-05-26T15:39:36.989-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5beta1</li>
+                            
+                            <li>0.5</li>
+                            
+                            <li>0.6beta1</li>
+                            
+                            <li>0.6</li>
+                            
+                            <li>0.7</li>
+                            
+                            <li>0.8</li>
+                            
+                            <li>1.0</li>
+                            
+                            <li>1.1</li>
+                            
+                            <li>1.1.1</li>
+                            
+                            <li>1.1.2</li>
+                            
+                            <li>1.2</li>
+                            
+                            <li>1.3</li>
+                            
+                            <li>1.3.1</li>
+                            
+                            <li>1.4</li>
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Image Reorderer</li>
+                            
+                            <li>Layout Reorderer</li>
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Dragging an image offscreen or out of the frame has some unexpected results.</p>
+<p>IE7: The image freezes and the cursor changes to a crossed out circle. When the mouse button is released, the image will snap back to its original location. Does not seem to happen when Fluid-101(<a href="http://issues.fluidproject.org/browse/FLUID-101">http://issues.fluidproject.org/browse/FLUID-101</a>) occurs.</p>
+<p>FF: The image is still draggable; however, when the mouse button is released, the image is still held and can still be dragged. The button has to be clicked for it to be released, at which time it will snap back to it's original location or to a drop point if it is over top of one.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Firefox 2 (Mac OS 10.5, Win XP)<br>
+IE7 (Win XP)<br>
+FF4 (Win7)</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-118/screenshot-1.jpg">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-118/screenshot-1.jpg" alt="screenshot-1.jpg">
+                            
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-118/screenshot-2.jpg">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLUID/FLUID-118/screenshot-2.jpg" alt="screenshot-2.jpg">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-19789">
+                        <p class="mb-0"><b>Jonathan Hung</b> <i>commented <relative-time datetime="2007-12-12T15:09:45.000-0500">2007-12-12T15:09:45.000-0500</relative-time></i></p>
+                        <p>Additional information:</p>
+<ul>
+<li>In IE when dragging out of bounds, the thumbnail will stick to the boundary where the mouse exited until the mouse returns to the div containing the Lightbox. When the mouse returns to the Lightbox div, the thumbnail snaps back to its original position.</li>
+</ul>
+<p>May 28, 2008:</p>
+<p>In FF2, it is possible to drag an orderable WAAAY off the screen. The horizontal scrollbar keeps expanding as user continues to move the mouse in a direction.</p>
+
+                    </li>
+                    
+                    <li id="comment-19791">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-07-18T12:39:05.000-0400">2008-07-18T12:39:05.000-0400</relative-time></i></p>
+                        <p>When there are nested reorderables, such as on the uportal demo page (<a href="http://build.fluidproject.org/fluid/sample-code/reorderer/portal/portal.html">http://build.fluidproject.org/fluid/sample-code/reorderer/portal/portal.html</a>), this bug allows you to drag two avatars.</p>
+<p>Steps to reproduce:</p>
+<p>1) Go to the uPortal demo page from the daily buid site:<br>
+<a href="http://build.fluidproject.org/fluid/sample-code/reorderer/portal/portal.html">http://build.fluidproject.org/fluid/sample-code/reorderer/portal/portal.html</a></p>
+<p>2) Drag an element (fruit image) from the lightbox portal off screen and release the mouse</p>
+<p>3) Place the pointer back on the screen and drag a portlet. Notice that you now have two avatars.</p>
+
+                    </li>
+                    
+                    <li id="comment-19793">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-07-18T12:41:25.000-0400">2008-07-18T12:41:25.000-0400</relative-time></i></p>
+                        <p>'screenshot-1' shows the two avatars being dragged</p>
+
+                    </li>
+                    
+                    <li id="comment-19794">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-08-13T13:33:23.000-0400">2008-08-13T13:33:23.000-0400</relative-time></i></p>
+                        <p>The IE7 behaviour does not appear to occur anymore.</p>
+<p>Updated the Environments that the issue affects</p>
+
+                    </li>
+                    
+                    <li id="comment-19796">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2008-09-07T22:40:54.000-0400">2008-09-07T22:40:54.000-0400</relative-time></i></p>
+                        <p>It appears that the FIrefox side of the issue simply cannot be resolved - we do not obtain any notification of mouse events whilst the cursor is out of the browser bounds, and cannot even query the current button state. If you can verify the IE behaviour as ok, and can no longer demonstrate the "double avatar" phenomenon, we will have to sadly close this issue as "incomplete".</p>
+
+                    </li>
+                    
+                    <li id="comment-19798">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-08T09:52:04.000-0400">2008-09-08T09:52:04.000-0400</relative-time></i></p>
+                        <p>The IE7 behaviour, as described in the description no longer occurs. However, the "double avatar' phenomenon is still reproducible</p>
+
+                    </li>
+                    
+                    <li id="comment-19800">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-10T13:56:21.000-0400">2008-09-10T13:56:21.000-0400</relative-time></i></p>
+                        <p>The 'double avatar' no longer seems to be reproducible</p>
+
+                    </li>
+                    
+                    <li id="comment-19801">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-11T12:32:49.000-0400">2008-09-11T12:32:49.000-0400</relative-time></i></p>
+                        <p>Okay I've managed to reproduce the "double avatar" issue. It works in reverse now. You need to pick up a portlet from the side so that when the avatar shrinks the pointer is left off of it( see Fluid-1334). You drag it out of the window and then can pick up an image from the lightbox portlet.</p>
+
+                    </li>
+                    
+                    <li id="comment-19803">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-09-11T12:34:01.000-0400">2008-09-11T12:34:01.000-0400</relative-time></i></p>
+                        <p>'screenshot-2' shows a variant of the double avatar issue.</p>
+
+                    </li>
+                    
+                    <li id="comment-19805">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2008-09-25T18:28:37.000-0400">2008-09-25T18:28:37.000-0400</relative-time></i></p>
+                        <p>The behavior that I observed is a little different:</p>
+<p>IE7: Drag off screen, the avatar becomes "decoupled" from the pointer so that when you drag the pointer back into the window the avatar lags behind until the avatar comes completely back into the window then it snaps back to the pointer. </p>
+<p>Just noticed that this is written up as <a href="/browse/FLUID-894/">FLUID-894</a></p>
+
+                    </li>
+                    
+                    <li id="comment-19807">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2014-05-26T15:39:36.975-0400">2014-05-26T15:39:36.975-0400</relative-time></i></p>
+                        <p>Couldn't reproduce in the latest supported browsers. This is likely do to changes in the new browsers, or refactoring to the Reorderer.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-117/"><span class="aria-hidden">←</span> Previous: FLUID-117</a>
+        <a class="mx-1" href="/browse/FLUID-119/">Next: FLUID-119 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

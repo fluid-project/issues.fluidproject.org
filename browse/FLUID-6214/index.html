@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6214  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6214 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6214/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6214/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6214/">FLUID-6214</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6214: Create syntax and implementation for options distribution to refer to its source</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6214">FLUID-6214</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-10-17T17:38:32.133-0400" prefix="">2017-10-17T17:38:32.133-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-04-20T09:59:34.407-0400" prefix="">2021-04-20T09:59:34.407-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Gathering further experience on the space of features covered by <a href="/browse/FLUID-5258/">FLUID-5258</a>, <a href="/browse/FLUID-5594/">FLUID-5594</a>, we find a crucial requirement is for options distributions material to be able to straightforwardly refer to the source component itself. Since <a href="/browse/FLUID-5258/">FLUID-5258</a> was filed, we changed the behaviour to always resolve at target, so that at least we are spared the inconsistency between globally resolved and locally resolved material such as invoker and listener arguments. But repeatedly, when working on kinds of highly dynamic applications such as the visible nexus, the embrangler, etc. an annoyingly recurring pattern emerges where some "index" component needs to be advertised globally in order to be resolvable.</p>
+<p>Here is the example from the visible nexus - <a href="https://github.com/amb26/fluid-authoring/blob/FLUID-4884/src/server/js/VisibleNexus.js#L126">https://github.com/amb26/fluid-authoring/blob/FLUID-4884/src/server/js/VisibleNexus.js#L126</a></p>
+<p>And from embranglement, we finesse this requirement by making a cruder, less flexible system as well as using <a href="/browse/FLUID-5903/">FLUID-5903</a> style recursive context expressions:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.embranglement.indexedDynamicComponent"</span>, {
+    mergePolicy: { <span class="hljs-comment">// Obviously this will be replaced by a <a href="/browse/FLUID-6214/">FLUID-6214</a> scheme</span>
+        dynamicComponentIndex: <span class="hljs-string">"noexpand"</span>
+    },
+    listeners: {
+        <span class="hljs-string">"onCreate.indexComponent"</span>: {
+            func: <span class="hljs-string">"{{that}.options.dynamicComponentIndex}.events.onIndexAdd"</span>,
+            args: <span class="hljs-string">"{that}"</span>
+        },
+        <span class="hljs-string">"onDestroy.indexComponent"</span>: {
+            func: <span class="hljs-string">"{{that}.options.dynamicComponentIndex}.events.onIndexRemove"</span>,
+            args: <span class="hljs-string">"{that}"</span>
+        }
+    }
+});
+</code></pre>
+<p>One possibility would be to introduce a special context&#160;{<code>distributionSource</code>}&#160;which resolves onto the component holding the distribution. But in practice, making this work is no easier than solving <a href="/browse/FLUID-5258/">FLUID-5258</a>, because of the possibility of "local expansion". Whilst we have the capability to attach a "localRecord" to an entire component's options to record special contexts (as we do for dynamic components), we can't refine this enough to just hit material resulting from a single distribution. The solution to this seems to require full-scale provenance structures as alluded to in <a href="/browse/FLUID-4930/">FLUID-4930</a> and <a href="/browse/FLUID-5594/">FLUID-5594</a>, which we're unlikely to be able to afford until some good time after <a href="/browse/FLUID-6148/">FLUID-6148</a> is implemented - this structure will be a necessary auxiliary of the "shadow compiler" and is also unlikely to be affordable without it.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6213/"><span class="aria-hidden">←</span> Previous: FLUID-6213</a>
+        <a class="mx-1" href="/browse/FLUID-6215/">Next: FLUID-6215 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

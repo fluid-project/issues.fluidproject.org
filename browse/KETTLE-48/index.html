@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> KETTLE-48  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" KETTLE-48 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/KETTLE-48/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/KETTLE-48/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/KETTLE" data-pagefind-filter="project">Kettle</a></li>
+                <li><a href="/browse/KETTLE-48/">KETTLE-48</a></li>
+            </ol>
+        </nav>
+        <h1>KETTLE-48: Running "npm install" on kettle with npm 3 throws an error at building "leveldown" package</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/KETTLE-48">KETTLE-48</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/KETTLE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-10-20T11:09:12.540-0400" prefix="">2016-10-20T11:09:12.540-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-08-28T10:22:33.820-0400" prefix="">2017-08-28T10:22:33.820-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>To reproduce:<br>
+1. Checkout the kettle master branch from <a href="https://github.com/fluid-project/kettle">https://github.com/fluid-project/kettle</a><br>
+2. Go to the kettle root directory, run:</p>
+<pre><code class="hljs language-java">rm -rf node_modules/
+npm install
+</code></pre>
+<p>3. "npm install" fails at building the "leveldown" package with this error:</p>
+<pre><code class="hljs language-java">LIBTOOL-STATIC Release/leveldb.a
+libtool: unrecognized option `-<span class="hljs-keyword">static</span><span class="hljs-string">'
+libtool: Try `libtool --help'</span> <span class="hljs-keyword">for</span> more information.
+make: *** [Release/leveldb.a] Error <span class="hljs-number">1</span>
+prebuild ERR! build error 
+prebuild ERR! stack Error: `make` failed with exit code: <span class="hljs-number">2</span>
+prebuild ERR! stack     at ChildProcess.onExit (/Users/cindyli/Development/kettle/node_modules/node-gyp/lib/build.js:<span class="hljs-number">276</span>:<span class="hljs-number">23</span>)
+prebuild ERR! stack     at <span class="hljs-title function_">emitTwo</span> <span class="hljs-params">(events.js:<span class="hljs-number">106</span>:<span class="hljs-number">13</span>)</span>
+prebuild ERR! stack     at ChildProcess.emit (events.js:<span class="hljs-number">191</span>:<span class="hljs-number">7</span>)
+prebuild ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:<span class="hljs-number">215</span>:<span class="hljs-number">12</span>)
+prebuild ERR! not ok 
+prebuild ERR! build Error: `make` failed with exit code: <span class="hljs-number">2</span>
+prebuild ERR! build     at ChildProcess.onExit (/Users/cindyli/Development/kettle/node_modules/node-gyp/lib/build.js:<span class="hljs-number">276</span>:<span class="hljs-number">23</span>)
+prebuild ERR! build     at <span class="hljs-title function_">emitTwo</span> <span class="hljs-params">(events.js:<span class="hljs-number">106</span>:<span class="hljs-number">13</span>)</span>
+prebuild ERR! build     at ChildProcess.emit (events.js:<span class="hljs-number">191</span>:<span class="hljs-number">7</span>)
+prebuild ERR! build     at Process.ChildProcess._handle.onexit (internal/child_process.js:<span class="hljs-number">215</span>:<span class="hljs-number">12</span>)
+npm WARN install:leveldown@<span class="hljs-number">1.4</span><span class="hljs-number">.5</span> leveldown@<span class="hljs-number">1.4</span><span class="hljs-number">.5</span> install: `prebuild --install`
+npm WARN install:leveldown@<span class="hljs-number">1.4</span><span class="hljs-number">.5</span> Exit status <span class="hljs-number">2</span>
+</code></pre>
+<p>The detailed full output of "npm install" can be found in the attached log file.</p>
+<p>The relationship between the "leveldown" package and kettle:<br>
+1. The "leveldown" package is a dependency of pouchdb: <a href="https://github.com/pouchdb/pouchdb/blob/master/package.json#L55">https://github.com/pouchdb/pouchdb/blob/master/package.json#L55</a><br>
+2. The "pouchdb" is a dependency of gpii-pouchdb: <a href="https://github.com/the-t-in-rtf/gpii-pouchdb/blob/GPII-1897/package.json#L21">https://github.com/the-t-in-rtf/gpii-pouchdb/blob/GPII-1897/package.json#L21</a><br>
+3. The "gpii-pouchdb" is a dev dependency of kettle: <a href="https://github.com/fluid-project/kettle/blob/master/package.json#L31">https://github.com/fluid-project/kettle/blob/master/package.json#L31</a></p>
+<p>Running "npm install" on gpii-pouchdb (<a href="https://github.com/the-t-in-rtf/gpii-pouchdb/tree/GPII-1897">https://github.com/the-t-in-rtf/gpii-pouchdb/tree/GPII-1897</a>) builds fine.</p>
+<p>One thing to note is the cross dependency between kettle and gpii-pouchdb:<br>
+1. As stated above, the "gpii-pouchdb" is a dev dependency of kettle: <a href="https://github.com/fluid-project/kettle/blob/master/package.json#L31">https://github.com/fluid-project/kettle/blob/master/package.json#L31</a><br>
+2. Meanwhile, the "kettle" is also a dev dependency of gpii-pouchdb: <a href="https://github.com/the-t-in-rtf/gpii-pouchdb/blob/GPII-1897/package.json#L30">https://github.com/the-t-in-rtf/gpii-pouchdb/blob/GPII-1897/package.json#L30</a></p>
+<p>However, due to the fact of kettle being a DEV dependency of gpii-pouchdb instead of a dependency, running "npm install" on kettle should not trigger gpii-pouchdb to fetch kettle.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>System: Mac OS 10.11.6<br>
+npm version: 3.10.3</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/KETTLE/KETTLE-48/kettle_npm3_install.log">
+                            
+                                kettle_npm3_install.log
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26103">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-10-30T11:07:01.633-0400">2016-10-30T11:07:01.633-0400</relative-time></i></p>
+                        <p>I was able to install Kettle fine using npm3 on my system. I don't think the cycle you mention is relevant, rather the problem with building leveldown which looks like a problem with the configuration of the native build chain (e.g. node-gyp, etc.) on your system.</p>
+<p>However, I am unable to run the unit tests, with the following failure:</p>
+<pre><code class="hljs language-java"><span class="hljs-number">14</span>:<span class="hljs-number">56</span>:<span class="hljs-number">24.780</span>:  Registering <span class="hljs-keyword">module</span> kettle from path E:\source\gits\kettle
+<span class="hljs-number">14</span>:<span class="hljs-number">56</span>:<span class="hljs-number">24.785</span>:  Registering <span class="hljs-keyword">module</span> infusion from path E:\source\gits\kettle\node_modules\infusion
+<span class="hljs-number">14</span>:<span class="hljs-number">56</span>:<span class="hljs-number">24.788</span>:  Registering <span class="hljs-keyword">module</span> infusion from path E:\source\gits\kettle\node_modules\infusion
+<span class="hljs-number">14</span>:<span class="hljs-number">56</span>:<span class="hljs-number">24.801</span>:  Registering <span class="hljs-keyword">module</span> kettle from path E:\source\gits\kettle
+<span class="hljs-number">14</span>:<span class="hljs-number">56</span>:<span class="hljs-number">25.161</span>:  Successfully queued test JSON line number diagnostic test
+<span class="hljs-number">14</span>:<span class="hljs-number">56</span>:<span class="hljs-number">25.219</span>:  Resolved infusion from path E:\source\gits\kettle\node_modules\gpii-pouchdb\node_modules\infusion\src\<span class="hljs-keyword">module</span> to E:/source/gits/kettle/node_module
+s/infusion
+<span class="hljs-number">14</span>:<span class="hljs-number">56</span>:<span class="hljs-number">25.225</span>:  Registering <span class="hljs-keyword">module</span> gpii-pouchdb from path E:\source\gits\kettle\node_modules\gpii-pouchdb
+<span class="hljs-number">14</span>:<span class="hljs-number">56</span>:<span class="hljs-number">25.653</span>:  Resolved infusion from path E:\source\gits\kettle\node_modules\gpii-express\node_modules\infusion\src\<span class="hljs-keyword">module</span> to E:/source/gits/kettle/node_module
+s/infusion
+<span class="hljs-number">14</span>:<span class="hljs-number">56</span>:<span class="hljs-number">25.670</span>:  Registering <span class="hljs-keyword">module</span> gpii-express from path E:\source\gits\kettle\node_modules\gpii-express
+<span class="hljs-number">14</span>:<span class="hljs-number">56</span>:<span class="hljs-number">25.835</span>:  Express at path E:\source\gits\kettle\node_modules\gpii-express is at top level
+<span class="hljs-number">14</span>:<span class="hljs-number">56</span>:<span class="hljs-number">25.839</span>:  Resolved gpii-express from path E:\source\gits\kettle\node_modules\gpii-pouchdb\node_modules\gpii-express to E:\source\gits\kettle\node_modules\g
+pii-express
+<span class="hljs-number">14</span>:<span class="hljs-number">56</span>:<span class="hljs-number">25.851</span>:  FATAL ERROR: Uncaught exception: Cannot find <span class="hljs-keyword">module</span> <span class="hljs-string">'kettle'</span>
+Error: Cannot find <span class="hljs-keyword">module</span> <span class="hljs-string">'kettle'</span>
+    at Function.Module._resolveFilename (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">455</span>:<span class="hljs-number">15</span>)
+    at Function.Module._load (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">403</span>:<span class="hljs-number">25</span>)
+    at Module.require (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">483</span>:<span class="hljs-number">17</span>)
+    at <span class="hljs-title function_">require</span> <span class="hljs-params">(internal/<span class="hljs-keyword">module</span>.js:<span class="hljs-number">20</span>:<span class="hljs-number">19</span>)</span>
+    at Object.&lt;anonymous&gt; (E:\source\gits\kettle\node_modules\gpii-express\tests\js\lib\request.js:<span class="hljs-number">4</span>:<span class="hljs-number">14</span>)
+    at Module._compile (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">556</span>:<span class="hljs-number">32</span>)
+    at Object.Module._extensions..js (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">565</span>:<span class="hljs-number">10</span>)
+    at Module.load (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">473</span>:<span class="hljs-number">32</span>)
+    at <span class="hljs-title function_">tryModuleLoad</span> <span class="hljs-params">(<span class="hljs-keyword">module</span>.js:<span class="hljs-number">432</span>:<span class="hljs-number">12</span>)</span>
+    at Function.Module._load (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">424</span>:<span class="hljs-number">3</span>)
+    at Module.require (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">483</span>:<span class="hljs-number">17</span>)
+    at <span class="hljs-title function_">require</span> <span class="hljs-params">(internal/<span class="hljs-keyword">module</span>.js:<span class="hljs-number">20</span>:<span class="hljs-number">19</span>)</span>
+    at Object.&lt;anonymous&gt; (E:\source\gits\kettle\node_modules\gpii-express\tests\js\lib\index.js:<span class="hljs-number">3</span>:<span class="hljs-number">1</span>)
+    at Module._compile (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">556</span>:<span class="hljs-number">32</span>)
+    at Object.Module._extensions..js (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">565</span>:<span class="hljs-number">10</span>)
+    at Module.load (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">473</span>:<span class="hljs-number">32</span>)
+    at <span class="hljs-title function_">tryModuleLoad</span> <span class="hljs-params">(<span class="hljs-keyword">module</span>.js:<span class="hljs-number">432</span>:<span class="hljs-number">12</span>)</span>
+    at Function.Module._load (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">424</span>:<span class="hljs-number">3</span>)
+    at Module.require (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">483</span>:<span class="hljs-number">17</span>)
+    at <span class="hljs-title function_">require</span> <span class="hljs-params">(internal/<span class="hljs-keyword">module</span>.js:<span class="hljs-number">20</span>:<span class="hljs-number">19</span>)</span>
+    at Object.&lt;anonymous&gt; (E:\source\gits\kettle\node_modules\gpii-express\testIncludes.js:<span class="hljs-number">2</span>:<span class="hljs-number">1</span>)
+    at Module._compile (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">556</span>:<span class="hljs-number">32</span>)
+    at Object.Module._extensions..js (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">565</span>:<span class="hljs-number">10</span>)
+    at Module.load (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">473</span>:<span class="hljs-number">32</span>)
+    at <span class="hljs-title function_">tryModuleLoad</span> <span class="hljs-params">(<span class="hljs-keyword">module</span>.js:<span class="hljs-number">432</span>:<span class="hljs-number">12</span>)</span>
+    at Function.Module._load (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">424</span>:<span class="hljs-number">3</span>)
+    at Module.require (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">483</span>:<span class="hljs-number">17</span>)
+    at <span class="hljs-title function_">require</span> <span class="hljs-params">(internal/<span class="hljs-keyword">module</span>.js:<span class="hljs-number">20</span>:<span class="hljs-number">19</span>)</span>
+    at Function.gpii.express.loadTestingSupport (E:\source\gits\kettle\node_modules\gpii-express\index.js:<span class="hljs-number">53</span>:<span class="hljs-number">9</span>)
+    at Function.gpii.pouch.loadTestingSupport (E:\source\gits\kettle\node_modules\gpii-pouchdb\index.js:<span class="hljs-number">13</span>:<span class="hljs-number">18</span>)
+    at Object.&lt;anonymous&gt; (E:\source\gits\kettle\tests\DataSourcePouchDBTests.js:<span class="hljs-number">22</span>:<span class="hljs-number">12</span>)
+    at Module._compile (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">556</span>:<span class="hljs-number">32</span>)
+    at Object.Module._extensions..js (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">565</span>:<span class="hljs-number">10</span>)
+    at Module.load (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">473</span>:<span class="hljs-number">32</span>)
+    at <span class="hljs-title function_">tryModuleLoad</span> <span class="hljs-params">(<span class="hljs-keyword">module</span>.js:<span class="hljs-number">432</span>:<span class="hljs-number">12</span>)</span>
+    at Function.Module._load (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">424</span>:<span class="hljs-number">3</span>)
+    at Module.require (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">483</span>:<span class="hljs-number">17</span>)
+    at <span class="hljs-title function_">require</span> <span class="hljs-params">(internal/<span class="hljs-keyword">module</span>.js:<span class="hljs-number">20</span>:<span class="hljs-number">19</span>)</span>
+    at E:\source\gits\kettle\tests\all-tests.js:<span class="hljs-number">44</span>:<span class="hljs-number">5</span>
+    at Object.fluid.each (E:\source\gits\kettle\node_modules\infusion\src\framework\core\js\Fluid.js:<span class="hljs-number">502</span>:<span class="hljs-number">17</span>)
+    at Object.&lt;anonymous&gt; (E:\source\gits\kettle\tests\all-tests.js:<span class="hljs-number">43</span>:<span class="hljs-number">7</span>)
+    at Module._compile (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">556</span>:<span class="hljs-number">32</span>)
+    at Object.Module._extensions..js (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">565</span>:<span class="hljs-number">10</span>)
+    at Module.load (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">473</span>:<span class="hljs-number">32</span>)
+    at <span class="hljs-title function_">tryModuleLoad</span> <span class="hljs-params">(<span class="hljs-keyword">module</span>.js:<span class="hljs-number">432</span>:<span class="hljs-number">12</span>)</span>
+    at Function.Module._load (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">424</span>:<span class="hljs-number">3</span>)
+    at Module.runMain (<span class="hljs-keyword">module</span>.js:<span class="hljs-number">590</span>:<span class="hljs-number">10</span>)
+    at <span class="hljs-title function_">run</span> <span class="hljs-params">(bootstrap_node.js:<span class="hljs-number">394</span>:<span class="hljs-number">7</span>)</span>
+    at <span class="hljs-title function_">startup</span> <span class="hljs-params">(bootstrap_node.js:<span class="hljs-number">149</span>:<span class="hljs-number">9</span>)</span>
+    at bootstrap_node.js:<span class="hljs-number">509</span>:<span class="hljs-number">3</span>
+</code></pre>
+
+                    </li>
+                    
+                    <li id="comment-26104">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-10-30T11:07:25.192-0400">2016-10-30T11:07:25.192-0400</relative-time></i></p>
+                        <p>This needs to be fixed up in gpii-express and has been reported as <a href="https://issues.gpii.net/browse/GPII-2108">https://issues.gpii.net/browse/GPII-2108</a></p>
+
+                    </li>
+                    
+                    <li id="comment-26105">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2017-08-28T10:22:33.813-0400">2017-08-28T10:22:33.813-0400</relative-time></i></p>
+                        <p>This was fixed in Kettle 1.1.1 released 1 Nov 2016</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/KETTLE-46/"><span class="aria-hidden">←</span> Previous: KETTLE-46</a>
+        <a class="mx-1" href="/browse/KETTLE-49/">Next: KETTLE-49 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

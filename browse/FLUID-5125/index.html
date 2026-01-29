@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5125  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5125 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5125/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5125/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5125/">FLUID-5125</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5125: Demands blocks are applied out of the context scope if the demanding component is shared by siblings</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5125">FLUID-5125</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Not%20A%20Bug">Not A Bug</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Cindy Li</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Cindy%20Li">Cindy Li</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-09-06T11:59:57.584-0400" prefix="">2013-09-06T11:59:57.584-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T11:29:10.698-0500" prefix="">2014-03-03T11:29:10.698-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The demands block:</p>
+<p>fluid.demands("fluid.tests.fluid5100ToRemove", ["fluid.tests.fluid5100Sub1"], {<br>
+funcName: "fluid.emptySubcomponent"<br>
+});</p>
+<p>If the demanding component "fluid.tests.fluid5100ToRemove" is shared by two sibling components such as:</p>
+<p>fluid.defaults("fluid.tests.fluid5100", {<br>
+gradeNames: ["fluid.littleComponent", "autoInit"],<br>
+components: {<br>
+sub1: {<br>
+type: "fluid.tests.fluid5100Sub1",<br>
+options: {<br>
+components: {<br>
+toRemove: {<br>
+type: "fluid.tests.fluid5100ToRemove"<br>
+}<br>
+}<br>
+}<br>
+},<br>
+sub2: {<br>
+type: "fluid.tests.fluid5100Sub2",<br>
+options: {<br>
+components: {<br>
+toRemove: {<br>
+type: "fluid.tests.fluid5100ToRemove"<br>
+}<br>
+}<br>
+}<br>
+}<br>
+}<br>
+});</p>
+<p>Even though the demands block is expected to be only applied to its context component "fluid.tests.fluid5100Sub1", it's actually applied to both siblings.</p>
+<p>A test case is created @ <a href="https://github.com/cindyli/infusion/blob/FLUID-5125/src/tests/framework-tests/core/js/FluidIoCTests.js#L3206-L3255">https://github.com/cindyli/infusion/blob/FLUID-5125/src/tests/framework-tests/core/js/FluidIoCTests.js#L3206-L3255</a></p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22873">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-09-07T04:26:42.646-0400">2013-09-07T04:26:42.646-0400</relative-time></i></p>
+                        <p>Hi cindyli - unfortunately this behaviour is "working as designed". The demands block is applicable to the sibling component, since the context name "fluid.tests.fluid5125Sub1" is resolvable from there, since the component is part of the set of "siblings of ancestors". For example - were you to use the context "{fluid5125Sub1}" within the 2nd subcomponent, it would be resolvable by the standard resolution rules, and hence it is also valid as a context name for the purposes of demands resolution.</p>
+<p>See our standard "yellow squares" diagram for an illustration: <a href="http://wiki.fluidproject.org/display/docs/Demand+Resolution">http://wiki.fluidproject.org/display/docs/Demand+Resolution</a></p>
+<p>Although this behaviour may seem peculiar, it can't be altered without changing the meaning of all demands blocks and causing many current uses of them, e.g. for progressiveEnhancement to fail. As I mentioned in the channel today, it is safer to start relying on the "distributeOptions" mechanism instead since the downward-matching selectors that it uses are free from this possibly awkward interpretation applied to the upward-matching contexts used for matching demands blocks contexts - as well as the fact that recent discoveries (see GPII architecture list for today, 7/9/13) suggest that we should deprecate the use of demands blocks altogether and remove them from the framework.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5124/"><span class="aria-hidden">←</span> Previous: FLUID-5124</a>
+        <a class="mx-1" href="/browse/FLUID-5126/">Next: FLUID-5126 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

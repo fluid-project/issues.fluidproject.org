@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5798  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5798 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5798/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5798/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5798/">FLUID-5798</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5798: fluid-publish fails to apply the NPM tag</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5798">FLUID-5798</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-10-26T09:19:27.424-0400" prefix="">2015-10-26T09:19:27.424-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-07-08T09:04:26.069-0400" prefix="">2016-07-08T09:04:26.069-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Build Scripts</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When trying to apply an NPM dist-tag an error occurs. It appears that the cause of this is that the command to get the revision number from git returns with a new line character at the end. This in turn pushes the tag name onto a new line, which results in an error where the "latest" tag has already been applied and there is no command called "dev".</p>
+<p>Console Error:<br>
+[colin@tofino infusion (master $=)]$ fluid-publish <br>
+npm WARN dist-tag add latest is already set to version 2.0.0-dev-dev.20151024T010910Z.d1e5b8d <br>
+/bin/sh: line 1: dev: command not found <br>
+child_process.js:484 <br>
+throw err; <br>
+^ </p>
+<p>Error: Command failed: npm dist-tag add infusion@2.0.0-dev-dev.20151024T010910Z.d1e5b8d <br>
+dev <br>
+npm WARN dist-tag add latest is already set to version 2.0.0-dev-dev.20151024T010910Z.d1e5b8d <br>
+/bin/sh: line 1: dev: command not found </p>
+<p>at checkExecSyncError (child_process.js:441:13) <br>
+at Object.execSync (child_process.js:481:13) <br>
+at Object.publish.tag (/usr/local/lib/node_modules/fluid-publish/publish.js:202:17) <br>
+at Object.publish.dev (/usr/local/lib/node_modules/fluid-publish/publish.js:257:13) <br>
+at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/fluid-publish/publish.js:291:17) <br>
+at Module._compile (module.js:435:26) <br>
+at Object.Module._extensions..js (module.js:442:10) <br>
+at Module.load (module.js:356:32) <br>
+at Function.Module._load (module.js:311:12) <br>
+at Function.Module.runMain (module.js:467:10) </p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-24347">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-10-27T12:49:16.931-0400">2015-10-27T12:49:16.931-0400</relative-time></i></p>
+                        <p>Resolved in fluid-publish 1.1.0</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5797/"><span class="aria-hidden">←</span> Previous: FLUID-5797</a>
+        <a class="mx-1" href="/browse/FLUID-5799/">Next: FLUID-5799 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

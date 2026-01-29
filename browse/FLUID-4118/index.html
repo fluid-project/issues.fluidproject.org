@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4118  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4118 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4118/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4118/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4118/">FLUID-4118</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4118: Some TinyMCE functions not working in Rich Text Demo</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4118">FLUID-4118</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Duplicate">Duplicate</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Harris%20Wong">Harris Wong</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2011-02-24T16:40:37.948-0500" prefix="">2011-02-24T16:40:37.948-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-03-01T11:29:57.614-0500" prefix="">2011-03-01T11:29:57.614-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Demos</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>1. Open <a href="http://build.fluidproject.org/infusion/demos/inlineEdit/rich/demo.html">http://build.fluidproject.org/infusion/demos/inlineEdit/rich/demo.html</a>, or infusion-1.3.1-src.zip from <a href="http://wiki.fluidproject.org/display/fluid/Release+Package+QA+Test+Plan">http://wiki.fluidproject.org/display/fluid/Release+Package+QA+Test+Plan</a><br>
+2. Click on "Edit" under the "Rich Text Inline Edit with Tiny MCE"<br>
+3. Highlight anything, click "Insert/Edit link"<br>
+4. A popup appears but nothing is loaded.</p>
+<p>This occurs in WinXP Chrome, FF3.6, IE8</p>
+<p>Futhermore, in Chrome, the following fails as well<br>
+5. Highlight any text, click "Strikethrough"<br>
+6. Save.<br>
+Nothing is saved.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>WinXP Firefox, Chrome, IE8</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-21918">
+                        <p class="mb-0"><b>Harris Wong</b> <i>commented <relative-time datetime="2011-02-24T17:18:54.804-0500">2011-02-24T17:18:54.804-0500</relative-time></i></p>
+                        <p>have the following error on IE8:<br>
+---------------------------------------------------
+<br>
+Line: 5<br>
+Character: 97<br>
+Code: 0<br>
+Error Message: Permission denied<br>
+URL: <a href="http://tinymce-fluid.appspot.com/tiny_mce_popup.js">http://tinymce-fluid.appspot.com/tiny_mce_popup.js</a><br>
+---------------------------------------------------
+<br>
+Line: 10<br>
+Character: 1<br>
+Code: 0<br>
+Error Message: 'tinyMCEPopup.editor.baseURI' is null or not an object<br>
+URL: <a href="http://tinymce-fluid.appspot.com/utils/form_utils.js">http://tinymce-fluid.appspot.com/utils/form_utils.js</a><br>
+---------------------------------------------------
+<br>
+Line: 5<br>
+Character: 760<br>
+Code: 0<br>
+Error Message: 'this.params' is null or not an object<br>
+URL: <a href="http://tinymce-fluid.appspot.com/tiny_mce_popup.js">http://tinymce-fluid.appspot.com/tiny_mce_popup.js</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4117/"><span class="aria-hidden">←</span> Previous: FLUID-4117</a>
+        <a class="mx-1" href="/browse/FLUID-4119/">Next: FLUID-4119 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

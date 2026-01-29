@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> INFRA-102  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" INFRA-102 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/INFRA-102/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/INFRA-102/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/INFRA" data-pagefind-filter="project">Infrastructure</a></li>
+                <li><a href="/browse/INFRA-102/">INFRA-102</a></li>
+            </ol>
+        </nav>
+        <h1>INFRA-102: Evaluate Rancher 2.0 Tech Preview 2</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/INFRA-102">INFRA-102</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/INFRA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Giovanni Tirloni</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/INFRA/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2018-01-29T09:34:41.291-0500" prefix="">2018-01-29T09:34:41.291-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-02-06T11:47:11.060-0500" prefix="">2018-02-06T11:47:11.060-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Rancher 2.0 was released and the IDRC was given access to a restricted support channel with Rancher Labs.</p>
+<p>Investigate what's needed to install and use it for our purposes.</p>
+<p>Storage management is currently not&#160;available in&#160;Rancher 2.0&#160;TP2</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25914">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-01-29T11:57:14.828-0500">2018-01-29T11:57:14.828-0500</relative-time></i></p>
+                        <p>Starting work on this today.</p>
+
+                    </li>
+                    
+                    <li id="comment-25915">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-02-02T07:15:57.683-0500">2018-02-02T07:15:57.683-0500</relative-time></i></p>
+                        <p>I've updated this ticket because there was a misunderstanding regarding when the Beta would be available.</p>
+<p>The release that was done a week ago is still called "Tech Preview 2" and it's not the Beta.</p>
+<p>Since I've been evaluating TP2 (with good results so far), I'll add my findings here about TP2 and open a new ticket for the Beta specifically (which should be released in 2 weeks).</p>
+
+                    </li>
+                    
+                    <li id="comment-25916">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-02-02T14:47:53.133-0500">2018-02-02T14:47:53.133-0500</relative-time></i></p>
+                        <p><strong>What changed since TP1</strong></p>
+<p>TP1 felt like a mix of Rancher 1.x and 2.x. Various concepts were mixed together, there was a lot of Cattle code still running and overall it wasn't a good experience. That was expected. The UI also had a lot of issues and it seems everything was exposed, even if it didn't work so well (or at all).</p>
+<p>In TP2 the UI is much more polished, actions either work or have clear errors and a number of options have been removed (probably things that are still being worked on). Overall, it felt much better. What was available worked as expected.</p>
+<p><strong>High Availability</strong></p>
+<p>Right now the Rancher server doesn't support HA. It should not be confused with HA for the Kubernetes cluster, which the RKE installer supports just fine it seems.</p>
+<p>For us this won't matter much. If the management interface goes down, the Kubernetes clusters continue to work normally. It would be an annoyance though but I'm not sure our environment justifies spinning up 3 VM's just for it. In the future, if the Rancher server could run alongside the Kubernetes masters, that would be good for resource efficiency but I'm not sure about the security implications.</p>
+<p><strong>Storage Management</strong></p>
+<p>Storage management is missing from TP2 but should be added before the GA release. This is a major area of concern for us. I think the biggest.</p>
+<p><strong>Ingress Controller</strong></p>
+<p>The Rancher ingress controller worked fine. Others might be used instead (just like in any K8s cluster you can have many controllers watching over different objects).</p>
+<p><strong>Catalog</strong></p>
+<p>Rancher has their "certified" and "community" catalogs. It's basically a collection of docker-compose and rancher-compose files. I didn't test this extensively because I think we prefer Helm charts and I couldn't find much about how that's integrated into the UI (i.e. if I deploy a Helm chart, does it count as a catalog item being deployed?). I think we should explore this further because it could help in providing a self-service panel for power users (a la Bitnami).</p>
+<p><strong>Creating clusters</strong></p>
+<p>In the Tech Preview 2, only AWS and Digital Ocean are supported to create clusters from the UI. However, it's possible to use RKE manually (which is essentially what Rancher uses), create the cluster and then import it. It's mentioned in the Getting Started Guide that the ability to create RKE clusters on other providers or bare metal will be in the GA release. That's what I have focused on (and submitted a few bug reports, forums posts, etc).</p>
+<p>Additionally, we can also create clusters with kubeadm and import them. I tested it and it seemed to work fine, although at this point I'm leaning more towards RKE clusters. Kubeadm is getting HA support in the next few releases but RKE has it now.</p>
+<p><strong>Node Drivers</strong></p>
+<p>Rancher can use docker-machine to spin up VMs. There are several drivers that know how to talk to various cloud providers and hypervisors. Support for KVM/libvirt isn't enabled by default and we would need to figure out how to do this. Since we don't play to spin up clusters all the time, I'm not sure the effort to automate this here will pay off (since it's already automated in Ansible).</p>
+<p>If a Node Driver for KVM/libvirt cannot be made to work, the alternative is to use RKE separately and import the cluster. It seems there aren't many downsides in doing this but it's worth investigating full automation.</p>
+<p><strong>Custom Node Support</strong></p>
+<p>This feature existed in Rancher 1.x but is not available in 2.x yet. I read it's being prioritized for the Beta release. Adding Custom Nodes would allow us to deploy our VMs in the traditional way (KVM/libvirt/ansible) and then add them through the Rancher UI which would give us a Docker command to run the Rancher agent. It works pretty well in 1.6 so I'm expecting the same in 2.0 since there aren't big changes. I think the removal of certain features from the TP2 was a matter of focus and limiting support the support burden.</p>
+<p><strong>SELinux</strong></p>
+<p>SELinux had to be disabled to use TP2 the RKE installer, that's unfortunate. There are instructions on how to enable SELinux for Rancher 1.6 but I have not tested it (because 2.x is too different in how it deploys K8s). In the final release, I'd expect SELinux to be supported again.</p>
+<p><strong>Non-default SSH port</strong></p>
+<p>RKE 0.1.0 doesn't support non-default SSH port (there's a PR for this – <a href="https://github.com/rancher/rke/issues/100">https://github.com/rancher/rke/issues/100</a>). I had to make OpenSSH listen on port 22 due to that.</p>
+<p><strong>CentOS Docker issue</strong></p>
+<p>There is an issue with bind mounts that was fixed in Fedora and RHEL some time ago but it's missing from the CentOS package. I opened a bug report: <a href="https://bugs.centos.org/view.php?id=14455">https://bugs.centos.org/view.php?id=14455</a></p>
+<p>"MountFlags=" should be removed from Docker's systemd unit (<a href="https://github.com/rancher/rke/issues/123">https://github.com/rancher/rke/issues/123</a>&#160;<a href="https://github.com/rancher/rke/issues/123">https://github.com/rancher/rke/issues/123</a> <a href="https://github.com/moby/moby/pull/22806#issuecomment-220009311">https://github.com/moby/moby/pull/22806#issuecomment-220009311</a>)</p>
+<p><strong>Networking</strong></p>
+<p>The default overlay network is flannel. That's not appropriate for us due to lack of support for Network Policies which we definitely want.</p>
+<p>Luckily, calico, weave and canal are supported. I need to run more tests with more complex deployment to test Network Policies thoroughly but it's a basic Kubernetes feature, not Rancher's.</p>
+<p><strong>Final Words</strong></p>
+<p>Overall impression was positive (actually, pretty impressed with the improvements since TP1 so now expecting a lot for the Beta).</p>
+<p>I continue to think it fits our scenario perfectly due to the following reasons:</p>
+<ul>
+<li>Open source (both RancherUI and RKE)</li>
+<li>Fully focused on Kubernetes now</li>
+<li>Kubernetes is deployed completely as containers ("self-hosted Kubernetes"). This seems better than managing systemd units.</li>
+<li>Nice complementing concepts to the basic Kubernetes ones (Stacks, Workloads, etc)</li>
+<li>Good defaults for RBAC</li>
+<li>Security policies per environment</li>
+<li>Moved from MySQL/Java to etcd/Go (leveraging Kubernetes custom resource definitions now, very low resource usage)</li>
+<li>Nice UI but also no roadblocks to accessing the underlying Kubernetes directly.</li>
+</ul>
+<p><strong>Next Steps</strong></p>
+<p>I think we have spent too much time already in the prep phase of our Kubernetes work. I think it's time to put it in use and soon.</p>
+<p>I want to discuss what are some good workloads to start throwing at a semi-permanent cluster with the intent of moving as much as possible inside Kubernetes. Some workloads will need to wait a bit more until we have more trust in the storage solution (GlusterFS, with maybe Rook) but we shouldn't delay this anymore.</p>
+<p></p>
+
+                    </li>
+                    
+                    <li id="comment-25917">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2018-02-06T11:47:11.056-0500">2018-02-06T11:47:11.056-0500</relative-time></i></p>
+                        <p>Closing this issue as the research is done. We'll repeat the process for Rancher 2.0 Beta (the real Beta) and in the meantime we'll get a cluster up &amp; running to start deploying things to it.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/INFRA-100/"><span class="aria-hidden">←</span> Previous: INFRA-100</a>
+        <a class="mx-1" href="/browse/INFRA-103/">Next: INFRA-103 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

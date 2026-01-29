@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5105  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5105 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5105/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5105/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5105/">FLUID-5105</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5105: Contributed grade options are not resolved within the expander inside the defaults.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5105">FLUID-5105</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=y%20z">y z</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-07-29T09:29:42.250-0400" prefix="">2013-07-29T09:29:42.250-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2019-10-19T03:38:36.996-0400" prefix="">2019-10-19T03:38:36.996-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This problem can be seen in the current state of the UIOptions builder.</p>
+<p>The auxiliary builder is currently assigned a "fluid.uiOptions.auxSchema.starter" grade that contains all the specification for the starter panels, enactors, etc: <a href="https://github.com/jobara/infusion/blob/FLUID-4907/src/components/uiOptions/js/Builder.js#L25">https://github.com/jobara/infusion/blob/FLUID-4907/src/components/uiOptions/js/Builder.js#L25</a></p>
+<p>This is incorrect and in fact should be changed to just "fluid.uiOptions.auxSchema" grade that is by default empty.</p>
+<p>Whenever the user configures uioptions builder and by extension uioptions themselves, they have an option of passing an auxSchema gradeName that contains the required configuration. For example, this is demonstrated by the current uioptions demo: <a href="https://github.com/jobara/infusion/blob/FLUID-4907/src/demos/uiOptions/js/uiOptionsDemo.js#L23-L25">https://github.com/jobara/infusion/blob/FLUID-4907/src/demos/uiOptions/js/uiOptionsDemo.js#L23-L25</a>.</p>
+<p>However this does not work at the moment because the framework does not resolve the "fluid.uiOptions.auxSchema.starter" defaults when passed as options to the builder.</p>
+<p>More specific test case to follow.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25238">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-07-30T10:29:01.974-0400">2013-07-30T10:29:01.974-0400</relative-time></i></p>
+                        <p>Hi yzen and cindyli - Thanks for this report and test case. I am pasting in its current form here, in case it gets updated:</p>
+<pre><code class="hljs language-java">fluid.defaults(<span class="hljs-string">"fluid.tests.auxSchema"</span>, {
+        gradeNames: [<span class="hljs-string">"fluid.littleComponent"</span>, <span class="hljs-string">"autoInit"</span>],
+        auxiliarySchema: {}
+    });
+
+    fluid.defaults(<span class="hljs-string">"fluid.tests.auxSchema.starter"</span>, {
+        gradeNames: [<span class="hljs-string">"fluid.tests.auxSchema"</span>, <span class="hljs-string">"autoInit"</span>],
+        auxiliarySchema: {
+            <span class="hljs-string">"exists"</span>: <span class="hljs-literal">true</span>
+        }
+    });
+
+    fluid.defaults(<span class="hljs-string">"fluid.tests.primaryBuilder"</span>, {
+        gradeNames: [<span class="hljs-string">"fluid.littleComponent"</span>, <span class="hljs-string">"autoInit"</span>, <span class="hljs-string">"{that}.buildPrimary"</span>],
+        primarySchema: {},
+        auxiliarySchema: {},
+        auxSchema: {
+            expander: {
+                func: <span class="hljs-string">"fluid.tests.primaryBuilder.parseAuxSchema"</span>,
+                args: <span class="hljs-string">"{that}.options.auxiliarySchema"</span>
+            }
+        },
+        invokers: {
+            buildPrimary: {
+                funcName: <span class="hljs-string">"fluid.tests.primaryBuilder.buildPrimary"</span>,
+                args: <span class="hljs-string">"{that}.options.auxSchema"</span>
+            }
+        },
+    });
+
+    fluid.tests.primaryBuilder.buildPrimary = function (auxSchema) {
+        <span class="hljs-keyword">return</span> [];
+    };
+
+    fluid.tests.primaryBuilder.parseAuxSchema = function (auxSchema) {
+        <span class="hljs-keyword">return</span> {exists: auxSchema.exists};
+    };
+
+    fluid.defaults(<span class="hljs-string">"fluid.tests.auxBuilder"</span>, {
+        gradeNames: [<span class="hljs-string">"autoInit"</span>, <span class="hljs-string">"fluid.tests.auxSchema"</span>, <span class="hljs-string">"fluid.tests.primaryBuilder"</span>]
+    });
+
+    jqUnit.test(<span class="hljs-string">"<a href="/browse/FLUID-5105/">FLUID-5105</a>: Contributed grade options merging."</span>, function () {
+        <span class="hljs-type">var</span> <span class="hljs-variable">builder</span> <span class="hljs-operator">=</span> fluid.tests.auxBuilder({
+            gradeNames: [<span class="hljs-string">"fluid.tests.auxSchema.starter"</span>]
+        });
+        jqUnit.assertValue(<span class="hljs-string">"Options from the contributed grade must be merged in"</span>, builder.options.auxiliarySchema.exists);
+        jqUnit.assertValue(<span class="hljs-string">"Options from the contributed grade must be merged in"</span>, builder.options.auxSchema.exists);
+    });
+</code></pre>
+<p>The issue is that the dynamic grade structure of a component is evaluated at just one time. Tracing the activity of "{that}.buildPrimary", the dynamic grade of the component, this triggers the evaluation of {that}.options.auxSchema - this in turn triggers the evaluation of {that}.options.auxiliarySchema. Given this is partway through the process of resolving dynamic grades, the additional material supplied as direct options has not yet been seen. We can try to fix this, but in general you should avoid the use of invokers in grade resolution which depend on material which is itself dependent on dynamic grade information, since this runs the risk of encountering a circularity in evaluation.</p>
+<p>It may be possible to resolve this issue by moving towards a 3-phase approach for resolving dynamic grade information, where the use of invokers is deferred to the third phase.</p>
+
+                    </li>
+                    
+                    <li id="comment-25239">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-08-22T17:41:42.591-0400">2013-08-22T17:41:42.591-0400</relative-time></i></p>
+                        <p>Keeping this issue open for now, but have closed the corresponding pull request with this comment:</p>
+<p>Hi yzen - thanks for this test case which is useful - I think I will close this pull request but keep the accompanying JIRA open since this is a bit of a "grey area" in the implementation policy, and it would be good to be able to search for this issue in future should it arise again. As I explain in the JIRA, I'd prefer not to "fix" this issue without another confirming instance of the problem, since allowing people to cut the ginger world timing so finely runs the risk of creating code which is very difficult to follow. In practice, the original issue was resolved by the old-fashioned means of creating an extra component - although in this case I feel the effect was to improve the system design.</p>
+
+                    </li>
+                    
+                    <li id="comment-25240">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-11-20T14:35:12.176-0500">2013-11-20T14:35:12.176-0500</relative-time></i></p>
+                        <p>I had a further look at this test case after the <a href="/browse/FLUID-5155/">FLUID-5155</a> implementation, but it is still not practical to resolve it. As the early comment mentions, the activity of "{that}.buildPrimary" causes the full evaluation of the option "{that}.options.auxiliarySchema" which given the grade structure at the time evaluates to {}. This value having once been evaluated, we cannot then go on to reevaluate it when the further grade material arrives from "fluid.tests.auxSchema.starter" which is counted as a dynamic grade and is so applied later.</p>
+
+                    </li>
+                    
+                    <li id="comment-25241">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-08-20T22:00:01.301-0400">2015-08-20T22:00:01.301-0400</relative-time></i></p>
+                        <p>This will probably be resolved fully with <a href="/browse/FLUID-4982/">FLUID-4982</a></p>
+
+                    </li>
+                    
+                    <li id="comment-25242">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2019-10-19T03:38:36.996-0400">2019-10-19T03:38:36.996-0400</relative-time></i></p>
+                        <p>This should have been resolved, re-check - for some time it should have been that directly supplied grades do not count as dynamic.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5104/"><span class="aria-hidden">←</span> Previous: FLUID-5104</a>
+        <a class="mx-1" href="/browse/FLUID-5106/">Next: FLUID-5106 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

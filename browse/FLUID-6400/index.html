@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6400  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6400 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6400/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6400/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6400/">FLUID-6400</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6400: Prepare and update prefs framework for closer convergence with GPII primitives and easier reuse</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6400">FLUID-6400</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2019-09-23T08:44:36.424-0400" prefix="">2019-09-23T08:44:36.424-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2024-07-22T10:35:06.913-0400" prefix="">2024-07-22T10:35:06.913-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This is a subset of longer-term discussions which are being tracked in <a href="https://pad.gpii.net/p/uio-and-prefs-framework-requirements-2u194n92">https://pad.gpii.net/p/uio-and-prefs-framework-requirements-2u194n92</a> . </p>
+<p>Some relatively self-contained and bite-sized tasks have emerged - </p>
+<p>i) Updating our dialect of JSON schema used in our primary schema grades to the current draft (involving updates like updating "divisibleBy" to "multipleOf"<br>
+ii) Moving towards the GPII solutions registry's profile of JSON schema, which involves making use of the "enumLabels" approach for referencing i18n message keys for enumerations</p>
+<p>This should pave the way to eliminating the<br>
+"controlValues" and "stringArrayIndex" intrusions identified in the OpenDyslexic pull at <a href="https://github.com/fluid-project/infusion/pull/956">https://github.com/fluid-project/infusion/pull/956</a> for <a href="/browse/FLUID-5525/">FLUID-5525</a> which was identified by Alan Harnum as some of the obstructions to easily reusing and extending the prefs framework UI.</p>
+<p>This might involve adopting some of the global conventions on message bundle naming and bundle orchestration that were discussed last year at <a href="https://pad.gpii.net/p/i18n-meetings-6294n3p">https://pad.gpii.net/p/i18n-meetings-6294n3p</a> and given a partial implementation by the Astea team at <a href="https://github.com/GPII/gpii-app/blob/master/scripts/compileMessageBundles.js">https://github.com/GPII/gpii-app/blob/master/scripts/compileMessageBundles.js</a> . </p>
+<p>It seems like an integrated approach to coordinating message bundle names with primary schema grades will be an important part of the work of implementing the GPII "Presentation Registry" (headed up by Tony Atkins [RtF]) that goes beyond what has been achieved so far with the "Auxiliary Schema" in the prefs framework, and should also significantly improve our reuse stories.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6399/"><span class="aria-hidden">←</span> Previous: FLUID-6399</a>
+        <a class="mx-1" href="/browse/FLUID-6401/">Next: FLUID-6401 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> DECA-256  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" DECA-256 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/DECA-256/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/DECA-256/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/DECA" data-pagefind-filter="project">Decapod</a></li>
+                <li><a href="/browse/DECA-256/">DECA-256</a></li>
+            </ol>
+        </nav>
+        <h1>DECA-256: The exporter unit tests throw errors</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/DECA-256">DECA-256</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/DECA/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Critical</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/DECA/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/DECA/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-05-15T16:32:14.135-0400" prefix="">2012-05-15T16:32:14.135-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2012-07-10T13:52:00.692-0400" prefix="">2012-07-10T13:52:00.692-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.6</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Export</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>The exporter unit tests run with all the tests passing; however, many errors are thrown for fluid.fail.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF 12 (Ubuntu 10.04)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10200">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2012-07-06T10:19:28.855-0400">2012-07-06T10:19:28.855-0400</relative-time></i></p>
+                        <p>Can't reproduce. I had to use the beta version of firebug to run the unit tests, as the stable version is too slow to handle all of the logging. It's possible that the pre-release version I had been using at the time had an issue. I've retested this with Firebug 1.10.0b2 and no errors are thrown. </p>
+
+                    </li>
+                    
+                    <li id="comment-10201">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2012-07-06T11:22:10.920-0400">2012-07-06T11:22:10.920-0400</relative-time></i></p>
+                        <p>I tried it again and the issues has reappeared. could have been a temporary respite due to the newer beta version of firebug.</p>
+
+                    </li>
+                    
+                    <li id="comment-10202">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2012-07-09T13:28:09.633-0400">2012-07-09T13:28:09.633-0400</relative-time></i></p>
+                        <p>Refactored the events. Used event aggregation to combine rendering events into a single event. This helps make it clear when all the export types have rendered. Also moved the onReady event to be triggered by the accordion instead of the event binder, since it is the last subcomponent to be initialized.</p>
+<p>The changes can be found in my bitbucket repo:<br>
+<a href="https://bitbucket.org/jobara/decapod-0.6-ui-iteration4">https://bitbucket.org/jobara/decapod-0.6-ui-iteration4</a></p>
+
+                    </li>
+                    
+                    <li id="comment-10203">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2012-07-10T13:51:56.312-0400">2012-07-10T13:51:56.312-0400</relative-time></i></p>
+                        <p>Merged into the googlecode repo</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/DECA-255/"><span class="aria-hidden">←</span> Previous: DECA-255</a>
+        <a class="mx-1" href="/browse/DECA-257/">Next: DECA-257 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

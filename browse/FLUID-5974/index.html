@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5974  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5974 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5974/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5974/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5974/">FLUID-5974</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5974: Dropdown inline edit throws an error when changing selection with the keyboard</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5974">FLUID-5974</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-09-29T12:43:36.139-0400" prefix="">2016-09-29T12:43:36.139-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-10-03T16:23:04.472-0400" prefix="">2016-10-03T16:23:04.472-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>After upgrading jQuery to v3.1 Dropdown Inline Edit throws an error ( lis.size is not a function ) from jquery.selectbox-0.5.js (line 149). This stems from the fact that the size function was removed from jQuery v3.0 ( <a href="https://api.jquery.com/size/">https://api.jquery.com/size/</a> ).</p>
+<p>Steps to reproduce: </p>
+<ol>
+<li>Open the Dropdown InlineEdit manual test ( <a href="http://build.fluidproject.org/infusion/tests/manual-tests/components/inlineEdit/dropdown/">http://build.fluidproject.org/infusion/tests/manual-tests/components/inlineEdit/dropdown/</a> )</li>
+<li>Tab to the dropdown inline edit element</li>
+<li>Press the Enter key to activate it</li>
+<li>Use the arrow keys to move around</li>
+<li>Notice that it doesn't change selection and that an error was thrown in the console.</li>
+</ol>
+<p>Unfortunately it doesn't seem that the select box plugin is being maintained anymore. I've found a version up to 1.2, but it also makes use of the size function.</p>
+<p><a href="http://stackoverflow.com/questions/1072239/is-it-possible-to-style-a-select-box/1072266#1072266">http://stackoverflow.com/questions/1072239/is-it-possible-to-style-a-select-box/1072266#1072266</a></p>
+<p>We could do one of the following:</p>
+<ul>
+<li>patch the select box plugin </li>
+<li>find a new plugin </li>
+<li>create our own support for the select box </li>
+<li>stop supporting a dropdown inline edit.</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22546">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-09-29T12:44:57.850-0400">2016-09-29T12:44:57.850-0400</relative-time></i></p>
+                        <p>Antranig Basman do you have a thought on how we should proceed with this. The dropdown inline edit is still not a fully supported component/feature in infusion.</p>
+
+                    </li>
+                    
+                    <li id="comment-22548">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2016-10-03T15:27:55.596-0400">2016-10-03T15:27:55.596-0400</relative-time></i></p>
+                        <p>The pull request <a href="https://github.com/fluid-project/jquery.selectbox/pull/1">https://github.com/fluid-project/jquery.selectbox/pull/1</a> has been merged into the master branch at cb5b2f36a23304260286236414124e80006e27a0</p>
+
+                    </li>
+                    
+                    <li id="comment-22550">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2016-10-03T16:22:57.646-0400">2016-10-03T16:22:57.646-0400</relative-time></i></p>
+                        <p>The infusion pull request <a href="https://github.com/fluid-project/infusion/pull/759">https://github.com/fluid-project/infusion/pull/759</a> has been merged into the master at a1199e7ff7d856b30d63fd55412534069b3d63d8</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5973/"><span class="aria-hidden">←</span> Previous: FLUID-5973</a>
+        <a class="mx-1" href="/browse/FLUID-5975/">Next: FLUID-5975 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

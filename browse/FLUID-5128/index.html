@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5128  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5128 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5128/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5128/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5128/">FLUID-5128</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5128: Automated removal of soft listeners causes corruption by removing all participating listeners</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5128">FLUID-5128</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-09-10T03:31:45.348-0400" prefix="">2013-09-10T03:31:45.348-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-03T11:28:43.213-0500" prefix="">2014-03-03T11:28:43.213-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This issue was encountered when debugging the preferences management tool under development at <a href="https://github.com/cindyli/prefsEditors/blob/GPII-188/src/shared/lib/cloud4all/CustomAdjusters.js#L217-L219">https://github.com/cindyli/prefsEditors/blob/GPII-188/src/shared/lib/cloud4all/CustomAdjusters.js#L217-L219</a> for <a href="/browse/GPII-188/">GPII-188</a>. The situation has a number of panels all derived from the type "fluid.uiOptions.defaultPanel". This contains the following definition: </p>
+<p>fluid.defaults("fluid.uiOptions.defaultPanel", {<br>
+gradeNames: ["fluid.eventedComponent", "autoInit"],<br>
+...<br>
+listeners: {<br>
+"{uiOptions}.events.onUIOptionsRefresh": "{fluid.uiOptions.panels}.refreshView"<br>
+},</p>
+<p>});</p>
+<p>This causes a number of registrations to the root component UIOptions, with one listener for each panel registered with the softNamespace of "fluid.uiOptions.defaultPanel" - this is in accordance with rules on soft namespace sources implemented for <a href="/browse/FLUID-5082/">FLUID-5082</a>. There is an error in the soft namespaces implementation that acts in the case where the panels are torn down and recreated as a result of a rendering operation - this deregisters such automatically registered listeners as the one shown above. Unfortunately the deregistration proceeds on a namespace basis and so the every deregistration removes ALL listeners from the panels participating in this situation. As they are each torn down, each one of them removes all such listeners - resulting in just one listener remaining in the set after the refresh is complete.</p>
+<p>This is against the design principles behind soft listeners, which require that no listener which does not mention an explicit (hard) namespace should be able to detect any difference with the implementation before soft listeners were implemented. We need to improve the implementation so that soft namespace information is supplied again on automatic deregistration and that just the individual listener originally subscribed is deregistered.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-14496">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2013-09-17T13:38:28.837-0400">2013-09-17T13:38:28.837-0400</relative-time></i></p>
+                        <p>Reviewed and pushed to master at rev a739752a9311d760ae869a069c65aebf6857988f.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5127/"><span class="aria-hidden">←</span> Previous: FLUID-5127</a>
+        <a class="mx-1" href="/browse/FLUID-5129/">Next: FLUID-5129 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

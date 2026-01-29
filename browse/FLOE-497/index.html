@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-497  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-497 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-497/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-497/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-497/">FLOE-497</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-497: Update dependencies, use new /dist from NPM for sourcing Infusion, investigate test failures</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-497">FLOE-497</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLOE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alan Harnum</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Alan%20Harnum">Alan Harnum</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2017-01-11T09:48:41.153-0500" prefix="">2017-01-11T09:48:41.153-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-02-24T13:38:51.307-0500" prefix="">2017-02-24T13:38:51.307-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Chart Authoring Tool</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Maintenance &amp; anti-entropy for the chart authoring tool:</p>
+<p>DEPENDENCY UPDATES:</p>
+<ul>
+<li>update to the official 2.0.0 release of Infusion available via NPM</li>
+<li>update to the latest Flocking, which has some bug fixes</li>
+<li>use the new /dist directory from NPM that contains pre-packaged Infusion</li>
+</ul>
+<p>TEST FIXES:</p>
+<p>After updating to the 2.0.0 release of Infusion, the Chart Authoring tests are now failing. with a 73rd assertion being run (there are only 72 in the test suite) and "TypeError: shadow is undefined" (FF) / "TypeError: undefined is not an object (evaluating 'shadow.path')" (Safari) / "FluidIoC.js:1046 Uncaught TypeError: Cannot read property 'path' of undefined" (Chrome) - this failure is not present in the current master at <a href="http://build.fluidproject.org/chartAuthoring/tests/html/chartAuthoring-Tests.html">http://build.fluidproject.org/chartAuthoring/tests/html/chartAuthoring-Tests.html</a> and appears to be because of an issue with the change in Infusion version</p>
+<p>In all cases the direct error is line 1046 of FluidIoC.js: <a href="https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/FluidIoC.js#L1046">https://github.com/fluid-project/infusion/blob/master/src/framework/core/js/FluidIoC.js#L1046</a></p>
+<p>See comments for more exact tracing of the error.</p>
+
+            </div>
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Attachments</h2>
+                <ul class="spacing-y-1" role="list">
+                    
+                    <li>
+                        <a href="https://idrc.cachefly.net/issues.fluidproject.org/FLOE/FLOE-497/FLOE-497 stack trace.png">
+                            
+                                <img src="https://idrc.cachefly.net/issues.fluidproject.org/FLOE/FLOE-497/FLOE-497 stack trace.png" alt="FLOE-497 stack trace.png">
+                            
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-11065">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2017-01-11T14:01:16.678-0500">2017-01-11T14:01:16.678-0500</relative-time></i></p>
+                        <p>The issue (see attached stack trace) appears to originate in the cleanup process of the IoC testing framework, but I believe it has to do with changes to the core of Infusion. (reason: manually rolled back IoCTestUtils.js to the version from the working commit hash below, and same problem occured).</p>
+<p>This is the last working version of Infusion published to NPM that works: <a href="https://github.com/fluid-project/infusion/tree/a2802dfd9012184984c99f6dd6778e0f14cf7fbe">https://github.com/fluid-project/infusion/tree/a2802dfd9012184984c99f6dd6778e0f14cf7fbe</a> (2.0.0-dev.20161002T002156Z.a2802df)</p>
+<p>This is the next NPM version in line, where the test begins to fail: <a href="https://github.com/fluid-project/infusion/tree/0bcd507499bf4968630813c25c8146a8163a1e39">https://github.com/fluid-project/infusion/tree/0bcd507499bf4968630813c25c8146a8163a1e39</a> (2.0.0-dev.20161027T155641Z.0bcd507)</p>
+
+                    </li>
+                    
+                    <li id="comment-11066">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2017-01-12T11:22:18.318-0500">2017-01-12T11:22:18.318-0500</relative-time></i></p>
+                        <p>I've isolated the error to changes in the <strong>fluid.instantiator</strong>() function of <strong>fluidIoC.js</strong>, specifically the internal function that.clearComponent() that gets attached to the instantiated component.</p>
+<p>First isolated by replacing the internal function with the one from the previous working hash locally, at which point the failure at the end of the test go away.</p>
+<p>The specific issue seems to be with whatever behaviour is served by the new destroyRecs options and the new that.clearConcreteComponent() internal function - commenting out the line <strong>fluid.each(options.destroyRecs, that.clearConcreteComponent);</strong> also makes the test failure stop.</p>
+<p>I theorize this may be a manifestation of an issue we've seen previously in a different form, which is "competition" between Flocking's own clean-up (all of the "Ignoring call..." log messages are to Flocking components) and the IoC testing framework's cleanup. </p>
+<p>Alternately, this may have surfaced an edge case in changes to the IoC functionality, perhaps in its interaction with Flocking.</p>
+
+                    </li>
+                    
+                    <li id="comment-11067">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2017-01-12T11:57:42.584-0500">2017-01-12T11:57:42.584-0500</relative-time></i></p>
+                        <p>Antranig Basman / Colin Clark - when you have time could you comment on the above? I've hit my own easy limits of being able to trace Infusion IoC issues.</p>
+<p>This is not an urgent issue because I can pin Chart Authoring to the latest working version of Infusion, but it does prevent me from taking advantage of the new /dist directory from the more recent versions of the NPM package.</p>
+
+                    </li>
+                    
+                    <li id="comment-11068">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2017-01-12T12:07:44.388-0500">2017-01-12T12:07:44.388-0500</relative-time></i></p>
+                        <p>Per Colin Clark's advice, updating to a development branch of Flocking that's compatible with Infusion 2.0 has fixed the test issue. Pull request opened: <a href="https://github.com/fluid-project/chartAuthoring/pull/17">https://github.com/fluid-project/chartAuthoring/pull/17</a></p>
+
+                    </li>
+                    
+                    <li id="comment-11069">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2017-02-24T13:38:47.080-0500">2017-02-24T13:38:47.080-0500</relative-time></i></p>
+                        <p>The pull request <a href="https://github.com/fluid-project/chartAuthoring/pull/17">https://github.com/fluid-project/chartAuthoring/pull/17</a> has been merged into the project repo master branch at 23232ccb4078f05725879ef030366f280cd90b3e.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-496/"><span class="aria-hidden">←</span> Previous: FLOE-496</a>
+        <a class="mx-1" href="/browse/FLOE-498/">Next: FLOE-498 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

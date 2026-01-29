@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> VP-113  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" VP-113 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/VP-113/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/VP-113/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/VP" data-pagefind-filter="project">Video Player</a></li>
+                <li><a href="/browse/VP-113/">VP-113</a></li>
+            </ol>
+        </nav>
+        <h1>VP-113: Scrub-bar screen reader experience could be better</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/VP-113">VP-113</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/VP/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/VP/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/VP/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-08-09T14:33:31.911-0400" prefix="">2012-08-09T14:33:31.911-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2013-01-28T09:25:23.227-0500" prefix="">2013-01-28T09:25:23.227-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Jaws+FF:<br>
+When focus lands on the scrub-bar/time display, Jaws says "left right slider time scrub link," doesn't actually say current time.<br>
+When using the arrow keys to move the scrub bar, scrub bar doesn't move, Jaws reads out letters from something</p>
+<p>Jaws+IE9:<br>
+When focus lands on the scrub-bar/time display, Jaws says "slider time scrub link," then start and end time (0 time as "zero o'clock").<br>
+When using the arrow keys to move the scrub bar, Jaws reads the current caption block when it appears, "one hundred" otherwise.</p>
+<p>NVDA+FF:<br>
+When focus lands on the scrub-bar/time display, NVDA says "slider time scrub link," doesn't actually say current time.<br>
+When using the arrow keys to move the scrub bar, NVDA starts reading out the entire caption file, won't stop.</p>
+<p>NVDA+IE9:<br>
+When focus lands on the scrub-bar/time display, NVDA says start and end time, then "slider time scrub link," then start and end time.<br>
+When using the arrow keys to move the scrub bar, NVDA sounds a couple of strange tones the first time, then silence.</p>
+<p>VoiceOver+Safari:<br>
+When focus lands on the scrub-bar/time display, VoiceOver says "slider," doesn't actually say the current time<br>
+When using the arrow keys to move the scrub bar, VoiceOver reads the current caption block when it appears; pressing arrow again will interrupt speech.</p>
+<p>Note: for Jaws testing, Jaws was manually switched into application mode (virtual PC cursor 'off')</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>NVDA and Jaws with FF and IE9, VoiceOver with Safari</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-27246">
+                        <p class="mb-0"><b>Alexey Novak</b> <i>commented <relative-time datetime="2012-08-22T11:53:48.169-0400">2012-08-22T11:53:48.169-0400</relative-time></i></p>
+                        <p><a href="https://github.com/anvk/videoPlayer/tree/FLUID-4751">https://github.com/anvk/videoPlayer/tree/FLUID-4751</a></p>
+<p>NVDA+FF - works fine. With every time change it reads out how number out of total value.<br>
+NVDA+IE - reads slider information + reads the span information with word "grouping". It also may read the whole content of the transcripts which is the same related issue as in <a href="/browse/FLUID-4750/">FLUID-4750</a>. With every time change it reads number of seconds as a number (e.g. "five" or "nine" or "fourteen")<br>
+NVDA+Chrome - reads out "Time scrub editable, time scrub blank". With every time change it reads "blank"</p>
+<p>Safari+VoiceOver = says "0 00 of 5 4 3 time scrub". With a time change it reads new numbers without "time scrub" part but if you refocus back it will read this additional part. (before I thought that it just reads out the internal span because of the weird way it speaks out the time but if you remove it behaviour stays the same)</p>
+<p>JAWS + Chrome - On tab focus it tells you "Time scrub". "You have to press Enter to enter the application mode. 0.01 out of 5 43. Time scrub left right slider. Progress complete. If you refocus back on the time scrub it will just tell you something like 0 4 out 5 43<br>
+JAWS + IE - No need to enter an application mode. It will read time slider left right then time. Sometimes it reads out the time twice and will add word "hundred" at the end.<br>
+JAWS + FF - No need to enter an application mode. Reads "Time scrub" on the change it will read "0 4 out of 5 43". Works pretty well.</p>
+<p>It would be good to hide the span so that in some cases the text would not be read twice.</p>
+
+                    </li>
+                    
+                    <li id="comment-27247">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2012-09-04T12:31:57.924-0400">2012-09-04T12:31:57.924-0400</relative-time></i></p>
+                        <p>Improvements merged into demo branch at 4323f9abc7c184d76638a6eee8b2701b87ab686b</p>
+
+                    </li>
+                    
+                    <li id="comment-27248">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2012-10-03T11:13:43.069-0400">2012-10-03T11:13:43.069-0400</relative-time></i></p>
+                        <p>I think the experience of the time scrub slider is now adequate: users are told it's a time scrubber, what the current and max times are, and what the new time is when it's adjusted.</p>
+<p>My testing:<br>
+NVDA + IE<br>
+on focus: "zero zero-zero of five forty-three grouping, time scrub slider zero zero-zero of five forty-three"<br>
+on adjust: "twelve" (when adjusted to 12 seconds)</p>
+<p>NVDA + FF<br>
+on focus: "time scrub slider zero zero-zero of five forty-three "<br>
+on adjust: "zero twelve of five forty-three" (when adjusted to 12 seconds)</p>
+<p>Jaws + IE<br>
+on focus: "time scrub left-right slider zero o'clock of five forty-three, zero o'clock slash five forty-three, zero o'clock slash five forty-three"<br>
+on adjust: "time scrub left-right slider zero twelve of five forty-three, zero twelve slash five forty-three, zero twelve slash five forty-three" </p>
+<p>Jaws + FF<br>
+on focus: "time scrub left-right slider zero o'clock of five forty-three, to increase or decrease use the arrow key"<br>
+on adjust: "zero oh-five of five forty-three" (when adjusted to 5 seconds)</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/VP-150/"><span class="aria-hidden">←</span> Previous: VP-150</a>
+        <a class="mx-1" href="/browse/VP-79/">Next: VP-79 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

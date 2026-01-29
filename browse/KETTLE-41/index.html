@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> KETTLE-41  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" KETTLE-41 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/KETTLE-41/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/KETTLE-41/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/KETTLE" data-pagefind-filter="project">Kettle</a></li>
+                <li><a href="/browse/KETTLE-41/">KETTLE-41</a></li>
+            </ol>
+        </nav>
+        <h1>KETTLE-41: kettle.dataSource.URL should be able to better handle optional or complex content...</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/KETTLE-41">KETTLE-41</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/KETTLE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/KETTLE/?reporter=Tony%20Atkins%20%5BRtF%5D">Tony Atkins [RtF]</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-03-11T05:19:46.361-0500" prefix="">2016-03-11T05:19:46.361-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2018-05-24T03:58:32.436-0400" prefix="">2018-05-24T03:58:32.436-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>In working on <code>gpii-couch-cushion</code>, I have been reviewing the existing <code>kettle.dataSource.URL</code> grade in some depth.  This grade supports combining a <code>termMap</code> with a URL that contains string template variables.  This is fine if the variables:</p>
+<ol>
+<li>will always be set (failing to set a variable results in replacing the key with <code>undefined</code>)</li>
+<li>Are strings.  <code>Array</code> values will be replaced with <code>%5Bobject%20Object%5D</code>. This is particularly relevant when working with CouchDB, where lists and other endpoints commonly use an array to pass the list of keys to be retrieved.</li>
+</ol>
+<p>In addition, the URL template must take care of adding any necessary quotes, ampersands, etc.  </p>
+<p>This  mechanism is OK for simple use cases, but we can and should support a more robust mechanism.  Both the <code>request</code> module commonly used in Node and jQuery's <code>ajax</code> method support passing body and/or query data as an object, including array data.</p>
+<p>The existing <code>ajaxCapable</code> grade in <code>gpii-handlebars</code> builds the AJAX options (including data payload) by combining default request options and model data using transformation rules.  This gives the ability to pull variable data in cleanly, and does not suffer from the above problems.</p>
+<p>Before <a href="https://issues.gpii.net/browse/GPII-1587">GPII-1587</a> can be attempted, we need to at least outline an approach for this, as there are quite a number of existing use cases for the <code>ajaxCapable</code> grade that cannot be satisfied without this kind of mechanism.</p>
+<p>I am just coming to terms with the existing grades, if this is something that can already be accomplished, point me at whatever examples and documentation would help explain how to represent arrays and optional variables.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-26169">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-03-14T04:49:15.003-0400">2016-03-14T04:49:15.003-0400</relative-time></i></p>
+                        <p>I was thinking about this over the weekend.  Currently, the file that defines the existing base dataSource grades is only designed for use within node or possibly browserify (witness <a href="https://github.com/amb26/kettle/blob/KETTLE-32/lib/dataSource.js#L15">the use of require and node packages</a>).  In order to create a browser version of kettle.dataSource as described in <a href="https://issues.gpii.net/browse/GPII-1587">GPII-1587</a>, we would either need to use browserify, make a work-alike implementation that fulfills the same contract, or (my preference) to break up the existing code into:</p>
+<ol>
+<li>"common" grades with the code that will work in either environment.</li>
+<li>"server side" grades that have the same namespaces as the current grades, but which extend "common" grades and add the parts unique to the server-side, like <code>http.request</code>.</li>
+<li>"client side" grades that extend the common grades and add the parts unique to the client-side, like <code>$.ajax</code>.</li>
+</ol>
+<p>Since both <code>http.request</code> and <code>$.ajax</code> can be configured using JSON-able objects, I was thinking of using model transformation rules to make a convenience mapping between the conventions used with <code>http.request</code> and the conventions used with <code>$.ajax</code>.  In essence the documentation for the common grade would describe a declarative structure that is used to pass data, and the transformation rules would make sure that the structure is updated for the conventions of the code ultimately handling the request.</p>
+<p>Given that everything we have is already based on working with <code>http.request</code>, my assumption is that <code>http.request</code> would be the defacto standard and that the client-side <code>kettle.dataSource.URL.client</code> grade would take care of the transformation.  My idea is that the transformation would make it possible to use a common encoding for simple things like the port, scheme, hostname, and data payloads, but would make it possible for grades that need to use deep options in either <code>http.request</code> or <code>$.ajax</code> to safely do so.</p>
+
+                    </li>
+                    
+                    <li id="comment-26170">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-05-11T12:51:33.246-0400">2016-05-11T12:51:33.246-0400</relative-time></i></p>
+                        <p>I will experiment on my own, but after further review, it seems like the "user options" passed to the <code>get</code> invoker can be passed a <code>qs</code> object, which will satisfy the more advanced use cases mentioned here.</p>
+
+                    </li>
+                    
+                    <li id="comment-26171">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2016-05-12T09:12:47.221-0400">2016-05-12T09:12:47.221-0400</relative-time></i></p>
+                        <p>I just realized that we are not using the "mikeal" request, but rather node's request.  As far as I can see, I'll need to wire in a query builder to add the object data to the path before the request is launched.</p>
+
+                    </li>
+                    
+                    <li id="comment-26172">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2016-05-13T12:27:20.625-0400">2016-05-13T12:27:20.625-0400</relative-time></i></p>
+                        <p>See docs for now supported "resolveUrl" invoker at <a href="https://github.com/amb26/kettle/blob/KETTLE-32/docs/DataSources.md#configuration-options-accepted-by-kettledatasourceurl">https://github.com/amb26/kettle/blob/KETTLE-32/docs/DataSources.md#configuration-options-accepted-by-kettledatasourceurl</a> and a simple test at <a href="https://github.com/amb26/kettle/blob/KETTLE-32/tests/DataSourcePouchDBTests.js#L83">https://github.com/amb26/kettle/blob/KETTLE-32/tests/DataSourcePouchDBTests.js#L83</a></p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/KETTLE-40/"><span class="aria-hidden">←</span> Previous: KETTLE-40</a>
+        <a class="mx-1" href="/browse/KETTLE-42/">Next: KETTLE-42 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

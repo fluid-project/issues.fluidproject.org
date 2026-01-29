@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5510  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5510 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5510/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5510/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5510/">FLUID-5510</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5510: Use of wildcard expanders in the transformation framework is broke if outputpath is specified</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5510">FLUID-5510</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Pull Request</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Kasper Galschiot Markus</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Kasper%20Galschiot%20Markus">Kasper Galschiot Markus</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2014-09-15T11:09:10.091-0400" prefix="">2014-09-15T11:09:10.091-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2020-02-27T14:01:08.145-0500" prefix="">2020-02-27T14:01:08.145-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Model Transformation System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When using a wildcard expander in one of the rules, and have an output path in a nested rule functionality breaks. Instead of outputting to the relative outputPath, it attemps to match it as an input path (I think).</p>
+<p>So for example, given the rules:<br>
+{ <br>
+"*.a": {<br>
+transform: {<br>
+type: "value",<br>
+inputPath: "",<br>
+outputPath: "val"<br>
+}<br>
+}<br>
+}</p>
+<p>and the input model:<br>
+{<br>
+cat: {<br>
+a: "meow"<br>
+},<br>
+dog: {<br>
+a: "wrouf"<br>
+}<br>
+}</p>
+<p>would be expected to result in:</p>
+<p>{<br>
+cat: {<br>
+a: {<br>
+val: "meow"<br>
+}<br>
+},<br>
+dog: {<br>
+a: {<br>
+val: "wrouf"<br>
+}<br>
+}<br>
+}</p>
+<p>but this is not currently the case. Instead the transformation framework tries to match the current inputPath (eg. cat.a) plus the outputPath (val) in the inputModel (ie. cat.a.val), which obviously isn't present in the inputModel as this is what we're attempting to create with the output model.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25267">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2014-12-03T14:36:01.844-0500">2014-12-03T14:36:01.844-0500</relative-time></i></p>
+                        <p>This looks like a helpful patch, but I think we should mothball this area of functionality for a while. It has never been terribly well implemented and not very powerful - and all the known uses of it (particularly in the GPII universal) have disappeared. We will keep tracking these use cases and see if we can evaluate what kinds of features we might need to cover them - in particular we need to implement a more regexp-like model including numbered backreferences so that the various segments matched by "*" can be distinguished in the output paths.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5509/"><span class="aria-hidden">←</span> Previous: FLUID-5509</a>
+        <a class="mx-1" href="/browse/FLUID-5511/">Next: FLUID-5511 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

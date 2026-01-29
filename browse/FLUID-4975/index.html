@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-4975  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-4975 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-4975/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-4975/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-4975/">FLUID-4975</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-4975: Remove browser-specific CSS, replace with css support checker (like modernizr)</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-4975">FLUID-4975</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=heidi%20valles">heidi valles</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-04-11T14:49:14.908-0400" prefix="">2013-04-11T14:49:14.908-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2022-02-03T10:23:16.483-0500" prefix="">2022-02-03T10:23:16.483-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>5.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                            <li>UI Options</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Remove the css/ie8.css file from UI Options and replace with graceful degradation css, via a css support checker like modernizr.</p>
+<p>Implemented here: <a href="https://github.com/heidiv/infusion/tree/FLUID-4970-modernizr">https://github.com/heidiv/infusion/tree/FLUID-4970-modernizr</a></p>
+<p>But issue with false-positive in IE8 for generatedcontent, seems to be because it's within an iframe that is initially hidden (has height of 0). Might be an issue with modernizr's check for this.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-25527">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-08-12T12:02:26.961-0400">2016-08-12T12:02:26.961-0400</relative-time></i></p>
+                        <p>Need to review if modernizr is still the best approach.</p>
+
+                    </li>
+                    
+                    <li id="comment-25528">
+                        <p class="mb-0"><b>Ned Zimmerman</b> <i>commented <relative-time datetime="2021-03-24T09:00:55.829-0400">2021-03-24T09:00:55.829-0400</relative-time></i></p>
+                        <p>I think lots has changed since this JIRA was filed 🙂</p>
+<p>But one good thing to explore would be the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@supports">supports</a> media query. Here's an example for CSS grid.</p>
+<pre><code class="hljs language-css"><span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.columns</span> &gt; * {
+  <span class="hljs-attribute">background</span>: red;
+  <span class="hljs-attribute">float</span>: left;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+}
+
+<span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.columns</span> &gt; * + * {
+  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">1em</span>;
+}
+
+<span class="hljs-keyword">@supports</span>(display: <span class="hljs-attribute">grid</span>) {
+  <span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.columns</span> {
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-attribute">grid-gap</span>: <span class="hljs-number">1em</span>;
+    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(<span class="hljs-number">4</span>, <span class="hljs-number">100px</span>);
+  }
+  
+  <span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.columns</span> &gt; * {
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  }
+  
+  <span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.columns</span> &gt; * + * {
+    <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">0</span>;
+  }
+}
+</code></pre>
+<p>The CSS inside the supports query will only be run with browsers which support <code>display: grid</code>.</p>
+<p>Feature queries themselves are <a href="https://caniuse.com/css-featurequeries">supported in all modern browsers</a> (not in IE).</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-4974/"><span class="aria-hidden">←</span> Previous: FLUID-4974</a>
+        <a class="mx-1" href="/browse/FLUID-4976/">Next: FLUID-4976 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

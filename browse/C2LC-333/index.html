@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> C2LC-333  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" C2LC-333 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/C2LC-333/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/C2LC-333/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/C2LC" data-pagefind-filter="project">Coding to Learn and Create</a></li>
+                <li><a href="/browse/C2LC-333/">C2LC-333</a></li>
+            </ol>
+        </nav>
+        <h1>C2LC-333: Add keyboard shortcuts.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/C2LC-333">C2LC-333</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Done</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/C2LC/?reporter="></a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-04-06T09:36:18.645-0400" prefix="">2021-04-06T09:36:18.645-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-07-08T10:44:07.140-0400" prefix="">2021-07-08T10:44:07.140-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Env 0.9</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Coding Environment</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>For example, we need a keyboard shortcut to get to the last add node (end of the program). Ideally we would have some kind of UI to make the controls configurable, and likely we would need user instructions as well.</p>
+<p></p>
+<p>Feedback from the April 2021 co-design included:</p>
+<ul>
+<li>Up and down arrows to navigate on the user interface :question:</li>
+<li>Shortcuts for heading navigation (e.g. tabs) :question:</li>
+<li>Shortcuts for scene information :check_mark:</li>
+<li>Shortcuts for refresh button (e.g. Alt-R) :check_mark:</li>
+<li>Shortcuts for for play button :check_mark:</li>
+<li>Shortcuts for adding blocks to the beginning or the end of the program</li>
+<li>Shortcut for adjusting speed of program executed/being played :check_mark:</li>
+</ul>
+<p>In addition, we know we need:</p>
+<ul>
+<li>A modal to display / configure the keyboard shortcuts.</li>
+<li>A toggle to turn off keyboard handling (on the modal).</li>
+<li>A toggle to open close the modal itself.</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-10830">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2021-04-28T10:27:14.021-0400">2021-04-28T10:27:14.021-0400</relative-time></i></p>
+                        <p>This relates to <a href="/browse/C2LC-295/">C2LC-295</a>, in that many switches also act as keyboard inputs, so we would want to ensure that:</p>
+<ol>
+<li>We don't bind to switch keys that the user wants to use for something else.</li>
+<li>We allow them to use the keys their switch sends to control things.</li>
+</ol>
+<p>In other words, the keyboard shortcuts could be a means of allowing switches to interact with the coding environment.</p>
+
+                    </li>
+                    
+                    <li id="comment-10831">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2021-05-06T09:36:00.344-0400">2021-05-06T09:36:00.344-0400</relative-time></i></p>
+                        <p>Some references:</p>
+<ul>
+<li><a href="https://www.w3.org/WAI/WCAG21/Understanding/character-key-shortcuts.html">https://www.w3.org/WAI/WCAG21/Understanding/character-key-shortcuts.html</a></li>
+<li><a href="https://html.spec.whatwg.org/#the-accesskey-attribute">https://html.spec.whatwg.org/#the-accesskey-attribute</a></li>
+<li><a href="https://webaim.org/techniques/keyboard/accesskey">https://webaim.org/techniques/keyboard/accesskey</a></li>
+<li><a href="https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts#nvda-nvda_shortcut_keys">NVDA shortcuts</a></li>
+<li><a href="https://dequeuniversity.com/screenreaders/voiceover-keyboard-shortcuts#vo-mac-basics">VoiceOver shortcuts</a></li>
+<li><a href="https://dequeuniversity.com/screenreaders/jaws-keyboard-shortcuts">Jaws shortcuts</a></li>
+</ul>
+
+                    </li>
+                    
+                    <li id="comment-10832">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2021-05-06T10:13:38.061-0400">2021-05-06T10:13:38.061-0400</relative-time></i></p>
+                        <p>Simon and I agreed I would flesh this ticket out a bit in advance of 0.9, doing things like:</p>
+<ol>
+<li>Reviewing to see what our options are for safe(ish) key bindings.</li>
+<li>Collecting input from the group about a few key points like:
+<ol>
+<li>Which headings should have shortcuts?</li>
+<li>Which areas need arrow key support, and how do we want that to work?</li>
+</ol>
+</li>
+</ol>
+
+                    </li>
+                    
+                    <li id="comment-10833">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2021-05-06T10:33:26.872-0400">2021-05-06T10:33:26.872-0400</relative-time></i></p>
+                        <p>I was looking into arrow keys for a bit.  A few thoughts about arrow keys:</p>
+<ol>
+<li>JAWS uses nearly every variation (ctrl + arrow, ctrl + alt + arrow, alt + arrow, arrows by themselves in particular modes). The only one it doesn't seem to use is shift + arrow.</li>
+<li>Shift + arrow is use for text selection in most circumstances.</li>
+</ol>
+<p>As an alternative, perhaps we could use gaming layouts like AWSD, JKLI, or (like vi) HJKL.</p>
+
+                    </li>
+                    
+                    <li id="comment-10834">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2021-05-06T10:37:36.661-0400">2021-05-06T10:37:36.661-0400</relative-time></i></p>
+                        <p>The first WAI link discusses speech-to-text users, and points out that hotkeys without any modifier can be triggered as speech is recognised. They suggest making the behaviour configurable (which is one of our longer term goals here).   I was thinking that our first pass might focus on using a modifier, specifically the alt key, which should have less conflicts with browser commands.</p>
+<p>As an example, Chrome has a key binding for nearly every letter of the alphabet in combination with the command/control key, but has none that only use the alt key in combination with a single letter.</p>
+
+                    </li>
+                    
+                    <li id="comment-10835">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2021-05-06T10:41:56.771-0400">2021-05-06T10:41:56.771-0400</relative-time></i></p>
+                        <p>The text inputs for the character position also would suggest the need to use a modifier key for all of our shortcuts, as we use all (unmodified) letters in the column input, and all (unmodified) digits in the row input</p>
+
+                    </li>
+                    
+                    <li id="comment-10836">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2021-05-11T09:42:45.724-0400">2021-05-11T09:42:45.724-0400</relative-time></i></p>
+                        <p>An initial proof-of-concept keyboard shortcut implementation made for a meeting exploring The Grid 3 integration: <a href="https://github.com/codelearncreate/c2lc-coding-environment/commit/1915fa2320e2a812b0e3b68f79a5775132a3280d">https://github.com/codelearncreate/c2lc-coding-environment/commit/1915fa2320e2a812b0e3b68f79a5775132a3280d</a></p>
+
+                    </li>
+                    
+                    <li id="comment-10837">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2021-05-11T10:08:01.258-0400">2021-05-11T10:08:01.258-0400</relative-time></i></p>
+                        <p>We discussed having the modal that displays available key bindings include the toggle to turn the keys on and off.</p>
+<p>We discussed having an icon for the keyboard settings modal appear near to the theme picker.  We discussed replacing that with an icon to allow the two buttons to share a row.</p>
+
+                    </li>
+                    
+                    <li id="comment-10838">
+                        <p class="mb-0"><b>Tony Atkins [RtF]</b> <i>commented <relative-time datetime="2021-06-24T07:29:23.168-0400">2021-06-24T07:29:23.168-0400</relative-time></i></p>
+                        <p>From Simon Bates:</p>
+<p></p>
+<blockquote>
+<p>We discussed Grid 3 integration at the meeting with Bridges today and our ideas for additional keyboard shortcuts to support the integration.<br>
+We'd like to add the following:</p>
+</blockquote>
+<ul>
+<li>Keyboard shortcuts for setting focus to the different areas of the Weavly interface; similar to how a screen reader user might navigate by heading</li>
+<li>Keyboard shortcuts for directly selecting each of the actions in the Actions Panel </li>
+</ul>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/C2LC-332/"><span class="aria-hidden">←</span> Previous: C2LC-332</a>
+        <a class="mx-1" href="/browse/C2LC-334/">Next: C2LC-334 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5212  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5212 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5212/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5212/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5212/">FLUID-5212</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5212: Implement "new demands blocks" using simplified approach looking up grade names to grade names</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5212">FLUID-5212</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=New%20Feature">New Feature</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-11-15T17:25:54.173-0500" prefix="">2013-11-15T17:25:54.173-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-08-17T13:39:09.375-0400" prefix="">2014-08-17T13:39:09.375-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.4</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.5</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>As a result of our discovery, in <a href="http://issues.gpii.net/browse/GPII-209">http://issues.gpii.net/browse/GPII-209</a> , that demands blocks as implemented in Infusion must be removed from the implementation and framework, it was believed possible to cover all use cases for demands blocks using existing framework functionality.</p>
+<p>As a part of the work for <a href="http://issues.gpii.net/browse/GPII-75">http://issues.gpii.net/browse/GPII-75</a> , we are coming to implement socket.io capability for applications using Kettle, and it has surfaced that the above belief is incorrect, and that some use cases indeed remain for which old-style demands blocks are the only current possibility. These use cases centre around cases of genuine "multiple dispatch" - that is, implementations which should be selected only if multiple, orthogonal, conditions on the environment are met simultaneously.</p>
+<p>In this case the issue is revealed by provision of session support for socket.io enabled Kettle applications. A particular implementation grade, "kettle.use.session.io" was required only if BOTH the "kettle.server.io" grade were present, AND the grade "kettle.use.session". This was formerly implemented with a manual grade lookup with "if" statement, held in the file "session.js" which should properly have had no dependence on the io infrastructure - with an invoker bound to the following free function: </p>
+<p>kettle.server.io.getSessionIOGrade = function (gradeNames) {<br>
+if (gradeNames.indexOf("kettle.server.io") &gt;= 0) {<br>
+return "kettle.use.session.io";<br>
+}<br>
+};</p>
+<p>without the use of "old demands blocks" or some similar functionality, it would have been impossible to organise the dependence structure of these files properly.</p>
+<p>This problem, and many similar, could be resolved by a much simpler system than "old demands blocks" which makes use of two pieces of framework infrastructure developed since their implementation - i) dynamic grades implemented in <a href="/browse/FLUID-4916/">FLUID-4916</a>, and ii) "index defaults" given a basic implementation for <a href="/browse/FLUID-5067/">FLUID-5067</a>.</p>
+<p>In this new system, we only perform "multiple dispatch resolution" on the unit of entire grades, rather than individual invokers and listeners as implemented for <a href="/browse/FLUID-2881/">FLUID-2881</a> demands blocks. This simplifies the system hugely, as well as improving its performance, since the resolution will only occur on instantiation and not on every dispatch at runtime.</p>
+<p>We propose a system which holds a lookup of lists of grades ("context names" in the old terminology) to lists of grades ("output grades"). Whenever a component is found whose grade content matches an element in the index, the output grades are added to its grade set automatically.</p>
+<p>In order to avoid the mistakes which prompted the the <a href="/browse/GPII-209/">GPII-209</a> work in the first place, we propose that the index for this new system will be encoded by a standard fluid.defaults block - as a result of being given a unique name, this record will thus remain identifiable and can have a clear semantic in the case it is reloaded. "old demands blocks", not being associated with a particular name, were not identifiable and so could be given no clear reloading semantic.</p>
+<p>We propose a "draft implementation" for the time being to be trialed just in Kettle but to be elevated into the main framework once we are satisfied it is adequate. Initially we will have an "opt-in" system with a distinguished grade, say, "kettle.dynamicGradeLinkage" as a parent grade to be used by any grade wanting access to the dynamic resolution system.</p>
+<p>A user wanting to register a "linkage record" into the system would issue a defaults block like the following: </p>
+<p>fluid.defaults("kettle.sessionIoLinkage", {<br>
+gradeNames: ["kettle.gradeLinkageRecord", "autoInit"],<br>
+contextGrades: ["kettle.server.io", "kettle.use.session"], <br>
+resultGrades: "kettle.use.session.io"<br>
+});</p>
+<p>This defaults record encodes the fact that any grade holding the content "kettle.server.io" and "kettle.use.session" (as well as the temporarily required "marker grade" "kettle.dynamicGradeLinkage") will automatically have the grade "kettle.use.session.io" appended into its grade content.</p>
+<p>The current implementation of fluid.indexDefaults has very inadequate performance but could easily be upgraded in time, without disturbing existing users of this API. The linkage implementation would then query for all defaults of type "kettle.gradeLinkageRecord" in order to look up the "resultGrades" on instantiation of components opting in with "kettle.dynamicGradeLinkage".</p>
+<p>An open implementation question is to allow matching on all context names up the component tree, as with "old demands blocks", or to keep the resolution self-contained with the current component. This promises getting into all the complexities required for <a href="/browse/FLUID-4917/">FLUID-4917</a> "demands block horizons" but would tidy up the remaining contextual use cases as currently required for the Uploader component. Given this greatly simplified implementation strategy we could probably rethink the horizon system into something much simpler.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-15620">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-11-15T17:27:45.383-0500">2013-11-15T17:27:45.383-0500</relative-time></i></p>
+                        <p>Original chat transcript with JURA:</p>
+<p>(15:46:33) antranigbasman: But yes, it seems that there is indeed a small piece of the functionality of "old demands blocks" that can't be replicated with the new framework : P<br>
+(15:46:40) antranigbasman: And, gloriously, you have run into it<br>
+[]<br>
+(15:49:27) antranigbasman: So, a further thing - perhaps this "lookup system" should itself be operated by fluid.defaults<br>
+(15:49:38) antranigbasman: Because we really want to get rid of anything that is not operated by fluid.defaults<br>
+(15:49:53) yura.zenevich: right<br>
+(15:49:59) antranigbasman: So it might be an opportunity to use the "indexDefaults" system that we produced for the aux builder<br>
+(15:50:19) yura.zenevich: ya but it's not exactly the same thing<br>
+(15:50:33) yura.zenevich: indexed defaults is not the same as components that are used<br>
+(15:50:35) antranigbasman: I think the API will be good enough, even if the performance will be inadequate<br>
+(15:50:44) antranigbasman: Well, just the lookup goes into the index<br>
+(15:51:02) antranigbasman: So you will write "false components" that only exist to store the indirection between other grades<br>
+(15:51:13) yura.zenevich: can you give an example<br>
+(15:52:25) antranigbasman: Something like fluid.defaults("kettle.sessionIoLinkage", {<br>
+contextGrades: ["kettle.server.io", "kettle.session"], <br>
+resultGrades: "kettle.session.io"<br>
+});<br>
+(15:52:41) antranigbasman: This will allow us to remedy the fatal mistake we made with "old demands blocks" in NOT GIVING THEM NAMES<br>
+(15:53:13) antranigbasman: So this component is never instantiated, but is just indexed using "indexDefaults"<br>
+(15:53:32) antranigbasman: I guess it will need to have a certain gradeName of its own in order to allow it to be indexed<br>
+(15:53:40) antranigbasman: I need to run to the LIGHT SHOP, back shortly....<br>
+(15:53:41) yura.zenevich: so lets say it is indexed<br>
+(15:54:00) antranigbasman: It is indexed, from the invoker which supplies the dynamic grades<br>
+(15:54:05) antranigbasman: And in the end we will put this into the framework proper<br>
+(15:54:10) yura.zenevich: so i would index context grades<br>
+(15:54:12) antranigbasman: As we eliminate "old demands blocks"<br>
+(15:54:24) yura.zenevich: and the getDynamicGrade will apply the result grade ?<br>
+(15:54:31) yura.zenevich: nice<br>
+(15:54:31) antranigbasman: Yes, almost<br>
+(15:54:32) yura.zenevich: i like<br>
+(15:54:41) antranigbasman: Well, you'd really ask for the complete collection of grades which implement the common grade which I didn't write<br>
+(15:54:48) antranigbasman: Clearly this component has "gradeNames" of its own<br>
+(15:55:08) antranigbasman: So imagine that I had also written: gradeNames: ["kettle.gradeLinkage", "autoInit"] on the 2nd line<br>
+(15:55:18) antranigbasman: You will just ask the framework to give you everything which implements "kettle.gradeLinkage"<br>
+(15:55:34) antranigbasman: And then do the lookup manually based on testing them all<br>
+(15:55:40) antranigbasman: We'll implement a more efficient scheme later<br>
+(15:55:59) antranigbasman: But as long as we get the basic effect of the configuration, we can fix the dependence structure in kettle at least</p>
+
+                    </li>
+                    
+                    <li id="comment-15623">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-11-15T17:32:08.937-0500">2013-11-15T17:32:08.937-0500</relative-time></i></p>
+                        <p>Original github review comment, on <a href="https://github.com/fluid-project/kettle/pull/6">https://github.com/fluid-project/kettle/pull/6</a> - </p>
+<p>at code </p>
+<p>+    fluid.defaults("kettle.use.session", {<br>
++        gradeNames: ["autoInit", "fluid.eventedComponent",<br>
++            "{that}.getSessionIOGrade"],</p>
+<p>This dependence should be pushed down even further - into the session.io.js file and matching grade. That is - there should be no dependence in name or function from this file session.js on any material related to the "io" hierarchy. I think a little piece of "protoframework" might be helpful here - that is, to replicate just the very simple portion of demands blocks that operate on gradeNames rather than all the rest of the machinery. That is - to generalise your function "{that}.getSessionIOGrade" lookup into a general utility named "{that}.getDynamicGrades" which looks up the required extra grades in a lookup table which may be contributed into from the session.io.js file. The index for this lookup will be very similar to the index for demands blocks - that is, a combination of grades, and the result of the lookup will also be a combination of grades. That is, the registration will look like <br>
+fluid.registerDynamicGrades(["context1", "context2", "context3"], ["result1", "result2", "result3"])<br>
+where context1...n are grades which all require to be present, and result1...n are dynamic grades that will result.</p>
+
+                    </li>
+                    
+                    <li id="comment-15626">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-11-26T01:57:50.067-0500">2013-11-26T01:57:50.067-0500</relative-time></i></p>
+                        <p>It has turned out that this facility can't be implemented "on the outside" of the framework after all, since it has to deal with the process of dynamic grades arriving from other sources (invokers, distributeOptions, etc.) and continue to accrete freshly matched grades until we have closed (see <a href="/browse/FLUID-5155/">FLUID-5155</a>). Therefore we have had to elevate a draft implemention into the framework ahead of time by patching the "fluid.collectDynamicGrades" method.</p>
+
+                    </li>
+                    
+                    <li id="comment-15628">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-12-19T02:25:48.627-0500">2013-12-19T02:25:48.627-0500</relative-time></i></p>
+                        <p>Merged into trunk at revision 84d53d4</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5211/"><span class="aria-hidden">←</span> Previous: FLUID-5211</a>
+        <a class="mx-1" href="/browse/FLUID-5213/">Next: FLUID-5213 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

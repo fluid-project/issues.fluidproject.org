@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2028  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2028 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2028/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2028/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2028/">FLUID-2028</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2028: Adding multiple files to the file queue will cause the browse button to appear multiple times for a brief moment (flash 10)</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2028">FLUID-2028</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Minor</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-12-17T17:28:01.000-0500" prefix="">2008-12-17T17:28:01.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-06-04T09:22:21.000-0400" prefix="">2009-06-04T09:22:21.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.6</li>
+                            
+                            <li>0.7</li>
+                            
+                            <li>0.8</li>
+                            
+                            <li>1.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.1</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Uploader</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Adding multiple files to the file queue will cause the browse button to appear multiple times for a brief moment (flash 10)</p>
+<p>Steps to reproduce:</p>
+<p>1) Open the demo version of uploader<br>
+<a href="http://build.fluidproject.org/fluid/fluid-components/html/templates/Uploader.html">http://build.fluidproject.org/fluid/fluid-components/html/templates/Uploader.html</a></p>
+<p>2) Add about 10 or so files to the file queue at once</p>
+<p>Notice that as they are being added to the queue, the "Browse Files" button is briefly display multiple times</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>FF2, FF3(Mac OS 10.5)<br>
+FF2, FF3, IE6, IE7 (Win XP)<br>
+FF3, IE7 (Win Vista)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-17393">
+                        <p class="mb-0"><b>Eli Cochran</b> <i>commented <relative-time datetime="2009-03-24T19:46:52.000-0400">2009-03-24T19:46:52.000-0400</relative-time></i></p>
+                        <p>I could not reproduce this bug. Although we didn't do anything specific to fix it, I'm wondering if we inadvertently managed to fix it. </p>
+
+                    </li>
+                    
+                    <li id="comment-17394">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-06-04T09:22:21.000-0400">2009-06-04T09:22:21.000-0400</relative-time></i></p>
+                        <p>Appears to have been fixed, possibly  with the upgrade to the final version of swfupload 2.20</p>
+<p>Tested using:</p>
+<p>FF2, FF3, IE6, IE7 (Win XP)<br>
+FF3, IE7 (Win Vista) </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-2027/"><span class="aria-hidden">←</span> Previous: FLUID-2027</a>
+        <a class="mx-1" href="/browse/FLUID-2029/">Next: FLUID-2029 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

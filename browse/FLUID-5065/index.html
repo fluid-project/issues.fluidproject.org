@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5065  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5065 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5065/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5065/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5065/">FLUID-5065</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5065: writing demands for versioned fluid instances is confusing</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5065">FLUID-5065</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2013-06-25T12:11:54.921-0400" prefix="">2013-06-25T12:11:54.921-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-06-26T10:01:54.549-0400" prefix="">2015-06-26T10:01:54.549-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.9</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>IoC System</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When you write a demands block for a component that uses the versions fluid namesspace, you still have to refer to the unversioned fluid namespace for contexts and function names.</p>
+<p>e.g.</p>
+<p>fluid_1_5.videoPlayer(...);<br>
+fluid_1_5.demands("fluid.videoPlayer.controllers", "fluid.videoPlayer", {...});</p>
+<p>Notice how in the demands the "fluid" namespace is used for both the function to be modified and the context, even though the demands and the component were both executed from the "fluid_1_5" namespace.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-18469">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2013-06-25T12:26:18.401-0400">2013-06-25T12:26:18.401-0400</relative-time></i></p>
+                        <p>Unfortunately I don't see that this issue is avoidable. It's astonishing enough that this feature works at all, since I don't think any other environment offers anything comparable. Could you explain the context that this problem arises in? In general you should not be making access to the concrete versioned versions of fluid namespaces in any case, but using the standard pattern of binding them to the variable named "fluid" within a suitable closure - e.g. the code above could have been enclosed in the block</p>
+<p>(function ($, fluid) {</p>
+<p>...</p>
+<p>})(jQuery, fluid_1_5);</p>
+<p>which is the standard boilerplate for our files, and the references would have seemed less problematic. "fluid_1_5.videoPlayer" is not really a valid expression, as you find, since from its own point of view its standard global name is fluid.videoPlayer.</p>
+
+                    </li>
+                    
+                    <li id="comment-18475">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2013-06-26T08:40:24.641-0400">2013-06-26T08:40:24.641-0400</relative-time></i></p>
+                        <p>A GSoC student is working on a project to add the videoPlayer to ATutor. ATutor uses a released version of Infusion, while the videoPlayer requires a 1.5-SNAPSHOT version. The student required using the fluild_1_5 version to make calls to the video player. The student also needed to specify a demands block for the controllers template due to <a href="/browse/VP-314/">VP-314</a>. Colin also suggested the closure method in the channel yesterday and a task to properly document our versioning scheme has been added to the list <a href="http://wiki.fluidproject.org/display/fluid/Pre-1.5+Docs+Tasks">http://wiki.fluidproject.org/display/fluid/Pre-1.5+Docs+Tasks</a>.</p>
+<p>This last point you make, '"fluid_1_5.videoPlayer" is not really a valid expression, as you find, since from its own point of view its standard global name is fluid.videoPlayer', is what made working with it confusing; as the videoPlayer actually lives off of the fluid_1_5 object. </p>
+<p>Perhaps documentation will be enough to satisfy this issue though.</p>
+
+                    </li>
+                    
+                    <li id="comment-18480">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2015-03-31T13:03:21.473-0400">2015-03-31T13:03:21.473-0400</relative-time></i></p>
+                        <p>Demands blocks will shortly be removed from the framework, in favour of plain grades whose interaction with global names should be more clear.</p>
+
+                    </li>
+                    
+                    <li id="comment-18485">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-26T09:50:57.847-0400">2015-06-26T09:50:57.847-0400</relative-time></i></p>
+                        <p>Reopening to change the fix version to 1.9</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5064/"><span class="aria-hidden">←</span> Previous: FLUID-5064</a>
+        <a class="mx-1" href="/browse/FLUID-5066/">Next: FLUID-5066 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

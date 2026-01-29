@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-6689  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-6689 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-6689/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-6689/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-6689/">FLUID-6689</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-6689: Configuring the UIOptions store conundrum</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-6689">FLUID-6689</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2021-10-20T10:58:29.123-0400" prefix="">2021-10-20T10:58:29.123-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2021-10-20T10:58:29.123-0400" prefix="">2021-10-20T10:58:29.123-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>5.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>6.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Prefs Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>This issue writes up a design conundrum (a multi-author story that the IL framework is intended to handle) that arises in the design of UIOptions.</p>
+<p>The notion is that the default creator, e.g. fluid.uiOptions is a "one stop shop" for someone who wants to build a page with some kind of functioning interface and placeholder persistence - e.g. cookie-based. But that this creator can be overridden with more specific choices about the store, e.g. that it connect to a real preferences server with some credentials.</p>
+<p>The issue here is how these decisions get arbitrated, and how things end up at different addresses in the component tree. Right now we use the Infusion 1.x "hack" of nominating a "fluid.resolveRootSingle" component which gets pushed to the top of the component tree when it gets created - we call this the "globalSettingsStore" and every prefs editor and enhancer will bind to it through its visibility.</p>
+<p>But this is done in a cack-handed and "imperative" way - any other component which is found at this path will simply get knocked off - and if references have resolved to it during the construction of a component which consumes it, they will get stuck referring to the stale one. This is part of why we avoid caching component references anywhere in the tree, and hope that we can push this resolution into invoker and listener arguments, etc. - but still there is a risk of inconsistency of having this replaced - as well as the basic problem that this is authorially incoherent.</p>
+<p>The cookie settings store, e.g. is a "default" - and so it's not enough to simply overwrite the root component, you also have to overwrite the configuration sent to fluid.uiOptions - which means you have to know where it is.</p>
+<p>It should be possible to express that the store configuration supplied as the default packaging of fluid.uiOptions is simply a "default" - and so that if some other more specific store has <strong>already</strong> been configured by the user, fluid.uiOptions will not try to knock it off.</p>
+<p>This seems to appeal to multi-author features planned for Infusion 6.x as part of the "tangled mat" system - that is, the author tracking that comes with the fluid.uiOptions defaults also encodes that this global definition sent to top level is merely a "default" - and so if something is already there, it will "slip under the mat", possibly disappearing completely, if there is already a store there.</p>
+<p>But as well as the mat system itself, we also need a more principled system for expressing that some component should be constructed at some other part of the tree rather than its point of construction. Right now we would express this with options distributions of some kind - and so it seems that some modern variant of that could arrange for "mat injection to an arbitrary point" - together with our already standard lifetime scoping semantics, that the injected material would disappear if the source site is destroyed.</p>
+<p>Nonetheless we should try to think about any ways this story could be made better in the Infusion 5.x rewrite of the prefs framework.</p>
+
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-6688/"><span class="aria-hidden">←</span> Previous: FLUID-6688</a>
+        <a class="mx-1" href="/browse/FLUID-6690/">Next: FLUID-6690 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

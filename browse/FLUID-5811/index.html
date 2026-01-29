@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5811  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5811 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5811/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5811/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5811/">FLUID-5811</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5811: distributeOptions is not completely dynamic with respect to target component type</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5811">FLUID-5811</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Open</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Antranig Basman</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Antranig%20Basman">Antranig Basman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-11-07T22:16:00.834-0500" prefix="">2015-11-07T22:16:00.834-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2017-10-17T17:03:11.169-0400" prefix="">2017-10-17T17:03:11.169-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>fluid.assembleCreatorArguments begins with the following dodgy sequence: </p>
+<pre><code class="hljs language-java">fluid.assembleCreatorArguments = function (parentThat, typeName, options) {
+        <span class="hljs-type">var</span> <span class="hljs-variable">upDefaults</span> <span class="hljs-operator">=</span> fluid.defaults(typeName); <span class="hljs-comment">// we're not responsive to dynamic changes in argMap, but we don't believe in these anyway</span>
+        <span class="hljs-keyword">if</span> (!upDefaults || !upDefaults.argumentMap) {
+            fluid.fail(<span class="hljs-string">"Error in assembleCreatorArguments: cannot look up component type name "</span> + typeName + <span class="hljs-string">" to a component creator grade with an argumentMap"</span>);
+        }
+</code></pre>
+<p>The situation we'd LIKE to enable is - there is a placeholder "type" field in the component tree, e.g. "gpii.deviceReporter" which is used to receive a distribution which advises it away to some concrete type, e.g. "gpii.deviceReporter.static" - we don't necessarily expect to do this by broadcasting to "type" itself although this could be an interesting courtesy if we are really prepared to deal with the resulting type instability - but it would be nice for "gpii.deviceReporter" to be completely abstract and then, for example, broadcast "gpii.deviceReporter.static" to its gradeNames. </p>
+<p>Unfortunately this simple-minded concrete check complains about the unconcreteness of the original type name before we get a chance to receive our "early distributions" later on. It seems like we can't easily solve this before <a href="/browse/FLUID-5750/">FLUID-5750</a> options flattening since the purpose of this silly concrete check seems to be in order to know what is in the "argMap" in order to collect the distributions for the keys in it.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22135">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2017-10-17T16:40:34.977-0400">2017-10-17T16:40:34.977-0400</relative-time></i></p>
+                        <p>Check: Will this be resolved by the <a href="https://issues.fluidproject.org/browse/FLUID-6148">https://issues.fluidproject.org/browse/FLUID-6148</a> work, since both assembleCreatorArguments and argMap are gone?</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5810/"><span class="aria-hidden">←</span> Previous: FLUID-5810</a>
+        <a class="mx-1" href="/browse/FLUID-5812/">Next: FLUID-5812 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

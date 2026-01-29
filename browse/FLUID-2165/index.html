@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2165  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2165 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2165/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2165/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2165/">FLUID-2165</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2165: Stray references to "jQuery" within our private closure cause problems when jQuery.noConflict(true) is used.</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2165">FLUID-2165</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Michelle D'Souza</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Colin%20Clark">Colin Clark</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-01-27T12:27:00.000-0500" prefix="">2009-01-27T12:27:00.000-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2011-01-18T12:28:57.471-0500" prefix="">2011-01-18T12:28:57.471-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.4beta1</li>
+                            
+                            <li>0.4</li>
+                            
+                            <li>0.5beta1</li>
+                            
+                            <li>0.5</li>
+                            
+                            <li>0.6beta1</li>
+                            
+                            <li>0.6</li>
+                            
+                            <li>0.7</li>
+                            
+                            <li>0.8</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>1.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Framework</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>We wrap all of our code in a private, anonymous closure intended to provide us with a safe alias to jQuery and Fluid. Each file starts and ends with something that looks like this:</p>
+<p>(function ($, fluid) {</p>
+<p>})(jQuery, fluid_x_y);</p>
+<p>Within this closure, all references to jQuery should be through the $ variable. In several cases, we've got stray references to the jQuery variable which is causing problems when used with jQuery's extreme noConflicts mode. These should be removed in favour of $.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22235">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2009-01-27T13:57:58.000-0500">2009-01-27T13:57:58.000-0500</relative-time></i></p>
+                        <p>There are a couple of places in third-party code where this is still an issue:</p>
+<p>1. jARIA's :ariaRole and :ariaState pseudo selectors refer to jQuery().<br>
+2. The 1.5.3 version of jQuery UI's accordion plugin also refers to jQuery(). This is fixed in the 1.6 release candidates.</p>
+
+                    </li>
+                    
+                    <li id="comment-22237">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-02-06T12:52:43.000-0500">2009-02-06T12:52:43.000-0500</relative-time></i></p>
+                        <p>Bug XXX Parade 0.8 release</p>
+
+                    </li>
+                    
+                    <li id="comment-22238">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2009-02-16T17:41:53.000-0500">2009-02-16T17:41:53.000-0500</relative-time></i></p>
+                        <p>I have made a pass through the entire codebase, and no references to raw "jQuery" remain in our own code. Also, the version of accordion was earlier upgraded to JQuery 1.6rc6 and so the problem has gone away. jARIA is more problematic - the offending lines of code are these:</p>
+<p>$.extend($.expr[':'], {<br>
+// a is the element being tested, m[3] is the argument to the selector.</p>
+<p>ariaRole : "jQuery(a).ariaRole()==m[3]",<br>
+ariaState : "jQuery(a).ariaState(m[3].split(/=/)[0])==(/=/.test(m[3])?m[3].split(/=/)[1]:'true')"<br>
+});</p>
+<p>Incredibly enough, this seems to factor through a call to "eval" which will of course bust through any attempts to firewall a jQuery version. This may be an idiom copied from some now obsolete version of the jQuery codebase, since I don't seem to see it lying around in 1.3.1. Instead I see a whole new framework based on a thing named "Sizzle" from the looks of which is both fantastically faster and yet more fantastically obscure than the old way of matching selectors. It is possible that the "equivalent idiom" to the above looks like this:</p>
+<p>has: function(elem, i, match){<br>
+return !!Sizzle( match[3], elem ).length;<br>
+},</p>
+<p>but I wouldn't feel confident going in and hacking that at this point in the release. I suggest we punt the issue of jARIA back to its author, or reconsider it for 1.0.</p>
+
+                    </li>
+                    
+                    <li id="comment-22240">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-03-12T14:13:22.000-0400">2009-03-12T14:13:22.000-0400</relative-time></i></p>
+                        <p>Bug Parade 1.0 release </p>
+
+                    </li>
+                    
+                    <li id="comment-22242">
+                        <p class="mb-0"><b>Colin Clark</b> <i>commented <relative-time datetime="2009-03-16T11:02:20.000-0400">2009-03-16T11:02:20.000-0400</relative-time></i></p>
+                        <p>jQuery UI 1.7 has built-in support for ARIA roles and states. Rather than punting back to jARIA's author, let's thin out our codebase a bit by switching to the built-in functionality in ui.core.js instead.</p>
+
+                    </li>
+                    
+                    <li id="comment-22244">
+                        <p class="mb-0"><b>Antranig Basman</b> <i>commented <relative-time datetime="2009-03-24T16:27:55.000-0400">2009-03-24T16:27:55.000-0400</relative-time></i></p>
+                        <p>As of revision 6829, jAria.js is no longer in our codebase, in favour of the jQuery core functionality - as a result, I think our last stray usage of the "jQuery" symbol is gone from our build.</p>
+
+                    </li>
+                    
+                    <li id="comment-22246">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2009-03-25T16:20:00.000-0400">2009-03-25T16:20:00.000-0400</relative-time></i></p>
+                        <p>Except that I introduced a couple new stray jQuery calls into the code. Oops. Line 299 and 301 of UIOptions.js </p>
+
+                    </li>
+                    
+                    <li id="comment-22249">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2009-03-25T16:22:11.000-0400">2009-03-25T16:22:11.000-0400</relative-time></i></p>
+                        <p>Also, do we care about sample code and tests? I don't think it matters but several examples and tests have calls to jQuery. </p>
+
+                    </li>
+                    
+                    <li id="comment-22251">
+                        <p class="mb-0"><b>Michelle D'Souza</b> <i>commented <relative-time datetime="2009-03-25T16:26:15.000-0400">2009-03-25T16:26:15.000-0400</relative-time></i></p>
+                        <p>I reviewed this issue and the calls to jQuery in UIOptions.js need to be removed before this issue can be closed. </p>
+
+                    </li>
+                    
+                    <li id="comment-22254">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-03-26T09:08:13.000-0400">2009-03-26T09:08:13.000-0400</relative-time></i></p>
+                        <p>Clean Up Parade 1.0 </p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-2164/"><span class="aria-hidden">←</span> Previous: FLUID-2164</a>
+        <a class="mx-1" href="/browse/FLUID-2166/">Next: FLUID-2166 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-2932  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-2932 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-2932/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-2932/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-2932/">FLUID-2932</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-2932: Define module grouping information to be used by the custom builder</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-2932">FLUID-2932</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Task">Task</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Justin Obara</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Justin%20Obara">Justin Obara</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2009-06-09T10:47:27.000-0400" prefix="">2009-06-09T10:47:27.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2009-08-24T11:02:17.000-0400" prefix="">2009-08-24T11:02:17.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Infusion Builder</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Define module grouping information to be used by the custom builder</p>
+<p>In the "build.properties" file. Define the groups. For the specific modules add the name of the group to the module reference</p>
+<p>group_id="components"<br>
+group_name="Infusion Component Modules"<br>
+groupd_descriptoin=""</p>
+<p>module_inlineEdit-components="components/inlineEdit"</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23187">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-07-02T11:36:21.000-0400">2009-07-02T11:36:21.000-0400</relative-time></i></p>
+                        <p>module_inlineEdit-components="components/inlineEdit"</p>
+<p>we should be able to omit the "-components" part as we may be able to parse this out of the location information.</p>
+
+                    </li>
+                    
+                    <li id="comment-23188">
+                        <p class="mb-0"><b>Laurel Williams</b> <i>commented <relative-time datetime="2009-07-02T16:16:14.000-0400">2009-07-02T16:16:14.000-0400</relative-time></i></p>
+                        <p>This is complete but needs to be tested by parsing within the server code.</p>
+
+                    </li>
+                    
+                    <li id="comment-23189">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-07-03T15:23:12.000-0400">2009-07-03T15:23:12.000-0400</relative-time></i></p>
+                        <p>need to remove the old moduleGroups.json file</p>
+
+                    </li>
+                    
+                    <li id="comment-23190">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2009-07-03T15:26:32.000-0400">2009-07-03T15:26:32.000-0400</relative-time></i></p>
+                        <p>the moduleGroups.json file has been removed from trunk</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-2931/"><span class="aria-hidden">←</span> Previous: FLUID-2931</a>
+        <a class="mx-1" href="/browse/FLUID-2933/">Next: FLUID-2933 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

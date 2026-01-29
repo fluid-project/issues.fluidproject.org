@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5862  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5862 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5862/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5862/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5862/">FLUID-5862</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5862: InlineEdit test fails on Microsoft Edge</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5862">FLUID-5862</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Giovanni%20Tirloni">Giovanni Tirloni</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-02-11T08:31:10.519-0500" prefix="">2016-02-11T08:31:10.519-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-09-14T16:07:10.732-0400" prefix="">2016-09-14T16:07:10.732-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Inline Edit</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>InlineEdit is the only tests from all-tests.html that is failing on Microsoft Edge at this moment.</p>
+<pre><code class="hljs">----------------------------------------
+
+InlineEdit Tests: Edit Finish (<span class="hljs-number">1</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>)Rerun32 ms1.Initially display field is visible
+<span class="hljs-number">2.</span>Initially edit field is hidden
+<span class="hljs-number">3.</span>After edit, display field is hidden
+<span class="hljs-number">4.</span>After edit, edit field is visible
+<span class="hljs-number">5.</span>After edit, edit field has the same <span class="hljs-built_in">text</span> as display field
+<span class="hljs-number">6.</span>After finish, display field is visible
+<span class="hljs-number">7.</span>After finish, edit field is hidden
+<span class="hljs-number">8.</span>After finish, display field <span class="hljs-built_in">contains</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">text</span>
+<span class="hljs-number">9.</span><span class="hljs-built_in">When</span> not <span class="hljs-keyword">in</span> edit mode, textEditButton is visibleSource:     at pok (http:<span class="hljs-comment">//build.fluidproject.org/infusion/tests/test-core/jqUnit/js/jqUnit.js:110:9)</span>
+   at testFns.isVisible (http:<span class="hljs-comment">//build.fluidproject.org/infusion/tests/test-core/jqUnit/js/jqUnit-browser.js:39:13)</span>
+   at Anonymous <span class="hljs-keyword">function</span> (<span class="hljs-params">http:<span class="hljs-regexp">//</span>build.fluidproject.org<span class="hljs-regexp">/infusion/</span>tests<span class="hljs-regexp">/component-tests/i</span>nlineEdit<span class="hljs-regexp">/js/I</span>nlineEditTests.js:<span class="hljs-number">301</span>:<span class="hljs-number">13</span></span>)
+ 
+
+----------------------------------------
+
+<span class="hljs-title function_">InlineEdit</span> <span class="hljs-title function_">Tests</span>: <span class="hljs-title function_">Keyboard</span> <span class="hljs-title function_">Navigation</span> <span class="hljs-title function_">Edit</span> (<span class="hljs-params"><span class="hljs-number">2</span>, <span class="hljs-number">12</span>, <span class="hljs-number">14</span></span>)<span class="hljs-title function_">Rerun46</span> <span class="hljs-title function_">ms1</span>.<span class="hljs-title function_">TextEditButton</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">tabbable</span>
+2.<span class="hljs-title function_">Initially</span> <span class="hljs-title function_">display</span> <span class="hljs-title function_">field</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">not</span> <span class="hljs-title function_">focused</span>
+3.<span class="hljs-title function_">After</span> <span class="hljs-title function_">focus</span>, <span class="hljs-title function_">display</span> <span class="hljs-title function_">and</span> <span class="hljs-title function_">textEditButton</span> <span class="hljs-title function_">are</span> <span class="hljs-title function_">focussed</span>
+4.<span class="hljs-title function_">Before</span> <span class="hljs-title function_">enter</span> <span class="hljs-title function_">pressed</span>, <span class="hljs-title function_">display</span> <span class="hljs-title function_">field</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">visible</span>
+5.<span class="hljs-title function_">Before</span> <span class="hljs-title function_">enter</span> <span class="hljs-title function_">pressed</span>, <span class="hljs-title function_">edit</span> <span class="hljs-title function_">field</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">hidden</span>
+6.<span class="hljs-title function_">Before</span> <span class="hljs-title function_">enter</span> <span class="hljs-title function_">pressed</span>, <span class="hljs-title function_">button</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">visibleSource</span>:     <span class="hljs-title function_">at</span> <span class="hljs-title function_">pok</span> (<span class="hljs-params">http:<span class="hljs-regexp">//</span>build.fluidproject.org<span class="hljs-regexp">/infusion/</span>tests<span class="hljs-regexp">/test-core/</span>jqUnit<span class="hljs-regexp">/js/</span>jqUnit.js:<span class="hljs-number">110</span>:<span class="hljs-number">9</span></span>)
+   <span class="hljs-title function_">at</span> <span class="hljs-title function_">testFns</span>.<span class="hljs-title function_">isVisible</span> (<span class="hljs-params">http:<span class="hljs-regexp">//</span>build.fluidproject.org<span class="hljs-regexp">/infusion/</span>tests<span class="hljs-regexp">/test-core/</span>jqUnit<span class="hljs-regexp">/js/</span>jqUnit-browser.js:<span class="hljs-number">39</span>:<span class="hljs-number">13</span></span>)
+   <span class="hljs-title function_">at</span> <span class="hljs-title function_">Anonymous</span> <span class="hljs-title function_">function</span> (<span class="hljs-params">http:<span class="hljs-regexp">//</span>build.fluidproject.org<span class="hljs-regexp">/infusion/</span>tests<span class="hljs-regexp">/component-tests/i</span>nlineEdit<span class="hljs-regexp">/js/I</span>nlineEditTests.js:<span class="hljs-number">339</span>:<span class="hljs-number">13</span></span>)
+ 
+
+7.<span class="hljs-title function_">After</span> <span class="hljs-title function_">enter</span> <span class="hljs-title function_">pressed</span>, <span class="hljs-title function_">edit</span> <span class="hljs-title function_">field</span> <span class="hljs-title function_">contains</span> <span class="hljs-title function_">same</span> <span class="hljs-title function_">text</span> <span class="hljs-title function_">as</span> <span class="hljs-title function_">display</span> <span class="hljs-title function_">field</span>
+8.<span class="hljs-title function_">After</span> <span class="hljs-title function_">enter</span> <span class="hljs-title function_">pressed</span>, <span class="hljs-title function_">button</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">hidden</span>
+9.<span class="hljs-title function_">After</span> <span class="hljs-title function_">changing</span> <span class="hljs-title function_">text</span> <span class="hljs-title function_">and</span> <span class="hljs-title function_">pressing</span> <span class="hljs-title function_">enter</span>, <span class="hljs-title function_">display</span> <span class="hljs-title function_">field</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">visible</span>
+10.<span class="hljs-title function_">After</span> <span class="hljs-title function_">changing</span> <span class="hljs-title function_">text</span> <span class="hljs-title function_">and</span> <span class="hljs-title function_">pressing</span> <span class="hljs-title function_">enter</span>, <span class="hljs-title function_">display</span> <span class="hljs-title function_">has</span> <span class="hljs-title function_">displayModeContainer</span> <span class="hljs-title function_">style</span>
+11.<span class="hljs-title function_">After</span> <span class="hljs-title function_">changing</span> <span class="hljs-title function_">text</span> <span class="hljs-title function_">and</span> <span class="hljs-title function_">pressing</span> <span class="hljs-title function_">enter</span>, <span class="hljs-title function_">edit</span> <span class="hljs-title function_">field</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">hidden</span>
+12.<span class="hljs-title function_">After</span> <span class="hljs-title function_">changing</span> <span class="hljs-title function_">text</span> <span class="hljs-title function_">and</span> <span class="hljs-title function_">pressing</span> <span class="hljs-title function_">enter</span>, <span class="hljs-title function_">display</span> <span class="hljs-title function_">field</span> <span class="hljs-title function_">contains</span> <span class="hljs-title function_">new</span> <span class="hljs-title function_">text</span>
+13.<span class="hljs-title function_">After</span> <span class="hljs-title function_">enter</span> <span class="hljs-title function_">pressed</span>, <span class="hljs-title function_">button</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">visibleSource</span>:     <span class="hljs-title function_">at</span> <span class="hljs-title function_">pok</span> (<span class="hljs-params">http:<span class="hljs-regexp">//</span>build.fluidproject.org<span class="hljs-regexp">/infusion/</span>tests<span class="hljs-regexp">/test-core/</span>jqUnit<span class="hljs-regexp">/js/</span>jqUnit.js:<span class="hljs-number">110</span>:<span class="hljs-number">9</span></span>)
+   <span class="hljs-title function_">at</span> <span class="hljs-title function_">testFns</span>.<span class="hljs-title function_">isVisible</span> (<span class="hljs-params">http:<span class="hljs-regexp">//</span>build.fluidproject.org<span class="hljs-regexp">/infusion/</span>tests<span class="hljs-regexp">/test-core/</span>jqUnit<span class="hljs-regexp">/js/</span>jqUnit-browser.js:<span class="hljs-number">39</span>:<span class="hljs-number">13</span></span>)
+   <span class="hljs-title function_">at</span> <span class="hljs-title function_">Anonymous</span> <span class="hljs-title function_">function</span> (<span class="hljs-params">http:<span class="hljs-regexp">//</span>build.fluidproject.org<span class="hljs-regexp">/infusion/</span>tests<span class="hljs-regexp">/component-tests/i</span>nlineEdit<span class="hljs-regexp">/js/I</span>nlineEditTests.js:<span class="hljs-number">353</span>:<span class="hljs-number">13</span></span>)
+ 
+
+14.<span class="hljs-title function_">After</span> <span class="hljs-title function_">blur</span>, <span class="hljs-title function_">display</span> <span class="hljs-title function_">field</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">not</span> <span class="hljs-title function_">focused</span>
+
+----------------------------------------
+
+<span class="hljs-title function_">InlineEdit</span> <span class="hljs-title function_">Tests</span>: <span class="hljs-title function_">Click</span> <span class="hljs-title function_">on</span> <span class="hljs-title function_">display</span> (<span class="hljs-params"><span class="hljs-number">1</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span></span>)<span class="hljs-title function_">Rerun29</span> <span class="hljs-title function_">ms1</span>.<span class="hljs-title function_">Initially</span>, <span class="hljs-title function_">display</span> <span class="hljs-title function_">field</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">visible</span>
+2.<span class="hljs-title function_">Initially</span>, <span class="hljs-title function_">textEditButton</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">visibleSource</span>:     <span class="hljs-title function_">at</span> <span class="hljs-title function_">pok</span> (<span class="hljs-params">http:<span class="hljs-regexp">//</span>build.fluidproject.org<span class="hljs-regexp">/infusion/</span>tests<span class="hljs-regexp">/test-core/</span>jqUnit<span class="hljs-regexp">/js/</span>jqUnit.js:<span class="hljs-number">110</span>:<span class="hljs-number">9</span></span>)
+   <span class="hljs-title function_">at</span> <span class="hljs-title function_">testFns</span>.<span class="hljs-title function_">isVisible</span> (<span class="hljs-params">http:<span class="hljs-regexp">//</span>build.fluidproject.org<span class="hljs-regexp">/infusion/</span>tests<span class="hljs-regexp">/test-core/</span>jqUnit<span class="hljs-regexp">/js/</span>jqUnit-browser.js:<span class="hljs-number">39</span>:<span class="hljs-number">13</span></span>)
+   <span class="hljs-title function_">at</span> <span class="hljs-title function_">assertDisplayModeVisibility</span> (<span class="hljs-params">http:<span class="hljs-regexp">//</span>build.fluidproject.org<span class="hljs-regexp">/infusion/</span>tests<span class="hljs-regexp">/component-tests/i</span>nlineEdit<span class="hljs-regexp">/js/I</span>nlineEditTests.js:<span class="hljs-number">378</span>:<span class="hljs-number">13</span></span>)
+   <span class="hljs-title function_">at</span> <span class="hljs-title function_">Anonymous</span> <span class="hljs-title function_">function</span> (<span class="hljs-params">http:<span class="hljs-regexp">//</span>build.fluidproject.org<span class="hljs-regexp">/infusion/</span>tests<span class="hljs-regexp">/component-tests/i</span>nlineEdit<span class="hljs-regexp">/js/I</span>nlineEditTests.js:<span class="hljs-number">397</span>:<span class="hljs-number">13</span></span>)
+ 
+
+3.<span class="hljs-title function_">Initially</span>, <span class="hljs-title function_">edit</span> <span class="hljs-title function_">field</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">hidden</span>
+4.<span class="hljs-title function_">After</span> <span class="hljs-title function_">click</span>, <span class="hljs-title function_">display</span> <span class="hljs-title function_">field</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">hidden</span>
+5.<span class="hljs-title function_">After</span> <span class="hljs-title function_">click</span>, <span class="hljs-title function_">textEditButton</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">hidden</span>
+6.<span class="hljs-title function_">After</span> <span class="hljs-title function_">click</span>, <span class="hljs-title function_">edit</span> <span class="hljs-title function_">field</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">visible</span>
+7.<span class="hljs-title function_">After</span> <span class="hljs-title function_">click</span>, <span class="hljs-title function_">edit</span> <span class="hljs-title function_">field</span> <span class="hljs-title function_">contains</span> <span class="hljs-title function_">same</span> <span class="hljs-title function_">text</span> <span class="hljs-title function_">as</span> <span class="hljs-title function_">display</span> <span class="hljs-title function_">field</span>
+
+----------------------------------------
+
+<span class="hljs-title function_">InlineEdit</span> <span class="hljs-title function_">Tests</span>: <span class="hljs-title function_">Click</span> <span class="hljs-title function_">on</span> <span class="hljs-title function_">textEditButton</span> (<span class="hljs-params"><span class="hljs-number">1</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span></span>)<span class="hljs-title function_">Rerun31</span> <span class="hljs-title function_">ms1</span>.<span class="hljs-title function_">Initially</span>, <span class="hljs-title function_">display</span> <span class="hljs-title function_">field</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">visible</span>
+2.<span class="hljs-title function_">Initially</span>, <span class="hljs-title function_">textEditButton</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">visibleSource</span>:     <span class="hljs-title function_">at</span> <span class="hljs-title function_">pok</span> (<span class="hljs-params">http:<span class="hljs-regexp">//</span>build.fluidproject.org<span class="hljs-regexp">/infusion/</span>tests<span class="hljs-regexp">/test-core/</span>jqUnit<span class="hljs-regexp">/js/</span>jqUnit.js:<span class="hljs-number">110</span>:<span class="hljs-number">9</span></span>)
+   <span class="hljs-title function_">at</span> <span class="hljs-title function_">testFns</span>.<span class="hljs-title function_">isVisible</span> (<span class="hljs-params">http:<span class="hljs-regexp">//</span>build.fluidproject.org<span class="hljs-regexp">/infusion/</span>tests<span class="hljs-regexp">/test-core/</span>jqUnit<span class="hljs-regexp">/js/</span>jqUnit-browser.js:<span class="hljs-number">39</span>:<span class="hljs-number">13</span></span>)
+   <span class="hljs-title function_">at</span> <span class="hljs-title function_">assertDisplayModeVisibility</span> (<span class="hljs-params">http:<span class="hljs-regexp">//</span>build.fluidproject.org<span class="hljs-regexp">/infusion/</span>tests<span class="hljs-regexp">/component-tests/i</span>nlineEdit<span class="hljs-regexp">/js/I</span>nlineEditTests.js:<span class="hljs-number">378</span>:<span class="hljs-number">13</span></span>)
+   <span class="hljs-title function_">at</span> <span class="hljs-title function_">Anonymous</span> <span class="hljs-title function_">function</span> (<span class="hljs-params">http:<span class="hljs-regexp">//</span>build.fluidproject.org<span class="hljs-regexp">/infusion/</span>tests<span class="hljs-regexp">/component-tests/i</span>nlineEdit<span class="hljs-regexp">/js/I</span>nlineEditTests.js:<span class="hljs-number">410</span>:<span class="hljs-number">13</span></span>)
+ 
+
+3.<span class="hljs-title function_">Initially</span>, <span class="hljs-title function_">edit</span> <span class="hljs-title function_">field</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">hidden</span>
+4.<span class="hljs-title function_">After</span> <span class="hljs-title function_">click</span>, <span class="hljs-title function_">display</span> <span class="hljs-title function_">field</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">hidden</span>
+5.<span class="hljs-title function_">After</span> <span class="hljs-title function_">click</span>, <span class="hljs-title function_">textEditButton</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">hidden</span>
+6.<span class="hljs-title function_">After</span> <span class="hljs-title function_">click</span>, <span class="hljs-title function_">edit</span> <span class="hljs-title function_">field</span> <span class="hljs-title function_">is</span> <span class="hljs-title function_">visible</span>
+7.<span class="hljs-title function_">After</span> <span class="hljs-title function_">click</span>, <span class="hljs-title function_">edit</span> <span class="hljs-title function_">field</span> <span class="hljs-title function_">contains</span> <span class="hljs-title function_">same</span> <span class="hljs-title function_">text</span> <span class="hljs-title function_">as</span> <span class="hljs-title function_">display</span> <span class="hljs-title function_">field</span>
+</code></pre>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Windows 10<br>
+Microsoft Edge 25.10586.0.0<br>
+Microsoft EdgeHTML 13.10586</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-23674">
+                        <p class="mb-0"><b>Giovanni Tirloni</b> <i>commented <relative-time datetime="2016-09-14T16:07:10.634-0400">2016-09-14T16:07:10.634-0400</relative-time></i></p>
+                        <p>All tests pass now! </p>
+<p>Microsoft Edge 38.14393.0.0<br>
+Microsoft EdgeHTML 14.14393</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5861/"><span class="aria-hidden">←</span> Previous: FLUID-5861</a>
+        <a class="mx-1" href="/browse/FLUID-5863/">Next: FLUID-5863 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> IDI-104  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" IDI-104 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/IDI-104/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/IDI-104/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/IDI" data-pagefind-filter="project">IDI</a></li>
+                <li><a href="/browse/IDI-104/">IDI-104</a></li>
+            </ol>
+        </nav>
+        <h1>IDI-104: Integrate Video Player in IDI site via WordPress plugin</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/IDI-104">IDI-104</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/IDI/?type=Improvement">Improvement</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/IDI/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Anastasia Cheetham</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/IDI/?reporter=heidi%20valles">heidi valles</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2012-11-05T13:29:14.683-0500" prefix="">2012-11-05T13:29:14.683-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2014-03-07T16:55:40.830-0500" prefix="">2014-03-07T16:55:40.830-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>Create a WordPress plugin that will add to the authoring stage the ability to embed videos in the page using the VideoPlayer.</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-12949">
+                        <p class="mb-0"><b>heidi valles</b> <i>commented <relative-time datetime="2012-11-20T14:40:27.985-0500">2012-11-20T14:40:27.985-0500</relative-time></i></p>
+                        <p>Clone videoplayer (git://github.com/fluid-project/videoPlayer.git) into wp-content/themes/idi-theme/lib<br>
+In wp admin area, create top-level page "Media" and assign template "Media" to it - this is the new "media" page for showcasing videos etc. Top-level location likely temporary.</p>
+<p>header.php: temporary, includes video player files and changes to UIO. Copy back to wp-fss-theme when VP is ready.<br>
+media.php: media page with video player content<br>
+sidebar-media.php:	sidebar for media page<br>
+/videos: 	video files for media page</p>
+<p>update MyInfusion.js - move from videoplayer to infusion (uploader and tooltip components needed)<br>
+update FatPanelUIOptions.html - move from videoplayer to infusion</p>
+
+                    </li>
+                    
+                    <li id="comment-12950">
+                        <p class="mb-0"><b>heidi valles</b> <i>commented <relative-time datetime="2012-11-20T15:19:45.817-0500">2012-11-20T15:19:45.817-0500</relative-time></i></p>
+                        <p>See <a href="https://github.com/heidiv/idi-theme/commits/IDI-104">https://github.com/heidiv/idi-theme/commits/IDI-104</a></p>
+
+                    </li>
+                    
+                    <li id="comment-12951">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2013-01-15T16:08:04.993-0500">2013-01-15T16:08:04.993-0500</relative-time></i></p>
+                        <p>I spoke with Joanna about recommendations for incorporating media into the site design, and she'd prefer not to have a Media tab in the main navigation. She suggests videos simply be posted as News posts, and that the root News page include a link in the left sidebar to filter postings to only media postings.</p>
+
+                    </li>
+                    
+                    <li id="comment-12952">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2013-01-15T16:09:55.076-0500">2013-01-15T16:09:55.076-0500</relative-time></i></p>
+                        <p>WordPress will embed videos if you provide a link in the authoring interface. It will happen automatically for a shortlist of sites (e.g. youtube, flickr, etc.) and provides means to define your own handler for sites that don't support oEmbed. I've tested the means, and it works to detect a site and plug desired markup into the page. Moving on investigate the filter in the sidebar.</p>
+
+                    </li>
+                    
+                    <li id="comment-12953">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2013-01-15T17:13:20.691-0500">2013-01-15T17:13:20.691-0500</relative-time></i></p>
+                        <p>A parameter to query_posts() will filter for tags, which works nicely if we put a "media" tag on any media news articles. Working with Joanna on the page layouts, and looking at the code specifics.</p>
+
+                    </li>
+                    
+                    <li id="comment-12954">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2014-03-07T16:55:40.816-0500">2014-03-07T16:55:40.816-0500</relative-time></i></p>
+                        <p>The VideoPlayer plugin is now in use on the production site.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/IDI-103/"><span class="aria-hidden">←</span> Previous: IDI-103</a>
+        <a class="mx-1" href="/browse/IDI-105/">Next: IDI-105 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

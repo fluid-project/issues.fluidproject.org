@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-5994  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-5994 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-5994/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-5994/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-5994/">FLUID-5994</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-5994: Keyboard accessibility demo has errors in its use of aria-selected  and role=listitem </h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-5994">FLUID-5994</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Blocker</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Alan Harnum</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=David">David</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2016-10-26T15:17:06.071-0400" prefix="">2016-10-26T15:17:06.071-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2016-10-27T11:57:58.099-0400" prefix="">2016-10-27T11:57:58.099-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>2.0</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Demos</li>
+                            
+                            <li>Keyboard Accessibility</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p><a href="http://build.fluidproject.org/infusion/demos/keyboard-a11y/">http://build.fluidproject.org/infusion/demos/keyboard-a11y/</a><br>
+Ran the demo through the new validator (<a href="https://validator.w3.org/nu/">https://validator.w3.org/nu/</a>) and a couple types of issues were shown.</p>
+<p>Error: Attribute aria-selected not allowed on element img at this point.<br>
+From line 99, column 21; to line 99, column 214<br>
+&lt;li&gt;&lt;img class="demo-image-thumbImg selectable" src="images/RedApple.jpg" alt="red apple" id="fluid-id-44w2berk-42" aria-selected="false" role="listitem" aria-controls="image-preview" tabindex="-1"&gt;&lt;/li&gt;↩<br>
+Attributes for element img:<br>
+Global attributes<br>
+alt - Replacement text for use when images are not available<br>
+src - Address of the resource<br>
+srcset - Images to use in different situations (e.g., high-resolution displays, small monitors, etc)<br>
+sizes - Image sizes between breakpoints<br>
+crossorigin - How the element handles crossorigin requests<br>
+usemap - Name of image map to use<br>
+ismap - Whether the image is a server-side image map<br>
+width - Horizontal dimension<br>
+height - Vertical dimension<br>
+longdesc - A url that provides a link to an expanded description of the image, defined in [html-longdesc] </p>
+<p>Error: An element with role=listitem must be contained in, or owned by, an element with role=list or role=group.<br>
+From line 97, column 21; to line 97, column 217<br>
+&lt;li&gt;&lt;img class="demo-image-thumbImg selectable" src="images/Mangosteen.jpg" alt="mangosteen" id="fluid-id-44w2berk-40" aria-selected="false" role="listitem" aria-controls="image-preview" tabindex="-1"&gt;&lt;/li&gt;↩</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Chrome 53.0.2785.143 m (Windows 10)</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-22662">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2016-10-26T16:58:16.204-0400">2016-10-26T16:58:16.204-0400</relative-time></i></p>
+                        <p>This issue appears to originate in component markup injected by Javascript, rather than the index.html page markup itself; it therefore won't be tackled as part of <a href="/browse/FLUID-6000/">FLUID-6000</a>.</p>
+
+                    </li>
+                    
+                    <li id="comment-22663">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2016-10-26T17:32:57.522-0400">2016-10-26T17:32:57.522-0400</relative-time></i></p>
+                        <p>PR at <a href="https://github.com/fluid-project/infusion/pull/770">https://github.com/fluid-project/infusion/pull/770</a> - thanks David for report.</p>
+
+                    </li>
+                    
+                    <li id="comment-22664">
+                        <p class="mb-0"><b>Alan Harnum</b> <i>commented <relative-time datetime="2016-10-26T17:45:13.993-0400">2016-10-26T17:45:13.993-0400</relative-time></i></p>
+                        <p>I'm going to try and fix a few of the other demo pages with issues with their injected markup under the heading of this JIRA as well.</p>
+
+                    </li>
+                    
+                    <li id="comment-22666">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2016-10-27T11:57:55.102-0400">2016-10-27T11:57:55.102-0400</relative-time></i></p>
+                        <p>Merged PR ( <a href="https://github.com/fluid-project/infusion/pull/770">https://github.com/fluid-project/infusion/pull/770</a> ) into the project repo a 0bcd507499bf4968630813c25c8146a8163a1e39</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-5993/"><span class="aria-hidden">←</span> Previous: FLUID-5993</a>
+        <a class="mx-1" href="/browse/FLUID-5995/">Next: FLUID-5995 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

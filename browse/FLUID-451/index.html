@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLUID-451  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLUID-451 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLUID-451/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLUID-451/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLUID" data-pagefind-filter="project">Fluid Infusion</a></li>
+                <li><a href="/browse/FLUID-451/">FLUID-451</a></li>
+            </ol>
+        </nav>
+        <h1>FLUID-451: Reorderer: Mouse pointer icon does not change appropriately</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLUID-451">FLUID-451</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLUID/?resolution=Won't%20Fix">Won't Fix</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>N/A</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLUID/?reporter=Herb%20Wideman">Herb Wideman</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2008-04-04T15:02:22.000-0400" prefix="">2008-04-04T15:02:22.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2008-04-21T12:43:34.000-0400" prefix="">2008-04-21T12:43:34.000-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>0.3</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>Reorderer</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>On the unstyled sortable to do list, and the scheduler list ( <a href="http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/scheduler/scheduler.html">http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/scheduler/scheduler.html</a> ), the mouse cursor changes to text insertion point style which is inappropriate for the movement task - it imputes editing affordances, not drag and drop affordances. Recommendation: use the same four-pointed arrow as appears with tetheh styled sortable list test page.</p>
+
+            </div>
+            
+            <div class="spacing-y-1">
+                <h2>Environments</h2>
+                <p>Win XP, IE7</p>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-20651">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-04-07T11:30:30.000-0400">2008-04-07T11:30:30.000-0400</relative-time></i></p>
+                        <p>Note that this style change doesn't happen on Firefox.</p>
+<p>It should be reasonably easy to specify the cursor as part of the styling (except for the unstyled to-do list, which is an example of an unstyled list 🙂</p>
+
+                    </li>
+                    
+                    <li id="comment-20652">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-04-07T11:38:34.000-0400">2008-04-07T11:38:34.000-0400</relative-time></i></p>
+                        <p>The unstyled sortable to do list has been removed from the list of test files in the protocol, since it is inappropriate for use in testing.</p>
+<p>The issue is still relevant to the scheduler.</p>
+
+                    </li>
+                    
+                    <li id="comment-20653">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2008-04-07T14:41:27.000-0400">2008-04-07T14:41:27.000-0400</relative-time></i></p>
+                        <p>The cursor styling, for drag &amp; drop, is not consistent across the various test sites. </p>
+<p>Cursor style: pointing finger (IE7 WinXp, FF2 Mac OS 10.5, FF2 WinXP)</p>
+<p><a href="http://build.fluidproject.org/sakai-imagegallery-tool/fluid-components/html/Lightbox.html">http://build.fluidproject.org/sakai-imagegallery-tool/fluid-components/html/Lightbox.html</a><br>
+<a href="http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/generic-lightbox/generic-lightbox.html">http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/generic-lightbox/generic-lightbox.html</a><br>
+<a href="http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/uportal-unordered-list-tabs/uportal-sortable-tabs-mockup.html">http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/uportal-unordered-list-tabs/uportal-sortable-tabs-mockup.html</a></p>
+<p>Cursor style: four arrows (IE7 WinXp, FF2 WinXp), Open Hand (FF2 Mac OS 10.5)</p>
+<p><a href="http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/todo-list/sortable-styled-todo-list.html">http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/todo-list/sortable-styled-todo-list.html</a><br>
+<a href="http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/unordered-list-tabs/unordered-list-tabs.html#">http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/unordered-list-tabs/unordered-list-tabs.html#</a><br>
+<a href="http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/uportal3-newskin/new_theme_sample_html.htm">http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/uportal3-newskin/new_theme_sample_html.htm</a></p>
+<p>Cursor style: No cursor change to indicate drag capability</p>
+<p><a href="http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/scheduler/scheduler.html">http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/scheduler/scheduler.html</a><br>
+<a href="http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/abstract/portal/portlets.html">http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/abstract/portal/portlets.html</a><br>
+<a href="http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/scheduler/RSFStyleScheduler.html">http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/scheduler/RSFStyleScheduler.html</a></p>
+
+                    </li>
+                    
+                    <li id="comment-20654">
+                        <p class="mb-0"><b>Herb Wideman</b> <i>commented <relative-time datetime="2008-04-07T15:01:57.000-0400">2008-04-07T15:01:57.000-0400</relative-time></i></p>
+                        <p>Re Justin's comment: the cursor does in fact change to indicate drag capability at<br>
+<a href="http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/scheduler/scheduler.html">http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/concrete/scheduler/scheduler.html</a><br>
+but just not to the type suitable for indicating its functional affordances... it chages to a text insertion point from an arrow.</p>
+<p>Also true at:<br>
+<a href="http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/abstract/portal/portlets.html">http://build.fluidproject.org/sakai-imagegallery-tool/sample-code/reorderer/abstract/portal/portlets.html</a></p>
+
+                    </li>
+                    
+                    <li id="comment-20655">
+                        <p class="mb-0"><b>Anastasia Cheetham</b> <i>commented <relative-time datetime="2008-04-21T12:43:34.000-0400">2008-04-21T12:43:34.000-0400</relative-time></i></p>
+                        <p>This is a styling issue that arose in test files that were not well styled, and which are now being removed from the distribution.</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLUID-450/"><span class="aria-hidden">←</span> Previous: FLUID-450</a>
+        <a class="mx-1" href="/browse/FLUID-452/">Next: FLUID-452 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>

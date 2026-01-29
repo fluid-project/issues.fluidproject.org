@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-scheme="light">
+    <head>
+        <title> FLOE-333  | Fluid Project Issues Archive</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Archive of Fluid Project issues from the JIRA issue tracker">
+        <meta property="og:title" content=" FLOE-333 |  Fluid Project Issues Archive">
+        <meta property="og:description" content="Archive of Fluid Project issues">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://issues.fluidproject.org/browse/FLOE-333/">
+        <link rel="canonical" href="https://issues.fluidproject.org/browse/FLOE-333/">
+
+
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        
+<script type="module" src="/assets/scripts/relative-time/bundle.js"></script>
+
+    </head>
+    <body class="page-issue">
+        <header class="mt-3">
+            <a class="skip-link" href="#main">Skip to Content</a>
+            <nav aria-label="main menu">
+                <menu>
+                    <li><a rel="home" href="/">Home</a></li>
+                    <li><a href="/search/">Search</a></li>
+                </menu>
+            </nav>
+            
+        <nav aria-label="breadcrumbs">
+            <ol>
+                <li><a rel="home" href="/">Home</a></li>
+                <li><a href="/projects/FLOE" data-pagefind-filter="project">Floe</a></li>
+                <li><a href="/browse/FLOE-333/">FLOE-333</a></li>
+            </ol>
+        </nav>
+        <h1>FLOE-333: Scrolling through languages causes page to reload too often</h1>
+
+        </header>
+        <main id="main">
+            
+    <div id="content" class="content with-sidebar">
+        <div class="spacing-y-1 bg-default">
+            <h2>Metadata</h2>
+            <dl>
+                <div>
+                    <dt>Source</dt>
+                    <dd><a href="https://fluidproject.atlassian.net/browse/FLOE-333">FLOE-333</a></dd>
+                </div>
+                <div>
+                    <dt>Type</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?type=Bug">Bug</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Priority</dt>
+                    <dd>Major</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>Closed</dd>
+                </div>
+                <div>
+                    <dt>Resolution</dt>
+                    <dd>
+                            <a href="/projects/FLOE/?resolution=Fixed">Fixed</a>
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Assignee</dt>
+                    <dd>Simon Bates</dd>
+                </div>
+                <div>
+                    <dt>Reporter</dt>
+                    <dd>
+                        <a href="/projects/FLOE/?reporter=Anastasia%20Cheetham">Anastasia Cheetham</a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Created</dt>
+                    <dd><relative-time datetime="2015-05-13T09:14:02.751-0400" prefix="">2015-05-13T09:14:02.751-0400</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Updated</dt>
+                    <dd><relative-time datetime="2015-11-03T12:54:25.208-0500" prefix="">2015-11-03T12:54:25.208-0500</relative-time></dd>
+                </div>
+                <div>
+                    <dt>Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Fixed Versions</dt>
+                    <dd>
+                        
+                        N/A
+                        
+                    </dd>
+                </div>
+                <div>
+                    <dt>Component</dt>
+                    <dd>
+                        
+                        <ol role="list">
+                            
+                            <li>First Discovery</li>
+                            
+                        </ol>
+                        
+                    </dd>
+                </div>
+            </dl>
+        </div>
+
+        <div>
+            <div class="spacing-y-1">
+                <h2>Description</h2>
+                <p>When scrolling through languages using the up and down arrows (either by keyboard or mouse), the act of scrolling also changes the current language selection to the next on the list, which causes the page to reload into that language. Focus is lost, and the user has to start all over. It would be nice if the user could scroll through the languages, see what's available, identify what they want and THEN take some action to enact that language. </p>
+<hr>
+<p>On May 19, 2015, Dana, Anastasia, Cindy, and Simon met to clarify the desired behaviour:</p>
+<p>In the following, the term "active" is used for the language set in the user's preferences and in which the UI is rendered; the term "focused" is used for the language with keyboard focus. The active and focused languages might differ.</p>
+<ul>
+<li>The active language is indicated with a triangle and the name of the language is written in yellow</li>
+<li>Clicking on one of the arrow buttons with the mouse scrolls the list of languages and does not change the active language (the active language may scroll off screen)</li>
+<li>Clicking on a language button with the mouse activates the language</li>
+<li>When focus is moved to the language list, the list of visible languages is not changed and the language at the top of the list is given focus (this might not be the active language)</li>
+<li>When focus leaves the language list, the list of visible languages is not changed – the list stays at the same position</li>
+<li>Pressing the arrow keys moves the focus to the language above or below (scrolling as necessary) but does not change the active language</li>
+<li>Pressing enter or space on a language button makes that language active</li>
+<li>When the language panel is first displayed, or the user navigates back to it from another panel, the language list is scrolled to show the active language</li>
+</ul>
+
+            </div>
+            
+            
+            
+            
+            <div class="spacing-y-1">
+                <h2>Comments</h2>
+                <ul class="spacing-y-2" role="list">
+                    
+                    <li id="comment-11010">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2015-05-13T13:48:15.647-0400">2015-05-13T13:48:15.647-0400</relative-time></i></p>
+                        <p>According to the discussion in #fluid-design - <a href="http://issues.fluidproject.org/browse/FLOE-333">http://issues.fluidproject.org/browse/FLOE-333</a>, 12:54PM onwards, the arrow buttons should just scroll the language list, and then the user could use mouse to click on the language button to select their desired language.</p>
+<p>The triangular indicator should stay with the currently-selected language since the language on the screen reveals which language is currently selected. </p>
+
+                    </li>
+                    
+                    <li id="comment-11011">
+                        <p class="mb-0"><b>Cindy Li</b> <i>commented <relative-time datetime="2015-05-15T15:29:42.064-0400">2015-05-15T15:29:42.064-0400</relative-time></i></p>
+                        <p>Thoughts of how to implement this feature:</p>
+<p>When the back or next button is clicked, find out which language button needs to be moved into the view and use this function for the move - <a href="https://github.com/fluid-project/first-discovery/blob/master/src/js/panels.js#L563">https://github.com/fluid-project/first-discovery/blob/master/src/js/panels.js#L563</a>. This function needs to be refactored to be able to take in the moved-to-language as an argument so that it can be shared by moves triggered by clicking back/next buttons and the change on the selected language.</p>
+
+                    </li>
+                    
+                    <li id="comment-11012">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2015-05-19T17:11:02.626-0400">2015-05-19T17:11:02.626-0400</relative-time></i></p>
+                        <p>On May 19, we met to clarify the desired behaviour (see the description above). However, this behaviour may be time consuming to realise given the current implementation of the language panel. In particular, the language list is implemented using radio buttons.</p>
+<p>I am looking into alternative solutions to see if we can get the desired high level behaviour, of exploring the available languages without reloading, with a UI that is simpler to implement but sill satisfactory.</p>
+
+                    </li>
+                    
+                    <li id="comment-11013">
+                        <p class="mb-0"><b>Simon Bates</b> <i>commented <relative-time datetime="2015-06-04T12:10:38.874-0400">2015-06-04T12:10:38.874-0400</relative-time></i></p>
+                        <p>Pull request:</p>
+<p><a href="https://github.com/fluid-project/first-discovery/pull/83">https://github.com/fluid-project/first-discovery/pull/83</a></p>
+
+                    </li>
+                    
+                    <li id="comment-11014">
+                        <p class="mb-0"><b>Justin Obara</b> <i>commented <relative-time datetime="2015-06-05T13:02:35.433-0400">2015-06-05T13:02:35.433-0400</relative-time></i></p>
+                        <p>Merged pull request ( <a href="https://github.com/fluid-project/first-discovery/pull/83">https://github.com/fluid-project/first-discovery/pull/83</a> ) into the project repo at 556374661c8eac45bc6ad935b89f040a4f344b53</p>
+
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+        </main>
+        <footer>
+            
+<nav aria-labelledby="pagination">
+    <h2 class="visually-hidden">pagination</h2>
+    <p class="flex">
+        
+        
+        <a class="mx-1" href="/browse/FLOE-332/"><span class="aria-hidden">←</span> Previous: FLOE-332</a>
+        <a class="mx-1" href="/browse/FLOE-334/">Next: FLOE-334 <span class="aria-hidden">→</span></a>
+    </p>
+</nav>
+
+        </footer>
+    </body>
+</html>
